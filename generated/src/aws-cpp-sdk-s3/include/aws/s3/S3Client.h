@@ -1516,17 +1516,42 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Deletes an S3 Inventory configuration (identified by the inventory ID) from
-   * the bucket.</p> <p>To use this operation, you must have permissions to perform
-   * the <code>s3:PutInventoryConfiguration</code> action. The bucket owner has this
-   * permission by default. The bucket owner can grant this permission to others. For
-   * more information about permissions, see <a
+   * the bucket.</p>  <p> <b>Directory buckets </b> - For directory buckets,
+   * you must make requests for this API operation to the Regional endpoint. These
+   * endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have
+   * permissions to perform the <code>s3:PutInventoryConfiguration</code> action. The
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
-   * the Amazon S3 inventory feature, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:PutInventoryConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:PutInventoryConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy. For more
+   * information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For information about the Amazon S3 inventory feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
    * S3 Inventory</a>.</p>  <p>After deleting a configuration, Amazon S3 might
    * still deliver one additional inventory report during a brief transition period
@@ -2814,17 +2839,42 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Returns an S3 Inventory configuration (identified by the inventory
-   * configuration ID) from the bucket.</p> <p>To use this operation, you must have
+   * configuration ID) from the bucket.</p>  <p> <b>Directory buckets </b> -
+   * For directory buckets, you must make requests for this API operation to the
+   * Regional endpoint. These endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have
    * permissions to perform the <code>s3:GetInventoryConfiguration</code> action. The
-   * bucket owner has this permission by default and can grant this permission to
-   * others. For more information about permissions, see <a
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
-   * the Amazon S3 inventory feature, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:GetInventoryConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:GetInventoryConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy. For more
+   * information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For information about the Amazon S3 inventory feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
    * S3 Inventory</a>.</p> <p>The following operations are related to
    * <code>GetBucketInventoryConfiguration</code>:</p> <ul> <li> <p> <a
@@ -4683,7 +4733,6 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>Returns a list of S3 Inventory configurations for the bucket. You can have up
    * to 1,000 inventory configurations per bucket.</p> <p>This action supports list
    * pagination and does not return more than 100 configurations at a time. Always
@@ -4693,15 +4742,41 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * is a value in <code>NextContinuationToken</code>. You use the
    * <code>NextContinuationToken</code> value to continue the pagination of the list
    * by passing the value in continuation-token in the request to <code>GET</code>
-   * the next page.</p> <p> To use this operation, you must have permissions to
-   * perform the <code>s3:GetInventoryConfiguration</code> action. The bucket owner
-   * has this permission by default. The bucket owner can grant this permission to
-   * others. For more information about permissions, see <a
+   * the next page.</p>  <p> <b>Directory buckets </b> - For directory buckets,
+   * you must make requests for this API operation to the Regional endpoint. These
+   * endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have
+   * permissions to perform the <code>s3:GetInventoryConfiguration</code> action. The
+   * bucket owner has this permission by default. The bucket owner can grant this
+   * permission to others. For more information about permissions, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/using-with-s3-actions.html#using-with-s3-actions-related-to-bucket-subresources">Permissions
    * Related to Bucket Subresource Operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Managing
-   * Access Permissions to Your Amazon S3 Resources</a>.</p> <p>For information about
-   * the Amazon S3 inventory feature, see <a
+   * Access Permissions to Your Amazon S3 Resources</a>.</p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:GetInventoryConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:GetInventoryConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy. For more
+   * information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> </dd> <dt>HTTP Host header
+   * syntax</dt> <dd> <p> <b>Directory buckets </b> - The HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p>For information about the Amazon S3 inventory feature, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/storage-inventory.html">Amazon
    * S3 Inventory</a> </p> <p>The following operations are related to
    * <code>ListBucketInventoryConfigurations</code>:</p> <ul> <li> <p> <a
@@ -5593,8 +5668,8 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * bucket that you are making the PUT analytics configuration to. For more
    * information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/analytics-storage-class.html">Amazon
-   * S3 Analytics �� Storage Class Analysis</a>. </p>  <p>You must create
-   * a bucket policy on the destination bucket where the exported file is written to
+   * S3 Analytics – Storage Class Analysis</a>. </p>  <p>You must create a
+   * bucket policy on the destination bucket where the exported file is written to
    * grant permissions to Amazon S3 to write objects to the bucket. For an example
    * policy, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">Granting
@@ -5931,7 +6006,6 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
-   *  <p>This operation is not supported for directory buckets.</p>
    * <p>This implementation of the <code>PUT</code> action adds an S3 Inventory
    * configuration (identified by the inventory ID) to the bucket. You can have up to
    * 1,000 inventory configurations per bucket. </p> <p>Amazon S3 inventory generates
@@ -5952,18 +6026,42 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * policy, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/example-bucket-policies.html#example-bucket-policies-use-case-9">
    * Granting Permissions for Amazon S3 Inventory and Storage Class Analysis</a>.</p>
-   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must
-   * have permission to perform the <code>s3:PutInventoryConfiguration</code> action.
-   * The bucket owner has this permission by default and can grant this permission to
+   *   <p> <b>Directory buckets </b> - For directory buckets, you
+   * must make requests for this API operation to the Regional endpoint. These
+   * endpoints support path-style requests in the format
+   * <code>https://s3express-control.<i>region-code</i>.amazonaws.com/<i>bucket-name</i>
+   * </code>. Virtual-hosted-style requests aren't supported. For more information
+   * about endpoints in Availability Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/endpoint-directory-buckets-AZ.html">Regional
+   * and Zonal endpoints for directory buckets in Availability Zones</a> in the
+   * <i>Amazon S3 User Guide</i>. For more information about endpoints in Local
+   * Zones, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-lzs-for-directory-buckets.html">Concepts
+   * for directory buckets in Local Zones</a> in the <i>Amazon S3 User Guide</i>.</p>
+   *  <dl> <dt>Permissions</dt> <dd> <p>To use this operation, you must have
+   * permission to perform the <code>s3:PutInventoryConfiguration</code> action. The
+   * bucket owner has this permission by default and can grant this permission to
    * others. </p> <p>The <code>s3:PutInventoryConfiguration</code> permission allows
    * a user to create an <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html">S3
    * Inventory</a> report that includes all object metadata fields available and to
    * specify the destination bucket to store the inventory. A user with read access
    * to objects in the destination bucket can also access all object metadata fields
-   * that are available in the inventory report. </p> <p>To restrict access to an
+   * that are available in the inventory report. </p> <ul> <li> <p> <b>General
+   * purpose bucket permissions</b> - The <code>s3:PutInventoryConfiguration</code>
+   * permission is required in a policy. For more information about general purpose
+   * buckets permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/dev/using-iam-policies.html">Using
+   * Bucket Policies and User Policies</a> in the <i>Amazon S3 User Guide</i>.</p>
+   * </li> <li> <p> <b>Directory bucket permissions</b> - To grant access to this API
+   * operation, you must have the <code>s3express:PutInventoryConfiguration</code>
+   * permission in an IAM identity-based policy instead of a bucket policy. For more
+   * information about directory bucket policies and permissions, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-express-security-iam.html">Amazon
+   * Web Services Identity and Access Management (IAM) for S3 Express One Zone</a> in
+   * the <i>Amazon S3 User Guide</i>.</p> </li> </ul> <p>To restrict access to an
    * inventory report, see <a
-   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-use-case-10">Restricting
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/example-bucket-policies.html#example-bucket-policies-s3-inventory">Restricting
    * access to an Amazon S3 Inventory report</a> in the <i>Amazon S3 User Guide</i>.
    * For more information about the metadata fields available in S3 Inventory, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/storage-inventory.html#storage-inventory-contents">Amazon
@@ -5973,17 +6071,20 @@ class AWS_S3_API S3Client : public Aws::Client::AWSXMLClient,
    * related to bucket subresource operations</a> and <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/s3-access-control.html">Identity
    * and access management in Amazon S3</a> in the <i>Amazon S3 User Guide</i>.</p>
-   * </dd> </dl> <p> <code>PutBucketInventoryConfiguration</code> has the following
-   * special errors:</p> <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> <p>
-   * <i>Code:</i> InvalidArgument</p> <p> <i>Cause:</i> Invalid Argument</p> </dd>
-   * <dt>HTTP 400 Bad Request Error</dt> <dd> <p> <i>Code:</i>
-   * TooManyConfigurations</p> <p> <i>Cause:</i> You are attempting to create a new
-   * configuration but have already reached the 1,000-configuration limit. </p> </dd>
-   * <dt>HTTP 403 Forbidden Error</dt> <dd> <p> <i>Cause:</i> You are not the owner
-   * of the specified bucket, or you do not have the
-   * <code>s3:PutInventoryConfiguration</code> bucket permission to set the
-   * configuration on the bucket. </p> </dd> </dl> <p>The following operations are
-   * related to <code>PutBucketInventoryConfiguration</code>:</p> <ul> <li> <p> <a
+   * </dd> <dt>HTTP Host header syntax</dt> <dd> <p> <b>Directory buckets </b> - The
+   * HTTP Host header syntax is
+   * <code>s3express-control.<i>region-code</i>.amazonaws.com</code>.</p> </dd> </dl>
+   * <p> <code>PutBucketInventoryConfiguration</code> has the following special
+   * errors:</p> <dl> <dt>HTTP 400 Bad Request Error</dt> <dd> <p> <i>Code:</i>
+   * InvalidArgument</p> <p> <i>Cause:</i> Invalid Argument</p> </dd> <dt>HTTP 400
+   * Bad Request Error</dt> <dd> <p> <i>Code:</i> TooManyConfigurations</p> <p>
+   * <i>Cause:</i> You are attempting to create a new configuration but have already
+   * reached the 1,000-configuration limit. </p> </dd> <dt>HTTP 403 Forbidden
+   * Error</dt> <dd> <p> <i>Cause:</i> You are not the owner of the specified bucket,
+   * or you do not have the <code>s3:PutInventoryConfiguration</code> bucket
+   * permission to set the configuration on the bucket. </p> </dd> </dl> <p>The
+   * following operations are related to
+   * <code>PutBucketInventoryConfiguration</code>:</p> <ul> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_GetBucketInventoryConfiguration.html">GetBucketInventoryConfiguration</a>
    * </p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/API/API_DeleteBucketInventoryConfiguration.html">DeleteBucketInventoryConfiguration</a>

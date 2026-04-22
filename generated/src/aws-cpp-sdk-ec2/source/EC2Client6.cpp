@@ -20,6 +20,7 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/ImportVolumeRequest.h>
 #include <aws/ec2/model/ListImagesInRecycleBinRequest.h>
 #include <aws/ec2/model/ListSnapshotsInRecycleBinRequest.h>
 #include <aws/ec2/model/ListVolumesInRecycleBinRequest.h>
@@ -60,6 +61,7 @@
 #include <aws/ec2/model/ModifyLaunchTemplateRequest.h>
 #include <aws/ec2/model/ModifyLocalGatewayRouteRequest.h>
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
+#include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsRequest.h>
@@ -118,8 +120,6 @@
 #include <aws/ec2/model/RegisterImageRequest.h>
 #include <aws/ec2/model/RegisterInstanceEventNotificationAttributesRequest.h>
 #include <aws/ec2/model/RegisterTransitGatewayMulticastGroupMembersRequest.h>
-#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
-#include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <smithy/tracing/TracingUtils.h>
 
 using namespace Aws;
@@ -131,6 +131,11 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ImportVolumeOutcome EC2Client::ImportVolume(const ImportVolumeRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ImportVolumeOutcome(result.GetResultWithOwnership()) : ImportVolumeOutcome(std::move(result.GetError()));
+}
 
 ListImagesInRecycleBinOutcome EC2Client::ListImagesInRecycleBin(const ListImagesInRecycleBinRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
@@ -373,6 +378,13 @@ ModifyManagedPrefixListOutcome EC2Client::ModifyManagedPrefixList(const ModifyMa
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ModifyManagedPrefixListOutcome(result.GetResultWithOwnership())
                             : ModifyManagedPrefixListOutcome(std::move(result.GetError()));
+}
+
+ModifyManagedResourceVisibilityOutcome EC2Client::ModifyManagedResourceVisibility(
+    const ModifyManagedResourceVisibilityRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ModifyManagedResourceVisibilityOutcome(result.GetResultWithOwnership())
+                            : ModifyManagedResourceVisibilityOutcome(std::move(result.GetError()));
 }
 
 ModifyNetworkInterfaceAttributeOutcome EC2Client::ModifyNetworkInterfaceAttribute(
@@ -740,18 +752,4 @@ RegisterTransitGatewayMulticastGroupMembersOutcome EC2Client::RegisterTransitGat
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RegisterTransitGatewayMulticastGroupMembersOutcome(result.GetResultWithOwnership())
                             : RegisterTransitGatewayMulticastGroupMembersOutcome(std::move(result.GetError()));
-}
-
-RegisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::RegisterTransitGatewayMulticastGroupSources(
-    const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RegisterTransitGatewayMulticastGroupSourcesOutcome(result.GetResultWithOwnership())
-                            : RegisterTransitGatewayMulticastGroupSourcesOutcome(std::move(result.GetError()));
-}
-
-RejectCapacityReservationBillingOwnershipOutcome EC2Client::RejectCapacityReservationBillingOwnership(
-    const RejectCapacityReservationBillingOwnershipRequest& request) const {
-  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? RejectCapacityReservationBillingOwnershipOutcome(result.GetResultWithOwnership())
-                            : RejectCapacityReservationBillingOwnershipOutcome(std::move(result.GetError()));
 }

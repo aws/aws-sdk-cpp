@@ -21,6 +21,7 @@ static const int CREATE_FAILED_HASH = HashingUtils::HashString("CREATE_FAILED");
 static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
 static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 static const int DELETING_HASH = HashingUtils::HashString("DELETING");
+static const int ERROR__HASH = HashingUtils::HashString("ERROR");
 
 OnlineEvaluationConfigStatus GetOnlineEvaluationConfigStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +37,8 @@ OnlineEvaluationConfigStatus GetOnlineEvaluationConfigStatusForName(const Aws::S
     return OnlineEvaluationConfigStatus::UPDATE_FAILED;
   } else if (hashCode == DELETING_HASH) {
     return OnlineEvaluationConfigStatus::DELETING;
+  } else if (hashCode == ERROR__HASH) {
+    return OnlineEvaluationConfigStatus::ERROR_;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +65,8 @@ Aws::String GetNameForOnlineEvaluationConfigStatus(OnlineEvaluationConfigStatus 
       return "UPDATE_FAILED";
     case OnlineEvaluationConfigStatus::DELETING:
       return "DELETING";
+    case OnlineEvaluationConfigStatus::ERROR_:
+      return "ERROR";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -32,6 +32,139 @@ class BatchGetChannelResult {
 
   ///@{
   /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Allow-Origin">Access-Control-Allow-Origin</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetAccessControlAllowOrigin() const { return m_accessControlAllowOrigin; }
+  template <typename AccessControlAllowOriginT = Aws::String>
+  void SetAccessControlAllowOrigin(AccessControlAllowOriginT&& value) {
+    m_accessControlAllowOriginHasBeenSet = true;
+    m_accessControlAllowOrigin = std::forward<AccessControlAllowOriginT>(value);
+  }
+  template <typename AccessControlAllowOriginT = Aws::String>
+  BatchGetChannelResult& WithAccessControlAllowOrigin(AccessControlAllowOriginT&& value) {
+    SetAccessControlAllowOrigin(std::forward<AccessControlAllowOriginT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Access-Control-Expose-Headers">Access-Control-Expose-Headers</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetAccessControlExposeHeaders() const { return m_accessControlExposeHeaders; }
+  template <typename AccessControlExposeHeadersT = Aws::String>
+  void SetAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) {
+    m_accessControlExposeHeadersHasBeenSet = true;
+    m_accessControlExposeHeaders = std::forward<AccessControlExposeHeadersT>(value);
+  }
+  template <typename AccessControlExposeHeadersT = Aws::String>
+  BatchGetChannelResult& WithAccessControlExposeHeaders(AccessControlExposeHeadersT&& value) {
+    SetAccessControlExposeHeaders(std::forward<AccessControlExposeHeadersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Cache-Control">Cache-Control</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetCacheControl() const { return m_cacheControl; }
+  template <typename CacheControlT = Aws::String>
+  void SetCacheControl(CacheControlT&& value) {
+    m_cacheControlHasBeenSet = true;
+    m_cacheControl = std::forward<CacheControlT>(value);
+  }
+  template <typename CacheControlT = Aws::String>
+  BatchGetChannelResult& WithCacheControl(CacheControlT&& value) {
+    SetCacheControl(std::forward<CacheControlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Content-Security-Policy">Content-Security-Policy</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetContentSecurityPolicy() const { return m_contentSecurityPolicy; }
+  template <typename ContentSecurityPolicyT = Aws::String>
+  void SetContentSecurityPolicy(ContentSecurityPolicyT&& value) {
+    m_contentSecurityPolicyHasBeenSet = true;
+    m_contentSecurityPolicy = std::forward<ContentSecurityPolicyT>(value);
+  }
+  template <typename ContentSecurityPolicyT = Aws::String>
+  BatchGetChannelResult& WithContentSecurityPolicy(ContentSecurityPolicyT&& value) {
+    SetContentSecurityPolicy(std::forward<ContentSecurityPolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/Strict-Transport-Security">Strict-Transport-Security</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetStrictTransportSecurity() const { return m_strictTransportSecurity; }
+  template <typename StrictTransportSecurityT = Aws::String>
+  void SetStrictTransportSecurity(StrictTransportSecurityT&& value) {
+    m_strictTransportSecurityHasBeenSet = true;
+    m_strictTransportSecurity = std::forward<StrictTransportSecurityT>(value);
+  }
+  template <typename StrictTransportSecurityT = Aws::String>
+  BatchGetChannelResult& WithStrictTransportSecurity(StrictTransportSecurityT&& value) {
+    SetStrictTransportSecurity(std::forward<StrictTransportSecurityT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Content-Type-Options">X-Content-Type-Options</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetXContentTypeOptions() const { return m_xContentTypeOptions; }
+  template <typename XContentTypeOptionsT = Aws::String>
+  void SetXContentTypeOptions(XContentTypeOptionsT&& value) {
+    m_xContentTypeOptionsHasBeenSet = true;
+    m_xContentTypeOptions = std::forward<XContentTypeOptionsT>(value);
+  }
+  template <typename XContentTypeOptionsT = Aws::String>
+  BatchGetChannelResult& WithXContentTypeOptions(XContentTypeOptionsT&& value) {
+    SetXContentTypeOptions(std::forward<XContentTypeOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>See <a
+   * href="https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Headers/X-Frame-Options">X-Frame-Options</a>
+   * in the MDN Web Docs.</p>
+   */
+  inline const Aws::String& GetXFrameOptions() const { return m_xFrameOptions; }
+  template <typename XFrameOptionsT = Aws::String>
+  void SetXFrameOptions(XFrameOptionsT&& value) {
+    m_xFrameOptionsHasBeenSet = true;
+    m_xFrameOptions = std::forward<XFrameOptionsT>(value);
+  }
+  template <typename XFrameOptionsT = Aws::String>
+  BatchGetChannelResult& WithXFrameOptions(XFrameOptionsT&& value) {
+    SetXFrameOptions(std::forward<XFrameOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p/>
    */
   inline const Aws::Vector<Channel>& GetChannels() const { return m_channels; }
@@ -93,12 +226,33 @@ class BatchGetChannelResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
+  Aws::String m_accessControlAllowOrigin;
+
+  Aws::String m_accessControlExposeHeaders;
+
+  Aws::String m_cacheControl;
+
+  Aws::String m_contentSecurityPolicy;
+
+  Aws::String m_strictTransportSecurity;
+
+  Aws::String m_xContentTypeOptions;
+
+  Aws::String m_xFrameOptions;
+
   Aws::Vector<Channel> m_channels;
 
   Aws::Vector<BatchError> m_errors;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_accessControlAllowOriginHasBeenSet = false;
+  bool m_accessControlExposeHeadersHasBeenSet = false;
+  bool m_cacheControlHasBeenSet = false;
+  bool m_contentSecurityPolicyHasBeenSet = false;
+  bool m_strictTransportSecurityHasBeenSet = false;
+  bool m_xContentTypeOptionsHasBeenSet = false;
+  bool m_xFrameOptionsHasBeenSet = false;
   bool m_channelsHasBeenSet = false;
   bool m_errorsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

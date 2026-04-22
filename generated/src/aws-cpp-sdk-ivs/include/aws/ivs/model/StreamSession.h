@@ -42,18 +42,38 @@ class StreamSession {
 
   ///@{
   /**
-   * <p>The properties of the channel at the time of going live.</p>
+   * <p>Unique identifier for a live or previously live stream in the specified
+   * channel.</p>
    */
-  inline const Channel& GetChannel() const { return m_channel; }
-  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
-  template <typename ChannelT = Channel>
-  void SetChannel(ChannelT&& value) {
-    m_channelHasBeenSet = true;
-    m_channel = std::forward<ChannelT>(value);
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
   }
-  template <typename ChannelT = Channel>
-  StreamSession& WithChannel(ChannelT&& value) {
-    SetChannel(std::forward<ChannelT>(value));
+  template <typename StreamIdT = Aws::String>
+  StreamSession& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+   * this is returned as a string</i>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  StreamSession& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
     return *this;
   }
   ///@}
@@ -80,13 +100,31 @@ class StreamSession {
 
   ///@{
   /**
+   * <p>The properties of the channel at the time of going live.</p>
+   */
+  inline const Channel& GetChannel() const { return m_channel; }
+  inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+  template <typename ChannelT = Channel>
+  void SetChannel(ChannelT&& value) {
+    m_channelHasBeenSet = true;
+    m_channel = std::forward<ChannelT>(value);
+  }
+  template <typename ChannelT = Channel>
+  StreamSession& WithChannel(ChannelT&& value) {
+    SetChannel(std::forward<ChannelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The properties of the incoming RTMP stream.</p> <p> <b>Note:</b>
    * <code>ingestConfiguration</code> is deprecated in favor of
    * <code>ingestConfigurations</code> but retained to ensure backward compatibility.
    * If multitrack is not enabled, <code>ingestConfiguration</code> and
    * <code>ingestConfigurations</code> contain the same data, namely information
-   * about track0 (the sole track). If multitrack is enabled,
-   * <code>ingestConfiguration</code> contains data for only the first track (track0)
+   * about Track0 (the sole track). If multitrack is enabled,
+   * <code>ingestConfiguration</code> contains data for only the first track (Track0)
    * and <code>ingestConfigurations</code> contains data for all tracks.</p>
    */
   inline const IngestConfiguration& GetIngestConfiguration() const { return m_ingestConfiguration; }
@@ -107,7 +145,7 @@ class StreamSession {
   /**
    * <p>The properties of the incoming RTMP stream. If multitrack is enabled,
    * <code>ingestConfigurations</code> contains data for all tracks; otherwise, it
-   * contains data only for track0 (the sole track).</p>
+   * contains data only for Track0 (the sole track).</p>
    */
   inline const IngestConfigurations& GetIngestConfigurations() const { return m_ingestConfigurations; }
   inline bool IngestConfigurationsHasBeenSet() const { return m_ingestConfigurationsHasBeenSet; }
@@ -143,44 +181,6 @@ class StreamSession {
 
   ///@{
   /**
-   * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
-   * this is returned as a string</i>.</p>
-   */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
-  }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  StreamSession& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Unique identifier for a live or previously live stream in the specified
-   * channel.</p>
-   */
-  inline const Aws::String& GetStreamId() const { return m_streamId; }
-  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-  template <typename StreamIdT = Aws::String>
-  void SetStreamId(StreamIdT&& value) {
-    m_streamIdHasBeenSet = true;
-    m_streamId = std::forward<StreamIdT>(value);
-  }
-  template <typename StreamIdT = Aws::String>
-  StreamSession& WithStreamId(StreamIdT&& value) {
-    SetStreamId(std::forward<StreamIdT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>List of Amazon IVS events that the stream encountered. The list is sorted by
    * most recent events and contains up to 500 events. For Amazon IVS events, see <a
    * href="https://docs.aws.amazon.com/ivs/latest/userguide/eventbridge.html">Using
@@ -206,9 +206,13 @@ class StreamSession {
   }
   ///@}
  private:
-  Channel m_channel;
+  Aws::String m_streamId;
+
+  Aws::Utils::DateTime m_startTime{};
 
   Aws::Utils::DateTime m_endTime{};
+
+  Channel m_channel;
 
   IngestConfiguration m_ingestConfiguration;
 
@@ -216,18 +220,14 @@ class StreamSession {
 
   RecordingConfiguration m_recordingConfiguration;
 
-  Aws::Utils::DateTime m_startTime{};
-
-  Aws::String m_streamId;
-
   Aws::Vector<StreamEvent> m_truncatedEvents;
-  bool m_channelHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
+  bool m_channelHasBeenSet = false;
   bool m_ingestConfigurationHasBeenSet = false;
   bool m_ingestConfigurationsHasBeenSet = false;
   bool m_recordingConfigurationHasBeenSet = false;
-  bool m_startTimeHasBeenSet = false;
-  bool m_streamIdHasBeenSet = false;
   bool m_truncatedEventsHasBeenSet = false;
 };
 

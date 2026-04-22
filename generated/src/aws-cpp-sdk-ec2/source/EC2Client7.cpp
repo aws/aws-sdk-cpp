@@ -20,6 +20,8 @@
 #include <aws/ec2/EC2Client.h>
 #include <aws/ec2/EC2EndpointProvider.h>
 #include <aws/ec2/EC2ErrorMarshaller.h>
+#include <aws/ec2/model/RegisterTransitGatewayMulticastGroupSourcesRequest.h>
+#include <aws/ec2/model/RejectCapacityReservationBillingOwnershipRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayClientVpnAttachmentRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayMulticastDomainAssociationsRequest.h>
 #include <aws/ec2/model/RejectTransitGatewayPeeringAttachmentRequest.h>
@@ -92,6 +94,20 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Xml;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+RegisterTransitGatewayMulticastGroupSourcesOutcome EC2Client::RegisterTransitGatewayMulticastGroupSources(
+    const RegisterTransitGatewayMulticastGroupSourcesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RegisterTransitGatewayMulticastGroupSourcesOutcome(result.GetResultWithOwnership())
+                            : RegisterTransitGatewayMulticastGroupSourcesOutcome(std::move(result.GetError()));
+}
+
+RejectCapacityReservationBillingOwnershipOutcome EC2Client::RejectCapacityReservationBillingOwnership(
+    const RejectCapacityReservationBillingOwnershipRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RejectCapacityReservationBillingOwnershipOutcome(result.GetResultWithOwnership())
+                            : RejectCapacityReservationBillingOwnershipOutcome(std::move(result.GetError()));
+}
 
 RejectTransitGatewayClientVpnAttachmentOutcome EC2Client::RejectTransitGatewayClientVpnAttachment(
     const RejectTransitGatewayClientVpnAttachmentRequest& request) const {

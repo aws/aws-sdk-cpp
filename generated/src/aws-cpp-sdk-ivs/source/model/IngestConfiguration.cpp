@@ -18,13 +18,13 @@ namespace Model {
 IngestConfiguration::IngestConfiguration(JsonView jsonValue) { *this = jsonValue; }
 
 IngestConfiguration& IngestConfiguration::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("audio")) {
-    m_audio = jsonValue.GetObject("audio");
-    m_audioHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("video")) {
     m_video = jsonValue.GetObject("video");
     m_videoHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("audio")) {
+    m_audio = jsonValue.GetObject("audio");
+    m_audioHasBeenSet = true;
   }
   return *this;
 }
@@ -32,12 +32,12 @@ IngestConfiguration& IngestConfiguration::operator=(JsonView jsonValue) {
 JsonValue IngestConfiguration::Jsonize() const {
   JsonValue payload;
 
-  if (m_audioHasBeenSet) {
-    payload.WithObject("audio", m_audio.Jsonize());
-  }
-
   if (m_videoHasBeenSet) {
     payload.WithObject("video", m_video.Jsonize());
+  }
+
+  if (m_audioHasBeenSet) {
+    payload.WithObject("audio", m_audio.Jsonize());
   }
 
   return payload;

@@ -112,6 +112,7 @@ class InvokeAgentRuntimeRequest;
 class InvokeAgentRuntimeCommandRequest;
 class InvokeBrowserRequest;
 class InvokeCodeInterpreterRequest;
+class InvokeHarnessRequest;
 class ListActorsRequest;
 class ListBrowserSessionsRequest;
 class ListCodeInterpreterSessionsRequest;
@@ -154,6 +155,7 @@ typedef Aws::Utils::Outcome<InvokeAgentRuntimeResult, BedrockAgentCoreError> Inv
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeAgentRuntimeCommandOutcome;
 typedef Aws::Utils::Outcome<InvokeBrowserResult, BedrockAgentCoreError> InvokeBrowserOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeCodeInterpreterOutcome;
+typedef Aws::Utils::Outcome<Aws::NoResult, BedrockAgentCoreError> InvokeHarnessOutcome;
 typedef Aws::Utils::Outcome<ListActorsResult, BedrockAgentCoreError> ListActorsOutcome;
 typedef Aws::Utils::Outcome<ListBrowserSessionsResult, BedrockAgentCoreError> ListBrowserSessionsOutcome;
 typedef Aws::Utils::Outcome<ListCodeInterpreterSessionsResult, BedrockAgentCoreError> ListCodeInterpreterSessionsOutcome;
@@ -196,6 +198,7 @@ typedef std::future<InvokeAgentRuntimeOutcome> InvokeAgentRuntimeOutcomeCallable
 typedef std::future<InvokeAgentRuntimeCommandOutcome> InvokeAgentRuntimeCommandOutcomeCallable;
 typedef std::future<InvokeBrowserOutcome> InvokeBrowserOutcomeCallable;
 typedef std::future<InvokeCodeInterpreterOutcome> InvokeCodeInterpreterOutcomeCallable;
+typedef std::future<InvokeHarnessOutcome> InvokeHarnessOutcomeCallable;
 typedef std::future<ListActorsOutcome> ListActorsOutcomeCallable;
 typedef std::future<ListBrowserSessionsOutcome> ListBrowserSessionsOutcomeCallable;
 typedef std::future<ListCodeInterpreterSessionsOutcome> ListCodeInterpreterSessionsOutcomeCallable;
@@ -287,6 +290,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeBro
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeCodeInterpreterRequest&,
                            const Model::InvokeCodeInterpreterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     InvokeCodeInterpreterResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::InvokeHarnessRequest&, const Model::InvokeHarnessOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    InvokeHarnessResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListActorsRequest&, const Model::ListActorsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListActorsResponseReceivedHandler;

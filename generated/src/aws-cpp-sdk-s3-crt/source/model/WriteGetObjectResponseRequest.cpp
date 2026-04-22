@@ -139,6 +139,36 @@ Aws::Http::HeaderValueCollection WriteGetObjectResponseRequest::GetRequestSpecif
     ss.str("");
   }
 
+  if (m_checksumSHA512HasBeenSet) {
+    ss << m_checksumSHA512;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-sha512", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumMD5HasBeenSet) {
+    ss << m_checksumMD5;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-md5", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH64HasBeenSet) {
+    ss << m_checksumXXHASH64;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-xxhash64", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH3HasBeenSet) {
+    ss << m_checksumXXHASH3;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-xxhash3", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH128HasBeenSet) {
+    ss << m_checksumXXHASH128;
+    headers.emplace("x-amz-fwd-header-x-amz-checksum-xxhash128", ss.str());
+    ss.str("");
+  }
+
   if (m_deleteMarkerHasBeenSet) {
     ss << std::boolalpha << m_deleteMarker;
     headers.emplace("x-amz-fwd-header-x-amz-delete-marker", ss.str());

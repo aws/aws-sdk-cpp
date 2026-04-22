@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String ImportPlaybackKeyPairRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
   if (m_publicKeyMaterialHasBeenSet) {
     payload.WithString("publicKeyMaterial", m_publicKeyMaterial);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_tagsHasBeenSet) {

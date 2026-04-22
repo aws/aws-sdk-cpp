@@ -25,15 +25,21 @@
 #include <aws/emr-serverless/model/GetApplicationResult.h>
 #include <aws/emr-serverless/model/GetDashboardForJobRunResult.h>
 #include <aws/emr-serverless/model/GetJobRunResult.h>
+#include <aws/emr-serverless/model/GetResourceDashboardResult.h>
+#include <aws/emr-serverless/model/GetSessionEndpointResult.h>
+#include <aws/emr-serverless/model/GetSessionResult.h>
 #include <aws/emr-serverless/model/ListApplicationsRequest.h>
 #include <aws/emr-serverless/model/ListApplicationsResult.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsResult.h>
 #include <aws/emr-serverless/model/ListJobRunsResult.h>
+#include <aws/emr-serverless/model/ListSessionsResult.h>
 #include <aws/emr-serverless/model/ListTagsForResourceResult.h>
 #include <aws/emr-serverless/model/StartApplicationResult.h>
 #include <aws/emr-serverless/model/StartJobRunResult.h>
+#include <aws/emr-serverless/model/StartSessionResult.h>
 #include <aws/emr-serverless/model/StopApplicationResult.h>
 #include <aws/emr-serverless/model/TagResourceResult.h>
+#include <aws/emr-serverless/model/TerminateSessionResult.h>
 #include <aws/emr-serverless/model/UntagResourceResult.h>
 #include <aws/emr-serverless/model/UpdateApplicationResult.h>
 /* End of service model headers required in EMRServerlessClient header */
@@ -75,14 +81,20 @@ class DeleteApplicationRequest;
 class GetApplicationRequest;
 class GetDashboardForJobRunRequest;
 class GetJobRunRequest;
+class GetResourceDashboardRequest;
+class GetSessionRequest;
+class GetSessionEndpointRequest;
 class ListApplicationsRequest;
 class ListJobRunAttemptsRequest;
 class ListJobRunsRequest;
+class ListSessionsRequest;
 class ListTagsForResourceRequest;
 class StartApplicationRequest;
 class StartJobRunRequest;
+class StartSessionRequest;
 class StopApplicationRequest;
 class TagResourceRequest;
+class TerminateSessionRequest;
 class UntagResourceRequest;
 class UpdateApplicationRequest;
 /* End of service model forward declarations required in EMRServerlessClient header */
@@ -94,14 +106,20 @@ typedef Aws::Utils::Outcome<DeleteApplicationResult, EMRServerlessError> DeleteA
 typedef Aws::Utils::Outcome<GetApplicationResult, EMRServerlessError> GetApplicationOutcome;
 typedef Aws::Utils::Outcome<GetDashboardForJobRunResult, EMRServerlessError> GetDashboardForJobRunOutcome;
 typedef Aws::Utils::Outcome<GetJobRunResult, EMRServerlessError> GetJobRunOutcome;
+typedef Aws::Utils::Outcome<GetResourceDashboardResult, EMRServerlessError> GetResourceDashboardOutcome;
+typedef Aws::Utils::Outcome<GetSessionResult, EMRServerlessError> GetSessionOutcome;
+typedef Aws::Utils::Outcome<GetSessionEndpointResult, EMRServerlessError> GetSessionEndpointOutcome;
 typedef Aws::Utils::Outcome<ListApplicationsResult, EMRServerlessError> ListApplicationsOutcome;
 typedef Aws::Utils::Outcome<ListJobRunAttemptsResult, EMRServerlessError> ListJobRunAttemptsOutcome;
 typedef Aws::Utils::Outcome<ListJobRunsResult, EMRServerlessError> ListJobRunsOutcome;
+typedef Aws::Utils::Outcome<ListSessionsResult, EMRServerlessError> ListSessionsOutcome;
 typedef Aws::Utils::Outcome<ListTagsForResourceResult, EMRServerlessError> ListTagsForResourceOutcome;
 typedef Aws::Utils::Outcome<StartApplicationResult, EMRServerlessError> StartApplicationOutcome;
 typedef Aws::Utils::Outcome<StartJobRunResult, EMRServerlessError> StartJobRunOutcome;
+typedef Aws::Utils::Outcome<StartSessionResult, EMRServerlessError> StartSessionOutcome;
 typedef Aws::Utils::Outcome<StopApplicationResult, EMRServerlessError> StopApplicationOutcome;
 typedef Aws::Utils::Outcome<TagResourceResult, EMRServerlessError> TagResourceOutcome;
+typedef Aws::Utils::Outcome<TerminateSessionResult, EMRServerlessError> TerminateSessionOutcome;
 typedef Aws::Utils::Outcome<UntagResourceResult, EMRServerlessError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, EMRServerlessError> UpdateApplicationOutcome;
 /* End of service model Outcome class definitions */
@@ -113,14 +131,20 @@ typedef std::future<DeleteApplicationOutcome> DeleteApplicationOutcomeCallable;
 typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
 typedef std::future<GetDashboardForJobRunOutcome> GetDashboardForJobRunOutcomeCallable;
 typedef std::future<GetJobRunOutcome> GetJobRunOutcomeCallable;
+typedef std::future<GetResourceDashboardOutcome> GetResourceDashboardOutcomeCallable;
+typedef std::future<GetSessionOutcome> GetSessionOutcomeCallable;
+typedef std::future<GetSessionEndpointOutcome> GetSessionEndpointOutcomeCallable;
 typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
 typedef std::future<ListJobRunAttemptsOutcome> ListJobRunAttemptsOutcomeCallable;
 typedef std::future<ListJobRunsOutcome> ListJobRunsOutcomeCallable;
+typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
 typedef std::future<ListTagsForResourceOutcome> ListTagsForResourceOutcomeCallable;
 typedef std::future<StartApplicationOutcome> StartApplicationOutcomeCallable;
 typedef std::future<StartJobRunOutcome> StartJobRunOutcomeCallable;
+typedef std::future<StartSessionOutcome> StartSessionOutcomeCallable;
 typedef std::future<StopApplicationOutcome> StopApplicationOutcomeCallable;
 typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+typedef std::future<TerminateSessionOutcome> TerminateSessionOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
 /* End of service model Outcome callable definitions */
@@ -147,6 +171,15 @@ typedef std::function<void(const EMRServerlessClient*, const Model::GetDashboard
 typedef std::function<void(const EMRServerlessClient*, const Model::GetJobRunRequest&, const Model::GetJobRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetJobRunResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::GetResourceDashboardRequest&, const Model::GetResourceDashboardOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourceDashboardResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::GetSessionRequest&, const Model::GetSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::GetSessionEndpointRequest&, const Model::GetSessionEndpointOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetSessionEndpointResponseReceivedHandler;
 typedef std::function<void(const EMRServerlessClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListApplicationsResponseReceivedHandler;
@@ -156,6 +189,9 @@ typedef std::function<void(const EMRServerlessClient*, const Model::ListJobRunAt
 typedef std::function<void(const EMRServerlessClient*, const Model::ListJobRunsRequest&, const Model::ListJobRunsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListJobRunsResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListSessionsResponseReceivedHandler;
 typedef std::function<void(const EMRServerlessClient*, const Model::ListTagsForResourceRequest&, const Model::ListTagsForResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListTagsForResourceResponseReceivedHandler;
@@ -165,12 +201,18 @@ typedef std::function<void(const EMRServerlessClient*, const Model::StartApplica
 typedef std::function<void(const EMRServerlessClient*, const Model::StartJobRunRequest&, const Model::StartJobRunOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartJobRunResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::StartSessionRequest&, const Model::StartSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    StartSessionResponseReceivedHandler;
 typedef std::function<void(const EMRServerlessClient*, const Model::StopApplicationRequest&, const Model::StopApplicationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StopApplicationResponseReceivedHandler;
 typedef std::function<void(const EMRServerlessClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     TagResourceResponseReceivedHandler;
+typedef std::function<void(const EMRServerlessClient*, const Model::TerminateSessionRequest&, const Model::TerminateSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    TerminateSessionResponseReceivedHandler;
 typedef std::function<void(const EMRServerlessClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UntagResourceResponseReceivedHandler;

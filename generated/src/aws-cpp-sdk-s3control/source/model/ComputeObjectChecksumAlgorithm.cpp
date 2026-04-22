@@ -21,6 +21,10 @@ static const int CRC64NVME_HASH = HashingUtils::HashString("CRC64NVME");
 static const int MD5_HASH = HashingUtils::HashString("MD5");
 static const int SHA1_HASH = HashingUtils::HashString("SHA1");
 static const int SHA256_HASH = HashingUtils::HashString("SHA256");
+static const int SHA512_HASH = HashingUtils::HashString("SHA512");
+static const int XXHASH64_HASH = HashingUtils::HashString("XXHASH64");
+static const int XXHASH3_HASH = HashingUtils::HashString("XXHASH3");
+static const int XXHASH128_HASH = HashingUtils::HashString("XXHASH128");
 
 ComputeObjectChecksumAlgorithm GetComputeObjectChecksumAlgorithmForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -36,6 +40,14 @@ ComputeObjectChecksumAlgorithm GetComputeObjectChecksumAlgorithmForName(const Aw
     return ComputeObjectChecksumAlgorithm::SHA1;
   } else if (hashCode == SHA256_HASH) {
     return ComputeObjectChecksumAlgorithm::SHA256;
+  } else if (hashCode == SHA512_HASH) {
+    return ComputeObjectChecksumAlgorithm::SHA512;
+  } else if (hashCode == XXHASH64_HASH) {
+    return ComputeObjectChecksumAlgorithm::XXHASH64;
+  } else if (hashCode == XXHASH3_HASH) {
+    return ComputeObjectChecksumAlgorithm::XXHASH3;
+  } else if (hashCode == XXHASH128_HASH) {
+    return ComputeObjectChecksumAlgorithm::XXHASH128;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -62,6 +74,14 @@ Aws::String GetNameForComputeObjectChecksumAlgorithm(ComputeObjectChecksumAlgori
       return "SHA1";
     case ComputeObjectChecksumAlgorithm::SHA256:
       return "SHA256";
+    case ComputeObjectChecksumAlgorithm::SHA512:
+      return "SHA512";
+    case ComputeObjectChecksumAlgorithm::XXHASH64:
+      return "XXHASH64";
+    case ComputeObjectChecksumAlgorithm::XXHASH3:
+      return "XXHASH3";
+    case ComputeObjectChecksumAlgorithm::XXHASH128:
+      return "XXHASH128";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

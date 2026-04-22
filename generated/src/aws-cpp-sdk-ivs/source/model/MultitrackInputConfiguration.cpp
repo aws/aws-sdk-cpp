@@ -22,14 +22,14 @@ MultitrackInputConfiguration& MultitrackInputConfiguration::operator=(JsonView j
     m_enabled = jsonValue.GetBool("enabled");
     m_enabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("policy")) {
+    m_policy = MultitrackPolicyMapper::GetMultitrackPolicyForName(jsonValue.GetString("policy"));
+    m_policyHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("maximumResolution")) {
     m_maximumResolution =
         MultitrackMaximumResolutionMapper::GetMultitrackMaximumResolutionForName(jsonValue.GetString("maximumResolution"));
     m_maximumResolutionHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("policy")) {
-    m_policy = MultitrackPolicyMapper::GetMultitrackPolicyForName(jsonValue.GetString("policy"));
-    m_policyHasBeenSet = true;
   }
   return *this;
 }
@@ -41,12 +41,12 @@ JsonValue MultitrackInputConfiguration::Jsonize() const {
     payload.WithBool("enabled", m_enabled);
   }
 
-  if (m_maximumResolutionHasBeenSet) {
-    payload.WithString("maximumResolution", MultitrackMaximumResolutionMapper::GetNameForMultitrackMaximumResolution(m_maximumResolution));
-  }
-
   if (m_policyHasBeenSet) {
     payload.WithString("policy", MultitrackPolicyMapper::GetNameForMultitrackPolicy(m_policy));
+  }
+
+  if (m_maximumResolutionHasBeenSet) {
+    payload.WithString("maximumResolution", MultitrackMaximumResolutionMapper::GetNameForMultitrackMaximumResolution(m_maximumResolution));
   }
 
   return payload;

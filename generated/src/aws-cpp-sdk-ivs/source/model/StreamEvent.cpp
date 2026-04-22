@@ -18,14 +18,6 @@ namespace Model {
 StreamEvent::StreamEvent(JsonView jsonValue) { *this = jsonValue; }
 
 StreamEvent& StreamEvent::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("code")) {
-    m_code = jsonValue.GetString("code");
-    m_codeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("eventTime")) {
-    m_eventTime = jsonValue.GetString("eventTime");
-    m_eventTimeHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("name")) {
     m_name = jsonValue.GetString("name");
     m_nameHasBeenSet = true;
@@ -34,19 +26,19 @@ StreamEvent& StreamEvent::operator=(JsonView jsonValue) {
     m_type = jsonValue.GetString("type");
     m_typeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("eventTime")) {
+    m_eventTime = jsonValue.GetString("eventTime");
+    m_eventTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("code")) {
+    m_code = jsonValue.GetString("code");
+    m_codeHasBeenSet = true;
+  }
   return *this;
 }
 
 JsonValue StreamEvent::Jsonize() const {
   JsonValue payload;
-
-  if (m_codeHasBeenSet) {
-    payload.WithString("code", m_code);
-  }
-
-  if (m_eventTimeHasBeenSet) {
-    payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
 
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
@@ -54,6 +46,14 @@ JsonValue StreamEvent::Jsonize() const {
 
   if (m_typeHasBeenSet) {
     payload.WithString("type", m_type);
+  }
+
+  if (m_eventTimeHasBeenSet) {
+    payload.WithString("eventTime", m_eventTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_codeHasBeenSet) {
+    payload.WithString("code", m_code);
   }
 
   return payload;

@@ -211,6 +211,7 @@
 #include <aws/batch/model/RetryAction.h>
 #include <aws/batch/model/RetryStrategy.h>
 #include <aws/batch/model/RuntimePlatform.h>
+#include <aws/batch/model/S3FilesVolumeConfiguration.h>
 #include <aws/batch/model/SchedulingPolicyDetail.h>
 #include <aws/batch/model/SchedulingPolicyListingDetail.h>
 #include <aws/batch/model/Secret.h>

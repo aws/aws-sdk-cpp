@@ -34,6 +34,10 @@ ManagedInstancesProvider& ManagedInstancesProvider::operator=(JsonView jsonValue
     m_infrastructureOptimization = jsonValue.GetObject("infrastructureOptimization");
     m_infrastructureOptimizationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("autoRepairConfiguration")) {
+    m_autoRepairConfiguration = jsonValue.GetObject("autoRepairConfiguration");
+    m_autoRepairConfigurationHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ManagedInstancesProvider::Jsonize() const {
 
   if (m_infrastructureOptimizationHasBeenSet) {
     payload.WithObject("infrastructureOptimization", m_infrastructureOptimization.Jsonize());
+  }
+
+  if (m_autoRepairConfigurationHasBeenSet) {
+    payload.WithObject("autoRepairConfiguration", m_autoRepairConfiguration.Jsonize());
   }
 
   return payload;

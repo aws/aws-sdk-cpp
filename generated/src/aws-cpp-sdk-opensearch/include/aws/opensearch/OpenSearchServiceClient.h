@@ -2250,6 +2250,38 @@ class AWS_OPENSEARCHSERVICE_API OpenSearchServiceClient : public Aws::Client::AW
   }
 
   /**
+   * <p>Rolls back a service software update for a domain to the previous version.
+   * For more information, see <a
+   * href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">Service
+   * software updates in Amazon OpenSearch Service</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/opensearch-2021-01-01/RollbackServiceSoftwareUpdate">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::RollbackServiceSoftwareUpdateOutcome RollbackServiceSoftwareUpdate(
+      const Model::RollbackServiceSoftwareUpdateRequest& request) const;
+
+  /**
+   * A Callable wrapper for RollbackServiceSoftwareUpdate that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename RollbackServiceSoftwareUpdateRequestT = Model::RollbackServiceSoftwareUpdateRequest>
+  Model::RollbackServiceSoftwareUpdateOutcomeCallable RollbackServiceSoftwareUpdateCallable(
+      const RollbackServiceSoftwareUpdateRequestT& request) const {
+    return SubmitCallable(&OpenSearchServiceClient::RollbackServiceSoftwareUpdate, request);
+  }
+
+  /**
+   * An Async wrapper for RollbackServiceSoftwareUpdate that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename RollbackServiceSoftwareUpdateRequestT = Model::RollbackServiceSoftwareUpdateRequest>
+  void RollbackServiceSoftwareUpdateAsync(const RollbackServiceSoftwareUpdateRequestT& request,
+                                          const RollbackServiceSoftwareUpdateResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&OpenSearchServiceClient::RollbackServiceSoftwareUpdate, request, handler, context);
+  }
+
+  /**
    * <p>Starts the node maintenance process on the data node. These processes can
    * include a node reboot, an Opensearch or Elasticsearch process restart, or a
    * Dashboard or Kibana restart.</p><p><h3>See Also:</h3>   <a

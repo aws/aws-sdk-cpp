@@ -22,6 +22,10 @@ BatchStartViewerSessionRevocationError& BatchStartViewerSessionRevocationError::
     m_channelArn = jsonValue.GetString("channelArn");
     m_channelArnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("viewerId")) {
+    m_viewerId = jsonValue.GetString("viewerId");
+    m_viewerIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("code")) {
     m_code = jsonValue.GetString("code");
     m_codeHasBeenSet = true;
@@ -29,10 +33,6 @@ BatchStartViewerSessionRevocationError& BatchStartViewerSessionRevocationError::
   if (jsonValue.ValueExists("message")) {
     m_message = jsonValue.GetString("message");
     m_messageHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("viewerId")) {
-    m_viewerId = jsonValue.GetString("viewerId");
-    m_viewerIdHasBeenSet = true;
   }
   return *this;
 }
@@ -44,16 +44,16 @@ JsonValue BatchStartViewerSessionRevocationError::Jsonize() const {
     payload.WithString("channelArn", m_channelArn);
   }
 
+  if (m_viewerIdHasBeenSet) {
+    payload.WithString("viewerId", m_viewerId);
+  }
+
   if (m_codeHasBeenSet) {
     payload.WithString("code", m_code);
   }
 
   if (m_messageHasBeenSet) {
     payload.WithString("message", m_message);
-  }
-
-  if (m_viewerIdHasBeenSet) {
-    payload.WithString("viewerId", m_viewerId);
   }
 
   return payload;

@@ -31,24 +31,6 @@ class ListStreamKeysResult {
 
   ///@{
   /**
-   * <p>If there are more stream keys than <code>maxResults</code>, use
-   * <code>nextToken</code> in the request to get the next set.</p>
-   */
-  inline const Aws::String& GetNextToken() const { return m_nextToken; }
-  template <typename NextTokenT = Aws::String>
-  void SetNextToken(NextTokenT&& value) {
-    m_nextTokenHasBeenSet = true;
-    m_nextToken = std::forward<NextTokenT>(value);
-  }
-  template <typename NextTokenT = Aws::String>
-  ListStreamKeysResult& WithNextToken(NextTokenT&& value) {
-    SetNextToken(std::forward<NextTokenT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>List of stream keys.</p>
    */
   inline const Aws::Vector<StreamKeySummary>& GetStreamKeys() const { return m_streamKeys; }
@@ -71,6 +53,24 @@ class ListStreamKeysResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If there are more stream keys than <code>maxResults</code>, use
+   * <code>nextToken</code> in the request to get the next set.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListStreamKeysResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -87,14 +87,14 @@ class ListStreamKeysResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::String m_nextToken;
-
   Aws::Vector<StreamKeySummary> m_streamKeys;
+
+  Aws::String m_nextToken;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_nextTokenHasBeenSet = false;
   bool m_streamKeysHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

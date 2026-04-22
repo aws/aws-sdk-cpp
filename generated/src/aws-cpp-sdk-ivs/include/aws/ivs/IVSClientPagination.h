@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/pagination/Paginator.h>
 #include <aws/ivs/IVSClient.h>
+#include <aws/ivs/model/ListAdConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListChannelsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesPaginationTraits.h>
@@ -17,6 +18,8 @@
 namespace Aws {
 namespace IVS {
 
+using ListAdConfigurationsPaginator = Aws::Utils::Pagination::Paginator<IVSClient, Model::ListAdConfigurationsRequest,
+                                                                        Pagination::ListAdConfigurationsPaginationTraits<IVSClient>>;
 using ListChannelsPaginator =
     Aws::Utils::Pagination::Paginator<IVSClient, Model::ListChannelsRequest, Pagination::ListChannelsPaginationTraits<IVSClient>>;
 using ListPlaybackKeyPairsPaginator = Aws::Utils::Pagination::Paginator<IVSClient, Model::ListPlaybackKeyPairsRequest,

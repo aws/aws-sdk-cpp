@@ -60,6 +60,25 @@ class DescribeInstancesRequest : public EC2Request {
 
   ///@{
   /**
+   * <p>Indicates whether to include managed resources in the output. If this
+   * parameter is set to <code>true</code>, the output includes resources that are
+   * managed by Amazon Web Services services, even if managed resource visibility is
+   * set to hidden.</p>
+   */
+  inline bool GetIncludeManagedResources() const { return m_includeManagedResources; }
+  inline bool IncludeManagedResourcesHasBeenSet() const { return m_includeManagedResourcesHasBeenSet; }
+  inline void SetIncludeManagedResources(bool value) {
+    m_includeManagedResourcesHasBeenSet = true;
+    m_includeManagedResources = value;
+  }
+  inline DescribeInstancesRequest& WithIncludeManagedResources(bool value) {
+    SetIncludeManagedResources(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Checks whether you have the required permissions for the operation, without
    * actually making the request, and provides an error response. If you have the
    * required permissions, the error response is <code>DryRunOperation</code>.
@@ -449,6 +468,8 @@ class DescribeInstancesRequest : public EC2Request {
  private:
   Aws::Vector<Aws::String> m_instanceIds;
 
+  bool m_includeManagedResources{false};
+
   bool m_dryRun{false};
 
   Aws::Vector<Filter> m_filters;
@@ -457,6 +478,7 @@ class DescribeInstancesRequest : public EC2Request {
 
   int m_maxResults{0};
   bool m_instanceIdsHasBeenSet = false;
+  bool m_includeManagedResourcesHasBeenSet = false;
   bool m_dryRunHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;

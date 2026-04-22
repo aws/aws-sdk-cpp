@@ -26,6 +26,10 @@ InteractiveConfiguration& InteractiveConfiguration::operator=(JsonView jsonValue
     m_livyEndpointEnabled = jsonValue.GetBool("livyEndpointEnabled");
     m_livyEndpointEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("sessionEnabled")) {
+    m_sessionEnabled = jsonValue.GetBool("sessionEnabled");
+    m_sessionEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue InteractiveConfiguration::Jsonize() const {
 
   if (m_livyEndpointEnabledHasBeenSet) {
     payload.WithBool("livyEndpointEnabled", m_livyEndpointEnabled);
+  }
+
+  if (m_sessionEnabledHasBeenSet) {
+    payload.WithBool("sessionEnabled", m_sessionEnabled);
   }
 
   return payload;

@@ -4,6 +4,7 @@
  */
 
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/ivs/model/AccessDeniedException.h>
 
 #include <utility>

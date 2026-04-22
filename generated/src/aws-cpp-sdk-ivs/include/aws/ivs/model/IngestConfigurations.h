@@ -26,8 +26,8 @@ namespace Model {
  * in an encoder. </p> <p> <b>Note:</b> Use IngestConfigurations instead of
  * <a>IngestConfiguration</a> (which is deprecated). If multitrack is not enabled,
  * IngestConfiguration and IngestConfigurations contain the same data, namely
- * information about track0 (the sole track). If multitrack is enabled,
- * IngestConfiguration contains data for only the first track (track0) and
+ * information about Track0 (the sole track). If multitrack is enabled,
+ * IngestConfiguration contains data for only the first track (Track0) and
  * IngestConfigurations contains data for all tracks.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/IngestConfigurations">AWS
  * API Reference</a></p>
@@ -38,30 +38,6 @@ class IngestConfigurations {
   AWS_IVS_API IngestConfigurations(Aws::Utils::Json::JsonView jsonValue);
   AWS_IVS_API IngestConfigurations& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_IVS_API Aws::Utils::Json::JsonValue Jsonize() const;
-
-  ///@{
-  /**
-   * <p>Encoder settings for audio.</p>
-   */
-  inline const Aws::Vector<AudioConfiguration>& GetAudioConfigurations() const { return m_audioConfigurations; }
-  inline bool AudioConfigurationsHasBeenSet() const { return m_audioConfigurationsHasBeenSet; }
-  template <typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
-  void SetAudioConfigurations(AudioConfigurationsT&& value) {
-    m_audioConfigurationsHasBeenSet = true;
-    m_audioConfigurations = std::forward<AudioConfigurationsT>(value);
-  }
-  template <typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
-  IngestConfigurations& WithAudioConfigurations(AudioConfigurationsT&& value) {
-    SetAudioConfigurations(std::forward<AudioConfigurationsT>(value));
-    return *this;
-  }
-  template <typename AudioConfigurationsT = AudioConfiguration>
-  IngestConfigurations& AddAudioConfigurations(AudioConfigurationsT&& value) {
-    m_audioConfigurationsHasBeenSet = true;
-    m_audioConfigurations.emplace_back(std::forward<AudioConfigurationsT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -86,12 +62,36 @@ class IngestConfigurations {
     return *this;
   }
   ///@}
- private:
-  Aws::Vector<AudioConfiguration> m_audioConfigurations;
 
+  ///@{
+  /**
+   * <p>Encoder settings for audio.</p>
+   */
+  inline const Aws::Vector<AudioConfiguration>& GetAudioConfigurations() const { return m_audioConfigurations; }
+  inline bool AudioConfigurationsHasBeenSet() const { return m_audioConfigurationsHasBeenSet; }
+  template <typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
+  void SetAudioConfigurations(AudioConfigurationsT&& value) {
+    m_audioConfigurationsHasBeenSet = true;
+    m_audioConfigurations = std::forward<AudioConfigurationsT>(value);
+  }
+  template <typename AudioConfigurationsT = Aws::Vector<AudioConfiguration>>
+  IngestConfigurations& WithAudioConfigurations(AudioConfigurationsT&& value) {
+    SetAudioConfigurations(std::forward<AudioConfigurationsT>(value));
+    return *this;
+  }
+  template <typename AudioConfigurationsT = AudioConfiguration>
+  IngestConfigurations& AddAudioConfigurations(AudioConfigurationsT&& value) {
+    m_audioConfigurationsHasBeenSet = true;
+    m_audioConfigurations.emplace_back(std::forward<AudioConfigurationsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::Vector<VideoConfiguration> m_videoConfigurations;
-  bool m_audioConfigurationsHasBeenSet = false;
+
+  Aws::Vector<AudioConfiguration> m_audioConfigurations;
   bool m_videoConfigurationsHasBeenSet = false;
+  bool m_audioConfigurationsHasBeenSet = false;
 };
 
 }  // namespace Model

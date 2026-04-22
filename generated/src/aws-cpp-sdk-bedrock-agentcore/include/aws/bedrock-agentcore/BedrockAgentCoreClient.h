@@ -775,6 +775,31 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Operation to invoke a Harness.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/InvokeHarness">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InvokeHarnessOutcome InvokeHarness(Model::InvokeHarnessRequest& request) const;
+
+  /**
+   * A Callable wrapper for InvokeHarness that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename InvokeHarnessRequestT = Model::InvokeHarnessRequest>
+  Model::InvokeHarnessOutcomeCallable InvokeHarnessCallable(InvokeHarnessRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::InvokeHarness, request);
+  }
+
+  /**
+   * An Async wrapper for InvokeHarness that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename InvokeHarnessRequestT = Model::InvokeHarnessRequest>
+  void InvokeHarnessAsync(InvokeHarnessRequestT& request, const InvokeHarnessResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::InvokeHarness, request, handler, context);
+  }
+
+  /**
    * <p>Lists all actors in an AgentCore Memory resource. We recommend using
    * pagination to ensure that the operation returns quickly and successfully.</p>
    * <p>To use this operation, you must have the

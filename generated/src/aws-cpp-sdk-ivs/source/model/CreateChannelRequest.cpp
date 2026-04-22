@@ -15,36 +15,20 @@ using namespace Aws::Utils;
 Aws::String CreateChannelRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_authorizedHasBeenSet) {
-    payload.WithBool("authorized", m_authorized);
-  }
-
-  if (m_containerFormatHasBeenSet) {
-    payload.WithString("containerFormat", ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat));
-  }
-
-  if (m_insecureIngestHasBeenSet) {
-    payload.WithBool("insecureIngest", m_insecureIngest);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_latencyModeHasBeenSet) {
     payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if (m_multitrackInputConfigurationHasBeenSet) {
-    payload.WithObject("multitrackInputConfiguration", m_multitrackInputConfiguration.Jsonize());
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_playbackRestrictionPolicyArnHasBeenSet) {
-    payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
-  }
-
-  if (m_presetHasBeenSet) {
-    payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  if (m_authorizedHasBeenSet) {
+    payload.WithBool("authorized", m_authorized);
   }
 
   if (m_recordingConfigurationArnHasBeenSet) {
@@ -59,8 +43,28 @@ Aws::String CreateChannelRequest::SerializePayload() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
-  if (m_typeHasBeenSet) {
-    payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  if (m_insecureIngestHasBeenSet) {
+    payload.WithBool("insecureIngest", m_insecureIngest);
+  }
+
+  if (m_presetHasBeenSet) {
+    payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  }
+
+  if (m_playbackRestrictionPolicyArnHasBeenSet) {
+    payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
+  }
+
+  if (m_multitrackInputConfigurationHasBeenSet) {
+    payload.WithObject("multitrackInputConfiguration", m_multitrackInputConfiguration.Jsonize());
+  }
+
+  if (m_containerFormatHasBeenSet) {
+    payload.WithString("containerFormat", ContainerFormatMapper::GetNameForContainerFormat(m_containerFormat));
+  }
+
+  if (m_adConfigurationArnHasBeenSet) {
+    payload.WithString("adConfigurationArn", m_adConfigurationArn);
   }
 
   return payload.View().WriteReadable();

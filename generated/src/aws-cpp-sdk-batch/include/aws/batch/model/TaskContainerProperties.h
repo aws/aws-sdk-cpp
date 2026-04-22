@@ -523,6 +523,49 @@ class TaskContainerProperties {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Time duration (in seconds) to wait before giving up on resolving dependencies
+   * for a container. The minimum value is 2 seconds and the maximum value for
+   * Fargate is 120 seconds.</p>
+   */
+  inline int GetStartTimeout() const { return m_startTimeout; }
+  inline bool StartTimeoutHasBeenSet() const { return m_startTimeoutHasBeenSet; }
+  inline void SetStartTimeout(int value) {
+    m_startTimeoutHasBeenSet = true;
+    m_startTimeout = value;
+  }
+  inline TaskContainerProperties& WithStartTimeout(int value) {
+    SetStartTimeout(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Time duration (in seconds) to wait before the container is forcefully killed
+   * if it doesn't exit normally on its own. The minimum value is 2 seconds and the
+   * maximum value for Fargate is 120 seconds. If the parameter is not specified, the
+   * default value of 30 seconds is used. For tasks that use the EC2 launch type, if
+   * the <code>stopTimeout</code> parameter isn't specified, the value set for the
+   * Amazon ECS container agent configuration variable
+   * <code>ECS_CONTAINER_STOP_TIMEOUT</code> is used. If neither the
+   * <code>stopTimeout</code> parameter nor the
+   * <code>ECS_CONTAINER_STOP_TIMEOUT</code> agent configuration variable are set,
+   * then the default value of 30 seconds is used.</p>
+   */
+  inline int GetStopTimeout() const { return m_stopTimeout; }
+  inline bool StopTimeoutHasBeenSet() const { return m_stopTimeoutHasBeenSet; }
+  inline void SetStopTimeout(int value) {
+    m_stopTimeoutHasBeenSet = true;
+    m_stopTimeout = value;
+  }
+  inline TaskContainerProperties& WithStopTimeout(int value) {
+    SetStopTimeout(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_command;
 
@@ -557,6 +600,10 @@ class TaskContainerProperties {
   Aws::Vector<Ulimit> m_ulimits;
 
   Aws::String m_user;
+
+  int m_startTimeout{0};
+
+  int m_stopTimeout{0};
   bool m_commandHasBeenSet = false;
   bool m_dependsOnHasBeenSet = false;
   bool m_environmentHasBeenSet = false;
@@ -574,6 +621,8 @@ class TaskContainerProperties {
   bool m_secretsHasBeenSet = false;
   bool m_ulimitsHasBeenSet = false;
   bool m_userHasBeenSet = false;
+  bool m_startTimeoutHasBeenSet = false;
+  bool m_stopTimeoutHasBeenSet = false;
 };
 
 }  // namespace Model

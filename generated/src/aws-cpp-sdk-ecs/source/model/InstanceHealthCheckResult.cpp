@@ -26,6 +26,10 @@ InstanceHealthCheckResult& InstanceHealthCheckResult::operator=(JsonView jsonVal
     m_status = InstanceHealthCheckStateMapper::GetInstanceHealthCheckStateForName(jsonValue.GetString("status"));
     m_statusHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("statusReason")) {
+    m_statusReason = jsonValue.GetString("statusReason");
+    m_statusReasonHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("lastUpdated")) {
     m_lastUpdated = jsonValue.GetDouble("lastUpdated");
     m_lastUpdatedHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue InstanceHealthCheckResult::Jsonize() const {
 
   if (m_statusHasBeenSet) {
     payload.WithString("status", InstanceHealthCheckStateMapper::GetNameForInstanceHealthCheckState(m_status));
+  }
+
+  if (m_statusReasonHasBeenSet) {
+    payload.WithString("statusReason", m_statusReason);
   }
 
   if (m_lastUpdatedHasBeenSet) {

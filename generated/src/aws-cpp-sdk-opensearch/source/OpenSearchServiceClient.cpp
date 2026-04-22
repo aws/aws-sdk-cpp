@@ -95,6 +95,7 @@
 #include <aws/opensearch/model/RejectInboundConnectionRequest.h>
 #include <aws/opensearch/model/RemoveTagsRequest.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessRequest.h>
+#include <aws/opensearch/model/RollbackServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/StartDomainMaintenanceRequest.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateRequest.h>
 #include <aws/opensearch/model/UpdateApplicationRequest.h>
@@ -1497,6 +1498,18 @@ RevokeVpcEndpointAccessOutcome OpenSearchServiceClient::RevokeVpcEndpointAccess(
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? RevokeVpcEndpointAccessOutcome(result.GetResultWithOwnership())
                             : RevokeVpcEndpointAccessOutcome(std::move(result.GetError()));
+}
+
+RollbackServiceSoftwareUpdateOutcome OpenSearchServiceClient::RollbackServiceSoftwareUpdate(
+    const RollbackServiceSoftwareUpdateRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/2021-01-01/opensearch/serviceSoftwareUpdate/rollback");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? RollbackServiceSoftwareUpdateOutcome(result.GetResultWithOwnership())
+                            : RollbackServiceSoftwareUpdateOutcome(std::move(result.GetError()));
 }
 
 StartDomainMaintenanceOutcome OpenSearchServiceClient::StartDomainMaintenance(const StartDomainMaintenanceRequest& request) const {

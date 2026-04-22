@@ -26,14 +26,20 @@
 #include <aws/emr-serverless/model/GetApplicationRequest.h>
 #include <aws/emr-serverless/model/GetDashboardForJobRunRequest.h>
 #include <aws/emr-serverless/model/GetJobRunRequest.h>
+#include <aws/emr-serverless/model/GetResourceDashboardRequest.h>
+#include <aws/emr-serverless/model/GetSessionEndpointRequest.h>
+#include <aws/emr-serverless/model/GetSessionRequest.h>
 #include <aws/emr-serverless/model/ListApplicationsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsRequest.h>
 #include <aws/emr-serverless/model/ListJobRunsRequest.h>
+#include <aws/emr-serverless/model/ListSessionsRequest.h>
 #include <aws/emr-serverless/model/ListTagsForResourceRequest.h>
 #include <aws/emr-serverless/model/StartApplicationRequest.h>
 #include <aws/emr-serverless/model/StartJobRunRequest.h>
+#include <aws/emr-serverless/model/StartSessionRequest.h>
 #include <aws/emr-serverless/model/StopApplicationRequest.h>
 #include <aws/emr-serverless/model/TagResourceRequest.h>
+#include <aws/emr-serverless/model/TerminateSessionRequest.h>
 #include <aws/emr-serverless/model/UntagResourceRequest.h>
 #include <aws/emr-serverless/model/UpdateApplicationRequest.h>
 #include <smithy/tracing/TracingUtils.h>
@@ -311,6 +317,85 @@ GetJobRunOutcome EMRServerlessClient::GetJobRun(const GetJobRunRequest& request)
   return result.IsSuccess() ? GetJobRunOutcome(result.GetResultWithOwnership()) : GetJobRunOutcome(std::move(result.GetError()));
 }
 
+GetResourceDashboardOutcome EMRServerlessClient::GetResourceDashboard(const GetResourceDashboardRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourceDashboard", "Required field: ApplicationId, is not set");
+    return GetResourceDashboardOutcome(Aws::Client::AWSError<EMRServerlessErrors>(
+        EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.ResourceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourceDashboard", "Required field: ResourceId, is not set");
+    return GetResourceDashboardOutcome(Aws::Client::AWSError<EMRServerlessErrors>(
+        EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
+  if (!request.ResourceTypeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetResourceDashboard", "Required field: ResourceType, is not set");
+    return GetResourceDashboardOutcome(Aws::Client::AWSError<EMRServerlessErrors>(
+        EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceType]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/dashboard");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetResourceDashboardOutcome(result.GetResultWithOwnership())
+                            : GetResourceDashboardOutcome(std::move(result.GetError()));
+}
+
+GetSessionOutcome EMRServerlessClient::GetSession(const GetSessionRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: ApplicationId, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSession", "Required field: SessionId, is not set");
+    return GetSessionOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                        "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionOutcome(result.GetResultWithOwnership()) : GetSessionOutcome(std::move(result.GetError()));
+}
+
+GetSessionEndpointOutcome EMRServerlessClient::GetSessionEndpoint(const GetSessionEndpointRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSessionEndpoint", "Required field: ApplicationId, is not set");
+    return GetSessionEndpointOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetSessionEndpoint", "Required field: SessionId, is not set");
+    return GetSessionEndpointOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/endpoint");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetSessionEndpointOutcome(result.GetResultWithOwnership())
+                            : GetSessionEndpointOutcome(std::move(result.GetError()));
+}
+
 ListApplicationsOutcome EMRServerlessClient::ListApplications(const ListApplicationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -364,6 +449,24 @@ ListJobRunsOutcome EMRServerlessClient::ListJobRuns(const ListJobRunsRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListJobRunsOutcome(result.GetResultWithOwnership()) : ListJobRunsOutcome(std::move(result.GetError()));
+}
+
+ListSessionsOutcome EMRServerlessClient::ListSessions(const ListSessionsRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListSessions", "Required field: ApplicationId, is not set");
+    return ListSessionsOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [ApplicationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
 }
 
 ListTagsForResourceOutcome EMRServerlessClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
@@ -421,6 +524,24 @@ StartJobRunOutcome EMRServerlessClient::StartJobRun(const StartJobRunRequest& re
   return result.IsSuccess() ? StartJobRunOutcome(result.GetResultWithOwnership()) : StartJobRunOutcome(std::move(result.GetError()));
 }
 
+StartSessionOutcome EMRServerlessClient::StartSession(const StartSessionRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StartSession", "Required field: ApplicationId, is not set");
+    return StartSessionOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [ApplicationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartSessionOutcome(result.GetResultWithOwnership()) : StartSessionOutcome(std::move(result.GetError()));
+}
+
 StopApplicationOutcome EMRServerlessClient::StopApplication(const StopApplicationRequest& request) const {
   if (!request.ApplicationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StopApplication", "Required field: ApplicationId, is not set");
@@ -455,6 +576,31 @@ TagResourceOutcome EMRServerlessClient::TagResource(const TagResourceRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
+}
+
+TerminateSessionOutcome EMRServerlessClient::TerminateSession(const TerminateSessionRequest& request) const {
+  if (!request.ApplicationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("TerminateSession", "Required field: ApplicationId, is not set");
+    return TerminateSessionOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("TerminateSession", "Required field: SessionId, is not set");
+    return TerminateSessionOutcome(Aws::Client::AWSError<EMRServerlessErrors>(EMRServerlessErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                              "Missing required field [SessionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/applications/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetApplicationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/sessions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetSessionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? TerminateSessionOutcome(result.GetResultWithOwnership())
+                            : TerminateSessionOutcome(std::move(result.GetError()));
 }
 
 UntagResourceOutcome EMRServerlessClient::UntagResource(const UntagResourceRequest& request) const {

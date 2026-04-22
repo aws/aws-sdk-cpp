@@ -15,6 +15,8 @@
 #include <aws/ivs/IVSServiceClientModel.h>
 #include <aws/ivs/IVS_EXPORTS.h>
 #include <aws/ivs/model/AccessDeniedException.h>
+#include <aws/ivs/model/AdConfiguration.h>
+#include <aws/ivs/model/AdConfigurationSummary.h>
 #include <aws/ivs/model/AudioConfiguration.h>
 #include <aws/ivs/model/BatchError.h>
 #include <aws/ivs/model/BatchGetChannelRequest.h>
@@ -32,6 +34,8 @@
 #include <aws/ivs/model/ChannelType.h>
 #include <aws/ivs/model/ConflictException.h>
 #include <aws/ivs/model/ContainerFormat.h>
+#include <aws/ivs/model/CreateAdConfigurationRequest.h>
+#include <aws/ivs/model/CreateAdConfigurationResult.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
 #include <aws/ivs/model/CreateChannelResult.h>
 #include <aws/ivs/model/CreatePlaybackRestrictionPolicyRequest.h>
@@ -40,6 +44,7 @@
 #include <aws/ivs/model/CreateRecordingConfigurationResult.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
 #include <aws/ivs/model/CreateStreamKeyResult.h>
+#include <aws/ivs/model/DeleteAdConfigurationRequest.h>
 #include <aws/ivs/model/DeleteChannelRequest.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairRequest.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairResult.h>
@@ -47,6 +52,8 @@
 #include <aws/ivs/model/DeleteRecordingConfigurationRequest.h>
 #include <aws/ivs/model/DeleteStreamKeyRequest.h>
 #include <aws/ivs/model/DestinationConfiguration.h>
+#include <aws/ivs/model/GetAdConfigurationRequest.h>
+#include <aws/ivs/model/GetAdConfigurationResult.h>
 #include <aws/ivs/model/GetChannelRequest.h>
 #include <aws/ivs/model/GetChannelResult.h>
 #include <aws/ivs/model/GetPlaybackKeyPairRequest.h>
@@ -65,7 +72,11 @@
 #include <aws/ivs/model/ImportPlaybackKeyPairResult.h>
 #include <aws/ivs/model/IngestConfiguration.h>
 #include <aws/ivs/model/IngestConfigurations.h>
+#include <aws/ivs/model/InsertAdBreakRequest.h>
+#include <aws/ivs/model/InsertAdBreakResult.h>
 #include <aws/ivs/model/InternalServerException.h>
+#include <aws/ivs/model/ListAdConfigurationsRequest.h>
+#include <aws/ivs/model/ListAdConfigurationsResult.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
 #include <aws/ivs/model/ListChannelsResult.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
@@ -82,6 +93,7 @@
 #include <aws/ivs/model/ListStreamsResult.h>
 #include <aws/ivs/model/ListTagsForResourceRequest.h>
 #include <aws/ivs/model/ListTagsForResourceResult.h>
+#include <aws/ivs/model/MediaTailorPlaybackConfiguration.h>
 #include <aws/ivs/model/MultitrackInputConfiguration.h>
 #include <aws/ivs/model/MultitrackMaximumResolution.h>
 #include <aws/ivs/model/MultitrackPolicy.h>
@@ -101,6 +113,7 @@
 #include <aws/ivs/model/ResourceNotFoundException.h>
 #include <aws/ivs/model/S3DestinationConfiguration.h>
 #include <aws/ivs/model/ServiceQuotaExceededException.h>
+#include <aws/ivs/model/ServiceUnavailable.h>
 #include <aws/ivs/model/Srt.h>
 #include <aws/ivs/model/StartViewerSessionRevocationRequest.h>
 #include <aws/ivs/model/StartViewerSessionRevocationResult.h>

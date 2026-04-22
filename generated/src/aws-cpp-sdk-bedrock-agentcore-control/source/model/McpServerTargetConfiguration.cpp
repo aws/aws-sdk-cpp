@@ -26,6 +26,10 @@ McpServerTargetConfiguration& McpServerTargetConfiguration::operator=(JsonView j
     m_mcpToolSchema = jsonValue.GetObject("mcpToolSchema");
     m_mcpToolSchemaHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourcePriority")) {
+    m_resourcePriority = jsonValue.GetInteger("resourcePriority");
+    m_resourcePriorityHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("listingMode")) {
     m_listingMode = ListingModeMapper::GetListingModeForName(jsonValue.GetString("listingMode"));
     m_listingModeHasBeenSet = true;
@@ -42,6 +46,10 @@ JsonValue McpServerTargetConfiguration::Jsonize() const {
 
   if (m_mcpToolSchemaHasBeenSet) {
     payload.WithObject("mcpToolSchema", m_mcpToolSchema.Jsonize());
+  }
+
+  if (m_resourcePriorityHasBeenSet) {
+    payload.WithInteger("resourcePriority", m_resourcePriority);
   }
 
   if (m_listingModeHasBeenSet) {

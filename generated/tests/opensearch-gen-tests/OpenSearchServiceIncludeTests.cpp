@@ -334,6 +334,9 @@
 #include <aws/opensearch/model/RevokeVpcEndpointAccessResult.h>
 #include <aws/opensearch/model/RolesKeyIdCOption.h>
 #include <aws/opensearch/model/RollbackOnDisable.h>
+#include <aws/opensearch/model/RollbackServiceSoftwareOptions.h>
+#include <aws/opensearch/model/RollbackServiceSoftwareUpdateRequest.h>
+#include <aws/opensearch/model/RollbackServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/S3GlueDataCatalog.h>
 #include <aws/opensearch/model/S3VectorsEngine.h>
 #include <aws/opensearch/model/SAMLIdp.h>

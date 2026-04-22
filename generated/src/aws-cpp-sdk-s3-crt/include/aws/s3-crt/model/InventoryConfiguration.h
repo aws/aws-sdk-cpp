@@ -137,6 +137,11 @@ class InventoryConfiguration {
   ///@{
   /**
    * <p>Contains the optional fields that are included in the inventory results.</p>
+   *  <p>The following optional fields are supported for directory buckets
+   * <code>Size | LastModifiedDate | StorageClass | ETag | IsMultipartUploaded |
+   * EncryptionStatus | BucketKeyStatus | ChecksumAlgorithm |
+   * LifecycleExpirationDate.</code> Throws MalformedXML error if unsupported
+   * optional field is provided. </p>
    */
   inline const Aws::Vector<InventoryOptionalField>& GetOptionalFields() const { return m_optionalFields; }
   inline bool OptionalFieldsHasBeenSet() const { return m_optionalFieldsHasBeenSet; }

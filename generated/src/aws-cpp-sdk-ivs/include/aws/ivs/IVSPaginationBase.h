@@ -7,6 +7,7 @@
 
 #include <aws/core/client/UserAgent.h>
 #include <aws/core/utils/pagination/Paginator.h>
+#include <aws/ivs/model/ListAdConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListChannelsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesPaginationTraits.h>
@@ -25,6 +26,18 @@ class IVSClient;
 template <typename DerivedClient>
 class IVSPaginationBase {
  public:
+  /**
+   * Create a paginator for ListAdConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdConfigurationsRequest,
+                                    Pagination::ListAdConfigurationsPaginationTraits<DerivedClient>>
+  ListAdConfigurationsPaginator(const Model::ListAdConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAdConfigurationsRequest,
+                                             Pagination::ListAdConfigurationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
   /**
    * Create a paginator for ListChannels operation
    */

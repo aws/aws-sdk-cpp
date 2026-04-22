@@ -39,5 +39,9 @@ Aws::String GetPositionEstimateRequest::SerializePayload() const {
     payload.WithDouble("Timestamp", m_timestamp.SecondsWithMSPrecision());
   }
 
+  if (m_advancedConfigurationHasBeenSet) {
+    payload.WithObject("AdvancedConfiguration", m_advancedConfiguration.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

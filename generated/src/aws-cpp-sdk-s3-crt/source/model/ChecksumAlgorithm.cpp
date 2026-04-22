@@ -20,6 +20,11 @@ static const int CRC32C_HASH = HashingUtils::HashString("CRC32C");
 static const int SHA1_HASH = HashingUtils::HashString("SHA1");
 static const int SHA256_HASH = HashingUtils::HashString("SHA256");
 static const int CRC64NVME_HASH = HashingUtils::HashString("CRC64NVME");
+static const int SHA512_HASH = HashingUtils::HashString("SHA512");
+static const int MD5_HASH = HashingUtils::HashString("MD5");
+static const int XXHASH64_HASH = HashingUtils::HashString("XXHASH64");
+static const int XXHASH3_HASH = HashingUtils::HashString("XXHASH3");
+static const int XXHASH128_HASH = HashingUtils::HashString("XXHASH128");
 
 ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -33,6 +38,16 @@ ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name) {
     return ChecksumAlgorithm::SHA256;
   } else if (hashCode == CRC64NVME_HASH) {
     return ChecksumAlgorithm::CRC64NVME;
+  } else if (hashCode == SHA512_HASH) {
+    return ChecksumAlgorithm::SHA512;
+  } else if (hashCode == MD5_HASH) {
+    return ChecksumAlgorithm::MD5;
+  } else if (hashCode == XXHASH64_HASH) {
+    return ChecksumAlgorithm::XXHASH64;
+  } else if (hashCode == XXHASH3_HASH) {
+    return ChecksumAlgorithm::XXHASH3;
+  } else if (hashCode == XXHASH128_HASH) {
+    return ChecksumAlgorithm::XXHASH128;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -57,6 +72,16 @@ Aws::String GetNameForChecksumAlgorithm(ChecksumAlgorithm enumValue) {
       return "SHA256";
     case ChecksumAlgorithm::CRC64NVME:
       return "CRC64NVME";
+    case ChecksumAlgorithm::SHA512:
+      return "SHA512";
+    case ChecksumAlgorithm::MD5:
+      return "MD5";
+    case ChecksumAlgorithm::XXHASH64:
+      return "XXHASH64";
+    case ChecksumAlgorithm::XXHASH3:
+      return "XXHASH3";
+    case ChecksumAlgorithm::XXHASH128:
+      return "XXHASH128";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

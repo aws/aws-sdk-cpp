@@ -17,6 +17,7 @@
 #include <aws/iotwireless/model/AbpV1_0_x.h>
 #include <aws/iotwireless/model/AbpV1_1.h>
 #include <aws/iotwireless/model/Accuracy.h>
+#include <aws/iotwireless/model/AdvancedConfiguration.h>
 #include <aws/iotwireless/model/AggregationPeriod.h>
 #include <aws/iotwireless/model/ApplicationConfig.h>
 #include <aws/iotwireless/model/ApplicationConfigType.h>
@@ -390,6 +391,7 @@
 #include <aws/iotwireless/model/WcdmaNmrObj.h>
 #include <aws/iotwireless/model/WcdmaObj.h>
 #include <aws/iotwireless/model/WiFiAccessPoint.h>
+#include <aws/iotwireless/model/WiFiCellular.h>
 #include <aws/iotwireless/model/WirelessDeviceEvent.h>
 #include <aws/iotwireless/model/WirelessDeviceEventLogOption.h>
 #include <aws/iotwireless/model/WirelessDeviceFrameInfo.h>

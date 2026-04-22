@@ -170,6 +170,25 @@ class DescribeLaunchTemplatesRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to include managed resources in the output. If this
+   * parameter is set to <code>true</code>, the output includes resources that are
+   * managed by Amazon Web Services services, even if managed resource visibility is
+   * set to hidden.</p>
+   */
+  inline bool GetIncludeManagedResources() const { return m_includeManagedResources; }
+  inline bool IncludeManagedResourcesHasBeenSet() const { return m_includeManagedResourcesHasBeenSet; }
+  inline void SetIncludeManagedResources(bool value) {
+    m_includeManagedResourcesHasBeenSet = true;
+    m_includeManagedResources = value;
+  }
+  inline DescribeLaunchTemplatesRequest& WithIncludeManagedResources(bool value) {
+    SetIncludeManagedResources(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -182,12 +201,15 @@ class DescribeLaunchTemplatesRequest : public EC2Request {
   Aws::String m_nextToken;
 
   int m_maxResults{0};
+
+  bool m_includeManagedResources{false};
   bool m_dryRunHasBeenSet = false;
   bool m_launchTemplateIdsHasBeenSet = false;
   bool m_launchTemplateNamesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
+  bool m_includeManagedResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

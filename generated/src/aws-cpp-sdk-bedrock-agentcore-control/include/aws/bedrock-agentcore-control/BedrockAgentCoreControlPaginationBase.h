@@ -15,6 +15,7 @@
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
@@ -153,6 +154,17 @@ class BedrockAgentCoreControlPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayTargetsRequest,
                                              Pagination::ListGatewayTargetsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListHarnesses operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessesRequest, Pagination::ListHarnessesPaginationTraits<DerivedClient>>
+  ListHarnessesPaginator(const Model::ListHarnessesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListHarnessesRequest,
+                                             Pagination::ListHarnessesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                       request};
   }
 
   /**

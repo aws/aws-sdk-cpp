@@ -15,6 +15,10 @@ using namespace Aws::Utils;
 Aws::String UpdatePlaybackRestrictionPolicyRequest::SerializePayload() const {
   JsonValue payload;
 
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
   if (m_allowedCountriesHasBeenSet) {
     Aws::Utils::Array<JsonValue> allowedCountriesJsonList(m_allowedCountries.size());
     for (unsigned allowedCountriesIndex = 0; allowedCountriesIndex < allowedCountriesJsonList.GetLength(); ++allowedCountriesIndex) {
@@ -29,10 +33,6 @@ Aws::String UpdatePlaybackRestrictionPolicyRequest::SerializePayload() const {
       allowedOriginsJsonList[allowedOriginsIndex].AsString(m_allowedOrigins[allowedOriginsIndex]);
     }
     payload.WithArray("allowedOrigins", std::move(allowedOriginsJsonList));
-  }
-
-  if (m_arnHasBeenSet) {
-    payload.WithString("arn", m_arn);
   }
 
   if (m_enableStrictOriginEnforcementHasBeenSet) {

@@ -15,6 +15,7 @@
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
@@ -58,6 +59,8 @@ using ListGatewaysPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCore
 using ListGatewayTargetsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListGatewayTargetsRequest,
                                       Pagination::ListGatewayTargetsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListHarnessesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListHarnessesRequest,
+                                                                 Pagination::ListHarnessesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListMemoriesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListMemoriesRequest,
                                                                 Pagination::ListMemoriesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListOauth2CredentialProvidersPaginator =

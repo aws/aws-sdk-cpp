@@ -54,35 +54,19 @@ class StreamSummary {
 
   ///@{
   /**
-   * <p>The stream’s health.</p>
+   * <p>Unique identifier for a live or previously live stream in the specified
+   * channel.</p>
    */
-  inline StreamHealth GetHealth() const { return m_health; }
-  inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
-  inline void SetHealth(StreamHealth value) {
-    m_healthHasBeenSet = true;
-    m_health = value;
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
   }
-  inline StreamSummary& WithHealth(StreamHealth value) {
-    SetHealth(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
-   * is returned as a string</i>. </p>
-   */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
-  }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  StreamSummary& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
+  template <typename StreamIdT = Aws::String>
+  StreamSummary& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
     return *this;
   }
   ///@}
@@ -107,19 +91,16 @@ class StreamSummary {
 
   ///@{
   /**
-   * <p>Unique identifier for a live or previously live stream in the specified
-   * channel.</p>
+   * <p>The stream’s health.</p>
    */
-  inline const Aws::String& GetStreamId() const { return m_streamId; }
-  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-  template <typename StreamIdT = Aws::String>
-  void SetStreamId(StreamIdT&& value) {
-    m_streamIdHasBeenSet = true;
-    m_streamId = std::forward<StreamIdT>(value);
+  inline StreamHealth GetHealth() const { return m_health; }
+  inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+  inline void SetHealth(StreamHealth value) {
+    m_healthHasBeenSet = true;
+    m_health = value;
   }
-  template <typename StreamIdT = Aws::String>
-  StreamSummary& WithStreamId(StreamIdT&& value) {
-    SetStreamId(std::forward<StreamIdT>(value));
+  inline StreamSummary& WithHealth(StreamHealth value) {
+    SetHealth(value);
     return *this;
   }
   ///@}
@@ -143,24 +124,43 @@ class StreamSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Time of the stream’s start. This is an ISO 8601 timestamp; <i>note that this
+   * is returned as a string</i>. </p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  StreamSummary& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_channelArn;
 
-  StreamHealth m_health{StreamHealth::NOT_SET};
-
-  Aws::Utils::DateTime m_startTime{};
+  Aws::String m_streamId;
 
   StreamState m_state{StreamState::NOT_SET};
 
-  Aws::String m_streamId;
+  StreamHealth m_health{StreamHealth::NOT_SET};
 
   long long m_viewerCount{0};
+
+  Aws::Utils::DateTime m_startTime{};
   bool m_channelArnHasBeenSet = false;
-  bool m_healthHasBeenSet = false;
-  bool m_startTimeHasBeenSet = false;
-  bool m_stateHasBeenSet = false;
   bool m_streamIdHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
   bool m_viewerCountHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -495,7 +495,7 @@ class ComputeResourceUpdate {
   /**
    * <p>Provides information used to select Amazon Machine Images (AMIs) for Amazon
    * EC2 instances in the compute environment. If <code>Ec2Configuration</code> isn't
-   * specified, the default is <code>ECS_AL2</code> for EC2 (ECS) compute
+   * specified, the default is <code>ECS_AL2023</code> for EC2 (ECS) compute
    * environments and <code>EKS_AL2023</code> for EKS compute environments.</p>
    * <p>When updating a compute environment, changing this setting requires an
    * infrastructure update of the compute environment. For more information, see <a
@@ -598,10 +598,10 @@ class ComputeResourceUpdate {
    * use for that compute environment. For example, if your compute environment uses
    * A1 instance types, the compute resource AMI that you choose must support ARM
    * instances. Amazon ECS vends both x86 and ARM versions of the Amazon
-   * ECS-optimized Amazon Linux 2 AMI. For more information, see <a
+   * ECS-optimized Amazon Linux 2023 AMI. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-optimized_AMI.html#ecs-optimized-ami-linux-variants.html">Amazon
-   * ECS-optimized Amazon Linux 2 AMI</a> in the <i>Amazon Elastic Container Service
-   * Developer Guide</i>.</p>
+   * ECS-optimized Amazon Linux 2023 AMI</a> in the <i>Amazon Elastic Container
+   * Service Developer Guide</i>.</p>
    */
   inline const Aws::String& GetImageId() const { return m_imageId; }
   inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }

@@ -10,6 +10,7 @@
 #include <aws/ivs/IVSPaginationBase.h>
 #include <aws/ivs/model/ListStreamsPaginationTraits.h>
 #include <aws/ivs/model/ListRecordingConfigurationsPaginationTraits.h>
+#include <aws/ivs/model/ListAdConfigurationsPaginationTraits.h>
 #include <aws/ivs/model/ListStreamKeysPaginationTraits.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesPaginationTraits.h>
 #include <aws/ivs/model/ListStreamSessionsPaginationTraits.h>

@@ -68,12 +68,32 @@ class OperatorResponse {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, the resource is hidden by default based on the managed
+   * resource visibility settings for the account.</p>
+   */
+  inline bool GetHiddenByDefault() const { return m_hiddenByDefault; }
+  inline bool HiddenByDefaultHasBeenSet() const { return m_hiddenByDefaultHasBeenSet; }
+  inline void SetHiddenByDefault(bool value) {
+    m_hiddenByDefaultHasBeenSet = true;
+    m_hiddenByDefault = value;
+  }
+  inline OperatorResponse& WithHiddenByDefault(bool value) {
+    SetHiddenByDefault(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_managed{false};
 
   Aws::String m_principal;
+
+  bool m_hiddenByDefault{false};
   bool m_managedHasBeenSet = false;
   bool m_principalHasBeenSet = false;
+  bool m_hiddenByDefaultHasBeenSet = false;
 };
 
 }  // namespace Model

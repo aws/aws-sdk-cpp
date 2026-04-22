@@ -1521,6 +1521,8 @@
 #include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesRequest.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
+#include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
+#include <aws/ec2/model/GetManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsRequest.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentRequest.h>
@@ -1943,6 +1945,8 @@
 #include <aws/ec2/model/MaintenanceDetails.h>
 #include <aws/ec2/model/ManagedBy.h>
 #include <aws/ec2/model/ManagedPrefixList.h>
+#include <aws/ec2/model/ManagedResourceDefaultVisibility.h>
+#include <aws/ec2/model/ManagedResourceVisibilitySettings.h>
 #include <aws/ec2/model/MarketType.h>
 #include <aws/ec2/model/MediaAcceleratorInfo.h>
 #include <aws/ec2/model/MediaDeviceInfo.h>
@@ -2028,6 +2032,8 @@
 #include <aws/ec2/model/ModifyLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListRequest.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
+#include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
+#include <aws/ec2/model/ModifyManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/ModifyNetworkInterfaceAttributeRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsRequest.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>

@@ -34,6 +34,44 @@ class StreamSessionSummary {
 
   ///@{
   /**
+   * <p>Unique identifier for a live or previously live stream in the specified
+   * channel.</p>
+   */
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
+  }
+  template <typename StreamIdT = Aws::String>
+  StreamSessionSummary& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
+   * this is returned as a string</i>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
+  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  void SetStartTime(StartTimeT&& value) {
+    m_startTimeHasBeenSet = true;
+    m_startTime = std::forward<StartTimeT>(value);
+  }
+  template <typename StartTimeT = Aws::Utils::DateTime>
+  StreamSessionSummary& WithStartTime(StartTimeT&& value) {
+    SetStartTime(std::forward<StartTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Time when the channel went offline. This is an ISO 8601 timestamp; <i>note
    * that this is returned as a string</i>. For live streams, this is
    * <code>NULL</code>.</p>
@@ -67,56 +105,18 @@ class StreamSessionSummary {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Time when the channel went live. This is an ISO 8601 timestamp; <i>note that
-   * this is returned as a string</i>.</p>
-   */
-  inline const Aws::Utils::DateTime& GetStartTime() const { return m_startTime; }
-  inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  void SetStartTime(StartTimeT&& value) {
-    m_startTimeHasBeenSet = true;
-    m_startTime = std::forward<StartTimeT>(value);
-  }
-  template <typename StartTimeT = Aws::Utils::DateTime>
-  StreamSessionSummary& WithStartTime(StartTimeT&& value) {
-    SetStartTime(std::forward<StartTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Unique identifier for a live or previously live stream in the specified
-   * channel.</p>
-   */
-  inline const Aws::String& GetStreamId() const { return m_streamId; }
-  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-  template <typename StreamIdT = Aws::String>
-  void SetStreamId(StreamIdT&& value) {
-    m_streamIdHasBeenSet = true;
-    m_streamId = std::forward<StreamIdT>(value);
-  }
-  template <typename StreamIdT = Aws::String>
-  StreamSessionSummary& WithStreamId(StreamIdT&& value) {
-    SetStreamId(std::forward<StreamIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::Utils::DateTime m_endTime{};
-
-  bool m_hasErrorEvent{false};
+  Aws::String m_streamId;
 
   Aws::Utils::DateTime m_startTime{};
 
-  Aws::String m_streamId;
+  Aws::Utils::DateTime m_endTime{};
+
+  bool m_hasErrorEvent{false};
+  bool m_streamIdHasBeenSet = false;
+  bool m_startTimeHasBeenSet = false;
   bool m_endTimeHasBeenSet = false;
   bool m_hasErrorEventHasBeenSet = false;
-  bool m_startTimeHasBeenSet = false;
-  bool m_streamIdHasBeenSet = false;
 };
 
 }  // namespace Model

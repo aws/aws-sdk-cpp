@@ -62,12 +62,33 @@ class InteractiveConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Enables interactive sessions on the application. When set to
+   * <code>true</code>, you can start interactive sessions using the
+   * <code>StartSession</code> operation.</p>
+   */
+  inline bool GetSessionEnabled() const { return m_sessionEnabled; }
+  inline bool SessionEnabledHasBeenSet() const { return m_sessionEnabledHasBeenSet; }
+  inline void SetSessionEnabled(bool value) {
+    m_sessionEnabledHasBeenSet = true;
+    m_sessionEnabled = value;
+  }
+  inline InteractiveConfiguration& WithSessionEnabled(bool value) {
+    SetSessionEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_studioEnabled{false};
 
   bool m_livyEndpointEnabled{false};
+
+  bool m_sessionEnabled{false};
   bool m_studioEnabledHasBeenSet = false;
   bool m_livyEndpointEnabledHasBeenSet = false;
+  bool m_sessionEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

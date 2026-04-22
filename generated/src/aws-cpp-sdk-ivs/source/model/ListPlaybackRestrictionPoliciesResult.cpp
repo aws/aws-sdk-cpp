@@ -25,10 +25,6 @@ ListPlaybackRestrictionPoliciesResult& ListPlaybackRestrictionPoliciesResult::op
     const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("playbackRestrictionPolicies")) {
     Aws::Utils::Array<JsonView> playbackRestrictionPoliciesJsonList = jsonValue.GetArray("playbackRestrictionPolicies");
     for (unsigned playbackRestrictionPoliciesIndex = 0; playbackRestrictionPoliciesIndex < playbackRestrictionPoliciesJsonList.GetLength();
@@ -36,6 +32,10 @@ ListPlaybackRestrictionPoliciesResult& ListPlaybackRestrictionPoliciesResult::op
       m_playbackRestrictionPolicies.push_back(playbackRestrictionPoliciesJsonList[playbackRestrictionPoliciesIndex].AsObject());
     }
     m_playbackRestrictionPoliciesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

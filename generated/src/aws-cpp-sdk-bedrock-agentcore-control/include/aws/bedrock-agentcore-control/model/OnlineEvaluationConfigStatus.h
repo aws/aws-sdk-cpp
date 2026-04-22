@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class OnlineEvaluationConfigStatus { NOT_SET, ACTIVE, CREATING, CREATE_FAILED, UPDATING, UPDATE_FAILED, DELETING };
+enum class OnlineEvaluationConfigStatus { NOT_SET, ACTIVE, CREATING, CREATE_FAILED, UPDATING, UPDATE_FAILED, DELETING, ERROR_ };
 
 namespace OnlineEvaluationConfigStatusMapper {
 AWS_BEDROCKAGENTCORECONTROL_API OnlineEvaluationConfigStatus GetOnlineEvaluationConfigStatusForName(const Aws::String& name);

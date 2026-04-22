@@ -48,24 +48,6 @@ class ListChannelsRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Filters the channel list to match the specified policy.</p>
-   */
-  inline const Aws::String& GetFilterByPlaybackRestrictionPolicyArn() const { return m_filterByPlaybackRestrictionPolicyArn; }
-  inline bool FilterByPlaybackRestrictionPolicyArnHasBeenSet() const { return m_filterByPlaybackRestrictionPolicyArnHasBeenSet; }
-  template <typename FilterByPlaybackRestrictionPolicyArnT = Aws::String>
-  void SetFilterByPlaybackRestrictionPolicyArn(FilterByPlaybackRestrictionPolicyArnT&& value) {
-    m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true;
-    m_filterByPlaybackRestrictionPolicyArn = std::forward<FilterByPlaybackRestrictionPolicyArnT>(value);
-  }
-  template <typename FilterByPlaybackRestrictionPolicyArnT = Aws::String>
-  ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(FilterByPlaybackRestrictionPolicyArnT&& value) {
-    SetFilterByPlaybackRestrictionPolicyArn(std::forward<FilterByPlaybackRestrictionPolicyArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Filters the channel list to match the specified recording-configuration
    * ARN.</p>
    */
@@ -85,16 +67,36 @@ class ListChannelsRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Maximum number of channels to return. Default: 100.</p>
+   * <p>Filters the channel list to match the specified policy.</p>
    */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
+  inline const Aws::String& GetFilterByPlaybackRestrictionPolicyArn() const { return m_filterByPlaybackRestrictionPolicyArn; }
+  inline bool FilterByPlaybackRestrictionPolicyArnHasBeenSet() const { return m_filterByPlaybackRestrictionPolicyArnHasBeenSet; }
+  template <typename FilterByPlaybackRestrictionPolicyArnT = Aws::String>
+  void SetFilterByPlaybackRestrictionPolicyArn(FilterByPlaybackRestrictionPolicyArnT&& value) {
+    m_filterByPlaybackRestrictionPolicyArnHasBeenSet = true;
+    m_filterByPlaybackRestrictionPolicyArn = std::forward<FilterByPlaybackRestrictionPolicyArnT>(value);
   }
-  inline ListChannelsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
+  template <typename FilterByPlaybackRestrictionPolicyArnT = Aws::String>
+  ListChannelsRequest& WithFilterByPlaybackRestrictionPolicyArn(FilterByPlaybackRestrictionPolicyArnT&& value) {
+    SetFilterByPlaybackRestrictionPolicyArn(std::forward<FilterByPlaybackRestrictionPolicyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters the channel list to match the specified ad configuration ARN.</p>
+   */
+  inline const Aws::String& GetFilterByAdConfigurationArn() const { return m_filterByAdConfigurationArn; }
+  inline bool FilterByAdConfigurationArnHasBeenSet() const { return m_filterByAdConfigurationArnHasBeenSet; }
+  template <typename FilterByAdConfigurationArnT = Aws::String>
+  void SetFilterByAdConfigurationArn(FilterByAdConfigurationArnT&& value) {
+    m_filterByAdConfigurationArnHasBeenSet = true;
+    m_filterByAdConfigurationArn = std::forward<FilterByAdConfigurationArnT>(value);
+  }
+  template <typename FilterByAdConfigurationArnT = Aws::String>
+  ListChannelsRequest& WithFilterByAdConfigurationArn(FilterByAdConfigurationArnT&& value) {
+    SetFilterByAdConfigurationArn(std::forward<FilterByAdConfigurationArnT>(value));
     return *this;
   }
   ///@}
@@ -117,21 +119,40 @@ class ListChannelsRequest : public IVSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Maximum number of channels to return. Default: 100.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListChannelsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_filterByName;
 
-  Aws::String m_filterByPlaybackRestrictionPolicyArn;
-
   Aws::String m_filterByRecordingConfigurationArn;
 
-  int m_maxResults{0};
+  Aws::String m_filterByPlaybackRestrictionPolicyArn;
+
+  Aws::String m_filterByAdConfigurationArn;
 
   Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_filterByNameHasBeenSet = false;
-  bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
   bool m_filterByRecordingConfigurationArnHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
+  bool m_filterByPlaybackRestrictionPolicyArnHasBeenSet = false;
+  bool m_filterByAdConfigurationArnHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

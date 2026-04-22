@@ -104,6 +104,7 @@
 #include <aws/opensearch/model/RegisterCapabilityResult.h>
 #include <aws/opensearch/model/RejectInboundConnectionResult.h>
 #include <aws/opensearch/model/RevokeVpcEndpointAccessResult.h>
+#include <aws/opensearch/model/RollbackServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/StartDomainMaintenanceResult.h>
 #include <aws/opensearch/model/StartServiceSoftwareUpdateResult.h>
 #include <aws/opensearch/model/UpdateApplicationResult.h>
@@ -224,6 +225,7 @@ class RegisterCapabilityRequest;
 class RejectInboundConnectionRequest;
 class RemoveTagsRequest;
 class RevokeVpcEndpointAccessRequest;
+class RollbackServiceSoftwareUpdateRequest;
 class StartDomainMaintenanceRequest;
 class StartServiceSoftwareUpdateRequest;
 class UpdateApplicationRequest;
@@ -314,6 +316,7 @@ typedef Aws::Utils::Outcome<RegisterCapabilityResult, OpenSearchServiceError> Re
 typedef Aws::Utils::Outcome<RejectInboundConnectionResult, OpenSearchServiceError> RejectInboundConnectionOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, OpenSearchServiceError> RemoveTagsOutcome;
 typedef Aws::Utils::Outcome<RevokeVpcEndpointAccessResult, OpenSearchServiceError> RevokeVpcEndpointAccessOutcome;
+typedef Aws::Utils::Outcome<RollbackServiceSoftwareUpdateResult, OpenSearchServiceError> RollbackServiceSoftwareUpdateOutcome;
 typedef Aws::Utils::Outcome<StartDomainMaintenanceResult, OpenSearchServiceError> StartDomainMaintenanceOutcome;
 typedef Aws::Utils::Outcome<StartServiceSoftwareUpdateResult, OpenSearchServiceError> StartServiceSoftwareUpdateOutcome;
 typedef Aws::Utils::Outcome<UpdateApplicationResult, OpenSearchServiceError> UpdateApplicationOutcome;
@@ -404,6 +407,7 @@ typedef std::future<RegisterCapabilityOutcome> RegisterCapabilityOutcomeCallable
 typedef std::future<RejectInboundConnectionOutcome> RejectInboundConnectionOutcomeCallable;
 typedef std::future<RemoveTagsOutcome> RemoveTagsOutcomeCallable;
 typedef std::future<RevokeVpcEndpointAccessOutcome> RevokeVpcEndpointAccessOutcomeCallable;
+typedef std::future<RollbackServiceSoftwareUpdateOutcome> RollbackServiceSoftwareUpdateOutcomeCallable;
 typedef std::future<StartDomainMaintenanceOutcome> StartDomainMaintenanceOutcomeCallable;
 typedef std::future<StartServiceSoftwareUpdateOutcome> StartServiceSoftwareUpdateOutcomeCallable;
 typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
@@ -652,6 +656,10 @@ typedef std::function<void(const OpenSearchServiceClient*, const Model::RemoveTa
 typedef std::function<void(const OpenSearchServiceClient*, const Model::RevokeVpcEndpointAccessRequest&,
                            const Model::RevokeVpcEndpointAccessOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RevokeVpcEndpointAccessResponseReceivedHandler;
+typedef std::function<void(const OpenSearchServiceClient*, const Model::RollbackServiceSoftwareUpdateRequest&,
+                           const Model::RollbackServiceSoftwareUpdateOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    RollbackServiceSoftwareUpdateResponseReceivedHandler;
 typedef std::function<void(const OpenSearchServiceClient*, const Model::StartDomainMaintenanceRequest&,
                            const Model::StartDomainMaintenanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     StartDomainMaintenanceResponseReceivedHandler;

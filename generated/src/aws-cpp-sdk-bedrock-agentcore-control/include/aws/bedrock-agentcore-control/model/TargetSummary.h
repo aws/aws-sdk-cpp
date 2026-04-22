@@ -139,6 +139,23 @@ class TargetSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Priority for resolving resource URI conflicts across targets. Lower values
+   * take precedence. Defaults to 1000 when not set.</p>
+   */
+  inline int GetResourcePriority() const { return m_resourcePriority; }
+  inline bool ResourcePriorityHasBeenSet() const { return m_resourcePriorityHasBeenSet; }
+  inline void SetResourcePriority(int value) {
+    m_resourcePriorityHasBeenSet = true;
+    m_resourcePriority = value;
+  }
+  inline TargetSummary& WithResourcePriority(int value) {
+    SetResourcePriority(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_targetId;
 
@@ -151,12 +168,15 @@ class TargetSummary {
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
+
+  int m_resourcePriority{0};
   bool m_targetIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
+  bool m_resourcePriorityHasBeenSet = false;
 };
 
 }  // namespace Model

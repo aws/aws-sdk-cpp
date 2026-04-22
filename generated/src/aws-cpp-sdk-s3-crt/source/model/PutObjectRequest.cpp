@@ -111,6 +111,36 @@ Aws::Http::HeaderValueCollection PutObjectRequest::GetRequestSpecificHeaders() c
     ss.str("");
   }
 
+  if (m_checksumSHA512HasBeenSet) {
+    ss << m_checksumSHA512;
+    headers.emplace("x-amz-checksum-sha512", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumMD5HasBeenSet) {
+    ss << m_checksumMD5;
+    headers.emplace("x-amz-checksum-md5", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH64HasBeenSet) {
+    ss << m_checksumXXHASH64;
+    headers.emplace("x-amz-checksum-xxhash64", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH3HasBeenSet) {
+    ss << m_checksumXXHASH3;
+    headers.emplace("x-amz-checksum-xxhash3", ss.str());
+    ss.str("");
+  }
+
+  if (m_checksumXXHASH128HasBeenSet) {
+    ss << m_checksumXXHASH128;
+    headers.emplace("x-amz-checksum-xxhash128", ss.str());
+    ss.str("");
+  }
+
   if (m_expiresHasBeenSet) {
     headers.emplace("expires", m_expires.ToGmtString(Aws::Utils::DateFormat::RFC822));
   }

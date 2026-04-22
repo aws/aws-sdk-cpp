@@ -19,12 +19,12 @@ Aws::String ListStreamKeysRequest::SerializePayload() const {
     payload.WithString("channelArn", m_channelArn);
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();

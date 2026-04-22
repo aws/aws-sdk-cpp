@@ -22,16 +22,16 @@ ListStreamsResult::ListStreamsResult(const Aws::AmazonWebServiceResult<JsonValue
 ListStreamsResult& ListStreamsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("streams")) {
     Aws::Utils::Array<JsonView> streamsJsonList = jsonValue.GetArray("streams");
     for (unsigned streamsIndex = 0; streamsIndex < streamsJsonList.GetLength(); ++streamsIndex) {
       m_streams.push_back(streamsJsonList[streamsIndex].AsObject());
     }
     m_streamsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

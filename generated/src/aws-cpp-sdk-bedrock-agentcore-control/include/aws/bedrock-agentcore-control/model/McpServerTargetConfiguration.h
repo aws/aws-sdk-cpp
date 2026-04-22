@@ -74,6 +74,23 @@ class McpServerTargetConfiguration {
 
   ///@{
   /**
+   * <p>Priority for resolving MCP server targets with shared resource URIs. Lower
+   * values take precedence. Defaults to 1000 when not set.</p>
+   */
+  inline int GetResourcePriority() const { return m_resourcePriority; }
+  inline bool ResourcePriorityHasBeenSet() const { return m_resourcePriorityHasBeenSet; }
+  inline void SetResourcePriority(int value) {
+    m_resourcePriorityHasBeenSet = true;
+    m_resourcePriority = value;
+  }
+  inline McpServerTargetConfiguration& WithResourcePriority(int value) {
+    SetResourcePriority(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The listing mode for the MCP server target configuration. MCP resources for
    * default targets are cached at the control plane for faster access. MCP resources
    * for dynamic targets will be dynamically retrieved when listing tools.</p>
@@ -94,9 +111,12 @@ class McpServerTargetConfiguration {
 
   McpToolSchemaConfiguration m_mcpToolSchema;
 
+  int m_resourcePriority{0};
+
   ListingMode m_listingMode{ListingMode::NOT_SET};
   bool m_endpointHasBeenSet = false;
   bool m_mcpToolSchemaHasBeenSet = false;
+  bool m_resourcePriorityHasBeenSet = false;
   bool m_listingModeHasBeenSet = false;
 };
 

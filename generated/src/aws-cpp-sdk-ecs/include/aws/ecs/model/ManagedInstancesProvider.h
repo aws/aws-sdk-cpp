@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/AutoRepairConfiguration.h>
 #include <aws/ecs/model/InfrastructureOptimization.h>
 #include <aws/ecs/model/InstanceLaunchTemplate.h>
 #include <aws/ecs/model/PropagateMITags.h>
@@ -124,6 +125,26 @@ class ManagedInstancesProvider {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The auto repair configuration for the Amazon ECS Managed Instances capacity
+   * provider. Indicates whether Amazon ECS automatically replaces container
+   * instances that are detected as unhealthy.</p>
+   */
+  inline const AutoRepairConfiguration& GetAutoRepairConfiguration() const { return m_autoRepairConfiguration; }
+  inline bool AutoRepairConfigurationHasBeenSet() const { return m_autoRepairConfigurationHasBeenSet; }
+  template <typename AutoRepairConfigurationT = AutoRepairConfiguration>
+  void SetAutoRepairConfiguration(AutoRepairConfigurationT&& value) {
+    m_autoRepairConfigurationHasBeenSet = true;
+    m_autoRepairConfiguration = std::forward<AutoRepairConfigurationT>(value);
+  }
+  template <typename AutoRepairConfigurationT = AutoRepairConfiguration>
+  ManagedInstancesProvider& WithAutoRepairConfiguration(AutoRepairConfigurationT&& value) {
+    SetAutoRepairConfiguration(std::forward<AutoRepairConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_infrastructureRoleArn;
 
@@ -132,10 +153,13 @@ class ManagedInstancesProvider {
   PropagateMITags m_propagateTags{PropagateMITags::NOT_SET};
 
   InfrastructureOptimization m_infrastructureOptimization;
+
+  AutoRepairConfiguration m_autoRepairConfiguration;
   bool m_infrastructureRoleArnHasBeenSet = false;
   bool m_instanceLaunchTemplateHasBeenSet = false;
   bool m_propagateTagsHasBeenSet = false;
   bool m_infrastructureOptimizationHasBeenSet = false;
+  bool m_autoRepairConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

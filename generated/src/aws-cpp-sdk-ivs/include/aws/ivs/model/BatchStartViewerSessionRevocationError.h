@@ -53,6 +53,24 @@ class BatchStartViewerSessionRevocationError {
 
   ///@{
   /**
+   * <p>The ID of the viewer session to revoke.</p>
+   */
+  inline const Aws::String& GetViewerId() const { return m_viewerId; }
+  inline bool ViewerIdHasBeenSet() const { return m_viewerIdHasBeenSet; }
+  template <typename ViewerIdT = Aws::String>
+  void SetViewerId(ViewerIdT&& value) {
+    m_viewerIdHasBeenSet = true;
+    m_viewerId = std::forward<ViewerIdT>(value);
+  }
+  template <typename ViewerIdT = Aws::String>
+  BatchStartViewerSessionRevocationError& WithViewerId(ViewerIdT&& value) {
+    SetViewerId(std::forward<ViewerIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Error code.</p>
    */
   inline const Aws::String& GetCode() const { return m_code; }
@@ -86,36 +104,18 @@ class BatchStartViewerSessionRevocationError {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The ID of the viewer session to revoke.</p>
-   */
-  inline const Aws::String& GetViewerId() const { return m_viewerId; }
-  inline bool ViewerIdHasBeenSet() const { return m_viewerIdHasBeenSet; }
-  template <typename ViewerIdT = Aws::String>
-  void SetViewerId(ViewerIdT&& value) {
-    m_viewerIdHasBeenSet = true;
-    m_viewerId = std::forward<ViewerIdT>(value);
-  }
-  template <typename ViewerIdT = Aws::String>
-  BatchStartViewerSessionRevocationError& WithViewerId(ViewerIdT&& value) {
-    SetViewerId(std::forward<ViewerIdT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_channelArn;
+
+  Aws::String m_viewerId;
 
   Aws::String m_code;
 
   Aws::String m_message;
-
-  Aws::String m_viewerId;
   bool m_channelArnHasBeenSet = false;
+  bool m_viewerIdHasBeenSet = false;
   bool m_codeHasBeenSet = false;
   bool m_messageHasBeenSet = false;
-  bool m_viewerIdHasBeenSet = false;
 };
 
 }  // namespace Model

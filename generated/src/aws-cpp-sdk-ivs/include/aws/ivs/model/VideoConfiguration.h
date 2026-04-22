@@ -36,28 +36,10 @@ class VideoConfiguration {
 
   ///@{
   /**
-   * <p>Indicates the degree of required decoder performance for a profile. Normally
-   * this is set automatically by the encoder. For details, see the H.264
-   * specification.</p>
-   */
-  inline const Aws::String& GetAvcLevel() const { return m_avcLevel; }
-  inline bool AvcLevelHasBeenSet() const { return m_avcLevelHasBeenSet; }
-  template <typename AvcLevelT = Aws::String>
-  void SetAvcLevel(AvcLevelT&& value) {
-    m_avcLevelHasBeenSet = true;
-    m_avcLevel = std::forward<AvcLevelT>(value);
-  }
-  template <typename AvcLevelT = Aws::String>
-  VideoConfiguration& WithAvcLevel(AvcLevelT&& value) {
-    SetAvcLevel(std::forward<AvcLevelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Indicates to the decoder the requirements for decoding the stream. For
-   * definitions of the valid values, see the H.264 specification.</p>
+   * <p>(Deprecated) Indicates to the decoder the requirements for decoding the
+   * stream. For definitions of the valid values, see the H.264 specification. This
+   * is populated only when VideoConfiguration is part of the deprecated
+   * IngestConfiguration; otherwise, this is an empty string.</p>
    */
   inline const Aws::String& GetAvcProfile() const { return m_avcProfile; }
   inline bool AvcProfileHasBeenSet() const { return m_avcProfileHasBeenSet; }
@@ -69,6 +51,27 @@ class VideoConfiguration {
   template <typename AvcProfileT = Aws::String>
   VideoConfiguration& WithAvcProfile(AvcProfileT&& value) {
     SetAvcProfile(std::forward<AvcProfileT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>(Deprecated) Indicates the degree of required decoder performance for a
+   * profile. Normally this is set automatically by the encoder. For details, see the
+   * H.264 specification. This is populated only when VideoConfiguration is part of
+   * the deprecated IngestConfiguration; otherwise, this is an empty string.</p>
+   */
+  inline const Aws::String& GetAvcLevel() const { return m_avcLevel; }
+  inline bool AvcLevelHasBeenSet() const { return m_avcLevelHasBeenSet; }
+  template <typename AvcLevelT = Aws::String>
+  void SetAvcLevel(AvcLevelT&& value) {
+    m_avcLevelHasBeenSet = true;
+    m_avcLevel = std::forward<AvcLevelT>(value);
+  }
+  template <typename AvcLevelT = Aws::String>
+  VideoConfiguration& WithAvcLevel(AvcLevelT&& value) {
+    SetAvcLevel(std::forward<AvcLevelT>(value));
     return *this;
   }
   ///@}
@@ -111,45 +114,6 @@ class VideoConfiguration {
 
   ///@{
   /**
-   * <p>Indicates the degree of required decoder performance for a profile. Normally
-   * this is set automatically by the encoder. When an AVC codec is used, this field
-   * has the same value as <code>avcLevel</code>.</p>
-   */
-  inline const Aws::String& GetLevel() const { return m_level; }
-  inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
-  template <typename LevelT = Aws::String>
-  void SetLevel(LevelT&& value) {
-    m_levelHasBeenSet = true;
-    m_level = std::forward<LevelT>(value);
-  }
-  template <typename LevelT = Aws::String>
-  VideoConfiguration& WithLevel(LevelT&& value) {
-    SetLevel(std::forward<LevelT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Indicates to the decoder the requirements for decoding the stream. When an
-   * AVC codec is used, this field has the same value as <code>avcProfile</code>.</p>
-   */
-  inline const Aws::String& GetProfile() const { return m_profile; }
-  inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
-  template <typename ProfileT = Aws::String>
-  void SetProfile(ProfileT&& value) {
-    m_profileHasBeenSet = true;
-    m_profile = std::forward<ProfileT>(value);
-  }
-  template <typename ProfileT = Aws::String>
-  VideoConfiguration& WithProfile(ProfileT&& value) {
-    SetProfile(std::forward<ProfileT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The expected ingest bitrate (bits per second). This is configured in the
    * encoder.</p>
    */
@@ -177,25 +141,6 @@ class VideoConfiguration {
   }
   inline VideoConfiguration& WithTargetFramerate(long long value) {
     SetTargetFramerate(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Name of the video track. If multitrack is not enabled, this is track0 (the
-   * sole track).</p>
-   */
-  inline const Aws::String& GetTrack() const { return m_track; }
-  inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
-  template <typename TrackT = Aws::String>
-  void SetTrack(TrackT&& value) {
-    m_trackHasBeenSet = true;
-    m_track = std::forward<TrackT>(value);
-  }
-  template <typename TrackT = Aws::String>
-  VideoConfiguration& WithTrack(TrackT&& value) {
-    SetTrack(std::forward<TrackT>(value));
     return *this;
   }
   ///@}
@@ -231,39 +176,97 @@ class VideoConfiguration {
     return *this;
   }
   ///@}
- private:
-  Aws::String m_avcLevel;
 
+  ///@{
+  /**
+   * <p>Indicates the degree of required decoder performance for a profile. Normally
+   * this is set automatically by the encoder. When an AVC codec is used, this field
+   * has the same value as <code>avcLevel</code>.</p>
+   */
+  inline const Aws::String& GetLevel() const { return m_level; }
+  inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
+  template <typename LevelT = Aws::String>
+  void SetLevel(LevelT&& value) {
+    m_levelHasBeenSet = true;
+    m_level = std::forward<LevelT>(value);
+  }
+  template <typename LevelT = Aws::String>
+  VideoConfiguration& WithLevel(LevelT&& value) {
+    SetLevel(std::forward<LevelT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Name of the video track. If multitrack is not enabled, this is Track0 (the
+   * sole track).</p>
+   */
+  inline const Aws::String& GetTrack() const { return m_track; }
+  inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
+  template <typename TrackT = Aws::String>
+  void SetTrack(TrackT&& value) {
+    m_trackHasBeenSet = true;
+    m_track = std::forward<TrackT>(value);
+  }
+  template <typename TrackT = Aws::String>
+  VideoConfiguration& WithTrack(TrackT&& value) {
+    SetTrack(std::forward<TrackT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates to the decoder the requirements for decoding the stream. When an
+   * AVC codec is used, this field has the same value as <code>avcProfile</code>.</p>
+   */
+  inline const Aws::String& GetProfile() const { return m_profile; }
+  inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
+  template <typename ProfileT = Aws::String>
+  void SetProfile(ProfileT&& value) {
+    m_profileHasBeenSet = true;
+    m_profile = std::forward<ProfileT>(value);
+  }
+  template <typename ProfileT = Aws::String>
+  VideoConfiguration& WithProfile(ProfileT&& value) {
+    SetProfile(std::forward<ProfileT>(value));
+    return *this;
+  }
+  ///@}
+ private:
   Aws::String m_avcProfile;
+
+  Aws::String m_avcLevel;
 
   Aws::String m_codec;
 
   Aws::String m_encoder;
 
-  Aws::String m_level;
-
-  Aws::String m_profile;
-
   long long m_targetBitrate{0};
 
   long long m_targetFramerate{0};
 
-  Aws::String m_track;
-
   long long m_videoHeight{0};
 
   long long m_videoWidth{0};
-  bool m_avcLevelHasBeenSet = false;
+
+  Aws::String m_level;
+
+  Aws::String m_track;
+
+  Aws::String m_profile;
   bool m_avcProfileHasBeenSet = false;
+  bool m_avcLevelHasBeenSet = false;
   bool m_codecHasBeenSet = false;
   bool m_encoderHasBeenSet = false;
-  bool m_levelHasBeenSet = false;
-  bool m_profileHasBeenSet = false;
   bool m_targetBitrateHasBeenSet = false;
   bool m_targetFramerateHasBeenSet = false;
-  bool m_trackHasBeenSet = false;
   bool m_videoHeightHasBeenSet = false;
   bool m_videoWidthHasBeenSet = false;
+  bool m_levelHasBeenSet = false;
+  bool m_trackHasBeenSet = false;
+  bool m_profileHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -48,6 +48,31 @@ Checksum& Checksum::operator=(const XmlNode& xmlNode) {
       m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
       m_checksumSHA256HasBeenSet = true;
     }
+    XmlNode checksumSHA512Node = resultNode.FirstChild("ChecksumSHA512");
+    if (!checksumSHA512Node.IsNull()) {
+      m_checksumSHA512 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA512Node.GetText());
+      m_checksumSHA512HasBeenSet = true;
+    }
+    XmlNode checksumMD5Node = resultNode.FirstChild("ChecksumMD5");
+    if (!checksumMD5Node.IsNull()) {
+      m_checksumMD5 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumMD5Node.GetText());
+      m_checksumMD5HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH64Node = resultNode.FirstChild("ChecksumXXHASH64");
+    if (!checksumXXHASH64Node.IsNull()) {
+      m_checksumXXHASH64 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH64Node.GetText());
+      m_checksumXXHASH64HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH3Node = resultNode.FirstChild("ChecksumXXHASH3");
+    if (!checksumXXHASH3Node.IsNull()) {
+      m_checksumXXHASH3 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH3Node.GetText());
+      m_checksumXXHASH3HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH128Node = resultNode.FirstChild("ChecksumXXHASH128");
+    if (!checksumXXHASH128Node.IsNull()) {
+      m_checksumXXHASH128 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH128Node.GetText());
+      m_checksumXXHASH128HasBeenSet = true;
+    }
     XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
     if (!checksumTypeNode.IsNull()) {
       m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(
@@ -84,6 +109,31 @@ void Checksum::AddToNode(XmlNode& parentNode) const {
   if (m_checksumSHA256HasBeenSet) {
     XmlNode checksumSHA256Node = parentNode.CreateChildElement("ChecksumSHA256");
     checksumSHA256Node.SetText(m_checksumSHA256);
+  }
+
+  if (m_checksumSHA512HasBeenSet) {
+    XmlNode checksumSHA512Node = parentNode.CreateChildElement("ChecksumSHA512");
+    checksumSHA512Node.SetText(m_checksumSHA512);
+  }
+
+  if (m_checksumMD5HasBeenSet) {
+    XmlNode checksumMD5Node = parentNode.CreateChildElement("ChecksumMD5");
+    checksumMD5Node.SetText(m_checksumMD5);
+  }
+
+  if (m_checksumXXHASH64HasBeenSet) {
+    XmlNode checksumXXHASH64Node = parentNode.CreateChildElement("ChecksumXXHASH64");
+    checksumXXHASH64Node.SetText(m_checksumXXHASH64);
+  }
+
+  if (m_checksumXXHASH3HasBeenSet) {
+    XmlNode checksumXXHASH3Node = parentNode.CreateChildElement("ChecksumXXHASH3");
+    checksumXXHASH3Node.SetText(m_checksumXXHASH3);
+  }
+
+  if (m_checksumXXHASH128HasBeenSet) {
+    XmlNode checksumXXHASH128Node = parentNode.CreateChildElement("ChecksumXXHASH128");
+    checksumXXHASH128Node.SetText(m_checksumXXHASH128);
   }
 
   if (m_checksumTypeHasBeenSet) {

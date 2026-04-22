@@ -18,13 +18,21 @@ namespace Model {
 StreamSession::StreamSession(JsonView jsonValue) { *this = jsonValue; }
 
 StreamSession& StreamSession::operator=(JsonView jsonValue) {
-  if (jsonValue.ValueExists("channel")) {
-    m_channel = jsonValue.GetObject("channel");
-    m_channelHasBeenSet = true;
+  if (jsonValue.ValueExists("streamId")) {
+    m_streamId = jsonValue.GetString("streamId");
+    m_streamIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startTime")) {
+    m_startTime = jsonValue.GetString("startTime");
+    m_startTimeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetString("endTime");
     m_endTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("channel")) {
+    m_channel = jsonValue.GetObject("channel");
+    m_channelHasBeenSet = true;
   }
   if (jsonValue.ValueExists("ingestConfiguration")) {
     m_ingestConfiguration = jsonValue.GetObject("ingestConfiguration");
@@ -37,14 +45,6 @@ StreamSession& StreamSession::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("recordingConfiguration")) {
     m_recordingConfiguration = jsonValue.GetObject("recordingConfiguration");
     m_recordingConfigurationHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("startTime")) {
-    m_startTime = jsonValue.GetString("startTime");
-    m_startTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("streamId")) {
-    m_streamId = jsonValue.GetString("streamId");
-    m_streamIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("truncatedEvents")) {
     Aws::Utils::Array<JsonView> truncatedEventsJsonList = jsonValue.GetArray("truncatedEvents");
@@ -59,12 +59,20 @@ StreamSession& StreamSession::operator=(JsonView jsonValue) {
 JsonValue StreamSession::Jsonize() const {
   JsonValue payload;
 
-  if (m_channelHasBeenSet) {
-    payload.WithObject("channel", m_channel.Jsonize());
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("streamId", m_streamId);
+  }
+
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
   }
 
   if (m_endTimeHasBeenSet) {
     payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithObject("channel", m_channel.Jsonize());
   }
 
   if (m_ingestConfigurationHasBeenSet) {
@@ -77,14 +85,6 @@ JsonValue StreamSession::Jsonize() const {
 
   if (m_recordingConfigurationHasBeenSet) {
     payload.WithObject("recordingConfiguration", m_recordingConfiguration.Jsonize());
-  }
-
-  if (m_startTimeHasBeenSet) {
-    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_streamIdHasBeenSet) {
-    payload.WithString("streamId", m_streamId);
   }
 
   if (m_truncatedEventsHasBeenSet) {

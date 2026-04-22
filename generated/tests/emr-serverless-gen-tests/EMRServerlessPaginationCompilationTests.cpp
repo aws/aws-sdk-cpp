@@ -11,6 +11,7 @@
 #include <aws/emr-serverless/model/ListJobRunAttemptsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListApplicationsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunsPaginationTraits.h>
+#include <aws/emr-serverless/model/ListSessionsPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

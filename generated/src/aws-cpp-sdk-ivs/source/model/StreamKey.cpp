@@ -22,6 +22,10 @@ StreamKey& StreamKey::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("value")) {
+    m_value = jsonValue.GetString("value");
+    m_valueHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("channelArn")) {
     m_channelArn = jsonValue.GetString("channelArn");
     m_channelArnHasBeenSet = true;
@@ -33,10 +37,6 @@ StreamKey& StreamKey::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("value")) {
-    m_value = jsonValue.GetString("value");
-    m_valueHasBeenSet = true;
-  }
   return *this;
 }
 
@@ -45,6 +45,10 @@ JsonValue StreamKey::Jsonize() const {
 
   if (m_arnHasBeenSet) {
     payload.WithString("arn", m_arn);
+  }
+
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
   }
 
   if (m_channelArnHasBeenSet) {
@@ -57,10 +61,6 @@ JsonValue StreamKey::Jsonize() const {
       tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
     }
     payload.WithObject("tags", std::move(tagsJsonMap));
-  }
-
-  if (m_valueHasBeenSet) {
-    payload.WithString("value", m_value);
   }
 
   return payload;

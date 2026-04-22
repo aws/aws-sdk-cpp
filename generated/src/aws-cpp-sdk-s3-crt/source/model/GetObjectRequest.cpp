@@ -167,5 +167,10 @@ Aws::Vector<Aws::String> GetObjectRequest::GetResponseChecksumAlgorithmNames() c
   responseChecksumAlgorithmNames.push_back("CRC32C");
   responseChecksumAlgorithmNames.push_back("SHA256");
   responseChecksumAlgorithmNames.push_back("SHA1");
+  responseChecksumAlgorithmNames.push_back("SHA512");
+  responseChecksumAlgorithmNames.push_back("MD5");
+  responseChecksumAlgorithmNames.push_back("XXHASH64");
+  responseChecksumAlgorithmNames.push_back("XXHASH3");
+  responseChecksumAlgorithmNames.push_back("XXHASH128");
   return responseChecksumAlgorithmNames;
 }

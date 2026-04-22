@@ -8,6 +8,7 @@
 
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlClientPagination.h>
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControlPaginationBase.h>
+#include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>

@@ -236,6 +236,33 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Creates a new ad configuration to be used for server-side ad
+   * insertion.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateAdConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateAdConfigurationOutcome CreateAdConfiguration(const Model::CreateAdConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateAdConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateAdConfigurationRequestT = Model::CreateAdConfigurationRequest>
+  Model::CreateAdConfigurationOutcomeCallable CreateAdConfigurationCallable(const CreateAdConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::CreateAdConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for CreateAdConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateAdConfigurationRequestT = Model::CreateAdConfigurationRequest>
+  void CreateAdConfigurationAsync(const CreateAdConfigurationRequestT& request, const CreateAdConfigurationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::CreateAdConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>Creates a new channel and an associated stream key to start
    * streaming.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/CreateChannel">AWS
@@ -359,6 +386,32 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void CreateStreamKeyAsync(const CreateStreamKeyRequestT& request, const CreateStreamKeyResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::CreateStreamKey, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes the specified ad configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/DeleteAdConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteAdConfigurationOutcome DeleteAdConfiguration(const Model::DeleteAdConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteAdConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteAdConfigurationRequestT = Model::DeleteAdConfigurationRequest>
+  Model::DeleteAdConfigurationOutcomeCallable DeleteAdConfigurationCallable(const DeleteAdConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::DeleteAdConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteAdConfiguration that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteAdConfigurationRequestT = Model::DeleteAdConfigurationRequest>
+  void DeleteAdConfigurationAsync(const DeleteAdConfigurationRequestT& request, const DeleteAdConfigurationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::DeleteAdConfiguration, request, handler, context);
   }
 
   /**
@@ -511,6 +564,33 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void DeleteStreamKeyAsync(const DeleteStreamKeyRequestT& request, const DeleteStreamKeyResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::DeleteStreamKey, request, handler, context);
+  }
+
+  /**
+   * <p>Gets the ad configuration represented by the specified ARN.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/GetAdConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetAdConfigurationOutcome GetAdConfiguration(const Model::GetAdConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetAdConfiguration that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetAdConfigurationRequestT = Model::GetAdConfigurationRequest>
+  Model::GetAdConfigurationOutcomeCallable GetAdConfigurationCallable(const GetAdConfigurationRequestT& request) const {
+    return SubmitCallable(&IVSClient::GetAdConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for GetAdConfiguration that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetAdConfigurationRequestT = Model::GetAdConfigurationRequest>
+  void GetAdConfigurationAsync(const GetAdConfigurationRequestT& request, const GetAdConfigurationResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::GetAdConfiguration, request, handler, context);
   }
 
   /**
@@ -736,6 +816,67 @@ class AWS_IVS_API IVSClient : public Aws::Client::AWSJsonClient,
   void ImportPlaybackKeyPairAsync(const ImportPlaybackKeyPairRequestT& request, const ImportPlaybackKeyPairResponseReceivedHandler& handler,
                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&IVSClient::ImportPlaybackKeyPair, request, handler, context);
+  }
+
+  /**
+   * <p>Inserts an ad marker in the playlist for the specified channel and duration
+   * using the ad configuration associated with the channel.</p> <p> <b>Note:</b> AWS
+   * Elemental MediaTailor (EMT), the service that handles ad requests, provides
+   * CloudWatch metrics to help you monitor the success or failure of each
+   * InsertAdBreak operation. See <a
+   * href="https://docs.aws.amazon.com/mediatailor/latest/ug/monitoring-cloudwatch-metrics.html">Monitoring
+   * AWS Elemental MediaTailor with Amazon CloudWatch</a> metrics in the <i>AWS
+   * Elemental MediaTailor User Guide</i> for details on available
+   * metrics.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/InsertAdBreak">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::InsertAdBreakOutcome InsertAdBreak(const Model::InsertAdBreakRequest& request) const;
+
+  /**
+   * A Callable wrapper for InsertAdBreak that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename InsertAdBreakRequestT = Model::InsertAdBreakRequest>
+  Model::InsertAdBreakOutcomeCallable InsertAdBreakCallable(const InsertAdBreakRequestT& request) const {
+    return SubmitCallable(&IVSClient::InsertAdBreak, request);
+  }
+
+  /**
+   * An Async wrapper for InsertAdBreak that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename InsertAdBreakRequestT = Model::InsertAdBreakRequest>
+  void InsertAdBreakAsync(const InsertAdBreakRequestT& request, const InsertAdBreakResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&IVSClient::InsertAdBreak, request, handler, context);
+  }
+
+  /**
+   * <p>Gets summary information about all ad configurations in your account, in the
+   * AWS region where the API request is processed.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ivs-2020-07-14/ListAdConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAdConfigurationsOutcome ListAdConfigurations(const Model::ListAdConfigurationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListAdConfigurations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListAdConfigurationsRequestT = Model::ListAdConfigurationsRequest>
+  Model::ListAdConfigurationsOutcomeCallable ListAdConfigurationsCallable(const ListAdConfigurationsRequestT& request = {}) const {
+    return SubmitCallable(&IVSClient::ListAdConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListAdConfigurations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListAdConfigurationsRequestT = Model::ListAdConfigurationsRequest>
+  void ListAdConfigurationsAsync(const ListAdConfigurationsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListAdConfigurationsRequestT& request = {}) const {
+    return SubmitAsync(&IVSClient::ListAdConfigurations, request, handler, context);
   }
 
   /**

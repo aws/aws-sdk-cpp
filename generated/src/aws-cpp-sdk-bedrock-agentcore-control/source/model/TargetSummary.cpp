@@ -42,6 +42,10 @@ TargetSummary& TargetSummary::operator=(JsonView jsonValue) {
     m_updatedAt = jsonValue.GetString("updatedAt");
     m_updatedAtHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("resourcePriority")) {
+    m_resourcePriority = jsonValue.GetInteger("resourcePriority");
+    m_resourcePriorityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -70,6 +74,10 @@ JsonValue TargetSummary::Jsonize() const {
 
   if (m_updatedAtHasBeenSet) {
     payload.WithString("updatedAt", m_updatedAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_resourcePriorityHasBeenSet) {
+    payload.WithInteger("resourcePriority", m_resourcePriority);
   }
 
   return payload;

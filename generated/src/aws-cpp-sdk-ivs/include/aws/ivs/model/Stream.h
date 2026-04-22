@@ -55,16 +55,19 @@ class Stream {
 
   ///@{
   /**
-   * <p>The stream’s health.</p>
+   * <p>Unique identifier for a live or previously live stream in the specified
+   * channel.</p>
    */
-  inline StreamHealth GetHealth() const { return m_health; }
-  inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
-  inline void SetHealth(StreamHealth value) {
-    m_healthHasBeenSet = true;
-    m_health = value;
+  inline const Aws::String& GetStreamId() const { return m_streamId; }
+  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+  template <typename StreamIdT = Aws::String>
+  void SetStreamId(StreamIdT&& value) {
+    m_streamIdHasBeenSet = true;
+    m_streamId = std::forward<StreamIdT>(value);
   }
-  inline Stream& WithHealth(StreamHealth value) {
-    SetHealth(value);
+  template <typename StreamIdT = Aws::String>
+  Stream& WithStreamId(StreamIdT&& value) {
+    SetStreamId(std::forward<StreamIdT>(value));
     return *this;
   }
   ///@}
@@ -127,19 +130,16 @@ class Stream {
 
   ///@{
   /**
-   * <p>Unique identifier for a live or previously live stream in the specified
-   * channel.</p>
+   * <p>The stream’s health.</p>
    */
-  inline const Aws::String& GetStreamId() const { return m_streamId; }
-  inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
-  template <typename StreamIdT = Aws::String>
-  void SetStreamId(StreamIdT&& value) {
-    m_streamIdHasBeenSet = true;
-    m_streamId = std::forward<StreamIdT>(value);
+  inline StreamHealth GetHealth() const { return m_health; }
+  inline bool HealthHasBeenSet() const { return m_healthHasBeenSet; }
+  inline void SetHealth(StreamHealth value) {
+    m_healthHasBeenSet = true;
+    m_health = value;
   }
-  template <typename StreamIdT = Aws::String>
-  Stream& WithStreamId(StreamIdT&& value) {
-    SetStreamId(std::forward<StreamIdT>(value));
+  inline Stream& WithHealth(StreamHealth value) {
+    SetHealth(value);
     return *this;
   }
   ///@}
@@ -166,7 +166,7 @@ class Stream {
  private:
   Aws::String m_channelArn;
 
-  StreamHealth m_health{StreamHealth::NOT_SET};
+  Aws::String m_streamId;
 
   Aws::String m_playbackUrl;
 
@@ -174,15 +174,15 @@ class Stream {
 
   StreamState m_state{StreamState::NOT_SET};
 
-  Aws::String m_streamId;
+  StreamHealth m_health{StreamHealth::NOT_SET};
 
   long long m_viewerCount{0};
   bool m_channelArnHasBeenSet = false;
-  bool m_healthHasBeenSet = false;
+  bool m_streamIdHasBeenSet = false;
   bool m_playbackUrlHasBeenSet = false;
   bool m_startTimeHasBeenSet = false;
   bool m_stateHasBeenSet = false;
-  bool m_streamIdHasBeenSet = false;
+  bool m_healthHasBeenSet = false;
   bool m_viewerCountHasBeenSet = false;
 };
 

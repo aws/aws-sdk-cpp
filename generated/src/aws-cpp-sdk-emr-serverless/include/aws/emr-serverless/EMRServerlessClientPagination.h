@@ -9,6 +9,7 @@
 #include <aws/emr-serverless/model/ListApplicationsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunsPaginationTraits.h>
+#include <aws/emr-serverless/model/ListSessionsPaginationTraits.h>
 
 namespace Aws {
 namespace EMRServerless {
@@ -19,6 +20,8 @@ using ListJobRunAttemptsPaginator = Aws::Utils::Pagination::Paginator<EMRServerl
                                                                       Pagination::ListJobRunAttemptsPaginationTraits<EMRServerlessClient>>;
 using ListJobRunsPaginator = Aws::Utils::Pagination::Paginator<EMRServerlessClient, Model::ListJobRunsRequest,
                                                                Pagination::ListJobRunsPaginationTraits<EMRServerlessClient>>;
+using ListSessionsPaginator = Aws::Utils::Pagination::Paginator<EMRServerlessClient, Model::ListSessionsRequest,
+                                                                Pagination::ListSessionsPaginationTraits<EMRServerlessClient>>;
 
 }  // namespace EMRServerless
 }  // namespace Aws

@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iotwireless/IoTWirelessRequest.h>
 #include <aws/iotwireless/IoTWireless_EXPORTS.h>
+#include <aws/iotwireless/model/AdvancedConfiguration.h>
 #include <aws/iotwireless/model/CellTowers.h>
 #include <aws/iotwireless/model/Gnss.h>
 #include <aws/iotwireless/model/Ip.h>
@@ -137,6 +138,25 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * Optional configuration to customize position estimates. If not provided,
+   * defaults are applied.
+   */
+  inline const AdvancedConfiguration& GetAdvancedConfiguration() const { return m_advancedConfiguration; }
+  inline bool AdvancedConfigurationHasBeenSet() const { return m_advancedConfigurationHasBeenSet; }
+  template <typename AdvancedConfigurationT = AdvancedConfiguration>
+  void SetAdvancedConfiguration(AdvancedConfigurationT&& value) {
+    m_advancedConfigurationHasBeenSet = true;
+    m_advancedConfiguration = std::forward<AdvancedConfigurationT>(value);
+  }
+  template <typename AdvancedConfigurationT = AdvancedConfiguration>
+  GetPositionEstimateRequest& WithAdvancedConfiguration(AdvancedConfigurationT&& value) {
+    SetAdvancedConfiguration(std::forward<AdvancedConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<WiFiAccessPoint> m_wiFiAccessPoints;
 
@@ -147,11 +167,14 @@ class GetPositionEstimateRequest : public IoTWirelessRequest {
   Gnss m_gnss;
 
   Aws::Utils::DateTime m_timestamp{};
+
+  AdvancedConfiguration m_advancedConfiguration;
   bool m_wiFiAccessPointsHasBeenSet = false;
   bool m_cellTowersHasBeenSet = false;
   bool m_ipHasBeenSet = false;
   bool m_gnssHasBeenSet = false;
   bool m_timestampHasBeenSet = false;
+  bool m_advancedConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

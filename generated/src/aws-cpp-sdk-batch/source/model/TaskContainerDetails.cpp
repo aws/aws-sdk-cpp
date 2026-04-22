@@ -108,6 +108,14 @@ TaskContainerDetails& TaskContainerDetails::operator=(JsonView jsonValue) {
     m_user = jsonValue.GetString("user");
     m_userHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("startTimeout")) {
+    m_startTimeout = jsonValue.GetInteger("startTimeout");
+    m_startTimeoutHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("stopTimeout")) {
+    m_stopTimeout = jsonValue.GetInteger("stopTimeout");
+    m_stopTimeoutHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("exitCode")) {
     m_exitCode = jsonValue.GetInteger("exitCode");
     m_exitCodeHasBeenSet = true;
@@ -228,6 +236,14 @@ JsonValue TaskContainerDetails::Jsonize() const {
 
   if (m_userHasBeenSet) {
     payload.WithString("user", m_user);
+  }
+
+  if (m_startTimeoutHasBeenSet) {
+    payload.WithInteger("startTimeout", m_startTimeout);
+  }
+
+  if (m_stopTimeoutHasBeenSet) {
+    payload.WithInteger("stopTimeout", m_stopTimeout);
   }
 
   if (m_exitCodeHasBeenSet) {

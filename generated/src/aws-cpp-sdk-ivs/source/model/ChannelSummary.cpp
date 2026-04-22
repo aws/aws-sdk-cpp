@@ -22,29 +22,17 @@ ChannelSummary& ChannelSummary::operator=(JsonView jsonValue) {
     m_arn = jsonValue.GetString("arn");
     m_arnHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("authorized")) {
-    m_authorized = jsonValue.GetBool("authorized");
-    m_authorizedHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("insecureIngest")) {
-    m_insecureIngest = jsonValue.GetBool("insecureIngest");
-    m_insecureIngestHasBeenSet = true;
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("latencyMode")) {
     m_latencyMode = ChannelLatencyModeMapper::GetChannelLatencyModeForName(jsonValue.GetString("latencyMode"));
     m_latencyModeHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("name")) {
-    m_name = jsonValue.GetString("name");
-    m_nameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("playbackRestrictionPolicyArn")) {
-    m_playbackRestrictionPolicyArn = jsonValue.GetString("playbackRestrictionPolicyArn");
-    m_playbackRestrictionPolicyArnHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("preset")) {
-    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
-    m_presetHasBeenSet = true;
+  if (jsonValue.ValueExists("authorized")) {
+    m_authorized = jsonValue.GetBool("authorized");
+    m_authorizedHasBeenSet = true;
   }
   if (jsonValue.ValueExists("recordingConfigurationArn")) {
     m_recordingConfigurationArn = jsonValue.GetString("recordingConfigurationArn");
@@ -57,9 +45,25 @@ ChannelSummary& ChannelSummary::operator=(JsonView jsonValue) {
     }
     m_tagsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("insecureIngest")) {
+    m_insecureIngest = jsonValue.GetBool("insecureIngest");
+    m_insecureIngestHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("type")) {
     m_type = ChannelTypeMapper::GetChannelTypeForName(jsonValue.GetString("type"));
     m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("preset")) {
+    m_preset = TranscodePresetMapper::GetTranscodePresetForName(jsonValue.GetString("preset"));
+    m_presetHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("playbackRestrictionPolicyArn")) {
+    m_playbackRestrictionPolicyArn = jsonValue.GetString("playbackRestrictionPolicyArn");
+    m_playbackRestrictionPolicyArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("adConfigurationArn")) {
+    m_adConfigurationArn = jsonValue.GetString("adConfigurationArn");
+    m_adConfigurationArnHasBeenSet = true;
   }
   return *this;
 }
@@ -71,28 +75,16 @@ JsonValue ChannelSummary::Jsonize() const {
     payload.WithString("arn", m_arn);
   }
 
-  if (m_authorizedHasBeenSet) {
-    payload.WithBool("authorized", m_authorized);
-  }
-
-  if (m_insecureIngestHasBeenSet) {
-    payload.WithBool("insecureIngest", m_insecureIngest);
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
   }
 
   if (m_latencyModeHasBeenSet) {
     payload.WithString("latencyMode", ChannelLatencyModeMapper::GetNameForChannelLatencyMode(m_latencyMode));
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("name", m_name);
-  }
-
-  if (m_playbackRestrictionPolicyArnHasBeenSet) {
-    payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
-  }
-
-  if (m_presetHasBeenSet) {
-    payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  if (m_authorizedHasBeenSet) {
+    payload.WithBool("authorized", m_authorized);
   }
 
   if (m_recordingConfigurationArnHasBeenSet) {
@@ -107,8 +99,24 @@ JsonValue ChannelSummary::Jsonize() const {
     payload.WithObject("tags", std::move(tagsJsonMap));
   }
 
+  if (m_insecureIngestHasBeenSet) {
+    payload.WithBool("insecureIngest", m_insecureIngest);
+  }
+
   if (m_typeHasBeenSet) {
     payload.WithString("type", ChannelTypeMapper::GetNameForChannelType(m_type));
+  }
+
+  if (m_presetHasBeenSet) {
+    payload.WithString("preset", TranscodePresetMapper::GetNameForTranscodePreset(m_preset));
+  }
+
+  if (m_playbackRestrictionPolicyArnHasBeenSet) {
+    payload.WithString("playbackRestrictionPolicyArn", m_playbackRestrictionPolicyArn);
+  }
+
+  if (m_adConfigurationArnHasBeenSet) {
+    payload.WithString("adConfigurationArn", m_adConfigurationArn);
   }
 
   return payload;

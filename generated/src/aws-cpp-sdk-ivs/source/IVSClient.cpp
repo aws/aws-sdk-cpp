@@ -23,15 +23,18 @@
 #include <aws/ivs/model/BatchGetChannelRequest.h>
 #include <aws/ivs/model/BatchGetStreamKeyRequest.h>
 #include <aws/ivs/model/BatchStartViewerSessionRevocationRequest.h>
+#include <aws/ivs/model/CreateAdConfigurationRequest.h>
 #include <aws/ivs/model/CreateChannelRequest.h>
 #include <aws/ivs/model/CreatePlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/CreateRecordingConfigurationRequest.h>
 #include <aws/ivs/model/CreateStreamKeyRequest.h>
+#include <aws/ivs/model/DeleteAdConfigurationRequest.h>
 #include <aws/ivs/model/DeleteChannelRequest.h>
 #include <aws/ivs/model/DeletePlaybackKeyPairRequest.h>
 #include <aws/ivs/model/DeletePlaybackRestrictionPolicyRequest.h>
 #include <aws/ivs/model/DeleteRecordingConfigurationRequest.h>
 #include <aws/ivs/model/DeleteStreamKeyRequest.h>
+#include <aws/ivs/model/GetAdConfigurationRequest.h>
 #include <aws/ivs/model/GetChannelRequest.h>
 #include <aws/ivs/model/GetPlaybackKeyPairRequest.h>
 #include <aws/ivs/model/GetPlaybackRestrictionPolicyRequest.h>
@@ -40,6 +43,8 @@
 #include <aws/ivs/model/GetStreamRequest.h>
 #include <aws/ivs/model/GetStreamSessionRequest.h>
 #include <aws/ivs/model/ImportPlaybackKeyPairRequest.h>
+#include <aws/ivs/model/InsertAdBreakRequest.h>
+#include <aws/ivs/model/ListAdConfigurationsRequest.h>
 #include <aws/ivs/model/ListChannelsRequest.h>
 #include <aws/ivs/model/ListPlaybackKeyPairsRequest.h>
 #include <aws/ivs/model/ListPlaybackRestrictionPoliciesRequest.h>
@@ -241,6 +246,17 @@ BatchStartViewerSessionRevocationOutcome IVSClient::BatchStartViewerSessionRevoc
                             : BatchStartViewerSessionRevocationOutcome(std::move(result.GetError()));
 }
 
+CreateAdConfigurationOutcome IVSClient::CreateAdConfiguration(const CreateAdConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/CreateAdConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateAdConfigurationOutcome(result.GetResultWithOwnership())
+                            : CreateAdConfigurationOutcome(std::move(result.GetError()));
+}
+
 CreateChannelOutcome IVSClient::CreateChannel(const CreateChannelRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -283,6 +299,17 @@ CreateStreamKeyOutcome IVSClient::CreateStreamKey(const CreateStreamKeyRequest& 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateStreamKeyOutcome(result.GetResultWithOwnership())
                             : CreateStreamKeyOutcome(std::move(result.GetError()));
+}
+
+DeleteAdConfigurationOutcome IVSClient::DeleteAdConfiguration(const DeleteAdConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/DeleteAdConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeleteAdConfigurationOutcome(result.GetResultWithOwnership())
+                            : DeleteAdConfigurationOutcome(std::move(result.GetError()));
 }
 
 DeleteChannelOutcome IVSClient::DeleteChannel(const DeleteChannelRequest& request) const {
@@ -338,6 +365,17 @@ DeleteStreamKeyOutcome IVSClient::DeleteStreamKey(const DeleteStreamKeyRequest& 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DeleteStreamKeyOutcome(result.GetResultWithOwnership())
                             : DeleteStreamKeyOutcome(std::move(result.GetError()));
+}
+
+GetAdConfigurationOutcome IVSClient::GetAdConfiguration(const GetAdConfigurationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/GetAdConfiguration");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetAdConfigurationOutcome(result.GetResultWithOwnership())
+                            : GetAdConfigurationOutcome(std::move(result.GetError()));
 }
 
 GetChannelOutcome IVSClient::GetChannel(const GetChannelRequest& request) const {
@@ -423,6 +461,27 @@ ImportPlaybackKeyPairOutcome IVSClient::ImportPlaybackKeyPair(const ImportPlayba
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ImportPlaybackKeyPairOutcome(result.GetResultWithOwnership())
                             : ImportPlaybackKeyPairOutcome(std::move(result.GetError()));
+}
+
+InsertAdBreakOutcome IVSClient::InsertAdBreak(const InsertAdBreakRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/InsertAdBreak");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InsertAdBreakOutcome(result.GetResultWithOwnership()) : InsertAdBreakOutcome(std::move(result.GetError()));
+}
+
+ListAdConfigurationsOutcome IVSClient::ListAdConfigurations(const ListAdConfigurationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ListAdConfigurations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListAdConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAdConfigurationsOutcome(std::move(result.GetError()));
 }
 
 ListChannelsOutcome IVSClient::ListChannels(const ListChannelsRequest& request) const {

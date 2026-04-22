@@ -49,22 +49,6 @@ class ListStreamsRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Maximum number of streams to return. Default: 100.</p>
-   */
-  inline int GetMaxResults() const { return m_maxResults; }
-  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
-  inline void SetMaxResults(int value) {
-    m_maxResultsHasBeenSet = true;
-    m_maxResults = value;
-  }
-  inline ListStreamsRequest& WithMaxResults(int value) {
-    SetMaxResults(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The first stream to retrieve. This is used for pagination; see the
    * <code>nextToken</code> response field.</p>
    */
@@ -81,15 +65,31 @@ class ListStreamsRequest : public IVSRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Maximum number of streams to return. Default: 100.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListStreamsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
  private:
   StreamFilters m_filterBy;
 
-  int m_maxResults{0};
-
   Aws::String m_nextToken;
+
+  int m_maxResults{0};
   bool m_filterByHasBeenSet = false;
-  bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
 };
 
 }  // namespace Model

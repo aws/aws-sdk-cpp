@@ -53,24 +53,6 @@ class PlaybackKeyPair {
 
   ///@{
   /**
-   * <p>Key-pair identifier.</p>
-   */
-  inline const Aws::String& GetFingerprint() const { return m_fingerprint; }
-  inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
-  template <typename FingerprintT = Aws::String>
-  void SetFingerprint(FingerprintT&& value) {
-    m_fingerprintHasBeenSet = true;
-    m_fingerprint = std::forward<FingerprintT>(value);
-  }
-  template <typename FingerprintT = Aws::String>
-  PlaybackKeyPair& WithFingerprint(FingerprintT&& value) {
-    SetFingerprint(std::forward<FingerprintT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Playback-key-pair name. The value does not need to be unique.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
@@ -83,6 +65,24 @@ class PlaybackKeyPair {
   template <typename NameT = Aws::String>
   PlaybackKeyPair& WithName(NameT&& value) {
     SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Key-pair identifier.</p>
+   */
+  inline const Aws::String& GetFingerprint() const { return m_fingerprint; }
+  inline bool FingerprintHasBeenSet() const { return m_fingerprintHasBeenSet; }
+  template <typename FingerprintT = Aws::String>
+  void SetFingerprint(FingerprintT&& value) {
+    m_fingerprintHasBeenSet = true;
+    m_fingerprint = std::forward<FingerprintT>(value);
+  }
+  template <typename FingerprintT = Aws::String>
+  PlaybackKeyPair& WithFingerprint(FingerprintT&& value) {
+    SetFingerprint(std::forward<FingerprintT>(value));
     return *this;
   }
   ///@}
@@ -119,14 +119,14 @@ class PlaybackKeyPair {
  private:
   Aws::String m_arn;
 
-  Aws::String m_fingerprint;
-
   Aws::String m_name;
+
+  Aws::String m_fingerprint;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_arnHasBeenSet = false;
-  bool m_fingerprintHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_fingerprintHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

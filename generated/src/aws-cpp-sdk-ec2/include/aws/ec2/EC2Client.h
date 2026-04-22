@@ -18937,6 +18937,37 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
   }
 
   /**
+   * <p>Retrieves the managed resource visibility configuration for the account. The
+   * response indicates whether managed resources are hidden or visible by
+   * default.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetManagedResourceVisibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetManagedResourceVisibilityOutcome GetManagedResourceVisibility(
+      const Model::GetManagedResourceVisibilityRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for GetManagedResourceVisibility that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetManagedResourceVisibilityRequestT = Model::GetManagedResourceVisibilityRequest>
+  Model::GetManagedResourceVisibilityOutcomeCallable GetManagedResourceVisibilityCallable(
+      const GetManagedResourceVisibilityRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::GetManagedResourceVisibility, request);
+  }
+
+  /**
+   * An Async wrapper for GetManagedResourceVisibility that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetManagedResourceVisibilityRequestT = Model::GetManagedResourceVisibilityRequest>
+  void GetManagedResourceVisibilityAsync(const GetManagedResourceVisibilityResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                         const GetManagedResourceVisibilityRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::GetManagedResourceVisibility, request, handler, context);
+  }
+
+  /**
    * <p>Gets the findings for the specified Network Access Scope
    * analysis.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/GetNetworkInsightsAccessScopeAnalysisFindings">AWS
@@ -21406,6 +21437,39 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
                                     const ModifyManagedPrefixListResponseReceivedHandler& handler,
                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EC2Client::ModifyManagedPrefixList, request, handler, context);
+  }
+
+  /**
+   * <p>Modifies the managed resource visibility configuration for the account. Use
+   * this operation to control whether managed resources are hidden or visible by
+   * default. Visibility settings are account-wide and affect all IAM principals
+   * uniformly. Hidden resources remain fully operational and billable.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyManagedResourceVisibility">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ModifyManagedResourceVisibilityOutcome ModifyManagedResourceVisibility(
+      const Model::ModifyManagedResourceVisibilityRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ModifyManagedResourceVisibility that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ModifyManagedResourceVisibilityRequestT = Model::ModifyManagedResourceVisibilityRequest>
+  Model::ModifyManagedResourceVisibilityOutcomeCallable ModifyManagedResourceVisibilityCallable(
+      const ModifyManagedResourceVisibilityRequestT& request = {}) const {
+    return SubmitCallable(&EC2Client::ModifyManagedResourceVisibility, request);
+  }
+
+  /**
+   * An Async wrapper for ModifyManagedResourceVisibility that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ModifyManagedResourceVisibilityRequestT = Model::ModifyManagedResourceVisibilityRequest>
+  void ModifyManagedResourceVisibilityAsync(const ModifyManagedResourceVisibilityResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                            const ModifyManagedResourceVisibilityRequestT& request = {}) const {
+    return SubmitAsync(&EC2Client::ModifyManagedResourceVisibility, request, handler, context);
   }
 
   /**

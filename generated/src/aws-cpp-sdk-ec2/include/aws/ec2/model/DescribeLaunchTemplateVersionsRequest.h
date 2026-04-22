@@ -268,6 +268,25 @@ class DescribeLaunchTemplateVersionsRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether to include managed resources in the output. If this
+   * parameter is set to <code>true</code>, the output includes resources that are
+   * managed by Amazon Web Services services, even if managed resource visibility is
+   * set to hidden.</p>
+   */
+  inline bool GetIncludeManagedResources() const { return m_includeManagedResources; }
+  inline bool IncludeManagedResourcesHasBeenSet() const { return m_includeManagedResourcesHasBeenSet; }
+  inline void SetIncludeManagedResources(bool value) {
+    m_includeManagedResourcesHasBeenSet = true;
+    m_includeManagedResources = value;
+  }
+  inline DescribeLaunchTemplateVersionsRequest& WithIncludeManagedResources(bool value) {
+    SetIncludeManagedResources(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -288,6 +307,8 @@ class DescribeLaunchTemplateVersionsRequest : public EC2Request {
   Aws::Vector<Filter> m_filters;
 
   bool m_resolveAlias{false};
+
+  bool m_includeManagedResources{false};
   bool m_dryRunHasBeenSet = false;
   bool m_launchTemplateIdHasBeenSet = false;
   bool m_launchTemplateNameHasBeenSet = false;
@@ -298,6 +319,7 @@ class DescribeLaunchTemplateVersionsRequest : public EC2Request {
   bool m_maxResultsHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_resolveAliasHasBeenSet = false;
+  bool m_includeManagedResourcesHasBeenSet = false;
 };
 
 }  // namespace Model

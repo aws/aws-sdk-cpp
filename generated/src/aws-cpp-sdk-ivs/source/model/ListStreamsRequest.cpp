@@ -19,12 +19,12 @@ Aws::String ListStreamsRequest::SerializePayload() const {
     payload.WithObject("filterBy", m_filterBy.Jsonize());
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
-  }
-
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();

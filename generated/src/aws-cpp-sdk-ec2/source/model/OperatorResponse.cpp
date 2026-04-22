@@ -34,6 +34,12 @@ OperatorResponse& OperatorResponse::operator=(const XmlNode& xmlNode) {
       m_principal = Aws::Utils::Xml::DecodeEscapedXmlText(principalNode.GetText());
       m_principalHasBeenSet = true;
     }
+    XmlNode hiddenByDefaultNode = resultNode.FirstChild("hiddenByDefault");
+    if (!hiddenByDefaultNode.IsNull()) {
+      m_hiddenByDefault = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(hiddenByDefaultNode.GetText()).c_str()).c_str());
+      m_hiddenByDefaultHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -47,6 +53,10 @@ void OperatorResponse::OutputToStream(Aws::OStream& oStream, const char* locatio
   if (m_principalHasBeenSet) {
     oStream << location << index << locationValue << ".Principal=" << StringUtils::URLEncode(m_principal.c_str()) << "&";
   }
+
+  if (m_hiddenByDefaultHasBeenSet) {
+    oStream << location << index << locationValue << ".HiddenByDefault=" << std::boolalpha << m_hiddenByDefault << "&";
+  }
 }
 
 void OperatorResponse::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -55,6 +65,9 @@ void OperatorResponse::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if (m_principalHasBeenSet) {
     oStream << location << ".Principal=" << StringUtils::URLEncode(m_principal.c_str()) << "&";
+  }
+  if (m_hiddenByDefaultHasBeenSet) {
+    oStream << location << ".HiddenByDefault=" << std::boolalpha << m_hiddenByDefault << "&";
   }
 }
 

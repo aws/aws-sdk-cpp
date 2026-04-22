@@ -10,6 +10,7 @@
 #include <aws/emr-serverless/model/ListApplicationsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunAttemptsPaginationTraits.h>
 #include <aws/emr-serverless/model/ListJobRunsPaginationTraits.h>
+#include <aws/emr-serverless/model/ListSessionsPaginationTraits.h>
 
 #include <memory>
 
@@ -54,6 +55,17 @@ class EMRServerlessPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListJobRunsRequest,
                                              Pagination::ListJobRunsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                      request};
+  }
+
+  /**
+   * Create a paginator for ListSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest, Pagination::ListSessionsPaginationTraits<DerivedClient>>
+  ListSessionsPaginator(const Model::ListSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListSessionsRequest,
+                                             Pagination::ListSessionsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                      request};
   }
 };
 }  // namespace EMRServerless

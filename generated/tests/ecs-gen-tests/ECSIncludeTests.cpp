@@ -27,6 +27,8 @@
 #include <aws/ecs/model/Attachment.h>
 #include <aws/ecs/model/AttachmentStateChange.h>
 #include <aws/ecs/model/Attribute.h>
+#include <aws/ecs/model/AutoRepairActionsStatus.h>
+#include <aws/ecs/model/AutoRepairConfiguration.h>
 #include <aws/ecs/model/AutoScalingGroupProvider.h>
 #include <aws/ecs/model/AutoScalingGroupProviderUpdate.h>
 #include <aws/ecs/model/AvailabilityZoneRebalancing.h>

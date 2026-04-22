@@ -21,6 +21,10 @@ Aws::String DescribeNetworkInterfacesRequest::SerializePayload() const {
     ss << "MaxResults=" << m_maxResults << "&";
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   if (m_dryRunHasBeenSet) {
     ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
   }

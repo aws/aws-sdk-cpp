@@ -61,6 +61,10 @@ Aws::String DescribeLaunchTemplateVersionsRequest::SerializePayload() const {
     ss << "ResolveAlias=" << std::boolalpha << m_resolveAlias << "&";
   }
 
+  if (m_includeManagedResourcesHasBeenSet) {
+    ss << "IncludeManagedResources=" << std::boolalpha << m_includeManagedResources << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

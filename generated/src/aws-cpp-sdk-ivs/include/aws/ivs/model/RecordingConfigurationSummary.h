@@ -55,6 +55,24 @@ class RecordingConfigurationSummary {
 
   ///@{
   /**
+   * <p>Recording-configuration name. The value does not need to be unique.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  RecordingConfigurationSummary& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A complex type that contains information about where recorded video will be
    * stored.</p>
    */
@@ -68,24 +86,6 @@ class RecordingConfigurationSummary {
   template <typename DestinationConfigurationT = DestinationConfiguration>
   RecordingConfigurationSummary& WithDestinationConfiguration(DestinationConfigurationT&& value) {
     SetDestinationConfiguration(std::forward<DestinationConfigurationT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Recording-configuration name. The value does not need to be unique.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  RecordingConfigurationSummary& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -140,16 +140,16 @@ class RecordingConfigurationSummary {
  private:
   Aws::String m_arn;
 
-  DestinationConfiguration m_destinationConfiguration;
-
   Aws::String m_name;
+
+  DestinationConfiguration m_destinationConfiguration;
 
   RecordingConfigurationState m_state{RecordingConfigurationState::NOT_SET};
 
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_arnHasBeenSet = false;
-  bool m_destinationConfigurationHasBeenSet = false;
   bool m_nameHasBeenSet = false;
+  bool m_destinationConfigurationHasBeenSet = false;
   bool m_stateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };

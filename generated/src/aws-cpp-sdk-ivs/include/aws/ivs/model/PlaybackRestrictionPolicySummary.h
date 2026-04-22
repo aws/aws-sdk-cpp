@@ -36,6 +36,24 @@ class PlaybackRestrictionPolicySummary {
 
   ///@{
   /**
+   * <p>Playback-restriction-policy ARN</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  PlaybackRestrictionPolicySummary& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of country codes that control geoblocking restriction. Allowed values
    * are the officially assigned <a
    * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
@@ -84,24 +102,6 @@ class PlaybackRestrictionPolicySummary {
   PlaybackRestrictionPolicySummary& AddAllowedOrigins(AllowedOriginsT&& value) {
     m_allowedOriginsHasBeenSet = true;
     m_allowedOrigins.emplace_back(std::forward<AllowedOriginsT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Playback-restriction-policy ARN</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  PlaybackRestrictionPolicySummary& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
     return *this;
   }
   ///@}
@@ -171,20 +171,20 @@ class PlaybackRestrictionPolicySummary {
   }
   ///@}
  private:
+  Aws::String m_arn;
+
   Aws::Vector<Aws::String> m_allowedCountries;
 
   Aws::Vector<Aws::String> m_allowedOrigins;
-
-  Aws::String m_arn;
 
   bool m_enableStrictOriginEnforcement{false};
 
   Aws::String m_name;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_arnHasBeenSet = false;
   bool m_allowedCountriesHasBeenSet = false;
   bool m_allowedOriginsHasBeenSet = false;
-  bool m_arnHasBeenSet = false;
   bool m_enableStrictOriginEnforcementHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

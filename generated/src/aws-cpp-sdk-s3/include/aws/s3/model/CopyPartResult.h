@@ -70,10 +70,9 @@ class CopyPartResult {
 
   ///@{
   /**
-   * <p>This header can be used as a data integrity check to verify that the data
-   * received is the same data that was originally sent. This header specifies the
-   * Base64 encoded, 32-bit <code>CRC32</code> checksum of the part. For more
-   * information, see <a
+   * <p>The Base64 encoded, 32-bit <code>CRC32</code> checksum of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>CRC32</code> checksum algorithm. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
    */
@@ -93,10 +92,9 @@ class CopyPartResult {
 
   ///@{
   /**
-   * <p>This header can be used as a data integrity check to verify that the data
-   * received is the same data that was originally sent. This header specifies the
-   * Base64 encoded, 32-bit <code>CRC32C</code> checksum of the part. For more
-   * information, see <a
+   * <p>The Base64 encoded, 32-bit <code>CRC32C</code> checksum of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>CRC32C</code> checksum algorithm. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
    */
@@ -118,8 +116,7 @@ class CopyPartResult {
   /**
    * <p>The Base64 encoded, 64-bit <code>CRC64NVME</code> checksum of the part. This
    * checksum is present if the multipart upload request was created with the
-   * <code>CRC64NVME</code> checksum algorithm to the uploaded object). For more
-   * information, see <a
+   * <code>CRC64NVME</code> checksum algorithm. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
    */
@@ -139,10 +136,9 @@ class CopyPartResult {
 
   ///@{
   /**
-   * <p>This header can be used as a data integrity check to verify that the data
-   * received is the same data that was originally sent. This header specifies the
-   * Base64 encoded, 160-bit <code>SHA1</code> checksum of the part. For more
-   * information, see <a
+   * <p>The Base64 encoded, 160-bit <code>SHA1</code> digest of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>SHA1</code> checksum algorithm. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
    */
@@ -162,10 +158,9 @@ class CopyPartResult {
 
   ///@{
   /**
-   * <p>This header can be used as a data integrity check to verify that the data
-   * received is the same data that was originally sent. This header specifies the
-   * Base64 encoded, 256-bit <code>SHA256</code> checksum of the part. For more
-   * information, see <a
+   * <p>The Base64 encoded, 256-bit <code>SHA256</code> digest of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>SHA256</code> checksum algorithm. For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
    */
@@ -179,6 +174,116 @@ class CopyPartResult {
   template <typename ChecksumSHA256T = Aws::String>
   CopyPartResult& WithChecksumSHA256(ChecksumSHA256T&& value) {
     SetChecksumSHA256(std::forward<ChecksumSHA256T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64 encoded, 512-bit <code>SHA512</code> digest of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>SHA512</code> checksum algorithm. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetChecksumSHA512() const { return m_checksumSHA512; }
+  inline bool ChecksumSHA512HasBeenSet() const { return m_checksumSHA512HasBeenSet; }
+  template <typename ChecksumSHA512T = Aws::String>
+  void SetChecksumSHA512(ChecksumSHA512T&& value) {
+    m_checksumSHA512HasBeenSet = true;
+    m_checksumSHA512 = std::forward<ChecksumSHA512T>(value);
+  }
+  template <typename ChecksumSHA512T = Aws::String>
+  CopyPartResult& WithChecksumSHA512(ChecksumSHA512T&& value) {
+    SetChecksumSHA512(std::forward<ChecksumSHA512T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64 encoded, 128-bit <code>MD5</code> digest of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>MD5</code> checksum algorithm. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetChecksumMD5() const { return m_checksumMD5; }
+  inline bool ChecksumMD5HasBeenSet() const { return m_checksumMD5HasBeenSet; }
+  template <typename ChecksumMD5T = Aws::String>
+  void SetChecksumMD5(ChecksumMD5T&& value) {
+    m_checksumMD5HasBeenSet = true;
+    m_checksumMD5 = std::forward<ChecksumMD5T>(value);
+  }
+  template <typename ChecksumMD5T = Aws::String>
+  CopyPartResult& WithChecksumMD5(ChecksumMD5T&& value) {
+    SetChecksumMD5(std::forward<ChecksumMD5T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>XXHASH64</code> checksum algorithm. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH64() const { return m_checksumXXHASH64; }
+  inline bool ChecksumXXHASH64HasBeenSet() const { return m_checksumXXHASH64HasBeenSet; }
+  template <typename ChecksumXXHASH64T = Aws::String>
+  void SetChecksumXXHASH64(ChecksumXXHASH64T&& value) {
+    m_checksumXXHASH64HasBeenSet = true;
+    m_checksumXXHASH64 = std::forward<ChecksumXXHASH64T>(value);
+  }
+  template <typename ChecksumXXHASH64T = Aws::String>
+  CopyPartResult& WithChecksumXXHASH64(ChecksumXXHASH64T&& value) {
+    SetChecksumXXHASH64(std::forward<ChecksumXXHASH64T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>XXHASH3</code> checksum algorithm. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH3() const { return m_checksumXXHASH3; }
+  inline bool ChecksumXXHASH3HasBeenSet() const { return m_checksumXXHASH3HasBeenSet; }
+  template <typename ChecksumXXHASH3T = Aws::String>
+  void SetChecksumXXHASH3(ChecksumXXHASH3T&& value) {
+    m_checksumXXHASH3HasBeenSet = true;
+    m_checksumXXHASH3 = std::forward<ChecksumXXHASH3T>(value);
+  }
+  template <typename ChecksumXXHASH3T = Aws::String>
+  CopyPartResult& WithChecksumXXHASH3(ChecksumXXHASH3T&& value) {
+    SetChecksumXXHASH3(std::forward<ChecksumXXHASH3T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the part. This
+   * checksum is present if the multipart upload request was created with the
+   * <code>XXHASH128</code> checksum algorithm. For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH128() const { return m_checksumXXHASH128; }
+  inline bool ChecksumXXHASH128HasBeenSet() const { return m_checksumXXHASH128HasBeenSet; }
+  template <typename ChecksumXXHASH128T = Aws::String>
+  void SetChecksumXXHASH128(ChecksumXXHASH128T&& value) {
+    m_checksumXXHASH128HasBeenSet = true;
+    m_checksumXXHASH128 = std::forward<ChecksumXXHASH128T>(value);
+  }
+  template <typename ChecksumXXHASH128T = Aws::String>
+  CopyPartResult& WithChecksumXXHASH128(ChecksumXXHASH128T&& value) {
+    SetChecksumXXHASH128(std::forward<ChecksumXXHASH128T>(value));
     return *this;
   }
   ///@}
@@ -196,6 +301,16 @@ class CopyPartResult {
   Aws::String m_checksumSHA1;
 
   Aws::String m_checksumSHA256;
+
+  Aws::String m_checksumSHA512;
+
+  Aws::String m_checksumMD5;
+
+  Aws::String m_checksumXXHASH64;
+
+  Aws::String m_checksumXXHASH3;
+
+  Aws::String m_checksumXXHASH128;
   bool m_eTagHasBeenSet = false;
   bool m_lastModifiedHasBeenSet = false;
   bool m_checksumCRC32HasBeenSet = false;
@@ -203,6 +318,11 @@ class CopyPartResult {
   bool m_checksumCRC64NVMEHasBeenSet = false;
   bool m_checksumSHA1HasBeenSet = false;
   bool m_checksumSHA256HasBeenSet = false;
+  bool m_checksumSHA512HasBeenSet = false;
+  bool m_checksumMD5HasBeenSet = false;
+  bool m_checksumXXHASH64HasBeenSet = false;
+  bool m_checksumXXHASH3HasBeenSet = false;
+  bool m_checksumXXHASH128HasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,20 +15,12 @@ using namespace Aws::Utils;
 Aws::String CreateRecordingConfigurationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_destinationConfigurationHasBeenSet) {
-    payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
-  }
-
   if (m_nameHasBeenSet) {
     payload.WithString("name", m_name);
   }
 
-  if (m_recordingReconnectWindowSecondsHasBeenSet) {
-    payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
-  }
-
-  if (m_renditionConfigurationHasBeenSet) {
-    payload.WithObject("renditionConfiguration", m_renditionConfiguration.Jsonize());
+  if (m_destinationConfigurationHasBeenSet) {
+    payload.WithObject("destinationConfiguration", m_destinationConfiguration.Jsonize());
   }
 
   if (m_tagsHasBeenSet) {
@@ -41,6 +33,14 @@ Aws::String CreateRecordingConfigurationRequest::SerializePayload() const {
 
   if (m_thumbnailConfigurationHasBeenSet) {
     payload.WithObject("thumbnailConfiguration", m_thumbnailConfiguration.Jsonize());
+  }
+
+  if (m_recordingReconnectWindowSecondsHasBeenSet) {
+    payload.WithInteger("recordingReconnectWindowSeconds", m_recordingReconnectWindowSeconds);
+  }
+
+  if (m_renditionConfigurationHasBeenSet) {
+    payload.WithObject("renditionConfiguration", m_renditionConfiguration.Jsonize());
   }
 
   return payload.View().WriteReadable();

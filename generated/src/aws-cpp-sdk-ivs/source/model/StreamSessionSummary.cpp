@@ -18,6 +18,14 @@ namespace Model {
 StreamSessionSummary::StreamSessionSummary(JsonView jsonValue) { *this = jsonValue; }
 
 StreamSessionSummary& StreamSessionSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("streamId")) {
+    m_streamId = jsonValue.GetString("streamId");
+    m_streamIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("startTime")) {
+    m_startTime = jsonValue.GetString("startTime");
+    m_startTimeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("endTime")) {
     m_endTime = jsonValue.GetString("endTime");
     m_endTimeHasBeenSet = true;
@@ -26,19 +34,19 @@ StreamSessionSummary& StreamSessionSummary::operator=(JsonView jsonValue) {
     m_hasErrorEvent = jsonValue.GetBool("hasErrorEvent");
     m_hasErrorEventHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("startTime")) {
-    m_startTime = jsonValue.GetString("startTime");
-    m_startTimeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("streamId")) {
-    m_streamId = jsonValue.GetString("streamId");
-    m_streamIdHasBeenSet = true;
-  }
   return *this;
 }
 
 JsonValue StreamSessionSummary::Jsonize() const {
   JsonValue payload;
+
+  if (m_streamIdHasBeenSet) {
+    payload.WithString("streamId", m_streamId);
+  }
+
+  if (m_startTimeHasBeenSet) {
+    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
 
   if (m_endTimeHasBeenSet) {
     payload.WithString("endTime", m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
@@ -46,14 +54,6 @@ JsonValue StreamSessionSummary::Jsonize() const {
 
   if (m_hasErrorEventHasBeenSet) {
     payload.WithBool("hasErrorEvent", m_hasErrorEvent);
-  }
-
-  if (m_startTimeHasBeenSet) {
-    payload.WithString("startTime", m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
-  }
-
-  if (m_streamIdHasBeenSet) {
-    payload.WithString("streamId", m_streamId);
   }
 
   return payload;

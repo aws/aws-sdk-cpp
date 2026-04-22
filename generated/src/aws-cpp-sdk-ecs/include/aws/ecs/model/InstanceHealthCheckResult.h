@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ecs/ECS_EXPORTS.h>
 #include <aws/ecs/model/InstanceHealthCheckState.h>
 #include <aws/ecs/model/InstanceHealthCheckType.h>
@@ -68,6 +69,24 @@ class InstanceHealthCheckResult {
 
   ///@{
   /**
+   * <p>The reason for the container instance health status.</p>
+   */
+  inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+  inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
+  template <typename StatusReasonT = Aws::String>
+  void SetStatusReason(StatusReasonT&& value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = std::forward<StatusReasonT>(value);
+  }
+  template <typename StatusReasonT = Aws::String>
+  InstanceHealthCheckResult& WithStatusReason(StatusReasonT&& value) {
+    SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The Unix timestamp for when the container instance health status was last
    * updated.</p>
    */
@@ -108,11 +127,14 @@ class InstanceHealthCheckResult {
 
   InstanceHealthCheckState m_status{InstanceHealthCheckState::NOT_SET};
 
+  Aws::String m_statusReason;
+
   Aws::Utils::DateTime m_lastUpdated{};
 
   Aws::Utils::DateTime m_lastStatusChange{};
   bool m_typeHasBeenSet = false;
   bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
   bool m_lastUpdatedHasBeenSet = false;
   bool m_lastStatusChangeHasBeenSet = false;
 };

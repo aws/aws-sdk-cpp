@@ -31,24 +31,6 @@ class ImportPlaybackKeyPairRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>Playback-key-pair name. The value does not need to be unique.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  ImportPlaybackKeyPairRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The public portion of a customer-generated key pair.</p>
    */
   inline const Aws::String& GetPublicKeyMaterial() const { return m_publicKeyMaterial; }
@@ -61,6 +43,24 @@ class ImportPlaybackKeyPairRequest : public IVSRequest {
   template <typename PublicKeyMaterialT = Aws::String>
   ImportPlaybackKeyPairRequest& WithPublicKeyMaterial(PublicKeyMaterialT&& value) {
     SetPublicKeyMaterial(std::forward<PublicKeyMaterialT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Playback-key-pair name. The value does not need to be unique.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  ImportPlaybackKeyPairRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
     return *this;
   }
   ///@}
@@ -95,13 +95,13 @@ class ImportPlaybackKeyPairRequest : public IVSRequest {
   }
   ///@}
  private:
-  Aws::String m_name;
-
   Aws::String m_publicKeyMaterial;
 
+  Aws::String m_name;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
-  bool m_nameHasBeenSet = false;
   bool m_publicKeyMaterialHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

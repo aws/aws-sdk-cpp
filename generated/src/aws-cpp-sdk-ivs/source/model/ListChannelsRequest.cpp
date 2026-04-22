@@ -19,20 +19,24 @@ Aws::String ListChannelsRequest::SerializePayload() const {
     payload.WithString("filterByName", m_filterByName);
   }
 
-  if (m_filterByPlaybackRestrictionPolicyArnHasBeenSet) {
-    payload.WithString("filterByPlaybackRestrictionPolicyArn", m_filterByPlaybackRestrictionPolicyArn);
-  }
-
   if (m_filterByRecordingConfigurationArnHasBeenSet) {
     payload.WithString("filterByRecordingConfigurationArn", m_filterByRecordingConfigurationArn);
   }
 
-  if (m_maxResultsHasBeenSet) {
-    payload.WithInteger("maxResults", m_maxResults);
+  if (m_filterByPlaybackRestrictionPolicyArnHasBeenSet) {
+    payload.WithString("filterByPlaybackRestrictionPolicyArn", m_filterByPlaybackRestrictionPolicyArn);
+  }
+
+  if (m_filterByAdConfigurationArnHasBeenSet) {
+    payload.WithString("filterByAdConfigurationArn", m_filterByAdConfigurationArn);
   }
 
   if (m_nextTokenHasBeenSet) {
     payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
   }
 
   return payload.View().WriteReadable();

@@ -24,10 +24,6 @@ ListRecordingConfigurationsResult::ListRecordingConfigurationsResult(const Aws::
 ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("nextToken")) {
-    m_nextToken = jsonValue.GetString("nextToken");
-    m_nextTokenHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("recordingConfigurations")) {
     Aws::Utils::Array<JsonView> recordingConfigurationsJsonList = jsonValue.GetArray("recordingConfigurations");
     for (unsigned recordingConfigurationsIndex = 0; recordingConfigurationsIndex < recordingConfigurationsJsonList.GetLength();
@@ -35,6 +31,10 @@ ListRecordingConfigurationsResult& ListRecordingConfigurationsResult::operator=(
       m_recordingConfigurations.push_back(recordingConfigurationsJsonList[recordingConfigurationsIndex].AsObject());
     }
     m_recordingConfigurationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

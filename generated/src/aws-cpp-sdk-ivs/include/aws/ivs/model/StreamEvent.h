@@ -36,6 +36,61 @@ class StreamEvent {
 
   ///@{
   /**
+   * <p>Name that identifies the stream event within a <code>type</code>.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  StreamEvent& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Logical group for certain events.</p>
+   */
+  inline const Aws::String& GetType() const { return m_type; }
+  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+  template <typename TypeT = Aws::String>
+  void SetType(TypeT&& value) {
+    m_typeHasBeenSet = true;
+    m_type = std::forward<TypeT>(value);
+  }
+  template <typename TypeT = Aws::String>
+  StreamEvent& WithType(TypeT&& value) {
+    SetType(std::forward<TypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
+   * this is returned as a string</i>.</p>
+   */
+  inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
+  inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+  template <typename EventTimeT = Aws::Utils::DateTime>
+  void SetEventTime(EventTimeT&& value) {
+    m_eventTimeHasBeenSet = true;
+    m_eventTime = std::forward<EventTimeT>(value);
+  }
+  template <typename EventTimeT = Aws::Utils::DateTime>
+  StreamEvent& WithEventTime(EventTimeT&& value) {
+    SetEventTime(std::forward<EventTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Provides additional details about the stream event. There are several values;
    * the long descriptions are provided in the IVS console but not delivered through
    * the IVS API or EventBridge. Multitrack-related codes are used only for certain
@@ -82,73 +137,18 @@ class StreamEvent {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Time when the event occurred. This is an ISO 8601 timestamp; <i>note that
-   * this is returned as a string</i>.</p>
-   */
-  inline const Aws::Utils::DateTime& GetEventTime() const { return m_eventTime; }
-  inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
-  template <typename EventTimeT = Aws::Utils::DateTime>
-  void SetEventTime(EventTimeT&& value) {
-    m_eventTimeHasBeenSet = true;
-    m_eventTime = std::forward<EventTimeT>(value);
-  }
-  template <typename EventTimeT = Aws::Utils::DateTime>
-  StreamEvent& WithEventTime(EventTimeT&& value) {
-    SetEventTime(std::forward<EventTimeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Name that identifies the stream event within a <code>type</code>.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  StreamEvent& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Logical group for certain events.</p>
-   */
-  inline const Aws::String& GetType() const { return m_type; }
-  inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
-  template <typename TypeT = Aws::String>
-  void SetType(TypeT&& value) {
-    m_typeHasBeenSet = true;
-    m_type = std::forward<TypeT>(value);
-  }
-  template <typename TypeT = Aws::String>
-  StreamEvent& WithType(TypeT&& value) {
-    SetType(std::forward<TypeT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_code;
-
-  Aws::Utils::DateTime m_eventTime{};
-
   Aws::String m_name;
 
   Aws::String m_type;
-  bool m_codeHasBeenSet = false;
-  bool m_eventTimeHasBeenSet = false;
+
+  Aws::Utils::DateTime m_eventTime{};
+
+  Aws::String m_code;
   bool m_nameHasBeenSet = false;
   bool m_typeHasBeenSet = false;
+  bool m_eventTimeHasBeenSet = false;
+  bool m_codeHasBeenSet = false;
 };
 
 }  // namespace Model

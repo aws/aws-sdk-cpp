@@ -766,6 +766,8 @@
 #include <aws/ec2/model/GetLaunchTemplateDataResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListAssociationsResponse.h>
 #include <aws/ec2/model/GetManagedPrefixListEntriesResponse.h>
+#include <aws/ec2/model/GetManagedResourceVisibilityRequest.h>
+#include <aws/ec2/model/GetManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeAnalysisFindingsResponse.h>
 #include <aws/ec2/model/GetNetworkInsightsAccessScopeContentResponse.h>
 #include <aws/ec2/model/GetPasswordDataResponse.h>
@@ -845,6 +847,8 @@
 #include <aws/ec2/model/ModifyLaunchTemplateResponse.h>
 #include <aws/ec2/model/ModifyLocalGatewayRouteResponse.h>
 #include <aws/ec2/model/ModifyManagedPrefixListResponse.h>
+#include <aws/ec2/model/ModifyManagedResourceVisibilityRequest.h>
+#include <aws/ec2/model/ModifyManagedResourceVisibilityResponse.h>
 #include <aws/ec2/model/ModifyPrivateDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyPublicIpDnsNameOptionsResponse.h>
 #include <aws/ec2/model/ModifyReservedInstancesResponse.h>
@@ -1559,6 +1563,7 @@ class GetIpamResourceCidrsRequest;
 class GetLaunchTemplateDataRequest;
 class GetManagedPrefixListAssociationsRequest;
 class GetManagedPrefixListEntriesRequest;
+class GetManagedResourceVisibilityRequest;
 class GetNetworkInsightsAccessScopeAnalysisFindingsRequest;
 class GetNetworkInsightsAccessScopeContentRequest;
 class GetPasswordDataRequest;
@@ -1632,6 +1637,7 @@ class ModifyIpamScopeRequest;
 class ModifyLaunchTemplateRequest;
 class ModifyLocalGatewayRouteRequest;
 class ModifyManagedPrefixListRequest;
+class ModifyManagedResourceVisibilityRequest;
 class ModifyNetworkInterfaceAttributeRequest;
 class ModifyPrivateDnsNameOptionsRequest;
 class ModifyPublicIpDnsNameOptionsRequest;
@@ -2347,6 +2353,7 @@ typedef Aws::Utils::Outcome<GetIpamResourceCidrsResponse, EC2Error> GetIpamResou
 typedef Aws::Utils::Outcome<GetLaunchTemplateDataResponse, EC2Error> GetLaunchTemplateDataOutcome;
 typedef Aws::Utils::Outcome<GetManagedPrefixListAssociationsResponse, EC2Error> GetManagedPrefixListAssociationsOutcome;
 typedef Aws::Utils::Outcome<GetManagedPrefixListEntriesResponse, EC2Error> GetManagedPrefixListEntriesOutcome;
+typedef Aws::Utils::Outcome<GetManagedResourceVisibilityResponse, EC2Error> GetManagedResourceVisibilityOutcome;
 typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeAnalysisFindingsResponse, EC2Error>
     GetNetworkInsightsAccessScopeAnalysisFindingsOutcome;
 typedef Aws::Utils::Outcome<GetNetworkInsightsAccessScopeContentResponse, EC2Error> GetNetworkInsightsAccessScopeContentOutcome;
@@ -2425,6 +2432,7 @@ typedef Aws::Utils::Outcome<ModifyIpamScopeResponse, EC2Error> ModifyIpamScopeOu
 typedef Aws::Utils::Outcome<ModifyLaunchTemplateResponse, EC2Error> ModifyLaunchTemplateOutcome;
 typedef Aws::Utils::Outcome<ModifyLocalGatewayRouteResponse, EC2Error> ModifyLocalGatewayRouteOutcome;
 typedef Aws::Utils::Outcome<ModifyManagedPrefixListResponse, EC2Error> ModifyManagedPrefixListOutcome;
+typedef Aws::Utils::Outcome<ModifyManagedResourceVisibilityResponse, EC2Error> ModifyManagedResourceVisibilityOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, EC2Error> ModifyNetworkInterfaceAttributeOutcome;
 typedef Aws::Utils::Outcome<ModifyPrivateDnsNameOptionsResponse, EC2Error> ModifyPrivateDnsNameOptionsOutcome;
 typedef Aws::Utils::Outcome<ModifyPublicIpDnsNameOptionsResponse, EC2Error> ModifyPublicIpDnsNameOptionsOutcome;
@@ -3132,6 +3140,7 @@ typedef std::future<GetIpamResourceCidrsOutcome> GetIpamResourceCidrsOutcomeCall
 typedef std::future<GetLaunchTemplateDataOutcome> GetLaunchTemplateDataOutcomeCallable;
 typedef std::future<GetManagedPrefixListAssociationsOutcome> GetManagedPrefixListAssociationsOutcomeCallable;
 typedef std::future<GetManagedPrefixListEntriesOutcome> GetManagedPrefixListEntriesOutcomeCallable;
+typedef std::future<GetManagedResourceVisibilityOutcome> GetManagedResourceVisibilityOutcomeCallable;
 typedef std::future<GetNetworkInsightsAccessScopeAnalysisFindingsOutcome> GetNetworkInsightsAccessScopeAnalysisFindingsOutcomeCallable;
 typedef std::future<GetNetworkInsightsAccessScopeContentOutcome> GetNetworkInsightsAccessScopeContentOutcomeCallable;
 typedef std::future<GetPasswordDataOutcome> GetPasswordDataOutcomeCallable;
@@ -3205,6 +3214,7 @@ typedef std::future<ModifyIpamScopeOutcome> ModifyIpamScopeOutcomeCallable;
 typedef std::future<ModifyLaunchTemplateOutcome> ModifyLaunchTemplateOutcomeCallable;
 typedef std::future<ModifyLocalGatewayRouteOutcome> ModifyLocalGatewayRouteOutcomeCallable;
 typedef std::future<ModifyManagedPrefixListOutcome> ModifyManagedPrefixListOutcomeCallable;
+typedef std::future<ModifyManagedResourceVisibilityOutcome> ModifyManagedResourceVisibilityOutcomeCallable;
 typedef std::future<ModifyNetworkInterfaceAttributeOutcome> ModifyNetworkInterfaceAttributeOutcomeCallable;
 typedef std::future<ModifyPrivateDnsNameOptionsOutcome> ModifyPrivateDnsNameOptionsOutcomeCallable;
 typedef std::future<ModifyPublicIpDnsNameOptionsOutcome> ModifyPublicIpDnsNameOptionsOutcomeCallable;
@@ -5280,6 +5290,10 @@ typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListAs
 typedef std::function<void(const EC2Client*, const Model::GetManagedPrefixListEntriesRequest&,
                            const Model::GetManagedPrefixListEntriesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetManagedPrefixListEntriesResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::GetManagedResourceVisibilityRequest&,
+                           const Model::GetManagedResourceVisibilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetManagedResourceVisibilityResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::GetNetworkInsightsAccessScopeAnalysisFindingsRequest&,
                            const Model::GetNetworkInsightsAccessScopeAnalysisFindingsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -5533,6 +5547,10 @@ typedef std::function<void(const EC2Client*, const Model::ModifyLocalGatewayRout
 typedef std::function<void(const EC2Client*, const Model::ModifyManagedPrefixListRequest&, const Model::ModifyManagedPrefixListOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ModifyManagedPrefixListResponseReceivedHandler;
+typedef std::function<void(const EC2Client*, const Model::ModifyManagedResourceVisibilityRequest&,
+                           const Model::ModifyManagedResourceVisibilityOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ModifyManagedResourceVisibilityResponseReceivedHandler;
 typedef std::function<void(const EC2Client*, const Model::ModifyNetworkInterfaceAttributeRequest&,
                            const Model::ModifyNetworkInterfaceAttributeOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>

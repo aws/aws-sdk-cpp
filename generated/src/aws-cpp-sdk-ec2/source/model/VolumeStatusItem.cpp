@@ -86,6 +86,11 @@ VolumeStatusItem& VolumeStatusItem::operator=(const XmlNode& xmlNode) {
       m_availabilityZoneId = Aws::Utils::Xml::DecodeEscapedXmlText(availabilityZoneIdNode.GetText());
       m_availabilityZoneIdHasBeenSet = true;
     }
+    XmlNode operatorNode = resultNode.FirstChild("operator");
+    if (!operatorNode.IsNull()) {
+      m_operator = operatorNode;
+      m_operatorHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -146,6 +151,12 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   if (m_availabilityZoneIdHasBeenSet) {
     oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
+
+  if (m_operatorHasBeenSet) {
+    Aws::StringStream operatorLocationAndMemberSs;
+    operatorLocationAndMemberSs << location << index << locationValue << ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMemberSs.str().c_str());
+  }
 }
 
 void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -194,6 +205,11 @@ void VolumeStatusItem::OutputToStream(Aws::OStream& oStream, const char* locatio
   }
   if (m_availabilityZoneIdHasBeenSet) {
     oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
+  }
+  if (m_operatorHasBeenSet) {
+    Aws::String operatorLocationAndMember(location);
+    operatorLocationAndMember += ".Operator";
+    m_operator.OutputToStream(oStream, operatorLocationAndMember.c_str());
   }
 }
 

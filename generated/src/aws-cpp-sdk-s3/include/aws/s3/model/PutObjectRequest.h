@@ -280,9 +280,11 @@ class PutObjectRequest : public StreamingS3Request {
    * <code>x-amz-checksum-<i>algorithm</i> </code> header, replace <code>
    * <i>algorithm</i> </code> with the supported algorithm from the following list:
    * </p> <ul> <li> <p> <code>CRC32</code> </p> </li> <li> <p> <code>CRC32C</code>
-   * </p> </li> <li> <p> <code>CRC64NVME</code> </p> </li> <li> <p> <code>SHA1</code>
-   * </p> </li> <li> <p> <code>SHA256</code> </p> </li> </ul> <p>For more
-   * information, see <a
+   * </p> </li> <li> <p> <code>CRC64NVME</code> </p> </li> <li> <p> <code>MD5</code>
+   * </p> </li> <li> <p> <code>SHA1</code> </p> </li> <li> <p> <code>SHA256</code>
+   * </p> </li> <li> <p> <code>SHA512</code> </p> </li> <li> <p> <code>XXHASH3</code>
+   * </p> </li> <li> <p> <code>XXHASH64</code> </p> </li> <li> <p>
+   * <code>XXHASH128</code> </p> </li> </ul> <p>For more information, see <a
    * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
    * object integrity</a> in the <i>Amazon S3 User Guide</i>.</p> <p>If the
    * individual checksum value you provide through
@@ -446,6 +448,151 @@ class PutObjectRequest : public StreamingS3Request {
   template <typename ChecksumSHA256T = Aws::String>
   PutObjectRequest& WithChecksumSHA256(ChecksumSHA256T&& value) {
     SetChecksumSHA256(std::forward<ChecksumSHA256T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This header can be used as a data integrity check to verify that the data
+   * received is the same data that was originally sent. This header specifies the
+   * Base64 encoded, 512-bit <code>SHA512</code> digest of the object. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity in the Amazon S3 User Guide</a>.</p>
+   */
+  inline const Aws::String& GetChecksumSHA512() const { return m_checksumSHA512; }
+  inline bool ChecksumSHA512HasBeenSet() const { return m_checksumSHA512HasBeenSet; }
+  template <typename ChecksumSHA512T = Aws::String>
+  void SetChecksumSHA512(ChecksumSHA512T&& value) {
+    m_checksumSHA512HasBeenSet = true;
+    m_checksumSHA512 = std::forward<ChecksumSHA512T>(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::SHA512);
+  }
+  inline void SetChecksumSHA512(const char* value) {
+    m_checksumSHA512HasBeenSet = true;
+    m_checksumSHA512.assign(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::SHA512);
+  }
+  template <typename ChecksumSHA512T = Aws::String>
+  PutObjectRequest& WithChecksumSHA512(ChecksumSHA512T&& value) {
+    SetChecksumSHA512(std::forward<ChecksumSHA512T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This header can be used as a data integrity check to verify that the data
+   * received is the same data that was originally sent. This header specifies the
+   * Base64 encoded, 128-bit <code>MD5</code> digest of the object. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity in the Amazon S3 User Guide</a>.</p>
+   */
+  inline const Aws::String& GetChecksumMD5() const { return m_checksumMD5; }
+  inline bool ChecksumMD5HasBeenSet() const { return m_checksumMD5HasBeenSet; }
+  template <typename ChecksumMD5T = Aws::String>
+  void SetChecksumMD5(ChecksumMD5T&& value) {
+    m_checksumMD5HasBeenSet = true;
+    m_checksumMD5 = std::forward<ChecksumMD5T>(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::MD5);
+  }
+  inline void SetChecksumMD5(const char* value) {
+    m_checksumMD5HasBeenSet = true;
+    m_checksumMD5.assign(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::MD5);
+  }
+  template <typename ChecksumMD5T = Aws::String>
+  PutObjectRequest& WithChecksumMD5(ChecksumMD5T&& value) {
+    SetChecksumMD5(std::forward<ChecksumMD5T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This header can be used as a data integrity check to verify that the data
+   * received is the same data that was originally sent. This header specifies the
+   * Base64 encoded, 64-bit <code>XXHASH64</code> checksum of the object. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity in the Amazon S3 User Guide</a>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH64() const { return m_checksumXXHASH64; }
+  inline bool ChecksumXXHASH64HasBeenSet() const { return m_checksumXXHASH64HasBeenSet; }
+  template <typename ChecksumXXHASH64T = Aws::String>
+  void SetChecksumXXHASH64(ChecksumXXHASH64T&& value) {
+    m_checksumXXHASH64HasBeenSet = true;
+    m_checksumXXHASH64 = std::forward<ChecksumXXHASH64T>(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH64);
+  }
+  inline void SetChecksumXXHASH64(const char* value) {
+    m_checksumXXHASH64HasBeenSet = true;
+    m_checksumXXHASH64.assign(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH64);
+  }
+  template <typename ChecksumXXHASH64T = Aws::String>
+  PutObjectRequest& WithChecksumXXHASH64(ChecksumXXHASH64T&& value) {
+    SetChecksumXXHASH64(std::forward<ChecksumXXHASH64T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This header can be used as a data integrity check to verify that the data
+   * received is the same data that was originally sent. This header specifies the
+   * Base64 encoded, 64-bit <code>XXHASH3</code> checksum of the object. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity in the Amazon S3 User Guide</a>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH3() const { return m_checksumXXHASH3; }
+  inline bool ChecksumXXHASH3HasBeenSet() const { return m_checksumXXHASH3HasBeenSet; }
+  template <typename ChecksumXXHASH3T = Aws::String>
+  void SetChecksumXXHASH3(ChecksumXXHASH3T&& value) {
+    m_checksumXXHASH3HasBeenSet = true;
+    m_checksumXXHASH3 = std::forward<ChecksumXXHASH3T>(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH3);
+  }
+  inline void SetChecksumXXHASH3(const char* value) {
+    m_checksumXXHASH3HasBeenSet = true;
+    m_checksumXXHASH3.assign(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH3);
+  }
+  template <typename ChecksumXXHASH3T = Aws::String>
+  PutObjectRequest& WithChecksumXXHASH3(ChecksumXXHASH3T&& value) {
+    SetChecksumXXHASH3(std::forward<ChecksumXXHASH3T>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>This header can be used as a data integrity check to verify that the data
+   * received is the same data that was originally sent. This header specifies the
+   * Base64 encoded, 128-bit <code>XXHASH128</code> checksum of the object. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/checking-object-integrity.html">Checking
+   * object integrity in the Amazon S3 User Guide</a>.</p>
+   */
+  inline const Aws::String& GetChecksumXXHASH128() const { return m_checksumXXHASH128; }
+  inline bool ChecksumXXHASH128HasBeenSet() const { return m_checksumXXHASH128HasBeenSet; }
+  template <typename ChecksumXXHASH128T = Aws::String>
+  void SetChecksumXXHASH128(ChecksumXXHASH128T&& value) {
+    m_checksumXXHASH128HasBeenSet = true;
+    m_checksumXXHASH128 = std::forward<ChecksumXXHASH128T>(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH128);
+  }
+  inline void SetChecksumXXHASH128(const char* value) {
+    m_checksumXXHASH128HasBeenSet = true;
+    m_checksumXXHASH128.assign(value);
+    SetChecksumAlgorithm(ChecksumAlgorithm::XXHASH128);
+  }
+  template <typename ChecksumXXHASH128T = Aws::String>
+  PutObjectRequest& WithChecksumXXHASH128(ChecksumXXHASH128T&& value) {
+    SetChecksumXXHASH128(std::forward<ChecksumXXHASH128T>(value));
     return *this;
   }
   ///@}
@@ -1135,6 +1282,16 @@ class PutObjectRequest : public StreamingS3Request {
 
   Aws::String m_checksumSHA256;
 
+  Aws::String m_checksumSHA512;
+
+  Aws::String m_checksumMD5;
+
+  Aws::String m_checksumXXHASH64;
+
+  Aws::String m_checksumXXHASH3;
+
+  Aws::String m_checksumXXHASH128;
+
   Aws::Utils::DateTime m_expires{};
 
   Aws::String m_ifMatch;
@@ -1200,6 +1357,11 @@ class PutObjectRequest : public StreamingS3Request {
   bool m_checksumCRC64NVMEHasBeenSet = false;
   bool m_checksumSHA1HasBeenSet = false;
   bool m_checksumSHA256HasBeenSet = false;
+  bool m_checksumSHA512HasBeenSet = false;
+  bool m_checksumMD5HasBeenSet = false;
+  bool m_checksumXXHASH64HasBeenSet = false;
+  bool m_checksumXXHASH3HasBeenSet = false;
+  bool m_checksumXXHASH128HasBeenSet = false;
   bool m_expiresHasBeenSet = false;
   bool m_ifMatchHasBeenSet = false;
   bool m_ifNoneMatchHasBeenSet = false;

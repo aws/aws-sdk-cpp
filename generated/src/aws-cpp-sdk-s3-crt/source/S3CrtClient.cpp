@@ -950,6 +950,10 @@ void S3CrtClient::CopyObjectAsync(const CopyObjectRequest& request, const CopyOb
         {ChecksumAlgorithm::SHA1, aws_s3_checksum_algorithm::AWS_SCA_SHA1},
         {ChecksumAlgorithm::SHA256, aws_s3_checksum_algorithm::AWS_SCA_SHA256},
         {ChecksumAlgorithm::CRC64NVME, aws_s3_checksum_algorithm::AWS_SCA_CRC64NVME},
+        {ChecksumAlgorithm::SHA512, aws_s3_checksum_algorithm::AWS_SCA_SHA512},
+        {ChecksumAlgorithm::XXHASH64, aws_s3_checksum_algorithm::AWS_SCA_XXHASH64},
+        {ChecksumAlgorithm::XXHASH3, aws_s3_checksum_algorithm::AWS_SCA_XXHASH3_64},
+        {ChecksumAlgorithm::XXHASH128, aws_s3_checksum_algorithm::AWS_SCA_XXHASH3_128},
     };
 
     const auto checksumAlgorithm = request.GetChecksumAlgorithm();
@@ -1302,6 +1306,10 @@ void S3CrtClient::PutObjectAsync(const PutObjectRequest& request, const PutObjec
         {ChecksumAlgorithm::SHA1, aws_s3_checksum_algorithm::AWS_SCA_SHA1},
         {ChecksumAlgorithm::SHA256, aws_s3_checksum_algorithm::AWS_SCA_SHA256},
         {ChecksumAlgorithm::CRC64NVME, aws_s3_checksum_algorithm::AWS_SCA_CRC64NVME},
+        {ChecksumAlgorithm::SHA512, aws_s3_checksum_algorithm::AWS_SCA_SHA512},
+        {ChecksumAlgorithm::XXHASH64, aws_s3_checksum_algorithm::AWS_SCA_XXHASH64},
+        {ChecksumAlgorithm::XXHASH3, aws_s3_checksum_algorithm::AWS_SCA_XXHASH3_64},
+        {ChecksumAlgorithm::XXHASH128, aws_s3_checksum_algorithm::AWS_SCA_XXHASH3_128},
     };
 
     const auto checksumAlgorithm = request.GetChecksumAlgorithm();

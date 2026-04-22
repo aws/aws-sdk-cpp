@@ -1,0 +1,53 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/emr-serverless/model/ResourceType.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
+namespace ResourceTypeMapper {
+
+static const int SESSION_HASH = HashingUtils::HashString("SESSION");
+
+ResourceType GetResourceTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == SESSION_HASH) {
+    return ResourceType::SESSION;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<ResourceType>(hashCode);
+  }
+
+  return ResourceType::NOT_SET;
+}
+
+Aws::String GetNameForResourceType(ResourceType enumValue) {
+  switch (enumValue) {
+    case ResourceType::NOT_SET:
+      return {};
+    case ResourceType::SESSION:
+      return "SESSION";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace ResourceTypeMapper
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

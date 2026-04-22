@@ -28,6 +28,7 @@
 #include <aws/bedrock-agentcore/model/InvokeAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeBrowserRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
+#include <aws/bedrock-agentcore/model/InvokeHarnessRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsRequest.h>
@@ -728,6 +729,59 @@ InvokeCodeInterpreterOutcome BedrockAgentCoreClient::InvokeCodeInterpreter(Invok
         auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
         return result.IsSuccess() ? InvokeCodeInterpreterOutcome(result.GetResultWithOwnership())
                                   : InvokeCodeInterpreterOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+
+InvokeHarnessOutcome BedrockAgentCoreClient::InvokeHarness(InvokeHarnessRequest& request) const {
+  AWS_OPERATION_GUARD(InvokeHarness);
+  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeHarness, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  if (!request.HarnessArnHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeHarness", "Required field: HarnessArn, is not set");
+    return InvokeHarnessOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [HarnessArn]", false));
+  }
+  if (!request.RuntimeSessionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("InvokeHarness", "Required field: RuntimeSessionId, is not set");
+    return InvokeHarnessOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuntimeSessionId]", false));
+  }
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, InvokeHarness, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, InvokeHarness, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeHarness",
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<InvokeHarnessOutcome>(
+      [&]() -> InvokeHarnessOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, InvokeHarness, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                    endpointResolutionOutcome.GetError().GetMessage());
+        endpointResolutionOutcome.GetResult().AddPathSegments("/harnesses/invoke");
+        request.SetResponseStreamFactory([&] {
+          request.GetEventStreamDecoder().Reset();
+          return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder());
+        });
+        if (!request.GetHeadersReceivedEventHandler()) {
+          request.SetHeadersReceivedEventHandler([&request](const Http::HttpRequest*, Http::HttpResponse* response) {
+            AWS_CHECK_PTR("InvokeHarness", response);
+            if (const auto initialResponseHandler = request.GetEventStreamHandler().GetInitialResponseCallbackEx()) {
+              initialResponseHandler({response->GetHeaders()}, Utils::Event::InitialResponseType::ON_RESPONSE);
+            }
+          });
+        }
+        auto result = MakeRequest(request, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_POST);
+        return result.IsSuccess() ? InvokeHarnessOutcome(result.GetResultWithOwnership())
+                                  : InvokeHarnessOutcome(std::move(result.GetError()));
       },
       TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},

@@ -517,7 +517,7 @@ class ComputeResource {
    * <p>Provides information that's used to select Amazon Machine Images (AMIs) for
    * Amazon EC2 instances in the compute environment. If
    * <code>Ec2Configuration</code> isn't specified, the default is
-   * <code>ECS_AL2</code> for EC2 (ECS) compute environments and
+   * <code>ECS_AL2023</code> for EC2 (ECS) compute environments and
    * <code>EKS_AL2023</code> for EKS compute environments.</p> <p>One or two values
    * can be provided.</p>  <p>This parameter isn't applicable to jobs that are
    * running on Fargate resources. Don't specify it.</p>

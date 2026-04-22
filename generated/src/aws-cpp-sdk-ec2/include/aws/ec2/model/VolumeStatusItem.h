@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/model/InitializationStatusDetails.h>
+#include <aws/ec2/model/OperatorResponse.h>
 #include <aws/ec2/model/VolumeStatusAction.h>
 #include <aws/ec2/model/VolumeStatusAttachmentStatus.h>
 #include <aws/ec2/model/VolumeStatusEvent.h>
@@ -223,6 +224,24 @@ class VolumeStatusItem {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The service provider that manages the resource.</p>
+   */
+  inline const OperatorResponse& GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  template <typename OperatorT = OperatorResponse>
+  void SetOperator(OperatorT&& value) {
+    m_operatorHasBeenSet = true;
+    m_operator = std::forward<OperatorT>(value);
+  }
+  template <typename OperatorT = OperatorResponse>
+  VolumeStatusItem& WithOperator(OperatorT&& value) {
+    SetOperator(std::forward<OperatorT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<VolumeStatusAction> m_actions;
 
@@ -241,6 +260,8 @@ class VolumeStatusItem {
   InitializationStatusDetails m_initializationStatusDetails;
 
   Aws::String m_availabilityZoneId;
+
+  OperatorResponse m_operator;
   bool m_actionsHasBeenSet = false;
   bool m_availabilityZoneHasBeenSet = false;
   bool m_outpostArnHasBeenSet = false;
@@ -250,6 +271,7 @@ class VolumeStatusItem {
   bool m_attachmentStatusesHasBeenSet = false;
   bool m_initializationStatusDetailsHasBeenSet = false;
   bool m_availabilityZoneIdHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
 };
 
 }  // namespace Model

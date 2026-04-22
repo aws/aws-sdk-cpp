@@ -36,22 +36,6 @@ class AudioConfiguration {
 
   ///@{
   /**
-   * <p>Number of audio channels.</p>
-   */
-  inline long long GetChannels() const { return m_channels; }
-  inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
-  inline void SetChannels(long long value) {
-    m_channelsHasBeenSet = true;
-    m_channels = value;
-  }
-  inline AudioConfiguration& WithChannels(long long value) {
-    SetChannels(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Codec used for the audio encoding.</p>
    */
   inline const Aws::String& GetCodec() const { return m_codec; }
@@ -64,22 +48,6 @@ class AudioConfiguration {
   template <typename CodecT = Aws::String>
   AudioConfiguration& WithCodec(CodecT&& value) {
     SetCodec(std::forward<CodecT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Number of audio samples recorded per second.</p>
-   */
-  inline long long GetSampleRate() const { return m_sampleRate; }
-  inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
-  inline void SetSampleRate(long long value) {
-    m_sampleRateHasBeenSet = true;
-    m_sampleRate = value;
-  }
-  inline AudioConfiguration& WithSampleRate(long long value) {
-    SetSampleRate(value);
     return *this;
   }
   ///@}
@@ -103,8 +71,40 @@ class AudioConfiguration {
 
   ///@{
   /**
+   * <p>Number of audio samples recorded per second.</p>
+   */
+  inline long long GetSampleRate() const { return m_sampleRate; }
+  inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
+  inline void SetSampleRate(long long value) {
+    m_sampleRateHasBeenSet = true;
+    m_sampleRate = value;
+  }
+  inline AudioConfiguration& WithSampleRate(long long value) {
+    SetSampleRate(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Number of audio channels.</p>
+   */
+  inline long long GetChannels() const { return m_channels; }
+  inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+  inline void SetChannels(long long value) {
+    m_channelsHasBeenSet = true;
+    m_channels = value;
+  }
+  inline AudioConfiguration& WithChannels(long long value) {
+    SetChannels(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Name of the audio track (if the stream has an audio track). If multitrack is
-   * not enabled, this is track0 (the sole track).</p>
+   * not enabled, this is Track0 (the sole track).</p>
    */
   inline const Aws::String& GetTrack() const { return m_track; }
   inline bool TrackHasBeenSet() const { return m_trackHasBeenSet; }
@@ -120,19 +120,19 @@ class AudioConfiguration {
   }
   ///@}
  private:
-  long long m_channels{0};
-
   Aws::String m_codec;
-
-  long long m_sampleRate{0};
 
   long long m_targetBitrate{0};
 
+  long long m_sampleRate{0};
+
+  long long m_channels{0};
+
   Aws::String m_track;
-  bool m_channelsHasBeenSet = false;
   bool m_codecHasBeenSet = false;
-  bool m_sampleRateHasBeenSet = false;
   bool m_targetBitrateHasBeenSet = false;
+  bool m_sampleRateHasBeenSet = false;
+  bool m_channelsHasBeenSet = false;
   bool m_trackHasBeenSet = false;
 };
 

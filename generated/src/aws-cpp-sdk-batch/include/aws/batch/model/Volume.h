@@ -7,6 +7,7 @@
 #include <aws/batch/Batch_EXPORTS.h>
 #include <aws/batch/model/EFSVolumeConfiguration.h>
 #include <aws/batch/model/Host.h>
+#include <aws/batch/model/S3FilesVolumeConfiguration.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
 #include <utility>
@@ -98,15 +99,37 @@ class Volume {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>This parameter is specified when you're using an S3Files file system for job
+   * storage.</p>
+   */
+  inline const S3FilesVolumeConfiguration& GetS3filesVolumeConfiguration() const { return m_s3filesVolumeConfiguration; }
+  inline bool S3filesVolumeConfigurationHasBeenSet() const { return m_s3filesVolumeConfigurationHasBeenSet; }
+  template <typename S3filesVolumeConfigurationT = S3FilesVolumeConfiguration>
+  void SetS3filesVolumeConfiguration(S3filesVolumeConfigurationT&& value) {
+    m_s3filesVolumeConfigurationHasBeenSet = true;
+    m_s3filesVolumeConfiguration = std::forward<S3filesVolumeConfigurationT>(value);
+  }
+  template <typename S3filesVolumeConfigurationT = S3FilesVolumeConfiguration>
+  Volume& WithS3filesVolumeConfiguration(S3filesVolumeConfigurationT&& value) {
+    SetS3filesVolumeConfiguration(std::forward<S3filesVolumeConfigurationT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Host m_host;
 
   Aws::String m_name;
 
   EFSVolumeConfiguration m_efsVolumeConfiguration;
+
+  S3FilesVolumeConfiguration m_s3filesVolumeConfiguration;
   bool m_hostHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_efsVolumeConfigurationHasBeenSet = false;
+  bool m_s3filesVolumeConfigurationHasBeenSet = false;
 };
 
 }  // namespace Model

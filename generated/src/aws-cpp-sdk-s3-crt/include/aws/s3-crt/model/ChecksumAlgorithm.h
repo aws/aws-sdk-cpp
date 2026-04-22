@@ -10,7 +10,7 @@
 namespace Aws {
 namespace S3Crt {
 namespace Model {
-enum class ChecksumAlgorithm { NOT_SET, CRC32, CRC32C, SHA1, SHA256, CRC64NVME };
+enum class ChecksumAlgorithm { NOT_SET, CRC32, CRC32C, SHA1, SHA256, CRC64NVME, SHA512, MD5, XXHASH64, XXHASH3, XXHASH128 };
 
 namespace ChecksumAlgorithmMapper {
 AWS_S3CRT_API ChecksumAlgorithm GetChecksumAlgorithmForName(const Aws::String& name);

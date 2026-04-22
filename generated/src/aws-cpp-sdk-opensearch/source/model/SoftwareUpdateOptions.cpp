@@ -22,6 +22,10 @@ SoftwareUpdateOptions& SoftwareUpdateOptions::operator=(JsonView jsonValue) {
     m_autoSoftwareUpdateEnabled = jsonValue.GetBool("AutoSoftwareUpdateEnabled");
     m_autoSoftwareUpdateEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UseLatestServiceSoftwareForBlueGreen")) {
+    m_useLatestServiceSoftwareForBlueGreen = jsonValue.GetBool("UseLatestServiceSoftwareForBlueGreen");
+    m_useLatestServiceSoftwareForBlueGreenHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue SoftwareUpdateOptions::Jsonize() const {
 
   if (m_autoSoftwareUpdateEnabledHasBeenSet) {
     payload.WithBool("AutoSoftwareUpdateEnabled", m_autoSoftwareUpdateEnabled);
+  }
+
+  if (m_useLatestServiceSoftwareForBlueGreenHasBeenSet) {
+    payload.WithBool("UseLatestServiceSoftwareForBlueGreen", m_useLatestServiceSoftwareForBlueGreen);
   }
 
   return payload;

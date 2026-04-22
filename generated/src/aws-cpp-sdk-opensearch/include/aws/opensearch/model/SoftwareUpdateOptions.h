@@ -44,9 +44,30 @@ class SoftwareUpdateOptions {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Whether the domain should use the latest service software version during a
+   * blue/green deployment. If enabled, the domain will automatically use the latest
+   * available service software when a blue/green deployment is triggered.</p>
+   */
+  inline bool GetUseLatestServiceSoftwareForBlueGreen() const { return m_useLatestServiceSoftwareForBlueGreen; }
+  inline bool UseLatestServiceSoftwareForBlueGreenHasBeenSet() const { return m_useLatestServiceSoftwareForBlueGreenHasBeenSet; }
+  inline void SetUseLatestServiceSoftwareForBlueGreen(bool value) {
+    m_useLatestServiceSoftwareForBlueGreenHasBeenSet = true;
+    m_useLatestServiceSoftwareForBlueGreen = value;
+  }
+  inline SoftwareUpdateOptions& WithUseLatestServiceSoftwareForBlueGreen(bool value) {
+    SetUseLatestServiceSoftwareForBlueGreen(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_autoSoftwareUpdateEnabled{false};
+
+  bool m_useLatestServiceSoftwareForBlueGreen{false};
   bool m_autoSoftwareUpdateEnabledHasBeenSet = false;
+  bool m_useLatestServiceSoftwareForBlueGreenHasBeenSet = false;
 };
 
 }  // namespace Model

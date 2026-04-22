@@ -60,6 +60,7 @@ static const int nodejs24_x_HASH = HashingUtils::HashString("nodejs24.x");
 static const int python3_14_HASH = HashingUtils::HashString("python3.14");
 static const int java25_HASH = HashingUtils::HashString("java25");
 static const int dotnet10_HASH = HashingUtils::HashString("dotnet10");
+static const int ruby4_0_HASH = HashingUtils::HashString("ruby4.0");
 
 Runtime GetRuntimeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -153,6 +154,8 @@ Runtime GetRuntimeForName(const Aws::String& name) {
     return Runtime::java25;
   } else if (hashCode == dotnet10_HASH) {
     return Runtime::dotnet10;
+  } else if (hashCode == ruby4_0_HASH) {
+    return Runtime::ruby4_0;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -257,6 +260,8 @@ Aws::String GetNameForRuntime(Runtime enumValue) {
       return "java25";
     case Runtime::dotnet10:
       return "dotnet10";
+    case Runtime::ruby4_0:
+      return "ruby4.0";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

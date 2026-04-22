@@ -57,23 +57,6 @@ class MultitrackInputConfiguration {
 
   ///@{
   /**
-   * <p>Maximum resolution for multitrack input. Required if <code>enabled</code> is
-   * <code>true</code>.</p>
-   */
-  inline MultitrackMaximumResolution GetMaximumResolution() const { return m_maximumResolution; }
-  inline bool MaximumResolutionHasBeenSet() const { return m_maximumResolutionHasBeenSet; }
-  inline void SetMaximumResolution(MultitrackMaximumResolution value) {
-    m_maximumResolutionHasBeenSet = true;
-    m_maximumResolution = value;
-  }
-  inline MultitrackInputConfiguration& WithMaximumResolution(MultitrackMaximumResolution value) {
-    SetMaximumResolution(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Indicates whether multitrack input is allowed or required. Required if
    * <code>enabled</code> is <code>true</code>.</p>
    */
@@ -88,15 +71,32 @@ class MultitrackInputConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Maximum resolution for multitrack input. Required if <code>enabled</code> is
+   * <code>true</code>.</p>
+   */
+  inline MultitrackMaximumResolution GetMaximumResolution() const { return m_maximumResolution; }
+  inline bool MaximumResolutionHasBeenSet() const { return m_maximumResolutionHasBeenSet; }
+  inline void SetMaximumResolution(MultitrackMaximumResolution value) {
+    m_maximumResolutionHasBeenSet = true;
+    m_maximumResolution = value;
+  }
+  inline MultitrackInputConfiguration& WithMaximumResolution(MultitrackMaximumResolution value) {
+    SetMaximumResolution(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_enabled{false};
 
-  MultitrackMaximumResolution m_maximumResolution{MultitrackMaximumResolution::NOT_SET};
-
   MultitrackPolicy m_policy{MultitrackPolicy::NOT_SET};
+
+  MultitrackMaximumResolution m_maximumResolution{MultitrackMaximumResolution::NOT_SET};
   bool m_enabledHasBeenSet = false;
-  bool m_maximumResolutionHasBeenSet = false;
   bool m_policyHasBeenSet = false;
+  bool m_maximumResolutionHasBeenSet = false;
 };
 
 }  // namespace Model

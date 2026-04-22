@@ -257,6 +257,93 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Returns a URL that you can use to access the application UIs for a specified
+   * resource, such as a session.</p> <p>For resources in a running state, the
+   * application UI is a live user interface such as the Spark web UI. For terminated
+   * resources, the application UI is a persistent application user interface such as
+   * the Spark History Server.</p>  <p>The URL is valid for one hour after you
+   * generate it. To access the application UI after that hour elapses, you must
+   * invoke the API again to generate a new URL.</p> <p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetResourceDashboard">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourceDashboardOutcome GetResourceDashboard(const Model::GetResourceDashboardRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourceDashboard that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourceDashboardRequestT = Model::GetResourceDashboardRequest>
+  Model::GetResourceDashboardOutcomeCallable GetResourceDashboardCallable(const GetResourceDashboardRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::GetResourceDashboard, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourceDashboard that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetResourceDashboardRequestT = Model::GetResourceDashboardRequest>
+  void GetResourceDashboardAsync(const GetResourceDashboardRequestT& request, const GetResourceDashboardResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::GetResourceDashboard, request, handler, context);
+  }
+
+  /**
+   * <p>Displays detailed information about a session.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionOutcome GetSession(const Model::GetSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  Model::GetSessionOutcomeCallable GetSessionCallable(const GetSessionRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::GetSession, request);
+  }
+
+  /**
+   * An Async wrapper for GetSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetSessionRequestT = Model::GetSessionRequest>
+  void GetSessionAsync(const GetSessionRequestT& request, const GetSessionResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::GetSession, request, handler, context);
+  }
+
+  /**
+   * <p>Returns the session endpoint URL and a time-limited authentication token for
+   * the specified session. Use the endpoint and token to connect a client to the
+   * session. Call this operation again when the authentication token expires to
+   * obtain a new token.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/GetSessionEndpoint">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetSessionEndpointOutcome GetSessionEndpoint(const Model::GetSessionEndpointRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetSessionEndpoint that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  Model::GetSessionEndpointOutcomeCallable GetSessionEndpointCallable(const GetSessionEndpointRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::GetSessionEndpoint, request);
+  }
+
+  /**
+   * An Async wrapper for GetSessionEndpoint that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetSessionEndpointRequestT = Model::GetSessionEndpointRequest>
+  void GetSessionEndpointAsync(const GetSessionEndpointRequestT& request, const GetSessionEndpointResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::GetSessionEndpoint, request, handler, context);
+  }
+
+  /**
    * <p>Lists applications based on a set of parameters.</p><p><h3>See Also:</h3>
    * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListApplications">AWS
@@ -333,6 +420,32 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
   void ListJobRunsAsync(const ListJobRunsRequestT& request, const ListJobRunsResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EMRServerlessClient::ListJobRuns, request, handler, context);
+  }
+
+  /**
+   * <p>Lists sessions for the specified application. You can filter sessions by
+   * state and creation time.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/ListSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListSessionsOutcome ListSessions(const Model::ListSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListSessions that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  Model::ListSessionsOutcomeCallable ListSessionsCallable(const ListSessionsRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::ListSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListSessions that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListSessionsRequestT = Model::ListSessionsRequest>
+  void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::ListSessions, request, handler, context);
   }
 
   /**
@@ -414,6 +527,35 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
   }
 
   /**
+   * <p>Creates and starts a new session on the specified application. The
+   * application must be in the <code>STARTED</code> state or have
+   * <code>AutoStart</code> enabled, and have interactive sessions enabled. This
+   * operation is supported for EMR release 7.13.0 and later.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/StartSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartSessionOutcome StartSession(const Model::StartSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartSession that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename StartSessionRequestT = Model::StartSessionRequest>
+  Model::StartSessionOutcomeCallable StartSessionCallable(const StartSessionRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::StartSession, request);
+  }
+
+  /**
+   * An Async wrapper for StartSession that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename StartSessionRequestT = Model::StartSessionRequest>
+  void StartSessionAsync(const StartSessionRequestT& request, const StartSessionResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::StartSession, request, handler, context);
+  }
+
+  /**
    * <p>Stops a specified application and releases initial capacity if configured.
    * All scheduled and running jobs must be completed or cancelled before stopping an
    * application.</p><p><h3>See Also:</h3>   <a
@@ -468,6 +610,35 @@ class AWS_EMRSERVERLESS_API EMRServerlessClient : public Aws::Client::AWSJsonCli
   void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&EMRServerlessClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Terminates the specified session. After you terminate a session, it enters
+   * the <code>TERMINATING</code> state and then the <code>TERMINATED</code> state.
+   * You can still access the Spark History Server for a terminated session through
+   * the <code>GetResourceDashboard</code> operation.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/emr-serverless-2021-07-13/TerminateSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TerminateSessionOutcome TerminateSession(const Model::TerminateSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for TerminateSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename TerminateSessionRequestT = Model::TerminateSessionRequest>
+  Model::TerminateSessionOutcomeCallable TerminateSessionCallable(const TerminateSessionRequestT& request) const {
+    return SubmitCallable(&EMRServerlessClient::TerminateSession, request);
+  }
+
+  /**
+   * An Async wrapper for TerminateSession that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename TerminateSessionRequestT = Model::TerminateSessionRequest>
+  void TerminateSessionAsync(const TerminateSessionRequestT& request, const TerminateSessionResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&EMRServerlessClient::TerminateSession, request, handler, context);
   }
 
   /**

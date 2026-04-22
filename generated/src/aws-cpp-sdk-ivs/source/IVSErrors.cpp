@@ -13,6 +13,7 @@
 #include <aws/ivs/model/PendingVerification.h>
 #include <aws/ivs/model/ResourceNotFoundException.h>
 #include <aws/ivs/model/ServiceQuotaExceededException.h>
+#include <aws/ivs/model/ServiceUnavailable.h>
 #include <aws/ivs/model/StreamUnavailable.h>
 #include <aws/ivs/model/ThrottlingException.h>
 #include <aws/ivs/model/ValidationException.h>
@@ -70,6 +71,12 @@ template <>
 AWS_IVS_API PendingVerification IVSError::GetModeledError() {
   assert(this->GetErrorType() == IVSErrors::PENDING_VERIFICATION);
   return PendingVerification(this->GetJsonPayload().View());
+}
+
+template <>
+AWS_IVS_API ServiceUnavailable IVSError::GetModeledError() {
+  assert(this->GetErrorType() == IVSErrors::SERVICE_UNAVAILABLE);
+  return ServiceUnavailable(this->GetJsonPayload().View());
 }
 
 template <>

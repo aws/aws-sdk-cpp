@@ -103,6 +103,36 @@ HeadObjectResult& HeadObjectResult::operator=(const Aws::AmazonWebServiceResult<
     m_checksumSHA256HasBeenSet = true;
   }
 
+  const auto& checksumSHA512Iter = headers.find("x-amz-checksum-sha512");
+  if (checksumSHA512Iter != headers.end()) {
+    m_checksumSHA512 = checksumSHA512Iter->second;
+    m_checksumSHA512HasBeenSet = true;
+  }
+
+  const auto& checksumMD5Iter = headers.find("x-amz-checksum-md5");
+  if (checksumMD5Iter != headers.end()) {
+    m_checksumMD5 = checksumMD5Iter->second;
+    m_checksumMD5HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH64Iter = headers.find("x-amz-checksum-xxhash64");
+  if (checksumXXHASH64Iter != headers.end()) {
+    m_checksumXXHASH64 = checksumXXHASH64Iter->second;
+    m_checksumXXHASH64HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH3Iter = headers.find("x-amz-checksum-xxhash3");
+  if (checksumXXHASH3Iter != headers.end()) {
+    m_checksumXXHASH3 = checksumXXHASH3Iter->second;
+    m_checksumXXHASH3HasBeenSet = true;
+  }
+
+  const auto& checksumXXHASH128Iter = headers.find("x-amz-checksum-xxhash128");
+  if (checksumXXHASH128Iter != headers.end()) {
+    m_checksumXXHASH128 = checksumXXHASH128Iter->second;
+    m_checksumXXHASH128HasBeenSet = true;
+  }
+
   const auto& checksumTypeIter = headers.find("x-amz-checksum-type");
   if (checksumTypeIter != headers.end()) {
     m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(checksumTypeIter->second);

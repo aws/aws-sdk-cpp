@@ -31,6 +31,24 @@ class UpdatePlaybackRestrictionPolicyRequest : public IVSRequest {
 
   ///@{
   /**
+   * <p>ARN of the playback-restriction-policy to be updated.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  UpdatePlaybackRestrictionPolicyRequest& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A list of country codes that control geoblocking restriction. Allowed values
    * are the officially assigned <a
    * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1 alpha-2</a>
@@ -85,24 +103,6 @@ class UpdatePlaybackRestrictionPolicyRequest : public IVSRequest {
 
   ///@{
   /**
-   * <p>ARN of the playback-restriction-policy to be updated.</p>
-   */
-  inline const Aws::String& GetArn() const { return m_arn; }
-  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
-  template <typename ArnT = Aws::String>
-  void SetArn(ArnT&& value) {
-    m_arnHasBeenSet = true;
-    m_arn = std::forward<ArnT>(value);
-  }
-  template <typename ArnT = Aws::String>
-  UpdatePlaybackRestrictionPolicyRequest& WithArn(ArnT&& value) {
-    SetArn(std::forward<ArnT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>Whether channel playback is constrained by origin site. Default:
    * <code>false</code>.</p>
    */
@@ -136,18 +136,18 @@ class UpdatePlaybackRestrictionPolicyRequest : public IVSRequest {
   }
   ///@}
  private:
+  Aws::String m_arn;
+
   Aws::Vector<Aws::String> m_allowedCountries;
 
   Aws::Vector<Aws::String> m_allowedOrigins;
 
-  Aws::String m_arn;
-
   bool m_enableStrictOriginEnforcement{false};
 
   Aws::String m_name;
+  bool m_arnHasBeenSet = false;
   bool m_allowedCountriesHasBeenSet = false;
   bool m_allowedOriginsHasBeenSet = false;
-  bool m_arnHasBeenSet = false;
   bool m_enableStrictOriginEnforcementHasBeenSet = false;
   bool m_nameHasBeenSet = false;
 };

@@ -52,6 +52,24 @@ class StreamKey {
 
   ///@{
   /**
+   * <p>Stream-key value.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  StreamKey& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Channel ARN for the stream.</p>
    */
   inline const Aws::String& GetChannelArn() const { return m_channelArn; }
@@ -97,36 +115,18 @@ class StreamKey {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Stream-key value.</p>
-   */
-  inline const Aws::String& GetValue() const { return m_value; }
-  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
-  template <typename ValueT = Aws::String>
-  void SetValue(ValueT&& value) {
-    m_valueHasBeenSet = true;
-    m_value = std::forward<ValueT>(value);
-  }
-  template <typename ValueT = Aws::String>
-  StreamKey& WithValue(ValueT&& value) {
-    SetValue(std::forward<ValueT>(value));
-    return *this;
-  }
-  ///@}
  private:
   Aws::String m_arn;
+
+  Aws::String m_value;
 
   Aws::String m_channelArn;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
-
-  Aws::String m_value;
   bool m_arnHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
   bool m_channelArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
-  bool m_valueHasBeenSet = false;
 };
 
 }  // namespace Model
