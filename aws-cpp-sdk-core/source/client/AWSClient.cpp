@@ -370,6 +370,32 @@ StreamOutcome AWSClient::MakeRequestWithUnparsedResponse(const Aws::Http::URI& u
     return StreamOutcome(httpResponseOutcome.GetError());
 }
 
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri,
+    const Aws::AmazonWebServiceRequest& request,
+    Http::HttpMethod method,
+    const char* signerName) const
+{
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, request, method, signerName);
+    if (httpOutcome.IsSuccess())
+    {
+        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
+    }
+
+    return XmlOutcome(httpOutcome.GetError());
+}
+
+XmlOutcome AWSXMLClient::MakeRequestWithEventStream(const Aws::Http::URI& uri, Http::HttpMethod method,
+    const char* signerName, const char* requestName) const
+{
+    HttpResponseOutcome httpOutcome = AttemptExhaustively(uri, method, signerName, requestName);
+    if (httpOutcome.IsSuccess())
+    {
+        return XmlOutcome(AmazonWebServiceResult<XmlDocument>(XmlDocument(), httpOutcome.GetResult()->GetHeaders()));
+    }
+
+    return XmlOutcome(httpOutcome.GetError());
+}
+
 void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
     const Http::HeaderValueCollection& headerValues) const
 {
@@ -383,7 +409,7 @@ void AWSClient::AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest
 }
 
 void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-    const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5) const
+    const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5, bool isChunked) const
 {
     httpRequest->AddContentBody(body);
 
@@ -404,10 +430,20 @@ void AWSClient::AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpReq
         }
     }
 
+    //Add transfer-encoding:chunked to header
+    if (body && isChunked)
+    {
+        httpRequest->SetTransferEncoding(CHUNKED_VALUE);
+    }
     //in the scenario where we are adding a content body as a stream, the request object likely already
     //has a content-length header set and we don't want to seek the stream just to find this information.
-    if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
+    else if (body && !httpRequest->HasHeader(Http::CONTENT_LENGTH_HEADER))
     {
+        if (!m_httpClient->SupportsChunkedTransferEncoding())
+        {
+            AWS_LOGSTREAM_WARN(AWS_CLIENT_LOG_TAG, "This http client doesn't support transfer-encoding:chunked. " <<
+                                                   "The request may fail if it's not a seekable stream.");
+        }
         AWS_LOGSTREAM_TRACE(AWS_CLIENT_LOG_TAG, "Found body, but content-length has not been set, attempting to compute content-length");
         body->seekg(0, body->end);
         auto streamSize = body->tellg();
@@ -440,7 +476,8 @@ void AWSClient::BuildHttpRequest(const Aws::AmazonWebServiceRequest& request,
 {
     //do headers first since the request likely will set content-length as it's own header.
     AddHeadersToRequest(httpRequest, request.GetHeaders());
-    AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5());
+    AddContentBodyToRequest(httpRequest, request.GetBody(), request.ShouldComputeContentMd5(),
+                            request.IsStreaming() && request.IsChunked() && m_httpClient->SupportsChunkedTransferEncoding());
 
     // Pass along handlers for processing data sent/received in bytes
     httpRequest->SetDataReceivedEventHandler(request.GetDataReceivedEventHandler());
@@ -464,7 +501,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, long lo
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const Aws::Http::HeaderValueCollection& customizedHeaders, long long expirationInSeconds)
@@ -480,7 +517,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const A
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName, long long expirationInSeconds) const
@@ -492,7 +529,7 @@ Aws::String AWSClient::GeneratePresignedUrl(Aws::Http::URI& uri, Aws::Http::Http
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const char* region, long long expirationInSeconds) const
@@ -504,7 +541,7 @@ Aws::String AWSClient::GeneratePresignedUrl(URI& uri, HttpMethod method, const c
         return request->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region,
@@ -518,7 +555,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method, const char* region, const char* serviceName,
@@ -532,7 +569,7 @@ const Aws::Http::QueryStringParameterCollection& extraParams, long long expirati
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri, Aws::Http::HttpMethod method,
@@ -546,7 +583,7 @@ Aws::String AWSClient::GeneratePresignedUrl(const Aws::AmazonWebServiceRequest& 
         return httpRequest->GetURIString();
     }
 
-    return "";
+    return {};
 }
 
 std::shared_ptr<Aws::Http::HttpRequest> AWSClient::ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
@@ -636,6 +673,7 @@ AWSError<CoreErrors> AWSJsonClient::BuildAWSError(
     if (!httpResponse)
     {
         error = AWSError<CoreErrors>(CoreErrors::NETWORK_CONNECTION, "", "Unable to connect to endpoint", true);
+        error.SetResponseCode(HttpResponseCode::REQUEST_NOT_MADE);
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
@@ -734,8 +772,6 @@ AWSError<CoreErrors> AWSXMLClient::BuildAWSError(const std::shared_ptr<Http::Htt
         AWS_LOGSTREAM_ERROR(AWS_CLIENT_LOG_TAG, error);
         return error;
     }
-
-
 
     if (httpResponse->GetResponseBody().tellp() < 1)
     {

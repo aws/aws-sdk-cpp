@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the receipt rule set to describe.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set to describe.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**

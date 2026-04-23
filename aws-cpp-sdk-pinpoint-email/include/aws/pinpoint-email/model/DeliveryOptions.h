@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the dedicated IP pool that you want to associate with the
      * configuration set.</p>
      */
+    inline bool SendingPoolNameHasBeenSet() const { return m_sendingPoolNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dedicated IP pool that you want to associate with the
+     * configuration set.</p>
+     */
     inline void SetSendingPoolName(const Aws::String& value) { m_sendingPoolNameHasBeenSet = true; m_sendingPoolName = value; }
 
     /**

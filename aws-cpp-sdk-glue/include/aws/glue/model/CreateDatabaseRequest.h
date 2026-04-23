@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which to create the database. If none is
      * supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which to create the database. If none is
+     * supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * in the catalog.</p>
      */
     inline const DatabaseInput& GetDatabaseInput() const{ return m_databaseInput; }
+
+    /**
+     * <p>A <code>DatabaseInput</code> object defining the metadata database to create
+     * in the catalog.</p>
+     */
+    inline bool DatabaseInputHasBeenSet() const { return m_databaseInputHasBeenSet; }
 
     /**
      * <p>A <code>DatabaseInput</code> object defining the metadata database to create

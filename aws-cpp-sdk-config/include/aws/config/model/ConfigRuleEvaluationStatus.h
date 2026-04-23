@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleArnHasBeenSet() const { return m_configRuleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleArn(const Aws::String& value) { m_configRuleArnHasBeenSet = true; m_configRuleArn = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The ID of the AWS Config rule.</p>
      */
     inline const Aws::String& GetConfigRuleId() const{ return m_configRuleId; }
+
+    /**
+     * <p>The ID of the AWS Config rule.</p>
+     */
+    inline bool ConfigRuleIdHasBeenSet() const { return m_configRuleIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS Config rule.</p>
@@ -169,6 +184,12 @@ namespace Model
      * <p>The time that AWS Config last successfully invoked the AWS Config rule to
      * evaluate your AWS resources.</p>
      */
+    inline bool LastSuccessfulInvocationTimeHasBeenSet() const { return m_lastSuccessfulInvocationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that AWS Config last successfully invoked the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
     inline void SetLastSuccessfulInvocationTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulInvocationTimeHasBeenSet = true; m_lastSuccessfulInvocationTime = value; }
 
     /**
@@ -195,6 +216,12 @@ namespace Model
      * evaluate your AWS resources.</p>
      */
     inline const Aws::Utils::DateTime& GetLastFailedInvocationTime() const{ return m_lastFailedInvocationTime; }
+
+    /**
+     * <p>The time that AWS Config last failed to invoke the AWS Config rule to
+     * evaluate your AWS resources.</p>
+     */
+    inline bool LastFailedInvocationTimeHasBeenSet() const { return m_lastFailedInvocationTimeHasBeenSet; }
 
     /**
      * <p>The time that AWS Config last failed to invoke the AWS Config rule to
@@ -231,6 +258,12 @@ namespace Model
      * <p>The time that AWS Config last successfully evaluated your AWS resources
      * against the rule.</p>
      */
+    inline bool LastSuccessfulEvaluationTimeHasBeenSet() const { return m_lastSuccessfulEvaluationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that AWS Config last successfully evaluated your AWS resources
+     * against the rule.</p>
+     */
     inline void SetLastSuccessfulEvaluationTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulEvaluationTimeHasBeenSet = true; m_lastSuccessfulEvaluationTime = value; }
 
     /**
@@ -257,6 +290,12 @@ namespace Model
      * the rule.</p>
      */
     inline const Aws::Utils::DateTime& GetLastFailedEvaluationTime() const{ return m_lastFailedEvaluationTime; }
+
+    /**
+     * <p>The time that AWS Config last failed to evaluate your AWS resources against
+     * the rule.</p>
+     */
+    inline bool LastFailedEvaluationTimeHasBeenSet() const { return m_lastFailedEvaluationTimeHasBeenSet; }
 
     /**
      * <p>The time that AWS Config last failed to evaluate your AWS resources against
@@ -291,6 +330,11 @@ namespace Model
     /**
      * <p>The time that you first activated the AWS Config rule.</p>
      */
+    inline bool FirstActivatedTimeHasBeenSet() const { return m_firstActivatedTimeHasBeenSet; }
+
+    /**
+     * <p>The time that you first activated the AWS Config rule.</p>
+     */
     inline void SetFirstActivatedTime(const Aws::Utils::DateTime& value) { m_firstActivatedTimeHasBeenSet = true; m_firstActivatedTime = value; }
 
     /**
@@ -313,6 +357,11 @@ namespace Model
      * <p>The error code that AWS Config returned when the rule last failed.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
+
+    /**
+     * <p>The error code that AWS Config returned when the rule last failed.</p>
+     */
+    inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
      * <p>The error code that AWS Config returned when the rule last failed.</p>
@@ -353,6 +402,11 @@ namespace Model
     /**
      * <p>The error message that AWS Config returned when the rule last failed.</p>
      */
+    inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
+
+    /**
+     * <p>The error message that AWS Config returned when the rule last failed.</p>
+     */
     inline void SetLastErrorMessage(const Aws::String& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = value; }
 
     /**
@@ -389,6 +443,15 @@ namespace Model
      * resources against the rule.</p> </li> </ul>
      */
     inline bool GetFirstEvaluationStarted() const{ return m_firstEvaluationStarted; }
+
+    /**
+     * <p>Indicates whether AWS Config has evaluated your resources against the rule at
+     * least once.</p> <ul> <li> <p> <code>true</code> - AWS Config has evaluated your
+     * AWS resources against the rule at least once.</p> </li> <li> <p>
+     * <code>false</code> - AWS Config has not once finished evaluating your AWS
+     * resources against the rule.</p> </li> </ul>
+     */
+    inline bool FirstEvaluationStartedHasBeenSet() const { return m_firstEvaluationStartedHasBeenSet; }
 
     /**
      * <p>Indicates whether AWS Config has evaluated your resources against the rule at

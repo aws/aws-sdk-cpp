@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The names of the domains you want to include in the response.</p>
      */
+    inline bool DomainNamesHasBeenSet() const { return m_domainNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the domains you want to include in the response.</p>
+     */
     inline void SetDomainNames(const Aws::Vector<Aws::String>& value) { m_domainNamesHasBeenSet = true; m_domainNames = value; }
 
     /**

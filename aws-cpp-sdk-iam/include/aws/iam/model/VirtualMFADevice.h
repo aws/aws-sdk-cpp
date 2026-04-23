@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
      */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
+
+    /**
+     * <p>The serial number associated with <code>VirtualMFADevice</code>.</p>
+     */
     inline void SetSerialNumber(const Aws::String& value) { m_serialNumberHasBeenSet = true; m_serialNumber = value; }
 
     /**
@@ -90,37 +95,44 @@ namespace Model
 
 
     /**
-     * <p> The Base32 seed defined as specified in <a
+     * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetBase32StringSeed() const{ return m_base32StringSeed; }
 
     /**
-     * <p> The Base32 seed defined as specified in <a
+     * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
+     */
+    inline bool Base32StringSeedHasBeenSet() const { return m_base32StringSeedHasBeenSet; }
+
+    /**
+     * <p> The base32 seed defined as specified in <a
+     * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
     inline void SetBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = value; }
 
     /**
-     * <p> The Base32 seed defined as specified in <a
+     * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
     inline void SetBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { m_base32StringSeedHasBeenSet = true; m_base32StringSeed = std::move(value); }
 
     /**
-     * <p> The Base32 seed defined as specified in <a
+     * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(const Aws::Utils::CryptoBuffer& value) { SetBase32StringSeed(value); return *this;}
 
     /**
-     * <p> The Base32 seed defined as specified in <a
+     * <p> The base32 seed defined as specified in <a
      * href="https://tools.ietf.org/html/rfc3548.txt">RFC3548</a>. The
-     * <code>Base32StringSeed</code> is Base64-encoded. </p>
+     * <code>Base32StringSeed</code> is base64-encoded. </p>
      */
     inline VirtualMFADevice& WithBase32StringSeed(Aws::Utils::CryptoBuffer&& value) { SetBase32StringSeed(std::move(value)); return *this;}
 
@@ -128,50 +140,60 @@ namespace Model
     /**
      * <p> A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-     * where <code>$virtualMFADeviceName</code> is one of the create call arguments,
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
      * <code>AccountName</code> is the user name if set (otherwise, the account ID
-     * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded. </p>
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline const Aws::Utils::CryptoBuffer& GetQRCodePNG() const{ return m_qRCodePNG; }
 
     /**
      * <p> A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-     * where <code>$virtualMFADeviceName</code> is one of the create call arguments,
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
      * <code>AccountName</code> is the user name if set (otherwise, the account ID
-     * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded. </p>
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
+     */
+    inline bool QRCodePNGHasBeenSet() const { return m_qRCodePNGHasBeenSet; }
+
+    /**
+     * <p> A QR code PNG image that encodes
+     * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
+     * <code>AccountName</code> is the user name if set (otherwise, the account ID
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline void SetQRCodePNG(const Aws::Utils::CryptoBuffer& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = value; }
 
     /**
      * <p> A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-     * where <code>$virtualMFADeviceName</code> is one of the create call arguments,
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
      * <code>AccountName</code> is the user name if set (otherwise, the account ID
-     * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded. </p>
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline void SetQRCodePNG(Aws::Utils::CryptoBuffer&& value) { m_qRCodePNGHasBeenSet = true; m_qRCodePNG = std::move(value); }
 
     /**
      * <p> A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-     * where <code>$virtualMFADeviceName</code> is one of the create call arguments,
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
      * <code>AccountName</code> is the user name if set (otherwise, the account ID
-     * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded. </p>
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline VirtualMFADevice& WithQRCodePNG(const Aws::Utils::CryptoBuffer& value) { SetQRCodePNG(value); return *this;}
 
     /**
      * <p> A QR code PNG image that encodes
      * <code>otpauth://totp/$virtualMFADeviceName@$AccountName?secret=$Base32String</code>
-     * where <code>$virtualMFADeviceName</code> is one of the create call arguments,
+     * where <code>$virtualMFADeviceName</code> is one of the create call arguments.
      * <code>AccountName</code> is the user name if set (otherwise, the account ID
-     * otherwise), and <code>Base32String</code> is the seed in Base32 format. The
-     * <code>Base32String</code> value is Base64-encoded. </p>
+     * otherwise), and <code>Base32String</code> is the seed in base32 format. The
+     * <code>Base32String</code> value is base64-encoded. </p>
      */
     inline VirtualMFADevice& WithQRCodePNG(Aws::Utils::CryptoBuffer&& value) { SetQRCodePNG(std::move(value)); return *this;}
 
@@ -180,6 +202,11 @@ namespace Model
      * <p>The IAM user associated with this virtual MFA device.</p>
      */
     inline const User& GetUser() const{ return m_user; }
+
+    /**
+     * <p>The IAM user associated with this virtual MFA device.</p>
+     */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The IAM user associated with this virtual MFA device.</p>
@@ -206,6 +233,11 @@ namespace Model
      * <p>The date and time on which the virtual MFA device was enabled.</p>
      */
     inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
+
+    /**
+     * <p>The date and time on which the virtual MFA device was enabled.</p>
+     */
+    inline bool EnableDateHasBeenSet() const { return m_enableDateHasBeenSet; }
 
     /**
      * <p>The date and time on which the virtual MFA device was enabled.</p>

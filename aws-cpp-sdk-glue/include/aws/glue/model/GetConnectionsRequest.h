@@ -47,43 +47,49 @@ namespace Model
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline const Aws::String& GetCatalogId() const{ return m_catalogId; }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
+     */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the connections reside. If none is
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(Aws::String&& value) { m_catalogIdHasBeenSet = true; m_catalogId = std::move(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline void SetCatalogId(const char* value) { m_catalogIdHasBeenSet = true; m_catalogId.assign(value); }
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(const Aws::String& value) { SetCatalogId(value); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(Aws::String&& value) { SetCatalogId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the Data Catalog in which the connections reside. If none is
-     * supplied, the AWS account ID is used by default.</p>
+     * provided, the AWS account ID is used by default.</p>
      */
     inline GetConnectionsRequest& WithCatalogId(const char* value) { SetCatalogId(value); return *this;}
 
@@ -92,6 +98,11 @@ namespace Model
      * <p>A filter that controls which connections will be returned.</p>
      */
     inline const GetConnectionsFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>A filter that controls which connections will be returned.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>A filter that controls which connections will be returned.</p>
@@ -115,9 +126,51 @@ namespace Model
 
 
     /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
+    inline bool GetHidePassword() const{ return m_hidePassword; }
+
+    /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
+    inline bool HidePasswordHasBeenSet() const { return m_hidePasswordHasBeenSet; }
+
+    /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
+    inline void SetHidePassword(bool value) { m_hidePasswordHasBeenSet = true; m_hidePassword = value; }
+
+    /**
+     * <p>Allows you to retrieve the connection metadata without returning the
+     * password. For instance, the AWS Glue console uses this flag to retrieve the
+     * connection, and does not display the password. Set this parameter when the
+     * caller might not have permission to use the AWS KMS key to decrypt the password,
+     * but does have permission to access the rest of the connection properties.</p>
+     */
+    inline GetConnectionsRequest& WithHidePassword(bool value) { SetHidePassword(value); return *this;}
+
+
+    /**
      * <p>A continuation token, if this is a continuation call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A continuation token, if this is a continuation call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A continuation token, if this is a continuation call.</p>
@@ -158,6 +211,11 @@ namespace Model
     /**
      * <p>The maximum number of connections to return in one response.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of connections to return in one response.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -172,6 +230,9 @@ namespace Model
 
     GetConnectionsFilter m_filter;
     bool m_filterHasBeenSet;
+
+    bool m_hidePassword;
+    bool m_hidePasswordHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

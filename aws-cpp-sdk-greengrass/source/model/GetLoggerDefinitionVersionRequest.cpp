@@ -34,7 +34,7 @@ GetLoggerDefinitionVersionRequest::GetLoggerDefinitionVersionRequest() :
 
 Aws::String GetLoggerDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetLoggerDefinitionVersionRequest::AddQueryStringParameters(URI& uri) const

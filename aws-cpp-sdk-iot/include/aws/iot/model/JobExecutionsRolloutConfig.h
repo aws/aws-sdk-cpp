@@ -15,6 +15,8 @@
 
 #pragma once
 #include <aws/iot/IoT_EXPORTS.h>
+#include <aws/iot/model/ExponentialRolloutRate.h>
+#include <utility>
 
 namespace Aws
 {
@@ -55,6 +57,12 @@ namespace Model
      * <p>The maximum number of things that will be notified of a pending job, per
      * minute. This parameter allows you to create a staged rollout.</p>
      */
+    inline bool MaximumPerMinuteHasBeenSet() const { return m_maximumPerMinuteHasBeenSet; }
+
+    /**
+     * <p>The maximum number of things that will be notified of a pending job, per
+     * minute. This parameter allows you to create a staged rollout.</p>
+     */
     inline void SetMaximumPerMinute(int value) { m_maximumPerMinuteHasBeenSet = true; m_maximumPerMinute = value; }
 
     /**
@@ -63,10 +71,50 @@ namespace Model
      */
     inline JobExecutionsRolloutConfig& WithMaximumPerMinute(int value) { SetMaximumPerMinute(value); return *this;}
 
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline const ExponentialRolloutRate& GetExponentialRate() const{ return m_exponentialRate; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline bool ExponentialRateHasBeenSet() const { return m_exponentialRateHasBeenSet; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline void SetExponentialRate(const ExponentialRolloutRate& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = value; }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline void SetExponentialRate(ExponentialRolloutRate&& value) { m_exponentialRateHasBeenSet = true; m_exponentialRate = std::move(value); }
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline JobExecutionsRolloutConfig& WithExponentialRate(const ExponentialRolloutRate& value) { SetExponentialRate(value); return *this;}
+
+    /**
+     * <p>The rate of increase for a job rollout. This parameter allows you to define
+     * an exponential rate for a job rollout.</p>
+     */
+    inline JobExecutionsRolloutConfig& WithExponentialRate(ExponentialRolloutRate&& value) { SetExponentialRate(std::move(value)); return *this;}
+
   private:
 
     int m_maximumPerMinute;
     bool m_maximumPerMinuteHasBeenSet;
+
+    ExponentialRolloutRate m_exponentialRate;
+    bool m_exponentialRateHasBeenSet;
   };
 
 } // namespace Model

@@ -1692,16 +1692,16 @@ namespace Model
         virtual void ListRunsAsync(const Model::ListRunsRequest& request, const ListRunsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          */
         virtual Model::ListSamplesOutcome ListSamples(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          *
@@ -1710,8 +1710,8 @@ namespace Model
         virtual Model::ListSamplesOutcomeCallable ListSamplesCallable(const Model::ListSamplesRequest& request) const;
 
         /**
-         * <p>Gets information about samples, given an AWS Device Farm project
-         * ARN</p><p><h3>See Also:</h3>   <a
+         * <p>Gets information about samples, given an AWS Device Farm job
+         * ARN.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/ListSamples">AWS
          * API Reference</a></p>
          *
@@ -2277,10 +2277,10 @@ namespace Model
          */
         virtual void UpdateVPCEConfigurationAsync(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateDevicePoolAsyncHelper(const Model::CreateDevicePoolRequest& request, const CreateDevicePoolResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateInstanceProfileAsyncHelper(const Model::CreateInstanceProfileRequest& request, const CreateInstanceProfileResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2348,6 +2348,7 @@ namespace Model
         void UpdateVPCEConfigurationAsyncHelper(const Model::UpdateVPCEConfigurationRequest& request, const UpdateVPCEConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

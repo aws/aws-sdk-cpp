@@ -41,6 +41,8 @@ BurninDestinationSettings::BurninDestinationSettings() :
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
     m_fontResolutionHasBeenSet(false),
+    m_fontScript(FontScript::NOT_SET),
+    m_fontScriptHasBeenSet(false),
     m_fontSize(0),
     m_fontSizeHasBeenSet(false),
     m_outlineColor(BurninSubtitleOutlineColor::NOT_SET),
@@ -77,6 +79,8 @@ BurninDestinationSettings::BurninDestinationSettings(JsonView jsonValue) :
     m_fontOpacityHasBeenSet(false),
     m_fontResolution(0),
     m_fontResolutionHasBeenSet(false),
+    m_fontScript(FontScript::NOT_SET),
+    m_fontScriptHasBeenSet(false),
     m_fontSize(0),
     m_fontSizeHasBeenSet(false),
     m_outlineColor(BurninSubtitleOutlineColor::NOT_SET),
@@ -143,6 +147,13 @@ BurninDestinationSettings& BurninDestinationSettings::operator =(JsonView jsonVa
     m_fontResolution = jsonValue.GetInteger("fontResolution");
 
     m_fontResolutionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fontScript"))
+  {
+    m_fontScript = FontScriptMapper::GetFontScriptForName(jsonValue.GetString("fontScript"));
+
+    m_fontScriptHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("fontSize"))
@@ -253,6 +264,11 @@ JsonValue BurninDestinationSettings::Jsonize() const
   {
    payload.WithInteger("fontResolution", m_fontResolution);
 
+  }
+
+  if(m_fontScriptHasBeenSet)
+  {
+   payload.WithString("fontScript", FontScriptMapper::GetNameForFontScript(m_fontScript));
   }
 
   if(m_fontSizeHasBeenSet)

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The time and date the instance fleet was created.</p>
      */
+    inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+
+    /**
+     * <p>The time and date the instance fleet was created.</p>
+     */
     inline void SetCreationDateTime(const Aws::Utils::DateTime& value) { m_creationDateTimeHasBeenSet = true; m_creationDateTime = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>The time and date the instance fleet was ready to run jobs.</p>
      */
+    inline bool ReadyDateTimeHasBeenSet() const { return m_readyDateTimeHasBeenSet; }
+
+    /**
+     * <p>The time and date the instance fleet was ready to run jobs.</p>
+     */
     inline void SetReadyDateTime(const Aws::Utils::DateTime& value) { m_readyDateTimeHasBeenSet = true; m_readyDateTime = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The time and date the instance fleet terminated.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDateTime() const{ return m_endDateTime; }
+
+    /**
+     * <p>The time and date the instance fleet terminated.</p>
+     */
+    inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
 
     /**
      * <p>The time and date the instance fleet terminated.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the scheduled action.</p>
      */
+    inline bool ScheduledActionNameHasBeenSet() const { return m_scheduledActionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scheduled action.</p>
+     */
     inline void SetScheduledActionName(const Aws::String& value) { m_scheduledActionNameHasBeenSet = true; m_scheduledActionName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The error code.</p>
      */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
+
+    /**
+     * <p>The error code.</p>
+     */
     inline void SetErrorCode(const Aws::String& value) { m_errorCodeHasBeenSet = true; m_errorCode = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The error message accompanying the error code.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message accompanying the error code.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message accompanying the error code.</p>

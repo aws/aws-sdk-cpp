@@ -72,6 +72,15 @@ namespace Model
      * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
      * three hours.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The beginning of the time range from which you want
+     * <code>GetSampledRequests</code> to return a sample of the requests that your AWS
+     * resource received. Specify the date and time in the following format:
+     * <code>"2016-09-27T14:50Z"</code>. You can specify any time range in the previous
+     * three hours.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -109,6 +118,14 @@ namespace Model
      * specify any time range in the previous three hours.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end of the time range from which you want <code>GetSampledRequests</code>
+     * to return a sample of the requests that your AWS resource received. Specify the
+     * date and time in the following format: <code>"2016-09-27T14:50Z"</code>. You can
+     * specify any time range in the previous three hours.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end of the time range from which you want <code>GetSampledRequests</code>

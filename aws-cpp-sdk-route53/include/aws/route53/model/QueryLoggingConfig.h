@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID for a configuration for DNS query logging.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for a configuration for DNS query logging.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
      */
     inline const Aws::String& GetHostedZoneId() const{ return m_hostedZoneId; }
+
+    /**
+     * <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
+     */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
 
     /**
      * <p>The ID of the hosted zone that CloudWatch Logs is logging queries for. </p>
@@ -125,6 +135,12 @@ namespace Model
      * Route 53 is publishing logs to.</p>
      */
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon
+     * Route 53 is publishing logs to.</p>
+     */
+    inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the CloudWatch Logs log group that Amazon

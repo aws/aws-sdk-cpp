@@ -40,6 +40,9 @@ namespace Aws
         static const int INSTANCE_ARN_HASH = HashingUtils::HashString("INSTANCE_ARN");
         static const int INSTANCE_LABELS_HASH = HashingUtils::HashString("INSTANCE_LABELS");
         static const int FLEET_TYPE_HASH = HashingUtils::HashString("FLEET_TYPE");
+        static const int OS_VERSION_HASH = HashingUtils::HashString("OS_VERSION");
+        static const int MODEL_HASH = HashingUtils::HashString("MODEL");
+        static const int AVAILABILITY_HASH = HashingUtils::HashString("AVAILABILITY");
 
 
         DeviceAttribute GetDeviceAttributeForName(const Aws::String& name)
@@ -85,6 +88,18 @@ namespace Aws
           {
             return DeviceAttribute::FLEET_TYPE;
           }
+          else if (hashCode == OS_VERSION_HASH)
+          {
+            return DeviceAttribute::OS_VERSION;
+          }
+          else if (hashCode == MODEL_HASH)
+          {
+            return DeviceAttribute::MODEL;
+          }
+          else if (hashCode == AVAILABILITY_HASH)
+          {
+            return DeviceAttribute::AVAILABILITY;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -119,6 +134,12 @@ namespace Aws
             return "INSTANCE_LABELS";
           case DeviceAttribute::FLEET_TYPE:
             return "FLEET_TYPE";
+          case DeviceAttribute::OS_VERSION:
+            return "OS_VERSION";
+          case DeviceAttribute::MODEL:
+            return "MODEL";
+          case DeviceAttribute::AVAILABILITY:
+            return "AVAILABILITY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -126,7 +147,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

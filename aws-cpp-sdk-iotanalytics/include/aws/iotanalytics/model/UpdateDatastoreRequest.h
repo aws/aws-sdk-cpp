@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the data store to be updated.</p>
      */
+    inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data store to be updated.</p>
+     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>How long, in days, message data is kept for the data store.</p>
      */
     inline const RetentionPeriod& GetRetentionPeriod() const{ return m_retentionPeriod; }
+
+    /**
+     * <p>How long, in days, message data is kept for the data store.</p>
+     */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
 
     /**
      * <p>How long, in days, message data is kept for the data store.</p>

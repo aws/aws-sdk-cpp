@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The facet value being counted.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The facet value being counted.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * field.</p>
      */
     inline long long GetCount() const{ return m_count; }
+
+    /**
+     * <p>The number of hits that contain the facet value in the specified facet
+     * field.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The number of hits that contain the facet value in the specified facet

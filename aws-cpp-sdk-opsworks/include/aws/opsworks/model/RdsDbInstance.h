@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The instance's ARN.</p>
      */
+    inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The DB instance identifier.</p>
      */
     inline const Aws::String& GetDbInstanceIdentifier() const{ return m_dbInstanceIdentifier; }
+
+    /**
+     * <p>The DB instance identifier.</p>
+     */
+    inline bool DbInstanceIdentifierHasBeenSet() const { return m_dbInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The DB instance identifier.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The master user name.</p>
      */
+    inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
+
+    /**
+     * <p>The master user name.</p>
+     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
@@ -160,6 +175,12 @@ namespace Model
      * actual value.</p>
      */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+
+    /**
+     * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
+     * actual value.</p>
+     */
+    inline bool DbPasswordHasBeenSet() const { return m_dbPasswordHasBeenSet; }
 
     /**
      * <p>AWS OpsWorks Stacks returns <code>*****FILTERED*****</code> instead of the
@@ -206,6 +227,11 @@ namespace Model
     /**
      * <p>The instance's AWS region.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The instance's AWS region.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -238,6 +264,11 @@ namespace Model
      * <p>The instance's address.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>The instance's address.</p>
+     */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>The instance's address.</p>
@@ -278,6 +309,11 @@ namespace Model
     /**
      * <p>The instance's database engine.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The instance's database engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -310,6 +346,11 @@ namespace Model
      * <p>The ID of the stack with which the instance is registered.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The ID of the stack with which the instance is registered.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The ID of the stack with which the instance is registered.</p>
@@ -349,6 +390,14 @@ namespace Model
      * instance, and then register it again.</p>
      */
     inline bool GetMissingOnRds() const{ return m_missingOnRds; }
+
+    /**
+     * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the
+     * Amazon RDS instance. AWS OpsWorks Stacks attempts to discover the instance only
+     * once. If this value is set to <code>true</code>, you must deregister the
+     * instance, and then register it again.</p>
+     */
+    inline bool MissingOnRdsHasBeenSet() const { return m_missingOnRdsHasBeenSet; }
 
     /**
      * <p>Set to <code>true</code> if AWS OpsWorks Stacks is unable to discover the

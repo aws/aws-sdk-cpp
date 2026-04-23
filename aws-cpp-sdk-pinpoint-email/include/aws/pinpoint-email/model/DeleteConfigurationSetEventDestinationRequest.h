@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the configuration set that contains the event destination that
      * you want to delete.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that contains the event destination that
+     * you want to delete.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The name of the event destination that you want to delete.</p>
      */
     inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
+
+    /**
+     * <p>The name of the event destination that you want to delete.</p>
+     */
+    inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
 
     /**
      * <p>The name of the event destination that you want to delete.</p>

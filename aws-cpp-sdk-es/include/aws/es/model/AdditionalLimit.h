@@ -73,6 +73,19 @@ namespace Model
      * <a>ESPartitionInstanceType</a> </code> upto which you don't need any master
      * nodes to govern them. </ul> </p>
      */
+    inline bool LimitNameHasBeenSet() const { return m_limitNameHasBeenSet; }
+
+    /**
+     * <p> Name of Additional Limit is specific to a given InstanceType and for each of
+     * it's <code> <a>InstanceRole</a> </code> etc. <br/> Attributes and their details:
+     * <br/> <ul> <li>MaximumNumberOfDataNodesSupported</li> This attribute will be
+     * present in Master node only to specify how much data nodes upto which given
+     * <code> <a>ESPartitionInstanceType</a> </code> can support as master node.
+     * <li>MaximumNumberOfDataNodesWithoutMasterNode</li> This attribute will be
+     * present in Data node only to specify how much data nodes of given <code>
+     * <a>ESPartitionInstanceType</a> </code> upto which you don't need any master
+     * nodes to govern them. </ul> </p>
+     */
     inline void SetLimitName(const Aws::String& value) { m_limitNameHasBeenSet = true; m_limitName = value; }
 
     /**
@@ -145,6 +158,11 @@ namespace Model
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
      */
     inline const Aws::Vector<Aws::String>& GetLimitValues() const{ return m_limitValues; }
+
+    /**
+     * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>
+     */
+    inline bool LimitValuesHasBeenSet() const { return m_limitValuesHasBeenSet; }
 
     /**
      * <p> Value for given <code> <a>AdditionalLimit$LimitName</a> </code> . </p>

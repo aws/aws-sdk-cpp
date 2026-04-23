@@ -30,7 +30,7 @@ DescribeIdentityUsageRequest::DescribeIdentityUsageRequest() :
 
 Aws::String DescribeIdentityUsageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

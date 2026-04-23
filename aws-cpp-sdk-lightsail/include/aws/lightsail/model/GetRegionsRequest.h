@@ -54,6 +54,13 @@ namespace Model
      * get regions request. Availability Zones are indicated with a letter: e.g.,
      * <code>us-east-2a</code>.</p>
      */
+    inline bool IncludeAvailabilityZonesHasBeenSet() const { return m_includeAvailabilityZonesHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether to also include Availability Zones in your
+     * get regions request. Availability Zones are indicated with a letter: e.g.,
+     * <code>us-east-2a</code>.</p>
+     */
     inline void SetIncludeAvailabilityZones(bool value) { m_includeAvailabilityZonesHasBeenSet = true; m_includeAvailabilityZones = value; }
 
     /**
@@ -70,6 +77,13 @@ namespace Model
      * letter (e.g., <code>us-east-2a</code>).</p>
      */
     inline bool GetIncludeRelationalDatabaseAvailabilityZones() const{ return m_includeRelationalDatabaseAvailabilityZones; }
+
+    /**
+     * <p>&gt;A Boolean value indicating whether to also include Availability Zones for
+     * databases in your get regions request. Availability Zones are indicated with a
+     * letter (e.g., <code>us-east-2a</code>).</p>
+     */
+    inline bool IncludeRelationalDatabaseAvailabilityZonesHasBeenSet() const { return m_includeRelationalDatabaseAvailabilityZonesHasBeenSet; }
 
     /**
      * <p>&gt;A Boolean value indicating whether to also include Availability Zones for

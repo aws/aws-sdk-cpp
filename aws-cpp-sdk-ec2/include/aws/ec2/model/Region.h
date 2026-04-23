@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The region service endpoint.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The region service endpoint.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the region.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
+
+    /**
+     * <p>The name of the region.</p>
+     */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>The name of the region.</p>

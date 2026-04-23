@@ -61,6 +61,14 @@ namespace Model
      * response includes only results beyond the token, up to the value specified by
      * <code>MaxResults</code>. Required.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * <code>MaxResults</code>. Required.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -116,6 +124,13 @@ namespace Model
      * exist than the specified <code>MaxResults</code> value, a token is included in
      * the response so that the remaining results can be retrieved. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified <code>MaxResults</code> value, a token is included in
+     * the response so that the remaining results can be retrieved. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -131,6 +146,12 @@ namespace Model
      * filter key is SkillGroupName. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The filters to use to list a specified set of skill groups. The supported
+     * filter key is SkillGroupName. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The filters to use to list a specified set of skill groups. The supported
@@ -174,6 +195,12 @@ namespace Model
      * supported sort key is SkillGroupName. </p>
      */
     inline const Aws::Vector<Sort>& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * <p>The sort order to use in listing the specified set of skill groups. The
+     * supported sort key is SkillGroupName. </p>
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
      * <p>The sort order to use in listing the specified set of skill groups. The

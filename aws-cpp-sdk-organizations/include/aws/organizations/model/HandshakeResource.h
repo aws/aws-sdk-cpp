@@ -63,6 +63,13 @@ namespace Model
      * format of the value string must match the requirements of the specified
      * type.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The information that is passed to the other party in the handshake. The
+     * format of the value string must match the requirements of the specified
+     * type.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -116,6 +123,22 @@ namespace Model
      * </ul>
      */
     inline const HandshakeResourceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of information being passed, specifying how the value is to be
+     * interpreted by the other party:</p> <ul> <li> <p> <code>ACCOUNT</code> -
+     * Specifies an AWS account ID number.</p> </li> <li> <p> <code>ORGANIZATION</code>
+     * - Specifies an organization ID number.</p> </li> <li> <p> <code>EMAIL</code> -
+     * Specifies the email address that is associated with the account that receives
+     * the handshake. </p> </li> <li> <p> <code>OWNER_EMAIL</code> - Specifies the
+     * email address associated with the master account. Included as information about
+     * an organization. </p> </li> <li> <p> <code>OWNER_NAME</code> - Specifies the
+     * name associated with the master account. Included as information about an
+     * organization. </p> </li> <li> <p> <code>NOTES</code> - Additional text provided
+     * by the handshake initiator and intended for the recipient to read.</p> </li>
+     * </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of information being passed, specifying how the value is to be
@@ -187,6 +210,12 @@ namespace Model
      * objects.</p>
      */
     inline const Aws::Vector<HandshakeResource>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>When needed, contains an additional array of <code>HandshakeResource</code>
+     * objects.</p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>When needed, contains an additional array of <code>HandshakeResource</code>

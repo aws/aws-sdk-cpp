@@ -38,6 +38,7 @@ namespace Aws
         static const int deleting_HASH = HashingUtils::HashString("deleting");
         static const int deleted_HASH = HashingUtils::HashString("deleted");
         static const int rejected_HASH = HashingUtils::HashString("rejected");
+        static const int unknown_HASH = HashingUtils::HashString("unknown");
 
 
         ConnectionState GetConnectionStateForName(const Aws::String& name)
@@ -75,6 +76,10 @@ namespace Aws
           {
             return ConnectionState::rejected;
           }
+          else if (hashCode == unknown_HASH)
+          {
+            return ConnectionState::unknown;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +110,8 @@ namespace Aws
             return "deleted";
           case ConnectionState::rejected:
             return "rejected";
+          case ConnectionState::unknown:
+            return "unknown";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -112,7 +119,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

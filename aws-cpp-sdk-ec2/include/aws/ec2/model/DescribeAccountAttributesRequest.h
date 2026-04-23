@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeAccountAttributes.</p><p><h3>See
-   * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeAccountAttributesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeAccountAttributesRequest : public EC2Request
   {
@@ -55,6 +51,11 @@ namespace Model
      * <p>One or more account attribute names.</p>
      */
     inline const Aws::Vector<AccountAttributeName>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>One or more account attribute names.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>One or more account attribute names.</p>
@@ -94,6 +95,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

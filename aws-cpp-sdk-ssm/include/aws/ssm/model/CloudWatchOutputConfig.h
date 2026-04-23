@@ -62,6 +62,14 @@ namespace Model
      * group for you. The log group uses the following naming format:
      * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
      */
+    inline bool CloudWatchLogGroupNameHasBeenSet() const { return m_cloudWatchLogGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the CloudWatch log group where you want to send command output.
+     * If you don't specify a group name, Systems Manager automatically creates a log
+     * group for you. The log group uses the following naming format:
+     * aws/ssm/<i>SystemsManagerDocumentName</i>.</p>
+     */
     inline void SetCloudWatchLogGroupName(const Aws::String& value) { m_cloudWatchLogGroupNameHasBeenSet = true; m_cloudWatchLogGroupName = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
      */
     inline bool GetCloudWatchOutputEnabled() const{ return m_cloudWatchOutputEnabled; }
+
+    /**
+     * <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>
+     */
+    inline bool CloudWatchOutputEnabledHasBeenSet() const { return m_cloudWatchOutputEnabledHasBeenSet; }
 
     /**
      * <p>Enables Systems Manager to send command output to CloudWatch Logs.</p>

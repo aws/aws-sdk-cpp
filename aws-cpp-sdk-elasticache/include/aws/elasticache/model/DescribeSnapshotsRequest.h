@@ -62,6 +62,13 @@ namespace Model
      * only snapshots associated with that specific replication group are
      * described.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied replication group identifier. If this parameter is specified,
+     * only snapshots associated with that specific replication group are
+     * described.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -110,6 +117,12 @@ namespace Model
      * <p>A user-supplied cluster identifier. If this parameter is specified, only
      * snapshots associated with that specific cluster are described.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied cluster identifier. If this parameter is specified, only
+     * snapshots associated with that specific cluster are described.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -148,6 +161,12 @@ namespace Model
      * this snapshot are described.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
+    /**
+     * <p>A user-supplied name of the snapshot. If this parameter is specified, only
+     * this snapshot are described.</p>
+     */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>A user-supplied name of the snapshot. If this parameter is specified, only
@@ -193,6 +212,14 @@ namespace Model
      * automatically and manually created snapshots.</p>
      */
     inline const Aws::String& GetSnapshotSource() const{ return m_snapshotSource; }
+
+    /**
+     * <p>If set to <code>system</code>, the output shows snapshots that were
+     * automatically created by ElastiCache. If set to <code>user</code> the output
+     * shows snapshots that were manually created. If omitted, the output shows both
+     * automatically and manually created snapshots.</p>
+     */
+    inline bool SnapshotSourceHasBeenSet() const { return m_snapshotSourceHasBeenSet; }
 
     /**
      * <p>If set to <code>system</code>, the output shows snapshots that were
@@ -257,6 +284,14 @@ namespace Model
      * response includes only records beyond the marker, up to the value specified by
      * <code>MaxRecords</code>.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -314,6 +349,14 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 50</p> <p>Constraints: minimum 20; maximum 50.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 50</p> <p>Constraints: minimum 20; maximum 50.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -330,6 +373,12 @@ namespace Model
      * included in the snapshot description.</p>
      */
     inline bool GetShowNodeGroupConfig() const{ return m_showNodeGroupConfig; }
+
+    /**
+     * <p>A Boolean value which if true, the node group (shard) configuration is
+     * included in the snapshot description.</p>
+     */
+    inline bool ShowNodeGroupConfigHasBeenSet() const { return m_showNodeGroupConfigHasBeenSet; }
 
     /**
      * <p>A Boolean value which if true, the node group (shard) configuration is

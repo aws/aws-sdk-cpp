@@ -62,6 +62,12 @@ namespace Model
      * <p>The product code for which the given entitlement applies. Product codes are
      * provided by AWS Marketplace when the product listing is created.</p>
      */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
+
+    /**
+     * <p>The product code for which the given entitlement applies. Product codes are
+     * provided by AWS Marketplace when the product listing is created.</p>
+     */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * in AWS Marketplace.</p>
      */
     inline const Aws::String& GetDimension() const{ return m_dimension; }
+
+    /**
+     * <p>The dimension for which the given entitlement applies. Dimensions represent
+     * categories of capacity in a product and are specified when the product is listed
+     * in AWS Marketplace.</p>
+     */
+    inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
 
     /**
      * <p>The dimension for which the given entitlement applies. Dimensions represent
@@ -157,6 +170,13 @@ namespace Model
      * application. Customer identifiers are obtained through the ResolveCustomer
      * operation in AWS Marketplace Metering Service.</p>
      */
+    inline bool CustomerIdentifierHasBeenSet() const { return m_customerIdentifierHasBeenSet; }
+
+    /**
+     * <p>The customer identifier is a handle to each unique customer in an
+     * application. Customer identifiers are obtained through the ResolveCustomer
+     * operation in AWS Marketplace Metering Service.</p>
+     */
     inline void SetCustomerIdentifier(const Aws::String& value) { m_customerIdentifierHasBeenSet = true; m_customerIdentifier = value; }
 
     /**
@@ -205,6 +225,12 @@ namespace Model
      * <p>The EntitlementValue represents the amount of capacity that the customer is
      * entitled to for the product.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The EntitlementValue represents the amount of capacity that the customer is
+     * entitled to for the product.</p>
+     */
     inline void SetValue(const EntitlementValue& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -234,6 +260,15 @@ namespace Model
      * still have entitlements with an expiration date.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    /**
+     * <p>The expiration date represents the minimum date through which this
+     * entitlement is expected to remain valid. For contractual products listed on AWS
+     * Marketplace, the expiration date is the date at which the customer will renew or
+     * cancel their contract. Customers who are opting to renew their contract will
+     * still have entitlements with an expiration date.</p>
+     */
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The expiration date represents the minimum date through which this

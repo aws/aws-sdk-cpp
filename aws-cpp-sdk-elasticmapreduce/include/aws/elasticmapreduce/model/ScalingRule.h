@@ -63,6 +63,12 @@ namespace Model
      * <p>The name used to identify an automatic scaling rule. Rule names must be
      * unique within a scaling policy.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name used to identify an automatic scaling rule. Rule names must be
+     * unique within a scaling policy.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>A friendly, more verbose description of the automatic scaling rule.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A friendly, more verbose description of the automatic scaling rule.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -140,6 +151,11 @@ namespace Model
     /**
      * <p>The conditions that trigger an automatic scaling activity.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The conditions that trigger an automatic scaling activity.</p>
+     */
     inline void SetAction(const ScalingAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -163,6 +179,12 @@ namespace Model
      * activity is triggered.</p>
      */
     inline const ScalingTrigger& GetTrigger() const{ return m_trigger; }
+
+    /**
+     * <p>The CloudWatch alarm definition that determines when automatic scaling
+     * activity is triggered.</p>
+     */
+    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
 
     /**
      * <p>The CloudWatch alarm definition that determines when automatic scaling

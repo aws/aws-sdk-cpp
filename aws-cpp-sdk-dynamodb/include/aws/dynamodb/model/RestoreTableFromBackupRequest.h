@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the new table to which the backup must be restored.</p>
      */
+    inline bool TargetTableNameHasBeenSet() const { return m_targetTableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the new table to which the backup must be restored.</p>
+     */
     inline void SetTargetTableName(const Aws::String& value) { m_targetTableNameHasBeenSet = true; m_targetTableName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN associated with the backup.</p>
      */
     inline const Aws::String& GetBackupArn() const{ return m_backupArn; }
+
+    /**
+     * <p>The ARN associated with the backup.</p>
+     */
+    inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
 
     /**
      * <p>The ARN associated with the backup.</p>

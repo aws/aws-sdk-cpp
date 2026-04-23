@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The unique identifier for the Trusted Advisor check.</p>
      */
+    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the Trusted Advisor check.</p>
+     */
     inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * parameters must be passed explicitly for operations that take them.</p>
      */
     inline const Aws::String& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The ISO 639-1 code for the language in which AWS provides support. AWS
+     * Support currently supports English ("en") and Japanese ("ja"). Language
+     * parameters must be passed explicitly for operations that take them.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The ISO 639-1 code for the language in which AWS provides support. AWS

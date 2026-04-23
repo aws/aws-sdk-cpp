@@ -58,6 +58,12 @@ namespace Model
      * <p>(deprecated) The ARN of the IoT Analytics channel to which message data will
      * be sent.</p>
      */
+    inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
+
+    /**
+     * <p>(deprecated) The ARN of the IoT Analytics channel to which message data will
+     * be sent.</p>
+     */
     inline void SetChannelArn(const Aws::String& value) { m_channelArnHasBeenSet = true; m_channelArn = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the IoT Analytics channel to which message data will be sent.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IoT Analytics channel to which message data will be sent.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role which has a policy that grants IoT Analytics permission
+     * to send message data via IoT Analytics (iotanalytics:BatchPutMessage).</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role which has a policy that grants IoT Analytics permission

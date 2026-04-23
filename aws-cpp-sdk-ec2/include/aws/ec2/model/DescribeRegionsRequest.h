@@ -29,9 +29,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for DescribeRegions.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeRegionsRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API DescribeRegionsRequest : public EC2Request
   {
@@ -58,6 +55,14 @@ namespace Model
      * <code>us-east-1</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
+     * of the region (for example, <code>ec2.us-east-1.amazonaws.com</code>).</p> </li>
+     * <li> <p> <code>region-name</code> - The name of the region (for example,
+     * <code>us-east-1</code>).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>endpoint</code> - The endpoint
@@ -116,6 +121,11 @@ namespace Model
     /**
      * <p>The names of one or more regions.</p>
      */
+    inline bool RegionNamesHasBeenSet() const { return m_regionNamesHasBeenSet; }
+
+    /**
+     * <p>The names of one or more regions.</p>
+     */
     inline void SetRegionNames(const Aws::Vector<Aws::String>& value) { m_regionNamesHasBeenSet = true; m_regionNames = value; }
 
     /**
@@ -156,6 +166,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -55,6 +55,12 @@ namespace Model
      * <p>The ARN of the assessment template that is used during the event for which
      * you want to receive SNS notifications.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the assessment template that is used during the event for which
+     * you want to receive SNS notifications.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The event for which you want to receive SNS notifications.</p>
      */
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
+
+    /**
+     * <p>The event for which you want to receive SNS notifications.</p>
+     */
     inline void SetEvent(const InspectorEvent& value) { m_eventHasBeenSet = true; m_event = value; }
 
     /**
@@ -118,6 +129,11 @@ namespace Model
      * <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
+    /**
+     * <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>
+     */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
 
     /**
      * <p>The ARN of the SNS topic to which the SNS notifications are sent.</p>

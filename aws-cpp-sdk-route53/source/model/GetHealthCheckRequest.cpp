@@ -30,7 +30,7 @@ GetHealthCheckRequest::GetHealthCheckRequest() :
 
 Aws::String GetHealthCheckRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

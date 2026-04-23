@@ -59,6 +59,12 @@ namespace Model
      * Enables audit logging. Every user management action made using JMX or the
      * ActiveMQ Web Console is logged.
      */
+    inline bool AuditHasBeenSet() const { return m_auditHasBeenSet; }
+
+    /**
+     * Enables audit logging. Every user management action made using JMX or the
+     * ActiveMQ Web Console is logged.
+     */
     inline void SetAudit(bool value) { m_auditHasBeenSet = true; m_audit = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * The location of the CloudWatch Logs log group where audit logs are sent.
      */
     inline const Aws::String& GetAuditLogGroup() const{ return m_auditLogGroup; }
+
+    /**
+     * The location of the CloudWatch Logs log group where audit logs are sent.
+     */
+    inline bool AuditLogGroupHasBeenSet() const { return m_auditLogGroupHasBeenSet; }
 
     /**
      * The location of the CloudWatch Logs log group where audit logs are sent.
@@ -112,6 +123,11 @@ namespace Model
     /**
      * Enables general logging.
      */
+    inline bool GeneralHasBeenSet() const { return m_generalHasBeenSet; }
+
+    /**
+     * Enables general logging.
+     */
     inline void SetGeneral(bool value) { m_generalHasBeenSet = true; m_general = value; }
 
     /**
@@ -124,6 +140,11 @@ namespace Model
      * The location of the CloudWatch Logs log group where general logs are sent.
      */
     inline const Aws::String& GetGeneralLogGroup() const{ return m_generalLogGroup; }
+
+    /**
+     * The location of the CloudWatch Logs log group where general logs are sent.
+     */
+    inline bool GeneralLogGroupHasBeenSet() const { return m_generalLogGroupHasBeenSet; }
 
     /**
      * The location of the CloudWatch Logs log group where general logs are sent.
@@ -161,6 +182,12 @@ namespace Model
      * broker.
      */
     inline const PendingLogs& GetPending() const{ return m_pending; }
+
+    /**
+     * The list of information about logs pending to be deployed for the specified
+     * broker.
+     */
+    inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
 
     /**
      * The list of information about logs pending to be deployed for the specified

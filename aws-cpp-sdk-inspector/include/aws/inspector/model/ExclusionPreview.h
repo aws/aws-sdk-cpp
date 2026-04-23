@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the exclusion preview.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>The name of the exclusion preview.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The description of the exclusion preview.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the exclusion preview.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the exclusion preview.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The recommendation for the exclusion preview.</p>
      */
+    inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
+
+    /**
+     * <p>The recommendation for the exclusion preview.</p>
+     */
     inline void SetRecommendation(const Aws::String& value) { m_recommendationHasBeenSet = true; m_recommendation = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The AWS resources for which the exclusion preview pertains.</p>
      */
+    inline bool ScopesHasBeenSet() const { return m_scopesHasBeenSet; }
+
+    /**
+     * <p>The AWS resources for which the exclusion preview pertains.</p>
+     */
     inline void SetScopes(const Aws::Vector<Scope>& value) { m_scopesHasBeenSet = true; m_scopes = value; }
 
     /**
@@ -199,6 +219,11 @@ namespace Model
      * <p>The system-defined attributes for the exclusion preview.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The system-defined attributes for the exclusion preview.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The system-defined attributes for the exclusion preview.</p>

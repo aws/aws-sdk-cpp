@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The number of instances.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The purchase token.</p>
      */
     inline const Aws::String& GetPurchaseToken() const{ return m_purchaseToken; }
+
+    /**
+     * <p>The purchase token.</p>
+     */
+    inline bool PurchaseTokenHasBeenSet() const { return m_purchaseTokenHasBeenSet; }
 
     /**
      * <p>The purchase token.</p>

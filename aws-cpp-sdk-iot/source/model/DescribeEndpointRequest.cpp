@@ -32,7 +32,7 @@ DescribeEndpointRequest::DescribeEndpointRequest() :
 
 Aws::String DescribeEndpointRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeEndpointRequest::AddQueryStringParameters(URI& uri) const

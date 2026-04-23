@@ -69,6 +69,12 @@ namespace Model
      * <p>The user-supplied identifier of the cluster. This identifier is a unique key
      * that identifies a cluster.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The user-supplied identifier of the cluster. This identifier is a unique key
+     * that identifies a cluster.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -118,6 +124,15 @@ namespace Model
      * it.</p> <p>Example:
      * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
      */
+    inline bool ConfigurationEndpointHasBeenSet() const { return m_configurationEndpointHasBeenSet; }
+
+    /**
+     * <p>Represents a Memcached cluster endpoint which, if Automatic Discovery is
+     * enabled on the cluster, can be used by an application to connect to any node in
+     * the cluster. The configuration endpoint will always have <code>.cfg</code> in
+     * it.</p> <p>Example:
+     * <code>mem-3.9dvc4r<u>.cfg</u>.usw2.cache.amazonaws.com:11211</code> </p>
+     */
     inline void SetConfigurationEndpoint(const Endpoint& value) { m_configurationEndpointHasBeenSet = true; m_configurationEndpoint = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * library.</p>
      */
     inline const Aws::String& GetClientDownloadLandingPage() const{ return m_clientDownloadLandingPage; }
+
+    /**
+     * <p>The URL of the web page where you can download the latest ElastiCache client
+     * library.</p>
+     */
+    inline bool ClientDownloadLandingPageHasBeenSet() const { return m_clientDownloadLandingPageHasBeenSet; }
 
     /**
      * <p>The URL of the web page where you can download the latest ElastiCache client
@@ -234,6 +255,50 @@ namespace Model
      * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The name of the compute and memory capacity node type for the cluster.</p>
+     * <p>The following node types are supported by ElastiCache. Generally speaking,
+     * the current generation types provide more memory and computational power at
+     * lower cost when compared to their equivalent previous generation
+     * counterparts.</p> <ul> <li> <p>General purpose:</p> <ul> <li> <p>Current
+     * generation: </p> <p> <b>T2 node types:</b> <code>cache.t2.micro</code>,
+     * <code>cache.t2.small</code>, <code>cache.t2.medium</code> </p> <p> <b>M3 node
+     * types:</b> <code>cache.m3.medium</code>, <code>cache.m3.large</code>,
+     * <code>cache.m3.xlarge</code>, <code>cache.m3.2xlarge</code> </p> <p> <b>M4 node
+     * types:</b> <code>cache.m4.large</code>, <code>cache.m4.xlarge</code>,
+     * <code>cache.m4.2xlarge</code>, <code>cache.m4.4xlarge</code>,
+     * <code>cache.m4.10xlarge</code> </p> </li> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>T1 node types:</b> <code>cache.t1.micro</code> </p> <p>
+     * <b>M1 node types:</b> <code>cache.m1.small</code>, <code>cache.m1.medium</code>,
+     * <code>cache.m1.large</code>, <code>cache.m1.xlarge</code> </p> </li> </ul> </li>
+     * <li> <p>Compute optimized:</p> <ul> <li> <p>Previous generation: (not
+     * recommended)</p> <p> <b>C1 node types:</b> <code>cache.c1.xlarge</code> </p>
+     * </li> </ul> </li> <li> <p>Memory optimized:</p> <ul> <li> <p>Current generation:
+     * </p> <p> <b>R3 node types:</b> <code>cache.r3.large</code>,
+     * <code>cache.r3.xlarge</code>, <code>cache.r3.2xlarge</code>,
+     * <code>cache.r3.4xlarge</code>, <code>cache.r3.8xlarge</code> </p> <p> <b>R4 node
+     * types;</b> <code>cache.r4.large</code>, <code>cache.r4.xlarge</code>,
+     * <code>cache.r4.2xlarge</code>, <code>cache.r4.4xlarge</code>,
+     * <code>cache.r4.8xlarge</code>, <code>cache.r4.16xlarge</code> </p> </li> <li>
+     * <p>Previous generation: (not recommended)</p> <p> <b>M2 node types:</b>
+     * <code>cache.m2.xlarge</code>, <code>cache.m2.2xlarge</code>,
+     * <code>cache.m2.4xlarge</code> </p> </li> </ul> </li> </ul> <p> <b>Notes:</b>
+     * </p> <ul> <li> <p>All T2 instances are created in an Amazon Virtual Private
+     * Cloud (Amazon VPC).</p> </li> <li> <p>Redis (cluster mode disabled): Redis
+     * backup/restore is not supported on T1 and T2 instances. </p> </li> <li> <p>Redis
+     * (cluster mode enabled): Backup/restore is not supported on T1 instances.</p>
+     * </li> <li> <p>Redis Append-only files (AOF) functionality is not supported for
+     * T1 or T2 instances.</p> </li> </ul> <p>For a complete listing of node types and
+     * specifications, see:</p> <ul> <li> <p> <a
+     * href="http://aws.amazon.com/elasticache/details">Amazon ElastiCache Product
+     * Features and Details</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/mem-ug/ParameterGroups.Memcached.html#ParameterGroups.Memcached.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Memcached</a> </p> </li> <li> <p> <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/ParameterGroups.Redis.html#ParameterGroups.Redis.NodeSpecific">Cache
+     * Node Type-Specific Parameters for Redis</a> </p> </li> </ul>
+     */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
 
     /**
      * <p>The name of the compute and memory capacity node type for the cluster.</p>
@@ -510,6 +575,12 @@ namespace Model
      * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
      * to be used for this cluster.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the cache engine (<code>memcached</code> or <code>redis</code>)
+     * to be used for this cluster.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -551,6 +622,11 @@ namespace Model
     /**
      * <p>The version of the cache engine that is used in this cluster.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the cache engine that is used in this cluster.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -587,6 +663,15 @@ namespace Model
      * <code>restore-failed</code>, or <code>snapshotting</code>.</p>
      */
     inline const Aws::String& GetCacheClusterStatus() const{ return m_cacheClusterStatus; }
+
+    /**
+     * <p>The current state of this cluster, one of the following values:
+     * <code>available</code>, <code>creating</code>, <code>deleted</code>,
+     * <code>deleting</code>, <code>incompatible-network</code>,
+     * <code>modifying</code>, <code>rebooting cluster nodes</code>,
+     * <code>restore-failed</code>, or <code>snapshotting</code>.</p>
+     */
+    inline bool CacheClusterStatusHasBeenSet() const { return m_cacheClusterStatusHasBeenSet; }
 
     /**
      * <p>The current state of this cluster, one of the following values:
@@ -655,6 +740,13 @@ namespace Model
      * this value must be 1. For clusters running Memcached, this value must be between
      * 1 and 20.</p>
      */
+    inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
+
+    /**
+     * <p>The number of cache nodes in the cluster.</p> <p>For clusters running Redis,
+     * this value must be 1. For clusters running Memcached, this value must be between
+     * 1 and 20.</p>
+     */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
@@ -670,6 +762,12 @@ namespace Model
      * "Multiple" if the cache nodes are located in different Availability Zones.</p>
      */
     inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
+
+    /**
+     * <p>The name of the Availability Zone in which the cluster is located or
+     * "Multiple" if the cache nodes are located in different Availability Zones.</p>
+     */
+    inline bool PreferredAvailabilityZoneHasBeenSet() const { return m_preferredAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>The name of the Availability Zone in which the cluster is located or
@@ -716,6 +814,11 @@ namespace Model
     /**
      * <p>The date and time when the cluster was created.</p>
      */
+    inline bool CacheClusterCreateTimeHasBeenSet() const { return m_cacheClusterCreateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time when the cluster was created.</p>
+     */
     inline void SetCacheClusterCreateTime(const Aws::Utils::DateTime& value) { m_cacheClusterCreateTimeHasBeenSet = true; m_cacheClusterCreateTime = value; }
 
     /**
@@ -745,6 +848,18 @@ namespace Model
      * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>Specifies the weekly time range during which maintenance on the cluster is
+     * performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi (24H
+     * Clock UTC). The minimum maintenance window is a 60 minute period.</p> <p>Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:23:00-mon:01:30</code> </p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the cluster is
@@ -823,6 +938,9 @@ namespace Model
     inline const PendingModifiedValues& GetPendingModifiedValues() const{ return m_pendingModifiedValues; }
 
     
+    inline bool PendingModifiedValuesHasBeenSet() const { return m_pendingModifiedValuesHasBeenSet; }
+
+    
     inline void SetPendingModifiedValues(const PendingModifiedValues& value) { m_pendingModifiedValuesHasBeenSet = true; m_pendingModifiedValues = value; }
 
     
@@ -841,6 +959,13 @@ namespace Model
      * Notification Service (SNS). </p>
      */
     inline const NotificationConfiguration& GetNotificationConfiguration() const{ return m_notificationConfiguration; }
+
+    /**
+     * <p>Describes a notification topic and its status. Notification topics are used
+     * for publishing ElastiCache events to subscribers using Amazon Simple
+     * Notification Service (SNS). </p>
+     */
+    inline bool NotificationConfigurationHasBeenSet() const { return m_notificationConfigurationHasBeenSet; }
 
     /**
      * <p>Describes a notification topic and its status. Notification topics are used
@@ -876,6 +1001,12 @@ namespace Model
      * sub-elements.</p>
      */
     inline const Aws::Vector<CacheSecurityGroupMembership>& GetCacheSecurityGroups() const{ return m_cacheSecurityGroups; }
+
+    /**
+     * <p>A list of cache security group elements, composed of name and status
+     * sub-elements.</p>
+     */
+    inline bool CacheSecurityGroupsHasBeenSet() const { return m_cacheSecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of cache security group elements, composed of name and status
@@ -922,6 +1053,11 @@ namespace Model
     /**
      * <p>Status of the cache parameter group.</p>
      */
+    inline bool CacheParameterGroupHasBeenSet() const { return m_cacheParameterGroupHasBeenSet; }
+
+    /**
+     * <p>Status of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroup(const CacheParameterGroupStatus& value) { m_cacheParameterGroupHasBeenSet = true; m_cacheParameterGroup = value; }
 
     /**
@@ -944,6 +1080,11 @@ namespace Model
      * <p>The name of the cache subnet group associated with the cluster.</p>
      */
     inline const Aws::String& GetCacheSubnetGroupName() const{ return m_cacheSubnetGroupName; }
+
+    /**
+     * <p>The name of the cache subnet group associated with the cluster.</p>
+     */
+    inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the cache subnet group associated with the cluster.</p>
@@ -984,6 +1125,11 @@ namespace Model
     /**
      * <p>A list of cache nodes that are members of the cluster.</p>
      */
+    inline bool CacheNodesHasBeenSet() const { return m_cacheNodesHasBeenSet; }
+
+    /**
+     * <p>A list of cache nodes that are members of the cluster.</p>
+     */
     inline void SetCacheNodes(const Aws::Vector<CacheNode>& value) { m_cacheNodesHasBeenSet = true; m_cacheNodes = value; }
 
     /**
@@ -1020,6 +1166,11 @@ namespace Model
     /**
      * <p>This parameter is currently disabled.</p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>This parameter is currently disabled.</p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -1032,6 +1183,11 @@ namespace Model
      * <p>A list of VPC Security Groups associated with the cluster.</p>
      */
     inline const Aws::Vector<SecurityGroupMembership>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>A list of VPC Security Groups associated with the cluster.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>A list of VPC Security Groups associated with the cluster.</p>
@@ -1069,6 +1225,12 @@ namespace Model
      * the cluster is not associated with any replication group.</p>
      */
     inline const Aws::String& GetReplicationGroupId() const{ return m_replicationGroupId; }
+
+    /**
+     * <p>The replication group to which this cluster belongs. If this field is empty,
+     * the cluster is not associated with any replication group.</p>
+     */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
 
     /**
      * <p>The replication group to which this cluster belongs. If this field is empty,
@@ -1125,6 +1287,16 @@ namespace Model
      * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
      * </important>
      */
+    inline bool SnapshotRetentionLimitHasBeenSet() const { return m_snapshotRetentionLimitHasBeenSet; }
+
+    /**
+     * <p>The number of days for which ElastiCache retains automatic cluster snapshots
+     * before deleting them. For example, if you set
+     * <code>SnapshotRetentionLimit</code> to 5, a snapshot that was taken today is
+     * retained for 5 days before being deleted.</p> <important> <p> If the value of
+     * SnapshotRetentionLimit is set to zero (0), backups are turned off.</p>
+     * </important>
+     */
     inline void SetSnapshotRetentionLimit(int value) { m_snapshotRetentionLimitHasBeenSet = true; m_snapshotRetentionLimit = value; }
 
     /**
@@ -1143,6 +1315,12 @@ namespace Model
      * snapshot of your cluster.</p> <p>Example: <code>05:00-09:00</code> </p>
      */
     inline const Aws::String& GetSnapshotWindow() const{ return m_snapshotWindow; }
+
+    /**
+     * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
+     * snapshot of your cluster.</p> <p>Example: <code>05:00-09:00</code> </p>
+     */
+    inline bool SnapshotWindowHasBeenSet() const { return m_snapshotWindowHasBeenSet; }
 
     /**
      * <p>The daily time range (in UTC) during which ElastiCache begins taking a daily
@@ -1191,6 +1369,12 @@ namespace Model
      * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
      * Redis commands.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool AuthTokenEnabledHasBeenSet() const { return m_authTokenEnabledHasBeenSet; }
+
+    /**
+     * <p>A flag that enables using an <code>AuthToken</code> (password) when issuing
+     * Redis commands.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetAuthTokenEnabled(bool value) { m_authTokenEnabledHasBeenSet = true; m_authTokenEnabled = value; }
 
     /**
@@ -1210,6 +1394,17 @@ namespace Model
      * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetTransitEncryptionEnabled() const{ return m_transitEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>TransitEncryptionEnabled</code> after
+     * the cluster is created. To enable in-transit encryption on a cluster you must
+     * set <code>TransitEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool TransitEncryptionEnabledHasBeenSet() const { return m_transitEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables in-transit encryption when set to <code>true</code>.</p>
@@ -1244,6 +1439,17 @@ namespace Model
      * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
      */
     inline bool GetAtRestEncryptionEnabled() const{ return m_atRestEncryptionEnabled; }
+
+    /**
+     * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>
+     * <p>You cannot modify the value of <code>AtRestEncryptionEnabled</code> after the
+     * cluster is created. To enable at-rest encryption on a cluster you must set
+     * <code>AtRestEncryptionEnabled</code> to <code>true</code> when you create a
+     * cluster.</p> <p> <b>Required:</b> Only available when creating a replication
+     * group in an Amazon VPC using redis version <code>3.2.6</code> or
+     * <code>4.x</code>.</p> <p>Default: <code>false</code> </p>
+     */
+    inline bool AtRestEncryptionEnabledHasBeenSet() const { return m_atRestEncryptionEnabledHasBeenSet; }
 
     /**
      * <p>A flag that enables encryption at-rest when set to <code>true</code>.</p>

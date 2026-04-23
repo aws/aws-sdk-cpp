@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository to set or change the default branch for.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to set or change the default branch for.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the branch to set as the default.</p>
      */
     inline const Aws::String& GetDefaultBranchName() const{ return m_defaultBranchName; }
+
+    /**
+     * <p>The name of the branch to set as the default.</p>
+     */
+    inline bool DefaultBranchNameHasBeenSet() const { return m_defaultBranchNameHasBeenSet; }
 
     /**
      * <p>The name of the branch to set as the default.</p>

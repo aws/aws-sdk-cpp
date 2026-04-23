@@ -18,13 +18,14 @@ package com.amazonaws.util.awsclientgenerator.generators.cpp;
 import com.amazonaws.util.awsclientgenerator.domainmodels.SdkFileEntry;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.ServiceModel;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Shape;
+import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.Operation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppShapeInformation;
 import com.amazonaws.util.awsclientgenerator.domainmodels.codegeneration.cpp.CppViewHelper;
 import org.apache.velocity.Template;
 import org.apache.velocity.VelocityContext;
 
 import java.nio.charset.StandardCharsets;
-import java.util.Map;
+import java.util.*;
 
 public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
@@ -76,11 +77,13 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
 
         Shape shape = shapeEntry.getValue();
         //we only want to override json related stuff.
-        if (shape.isRequest() || shape.isEnum()) {
+        if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
             return super.generateModelHeaderFile(serviceModel, shapeEntry);
         }
 
-        if (shape.isStructure() && shape.isReferenced()) {
+        // Will not generate source code if it's a shape of event, with empty member.
+        if (shape.isStructure() && shape.isReferenced() &&
+            !(shape.isEventStream() || (shape.isEvent() && shape.getMembers().isEmpty()) || (shape.isResult() && shape.hasEventStreamMembers()))) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
 
@@ -113,9 +116,21 @@ public class RestXmlCppClientGenerator  extends CppClientGenerator {
             return super.generateModelSourceFile(serviceModel, shapeEntry);
         }
 
-        if (shape.isStructure() && shape.isReferenced()) {
+        if (shape.isStructure() && shape.isReferenced() &&
+            !(shape.isEventStream() ||
+              shape.hasBlobMembers() && shape.hasEventPayloadMembers() ||
+              shape.isEvent() && shape.getMembers().isEmpty() ||
+              shape.isResult() && shape.hasEventStreamMembers())) {
             Template template = null;
             VelocityContext context = createContext(serviceModel);
+            
+            for (Map.Entry<String, Operation> opEntry : serviceModel.getOperations().entrySet()) {
+                Operation op = opEntry.getValue();
+                if (op.getRequest() != null && op.getRequest().getShape().getName() == shape.getName()) {
+                    context.put("operation", op);
+                    break;
+                }
+            }
 
             if (shape.isRequest() && shape.hasStreamMembers()) {
                 template = velocityEngine.getTemplate("/com/amazonaws/util/awsclientgenerator/velocity/cpp/StreamRequestSource.vm", StandardCharsets.UTF_8.name());

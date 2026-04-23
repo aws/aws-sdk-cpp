@@ -60,6 +60,12 @@ namespace Model
      * <p>The instance type that you want to preconfigure for your domain. For example,
      * <code>search.m1.small</code>.</p>
      */
+    inline bool DesiredInstanceTypeHasBeenSet() const { return m_desiredInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type that you want to preconfigure for your domain. For example,
+     * <code>search.m1.small</code>.</p>
+     */
     inline void SetDesiredInstanceType(const PartitionInstanceType& value) { m_desiredInstanceTypeHasBeenSet = true; m_desiredInstanceType = value; }
 
     /**
@@ -89,6 +95,11 @@ namespace Model
     /**
      * <p>The number of replicas you want to preconfigure for each index partition.</p>
      */
+    inline bool DesiredReplicationCountHasBeenSet() const { return m_desiredReplicationCountHasBeenSet; }
+
+    /**
+     * <p>The number of replicas you want to preconfigure for each index partition.</p>
+     */
     inline void SetDesiredReplicationCount(int value) { m_desiredReplicationCountHasBeenSet = true; m_desiredReplicationCount = value; }
 
     /**
@@ -102,6 +113,12 @@ namespace Model
      * when you select <code>m2.2xlarge</code> as the desired instance type.</p>
      */
     inline int GetDesiredPartitionCount() const{ return m_desiredPartitionCount; }
+
+    /**
+     * <p>The number of partitions you want to preconfigure for your domain. Only valid
+     * when you select <code>m2.2xlarge</code> as the desired instance type.</p>
+     */
+    inline bool DesiredPartitionCountHasBeenSet() const { return m_desiredPartitionCountHasBeenSet; }
 
     /**
      * <p>The number of partitions you want to preconfigure for your domain. Only valid

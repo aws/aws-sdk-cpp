@@ -64,6 +64,12 @@ namespace Model
      * <p>The snapshot attribute to modify. Only volume creation permissions can be
      * modified.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The snapshot attribute to modify. Only volume creation permissions can be
+     * modified.</p>
+     */
     inline void SetAttribute(const SnapshotAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
     /**
      * <p>A JSON representation of the snapshot attribute modification.</p>
      */
+    inline bool CreateVolumePermissionHasBeenSet() const { return m_createVolumePermissionHasBeenSet; }
+
+    /**
+     * <p>A JSON representation of the snapshot attribute modification.</p>
+     */
     inline void SetCreateVolumePermission(const CreateVolumePermissionModifications& value) { m_createVolumePermissionHasBeenSet = true; m_createVolumePermission = value; }
 
     /**
@@ -115,6 +126,11 @@ namespace Model
      * <p>The group to modify for the snapshot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroupNames() const{ return m_groupNames; }
+
+    /**
+     * <p>The group to modify for the snapshot.</p>
+     */
+    inline bool GroupNamesHasBeenSet() const { return m_groupNamesHasBeenSet; }
 
     /**
      * <p>The group to modify for the snapshot.</p>
@@ -160,6 +176,11 @@ namespace Model
     /**
      * <p>The type of operation to perform to the attribute.</p>
      */
+    inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of operation to perform to the attribute.</p>
+     */
     inline void SetOperationType(const OperationType& value) { m_operationTypeHasBeenSet = true; m_operationType = value; }
 
     /**
@@ -182,6 +203,11 @@ namespace Model
      * <p>The ID of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -218,6 +244,11 @@ namespace Model
      * <p>The account ID to modify for the snapshot.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+
+    /**
+     * <p>The account ID to modify for the snapshot.</p>
+     */
+    inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
      * <p>The account ID to modify for the snapshot.</p>
@@ -262,6 +293,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

@@ -29,7 +29,7 @@ GetTopicRuleRequest::GetTopicRuleRequest() :
 
 Aws::String GetTopicRuleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

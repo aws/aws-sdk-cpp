@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the notebook instance.</p>
      */
+    inline bool NotebookInstanceNameHasBeenSet() const { return m_notebookInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the notebook instance.</p>
+     */
     inline void SetNotebookInstanceName(const Aws::String& value) { m_notebookInstanceNameHasBeenSet = true; m_notebookInstanceName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The duration of the session, in seconds. The default is 12 hours.</p>
      */
     inline int GetSessionExpirationDurationInSeconds() const{ return m_sessionExpirationDurationInSeconds; }
+
+    /**
+     * <p>The duration of the session, in seconds. The default is 12 hours.</p>
+     */
+    inline bool SessionExpirationDurationInSecondsHasBeenSet() const { return m_sessionExpirationDurationInSecondsHasBeenSet; }
 
     /**
      * <p>The duration of the session, in seconds. The default is 12 hours.</p>

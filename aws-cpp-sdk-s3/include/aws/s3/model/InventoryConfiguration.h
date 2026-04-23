@@ -38,6 +38,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API InventoryConfiguration
   {
   public:
@@ -52,6 +57,11 @@ namespace Model
      * <p>Contains information about where to publish the inventory results.</p>
      */
     inline const InventoryDestination& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>Contains information about where to publish the inventory results.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>Contains information about where to publish the inventory results.</p>
@@ -82,6 +92,11 @@ namespace Model
     /**
      * <p>Specifies whether the inventory is enabled or disabled.</p>
      */
+    inline bool IsEnabledHasBeenSet() const { return m_isEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the inventory is enabled or disabled.</p>
+     */
     inline void SetIsEnabled(bool value) { m_isEnabledHasBeenSet = true; m_isEnabled = value; }
 
     /**
@@ -95,6 +110,12 @@ namespace Model
      * the filter's criteria.</p>
      */
     inline const InventoryFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Specifies an inventory filter. The inventory only includes objects that meet
+     * the filter's criteria.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>Specifies an inventory filter. The inventory only includes objects that meet
@@ -125,6 +146,11 @@ namespace Model
      * <p>The ID used to identify the inventory configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID used to identify the inventory configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID used to identify the inventory configuration.</p>
@@ -165,6 +191,11 @@ namespace Model
     /**
      * <p>Specifies which object version(s) to included in the inventory results.</p>
      */
+    inline bool IncludedObjectVersionsHasBeenSet() const { return m_includedObjectVersionsHasBeenSet; }
+
+    /**
+     * <p>Specifies which object version(s) to included in the inventory results.</p>
+     */
     inline void SetIncludedObjectVersions(const InventoryIncludedObjectVersions& value) { m_includedObjectVersionsHasBeenSet = true; m_includedObjectVersions = value; }
 
     /**
@@ -187,6 +218,11 @@ namespace Model
      * <p>Contains the optional fields that are included in the inventory results.</p>
      */
     inline const Aws::Vector<InventoryOptionalField>& GetOptionalFields() const{ return m_optionalFields; }
+
+    /**
+     * <p>Contains the optional fields that are included in the inventory results.</p>
+     */
+    inline bool OptionalFieldsHasBeenSet() const { return m_optionalFieldsHasBeenSet; }
 
     /**
      * <p>Contains the optional fields that are included in the inventory results.</p>
@@ -223,6 +259,11 @@ namespace Model
      * <p>Specifies the schedule for generating inventory results.</p>
      */
     inline const InventorySchedule& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>Specifies the schedule for generating inventory results.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>Specifies the schedule for generating inventory results.</p>

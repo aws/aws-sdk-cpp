@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A standard AWS account ID (9+ digits).</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>A standard AWS account ID (9+ digits).</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -124,8 +134,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -137,8 +149,25 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
+     * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
+     * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
+     * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
+     * <code>www.digits.com</code> </p> </li> </ul>
+     */
+    inline bool LoginsHasBeenSet() const { return m_loginsHasBeenSet; }
+
+    /**
+     * <p>A set of optional name-value pairs that map provider names to provider
+     * tokens. The available provider names for <code>Logins</code> are as follows:</p>
+     * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -150,8 +179,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -163,8 +194,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -176,8 +209,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -189,8 +224,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -202,8 +239,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -215,8 +254,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -228,8 +269,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -241,8 +284,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -254,8 +299,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:
@@ -267,8 +314,10 @@ namespace Model
      * <p>A set of optional name-value pairs that map provider names to provider
      * tokens. The available provider names for <code>Logins</code> are as follows:</p>
      * <ul> <li> <p>Facebook: <code>graph.facebook.com</code> </p> </li> <li> <p>Amazon
-     * Cognito Identity Provider:
-     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code> </p> </li>
+     * Cognito user pool:
+     * <code>cognito-idp.&lt;region&gt;.amazonaws.com/&lt;YOUR_USER_POOL_ID&gt;</code>,
+     * for example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>. </p> </li>
      * <li> <p>Google: <code>accounts.google.com</code> </p> </li> <li> <p>Amazon:
      * <code>www.amazon.com</code> </p> </li> <li> <p>Twitter:
      * <code>api.twitter.com</code> </p> </li> <li> <p>Digits:

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The domain for which you want to get a list of tags.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain for which you want to get a list of tags.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

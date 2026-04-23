@@ -67,6 +67,16 @@ namespace Model
      * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
      * for detailed descriptions.</p>
      */
+    inline bool EC2InstanceTypeHasBeenSet() const { return m_eC2InstanceTypeHasBeenSet; }
+
+    /**
+     * <p>Name of an EC2 instance type that is supported in Amazon GameLift. A fleet
+     * instance type determines the computing resources of each instance in the fleet,
+     * including CPU, memory, storage, and networking capacity. Amazon GameLift
+     * supports the following EC2 instance types. See <a
+     * href="http://aws.amazon.com/ec2/instance-types/">Amazon EC2 Instance Types</a>
+     * for detailed descriptions.</p>
+     */
     inline void SetEC2InstanceType(const EC2InstanceType& value) { m_eC2InstanceTypeHasBeenSet = true; m_eC2InstanceType = value; }
 
     /**
@@ -110,6 +120,12 @@ namespace Model
      * <p>Number of instances of the specified type that are currently in use by this
      * AWS account.</p>
      */
+    inline bool CurrentInstancesHasBeenSet() const { return m_currentInstancesHasBeenSet; }
+
+    /**
+     * <p>Number of instances of the specified type that are currently in use by this
+     * AWS account.</p>
+     */
     inline void SetCurrentInstances(int value) { m_currentInstancesHasBeenSet = true; m_currentInstances = value; }
 
     /**
@@ -123,6 +139,11 @@ namespace Model
      * <p>Number of instances allowed.</p>
      */
     inline int GetInstanceLimit() const{ return m_instanceLimit; }
+
+    /**
+     * <p>Number of instances allowed.</p>
+     */
+    inline bool InstanceLimitHasBeenSet() const { return m_instanceLimitHasBeenSet; }
 
     /**
      * <p>Number of instances allowed.</p>

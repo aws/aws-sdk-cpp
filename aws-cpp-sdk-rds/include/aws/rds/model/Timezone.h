@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the time zone.</p>
      */
+    inline bool TimezoneNameHasBeenSet() const { return m_timezoneNameHasBeenSet; }
+
+    /**
+     * <p>The name of the time zone.</p>
+     */
     inline void SetTimezoneName(const Aws::String& value) { m_timezoneNameHasBeenSet = true; m_timezoneName = value; }
 
     /**

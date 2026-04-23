@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>DataSource</code> at creation.</p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>DataSource</code> at creation.</p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * returned.</p> <p>If false, <code>DataSourceSchema</code> is not returned.</p>
      */
     inline bool GetVerbose() const{ return m_verbose; }
+
+    /**
+     * <p>Specifies whether the <code>GetDataSource</code> operation should return
+     * <code>DataSourceSchema</code>.</p> <p>If true, <code>DataSourceSchema</code> is
+     * returned.</p> <p>If false, <code>DataSourceSchema</code> is not returned.</p>
+     */
+    inline bool VerboseHasBeenSet() const { return m_verboseHasBeenSet; }
 
     /**
      * <p>Specifies whether the <code>GetDataSource</code> operation should return

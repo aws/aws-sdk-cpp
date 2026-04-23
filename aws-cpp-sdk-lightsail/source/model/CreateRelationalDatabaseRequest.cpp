@@ -33,7 +33,8 @@ CreateRelationalDatabaseRequest::CreateRelationalDatabaseRequest() :
     m_preferredBackupWindowHasBeenSet(false),
     m_preferredMaintenanceWindowHasBeenSet(false),
     m_publiclyAccessible(false),
-    m_publiclyAccessibleHasBeenSet(false)
+    m_publiclyAccessibleHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -98,6 +99,17 @@ Aws::String CreateRelationalDatabaseRequest::SerializePayload() const
   if(m_publiclyAccessibleHasBeenSet)
   {
    payload.WithBool("publiclyAccessible", m_publiclyAccessible);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

@@ -29,7 +29,7 @@ RebootBrokerRequest::RebootBrokerRequest() :
 
 Aws::String RebootBrokerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

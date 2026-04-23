@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The availability options configured for the domain.</p>
      */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+
+    /**
+     * <p>The availability options configured for the domain.</p>
+     */
     inline void SetOptions(bool value) { m_optionsHasBeenSet = true; m_options = value; }
 
     /**
@@ -68,6 +73,9 @@ namespace Model
 
     
     inline const OptionStatus& GetStatus() const{ return m_status; }
+
+    
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     
     inline void SetStatus(const OptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }

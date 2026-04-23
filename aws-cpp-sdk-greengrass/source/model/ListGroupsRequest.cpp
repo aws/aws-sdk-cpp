@@ -33,7 +33,7 @@ ListGroupsRequest::ListGroupsRequest() :
 
 Aws::String ListGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListGroupsRequest::AddQueryStringParameters(URI& uri) const

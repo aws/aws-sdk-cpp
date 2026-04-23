@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
      */
+    inline bool OutputSourceIdHasBeenSet() const { return m_outputSourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the output source, for example the URL of an Amazon S3 bucket.</p>
+     */
     inline void SetOutputSourceId(const Aws::String& value) { m_outputSourceIdHasBeenSet = true; m_outputSourceId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * example, Amazon S3.</p>
      */
     inline const Aws::String& GetOutputSourceType() const{ return m_outputSourceType; }
+
+    /**
+     * <p>The type of source where the association execution details are stored, for
+     * example, Amazon S3.</p>
+     */
+    inline bool OutputSourceTypeHasBeenSet() const { return m_outputSourceTypeHasBeenSet; }
 
     /**
      * <p>The type of source where the association execution details are stored, for

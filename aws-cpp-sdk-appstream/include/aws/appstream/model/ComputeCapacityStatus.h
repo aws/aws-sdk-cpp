@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The desired number of streaming instances.</p>
      */
+    inline bool DesiredHasBeenSet() const { return m_desiredHasBeenSet; }
+
+    /**
+     * <p>The desired number of streaming instances.</p>
+     */
     inline void SetDesired(int value) { m_desiredHasBeenSet = true; m_desired = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>The total number of simultaneous streaming instances that are running.</p>
      */
     inline int GetRunning() const{ return m_running; }
+
+    /**
+     * <p>The total number of simultaneous streaming instances that are running.</p>
+     */
+    inline bool RunningHasBeenSet() const { return m_runningHasBeenSet; }
 
     /**
      * <p>The total number of simultaneous streaming instances that are running.</p>
@@ -85,6 +95,11 @@ namespace Model
     /**
      * <p>The number of instances in use for streaming.</p>
      */
+    inline bool InUseHasBeenSet() const { return m_inUseHasBeenSet; }
+
+    /**
+     * <p>The number of instances in use for streaming.</p>
+     */
     inline void SetInUse(int value) { m_inUseHasBeenSet = true; m_inUse = value; }
 
     /**
@@ -98,6 +113,12 @@ namespace Model
      * sessions.</p>
      */
     inline int GetAvailable() const{ return m_available; }
+
+    /**
+     * <p>The number of currently available instances that can be used to stream
+     * sessions.</p>
+     */
+    inline bool AvailableHasBeenSet() const { return m_availableHasBeenSet; }
 
     /**
      * <p>The number of currently available instances that can be used to stream

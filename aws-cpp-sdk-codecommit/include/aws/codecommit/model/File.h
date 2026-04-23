@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The blob ID that contains the file information.</p>
      */
+    inline bool BlobIdHasBeenSet() const { return m_blobIdHasBeenSet; }
+
+    /**
+     * <p>The blob ID that contains the file information.</p>
+     */
     inline void SetBlobId(const Aws::String& value) { m_blobIdHasBeenSet = true; m_blobId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The fully-qualified path to the file in the repository.</p>
      */
     inline const Aws::String& GetAbsolutePath() const{ return m_absolutePath; }
+
+    /**
+     * <p>The fully-qualified path to the file in the repository.</p>
+     */
+    inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
 
     /**
      * <p>The fully-qualified path to the file in the repository.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The relative path of the file from the folder where the query originated.</p>
      */
+    inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
+
+    /**
+     * <p>The relative path of the file from the folder where the query originated.</p>
+     */
     inline void SetRelativePath(const Aws::String& value) { m_relativePathHasBeenSet = true; m_relativePath = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * EXECUTABLE and NORMAL.</p>
      */
     inline const FileModeTypeEnum& GetFileMode() const{ return m_fileMode; }
+
+    /**
+     * <p>The extrapolated file mode permissions for the file. Valid values include
+     * EXECUTABLE and NORMAL.</p>
+     */
+    inline bool FileModeHasBeenSet() const { return m_fileModeHasBeenSet; }
 
     /**
      * <p>The extrapolated file mode permissions for the file. Valid values include

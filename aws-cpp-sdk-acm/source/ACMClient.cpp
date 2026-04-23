@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/acm/ACMClient.h>
 #include <aws/acm/ACMEndpoint.h>
 #include <aws/acm/ACMErrorMarshaller.h>
@@ -36,6 +39,7 @@
 #include <aws/acm/model/ListCertificatesRequest.h>
 #include <aws/acm/model/ListTagsForCertificateRequest.h>
 #include <aws/acm/model/RemoveTagsFromCertificateRequest.h>
+#include <aws/acm/model/RenewCertificateRequest.h>
 #include <aws/acm/model/RequestCertificateRequest.h>
 #include <aws/acm/model/ResendValidationEmailRequest.h>
 #include <aws/acm/model/UpdateCertificateOptionsRequest.h>
@@ -89,25 +93,32 @@ ACMClient::~ACMClient()
 
 void ACMClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << ACMEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + ACMEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void ACMClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AddTagsToCertificateOutcome ACMClient::AddTagsToCertificate(const AddTagsToCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -141,8 +152,8 @@ void ACMClient::AddTagsToCertificateAsyncHelper(const AddTagsToCertificateReques
 
 DeleteCertificateOutcome ACMClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -176,8 +187,8 @@ void ACMClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& req
 
 DescribeCertificateOutcome ACMClient::DescribeCertificate(const DescribeCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -211,8 +222,8 @@ void ACMClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest&
 
 ExportCertificateOutcome ACMClient::ExportCertificate(const ExportCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -246,8 +257,8 @@ void ACMClient::ExportCertificateAsyncHelper(const ExportCertificateRequest& req
 
 GetCertificateOutcome ACMClient::GetCertificate(const GetCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -281,8 +292,8 @@ void ACMClient::GetCertificateAsyncHelper(const GetCertificateRequest& request, 
 
 ImportCertificateOutcome ACMClient::ImportCertificate(const ImportCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -316,8 +327,8 @@ void ACMClient::ImportCertificateAsyncHelper(const ImportCertificateRequest& req
 
 ListCertificatesOutcome ACMClient::ListCertificates(const ListCertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -351,8 +362,8 @@ void ACMClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& reque
 
 ListTagsForCertificateOutcome ACMClient::ListTagsForCertificate(const ListTagsForCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -386,8 +397,8 @@ void ACMClient::ListTagsForCertificateAsyncHelper(const ListTagsForCertificateRe
 
 RemoveTagsFromCertificateOutcome ACMClient::RemoveTagsFromCertificate(const RemoveTagsFromCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -419,10 +430,45 @@ void ACMClient::RemoveTagsFromCertificateAsyncHelper(const RemoveTagsFromCertifi
   handler(this, request, RemoveTagsFromCertificate(request), context);
 }
 
+RenewCertificateOutcome ACMClient::RenewCertificate(const RenewCertificateRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RenewCertificateOutcome(NoResult());
+  }
+  else
+  {
+    return RenewCertificateOutcome(outcome.GetError());
+  }
+}
+
+RenewCertificateOutcomeCallable ACMClient::RenewCertificateCallable(const RenewCertificateRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RenewCertificateOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RenewCertificate(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ACMClient::RenewCertificateAsync(const RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RenewCertificateAsyncHelper( request, handler, context ); } );
+}
+
+void ACMClient::RenewCertificateAsyncHelper(const RenewCertificateRequest& request, const RenewCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RenewCertificate(request), context);
+}
+
 RequestCertificateOutcome ACMClient::RequestCertificate(const RequestCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -456,8 +502,8 @@ void ACMClient::RequestCertificateAsyncHelper(const RequestCertificateRequest& r
 
 ResendValidationEmailOutcome ACMClient::ResendValidationEmail(const ResendValidationEmailRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -491,8 +537,8 @@ void ACMClient::ResendValidationEmailAsyncHelper(const ResendValidationEmailRequ
 
 UpdateCertificateOptionsOutcome ACMClient::UpdateCertificateOptions(const UpdateCertificateOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

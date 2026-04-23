@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The minimum value of the timestamp range.</p>
      */
+    inline bool BeginDateHasBeenSet() const { return m_beginDateHasBeenSet; }
+
+    /**
+     * <p>The minimum value of the timestamp range.</p>
+     */
     inline void SetBeginDate(const Aws::Utils::DateTime& value) { m_beginDateHasBeenSet = true; m_beginDate = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The maximum value of the timestamp range.</p>
      */
     inline const Aws::Utils::DateTime& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The maximum value of the timestamp range.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The maximum value of the timestamp range.</p>

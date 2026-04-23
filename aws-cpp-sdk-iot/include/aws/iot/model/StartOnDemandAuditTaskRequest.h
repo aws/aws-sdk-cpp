@@ -59,6 +59,15 @@ namespace Model
      * including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
      * to select which checks are enabled.</p>
      */
+    inline bool TargetCheckNamesHasBeenSet() const { return m_targetCheckNamesHasBeenSet; }
+
+    /**
+     * <p>Which checks are performed during the audit. The checks you specify must be
+     * enabled for your account or an exception occurs. Use
+     * <code>DescribeAccountAuditConfiguration</code> to see the list of all checks
+     * including those that are enabled or <code>UpdateAccountAuditConfiguration</code>
+     * to select which checks are enabled.</p>
+     */
     inline void SetTargetCheckNames(const Aws::Vector<Aws::String>& value) { m_targetCheckNamesHasBeenSet = true; m_targetCheckNames = value; }
 
     /**

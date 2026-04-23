@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Kinesis video stream input stream for the source streaming video.</p>
      */
+    inline bool KinesisVideoStreamHasBeenSet() const { return m_kinesisVideoStreamHasBeenSet; }
+
+    /**
+     * <p>The Kinesis video stream input stream for the source streaming video.</p>
+     */
     inline void SetKinesisVideoStream(const KinesisVideoStream& value) { m_kinesisVideoStreamHasBeenSet = true; m_kinesisVideoStream = value; }
 
     /**

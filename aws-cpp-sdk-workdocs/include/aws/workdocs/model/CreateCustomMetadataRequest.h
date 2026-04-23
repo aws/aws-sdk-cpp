@@ -61,6 +61,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource.</p>
@@ -140,6 +151,12 @@ namespace Model
      * <p>The ID of the version, if the custom metadata is being added to a document
      * version.</p>
      */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the version, if the custom metadata is being added to a document
+     * version.</p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
@@ -177,6 +194,11 @@ namespace Model
      * <p>Custom metadata in the form of name-value pairs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomMetadata() const{ return m_customMetadata; }
+
+    /**
+     * <p>Custom metadata in the form of name-value pairs.</p>
+     */
+    inline bool CustomMetadataHasBeenSet() const { return m_customMetadataHasBeenSet; }
 
     /**
      * <p>Custom metadata in the form of name-value pairs.</p>

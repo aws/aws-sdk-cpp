@@ -45,37 +45,37 @@ namespace Model
 
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline const Aws::Vector<Permission>& GetPermissions() const{ return m_permissions; }
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline void SetPermissions(const Aws::Vector<Permission>& value) { m_permissions = value; }
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline void SetPermissions(Aws::Vector<Permission>&& value) { m_permissions = std::move(value); }
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline ListMailboxPermissionsResult& WithPermissions(const Aws::Vector<Permission>& value) { SetPermissions(value); return *this;}
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline ListMailboxPermissionsResult& WithPermissions(Aws::Vector<Permission>&& value) { SetPermissions(std::move(value)); return *this;}
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline ListMailboxPermissionsResult& AddPermissions(const Permission& value) { m_permissions.push_back(value); return *this; }
 
     /**
-     * <p>One page of the entity's mailbox permissions.</p>
+     * <p>One page of the user, group, or resource mailbox permissions.</p>
      */
     inline ListMailboxPermissionsResult& AddPermissions(Permission&& value) { m_permissions.push_back(std::move(value)); return *this; }
 

@@ -60,6 +60,12 @@ namespace Model
      * <p>The destination region that snapshots are automatically copied to when
      * cross-region snapshot copy is enabled.</p>
      */
+    inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
+
+    /**
+     * <p>The destination region that snapshots are automatically copied to when
+     * cross-region snapshot copy is enabled.</p>
+     */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The number of days that automated snapshots are retained in the destination
      * region after they are copied from a source region.</p>
      */
+    inline bool RetentionPeriodHasBeenSet() const { return m_retentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that automated snapshots are retained in the destination
+     * region after they are copied from a source region.</p>
+     */
     inline void SetRetentionPeriod(long long value) { m_retentionPeriodHasBeenSet = true; m_retentionPeriod = value; }
 
     /**
@@ -126,6 +138,14 @@ namespace Model
      * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
      * an integer between 1 and 3,653.</p>
      */
+    inline bool ManualSnapshotRetentionPeriodHasBeenSet() const { return m_manualSnapshotRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days that automated snapshots are retained in the destination
+     * region after they are copied from a source region. If the value is -1, the
+     * manual snapshot is retained indefinitely. </p> <p>The value must be either -1 or
+     * an integer between 1 and 3,653.</p>
+     */
     inline void SetManualSnapshotRetentionPeriod(int value) { m_manualSnapshotRetentionPeriodHasBeenSet = true; m_manualSnapshotRetentionPeriod = value; }
 
     /**
@@ -141,6 +161,11 @@ namespace Model
      * <p>The name of the snapshot copy grant.</p>
      */
     inline const Aws::String& GetSnapshotCopyGrantName() const{ return m_snapshotCopyGrantName; }
+
+    /**
+     * <p>The name of the snapshot copy grant.</p>
+     */
+    inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
 
     /**
      * <p>The name of the snapshot copy grant.</p>

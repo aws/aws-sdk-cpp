@@ -21,6 +21,7 @@
 #include <aws/ecs/model/VersionInfo.h>
 #include <aws/ecs/model/Resource.h>
 #include <aws/ecs/model/Attribute.h>
+#include <aws/ecs/model/PlatformDevice.h>
 #include <aws/ecs/model/Tag.h>
 #include <utility>
 
@@ -55,6 +56,13 @@ namespace Model
      * default cluster is assumed.</p>
      */
     inline const Aws::String& GetCluster() const{ return m_cluster; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster with which
+     * to register your container instance. If you do not specify a cluster, the
+     * default cluster is assumed.</p>
+     */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
 
     /**
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster with which
@@ -106,6 +114,14 @@ namespace Model
      * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
      */
     inline const Aws::String& GetInstanceIdentityDocument() const{ return m_instanceIdentityDocument; }
+
+    /**
+     * <p>The instance identity document for the EC2 instance to register. This
+     * document can be found by running the following command from the instance:
+     * <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/document/</code> </p>
+     */
+    inline bool InstanceIdentityDocumentHasBeenSet() const { return m_instanceIdentityDocumentHasBeenSet; }
 
     /**
      * <p>The instance identity document for the EC2 instance to register. This
@@ -170,6 +186,14 @@ namespace Model
      * <code>curl
      * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
      */
+    inline bool InstanceIdentityDocumentSignatureHasBeenSet() const { return m_instanceIdentityDocumentSignatureHasBeenSet; }
+
+    /**
+     * <p>The instance identity document signature for the EC2 instance to register.
+     * This signature can be found by running the following command from the instance:
+     * <code>curl
+     * http://169.254.169.254/latest/dynamic/instance-identity/signature/</code> </p>
+     */
     inline void SetInstanceIdentityDocumentSignature(const Aws::String& value) { m_instanceIdentityDocumentSignatureHasBeenSet = true; m_instanceIdentityDocumentSignature = value; }
 
     /**
@@ -221,6 +245,11 @@ namespace Model
     /**
      * <p>The resources available on the instance.</p>
      */
+    inline bool TotalResourcesHasBeenSet() const { return m_totalResourcesHasBeenSet; }
+
+    /**
+     * <p>The resources available on the instance.</p>
+     */
     inline void SetTotalResources(const Aws::Vector<Resource>& value) { m_totalResourcesHasBeenSet = true; m_totalResources = value; }
 
     /**
@@ -259,6 +288,12 @@ namespace Model
      * <p>The version information for the Amazon ECS container agent and Docker daemon
      * running on the container instance.</p>
      */
+    inline bool VersionInfoHasBeenSet() const { return m_versionInfoHasBeenSet; }
+
+    /**
+     * <p>The version information for the Amazon ECS container agent and Docker daemon
+     * running on the container instance.</p>
+     */
     inline void SetVersionInfo(const VersionInfo& value) { m_versionInfoHasBeenSet = true; m_versionInfo = value; }
 
     /**
@@ -284,6 +319,11 @@ namespace Model
      * <p>The ARN of the container instance (if it was previously registered).</p>
      */
     inline const Aws::String& GetContainerInstanceArn() const{ return m_containerInstanceArn; }
+
+    /**
+     * <p>The ARN of the container instance (if it was previously registered).</p>
+     */
+    inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
 
     /**
      * <p>The ARN of the container instance (if it was previously registered).</p>
@@ -324,6 +364,11 @@ namespace Model
     /**
      * <p>The container instance attributes that this container instance supports.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The container instance attributes that this container instance supports.</p>
+     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -353,12 +398,69 @@ namespace Model
 
 
     /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline const Aws::Vector<PlatformDevice>& GetPlatformDevices() const{ return m_platformDevices; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline bool PlatformDevicesHasBeenSet() const { return m_platformDevicesHasBeenSet; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline void SetPlatformDevices(const Aws::Vector<PlatformDevice>& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = value; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline void SetPlatformDevices(Aws::Vector<PlatformDevice>&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices = std::move(value); }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& WithPlatformDevices(const Aws::Vector<PlatformDevice>& value) { SetPlatformDevices(value); return *this;}
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& WithPlatformDevices(Aws::Vector<PlatformDevice>&& value) { SetPlatformDevices(std::move(value)); return *this;}
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& AddPlatformDevices(const PlatformDevice& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(value); return *this; }
+
+    /**
+     * <p>The devices that are available on the container instance. The only supported
+     * device type is a GPU.</p>
+     */
+    inline RegisterContainerInstanceRequest& AddPlatformDevices(PlatformDevice&& value) { m_platformDevicesHasBeenSet = true; m_platformDevices.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The metadata that you apply to the container instance to help you categorize
      * and organize them. Each tag consists of a key and an optional value, both of
      * which you define. Tag keys can have a maximum character length of 128
      * characters, and tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the container instance to help you categorize
+     * and organize them. Each tag consists of a key and an optional value, both of
+     * which you define. Tag keys can have a maximum character length of 128
+     * characters, and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the container instance to help you categorize
@@ -430,6 +532,9 @@ namespace Model
 
     Aws::Vector<Attribute> m_attributes;
     bool m_attributesHasBeenSet;
+
+    Aws::Vector<PlatformDevice> m_platformDevices;
+    bool m_platformDevicesHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

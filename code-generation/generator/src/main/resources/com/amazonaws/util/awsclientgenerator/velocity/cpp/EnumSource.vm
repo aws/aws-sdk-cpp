@@ -132,7 +132,7 @@ namespace ${rootNamespace}
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
 #else
 #set($maxHelperIndex = $enumModel.members.size() / 122)
@@ -151,7 +151,7 @@ namespace ${rootNamespace}
             return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
           }
 
-          return "";
+          return {};
 #end
         }
 

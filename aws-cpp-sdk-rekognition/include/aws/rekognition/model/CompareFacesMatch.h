@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Level of confidence that the faces match.</p>
      */
+    inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
+
+    /**
+     * <p>Level of confidence that the faces match.</p>
+     */
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
 
     /**
@@ -72,6 +77,12 @@ namespace Model
      * actually contains a face).</p>
      */
     inline const ComparedFace& GetFace() const{ return m_face; }
+
+    /**
+     * <p>Provides face metadata (bounding box and confidence that the bounding box
+     * actually contains a face).</p>
+     */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
 
     /**
      * <p>Provides face metadata (bounding box and confidence that the bounding box

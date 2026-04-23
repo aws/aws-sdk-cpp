@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
      * false, the pipeline is deactivated after all running objects finish.</p>
      */
     inline bool GetCancelActive() const{ return m_cancelActive; }
+
+    /**
+     * <p>Indicates whether to cancel any running objects. The default is true, which
+     * sets the state of any running objects to <code>CANCELED</code>. If this value is
+     * false, the pipeline is deactivated after all running objects finish.</p>
+     */
+    inline bool CancelActiveHasBeenSet() const { return m_cancelActiveHasBeenSet; }
 
     /**
      * <p>Indicates whether to cancel any running objects. The default is true, which

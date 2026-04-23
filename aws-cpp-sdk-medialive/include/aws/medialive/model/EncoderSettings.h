@@ -43,7 +43,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for EncoderSettings<p><h3>See Also:</h3>   <a
+   * Encoder Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EncoderSettings">AWS
    * API Reference</a></p>
    */
@@ -58,6 +58,9 @@ namespace Model
 
     
     inline const Aws::Vector<AudioDescription>& GetAudioDescriptions() const{ return m_audioDescriptions; }
+
+    
+    inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
 
     
     inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
@@ -82,6 +85,11 @@ namespace Model
      * Settings for ad avail blanking.
      */
     inline const AvailBlanking& GetAvailBlanking() const{ return m_availBlanking; }
+
+    /**
+     * Settings for ad avail blanking.
+     */
+    inline bool AvailBlankingHasBeenSet() const { return m_availBlankingHasBeenSet; }
 
     /**
      * Settings for ad avail blanking.
@@ -112,6 +120,11 @@ namespace Model
     /**
      * Event-wide configuration settings for ad avail insertion.
      */
+    inline bool AvailConfigurationHasBeenSet() const { return m_availConfigurationHasBeenSet; }
+
+    /**
+     * Event-wide configuration settings for ad avail insertion.
+     */
     inline void SetAvailConfiguration(const AvailConfiguration& value) { m_availConfigurationHasBeenSet = true; m_availConfiguration = value; }
 
     /**
@@ -138,6 +151,11 @@ namespace Model
     /**
      * Settings for blackout slate.
      */
+    inline bool BlackoutSlateHasBeenSet() const { return m_blackoutSlateHasBeenSet; }
+
+    /**
+     * Settings for blackout slate.
+     */
     inline void SetBlackoutSlate(const BlackoutSlate& value) { m_blackoutSlateHasBeenSet = true; m_blackoutSlate = value; }
 
     /**
@@ -160,6 +178,11 @@ namespace Model
      * Settings for caption decriptions
      */
     inline const Aws::Vector<CaptionDescription>& GetCaptionDescriptions() const{ return m_captionDescriptions; }
+
+    /**
+     * Settings for caption decriptions
+     */
+    inline bool CaptionDescriptionsHasBeenSet() const { return m_captionDescriptionsHasBeenSet; }
 
     /**
      * Settings for caption decriptions
@@ -200,6 +223,11 @@ namespace Model
     /**
      * Configuration settings that apply to the event as a whole.
      */
+    inline bool GlobalConfigurationHasBeenSet() const { return m_globalConfigurationHasBeenSet; }
+
+    /**
+     * Configuration settings that apply to the event as a whole.
+     */
     inline void SetGlobalConfiguration(const GlobalConfiguration& value) { m_globalConfigurationHasBeenSet = true; m_globalConfiguration = value; }
 
     /**
@@ -220,6 +248,9 @@ namespace Model
 
     
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
+
+    
+    inline bool OutputGroupsHasBeenSet() const { return m_outputGroupsHasBeenSet; }
 
     
     inline void SetOutputGroups(const Aws::Vector<OutputGroup>& value) { m_outputGroupsHasBeenSet = true; m_outputGroups = value; }
@@ -248,6 +279,11 @@ namespace Model
     /**
      * Contains settings used to acquire and adjust timecode information from inputs.
      */
+    inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
+
+    /**
+     * Contains settings used to acquire and adjust timecode information from inputs.
+     */
     inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
 
     /**
@@ -268,6 +304,9 @@ namespace Model
 
     
     inline const Aws::Vector<VideoDescription>& GetVideoDescriptions() const{ return m_videoDescriptions; }
+
+    
+    inline bool VideoDescriptionsHasBeenSet() const { return m_videoDescriptionsHasBeenSet; }
 
     
     inline void SetVideoDescriptions(const Aws::Vector<VideoDescription>& value) { m_videoDescriptionsHasBeenSet = true; m_videoDescriptions = value; }

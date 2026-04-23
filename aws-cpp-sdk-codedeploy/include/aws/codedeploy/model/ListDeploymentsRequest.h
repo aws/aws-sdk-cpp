@@ -52,80 +52,91 @@ namespace Model
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline const Aws::String& GetDeploymentGroupName() const{ return m_deploymentGroupName; }
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
+     */
+    inline bool DeploymentGroupNameHasBeenSet() const { return m_deploymentGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline void SetDeploymentGroupName(const Aws::String& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = value; }
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline void SetDeploymentGroupName(Aws::String&& value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName = std::move(value); }
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline void SetDeploymentGroupName(const char* value) { m_deploymentGroupNameHasBeenSet = true; m_deploymentGroupName.assign(value); }
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const Aws::String& value) { SetDeploymentGroupName(value); return *this;}
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(Aws::String&& value) { SetDeploymentGroupName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an existing deployment group for the specified application.</p>
+     * <p>The name of a deployment group for the specified application.</p>
      */
     inline ListDeploymentsRequest& WithDeploymentGroupName(const char* value) { SetDeploymentGroupName(value); return *this;}
 
@@ -140,6 +151,17 @@ namespace Model
      * Include stopped deployments in the resulting list.</p> </li> </ul>
      */
     inline const Aws::Vector<DeploymentStatus>& GetIncludeOnlyStatuses() const{ return m_includeOnlyStatuses; }
+
+    /**
+     * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
+     * created deployments in the resulting list.</p> </li> <li> <p>Queued: Include
+     * queued deployments in the resulting list.</p> </li> <li> <p>In Progress: Include
+     * in-progress deployments in the resulting list.</p> </li> <li> <p>Succeeded:
+     * Include successful deployments in the resulting list.</p> </li> <li> <p>Failed:
+     * Include failed deployments in the resulting list.</p> </li> <li> <p>Stopped:
+     * Include stopped deployments in the resulting list.</p> </li> </ul>
+     */
+    inline bool IncludeOnlyStatusesHasBeenSet() const { return m_includeOnlyStatusesHasBeenSet; }
 
     /**
      * <p>A subset of deployments to list by status:</p> <ul> <li> <p>Created: Include
@@ -218,6 +240,12 @@ namespace Model
      * <p>A time range (start and end) for returning a subset of the list of
      * deployments.</p>
      */
+    inline bool CreateTimeRangeHasBeenSet() const { return m_createTimeRangeHasBeenSet; }
+
+    /**
+     * <p>A time range (start and end) for returning a subset of the list of
+     * deployments.</p>
+     */
     inline void SetCreateTimeRange(const TimeRange& value) { m_createTimeRangeHasBeenSet = true; m_createTimeRange = value; }
 
     /**
@@ -244,6 +272,12 @@ namespace Model
      * used to return the next set of deployments in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier returned from the previous list deployments call. It can be
+     * used to return the next set of deployments in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier returned from the previous list deployments call. It can be

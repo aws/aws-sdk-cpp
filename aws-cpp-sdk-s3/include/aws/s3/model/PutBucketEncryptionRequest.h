@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the bucket for which the server-side encryption configuration is
      * set.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the bucket for which the server-side encryption configuration is
+     * set.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -97,49 +103,66 @@ namespace Model
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline PutBucketEncryptionRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline PutBucketEncryptionRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
     /**
      * <p>The base64-encoded 128-bit MD5 digest of the server-side encryption
-     * configuration.</p>
+     * configuration. This parameter is auto-populated when using the command from the
+     * CLI</p>
      */
     inline PutBucketEncryptionRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
     
     inline const ServerSideEncryptionConfiguration& GetServerSideEncryptionConfiguration() const{ return m_serverSideEncryptionConfiguration; }
+
+    
+    inline bool ServerSideEncryptionConfigurationHasBeenSet() const { return m_serverSideEncryptionConfigurationHasBeenSet; }
 
     
     inline void SetServerSideEncryptionConfiguration(const ServerSideEncryptionConfiguration& value) { m_serverSideEncryptionConfigurationHasBeenSet = true; m_serverSideEncryptionConfiguration = value; }
@@ -156,6 +179,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

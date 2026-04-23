@@ -53,6 +53,11 @@ namespace Model
     /**
      * A short text description of the Channel.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * A short text description of the Channel.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * The ID of the Channel to update.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the Channel to update.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the Channel to update.

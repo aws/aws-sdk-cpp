@@ -30,7 +30,7 @@ DeleteDocumentationPartRequest::DeleteDocumentationPartRequest() :
 
 Aws::String DeleteDocumentationPartRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

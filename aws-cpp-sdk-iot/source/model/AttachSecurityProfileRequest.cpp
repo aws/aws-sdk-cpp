@@ -33,7 +33,7 @@ AttachSecurityProfileRequest::AttachSecurityProfileRequest() :
 
 Aws::String AttachSecurityProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void AttachSecurityProfileRequest::AddQueryStringParameters(URI& uri) const

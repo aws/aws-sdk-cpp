@@ -86,6 +86,11 @@ namespace Model
     /**
      * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
      */
+    inline bool DeliveryFrequencyHasBeenSet() const { return m_deliveryFrequencyHasBeenSet; }
+
+    /**
+     * <p>The frequency with which AWS Config delivers configuration snapshots.</p>
+     */
     inline void SetDeliveryFrequency(const MaximumExecutionFrequency& value) { m_deliveryFrequencyHasBeenSet = true; m_deliveryFrequency = value; }
 
     /**

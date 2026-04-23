@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The type of principal.</p>
      */
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
+
+    /**
+     * <p>The type of principal.</p>
+     */
     inline void SetPrincipalType(const PrincipalType& value) { m_principalTypeHasBeenSet = true; m_principalType = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the principal.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the principal.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the principal.</p>

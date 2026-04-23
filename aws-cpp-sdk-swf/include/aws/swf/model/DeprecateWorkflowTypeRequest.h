@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain in which the workflow type is registered.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain in which the workflow type is registered.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The workflow type to deprecate.</p>
      */
     inline const WorkflowType& GetWorkflowType() const{ return m_workflowType; }
+
+    /**
+     * <p>The workflow type to deprecate.</p>
+     */
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
 
     /**
      * <p>The workflow type to deprecate.</p>

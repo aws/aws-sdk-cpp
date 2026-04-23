@@ -57,6 +57,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -78,7 +81,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline const Aws::String& GetDiskId() const{ return m_diskId; }
@@ -86,7 +89,15 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * to list disk IDs for a gateway.</p>
+     */
+    inline bool DiskIdHasBeenSet() const { return m_diskIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the gateway local disk that is configured as a
+     * stored volume. Use <a
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline void SetDiskId(const Aws::String& value) { m_diskIdHasBeenSet = true; m_diskId = value; }
@@ -94,7 +105,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline void SetDiskId(Aws::String&& value) { m_diskIdHasBeenSet = true; m_diskId = std::move(value); }
@@ -102,7 +113,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline void SetDiskId(const char* value) { m_diskIdHasBeenSet = true; m_diskId.assign(value); }
@@ -110,7 +121,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithDiskId(const Aws::String& value) { SetDiskId(value); return *this;}
@@ -118,7 +129,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithDiskId(Aws::String&& value) { SetDiskId(std::move(value)); return *this;}
@@ -126,7 +137,7 @@ namespace Model
     /**
      * <p>The unique identifier for the gateway local disk that is configured as a
      * stored volume. Use <a
-     * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
+     * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/API_ListLocalDisks.html">ListLocalDisks</a>
      * to list disk IDs for a gateway.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithDiskId(const char* value) { SetDiskId(value); return *this;}
@@ -137,7 +148,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
@@ -147,7 +158,17 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
+
+    /**
+     * <p>The snapshot ID (e.g. "snap-1122aabb") of the snapshot to restore as the new
+     * stored volume. Specify this field if you want to create the iSCSI storage volume
+     * from a snapshot otherwise do not include this field. To list snapshots for your
+     * account use <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
@@ -157,7 +178,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(Aws::String&& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = std::move(value); }
@@ -167,7 +188,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline void SetSnapshotId(const char* value) { m_snapshotIdHasBeenSet = true; m_snapshotId.assign(value); }
@@ -177,7 +198,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(const Aws::String& value) { SetSnapshotId(value); return *this;}
@@ -187,7 +208,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(Aws::String&& value) { SetSnapshotId(std::move(value)); return *this;}
@@ -197,7 +218,7 @@ namespace Model
      * stored volume. Specify this field if you want to create the iSCSI storage volume
      * from a snapshot otherwise do not include this field. To list snapshots for your
      * account use <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
      * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithSnapshotId(const char* value) { SetSnapshotId(value); return *this;}
@@ -215,6 +236,13 @@ namespace Model
      * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
      * Valid Values: true, false</p>
      */
+    inline bool PreserveExistingDataHasBeenSet() const { return m_preserveExistingDataHasBeenSet; }
+
+    /**
+     * <p>Specify this field as true if you want to preserve the data on the local
+     * disk. Otherwise, specifying this field as false creates an empty volume.</p> <p>
+     * Valid Values: true, false</p>
+     */
     inline void SetPreserveExistingData(bool value) { m_preserveExistingDataHasBeenSet = true; m_preserveExistingData = value; }
 
     /**
@@ -226,65 +254,90 @@ namespace Model
 
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
+     */
+    inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const Aws::String& value) { m_targetNameHasBeenSet = true; m_targetName = value; }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(Aws::String&& value) { m_targetNameHasBeenSet = true; m_targetName = std::move(value); }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline void SetTargetName(const char* value) { m_targetNameHasBeenSet = true; m_targetName.assign(value); }
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(const Aws::String& value) { SetTargetName(value); return *this;}
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(Aws::String&& value) { SetTargetName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the iSCSI target used by initiators to connect to the target and
-     * as a suffix for the target ARN. For example, specifying <code>TargetName</code>
-     * as <i>myvolume</i> results in the target ARN of
-     * arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume.
-     * The target name must be unique across all volumes of a gateway.</p>
+     * <p>The name of the iSCSI target used by an initiator to connect to a volume and
+     * used as a suffix for the target ARN. For example, specifying
+     * <code>TargetName</code> as <i>myvolume</i> results in the target ARN of
+     * <code>arn:aws:storagegateway:us-east-2:111122223333:gateway/sgw-12A3456B/target/iqn.1997-05.com.amazon:myvolume</code>.
+     * The target name must be unique across all volumes on a gateway.</p> <p>If you
+     * don't specify a value, Storage Gateway uses the value that was previously used
+     * for this volume as the new target name.</p>
      */
     inline CreateStorediSCSIVolumeRequest& WithTargetName(const char* value) { SetTargetName(value); return *this;}
 
@@ -296,6 +349,14 @@ namespace Model
      * valid IP address.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The network interface of the gateway on which to expose the iSCSI target.
+     * Only IPv4 addresses are accepted. Use <a>DescribeGatewayInformation</a> to get a
+     * list of the network interfaces available on a gateway.</p> <p> Valid Values: A
+     * valid IP address.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The network interface of the gateway on which to expose the iSCSI target.
@@ -356,6 +417,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional.</p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -370,6 +437,12 @@ namespace Model
      * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side
+     * encryption. This value can only be set when KMSEncrypted is true. Optional.</p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the KMS key used for Amazon S3 server side

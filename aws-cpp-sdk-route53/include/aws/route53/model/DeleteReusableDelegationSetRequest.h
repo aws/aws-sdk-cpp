@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the reusable delegation set that you want to delete.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the reusable delegation set that you want to delete.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

@@ -58,6 +58,12 @@ namespace Model
      * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
      * for this audio track.
      */
+    inline bool BitDepthHasBeenSet() const { return m_bitDepthHasBeenSet; }
+
+    /**
+     * Specify Bit depth (BitDepth), in bits per sample, to choose the encoding quality
+     * for this audio track.
+     */
     inline void SetBitDepth(int value) { m_bitDepthHasBeenSet = true; m_bitDepth = value; }
 
     /**
@@ -79,6 +85,13 @@ namespace Model
      * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
      * 4-Channel, and 8-Channel, respectively.
      */
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+
+    /**
+     * Set Channels to specify the number of channels in this output audio track. With
+     * WAV, valid values 1, 2, 4, and 8. In the console, these values are Mono, Stereo,
+     * 4-Channel, and 8-Channel, respectively.
+     */
     inline void SetChannels(int value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**
@@ -89,19 +102,46 @@ namespace Model
     inline WavSettings& WithChannels(int value) { SetChannels(value); return *this;}
 
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline const WavFormat& GetFormat() const{ return m_format; }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline void SetFormat(const WavFormat& value) { m_formatHasBeenSet = true; m_format = value; }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline void SetFormat(WavFormat&& value) { m_formatHasBeenSet = true; m_format = std::move(value); }
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline WavSettings& WithFormat(const WavFormat& value) { SetFormat(value); return *this;}
 
-    
+    /**
+     * The service defaults to using RIFF for WAV outputs. If your output audio is
+     * likely to exceed 4 GB in file size, or if you otherwise need the extended
+     * support of the RF64 format, set your output WAV file format to RF64.
+     */
     inline WavSettings& WithFormat(WavFormat&& value) { SetFormat(std::move(value)); return *this;}
 
 
@@ -109,6 +149,11 @@ namespace Model
      * Sample rate in Hz.
      */
     inline int GetSampleRate() const{ return m_sampleRate; }
+
+    /**
+     * Sample rate in Hz.
+     */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * Sample rate in Hz.

@@ -51,7 +51,9 @@ AutomationExecutionMetadata::AutomationExecutionMetadata() :
     m_resolvedTargetsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_targetHasBeenSet(false),
+    m_automationType(AutomationType::NOT_SET),
+    m_automationTypeHasBeenSet(false)
 {
 }
 
@@ -78,7 +80,9 @@ AutomationExecutionMetadata::AutomationExecutionMetadata(JsonView jsonValue) :
     m_resolvedTargetsHasBeenSet(false),
     m_maxConcurrencyHasBeenSet(false),
     m_maxErrorsHasBeenSet(false),
-    m_targetHasBeenSet(false)
+    m_targetHasBeenSet(false),
+    m_automationType(AutomationType::NOT_SET),
+    m_automationTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -261,6 +265,13 @@ AutomationExecutionMetadata& AutomationExecutionMetadata::operator =(JsonView js
     m_targetHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("AutomationType"))
+  {
+    m_automationType = AutomationTypeMapper::GetAutomationTypeForName(jsonValue.GetString("AutomationType"));
+
+    m_automationTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -418,6 +429,11 @@ JsonValue AutomationExecutionMetadata::Jsonize() const
   {
    payload.WithString("Target", m_target);
 
+  }
+
+  if(m_automationTypeHasBeenSet)
+  {
+   payload.WithString("AutomationType", AutomationTypeMapper::GetNameForAutomationType(m_automationType));
   }
 
   return payload;

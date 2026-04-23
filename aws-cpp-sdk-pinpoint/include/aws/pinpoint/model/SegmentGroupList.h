@@ -57,6 +57,11 @@ namespace Model
     /**
      * A set of segment criteria to evaluate.
      */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
+
+    /**
+     * A set of segment criteria to evaluate.
+     */
     inline void SetGroups(const Aws::Vector<SegmentGroup>& value) { m_groupsHasBeenSet = true; m_groups = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * Acceptable values: ALL, ANY, or NONE.
      */
     inline const Include& GetInclude() const{ return m_include; }
+
+    /**
+     * Specify how to handle multiple segment groups. For example, if the segment
+     * includes three segment groups, should the resulting segment include endpoints
+     * that are matched by all, any, or none of the segment groups you created.
+     * Acceptable values: ALL, ANY, or NONE.
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * Specify how to handle multiple segment groups. For example, if the segment

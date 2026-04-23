@@ -56,6 +56,11 @@ namespace Model
     /**
      * The unique ID for the application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID for the application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * The attribute type for the application.
      */
+    inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
+
+    /**
+     * The attribute type for the application.
+     */
     inline void SetAttributeType(const Aws::String& value) { m_attributeTypeHasBeenSet = true; m_attributeType = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * The attributes for the application.
      */
     inline const Aws::Vector<Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * The attributes for the application.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * The attributes for the application.

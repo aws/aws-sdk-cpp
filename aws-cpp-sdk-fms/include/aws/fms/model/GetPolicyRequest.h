@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Firewall Manager policy that you want the details for.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**

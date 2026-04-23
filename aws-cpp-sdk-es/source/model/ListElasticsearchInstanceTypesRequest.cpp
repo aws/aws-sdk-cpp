@@ -36,7 +36,7 @@ ListElasticsearchInstanceTypesRequest::ListElasticsearchInstanceTypesRequest() :
 
 Aws::String ListElasticsearchInstanceTypesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListElasticsearchInstanceTypesRequest::AddQueryStringParameters(URI& uri) const

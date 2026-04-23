@@ -59,6 +59,13 @@ namespace Model
      * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
      * hours.</p>
      */
+    inline bool AutomatedSnapshotStartHourHasBeenSet() const { return m_automatedSnapshotStartHourHasBeenSet; }
+
+    /**
+     * <p>Specifies the time, in UTC format, when the service takes a daily automated
+     * snapshot of the specified Elasticsearch domain. Default value is <code>0</code>
+     * hours.</p>
+     */
     inline void SetAutomatedSnapshotStartHour(int value) { m_automatedSnapshotStartHourHasBeenSet = true; m_automatedSnapshotStartHour = value; }
 
     /**

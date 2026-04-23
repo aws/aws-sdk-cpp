@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the device to associate to a room. Required.</p>
      */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device to associate to a room. Required.</p>
+     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the room with which to associate the device. Required.</p>
      */
     inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
+
+    /**
+     * <p>The ARN of the room with which to associate the device. Required.</p>
+     */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
 
     /**
      * <p>The ARN of the room with which to associate the device. Required.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the service principal. This is typically in the form of a URL,
      * such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
      */
+    inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
+
+    /**
+     * <p>The name of the service principal. This is typically in the form of a URL,
+     * such as: <code> <i>servicename</i>.amazonaws.com</code>.</p>
+     */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * Organizations.</p>
      */
     inline const Aws::Utils::DateTime& GetDateEnabled() const{ return m_dateEnabled; }
+
+    /**
+     * <p>The date that the service principal was enabled for integration with AWS
+     * Organizations.</p>
+     */
+    inline bool DateEnabledHasBeenSet() const { return m_dateEnabledHasBeenSet; }
 
     /**
      * <p>The date that the service principal was enabled for integration with AWS

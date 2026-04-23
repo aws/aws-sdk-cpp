@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The action that is enabled or disabled.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The action that is enabled or disabled.</p>
+     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Indicates whether the action is enabled or disabled.</p>
      */
     inline const Permission& GetPermission() const{ return m_permission; }
+
+    /**
+     * <p>Indicates whether the action is enabled or disabled.</p>
+     */
+    inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
 
     /**
      * <p>Indicates whether the action is enabled or disabled.</p>

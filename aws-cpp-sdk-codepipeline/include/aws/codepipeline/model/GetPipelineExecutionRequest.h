@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the pipeline about which you want to get execution details.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline about which you want to get execution details.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * details.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+
+    /**
+     * <p>The ID of the pipeline execution about which you want to get execution
+     * details.</p>
+     */
+    inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
 
     /**
      * <p>The ID of the pipeline execution about which you want to get execution

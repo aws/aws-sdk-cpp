@@ -60,6 +60,12 @@ namespace Model
      * <p>The device name (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>Parameters used to automatically set up EBS volumes when the instance is
      * launched.</p>
      */
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
+
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
     inline void SetEbs(const EbsInstanceBlockDeviceSpecification& value) { m_ebsHasBeenSet = true; m_ebs = value; }
 
     /**
@@ -128,6 +140,11 @@ namespace Model
      * <p>suppress the specified device included in the block device mapping.</p>
      */
     inline const Aws::String& GetNoDevice() const{ return m_noDevice; }
+
+    /**
+     * <p>suppress the specified device included in the block device mapping.</p>
+     */
+    inline bool NoDeviceHasBeenSet() const { return m_noDeviceHasBeenSet; }
 
     /**
      * <p>suppress the specified device included in the block device mapping.</p>
@@ -164,6 +181,11 @@ namespace Model
      * <p>The virtual device name.</p>
      */
     inline const Aws::String& GetVirtualName() const{ return m_virtualName; }
+
+    /**
+     * <p>The virtual device name.</p>
+     */
+    inline bool VirtualNameHasBeenSet() const { return m_virtualNameHasBeenSet; }
 
     /**
      * <p>The virtual device name.</p>

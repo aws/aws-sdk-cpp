@@ -36,7 +36,7 @@ GetBotAliasesRequest::GetBotAliasesRequest() :
 
 Aws::String GetBotAliasesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBotAliasesRequest::AddQueryStringParameters(URI& uri) const

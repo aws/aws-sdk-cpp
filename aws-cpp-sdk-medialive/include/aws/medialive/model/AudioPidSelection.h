@@ -32,7 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioPidSelection<p><h3>See Also:</h3>   <a
+   * Audio Pid Selection<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioPidSelection">AWS
    * API Reference</a></p>
    */
@@ -49,6 +49,11 @@ namespace Model
      * Selects a specific PID from within a source.
      */
     inline int GetPid() const{ return m_pid; }
+
+    /**
+     * Selects a specific PID from within a source.
+     */
+    inline bool PidHasBeenSet() const { return m_pidHasBeenSet; }
 
     /**
      * Selects a specific PID from within a source.

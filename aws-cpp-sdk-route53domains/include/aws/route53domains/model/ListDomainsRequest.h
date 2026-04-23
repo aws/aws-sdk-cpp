@@ -70,6 +70,18 @@ namespace Model
      * <code>Marker</code> element.</p> <p>Constraints: The marker must match the value
      * specified in the previous request.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>For an initial request for a list of domains, omit this element. If the
+     * number of domains that are associated with the current AWS account is greater
+     * than the value that you specified for <code>MaxItems</code>, you can use
+     * <code>Marker</code> to return additional domains. Get the value of
+     * <code>NextPageMarker</code> from the previous response, and submit another
+     * request that includes the value of <code>NextPageMarker</code> in the
+     * <code>Marker</code> element.</p> <p>Constraints: The marker must match the value
+     * specified in the previous request.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -137,6 +149,11 @@ namespace Model
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>Number of domains to be returned.</p> <p>Default: 20</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>

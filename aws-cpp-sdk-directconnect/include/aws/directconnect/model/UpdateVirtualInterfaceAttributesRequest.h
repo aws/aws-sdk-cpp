@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the virtual private interface.</p>
      */
+    inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual private interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * and 9001. The default value is 1500.</p>
      */
     inline int GetMtu() const{ return m_mtu; }
+
+    /**
+     * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500
+     * and 9001. The default value is 1500.</p>
+     */
+    inline bool MtuHasBeenSet() const { return m_mtuHasBeenSet; }
 
     /**
      * <p>The maximum transmission unit (MTU), in bytes. The supported values are 1500

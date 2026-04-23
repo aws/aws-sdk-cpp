@@ -35,7 +35,7 @@ ListVersionsByFunctionRequest::ListVersionsByFunctionRequest() :
 
 Aws::String ListVersionsByFunctionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListVersionsByFunctionRequest::AddQueryStringParameters(URI& uri) const

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The error.</p>
      */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>The error.</p>
+     */
     inline void SetError(const CancelSpotFleetRequestsError& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+
+    /**
+     * <p>The ID of the Spot Fleet request.</p>
+     */
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
 
     /**
      * <p>The ID of the Spot Fleet request.</p>

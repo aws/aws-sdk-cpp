@@ -55,6 +55,11 @@ namespace Model
     /**
      * A detailed error code.
      */
+    inline bool DetailedErrorCodeHasBeenSet() const { return m_detailedErrorCodeHasBeenSet; }
+
+    /**
+     * A detailed error code.
+     */
     inline void SetDetailedErrorCode(const Aws::String& value) { m_detailedErrorCodeHasBeenSet = true; m_detailedErrorCode = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * A detailed error message.
      */
     inline const Aws::String& GetDetailedErrorMessage() const{ return m_detailedErrorMessage; }
+
+    /**
+     * A detailed error message.
+     */
+    inline bool DetailedErrorMessageHasBeenSet() const { return m_detailedErrorMessageHasBeenSet; }
 
     /**
      * A detailed error message.

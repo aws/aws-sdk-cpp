@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The inventory type and attribute name for aggregation.</p>
      */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>The inventory type and attribute name for aggregation.</p>
+     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
      */
     inline const Aws::Vector<InventoryAggregator>& GetAggregators() const{ return m_aggregators; }
+
+    /**
+     * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
+     */
+    inline bool AggregatorsHasBeenSet() const { return m_aggregatorsHasBeenSet; }
 
     /**
      * <p>Nested aggregators to further refine aggregation for an inventory type.</p>
@@ -129,6 +139,13 @@ namespace Model
      * specified criteria.</p>
      */
     inline const Aws::Vector<InventoryGroup>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>A user-defined set of one or more filters on which to aggregate inventory
+     * data. Groups return a count of resources that match and don't match the
+     * specified criteria.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>A user-defined set of one or more filters on which to aggregate inventory

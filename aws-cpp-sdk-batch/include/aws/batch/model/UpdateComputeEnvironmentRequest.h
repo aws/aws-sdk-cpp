@@ -54,6 +54,12 @@ namespace Model
      * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
      * update.</p>
      */
+    inline bool ComputeEnvironmentHasBeenSet() const { return m_computeEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The name or full Amazon Resource Name (ARN) of the compute environment to
+     * update.</p>
+     */
     inline void SetComputeEnvironment(const Aws::String& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * <code>ENABLED</code> state can accept jobs from a queue and scale in or out
      * automatically based on the workload demand of its associated queues.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the compute environment. Compute environments in the
+     * <code>ENABLED</code> state can accept jobs from a queue and scale in or out
+     * automatically based on the workload demand of its associated queues.</p>
+     */
     inline void SetState(const CEState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -128,6 +141,12 @@ namespace Model
      * for a managed compute environment.</p>
      */
     inline const ComputeResourceUpdate& GetComputeResources() const{ return m_computeResources; }
+
+    /**
+     * <p>Details of the compute resources managed by the compute environment. Required
+     * for a managed compute environment.</p>
+     */
+    inline bool ComputeResourcesHasBeenSet() const { return m_computeResourcesHasBeenSet; }
 
     /**
      * <p>Details of the compute resources managed by the compute environment. Required
@@ -167,6 +186,20 @@ namespace Model
      * environments.</p> </note>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to
+     * make calls to other AWS services on your behalf.</p> <p>If your specified role
+     * has a path other than <code>/</code>, then you must either specify the full role
+     * ARN (this is recommended) or prefix the role name with the path.</p> <note>
+     * <p>Depending on how you created your AWS Batch service role, its ARN may contain
+     * the <code>service-role</code> path prefix. When you only specify the name of the
+     * service role, AWS Batch assumes that your ARN does not use the
+     * <code>service-role</code> path prefix. Because of this, we recommend that you
+     * specify the full ARN of your service role when you create compute
+     * environments.</p> </note>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The full Amazon Resource Name (ARN) of the IAM role that allows AWS Batch to

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The allowed value for an option setting.</p>
      */
+    inline bool AllowedValueHasBeenSet() const { return m_allowedValueHasBeenSet; }
+
+    /**
+     * <p>The allowed value for an option setting.</p>
+     */
     inline void SetAllowedValue(const Aws::String& value) { m_allowedValueHasBeenSet = true; m_allowedValue = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The minimum DB engine version required for the allowed value.</p>
      */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The minimum DB engine version required for the allowed value.</p>
+     */
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
 
     /**
      * <p>The minimum DB engine version required for the allowed value.</p>

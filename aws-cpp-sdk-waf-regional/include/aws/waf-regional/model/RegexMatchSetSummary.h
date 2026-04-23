@@ -67,6 +67,16 @@ namespace Model
      * <code>RegexMatchSet</code> from AWS WAF.</p> <p> <code>RegexMatchSetId</code> is
      * returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
      */
+    inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RegexMatchSetId</code> for a <code>RegexMatchSet</code>. You use
+     * <code>RegexMatchSetId</code> to get information about a
+     * <code>RegexMatchSet</code>, update a <code>RegexMatchSet</code>, remove a
+     * <code>RegexMatchSet</code> from a <code>Rule</code>, and delete a
+     * <code>RegexMatchSet</code> from AWS WAF.</p> <p> <code>RegexMatchSetId</code> is
+     * returned by <a>CreateRegexMatchSet</a> and by <a>ListRegexMatchSets</a>.</p>
+     */
     inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
 
     /**
@@ -125,6 +135,12 @@ namespace Model
      * <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change
+     * <code>Name</code> after you create a <code>RegexMatchSet</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>RegexMatchSet</a>. You can't change

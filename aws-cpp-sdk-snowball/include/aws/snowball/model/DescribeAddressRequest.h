@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The automatically generated ID for a specific address.</p>
      */
+    inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
+
+    /**
+     * <p>The automatically generated ID for a specific address.</p>
+     */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**

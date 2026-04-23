@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * ID.</p>
      */
     inline const Aws::String& GetAuthorizerId() const{ return m_authorizerId; }
+
+    /**
+     * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
+     * ID.</p>
+     */
+    inline bool AuthorizerIdHasBeenSet() const { return m_authorizerIdHasBeenSet; }
 
     /**
      * <p>[Required] Specifies a test invoke authorizer request's <a>Authorizer</a>
@@ -133,6 +144,13 @@ namespace Model
      * identity source, may be specified.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const{ return m_multiValueHeaders; }
+
+    /**
+     * <p>[Optional] The headers as a map from string to list of values to simulate an
+     * incoming invocation request. This is where the incoming authorization token, or
+     * identity source, may be specified.</p>
+     */
+    inline bool MultiValueHeadersHasBeenSet() const { return m_multiValueHeadersHasBeenSet; }
 
     /**
      * <p>[Optional] The headers as a map from string to list of values to simulate an
@@ -215,6 +233,12 @@ namespace Model
      * <p>[Optional] The URI path, including query string, of the simulated invocation
      * request. Use this to specify path parameters and query string parameters.</p>
      */
+    inline bool PathWithQueryStringHasBeenSet() const { return m_pathWithQueryStringHasBeenSet; }
+
+    /**
+     * <p>[Optional] The URI path, including query string, of the simulated invocation
+     * request. Use this to specify path parameters and query string parameters.</p>
+     */
     inline void SetPathWithQueryString(const Aws::String& value) { m_pathWithQueryStringHasBeenSet = true; m_pathWithQueryString = value; }
 
     /**
@@ -253,6 +277,12 @@ namespace Model
      * <a>Stage</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
+
+    /**
+     * <p>A key-value map of stage variables to simulate an invocation on a deployed
+     * <a>Stage</a>.</p>
+     */
+    inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
@@ -329,6 +359,11 @@ namespace Model
     /**
      * <p>[Optional] A key-value map of additional context variables.</p>
      */
+    inline bool AdditionalContextHasBeenSet() const { return m_additionalContextHasBeenSet; }
+
+    /**
+     * <p>[Optional] A key-value map of additional context variables.</p>
+     */
     inline void SetAdditionalContext(const Aws::Map<Aws::String, Aws::String>& value) { m_additionalContextHasBeenSet = true; m_additionalContext = value; }
 
     /**
@@ -390,6 +425,11 @@ namespace Model
     /**
      * <p>[Optional] The simulated request body of an incoming invocation request.</p>
      */
+    inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
+
+    /**
+     * <p>[Optional] The simulated request body of an incoming invocation request.</p>
+     */
     inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
 
     /**
@@ -424,6 +464,13 @@ namespace Model
      * should be specified.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestHeaders() const{ return m_requestHeaders; }
+
+    /**
+     * <p>[Required] A key-value map of headers to simulate an incoming invocation
+     * request. This is where the incoming authorization token, or identity source,
+     * should be specified.</p>
+     */
+    inline bool RequestHeadersHasBeenSet() const { return m_requestHeadersHasBeenSet; }
 
     /**
      * <p>[Required] A key-value map of headers to simulate an incoming invocation

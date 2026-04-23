@@ -32,7 +32,8 @@ UpdateDataSourceRequest::UpdateDataSourceRequest() :
     m_dynamodbConfigHasBeenSet(false),
     m_lambdaConfigHasBeenSet(false),
     m_elasticsearchConfigHasBeenSet(false),
-    m_httpConfigHasBeenSet(false)
+    m_httpConfigHasBeenSet(false),
+    m_relationalDatabaseConfigHasBeenSet(false)
 {
 }
 
@@ -78,6 +79,12 @@ Aws::String UpdateDataSourceRequest::SerializePayload() const
   if(m_httpConfigHasBeenSet)
   {
    payload.WithObject("httpConfig", m_httpConfig.Jsonize());
+
+  }
+
+  if(m_relationalDatabaseConfigHasBeenSet)
+  {
+   payload.WithObject("relationalDatabaseConfig", m_relationalDatabaseConfig.Jsonize());
 
   }
 

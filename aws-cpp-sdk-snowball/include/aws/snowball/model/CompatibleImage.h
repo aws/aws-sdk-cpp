@@ -35,9 +35,10 @@ namespace Model
 
   /**
    * <p>A JSON-formatted object that describes a compatible Amazon Machine Image
-   * (AMI), including the ID and name for a Snowball Edge AMI. This AMI is compatible
-   * with the device's physical hardware requirements, and it should be able to be
-   * run in an SBE1 instance on the device.</p><p><h3>See Also:</h3>   <a
+   * (AMI). For more information on compatible AMIs, see <a
+   * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
+   * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/CompatibleImage">AWS
    * API Reference</a></p>
    */
@@ -54,6 +55,11 @@ namespace Model
      * <p>The unique identifier for an individual Snowball Edge AMI.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
+    /**
+     * <p>The unique identifier for an individual Snowball Edge AMI.</p>
+     */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for an individual Snowball Edge AMI.</p>
@@ -90,6 +96,11 @@ namespace Model
      * <p>The optional name of a compatible image.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The optional name of a compatible image.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The optional name of a compatible image.</p>

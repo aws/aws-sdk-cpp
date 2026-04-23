@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>One or more associations.</p>
      */
+    inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
+
+    /**
+     * <p>One or more associations.</p>
+     */
     inline void SetEntries(const Aws::Vector<CreateAssociationBatchRequestEntry>& value) { m_entriesHasBeenSet = true; m_entries = value; }
 
     /**

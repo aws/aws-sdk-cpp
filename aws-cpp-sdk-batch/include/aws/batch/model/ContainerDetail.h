@@ -21,6 +21,8 @@
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
+#include <aws/batch/model/NetworkInterface.h>
+#include <aws/batch/model/ResourceRequirement.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +63,11 @@ namespace Model
     /**
      * <p>The image used to start the container.</p>
      */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The image used to start the container.</p>
+     */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
@@ -97,6 +104,11 @@ namespace Model
     /**
      * <p>The number of VCPUs allocated for the job. </p>
      */
+    inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
+
+    /**
+     * <p>The number of VCPUs allocated for the job. </p>
+     */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
     /**
@@ -113,6 +125,11 @@ namespace Model
     /**
      * <p>The number of MiB of memory reserved for the job.</p>
      */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+
+    /**
+     * <p>The number of MiB of memory reserved for the job.</p>
+     */
     inline void SetMemory(int value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
@@ -125,6 +142,11 @@ namespace Model
      * <p>The command that is passed to the container. </p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+
+    /**
+     * <p>The command that is passed to the container. </p>
+     */
+    inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
      * <p>The command that is passed to the container. </p>
@@ -170,6 +192,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
      */
+    inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) associated with the job upon execution. </p>
+     */
     inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
 
     /**
@@ -202,6 +229,11 @@ namespace Model
      * <p>A list of volumes associated with the job.</p>
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
+    /**
+     * <p>A list of volumes associated with the job.</p>
+     */
+    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
      * <p>A list of volumes associated with the job.</p>
@@ -240,6 +272,13 @@ namespace Model
      * reserved for variables that are set by the AWS Batch service.</p> </note>
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to pass to a container.</p> <note> <p>Environment
+     * variables must not start with <code>AWS_BATCH</code>; this naming convention is
+     * reserved for variables that are set by the AWS Batch service.</p> </note>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>The environment variables to pass to a container.</p> <note> <p>Environment
@@ -292,6 +331,11 @@ namespace Model
     /**
      * <p>The mount points for data volumes in your container.</p>
      */
+    inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
+
+    /**
+     * <p>The mount points for data volumes in your container.</p>
+     */
     inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
 
     /**
@@ -330,6 +374,12 @@ namespace Model
      * <p>When this parameter is true, the container is given read-only access to its
      * root file system.</p>
      */
+    inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
+
+    /**
+     * <p>When this parameter is true, the container is given read-only access to its
+     * root file system.</p>
+     */
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
 
     /**
@@ -343,6 +393,11 @@ namespace Model
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
+
+    /**
+     * <p>A list of <code>ulimit</code> values to set in the container.</p>
+     */
+    inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
 
     /**
      * <p>A list of <code>ulimit</code> values to set in the container.</p>
@@ -385,6 +440,12 @@ namespace Model
      * <p>When this parameter is true, the container is given elevated privileges on
      * the host container instance (similar to the <code>root</code> user).</p>
      */
+    inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
+
+    /**
+     * <p>When this parameter is true, the container is given elevated privileges on
+     * the host container instance (similar to the <code>root</code> user).</p>
+     */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
     /**
@@ -398,6 +459,11 @@ namespace Model
      * <p>The user name to use inside the container.</p>
      */
     inline const Aws::String& GetUser() const{ return m_user; }
+
+    /**
+     * <p>The user name to use inside the container.</p>
+     */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The user name to use inside the container.</p>
@@ -438,6 +504,11 @@ namespace Model
     /**
      * <p>The exit code to return upon completion.</p>
      */
+    inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
+
+    /**
+     * <p>The exit code to return upon completion.</p>
+     */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
@@ -451,6 +522,12 @@ namespace Model
      * details about a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A short (255 max characters) human-readable string to provide additional
+     * details about a running or stopped container.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional
@@ -499,6 +576,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the container instance on which the
      * container is running.</p>
      */
+    inline bool ContainerInstanceArnHasBeenSet() const { return m_containerInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the container instance on which the
+     * container is running.</p>
+     */
     inline void SetContainerInstanceArn(const Aws::String& value) { m_containerInstanceArnHasBeenSet = true; m_containerInstanceArn = value; }
 
     /**
@@ -538,6 +621,13 @@ namespace Model
      * the <code>STARTING</code> status.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
+     * the container job. Each container attempt receives a task ARN when they reach
+     * the <code>STARTING</code> status.</p>
+     */
+    inline bool TaskArnHasBeenSet() const { return m_taskArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon ECS task that is associated with
@@ -596,6 +686,14 @@ namespace Model
      * attempt receives a log stream name when they reach the <code>RUNNING</code>
      * status.</p>
      */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the CloudWatch Logs log stream associated with the container. The
+     * log group for AWS Batch jobs is <code>/aws/batch/job</code>. Each container
+     * attempt receives a log stream name when they reach the <code>RUNNING</code>
+     * status.</p>
+     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
@@ -637,6 +735,145 @@ namespace Model
      * status.</p>
      */
     inline ContainerDetail& WithLogStreamName(const char* value) { SetLogStreamName(value); return *this;}
+
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type of the underlying host infrastructure of a multi-node
+     * parallel job.</p>
+     */
+    inline ContainerDetail& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline void SetNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = value; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline void SetNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces = std::move(value); }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& WithNetworkInterfaces(const Aws::Vector<NetworkInterface>& value) { SetNetworkInterfaces(value); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& WithNetworkInterfaces(Aws::Vector<NetworkInterface>&& value) { SetNetworkInterfaces(std::move(value)); return *this;}
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& AddNetworkInterfaces(const NetworkInterface& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(value); return *this; }
+
+    /**
+     * <p>The network interfaces associated with the job.</p>
+     */
+    inline ContainerDetail& AddNetworkInterfaces(NetworkInterface&& value) { m_networkInterfacesHasBeenSet = true; m_networkInterfaces.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerDetail& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerDetail& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerDetail& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerDetail& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -690,6 +927,15 @@ namespace Model
 
     Aws::String m_logStreamName;
     bool m_logStreamNameHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
+
+    Aws::Vector<NetworkInterface> m_networkInterfaces;
+    bool m_networkInterfacesHasBeenSet;
+
+    Aws::Vector<ResourceRequirement> m_resourceRequirements;
+    bool m_resourceRequirementsHasBeenSet;
   };
 
 } // namespace Model

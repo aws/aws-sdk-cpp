@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The launch template.</p>
      */
+    inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
+
+    /**
+     * <p>The launch template.</p>
+     */
     inline void SetLaunchTemplateSpecification(const FleetLaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * template.</p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
+
+    /**
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template.</p>
+     */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch

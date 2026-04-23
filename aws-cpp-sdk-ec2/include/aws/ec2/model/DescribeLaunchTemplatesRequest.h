@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -77,6 +85,11 @@ namespace Model
      * <p>One or more launch template IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchTemplateIds() const{ return m_launchTemplateIds; }
+
+    /**
+     * <p>One or more launch template IDs.</p>
+     */
+    inline bool LaunchTemplateIdsHasBeenSet() const { return m_launchTemplateIdsHasBeenSet; }
 
     /**
      * <p>One or more launch template IDs.</p>
@@ -118,6 +131,11 @@ namespace Model
      * <p>One or more launch template names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLaunchTemplateNames() const{ return m_launchTemplateNames; }
+
+    /**
+     * <p>One or more launch template names.</p>
+     */
+    inline bool LaunchTemplateNamesHasBeenSet() const { return m_launchTemplateNamesHasBeenSet; }
 
     /**
      * <p>One or more launch template names.</p>
@@ -169,6 +187,21 @@ namespace Model
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The time
+     * the launch template was created.</p> </li> <li> <p>
+     * <code>launch-template-name</code> - The name of the launch template.</p> </li>
+     * <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The time
@@ -269,6 +302,11 @@ namespace Model
     /**
      * <p>The token to request the next page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -303,6 +341,13 @@ namespace Model
      * value. This value can be between 1 and 200.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 1 and 200.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call. To retrieve the

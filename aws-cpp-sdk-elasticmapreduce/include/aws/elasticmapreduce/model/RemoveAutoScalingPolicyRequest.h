@@ -54,6 +54,12 @@ namespace Model
      * <p>Specifies the ID of a cluster. The instance group to which the automatic
      * scaling policy is applied is within this cluster.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ID of a cluster. The instance group to which the automatic
+     * scaling policy is applied is within this cluster.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * applied.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
+    /**
+     * <p>Specifies the ID of the instance group to which the scaling policy is
+     * applied.</p>
+     */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
      * <p>Specifies the ID of the instance group to which the scaling policy is

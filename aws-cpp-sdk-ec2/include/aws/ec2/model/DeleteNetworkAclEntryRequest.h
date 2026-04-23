@@ -60,6 +60,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,11 @@ namespace Model
     /**
      * <p>Indicates whether the rule is an egress rule.</p>
      */
+    inline bool EgressHasBeenSet() const { return m_egressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the rule is an egress rule.</p>
+     */
     inline void SetEgress(bool value) { m_egressHasBeenSet = true; m_egress = value; }
 
     /**
@@ -91,6 +104,11 @@ namespace Model
      * <p>The ID of the network ACL.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+
+    /**
+     * <p>The ID of the network ACL.</p>
+     */
+    inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
 
     /**
      * <p>The ID of the network ACL.</p>
@@ -127,6 +145,11 @@ namespace Model
      * <p>The rule number of the entry to delete.</p>
      */
     inline int GetRuleNumber() const{ return m_ruleNumber; }
+
+    /**
+     * <p>The rule number of the entry to delete.</p>
+     */
+    inline bool RuleNumberHasBeenSet() const { return m_ruleNumberHasBeenSet; }
 
     /**
      * <p>The rule number of the entry to delete.</p>

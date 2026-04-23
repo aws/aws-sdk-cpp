@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the typed link attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The range of attribute values that are being selected.</p>
      */
     inline const TypedAttributeValueRange& GetRange() const{ return m_range; }
+
+    /**
+     * <p>The range of attribute values that are being selected.</p>
+     */
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>The range of attribute values that are being selected.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>Descriptive label that is associated with a build. Build names do not need to
      * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Descriptive label that is associated with a build. Build names do not need to
+     * be unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>Version that is associated with this build. Version strings do not need to be
+     * unique. You can use <a>UpdateBuild</a> to change this value later. </p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>Version that is associated with this build. Version strings do not need to be
@@ -153,6 +165,16 @@ namespace Model
      * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
      * create a new build in.</p>
      */
+    inline bool StorageLocationHasBeenSet() const { return m_storageLocationHasBeenSet; }
+
+    /**
+     * <p>Information indicating where your game build files are stored. Use this
+     * parameter only when creating a build with files stored in an Amazon S3 bucket
+     * that you own. The storage location must specify an Amazon S3 bucket name and
+     * key, as well as a role ARN that you set up to allow Amazon GameLift to access
+     * your Amazon S3 bucket. The S3 bucket must be in the same region that you want to
+     * create a new build in.</p>
+     */
     inline void SetStorageLocation(const S3Location& value) { m_storageLocationHasBeenSet = true; m_storageLocation = value; }
 
     /**
@@ -195,6 +217,16 @@ namespace Model
      * changed later.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Operating system that the game server binaries are built to run on. This
+     * value determines the type of fleet resources that you can use for this build. If
+     * your game build contains multiple executables, they all must run on the same
+     * operating system. If an operating system is not specified when creating a build,
+     * Amazon GameLift uses the default value (WINDOWS_2012). This value cannot be
+     * changed later.</p>
+     */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
      * <p>Operating system that the game server binaries are built to run on. This

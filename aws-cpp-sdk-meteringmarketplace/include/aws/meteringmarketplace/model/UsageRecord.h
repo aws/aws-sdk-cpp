@@ -62,6 +62,13 @@ namespace Model
      * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
      * to one hour in the past.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Timestamp of the hour, recorded in UTC. The seconds and milliseconds portions
+     * of the timestamp will be ignored.</p> <p>Your application can meter usage for up
+     * to one hour in the past.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -91,6 +98,12 @@ namespace Model
      * represents an individual buyer in your application.</p>
      */
     inline const Aws::String& GetCustomerIdentifier() const{ return m_customerIdentifier; }
+
+    /**
+     * <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
+     * represents an individual buyer in your application.</p>
+     */
+    inline bool CustomerIdentifierHasBeenSet() const { return m_customerIdentifierHasBeenSet; }
 
     /**
      * <p>The CustomerIdentifier is obtained through the ResolveCustomer operation and
@@ -141,6 +154,13 @@ namespace Model
      * dimensions are specified. These represent different units of value in your
      * application.</p>
      */
+    inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
+
+    /**
+     * <p>During the process of registering a product on AWS Marketplace, up to eight
+     * dimensions are specified. These represent different units of value in your
+     * application.</p>
+     */
     inline void SetDimension(const Aws::String& value) { m_dimensionHasBeenSet = true; m_dimension = value; }
 
     /**
@@ -181,19 +201,25 @@ namespace Model
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline int GetQuantity() const{ return m_quantity; }
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
+     */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The quantity of usage consumed by the customer for the given dimension and
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
      * <p>The quantity of usage consumed by the customer for the given dimension and
-     * time.</p>
+     * time. Defaults to <code>0</code> if not specified.</p>
      */
     inline UsageRecord& WithQuantity(int value) { SetQuantity(value); return *this;}
 

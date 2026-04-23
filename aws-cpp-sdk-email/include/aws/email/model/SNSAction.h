@@ -84,6 +84,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify. An example
+     * of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -144,6 +154,14 @@ namespace Model
      * characters. The default value is UTF-8.</p>
      */
     inline const SNSActionEncoding& GetEncoding() const{ return m_encoding; }
+
+    /**
+     * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8
+     * is easier to use, but may not preserve all special characters when a message was
+     * encoded with a different encoding format. Base64 preserves all special
+     * characters. The default value is UTF-8.</p>
+     */
+    inline bool EncodingHasBeenSet() const { return m_encodingHasBeenSet; }
 
     /**
      * <p>The encoding to use for the email within the Amazon SNS notification. UTF-8

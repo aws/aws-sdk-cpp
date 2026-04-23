@@ -17,6 +17,7 @@
 #include <aws/sagemaker/SageMaker_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/sagemaker/model/ContainerDefinition.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/sagemaker/model/VpcConfig.h>
 #include <aws/core/utils/DateTime.h>
 #include <utility>
@@ -118,6 +119,42 @@ namespace Model
 
 
     /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline const Aws::Vector<ContainerDefinition>& GetContainers() const{ return m_containers; }
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline void SetContainers(const Aws::Vector<ContainerDefinition>& value) { m_containers = value; }
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline void SetContainers(Aws::Vector<ContainerDefinition>&& value) { m_containers = std::move(value); }
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline DescribeModelResult& WithContainers(const Aws::Vector<ContainerDefinition>& value) { SetContainers(value); return *this;}
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline DescribeModelResult& WithContainers(Aws::Vector<ContainerDefinition>&& value) { SetContainers(std::move(value)); return *this;}
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline DescribeModelResult& AddContainers(const ContainerDefinition& value) { m_containers.push_back(value); return *this; }
+
+    /**
+     * <p>The containers in the inference pipeline.</p>
+     */
+    inline DescribeModelResult& AddContainers(ContainerDefinition&& value) { m_containers.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that you specified for the
      * model.</p>
      */
@@ -163,7 +200,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
      * to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -171,7 +208,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
      * to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfig = value; }
@@ -179,7 +216,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
      * to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfig = std::move(value); }
@@ -187,7 +224,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
      * to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline DescribeModelResult& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -195,7 +232,7 @@ namespace Model
     /**
      * <p>A <a>VpcConfig</a> object that specifies the VPC that this model has access
      * to. For more information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
      * Endpoints by Using an Amazon Virtual Private Cloud</a> </p>
      */
     inline DescribeModelResult& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -262,11 +299,35 @@ namespace Model
      */
     inline DescribeModelResult& WithModelArn(const char* value) { SetModelArn(value); return *this;}
 
+
+    /**
+     * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
+     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
+     * algorithm does not support network isolation.</p> </note>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
+     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
+     * algorithm does not support network isolation.</p> </note>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>If <code>True</code>, no inbound or outbound network calls can be made to or
+     * from the model container.</p> <note> <p>The Semantic Segmentation built-in
+     * algorithm does not support network isolation.</p> </note>
+     */
+    inline DescribeModelResult& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
   private:
 
     Aws::String m_modelName;
 
     ContainerDefinition m_primaryContainer;
+
+    Aws::Vector<ContainerDefinition> m_containers;
 
     Aws::String m_executionRoleArn;
 
@@ -275,6 +336,8 @@ namespace Model
     Aws::Utils::DateTime m_creationTime;
 
     Aws::String m_modelArn;
+
+    bool m_enableNetworkIsolation;
   };
 
 } // namespace Model

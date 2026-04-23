@@ -30,7 +30,7 @@ GetDeploymentStatusRequest::GetDeploymentStatusRequest() :
 
 Aws::String GetDeploymentStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

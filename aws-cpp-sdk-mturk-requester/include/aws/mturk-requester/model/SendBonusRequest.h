@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Worker being paid the bonus.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Worker being paid the bonus.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * include currency symbols or currency codes. </p>
      */
     inline const Aws::String& GetBonusAmount() const{ return m_bonusAmount; }
+
+    /**
+     * <p> The Bonus amount is a US Dollar amount specified using a string (for
+     * example, "5" represents $5.00 USD and "101.42" represents $101.42 USD). Do not
+     * include currency symbols or currency codes. </p>
+     */
+    inline bool BonusAmountHasBeenSet() const { return m_bonusAmountHasBeenSet; }
 
     /**
      * <p> The Bonus amount is a US Dollar amount specified using a string (for
@@ -138,6 +150,11 @@ namespace Model
     /**
      * <p>The ID of the assignment for which this bonus is paid.</p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the assignment for which this bonus is paid.</p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -171,6 +188,12 @@ namespace Model
      * receiving the bonus can see this message.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A message that explains the reason for the bonus payment. The Worker
+     * receiving the bonus can see this message.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A message that explains the reason for the bonus payment. The Worker
@@ -218,6 +241,16 @@ namespace Model
      * containing the request ID.</p>
      */
     inline const Aws::String& GetUniqueRequestToken() const{ return m_uniqueRequestToken; }
+
+    /**
+     * <p>A unique identifier for this request, which allows you to retry the call on
+     * error without granting multiple bonuses. This is useful in cases such as network
+     * timeouts where it is unclear whether or not the call succeeded on the server. If
+     * the bonus already exists in the system from a previous call using the same
+     * UniqueRequestToken, subsequent calls will return an error with a message
+     * containing the request ID.</p>
+     */
+    inline bool UniqueRequestTokenHasBeenSet() const { return m_uniqueRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for this request, which allows you to retry the call on

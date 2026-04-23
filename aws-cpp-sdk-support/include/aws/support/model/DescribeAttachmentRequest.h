@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the attachment to return. Attachment IDs are returned by the
      * <a>DescribeCommunications</a> operation.</p>
      */
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment to return. Attachment IDs are returned by the
+     * <a>DescribeCommunications</a> operation.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
     /**

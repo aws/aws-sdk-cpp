@@ -37,7 +37,7 @@ DeleteCustomMetadataRequest::DeleteCustomMetadataRequest() :
 
 Aws::String DeleteCustomMetadataRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteCustomMetadataRequest::GetRequestSpecificHeaders() const

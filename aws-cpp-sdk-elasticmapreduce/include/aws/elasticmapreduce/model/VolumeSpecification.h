@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
      */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+
+    /**
+     * <p>The volume type. Volume types supported are gp2, io1, standard.</p>
+     */
     inline void SetVolumeType(const Aws::String& value) { m_volumeTypeHasBeenSet = true; m_volumeType = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -106,6 +116,12 @@ namespace Model
      * the volume type is EBS-optimized, the minimum value is 10.</p>
      */
     inline int GetSizeInGB() const{ return m_sizeInGB; }
+
+    /**
+     * <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If
+     * the volume type is EBS-optimized, the minimum value is 10.</p>
+     */
+    inline bool SizeInGBHasBeenSet() const { return m_sizeInGBHasBeenSet; }
 
     /**
      * <p>The volume size, in gibibytes (GiB). This can be a number from 1 - 1024. If

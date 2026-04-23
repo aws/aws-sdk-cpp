@@ -64,6 +64,17 @@ namespace Model
      * value of <code>NextMarker</code> from the previous response to get information
      * about another batch of <code>WebACL</code> objects.</p>
      */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
+
+    /**
+     * <p>If you specify a value for <code>Limit</code> and you have more
+     * <code>WebACL</code> objects than the number that you specify for
+     * <code>Limit</code>, AWS WAF returns a <code>NextMarker</code> value in the
+     * response that allows you to list another group of <code>WebACL</code> objects.
+     * For the second and subsequent <code>ListWebACLs</code> requests, specify the
+     * value of <code>NextMarker</code> from the previous response to get information
+     * about another batch of <code>WebACL</code> objects.</p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
@@ -130,6 +141,15 @@ namespace Model
      * <code>WebACL</code> objects.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to
+     * return for this request. If you have more <code>WebACL</code> objects than the
+     * number that you specify for <code>Limit</code>, the response includes a
+     * <code>NextMarker</code> value that you can use to get another batch of
+     * <code>WebACL</code> objects.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Specifies the number of <code>WebACL</code> objects that you want AWS WAF to

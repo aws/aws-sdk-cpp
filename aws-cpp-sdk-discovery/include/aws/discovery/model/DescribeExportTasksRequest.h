@@ -56,6 +56,12 @@ namespace Model
      * <p>One or more unique identifiers used to query the status of an export
      * request.</p>
      */
+    inline bool ExportIdsHasBeenSet() const { return m_exportIdsHasBeenSet; }
+
+    /**
+     * <p>One or more unique identifiers used to query the status of an export
+     * request.</p>
+     */
     inline void SetExportIds(const Aws::Vector<Aws::String>& value) { m_exportIdsHasBeenSet = true; m_exportIds = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * whose collected data will be exported</p> </li> </ul>
      */
     inline const Aws::Vector<ExportFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
+     * whose collected data will be exported</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>AgentId</code> - ID of the agent
@@ -154,6 +166,15 @@ namespace Model
      * results in a single page along with a <code>nextToken</code> response
      * element.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of volume results returned by
+     * <code>DescribeExportTasks</code> in paginated output. When this parameter is
+     * used, <code>DescribeExportTasks</code> only returns <code>maxResults</code>
+     * results in a single page along with a <code>nextToken</code> response
+     * element.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -174,6 +195,15 @@ namespace Model
      * This value is null when there are no more results to return.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>DescribeExportTasks</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * This value is null when there are no more results to return.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

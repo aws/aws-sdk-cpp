@@ -68,6 +68,15 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -124,6 +133,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -158,6 +172,13 @@ namespace Model
      * of returned jobs never exceeds the limit.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of jobs to be returned. The default limit is 50. The
+     * number of jobs returned might be fewer than the specified limit, but the number
+     * of returned jobs never exceeds the limit.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of jobs to be returned. The default limit is 50. The
@@ -209,6 +230,14 @@ namespace Model
      * pagination of results started in a previous List Jobs request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An opaque string used for pagination. This value specifies the job at which
+     * the listing of jobs should begin. Get the marker value from a previous List Jobs
+     * response. You only need to include the marker if you are continuing the
+     * pagination of results started in a previous List Jobs request.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An opaque string used for pagination. This value specifies the job at which
@@ -269,6 +298,12 @@ namespace Model
      * <p>The type of job status to return. You can specify the following values:
      * <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
      */
+    inline bool StatuscodeHasBeenSet() const { return m_statuscodeHasBeenSet; }
+
+    /**
+     * <p>The type of job status to return. You can specify the following values:
+     * <code>InProgress</code>, <code>Succeeded</code>, or <code>Failed</code>.</p>
+     */
     inline void SetStatuscode(const Aws::String& value) { m_statuscodeHasBeenSet = true; m_statuscode = value; }
 
     /**
@@ -307,6 +342,12 @@ namespace Model
      * <code>false</code>.</p>
      */
     inline const Aws::String& GetCompleted() const{ return m_completed; }
+
+    /**
+     * <p>The state of the jobs to return. You can specify <code>true</code> or
+     * <code>false</code>.</p>
+     */
+    inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
 
     /**
      * <p>The state of the jobs to return. You can specify <code>true</code> or

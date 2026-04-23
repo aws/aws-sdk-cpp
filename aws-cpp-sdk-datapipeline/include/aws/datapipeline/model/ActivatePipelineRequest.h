@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
      */
     inline const Aws::Vector<ParameterValue>& GetParameterValues() const{ return m_parameterValues; }
+
+    /**
+     * <p>A list of parameter values to pass to the pipeline at activation.</p>
+     */
+    inline bool ParameterValuesHasBeenSet() const { return m_parameterValuesHasBeenSet; }
 
     /**
      * <p>A list of parameter values to pass to the pipeline at activation.</p>
@@ -127,6 +137,12 @@ namespace Model
      * from the last completed execution.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTimestamp() const{ return m_startTimestamp; }
+
+    /**
+     * <p>The date and time to resume the pipeline. By default, the pipeline resumes
+     * from the last completed execution.</p>
+     */
+    inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
 
     /**
      * <p>The date and time to resume the pipeline. By default, the pipeline resumes

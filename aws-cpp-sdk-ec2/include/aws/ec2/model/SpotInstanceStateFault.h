@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The reason code for the Spot Instance state change.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The reason code for the Spot Instance state change.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The message for the Spot Instance state change.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message for the Spot Instance state change.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message for the Spot Instance state change.</p>

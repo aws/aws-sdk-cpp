@@ -32,6 +32,7 @@ namespace Aws
 
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static const int AWS_BACKUP_HASH = HashingUtils::HashString("AWS_BACKUP");
 
 
         BackupType GetBackupTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == SYSTEM_HASH)
           {
             return BackupType::SYSTEM;
+          }
+          else if (hashCode == AWS_BACKUP_HASH)
+          {
+            return BackupType::AWS_BACKUP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "USER";
           case BackupType::SYSTEM:
             return "SYSTEM";
+          case BackupType::AWS_BACKUP:
+            return "AWS_BACKUP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

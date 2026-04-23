@@ -13,7 +13,7 @@ Aws::String ${className}::ComputeEndpointString(const Aws::String& accountId) co
     }
     else
     {
-        return "";
+        return {};
     }
 }
 

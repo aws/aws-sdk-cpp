@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>This parameter is reserved.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>This parameter is reserved.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>This parameter is reserved.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>This parameter is reserved.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>This parameter is reserved.</p>

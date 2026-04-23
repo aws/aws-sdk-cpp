@@ -55,6 +55,11 @@ namespace Model
     /**
      * The numeric value placed in the Network Information Table (NIT).
      */
+    inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
+
+    /**
+     * The numeric value placed in the Network Information Table (NIT).
+     */
     inline void SetNetworkId(int value) { m_networkIdHasBeenSet = true; m_networkId = value; }
 
     /**
@@ -68,6 +73,12 @@ namespace Model
      * Information Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetNetworkName() const{ return m_networkName; }
+
+    /**
+     * The network name text placed in the networkNameDescriptor inside the Network
+     * Information Table. Maximum length is 256 characters.
+     */
+    inline bool NetworkNameHasBeenSet() const { return m_networkNameHasBeenSet; }
 
     /**
      * The network name text placed in the networkNameDescriptor inside the Network
@@ -111,6 +122,12 @@ namespace Model
      * transport stream.
      */
     inline int GetRepInterval() const{ return m_repInterval; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
+    inline bool RepIntervalHasBeenSet() const { return m_repIntervalHasBeenSet; }
 
     /**
      * The number of milliseconds between instances of this table in the output

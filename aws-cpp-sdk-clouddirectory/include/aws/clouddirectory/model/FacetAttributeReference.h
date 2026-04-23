@@ -61,6 +61,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
      * References</a> for more information.</p>
      */
+    inline bool TargetFacetNameHasBeenSet() const { return m_targetFacetNameHasBeenSet; }
+
+    /**
+     * <p>The target facet name that is associated with the facet reference. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
+     * References</a> for more information.</p>
+     */
     inline void SetTargetFacetName(const Aws::String& value) { m_targetFacetNameHasBeenSet = true; m_targetFacetName = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * References</a> for more information.</p>
      */
     inline const Aws::String& GetTargetAttributeName() const{ return m_targetAttributeName; }
+
+    /**
+     * <p>The target attribute name that is associated with the facet reference. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_attributereferences.html">Attribute
+     * References</a> for more information.</p>
+     */
+    inline bool TargetAttributeNameHasBeenSet() const { return m_targetAttributeNameHasBeenSet; }
 
     /**
      * <p>The target attribute name that is associated with the facet reference. See <a

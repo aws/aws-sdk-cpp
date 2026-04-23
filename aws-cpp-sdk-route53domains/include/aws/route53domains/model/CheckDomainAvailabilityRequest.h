@@ -62,6 +62,14 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to get availability for.</p>
+     * <p>Constraints: The domain name can contain only the letters a through z, the
+     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
+     * supported.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const Aws::String& GetIdnLangCode() const{ return m_idnLangCode; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool IdnLangCodeHasBeenSet() const { return m_idnLangCodeHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

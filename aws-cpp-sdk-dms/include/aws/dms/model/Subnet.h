@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The subnet identifier.</p>
      */
+    inline bool SubnetIdentifierHasBeenSet() const { return m_subnetIdentifierHasBeenSet; }
+
+    /**
+     * <p>The subnet identifier.</p>
+     */
     inline void SetSubnetIdentifier(const Aws::String& value) { m_subnetIdentifierHasBeenSet = true; m_subnetIdentifier = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
+    inline bool SubnetAvailabilityZoneHasBeenSet() const { return m_subnetAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone of the subnet.</p>
+     */
     inline void SetSubnetAvailabilityZone(const AvailabilityZone& value) { m_subnetAvailabilityZoneHasBeenSet = true; m_subnetAvailabilityZone = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The status of the subnet.</p>
      */
     inline const Aws::String& GetSubnetStatus() const{ return m_subnetStatus; }
+
+    /**
+     * <p>The status of the subnet.</p>
+     */
+    inline bool SubnetStatusHasBeenSet() const { return m_subnetStatusHasBeenSet; }
 
     /**
      * <p>The status of the subnet.</p>

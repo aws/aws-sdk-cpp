@@ -25,6 +25,7 @@
 #include <aws/connect/model/DescribeUserResult.h>
 #include <aws/connect/model/DescribeUserHierarchyGroupResult.h>
 #include <aws/connect/model/DescribeUserHierarchyStructureResult.h>
+#include <aws/connect/model/GetContactAttributesResult.h>
 #include <aws/connect/model/GetCurrentMetricDataResult.h>
 #include <aws/connect/model/GetFederationTokenResult.h>
 #include <aws/connect/model/GetMetricDataResult.h>
@@ -81,6 +82,7 @@ namespace Model
         class DescribeUserRequest;
         class DescribeUserHierarchyGroupRequest;
         class DescribeUserHierarchyStructureRequest;
+        class GetContactAttributesRequest;
         class GetCurrentMetricDataRequest;
         class GetFederationTokenRequest;
         class GetMetricDataRequest;
@@ -102,6 +104,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUserResult, Aws::Client::AWSError<ConnectErrors>> DescribeUserOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyGroupResult, Aws::Client::AWSError<ConnectErrors>> DescribeUserHierarchyGroupOutcome;
         typedef Aws::Utils::Outcome<DescribeUserHierarchyStructureResult, Aws::Client::AWSError<ConnectErrors>> DescribeUserHierarchyStructureOutcome;
+        typedef Aws::Utils::Outcome<GetContactAttributesResult, Aws::Client::AWSError<ConnectErrors>> GetContactAttributesOutcome;
         typedef Aws::Utils::Outcome<GetCurrentMetricDataResult, Aws::Client::AWSError<ConnectErrors>> GetCurrentMetricDataOutcome;
         typedef Aws::Utils::Outcome<GetFederationTokenResult, Aws::Client::AWSError<ConnectErrors>> GetFederationTokenOutcome;
         typedef Aws::Utils::Outcome<GetMetricDataResult, Aws::Client::AWSError<ConnectErrors>> GetMetricDataOutcome;
@@ -123,6 +126,7 @@ namespace Model
         typedef std::future<DescribeUserOutcome> DescribeUserOutcomeCallable;
         typedef std::future<DescribeUserHierarchyGroupOutcome> DescribeUserHierarchyGroupOutcomeCallable;
         typedef std::future<DescribeUserHierarchyStructureOutcome> DescribeUserHierarchyStructureOutcomeCallable;
+        typedef std::future<GetContactAttributesOutcome> GetContactAttributesOutcomeCallable;
         typedef std::future<GetCurrentMetricDataOutcome> GetCurrentMetricDataOutcomeCallable;
         typedef std::future<GetFederationTokenOutcome> GetFederationTokenOutcomeCallable;
         typedef std::future<GetMetricDataOutcome> GetMetricDataOutcomeCallable;
@@ -147,6 +151,7 @@ namespace Model
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserRequest&, const Model::DescribeUserOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyGroupRequest&, const Model::DescribeUserHierarchyGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyGroupResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::DescribeUserHierarchyStructureRequest&, const Model::DescribeUserHierarchyStructureOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUserHierarchyStructureResponseReceivedHandler;
+    typedef std::function<void(const ConnectClient*, const Model::GetContactAttributesRequest&, const Model::GetContactAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetContactAttributesResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetCurrentMetricDataRequest&, const Model::GetCurrentMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCurrentMetricDataResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetFederationTokenRequest&, const Model::GetFederationTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFederationTokenResponseReceivedHandler;
     typedef std::function<void(const ConnectClient*, const Model::GetMetricDataRequest&, const Model::GetMetricDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetMetricDataResponseReceivedHandler;
@@ -168,9 +173,15 @@ namespace Model
    * examples for each of the Amazon Connect actions, data types, parameters, and
    * errors. Amazon Connect is a cloud-based contact center solution that makes it
    * easy to set up and manage a customer contact center and provide reliable
-   * customer engagement at any scale.</p> <p>There is a throttling limit placed on
-   * usage of the Amazon Connect operations that includes a RateLimit of 2 per
-   * second, and a BurstLimit of 5 per second.</p>
+   * customer engagement at any scale.</p> <p>Throttling limits for the Amazon
+   * Connect API operations:</p> <p>For the <code>GetMetricData</code> and
+   * <code>GetCurrentMetricData</code> operations, a RateLimit of 5 per second, and a
+   * BurstLimit of 8 per second.</p> <p>For all other operations, a RateLimit of 2
+   * per second, and a BurstLimit of 5 per second.</p> <p>You can request an increase
+   * to the throttling limits by submitting a <a
+   * href="https://console.aws.amazon.com/support/home#/case/create?issueType=service-limit-increase">Amazon
+   * Connect service limits increase form</a>. You must be signed in to your AWS
+   * account to access the form.</p>
    */
   class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient
   {
@@ -337,6 +348,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeUserHierarchyStructureAsync(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves the contact attributes associated with a contact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetContactAttributesOutcome GetContactAttributes(const Model::GetContactAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves the contact attributes associated with a contact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetContactAttributesOutcomeCallable GetContactAttributesCallable(const Model::GetContactAttributesRequest& request) const;
+
+        /**
+         * <p>Retrieves the contact attributes associated with a contact.</p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/GetContactAttributes">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetContactAttributesAsync(const Model::GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>The <code>GetCurrentMetricData</code> operation retrieves current metric data
@@ -556,7 +595,9 @@ namespace Model
          * <p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow
          * to place an outbound call to a customer.</p> <p>If you are using an IAM account,
          * it must have permission to the <code>connect:StartOutboundVoiceContact</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>There is a 60 second dialing timeout for this operation. If the
+         * call is not connected after 60 seconds, the call fails.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          */
@@ -566,7 +607,9 @@ namespace Model
          * <p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow
          * to place an outbound call to a customer.</p> <p>If you are using an IAM account,
          * it must have permission to the <code>connect:StartOutboundVoiceContact</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>There is a 60 second dialing timeout for this operation. If the
+         * call is not connected after 60 seconds, the call fails.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -578,7 +621,9 @@ namespace Model
          * <p>The <code>StartOutboundVoiceContact</code> operation initiates a contact flow
          * to place an outbound call to a customer.</p> <p>If you are using an IAM account,
          * it must have permission to the <code>connect:StartOutboundVoiceContact</code>
-         * action.</p><p><h3>See Also:</h3>   <a
+         * action.</p> <p>There is a 60 second dialing timeout for this operation. If the
+         * call is not connected after 60 seconds, the call fails.</p><p><h3>See Also:</h3>
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/StartOutboundVoiceContact">AWS
          * API Reference</a></p>
          *
@@ -839,16 +884,17 @@ namespace Model
          */
         virtual void UpdateUserSecurityProfilesAsync(const Model::UpdateUserSecurityProfilesRequest& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateUserAsyncHelper(const Model::CreateUserRequest& request, const CreateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteUserAsyncHelper(const Model::DeleteUserRequest& request, const DeleteUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserAsyncHelper(const Model::DescribeUserRequest& request, const DescribeUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyGroupAsyncHelper(const Model::DescribeUserHierarchyGroupRequest& request, const DescribeUserHierarchyGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeUserHierarchyStructureAsyncHelper(const Model::DescribeUserHierarchyStructureRequest& request, const DescribeUserHierarchyStructureResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetContactAttributesAsyncHelper(const Model::GetContactAttributesRequest& request, const GetContactAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCurrentMetricDataAsyncHelper(const Model::GetCurrentMetricDataRequest& request, const GetCurrentMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFederationTokenAsyncHelper(const Model::GetFederationTokenRequest& request, const GetFederationTokenResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetMetricDataAsyncHelper(const Model::GetMetricDataRequest& request, const GetMetricDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -866,6 +912,7 @@ namespace Model
         void UpdateUserSecurityProfilesAsyncHelper(const Model::UpdateUserSecurityProfilesRequest& request, const UpdateUserSecurityProfilesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

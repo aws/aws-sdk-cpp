@@ -38,7 +38,7 @@ ListThingGroupsRequest::ListThingGroupsRequest() :
 
 Aws::String ListThingGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListThingGroupsRequest::AddQueryStringParameters(URI& uri) const

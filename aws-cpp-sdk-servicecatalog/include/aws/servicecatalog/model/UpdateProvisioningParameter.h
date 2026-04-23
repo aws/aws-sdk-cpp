@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The parameter key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The parameter key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The parameter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The parameter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value.</p>
@@ -125,6 +135,12 @@ namespace Model
      * value is kept.</p>
      */
     inline bool GetUsePreviousValue() const{ return m_usePreviousValue; }
+
+    /**
+     * <p>If set to true, <code>Value</code> is ignored and the previous parameter
+     * value is kept.</p>
+     */
+    inline bool UsePreviousValueHasBeenSet() const { return m_usePreviousValueHasBeenSet; }
 
     /**
      * <p>If set to true, <code>Value</code> is ignored and the previous parameter

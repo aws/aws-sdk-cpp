@@ -59,6 +59,12 @@ namespace Model
      * <p>The code identifying the operation, for example,
      * <code>enable-volume-io</code>.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The code identifying the operation, for example,
+     * <code>enable-volume-io</code>.</p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>A description of the operation.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the operation.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The ID of the event associated with this operation.</p>
      */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the event associated with this operation.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
      * <p>The event type associated with this operation.</p>
      */
     inline const Aws::String& GetEventType() const{ return m_eventType; }
+
+    /**
+     * <p>The event type associated with this operation.</p>
+     */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The event type associated with this operation.</p>

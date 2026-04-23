@@ -34,7 +34,7 @@ DeleteV2LoggingLevelRequest::DeleteV2LoggingLevelRequest() :
 
 Aws::String DeleteV2LoggingLevelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteV2LoggingLevelRequest::AddQueryStringParameters(URI& uri) const

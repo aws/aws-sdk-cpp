@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The error code indicating the type of error that occurred.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code indicating the type of error that occurred.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code indicating the type of error that occurred.</p>

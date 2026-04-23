@@ -60,6 +60,12 @@ namespace Model
      * Optionally, specify a job template category to limit responses to only job
      * templates from that category.
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * Optionally, specify a job template category to limit responses to only job
+     * templates from that category.
+     */
     inline void SetCategory(const Aws::String& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -93,19 +99,46 @@ namespace Model
     inline ListJobTemplatesRequest& WithCategory(const char* value) { SetCategory(value); return *this;}
 
 
-    
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline const JobTemplateListBy& GetListBy() const{ return m_listBy; }
 
-    
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
+    inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
+
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline void SetListBy(const JobTemplateListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
-    
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline void SetListBy(JobTemplateListBy&& value) { m_listByHasBeenSet = true; m_listBy = std::move(value); }
 
-    
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline ListJobTemplatesRequest& WithListBy(const JobTemplateListBy& value) { SetListBy(value); return *this;}
 
-    
+    /**
+     * Optional. When you request a list of job templates, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by name.
+     */
     inline ListJobTemplatesRequest& WithListBy(JobTemplateListBy&& value) { SetListBy(std::move(value)); return *this;}
 
 
@@ -114,6 +147,12 @@ namespace Model
      * time.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * Optional. Number of job templates, up to twenty, that will be returned at one
+     * time.
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * Optional. Number of job templates, up to twenty, that will be returned at one
@@ -133,6 +172,12 @@ namespace Model
      * the next batch of job templates.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of job templates.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request
@@ -171,19 +216,40 @@ namespace Model
     inline ListJobTemplatesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline const Order& GetOrder() const{ return m_order; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListJobTemplatesRequest& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListJobTemplatesRequest& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
 
   private:

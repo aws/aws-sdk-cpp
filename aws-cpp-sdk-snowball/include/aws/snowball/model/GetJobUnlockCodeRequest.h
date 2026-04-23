@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID for the job that you want to get the <code>UnlockCode</code> value
      * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the job that you want to get the <code>UnlockCode</code> value
+     * for, for example <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

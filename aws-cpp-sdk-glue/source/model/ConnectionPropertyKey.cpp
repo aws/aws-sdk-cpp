@@ -34,6 +34,7 @@ namespace Aws
         static const int PORT_HASH = HashingUtils::HashString("PORT");
         static const int USERNAME_HASH = HashingUtils::HashString("USERNAME");
         static const int PASSWORD_HASH = HashingUtils::HashString("PASSWORD");
+        static const int ENCRYPTED_PASSWORD_HASH = HashingUtils::HashString("ENCRYPTED_PASSWORD");
         static const int JDBC_DRIVER_JAR_URI_HASH = HashingUtils::HashString("JDBC_DRIVER_JAR_URI");
         static const int JDBC_DRIVER_CLASS_NAME_HASH = HashingUtils::HashString("JDBC_DRIVER_CLASS_NAME");
         static const int JDBC_ENGINE_HASH = HashingUtils::HashString("JDBC_ENGINE");
@@ -62,6 +63,10 @@ namespace Aws
           else if (hashCode == PASSWORD_HASH)
           {
             return ConnectionPropertyKey::PASSWORD;
+          }
+          else if (hashCode == ENCRYPTED_PASSWORD_HASH)
+          {
+            return ConnectionPropertyKey::ENCRYPTED_PASSWORD;
           }
           else if (hashCode == JDBC_DRIVER_JAR_URI_HASH)
           {
@@ -117,6 +122,8 @@ namespace Aws
             return "USERNAME";
           case ConnectionPropertyKey::PASSWORD:
             return "PASSWORD";
+          case ConnectionPropertyKey::ENCRYPTED_PASSWORD:
+            return "ENCRYPTED_PASSWORD";
           case ConnectionPropertyKey::JDBC_DRIVER_JAR_URI:
             return "JDBC_DRIVER_JAR_URI";
           case ConnectionPropertyKey::JDBC_DRIVER_CLASS_NAME:
@@ -140,7 +147,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

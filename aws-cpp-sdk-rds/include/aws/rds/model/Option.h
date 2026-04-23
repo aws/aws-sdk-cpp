@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
+    inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option.</p>
+     */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The description of the option.</p>
      */
     inline const Aws::String& GetOptionDescription() const{ return m_optionDescription; }
+
+    /**
+     * <p>The description of the option.</p>
+     */
+    inline bool OptionDescriptionHasBeenSet() const { return m_optionDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the option.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Indicate if this option is persistent.</p>
      */
+    inline bool PersistentHasBeenSet() const { return m_persistentHasBeenSet; }
+
+    /**
+     * <p>Indicate if this option is persistent.</p>
+     */
     inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>Indicate if this option is permanent.</p>
      */
     inline bool GetPermanent() const{ return m_permanent; }
+
+    /**
+     * <p>Indicate if this option is permanent.</p>
+     */
+    inline bool PermanentHasBeenSet() const { return m_permanentHasBeenSet; }
 
     /**
      * <p>Indicate if this option is permanent.</p>
@@ -165,6 +185,11 @@ namespace Model
     /**
      * <p>If required, the port configured for this option to use.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>If required, the port configured for this option to use.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -177,6 +202,11 @@ namespace Model
      * <p>The version of the option.</p>
      */
     inline const Aws::String& GetOptionVersion() const{ return m_optionVersion; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
+    inline bool OptionVersionHasBeenSet() const { return m_optionVersionHasBeenSet; }
 
     /**
      * <p>The version of the option.</p>
@@ -217,6 +247,11 @@ namespace Model
     /**
      * <p>The option settings for this option.</p>
      */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
+
+    /**
+     * <p>The option settings for this option.</p>
+     */
     inline void SetOptionSettings(const Aws::Vector<OptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
@@ -250,6 +285,12 @@ namespace Model
      * access to the port.</p>
      */
     inline const Aws::Vector<DBSecurityGroupMembership>& GetDBSecurityGroupMemberships() const{ return m_dBSecurityGroupMemberships; }
+
+    /**
+     * <p>If the option requires access to a port, then this DB security group allows
+     * access to the port.</p>
+     */
+    inline bool DBSecurityGroupMembershipsHasBeenSet() const { return m_dBSecurityGroupMembershipsHasBeenSet; }
 
     /**
      * <p>If the option requires access to a port, then this DB security group allows
@@ -293,6 +334,12 @@ namespace Model
      * access to the port.</p>
      */
     inline const Aws::Vector<VpcSecurityGroupMembership>& GetVpcSecurityGroupMemberships() const{ return m_vpcSecurityGroupMemberships; }
+
+    /**
+     * <p>If the option requires access to a port, then this VPC security group allows
+     * access to the port.</p>
+     */
+    inline bool VpcSecurityGroupMembershipsHasBeenSet() const { return m_vpcSecurityGroupMembershipsHasBeenSet; }
 
     /**
      * <p>If the option requires access to a port, then this VPC security group allows

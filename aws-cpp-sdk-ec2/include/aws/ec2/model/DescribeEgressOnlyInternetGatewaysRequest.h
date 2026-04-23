@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>One or more egress-only internet gateway IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEgressOnlyInternetGatewayIds() const{ return m_egressOnlyInternetGatewayIds; }
+
+    /**
+     * <p>One or more egress-only internet gateway IDs.</p>
+     */
+    inline bool EgressOnlyInternetGatewayIdsHasBeenSet() const { return m_egressOnlyInternetGatewayIdsHasBeenSet; }
 
     /**
      * <p>One or more egress-only internet gateway IDs.</p>
@@ -114,65 +127,71 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results to return for the request in a single page. The
-     * remaining results can be seen by sending another request with the returned
-     * <code>NextToken</code> value. This value can be between 5 and 1000. If
-     * <code>MaxResults</code> is given a value larger than 1000, only 1000 results are
-     * returned.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token to retrieve the next page of results.</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribeEgressOnlyInternetGatewaysRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

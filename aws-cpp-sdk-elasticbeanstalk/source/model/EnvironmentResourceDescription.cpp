@@ -35,6 +35,7 @@ EnvironmentResourceDescription::EnvironmentResourceDescription() :
     m_autoScalingGroupsHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_launchConfigurationsHasBeenSet(false),
+    m_launchTemplatesHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_triggersHasBeenSet(false),
     m_queuesHasBeenSet(false)
@@ -46,6 +47,7 @@ EnvironmentResourceDescription::EnvironmentResourceDescription(const XmlNode& xm
     m_autoScalingGroupsHasBeenSet(false),
     m_instancesHasBeenSet(false),
     m_launchConfigurationsHasBeenSet(false),
+    m_launchTemplatesHasBeenSet(false),
     m_loadBalancersHasBeenSet(false),
     m_triggersHasBeenSet(false),
     m_queuesHasBeenSet(false)
@@ -100,6 +102,18 @@ EnvironmentResourceDescription& EnvironmentResourceDescription::operator =(const
       }
 
       m_launchConfigurationsHasBeenSet = true;
+    }
+    XmlNode launchTemplatesNode = resultNode.FirstChild("LaunchTemplates");
+    if(!launchTemplatesNode.IsNull())
+    {
+      XmlNode launchTemplatesMember = launchTemplatesNode.FirstChild("member");
+      while(!launchTemplatesMember.IsNull())
+      {
+        m_launchTemplates.push_back(launchTemplatesMember);
+        launchTemplatesMember = launchTemplatesMember.NextNode("member");
+      }
+
+      m_launchTemplatesHasBeenSet = true;
     }
     XmlNode loadBalancersNode = resultNode.FirstChild("LoadBalancers");
     if(!loadBalancersNode.IsNull())
@@ -182,6 +196,17 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
       }
   }
 
+  if(m_launchTemplatesHasBeenSet)
+  {
+      unsigned launchTemplatesIdx = 1;
+      for(auto& item : m_launchTemplates)
+      {
+        Aws::StringStream launchTemplatesSs;
+        launchTemplatesSs << location << index << locationValue << ".LaunchTemplates.member." << launchTemplatesIdx++;
+        item.OutputToStream(oStream, launchTemplatesSs.str().c_str());
+      }
+  }
+
   if(m_loadBalancersHasBeenSet)
   {
       unsigned loadBalancersIdx = 1;
@@ -251,6 +276,16 @@ void EnvironmentResourceDescription::OutputToStream(Aws::OStream& oStream, const
         Aws::StringStream launchConfigurationsSs;
         launchConfigurationsSs << location <<  ".LaunchConfigurations.member." << launchConfigurationsIdx++;
         item.OutputToStream(oStream, launchConfigurationsSs.str().c_str());
+      }
+  }
+  if(m_launchTemplatesHasBeenSet)
+  {
+      unsigned launchTemplatesIdx = 1;
+      for(auto& item : m_launchTemplates)
+      {
+        Aws::StringStream launchTemplatesSs;
+        launchTemplatesSs << location <<  ".LaunchTemplates.member." << launchTemplatesIdx++;
+        item.OutputToStream(oStream, launchTemplatesSs.str().c_str());
       }
   }
   if(m_loadBalancersHasBeenSet)

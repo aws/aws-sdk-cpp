@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The identifier of the cluster with steps to describe.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster with steps to describe.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The identifier of the step to describe.</p>
      */
     inline const Aws::String& GetStepId() const{ return m_stepId; }
+
+    /**
+     * <p>The identifier of the step to describe.</p>
+     */
+    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
 
     /**
      * <p>The identifier of the step to describe.</p>

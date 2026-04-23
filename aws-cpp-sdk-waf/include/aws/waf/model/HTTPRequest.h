@@ -71,6 +71,16 @@ namespace Model
      * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
      * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
      */
+    inline bool ClientIPHasBeenSet() const { return m_clientIPHasBeenSet; }
+
+    /**
+     * <p>The IP address that the request originated from. If the <code>WebACL</code>
+     * is associated with a CloudFront distribution, this is the value of one of the
+     * following fields in CloudFront access logs:</p> <ul> <li> <p> <code>c-ip</code>,
+     * if the viewer did not use an HTTP proxy or a load balancer to send the
+     * request</p> </li> <li> <p> <code>x-forwarded-for</code>, if the viewer did use
+     * an HTTP proxy or a load balancer to send the request</p> </li> </ul>
+     */
     inline void SetClientIP(const Aws::String& value) { m_clientIPHasBeenSet = true; m_clientIP = value; }
 
     /**
@@ -138,6 +148,14 @@ namespace Model
      * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
      * alpha-2</a>.</p>
      */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
+
+    /**
+     * <p>The two-letter country code for the country that the request originated from.
+     * For a current list of country codes, see the Wikipedia entry <a
+     * href="https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2">ISO 3166-1
+     * alpha-2</a>.</p>
+     */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
@@ -191,6 +209,12 @@ namespace Model
      * <p>The part of a web request that identifies the resource, for example,
      * <code>/images/daily-ad.jpg</code>.</p>
      */
+    inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
+
+    /**
+     * <p>The part of a web request that identifies the resource, for example,
+     * <code>/images/daily-ad.jpg</code>.</p>
+     */
     inline void SetURI(const Aws::String& value) { m_uRIHasBeenSet = true; m_uRI = value; }
 
     /**
@@ -231,6 +255,14 @@ namespace Model
      * <code>PUT</code>. </p>
      */
     inline const Aws::String& GetMethod() const{ return m_method; }
+
+    /**
+     * <p>The HTTP method specified in the sampled web request. CloudFront supports the
+     * following methods: <code>DELETE</code>, <code>GET</code>, <code>HEAD</code>,
+     * <code>OPTIONS</code>, <code>PATCH</code>, <code>POST</code>, and
+     * <code>PUT</code>. </p>
+     */
+    inline bool MethodHasBeenSet() const { return m_methodHasBeenSet; }
 
     /**
      * <p>The HTTP method specified in the sampled web request. CloudFront supports the
@@ -291,6 +323,12 @@ namespace Model
      * <p>The HTTP version specified in the sampled web request, for example,
      * <code>HTTP/1.1</code>.</p>
      */
+    inline bool HTTPVersionHasBeenSet() const { return m_hTTPVersionHasBeenSet; }
+
+    /**
+     * <p>The HTTP version specified in the sampled web request, for example,
+     * <code>HTTP/1.1</code>.</p>
+     */
     inline void SetHTTPVersion(const Aws::String& value) { m_hTTPVersionHasBeenSet = true; m_hTTPVersion = value; }
 
     /**
@@ -329,6 +367,12 @@ namespace Model
      * request: the name of the header and the value of the header.</p>
      */
     inline const Aws::Vector<HTTPHeader>& GetHeaders() const{ return m_headers; }
+
+    /**
+     * <p>A complex type that contains two values for each header in the sampled web
+     * request: the name of the header and the value of the header.</p>
+     */
+    inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
 
     /**
      * <p>A complex type that contains two values for each header in the sampled web

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p> A complex type that contains zero or more <code>Tag</code>
    * elements.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/TagKeys">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/TagKeys">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API TagKeys
@@ -53,6 +53,11 @@ namespace Model
      * <p> A complex type that contains <code>Tag</code> key elements.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p> A complex type that contains <code>Tag</code> key elements.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p> A complex type that contains <code>Tag</code> key elements.</p>

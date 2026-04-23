@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The minimum capacity.</p>
      */
+    inline bool MinCapacityHasBeenSet() const { return m_minCapacityHasBeenSet; }
+
+    /**
+     * <p>The minimum capacity.</p>
+     */
     inline void SetMinCapacity(int value) { m_minCapacityHasBeenSet = true; m_minCapacity = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The maximum capacity.</p>
      */
     inline int GetMaxCapacity() const{ return m_maxCapacity; }
+
+    /**
+     * <p>The maximum capacity.</p>
+     */
+    inline bool MaxCapacityHasBeenSet() const { return m_maxCapacityHasBeenSet; }
 
     /**
      * <p>The maximum capacity.</p>

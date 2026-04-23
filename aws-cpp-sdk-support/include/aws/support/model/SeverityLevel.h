@@ -60,6 +60,13 @@ namespace Model
      * correspond to response times returned to the caller in
      * <code>severityLevel.name</code>. </p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>One of four values: "low," "medium," "high," and "urgent". These values
+     * correspond to response times returned to the caller in
+     * <code>severityLevel.name</code>. </p>
+     */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * code.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the severity level that corresponds to the severity level
+     * code.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the severity level that corresponds to the severity level

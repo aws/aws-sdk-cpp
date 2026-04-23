@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
      */
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share to be updated. </p>
+     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional. </p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional. </p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -111,6 +122,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true. Optional.
+     * </p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
@@ -163,6 +181,11 @@ namespace Model
     /**
      * <p>The default values for the file share. Optional.</p>
      */
+    inline bool NFSFileShareDefaultsHasBeenSet() const { return m_nFSFileShareDefaultsHasBeenSet; }
+
+    /**
+     * <p>The default values for the file share. Optional.</p>
+     */
     inline void SetNFSFileShareDefaults(const NFSFileShareDefaults& value) { m_nFSFileShareDefaultsHasBeenSet = true; m_nFSFileShareDefaults = value; }
 
     /**
@@ -188,6 +211,14 @@ namespace Model
      * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
+
+    /**
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     */
+    inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
@@ -250,6 +281,13 @@ namespace Model
      * bucket that a file gateway puts objects into. The default value is
      * "private".</p>
      */
+    inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the S3
+     * bucket that a file gateway puts objects into. The default value is
+     * "private".</p>
+     */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
@@ -279,6 +317,12 @@ namespace Model
      * must contain either valid IP addresses or valid CIDR blocks.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClientList() const{ return m_clientList; }
+
+    /**
+     * <p>The list of clients that are allowed to access the file gateway. The list
+     * must contain either valid IP addresses or valid CIDR blocks.</p>
+     */
+    inline bool ClientListHasBeenSet() const { return m_clientListHasBeenSet; }
 
     /**
      * <p>The list of clients that are allowed to access the file gateway. The list
@@ -331,6 +375,15 @@ namespace Model
      * user.</p> </li> </ul>
      */
     inline const Aws::String& GetSquash() const{ return m_squash; }
+
+    /**
+     * <p>The user mapped to anonymous user. Valid options are the following:</p> <ul>
+     * <li> <p> <code>RootSquash</code> - Only root is mapped to anonymous user.</p>
+     * </li> <li> <p> <code>NoSquash</code> - No one is mapped to anonymous user</p>
+     * </li> <li> <p> <code>AllSquash</code> - Everyone is mapped to anonymous
+     * user.</p> </li> </ul>
+     */
+    inline bool SquashHasBeenSet() const { return m_squashHasBeenSet; }
 
     /**
      * <p>The user mapped to anonymous user. Valid options are the following:</p> <ul>
@@ -397,6 +450,12 @@ namespace Model
      * <p>A value that sets the write status of a file share. This value is true if the
      * write status is read-only, and otherwise false.</p>
      */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+
+    /**
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
@@ -412,6 +471,13 @@ namespace Model
      * otherwise to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
+
+    /**
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
+     */
+    inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
@@ -434,6 +500,13 @@ namespace Model
      * <code>private</code>.</p>
      */
     inline bool GetRequesterPays() const{ return m_requesterPays; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
+     */
+    inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
 
     /**
      * <p>A value that sets the access control list permission for objects in the

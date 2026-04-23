@@ -586,7 +586,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline const EnvironmentHealth& GetHealth() const{ return m_health; }
@@ -602,7 +602,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline void SetHealth(const EnvironmentHealth& value) { m_health = value; }
@@ -618,7 +618,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline void SetHealth(EnvironmentHealth&& value) { m_health = std::move(value); }
@@ -634,7 +634,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline CreateEnvironmentResult& WithHealth(const EnvironmentHealth& value) { SetHealth(value); return *this;}
@@ -650,7 +650,7 @@ namespace Model
      * functional.</p> </li> <li> <p> <code>Grey</code>: Default health for a new
      * environment. The environment is not fully launched and health checks have not
      * started or health checks are suspended during an <code>UpdateEnvironment</code>
-     * or <code>RestartEnvironement</code> request.</p> </li> </ul> <p> Default:
+     * or <code>RestartEnvironment</code> request.</p> </li> </ul> <p> Default:
      * <code>Grey</code> </p>
      */
     inline CreateEnvironmentResult& WithHealth(EnvironmentHealth&& value) { SetHealth(std::move(value)); return *this;}
@@ -659,7 +659,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline const EnvironmentHealthStatus& GetHealthStatus() const{ return m_healthStatus; }
@@ -667,7 +667,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(const EnvironmentHealthStatus& value) { m_healthStatus = value; }
@@ -675,7 +675,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline void SetHealthStatus(EnvironmentHealthStatus&& value) { m_healthStatus = std::move(value); }
@@ -683,7 +683,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline CreateEnvironmentResult& WithHealthStatus(const EnvironmentHealthStatus& value) { SetHealthStatus(value); return *this;}
@@ -691,7 +691,7 @@ namespace Model
     /**
      * <p>Returns the health status of the application running in your environment. For
      * more information, see <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced-status.html">Health
      * Colors and Statuses</a>.</p>
      */
     inline CreateEnvironmentResult& WithHealthStatus(EnvironmentHealthStatus&& value) { SetHealthStatus(std::move(value)); return *this;}

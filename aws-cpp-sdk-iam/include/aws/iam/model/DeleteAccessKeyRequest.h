@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -57,7 +57,16 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose access key pair you want to delete.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -66,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -75,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -84,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -93,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -102,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose access key pair you want to delete.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -112,7 +121,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -120,7 +129,15 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * that can consist of any upper or lowercased letter or digit.</p>
+     */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The access key ID for the access key ID and secret access key you want to
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -128,7 +145,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -136,7 +153,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -144,7 +161,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -152,7 +169,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */
@@ -160,7 +177,7 @@ namespace Model
 
     /**
      * <p>The access key ID for the access key ID and secret access key you want to
-     * delete.</p> <p>This parameter allows (per its <a
+     * delete.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * that can consist of any upper or lowercased letter or digit.</p>
      */

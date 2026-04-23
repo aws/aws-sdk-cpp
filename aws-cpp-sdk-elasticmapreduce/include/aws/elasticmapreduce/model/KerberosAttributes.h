@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
    * using a security configuration. For more information see <a
-   * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+   * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
    * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/KerberosAttributes">AWS
@@ -56,6 +56,12 @@ namespace Model
      * example, <code>EC2.INTERNAL</code>. </p>
      */
     inline const Aws::String& GetRealm() const{ return m_realm; }
+
+    /**
+     * <p>The name of the Kerberos realm to which all nodes in a cluster belong. For
+     * example, <code>EC2.INTERNAL</code>. </p>
+     */
+    inline bool RealmHasBeenSet() const { return m_realmHasBeenSet; }
 
     /**
      * <p>The name of the Kerberos realm to which all nodes in a cluster belong. For
@@ -100,6 +106,13 @@ namespace Model
      * and keytabs for the cluster.</p>
      */
     inline const Aws::String& GetKdcAdminPassword() const{ return m_kdcAdminPassword; }
+
+    /**
+     * <p>The password used within the cluster for the kadmin service on the
+     * cluster-dedicated KDC, which maintains Kerberos principals, password policies,
+     * and keytabs for the cluster.</p>
+     */
+    inline bool KdcAdminPasswordHasBeenSet() const { return m_kdcAdminPasswordHasBeenSet; }
 
     /**
      * <p>The password used within the cluster for the kadmin service on the
@@ -156,6 +169,13 @@ namespace Model
      * realm. The cross-realm principal password, which must be identical across
      * realms.</p>
      */
+    inline bool CrossRealmTrustPrincipalPasswordHasBeenSet() const { return m_crossRealmTrustPrincipalPasswordHasBeenSet; }
+
+    /**
+     * <p>Required only when establishing a cross-realm trust with a KDC in a different
+     * realm. The cross-realm principal password, which must be identical across
+     * realms.</p>
+     */
     inline void SetCrossRealmTrustPrincipalPassword(const Aws::String& value) { m_crossRealmTrustPrincipalPasswordHasBeenSet = true; m_crossRealmTrustPrincipalPassword = value; }
 
     /**
@@ -204,6 +224,12 @@ namespace Model
      * <p>Required only when establishing a cross-realm trust with an Active Directory
      * domain. A user with sufficient privileges to join resources to the domain.</p>
      */
+    inline bool ADDomainJoinUserHasBeenSet() const { return m_aDDomainJoinUserHasBeenSet; }
+
+    /**
+     * <p>Required only when establishing a cross-realm trust with an Active Directory
+     * domain. A user with sufficient privileges to join resources to the domain.</p>
+     */
     inline void SetADDomainJoinUser(const Aws::String& value) { m_aDDomainJoinUserHasBeenSet = true; m_aDDomainJoinUser = value; }
 
     /**
@@ -241,6 +267,11 @@ namespace Model
      * <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
      */
     inline const Aws::String& GetADDomainJoinPassword() const{ return m_aDDomainJoinPassword; }
+
+    /**
+     * <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>
+     */
+    inline bool ADDomainJoinPasswordHasBeenSet() const { return m_aDDomainJoinPasswordHasBeenSet; }
 
     /**
      * <p>The Active Directory password for <code>ADDomainJoinUser</code>.</p>

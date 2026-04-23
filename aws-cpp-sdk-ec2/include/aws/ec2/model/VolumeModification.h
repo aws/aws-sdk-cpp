@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ID of the volume.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -100,6 +105,12 @@ namespace Model
      * <p>The current modification state. The modification state is null for unmodified
      * volumes.</p>
      */
+    inline bool ModificationStateHasBeenSet() const { return m_modificationStateHasBeenSet; }
+
+    /**
+     * <p>The current modification state. The modification state is null for unmodified
+     * volumes.</p>
+     */
     inline void SetModificationState(const VolumeModificationState& value) { m_modificationStateHasBeenSet = true; m_modificationState = value; }
 
     /**
@@ -125,6 +136,11 @@ namespace Model
      * <p>A status message about the modification progress or failure.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A status message about the modification progress or failure.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A status message about the modification progress or failure.</p>
@@ -165,6 +181,11 @@ namespace Model
     /**
      * <p>The target size of the volume, in GiB.</p>
      */
+    inline bool TargetSizeHasBeenSet() const { return m_targetSizeHasBeenSet; }
+
+    /**
+     * <p>The target size of the volume, in GiB.</p>
+     */
     inline void SetTargetSize(int value) { m_targetSizeHasBeenSet = true; m_targetSize = value; }
 
     /**
@@ -181,6 +202,11 @@ namespace Model
     /**
      * <p>The target IOPS rate of the volume.</p>
      */
+    inline bool TargetIopsHasBeenSet() const { return m_targetIopsHasBeenSet; }
+
+    /**
+     * <p>The target IOPS rate of the volume.</p>
+     */
     inline void SetTargetIops(int value) { m_targetIopsHasBeenSet = true; m_targetIops = value; }
 
     /**
@@ -193,6 +219,11 @@ namespace Model
      * <p>The target EBS volume type of the volume.</p>
      */
     inline const VolumeType& GetTargetVolumeType() const{ return m_targetVolumeType; }
+
+    /**
+     * <p>The target EBS volume type of the volume.</p>
+     */
+    inline bool TargetVolumeTypeHasBeenSet() const { return m_targetVolumeTypeHasBeenSet; }
 
     /**
      * <p>The target EBS volume type of the volume.</p>
@@ -223,6 +254,11 @@ namespace Model
     /**
      * <p>The original size of the volume.</p>
      */
+    inline bool OriginalSizeHasBeenSet() const { return m_originalSizeHasBeenSet; }
+
+    /**
+     * <p>The original size of the volume.</p>
+     */
     inline void SetOriginalSize(int value) { m_originalSizeHasBeenSet = true; m_originalSize = value; }
 
     /**
@@ -239,6 +275,11 @@ namespace Model
     /**
      * <p>The original IOPS rate of the volume.</p>
      */
+    inline bool OriginalIopsHasBeenSet() const { return m_originalIopsHasBeenSet; }
+
+    /**
+     * <p>The original IOPS rate of the volume.</p>
+     */
     inline void SetOriginalIops(int value) { m_originalIopsHasBeenSet = true; m_originalIops = value; }
 
     /**
@@ -251,6 +292,11 @@ namespace Model
      * <p>The original EBS volume type of the volume.</p>
      */
     inline const VolumeType& GetOriginalVolumeType() const{ return m_originalVolumeType; }
+
+    /**
+     * <p>The original EBS volume type of the volume.</p>
+     */
+    inline bool OriginalVolumeTypeHasBeenSet() const { return m_originalVolumeTypeHasBeenSet; }
 
     /**
      * <p>The original EBS volume type of the volume.</p>
@@ -281,6 +327,11 @@ namespace Model
     /**
      * <p>The modification progress, from 0 to 100 percent complete.</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>The modification progress, from 0 to 100 percent complete.</p>
+     */
     inline void SetProgress(long long value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -293,6 +344,11 @@ namespace Model
      * <p>The modification start time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The modification start time.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The modification start time.</p>
@@ -319,6 +375,11 @@ namespace Model
      * <p>The modification completion or failure time.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The modification completion or failure time.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The modification completion or failure time.</p>

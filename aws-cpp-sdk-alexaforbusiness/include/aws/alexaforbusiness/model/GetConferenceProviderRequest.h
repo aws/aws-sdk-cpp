@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the newly created conference provider.</p>
      */
+    inline bool ConferenceProviderArnHasBeenSet() const { return m_conferenceProviderArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the newly created conference provider.</p>
+     */
     inline void SetConferenceProviderArn(const Aws::String& value) { m_conferenceProviderArnHasBeenSet = true; m_conferenceProviderArn = value; }
 
     /**

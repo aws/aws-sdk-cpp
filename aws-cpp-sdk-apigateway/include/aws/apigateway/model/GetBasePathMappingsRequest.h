@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>[Required] The domain name of a <a>BasePathMapping</a> resource.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * <p>The current pagination position in the paged result set.</p>
@@ -129,6 +139,12 @@ namespace Model
      * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of returned results per page. The default value is 25 and

@@ -38,6 +38,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Rule">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Rule
   {
   public:
@@ -48,19 +53,34 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const LifecycleExpiration& GetExpiration() const{ return m_expiration; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetExpiration(const LifecycleExpiration& value) { m_expirationHasBeenSet = true; m_expiration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetExpiration(LifecycleExpiration&& value) { m_expirationHasBeenSet = true; m_expiration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithExpiration(const LifecycleExpiration& value) { SetExpiration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithExpiration(LifecycleExpiration&& value) { SetExpiration(std::move(value)); return *this;}
 
 
@@ -69,6 +89,12 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p>Unique identifier for the rule. The value cannot be longer than 255
+     * characters.</p>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>Unique identifier for the rule. The value cannot be longer than 255
@@ -115,6 +141,11 @@ namespace Model
     /**
      * <p>Prefix identifying one or more objects to which the rule applies.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>Prefix identifying one or more objects to which the rule applies.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -153,6 +184,12 @@ namespace Model
      * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
      * not currently being applied.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>If 'Enabled', the rule is currently being applied. If 'Disabled', the rule is
+     * not currently being applied.</p>
+     */
     inline void SetStatus(const ExpirationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -174,24 +211,42 @@ namespace Model
     inline Rule& WithStatus(ExpirationStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Transition& GetTransition() const{ return m_transition; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool TransitionHasBeenSet() const { return m_transitionHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTransition(const Transition& value) { m_transitionHasBeenSet = true; m_transition = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTransition(Transition&& value) { m_transitionHasBeenSet = true; m_transition = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithTransition(const Transition& value) { SetTransition(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Rule& WithTransition(Transition&& value) { SetTransition(std::move(value)); return *this;}
 
 
     
     inline const NoncurrentVersionTransition& GetNoncurrentVersionTransition() const{ return m_noncurrentVersionTransition; }
+
+    
+    inline bool NoncurrentVersionTransitionHasBeenSet() const { return m_noncurrentVersionTransitionHasBeenSet; }
 
     
     inline void SetNoncurrentVersionTransition(const NoncurrentVersionTransition& value) { m_noncurrentVersionTransitionHasBeenSet = true; m_noncurrentVersionTransition = value; }
@@ -210,6 +265,9 @@ namespace Model
     inline const NoncurrentVersionExpiration& GetNoncurrentVersionExpiration() const{ return m_noncurrentVersionExpiration; }
 
     
+    inline bool NoncurrentVersionExpirationHasBeenSet() const { return m_noncurrentVersionExpirationHasBeenSet; }
+
+    
     inline void SetNoncurrentVersionExpiration(const NoncurrentVersionExpiration& value) { m_noncurrentVersionExpirationHasBeenSet = true; m_noncurrentVersionExpiration = value; }
 
     
@@ -224,6 +282,9 @@ namespace Model
 
     
     inline const AbortIncompleteMultipartUpload& GetAbortIncompleteMultipartUpload() const{ return m_abortIncompleteMultipartUpload; }
+
+    
+    inline bool AbortIncompleteMultipartUploadHasBeenSet() const { return m_abortIncompleteMultipartUploadHasBeenSet; }
 
     
     inline void SetAbortIncompleteMultipartUpload(const AbortIncompleteMultipartUpload& value) { m_abortIncompleteMultipartUploadHasBeenSet = true; m_abortIncompleteMultipartUpload = value; }

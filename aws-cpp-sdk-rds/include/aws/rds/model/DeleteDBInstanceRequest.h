@@ -61,6 +61,13 @@ namespace Model
      * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the name
      * of an existing DB instance.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB instance identifier for the DB instance to be deleted. This parameter
+     * isn't case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the name
+     * of an existing DB instance.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -127,6 +134,21 @@ namespace Model
      * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
      * <code>false</code> </p>
      */
+    inline bool SkipFinalSnapshotHasBeenSet() const { return m_skipFinalSnapshotHasBeenSet; }
+
+    /**
+     * <p> A value that indicates whether a final DB snapshot is created before the DB
+     * instance is deleted. If <code>true</code> is specified, no DB snapshot is
+     * created. If <code>false</code> is specified, a DB snapshot is created before the
+     * DB instance is deleted. </p> <p>When a DB instance is in a failure state and has
+     * a status of <code>failed</code>, <code>incompatible-restore</code>, or
+     * <code>incompatible-network</code>, you can only delete it when the
+     * <code>SkipFinalSnapshot</code> parameter is set to <code>true</code>.</p>
+     * <p>Specify <code>true</code> when deleting a Read Replica.</p> <note> <p>The
+     * <code>FinalDBSnapshotIdentifier</code> parameter must be specified if
+     * <code>SkipFinalSnapshot</code> is <code>false</code>.</p> </note> <p>Default:
+     * <code>false</code> </p>
+     */
     inline void SetSkipFinalSnapshot(bool value) { m_skipFinalSnapshotHasBeenSet = true; m_skipFinalSnapshot = value; }
 
     /**
@@ -156,6 +178,18 @@ namespace Model
      * when deleting a Read Replica.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalDBSnapshotIdentifier() const{ return m_finalDBSnapshotIdentifier; }
+
+    /**
+     * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
+     * <code>SkipFinalSnapshot</code> is set to <code>false</code>. </p> <note>
+     * <p>Specifying this parameter and also setting the <code>SkipFinalShapshot</code>
+     * parameter to <code>true</code> results in an error.</p> </note>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters or numbers.</p> </li>
+     * <li> <p>First character must be a letter.</p> </li> <li> <p>Can't end with a
+     * hyphen or contain two consecutive hyphens.</p> </li> <li> <p>Can't be specified
+     * when deleting a Read Replica.</p> </li> </ul>
+     */
+    inline bool FinalDBSnapshotIdentifierHasBeenSet() const { return m_finalDBSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p> The <code>DBSnapshotIdentifier</code> of the new DB snapshot created when
@@ -236,6 +270,13 @@ namespace Model
      * defaults to <code>true</code>.</p>
      */
     inline bool GetDeleteAutomatedBackups() const{ return m_deleteAutomatedBackups; }
+
+    /**
+     * <p>A value that indicates whether to remove automated backups immediately after
+     * the DB instance is deleted. This parameter isn't case-sensitive. This parameter
+     * defaults to <code>true</code>.</p>
+     */
+    inline bool DeleteAutomatedBackupsHasBeenSet() const { return m_deleteAutomatedBackupsHasBeenSet; }
 
     /**
      * <p>A value that indicates whether to remove automated backups immediately after

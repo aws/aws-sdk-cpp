@@ -32,6 +32,7 @@ ReplicaSettingsDescription::ReplicaSettingsDescription() :
     m_regionNameHasBeenSet(false),
     m_replicaStatus(ReplicaStatus::NOT_SET),
     m_replicaStatusHasBeenSet(false),
+    m_replicaBillingModeSummaryHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
@@ -46,6 +47,7 @@ ReplicaSettingsDescription::ReplicaSettingsDescription(JsonView jsonValue) :
     m_regionNameHasBeenSet(false),
     m_replicaStatus(ReplicaStatus::NOT_SET),
     m_replicaStatusHasBeenSet(false),
+    m_replicaBillingModeSummaryHasBeenSet(false),
     m_replicaProvisionedReadCapacityUnits(0),
     m_replicaProvisionedReadCapacityUnitsHasBeenSet(false),
     m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet(false),
@@ -71,6 +73,13 @@ ReplicaSettingsDescription& ReplicaSettingsDescription::operator =(JsonView json
     m_replicaStatus = ReplicaStatusMapper::GetReplicaStatusForName(jsonValue.GetString("ReplicaStatus"));
 
     m_replicaStatusHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ReplicaBillingModeSummary"))
+  {
+    m_replicaBillingModeSummary = jsonValue.GetObject("ReplicaBillingModeSummary");
+
+    m_replicaBillingModeSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("ReplicaProvisionedReadCapacityUnits"))
@@ -127,6 +136,12 @@ JsonValue ReplicaSettingsDescription::Jsonize() const
   if(m_replicaStatusHasBeenSet)
   {
    payload.WithString("ReplicaStatus", ReplicaStatusMapper::GetNameForReplicaStatus(m_replicaStatus));
+  }
+
+  if(m_replicaBillingModeSummaryHasBeenSet)
+  {
+   payload.WithObject("ReplicaBillingModeSummary", m_replicaBillingModeSummary.Jsonize());
+
   }
 
   if(m_replicaProvisionedReadCapacityUnitsHasBeenSet)

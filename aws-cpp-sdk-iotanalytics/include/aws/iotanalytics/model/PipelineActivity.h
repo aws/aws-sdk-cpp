@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>Determines the source of the messages to be processed.</p>
      */
+    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
+
+    /**
+     * <p>Determines the source of the messages to be processed.</p>
+     */
     inline void SetChannel(const ChannelActivity& value) { m_channelHasBeenSet = true; m_channel = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Runs a Lambda function to modify the message.</p>
      */
     inline const LambdaActivity& GetLambda() const{ return m_lambda; }
+
+    /**
+     * <p>Runs a Lambda function to modify the message.</p>
+     */
+    inline bool LambdaHasBeenSet() const { return m_lambdaHasBeenSet; }
 
     /**
      * <p>Runs a Lambda function to modify the message.</p>
@@ -117,6 +127,11 @@ namespace Model
     /**
      * <p>Specifies where to store the processed message data.</p>
      */
+    inline bool DatastoreHasBeenSet() const { return m_datastoreHasBeenSet; }
+
+    /**
+     * <p>Specifies where to store the processed message data.</p>
+     */
     inline void SetDatastore(const DatastoreActivity& value) { m_datastoreHasBeenSet = true; m_datastore = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>Adds other attributes based on existing attributes in the message.</p>
      */
     inline const AddAttributesActivity& GetAddAttributes() const{ return m_addAttributes; }
+
+    /**
+     * <p>Adds other attributes based on existing attributes in the message.</p>
+     */
+    inline bool AddAttributesHasBeenSet() const { return m_addAttributesHasBeenSet; }
 
     /**
      * <p>Adds other attributes based on existing attributes in the message.</p>
@@ -169,6 +189,11 @@ namespace Model
     /**
      * <p>Removes attributes from a message.</p>
      */
+    inline bool RemoveAttributesHasBeenSet() const { return m_removeAttributesHasBeenSet; }
+
+    /**
+     * <p>Removes attributes from a message.</p>
+     */
     inline void SetRemoveAttributes(const RemoveAttributesActivity& value) { m_removeAttributesHasBeenSet = true; m_removeAttributes = value; }
 
     /**
@@ -192,6 +217,12 @@ namespace Model
      * message. </p>
      */
     inline const SelectAttributesActivity& GetSelectAttributes() const{ return m_selectAttributes; }
+
+    /**
+     * <p>Creates a new message using only the specified attributes from the original
+     * message. </p>
+     */
+    inline bool SelectAttributesHasBeenSet() const { return m_selectAttributesHasBeenSet; }
 
     /**
      * <p>Creates a new message using only the specified attributes from the original
@@ -226,6 +257,11 @@ namespace Model
     /**
      * <p>Filters a message based on its attributes.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Filters a message based on its attributes.</p>
+     */
     inline void SetFilter(const FilterActivity& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -249,6 +285,12 @@ namespace Model
      * to the message.</p>
      */
     inline const MathActivity& GetMath() const{ return m_math; }
+
+    /**
+     * <p>Computes an arithmetic expression using the message's attributes and adds it
+     * to the message.</p>
+     */
+    inline bool MathHasBeenSet() const { return m_mathHasBeenSet; }
 
     /**
      * <p>Computes an arithmetic expression using the message's attributes and adds it
@@ -283,6 +325,11 @@ namespace Model
     /**
      * <p>Adds data from the AWS IoT device registry to your message.</p>
      */
+    inline bool DeviceRegistryEnrichHasBeenSet() const { return m_deviceRegistryEnrichHasBeenSet; }
+
+    /**
+     * <p>Adds data from the AWS IoT device registry to your message.</p>
+     */
     inline void SetDeviceRegistryEnrich(const DeviceRegistryEnrichActivity& value) { m_deviceRegistryEnrichHasBeenSet = true; m_deviceRegistryEnrich = value; }
 
     /**
@@ -305,6 +352,11 @@ namespace Model
      * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
      */
     inline const DeviceShadowEnrichActivity& GetDeviceShadowEnrich() const{ return m_deviceShadowEnrich; }
+
+    /**
+     * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>
+     */
+    inline bool DeviceShadowEnrichHasBeenSet() const { return m_deviceShadowEnrichHasBeenSet; }
 
     /**
      * <p>Adds information from the AWS IoT Device Shadows service to a message.</p>

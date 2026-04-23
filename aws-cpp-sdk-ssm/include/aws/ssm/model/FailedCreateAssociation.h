@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The association.</p>
      */
+    inline bool EntryHasBeenSet() const { return m_entryHasBeenSet; }
+
+    /**
+     * <p>The association.</p>
+     */
     inline void SetEntry(const CreateAssociationBatchRequestEntry& value) { m_entryHasBeenSet = true; m_entry = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>A description of the failure.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A description of the failure.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A description of the failure.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>The source of the failure.</p>
      */
     inline const Fault& GetFault() const{ return m_fault; }
+
+    /**
+     * <p>The source of the failure.</p>
+     */
+    inline bool FaultHasBeenSet() const { return m_faultHasBeenSet; }
 
     /**
      * <p>The source of the failure.</p>

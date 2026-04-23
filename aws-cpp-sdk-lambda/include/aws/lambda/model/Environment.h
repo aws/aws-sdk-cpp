@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Environment variable key-value pairs.</p>
      */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>Environment variable key-value pairs.</p>
+     */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**

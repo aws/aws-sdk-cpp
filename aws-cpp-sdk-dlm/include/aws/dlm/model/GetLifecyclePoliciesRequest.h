@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifiers of the data lifecycle policies.</p>
      */
+    inline bool PolicyIdsHasBeenSet() const { return m_policyIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers of the data lifecycle policies.</p>
+     */
     inline void SetPolicyIds(const Aws::Vector<Aws::String>& value) { m_policyIdsHasBeenSet = true; m_policyIds = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The activation state.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The activation state.</p>
+     */
     inline void SetState(const GettablePolicyStateValues& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * <p>The resource type.</p>
      */
     inline const Aws::Vector<ResourceTypeValues>& GetResourceTypes() const{ return m_resourceTypes; }
+
+    /**
+     * <p>The resource type.</p>
+     */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
 
     /**
      * <p>The resource type.</p>
@@ -159,6 +174,12 @@ namespace Model
      * <code>key=value</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetTags() const{ return m_targetTags; }
+
+    /**
+     * <p>The target tag for a policy.</p> <p>Tags are strings in the format
+     * <code>key=value</code>.</p>
+     */
+    inline bool TargetTagsHasBeenSet() const { return m_targetTagsHasBeenSet; }
 
     /**
      * <p>The target tag for a policy.</p> <p>Tags are strings in the format
@@ -209,6 +230,13 @@ namespace Model
      * addition to the AWS-added lifecycle tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToAdd() const{ return m_tagsToAdd; }
+
+    /**
+     * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in
+     * the format <code>key=value</code>.</p> <p>These user-defined tags are added in
+     * addition to the AWS-added lifecycle tags.</p>
+     */
+    inline bool TagsToAddHasBeenSet() const { return m_tagsToAddHasBeenSet; }
 
     /**
      * <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in

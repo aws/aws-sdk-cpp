@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/glacier/GlacierClient.h>
 #include <aws/glacier/GlacierEndpoint.h>
 #include <aws/glacier/GlacierErrorMarshaller.h>
@@ -110,25 +113,47 @@ GlacierClient::~GlacierClient()
 
 void GlacierClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << GlacierEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + GlacierEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void GlacierClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AbortMultipartUploadOutcome GlacierClient::AbortMultipartUpload(const AbortMultipartUploadRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: AccountId, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: VaultName, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortMultipartUpload", "Required field: UploadId, is not set");
+    return AbortMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -167,8 +192,18 @@ void GlacierClient::AbortMultipartUploadAsyncHelper(const AbortMultipartUploadRe
 
 AbortVaultLockOutcome GlacierClient::AbortVaultLock(const AbortVaultLockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortVaultLock", "Required field: AccountId, is not set");
+    return AbortVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortVaultLock", "Required field: VaultName, is not set");
+    return AbortVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -206,8 +241,18 @@ void GlacierClient::AbortVaultLockAsyncHelper(const AbortVaultLockRequest& reque
 
 AddTagsToVaultOutcome GlacierClient::AddTagsToVault(const AddTagsToVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddTagsToVault", "Required field: AccountId, is not set");
+    return AddTagsToVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddTagsToVault", "Required field: VaultName, is not set");
+    return AddTagsToVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -247,8 +292,23 @@ void GlacierClient::AddTagsToVaultAsyncHelper(const AddTagsToVaultRequest& reque
 
 CompleteMultipartUploadOutcome GlacierClient::CompleteMultipartUpload(const CompleteMultipartUploadRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: AccountId, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: VaultName, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteMultipartUpload", "Required field: UploadId, is not set");
+    return CompleteMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -287,8 +347,23 @@ void GlacierClient::CompleteMultipartUploadAsyncHelper(const CompleteMultipartUp
 
 CompleteVaultLockOutcome GlacierClient::CompleteVaultLock(const CompleteVaultLockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteVaultLock", "Required field: AccountId, is not set");
+    return CompleteVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteVaultLock", "Required field: VaultName, is not set");
+    return CompleteVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.LockIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CompleteVaultLock", "Required field: LockId, is not set");
+    return CompleteVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LockId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -327,8 +402,18 @@ void GlacierClient::CompleteVaultLockAsyncHelper(const CompleteVaultLockRequest&
 
 CreateVaultOutcome GlacierClient::CreateVault(const CreateVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVault", "Required field: AccountId, is not set");
+    return CreateVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateVault", "Required field: VaultName, is not set");
+    return CreateVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -365,8 +450,23 @@ void GlacierClient::CreateVaultAsyncHelper(const CreateVaultRequest& request, co
 
 DeleteArchiveOutcome GlacierClient::DeleteArchive(const DeleteArchiveRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteArchive", "Required field: AccountId, is not set");
+    return DeleteArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteArchive", "Required field: VaultName, is not set");
+    return DeleteArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.ArchiveIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteArchive", "Required field: ArchiveId, is not set");
+    return DeleteArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ArchiveId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -405,8 +505,18 @@ void GlacierClient::DeleteArchiveAsyncHelper(const DeleteArchiveRequest& request
 
 DeleteVaultOutcome GlacierClient::DeleteVault(const DeleteVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVault", "Required field: AccountId, is not set");
+    return DeleteVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVault", "Required field: VaultName, is not set");
+    return DeleteVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -443,8 +553,18 @@ void GlacierClient::DeleteVaultAsyncHelper(const DeleteVaultRequest& request, co
 
 DeleteVaultAccessPolicyOutcome GlacierClient::DeleteVaultAccessPolicy(const DeleteVaultAccessPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVaultAccessPolicy", "Required field: AccountId, is not set");
+    return DeleteVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVaultAccessPolicy", "Required field: VaultName, is not set");
+    return DeleteVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -482,8 +602,18 @@ void GlacierClient::DeleteVaultAccessPolicyAsyncHelper(const DeleteVaultAccessPo
 
 DeleteVaultNotificationsOutcome GlacierClient::DeleteVaultNotifications(const DeleteVaultNotificationsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVaultNotifications", "Required field: AccountId, is not set");
+    return DeleteVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVaultNotifications", "Required field: VaultName, is not set");
+    return DeleteVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -521,8 +651,23 @@ void GlacierClient::DeleteVaultNotificationsAsyncHelper(const DeleteVaultNotific
 
 DescribeJobOutcome GlacierClient::DescribeJob(const DescribeJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: AccountId, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: VaultName, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: JobId, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -561,8 +706,18 @@ void GlacierClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, co
 
 DescribeVaultOutcome GlacierClient::DescribeVault(const DescribeVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVault", "Required field: AccountId, is not set");
+    return DescribeVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeVault", "Required field: VaultName, is not set");
+    return DescribeVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -599,8 +754,13 @@ void GlacierClient::DescribeVaultAsyncHelper(const DescribeVaultRequest& request
 
 GetDataRetrievalPolicyOutcome GlacierClient::GetDataRetrievalPolicy(const GetDataRetrievalPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDataRetrievalPolicy", "Required field: AccountId, is not set");
+    return GetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/policies/data-retrieval";
@@ -636,8 +796,23 @@ void GlacierClient::GetDataRetrievalPolicyAsyncHelper(const GetDataRetrievalPoli
 
 GetJobOutputOutcome GlacierClient::GetJobOutput(const GetJobOutputRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobOutput", "Required field: AccountId, is not set");
+    return GetJobOutputOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobOutput", "Required field: VaultName, is not set");
+    return GetJobOutputOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobOutput", "Required field: JobId, is not set");
+    return GetJobOutputOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -677,8 +852,18 @@ void GlacierClient::GetJobOutputAsyncHelper(const GetJobOutputRequest& request, 
 
 GetVaultAccessPolicyOutcome GlacierClient::GetVaultAccessPolicy(const GetVaultAccessPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultAccessPolicy", "Required field: AccountId, is not set");
+    return GetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultAccessPolicy", "Required field: VaultName, is not set");
+    return GetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -716,8 +901,18 @@ void GlacierClient::GetVaultAccessPolicyAsyncHelper(const GetVaultAccessPolicyRe
 
 GetVaultLockOutcome GlacierClient::GetVaultLock(const GetVaultLockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultLock", "Required field: AccountId, is not set");
+    return GetVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultLock", "Required field: VaultName, is not set");
+    return GetVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -755,8 +950,18 @@ void GlacierClient::GetVaultLockAsyncHelper(const GetVaultLockRequest& request, 
 
 GetVaultNotificationsOutcome GlacierClient::GetVaultNotifications(const GetVaultNotificationsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultNotifications", "Required field: AccountId, is not set");
+    return GetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVaultNotifications", "Required field: VaultName, is not set");
+    return GetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -794,8 +999,18 @@ void GlacierClient::GetVaultNotificationsAsyncHelper(const GetVaultNotifications
 
 InitiateJobOutcome GlacierClient::InitiateJob(const InitiateJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateJob", "Required field: AccountId, is not set");
+    return InitiateJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateJob", "Required field: VaultName, is not set");
+    return InitiateJobOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -833,8 +1048,18 @@ void GlacierClient::InitiateJobAsyncHelper(const InitiateJobRequest& request, co
 
 InitiateMultipartUploadOutcome GlacierClient::InitiateMultipartUpload(const InitiateMultipartUploadRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateMultipartUpload", "Required field: AccountId, is not set");
+    return InitiateMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateMultipartUpload", "Required field: VaultName, is not set");
+    return InitiateMultipartUploadOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -872,8 +1097,18 @@ void GlacierClient::InitiateMultipartUploadAsyncHelper(const InitiateMultipartUp
 
 InitiateVaultLockOutcome GlacierClient::InitiateVaultLock(const InitiateVaultLockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateVaultLock", "Required field: AccountId, is not set");
+    return InitiateVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("InitiateVaultLock", "Required field: VaultName, is not set");
+    return InitiateVaultLockOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -911,8 +1146,18 @@ void GlacierClient::InitiateVaultLockAsyncHelper(const InitiateVaultLockRequest&
 
 ListJobsOutcome GlacierClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobs", "Required field: AccountId, is not set");
+    return ListJobsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobs", "Required field: VaultName, is not set");
+    return ListJobsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -950,8 +1195,18 @@ void GlacierClient::ListJobsAsyncHelper(const ListJobsRequest& request, const Li
 
 ListMultipartUploadsOutcome GlacierClient::ListMultipartUploads(const ListMultipartUploadsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: AccountId, is not set");
+    return ListMultipartUploadsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListMultipartUploads", "Required field: VaultName, is not set");
+    return ListMultipartUploadsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -989,8 +1244,23 @@ void GlacierClient::ListMultipartUploadsAsyncHelper(const ListMultipartUploadsRe
 
 ListPartsOutcome GlacierClient::ListParts(const ListPartsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: AccountId, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: VaultName, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListParts", "Required field: UploadId, is not set");
+    return ListPartsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1029,8 +1299,13 @@ void GlacierClient::ListPartsAsyncHelper(const ListPartsRequest& request, const 
 
 ListProvisionedCapacityOutcome GlacierClient::ListProvisionedCapacity(const ListProvisionedCapacityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListProvisionedCapacity", "Required field: AccountId, is not set");
+    return ListProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/provisioned-capacity";
@@ -1066,8 +1341,18 @@ void GlacierClient::ListProvisionedCapacityAsyncHelper(const ListProvisionedCapa
 
 ListTagsForVaultOutcome GlacierClient::ListTagsForVault(const ListTagsForVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForVault", "Required field: AccountId, is not set");
+    return ListTagsForVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForVault", "Required field: VaultName, is not set");
+    return ListTagsForVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1105,8 +1390,13 @@ void GlacierClient::ListTagsForVaultAsyncHelper(const ListTagsForVaultRequest& r
 
 ListVaultsOutcome GlacierClient::ListVaults(const ListVaultsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVaults", "Required field: AccountId, is not set");
+    return ListVaultsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults";
@@ -1142,8 +1432,13 @@ void GlacierClient::ListVaultsAsyncHelper(const ListVaultsRequest& request, cons
 
 PurchaseProvisionedCapacityOutcome GlacierClient::PurchaseProvisionedCapacity(const PurchaseProvisionedCapacityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PurchaseProvisionedCapacity", "Required field: AccountId, is not set");
+    return PurchaseProvisionedCapacityOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/provisioned-capacity";
@@ -1179,8 +1474,18 @@ void GlacierClient::PurchaseProvisionedCapacityAsyncHelper(const PurchaseProvisi
 
 RemoveTagsFromVaultOutcome GlacierClient::RemoveTagsFromVault(const RemoveTagsFromVaultRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveTagsFromVault", "Required field: AccountId, is not set");
+    return RemoveTagsFromVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveTagsFromVault", "Required field: VaultName, is not set");
+    return RemoveTagsFromVaultOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1220,8 +1525,13 @@ void GlacierClient::RemoveTagsFromVaultAsyncHelper(const RemoveTagsFromVaultRequ
 
 SetDataRetrievalPolicyOutcome GlacierClient::SetDataRetrievalPolicy(const SetDataRetrievalPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetDataRetrievalPolicy", "Required field: AccountId, is not set");
+    return SetDataRetrievalPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/policies/data-retrieval";
@@ -1257,8 +1567,18 @@ void GlacierClient::SetDataRetrievalPolicyAsyncHelper(const SetDataRetrievalPoli
 
 SetVaultAccessPolicyOutcome GlacierClient::SetVaultAccessPolicy(const SetVaultAccessPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetVaultAccessPolicy", "Required field: AccountId, is not set");
+    return SetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetVaultAccessPolicy", "Required field: VaultName, is not set");
+    return SetVaultAccessPolicyOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1296,8 +1616,18 @@ void GlacierClient::SetVaultAccessPolicyAsyncHelper(const SetVaultAccessPolicyRe
 
 SetVaultNotificationsOutcome GlacierClient::SetVaultNotifications(const SetVaultNotificationsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetVaultNotifications", "Required field: AccountId, is not set");
+    return SetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetVaultNotifications", "Required field: VaultName, is not set");
+    return SetVaultNotificationsOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1335,8 +1665,18 @@ void GlacierClient::SetVaultNotificationsAsyncHelper(const SetVaultNotifications
 
 UploadArchiveOutcome GlacierClient::UploadArchive(const UploadArchiveRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadArchive", "Required field: VaultName, is not set");
+    return UploadArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadArchive", "Required field: AccountId, is not set");
+    return UploadArchiveOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";
@@ -1374,8 +1714,23 @@ void GlacierClient::UploadArchiveAsyncHelper(const UploadArchiveRequest& request
 
 UploadMultipartPartOutcome GlacierClient::UploadMultipartPart(const UploadMultipartPartRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadMultipartPart", "Required field: AccountId, is not set");
+    return UploadMultipartPartOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
+  if (!request.VaultNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadMultipartPart", "Required field: VaultName, is not set");
+    return UploadMultipartPartOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VaultName]", false));
+  }
+  if (!request.UploadIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UploadMultipartPart", "Required field: UploadId, is not set");
+    return UploadMultipartPartOutcome(Aws::Client::AWSError<GlacierErrors>(GlacierErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UploadId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   ss << request.GetAccountId();
   ss << "/vaults/";

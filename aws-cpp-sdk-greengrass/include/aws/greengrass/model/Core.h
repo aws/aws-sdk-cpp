@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the certificate associated with the core.
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * The ARN of the certificate associated with the core.
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -86,49 +91,56 @@ namespace Model
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * A descriptive or arbitrary ID for the core. This value must be unique within the
+     * core definition version. Max length is 128 characters with pattern
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Core& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Core& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * A descriptive or arbitrary ID for the core. This value must be unique within the
      * core definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Core& WithId(const char* value) { SetId(value); return *this;}
 
@@ -137,6 +149,11 @@ namespace Model
      * If true, the core's local shadow is automatically synced with the cloud.
      */
     inline bool GetSyncShadow() const{ return m_syncShadow; }
+
+    /**
+     * If true, the core's local shadow is automatically synced with the cloud.
+     */
+    inline bool SyncShadowHasBeenSet() const { return m_syncShadowHasBeenSet; }
 
     /**
      * If true, the core's local shadow is automatically synced with the cloud.
@@ -153,6 +170,11 @@ namespace Model
      * The ARN of the thing which is the core.
      */
     inline const Aws::String& GetThingArn() const{ return m_thingArn; }
+
+    /**
+     * The ARN of the thing which is the core.
+     */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
 
     /**
      * The ARN of the thing which is the core.

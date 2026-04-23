@@ -34,8 +34,11 @@ namespace Model
 {
 
   /**
-   * <p>An object representing the secret to expose to your container.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>An object representing the secret to expose to your container. For more
+   * information, see <a
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/specifying-sensitive-data.html">Specifying
+   * Sensitive Data</a> in the <i>Amazon Elastic Container Service Developer
+   * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Secret">AWS API
    * Reference</a></p>
    */
@@ -52,6 +55,11 @@ namespace Model
      * <p>The value to set as the environment variable on the container.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The value to set as the environment variable on the container.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The value to set as the environment variable on the container.</p>
@@ -85,51 +93,106 @@ namespace Model
 
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline const Aws::String& GetValueFrom() const{ return m_valueFrom; }
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
+     */
+    inline bool ValueFromHasBeenSet() const { return m_valueFromHasBeenSet; }
+
+    /**
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline void SetValueFrom(const Aws::String& value) { m_valueFromHasBeenSet = true; m_valueFrom = value; }
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline void SetValueFrom(Aws::String&& value) { m_valueFromHasBeenSet = true; m_valueFrom = std::move(value); }
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline void SetValueFrom(const char* value) { m_valueFromHasBeenSet = true; m_valueFrom.assign(value); }
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline Secret& WithValueFrom(const Aws::String& value) { SetValueFrom(value); return *this;}
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline Secret& WithValueFrom(Aws::String&& value) { SetValueFrom(std::move(value)); return *this;}
 
     /**
-     * <p>The secret to expose to the container. Supported values are either the full
-     * ARN or the name of the parameter in the AWS Systems Manager Parameter Store.
-     * </p>
+     * <p>The secret to expose to the container. If your task is using the EC2 launch
+     * type, then supported values are either the full ARN of the AWS Secrets Manager
+     * secret or the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store. If your task is using the Fargate launch type, then the only supported
+     * value is the full ARN of the parameter in the AWS Systems Manager Parameter
+     * Store.</p> <note> <p>If the AWS Systems Manager Parameter Store parameter exists
+     * in the same Region as the task you are launching, then you can use either the
+     * full ARN or name of the parameter. If the parameter exists in a different
+     * Region, then the full ARN must be specified.</p> </note>
      */
     inline Secret& WithValueFrom(const char* value) { SetValueFrom(value); return *this;}
 

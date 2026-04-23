@@ -54,6 +54,12 @@ namespace Model
      * <p>The statement ID corresponding to the account that is no longer allowed to
      * put events to the default event bus.</p>
      */
+    inline bool StatementIdHasBeenSet() const { return m_statementIdHasBeenSet; }
+
+    /**
+     * <p>The statement ID corresponding to the account that is no longer allowed to
+     * put events to the default event bus.</p>
+     */
     inline void SetStatementId(const Aws::String& value) { m_statementIdHasBeenSet = true; m_statementId = value; }
 
     /**

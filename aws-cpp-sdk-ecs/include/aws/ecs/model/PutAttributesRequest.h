@@ -58,6 +58,13 @@ namespace Model
      * contains the resource to apply attributes. If you do not specify a cluster, the
      * default cluster is assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that
+     * contains the resource to apply attributes. If you do not specify a cluster, the
+     * default cluster is assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -102,6 +109,13 @@ namespace Model
      * call.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes to apply to your resource. You can specify up to 10 custom
+     * attributes per resource. You can specify up to 10 attributes in a single
+     * call.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes to apply to your resource. You can specify up to 10 custom

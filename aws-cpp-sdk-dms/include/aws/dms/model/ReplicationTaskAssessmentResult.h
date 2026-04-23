@@ -58,6 +58,12 @@ namespace Model
      * <p> The replication task identifier of the task on which the task assessment was
      * run. </p>
      */
+    inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
+
+    /**
+     * <p> The replication task identifier of the task on which the task assessment was
+     * run. </p>
+     */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task. </p>
      */
+    inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication task. </p>
+     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The date the task assessment was completed. </p>
      */
+    inline bool ReplicationTaskLastAssessmentDateHasBeenSet() const { return m_replicationTaskLastAssessmentDateHasBeenSet; }
+
+    /**
+     * <p>The date the task assessment was completed. </p>
+     */
     inline void SetReplicationTaskLastAssessmentDate(const Aws::Utils::DateTime& value) { m_replicationTaskLastAssessmentDateHasBeenSet = true; m_replicationTaskLastAssessmentDate = value; }
 
     /**
@@ -157,6 +173,11 @@ namespace Model
      * <p> The status of the task assessment. </p>
      */
     inline const Aws::String& GetAssessmentStatus() const{ return m_assessmentStatus; }
+
+    /**
+     * <p> The status of the task assessment. </p>
+     */
+    inline bool AssessmentStatusHasBeenSet() const { return m_assessmentStatusHasBeenSet; }
 
     /**
      * <p> The status of the task assessment. </p>
@@ -197,6 +218,11 @@ namespace Model
     /**
      * <p> The file containing the results of the task assessment. </p>
      */
+    inline bool AssessmentResultsFileHasBeenSet() const { return m_assessmentResultsFileHasBeenSet; }
+
+    /**
+     * <p> The file containing the results of the task assessment. </p>
+     */
     inline void SetAssessmentResultsFile(const Aws::String& value) { m_assessmentResultsFileHasBeenSet = true; m_assessmentResultsFile = value; }
 
     /**
@@ -233,6 +259,11 @@ namespace Model
     /**
      * <p> The task assessment results in JSON format. </p>
      */
+    inline bool AssessmentResultsHasBeenSet() const { return m_assessmentResultsHasBeenSet; }
+
+    /**
+     * <p> The task assessment results in JSON format. </p>
+     */
     inline void SetAssessmentResults(const Aws::String& value) { m_assessmentResultsHasBeenSet = true; m_assessmentResults = value; }
 
     /**
@@ -265,6 +296,11 @@ namespace Model
      * <p> The URL of the S3 object containing the task assessment results. </p>
      */
     inline const Aws::String& GetS3ObjectUrl() const{ return m_s3ObjectUrl; }
+
+    /**
+     * <p> The URL of the S3 object containing the task assessment results. </p>
+     */
+    inline bool S3ObjectUrlHasBeenSet() const { return m_s3ObjectUrlHasBeenSet; }
 
     /**
      * <p> The URL of the S3 object containing the task assessment results. </p>

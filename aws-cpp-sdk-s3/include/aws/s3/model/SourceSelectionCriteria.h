@@ -60,6 +60,13 @@ namespace Model
      * with AWS KMS. If you include <code>SourceSelectionCriteria</code> in the
      * replication configuration, this element is required. </p>
      */
+    inline bool SseKmsEncryptedObjectsHasBeenSet() const { return m_sseKmsEncryptedObjectsHasBeenSet; }
+
+    /**
+     * <p> A container for filter information for the selection of S3 objects encrypted
+     * with AWS KMS. If you include <code>SourceSelectionCriteria</code> in the
+     * replication configuration, this element is required. </p>
+     */
     inline void SetSseKmsEncryptedObjects(const SseKmsEncryptedObjects& value) { m_sseKmsEncryptedObjectsHasBeenSet = true; m_sseKmsEncryptedObjects = value; }
 
     /**

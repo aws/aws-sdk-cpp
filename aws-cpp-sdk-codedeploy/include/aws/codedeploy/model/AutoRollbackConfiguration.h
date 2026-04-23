@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>Information about a configuration for automatically rolling back to a
-   * previous version of an application revision when a deployment doesn't complete
+   * previous version of an application revision when a deployment is not completed
    * successfully.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/AutoRollbackConfiguration">AWS
    * API Reference</a></p>
@@ -60,6 +60,12 @@ namespace Model
      * <p>Indicates whether a defined automatic rollback configuration is currently
      * enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a defined automatic rollback configuration is currently
+     * enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The event type or types that trigger a rollback.</p>
      */
     inline const Aws::Vector<AutoRollbackEvent>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The event type or types that trigger a rollback.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The event type or types that trigger a rollback.</p>

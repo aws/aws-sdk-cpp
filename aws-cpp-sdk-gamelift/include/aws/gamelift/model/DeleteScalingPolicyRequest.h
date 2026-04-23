@@ -57,6 +57,12 @@ namespace Model
      * <p>Descriptive label that is associated with a scaling policy. Policy names do
      * not need to be unique.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Descriptive label that is associated with a scaling policy. Policy names do
+     * not need to be unique.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>Unique identifier for a fleet to be deleted.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>Unique identifier for a fleet to be deleted.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a fleet to be deleted.</p>

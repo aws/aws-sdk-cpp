@@ -21,6 +21,7 @@
 #include <aws/redshift/model/ResponseMetadata.h>
 #include <aws/redshift/model/Tag.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/redshift/model/ClusterAssociatedToSchedule.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +60,11 @@ namespace Model
      * <p>A list of ScheduleDefinitions</p>
      */
     inline const Aws::Vector<Aws::String>& GetScheduleDefinitions() const{ return m_scheduleDefinitions; }
+
+    /**
+     * <p>A list of ScheduleDefinitions</p>
+     */
+    inline bool ScheduleDefinitionsHasBeenSet() const { return m_scheduleDefinitionsHasBeenSet; }
 
     /**
      * <p>A list of ScheduleDefinitions</p>
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>A unique identifier for the schedule.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the schedule.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
      * <p>The description of the schedule.</p>
      */
     inline const Aws::String& GetScheduleDescription() const{ return m_scheduleDescription; }
+
+    /**
+     * <p>The description of the schedule.</p>
+     */
+    inline bool ScheduleDescriptionHasBeenSet() const { return m_scheduleDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the schedule.</p>
@@ -176,6 +192,11 @@ namespace Model
     /**
      * <p>An optional set of tags describing the schedule.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An optional set of tags describing the schedule.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -208,6 +229,9 @@ namespace Model
     inline const Aws::Vector<Aws::Utils::DateTime>& GetNextInvocations() const{ return m_nextInvocations; }
 
     
+    inline bool NextInvocationsHasBeenSet() const { return m_nextInvocationsHasBeenSet; }
+
+    
     inline void SetNextInvocations(const Aws::Vector<Aws::Utils::DateTime>& value) { m_nextInvocationsHasBeenSet = true; m_nextInvocations = value; }
 
     
@@ -227,7 +251,48 @@ namespace Model
 
 
     
+    inline int GetAssociatedClusterCount() const{ return m_associatedClusterCount; }
+
+    
+    inline bool AssociatedClusterCountHasBeenSet() const { return m_associatedClusterCountHasBeenSet; }
+
+    
+    inline void SetAssociatedClusterCount(int value) { m_associatedClusterCountHasBeenSet = true; m_associatedClusterCount = value; }
+
+    
+    inline SnapshotSchedule& WithAssociatedClusterCount(int value) { SetAssociatedClusterCount(value); return *this;}
+
+
+    
+    inline const Aws::Vector<ClusterAssociatedToSchedule>& GetAssociatedClusters() const{ return m_associatedClusters; }
+
+    
+    inline bool AssociatedClustersHasBeenSet() const { return m_associatedClustersHasBeenSet; }
+
+    
+    inline void SetAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = value; }
+
+    
+    inline void SetAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters = std::move(value); }
+
+    
+    inline SnapshotSchedule& WithAssociatedClusters(const Aws::Vector<ClusterAssociatedToSchedule>& value) { SetAssociatedClusters(value); return *this;}
+
+    
+    inline SnapshotSchedule& WithAssociatedClusters(Aws::Vector<ClusterAssociatedToSchedule>&& value) { SetAssociatedClusters(std::move(value)); return *this;}
+
+    
+    inline SnapshotSchedule& AddAssociatedClusters(const ClusterAssociatedToSchedule& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(value); return *this; }
+
+    
+    inline SnapshotSchedule& AddAssociatedClusters(ClusterAssociatedToSchedule&& value) { m_associatedClustersHasBeenSet = true; m_associatedClusters.push_back(std::move(value)); return *this; }
+
+
+    
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }
@@ -257,6 +322,12 @@ namespace Model
 
     Aws::Vector<Aws::Utils::DateTime> m_nextInvocations;
     bool m_nextInvocationsHasBeenSet;
+
+    int m_associatedClusterCount;
+    bool m_associatedClusterCountHasBeenSet;
+
+    Aws::Vector<ClusterAssociatedToSchedule> m_associatedClusters;
+    bool m_associatedClustersHasBeenSet;
 
     ResponseMetadata m_responseMetadata;
     bool m_responseMetadataHasBeenSet;

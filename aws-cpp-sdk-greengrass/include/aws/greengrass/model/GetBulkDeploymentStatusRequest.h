@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the bulk deployment.
      */
+    inline bool BulkDeploymentIdHasBeenSet() const { return m_bulkDeploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the bulk deployment.
+     */
     inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = value; }
 
     /**

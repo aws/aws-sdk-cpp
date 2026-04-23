@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the HSM client certificate to be deleted.</p>
      */
+    inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the HSM client certificate to be deleted.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**

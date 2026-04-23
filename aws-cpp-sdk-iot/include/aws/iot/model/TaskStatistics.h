@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of checks in this audit.</p>
      */
+    inline bool TotalChecksHasBeenSet() const { return m_totalChecksHasBeenSet; }
+
+    /**
+     * <p>The number of checks in this audit.</p>
+     */
     inline void SetTotalChecks(int value) { m_totalChecksHasBeenSet = true; m_totalChecks = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The number of checks in progress.</p>
      */
     inline int GetInProgressChecks() const{ return m_inProgressChecks; }
+
+    /**
+     * <p>The number of checks in progress.</p>
+     */
+    inline bool InProgressChecksHasBeenSet() const { return m_inProgressChecksHasBeenSet; }
 
     /**
      * <p>The number of checks in progress.</p>
@@ -86,6 +96,11 @@ namespace Model
     /**
      * <p>The number of checks waiting for data collection.</p>
      */
+    inline bool WaitingForDataCollectionChecksHasBeenSet() const { return m_waitingForDataCollectionChecksHasBeenSet; }
+
+    /**
+     * <p>The number of checks waiting for data collection.</p>
+     */
     inline void SetWaitingForDataCollectionChecks(int value) { m_waitingForDataCollectionChecksHasBeenSet = true; m_waitingForDataCollectionChecks = value; }
 
     /**
@@ -98,6 +113,11 @@ namespace Model
      * <p>The number of checks that found compliant resources.</p>
      */
     inline int GetCompliantChecks() const{ return m_compliantChecks; }
+
+    /**
+     * <p>The number of checks that found compliant resources.</p>
+     */
+    inline bool CompliantChecksHasBeenSet() const { return m_compliantChecksHasBeenSet; }
 
     /**
      * <p>The number of checks that found compliant resources.</p>
@@ -118,6 +138,11 @@ namespace Model
     /**
      * <p>The number of checks that found non-compliant resources.</p>
      */
+    inline bool NonCompliantChecksHasBeenSet() const { return m_nonCompliantChecksHasBeenSet; }
+
+    /**
+     * <p>The number of checks that found non-compliant resources.</p>
+     */
     inline void SetNonCompliantChecks(int value) { m_nonCompliantChecksHasBeenSet = true; m_nonCompliantChecks = value; }
 
     /**
@@ -134,6 +159,11 @@ namespace Model
     /**
      * <p>The number of checks </p>
      */
+    inline bool FailedChecksHasBeenSet() const { return m_failedChecksHasBeenSet; }
+
+    /**
+     * <p>The number of checks </p>
+     */
     inline void SetFailedChecks(int value) { m_failedChecksHasBeenSet = true; m_failedChecks = value; }
 
     /**
@@ -146,6 +176,11 @@ namespace Model
      * <p>The number of checks that did not run because the audit was canceled.</p>
      */
     inline int GetCanceledChecks() const{ return m_canceledChecks; }
+
+    /**
+     * <p>The number of checks that did not run because the audit was canceled.</p>
+     */
+    inline bool CanceledChecksHasBeenSet() const { return m_canceledChecksHasBeenSet; }
 
     /**
      * <p>The number of checks that did not run because the audit was canceled.</p>

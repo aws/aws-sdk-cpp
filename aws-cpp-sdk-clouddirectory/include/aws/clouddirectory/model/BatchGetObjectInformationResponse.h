@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The facets attached to the specified object.</p>
      */
+    inline bool SchemaFacetsHasBeenSet() const { return m_schemaFacetsHasBeenSet; }
+
+    /**
+     * <p>The facets attached to the specified object.</p>
+     */
     inline void SetSchemaFacets(const Aws::Vector<SchemaFacet>& value) { m_schemaFacetsHasBeenSet = true; m_schemaFacets = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> of the specified object.</p>
+     */
+    inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
 
     /**
      * <p>The <code>ObjectIdentifier</code> of the specified object.</p>

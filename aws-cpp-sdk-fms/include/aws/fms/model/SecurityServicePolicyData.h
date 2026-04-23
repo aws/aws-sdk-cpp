@@ -50,32 +50,44 @@ namespace Model
 
 
     /**
-     * <p>The service that the policy is using to protect the resources. This value is
-     * <code>WAF</code>.</p>
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
      */
     inline const SecurityServiceType& GetType() const{ return m_type; }
 
     /**
-     * <p>The service that the policy is using to protect the resources. This value is
-     * <code>WAF</code>.</p>
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
      */
     inline void SetType(const SecurityServiceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
-     * <p>The service that the policy is using to protect the resources. This value is
-     * <code>WAF</code>.</p>
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
      */
     inline void SetType(SecurityServiceType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
     /**
-     * <p>The service that the policy is using to protect the resources. This value is
-     * <code>WAF</code>.</p>
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
      */
     inline SecurityServicePolicyData& WithType(const SecurityServiceType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The service that the policy is using to protect the resources. This value is
-     * <code>WAF</code>.</p>
+     * <p>The service that the policy is using to protect the resources. This specifies
+     * the type of policy that is created, either a WAF policy or Shield Advanced
+     * policy.</p>
      */
     inline SecurityServicePolicyData& WithType(SecurityServiceType&& value) { SetType(std::move(value)); return *this;}
 
@@ -85,7 +97,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline const Aws::String& GetManagedServiceData() const{ return m_managedServiceData; }
 
@@ -94,7 +107,18 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
+     */
+    inline bool ManagedServiceDataHasBeenSet() const { return m_managedServiceDataHasBeenSet; }
+
+    /**
+     * <p>Details about the service. This contains <code>WAF</code> data in JSON
+     * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
+     * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
+     * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline void SetManagedServiceData(const Aws::String& value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData = value; }
 
@@ -103,7 +127,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline void SetManagedServiceData(Aws::String&& value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData = std::move(value); }
 
@@ -112,7 +137,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline void SetManagedServiceData(const char* value) { m_managedServiceDataHasBeenSet = true; m_managedServiceData.assign(value); }
 
@@ -121,7 +147,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline SecurityServicePolicyData& WithManagedServiceData(const Aws::String& value) { SetManagedServiceData(value); return *this;}
 
@@ -130,7 +157,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline SecurityServicePolicyData& WithManagedServiceData(Aws::String&& value) { SetManagedServiceData(std::move(value)); return *this;}
 
@@ -139,7 +167,8 @@ namespace Model
      * format, as shown in the following example:</p> <p> <code>ManagedServiceData":
      * "{\"type\": \"WAF\", \"ruleGroups\": [{\"id\":
      * \"12345678-1bcd-9012-efga-0987654321ab\", \"overrideAction\" : {\"type\":
-     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p>
+     * \"COUNT\"}}], \"defaultAction\": {\"type\": \"BLOCK\"}}</code> </p> <p>If this
+     * is a Shield Advanced policy, this string will be empty.</p>
      */
     inline SecurityServicePolicyData& WithManagedServiceData(const char* value) { SetManagedServiceData(value); return *this;}
 

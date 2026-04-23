@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DeleteDirectConnectGatewayAssociationRequest::DeleteDirectConnectGatewayAssociationRequest() : 
+    m_associationIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false)
 {
@@ -31,6 +32,12 @@ DeleteDirectConnectGatewayAssociationRequest::DeleteDirectConnectGatewayAssociat
 Aws::String DeleteDirectConnectGatewayAssociationRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_associationIdHasBeenSet)
+  {
+   payload.WithString("associationId", m_associationId);
+
+  }
 
   if(m_directConnectGatewayIdHasBeenSet)
   {

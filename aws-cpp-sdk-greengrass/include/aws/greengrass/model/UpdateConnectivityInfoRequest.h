@@ -55,6 +55,11 @@ namespace Model
     /**
      * A list of connectivity info.
      */
+    inline bool ConnectivityInfoHasBeenSet() const { return m_connectivityInfoHasBeenSet; }
+
+    /**
+     * A list of connectivity info.
+     */
     inline void SetConnectivityInfo(const Aws::Vector<ConnectivityInfo>& value) { m_connectivityInfoHasBeenSet = true; m_connectivityInfo = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The thing name.
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * The thing name.
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * The thing name.

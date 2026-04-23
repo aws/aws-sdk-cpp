@@ -54,6 +54,12 @@ namespace Model
      * <p>The system-generated ID of the comment you want to update. To get this ID,
      * use <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
      */
+    inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the comment you want to update. To get this ID,
+     * use <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
+     */
     inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * the comment.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The updated content with which you want to replace the existing content of
+     * the comment.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The updated content with which you want to replace the existing content of

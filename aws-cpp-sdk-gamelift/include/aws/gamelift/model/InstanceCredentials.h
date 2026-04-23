@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>User login string.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>User login string.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * saved as a <code>.pem</code> file) for use with SSH.</p>
      */
     inline const Aws::String& GetSecret() const{ return m_secret; }
+
+    /**
+     * <p>Secret string. For Windows instances, the secret is a password for use with
+     * Windows Remote Desktop. For Linux instances, it is a private key (which must be
+     * saved as a <code>.pem</code> file) for use with SSH.</p>
+     */
+    inline bool SecretHasBeenSet() const { return m_secretHasBeenSet; }
 
     /**
      * <p>Secret string. For Windows instances, the secret is a password for use with

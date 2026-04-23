@@ -68,6 +68,16 @@ transfer with the key
      * provider service.
 
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * An Amazon Resource Name (ARN) of a Certificate Manager certificate
+that
+     * MediaPackage will use for enforcing secure end-to-end data
+transfer with the key
+     * provider service.
+
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -129,6 +139,11 @@ transfer with the key
     /**
      * The resource ID to include in key requests.
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * The resource ID to include in key requests.
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -164,6 +179,14 @@ MediaPackage
 
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
+MediaPackage
+     * will assume when accessing the key provider service.
+
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * An Amazon Resource Name (ARN) of an IAM role that AWS Elemental
@@ -222,6 +245,11 @@ MediaPackage
     /**
      * The system IDs to include in key requests.
      */
+    inline bool SystemIdsHasBeenSet() const { return m_systemIdsHasBeenSet; }
+
+    /**
+     * The system IDs to include in key requests.
+     */
     inline void SetSystemIds(const Aws::Vector<Aws::String>& value) { m_systemIdsHasBeenSet = true; m_systemIds = value; }
 
     /**
@@ -259,6 +287,11 @@ MediaPackage
      * The URL of the external key provider service.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL of the external key provider service.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL of the external key provider service.

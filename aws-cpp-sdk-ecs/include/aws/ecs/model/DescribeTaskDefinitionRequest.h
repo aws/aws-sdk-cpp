@@ -60,6 +60,14 @@ namespace Model
      * a specific revision in the family, or full Amazon Resource Name (ARN) of the
      * task definition to describe.</p>
      */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
+
+    /**
+     * <p>The <code>family</code> for the latest <code>ACTIVE</code> revision,
+     * <code>family</code> and <code>revision</code> (<code>family:revision</code>) for
+     * a specific revision in the family, or full Amazon Resource Name (ARN) of the
+     * task definition to describe.</p>
+     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**
@@ -109,6 +117,13 @@ namespace Model
      * field is omitted, tags are not included in the response.</p>
      */
     inline const Aws::Vector<TaskDefinitionField>& GetInclude() const{ return m_include; }
+
+    /**
+     * <p>Specifies whether to see the resource tags for the task definition. If
+     * <code>TAGS</code> is specified, the tags are included in the response. If this
+     * field is omitted, tags are not included in the response.</p>
+     */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
 
     /**
      * <p>Specifies whether to see the resource tags for the task definition. If

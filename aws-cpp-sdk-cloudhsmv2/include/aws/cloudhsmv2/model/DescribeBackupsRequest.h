@@ -56,6 +56,12 @@ namespace Model
      * <p>The <code>NextToken</code> value that you received in the previous response.
      * Use this value to get more backups.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>NextToken</code> value that you received in the previous response.
+     * Use this value to get more backups.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -101,6 +107,13 @@ namespace Model
      * backups than the number you specify, the response contains a
      * <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of backups to return in the response. When there are more
+     * backups than the number you specify, the response contains a
+     * <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -123,6 +136,19 @@ namespace Model
      * return only backups that match the specified state.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters to limit the items returned in the response.</p> <p>Use
+     * the <code>backupIds</code> filter to return only the specified backups. Specify
+     * backups by their backup identifier (ID).</p> <p>Use the
+     * <code>sourceBackupIds</code> filter to return only the backups created from a
+     * source backup. The <code>sourceBackupID</code> of a source backup is returned by
+     * the <a>CopyBackupToRegion</a> operation.</p> <p>Use the <code>clusterIds</code>
+     * filter to return only the backups for the specified clusters. Specify clusters
+     * by their cluster identifier (ID).</p> <p>Use the <code>states</code> filter to
+     * return only backups that match the specified state.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters to limit the items returned in the response.</p> <p>Use
@@ -257,6 +283,9 @@ namespace Model
 
     
     inline bool GetSortAscending() const{ return m_sortAscending; }
+
+    
+    inline bool SortAscendingHasBeenSet() const { return m_sortAscendingHasBeenSet; }
 
     
     inline void SetSortAscending(bool value) { m_sortAscendingHasBeenSet = true; m_sortAscending = value; }

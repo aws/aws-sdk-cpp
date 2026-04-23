@@ -61,6 +61,13 @@ namespace Model
      * format of a trail ARN is:</p> <p>
      * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the ARN of the trail to which one or more tags will be added. The
+     * format of a trail ARN is:</p> <p>
+     * <code>arn:aws:cloudtrail:us-east-2:123456789012:trail/MyTrail</code> </p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
      */
     inline const Aws::Vector<Tag>& GetTagsList() const{ return m_tagsList; }
+
+    /**
+     * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>
+     */
+    inline bool TagsListHasBeenSet() const { return m_tagsListHasBeenSet; }
 
     /**
      * <p>Contains a list of CloudTrail tags, up to a limit of 50</p>

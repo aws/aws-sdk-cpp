@@ -58,6 +58,12 @@ namespace Model
      * <p>Enables or disables persistent application settings for users during their
      * streaming sessions. </p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Enables or disables persistent application settings for users during their
+     * streaming sessions. </p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -74,6 +80,14 @@ namespace Model
      * stack. </p>
      */
     inline const Aws::String& GetSettingsGroup() const{ return m_settingsGroup; }
+
+    /**
+     * <p>The path prefix for the S3 bucket where users’ persistent application
+     * settings are stored. You can allow the same persistent application settings to
+     * be used across multiple stacks by specifying the same settings group for each
+     * stack. </p>
+     */
+    inline bool SettingsGroupHasBeenSet() const { return m_settingsGroupHasBeenSet; }
 
     /**
      * <p>The path prefix for the S3 bucket where users’ persistent application

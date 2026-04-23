@@ -29,7 +29,7 @@ GetDedicatedIpRequest::GetDedicatedIpRequest() :
 
 Aws::String GetDedicatedIpRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDedicatedIpRequest::GetRequestSpecificHeaders() const

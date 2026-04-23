@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the MQTT topic.</p>
      */
     inline const Aws::String& GetTopic() const{ return m_topic; }
+
+    /**
+     * <p>The name of the MQTT topic.</p>
+     */
+    inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
 
     /**
      * <p>The name of the MQTT topic.</p>

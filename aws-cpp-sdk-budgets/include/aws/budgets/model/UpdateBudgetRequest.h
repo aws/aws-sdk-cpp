@@ -58,6 +58,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget that you want
      * to update.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to update.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The budget that you want to update your budget to.</p>
      */
     inline const Budget& GetNewBudget() const{ return m_newBudget; }
+
+    /**
+     * <p>The budget that you want to update your budget to.</p>
+     */
+    inline bool NewBudgetHasBeenSet() const { return m_newBudgetHasBeenSet; }
 
     /**
      * <p>The budget that you want to update your budget to.</p>

@@ -58,6 +58,12 @@ namespace Model
      * Identifies whether this action starts relative to the start or relative to the
      * end of the reference action.
      */
+    inline bool FollowPointHasBeenSet() const { return m_followPointHasBeenSet; }
+
+    /**
+     * Identifies whether this action starts relative to the start or relative to the
+     * end of the reference action.
+     */
     inline void SetFollowPoint(const FollowPoint& value) { m_followPointHasBeenSet = true; m_followPoint = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * The action name of another action that this one refers to.
      */
     inline const Aws::String& GetReferenceActionName() const{ return m_referenceActionName; }
+
+    /**
+     * The action name of another action that this one refers to.
+     */
+    inline bool ReferenceActionNameHasBeenSet() const { return m_referenceActionNameHasBeenSet; }
 
     /**
      * The action name of another action that this one refers to.

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the skill group to disassociate from a room. Required.</p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill group to disassociate from a room. Required.</p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * Required.</p>
      */
     inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
+
+    /**
+     * <p>The ARN of the room from which the skill group is to be disassociated.
+     * Required.</p>
+     */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
 
     /**
      * <p>The ARN of the room from which the skill group is to be disassociated.

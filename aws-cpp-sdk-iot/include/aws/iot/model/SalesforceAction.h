@@ -60,6 +60,13 @@ namespace Model
      * Stream. The token is available from the Salesforce IoT Cloud platform after
      * creation of the Input Stream.</p>
      */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
+
+    /**
+     * <p>The token used to authenticate access to the Salesforce IoT Cloud Input
+     * Stream. The token is available from the Salesforce IoT Cloud platform after
+     * creation of the Input Stream.</p>
+     */
     inline void SetToken(const Aws::String& value) { m_tokenHasBeenSet = true; m_token = value; }
 
     /**
@@ -104,6 +111,13 @@ namespace Model
      * Stream.</p>
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is
+     * available from the Salesforce IoT Cloud platform after creation of the Input
+     * Stream.</p>
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * <p>The URL exposed by the Salesforce IoT Cloud Input Stream. The URL is

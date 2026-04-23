@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the merge has been made.</p>
      */
+    inline bool IsMergedHasBeenSet() const { return m_isMergedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the merge has been made.</p>
+     */
     inline void SetIsMerged(bool value) { m_isMergedHasBeenSet = true; m_isMerged = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
      */
     inline const Aws::String& GetMergedBy() const{ return m_mergedBy; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>
+     */
+    inline bool MergedByHasBeenSet() const { return m_mergedByHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the user who merged the branches.</p>

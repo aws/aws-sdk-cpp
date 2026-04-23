@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique identifier in the format REGION:GUID.</p>
      */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier in the format REGION:GUID.</p>
+     */
     inline void SetIdentityId(const Aws::String& value) { m_identityIdHasBeenSet = true; m_identityId = value; }
 
     /**

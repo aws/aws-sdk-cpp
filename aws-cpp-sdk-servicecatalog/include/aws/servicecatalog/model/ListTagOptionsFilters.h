@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The TagOption key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The TagOption key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The TagOption value.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The TagOption value.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The active state.</p>
      */
     inline bool GetActive() const{ return m_active; }
+
+    /**
+     * <p>The active state.</p>
+     */
+    inline bool ActiveHasBeenSet() const { return m_activeHasBeenSet; }
 
     /**
      * <p>The active state.</p>

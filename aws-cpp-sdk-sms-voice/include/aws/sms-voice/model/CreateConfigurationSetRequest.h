@@ -27,7 +27,7 @@ namespace Model
 {
 
   /**
-   * CreateConfigurationSetRequest<p><h3>See Also:</h3>   <a
+   * A request to create a new configuration set.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetRequest">AWS
    * API Reference</a></p>
    */
@@ -49,6 +49,11 @@ namespace Model
      * The name that you want to give the configuration set.
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * The name that you want to give the configuration set.
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
      * The name that you want to give the configuration set.

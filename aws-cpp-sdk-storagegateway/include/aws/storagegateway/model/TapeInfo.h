@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a virtual tape.</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The barcode that identifies a specific virtual tape.</p>
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
+
+    /**
+     * <p>The barcode that identifies a specific virtual tape.</p>
+     */
+    inline bool TapeBarcodeHasBeenSet() const { return m_tapeBarcodeHasBeenSet; }
 
     /**
      * <p>The barcode that identifies a specific virtual tape.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of a virtual tape.</p>
      */
+    inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of a virtual tape.</p>
+     */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>The status of the tape.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
+
+    /**
+     * <p>The status of the tape.</p>
+     */
+    inline bool TapeStatusHasBeenSet() const { return m_tapeStatusHasBeenSet; }
 
     /**
      * <p>The status of the tape.</p>
@@ -181,6 +201,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
      * operation to return a list of gateways for your account and region.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+     * operation to return a list of gateways for your account and region.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -213,6 +239,79 @@ namespace Model
      */
     inline TapeInfo& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeInfo& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeInfo& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the pool that you want to add your tape to for archiving. The tape
+     * in this pool is archived in the S3 storage class that is associated with the
+     * pool. When you use your backup application to eject the tape, the tape is
+     * archived directly into the storage class (Glacier or Deep Archive) that
+     * corresponds to the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline TapeInfo& WithPoolId(const char* value) { SetPoolId(value); return *this;}
+
   private:
 
     Aws::String m_tapeARN;
@@ -229,6 +328,9 @@ namespace Model
 
     Aws::String m_gatewayARN;
     bool m_gatewayARNHasBeenSet;
+
+    Aws::String m_poolId;
+    bool m_poolIdHasBeenSet;
   };
 
 } // namespace Model

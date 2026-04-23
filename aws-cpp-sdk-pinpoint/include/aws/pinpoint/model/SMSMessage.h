@@ -58,6 +58,11 @@ namespace Model
     /**
      * The body of the SMS message.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The body of the SMS message.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * dedicated number.
      */
     inline const Aws::String& GetKeyword() const{ return m_keyword; }
+
+    /**
+     * The SMS program name that you provided to AWS Support when you requested your
+     * dedicated number.
+     */
+    inline bool KeywordHasBeenSet() const { return m_keywordHasBeenSet; }
 
     /**
      * The SMS program name that you provided to AWS Support when you requested your
@@ -137,6 +148,11 @@ namespace Model
     /**
      * Is this a transaction priority message or lower priority.
      */
+    inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
+
+    /**
+     * Is this a transaction priority message or lower priority.
+     */
     inline void SetMessageType(const MessageType& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
@@ -162,6 +178,14 @@ namespace Model
      * randomly assigns a long code.
      */
     inline const Aws::String& GetOriginationNumber() const{ return m_originationNumber; }
+
+    /**
+     * The phone number that the SMS message originates from. Specify one of the
+     * dedicated long codes or short codes that you requested from AWS Support and that
+     * is assigned to your account. If this attribute is not specified, Amazon Pinpoint
+     * randomly assigns a long code.
+     */
+    inline bool OriginationNumberHasBeenSet() const { return m_originationNumberHasBeenSet; }
 
     /**
      * The phone number that the SMS message originates from. Specify one of the
@@ -222,6 +246,12 @@ namespace Model
      * The sender ID that is shown as the message sender on the recipient's device.
      * Support for sender IDs varies by country or region.
      */
+    inline bool SenderIdHasBeenSet() const { return m_senderIdHasBeenSet; }
+
+    /**
+     * The sender ID that is shown as the message sender on the recipient's device.
+     * Support for sender IDs varies by country or region.
+     */
     inline void SetSenderId(const Aws::String& value) { m_senderIdHasBeenSet = true; m_senderId = value; }
 
     /**
@@ -260,6 +290,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address

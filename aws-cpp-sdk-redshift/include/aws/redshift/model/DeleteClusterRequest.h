@@ -65,6 +65,15 @@ namespace Model
      * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster to be deleted.</p> <p>Constraints:</p> <ul>
+     * <li> <p>Must contain lowercase characters.</p> </li> <li> <p>Must contain from 1
+     * to 63 alphanumeric characters or hyphens.</p> </li> <li> <p>First character must
+     * be a letter.</p> </li> <li> <p>Cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -131,6 +140,16 @@ namespace Model
      * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
      * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
      */
+    inline bool SkipFinalClusterSnapshotHasBeenSet() const { return m_skipFinalClusterSnapshotHasBeenSet; }
+
+    /**
+     * <p>Determines whether a final snapshot of the cluster is created before Amazon
+     * Redshift deletes the cluster. If <code>true</code>, a final cluster snapshot is
+     * not created. If <code>false</code>, a final cluster snapshot is created before
+     * the cluster is deleted. </p> <note> <p>The <i>FinalClusterSnapshotIdentifier</i>
+     * parameter must be specified if <i>SkipFinalClusterSnapshot</i> is
+     * <code>false</code>.</p> </note> <p>Default: <code>false</code> </p>
+     */
     inline void SetSkipFinalClusterSnapshot(bool value) { m_skipFinalClusterSnapshotHasBeenSet = true; m_skipFinalClusterSnapshot = value; }
 
     /**
@@ -153,6 +172,16 @@ namespace Model
      * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
      */
     inline const Aws::String& GetFinalClusterSnapshotIdentifier() const{ return m_finalClusterSnapshotIdentifier; }
+
+    /**
+     * <p>The identifier of the final snapshot that is to be created immediately before
+     * deleting the cluster. If this parameter is provided,
+     * <i>SkipFinalClusterSnapshot</i> must be <code>false</code>. </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 alphanumeric characters.</p>
+     * </li> <li> <p>First character must be a letter.</p> </li> <li> <p>Cannot end
+     * with a hyphen or contain two consecutive hyphens.</p> </li> </ul>
+     */
+    inline bool FinalClusterSnapshotIdentifierHasBeenSet() const { return m_finalClusterSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the final snapshot that is to be created immediately before
@@ -221,6 +250,13 @@ namespace Model
      * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
      */
     inline int GetFinalClusterSnapshotRetentionPeriod() const{ return m_finalClusterSnapshotRetentionPeriod; }
+
+    /**
+     * <p>The number of days that a manual snapshot is retained. If the value is -1,
+     * the manual snapshot is retained indefinitely.</p> <p>The value must be either -1
+     * or an integer between 1 and 3,653.</p> <p>The default value is -1.</p>
+     */
+    inline bool FinalClusterSnapshotRetentionPeriodHasBeenSet() const { return m_finalClusterSnapshotRetentionPeriodHasBeenSet; }
 
     /**
      * <p>The number of days that a manual snapshot is retained. If the value is -1,

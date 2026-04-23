@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique identifier for the instance in Amazon EMR.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the instance in Amazon EMR.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The unique identifier of the instance in Amazon EC2.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
+    /**
+     * <p>The unique identifier of the instance in Amazon EC2.</p>
+     */
+    inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the instance in Amazon EC2.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The public DNS name of the instance.</p>
      */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+
+    /**
+     * <p>The public DNS name of the instance.</p>
+     */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The public IP address of the instance.</p>
      */
     inline const Aws::String& GetPublicIpAddress() const{ return m_publicIpAddress; }
+
+    /**
+     * <p>The public IP address of the instance.</p>
+     */
+    inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
 
     /**
      * <p>The public IP address of the instance.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The private DNS name of the instance.</p>
      */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
+
+    /**
+     * <p>The private DNS name of the instance.</p>
+     */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
      * <p>The private IP address of the instance.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IP address of the instance.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -276,6 +306,11 @@ namespace Model
     /**
      * <p>The current status of the instance.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of the instance.</p>
+     */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -298,6 +333,11 @@ namespace Model
      * <p>The identifier of the instance group to which this instance belongs.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
+    /**
+     * <p>The identifier of the instance group to which this instance belongs.</p>
+     */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
      * <p>The identifier of the instance group to which this instance belongs.</p>
@@ -335,6 +375,12 @@ namespace Model
      * belongs.</p>
      */
     inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
+
+    /**
+     * <p>The unique identifier of the instance fleet to which an EC2 instance
+     * belongs.</p>
+     */
+    inline bool InstanceFleetIdHasBeenSet() const { return m_instanceFleetIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the instance fleet to which an EC2 instance
@@ -383,6 +429,12 @@ namespace Model
      * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
      * <code>SPOT</code>. </p>
      */
+    inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
+
+    /**
+     * <p>The instance purchasing option. Valid values are <code>ON_DEMAND</code> or
+     * <code>SPOT</code>. </p>
+     */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
@@ -408,6 +460,11 @@ namespace Model
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
@@ -444,6 +501,11 @@ namespace Model
      * <p>The list of EBS volumes that are attached to this instance.</p>
      */
     inline const Aws::Vector<EbsVolume>& GetEbsVolumes() const{ return m_ebsVolumes; }
+
+    /**
+     * <p>The list of EBS volumes that are attached to this instance.</p>
+     */
+    inline bool EbsVolumesHasBeenSet() const { return m_ebsVolumesHasBeenSet; }
 
     /**
      * <p>The list of EBS volumes that are attached to this instance.</p>

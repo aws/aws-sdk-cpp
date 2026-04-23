@@ -38,7 +38,7 @@ namespace Model
    * <p>An object representing a constraint on task placement in the task
    * definition.</p> <p>If you are using the Fargate launch type, task placement
    * constraints are not supported.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html">Task
    * Placement Constraints</a> in the <i>Amazon Elastic Container Service Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/TaskDefinitionPlacementConstraint">AWS
@@ -60,6 +60,14 @@ namespace Model
      * group of valid candidates.</p>
      */
     inline const TaskDefinitionPlacementConstraintType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of constraint. The <code>DistinctInstance</code> constraint ensures
+     * that each task in a particular group is running on a different container
+     * instance. The <code>MemberOf</code> constraint restricts selection to be from a
+     * group of valid candidates.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of constraint. The <code>DistinctInstance</code> constraint ensures
@@ -97,7 +105,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -106,7 +114,16 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * Query Language</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>A cluster query language expression to apply to the constraint. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -115,7 +132,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -124,7 +141,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -133,7 +150,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -142,7 +159,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */
@@ -151,7 +168,7 @@ namespace Model
     /**
      * <p>A cluster query language expression to apply to the constraint. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
      * Query Language</a> in the <i>Amazon Elastic Container Service Developer
      * Guide</i>.</p>
      */

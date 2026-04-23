@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique name of the typed link attribute.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the typed link attribute.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The type of the attribute.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the attribute.</p>
+     */
     inline void SetType(const FacetAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The default value of the attribute (if configured).</p>
      */
     inline const TypedAttributeValue& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value of the attribute (if configured).</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value of the attribute (if configured).</p>
@@ -148,6 +163,11 @@ namespace Model
     /**
      * <p>Whether the attribute is mutable or not.</p>
      */
+    inline bool IsImmutableHasBeenSet() const { return m_isImmutableHasBeenSet; }
+
+    /**
+     * <p>Whether the attribute is mutable or not.</p>
+     */
     inline void SetIsImmutable(bool value) { m_isImmutableHasBeenSet = true; m_isImmutable = value; }
 
     /**
@@ -160,6 +180,11 @@ namespace Model
      * <p>Validation rules that are attached to the attribute definition.</p>
      */
     inline const Aws::Map<Aws::String, Rule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>Validation rules that are attached to the attribute definition.</p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>Validation rules that are attached to the attribute definition.</p>
@@ -216,6 +241,11 @@ namespace Model
      * <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
      */
     inline const RequiredAttributeBehavior& GetRequiredBehavior() const{ return m_requiredBehavior; }
+
+    /**
+     * <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>
+     */
+    inline bool RequiredBehaviorHasBeenSet() const { return m_requiredBehaviorHasBeenSet; }
 
     /**
      * <p>The required behavior of the <code>TypedLinkAttributeDefinition</code>.</p>

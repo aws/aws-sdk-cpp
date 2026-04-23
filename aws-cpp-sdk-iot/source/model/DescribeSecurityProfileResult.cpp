@@ -76,6 +76,15 @@ DescribeSecurityProfileResult& DescribeSecurityProfileResult::operator =(const A
     }
   }
 
+  if(jsonValue.ValueExists("additionalMetricsToRetain"))
+  {
+    Array<JsonView> additionalMetricsToRetainJsonList = jsonValue.GetArray("additionalMetricsToRetain");
+    for(unsigned additionalMetricsToRetainIndex = 0; additionalMetricsToRetainIndex < additionalMetricsToRetainJsonList.GetLength(); ++additionalMetricsToRetainIndex)
+    {
+      m_additionalMetricsToRetain.push_back(additionalMetricsToRetainJsonList[additionalMetricsToRetainIndex].AsString());
+    }
+  }
+
   if(jsonValue.ValueExists("version"))
   {
     m_version = jsonValue.GetInt64("version");

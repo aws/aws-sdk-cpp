@@ -56,6 +56,12 @@ namespace Model
      * <p>The ARN of the room with which the device to sync is associated.
      * Required.</p>
      */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room with which the device to sync is associated.
+     * Required.</p>
+     */
     inline void SetRoomArn(const Aws::String& value) { m_roomArnHasBeenSet = true; m_roomArn = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>The ARN of the device to sync. Required.</p>
      */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device to sync. Required.</p>
+     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
 
     /**
@@ -129,6 +140,11 @@ namespace Model
      * <p>Request structure to start the device sync. Required.</p>
      */
     inline const Aws::Vector<Feature>& GetFeatures() const{ return m_features; }
+
+    /**
+     * <p>Request structure to start the device sync. Required.</p>
+     */
+    inline bool FeaturesHasBeenSet() const { return m_featuresHasBeenSet; }
 
     /**
      * <p>Request structure to start the device sync. Required.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the stream.</p>
      */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the stream.</p>
+     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * ID.</p>
      */
     inline const Aws::String& GetShardId() const{ return m_shardId; }
+
+    /**
+     * <p>The identifier of the shard. The iterator will be returned for this shard
+     * ID.</p>
+     */
+    inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
 
     /**
      * <p>The identifier of the shard. The iterator will be returned for this shard
@@ -140,6 +151,22 @@ namespace Model
      * </li> </ul>
      */
     inline const ShardIteratorType& GetShardIteratorType() const{ return m_shardIteratorType; }
+
+    /**
+     * <p>Determines how the shard iterator is used to start reading stream records
+     * from the shard:</p> <ul> <li> <p><code>AT_SEQUENCE_NUMBER</code> - Start reading
+     * exactly from the position denoted by a specific sequence number.</p> </li> <li>
+     * <p><code>AFTER_SEQUENCE_NUMBER</code> - Start reading right after the position
+     * denoted by a specific sequence number.</p> </li> <li>
+     * <p><code>TRIM_HORIZON</code> - Start reading at the last (untrimmed) stream
+     * record, which is the oldest record in the shard. In DynamoDB Streams, there is a
+     * 24 hour limit on data retention. Stream records whose age exceeds this limit are
+     * subject to removal (trimming) from the stream.</p> </li> <li>
+     * <p><code>LATEST</code> - Start reading just after the most recent stream record
+     * in the shard, so that you always read the most recent data in the shard.</p>
+     * </li> </ul>
+     */
+    inline bool ShardIteratorTypeHasBeenSet() const { return m_shardIteratorTypeHasBeenSet; }
 
     /**
      * <p>Determines how the shard iterator is used to start reading stream records
@@ -211,6 +238,12 @@ namespace Model
      * reading.</p>
      */
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+
+    /**
+     * <p>The sequence number of a stream record in the shard from which to start
+     * reading.</p>
+     */
+    inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
 
     /**
      * <p>The sequence number of a stream record in the shard from which to start

@@ -54,6 +54,12 @@ namespace Model
      * <p>A token used for paginating the results from your GetLoadBalancers
      * request.</p>
      */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
+
+    /**
+     * <p>A token used for paginating the results from your GetLoadBalancers
+     * request.</p>
+     */
     inline void SetPageToken(const Aws::String& value) { m_pageTokenHasBeenSet = true; m_pageToken = value; }
 
     /**

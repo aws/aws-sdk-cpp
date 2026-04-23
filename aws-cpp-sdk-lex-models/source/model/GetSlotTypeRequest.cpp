@@ -30,7 +30,7 @@ GetSlotTypeRequest::GetSlotTypeRequest() :
 
 Aws::String GetSlotTypeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

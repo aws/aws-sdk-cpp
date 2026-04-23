@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the DNS record to create in your domain. This is supplied by
      * ACM.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the DNS record to create in your domain. This is supplied by
+     * ACM.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of DNS record. Currently this can be <code>CNAME</code>.</p>
+     */
     inline void SetType(const RecordType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -124,6 +135,12 @@ namespace Model
      * by ACM.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the CNAME record to add to your DNS database. This is supplied
+     * by ACM.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the CNAME record to add to your DNS database. This is supplied

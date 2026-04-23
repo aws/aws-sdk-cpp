@@ -36,7 +36,7 @@ ListRoleAliasesRequest::ListRoleAliasesRequest() :
 
 Aws::String ListRoleAliasesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListRoleAliasesRequest::AddQueryStringParameters(URI& uri) const

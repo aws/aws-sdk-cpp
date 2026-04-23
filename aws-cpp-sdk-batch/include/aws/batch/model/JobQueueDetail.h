@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the job queue.</p>
      */
+    inline bool JobQueueNameHasBeenSet() const { return m_jobQueueNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job queue.</p>
+     */
     inline void SetJobQueueName(const Aws::String& value) { m_jobQueueNameHasBeenSet = true; m_jobQueueName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
      */
     inline const Aws::String& GetJobQueueArn() const{ return m_jobQueueArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the job queue.</p>
+     */
+    inline bool JobQueueArnHasBeenSet() const { return m_jobQueueArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the job queue.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Describes the ability of the queue to accept new jobs.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Describes the ability of the queue to accept new jobs.</p>
+     */
     inline void SetState(const JQState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -155,6 +170,12 @@ namespace Model
      * <code>VALID</code>).</p>
      */
     inline const JQStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the job queue (for example, <code>CREATING</code> or
+     * <code>VALID</code>).</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the job queue (for example, <code>CREATING</code> or
@@ -186,6 +207,12 @@ namespace Model
      * current status of the job queue.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job queue.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the
@@ -232,6 +259,11 @@ namespace Model
     /**
      * <p>The priority of the job queue. </p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority of the job queue. </p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -246,6 +278,13 @@ namespace Model
      * placement in ascending order.</p>
      */
     inline const Aws::Vector<ComputeEnvironmentOrder>& GetComputeEnvironmentOrder() const{ return m_computeEnvironmentOrder; }
+
+    /**
+     * <p>The compute environments that are attached to the job queue and the order in
+     * which job placement is preferred. Compute environments are selected for job
+     * placement in ascending order.</p>
+     */
+    inline bool ComputeEnvironmentOrderHasBeenSet() const { return m_computeEnvironmentOrderHasBeenSet; }
 
     /**
      * <p>The compute environments that are attached to the job queue and the order in

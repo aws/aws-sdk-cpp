@@ -17,12 +17,6 @@
 #set($index = 1)
 #foreach($entry in $shape.members.entrySet())
 #set($memberShape = $entry.value.shape)
-#if($memberShape.getName() == $shape.getName())
-#set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(1)")
-#if($index < $initializerCount)
-#set($initializers = "${initializers},")
-#end
-#end
 #if($memberShape.primitive || $memberShape.enum || $entry.value.idempotencyToken)
 #if($memberShape.primitive)
 #set($initializers = "${initializers}${nl}    ${CppViewHelper.computeMemberVariableName($entry.key)}(${CppViewHelper.computeDefaultValue($memberShape)})")
@@ -48,4 +42,7 @@
 #end
 #set($index = $index + 1)
 #end
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+#set($initializers = "${initializers},${nl}    m_decoder(Aws::Utils::Event::EventStreamDecoder(&m_handler))")
 #end

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Returns the default patch baseline for the specified operating system.</p>
      */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+
+    /**
+     * <p>Returns the default patch baseline for the specified operating system.</p>
+     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**

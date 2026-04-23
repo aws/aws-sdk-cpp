@@ -64,6 +64,14 @@ namespace Model
      * Pinpoint also provides these attributes in the events that it generates for
      * users-messages deliveries.
      */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
+
+    /**
+     * A map of custom attribute-value pairs. Amazon Pinpoint adds these attributes to
+     * the data.pinpoint object in the body of the push notification payload. Amazon
+     * Pinpoint also provides these attributes in the events that it generates for
+     * users-messages deliveries.
+     */
     inline void SetContext(const Aws::Map<Aws::String, Aws::String>& value) { m_contextHasBeenSet = true; m_context = value; }
 
     /**
@@ -157,6 +165,12 @@ namespace Model
      * Message definitions for the default message and any messages that are tailored
      * for specific channels.
      */
+    inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
+
+    /**
+     * Message definitions for the default message and any messages that are tailored
+     * for specific channels.
+     */
     inline void SetMessageConfiguration(const DirectMessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
@@ -183,6 +197,12 @@ namespace Model
      * recipients.
      */
     inline const Aws::String& GetTraceId() const{ return m_traceId; }
+
+    /**
+     * A unique ID that you can use to trace a message. This ID is visible to
+     * recipients.
+     */
+    inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
 
     /**
      * A unique ID that you can use to trace a message. This ID is visible to
@@ -227,6 +247,13 @@ namespace Model
      * specifying message overrides or substitutions.
      */
     inline const Aws::Map<Aws::String, EndpointSendConfiguration>& GetUsers() const{ return m_users; }
+
+    /**
+     * A map that associates user IDs with EndpointSendConfiguration objects. Within an
+     * EndpointSendConfiguration object, you can tailor the message for a user by
+     * specifying message overrides or substitutions.
+     */
+    inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
 
     /**
      * A map that associates user IDs with EndpointSendConfiguration objects. Within an

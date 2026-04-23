@@ -58,6 +58,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) of the broker.
      */
+    inline bool BrokerArnHasBeenSet() const { return m_brokerArnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the broker.
+     */
     inline void SetBrokerArn(const Aws::String& value) { m_brokerArnHasBeenSet = true; m_brokerArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * The unique ID that Amazon MQ generates for the broker.
      */
     inline const Aws::String& GetBrokerId() const{ return m_brokerId; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the broker.
+     */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
 
     /**
      * The unique ID that Amazon MQ generates for the broker.
@@ -129,6 +139,14 @@ namespace Model
      * characters.
      */
     inline const Aws::String& GetBrokerName() const{ return m_brokerName; }
+
+    /**
+     * The name of the broker. This value must be unique in your AWS account, 1-50
+     * characters long, must contain only letters, numbers, dashes, and underscores,
+     * and must not contain whitespaces, brackets, wildcard characters, or special
+     * characters.
+     */
+    inline bool BrokerNameHasBeenSet() const { return m_brokerNameHasBeenSet; }
 
     /**
      * The name of the broker. This value must be unique in your AWS account, 1-50
@@ -187,6 +205,11 @@ namespace Model
     /**
      * The status of the broker.
      */
+    inline bool BrokerStateHasBeenSet() const { return m_brokerStateHasBeenSet; }
+
+    /**
+     * The status of the broker.
+     */
     inline void SetBrokerState(const BrokerState& value) { m_brokerStateHasBeenSet = true; m_brokerState = value; }
 
     /**
@@ -209,6 +232,11 @@ namespace Model
      * The time when the broker was created.
      */
     inline const Aws::Utils::DateTime& GetCreated() const{ return m_created; }
+
+    /**
+     * The time when the broker was created.
+     */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
 
     /**
      * The time when the broker was created.
@@ -239,6 +267,11 @@ namespace Model
     /**
      * Required. The deployment mode of the broker.
      */
+    inline bool DeploymentModeHasBeenSet() const { return m_deploymentModeHasBeenSet; }
+
+    /**
+     * Required. The deployment mode of the broker.
+     */
     inline void SetDeploymentMode(const DeploymentMode& value) { m_deploymentModeHasBeenSet = true; m_deploymentMode = value; }
 
     /**
@@ -261,6 +294,11 @@ namespace Model
      * The broker's instance type.
      */
     inline const Aws::String& GetHostInstanceType() const{ return m_hostInstanceType; }
+
+    /**
+     * The broker's instance type.
+     */
+    inline bool HostInstanceTypeHasBeenSet() const { return m_hostInstanceTypeHasBeenSet; }
 
     /**
      * The broker's instance type.

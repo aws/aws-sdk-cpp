@@ -32,7 +32,7 @@ GetTrafficPolicyRequest::GetTrafficPolicyRequest() :
 
 Aws::String GetTrafficPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

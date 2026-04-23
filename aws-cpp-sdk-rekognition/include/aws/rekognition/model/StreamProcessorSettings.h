@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Face search settings to use on a streaming video. </p>
      */
+    inline bool FaceSearchHasBeenSet() const { return m_faceSearchHasBeenSet; }
+
+    /**
+     * <p>Face search settings to use on a streaming video. </p>
+     */
     inline void SetFaceSearch(const FaceSearchSettings& value) { m_faceSearchHasBeenSet = true; m_faceSearch = value; }
 
     /**

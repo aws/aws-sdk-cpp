@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to delete.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic you want to delete.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**

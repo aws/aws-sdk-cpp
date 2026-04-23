@@ -55,6 +55,11 @@ namespace Model
     /**
      * The raw email message itself. Then entire message must be base64-encoded.
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * The raw email message itself. Then entire message must be base64-encoded.
+     */
     inline void SetData(const Aws::Utils::ByteBuffer& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**

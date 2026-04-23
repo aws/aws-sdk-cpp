@@ -31,7 +31,7 @@ DeleteResolverRequest::DeleteResolverRequest() :
 
 Aws::String DeleteResolverRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

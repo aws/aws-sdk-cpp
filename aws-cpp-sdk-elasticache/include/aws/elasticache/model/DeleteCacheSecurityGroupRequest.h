@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the cache security group to delete.</p> <note> <p>You cannot
      * delete the default security group.</p> </note>
      */
+    inline bool CacheSecurityGroupNameHasBeenSet() const { return m_cacheSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache security group to delete.</p> <note> <p>You cannot
+     * delete the default security group.</p> </note>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /**

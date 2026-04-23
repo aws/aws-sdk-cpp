@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A string value that contains a Key Usage extension name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A string value that contains a Key Usage extension name.</p>
+     */
     inline void SetName(const KeyUsageName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

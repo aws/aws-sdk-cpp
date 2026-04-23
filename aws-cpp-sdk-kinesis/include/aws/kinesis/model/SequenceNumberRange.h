@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The starting sequence number for the range.</p>
      */
+    inline bool StartingSequenceNumberHasBeenSet() const { return m_startingSequenceNumberHasBeenSet; }
+
+    /**
+     * <p>The starting sequence number for the range.</p>
+     */
     inline void SetStartingSequenceNumber(const Aws::String& value) { m_startingSequenceNumberHasBeenSet = true; m_startingSequenceNumber = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * have an ending sequence number of <code>null</code>.</p>
      */
     inline const Aws::String& GetEndingSequenceNumber() const{ return m_endingSequenceNumber; }
+
+    /**
+     * <p>The ending sequence number for the range. Shards that are in the OPEN state
+     * have an ending sequence number of <code>null</code>.</p>
+     */
+    inline bool EndingSequenceNumberHasBeenSet() const { return m_endingSequenceNumberHasBeenSet; }
 
     /**
      * <p>The ending sequence number for the range. Shards that are in the OPEN state

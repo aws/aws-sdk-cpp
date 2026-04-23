@@ -29,7 +29,7 @@ DisableTopicRuleRequest::DisableTopicRuleRequest() :
 
 Aws::String DisableTopicRuleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

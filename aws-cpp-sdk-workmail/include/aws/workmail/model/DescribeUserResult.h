@@ -191,82 +191,82 @@ namespace Model
 
     /**
      * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(const EntityState& value) { m_state = value; }
 
     /**
      * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
 
     /**
      * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeUserResult& WithState(const EntityState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of a user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeUserResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>In certain cases other entities are modeled as users. If interoperability is
+     * <p>In certain cases, other entities are modeled as users. If interoperability is
      * enabled, resources are imported into Amazon WorkMail as users. Because different
-     * Amazon WorkMail organizations rely on different directory types, administrators
-     * can distinguish between a user that is not registered to Amazon WorkMail (is
-     * disabled and has a user role) and the administrative users of the directory. The
-     * values are USER, RESOURCE, and SYSTEM_USER.</p>
+     * WorkMail organizations rely on different directory types, administrators can
+     * distinguish between an unregistered user (account is disabled and has a user
+     * role) and the directory administrators. The values are USER, RESOURCE, and
+     * SYSTEM_USER.</p>
      */
     inline const UserRole& GetUserRole() const{ return m_userRole; }
 
     /**
-     * <p>In certain cases other entities are modeled as users. If interoperability is
+     * <p>In certain cases, other entities are modeled as users. If interoperability is
      * enabled, resources are imported into Amazon WorkMail as users. Because different
-     * Amazon WorkMail organizations rely on different directory types, administrators
-     * can distinguish between a user that is not registered to Amazon WorkMail (is
-     * disabled and has a user role) and the administrative users of the directory. The
-     * values are USER, RESOURCE, and SYSTEM_USER.</p>
+     * WorkMail organizations rely on different directory types, administrators can
+     * distinguish between an unregistered user (account is disabled and has a user
+     * role) and the directory administrators. The values are USER, RESOURCE, and
+     * SYSTEM_USER.</p>
      */
     inline void SetUserRole(const UserRole& value) { m_userRole = value; }
 
     /**
-     * <p>In certain cases other entities are modeled as users. If interoperability is
+     * <p>In certain cases, other entities are modeled as users. If interoperability is
      * enabled, resources are imported into Amazon WorkMail as users. Because different
-     * Amazon WorkMail organizations rely on different directory types, administrators
-     * can distinguish between a user that is not registered to Amazon WorkMail (is
-     * disabled and has a user role) and the administrative users of the directory. The
-     * values are USER, RESOURCE, and SYSTEM_USER.</p>
+     * WorkMail organizations rely on different directory types, administrators can
+     * distinguish between an unregistered user (account is disabled and has a user
+     * role) and the directory administrators. The values are USER, RESOURCE, and
+     * SYSTEM_USER.</p>
      */
     inline void SetUserRole(UserRole&& value) { m_userRole = std::move(value); }
 
     /**
-     * <p>In certain cases other entities are modeled as users. If interoperability is
+     * <p>In certain cases, other entities are modeled as users. If interoperability is
      * enabled, resources are imported into Amazon WorkMail as users. Because different
-     * Amazon WorkMail organizations rely on different directory types, administrators
-     * can distinguish between a user that is not registered to Amazon WorkMail (is
-     * disabled and has a user role) and the administrative users of the directory. The
-     * values are USER, RESOURCE, and SYSTEM_USER.</p>
+     * WorkMail organizations rely on different directory types, administrators can
+     * distinguish between an unregistered user (account is disabled and has a user
+     * role) and the directory administrators. The values are USER, RESOURCE, and
+     * SYSTEM_USER.</p>
      */
     inline DescribeUserResult& WithUserRole(const UserRole& value) { SetUserRole(value); return *this;}
 
     /**
-     * <p>In certain cases other entities are modeled as users. If interoperability is
+     * <p>In certain cases, other entities are modeled as users. If interoperability is
      * enabled, resources are imported into Amazon WorkMail as users. Because different
-     * Amazon WorkMail organizations rely on different directory types, administrators
-     * can distinguish between a user that is not registered to Amazon WorkMail (is
-     * disabled and has a user role) and the administrative users of the directory. The
-     * values are USER, RESOURCE, and SYSTEM_USER.</p>
+     * WorkMail organizations rely on different directory types, administrators can
+     * distinguish between an unregistered user (account is disabled and has a user
+     * role) and the directory administrators. The values are USER, RESOURCE, and
+     * SYSTEM_USER.</p>
      */
     inline DescribeUserResult& WithUserRole(UserRole&& value) { SetUserRole(std::move(value)); return *this;}
 

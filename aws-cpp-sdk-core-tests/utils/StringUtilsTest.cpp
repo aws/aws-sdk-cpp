@@ -243,6 +243,25 @@ TEST(StringUtilsTest, TestURLEncodeAndDecode)
     ASSERT_STREQ("IShouldNotChange", shouldBeTheSameAsEncoded.c_str());
 }
 
+TEST(StringUtilsTest, TestURLDecodeEdgeCases)
+{
+    ASSERT_STREQ("me@ama%zon.com", StringUtils::URLDecode( "me%40ama%zon.com").c_str());
+    ASSERT_STREQ("me@am%azon.com", StringUtils::URLDecode( "me%40am%azon.com").c_str());
+    ASSERT_STREQ("", StringUtils::URLDecode("").c_str());
+    ASSERT_STREQ("%", StringUtils::URLDecode("%").c_str());
+    ASSERT_STREQ("%%", StringUtils::URLDecode("%%").c_str());
+    ASSERT_STREQ("%ZERO", StringUtils::URLDecode("%ZERO").c_str());
+    ASSERT_STREQ("%DO", StringUtils::URLDecode("%DO").c_str());
+}
+
+TEST(StringUtilsTest, TestURLWithEncodedSpace)
+{
+    //Some services(e.g. S3) use + for spaces in URL encoding.
+    const Aws::String encoded = "Test+Path%20Space";
+    Aws::String decoded = StringUtils::URLDecode(encoded.c_str());
+    ASSERT_STREQ("Test Path Space", decoded.c_str());
+}
+
 TEST(StringUtilsTest, TestInt64Conversion)
 {
     long long bigIntValue = LLONG_MAX - 1;
@@ -312,6 +331,15 @@ TEST(StringUtilsTest, TestUnicodeURLDecoding)
 {
     // 中国 in UTF-8 hex notation
     ASSERT_STREQ("sample\xE4\xB8\xAD\xE5\x9B\xBD", StringUtils::URLDecode("sample%E4%B8%AD%E5%9B%BD").c_str());
+}
+
+TEST(StringUtilsTest, TestToHexString)
+{
+    ASSERT_STREQ("0", StringUtils::ToHexString(static_cast<uint8_t>(0)).c_str());
+    ASSERT_STREQ("38", StringUtils::ToHexString(static_cast<uint8_t>(56)).c_str());
+    ASSERT_STREQ("237", StringUtils::ToHexString(static_cast<uint16_t>(567)).c_str());
+    ASSERT_STREQ("162E", StringUtils::ToHexString(static_cast<uint32_t>(5678)).c_str());
+    ASSERT_STREQ("DDD5", StringUtils::ToHexString(static_cast<uint64_t>(56789)).c_str());
 }
 
 #ifdef _WIN32

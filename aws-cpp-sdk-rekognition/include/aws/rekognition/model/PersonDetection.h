@@ -38,7 +38,7 @@ namespace Model
    * tracked in a video. Amazon Rekognition operations that track people's paths
    * return an array of <code>PersonDetection</code> objects with elements for each
    * time a person's path is tracked in a video. </p> <p>For more information, see
-   * API_GetPersonTracking in the Amazon Rekognition Developer Guide. </p><p><h3>See
+   * GetPersonTracking in the Amazon Rekognition Developer Guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/PersonDetection">AWS
    * API Reference</a></p>
@@ -62,6 +62,12 @@ namespace Model
      * <p>The time, in milliseconds from the start of the video, that the person's path
      * was tracked.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds from the start of the video, that the person's path
+     * was tracked.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -75,6 +81,11 @@ namespace Model
      * <p>Details about a person whose path was tracked in a video.</p>
      */
     inline const PersonDetail& GetPerson() const{ return m_person; }
+
+    /**
+     * <p>Details about a person whose path was tracked in a video.</p>
+     */
+    inline bool PersonHasBeenSet() const { return m_personHasBeenSet; }
 
     /**
      * <p>Details about a person whose path was tracked in a video.</p>

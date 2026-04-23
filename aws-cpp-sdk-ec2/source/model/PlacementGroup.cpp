@@ -35,7 +35,9 @@ PlacementGroup::PlacementGroup() :
     m_state(PlacementGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false)
+    m_strategyHasBeenSet(false),
+    m_partitionCount(0),
+    m_partitionCountHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ PlacementGroup::PlacementGroup(const XmlNode& xmlNode) :
     m_state(PlacementGroupState::NOT_SET),
     m_stateHasBeenSet(false),
     m_strategy(PlacementStrategy::NOT_SET),
-    m_strategyHasBeenSet(false)
+    m_strategyHasBeenSet(false),
+    m_partitionCount(0),
+    m_partitionCountHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -73,6 +77,12 @@ PlacementGroup& PlacementGroup::operator =(const XmlNode& xmlNode)
       m_strategy = PlacementStrategyMapper::GetPlacementStrategyForName(StringUtils::Trim(strategyNode.GetText().c_str()).c_str());
       m_strategyHasBeenSet = true;
     }
+    XmlNode partitionCountNode = resultNode.FirstChild("partitionCount");
+    if(!partitionCountNode.IsNull())
+    {
+      m_partitionCount = StringUtils::ConvertToInt32(StringUtils::Trim(partitionCountNode.GetText().c_str()).c_str());
+      m_partitionCountHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -95,6 +105,11 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location,
       oStream << location << index << locationValue << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
   }
 
+  if(m_partitionCountHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".PartitionCount=" << m_partitionCount << "&";
+  }
+
 }
 
 void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -110,6 +125,10 @@ void PlacementGroup::OutputToStream(Aws::OStream& oStream, const char* location)
   if(m_strategyHasBeenSet)
   {
       oStream << location << ".Strategy=" << PlacementStrategyMapper::GetNameForPlacementStrategy(m_strategy) << "&";
+  }
+  if(m_partitionCountHasBeenSet)
+  {
+      oStream << location << ".PartitionCount=" << m_partitionCount << "&";
   }
 }
 

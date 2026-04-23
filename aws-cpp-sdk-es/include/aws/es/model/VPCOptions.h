@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Specifies the subnets for VPC endpoint.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>Specifies the subnets for VPC endpoint.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>Specifies the security groups for VPC endpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>Specifies the security groups for VPC endpoint.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>Specifies the security groups for VPC endpoint.</p>

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the placement to update.</p>
      */
+    inline bool PlacementNameHasBeenSet() const { return m_placementNameHasBeenSet; }
+
+    /**
+     * <p>The name of the placement to update.</p>
+     */
     inline void SetPlacementName(const Aws::String& value) { m_placementNameHasBeenSet = true; m_placementName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The name of the project containing the placement to be updated.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project containing the placement to be updated.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The name of the project containing the placement to be updated.</p>
@@ -120,6 +130,12 @@ namespace Model
      * maximum number of key/value pairs is 50.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The user-defined object of attributes used to update the placement. The
+     * maximum number of key/value pairs is 50.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The user-defined object of attributes used to update the placement. The

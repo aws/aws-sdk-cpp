@@ -55,6 +55,12 @@ namespace Model
      * <p> The ID of the HIT type of the HITs to consider for the query. If not
      * specified, all HITs for the Reviewer are considered </p>
      */
+    inline bool HITTypeIdHasBeenSet() const { return m_hITTypeIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the HIT type of the HITs to consider for the query. If not
+     * specified, all HITs for the Reviewer are considered </p>
+     */
     inline void SetHITTypeId(const Aws::String& value) { m_hITTypeIdHasBeenSet = true; m_hITTypeId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
      * is the default value. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> Can be either <code>Reviewable</code> or <code>Reviewing</code>. Reviewable
+     * is the default value. </p>
+     */
     inline void SetStatus(const ReviewableHITStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
      * <p>Pagination Token</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination Token</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination Token</p>
@@ -159,6 +176,11 @@ namespace Model
      * <p> Limit the number of results returned. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> Limit the number of results returned. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> Limit the number of results returned. </p>

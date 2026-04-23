@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The S3 bucket that contains the updated firmware.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The S3 bucket that contains the updated firmware.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The S3 prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The S3 prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The S3 prefix.</p>

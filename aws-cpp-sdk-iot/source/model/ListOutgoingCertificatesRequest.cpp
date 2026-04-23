@@ -36,7 +36,7 @@ ListOutgoingCertificatesRequest::ListOutgoingCertificatesRequest() :
 
 Aws::String ListOutgoingCertificatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListOutgoingCertificatesRequest::AddQueryStringParameters(URI& uri) const

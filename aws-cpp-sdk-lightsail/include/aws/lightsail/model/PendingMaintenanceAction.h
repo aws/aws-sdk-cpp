@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of pending database maintenance action.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The type of pending database maintenance action.</p>
+     */
     inline void SetAction(const Aws::String& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>Additional detail about the pending database maintenance action.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Additional detail about the pending database maintenance action.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The effective date of the pending database maintenance action.</p>
      */
     inline const Aws::Utils::DateTime& GetCurrentApplyDate() const{ return m_currentApplyDate; }
+
+    /**
+     * <p>The effective date of the pending database maintenance action.</p>
+     */
+    inline bool CurrentApplyDateHasBeenSet() const { return m_currentApplyDateHasBeenSet; }
 
     /**
      * <p>The effective date of the pending database maintenance action.</p>

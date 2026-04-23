@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CompletedPart">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API CompletedPart
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>Entity tag returned when the part was uploaded.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>Entity tag returned when the part was uploaded.</p>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p>Entity tag returned when the part was uploaded.</p>
@@ -83,6 +93,12 @@ namespace Model
      * and 10,000.</p>
      */
     inline int GetPartNumber() const{ return m_partNumber; }
+
+    /**
+     * <p>Part number that identifies the part. This is a positive integer between 1
+     * and 10,000.</p>
+     */
+    inline bool PartNumberHasBeenSet() const { return m_partNumberHasBeenSet; }
 
     /**
      * <p>Part number that identifies the part. This is a positive integer between 1

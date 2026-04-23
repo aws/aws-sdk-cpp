@@ -34,4 +34,18 @@ public class Operation {
     private String accountIdMemberName;
     private String authtype;
     private String authorizer;
+    private boolean eventStream;
+
+    // For Host Prefix Injection.
+    private boolean hasEndpointTrait;
+    private Endpoint endpoint;
+
+    // For Cellular Request Routing
+    private boolean isEndpointOperation;
+    private boolean hasEndpointDiscoveryTrait;
+    private boolean requireEndpointDiscovery;
+
+    public boolean hasEndpointDiscoveryTrait() {
+        return hasEndpointDiscoveryTrait;
+    }
 }

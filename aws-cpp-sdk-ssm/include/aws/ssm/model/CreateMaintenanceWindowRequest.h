@@ -17,6 +17,8 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/ssm/SSMRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -49,6 +51,11 @@ namespace Model
      * <p>The name of the Maintenance Window.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Maintenance Window.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -86,6 +93,12 @@ namespace Model
      * description to help you organize your Maintenance Windows. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the Maintenance Window. We recommend specifying a
+     * description to help you organize your Maintenance Windows. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional description for the Maintenance Window. We recommend specifying a
@@ -130,6 +143,13 @@ namespace Model
      * the Maintenance Window until the specified future date.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * Maintenance Window to become active. StartDate allows you to delay activation of
+     * the Maintenance Window until the specified future date.</p>
+     */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when you want the
@@ -186,6 +206,13 @@ namespace Model
      * Maintenance Window to become inactive. EndDate allows you to set a date and time
      * in the future when the Maintenance Window will no longer run.</p>
      */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * Maintenance Window to become inactive. EndDate allows you to set a date and time
+     * in the future when the Maintenance Window will no longer run.</p>
+     */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
@@ -234,6 +261,12 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
@@ -275,6 +308,15 @@ namespace Model
      * website.</p>
      */
     inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline bool ScheduleTimezoneHasBeenSet() const { return m_scheduleTimezoneHasBeenSet; }
 
     /**
      * <p>The time zone that the scheduled Maintenance Window executions are based on,
@@ -339,6 +381,11 @@ namespace Model
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the Maintenance Window in hours.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -357,6 +404,12 @@ namespace Model
      * <p>The number of hours before the end of the Maintenance Window that Systems
      * Manager stops scheduling new tasks for execution.</p>
      */
+    inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
+
+    /**
+     * <p>The number of hours before the end of the Maintenance Window that Systems
+     * Manager stops scheduling new tasks for execution.</p>
+     */
     inline void SetCutoff(int value) { m_cutoffHasBeenSet = true; m_cutoff = value; }
 
     /**
@@ -367,8 +420,8 @@ namespace Model
 
 
     /**
-     * <p>Enables a Maintenance Window task to execute on managed instances, even if
-     * you have not registered those instances as targets. If enabled, then you must
+     * <p>Enables a Maintenance Window task to run on managed instances, even if you
+     * have not registered those instances as targets. If enabled, then you must
      * specify the unregistered instances (by instance ID) when you register a task
      * with the Maintenance Window </p> <p>If you don't enable this option, then you
      * must specify previously-registered targets when you register a task with the
@@ -377,8 +430,18 @@ namespace Model
     inline bool GetAllowUnassociatedTargets() const{ return m_allowUnassociatedTargets; }
 
     /**
-     * <p>Enables a Maintenance Window task to execute on managed instances, even if
-     * you have not registered those instances as targets. If enabled, then you must
+     * <p>Enables a Maintenance Window task to run on managed instances, even if you
+     * have not registered those instances as targets. If enabled, then you must
+     * specify the unregistered instances (by instance ID) when you register a task
+     * with the Maintenance Window </p> <p>If you don't enable this option, then you
+     * must specify previously-registered targets when you register a task with the
+     * Maintenance Window. </p>
+     */
+    inline bool AllowUnassociatedTargetsHasBeenSet() const { return m_allowUnassociatedTargetsHasBeenSet; }
+
+    /**
+     * <p>Enables a Maintenance Window task to run on managed instances, even if you
+     * have not registered those instances as targets. If enabled, then you must
      * specify the unregistered instances (by instance ID) when you register a task
      * with the Maintenance Window </p> <p>If you don't enable this option, then you
      * must specify previously-registered targets when you register a task with the
@@ -387,8 +450,8 @@ namespace Model
     inline void SetAllowUnassociatedTargets(bool value) { m_allowUnassociatedTargetsHasBeenSet = true; m_allowUnassociatedTargets = value; }
 
     /**
-     * <p>Enables a Maintenance Window task to execute on managed instances, even if
-     * you have not registered those instances as targets. If enabled, then you must
+     * <p>Enables a Maintenance Window task to run on managed instances, even if you
+     * have not registered those instances as targets. If enabled, then you must
      * specify the unregistered instances (by instance ID) when you register a task
      * with the Maintenance Window </p> <p>If you don't enable this option, then you
      * must specify previously-registered targets when you register a task with the
@@ -401,6 +464,11 @@ namespace Model
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>User-provided idempotency token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>User-provided idempotency token.</p>
@@ -431,6 +499,119 @@ namespace Model
      * <p>User-provided idempotency token.</p>
      */
     inline CreateMaintenanceWindowRequest& WithClientToken(const char* value) { SetClientToken(value); return *this;}
+
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreateMaintenanceWindowRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreateMaintenanceWindowRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreateMaintenanceWindowRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Optional metadata that you assign to a resource. Tags enable you to
+     * categorize a resource in different ways, such as by purpose, owner, or
+     * environment. For example, you might want to tag a Maintenance Window to identify
+     * the type of tasks it will run, the types of targets, and the environment it will
+     * run in. In this case, you could specify the following key name/value pairs:</p>
+     * <ul> <li> <p> <code>Key=TaskType,Value=AgentUpdate</code> </p> </li> <li> <p>
+     * <code>Key=OS,Value=Windows</code> </p> </li> <li> <p>
+     * <code>Key=Environment,Value=Production</code> </p> </li> </ul> <note> <p>To add
+     * tags to an existing Maintenance Window, use the <a>AddTagsToResource</a>
+     * action.</p> </note>
+     */
+    inline CreateMaintenanceWindowRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -463,6 +644,9 @@ namespace Model
 
     Aws::String m_clientToken;
     bool m_clientTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

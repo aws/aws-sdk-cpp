@@ -40,7 +40,8 @@ Activation::Activation() :
     m_expirationDateHasBeenSet(false),
     m_expired(false),
     m_expiredHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,7 +57,8 @@ Activation::Activation(JsonView jsonValue) :
     m_expirationDateHasBeenSet(false),
     m_expired(false),
     m_expiredHasBeenSet(false),
-    m_createdDateHasBeenSet(false)
+    m_createdDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -126,6 +128,16 @@ Activation& Activation::operator =(JsonView jsonValue)
     m_createdDateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("Tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -183,6 +195,17 @@ JsonValue Activation::Jsonize() const
   if(m_createdDateHasBeenSet)
   {
    payload.WithDouble("CreatedDate", m_createdDate.SecondsWithMSPrecision());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload;

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Maintenance Window ID that includes the task to retrieve.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The Maintenance Window ID that includes the task to retrieve.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The Maintenance Window task ID to retrieve.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
+
+    /**
+     * <p>The Maintenance Window task ID to retrieve.</p>
+     */
+    inline bool WindowTaskIdHasBeenSet() const { return m_windowTaskIdHasBeenSet; }
 
     /**
      * <p>The Maintenance Window task ID to retrieve.</p>

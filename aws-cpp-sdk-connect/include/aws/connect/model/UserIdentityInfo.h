@@ -59,6 +59,12 @@ namespace Model
      * <p>The first name used in the user account. This is required if you are using
      * Amazon Connect or SAML for identity management.</p>
      */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>The first name used in the user account. This is required if you are using
+     * Amazon Connect or SAML for identity management.</p>
+     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * Amazon Connect or SAML for identity management.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    /**
+     * <p>The last name used in the user account. This is required if you are using
+     * Amazon Connect or SAML for identity management.</p>
+     */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
 
     /**
      * <p>The last name used in the user account. This is required if you are using
@@ -141,6 +153,13 @@ namespace Model
      * <code>InvalidRequestException</code> is returned.</p>
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * <p>The email address added to the user account. If you are using SAML for
+     * identity management and include this parameter, an
+     * <code>InvalidRequestException</code> is returned.</p>
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * <p>The email address added to the user account. If you are using SAML for

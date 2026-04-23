@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Initiator">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Initiator
   {
   public:
@@ -47,6 +52,12 @@ namespace Model
      * principal is an IAM User, it provides a user ARN value.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
+     * principal is an IAM User, it provides a user ARN value.</p>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>If the principal is an AWS account, it provides the Canonical User ID. If the
@@ -89,6 +100,11 @@ namespace Model
      * <p>Name of the Principal.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>Name of the Principal.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>Name of the Principal.</p>

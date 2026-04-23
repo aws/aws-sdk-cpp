@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Text that is visible to the user on the button.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>Text that is visible to the user on the button.</p>
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * be "New York City."</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value sent to Amazon Lex when a user chooses the button. For example,
+     * consider button text "NYC." When the user chooses the button, the value sent can
+     * be "New York City."</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value sent to Amazon Lex when a user chooses the button. For example,

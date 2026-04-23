@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the user exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the user exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -81,43 +86,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
+     * removed.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline void SetEntityId(const Aws::String& value) { m_entityIdHasBeenSet = true; m_entityId = value; }
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline void SetEntityId(Aws::String&& value) { m_entityIdHasBeenSet = true; m_entityId = std::move(value); }
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline void SetEntityId(const char* value) { m_entityIdHasBeenSet = true; m_entityId.assign(value); }
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline DeleteAliasRequest& WithEntityId(const Aws::String& value) { SetEntityId(value); return *this;}
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline DeleteAliasRequest& WithEntityId(Aws::String&& value) { SetEntityId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the Amazon WorkMail entity to have the aliases
+     * <p>The identifier for the member (user or group) from which to have the aliases
      * removed.</p>
      */
     inline DeleteAliasRequest& WithEntityId(const char* value) { SetEntityId(value); return *this;}
@@ -129,6 +140,13 @@ namespace Model
      * set).</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The aliases to be removed from the user's set of aliases. Duplicate entries
+     * in the list are collapsed into single entries (the list is transformed into a
+     * set).</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The aliases to be removed from the user's set of aliases. Duplicate entries

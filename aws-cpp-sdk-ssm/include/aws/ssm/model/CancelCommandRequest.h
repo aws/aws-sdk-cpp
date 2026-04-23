@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the command you want to cancel.</p>
      */
+    inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the command you want to cancel.</p>
+     */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * requested.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>(Optional) A list of instance IDs on which you want to cancel the command. If
+     * not provided, the command is canceled on every instance on which it was
+     * requested.</p>
+     */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
      * <p>(Optional) A list of instance IDs on which you want to cancel the command. If

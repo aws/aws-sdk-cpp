@@ -15,8 +15,8 @@
 
 #pragma once
 #include <aws/iot1click-devices/IoT1ClickDevicesService_EXPORTS.h>
-#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -44,85 +44,133 @@ namespace Model
 
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>The ARN of the device.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the device.</p>
+     */
+    inline DeviceDescription& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
+     * specified device attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline void SetAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline void SetAttributes(Aws::Map<Aws::String, Aws::String>&& value) { m_attributesHasBeenSet = true; m_attributes = std::move(value); }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& WithAttributes(const Aws::Map<Aws::String, Aws::String>& value) { SetAttributes(value); return *this;}
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& WithAttributes(Aws::Map<Aws::String, Aws::String>&& value) { SetAttributes(std::move(value)); return *this;}
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const Aws::String& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, const Aws::String& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const Aws::String& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const char* key, Aws::String&& value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(Aws::String&& key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>An array of zero or more elements of DeviceAttribute objects
- providing user
+     * <p>An array of zero or more elements of DeviceAttribute objects providing
+ user
      * specified device attributes.</p>
      */
     inline DeviceDescription& AddAttributes(const char* key, const char* value) { m_attributesHasBeenSet = true; m_attributes.emplace(key, value); return *this; }
@@ -132,6 +180,11 @@ namespace Model
      * <p>The unique identifier of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the device.</p>
@@ -172,6 +225,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether or not the device is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether or not the device is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -182,22 +240,29 @@ namespace Model
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline double GetRemainingLife() const{ return m_remainingLife; }
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
+     */
+    inline bool RemainingLifeHasBeenSet() const { return m_remainingLifeHasBeenSet; }
+
+    /**
+     * <p>A value between 0 and 1 inclusive, representing the fraction of life
+     * remaining for the
+ device.</p>
      */
     inline void SetRemainingLife(double value) { m_remainingLifeHasBeenSet = true; m_remainingLife = value; }
 
     /**
      * <p>A value between 0 and 1 inclusive, representing the fraction of life
-     * remaining for
- the device.</p>
+     * remaining for the
+ device.</p>
      */
     inline DeviceDescription& WithRemainingLife(double value) { SetRemainingLife(value); return *this;}
 
@@ -206,6 +271,11 @@ namespace Model
      * <p>The type of the device, such as "button".</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the device, such as "button".</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the device, such as "button".</p>
@@ -237,7 +307,76 @@ namespace Model
      */
     inline DeviceDescription& WithType(const char* value) { SetType(value); return *this;}
 
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags currently associated with the AWS IoT 1-Click device.</p>
+     */
+    inline DeviceDescription& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_attributes;
     bool m_attributesHasBeenSet;
@@ -253,6 +392,9 @@ namespace Model
 
     Aws::String m_type;
     bool m_typeHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

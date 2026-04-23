@@ -58,6 +58,12 @@ namespace Model
      * <p>The programmable code for the state change reason. Note: Currently, the
      * service provides no code for the state change.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The programmable code for the state change reason. Note: Currently, the
+     * service provides no code for the state change.</p>
+     */
     inline void SetCode(const StepStateChangeReasonCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -83,6 +89,11 @@ namespace Model
      * <p>The descriptive message for the state change reason.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The descriptive message for the state change reason.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The descriptive message for the state change reason.</p>

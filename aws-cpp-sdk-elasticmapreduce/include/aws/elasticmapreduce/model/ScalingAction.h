@@ -59,6 +59,12 @@ namespace Model
      * <p>Not available for instance groups. Instance groups use the market type
      * specified for the group.</p>
      */
+    inline bool MarketHasBeenSet() const { return m_marketHasBeenSet; }
+
+    /**
+     * <p>Not available for instance groups. Instance groups use the market type
+     * specified for the group.</p>
+     */
     inline void SetMarket(const MarketType& value) { m_marketHasBeenSet = true; m_market = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * and the periodicity of the adjustment.</p>
      */
     inline const SimpleScalingPolicyConfiguration& GetSimpleScalingPolicyConfiguration() const{ return m_simpleScalingPolicyConfiguration; }
+
+    /**
+     * <p>The type of adjustment the automatic scaling activity makes when triggered,
+     * and the periodicity of the adjustment.</p>
+     */
+    inline bool SimpleScalingPolicyConfigurationHasBeenSet() const { return m_simpleScalingPolicyConfigurationHasBeenSet; }
 
     /**
      * <p>The type of adjustment the automatic scaling activity makes when triggered,

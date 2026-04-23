@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Specifies encryption-at-rest configuration for the Data
+   * <p>Specifies the encryption-at-rest configuration for the Data
    * Catalog.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/EncryptionAtRest">AWS
    * API Reference</a></p>
@@ -53,6 +53,11 @@ namespace Model
      * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
      */
     inline const CatalogEncryptionMode& GetCatalogEncryptionMode() const{ return m_catalogEncryptionMode; }
+
+    /**
+     * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
+     */
+    inline bool CatalogEncryptionModeHasBeenSet() const { return m_catalogEncryptionModeHasBeenSet; }
 
     /**
      * <p>The encryption-at-rest mode for encrypting Data Catalog data.</p>
@@ -79,6 +84,11 @@ namespace Model
      * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
      */
     inline const Aws::String& GetSseAwsKmsKeyId() const{ return m_sseAwsKmsKeyId; }
+
+    /**
+     * <p>The ID of the AWS KMS key to use for encryption at rest.</p>
+     */
+    inline bool SseAwsKmsKeyIdHasBeenSet() const { return m_sseAwsKmsKeyIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS KMS key to use for encryption at rest.</p>

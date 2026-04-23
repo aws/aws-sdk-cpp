@@ -52,6 +52,9 @@ namespace Model
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     
@@ -77,6 +80,14 @@ namespace Model
      * all devices on the specified gateway.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetVTLDeviceARNs() const{ return m_vTLDeviceARNs; }
+
+    /**
+     * <p>An array of strings, where each string represents the Amazon Resource Name
+     * (ARN) of a VTL device.</p> <note> <p>All of the specified VTL devices must be
+     * from the same gateway. If no VTL devices are specified, the result will contain
+     * all devices on the specified gateway.</p> </note>
+     */
+    inline bool VTLDeviceARNsHasBeenSet() const { return m_vTLDeviceARNsHasBeenSet; }
 
     /**
      * <p>An array of strings, where each string represents the Amazon Resource Name
@@ -145,6 +156,12 @@ namespace Model
      * <p>An opaque string that indicates the position at which to begin describing the
      * VTL devices.</p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p>An opaque string that indicates the position at which to begin describing the
+     * VTL devices.</p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -183,6 +200,12 @@ namespace Model
      * specified number.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Specifies that the number of VTL devices described be limited to the
+     * specified number.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Specifies that the number of VTL devices described be limited to the

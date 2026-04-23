@@ -60,6 +60,12 @@ namespace Model
      * <p>The number of instances to add or remove when the load exceeds a
      * threshold.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances to add or remove when the load exceeds a
+     * threshold.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * more instances are added or removed.</p>
      */
     inline int GetThresholdsWaitTime() const{ return m_thresholdsWaitTime; }
+
+    /**
+     * <p>The amount of time, in minutes, that the load must exceed a threshold before
+     * more instances are added or removed.</p>
+     */
+    inline bool ThresholdsWaitTimeHasBeenSet() const { return m_thresholdsWaitTimeHasBeenSet; }
 
     /**
      * <p>The amount of time, in minutes, that the load must exceed a threshold before
@@ -110,6 +122,18 @@ namespace Model
      * allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough
      * to get the new instances online.</p>
      */
+    inline bool IgnoreMetricsTimeHasBeenSet() const { return m_ignoreMetricsTimeHasBeenSet; }
+
+    /**
+     * <p>The amount of time (in minutes) after a scaling event occurs that AWS
+     * OpsWorks Stacks should ignore metrics and suppress additional scaling events.
+     * For example, AWS OpsWorks Stacks adds new instances following an upscaling event
+     * but the instances won't start reducing the load until they have been booted and
+     * configured. There is no point in raising additional scaling events during that
+     * operation, which typically takes several minutes. <code>IgnoreMetricsTime</code>
+     * allows you to direct AWS OpsWorks Stacks to suppress scaling events long enough
+     * to get the new instances online.</p>
+     */
     inline void SetIgnoreMetricsTime(int value) { m_ignoreMetricsTimeHasBeenSet = true; m_ignoreMetricsTime = value; }
 
     /**
@@ -135,6 +159,12 @@ namespace Model
      * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
      * -1 disables the threshold.</p>
      */
+    inline bool CpuThresholdHasBeenSet() const { return m_cpuThresholdHasBeenSet; }
+
+    /**
+     * <p>The CPU utilization threshold, as a percent of the available CPU. A value of
+     * -1 disables the threshold.</p>
+     */
     inline void SetCpuThreshold(double value) { m_cpuThresholdHasBeenSet = true; m_cpuThreshold = value; }
 
     /**
@@ -149,6 +179,12 @@ namespace Model
      * value of -1 disables the threshold.</p>
      */
     inline double GetMemoryThreshold() const{ return m_memoryThreshold; }
+
+    /**
+     * <p>The memory utilization threshold, as a percent of the available memory. A
+     * value of -1 disables the threshold.</p>
+     */
+    inline bool MemoryThresholdHasBeenSet() const { return m_memoryThresholdHasBeenSet; }
 
     /**
      * <p>The memory utilization threshold, as a percent of the available memory. A
@@ -170,6 +206,14 @@ namespace Model
      * (computing)</a>.</p>
      */
     inline double GetLoadThreshold() const{ return m_loadThreshold; }
+
+    /**
+     * <p>The load threshold. A value of -1 disables the threshold. For more
+     * information about how load is computed, see <a
+     * href="http://en.wikipedia.org/wiki/Load_%28computing%29">Load
+     * (computing)</a>.</p>
+     */
+    inline bool LoadThresholdHasBeenSet() const { return m_loadThresholdHasBeenSet; }
 
     /**
      * <p>The load threshold. A value of -1 disables the threshold. For more
@@ -199,6 +243,18 @@ namespace Model
      * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetAlarms() const{ return m_alarms; }
+
+    /**
+     * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This
+     * parameter takes a list of up to five alarm names, which are case sensitive and
+     * must be in the same region as the stack.</p> <note> <p>To use custom alarms, you
+     * must update your service role to allow <code>cloudwatch:DescribeAlarms</code>.
+     * You can either have AWS OpsWorks Stacks update the role for you when you first
+     * use this feature or you can edit the role manually. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-servicerole.html">Allowing
+     * AWS OpsWorks Stacks to Act on Your Behalf</a>.</p> </note>
+     */
+    inline bool AlarmsHasBeenSet() const { return m_alarmsHasBeenSet; }
 
     /**
      * <p>Custom Cloudwatch auto scaling alarms, to be used as thresholds. This

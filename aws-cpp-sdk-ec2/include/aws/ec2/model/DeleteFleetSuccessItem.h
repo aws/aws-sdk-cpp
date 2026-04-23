@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The current state of the EC2 Fleet.</p>
      */
+    inline bool CurrentFleetStateHasBeenSet() const { return m_currentFleetStateHasBeenSet; }
+
+    /**
+     * <p>The current state of the EC2 Fleet.</p>
+     */
     inline void SetCurrentFleetState(const FleetStateCode& value) { m_currentFleetStateHasBeenSet = true; m_currentFleetState = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>The previous state of the EC2 Fleet.</p>
      */
+    inline bool PreviousFleetStateHasBeenSet() const { return m_previousFleetStateHasBeenSet; }
+
+    /**
+     * <p>The previous state of the EC2 Fleet.</p>
+     */
     inline void SetPreviousFleetState(const FleetStateCode& value) { m_previousFleetStateHasBeenSet = true; m_previousFleetState = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The ID of the EC2 Fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>The ID of the EC2 Fleet.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>The ID of the EC2 Fleet.</p>

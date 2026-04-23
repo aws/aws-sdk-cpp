@@ -43,25 +43,39 @@ namespace Model
     GetCorsPolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline const Aws::Vector<CorsRule>& GetCorsPolicy() const{ return m_corsPolicy; }
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline void SetCorsPolicy(const Aws::Vector<CorsRule>& value) { m_corsPolicy = value; }
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline void SetCorsPolicy(Aws::Vector<CorsRule>&& value) { m_corsPolicy = std::move(value); }
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline GetCorsPolicyResult& WithCorsPolicy(const Aws::Vector<CorsRule>& value) { SetCorsPolicy(value); return *this;}
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline GetCorsPolicyResult& WithCorsPolicy(Aws::Vector<CorsRule>&& value) { SetCorsPolicy(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline GetCorsPolicyResult& AddCorsPolicy(const CorsRule& value) { m_corsPolicy.push_back(value); return *this; }
 
-    
+    /**
+     * <p>The CORS policy assigned to the container.</p>
+     */
     inline GetCorsPolicyResult& AddCorsPolicy(CorsRule&& value) { m_corsPolicy.push_back(std::move(value)); return *this; }
 
   private:

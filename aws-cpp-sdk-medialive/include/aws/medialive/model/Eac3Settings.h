@@ -47,7 +47,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Eac3Settings<p><h3>See Also:</h3>   <a
+   * Eac3 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Eac3Settings">AWS
    * API Reference</a></p>
    */
@@ -65,6 +65,12 @@ namespace Model
      * Only used for 3/2 coding mode.
      */
     inline const Eac3AttenuationControl& GetAttenuationControl() const{ return m_attenuationControl; }
+
+    /**
+     * When set to attenuate3Db, applies a 3 dB attenuation to the surround channels.
+     * Only used for 3/2 coding mode.
+     */
+    inline bool AttenuationControlHasBeenSet() const { return m_attenuationControlHasBeenSet; }
 
     /**
      * When set to attenuate3Db, applies a 3 dB attenuation to the surround channels.
@@ -99,6 +105,11 @@ namespace Model
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     */
     inline void SetBitrate(double value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -112,6 +123,12 @@ namespace Model
      * A/52-2012 (Annex E) for background on these values.
      */
     inline const Eac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+
+    /**
+     * Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC
+     * A/52-2012 (Annex E) for background on these values.
+     */
+    inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     /**
      * Specifies the bitstream mode (bsmod) for the emitted E-AC-3 stream. See ATSC
@@ -146,6 +163,11 @@ namespace Model
     /**
      * Dolby Digital Plus coding mode. Determines number of channels.
      */
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
+
+    /**
+     * Dolby Digital Plus coding mode. Determines number of channels.
+     */
     inline void SetCodingMode(const Eac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
 
     /**
@@ -168,6 +190,11 @@ namespace Model
      * When set to enabled, activates a DC highpass filter for all input channels.
      */
     inline const Eac3DcFilter& GetDcFilter() const{ return m_dcFilter; }
+
+    /**
+     * When set to enabled, activates a DC highpass filter for all input channels.
+     */
+    inline bool DcFilterHasBeenSet() const { return m_dcFilterHasBeenSet; }
 
     /**
      * When set to enabled, activates a DC highpass filter for all input channels.
@@ -200,6 +227,12 @@ namespace Model
      * Sets the dialnorm for the output. If blank and input audio is Dolby Digital
      * Plus, dialnorm will be passed through.
      */
+    inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
+
+    /**
+     * Sets the dialnorm for the output. If blank and input audio is Dolby Digital
+     * Plus, dialnorm will be passed through.
+     */
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
 
     /**
@@ -213,6 +246,11 @@ namespace Model
      * Sets the Dolby dynamic range compression profile.
      */
     inline const Eac3DrcLine& GetDrcLine() const{ return m_drcLine; }
+
+    /**
+     * Sets the Dolby dynamic range compression profile.
+     */
+    inline bool DrcLineHasBeenSet() const { return m_drcLineHasBeenSet; }
 
     /**
      * Sets the Dolby dynamic range compression profile.
@@ -240,6 +278,12 @@ namespace Model
      * instantaneous signal peaks do not exceed specified levels.
      */
     inline const Eac3DrcRf& GetDrcRf() const{ return m_drcRf; }
+
+    /**
+     * Sets the profile for heavy Dolby dynamic range compression, ensures that the
+     * instantaneous signal peaks do not exceed specified levels.
+     */
+    inline bool DrcRfHasBeenSet() const { return m_drcRfHasBeenSet; }
 
     /**
      * Sets the profile for heavy Dolby dynamic range compression, ensures that the
@@ -274,6 +318,11 @@ namespace Model
     /**
      * When encoding 3/2 audio, setting to lfe enables the LFE channel
      */
+    inline bool LfeControlHasBeenSet() const { return m_lfeControlHasBeenSet; }
+
+    /**
+     * When encoding 3/2 audio, setting to lfe enables the LFE channel
+     */
     inline void SetLfeControl(const Eac3LfeControl& value) { m_lfeControlHasBeenSet = true; m_lfeControl = value; }
 
     /**
@@ -297,6 +346,12 @@ namespace Model
      * encoding. Only valid with codingMode32 coding mode.
      */
     inline const Eac3LfeFilter& GetLfeFilter() const{ return m_lfeFilter; }
+
+    /**
+     * When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to
+     * encoding. Only valid with codingMode32 coding mode.
+     */
+    inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
 
     /**
      * When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to
@@ -331,6 +386,11 @@ namespace Model
     /**
      * Left only/Right only center mix level. Only used for 3/2 coding mode.
      */
+    inline bool LoRoCenterMixLevelHasBeenSet() const { return m_loRoCenterMixLevelHasBeenSet; }
+
+    /**
+     * Left only/Right only center mix level. Only used for 3/2 coding mode.
+     */
     inline void SetLoRoCenterMixLevel(double value) { m_loRoCenterMixLevelHasBeenSet = true; m_loRoCenterMixLevel = value; }
 
     /**
@@ -343,6 +403,11 @@ namespace Model
      * Left only/Right only surround mix level. Only used for 3/2 coding mode.
      */
     inline double GetLoRoSurroundMixLevel() const{ return m_loRoSurroundMixLevel; }
+
+    /**
+     * Left only/Right only surround mix level. Only used for 3/2 coding mode.
+     */
+    inline bool LoRoSurroundMixLevelHasBeenSet() const { return m_loRoSurroundMixLevelHasBeenSet; }
 
     /**
      * Left only/Right only surround mix level. Only used for 3/2 coding mode.
@@ -363,6 +428,11 @@ namespace Model
     /**
      * Left total/Right total center mix level. Only used for 3/2 coding mode.
      */
+    inline bool LtRtCenterMixLevelHasBeenSet() const { return m_ltRtCenterMixLevelHasBeenSet; }
+
+    /**
+     * Left total/Right total center mix level. Only used for 3/2 coding mode.
+     */
     inline void SetLtRtCenterMixLevel(double value) { m_ltRtCenterMixLevelHasBeenSet = true; m_ltRtCenterMixLevel = value; }
 
     /**
@@ -375,6 +445,11 @@ namespace Model
      * Left total/Right total surround mix level. Only used for 3/2 coding mode.
      */
     inline double GetLtRtSurroundMixLevel() const{ return m_ltRtSurroundMixLevel; }
+
+    /**
+     * Left total/Right total surround mix level. Only used for 3/2 coding mode.
+     */
+    inline bool LtRtSurroundMixLevelHasBeenSet() const { return m_ltRtSurroundMixLevelHasBeenSet; }
 
     /**
      * Left total/Right total surround mix level. Only used for 3/2 coding mode.
@@ -393,6 +468,13 @@ namespace Model
      * of these streams, then the static metadata settings will be used.
      */
     inline const Eac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+
+    /**
+     * When set to followInput, encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
+    inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
 
     /**
      * When set to followInput, encoder metadata will be sourced from the DD, DD+, or
@@ -437,6 +519,14 @@ namespace Model
      * Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+
      * output as the system alternates between passthrough and encoding.
      */
+    inline bool PassthroughControlHasBeenSet() const { return m_passthroughControlHasBeenSet; }
+
+    /**
+     * When set to whenPossible, input DD+ audio will be passed through if it is
+     * present on the input. This detection is dynamic over the life of the transcode.
+     * Inputs that alternate between DD+ and non-DD+ content will have a consistent DD+
+     * output as the system alternates between passthrough and encoding.
+     */
     inline void SetPassthroughControl(const Eac3PassthroughControl& value) { m_passthroughControlHasBeenSet = true; m_passthroughControl = value; }
 
     /**
@@ -474,6 +564,12 @@ namespace Model
      * When set to shift90Degrees, applies a 90-degree phase shift to the surround
      * channels. Only used for 3/2 coding mode.
      */
+    inline bool PhaseControlHasBeenSet() const { return m_phaseControlHasBeenSet; }
+
+    /**
+     * When set to shift90Degrees, applies a 90-degree phase shift to the surround
+     * channels. Only used for 3/2 coding mode.
+     */
     inline void SetPhaseControl(const Eac3PhaseControl& value) { m_phaseControlHasBeenSet = true; m_phaseControl = value; }
 
     /**
@@ -499,6 +595,11 @@ namespace Model
      * Stereo downmix preference. Only used for 3/2 coding mode.
      */
     inline const Eac3StereoDownmix& GetStereoDownmix() const{ return m_stereoDownmix; }
+
+    /**
+     * Stereo downmix preference. Only used for 3/2 coding mode.
+     */
+    inline bool StereoDownmixHasBeenSet() const { return m_stereoDownmixHasBeenSet; }
 
     /**
      * Stereo downmix preference. Only used for 3/2 coding mode.
@@ -531,6 +632,12 @@ namespace Model
      * When encoding 3/2 audio, sets whether an extra center back surround channel is
      * matrix encoded into the left and right surround channels.
      */
+    inline bool SurroundExModeHasBeenSet() const { return m_surroundExModeHasBeenSet; }
+
+    /**
+     * When encoding 3/2 audio, sets whether an extra center back surround channel is
+     * matrix encoded into the left and right surround channels.
+     */
     inline void SetSurroundExMode(const Eac3SurroundExMode& value) { m_surroundExModeHasBeenSet = true; m_surroundExMode = value; }
 
     /**
@@ -557,6 +664,12 @@ namespace Model
      * two channels.
      */
     inline const Eac3SurroundMode& GetSurroundMode() const{ return m_surroundMode; }
+
+    /**
+     * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the
+     * two channels.
+     */
+    inline bool SurroundModeHasBeenSet() const { return m_surroundModeHasBeenSet; }
 
     /**
      * When encoding 2/0 audio, sets whether Dolby Surround is matrix encoded into the

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p> Unique bundle identifier. </p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p> Unique bundle identifier. </p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p> Unique project identifier. </p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p> Unique project identifier. </p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
      * <p> Developer desktop or target application platform. </p>
      */
     inline const Platform& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p> Developer desktop or target application platform. </p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p> Developer desktop or target application platform. </p>

@@ -55,6 +55,12 @@ namespace Model
      * <p>The Public Access Block configuration that you want to apply to this Amazon
      * Web Services account.</p>
      */
+    inline bool PublicAccessBlockConfigurationHasBeenSet() const { return m_publicAccessBlockConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Public Access Block configuration that you want to apply to this Amazon
+     * Web Services account.</p>
+     */
     inline void SetPublicAccessBlockConfiguration(const PublicAccessBlockConfiguration& value) { m_publicAccessBlockConfigurationHasBeenSet = true; m_publicAccessBlockConfiguration = value; }
 
     /**
@@ -81,6 +87,12 @@ namespace Model
      * configuration you want to set.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The Account ID for the Amazon Web Services account whose Public Access Block
+     * configuration you want to set.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The Account ID for the Amazon Web Services account whose Public Access Block

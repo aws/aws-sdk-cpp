@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The currency of the offering.</p>
      */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+
+    /**
+     * <p>The currency of the offering.</p>
+     */
     inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The duration of the offering (in seconds).</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the offering (in seconds).</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -98,6 +108,11 @@ namespace Model
      * <p>The hourly price of the offering.</p>
      */
     inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price of the offering.</p>
+     */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
 
     /**
      * <p>The hourly price of the offering.</p>
@@ -138,6 +153,11 @@ namespace Model
     /**
      * <p>The instance family of the offering.</p>
      */
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
+
+    /**
+     * <p>The instance family of the offering.</p>
+     */
     inline void SetInstanceFamily(const Aws::String& value) { m_instanceFamilyHasBeenSet = true; m_instanceFamily = value; }
 
     /**
@@ -170,6 +190,11 @@ namespace Model
      * <p>The ID of the offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
      * <p>The ID of the offering.</p>
@@ -210,6 +235,11 @@ namespace Model
     /**
      * <p>The available payment option.</p>
      */
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+
+    /**
+     * <p>The available payment option.</p>
+     */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
@@ -233,6 +263,12 @@ namespace Model
      * offerings.</p>
      */
     inline const Aws::String& GetUpfrontPrice() const{ return m_upfrontPrice; }
+
+    /**
+     * <p>The upfront price of the offering. Does not apply to No Upfront
+     * offerings.</p>
+     */
+    inline bool UpfrontPriceHasBeenSet() const { return m_upfrontPriceHasBeenSet; }
 
     /**
      * <p>The upfront price of the offering. Does not apply to No Upfront

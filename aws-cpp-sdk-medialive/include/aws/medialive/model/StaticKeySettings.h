@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for StaticKeySettings<p><h3>See Also:</h3>   <a
+   * Static Key Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/StaticKeySettings">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * The URL of the license server used for protecting content.
      */
     inline const InputLocation& GetKeyProviderServer() const{ return m_keyProviderServer; }
+
+    /**
+     * The URL of the license server used for protecting content.
+     */
+    inline bool KeyProviderServerHasBeenSet() const { return m_keyProviderServerHasBeenSet; }
 
     /**
      * The URL of the license server used for protecting content.
@@ -78,6 +83,11 @@ namespace Model
      * Static key value as a 32 character hexadecimal string.
      */
     inline const Aws::String& GetStaticKeyValue() const{ return m_staticKeyValue; }
+
+    /**
+     * Static key value as a 32 character hexadecimal string.
+     */
+    inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
 
     /**
      * Static key value as a 32 character hexadecimal string.

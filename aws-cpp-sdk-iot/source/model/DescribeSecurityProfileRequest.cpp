@@ -29,7 +29,7 @@ DescribeSecurityProfileRequest::DescribeSecurityProfileRequest() :
 
 Aws::String DescribeSecurityProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

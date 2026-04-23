@@ -66,6 +66,16 @@ namespace Model
      * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
      * </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of server-side encryption:</p> <ul> <li> <p>
+     * <code>ENABLING</code> - Server-side encryption is being enabled.</p> </li> <li>
+     * <p> <code>ENABLED</code> - Server-side encryption is enabled.</p> </li> <li> <p>
+     * <code>DISABLING</code> - Server-side encryption is being disabled.</p> </li>
+     * <li> <p> <code>DISABLED</code> - Server-side encryption is disabled.</p> </li>
+     * </ul>
+     */
     inline void SetStatus(const SSEStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

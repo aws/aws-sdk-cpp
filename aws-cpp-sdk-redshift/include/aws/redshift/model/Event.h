@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identifier for the source of the event.</p>
      */
+    inline bool SourceIdentifierHasBeenSet() const { return m_sourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the source of the event.</p>
+     */
     inline void SetSourceIdentifier(const Aws::String& value) { m_sourceIdentifierHasBeenSet = true; m_sourceIdentifier = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The source type for this event.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source type for this event.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The text of this event.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The text of this event.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The text of this event.</p>
@@ -155,6 +170,12 @@ namespace Model
      * Monitoring, Security</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
+     * Monitoring, Security</p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>A list of the event categories.</p> <p>Values: Configuration, Management,
@@ -207,6 +228,11 @@ namespace Model
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+     */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -243,6 +269,11 @@ namespace Model
     /**
      * <p>The date and time of the event.</p>
      */
+    inline bool DateHasBeenSet() const { return m_dateHasBeenSet; }
+
+    /**
+     * <p>The date and time of the event.</p>
+     */
     inline void SetDate(const Aws::Utils::DateTime& value) { m_dateHasBeenSet = true; m_date = value; }
 
     /**
@@ -265,6 +296,11 @@ namespace Model
      * <p>The identifier of the event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
+    /**
+     * <p>The identifier of the event.</p>
+     */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
      * <p>The identifier of the event.</p>

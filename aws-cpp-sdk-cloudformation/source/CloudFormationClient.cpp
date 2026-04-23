@@ -24,6 +24,9 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/cloudformation/CloudFormationClient.h>
 #include <aws/cloudformation/CloudFormationEndpoint.h>
 #include <aws/cloudformation/CloudFormationErrorMarshaller.h>
@@ -123,21 +126,28 @@ CloudFormationClient::~CloudFormationClient()
 
 void CloudFormationClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << CloudFormationEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + CloudFormationEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void CloudFormationClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
 {
   Aws::StringStream ss;
@@ -150,8 +160,8 @@ Aws::String CloudFormationClient::ConvertRequestToPresignedUrl(const AmazonSeria
 
 CancelUpdateStackOutcome CloudFormationClient::CancelUpdateStack(const CancelUpdateStackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -185,8 +195,8 @@ void CloudFormationClient::CancelUpdateStackAsyncHelper(const CancelUpdateStackR
 
 ContinueUpdateRollbackOutcome CloudFormationClient::ContinueUpdateRollback(const ContinueUpdateRollbackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -220,8 +230,8 @@ void CloudFormationClient::ContinueUpdateRollbackAsyncHelper(const ContinueUpdat
 
 CreateChangeSetOutcome CloudFormationClient::CreateChangeSet(const CreateChangeSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -255,8 +265,8 @@ void CloudFormationClient::CreateChangeSetAsyncHelper(const CreateChangeSetReque
 
 CreateStackOutcome CloudFormationClient::CreateStack(const CreateStackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -290,8 +300,8 @@ void CloudFormationClient::CreateStackAsyncHelper(const CreateStackRequest& requ
 
 CreateStackInstancesOutcome CloudFormationClient::CreateStackInstances(const CreateStackInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -325,8 +335,8 @@ void CloudFormationClient::CreateStackInstancesAsyncHelper(const CreateStackInst
 
 CreateStackSetOutcome CloudFormationClient::CreateStackSet(const CreateStackSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -360,8 +370,8 @@ void CloudFormationClient::CreateStackSetAsyncHelper(const CreateStackSetRequest
 
 DeleteChangeSetOutcome CloudFormationClient::DeleteChangeSet(const DeleteChangeSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -395,8 +405,8 @@ void CloudFormationClient::DeleteChangeSetAsyncHelper(const DeleteChangeSetReque
 
 DeleteStackOutcome CloudFormationClient::DeleteStack(const DeleteStackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -430,8 +440,8 @@ void CloudFormationClient::DeleteStackAsyncHelper(const DeleteStackRequest& requ
 
 DeleteStackInstancesOutcome CloudFormationClient::DeleteStackInstances(const DeleteStackInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -465,8 +475,8 @@ void CloudFormationClient::DeleteStackInstancesAsyncHelper(const DeleteStackInst
 
 DeleteStackSetOutcome CloudFormationClient::DeleteStackSet(const DeleteStackSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -500,8 +510,8 @@ void CloudFormationClient::DeleteStackSetAsyncHelper(const DeleteStackSetRequest
 
 DescribeAccountLimitsOutcome CloudFormationClient::DescribeAccountLimits(const DescribeAccountLimitsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -535,8 +545,8 @@ void CloudFormationClient::DescribeAccountLimitsAsyncHelper(const DescribeAccoun
 
 DescribeChangeSetOutcome CloudFormationClient::DescribeChangeSet(const DescribeChangeSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -570,8 +580,8 @@ void CloudFormationClient::DescribeChangeSetAsyncHelper(const DescribeChangeSetR
 
 DescribeStackDriftDetectionStatusOutcome CloudFormationClient::DescribeStackDriftDetectionStatus(const DescribeStackDriftDetectionStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -605,8 +615,8 @@ void CloudFormationClient::DescribeStackDriftDetectionStatusAsyncHelper(const De
 
 DescribeStackEventsOutcome CloudFormationClient::DescribeStackEvents(const DescribeStackEventsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -640,8 +650,8 @@ void CloudFormationClient::DescribeStackEventsAsyncHelper(const DescribeStackEve
 
 DescribeStackInstanceOutcome CloudFormationClient::DescribeStackInstance(const DescribeStackInstanceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -675,8 +685,8 @@ void CloudFormationClient::DescribeStackInstanceAsyncHelper(const DescribeStackI
 
 DescribeStackResourceOutcome CloudFormationClient::DescribeStackResource(const DescribeStackResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -710,8 +720,8 @@ void CloudFormationClient::DescribeStackResourceAsyncHelper(const DescribeStackR
 
 DescribeStackResourceDriftsOutcome CloudFormationClient::DescribeStackResourceDrifts(const DescribeStackResourceDriftsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -745,8 +755,8 @@ void CloudFormationClient::DescribeStackResourceDriftsAsyncHelper(const Describe
 
 DescribeStackResourcesOutcome CloudFormationClient::DescribeStackResources(const DescribeStackResourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -780,8 +790,8 @@ void CloudFormationClient::DescribeStackResourcesAsyncHelper(const DescribeStack
 
 DescribeStackSetOutcome CloudFormationClient::DescribeStackSet(const DescribeStackSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -815,8 +825,8 @@ void CloudFormationClient::DescribeStackSetAsyncHelper(const DescribeStackSetReq
 
 DescribeStackSetOperationOutcome CloudFormationClient::DescribeStackSetOperation(const DescribeStackSetOperationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -850,8 +860,8 @@ void CloudFormationClient::DescribeStackSetOperationAsyncHelper(const DescribeSt
 
 DescribeStacksOutcome CloudFormationClient::DescribeStacks(const DescribeStacksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -885,8 +895,8 @@ void CloudFormationClient::DescribeStacksAsyncHelper(const DescribeStacksRequest
 
 DetectStackDriftOutcome CloudFormationClient::DetectStackDrift(const DetectStackDriftRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -920,8 +930,8 @@ void CloudFormationClient::DetectStackDriftAsyncHelper(const DetectStackDriftReq
 
 DetectStackResourceDriftOutcome CloudFormationClient::DetectStackResourceDrift(const DetectStackResourceDriftRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -955,8 +965,8 @@ void CloudFormationClient::DetectStackResourceDriftAsyncHelper(const DetectStack
 
 EstimateTemplateCostOutcome CloudFormationClient::EstimateTemplateCost(const EstimateTemplateCostRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -990,8 +1000,8 @@ void CloudFormationClient::EstimateTemplateCostAsyncHelper(const EstimateTemplat
 
 ExecuteChangeSetOutcome CloudFormationClient::ExecuteChangeSet(const ExecuteChangeSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1025,8 +1035,8 @@ void CloudFormationClient::ExecuteChangeSetAsyncHelper(const ExecuteChangeSetReq
 
 GetStackPolicyOutcome CloudFormationClient::GetStackPolicy(const GetStackPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1060,8 +1070,8 @@ void CloudFormationClient::GetStackPolicyAsyncHelper(const GetStackPolicyRequest
 
 GetTemplateOutcome CloudFormationClient::GetTemplate(const GetTemplateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1095,8 +1105,8 @@ void CloudFormationClient::GetTemplateAsyncHelper(const GetTemplateRequest& requ
 
 GetTemplateSummaryOutcome CloudFormationClient::GetTemplateSummary(const GetTemplateSummaryRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1130,8 +1140,8 @@ void CloudFormationClient::GetTemplateSummaryAsyncHelper(const GetTemplateSummar
 
 ListChangeSetsOutcome CloudFormationClient::ListChangeSets(const ListChangeSetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1165,8 +1175,8 @@ void CloudFormationClient::ListChangeSetsAsyncHelper(const ListChangeSetsRequest
 
 ListExportsOutcome CloudFormationClient::ListExports(const ListExportsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1200,8 +1210,8 @@ void CloudFormationClient::ListExportsAsyncHelper(const ListExportsRequest& requ
 
 ListImportsOutcome CloudFormationClient::ListImports(const ListImportsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1235,8 +1245,8 @@ void CloudFormationClient::ListImportsAsyncHelper(const ListImportsRequest& requ
 
 ListStackInstancesOutcome CloudFormationClient::ListStackInstances(const ListStackInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1270,8 +1280,8 @@ void CloudFormationClient::ListStackInstancesAsyncHelper(const ListStackInstance
 
 ListStackResourcesOutcome CloudFormationClient::ListStackResources(const ListStackResourcesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1305,8 +1315,8 @@ void CloudFormationClient::ListStackResourcesAsyncHelper(const ListStackResource
 
 ListStackSetOperationResultsOutcome CloudFormationClient::ListStackSetOperationResults(const ListStackSetOperationResultsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1340,8 +1350,8 @@ void CloudFormationClient::ListStackSetOperationResultsAsyncHelper(const ListSta
 
 ListStackSetOperationsOutcome CloudFormationClient::ListStackSetOperations(const ListStackSetOperationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1375,8 +1385,8 @@ void CloudFormationClient::ListStackSetOperationsAsyncHelper(const ListStackSetO
 
 ListStackSetsOutcome CloudFormationClient::ListStackSets(const ListStackSetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1410,8 +1420,8 @@ void CloudFormationClient::ListStackSetsAsyncHelper(const ListStackSetsRequest& 
 
 ListStacksOutcome CloudFormationClient::ListStacks(const ListStacksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1445,8 +1455,8 @@ void CloudFormationClient::ListStacksAsyncHelper(const ListStacksRequest& reques
 
 SetStackPolicyOutcome CloudFormationClient::SetStackPolicy(const SetStackPolicyRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1480,8 +1490,8 @@ void CloudFormationClient::SetStackPolicyAsyncHelper(const SetStackPolicyRequest
 
 SignalResourceOutcome CloudFormationClient::SignalResource(const SignalResourceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1515,8 +1525,8 @@ void CloudFormationClient::SignalResourceAsyncHelper(const SignalResourceRequest
 
 StopStackSetOperationOutcome CloudFormationClient::StopStackSetOperation(const StopStackSetOperationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1550,8 +1560,8 @@ void CloudFormationClient::StopStackSetOperationAsyncHelper(const StopStackSetOp
 
 UpdateStackOutcome CloudFormationClient::UpdateStack(const UpdateStackRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1585,8 +1595,8 @@ void CloudFormationClient::UpdateStackAsyncHelper(const UpdateStackRequest& requ
 
 UpdateStackInstancesOutcome CloudFormationClient::UpdateStackInstances(const UpdateStackInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1620,8 +1630,8 @@ void CloudFormationClient::UpdateStackInstancesAsyncHelper(const UpdateStackInst
 
 UpdateStackSetOutcome CloudFormationClient::UpdateStackSet(const UpdateStackSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1655,8 +1665,8 @@ void CloudFormationClient::UpdateStackSetAsyncHelper(const UpdateStackSetRequest
 
 UpdateTerminationProtectionOutcome CloudFormationClient::UpdateTerminationProtection(const UpdateTerminationProtectionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);
@@ -1690,8 +1700,8 @@ void CloudFormationClient::UpdateTerminationProtectionAsyncHelper(const UpdateTe
 
 ValidateTemplateOutcome CloudFormationClient::ValidateTemplate(const ValidateTemplateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST);

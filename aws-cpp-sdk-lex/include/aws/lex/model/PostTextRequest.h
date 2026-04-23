@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Lex bot.</p>
      */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Lex bot.</p>
+     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The alias of the Amazon Lex bot.</p>
      */
     inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+
+    /**
+     * <p>The alias of the Amazon Lex bot.</p>
+     */
+    inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
 
     /**
      * <p>The alias of the Amazon Lex bot.</p>
@@ -134,6 +144,26 @@ namespace Model
      * separate the two conversations.</p> </li> </ul>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The ID of the client application user. Amazon Lex uses this to identify a
+     * user's conversation with your bot. At runtime, each request must contain the
+     * <code>userID</code> field.</p> <p>To decide the user ID to use for your
+     * application, consider the following factors.</p> <ul> <li> <p>The
+     * <code>userID</code> field must not contain any personally identifiable
+     * information of the user, for example, name, personal identification numbers, or
+     * other end user personal information.</p> </li> <li> <p>If you want a user to
+     * start a conversation on one device and continue on another device, use a
+     * user-specific identifier.</p> </li> <li> <p>If you want the same user to be able
+     * to have two independent conversations on two different devices, choose a
+     * device-specific identifier.</p> </li> <li> <p>A user can't have two independent
+     * conversations with two different versions of the same bot. For example, a user
+     * can't have a conversation with the PROD and BETA versions of the same bot. If
+     * you anticipate that a user will need to have conversation with two different
+     * versions, for example, while testing, include the bot alias in the user ID to
+     * separate the two conversations.</p> </li> </ul>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The ID of the client application user. Amazon Lex uses this to identify a
@@ -270,6 +300,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
      * Session Attributes</a>.</p>
      */
+    inline bool SessionAttributesHasBeenSet() const { return m_sessionAttributesHasBeenSet; }
+
+    /**
+     * <p>Application-specific information passed between Amazon Lex and a client
+     * application.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-session-attribs">Setting
+     * Session Attributes</a>.</p>
+     */
     inline void SetSessionAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_sessionAttributesHasBeenSet = true; m_sessionAttributes = value; }
 
     /**
@@ -362,6 +400,16 @@ namespace Model
      * Request Attributes</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestAttributes() const{ return m_requestAttributes; }
+
+    /**
+     * <p>Request-specific information passed between Amazon Lex and a client
+     * application.</p> <p>The namespace <code>x-amz-lex:</code> is reserved for
+     * special attributes. Don't create any request attributes with the prefix
+     * <code>x-amz-lex:</code>.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/lex/latest/dg/context-mgmt.html#context-mgmt-request-attribs">Setting
+     * Request Attributes</a>.</p>
+     */
+    inline bool RequestAttributesHasBeenSet() const { return m_requestAttributesHasBeenSet; }
 
     /**
      * <p>Request-specific information passed between Amazon Lex and a client
@@ -478,6 +526,11 @@ namespace Model
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>
      */
     inline const Aws::String& GetInputText() const{ return m_inputText; }
+
+    /**
+     * <p>The text that the user entered (Amazon Lex interprets this text).</p>
+     */
+    inline bool InputTextHasBeenSet() const { return m_inputTextHasBeenSet; }
 
     /**
      * <p>The text that the user entered (Amazon Lex interprets this text).</p>

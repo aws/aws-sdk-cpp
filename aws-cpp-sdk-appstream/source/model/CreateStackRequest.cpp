@@ -30,7 +30,8 @@ CreateStackRequest::CreateStackRequest() :
     m_redirectURLHasBeenSet(false),
     m_feedbackURLHasBeenSet(false),
     m_userSettingsHasBeenSet(false),
-    m_applicationSettingsHasBeenSet(false)
+    m_applicationSettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -93,6 +94,17 @@ Aws::String CreateStackRequest::SerializePayload() const
   if(m_applicationSettingsHasBeenSet)
   {
    payload.WithObject("ApplicationSettings", m_applicationSettings.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

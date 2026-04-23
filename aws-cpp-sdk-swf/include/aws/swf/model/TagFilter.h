@@ -58,6 +58,12 @@ namespace Model
      * <p> Specifies the tag that must be associated with the execution for it to meet
      * the filter criteria.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p> Specifies the tag that must be associated with the execution for it to meet
+     * the filter criteria.</p>
+     */
     inline void SetTag(const Aws::String& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**

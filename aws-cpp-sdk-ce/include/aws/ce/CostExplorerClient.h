@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ce/model/GetCostAndUsageResult.h>
+#include <aws/ce/model/GetCostForecastResult.h>
 #include <aws/ce/model/GetDimensionValuesResult.h>
 #include <aws/ce/model/GetReservationCoverageResult.h>
 #include <aws/ce/model/GetReservationPurchaseRecommendationResult.h>
@@ -68,6 +69,7 @@ namespace CostExplorer
 namespace Model
 {
         class GetCostAndUsageRequest;
+        class GetCostForecastRequest;
         class GetDimensionValuesRequest;
         class GetReservationCoverageRequest;
         class GetReservationPurchaseRecommendationRequest;
@@ -75,6 +77,7 @@ namespace Model
         class GetTagsRequest;
 
         typedef Aws::Utils::Outcome<GetCostAndUsageResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostAndUsageOutcome;
+        typedef Aws::Utils::Outcome<GetCostForecastResult, Aws::Client::AWSError<CostExplorerErrors>> GetCostForecastOutcome;
         typedef Aws::Utils::Outcome<GetDimensionValuesResult, Aws::Client::AWSError<CostExplorerErrors>> GetDimensionValuesOutcome;
         typedef Aws::Utils::Outcome<GetReservationCoverageResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationCoverageOutcome;
         typedef Aws::Utils::Outcome<GetReservationPurchaseRecommendationResult, Aws::Client::AWSError<CostExplorerErrors>> GetReservationPurchaseRecommendationOutcome;
@@ -82,6 +85,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTagsResult, Aws::Client::AWSError<CostExplorerErrors>> GetTagsOutcome;
 
         typedef std::future<GetCostAndUsageOutcome> GetCostAndUsageOutcomeCallable;
+        typedef std::future<GetCostForecastOutcome> GetCostForecastOutcomeCallable;
         typedef std::future<GetDimensionValuesOutcome> GetDimensionValuesOutcomeCallable;
         typedef std::future<GetReservationCoverageOutcome> GetReservationCoverageOutcomeCallable;
         typedef std::future<GetReservationPurchaseRecommendationOutcome> GetReservationPurchaseRecommendationOutcomeCallable;
@@ -92,6 +96,7 @@ namespace Model
   class CostExplorerClient;
 
     typedef std::function<void(const CostExplorerClient*, const Model::GetCostAndUsageRequest&, const Model::GetCostAndUsageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostAndUsageResponseReceivedHandler;
+    typedef std::function<void(const CostExplorerClient*, const Model::GetCostForecastRequest&, const Model::GetCostForecastOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCostForecastResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetDimensionValuesRequest&, const Model::GetDimensionValuesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDimensionValuesResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationCoverageRequest&, const Model::GetReservationCoverageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationCoverageResponseReceivedHandler;
     typedef std::function<void(const CostExplorerClient*, const Model::GetReservationPurchaseRecommendationRequest&, const Model::GetReservationPurchaseRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetReservationPurchaseRecommendationResponseReceivedHandler;
@@ -99,15 +104,16 @@ namespace Model
     typedef std::function<void(const CostExplorerClient*, const Model::GetTagsRequest&, const Model::GetTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTagsResponseReceivedHandler;
 
   /**
-   * <p>The Cost Explorer API allows you to programmatically query your cost and
+   * <p>The Cost Explorer API enables you to programmatically query your cost and
    * usage data. You can query for aggregated data such as total monthly costs or
    * total daily usage. You can also query for granular data, such as the number of
    * daily write operations for Amazon DynamoDB database tables in your production
    * environment. </p> <p>Service Endpoint</p> <p>The Cost Explorer API provides the
-   * following endpoint:</p> <ul> <li> <p>https://ce.us-east-1.amazonaws.com</p>
-   * </li> </ul> <p>For information about costs associated with the Cost Explorer
-   * API, see <a href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost
-   * Management Pricing</a>.</p>
+   * following endpoint:</p> <ul> <li> <p>
+   * <code>https://ce.us-east-1.amazonaws.com</code> </p> </li> </ul> <p>For
+   * information about costs associated with the Cost Explorer API, see <a
+   * href="https://aws.amazon.com/aws-cost-management/pricing/">AWS Cost Management
+   * Pricing</a>.</p>
    */
   class AWS_COSTEXPLORER_API CostExplorerClient : public Aws::Client::AWSJsonClient
   {
@@ -144,10 +150,10 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          */
@@ -159,10 +165,10 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
@@ -176,16 +182,47 @@ namespace Model
          * <code>UsageQuantity</code>, that you want the request to return. You can also
          * filter and group your data by various dimensions, such as <code>SERVICE</code>
          * or <code>AZ</code>, in a specific time range. For a complete list of valid
-         * dimensions, see the <code> <a
+         * dimensions, see the <a
          * href="http://docs.aws.amazon.com/aws-cost-management/latest/APIReference/API_GetDimensionValues.html">GetDimensionValues</a>
-         * </code> operation. Master accounts in an organization in AWS Organizations have
-         * access to all member accounts.</p><p><h3>See Also:</h3>   <a
+         * operation. Master accounts in an organization in AWS Organizations have access
+         * to all member accounts.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostAndUsage">AWS
          * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetCostAndUsageAsync(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * spend over the forecast time period that you select, based on your past costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetCostForecastOutcome GetCostForecast(const Model::GetCostForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * spend over the forecast time period that you select, based on your past costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetCostForecastOutcomeCallable GetCostForecastCallable(const Model::GetCostForecastRequest& request) const;
+
+        /**
+         * <p>Retrieves a forecast for how much Amazon Web Services predicts that you will
+         * spend over the forecast time period that you select, based on your past costs.
+         * </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetCostForecast">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetCostForecastAsync(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all available filter values for a specified filter over a period of
@@ -219,7 +256,7 @@ namespace Model
         virtual void GetDimensionValuesAsync(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -238,7 +275,7 @@ namespace Model
         virtual Model::GetReservationCoverageOutcome GetReservationCoverage(const Model::GetReservationCoverageRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -259,7 +296,7 @@ namespace Model
         virtual Model::GetReservationCoverageOutcomeCallable GetReservationCoverageCallable(const Model::GetReservationCoverageRequest& request) const;
 
         /**
-         * <p>Retrieves the reservation coverage for your account. This allows you to see
+         * <p>Retrieves the reservation coverage for your account. This enables you to see
          * how much of your Amazon Elastic Compute Cloud, Amazon ElastiCache, Amazon
          * Relational Database Service, or Amazon Redshift usage is covered by a
          * reservation. An organization's master account can see the coverage of the
@@ -288,13 +325,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
@@ -311,13 +348,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
@@ -336,13 +373,13 @@ namespace Model
          * for a reservation. After AWS has these categories, it simulates every
          * combination of reservations in each category of usage to identify the best
          * number of each type of RI to purchase to maximize your estimated savings. </p>
-         * <p>For example, AWS automatically aggregates your EC2 Linux, shared tenancy, and
-         * c4 family usage in the US West (Oregon) Region and recommends that you buy
-         * size-flexible regional reservations to apply to the c4 family usage. AWS
+         * <p>For example, AWS automatically aggregates your Amazon EC2 Linux, shared
+         * tenancy, and c4 family usage in the US West (Oregon) Region and recommends that
+         * you buy size-flexible regional reservations to apply to the c4 family usage. AWS
          * recommends the smallest size instance in an instance family. This makes it
          * easier to purchase a size-flexible RI. AWS also shows the equal number of
          * normalized units so that you can purchase any instance size that you want. For
-         * this example, your RI recommendation would be for <code>c4.large</code>, because
+         * this example, your RI recommendation would be for <code>c4.large</code> because
          * that is the smallest size instance in the c4 instance family.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/GetReservationPurchaseRecommendation">AWS
@@ -417,12 +454,13 @@ namespace Model
          */
         virtual void GetTagsAsync(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void GetCostAndUsageAsyncHelper(const Model::GetCostAndUsageRequest& request, const GetCostAndUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetCostForecastAsyncHelper(const Model::GetCostForecastRequest& request, const GetCostForecastResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDimensionValuesAsyncHelper(const Model::GetDimensionValuesRequest& request, const GetDimensionValuesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationCoverageAsyncHelper(const Model::GetReservationCoverageRequest& request, const GetReservationCoverageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetReservationPurchaseRecommendationAsyncHelper(const Model::GetReservationPurchaseRecommendationRequest& request, const GetReservationPurchaseRecommendationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -430,6 +468,7 @@ namespace Model
         void GetTagsAsyncHelper(const Model::GetTagsRequest& request, const GetTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

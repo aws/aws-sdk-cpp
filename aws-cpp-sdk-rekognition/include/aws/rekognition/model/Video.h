@@ -35,8 +35,9 @@ namespace Model
 
   /**
    * <p>Video file stored in an Amazon S3 bucket. Amazon Rekognition video start
-   * operations such as use <code>Video</code> to specify a video for analysis. The
-   * supported file formats are .mp4, .mov and .avi.</p><p><h3>See Also:</h3>   <a
+   * operations such as <a>StartLabelDetection</a> use <code>Video</code> to specify
+   * a video for analysis. The supported file formats are .mp4, .mov and
+   * .avi.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Video">AWS
    * API Reference</a></p>
    */
@@ -53,6 +54,11 @@ namespace Model
      * <p>The Amazon S3 bucket name and file name for the video.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
+
+    /**
+     * <p>The Amazon S3 bucket name and file name for the video.</p>
+     */
+    inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
 
     /**
      * <p>The Amazon S3 bucket name and file name for the video.</p>

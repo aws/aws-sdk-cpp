@@ -34,7 +34,7 @@ ListDatasetsRequest::ListDatasetsRequest() :
 
 Aws::String ListDatasetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDatasetsRequest::AddQueryStringParameters(URI& uri) const

@@ -42,9 +42,7 @@ namespace Model
 
   /**
    * <p>Describes an asynchronous transcription job that was created with the
-   * <code>StartTranscriptionJob</code> operation. Note that en-AU, en-UK, and fr-CA
-   * languages are in preview and are only available to whitelisted
-   * customers.</p><p><h3>See Also:</h3>   <a
+   * <code>StartTranscriptionJob</code> operation. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/TranscriptionJob">AWS
    * API Reference</a></p>
    */
@@ -61,6 +59,11 @@ namespace Model
      * <p>The name of the transcription job.</p>
      */
     inline const Aws::String& GetTranscriptionJobName() const{ return m_transcriptionJobName; }
+
+    /**
+     * <p>The name of the transcription job.</p>
+     */
+    inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
 
     /**
      * <p>The name of the transcription job.</p>
@@ -101,6 +104,11 @@ namespace Model
     /**
      * <p>The status of the transcription job.</p>
      */
+    inline bool TranscriptionJobStatusHasBeenSet() const { return m_transcriptionJobStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the transcription job.</p>
+     */
     inline void SetTranscriptionJobStatus(const TranscriptionJobStatus& value) { m_transcriptionJobStatusHasBeenSet = true; m_transcriptionJobStatus = value; }
 
     /**
@@ -123,6 +131,11 @@ namespace Model
      * <p>The language code for the input speech.</p>
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * <p>The language code for the input speech.</p>
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * <p>The language code for the input speech.</p>
@@ -153,6 +166,11 @@ namespace Model
     /**
      * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
      */
+    inline bool MediaSampleRateHertzHasBeenSet() const { return m_mediaSampleRateHertzHasBeenSet; }
+
+    /**
+     * <p>The sample rate, in Hertz, of the audio track in the input media file. </p>
+     */
     inline void SetMediaSampleRateHertz(int value) { m_mediaSampleRateHertzHasBeenSet = true; m_mediaSampleRateHertz = value; }
 
     /**
@@ -165,6 +183,11 @@ namespace Model
      * <p>The format of the input media file.</p>
      */
     inline const MediaFormat& GetMediaFormat() const{ return m_mediaFormat; }
+
+    /**
+     * <p>The format of the input media file.</p>
+     */
+    inline bool MediaFormatHasBeenSet() const { return m_mediaFormatHasBeenSet; }
 
     /**
      * <p>The format of the input media file.</p>
@@ -195,6 +218,11 @@ namespace Model
     /**
      * <p>An object that describes the input media for the transcription job.</p>
      */
+    inline bool MediaHasBeenSet() const { return m_mediaHasBeenSet; }
+
+    /**
+     * <p>An object that describes the input media for the transcription job.</p>
+     */
     inline void SetMedia(const Media& value) { m_mediaHasBeenSet = true; m_media = value; }
 
     /**
@@ -217,6 +245,11 @@ namespace Model
      * <p>An object that describes the output of the transcription job.</p>
      */
     inline const Transcript& GetTranscript() const{ return m_transcript; }
+
+    /**
+     * <p>An object that describes the output of the transcription job.</p>
+     */
+    inline bool TranscriptHasBeenSet() const { return m_transcriptHasBeenSet; }
 
     /**
      * <p>An object that describes the output of the transcription job.</p>
@@ -247,6 +280,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -273,6 +311,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the job was completed.</p>
      */
+    inline bool CompletionTimeHasBeenSet() const { return m_completionTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the job was completed.</p>
+     */
     inline void SetCompletionTime(const Aws::Utils::DateTime& value) { m_completionTimeHasBeenSet = true; m_completionTime = value; }
 
     /**
@@ -293,43 +336,249 @@ namespace Model
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline void SetFailureReason(const char* value) { m_failureReasonHasBeenSet = true; m_failureReason.assign(value); }
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline TranscriptionJob& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline TranscriptionJob& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
      * <p>If the <code>TranscriptionJobStatus</code> field is <code>FAILED</code>, this
-     * field contains information about why the job failed.</p>
+     * field contains information about why the job failed.</p> <p>The
+     * <code>FailureReason</code> field can contain one of the following values:</p>
+     * <ul> <li> <p> <code>Unsupported media format</code> - The media format specified
+     * in the <code>MediaFormat</code> field of the request isn't valid. See the
+     * description of the <code>MediaFormat</code> field for a list of valid
+     * values.</p> </li> <li> <p> <code>The media format provided does not match the
+     * detected media format</code> - The media format of the audio file doesn't match
+     * the format specified in the <code>MediaFormat</code> field in the request. Check
+     * the media format of your media file and make sure that the two values match.</p>
+     * </li> <li> <p> <code>Invalid sample rate for audio file</code> - The sample rate
+     * specified in the <code>MediaSampleRateHertz</code> of the request isn't valid.
+     * The sample rate must be between 8000 and 48000 Hertz.</p> </li> <li> <p>
+     * <code>The sample rate provided does not match the detected sample rate</code> -
+     * The sample rate in the audio file doesn't match the sample rate specified in the
+     * <code>MediaSampleRateHertz</code> field in the request. Check the sample rate of
+     * your media file and make sure that the two values match.</p> </li> <li> <p>
+     * <code>Invalid file size: file size too large</code> - The size of your audio
+     * file is larger than Amazon Transcribe can process. For more information, see <a
+     * href="https://docs.aws.amazon.com/transcribe/latest/dg/limits-guidelines.html#limits">Limits</a>
+     * in the <i>Amazon Transcribe Developer Guide</i>.</p> </li> <li> <p>
+     * <code>Invalid number of channels: number of channels too large</code> - Your
+     * audio contains more channels than Amazon Transcribe is configured to process. To
+     * request additional channels, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits-amazon-transcribe">Amazon
+     * Transcribe Limits</a> in the <i>Amazon Web Services General Reference</i>.</p>
+     * </li> </ul>
      */
     inline TranscriptionJob& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -341,6 +590,14 @@ namespace Model
      * transcription job.</p>
      */
     inline const Settings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Optional settings for the transcription job. Use these settings to turn on
+     * speaker recognition, to set the maximum number of speakers that should be
+     * identified and to specify a custom vocabulary to use when processing the
+     * transcription job.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>Optional settings for the transcription job. Use these settings to turn on

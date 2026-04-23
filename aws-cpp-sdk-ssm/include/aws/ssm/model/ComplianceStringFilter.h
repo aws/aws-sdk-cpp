@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The value for which to search.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value for which to search.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value for which to search.</p>
@@ -132,6 +142,12 @@ namespace Model
      * NotEqual, BeginWith, LessThan, or GreaterThan.</p>
      */
     inline const ComplianceQueryOperatorType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of comparison that should be performed for the value: Equal,
+     * NotEqual, BeginWith, LessThan, or GreaterThan.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of comparison that should be performed for the value: Equal,

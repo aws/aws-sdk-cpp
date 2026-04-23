@@ -59,6 +59,12 @@ namespace Model
      * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
      * replication-instance | migration-task</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p> The type of AWS DMS resource that generates events. </p> <p>Valid values:
+     * replication-instance | migration-task</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>Filters applied to the action.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters applied to the action.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters applied to the action.</p>

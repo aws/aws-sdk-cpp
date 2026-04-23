@@ -28,6 +28,7 @@
 #include <aws/serverlessrepo/model/GetApplicationResult.h>
 #include <aws/serverlessrepo/model/GetApplicationPolicyResult.h>
 #include <aws/serverlessrepo/model/GetCloudFormationTemplateResult.h>
+#include <aws/serverlessrepo/model/ListApplicationDependenciesResult.h>
 #include <aws/serverlessrepo/model/ListApplicationVersionsResult.h>
 #include <aws/serverlessrepo/model/ListApplicationsResult.h>
 #include <aws/serverlessrepo/model/PutApplicationPolicyResult.h>
@@ -81,6 +82,7 @@ namespace Model
         class GetApplicationRequest;
         class GetApplicationPolicyRequest;
         class GetCloudFormationTemplateRequest;
+        class ListApplicationDependenciesRequest;
         class ListApplicationVersionsRequest;
         class ListApplicationsRequest;
         class PutApplicationPolicyRequest;
@@ -94,6 +96,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetApplicationResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationOutcome;
         typedef Aws::Utils::Outcome<GetApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetApplicationPolicyOutcome;
         typedef Aws::Utils::Outcome<GetCloudFormationTemplateResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> GetCloudFormationTemplateOutcome;
+        typedef Aws::Utils::Outcome<ListApplicationDependenciesResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationDependenciesOutcome;
         typedef Aws::Utils::Outcome<ListApplicationVersionsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListApplicationsResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> ListApplicationsOutcome;
         typedef Aws::Utils::Outcome<PutApplicationPolicyResult, Aws::Client::AWSError<ServerlessApplicationRepositoryErrors>> PutApplicationPolicyOutcome;
@@ -107,6 +110,7 @@ namespace Model
         typedef std::future<GetApplicationOutcome> GetApplicationOutcomeCallable;
         typedef std::future<GetApplicationPolicyOutcome> GetApplicationPolicyOutcomeCallable;
         typedef std::future<GetCloudFormationTemplateOutcome> GetCloudFormationTemplateOutcomeCallable;
+        typedef std::future<ListApplicationDependenciesOutcome> ListApplicationDependenciesOutcomeCallable;
         typedef std::future<ListApplicationVersionsOutcome> ListApplicationVersionsOutcomeCallable;
         typedef std::future<ListApplicationsOutcome> ListApplicationsOutcomeCallable;
         typedef std::future<PutApplicationPolicyOutcome> PutApplicationPolicyOutcomeCallable;
@@ -123,6 +127,7 @@ namespace Model
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::GetApplicationRequest&, const Model::GetApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::GetApplicationPolicyRequest&, const Model::GetApplicationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetApplicationPolicyResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::GetCloudFormationTemplateRequest&, const Model::GetCloudFormationTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetCloudFormationTemplateResponseReceivedHandler;
+    typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationDependenciesRequest&, const Model::ListApplicationDependenciesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationDependenciesResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationVersionsRequest&, const Model::ListApplicationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationVersionsResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::ListApplicationsRequest&, const Model::ListApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApplicationsResponseReceivedHandler;
     typedef std::function<void(const ServerlessApplicationRepositoryClient*, const Model::PutApplicationPolicyRequest&, const Model::PutApplicationPolicyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutApplicationPolicyResponseReceivedHandler;
@@ -163,7 +168,7 @@ namespace Model
  experiences
    * available:</p><ul>
  <li>
- <p>Consuming Applications �� Browse for applications
+ <p>Consuming Applications – Browse for applications
    * and view information about them, including
  source code and readme files. Also
    * install, configure, and deploy applications of your choosing. </p>
@@ -411,6 +416,34 @@ namespace Model
         virtual void GetCloudFormationTemplateAsync(const Model::GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves the list of applications nested in the containing
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListApplicationDependenciesOutcome ListApplicationDependencies(const Model::ListApplicationDependenciesRequest& request) const;
+
+        /**
+         * <p>Retrieves the list of applications nested in the containing
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListApplicationDependenciesOutcomeCallable ListApplicationDependenciesCallable(const Model::ListApplicationDependenciesRequest& request) const;
+
+        /**
+         * <p>Retrieves the list of applications nested in the containing
+         * application.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationDependencies">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListApplicationDependenciesAsync(const Model::ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists versions for the specified application.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/serverlessrepo-2017-09-08/ListApplicationVersions">AWS
          * API Reference</a></p>
@@ -528,10 +561,10 @@ namespace Model
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationVersionAsyncHelper(const Model::CreateApplicationVersionRequest& request, const CreateApplicationVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -541,12 +574,14 @@ namespace Model
         void GetApplicationAsyncHelper(const Model::GetApplicationRequest& request, const GetApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetApplicationPolicyAsyncHelper(const Model::GetApplicationPolicyRequest& request, const GetApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetCloudFormationTemplateAsyncHelper(const Model::GetCloudFormationTemplateRequest& request, const GetCloudFormationTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListApplicationDependenciesAsyncHelper(const Model::ListApplicationDependenciesRequest& request, const ListApplicationDependenciesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationVersionsAsyncHelper(const Model::ListApplicationVersionsRequest& request, const ListApplicationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApplicationsAsyncHelper(const Model::ListApplicationsRequest& request, const ListApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutApplicationPolicyAsyncHelper(const Model::PutApplicationPolicyRequest& request, const PutApplicationPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

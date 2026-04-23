@@ -58,6 +58,11 @@ namespace Model
     /**
      * The unique treatment ID.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The unique treatment ID.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * The message configuration settings.
      */
+    inline bool MessageConfigurationHasBeenSet() const { return m_messageConfigurationHasBeenSet; }
+
+    /**
+     * The message configuration settings.
+     */
     inline void SetMessageConfiguration(const MessageConfiguration& value) { m_messageConfigurationHasBeenSet = true; m_messageConfiguration = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * The campaign schedule.
      */
     inline const Schedule& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * The campaign schedule.
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * The campaign schedule.
@@ -146,6 +161,11 @@ namespace Model
     /**
      * The allocated percentage of users for this treatment.
      */
+    inline bool SizePercentHasBeenSet() const { return m_sizePercentHasBeenSet; }
+
+    /**
+     * The allocated percentage of users for this treatment.
+     */
     inline void SetSizePercent(int value) { m_sizePercentHasBeenSet = true; m_sizePercent = value; }
 
     /**
@@ -158,6 +178,11 @@ namespace Model
      * The treatment status.
      */
     inline const CampaignState& GetState() const{ return m_state; }
+
+    /**
+     * The treatment status.
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * The treatment status.
@@ -184,6 +209,11 @@ namespace Model
      * A custom description for the treatment.
      */
     inline const Aws::String& GetTreatmentDescription() const{ return m_treatmentDescription; }
+
+    /**
+     * A custom description for the treatment.
+     */
+    inline bool TreatmentDescriptionHasBeenSet() const { return m_treatmentDescriptionHasBeenSet; }
 
     /**
      * A custom description for the treatment.
@@ -220,6 +250,11 @@ namespace Model
      * The custom name of a variation of the campaign used for A/B testing.
      */
     inline const Aws::String& GetTreatmentName() const{ return m_treatmentName; }
+
+    /**
+     * The custom name of a variation of the campaign used for A/B testing.
+     */
+    inline bool TreatmentNameHasBeenSet() const { return m_treatmentNameHasBeenSet; }
 
     /**
      * The custom name of a variation of the campaign used for A/B testing.

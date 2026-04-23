@@ -28,7 +28,6 @@ namespace Glacier
 namespace GlacierErrorMapper
 {
 
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeoutException");
 static const int MISSING_PARAMETER_VALUE_HASH = HashingUtils::HashString("MissingParameterValueException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int POLICY_ENFORCED_HASH = HashingUtils::HashString("PolicyEnforcedException");
@@ -39,11 +38,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == REQUEST_TIMEOUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::REQUEST_TIMEOUT), false);
-  }
-  else if (hashCode == MISSING_PARAMETER_VALUE_HASH)
+  if (hashCode == MISSING_PARAMETER_VALUE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(GlacierErrors::MISSING_PARAMETER_VALUE), false);
   }

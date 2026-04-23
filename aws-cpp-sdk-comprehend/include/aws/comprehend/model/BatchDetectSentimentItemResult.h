@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The sentiment detected in the document.</p>
      */
     inline const SentimentType& GetSentiment() const{ return m_sentiment; }
+
+    /**
+     * <p>The sentiment detected in the document.</p>
+     */
+    inline bool SentimentHasBeenSet() const { return m_sentimentHasBeenSet; }
 
     /**
      * <p>The sentiment detected in the document.</p>
@@ -97,6 +107,12 @@ namespace Model
      * sentiment detection.</p>
      */
     inline const SentimentScore& GetSentimentScore() const{ return m_sentimentScore; }
+
+    /**
+     * <p>The level of confidence that Amazon Comprehend has in the accuracy of its
+     * sentiment detection.</p>
+     */
+    inline bool SentimentScoreHasBeenSet() const { return m_sentimentScoreHasBeenSet; }
 
     /**
      * <p>The level of confidence that Amazon Comprehend has in the accuracy of its

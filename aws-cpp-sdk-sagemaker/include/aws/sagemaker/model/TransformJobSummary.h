@@ -36,9 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>Provides a summary of a transform job. Multiple TransformJobSummary objects
-   * are returned as a list after calling <a>ListTransformJobs</a>.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Provides a summary of a transform job. Multiple
+   * <code>TransformJobSummary</code> objects are returned as a list after in
+   * response to a <a>ListTransformJobs</a> call.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/TransformJobSummary">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,11 @@ namespace Model
      * <p>The name of the transform job.</p>
      */
     inline const Aws::String& GetTransformJobName() const{ return m_transformJobName; }
+
+    /**
+     * <p>The name of the transform job.</p>
+     */
+    inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
 
     /**
      * <p>The name of the transform job.</p>
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the transform job.</p>
      */
+    inline bool TransformJobArnHasBeenSet() const { return m_transformJobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the transform job.</p>
+     */
     inline void SetTransformJobArn(const Aws::String& value) { m_transformJobArnHasBeenSet = true; m_transformJobArn = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>A timestamp that shows when the transform Job was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that shows when the transform Job was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -156,6 +171,14 @@ namespace Model
      * failed.</p>
      */
     inline const Aws::Utils::DateTime& GetTransformEndTime() const{ return m_transformEndTime; }
+
+    /**
+     * <p>Indicates when the transform job ends on compute instances. For successful
+     * jobs and stopped jobs, this is the exact time recorded after the results are
+     * uploaded. For failed jobs, this is when Amazon SageMaker detected that the job
+     * failed.</p>
+     */
+    inline bool TransformEndTimeHasBeenSet() const { return m_transformEndTimeHasBeenSet; }
 
     /**
      * <p>Indicates when the transform job ends on compute instances. For successful
@@ -198,6 +221,11 @@ namespace Model
     /**
      * <p>Indicates when the transform job was last modified.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>Indicates when the transform job was last modified.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -224,6 +252,11 @@ namespace Model
     /**
      * <p>The status of the transform job.</p>
      */
+    inline bool TransformJobStatusHasBeenSet() const { return m_transformJobStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the transform job.</p>
+     */
     inline void SetTransformJobStatus(const TransformJobStatus& value) { m_transformJobStatusHasBeenSet = true; m_transformJobStatus = value; }
 
     /**
@@ -246,6 +279,11 @@ namespace Model
      * <p>If the transform job failed, the reason it failed.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the transform job failed, the reason it failed.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>If the transform job failed, the reason it failed.</p>

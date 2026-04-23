@@ -30,7 +30,7 @@ GetDataSourceRequest::GetDataSourceRequest() :
 
 Aws::String GetDataSourceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

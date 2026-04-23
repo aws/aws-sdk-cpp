@@ -56,6 +56,13 @@ namespace Model
      * file containing the resource to import. The resource should match the type
      * specified in the <code>resourceType</code> field.</p>
      */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
+
+    /**
+     * <p>A zip archive in binary format. The archive should contain one file, a JSON
+     * file containing the resource to import. The resource should match the type
+     * specified in the <code>resourceType</code> field.</p>
+     */
     inline void SetPayload(const Aws::Utils::ByteBuffer& value) { m_payloadHasBeenSet = true; m_payload = value; }
 
     /**
@@ -87,6 +94,14 @@ namespace Model
      * </ul>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>Specifies the type of resource to export. Each resource also exports any
+     * resources that it depends on. </p> <ul> <li> <p>A bot exports dependent
+     * intents.</p> </li> <li> <p>An intent exports dependent slot types.</p> </li>
+     * </ul>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>Specifies the type of resource to export. Each resource also exports any
@@ -133,6 +148,19 @@ namespace Model
      * the import file.</p> </li> </ul>
      */
     inline const MergeStrategy& GetMergeStrategy() const{ return m_mergeStrategy; }
+
+    /**
+     * <p>Specifies the action that the <code>StartImport</code> operation should take
+     * when there is an existing resource with the same name.</p> <ul> <li>
+     * <p>FAIL_ON_CONFLICT - The import operation is stopped on the first conflict
+     * between a resource in the import file and an existing resource. The name of the
+     * resource causing the conflict is in the <code>failureReason</code> field of the
+     * response to the <code>GetImport</code> operation.</p> <p>OVERWRITE_LATEST - The
+     * import operation proceeds even if there is a conflict with an existing resource.
+     * The $LASTEST version of the existing resource is overwritten with the data from
+     * the import file.</p> </li> </ul>
+     */
+    inline bool MergeStrategyHasBeenSet() const { return m_mergeStrategyHasBeenSet; }
 
     /**
      * <p>Specifies the action that the <code>StartImport</code> operation should take

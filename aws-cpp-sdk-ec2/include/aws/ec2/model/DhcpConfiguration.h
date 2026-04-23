@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of a DHCP option.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of a DHCP option.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>One or more values for the DHCP option.</p>
      */
     inline const Aws::Vector<AttributeValue>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>One or more values for the DHCP option.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>One or more values for the DHCP option.</p>

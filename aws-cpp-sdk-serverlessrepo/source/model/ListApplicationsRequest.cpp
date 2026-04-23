@@ -34,7 +34,7 @@ ListApplicationsRequest::ListApplicationsRequest() :
 
 Aws::String ListApplicationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListApplicationsRequest::AddQueryStringParameters(URI& uri) const

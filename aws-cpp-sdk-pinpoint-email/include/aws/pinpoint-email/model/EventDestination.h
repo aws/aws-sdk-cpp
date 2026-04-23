@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>A name that identifies the event destination.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A name that identifies the event destination.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -110,6 +115,15 @@ namespace Model
      * the event destination is disabled. When the event destination is disabled,
      * events aren't sent to the specified destinations.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, the event destination is enabled. When the event
+     * destination is enabled, the specified event types are sent to the destinations
+     * in this <code>EventDestinationDefinition</code>.</p> <p>If <code>false</code>,
+     * the event destination is disabled. When the event destination is disabled,
+     * events aren't sent to the specified destinations.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -127,6 +141,12 @@ namespace Model
      * destinations.</p>
      */
     inline const Aws::Vector<EventType>& GetMatchingEventTypes() const{ return m_matchingEventTypes; }
+
+    /**
+     * <p>The types of events that Amazon Pinpoint sends to the specified event
+     * destinations.</p>
+     */
+    inline bool MatchingEventTypesHasBeenSet() const { return m_matchingEventTypesHasBeenSet; }
 
     /**
      * <p>The types of events that Amazon Pinpoint sends to the specified event
@@ -177,6 +197,13 @@ namespace Model
      * events. You can use Amazon Kinesis Data Firehose to stream data to other
      * services, such as Amazon S3 and Amazon Redshift.</p>
      */
+    inline bool KinesisFirehoseDestinationHasBeenSet() const { return m_kinesisFirehoseDestinationHasBeenSet; }
+
+    /**
+     * <p>An object that defines an Amazon Kinesis Data Firehose destination for email
+     * events. You can use Amazon Kinesis Data Firehose to stream data to other
+     * services, such as Amazon S3 and Amazon Redshift.</p>
+     */
     inline void SetKinesisFirehoseDestination(const KinesisFirehoseDestination& value) { m_kinesisFirehoseDestinationHasBeenSet = true; m_kinesisFirehoseDestination = value; }
 
     /**
@@ -207,6 +234,13 @@ namespace Model
      * metrics.</p>
      */
     inline const CloudWatchDestination& GetCloudWatchDestination() const{ return m_cloudWatchDestination; }
+
+    /**
+     * <p>An object that defines an Amazon CloudWatch destination for email events. You
+     * can use Amazon CloudWatch to monitor and gain insights on your email sending
+     * metrics.</p>
+     */
+    inline bool CloudWatchDestinationHasBeenSet() const { return m_cloudWatchDestinationHasBeenSet; }
 
     /**
      * <p>An object that defines an Amazon CloudWatch destination for email events. You
@@ -247,6 +281,12 @@ namespace Model
      * <p>An object that defines an Amazon SNS destination for email events. You can
      * use Amazon SNS to send notification when certain email events occur.</p>
      */
+    inline bool SnsDestinationHasBeenSet() const { return m_snsDestinationHasBeenSet; }
+
+    /**
+     * <p>An object that defines an Amazon SNS destination for email events. You can
+     * use Amazon SNS to send notification when certain email events occur.</p>
+     */
     inline void SetSnsDestination(const SnsDestination& value) { m_snsDestinationHasBeenSet = true; m_snsDestination = value; }
 
     /**
@@ -274,6 +314,13 @@ namespace Model
      * You can use these attributes to create segments for your campaigns.</p>
      */
     inline const PinpointDestination& GetPinpointDestination() const{ return m_pinpointDestination; }
+
+    /**
+     * <p>An object that defines a Amazon Pinpoint destination for email events. You
+     * can use Amazon Pinpoint events to create attributes in Amazon Pinpoint projects.
+     * You can use these attributes to create segments for your campaigns.</p>
+     */
+    inline bool PinpointDestinationHasBeenSet() const { return m_pinpointDestinationHasBeenSet; }
 
     /**
      * <p>An object that defines a Amazon Pinpoint destination for email events. You

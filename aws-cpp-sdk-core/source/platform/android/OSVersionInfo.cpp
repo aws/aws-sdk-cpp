@@ -48,7 +48,7 @@ Aws::String GetSysCommandOutput(const char* command)
         return Aws::Utils::StringUtils::Trim(outputStr.c_str());
     }
 
-    return "";
+    return {};
 }
 
 Aws::String ComputeOSVersionString()

@@ -59,6 +59,13 @@ namespace Model
      * that you can specify is /24. The address range cannot overlap with another
      * address range that you've brought to this or another region.</p>
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>The public IPv4 address range, in CIDR notation. The most specific prefix
+     * that you can specify is /24. The address range cannot overlap with another
+     * address range that you've brought to this or another region.</p>
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
@@ -107,6 +114,12 @@ namespace Model
      * <p>A signed document that proves that you are authorized to bring the specified
      * IP address range to Amazon using BYOIP.</p>
      */
+    inline bool CidrAuthorizationContextHasBeenSet() const { return m_cidrAuthorizationContextHasBeenSet; }
+
+    /**
+     * <p>A signed document that proves that you are authorized to bring the specified
+     * IP address range to Amazon using BYOIP.</p>
+     */
     inline void SetCidrAuthorizationContext(const CidrAuthorizationContext& value) { m_cidrAuthorizationContextHasBeenSet = true; m_cidrAuthorizationContext = value; }
 
     /**
@@ -132,6 +145,11 @@ namespace Model
      * <p>A description for the address range and the address pool.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the address range and the address pool.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the address range and the address pool.</p>
@@ -171,6 +189,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

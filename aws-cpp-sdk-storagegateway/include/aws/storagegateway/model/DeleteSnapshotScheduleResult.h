@@ -42,25 +42,39 @@ namespace Model
     DeleteSnapshotScheduleResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline DeleteSnapshotScheduleResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline DeleteSnapshotScheduleResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The volume which snapshot schedule was deleted.</p>
+     */
     inline DeleteSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 
   private:

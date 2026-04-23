@@ -24,6 +24,7 @@ CreateVpnConnectionRequest::CreateVpnConnectionRequest() :
     m_customerGatewayIdHasBeenSet(false),
     m_typeHasBeenSet(false),
     m_vpnGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false),
     m_optionsHasBeenSet(false)
@@ -47,6 +48,11 @@ Aws::String CreateVpnConnectionRequest::SerializePayload() const
   if(m_vpnGatewayIdHasBeenSet)
   {
     ss << "VpnGatewayId=" << StringUtils::URLEncode(m_vpnGatewayId.c_str()) << "&";
+  }
+
+  if(m_transitGatewayIdHasBeenSet)
+  {
+    ss << "TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
 
   if(m_dryRunHasBeenSet)

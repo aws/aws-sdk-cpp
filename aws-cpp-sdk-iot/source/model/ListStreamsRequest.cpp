@@ -36,7 +36,7 @@ ListStreamsRequest::ListStreamsRequest() :
 
 Aws::String ListStreamsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListStreamsRequest::AddQueryStringParameters(URI& uri) const

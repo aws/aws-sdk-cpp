@@ -57,6 +57,12 @@ namespace Model
      * <p>The percentage of traffic to shift in the first increment of a
      * <code>TimeBasedCanary</code> deployment.</p>
      */
+    inline bool CanaryPercentageHasBeenSet() const { return m_canaryPercentageHasBeenSet; }
+
+    /**
+     * <p>The percentage of traffic to shift in the first increment of a
+     * <code>TimeBasedCanary</code> deployment.</p>
+     */
     inline void SetCanaryPercentage(int value) { m_canaryPercentageHasBeenSet = true; m_canaryPercentage = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * <code>TimeBasedCanary</code> deployment.</p>
      */
     inline int GetCanaryInterval() const{ return m_canaryInterval; }
+
+    /**
+     * <p>The number of minutes between the first and second traffic shifts of a
+     * <code>TimeBasedCanary</code> deployment.</p>
+     */
+    inline bool CanaryIntervalHasBeenSet() const { return m_canaryIntervalHasBeenSet; }
 
     /**
      * <p>The number of minutes between the first and second traffic shifts of a

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A string that describes the update briefly</p>
      */
+    inline bool UpgradeNameHasBeenSet() const { return m_upgradeNameHasBeenSet; }
+
+    /**
+     * <p>A string that describes the update briefly</p>
+     */
     inline void SetUpgradeName(const Aws::String& value) { m_upgradeNameHasBeenSet = true; m_upgradeName = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>UTC Timestamp at which the Upgrade API call was made in
      * "yyyy-MM-ddTHH:mm:ssZ" format.</p>
      */
+    inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
+
+    /**
+     * <p>UTC Timestamp at which the Upgrade API call was made in
+     * "yyyy-MM-ddTHH:mm:ssZ" format.</p>
+     */
     inline void SetStartTimestamp(const Aws::Utils::DateTime& value) { m_startTimestampHasBeenSet = true; m_startTimestamp = value; }
 
     /**
@@ -125,6 +136,13 @@ namespace Model
      * Issues</li> <li>Failed</li> </ul> </p>
      */
     inline const UpgradeStatus& GetUpgradeStatus() const{ return m_upgradeStatus; }
+
+    /**
+     * <p> The overall status of the update. The status can take one of the following
+     * values: <ul> <li>In Progress</li> <li>Succeeded</li> <li>Succeeded with
+     * Issues</li> <li>Failed</li> </ul> </p>
+     */
+    inline bool UpgradeStatusHasBeenSet() const { return m_upgradeStatusHasBeenSet; }
 
     /**
      * <p> The overall status of the update. The status can take one of the following
@@ -161,6 +179,13 @@ namespace Model
      * Check. </p>
      */
     inline const Aws::Vector<UpgradeStepItem>& GetStepsList() const{ return m_stepsList; }
+
+    /**
+     * <p> A list of <code> <a>UpgradeStepItem</a> </code> s representing information
+     * about each step performed as pard of a specific Upgrade or Upgrade Eligibility
+     * Check. </p>
+     */
+    inline bool StepsListHasBeenSet() const { return m_stepsListHasBeenSet; }
 
     /**
      * <p> A list of <code> <a>UpgradeStepItem</a> </code> s representing information

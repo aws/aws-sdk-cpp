@@ -36,7 +36,11 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition() :
     m_vpcConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false),
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
 {
 }
 
@@ -48,7 +52,11 @@ HyperParameterTrainingJobDefinition::HyperParameterTrainingJobDefinition(JsonVie
     m_vpcConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
     m_resourceConfigHasBeenSet(false),
-    m_stoppingConditionHasBeenSet(false)
+    m_stoppingConditionHasBeenSet(false),
+    m_enableNetworkIsolation(false),
+    m_enableNetworkIsolationHasBeenSet(false),
+    m_enableInterContainerTrafficEncryption(false),
+    m_enableInterContainerTrafficEncryptionHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -117,6 +125,20 @@ HyperParameterTrainingJobDefinition& HyperParameterTrainingJobDefinition::operat
     m_stoppingConditionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EnableNetworkIsolation"))
+  {
+    m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
+
+    m_enableNetworkIsolationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
+  {
+    m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
+
+    m_enableInterContainerTrafficEncryptionHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -179,6 +201,18 @@ JsonValue HyperParameterTrainingJobDefinition::Jsonize() const
   if(m_stoppingConditionHasBeenSet)
   {
    payload.WithObject("StoppingCondition", m_stoppingCondition.Jsonize());
+
+  }
+
+  if(m_enableNetworkIsolationHasBeenSet)
+  {
+   payload.WithBool("EnableNetworkIsolation", m_enableNetworkIsolation);
+
+  }
+
+  if(m_enableInterContainerTrafficEncryptionHasBeenSet)
+  {
+   payload.WithBool("EnableInterContainerTrafficEncryption", m_enableInterContainerTrafficEncryption);
 
   }
 

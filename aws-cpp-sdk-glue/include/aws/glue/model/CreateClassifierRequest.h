@@ -19,6 +19,7 @@
 #include <aws/glue/model/CreateGrokClassifierRequest.h>
 #include <aws/glue/model/CreateXMLClassifierRequest.h>
 #include <aws/glue/model/CreateJsonClassifierRequest.h>
+#include <aws/glue/model/CreateCsvClassifierRequest.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +55,11 @@ namespace Model
     /**
      * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
      */
+    inline bool GrokClassifierHasBeenSet() const { return m_grokClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>GrokClassifier</code> object specifying the classifier to create.</p>
+     */
     inline void SetGrokClassifier(const CreateGrokClassifierRequest& value) { m_grokClassifierHasBeenSet = true; m_grokClassifier = value; }
 
     /**
@@ -76,6 +82,11 @@ namespace Model
      * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
      */
     inline const CreateXMLClassifierRequest& GetXMLClassifier() const{ return m_xMLClassifier; }
+
+    /**
+     * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline bool XMLClassifierHasBeenSet() const { return m_xMLClassifierHasBeenSet; }
 
     /**
      * <p>An <code>XMLClassifier</code> object specifying the classifier to create.</p>
@@ -106,6 +117,11 @@ namespace Model
     /**
      * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
      */
+    inline bool JsonClassifierHasBeenSet() const { return m_jsonClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>JsonClassifier</code> object specifying the classifier to create.</p>
+     */
     inline void SetJsonClassifier(const CreateJsonClassifierRequest& value) { m_jsonClassifierHasBeenSet = true; m_jsonClassifier = value; }
 
     /**
@@ -123,6 +139,37 @@ namespace Model
      */
     inline CreateClassifierRequest& WithJsonClassifier(CreateJsonClassifierRequest&& value) { SetJsonClassifier(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline const CreateCsvClassifierRequest& GetCsvClassifier() const{ return m_csvClassifier; }
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline bool CsvClassifierHasBeenSet() const { return m_csvClassifierHasBeenSet; }
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetCsvClassifier(const CreateCsvClassifierRequest& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = value; }
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline void SetCsvClassifier(CreateCsvClassifierRequest&& value) { m_csvClassifierHasBeenSet = true; m_csvClassifier = std::move(value); }
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithCsvClassifier(const CreateCsvClassifierRequest& value) { SetCsvClassifier(value); return *this;}
+
+    /**
+     * <p>A <code>CsvClassifier</code> object specifying the classifier to create.</p>
+     */
+    inline CreateClassifierRequest& WithCsvClassifier(CreateCsvClassifierRequest&& value) { SetCsvClassifier(std::move(value)); return *this;}
+
   private:
 
     CreateGrokClassifierRequest m_grokClassifier;
@@ -133,6 +180,9 @@ namespace Model
 
     CreateJsonClassifierRequest m_jsonClassifier;
     bool m_jsonClassifierHasBeenSet;
+
+    CreateCsvClassifierRequest m_csvClassifier;
+    bool m_csvClassifierHasBeenSet;
   };
 
 } // namespace Model

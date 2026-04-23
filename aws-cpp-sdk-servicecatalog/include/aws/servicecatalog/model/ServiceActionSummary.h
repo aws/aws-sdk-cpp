@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The self-service action identifier.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The self-service action identifier.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The self-service action name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The self-service action name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The self-service action name.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The self-service action description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The self-service action description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -162,6 +177,12 @@ namespace Model
      * <code>SSM_AUTOMATION</code>.</p>
      */
     inline const ServiceActionDefinitionType& GetDefinitionType() const{ return m_definitionType; }
+
+    /**
+     * <p>The self-service action definition type. For example,
+     * <code>SSM_AUTOMATION</code>.</p>
+     */
+    inline bool DefinitionTypeHasBeenSet() const { return m_definitionTypeHasBeenSet; }
 
     /**
      * <p>The self-service action definition type. For example,

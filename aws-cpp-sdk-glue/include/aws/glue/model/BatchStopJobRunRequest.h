@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the job definition for which to stop job runs.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition for which to stop job runs.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>A list of the JobRunIds that should be stopped for that job definition.</p>
      */
     inline const Aws::Vector<Aws::String>& GetJobRunIds() const{ return m_jobRunIds; }
+
+    /**
+     * <p>A list of the JobRunIds that should be stopped for that job definition.</p>
+     */
+    inline bool JobRunIdsHasBeenSet() const { return m_jobRunIdsHasBeenSet; }
 
     /**
      * <p>A list of the JobRunIds that should be stopped for that job definition.</p>

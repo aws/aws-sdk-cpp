@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Direct Connect gateway.</p>
      */
+    inline bool DirectConnectGatewayIdHasBeenSet() const { return m_directConnectGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Direct Connect gateway.</p>
+     */
     inline void SetDirectConnectGatewayId(const Aws::String& value) { m_directConnectGatewayIdHasBeenSet = true; m_directConnectGatewayId = value; }
 
     /**
@@ -81,17 +86,34 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of Direct Connect gateways to return per page.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p> <p>If <code>MaxResults</code> is given a value larger than 100, only
+     * 100 results are returned.</p>
      */
     inline DescribeDirectConnectGatewaysRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -100,6 +122,11 @@ namespace Model
      * <p>The token provided in the previous call to retrieve the next page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token provided in the previous call to retrieve the next page.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token provided in the previous call to retrieve the next page.</p>

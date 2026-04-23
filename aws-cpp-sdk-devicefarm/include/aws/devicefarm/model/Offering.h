@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID that corresponds to a device offering.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID that corresponds to a device offering.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A string describing the offering.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A string describing the offering.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A string describing the offering.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The type of offering (e.g., "RECURRING") for a device.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of offering (e.g., "RECURRING") for a device.</p>
+     */
     inline void SetType(const OfferingType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The platform of the device (e.g., ANDROID or IOS).</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The platform of the device (e.g., ANDROID or IOS).</p>
+     */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
      * <p>Specifies whether there are recurring charges for the offering.</p>
      */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+
+    /**
+     * <p>Specifies whether there are recurring charges for the offering.</p>
+     */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
 
     /**
      * <p>Specifies whether there are recurring charges for the offering.</p>

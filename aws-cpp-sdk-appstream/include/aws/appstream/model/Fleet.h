@@ -42,7 +42,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for a fleet.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the parameters for a fleet.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/Fleet">AWS API
    * Reference</a></p>
    */
@@ -59,6 +59,11 @@ namespace Model
      * <p>The ARN for the fleet.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN for the fleet.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN for the fleet.</p>
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the fleet.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,73 +138,83 @@ namespace Model
 
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The fleet name for display.</p>
+     * <p>The fleet name to display.</p>
      */
     inline Fleet& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>The description for display.</p>
+     * <p>The description to display.</p>
      */
     inline Fleet& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -203,6 +223,11 @@ namespace Model
      * <p>The name of the image used to create the fleet.</p>
      */
     inline const Aws::String& GetImageName() const{ return m_imageName; }
+
+    /**
+     * <p>The name of the image used to create the fleet.</p>
+     */
+    inline bool ImageNameHasBeenSet() const { return m_imageNameHasBeenSet; }
 
     /**
      * <p>The name of the image used to create the fleet.</p>
@@ -243,6 +268,11 @@ namespace Model
     /**
      * <p>The ARN for the public, private, or shared image.</p>
      */
+    inline bool ImageArnHasBeenSet() const { return m_imageArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the public, private, or shared image.</p>
+     */
     inline void SetImageArn(const Aws::String& value) { m_imageArnHasBeenSet = true; m_imageArn = value; }
 
     /**
@@ -275,6 +305,11 @@ namespace Model
      * <p>The instance type to use when launching fleet instances.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use when launching fleet instances.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type to use when launching fleet instances.</p>
@@ -317,6 +352,17 @@ namespace Model
      * </dd> </dl>
      */
     inline const FleetType& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
+     * instant-on access to their apps. You are charged for all running instances in
+     * your fleet, even if no users are streaming apps.</p> </dd> <dt>ON_DEMAND</dt>
+     * <dd> <p>Provide users with access to applications after they connect, which
+     * takes one to two minutes. You are charged for instance streaming when users are
+     * connected and a small hourly fee for instances that are not streaming apps.</p>
+     * </dd> </dl>
+     */
+    inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
     /**
      * <p>The fleet type.</p> <dl> <dt>ALWAYS_ON</dt> <dd> <p>Provides users with
@@ -371,6 +417,11 @@ namespace Model
     /**
      * <p>The capacity status for the fleet.</p>
      */
+    inline bool ComputeCapacityStatusHasBeenSet() const { return m_computeCapacityStatusHasBeenSet; }
+
+    /**
+     * <p>The capacity status for the fleet.</p>
+     */
     inline void SetComputeCapacityStatus(const ComputeCapacityStatus& value) { m_computeCapacityStatusHasBeenSet = true; m_computeCapacityStatus = value; }
 
     /**
@@ -391,19 +442,25 @@ namespace Model
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000.</p>
      */
     inline int GetMaxUserDurationInSeconds() const{ return m_maxUserDurationInSeconds; }
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000.</p>
+     */
+    inline bool MaxUserDurationInSecondsHasBeenSet() const { return m_maxUserDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum time that a streaming session can run, in seconds. Specify a
+     * value between 600 and 360000.</p>
      */
     inline void SetMaxUserDurationInSeconds(int value) { m_maxUserDurationInSecondsHasBeenSet = true; m_maxUserDurationInSeconds = value; }
 
     /**
      * <p>The maximum time that a streaming session can run, in seconds. Specify a
-     * value between 600 and 57600.</p>
+     * value between 600 and 360000.</p>
      */
     inline Fleet& WithMaxUserDurationInSeconds(int value) { SetMaxUserDurationInSeconds(value); return *this;}
 
@@ -412,7 +469,7 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, this value is 900 seconds (15 minutes).</p>
      */
     inline int GetDisconnectTimeoutInSeconds() const{ return m_disconnectTimeoutInSeconds; }
 
@@ -420,7 +477,15 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, this value is 900 seconds (15 minutes).</p>
+     */
+    inline bool DisconnectTimeoutInSecondsHasBeenSet() const { return m_disconnectTimeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The time after disconnection when a session is considered to have ended, in
+     * seconds. If a user who was disconnected reconnects within this time interval,
+     * the user is connected to their previous session. Specify a value between 60 and
+     * 360000. By default, this value is 900 seconds (15 minutes).</p>
      */
     inline void SetDisconnectTimeoutInSeconds(int value) { m_disconnectTimeoutInSecondsHasBeenSet = true; m_disconnectTimeoutInSeconds = value; }
 
@@ -428,7 +493,7 @@ namespace Model
      * <p>The time after disconnection when a session is considered to have ended, in
      * seconds. If a user who was disconnected reconnects within this time interval,
      * the user is connected to their previous session. Specify a value between 60 and
-     * 57600.</p>
+     * 360000. By default, this value is 900 seconds (15 minutes).</p>
      */
     inline Fleet& WithDisconnectTimeoutInSeconds(int value) { SetDisconnectTimeoutInSeconds(value); return *this;}
 
@@ -437,6 +502,11 @@ namespace Model
      * <p>The current state for the fleet.</p>
      */
     inline const FleetState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state for the fleet.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state for the fleet.</p>
@@ -467,6 +537,11 @@ namespace Model
     /**
      * <p>The VPC configuration for the fleet.</p>
      */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC configuration for the fleet.</p>
+     */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
 
     /**
@@ -493,6 +568,11 @@ namespace Model
     /**
      * <p>The time the fleet was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The time the fleet was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -515,6 +595,11 @@ namespace Model
      * <p>The fleet errors.</p>
      */
     inline const Aws::Vector<FleetError>& GetFleetErrors() const{ return m_fleetErrors; }
+
+    /**
+     * <p>The fleet errors.</p>
+     */
+    inline bool FleetErrorsHasBeenSet() const { return m_fleetErrorsHasBeenSet; }
 
     /**
      * <p>The fleet errors.</p>
@@ -555,6 +640,11 @@ namespace Model
     /**
      * <p>Indicates whether default internet access is enabled for the fleet.</p>
      */
+    inline bool EnableDefaultInternetAccessHasBeenSet() const { return m_enableDefaultInternetAccessHasBeenSet; }
+
+    /**
+     * <p>Indicates whether default internet access is enabled for the fleet.</p>
+     */
     inline void SetEnableDefaultInternetAccess(bool value) { m_enableDefaultInternetAccessHasBeenSet = true; m_enableDefaultInternetAccess = value; }
 
     /**
@@ -564,27 +654,38 @@ namespace Model
 
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline const DomainJoinInfo& GetDomainJoinInfo() const{ return m_domainJoinInfo; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
+     */
+    inline bool DomainJoinInfoHasBeenSet() const { return m_domainJoinInfoHasBeenSet; }
+
+    /**
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(const DomainJoinInfo& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = value; }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline void SetDomainJoinInfo(DomainJoinInfo&& value) { m_domainJoinInfoHasBeenSet = true; m_domainJoinInfo = std::move(value); }
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline Fleet& WithDomainJoinInfo(const DomainJoinInfo& value) { SetDomainJoinInfo(value); return *this;}
 
     /**
-     * <p>The information needed to join a Microsoft Active Directory domain.</p>
+     * <p>The name of the directory and organizational unit (OU) to use to join the
+     * fleet to a Microsoft Active Directory domain. </p>
      */
     inline Fleet& WithDomainJoinInfo(DomainJoinInfo&& value) { SetDomainJoinInfo(std::move(value)); return *this;}
 

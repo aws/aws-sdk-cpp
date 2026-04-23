@@ -57,6 +57,11 @@ namespace Model
     /**
      * The name of the replaceable attribute.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the replaceable attribute.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The value of the replaceable attribute.
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * The value of the replaceable attribute.
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * The value of the replaceable attribute.
@@ -126,6 +136,12 @@ namespace Model
      * new attribute/value pair. The default setting is <code>false</code>.
      */
     inline bool GetReplace() const{ return m_replace; }
+
+    /**
+     * A flag specifying whether or not to replace the attribute/value pair or to add a
+     * new attribute/value pair. The default setting is <code>false</code>.
+     */
+    inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
      * A flag specifying whether or not to replace the attribute/value pair or to add a

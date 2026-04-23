@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Specifies the port that the database is listening on.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the port that the database is listening on.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>Specifies the DNS address of the database.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>Specifies the DNS address of the database.</p>
+     */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>Specifies the DNS address of the database.</p>

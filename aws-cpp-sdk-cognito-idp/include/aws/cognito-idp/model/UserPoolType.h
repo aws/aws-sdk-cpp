@@ -73,6 +73,11 @@ namespace Model
     /**
      * <p>The ID of the user pool.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the user pool.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -105,6 +110,11 @@ namespace Model
      * <p>The name of the user pool.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the user pool.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the user pool.</p>
@@ -145,6 +155,11 @@ namespace Model
     /**
      * <p>The policies associated with the user pool.</p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>The policies associated with the user pool.</p>
+     */
     inline void SetPolicies(const UserPoolPolicyType& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The AWS Lambda triggers associated with the user pool.</p>
      */
     inline const LambdaConfigType& GetLambdaConfig() const{ return m_lambdaConfig; }
+
+    /**
+     * <p>The AWS Lambda triggers associated with the user pool.</p>
+     */
+    inline bool LambdaConfigHasBeenSet() const { return m_lambdaConfigHasBeenSet; }
 
     /**
      * <p>The AWS Lambda triggers associated with the user pool.</p>
@@ -197,6 +217,11 @@ namespace Model
     /**
      * <p>The status of a user pool.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of a user pool.</p>
+     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -219,6 +244,11 @@ namespace Model
      * <p>The date the user pool was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>The date the user pool was last modified.</p>
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * <p>The date the user pool was last modified.</p>
@@ -249,6 +279,11 @@ namespace Model
     /**
      * <p>The date the user pool was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date the user pool was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -271,6 +306,11 @@ namespace Model
      * <p>A container with the schema attributes of a user pool.</p>
      */
     inline const Aws::Vector<SchemaAttributeType>& GetSchemaAttributes() const{ return m_schemaAttributes; }
+
+    /**
+     * <p>A container with the schema attributes of a user pool.</p>
+     */
+    inline bool SchemaAttributesHasBeenSet() const { return m_schemaAttributesHasBeenSet; }
 
     /**
      * <p>A container with the schema attributes of a user pool.</p>
@@ -311,6 +351,11 @@ namespace Model
     /**
      * <p>Specifies the attributes that are auto-verified in a user pool.</p>
      */
+    inline bool AutoVerifiedAttributesHasBeenSet() const { return m_autoVerifiedAttributesHasBeenSet; }
+
+    /**
+     * <p>Specifies the attributes that are auto-verified in a user pool.</p>
+     */
     inline void SetAutoVerifiedAttributes(const Aws::Vector<VerifiedAttributeType>& value) { m_autoVerifiedAttributesHasBeenSet = true; m_autoVerifiedAttributes = value; }
 
     /**
@@ -343,6 +388,11 @@ namespace Model
      * <p>Specifies the attributes that are aliased in a user pool.</p>
      */
     inline const Aws::Vector<AliasAttributeType>& GetAliasAttributes() const{ return m_aliasAttributes; }
+
+    /**
+     * <p>Specifies the attributes that are aliased in a user pool.</p>
+     */
+    inline bool AliasAttributesHasBeenSet() const { return m_aliasAttributesHasBeenSet; }
 
     /**
      * <p>Specifies the attributes that are aliased in a user pool.</p>
@@ -380,6 +430,12 @@ namespace Model
      * usernames when a user signs up.</p>
      */
     inline const Aws::Vector<UsernameAttributeType>& GetUsernameAttributes() const{ return m_usernameAttributes; }
+
+    /**
+     * <p>Specifies whether email addresses or phone numbers can be specified as
+     * usernames when a user signs up.</p>
+     */
+    inline bool UsernameAttributesHasBeenSet() const { return m_usernameAttributesHasBeenSet; }
 
     /**
      * <p>Specifies whether email addresses or phone numbers can be specified as
@@ -426,6 +482,11 @@ namespace Model
     /**
      * <p>The contents of the SMS verification message.</p>
      */
+    inline bool SmsVerificationMessageHasBeenSet() const { return m_smsVerificationMessageHasBeenSet; }
+
+    /**
+     * <p>The contents of the SMS verification message.</p>
+     */
     inline void SetSmsVerificationMessage(const Aws::String& value) { m_smsVerificationMessageHasBeenSet = true; m_smsVerificationMessage = value; }
 
     /**
@@ -458,6 +519,11 @@ namespace Model
      * <p>The contents of the email verification message.</p>
      */
     inline const Aws::String& GetEmailVerificationMessage() const{ return m_emailVerificationMessage; }
+
+    /**
+     * <p>The contents of the email verification message.</p>
+     */
+    inline bool EmailVerificationMessageHasBeenSet() const { return m_emailVerificationMessageHasBeenSet; }
 
     /**
      * <p>The contents of the email verification message.</p>
@@ -498,6 +564,11 @@ namespace Model
     /**
      * <p>The subject of the email verification message.</p>
      */
+    inline bool EmailVerificationSubjectHasBeenSet() const { return m_emailVerificationSubjectHasBeenSet; }
+
+    /**
+     * <p>The subject of the email verification message.</p>
+     */
     inline void SetEmailVerificationSubject(const Aws::String& value) { m_emailVerificationSubjectHasBeenSet = true; m_emailVerificationSubject = value; }
 
     /**
@@ -534,6 +605,11 @@ namespace Model
     /**
      * <p>The template for verification messages.</p>
      */
+    inline bool VerificationMessageTemplateHasBeenSet() const { return m_verificationMessageTemplateHasBeenSet; }
+
+    /**
+     * <p>The template for verification messages.</p>
+     */
     inline void SetVerificationMessageTemplate(const VerificationMessageTemplateType& value) { m_verificationMessageTemplateHasBeenSet = true; m_verificationMessageTemplate = value; }
 
     /**
@@ -556,6 +632,11 @@ namespace Model
      * <p>The contents of the SMS authentication message.</p>
      */
     inline const Aws::String& GetSmsAuthenticationMessage() const{ return m_smsAuthenticationMessage; }
+
+    /**
+     * <p>The contents of the SMS authentication message.</p>
+     */
+    inline bool SmsAuthenticationMessageHasBeenSet() const { return m_smsAuthenticationMessageHasBeenSet; }
 
     /**
      * <p>The contents of the SMS authentication message.</p>
@@ -606,6 +687,16 @@ namespace Model
      * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
      * registering to create an MFA token.</p> </li> </ul>
      */
+    inline bool MfaConfigurationHasBeenSet() const { return m_mfaConfigurationHasBeenSet; }
+
+    /**
+     * <p>Can be one of the following values:</p> <ul> <li> <p> <code>OFF</code> - MFA
+     * tokens are not required and cannot be specified during user registration.</p>
+     * </li> <li> <p> <code>ON</code> - MFA tokens are required for all user
+     * registrations. You can only specify required when you are initially creating a
+     * user pool.</p> </li> <li> <p> <code>OPTIONAL</code> - Users have the option when
+     * registering to create an MFA token.</p> </li> </ul>
+     */
     inline void SetMfaConfiguration(const UserPoolMfaType& value) { m_mfaConfigurationHasBeenSet = true; m_mfaConfiguration = value; }
 
     /**
@@ -647,6 +738,11 @@ namespace Model
     /**
      * <p>The device configuration.</p>
      */
+    inline bool DeviceConfigurationHasBeenSet() const { return m_deviceConfigurationHasBeenSet; }
+
+    /**
+     * <p>The device configuration.</p>
+     */
     inline void SetDeviceConfiguration(const DeviceConfigurationType& value) { m_deviceConfigurationHasBeenSet = true; m_deviceConfiguration = value; }
 
     /**
@@ -673,6 +769,11 @@ namespace Model
     /**
      * <p>A number estimating the size of the user pool.</p>
      */
+    inline bool EstimatedNumberOfUsersHasBeenSet() const { return m_estimatedNumberOfUsersHasBeenSet; }
+
+    /**
+     * <p>A number estimating the size of the user pool.</p>
+     */
     inline void SetEstimatedNumberOfUsers(int value) { m_estimatedNumberOfUsersHasBeenSet = true; m_estimatedNumberOfUsers = value; }
 
     /**
@@ -685,6 +786,11 @@ namespace Model
      * <p>The email configuration.</p>
      */
     inline const EmailConfigurationType& GetEmailConfiguration() const{ return m_emailConfiguration; }
+
+    /**
+     * <p>The email configuration.</p>
+     */
+    inline bool EmailConfigurationHasBeenSet() const { return m_emailConfigurationHasBeenSet; }
 
     /**
      * <p>The email configuration.</p>
@@ -715,6 +821,11 @@ namespace Model
     /**
      * <p>The SMS configuration.</p>
      */
+    inline bool SmsConfigurationHasBeenSet() const { return m_smsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The SMS configuration.</p>
+     */
     inline void SetSmsConfiguration(const SmsConfigurationType& value) { m_smsConfigurationHasBeenSet = true; m_smsConfiguration = value; }
 
     /**
@@ -734,86 +845,93 @@ namespace Model
 
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserPoolTags() const{ return m_userPoolTags; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline bool UserPoolTagsHasBeenSet() const { return m_userPoolTagsHasBeenSet; }
+
+    /**
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = value; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline void SetUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags = std::move(value); }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& WithUserPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetUserPoolTags(value); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& WithUserPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetUserPoolTags(std::move(value)); return *this;}
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const Aws::String& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, const Aws::String& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const Aws::String& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const char* key, Aws::String&& value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(Aws::String&& key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The cost allocation tags for the user pool. For more information, see <a
-     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-cost-allocation-tagging.html">Adding
-     * Cost Allocation Tags to Your User Pool</a> </p>
+     * <p>The tags that are assigned to the user pool. A tag is a label that you can
+     * apply to user pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
      */
     inline UserPoolType& AddUserPoolTags(const char* key, const char* value) { m_userPoolTagsHasBeenSet = true; m_userPoolTags.emplace(key, value); return *this; }
 
@@ -823,6 +941,12 @@ namespace Model
      * users.</p>
      */
     inline const Aws::String& GetSmsConfigurationFailure() const{ return m_smsConfigurationFailure; }
+
+    /**
+     * <p>The reason why the SMS configuration cannot send the messages to your
+     * users.</p>
+     */
+    inline bool SmsConfigurationFailureHasBeenSet() const { return m_smsConfigurationFailureHasBeenSet; }
 
     /**
      * <p>The reason why the SMS configuration cannot send the messages to your
@@ -871,6 +995,12 @@ namespace Model
      * <p>The reason why the email configuration cannot send the messages to your
      * users.</p>
      */
+    inline bool EmailConfigurationFailureHasBeenSet() const { return m_emailConfigurationFailureHasBeenSet; }
+
+    /**
+     * <p>The reason why the email configuration cannot send the messages to your
+     * users.</p>
+     */
     inline void SetEmailConfigurationFailure(const Aws::String& value) { m_emailConfigurationFailureHasBeenSet = true; m_emailConfigurationFailure = value; }
 
     /**
@@ -912,6 +1042,11 @@ namespace Model
     /**
      * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Holds the domain prefix if the user pool has a domain associated with it.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -940,25 +1075,84 @@ namespace Model
     inline UserPoolType& WithDomain(const char* value) { SetDomain(value); return *this;}
 
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline const Aws::String& GetCustomDomain() const{ return m_customDomain; }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
+    inline bool CustomDomainHasBeenSet() const { return m_customDomainHasBeenSet; }
+
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(const Aws::String& value) { m_customDomainHasBeenSet = true; m_customDomain = value; }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(Aws::String&& value) { m_customDomainHasBeenSet = true; m_customDomain = std::move(value); }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline void SetCustomDomain(const char* value) { m_customDomainHasBeenSet = true; m_customDomain.assign(value); }
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(const Aws::String& value) { SetCustomDomain(value); return *this;}
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(Aws::String&& value) { SetCustomDomain(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A custom domain name that you provide to Amazon Cognito. This parameter
+     * applies only if you use a custom domain to host the sign-up and sign-in pages
+     * for your application. For example: <code>auth.example.com</code>.</p> <p>For
+     * more information about adding a custom domain to your user pool, see <a
+     * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-add-custom-domain.html">Using
+     * Your Own Domain for the Hosted UI</a>.</p>
+     */
     inline UserPoolType& WithCustomDomain(const char* value) { SetCustomDomain(value); return *this;}
 
 
@@ -966,6 +1160,11 @@ namespace Model
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
      */
     inline const AdminCreateUserConfigType& GetAdminCreateUserConfig() const{ return m_adminCreateUserConfig; }
+
+    /**
+     * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
+     */
+    inline bool AdminCreateUserConfigHasBeenSet() const { return m_adminCreateUserConfigHasBeenSet; }
 
     /**
      * <p>The configuration for <code>AdminCreateUser</code> requests.</p>
@@ -996,6 +1195,11 @@ namespace Model
     /**
      * <p>The user pool add-ons.</p>
      */
+    inline bool UserPoolAddOnsHasBeenSet() const { return m_userPoolAddOnsHasBeenSet; }
+
+    /**
+     * <p>The user pool add-ons.</p>
+     */
     inline void SetUserPoolAddOns(const UserPoolAddOnsType& value) { m_userPoolAddOnsHasBeenSet = true; m_userPoolAddOns = value; }
 
     /**
@@ -1018,6 +1222,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the user pool.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the user pool.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the user pool.</p>

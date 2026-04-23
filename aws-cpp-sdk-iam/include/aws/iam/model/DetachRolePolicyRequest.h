@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -57,7 +57,16 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -66,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -84,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -93,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -102,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name (friendly name, not ARN) of the IAM role to detach the policy
-     * from.</p> <p>This parameter allows (per its <a
+     * from.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -113,7 +122,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -122,7 +131,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
+     * <p>For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -131,7 +149,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -140,7 +158,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -149,7 +167,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -158,7 +176,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -167,7 +185,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM policy you want to detach.</p>
      * <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */

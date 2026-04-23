@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Object that describes a game session.</p>
      */
+    inline bool GameSessionHasBeenSet() const { return m_gameSessionHasBeenSet; }
+
+    /**
+     * <p>Object that describes a game session.</p>
+     */
     inline void SetGameSession(const GameSession& value) { m_gameSessionHasBeenSet = true; m_gameSession = value; }
 
     /**
@@ -83,6 +88,15 @@ namespace Model
      * event.</p> </li> </ul>
      */
     inline const ProtectionPolicy& GetProtectionPolicy() const{ return m_protectionPolicy; }
+
+    /**
+     * <p>Current status of protection for the game session.</p> <ul> <li> <p>
+     * <b>NoProtection</b> -- The game session can be terminated during a scale-down
+     * event.</p> </li> <li> <p> <b>FullProtection</b> -- If the game session is in an
+     * <code>ACTIVE</code> status, it cannot be terminated during a scale-down
+     * event.</p> </li> </ul>
+     */
+    inline bool ProtectionPolicyHasBeenSet() const { return m_protectionPolicyHasBeenSet; }
 
     /**
      * <p>Current status of protection for the game session.</p> <ul> <li> <p>

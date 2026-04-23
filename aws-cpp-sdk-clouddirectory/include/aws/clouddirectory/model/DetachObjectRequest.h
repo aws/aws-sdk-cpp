@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
      * where objects reside. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the <a>Directory</a>
+     * where objects reside. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p>The parent reference from which the object with the specified link name is
      * detached.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>The parent reference from which the object with the specified link name is
+     * detached.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
      * <p>The link name associated with the object that needs to be detached.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The link name associated with the object that needs to be detached.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The link name associated with the object that needs to be detached.</p>

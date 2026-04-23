@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource.</p>
      */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource.</p>
+     */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The tags. Each resource can have a maximum of 10 tags.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags. Each resource can have a maximum of 10 tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags. Each resource can have a maximum of 10 tags.</p>

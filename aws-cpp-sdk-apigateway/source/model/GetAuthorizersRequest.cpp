@@ -35,7 +35,7 @@ GetAuthorizersRequest::GetAuthorizersRequest() :
 
 Aws::String GetAuthorizersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetAuthorizersRequest::AddQueryStringParameters(URI& uri) const

@@ -54,6 +54,12 @@ namespace Model
      * <p>The 39-character ID for the cluster that you want to cancel, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The 39-character ID for the cluster that you want to cancel, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**

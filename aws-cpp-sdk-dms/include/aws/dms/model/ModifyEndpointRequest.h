@@ -25,6 +25,7 @@
 #include <aws/dms/model/MongoDbSettings.h>
 #include <aws/dms/model/KinesisSettings.h>
 #include <aws/dms/model/ElasticsearchSettings.h>
+#include <aws/dms/model/RedshiftSettings.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::String& GetEndpointArn() const{ return m_endpointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -104,6 +111,13 @@ namespace Model
      * or contain two consecutive hyphens.</p>
      */
     inline const Aws::String& GetEndpointIdentifier() const{ return m_endpointIdentifier; }
+
+    /**
+     * <p>The database endpoint identifier. Identifiers must begin with a letter; must
+     * contain only ASCII letters, digits, and hyphens; and must not end with a hyphen
+     * or contain two consecutive hyphens.</p>
+     */
+    inline bool EndpointIdentifierHasBeenSet() const { return m_endpointIdentifierHasBeenSet; }
 
     /**
      * <p>The database endpoint identifier. Identifiers must begin with a letter; must
@@ -156,6 +170,11 @@ namespace Model
     /**
      * <p>The type of endpoint.</p>
      */
+    inline bool EndpointTypeHasBeenSet() const { return m_endpointTypeHasBeenSet; }
+
+    /**
+     * <p>The type of endpoint.</p>
+     */
     inline void SetEndpointType(const ReplicationEndpointTypeValue& value) { m_endpointTypeHasBeenSet = true; m_endpointType = value; }
 
     /**
@@ -181,6 +200,14 @@ namespace Model
      * mongodb, and sqlserver.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
+    /**
+     * <p>The type of engine for the endpoint. Valid values, depending on the
+     * EndPointType, include mysql, oracle, postgres, mariadb, aurora,
+     * aurora-postgresql, redshift, s3, db2, azuredb, sybase, sybase, dynamodb,
+     * mongodb, and sqlserver.</p>
+     */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>The type of engine for the endpoint. Valid values, depending on the
@@ -239,6 +266,11 @@ namespace Model
     /**
      * <p>The user name to be used to login to the endpoint database.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name to be used to login to the endpoint database.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -271,6 +303,11 @@ namespace Model
      * <p>The password to be used to login to the endpoint database.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password to be used to login to the endpoint database.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password to be used to login to the endpoint database.</p>
@@ -311,6 +348,11 @@ namespace Model
     /**
      * <p>The name of the server where the endpoint database resides.</p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>The name of the server where the endpoint database resides.</p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -347,6 +389,11 @@ namespace Model
     /**
      * <p>The port used by the endpoint database.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port used by the endpoint database.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -359,6 +406,11 @@ namespace Model
      * <p>The name of the endpoint database.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the endpoint database.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the endpoint database.</p>
@@ -396,6 +448,12 @@ namespace Model
      * parameter, pass the empty string ("") as an argument.</p>
      */
     inline const Aws::String& GetExtraConnectionAttributes() const{ return m_extraConnectionAttributes; }
+
+    /**
+     * <p>Additional attributes associated with the connection. To reset this
+     * parameter, pass the empty string ("") as an argument.</p>
+     */
+    inline bool ExtraConnectionAttributesHasBeenSet() const { return m_extraConnectionAttributesHasBeenSet; }
 
     /**
      * <p>Additional attributes associated with the connection. To reset this
@@ -444,6 +502,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the certificate used for SSL
      * connection.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificate used for SSL
+     * connection.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -487,6 +551,12 @@ namespace Model
      * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
      * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
      */
+    inline bool SslModeHasBeenSet() const { return m_sslModeHasBeenSet; }
+
+    /**
+     * <p>The SSL mode to be used.</p> <p>SSL mode can be one of four values: none,
+     * require, verify-ca, verify-full. </p> <p>The default value is none.</p>
+     */
     inline void SetSslMode(const DmsSslModeValue& value) { m_sslModeHasBeenSet = true; m_sslMode = value; }
 
     /**
@@ -513,6 +583,12 @@ namespace Model
      * to modify the endpoint. </p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) for the service access role you want to use
+     * to modify the endpoint. </p>
+     */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) for the service access role you want to use
@@ -559,6 +635,11 @@ namespace Model
     /**
      * <p>The external table definition.</p>
      */
+    inline bool ExternalTableDefinitionHasBeenSet() const { return m_externalTableDefinitionHasBeenSet; }
+
+    /**
+     * <p>The external table definition.</p>
+     */
     inline void SetExternalTableDefinition(const Aws::String& value) { m_externalTableDefinitionHasBeenSet = true; m_externalTableDefinition = value; }
 
     /**
@@ -590,7 +671,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
      */
@@ -599,7 +680,16 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
+     * Service User Guide.</i> </p>
+     */
+    inline bool DynamoDbSettingsHasBeenSet() const { return m_dynamoDbSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
      */
@@ -608,7 +698,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
      */
@@ -617,7 +707,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
      */
@@ -626,7 +716,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon DynamoDB endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.DynamoDB.html">Using
      * Object Mapping to Migrate Data to DynamoDB</a> in the <i>AWS Database Migration
      * Service User Guide.</i> </p>
      */
@@ -636,7 +726,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
      * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -645,7 +735,16 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
+     * <i>AWS Database Migration Service User Guide.</i> </p>
+     */
+    inline bool S3SettingsHasBeenSet() const { return m_s3SettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
      * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -654,7 +753,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
      * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -663,7 +762,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
      * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -672,7 +771,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon S3 endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.S3.html#CHAP_Target.S3.Configuring">Extra
      * Connection Attributes When Using Amazon S3 as a Target for AWS DMS</a> in the
      * <i>AWS Database Migration Service User Guide.</i> </p>
      */
@@ -692,6 +791,20 @@ namespace Model
      * "none"|"gzip" } </p>
      */
     inline const DmsTransferSettings& GetDmsTransferSettings() const{ return m_dmsTransferSettings; }
+
+    /**
+     * <p>The settings in JSON format for the DMS transfer type of source endpoint.
+     * </p> <p>Attributes include the following:</p> <ul> <li> <p>serviceAccessRoleArn
+     * - The IAM role that has permission to access the Amazon S3 bucket.</p> </li>
+     * <li> <p>BucketName - The name of the S3 bucket to use.</p> </li> <li>
+     * <p>compressionType - An optional parameter to use GZIP to compress the target
+     * files. Set to NONE (the default) or do not use to leave the files
+     * uncompressed.</p> </li> </ul> <p>Shorthand syntax: ServiceAccessRoleArn=string
+     * ,BucketName=string,CompressionType=string</p> <p>JSON syntax:</p> <p> {
+     * "ServiceAccessRoleArn": "string", "BucketName": "string", "CompressionType":
+     * "none"|"gzip" } </p>
+     */
+    inline bool DmsTransferSettingsHasBeenSet() const { return m_dmsTransferSettingsHasBeenSet; }
 
     /**
      * <p>The settings in JSON format for the DMS transfer type of source endpoint.
@@ -753,7 +866,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the configuration properties section in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
      * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -762,7 +875,16 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the configuration properties section in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
+     * Database Migration Service User Guide.</i> </p>
+     */
+    inline bool MongoDbSettingsHasBeenSet() const { return m_mongoDbSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the source MongoDB endpoint. For more information
+     * about the available settings, see the configuration properties section in <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
      * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -771,7 +893,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the configuration properties section in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
      * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -780,7 +902,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the configuration properties section in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
      * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -789,7 +911,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the source MongoDB endpoint. For more information
      * about the available settings, see the configuration properties section in <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Source.MongoDB.html">
      * Using MongoDB as a Target for AWS Database Migration Service</a> in the <i>AWS
      * Database Migration Service User Guide.</i> </p>
      */
@@ -799,7 +921,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
      * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
      * <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -808,7 +930,16 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
+     * <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline bool KinesisSettingsHasBeenSet() const { return m_kinesisSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
+     * For more information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
      * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
      * <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -817,7 +948,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
      * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
      * <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -826,7 +957,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
      * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
      * <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -835,7 +966,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Amazon Kinesis Data Streams endpoint.
      * For more information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Kinesis.html#CHAP_Target.Kinesis.ObjectMapping
      * ">Using Object Mapping to Migrate Data to a Kinesis Data Stream</a> in the
      * <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -845,7 +976,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -854,7 +985,16 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
+     * the <i>AWS Database Migration User Guide.</i> </p>
+     */
+    inline bool ElasticsearchSettingsHasBeenSet() const { return m_elasticsearchSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
+     * information about the available settings, see <a
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -863,7 +1003,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -872,7 +1012,7 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
@@ -881,11 +1021,30 @@ namespace Model
     /**
      * <p>Settings in JSON format for the target Elasticsearch endpoint. For more
      * information about the available settings, see <a
-     * href="http://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
+     * href="https://docs.aws.amazon.com/dms/latest/userguide/CHAP_Target.Elasticsearch.html#CHAP_Target.Elasticsearch.Configuration">Extra
      * Connection Attributes When Using Elasticsearch as a Target for AWS DMS</a> in
      * the <i>AWS Database Migration User Guide.</i> </p>
      */
     inline ModifyEndpointRequest& WithElasticsearchSettings(ElasticsearchSettings&& value) { SetElasticsearchSettings(std::move(value)); return *this;}
+
+
+    
+    inline const RedshiftSettings& GetRedshiftSettings() const{ return m_redshiftSettings; }
+
+    
+    inline bool RedshiftSettingsHasBeenSet() const { return m_redshiftSettingsHasBeenSet; }
+
+    
+    inline void SetRedshiftSettings(const RedshiftSettings& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = value; }
+
+    
+    inline void SetRedshiftSettings(RedshiftSettings&& value) { m_redshiftSettingsHasBeenSet = true; m_redshiftSettings = std::move(value); }
+
+    
+    inline ModifyEndpointRequest& WithRedshiftSettings(const RedshiftSettings& value) { SetRedshiftSettings(value); return *this;}
+
+    
+    inline ModifyEndpointRequest& WithRedshiftSettings(RedshiftSettings&& value) { SetRedshiftSettings(std::move(value)); return *this;}
 
   private:
 
@@ -948,6 +1107,9 @@ namespace Model
 
     ElasticsearchSettings m_elasticsearchSettings;
     bool m_elasticsearchSettingsHasBeenSet;
+
+    RedshiftSettings m_redshiftSettings;
+    bool m_redshiftSettingsHasBeenSet;
   };
 
 } // namespace Model

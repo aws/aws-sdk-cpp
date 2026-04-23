@@ -59,6 +59,12 @@ namespace Model
      * Represents the equal condition to be applied to a single field when querying for
      * findings.
      */
+    inline bool EqHasBeenSet() const { return m_eqHasBeenSet; }
+
+    /**
+     * Represents the equal condition to be applied to a single field when querying for
+     * findings.
+     */
     inline void SetEq(const Aws::Vector<Aws::String>& value) { m_eqHasBeenSet = true; m_eq = value; }
 
     /**
@@ -108,6 +114,12 @@ namespace Model
      * Represents the greater than condition to be applied to a single field when
      * querying for findings.
      */
+    inline bool GtHasBeenSet() const { return m_gtHasBeenSet; }
+
+    /**
+     * Represents the greater than condition to be applied to a single field when
+     * querying for findings.
+     */
     inline void SetGt(int value) { m_gtHasBeenSet = true; m_gt = value; }
 
     /**
@@ -122,6 +134,12 @@ namespace Model
      * querying for findings.
      */
     inline int GetGte() const{ return m_gte; }
+
+    /**
+     * Represents the greater than equal condition to be applied to a single field when
+     * querying for findings.
+     */
+    inline bool GteHasBeenSet() const { return m_gteHasBeenSet; }
 
     /**
      * Represents the greater than equal condition to be applied to a single field when
@@ -146,6 +164,12 @@ namespace Model
      * Represents the less than condition to be applied to a single field when querying
      * for findings.
      */
+    inline bool LtHasBeenSet() const { return m_ltHasBeenSet; }
+
+    /**
+     * Represents the less than condition to be applied to a single field when querying
+     * for findings.
+     */
     inline void SetLt(int value) { m_ltHasBeenSet = true; m_lt = value; }
 
     /**
@@ -165,6 +189,12 @@ namespace Model
      * Represents the less than equal condition to be applied to a single field when
      * querying for findings.
      */
+    inline bool LteHasBeenSet() const { return m_lteHasBeenSet; }
+
+    /**
+     * Represents the less than equal condition to be applied to a single field when
+     * querying for findings.
+     */
     inline void SetLte(int value) { m_lteHasBeenSet = true; m_lte = value; }
 
     /**
@@ -179,6 +209,12 @@ namespace Model
      * for findings.
      */
     inline const Aws::Vector<Aws::String>& GetNeq() const{ return m_neq; }
+
+    /**
+     * Represents the not equal condition to be applied to a single field when querying
+     * for findings.
+     */
+    inline bool NeqHasBeenSet() const { return m_neqHasBeenSet; }
 
     /**
      * Represents the not equal condition to be applied to a single field when querying

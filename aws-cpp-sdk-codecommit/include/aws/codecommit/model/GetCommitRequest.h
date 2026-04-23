@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the repository to which the commit was made.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to which the commit was made.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The commit ID. Commit IDs are the full SHA of the commit.</p>
      */
     inline const Aws::String& GetCommitId() const{ return m_commitId; }
+
+    /**
+     * <p>The commit ID. Commit IDs are the full SHA of the commit.</p>
+     */
+    inline bool CommitIdHasBeenSet() const { return m_commitIdHasBeenSet; }
 
     /**
      * <p>The commit ID. Commit IDs are the full SHA of the commit.</p>

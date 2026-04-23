@@ -35,7 +35,7 @@ ListVPCAssociationAuthorizationsRequest::ListVPCAssociationAuthorizationsRequest
 
 Aws::String ListVPCAssociationAuthorizationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListVPCAssociationAuthorizationsRequest::AddQueryStringParameters(URI& uri) const

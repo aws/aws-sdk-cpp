@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The client ID for the client app.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>The client ID for the client app.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>The client ID for the client app.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The logo image for the UI customization.</p>
      */
+    inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
+
+    /**
+     * <p>The logo image for the UI customization.</p>
+     */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The CSS values in the UI customization.</p>
      */
     inline const Aws::String& GetCSS() const{ return m_cSS; }
+
+    /**
+     * <p>The CSS values in the UI customization.</p>
+     */
+    inline bool CSSHasBeenSet() const { return m_cSSHasBeenSet; }
 
     /**
      * <p>The CSS values in the UI customization.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The CSS version number.</p>
      */
+    inline bool CSSVersionHasBeenSet() const { return m_cSSVersionHasBeenSet; }
+
+    /**
+     * <p>The CSS version number.</p>
+     */
     inline void SetCSSVersion(const Aws::String& value) { m_cSSVersionHasBeenSet = true; m_cSSVersion = value; }
 
     /**
@@ -237,6 +262,11 @@ namespace Model
     /**
      * <p>The last-modified date for the UI customization.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The last-modified date for the UI customization.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -259,6 +289,11 @@ namespace Model
      * <p>The creation date for the UI customization.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The creation date for the UI customization.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The creation date for the UI customization.</p>

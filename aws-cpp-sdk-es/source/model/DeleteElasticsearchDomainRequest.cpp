@@ -29,7 +29,7 @@ DeleteElasticsearchDomainRequest::DeleteElasticsearchDomainRequest() :
 
 Aws::String DeleteElasticsearchDomainRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

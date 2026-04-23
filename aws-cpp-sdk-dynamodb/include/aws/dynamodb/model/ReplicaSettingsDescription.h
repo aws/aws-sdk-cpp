@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/dynamodb/model/ReplicaStatus.h>
+#include <aws/dynamodb/model/BillingModeSummary.h>
 #include <aws/dynamodb/model/AutoScalingSettingsDescription.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/ReplicaGlobalSecondaryIndexSettingsDescription.h>
@@ -55,6 +56,11 @@ namespace Model
      * <p>The region name of the replica.</p>
      */
     inline const Aws::String& GetRegionName() const{ return m_regionName; }
+
+    /**
+     * <p>The region name of the replica.</p>
+     */
+    inline bool RegionNameHasBeenSet() const { return m_regionNameHasBeenSet; }
 
     /**
      * <p>The region name of the replica.</p>
@@ -103,6 +109,15 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
      * for use.</p> </li> </ul>
      */
+    inline bool ReplicaStatusHasBeenSet() const { return m_replicaStatusHasBeenSet; }
+
+    /**
+     * <p>The current state of the region:</p> <ul> <li> <p> <code>CREATING</code> -
+     * The region is being created.</p> </li> <li> <p> <code>UPDATING</code> - The
+     * region is being updated.</p> </li> <li> <p> <code>DELETING</code> - The region
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The region is ready
+     * for use.</p> </li> </ul>
+     */
     inline void SetReplicaStatus(const ReplicaStatus& value) { m_replicaStatusHasBeenSet = true; m_replicaStatus = value; }
 
     /**
@@ -134,6 +149,37 @@ namespace Model
 
 
     /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline const BillingModeSummary& GetReplicaBillingModeSummary() const{ return m_replicaBillingModeSummary; }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline bool ReplicaBillingModeSummaryHasBeenSet() const { return m_replicaBillingModeSummaryHasBeenSet; }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline void SetReplicaBillingModeSummary(const BillingModeSummary& value) { m_replicaBillingModeSummaryHasBeenSet = true; m_replicaBillingModeSummary = value; }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline void SetReplicaBillingModeSummary(BillingModeSummary&& value) { m_replicaBillingModeSummaryHasBeenSet = true; m_replicaBillingModeSummary = std::move(value); }
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaBillingModeSummary(const BillingModeSummary& value) { SetReplicaBillingModeSummary(value); return *this;}
+
+    /**
+     * <p>The read/write capacity mode of the replica.</p>
+     */
+    inline ReplicaSettingsDescription& WithReplicaBillingModeSummary(BillingModeSummary&& value) { SetReplicaBillingModeSummary(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of strongly consistent reads consumed per second before
      * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
      * <a
@@ -142,6 +188,16 @@ namespace Model
      * </p>
      */
     inline long long GetReplicaProvisionedReadCapacityUnits() const{ return m_replicaProvisionedReadCapacityUnits; }
+
+    /**
+     * <p>The maximum number of strongly consistent reads consumed per second before
+     * DynamoDB returns a <code>ThrottlingException</code>. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer Guide</i>.
+     * </p>
+     */
+    inline bool ReplicaProvisionedReadCapacityUnitsHasBeenSet() const { return m_replicaProvisionedReadCapacityUnitsHasBeenSet; }
 
     /**
      * <p>The maximum number of strongly consistent reads consumed per second before
@@ -168,6 +224,11 @@ namespace Model
      * <p>Autoscaling settings for a global table replica's read capacity units.</p>
      */
     inline const AutoScalingSettingsDescription& GetReplicaProvisionedReadCapacityAutoScalingSettings() const{ return m_replicaProvisionedReadCapacityAutoScalingSettings; }
+
+    /**
+     * <p>Autoscaling settings for a global table replica's read capacity units.</p>
+     */
+    inline bool ReplicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedReadCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
      * <p>Autoscaling settings for a global table replica's read capacity units.</p>
@@ -206,6 +267,15 @@ namespace Model
      * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
      * Guide</i>.</p>
      */
+    inline bool ReplicaProvisionedWriteCapacityUnitsHasBeenSet() const { return m_replicaProvisionedWriteCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of writes consumed per second before DynamoDB returns a
+     * <code>ThrottlingException</code>. For more information, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/WorkingWithTables.html#ProvisionedThroughput">Specifying
+     * Read and Write Requirements</a> in the <i>Amazon DynamoDB Developer
+     * Guide</i>.</p>
+     */
     inline void SetReplicaProvisionedWriteCapacityUnits(long long value) { m_replicaProvisionedWriteCapacityUnitsHasBeenSet = true; m_replicaProvisionedWriteCapacityUnits = value; }
 
     /**
@@ -222,6 +292,11 @@ namespace Model
      * <p>AutoScaling settings for a global table replica's write capacity units.</p>
      */
     inline const AutoScalingSettingsDescription& GetReplicaProvisionedWriteCapacityAutoScalingSettings() const{ return m_replicaProvisionedWriteCapacityAutoScalingSettings; }
+
+    /**
+     * <p>AutoScaling settings for a global table replica's write capacity units.</p>
+     */
+    inline bool ReplicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_replicaProvisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
      * <p>AutoScaling settings for a global table replica's write capacity units.</p>
@@ -248,6 +323,11 @@ namespace Model
      * <p>Replica global secondary index settings for the global table.</p>
      */
     inline const Aws::Vector<ReplicaGlobalSecondaryIndexSettingsDescription>& GetReplicaGlobalSecondaryIndexSettings() const{ return m_replicaGlobalSecondaryIndexSettings; }
+
+    /**
+     * <p>Replica global secondary index settings for the global table.</p>
+     */
+    inline bool ReplicaGlobalSecondaryIndexSettingsHasBeenSet() const { return m_replicaGlobalSecondaryIndexSettingsHasBeenSet; }
 
     /**
      * <p>Replica global secondary index settings for the global table.</p>
@@ -286,6 +366,9 @@ namespace Model
 
     ReplicaStatus m_replicaStatus;
     bool m_replicaStatusHasBeenSet;
+
+    BillingModeSummary m_replicaBillingModeSummary;
+    bool m_replicaBillingModeSummaryHasBeenSet;
 
     long long m_replicaProvisionedReadCapacityUnits;
     bool m_replicaProvisionedReadCapacityUnitsHasBeenSet;

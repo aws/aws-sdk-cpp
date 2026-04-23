@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex data type that includes the profile configurations specified for
    * field-level encryption. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionConfig
@@ -54,6 +54,11 @@ namespace Model
      * <p>A unique number that ensures the request can't be replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+
+    /**
+     * <p>A unique number that ensures the request can't be replayed.</p>
+     */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
      * <p>A unique number that ensures the request can't be replayed.</p>
@@ -90,6 +95,11 @@ namespace Model
      * <p>An optional comment about the configuration.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment about the configuration.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment about the configuration.</p>
@@ -132,6 +142,12 @@ namespace Model
      * <p>A complex data type that specifies when to forward content if a profile isn't
      * found and the profile that can be provided as a query argument in a request.</p>
      */
+    inline bool QueryArgProfileConfigHasBeenSet() const { return m_queryArgProfileConfigHasBeenSet; }
+
+    /**
+     * <p>A complex data type that specifies when to forward content if a profile isn't
+     * found and the profile that can be provided as a query argument in a request.</p>
+     */
     inline void SetQueryArgProfileConfig(const QueryArgProfileConfig& value) { m_queryArgProfileConfigHasBeenSet = true; m_queryArgProfileConfig = value; }
 
     /**
@@ -159,6 +175,13 @@ namespace Model
      * argument doesn't specify a profile to use.</p>
      */
     inline const ContentTypeProfileConfig& GetContentTypeProfileConfig() const{ return m_contentTypeProfileConfig; }
+
+    /**
+     * <p>A complex data type that specifies when to forward content if a content type
+     * isn't recognized and profiles to use as by default in a request if a query
+     * argument doesn't specify a profile to use.</p>
+     */
+    inline bool ContentTypeProfileConfigHasBeenSet() const { return m_contentTypeProfileConfigHasBeenSet; }
 
     /**
      * <p>A complex data type that specifies when to forward content if a content type

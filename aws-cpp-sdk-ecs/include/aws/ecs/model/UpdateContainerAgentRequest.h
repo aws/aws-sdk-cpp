@@ -56,6 +56,13 @@ namespace Model
      * container instance is running on. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that your
+     * container instance is running on. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -99,6 +106,12 @@ namespace Model
      * which you would like to update the Amazon ECS container agent.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
+
+    /**
+     * <p>The container instance ID or full ARN entries for the container instance on
+     * which you would like to update the Amazon ECS container agent.</p>
+     */
+    inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
 
     /**
      * <p>The container instance ID or full ARN entries for the container instance on

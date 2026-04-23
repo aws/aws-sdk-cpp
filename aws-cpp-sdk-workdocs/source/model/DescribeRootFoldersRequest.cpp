@@ -35,7 +35,7 @@ DescribeRootFoldersRequest::DescribeRootFoldersRequest() :
 
 Aws::String DescribeRootFoldersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeRootFoldersRequest::GetRequestSpecificHeaders() const

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex data type of profiles for the field-level encryption.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionProfileConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionProfileConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileConfig
@@ -53,6 +53,11 @@ namespace Model
      * <p>Profile name for the field-level encryption profile.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Profile name for the field-level encryption profile.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Profile name for the field-level encryption profile.</p>
@@ -86,37 +91,42 @@ namespace Model
 
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
+     */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
+
+    /**
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const Aws::String& value) { m_callerReferenceHasBeenSet = true; m_callerReference = value; }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(Aws::String&& value) { m_callerReferenceHasBeenSet = true; m_callerReference = std::move(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline void SetCallerReference(const char* value) { m_callerReferenceHasBeenSet = true; m_callerReference.assign(value); }
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(const Aws::String& value) { SetCallerReference(value); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(Aws::String&& value) { SetCallerReference(std::move(value)); return *this;}
 
     /**
-     * <p>A unique number that ensures the request can't be replayed.</p>
+     * <p>A unique number that ensures that the request can't be replayed.</p>
      */
     inline FieldLevelEncryptionProfileConfig& WithCallerReference(const char* value) { SetCallerReference(value); return *this;}
 
@@ -125,6 +135,11 @@ namespace Model
      * <p>An optional comment for the field-level encryption profile.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment for the field-level encryption profile.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment for the field-level encryption profile.</p>
@@ -163,6 +178,13 @@ namespace Model
      * specifying which fields to encrypt with this key.</p>
      */
     inline const EncryptionEntities& GetEncryptionEntities() const{ return m_encryptionEntities; }
+
+    /**
+     * <p>A complex data type of encryption entities for the field-level encryption
+     * profile that include the public key ID, provider, and field patterns for
+     * specifying which fields to encrypt with this key.</p>
+     */
+    inline bool EncryptionEntitiesHasBeenSet() const { return m_encryptionEntitiesHasBeenSet; }
 
     /**
      * <p>A complex data type of encryption entities for the field-level encryption

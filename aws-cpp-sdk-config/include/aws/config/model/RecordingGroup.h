@@ -56,9 +56,9 @@ namespace Model
    * specify which types of resources it will record with the
    * <code>resourceTypes</code> parameter.</p> <p>For a list of supported resource
    * types, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+   * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
    * Resource Types</a>.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
+   * href="https://docs.aws.amazon.com/config/latest/developerguide/select-resources.html">Selecting
    * Which Resources AWS Config Records</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/config-2014-11-12/RecordingGroup">AWS
    * API Reference</a></p>
@@ -81,6 +81,16 @@ namespace Model
      * <code>resourceTypes</code>.</p>
      */
     inline bool GetAllSupported() const{ return m_allSupported; }
+
+    /**
+     * <p>Specifies whether AWS Config records configuration changes for every
+     * supported type of regional resource.</p> <p>If you set this option to
+     * <code>true</code>, when AWS Config adds support for a new type of regional
+     * resource, it starts recording resources of that type automatically.</p> <p>If
+     * you set this option to <code>true</code>, you cannot enumerate a list of
+     * <code>resourceTypes</code>.</p>
+     */
+    inline bool AllSupportedHasBeenSet() const { return m_allSupportedHasBeenSet; }
 
     /**
      * <p>Specifies whether AWS Config records configuration changes for every
@@ -127,6 +137,19 @@ namespace Model
      * regions. To prevent duplicate configuration items, you should consider
      * customizing AWS Config in only one region to record global resources.</p>
      */
+    inline bool IncludeGlobalResourceTypesHasBeenSet() const { return m_includeGlobalResourceTypesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS Config includes all supported types of global resources
+     * (for example, IAM resources) with the resources that it records.</p> <p>Before
+     * you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>true</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * global resource, it starts recording resources of that type automatically.</p>
+     * <p>The configuration details for any global resource are the same in all
+     * regions. To prevent duplicate configuration items, you should consider
+     * customizing AWS Config in only one region to record global resources.</p>
+     */
     inline void SetIncludeGlobalResourceTypes(bool value) { m_includeGlobalResourceTypesHasBeenSet = true; m_includeGlobalResourceTypes = value; }
 
     /**
@@ -154,7 +177,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline const Aws::Vector<ResourceType>& GetResourceTypes() const{ return m_resourceTypes; }
@@ -170,7 +193,23 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * AWS Resource Types</a>.</p>
+     */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
+
+    /**
+     * <p>A comma-separated list that specifies the types of AWS resources for which
+     * AWS Config records configuration changes (for example,
+     * <code>AWS::EC2::Instance</code> or <code>AWS::CloudTrail::Trail</code>).</p>
+     * <p>Before you can set this option to <code>true</code>, you must set the
+     * <code>allSupported</code> option to <code>false</code>.</p> <p>If you set this
+     * option to <code>true</code>, when AWS Config adds support for a new type of
+     * resource, it will not record resources of that type unless you manually add that
+     * type to your recording group.</p> <p>For a list of valid
+     * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
+     * <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline void SetResourceTypes(const Aws::Vector<ResourceType>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
@@ -186,7 +225,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline void SetResourceTypes(Aws::Vector<ResourceType>&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = std::move(value); }
@@ -202,7 +241,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& WithResourceTypes(const Aws::Vector<ResourceType>& value) { SetResourceTypes(value); return *this;}
@@ -218,7 +257,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& WithResourceTypes(Aws::Vector<ResourceType>&& value) { SetResourceTypes(std::move(value)); return *this;}
@@ -234,7 +273,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& AddResourceTypes(const ResourceType& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(value); return *this; }
@@ -250,7 +289,7 @@ namespace Model
      * type to your recording group.</p> <p>For a list of valid
      * <code>resourceTypes</code> values, see the <b>resourceType Value</b> column in
      * <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/resource-config-reference.html#supported-resources">Supported
      * AWS Resource Types</a>.</p>
      */
     inline RecordingGroup& AddResourceTypes(ResourceType&& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes.push_back(std::move(value)); return *this; }

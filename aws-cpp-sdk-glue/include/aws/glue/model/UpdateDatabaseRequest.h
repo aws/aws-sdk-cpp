@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog in which the metadata database resides. If none is
      * supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog in which the metadata database resides. If none is
+     * supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * <p>The name of the database to update in the catalog. For Hive compatibility,
      * this is folded to lowercase.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the database to update in the catalog. For Hive compatibility,
+     * this is folded to lowercase.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -136,6 +148,12 @@ namespace Model
      * metadata database in the catalog.</p>
      */
     inline const DatabaseInput& GetDatabaseInput() const{ return m_databaseInput; }
+
+    /**
+     * <p>A <code>DatabaseInput</code> object specifying the new definition of the
+     * metadata database in the catalog.</p>
+     */
+    inline bool DatabaseInputHasBeenSet() const { return m_databaseInputHasBeenSet; }
 
     /**
      * <p>A <code>DatabaseInput</code> object specifying the new definition of the

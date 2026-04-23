@@ -36,7 +36,7 @@ GetResourcesRequest::GetResourcesRequest() :
 
 Aws::String GetResourcesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetResourcesRequest::AddQueryStringParameters(URI& uri) const

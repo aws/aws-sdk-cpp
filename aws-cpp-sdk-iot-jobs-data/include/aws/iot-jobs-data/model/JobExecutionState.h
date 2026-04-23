@@ -60,6 +60,12 @@ namespace Model
      * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
      * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
+     * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>A collection of name/value pairs that describe the status of the job
+     * execution.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>A collection of name/value pairs that describe the status of the job
@@ -159,6 +171,12 @@ namespace Model
      * time they are updated by a device.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
      * <p>The version of the job execution. Job execution versions are incremented each

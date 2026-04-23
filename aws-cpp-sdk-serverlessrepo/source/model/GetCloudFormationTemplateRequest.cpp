@@ -30,7 +30,7 @@ GetCloudFormationTemplateRequest::GetCloudFormationTemplateRequest() :
 
 Aws::String GetCloudFormationTemplateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

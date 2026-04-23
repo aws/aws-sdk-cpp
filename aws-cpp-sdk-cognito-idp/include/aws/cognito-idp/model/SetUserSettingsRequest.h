@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The access token for the set user settings request.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token for the set user settings request.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>
      */
     inline const Aws::Vector<MFAOptionType>& GetMFAOptions() const{ return m_mFAOptions; }
+
+    /**
+     * <p>Specifies the options for MFA (e.g., email or phone number).</p>
+     */
+    inline bool MFAOptionsHasBeenSet() const { return m_mFAOptionsHasBeenSet; }
 
     /**
      * <p>Specifies the options for MFA (e.g., email or phone number).</p>

@@ -38,7 +38,7 @@ DescribeDocumentVersionsRequest::DescribeDocumentVersionsRequest() :
 
 Aws::String DescribeDocumentVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeDocumentVersionsRequest::GetRequestSpecificHeaders() const

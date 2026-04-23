@@ -35,7 +35,7 @@ RemovePermissionRequest::RemovePermissionRequest() :
 
 Aws::String RemovePermissionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void RemovePermissionRequest::AddQueryStringParameters(URI& uri) const

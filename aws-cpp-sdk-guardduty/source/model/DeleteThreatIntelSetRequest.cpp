@@ -30,7 +30,7 @@ DeleteThreatIntelSetRequest::DeleteThreatIntelSetRequest() :
 
 Aws::String DeleteThreatIntelSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

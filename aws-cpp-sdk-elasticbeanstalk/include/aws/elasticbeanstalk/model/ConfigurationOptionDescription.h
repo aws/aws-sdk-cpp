@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>A unique namespace identifying the option's associated AWS resource.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The name of the configuration option.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration option.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -129,6 +139,11 @@ namespace Model
      * <p>The default value for this configuration option.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value for this configuration option.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value for this configuration option.</p>
@@ -173,6 +188,19 @@ namespace Model
      * restarted.</p> </li> </ul>
      */
     inline const Aws::String& GetChangeSeverity() const{ return m_changeSeverity; }
+
+    /**
+     * <p>An indication of which action is required if the value for this configuration
+     * option changes:</p> <ul> <li> <p> <code>NoInterruption</code> : There is no
+     * interruption to the environment or application availability.</p> </li> <li> <p>
+     * <code>RestartEnvironment</code> : The environment is entirely restarted, all AWS
+     * resources are deleted and recreated, and the environment is unavailable during
+     * the process.</p> </li> <li> <p> <code>RestartApplicationServer</code> : The
+     * environment is available the entire time. However, a short application outage
+     * occurs when the application servers on the running Amazon EC2 instances are
+     * restarted.</p> </li> </ul>
+     */
+    inline bool ChangeSeverityHasBeenSet() const { return m_changeSeverityHasBeenSet; }
 
     /**
      * <p>An indication of which action is required if the value for this configuration
@@ -273,6 +301,17 @@ namespace Model
      * You can remove only <code>UserDefined</code> options from a configuration. </p>
      * <p> Valid Values: <code>true</code> | <code>false</code> </p>
      */
+    inline bool UserDefinedHasBeenSet() const { return m_userDefinedHasBeenSet; }
+
+    /**
+     * <p>An indication of whether the user defined this configuration option:</p> <ul>
+     * <li> <p> <code>true</code> : This configuration option was defined by the user.
+     * It is a valid choice for specifying if this as an <code>Option to Remove</code>
+     * when updating configuration settings. </p> </li> <li> <p> <code>false</code> :
+     * This configuration was not defined by the user.</p> </li> </ul> <p> Constraint:
+     * You can remove only <code>UserDefined</code> options from a configuration. </p>
+     * <p> Valid Values: <code>true</code> | <code>false</code> </p>
+     */
     inline void SetUserDefined(bool value) { m_userDefinedHasBeenSet = true; m_userDefined = value; }
 
     /**
@@ -300,6 +339,20 @@ namespace Model
      * <code>ConfigDocument</code>.</p> </li> </ul>
      */
     inline const ConfigurationOptionValueType& GetValueType() const{ return m_valueType; }
+
+    /**
+     * <p>An indication of which type of values this option has and whether it is
+     * allowable to select one or more than one of the possible values:</p> <ul> <li>
+     * <p> <code>Scalar</code> : Values for this option are a single selection from the
+     * possible values, or an unformatted string, or numeric value governed by the
+     * <code>MIN/MAX/Regex</code> constraints.</p> </li> <li> <p> <code>List</code> :
+     * Values for this option are multiple selections from the possible values.</p>
+     * </li> <li> <p> <code>Boolean</code> : Values for this option are either
+     * <code>true</code> or <code>false</code> .</p> </li> <li> <p> <code>Json</code> :
+     * Values for this option are a JSON representation of a
+     * <code>ConfigDocument</code>.</p> </li> </ul>
+     */
+    inline bool ValueTypeHasBeenSet() const { return m_valueTypeHasBeenSet; }
 
     /**
      * <p>An indication of which type of values this option has and whether it is
@@ -368,6 +421,12 @@ namespace Model
      * <p>If specified, values for the configuration option are selected from this
      * list.</p>
      */
+    inline bool ValueOptionsHasBeenSet() const { return m_valueOptionsHasBeenSet; }
+
+    /**
+     * <p>If specified, values for the configuration option are selected from this
+     * list.</p>
+     */
     inline void SetValueOptions(const Aws::Vector<Aws::String>& value) { m_valueOptionsHasBeenSet = true; m_valueOptions = value; }
 
     /**
@@ -417,6 +476,12 @@ namespace Model
      * <p>If specified, the configuration option must be a numeric value greater than
      * this value.</p>
      */
+    inline bool MinValueHasBeenSet() const { return m_minValueHasBeenSet; }
+
+    /**
+     * <p>If specified, the configuration option must be a numeric value greater than
+     * this value.</p>
+     */
     inline void SetMinValue(int value) { m_minValueHasBeenSet = true; m_minValue = value; }
 
     /**
@@ -431,6 +496,12 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxValue() const{ return m_maxValue; }
+
+    /**
+     * <p>If specified, the configuration option must be a numeric value less than this
+     * value.</p>
+     */
+    inline bool MaxValueHasBeenSet() const { return m_maxValueHasBeenSet; }
 
     /**
      * <p>If specified, the configuration option must be a numeric value less than this
@@ -455,6 +526,12 @@ namespace Model
      * <p>If specified, the configuration option must be a string value no longer than
      * this value.</p>
      */
+    inline bool MaxLengthHasBeenSet() const { return m_maxLengthHasBeenSet; }
+
+    /**
+     * <p>If specified, the configuration option must be a string value no longer than
+     * this value.</p>
+     */
     inline void SetMaxLength(int value) { m_maxLengthHasBeenSet = true; m_maxLength = value; }
 
     /**
@@ -469,6 +546,12 @@ namespace Model
      * this regular expression.</p>
      */
     inline const OptionRestrictionRegex& GetRegex() const{ return m_regex; }
+
+    /**
+     * <p>If specified, the configuration option must be a string value that satisfies
+     * this regular expression.</p>
+     */
+    inline bool RegexHasBeenSet() const { return m_regexHasBeenSet; }
 
     /**
      * <p>If specified, the configuration option must be a string value that satisfies

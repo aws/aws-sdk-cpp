@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the cache parameter group.</p>
      */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group.</p>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The status of parameter updates.</p>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+
+    /**
+     * <p>The status of parameter updates.</p>
+     */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
 
     /**
      * <p>The status of parameter updates.</p>
@@ -127,6 +137,12 @@ namespace Model
      * to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToReboot() const{ return m_cacheNodeIdsToReboot; }
+
+    /**
+     * <p>A list of the cache node IDs which need to be rebooted for parameter changes
+     * to be applied. A node ID is a numeric identifier (0001, 0002, etc.).</p>
+     */
+    inline bool CacheNodeIdsToRebootHasBeenSet() const { return m_cacheNodeIdsToRebootHasBeenSet; }
 
     /**
      * <p>A list of the cache node IDs which need to be rebooted for parameter changes

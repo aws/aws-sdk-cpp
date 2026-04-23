@@ -52,7 +52,7 @@ UploadPartCopyRequest::UploadPartCopyRequest() :
 
 Aws::String UploadPartCopyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void UploadPartCopyRequest::AddQueryStringParameters(URI& uri) const

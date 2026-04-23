@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the state machine.</p>
      */
+    inline bool StateMachineArnHasBeenSet() const { return m_stateMachineArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the state machine.</p>
+     */
     inline void SetStateMachineArn(const Aws::String& value) { m_stateMachineArnHasBeenSet = true; m_stateMachineArn = value; }
 
     /**
@@ -81,37 +86,58 @@ namespace Model
 
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline const Aws::String& GetDefinition() const{ return m_definition; }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
+
+    /**
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(const Aws::String& value) { m_definitionHasBeenSet = true; m_definition = value; }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(Aws::String&& value) { m_definitionHasBeenSet = true; m_definition = std::move(value); }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline void SetDefinition(const char* value) { m_definitionHasBeenSet = true; m_definition.assign(value); }
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline UpdateStateMachineRequest& WithDefinition(const Aws::String& value) { SetDefinition(value); return *this;}
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline UpdateStateMachineRequest& WithDefinition(Aws::String&& value) { SetDefinition(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon States Language definition of the state machine.</p>
+     * <p>The Amazon States Language definition of the state machine. See <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/concepts-amazon-states-language.html">Amazon
+     * States Language</a>.</p>
      */
     inline UpdateStateMachineRequest& WithDefinition(const char* value) { SetDefinition(value); return *this;}
 
@@ -120,6 +146,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role of the state machine.</p>

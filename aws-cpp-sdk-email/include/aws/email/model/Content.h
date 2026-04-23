@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The textual data of the content.</p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The textual data of the content.</p>
+     */
     inline void SetData(const Aws::String& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The character set of the content.</p>
      */
     inline const Aws::String& GetCharset() const{ return m_charset; }
+
+    /**
+     * <p>The character set of the content.</p>
+     */
+    inline bool CharsetHasBeenSet() const { return m_charsetHasBeenSet; }
 
     /**
      * <p>The character set of the content.</p>

@@ -58,6 +58,14 @@ namespace Model
      * results in a <code>GetProducts</code> call. To retrieve a list of all services,
      * leave this blank.</p>
      */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the service whose information you want to retrieve, such as
+     * <code>AmazonEC2</code>. You can use the <code>ServiceCode</code> to filter the
+     * results in a <code>GetProducts</code> call. To retrieve a list of all services,
+     * leave this blank.</p>
+     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
@@ -111,6 +119,12 @@ namespace Model
      * <p>The format version that you want the response to be in.</p> <p>Valid values
      * are: <code>aws_v1</code> </p>
      */
+    inline bool FormatVersionHasBeenSet() const { return m_formatVersionHasBeenSet; }
+
+    /**
+     * <p>The format version that you want the response to be in.</p> <p>Valid values
+     * are: <code>aws_v1</code> </p>
+     */
     inline void SetFormatVersion(const Aws::String& value) { m_formatVersionHasBeenSet = true; m_formatVersion = value; }
 
     /**
@@ -154,6 +168,12 @@ namespace Model
      * <p>The pagination token that indicates the next set of results that you want to
      * retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * <p>The maximum number of results that you want returned in the response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results that you want returned in the response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results that you want returned in the response.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A unique identifier for a <code>RuleGroup</code>.</p>
      */
+    inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>RuleGroup</code>.</p>
+     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * change the name of a <code>RuleGroup</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <code>RuleGroup</code>. You can't
+     * change the name of a <code>RuleGroup</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <code>RuleGroup</code>. You can't
@@ -134,6 +145,14 @@ namespace Model
      * metric after you create the <code>RuleGroup</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this
+     * <code>RuleGroup</code>. The name can contain only alphanumeric characters (A-Z,
+     * a-z, 0-9); the name can't contain whitespace. You can't change the name of the
+     * metric after you create the <code>RuleGroup</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this

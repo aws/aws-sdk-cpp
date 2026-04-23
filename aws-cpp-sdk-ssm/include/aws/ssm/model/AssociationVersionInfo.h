@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID created by the system when the association was created.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID created by the system when the association was created.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The association version.</p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
 
     /**
      * <p>The association version.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The date the association version was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date the association version was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
      * <p>The name specified when the association was created.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name specified when the association was created.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name specified when the association was created.</p>
@@ -197,6 +217,12 @@ namespace Model
      * <p>The version of a Systems Manager document used when the association version
      * was created.</p>
      */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
+
+    /**
+     * <p>The version of a Systems Manager document used when the association version
+     * was created.</p>
+     */
     inline void SetDocumentVersion(const Aws::String& value) { m_documentVersionHasBeenSet = true; m_documentVersion = value; }
 
     /**
@@ -234,6 +260,11 @@ namespace Model
      * <p>Parameters specified when the association version was created.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>Parameters specified when the association version was created.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>Parameters specified when the association version was created.</p>
@@ -296,6 +327,12 @@ namespace Model
      * <p>The targets specified for the association when the association version was
      * created. </p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The targets specified for the association when the association version was
+     * created. </p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -334,6 +371,12 @@ namespace Model
      * version was created.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>The cron or rate schedule specified for the association when the association
+     * version was created.</p>
+     */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>The cron or rate schedule specified for the association when the association
@@ -382,6 +425,12 @@ namespace Model
      * <p>The location in Amazon S3 specified for the association when the association
      * version was created.</p>
      */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
+
+    /**
+     * <p>The location in Amazon S3 specified for the association when the association
+     * version was created.</p>
+     */
     inline void SetOutputLocation(const InstanceAssociationOutputLocation& value) { m_outputLocationHasBeenSet = true; m_outputLocation = value; }
 
     /**
@@ -408,6 +457,12 @@ namespace Model
      * was created.</p>
      */
     inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The name specified for the association version when the association version
+     * was created.</p>
+     */
+    inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
 
     /**
      * <p>The name specified for the association version when the association version
@@ -461,6 +516,22 @@ namespace Model
      * to 1 so that executions proceed one at a time.</p>
      */
     inline const Aws::String& GetMaxErrors() const{ return m_maxErrors; }
+
+    /**
+     * <p>The number of errors that are allowed before the system stops sending
+     * requests to run the association on additional targets. You can specify either an
+     * absolute number of errors, for example 10, or a percentage of the target set,
+     * for example 10%. If you specify 3, for example, the system stops sending
+     * requests when the fourth error is received. If you specify 0, then the system
+     * stops sending requests after the first error is returned. If you run an
+     * association on 50 instances and set MaxError to 10%, then the system stops
+     * sending the request when the sixth error is received.</p> <p>Executions that are
+     * already running an association when MaxErrors is reached are allowed to
+     * complete, but some of these executions may fail as well. If you need to ensure
+     * that there won't be more than max-errors failed executions, set MaxConcurrency
+     * to 1 so that executions proceed one at a time.</p>
+     */
+    inline bool MaxErrorsHasBeenSet() const { return m_maxErrorsHasBeenSet; }
 
     /**
      * <p>The number of errors that are allowed before the system stops sending
@@ -564,10 +635,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline const Aws::String& GetMaxConcurrency() const{ return m_maxConcurrency; }
 
@@ -576,10 +647,22 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
+     */
+    inline bool MaxConcurrencyHasBeenSet() const { return m_maxConcurrencyHasBeenSet; }
+
+    /**
+     * <p>The maximum number of targets allowed to run the association at the same
+     * time. You can specify a number, for example 10, or a percentage of the target
+     * set, for example 10%. The default value is 100%, which means all targets run the
+     * association at the same time.</p> <p>If a new instance starts and attempts to
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const Aws::String& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = value; }
 
@@ -588,10 +671,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(Aws::String&& value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency = std::move(value); }
 
@@ -600,10 +683,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline void SetMaxConcurrency(const char* value) { m_maxConcurrencyHasBeenSet = true; m_maxConcurrency.assign(value); }
 
@@ -612,10 +695,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(const Aws::String& value) { SetMaxConcurrency(value); return *this;}
 
@@ -624,10 +707,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(Aws::String&& value) { SetMaxConcurrency(std::move(value)); return *this;}
 
@@ -636,10 +719,10 @@ namespace Model
      * time. You can specify a number, for example 10, or a percentage of the target
      * set, for example 10%. The default value is 100%, which means all targets run the
      * association at the same time.</p> <p>If a new instance starts and attempts to
-     * execute an association while Systems Manager is executing MaxConcurrency
-     * associations, the association is allowed to run. During the next association
-     * interval, the new instance will process its association within the limit
-     * specified for MaxConcurrency.</p>
+     * run an association while Systems Manager is running MaxConcurrency associations,
+     * the association is allowed to run. During the next association interval, the new
+     * instance will process its association within the limit specified for
+     * MaxConcurrency.</p>
      */
     inline AssociationVersionInfo& WithMaxConcurrency(const char* value) { SetMaxConcurrency(value); return *this;}
 
@@ -648,6 +731,11 @@ namespace Model
      * <p>The severity level that is assigned to the association.</p>
      */
     inline const AssociationComplianceSeverity& GetComplianceSeverity() const{ return m_complianceSeverity; }
+
+    /**
+     * <p>The severity level that is assigned to the association.</p>
+     */
+    inline bool ComplianceSeverityHasBeenSet() const { return m_complianceSeverityHasBeenSet; }
 
     /**
      * <p>The severity level that is assigned to the association.</p>

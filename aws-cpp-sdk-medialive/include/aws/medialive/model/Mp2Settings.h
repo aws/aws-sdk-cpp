@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Mp2Settings<p><h3>See Also:</h3>   <a
+   * Mp2 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Mp2Settings">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,11 @@ namespace Model
     /**
      * Average bitrate in bits/second.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second.
+     */
     inline void SetBitrate(double value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -68,6 +73,12 @@ namespace Model
      * codingMode20 (for stereo).
      */
     inline const Mp2CodingMode& GetCodingMode() const{ return m_codingMode; }
+
+    /**
+     * The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or
+     * codingMode20 (for stereo).
+     */
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
     /**
      * The MPEG2 Audio coding mode.  Valid values are codingMode10 (for mono) or
@@ -98,6 +109,11 @@ namespace Model
      * Sample rate in Hz.
      */
     inline double GetSampleRate() const{ return m_sampleRate; }
+
+    /**
+     * Sample rate in Hz.
+     */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
 
     /**
      * Sample rate in Hz.

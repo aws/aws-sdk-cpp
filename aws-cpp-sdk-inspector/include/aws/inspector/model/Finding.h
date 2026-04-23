@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the finding.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the finding.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The schema version of this data type.</p>
      */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version of this data type.</p>
+     */
     inline void SetSchemaVersion(int value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>The data element is set to "Inspector".</p>
      */
     inline const Aws::String& GetService() const{ return m_service; }
+
+    /**
+     * <p>The data element is set to "Inspector".</p>
+     */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
      * <p>The data element is set to "Inspector".</p>
@@ -152,6 +167,11 @@ namespace Model
     /**
      * <p>This data type is used in the <a>Finding</a> data type.</p>
      */
+    inline bool ServiceAttributesHasBeenSet() const { return m_serviceAttributesHasBeenSet; }
+
+    /**
+     * <p>This data type is used in the <a>Finding</a> data type.</p>
+     */
     inline void SetServiceAttributes(const InspectorServiceAttributes& value) { m_serviceAttributesHasBeenSet = true; m_serviceAttributes = value; }
 
     /**
@@ -174,6 +194,11 @@ namespace Model
      * <p>The type of the host from which the finding is generated.</p>
      */
     inline const AssetType& GetAssetType() const{ return m_assetType; }
+
+    /**
+     * <p>The type of the host from which the finding is generated.</p>
+     */
+    inline bool AssetTypeHasBeenSet() const { return m_assetTypeHasBeenSet; }
 
     /**
      * <p>The type of the host from which the finding is generated.</p>
@@ -206,6 +231,12 @@ namespace Model
      * <p>A collection of attributes of the host from which the finding is
      * generated.</p>
      */
+    inline bool AssetAttributesHasBeenSet() const { return m_assetAttributesHasBeenSet; }
+
+    /**
+     * <p>A collection of attributes of the host from which the finding is
+     * generated.</p>
+     */
     inline void SetAssetAttributes(const AssetAttributes& value) { m_assetAttributesHasBeenSet = true; m_assetAttributes = value; }
 
     /**
@@ -231,6 +262,11 @@ namespace Model
      * <p>The ID of the finding.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of the finding.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the finding.</p>
@@ -271,6 +307,11 @@ namespace Model
     /**
      * <p>The name of the finding.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>The name of the finding.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -307,6 +348,11 @@ namespace Model
     /**
      * <p>The description of the finding.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the finding.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -339,6 +385,11 @@ namespace Model
      * <p>The recommendation for the finding.</p>
      */
     inline const Aws::String& GetRecommendation() const{ return m_recommendation; }
+
+    /**
+     * <p>The recommendation for the finding.</p>
+     */
+    inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
 
     /**
      * <p>The recommendation for the finding.</p>
@@ -381,6 +432,12 @@ namespace Model
      * <p>The finding severity. Values can be set to High, Medium, Low, and
      * Informational.</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The finding severity. Values can be set to High, Medium, Low, and
+     * Informational.</p>
+     */
     inline void SetSeverity(const Severity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -410,6 +467,11 @@ namespace Model
     /**
      * <p>The numeric value of the finding severity.</p>
      */
+    inline bool NumericSeverityHasBeenSet() const { return m_numericSeverityHasBeenSet; }
+
+    /**
+     * <p>The numeric value of the finding severity.</p>
+     */
     inline void SetNumericSeverity(double value) { m_numericSeverityHasBeenSet = true; m_numericSeverity = value; }
 
     /**
@@ -422,6 +484,11 @@ namespace Model
      * <p>This data element is currently not used.</p>
      */
     inline int GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>This data element is currently not used.</p>
@@ -442,6 +509,11 @@ namespace Model
     /**
      * <p>This data element is currently not used.</p>
      */
+    inline bool IndicatorOfCompromiseHasBeenSet() const { return m_indicatorOfCompromiseHasBeenSet; }
+
+    /**
+     * <p>This data element is currently not used.</p>
+     */
     inline void SetIndicatorOfCompromise(bool value) { m_indicatorOfCompromiseHasBeenSet = true; m_indicatorOfCompromise = value; }
 
     /**
@@ -454,6 +526,11 @@ namespace Model
      * <p>The system-defined attributes for the finding.</p>
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The system-defined attributes for the finding.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The system-defined attributes for the finding.</p>
@@ -494,6 +571,11 @@ namespace Model
     /**
      * <p>The user-defined attributes that are assigned to the finding.</p>
      */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
+
+    /**
+     * <p>The user-defined attributes that are assigned to the finding.</p>
+     */
     inline void SetUserAttributes(const Aws::Vector<Attribute>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
@@ -530,6 +612,11 @@ namespace Model
     /**
      * <p>The time when the finding was generated.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time when the finding was generated.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -552,6 +639,11 @@ namespace Model
      * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedAt() const{ return m_updatedAt; }
+
+    /**
+     * <p>The time when <a>AddAttributesToFindings</a> is called.</p>
+     */
+    inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
 
     /**
      * <p>The time when <a>AddAttributesToFindings</a> is called.</p>

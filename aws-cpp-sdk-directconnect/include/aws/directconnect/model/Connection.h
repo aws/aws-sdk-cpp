@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the connection.</p>
      */
+    inline bool OwnerAccountHasBeenSet() const { return m_ownerAccountHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the connection.</p>
+     */
     inline void SetOwnerAccount(const Aws::String& value) { m_ownerAccountHasBeenSet = true; m_ownerAccount = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The ID of the connection.</p>
      */
+    inline bool ConnectionIdHasBeenSet() const { return m_connectionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the connection.</p>
+     */
     inline void SetConnectionId(const Aws::String& value) { m_connectionIdHasBeenSet = true; m_connectionId = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The name of the connection.</p>
      */
     inline const Aws::String& GetConnectionName() const{ return m_connectionName; }
+
+    /**
+     * <p>The name of the connection.</p>
+     */
+    inline bool ConnectionNameHasBeenSet() const { return m_connectionNameHasBeenSet; }
 
     /**
      * <p>The name of the connection.</p>
@@ -174,7 +189,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
@@ -193,7 +209,28 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
+     */
+    inline bool ConnectionStateHasBeenSet() const { return m_connectionStateHasBeenSet; }
+
+    /**
+     * <p>The state of the connection. The following are the possible values:</p> <ul>
+     * <li> <p> <code>ordering</code>: The initial state of a hosted connection
+     * provisioned on an interconnect. The connection stays in the ordering state until
+     * the owner of the hosted connection confirms or declines the connection
+     * order.</p> </li> <li> <p> <code>requested</code>: The initial state of a
+     * standard connection. The connection stays in the requested state until the
+     * Letter of Authorization (LOA) is sent to the customer.</p> </li> <li> <p>
+     * <code>pending</code>: The connection has been approved and is being
+     * initialized.</p> </li> <li> <p> <code>available</code>: The network link is up
+     * and the connection is ready for use.</p> </li> <li> <p> <code>down</code>: The
+     * network link is down.</p> </li> <li> <p> <code>deleting</code>: The connection
+     * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
+     * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
+     * the <code>ordering</code> state enters the <code>rejected</code> state if it is
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline void SetConnectionState(const ConnectionState& value) { m_connectionStateHasBeenSet = true; m_connectionState = value; }
 
@@ -212,7 +249,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline void SetConnectionState(ConnectionState&& value) { m_connectionStateHasBeenSet = true; m_connectionState = std::move(value); }
 
@@ -231,7 +269,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline Connection& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
@@ -250,7 +289,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline Connection& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 
@@ -259,6 +299,11 @@ namespace Model
      * <p>The AWS Region where the connection is located.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The AWS Region where the connection is located.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS Region where the connection is located.</p>
@@ -299,6 +344,11 @@ namespace Model
     /**
      * <p>The location of the connection.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The location of the connection.</p>
+     */
     inline void SetLocation(const Aws::String& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -331,6 +381,11 @@ namespace Model
      * <p>The bandwidth of the connection.</p>
      */
     inline const Aws::String& GetBandwidth() const{ return m_bandwidth; }
+
+    /**
+     * <p>The bandwidth of the connection.</p>
+     */
+    inline bool BandwidthHasBeenSet() const { return m_bandwidthHasBeenSet; }
 
     /**
      * <p>The bandwidth of the connection.</p>
@@ -371,6 +426,11 @@ namespace Model
     /**
      * <p>The ID of the VLAN.</p>
      */
+    inline bool VlanHasBeenSet() const { return m_vlanHasBeenSet; }
+
+    /**
+     * <p>The ID of the VLAN.</p>
+     */
     inline void SetVlan(int value) { m_vlanHasBeenSet = true; m_vlan = value; }
 
     /**
@@ -384,6 +444,12 @@ namespace Model
      * connection.</p>
      */
     inline const Aws::String& GetPartnerName() const{ return m_partnerName; }
+
+    /**
+     * <p>The name of the AWS Direct Connect service provider associated with the
+     * connection.</p>
+     */
+    inline bool PartnerNameHasBeenSet() const { return m_partnerNameHasBeenSet; }
 
     /**
      * <p>The name of the AWS Direct Connect service provider associated with the
@@ -432,6 +498,12 @@ namespace Model
      * <p>The time of the most recent call to <a>DescribeLoa</a> for this
      * connection.</p>
      */
+    inline bool LoaIssueTimeHasBeenSet() const { return m_loaIssueTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent call to <a>DescribeLoa</a> for this
+     * connection.</p>
+     */
     inline void SetLoaIssueTime(const Aws::Utils::DateTime& value) { m_loaIssueTimeHasBeenSet = true; m_loaIssueTime = value; }
 
     /**
@@ -457,6 +529,11 @@ namespace Model
      * <p>The ID of the LAG.</p>
      */
     inline const Aws::String& GetLagId() const{ return m_lagId; }
+
+    /**
+     * <p>The ID of the LAG.</p>
+     */
+    inline bool LagIdHasBeenSet() const { return m_lagIdHasBeenSet; }
 
     /**
      * <p>The ID of the LAG.</p>
@@ -497,6 +574,11 @@ namespace Model
     /**
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
      */
+    inline bool AwsDeviceHasBeenSet() const { return m_awsDeviceHasBeenSet; }
+
+    /**
+     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     */
     inline void SetAwsDevice(const Aws::String& value) { m_awsDeviceHasBeenSet = true; m_awsDevice = value; }
 
     /**
@@ -533,6 +615,11 @@ namespace Model
     /**
      * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
      */
+    inline bool JumboFrameCapableHasBeenSet() const { return m_jumboFrameCapableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether jumbo frames (9001 MTU) are supported.</p>
+     */
     inline void SetJumboFrameCapable(bool value) { m_jumboFrameCapableHasBeenSet = true; m_jumboFrameCapable = value; }
 
     /**
@@ -545,6 +632,11 @@ namespace Model
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
      */
     inline const Aws::String& GetAwsDeviceV2() const{ return m_awsDeviceV2; }
+
+    /**
+     * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
+     */
+    inline bool AwsDeviceV2HasBeenSet() const { return m_awsDeviceV2HasBeenSet; }
 
     /**
      * <p>The Direct Connect endpoint on which the physical connection terminates.</p>
@@ -582,6 +674,12 @@ namespace Model
      * address family (IPv4/IPv6).</p>
      */
     inline const HasLogicalRedundancy& GetHasLogicalRedundancy() const{ return m_hasLogicalRedundancy; }
+
+    /**
+     * <p>Indicates whether the connection supports a secondary BGP peer in the same
+     * address family (IPv4/IPv6).</p>
+     */
+    inline bool HasLogicalRedundancyHasBeenSet() const { return m_hasLogicalRedundancyHasBeenSet; }
 
     /**
      * <p>Indicates whether the connection supports a secondary BGP peer in the same

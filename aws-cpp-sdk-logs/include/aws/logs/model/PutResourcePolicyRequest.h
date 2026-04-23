@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of the new policy. This parameter is required.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>Name of the new policy. This parameter is required.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -92,6 +97,19 @@ namespace Model
      * } ] } </code> </p>
      */
     inline const Aws::String& GetPolicyDocument() const{ return m_policyDocument; }
+
+    /**
+     * <p>Details of the new policy, including the identity of the principal that is
+     * enabled to put logs to this account. This is formatted as a JSON string.</p>
+     * <p>The following example creates a resource policy enabling the Route 53 service
+     * to put DNS query logs in to the specified log group. Replace "logArn" with the
+     * ARN of your CloudWatch Logs resource, such as a log group or log stream.</p> <p>
+     * <code>{ "Version": "2012-10-17", "Statement": [ { "Sid":
+     * "Route53LogsToCloudWatchLogs", "Effect": "Allow", "Principal": { "Service": [
+     * "route53.amazonaws.com" ] }, "Action":"logs:PutLogEvents", "Resource": "logArn"
+     * } ] } </code> </p>
+     */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
 
     /**
      * <p>Details of the new policy, including the identity of the principal that is

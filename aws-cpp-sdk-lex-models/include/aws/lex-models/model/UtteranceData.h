@@ -59,6 +59,12 @@ namespace Model
      * <p>The text that was entered by the user or the text representation of an audio
      * clip.</p>
      */
+    inline bool UtteranceStringHasBeenSet() const { return m_utteranceStringHasBeenSet; }
+
+    /**
+     * <p>The text that was entered by the user or the text representation of an audio
+     * clip.</p>
+     */
     inline void SetUtteranceString(const Aws::String& value) { m_utteranceStringHasBeenSet = true; m_utteranceString = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The number of times that the utterance was processed.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The number of times that the utterance was processed.</p>
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -116,6 +127,11 @@ namespace Model
     /**
      * <p>The total number of individuals that used the utterance.</p>
      */
+    inline bool DistinctUsersHasBeenSet() const { return m_distinctUsersHasBeenSet; }
+
+    /**
+     * <p>The total number of individuals that used the utterance.</p>
+     */
     inline void SetDistinctUsers(int value) { m_distinctUsersHasBeenSet = true; m_distinctUsers = value; }
 
     /**
@@ -128,6 +144,11 @@ namespace Model
      * <p>The date that the utterance was first recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetFirstUtteredDate() const{ return m_firstUtteredDate; }
+
+    /**
+     * <p>The date that the utterance was first recorded.</p>
+     */
+    inline bool FirstUtteredDateHasBeenSet() const { return m_firstUtteredDateHasBeenSet; }
 
     /**
      * <p>The date that the utterance was first recorded.</p>
@@ -154,6 +175,11 @@ namespace Model
      * <p>The date that the utterance was last recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUtteredDate() const{ return m_lastUtteredDate; }
+
+    /**
+     * <p>The date that the utterance was last recorded.</p>
+     */
+    inline bool LastUtteredDateHasBeenSet() const { return m_lastUtteredDateHasBeenSet; }
 
     /**
      * <p>The date that the utterance was last recorded.</p>

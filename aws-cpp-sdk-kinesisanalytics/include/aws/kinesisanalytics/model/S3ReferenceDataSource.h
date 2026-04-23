@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
+    inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Object key name containing reference data.</p>
      */
     inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+
+    /**
+     * <p>Object key name containing reference data.</p>
+     */
+    inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
 
     /**
      * <p>Object key name containing reference data.</p>
@@ -131,6 +141,14 @@ namespace Model
      * to assume this role.</p>
      */
     inline const Aws::String& GetReferenceRoleARN() const{ return m_referenceRoleARN; }
+
+    /**
+     * <p>ARN of the IAM role that the service can assume to read data on your behalf.
+     * This role must have permission for the <code>s3:GetObject</code> action on the
+     * object and trust policy that allows Amazon Kinesis Analytics service principal
+     * to assume this role.</p>
+     */
+    inline bool ReferenceRoleARNHasBeenSet() const { return m_referenceRoleARNHasBeenSet; }
 
     /**
      * <p>ARN of the IAM role that the service can assume to read data on your behalf.

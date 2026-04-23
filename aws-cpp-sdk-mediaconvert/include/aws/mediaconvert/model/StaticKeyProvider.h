@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * Settings for use with a SPEKE key provider.<p><h3>See Also:</h3>   <a
+   * Use these settings to set up encryption with a static key provider.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/StaticKeyProvider">AWS
    * API Reference</a></p>
    */
@@ -53,6 +54,13 @@ namespace Model
      * value of 'identity'.
      */
     inline const Aws::String& GetKeyFormat() const{ return m_keyFormat; }
+
+    /**
+     * Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must
+     * be 'identity' or a reverse DNS string. May be omitted to indicate an implicit
+     * value of 'identity'.
+     */
+    inline bool KeyFormatHasBeenSet() const { return m_keyFormatHasBeenSet; }
 
     /**
      * Relates to DRM implementation. Sets the value of the KEYFORMAT attribute. Must
@@ -107,6 +115,12 @@ namespace Model
      * Relates to DRM implementation. Either a single positive integer version value or
      * a slash delimited list of version values (1/2/3).
      */
+    inline bool KeyFormatVersionsHasBeenSet() const { return m_keyFormatVersionsHasBeenSet; }
+
+    /**
+     * Relates to DRM implementation. Either a single positive integer version value or
+     * a slash delimited list of version values (1/2/3).
+     */
     inline void SetKeyFormatVersions(const Aws::String& value) { m_keyFormatVersionsHasBeenSet = true; m_keyFormatVersions = value; }
 
     /**
@@ -150,6 +164,12 @@ namespace Model
      * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
      * Key Value (StaticKeyValue).
      */
+    inline bool StaticKeyValueHasBeenSet() const { return m_staticKeyValueHasBeenSet; }
+
+    /**
+     * Relates to DRM implementation. Use a 32-character hexidecimal string to specify
+     * Key Value (StaticKeyValue).
+     */
     inline void SetStaticKeyValue(const Aws::String& value) { m_staticKeyValueHasBeenSet = true; m_staticKeyValue = value; }
 
     /**
@@ -188,6 +208,12 @@ namespace Model
      * protecting content.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * Relates to DRM implementation. The location of the license server used for
+     * protecting content.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * Relates to DRM implementation. The location of the license server used for

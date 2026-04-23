@@ -69,6 +69,16 @@ namespace Model
      * <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
      * </ul>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The state. The following are the possible values:</p> <ul> <li> <p>
+     * <code>pending</code> - AFI bitstream generation is in progress.</p> </li> <li>
+     * <p> <code>available</code> - The AFI is available for use.</p> </li> <li> <p>
+     * <code>failed</code> - AFI bitstream generation failed.</p> </li> <li> <p>
+     * <code>unavailable</code> - The AFI is no longer available for use.</p> </li>
+     * </ul>
+     */
     inline void SetCode(const FpgaImageStateCode& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>If the state is <code>failed</code>, this is the error message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>If the state is <code>failed</code>, this is the error message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>If the state is <code>failed</code>, this is the error message.</p>

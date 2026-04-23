@@ -68,6 +68,15 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -124,6 +133,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -159,6 +173,14 @@ namespace Model
      * the pagination of results started in a previous List Uploads request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An opaque string used for pagination. This value specifies the upload at
+     * which the listing of uploads should begin. Get the marker value from a previous
+     * List Uploads response. You need only include the marker if you are continuing
+     * the pagination of results started in a previous List Uploads request.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An opaque string used for pagination. This value specifies the upload at
@@ -215,6 +237,13 @@ namespace Model
      * uploads.</p>
      */
     inline const Aws::String& GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>Specifies the maximum number of uploads returned in the response body. If
+     * this value is not specified, the List Uploads operation returns up to 50
+     * uploads.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>Specifies the maximum number of uploads returned in the response body. If

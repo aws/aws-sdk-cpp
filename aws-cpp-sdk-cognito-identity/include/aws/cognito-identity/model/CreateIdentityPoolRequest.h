@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A string that you provide.</p>
      */
+    inline bool IdentityPoolNameHasBeenSet() const { return m_identityPoolNameHasBeenSet; }
+
+    /**
+     * <p>A string that you provide.</p>
+     */
     inline void SetIdentityPoolName(const Aws::String& value) { m_identityPoolNameHasBeenSet = true; m_identityPoolName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>TRUE if the identity pool supports unauthenticated logins.</p>
      */
+    inline bool AllowUnauthenticatedIdentitiesHasBeenSet() const { return m_allowUnauthenticatedIdentitiesHasBeenSet; }
+
+    /**
+     * <p>TRUE if the identity pool supports unauthenticated logins.</p>
+     */
     inline void SetAllowUnauthenticatedIdentities(bool value) { m_allowUnauthenticatedIdentitiesHasBeenSet = true; m_allowUnauthenticatedIdentities = value; }
 
     /**
@@ -106,6 +116,11 @@ namespace Model
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSupportedLoginProviders() const{ return m_supportedLoginProviders; }
+
+    /**
+     * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
+     */
+    inline bool SupportedLoginProvidersHasBeenSet() const { return m_supportedLoginProvidersHasBeenSet; }
 
     /**
      * <p>Optional key:value pairs mapping provider names to provider app IDs.</p>
@@ -181,6 +196,16 @@ namespace Model
      * and dash (<code>-</code>).</p> <p>Once you have set a developer provider name,
      * you cannot change it. Please take care in setting this parameter.</p>
      */
+    inline bool DeveloperProviderNameHasBeenSet() const { return m_developerProviderNameHasBeenSet; }
+
+    /**
+     * <p>The "domain" by which Cognito will refer to your users. This name acts as a
+     * placeholder that allows your backend and the Cognito service to communicate
+     * about the developer provider. For the <code>DeveloperProviderName</code>, you
+     * can use letters as well as period (<code>.</code>), underscore (<code>_</code>),
+     * and dash (<code>-</code>).</p> <p>Once you have set a developer provider name,
+     * you cannot change it. Please take care in setting this parameter.</p>
+     */
     inline void SetDeveloperProviderName(const Aws::String& value) { m_developerProviderNameHasBeenSet = true; m_developerProviderName = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
     /**
      * <p>A list of OpendID Connect provider ARNs.</p>
      */
+    inline bool OpenIdConnectProviderARNsHasBeenSet() const { return m_openIdConnectProviderARNsHasBeenSet; }
+
+    /**
+     * <p>A list of OpendID Connect provider ARNs.</p>
+     */
     inline void SetOpenIdConnectProviderARNs(const Aws::Vector<Aws::String>& value) { m_openIdConnectProviderARNsHasBeenSet = true; m_openIdConnectProviderARNs = value; }
 
     /**
@@ -276,37 +306,42 @@ namespace Model
 
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline const Aws::Vector<CognitoIdentityProvider>& GetCognitoIdentityProviders() const{ return m_cognitoIdentityProviders; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
+     */
+    inline bool CognitoIdentityProvidersHasBeenSet() const { return m_cognitoIdentityProvidersHasBeenSet; }
+
+    /**
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline void SetCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = value; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline void SetCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders = std::move(value); }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(const Aws::Vector<CognitoIdentityProvider>& value) { SetCognitoIdentityProviders(value); return *this;}
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& WithCognitoIdentityProviders(Aws::Vector<CognitoIdentityProvider>&& value) { SetCognitoIdentityProviders(std::move(value)); return *this;}
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(const CognitoIdentityProvider& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(value); return *this; }
 
     /**
-     * <p>An array of Amazon Cognito Identity user pools and their client IDs.</p>
+     * <p>An array of Amazon Cognito user pools and their client IDs.</p>
      */
     inline CreateIdentityPoolRequest& AddCognitoIdentityProviders(CognitoIdentityProvider&& value) { m_cognitoIdentityProvidersHasBeenSet = true; m_cognitoIdentityProviders.push_back(std::move(value)); return *this; }
 
@@ -316,6 +351,12 @@ namespace Model
      * identity pool.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSamlProviderARNs() const{ return m_samlProviderARNs; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
+     * identity pool.</p>
+     */
+    inline bool SamlProviderARNsHasBeenSet() const { return m_samlProviderARNsHasBeenSet; }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) of the SAML provider for your
@@ -359,6 +400,98 @@ namespace Model
      */
     inline CreateIdentityPoolRequest& AddSamlProviderARNs(const char* value) { m_samlProviderARNsHasBeenSet = true; m_samlProviderARNs.push_back(value); return *this; }
 
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetIdentityPoolTags() const{ return m_identityPoolTags; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline bool IdentityPoolTagsHasBeenSet() const { return m_identityPoolTagsHasBeenSet; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline void SetIdentityPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags = value; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline void SetIdentityPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags = std::move(value); }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& WithIdentityPoolTags(const Aws::Map<Aws::String, Aws::String>& value) { SetIdentityPoolTags(value); return *this;}
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& WithIdentityPoolTags(Aws::Map<Aws::String, Aws::String>&& value) { SetIdentityPoolTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(const Aws::String& key, const Aws::String& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(Aws::String&& key, const Aws::String& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(const Aws::String& key, Aws::String&& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(Aws::String&& key, Aws::String&& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(const char* key, Aws::String&& value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(Aws::String&& key, const char* value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Tags to assign to the identity pool. A tag is a label that you can apply to
+     * identity pools to categorize and manage them in different ways, such as by
+     * purpose, owner, environment, or other criteria.</p>
+     */
+    inline CreateIdentityPoolRequest& AddIdentityPoolTags(const char* key, const char* value) { m_identityPoolTagsHasBeenSet = true; m_identityPoolTags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_identityPoolName;
@@ -381,6 +514,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_samlProviderARNs;
     bool m_samlProviderARNsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_identityPoolTags;
+    bool m_identityPoolTagsHasBeenSet;
   };
 
 } // namespace Model

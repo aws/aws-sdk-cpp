@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int textORcsv_HASH = HashingUtils::HashString("textORcsv");
+        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
 
 
         ReportFormat GetReportFormatForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == textORcsv_HASH)
           {
             return ReportFormat::textORcsv;
+          }
+          else if (hashCode == Parquet_HASH)
+          {
+            return ReportFormat::Parquet;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case ReportFormat::textORcsv:
             return "textORcsv";
+          case ReportFormat::Parquet:
+            return "Parquet";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -63,7 +70,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

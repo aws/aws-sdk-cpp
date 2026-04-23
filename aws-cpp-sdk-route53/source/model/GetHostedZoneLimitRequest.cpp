@@ -32,7 +32,7 @@ GetHostedZoneLimitRequest::GetHostedZoneLimitRequest() :
 
 Aws::String GetHostedZoneLimitRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

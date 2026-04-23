@@ -52,47 +52,85 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
@@ -101,6 +139,12 @@ namespace Model
      * the value that is displayed on your authentication device.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
+
+    /**
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
+     */
+    inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
@@ -139,24 +183,42 @@ namespace Model
     inline PutBucketVersioningRequest& WithMFA(const char* value) { SetMFA(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const VersioningConfiguration& GetVersioningConfiguration() const{ return m_versioningConfiguration; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool VersioningConfigurationHasBeenSet() const { return m_versioningConfigurationHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetVersioningConfiguration(const VersioningConfiguration& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersioningConfiguration(VersioningConfiguration&& value) { m_versioningConfigurationHasBeenSet = true; m_versioningConfiguration = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithVersioningConfiguration(const VersioningConfiguration& value) { SetVersioningConfiguration(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketVersioningRequest& WithVersioningConfiguration(VersioningConfiguration&& value) { SetVersioningConfiguration(std::move(value)); return *this;}
 
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

@@ -13,7 +13,19 @@
 # permissions and limitations under the License.
 #
 
-cmake_minimum_required (VERSION 2.8.12)
+cmake_minimum_required (VERSION 3.1)
+if(POLICY CMP0028)
+    cmake_policy(SET CMP0028 NEW)
+endif()
+if(POLICY CMP0048)
+    cmake_policy(SET CMP0048 NEW)
+endif()
+if(POLICY CMP0054)
+    cmake_policy(SET CMP0054 NEW)
+endif()
+if(POLICY CMP0056)
+    cmake_policy(SET CMP0056 NEW)
+endif()
 
 # 3.0 or higher is strongly suggested; build settings (target_compile_options/etc...) sometimes do not get propagated properly under certain conditions prior to this version
 # Making this a hard requirement is potentially disruptive to existing customers who aren't affected by the bad behavior though, so just warn for now
@@ -23,7 +35,7 @@ endif()
 
 get_filename_component(AWS_NATIVE_SDK_ROOT "${CMAKE_CURRENT_SOURCE_DIR}" ABSOLUTE)
 
-# git is required for Android builds and optional for all other platforms
+# git is required for Android builds and building third-party dependencies
 find_package(Git)
 
 # Cmake invocation variables:
@@ -56,10 +68,14 @@ option(ANDROID_BUILD_ZLIB "When building for Android, should Zlib be built as we
 option(FORCE_CURL "Forces usage of the Curl client rather than the default OS-specific api" OFF)
 option(ENABLE_ADDRESS_SANITIZER "Flags to enable/disable Address Sanitizer for gcc or clang" OFF)
 option(BYPASS_DEFAULT_PROXY "Bypass the machine's default proxy settings when using IXmlHttpRequest2" ON)
-
+option(BUILD_DEPS "Build third-party dependencies" ON)
 
 set(BUILD_ONLY "" CACHE STRING "A semi-colon delimited list of the projects to build")
 set(CPP_STANDARD "11" CACHE STRING "Flag to upgrade the C++ standard used. The default is 11. The minimum is 11.")
+
+if(NOT CMAKE_BUILD_TYPE)
+    set(CMAKE_BUILD_TYPE Release)
+endif()
 
 # backwards compatibility with old command line params
 if("${STATIC_LINKING}" STREQUAL "1")
@@ -93,19 +109,90 @@ endif()
 
 include(initialize_project_version)
 
-if(POLICY CMP0028)
-    cmake_policy(SET CMP0028 NEW)
-endif()
-if(POLICY CMP0048)
-    cmake_policy(SET CMP0048 NEW)
-endif()
-if(POLICY CMP0054)
-    cmake_policy(SET CMP0054 NEW)
-endif()
-if(POLICY CMP0056)
-    cmake_policy(SET CMP0056 NEW)
+if (BUILD_SHARED_LIBS OR FORCE_SHARED_CRT)
+    set(STATIC_CRT OFF)
+else()
+    set(STATIC_CRT ON)
 endif()
 
+# build third-party targets
+if (BUILD_DEPS)
+    # If building third party dependencies, we will move them to the same directory where SDK has been installed during installation.
+    # Therefore, we should set rpath to $ORIGIN to let SDK find these third party dependencies.
+    # Otherwise, customers are responsible for handling the linkage to these libraries.
+    set(CMAKE_INSTALL_RPATH "$ORIGIN")
+    set(AWS_DEPS_BUILD_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps)
+    if (NOT DEFINED AWS_DEPS_INSTALL_DIR)
+        if (DEFINED CMAKE_INSTALL_PREFIX)
+            set(AWS_DEPS_INSTALL_DIR ${CMAKE_INSTALL_PREFIX} CACHE STRING "A string describes the path where 3rd-party dependencies will be or have been installed")
+        else()
+            set(AWS_DEPS_INSTALL_DIR ${CMAKE_CURRENT_BINARY_DIR}/.deps/install CACHE STRING "A string describes the path where 3rd-party dependencies will be or have been installed")
+        endif()
+    endif()
+    file(MAKE_DIRECTORY ${AWS_DEPS_BUILD_DIR})
+    if(TARGET_ARCH STREQUAL "ANDROID")
+        execute_process(
+            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
+            -DTARGET_ARCH=${TARGET_ARCH}
+            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            -DANDROID_NATIVE_API_LEVEL=${ANDROID_NATIVE_API_LEVEL}
+            -DANDROID_ABI=${ANDROID_ABI}
+            -DANDROID_TOOLCHAIN_NAME=${ANDROID_TOOLCHAIN_NAME}
+            -DANDROID_STANDALONE_TOOLCHAIN=${ANDROID_STANDALONE_TOOLCHAIN}
+            -DANDROID_STL=${ANDROID_STL}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
+            -DGIT_EXECUTABLE=${GIT_EXECUTABLE}
+            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
+            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
+            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
+    elseif(TARGET_ARCH STREQUAL "APPLE" AND DEFINED CMAKE_OSX_ARCHITECTURES AND NOT CMAKE_OSX_ARCHITECTURES STREQUAL "")
+        message("Cross compiling third-party dependencies for architecture ${CMAKE_OSX_ARCHITECTURES}")
+        execute_process(
+            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
+            -DTARGET_ARCH=${TARGET_ARCH}
+            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
+            -DCMAKE_OSX_SYSROOT=${CMAKE_OSX_SYSROOT}
+            -DCMAKE_OSX_ARCHITECTURES=${CMAKE_OSX_ARCHITECTURES}
+            -DCMAKE_SYSTEM_NAME=${CMAKE_SYSTEM_NAME}
+            -DCMAKE_C_FLAGS=${CMAKE_C_FLAGS}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
+            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
+            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
+            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
+    else()
+        execute_process(
+            COMMAND ${CMAKE_COMMAND} -G ${CMAKE_GENERATOR}
+            -DTARGET_ARCH=${TARGET_ARCH}
+            -DCMAKE_TOOLCHAIN_FILE=${CMAKE_TOOLCHAIN_FILE}
+            -DCMAKE_BUILD_TYPE=${CMAKE_BUILD_TYPE}
+            -DBUILD_SHARED_LIBS=${BUILD_SHARED_LIBS}
+            -DSTATIC_CRT=${STATIC_CRT}
+            -DCMAKE_INSTALL_PREFIX=${AWS_DEPS_INSTALL_DIR}
+            -DCMAKE_RUNTIME_OUTPUT_DIRECTORY=${CMAKE_CURRENT_BINARY_DIR}/bin
+            ${CMAKE_CURRENT_SOURCE_DIR}/third-party
+            WORKING_DIRECTORY ${AWS_DEPS_BUILD_DIR}
+            RESULT_VARIABLE BUILD_3P_EXIT_CODE)
+    endif()
+
+    if (NOT ${BUILD_3P_EXIT_CODE} EQUAL 0)
+        message(FATAL_ERROR "Failed to configure third-party libraries.")
+    endif()
+    execute_process(COMMAND ${CMAKE_COMMAND} --build ${AWS_DEPS_BUILD_DIR} --config ${CMAKE_BUILD_TYPE}
+        RESULT_VARIABLE BUILD_3P_EXIT_CODE)
+
+    if (NOT ${BUILD_3P_EXIT_CODE} EQUAL 0)
+        message(FATAL_ERROR "Failed to build third-party libraries.")
+    endif()
+    message(STATUS "Third-party dependencies are installed at: ${AWS_DEPS_INSTALL_DIR}")
+    list(APPEND CMAKE_PREFIX_PATH "${AWS_DEPS_INSTALL_DIR}")
+endif()
+
+# build the sdk targets
 project("aws-cpp-sdk-all" VERSION "${PROJECT_VERSION}" LANGUAGES CXX)
 
 # http client, encryption, zlib
@@ -180,6 +267,18 @@ endif()
 
 if (ENABLE_ADDRESS_SANITIZER)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -fsanitize=address -g -fno-omit-frame-pointer")
+endif()
+
+include(CheckCXXSymbolExists)
+
+check_cxx_symbol_exists("pathconf" "unistd.h" HAS_PATHCONF)
+if (HAS_PATHCONF)
+    add_definitions(-DHAS_PATHCONF)
+endif()
+
+check_cxx_symbol_exists("umask" "sys/stat.h" HAS_UMASK)
+if (HAS_UMASK)
+    add_definitions(-DHAS_UMASK)
 endif()
 
 add_sdks()

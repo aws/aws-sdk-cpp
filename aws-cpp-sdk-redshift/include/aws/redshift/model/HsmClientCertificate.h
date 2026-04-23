@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The identifier of the HSM client certificate.</p>
      */
+    inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the HSM client certificate.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * HSM. You must register the public key in the HSM.</p>
      */
     inline const Aws::String& GetHsmClientCertificatePublicKey() const{ return m_hsmClientCertificatePublicKey; }
+
+    /**
+     * <p>The public key that the Amazon Redshift cluster will use to connect to the
+     * HSM. You must register the public key in the HSM.</p>
+     */
+    inline bool HsmClientCertificatePublicKeyHasBeenSet() const { return m_hsmClientCertificatePublicKeyHasBeenSet; }
 
     /**
      * <p>The public key that the Amazon Redshift cluster will use to connect to the
@@ -136,6 +147,11 @@ namespace Model
      * <p>The list of tags for the HSM client certificate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the HSM client certificate.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the HSM client certificate.</p>

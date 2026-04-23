@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the <code>GrokClassifier</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <code>GrokClassifier</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
+    /**
+     * <p>An identifier of the data format that the classifier matches, such as
+     * Twitter, JSON, Omniture logs, Amazon CloudWatch Logs, and so on.</p>
+     */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
      * <p>An identifier of the data format that the classifier matches, such as
@@ -135,6 +146,11 @@ namespace Model
     /**
      * <p>The grok pattern used by this classifier.</p>
      */
+    inline bool GrokPatternHasBeenSet() const { return m_grokPatternHasBeenSet; }
+
+    /**
+     * <p>The grok pattern used by this classifier.</p>
+     */
     inline void SetGrokPattern(const Aws::String& value) { m_grokPatternHasBeenSet = true; m_grokPattern = value; }
 
     /**
@@ -167,6 +183,11 @@ namespace Model
      * <p>Optional custom grok patterns used by this classifier.</p>
      */
     inline const Aws::String& GetCustomPatterns() const{ return m_customPatterns; }
+
+    /**
+     * <p>Optional custom grok patterns used by this classifier.</p>
+     */
+    inline bool CustomPatternsHasBeenSet() const { return m_customPatternsHasBeenSet; }
 
     /**
      * <p>Optional custom grok patterns used by this classifier.</p>

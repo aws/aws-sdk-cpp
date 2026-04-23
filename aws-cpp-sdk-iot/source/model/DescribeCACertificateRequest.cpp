@@ -29,7 +29,7 @@ DescribeCACertificateRequest::DescribeCACertificateRequest() :
 
 Aws::String DescribeCACertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

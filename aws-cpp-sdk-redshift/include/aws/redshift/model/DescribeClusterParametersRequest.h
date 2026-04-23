@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of a cluster parameter group for which to return details.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of a cluster parameter group for which to return details.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * Values: <code>user</code> | <code>engine-default</code> </p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>The parameter types to return. Specify <code>user</code> to show parameters
+     * that are different form the default. Similarly, specify
+     * <code>engine-default</code> to show parameters that are the same as the default
+     * parameter group. </p> <p>Default: All parameter types returned.</p> <p>Valid
+     * Values: <code>user</code> | <code>engine-default</code> </p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>The parameter types to return. Specify <code>user</code> to show parameters
@@ -167,6 +181,16 @@ namespace Model
      * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
      * maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of response records to return in each call. If the number
+     * of remaining response records exceeds the specified <code>MaxRecords</code>
+     * value, a value is returned in a <code>marker</code> field of the response. You
+     * can retrieve the next set of records by retrying the command with the returned
+     * marker value. </p> <p>Default: <code>100</code> </p> <p>Constraints: minimum 20,
+     * maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -189,6 +213,16 @@ namespace Model
      * <code>Marker</code> parameter and retrying the request. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional parameter that specifies the starting point to return a set of
+     * response records. When the results of a <a>DescribeClusterParameters</a> request
+     * exceed the value specified in <code>MaxRecords</code>, AWS returns a value in
+     * the <code>Marker</code> field of the response. You can retrieve the next set of
+     * response records by providing the returned marker value in the
+     * <code>Marker</code> parameter and retrying the request. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional parameter that specifies the starting point to return a set of

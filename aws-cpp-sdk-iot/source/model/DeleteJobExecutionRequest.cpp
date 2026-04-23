@@ -37,7 +37,7 @@ DeleteJobExecutionRequest::DeleteJobExecutionRequest() :
 
 Aws::String DeleteJobExecutionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteJobExecutionRequest::AddQueryStringParameters(URI& uri) const

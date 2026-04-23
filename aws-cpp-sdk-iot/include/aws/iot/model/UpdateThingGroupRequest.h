@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The thing group to update.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The thing group to update.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The thing group properties.</p>
      */
+    inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
+
+    /**
+     * <p>The thing group properties.</p>
+     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
 
     /**
@@ -110,6 +120,12 @@ namespace Model
      * of the thing group being updated, the update will fail.</p>
      */
     inline long long GetExpectedVersion() const{ return m_expectedVersion; }
+
+    /**
+     * <p>The expected version of the thing group. If this does not match the version
+     * of the thing group being updated, the update will fail.</p>
+     */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
 
     /**
      * <p>The expected version of the thing group. If this does not match the version

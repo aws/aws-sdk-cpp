@@ -30,7 +30,9 @@ namespace Model
 
 OutputSettings::OutputSettings() : 
     m_archiveOutputSettingsHasBeenSet(false),
+    m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
+    m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
@@ -39,7 +41,9 @@ OutputSettings::OutputSettings() :
 
 OutputSettings::OutputSettings(JsonView jsonValue) : 
     m_archiveOutputSettingsHasBeenSet(false),
+    m_frameCaptureOutputSettingsHasBeenSet(false),
     m_hlsOutputSettingsHasBeenSet(false),
+    m_mediaPackageOutputSettingsHasBeenSet(false),
     m_msSmoothOutputSettingsHasBeenSet(false),
     m_rtmpOutputSettingsHasBeenSet(false),
     m_udpOutputSettingsHasBeenSet(false)
@@ -56,11 +60,25 @@ OutputSettings& OutputSettings::operator =(JsonView jsonValue)
     m_archiveOutputSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("frameCaptureOutputSettings"))
+  {
+    m_frameCaptureOutputSettings = jsonValue.GetObject("frameCaptureOutputSettings");
+
+    m_frameCaptureOutputSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hlsOutputSettings"))
   {
     m_hlsOutputSettings = jsonValue.GetObject("hlsOutputSettings");
 
     m_hlsOutputSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaPackageOutputSettings"))
+  {
+    m_mediaPackageOutputSettings = jsonValue.GetObject("mediaPackageOutputSettings");
+
+    m_mediaPackageOutputSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("msSmoothOutputSettings"))
@@ -97,9 +115,21 @@ JsonValue OutputSettings::Jsonize() const
 
   }
 
+  if(m_frameCaptureOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("frameCaptureOutputSettings", m_frameCaptureOutputSettings.Jsonize());
+
+  }
+
   if(m_hlsOutputSettingsHasBeenSet)
   {
    payload.WithObject("hlsOutputSettings", m_hlsOutputSettings.Jsonize());
+
+  }
+
+  if(m_mediaPackageOutputSettingsHasBeenSet)
+  {
+   payload.WithObject("mediaPackageOutputSettings", m_mediaPackageOutputSettings.Jsonize());
 
   }
 

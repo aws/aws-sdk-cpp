@@ -63,6 +63,13 @@ namespace Model
      * should be identical to the value of the <code>BatchPredictionID</code> in the
      * request. </p>
      */
+    inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>BatchPrediction</code> at creation. This value
+     * should be identical to the value of the <code>BatchPredictionID</code> in the
+     * request. </p>
+     */
     inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * <p>The ID of the <code>MLModel</code> that generated predictions for the
      * <code>BatchPrediction</code> request.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>MLModel</code> that generated predictions for the
+     * <code>BatchPrediction</code> request.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -149,6 +162,12 @@ namespace Model
      * observations to predict.</p>
      */
     inline const Aws::String& GetBatchPredictionDataSourceId() const{ return m_batchPredictionDataSourceId; }
+
+    /**
+     * <p>The ID of the <code>DataSource</code> that points to the group of
+     * observations to predict.</p>
+     */
+    inline bool BatchPredictionDataSourceIdHasBeenSet() const { return m_batchPredictionDataSourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DataSource</code> that points to the group of
@@ -197,6 +216,12 @@ namespace Model
      * <p>The location of the data file or directory in Amazon Simple Storage Service
      * (Amazon S3).</p>
      */
+    inline bool InputDataLocationS3HasBeenSet() const { return m_inputDataLocationS3HasBeenSet; }
+
+    /**
+     * <p>The location of the data file or directory in Amazon Simple Storage Service
+     * (Amazon S3).</p>
+     */
     inline void SetInputDataLocationS3(const Aws::String& value) { m_inputDataLocationS3HasBeenSet = true; m_inputDataLocationS3 = value; }
 
     /**
@@ -236,6 +261,13 @@ namespace Model
      * Management (IAM) user account.</p>
      */
     inline const Aws::String& GetCreatedByIamUser() const{ return m_createdByIamUser; }
+
+    /**
+     * <p>The AWS user account that invoked the <code>BatchPrediction</code>. The
+     * account type can be either an AWS root account or an AWS Identity and Access
+     * Management (IAM) user account.</p>
+     */
+    inline bool CreatedByIamUserHasBeenSet() const { return m_createdByIamUserHasBeenSet; }
 
     /**
      * <p>The AWS user account that invoked the <code>BatchPrediction</code>. The
@@ -290,6 +322,12 @@ namespace Model
      * <p>The time that the <code>BatchPrediction</code> was created. The time is
      * expressed in epoch time.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the <code>BatchPrediction</code> was created. The time is
+     * expressed in epoch time.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -321,6 +359,12 @@ namespace Model
      * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
      * time is expressed in epoch time.</p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time of the most recent edit to the <code>BatchPrediction</code>. The
+     * time is expressed in epoch time.</p>
+     */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -346,6 +390,11 @@ namespace Model
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A user-supplied name or description of the <code>BatchPrediction</code>.</p>
@@ -389,6 +438,18 @@ namespace Model
      * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
      */
     inline const EntityStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the <code>BatchPrediction</code>. This element can have one of
+     * the following values:</p> <ul> <li> <code>PENDING</code> - Amazon Machine
+     * Learning (Amazon ML) submitted a request to generate predictions for a batch of
+     * observations.</li> <li> <code>INPROGRESS</code> - The process is underway.</li>
+     * <li> <code>FAILED</code> - The request to perform a batch prediction did not run
+     * to completion. It is not usable.</li> <li> <code>COMPLETED</code> - The batch
+     * prediction process completed successfully.</li> <li> <code>DELETED</code> - The
+     * <code>BatchPrediction</code> is marked as deleted. It is not usable.</li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the <code>BatchPrediction</code>. This element can have one of
@@ -451,6 +512,13 @@ namespace Model
      * results. The following substrings are not allowed in the <code>s3 key</code>
      * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
      */
+    inline bool OutputUriHasBeenSet() const { return m_outputUriHasBeenSet; }
+
+    /**
+     * <p>The location of an Amazon S3 bucket or directory to receive the operation
+     * results. The following substrings are not allowed in the <code>s3 key</code>
+     * portion of the <code>outputURI</code> field: ':', '//', '/./', '/../'.</p>
+     */
     inline void SetOutputUri(const Aws::String& value) { m_outputUriHasBeenSet = true; m_outputUri = value; }
 
     /**
@@ -499,6 +567,12 @@ namespace Model
      * <p>A description of the most recent details about processing the batch
      * prediction request.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A description of the most recent details about processing the batch
+     * prediction request.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -536,6 +610,9 @@ namespace Model
     inline long long GetComputeTime() const{ return m_computeTime; }
 
     
+    inline bool ComputeTimeHasBeenSet() const { return m_computeTimeHasBeenSet; }
+
+    
     inline void SetComputeTime(long long value) { m_computeTimeHasBeenSet = true; m_computeTime = value; }
 
     
@@ -544,6 +621,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetFinishedAt() const{ return m_finishedAt; }
+
+    
+    inline bool FinishedAtHasBeenSet() const { return m_finishedAtHasBeenSet; }
 
     
     inline void SetFinishedAt(const Aws::Utils::DateTime& value) { m_finishedAtHasBeenSet = true; m_finishedAt = value; }
@@ -562,6 +642,9 @@ namespace Model
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
     
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     
@@ -578,6 +661,9 @@ namespace Model
     inline long long GetTotalRecordCount() const{ return m_totalRecordCount; }
 
     
+    inline bool TotalRecordCountHasBeenSet() const { return m_totalRecordCountHasBeenSet; }
+
+    
     inline void SetTotalRecordCount(long long value) { m_totalRecordCountHasBeenSet = true; m_totalRecordCount = value; }
 
     
@@ -586,6 +672,9 @@ namespace Model
 
     
     inline long long GetInvalidRecordCount() const{ return m_invalidRecordCount; }
+
+    
+    inline bool InvalidRecordCountHasBeenSet() const { return m_invalidRecordCountHasBeenSet; }
 
     
     inline void SetInvalidRecordCount(long long value) { m_invalidRecordCountHasBeenSet = true; m_invalidRecordCount = value; }

@@ -20,6 +20,7 @@
 #include <aws/medialive/model/OfferingType.h>
 #include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/medialive/model/ReservationState.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -56,6 +57,12 @@ namespace Model
      * 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * Unique reservation ARN, e.g.
+     * 'arn:aws:medialive:us-west-2:123456789012:reservation:1234567'
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * Unique reservation ARN, e.g.
@@ -102,6 +109,11 @@ namespace Model
     /**
      * Number of reserved resources
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * Number of reserved resources
+     */
     inline void SetCount(int value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -114,6 +126,11 @@ namespace Model
      * Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * Currency code for usagePrice and fixedPrice in ISO-4217 format, e.g. 'USD'
@@ -154,6 +171,11 @@ namespace Model
     /**
      * Lease duration, e.g. '12'
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * Lease duration, e.g. '12'
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -166,6 +188,11 @@ namespace Model
      * Units for duration, e.g. 'MONTHS'
      */
     inline const OfferingDurationUnits& GetDurationUnits() const{ return m_durationUnits; }
+
+    /**
+     * Units for duration, e.g. 'MONTHS'
+     */
+    inline bool DurationUnitsHasBeenSet() const { return m_durationUnitsHasBeenSet; }
 
     /**
      * Units for duration, e.g. 'MONTHS'
@@ -192,6 +219,11 @@ namespace Model
      * Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
+
+    /**
+     * Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * Reservation UTC end date and time in ISO-8601 format, e.g. '2019-03-01T00:00:00'
@@ -232,6 +264,11 @@ namespace Model
     /**
      * One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
      */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
+
+    /**
+     * One-time charge for each reserved resource, e.g. '0.0' for a NO_UPFRONT offering
+     */
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
 
     /**
@@ -244,6 +281,11 @@ namespace Model
      * User specified reservation name
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * User specified reservation name
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * User specified reservation name
@@ -281,6 +323,12 @@ namespace Model
      * in US West (Oregon)'
      */
     inline const Aws::String& GetOfferingDescription() const{ return m_offeringDescription; }
+
+    /**
+     * Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ
+     * in US West (Oregon)'
+     */
+    inline bool OfferingDescriptionHasBeenSet() const { return m_offeringDescriptionHasBeenSet; }
 
     /**
      * Offering description, e.g. 'HD AVC output at 10-20 Mbps, 30 fps, and standard VQ
@@ -327,6 +375,11 @@ namespace Model
     /**
      * Unique offering ID, e.g. '87654321'
      */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
+
+    /**
+     * Unique offering ID, e.g. '87654321'
+     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**
@@ -363,6 +416,11 @@ namespace Model
     /**
      * Offering type, e.g. 'NO_UPFRONT'
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * Offering type, e.g. 'NO_UPFRONT'
+     */
     inline void SetOfferingType(const OfferingType& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -385,6 +443,11 @@ namespace Model
      * AWS region, e.g. 'us-west-2'
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * AWS region, e.g. 'us-west-2'
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * AWS region, e.g. 'us-west-2'
@@ -425,6 +488,11 @@ namespace Model
     /**
      * Unique reservation ID, e.g. '1234567'
      */
+    inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
+
+    /**
+     * Unique reservation ID, e.g. '1234567'
+     */
     inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
 
     /**
@@ -461,6 +529,11 @@ namespace Model
     /**
      * Resource configuration details
      */
+    inline bool ResourceSpecificationHasBeenSet() const { return m_resourceSpecificationHasBeenSet; }
+
+    /**
+     * Resource configuration details
+     */
     inline void SetResourceSpecification(const ReservationResourceSpecification& value) { m_resourceSpecificationHasBeenSet = true; m_resourceSpecification = value; }
 
     /**
@@ -484,6 +557,12 @@ namespace Model
      * '2018-03-01T00:00:00'
      */
     inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * Reservation UTC start date and time in ISO-8601 format, e.g.
+     * '2018-03-01T00:00:00'
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * Reservation UTC start date and time in ISO-8601 format, e.g.
@@ -530,6 +609,11 @@ namespace Model
     /**
      * Current state of reservation, e.g. 'ACTIVE'
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * Current state of reservation, e.g. 'ACTIVE'
+     */
     inline void SetState(const ReservationState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -549,9 +633,80 @@ namespace Model
 
 
     /**
+     * A collection of key-value pairs
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline Reservation& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * Recurring usage charge for each reserved resource, e.g. '157.0'
      */
     inline double GetUsagePrice() const{ return m_usagePrice; }
+
+    /**
+     * Recurring usage charge for each reserved resource, e.g. '157.0'
+     */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
 
     /**
      * Recurring usage charge for each reserved resource, e.g. '157.0'
@@ -612,6 +767,9 @@ namespace Model
 
     ReservationState m_state;
     bool m_stateHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     double m_usagePrice;
     bool m_usagePriceHasBeenSet;

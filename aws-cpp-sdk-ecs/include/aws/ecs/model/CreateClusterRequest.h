@@ -58,6 +58,13 @@ namespace Model
      * create a cluster named <code>default</code>. Up to 255 letters (uppercase and
      * lowercase), numbers, hyphens, and underscores are allowed.</p>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>The name of your cluster. If you do not specify a name for your cluster, you
+     * create a cluster named <code>default</code>. Up to 255 letters (uppercase and
+     * lowercase), numbers, hyphens, and underscores are allowed.</p>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
@@ -103,6 +110,14 @@ namespace Model
      * tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the cluster to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and

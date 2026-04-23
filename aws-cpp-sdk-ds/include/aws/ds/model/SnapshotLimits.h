@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The maximum number of manual snapshots allowed.</p>
      */
+    inline bool ManualSnapshotsLimitHasBeenSet() const { return m_manualSnapshotsLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of manual snapshots allowed.</p>
+     */
     inline void SetManualSnapshotsLimit(int value) { m_manualSnapshotsLimitHasBeenSet = true; m_manualSnapshotsLimit = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
     /**
      * <p>The current number of manual snapshots of the directory.</p>
      */
+    inline bool ManualSnapshotsCurrentCountHasBeenSet() const { return m_manualSnapshotsCurrentCountHasBeenSet; }
+
+    /**
+     * <p>The current number of manual snapshots of the directory.</p>
+     */
     inline void SetManualSnapshotsCurrentCount(int value) { m_manualSnapshotsCurrentCountHasBeenSet = true; m_manualSnapshotsCurrentCount = value; }
 
     /**
@@ -82,6 +92,11 @@ namespace Model
      * <p>Indicates if the manual snapshot limit has been reached.</p>
      */
     inline bool GetManualSnapshotsLimitReached() const{ return m_manualSnapshotsLimitReached; }
+
+    /**
+     * <p>Indicates if the manual snapshot limit has been reached.</p>
+     */
+    inline bool ManualSnapshotsLimitReachedHasBeenSet() const { return m_manualSnapshotsLimitReachedHasBeenSet; }
 
     /**
      * <p>Indicates if the manual snapshot limit has been reached.</p>

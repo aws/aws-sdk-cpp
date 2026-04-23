@@ -61,6 +61,13 @@ namespace Model
      * location used for evaluating the risk of an unexpected event by Amazon Cognito
      * advanced security.</p>
      */
+    inline bool EncodedDataHasBeenSet() const { return m_encodedDataHasBeenSet; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
     inline void SetEncodedData(const Aws::String& value) { m_encodedDataHasBeenSet = true; m_encodedData = value; }
 
     /**

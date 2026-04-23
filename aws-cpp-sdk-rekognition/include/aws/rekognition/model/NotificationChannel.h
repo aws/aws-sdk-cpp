@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
      * status.</p>
      */
+    inline bool SNSTopicArnHasBeenSet() const { return m_sNSTopicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon SNS topic to which Amazon Rekognition to posts the completion
+     * status.</p>
+     */
     inline void SetSNSTopicArn(const Aws::String& value) { m_sNSTopicArnHasBeenSet = true; m_sNSTopicArn = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * to the Amazon SNS topic. </p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions
+     * to the Amazon SNS topic. </p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM role that gives Amazon Rekognition publishing permissions

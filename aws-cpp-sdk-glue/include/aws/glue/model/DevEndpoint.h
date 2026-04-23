@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -58,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the DevEndpoint.</p>
      */
+    inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DevEndpoint.</p>
+     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
     /**
      * <p>The AWS ARN of the IAM role used in this DevEndpoint.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The AWS ARN of the IAM role used in this DevEndpoint.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -126,6 +137,11 @@ namespace Model
      * <p>A list of security group identifiers used in this DevEndpoint.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>A list of security group identifiers used in this DevEndpoint.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of security group identifiers used in this DevEndpoint.</p>
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The subnet ID for this DevEndpoint.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The subnet ID for this DevEndpoint.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -203,6 +224,11 @@ namespace Model
      * <p>The YARN endpoint address used by this DevEndpoint.</p>
      */
     inline const Aws::String& GetYarnEndpointAddress() const{ return m_yarnEndpointAddress; }
+
+    /**
+     * <p>The YARN endpoint address used by this DevEndpoint.</p>
+     */
+    inline bool YarnEndpointAddressHasBeenSet() const { return m_yarnEndpointAddressHasBeenSet; }
 
     /**
      * <p>The YARN endpoint address used by this DevEndpoint.</p>
@@ -241,6 +267,13 @@ namespace Model
      * you create the DevEndpoint within your virtual private cloud (VPC).</p>
      */
     inline const Aws::String& GetPrivateAddress() const{ return m_privateAddress; }
+
+    /**
+     * <p>A private IP address to access the DevEndpoint within a VPC, if the
+     * DevEndpoint is created within one. The PrivateAddress field is present only when
+     * you create the DevEndpoint within your virtual private cloud (VPC).</p>
+     */
+    inline bool PrivateAddressHasBeenSet() const { return m_privateAddressHasBeenSet; }
 
     /**
      * <p>A private IP address to access the DevEndpoint within a VPC, if the
@@ -293,6 +326,11 @@ namespace Model
     /**
      * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
      */
+    inline bool ZeppelinRemoteSparkInterpreterPortHasBeenSet() const { return m_zeppelinRemoteSparkInterpreterPortHasBeenSet; }
+
+    /**
+     * <p>The Apache Zeppelin port for the remote Apache Spark interpreter.</p>
+     */
     inline void SetZeppelinRemoteSparkInterpreterPort(int value) { m_zeppelinRemoteSparkInterpreterPortHasBeenSet = true; m_zeppelinRemoteSparkInterpreterPort = value; }
 
     /**
@@ -306,6 +344,12 @@ namespace Model
      * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
      */
     inline const Aws::String& GetPublicAddress() const{ return m_publicAddress; }
+
+    /**
+     * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
+     * present only when you create a non-VPC (virtual private cloud) DevEndpoint.</p>
+     */
+    inline bool PublicAddressHasBeenSet() const { return m_publicAddressHasBeenSet; }
 
     /**
      * <p>The public IP address used by this DevEndpoint. The PublicAddress field is
@@ -352,6 +396,11 @@ namespace Model
     /**
      * <p>The current status of this DevEndpoint.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status of this DevEndpoint.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -390,6 +439,12 @@ namespace Model
      * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
      * DevEndpoint.</p>
      */
+    inline bool NumberOfNodesHasBeenSet() const { return m_numberOfNodesHasBeenSet; }
+
+    /**
+     * <p>The number of AWS Glue Data Processing Units (DPUs) allocated to this
+     * DevEndpoint.</p>
+     */
     inline void SetNumberOfNodes(int value) { m_numberOfNodesHasBeenSet = true; m_numberOfNodes = value; }
 
     /**
@@ -403,6 +458,11 @@ namespace Model
      * <p>The AWS availability zone where this DevEndpoint is located.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The AWS availability zone where this DevEndpoint is located.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The AWS availability zone where this DevEndpoint is located.</p>
@@ -439,6 +499,11 @@ namespace Model
      * <p>The ID of the virtual private cloud (VPC) used by this DevEndpoint.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the virtual private cloud (VPC) used by this DevEndpoint.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the virtual private cloud (VPC) used by this DevEndpoint.</p>
@@ -480,6 +545,16 @@ namespace Model
      * not yet supported.</p>
      */
     inline const Aws::String& GetExtraPythonLibsS3Path() const{ return m_extraPythonLibsS3Path; }
+
+    /**
+     * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
+     * in your DevEndpoint. Multiple values must be complete paths separated by a
+     * comma.</p> <p>Please note that only pure Python libraries can currently be used
+     * on a DevEndpoint. Libraries that rely on C extensions, such as the <a
+     * href="http://pandas.pydata.org/">pandas</a> Python data analysis library, are
+     * not yet supported.</p>
+     */
+    inline bool ExtraPythonLibsS3PathHasBeenSet() const { return m_extraPythonLibsS3PathHasBeenSet; }
 
     /**
      * <p>Path(s) to one or more Python libraries in an S3 bucket that should be loaded
@@ -554,6 +629,13 @@ namespace Model
      * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
      * currently be used on a DevEndpoint.</p>
      */
+    inline bool ExtraJarsS3PathHasBeenSet() const { return m_extraJarsS3PathHasBeenSet; }
+
+    /**
+     * <p>Path to one or more Java Jars in an S3 bucket that should be loaded in your
+     * DevEndpoint.</p> <p>Please note that only pure Java/Scala libraries can
+     * currently be used on a DevEndpoint.</p>
+     */
     inline void SetExtraJarsS3Path(const Aws::String& value) { m_extraJarsS3PathHasBeenSet = true; m_extraJarsS3Path = value; }
 
     /**
@@ -600,6 +682,11 @@ namespace Model
     /**
      * <p>The reason for a current failure in this DevEndpoint.</p>
      */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>The reason for a current failure in this DevEndpoint.</p>
+     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
@@ -632,6 +719,11 @@ namespace Model
      * <p>The status of the last update.</p>
      */
     inline const Aws::String& GetLastUpdateStatus() const{ return m_lastUpdateStatus; }
+
+    /**
+     * <p>The status of the last update.</p>
+     */
+    inline bool LastUpdateStatusHasBeenSet() const { return m_lastUpdateStatusHasBeenSet; }
 
     /**
      * <p>The status of the last update.</p>
@@ -672,6 +764,11 @@ namespace Model
     /**
      * <p>The point in time at which this DevEndpoint was created.</p>
      */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+
+    /**
+     * <p>The point in time at which this DevEndpoint was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
@@ -694,6 +791,11 @@ namespace Model
      * <p>The point in time at which this DevEndpoint was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimestamp() const{ return m_lastModifiedTimestamp; }
+
+    /**
+     * <p>The point in time at which this DevEndpoint was last modified.</p>
+     */
+    inline bool LastModifiedTimestampHasBeenSet() const { return m_lastModifiedTimestampHasBeenSet; }
 
     /**
      * <p>The point in time at which this DevEndpoint was last modified.</p>
@@ -722,6 +824,13 @@ namespace Model
      * to use is public keys.</p>
      */
     inline const Aws::String& GetPublicKey() const{ return m_publicKey; }
+
+    /**
+     * <p>The public key to be used by this DevEndpoint for authentication. This
+     * attribute is provided for backward compatibility, as the recommended attribute
+     * to use is public keys.</p>
+     */
+    inline bool PublicKeyHasBeenSet() const { return m_publicKeyHasBeenSet; }
 
     /**
      * <p>The public key to be used by this DevEndpoint for authentication. This
@@ -776,6 +885,17 @@ namespace Model
      * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
      */
     inline const Aws::Vector<Aws::String>& GetPublicKeys() const{ return m_publicKeys; }
+
+    /**
+     * <p>A list of public keys to be used by the DevEndpoints for authentication. The
+     * use of this attribute is preferred over a single public key because the public
+     * keys allow you to have a different private key per client.</p> <note> <p>If you
+     * previously created an endpoint with a public key, you must remove that key to be
+     * able to set a list of public keys: call the <code>UpdateDevEndpoint</code> API
+     * with the public key content in the <code>deletePublicKeys</code> attribute, and
+     * the list of new keys in the <code>addPublicKeys</code> attribute.</p> </note>
+     */
+    inline bool PublicKeysHasBeenSet() const { return m_publicKeysHasBeenSet; }
 
     /**
      * <p>A list of public keys to be used by the DevEndpoints for authentication. The
@@ -865,6 +985,12 @@ namespace Model
      * <p>The name of the SecurityConfiguration structure to be used with this
      * DevEndpoint.</p>
      */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used with this
+     * DevEndpoint.</p>
+     */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
 
     /**
@@ -896,6 +1022,98 @@ namespace Model
      * DevEndpoint.</p>
      */
     inline DevEndpoint& WithSecurityConfiguration(const char* value) { SetSecurityConfiguration(value); return *this;}
+
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline bool ArgumentsHasBeenSet() const { return m_argumentsHasBeenSet; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_argumentsHasBeenSet = true; m_arguments = value; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_argumentsHasBeenSet = true; m_arguments = std::move(value); }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const Aws::String& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, const Aws::String& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const Aws::String& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const char* key, Aws::String&& value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(Aws::String&& key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>A map of arguments used to configure the DevEndpoint.</p> <p>Note that
+     * currently, we only support "--enable-glue-datacatalog": "" as a valid
+     * argument.</p>
+     */
+    inline DevEndpoint& AddArguments(const char* key, const char* value) { m_argumentsHasBeenSet = true; m_arguments.emplace(key, value); return *this; }
 
   private:
 
@@ -961,6 +1179,9 @@ namespace Model
 
     Aws::String m_securityConfiguration;
     bool m_securityConfigurationHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_arguments;
+    bool m_argumentsHasBeenSet;
   };
 
 } // namespace Model

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Name of the inventory item attribute.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the inventory item attribute.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The data type of the inventory item attribute. </p>
      */
     inline const InventoryAttributeDataType& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>The data type of the inventory item attribute. </p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
      * <p>The data type of the inventory item attribute. </p>

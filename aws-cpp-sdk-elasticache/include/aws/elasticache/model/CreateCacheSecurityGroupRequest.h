@@ -64,6 +64,14 @@ namespace Model
      * characters. Cannot be the word "Default".</p> <p>Example:
      * <code>mysecuritygroup</code> </p>
      */
+    inline bool CacheSecurityGroupNameHasBeenSet() const { return m_cacheSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>A name for the cache security group. This value is stored as a lowercase
+     * string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters. Cannot be the word "Default".</p> <p>Example:
+     * <code>mysecuritygroup</code> </p>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /**
@@ -111,6 +119,11 @@ namespace Model
      * <p>A description for the cache security group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the cache security group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the cache security group.</p>

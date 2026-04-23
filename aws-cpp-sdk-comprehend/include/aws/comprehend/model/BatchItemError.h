@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The numeric error code of the error.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The numeric error code of the error.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The numeric error code of the error.</p>
@@ -105,6 +115,11 @@ namespace Model
      * <p>A text description of the error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>A text description of the error.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>A text description of the error.</p>

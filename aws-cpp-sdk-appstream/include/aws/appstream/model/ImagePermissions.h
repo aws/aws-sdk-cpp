@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Indicates whether the image can be used for a fleet.</p>
      */
+    inline bool AllowFleetHasBeenSet() const { return m_allowFleetHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the image can be used for a fleet.</p>
+     */
     inline void SetAllowFleet(bool value) { m_allowFleetHasBeenSet = true; m_allowFleet = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>Indicates whether the image can be used for an image builder.</p>
      */
     inline bool GetAllowImageBuilder() const{ return m_allowImageBuilder; }
+
+    /**
+     * <p>Indicates whether the image can be used for an image builder.</p>
+     */
+    inline bool AllowImageBuilderHasBeenSet() const { return m_allowImageBuilderHasBeenSet; }
 
     /**
      * <p>Indicates whether the image can be used for an image builder.</p>

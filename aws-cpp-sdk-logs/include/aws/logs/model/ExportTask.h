@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the export task.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the export task.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the export task.</p>
      */
     inline const Aws::String& GetTaskName() const{ return m_taskName; }
+
+    /**
+     * <p>The name of the export task.</p>
+     */
+    inline bool TaskNameHasBeenSet() const { return m_taskNameHasBeenSet; }
 
     /**
      * <p>The name of the export task.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The name of the log group from which logs data was exported.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group from which logs data was exported.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -159,41 +174,50 @@ namespace Model
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline long long GetFrom() const{ return m_from; }
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
+     */
+    inline bool FromHasBeenSet() const { return m_fromHasBeenSet; }
+
+    /**
+     * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline void SetFrom(long long value) { m_fromHasBeenSet = true; m_from = value; }
 
     /**
      * <p>The start time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp before this time are not exported.</p>
+     * 00:00:00 UTC. Events with a timestamp before this time are not exported.</p>
      */
     inline ExportTask& WithFrom(long long value) { SetFrom(value); return *this;}
 
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline long long GetTo() const{ return m_to; }
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
+     */
+    inline bool ToHasBeenSet() const { return m_toHasBeenSet; }
+
+    /**
+     * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline void SetTo(long long value) { m_toHasBeenSet = true; m_to = value; }
 
     /**
      * <p>The end time, expressed as the number of milliseconds after Jan 1, 1970
-     * 00:00:00 UTC. Events with a time stamp later than this time are not
-     * exported.</p>
+     * 00:00:00 UTC. Events with a timestamp later than this time are not exported.</p>
      */
     inline ExportTask& WithTo(long long value) { SetTo(value); return *this;}
 
@@ -202,6 +226,11 @@ namespace Model
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
      */
     inline const Aws::String& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The name of Amazon S3 bucket to which the log data was exported.</p>
@@ -239,6 +268,12 @@ namespace Model
      * exported.</p>
      */
     inline const Aws::String& GetDestinationPrefix() const{ return m_destinationPrefix; }
+
+    /**
+     * <p>The prefix that was used as the start of Amazon S3 key for every object
+     * exported.</p>
+     */
+    inline bool DestinationPrefixHasBeenSet() const { return m_destinationPrefixHasBeenSet; }
 
     /**
      * <p>The prefix that was used as the start of Amazon S3 key for every object
@@ -285,6 +320,11 @@ namespace Model
     /**
      * <p>The status of the export task.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the export task.</p>
+     */
     inline void SetStatus(const ExportTaskStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -307,6 +347,11 @@ namespace Model
      * <p>Execution info about the export task.</p>
      */
     inline const ExportTaskExecutionInfo& GetExecutionInfo() const{ return m_executionInfo; }
+
+    /**
+     * <p>Execution info about the export task.</p>
+     */
+    inline bool ExecutionInfoHasBeenSet() const { return m_executionInfoHasBeenSet; }
 
     /**
      * <p>Execution info about the export task.</p>

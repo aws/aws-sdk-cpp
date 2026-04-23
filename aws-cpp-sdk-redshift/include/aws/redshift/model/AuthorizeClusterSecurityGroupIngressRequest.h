@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the security group to which the ingress rule is added.</p>
      */
+    inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security group to which the ingress rule is added.</p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The IP range to be added the Amazon Redshift security group.</p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
+
+    /**
+     * <p>The IP range to be added the Amazon Redshift security group.</p>
+     */
+    inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
 
     /**
      * <p>The IP range to be added the Amazon Redshift security group.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
      */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The EC2 security group to be added the Amazon Redshift security group.</p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
@@ -163,6 +178,13 @@ namespace Model
      * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
+    /**
+     * <p>The AWS account number of the owner of the security group specified by the
+     * <i>EC2SecurityGroupName</i> parameter. The AWS Access Key ID is not an
+     * acceptable value. </p> <p>Example: <code>111122223333</code> </p>
+     */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p>The AWS account number of the owner of the security group specified by the

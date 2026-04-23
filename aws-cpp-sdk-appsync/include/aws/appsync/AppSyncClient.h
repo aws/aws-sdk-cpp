@@ -23,15 +23,18 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/appsync/model/CreateApiKeyResult.h>
 #include <aws/appsync/model/CreateDataSourceResult.h>
+#include <aws/appsync/model/CreateFunctionResult.h>
 #include <aws/appsync/model/CreateGraphqlApiResult.h>
 #include <aws/appsync/model/CreateResolverResult.h>
 #include <aws/appsync/model/CreateTypeResult.h>
 #include <aws/appsync/model/DeleteApiKeyResult.h>
 #include <aws/appsync/model/DeleteDataSourceResult.h>
+#include <aws/appsync/model/DeleteFunctionResult.h>
 #include <aws/appsync/model/DeleteGraphqlApiResult.h>
 #include <aws/appsync/model/DeleteResolverResult.h>
 #include <aws/appsync/model/DeleteTypeResult.h>
 #include <aws/appsync/model/GetDataSourceResult.h>
+#include <aws/appsync/model/GetFunctionResult.h>
 #include <aws/appsync/model/GetGraphqlApiResult.h>
 #include <aws/appsync/model/GetIntrospectionSchemaResult.h>
 #include <aws/appsync/model/GetResolverResult.h>
@@ -39,12 +42,15 @@
 #include <aws/appsync/model/GetTypeResult.h>
 #include <aws/appsync/model/ListApiKeysResult.h>
 #include <aws/appsync/model/ListDataSourcesResult.h>
+#include <aws/appsync/model/ListFunctionsResult.h>
 #include <aws/appsync/model/ListGraphqlApisResult.h>
 #include <aws/appsync/model/ListResolversResult.h>
+#include <aws/appsync/model/ListResolversByFunctionResult.h>
 #include <aws/appsync/model/ListTypesResult.h>
 #include <aws/appsync/model/StartSchemaCreationResult.h>
 #include <aws/appsync/model/UpdateApiKeyResult.h>
 #include <aws/appsync/model/UpdateDataSourceResult.h>
+#include <aws/appsync/model/UpdateFunctionResult.h>
 #include <aws/appsync/model/UpdateGraphqlApiResult.h>
 #include <aws/appsync/model/UpdateResolverResult.h>
 #include <aws/appsync/model/UpdateTypeResult.h>
@@ -90,15 +96,18 @@ namespace Model
 {
         class CreateApiKeyRequest;
         class CreateDataSourceRequest;
+        class CreateFunctionRequest;
         class CreateGraphqlApiRequest;
         class CreateResolverRequest;
         class CreateTypeRequest;
         class DeleteApiKeyRequest;
         class DeleteDataSourceRequest;
+        class DeleteFunctionRequest;
         class DeleteGraphqlApiRequest;
         class DeleteResolverRequest;
         class DeleteTypeRequest;
         class GetDataSourceRequest;
+        class GetFunctionRequest;
         class GetGraphqlApiRequest;
         class GetIntrospectionSchemaRequest;
         class GetResolverRequest;
@@ -106,27 +115,33 @@ namespace Model
         class GetTypeRequest;
         class ListApiKeysRequest;
         class ListDataSourcesRequest;
+        class ListFunctionsRequest;
         class ListGraphqlApisRequest;
         class ListResolversRequest;
+        class ListResolversByFunctionRequest;
         class ListTypesRequest;
         class StartSchemaCreationRequest;
         class UpdateApiKeyRequest;
         class UpdateDataSourceRequest;
+        class UpdateFunctionRequest;
         class UpdateGraphqlApiRequest;
         class UpdateResolverRequest;
         class UpdateTypeRequest;
 
         typedef Aws::Utils::Outcome<CreateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> CreateApiKeyOutcome;
         typedef Aws::Utils::Outcome<CreateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> CreateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<CreateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> CreateFunctionOutcome;
         typedef Aws::Utils::Outcome<CreateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> CreateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<CreateResolverResult, Aws::Client::AWSError<AppSyncErrors>> CreateResolverOutcome;
         typedef Aws::Utils::Outcome<CreateTypeResult, Aws::Client::AWSError<AppSyncErrors>> CreateTypeOutcome;
         typedef Aws::Utils::Outcome<DeleteApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> DeleteApiKeyOutcome;
         typedef Aws::Utils::Outcome<DeleteDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> DeleteDataSourceOutcome;
+        typedef Aws::Utils::Outcome<DeleteFunctionResult, Aws::Client::AWSError<AppSyncErrors>> DeleteFunctionOutcome;
         typedef Aws::Utils::Outcome<DeleteGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> DeleteGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<DeleteResolverResult, Aws::Client::AWSError<AppSyncErrors>> DeleteResolverOutcome;
         typedef Aws::Utils::Outcome<DeleteTypeResult, Aws::Client::AWSError<AppSyncErrors>> DeleteTypeOutcome;
         typedef Aws::Utils::Outcome<GetDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> GetDataSourceOutcome;
+        typedef Aws::Utils::Outcome<GetFunctionResult, Aws::Client::AWSError<AppSyncErrors>> GetFunctionOutcome;
         typedef Aws::Utils::Outcome<GetGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> GetGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<GetIntrospectionSchemaResult, Aws::Client::AWSError<AppSyncErrors>> GetIntrospectionSchemaOutcome;
         typedef Aws::Utils::Outcome<GetResolverResult, Aws::Client::AWSError<AppSyncErrors>> GetResolverOutcome;
@@ -134,27 +149,33 @@ namespace Model
         typedef Aws::Utils::Outcome<GetTypeResult, Aws::Client::AWSError<AppSyncErrors>> GetTypeOutcome;
         typedef Aws::Utils::Outcome<ListApiKeysResult, Aws::Client::AWSError<AppSyncErrors>> ListApiKeysOutcome;
         typedef Aws::Utils::Outcome<ListDataSourcesResult, Aws::Client::AWSError<AppSyncErrors>> ListDataSourcesOutcome;
+        typedef Aws::Utils::Outcome<ListFunctionsResult, Aws::Client::AWSError<AppSyncErrors>> ListFunctionsOutcome;
         typedef Aws::Utils::Outcome<ListGraphqlApisResult, Aws::Client::AWSError<AppSyncErrors>> ListGraphqlApisOutcome;
         typedef Aws::Utils::Outcome<ListResolversResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversOutcome;
+        typedef Aws::Utils::Outcome<ListResolversByFunctionResult, Aws::Client::AWSError<AppSyncErrors>> ListResolversByFunctionOutcome;
         typedef Aws::Utils::Outcome<ListTypesResult, Aws::Client::AWSError<AppSyncErrors>> ListTypesOutcome;
         typedef Aws::Utils::Outcome<StartSchemaCreationResult, Aws::Client::AWSError<AppSyncErrors>> StartSchemaCreationOutcome;
         typedef Aws::Utils::Outcome<UpdateApiKeyResult, Aws::Client::AWSError<AppSyncErrors>> UpdateApiKeyOutcome;
         typedef Aws::Utils::Outcome<UpdateDataSourceResult, Aws::Client::AWSError<AppSyncErrors>> UpdateDataSourceOutcome;
+        typedef Aws::Utils::Outcome<UpdateFunctionResult, Aws::Client::AWSError<AppSyncErrors>> UpdateFunctionOutcome;
         typedef Aws::Utils::Outcome<UpdateGraphqlApiResult, Aws::Client::AWSError<AppSyncErrors>> UpdateGraphqlApiOutcome;
         typedef Aws::Utils::Outcome<UpdateResolverResult, Aws::Client::AWSError<AppSyncErrors>> UpdateResolverOutcome;
         typedef Aws::Utils::Outcome<UpdateTypeResult, Aws::Client::AWSError<AppSyncErrors>> UpdateTypeOutcome;
 
         typedef std::future<CreateApiKeyOutcome> CreateApiKeyOutcomeCallable;
         typedef std::future<CreateDataSourceOutcome> CreateDataSourceOutcomeCallable;
+        typedef std::future<CreateFunctionOutcome> CreateFunctionOutcomeCallable;
         typedef std::future<CreateGraphqlApiOutcome> CreateGraphqlApiOutcomeCallable;
         typedef std::future<CreateResolverOutcome> CreateResolverOutcomeCallable;
         typedef std::future<CreateTypeOutcome> CreateTypeOutcomeCallable;
         typedef std::future<DeleteApiKeyOutcome> DeleteApiKeyOutcomeCallable;
         typedef std::future<DeleteDataSourceOutcome> DeleteDataSourceOutcomeCallable;
+        typedef std::future<DeleteFunctionOutcome> DeleteFunctionOutcomeCallable;
         typedef std::future<DeleteGraphqlApiOutcome> DeleteGraphqlApiOutcomeCallable;
         typedef std::future<DeleteResolverOutcome> DeleteResolverOutcomeCallable;
         typedef std::future<DeleteTypeOutcome> DeleteTypeOutcomeCallable;
         typedef std::future<GetDataSourceOutcome> GetDataSourceOutcomeCallable;
+        typedef std::future<GetFunctionOutcome> GetFunctionOutcomeCallable;
         typedef std::future<GetGraphqlApiOutcome> GetGraphqlApiOutcomeCallable;
         typedef std::future<GetIntrospectionSchemaOutcome> GetIntrospectionSchemaOutcomeCallable;
         typedef std::future<GetResolverOutcome> GetResolverOutcomeCallable;
@@ -162,12 +183,15 @@ namespace Model
         typedef std::future<GetTypeOutcome> GetTypeOutcomeCallable;
         typedef std::future<ListApiKeysOutcome> ListApiKeysOutcomeCallable;
         typedef std::future<ListDataSourcesOutcome> ListDataSourcesOutcomeCallable;
+        typedef std::future<ListFunctionsOutcome> ListFunctionsOutcomeCallable;
         typedef std::future<ListGraphqlApisOutcome> ListGraphqlApisOutcomeCallable;
         typedef std::future<ListResolversOutcome> ListResolversOutcomeCallable;
+        typedef std::future<ListResolversByFunctionOutcome> ListResolversByFunctionOutcomeCallable;
         typedef std::future<ListTypesOutcome> ListTypesOutcomeCallable;
         typedef std::future<StartSchemaCreationOutcome> StartSchemaCreationOutcomeCallable;
         typedef std::future<UpdateApiKeyOutcome> UpdateApiKeyOutcomeCallable;
         typedef std::future<UpdateDataSourceOutcome> UpdateDataSourceOutcomeCallable;
+        typedef std::future<UpdateFunctionOutcome> UpdateFunctionOutcomeCallable;
         typedef std::future<UpdateGraphqlApiOutcome> UpdateGraphqlApiOutcomeCallable;
         typedef std::future<UpdateResolverOutcome> UpdateResolverOutcomeCallable;
         typedef std::future<UpdateTypeOutcome> UpdateTypeOutcomeCallable;
@@ -177,15 +201,18 @@ namespace Model
 
     typedef std::function<void(const AppSyncClient*, const Model::CreateApiKeyRequest&, const Model::CreateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateDataSourceRequest&, const Model::CreateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::CreateFunctionRequest&, const Model::CreateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateGraphqlApiRequest&, const Model::CreateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateResolverRequest&, const Model::CreateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::CreateTypeRequest&, const Model::CreateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTypeResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteApiKeyRequest&, const Model::DeleteApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteDataSourceRequest&, const Model::DeleteDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::DeleteFunctionRequest&, const Model::DeleteFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteGraphqlApiRequest&, const Model::DeleteGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteResolverRequest&, const Model::DeleteResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::DeleteTypeRequest&, const Model::DeleteTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTypeResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetDataSourceRequest&, const Model::GetDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::GetFunctionRequest&, const Model::GetFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetGraphqlApiRequest&, const Model::GetGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetIntrospectionSchemaRequest&, const Model::GetIntrospectionSchemaOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetIntrospectionSchemaResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::GetResolverRequest&, const Model::GetResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResolverResponseReceivedHandler;
@@ -193,12 +220,15 @@ namespace Model
     typedef std::function<void(const AppSyncClient*, const Model::GetTypeRequest&, const Model::GetTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetTypeResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListApiKeysRequest&, const Model::ListApiKeysOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListApiKeysResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListDataSourcesRequest&, const Model::ListDataSourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListDataSourcesResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::ListFunctionsRequest&, const Model::ListFunctionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFunctionsResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListGraphqlApisRequest&, const Model::ListGraphqlApisOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListGraphqlApisResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListResolversRequest&, const Model::ListResolversOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::ListResolversByFunctionRequest&, const Model::ListResolversByFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListResolversByFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::ListTypesRequest&, const Model::ListTypesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTypesResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::StartSchemaCreationRequest&, const Model::StartSchemaCreationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartSchemaCreationResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateApiKeyRequest&, const Model::UpdateApiKeyOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApiKeyResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateDataSourceRequest&, const Model::UpdateDataSourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateDataSourceResponseReceivedHandler;
+    typedef std::function<void(const AppSyncClient*, const Model::UpdateFunctionRequest&, const Model::UpdateFunctionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateFunctionResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateGraphqlApiRequest&, const Model::UpdateGraphqlApiOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGraphqlApiResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateResolverRequest&, const Model::UpdateResolverOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateResolverResponseReceivedHandler;
     typedef std::function<void(const AppSyncClient*, const Model::UpdateTypeRequest&, const Model::UpdateTypeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTypeResponseReceivedHandler;
@@ -233,7 +263,7 @@ namespace Model
 
         virtual ~AppSyncClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "appsync"; }
+        inline virtual const char* GetServiceClientName() const override { return "AppSync"; }
 
 
         /**
@@ -288,6 +318,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateDataSourceAsync(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
+         * entity. Multiple functions can be used to compose the resolver
+         * logic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateFunctionOutcome CreateFunction(const Model::CreateFunctionRequest& request) const;
+
+        /**
+         * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
+         * entity. Multiple functions can be used to compose the resolver
+         * logic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateFunctionOutcomeCallable CreateFunctionCallable(const Model::CreateFunctionRequest& request) const;
+
+        /**
+         * <p>Creates a <code>Function</code> object.</p> <p>A function is a reusable
+         * entity. Multiple functions can be used to compose the resolver
+         * logic.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/CreateFunction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateFunctionAsync(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates a <code>GraphqlApi</code> object.</p><p><h3>See Also:</h3>   <a
@@ -421,6 +482,31 @@ namespace Model
         virtual void DeleteDataSourceAsync(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteFunctionOutcome DeleteFunction(const Model::DeleteFunctionRequest& request) const;
+
+        /**
+         * <p>Deletes a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteFunctionOutcomeCallable DeleteFunctionCallable(const Model::DeleteFunctionRequest& request) const;
+
+        /**
+         * <p>Deletes a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteFunction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteFunctionAsync(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deletes a <code>GraphqlApi</code> object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/DeleteGraphqlApi">AWS
          * API Reference</a></p>
@@ -519,6 +605,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetDataSourceAsync(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Get a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetFunctionOutcome GetFunction(const Model::GetFunctionRequest& request) const;
+
+        /**
+         * <p>Get a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetFunctionOutcomeCallable GetFunctionCallable(const Model::GetFunctionRequest& request) const;
+
+        /**
+         * <p>Get a <code>Function</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/GetFunction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetFunctionAsync(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a <code>GraphqlApi</code> object.</p><p><h3>See Also:</h3>   <a
@@ -714,6 +825,31 @@ namespace Model
         virtual void ListDataSourcesAsync(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>List multiple functions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListFunctionsOutcome ListFunctions(const Model::ListFunctionsRequest& request) const;
+
+        /**
+         * <p>List multiple functions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListFunctionsOutcomeCallable ListFunctionsCallable(const Model::ListFunctionsRequest& request) const;
+
+        /**
+         * <p>List multiple functions.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListFunctions">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListFunctionsAsync(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Lists your GraphQL APIs.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListGraphqlApis">AWS
          * API Reference</a></p>
@@ -762,6 +898,34 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void ListResolversAsync(const Model::ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>List the resolvers that are associated with a specific
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ListResolversByFunctionOutcome ListResolversByFunction(const Model::ListResolversByFunctionRequest& request) const;
+
+        /**
+         * <p>List the resolvers that are associated with a specific
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ListResolversByFunctionOutcomeCallable ListResolversByFunctionCallable(const Model::ListResolversByFunctionRequest& request) const;
+
+        /**
+         * <p>List the resolvers that are associated with a specific
+         * function.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/ListResolversByFunction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ListResolversByFunctionAsync(const Model::ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Lists the types for a given API.</p><p><h3>See Also:</h3>   <a
@@ -867,6 +1031,31 @@ namespace Model
         virtual void UpdateDataSourceAsync(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a <code>Function</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateFunctionOutcome UpdateFunction(const Model::UpdateFunctionRequest& request) const;
+
+        /**
+         * <p>Updates a <code>Function</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateFunctionOutcomeCallable UpdateFunctionCallable(const Model::UpdateFunctionRequest& request) const;
+
+        /**
+         * <p>Updates a <code>Function</code> object.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateFunction">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateFunctionAsync(const Model::UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Updates a <code>GraphqlApi</code> object.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/appsync-2017-07-25/UpdateGraphqlApi">AWS
          * API Reference</a></p>
@@ -941,22 +1130,25 @@ namespace Model
          */
         virtual void UpdateTypeAsync(const Model::UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateApiKeyAsyncHelper(const Model::CreateApiKeyRequest& request, const CreateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateDataSourceAsyncHelper(const Model::CreateDataSourceRequest& request, const CreateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateFunctionAsyncHelper(const Model::CreateFunctionRequest& request, const CreateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateGraphqlApiAsyncHelper(const Model::CreateGraphqlApiRequest& request, const CreateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateResolverAsyncHelper(const Model::CreateResolverRequest& request, const CreateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTypeAsyncHelper(const Model::CreateTypeRequest& request, const CreateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApiKeyAsyncHelper(const Model::DeleteApiKeyRequest& request, const DeleteApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteDataSourceAsyncHelper(const Model::DeleteDataSourceRequest& request, const DeleteDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteFunctionAsyncHelper(const Model::DeleteFunctionRequest& request, const DeleteFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGraphqlApiAsyncHelper(const Model::DeleteGraphqlApiRequest& request, const DeleteGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteResolverAsyncHelper(const Model::DeleteResolverRequest& request, const DeleteResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteTypeAsyncHelper(const Model::DeleteTypeRequest& request, const DeleteTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDataSourceAsyncHelper(const Model::GetDataSourceRequest& request, const GetDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetFunctionAsyncHelper(const Model::GetFunctionRequest& request, const GetFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetGraphqlApiAsyncHelper(const Model::GetGraphqlApiRequest& request, const GetGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetIntrospectionSchemaAsyncHelper(const Model::GetIntrospectionSchemaRequest& request, const GetIntrospectionSchemaResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetResolverAsyncHelper(const Model::GetResolverRequest& request, const GetResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -964,17 +1156,21 @@ namespace Model
         void GetTypeAsyncHelper(const Model::GetTypeRequest& request, const GetTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListApiKeysAsyncHelper(const Model::ListApiKeysRequest& request, const ListApiKeysResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListDataSourcesAsyncHelper(const Model::ListDataSourcesRequest& request, const ListDataSourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListFunctionsAsyncHelper(const Model::ListFunctionsRequest& request, const ListFunctionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListGraphqlApisAsyncHelper(const Model::ListGraphqlApisRequest& request, const ListGraphqlApisResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListResolversAsyncHelper(const Model::ListResolversRequest& request, const ListResolversResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ListResolversByFunctionAsyncHelper(const Model::ListResolversByFunctionRequest& request, const ListResolversByFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTypesAsyncHelper(const Model::ListTypesRequest& request, const ListTypesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartSchemaCreationAsyncHelper(const Model::StartSchemaCreationRequest& request, const StartSchemaCreationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApiKeyAsyncHelper(const Model::UpdateApiKeyRequest& request, const UpdateApiKeyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateDataSourceAsyncHelper(const Model::UpdateDataSourceRequest& request, const UpdateDataSourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateFunctionAsyncHelper(const Model::UpdateFunctionRequest& request, const UpdateFunctionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGraphqlApiAsyncHelper(const Model::UpdateGraphqlApiRequest& request, const UpdateGraphqlApiResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateResolverAsyncHelper(const Model::UpdateResolverRequest& request, const UpdateResolverResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateTypeAsyncHelper(const Model::UpdateTypeRequest& request, const UpdateTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

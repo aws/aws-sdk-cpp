@@ -25,12 +25,16 @@ using namespace Aws::Utils;
 CreateInputRequest::CreateInputRequest() : 
     m_destinationsHasBeenSet(false),
     m_inputSecurityGroupsHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
+    m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_vpcHasBeenSet(false)
 {
 }
 
@@ -60,6 +64,17 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   }
 
+  if(m_mediaConnectFlowsHasBeenSet)
+  {
+   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+   {
+     mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
+   }
+   payload.WithArray("mediaConnectFlows", std::move(mediaConnectFlowsJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
@@ -69,6 +84,12 @@ Aws::String CreateInputRequest::SerializePayload() const
   if(m_requestIdHasBeenSet)
   {
    payload.WithString("requestId", m_requestId);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -83,9 +104,26 @@ Aws::String CreateInputRequest::SerializePayload() const
 
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
   if(m_typeHasBeenSet)
   {
    payload.WithString("type", InputTypeMapper::GetNameForInputType(m_type));
+  }
+
+  if(m_vpcHasBeenSet)
+  {
+   payload.WithObject("vpc", m_vpc.Jsonize());
+
   }
 
   return payload.View().WriteReadable();

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The time when the event occurred. </p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time when the event occurred. </p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The name of the server on or for which the event occurred. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>The name of the server on or for which the event occurred. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>The name of the server on or for which the event occurred. </p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>A human-readable informational or status message.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A human-readable informational or status message.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p>The Amazon S3 URL of the event's log file.</p>
      */
     inline const Aws::String& GetLogUrl() const{ return m_logUrl; }
+
+    /**
+     * <p>The Amazon S3 URL of the event's log file.</p>
+     */
+    inline bool LogUrlHasBeenSet() const { return m_logUrlHasBeenSet; }
 
     /**
      * <p>The Amazon S3 URL of the event's log file.</p>

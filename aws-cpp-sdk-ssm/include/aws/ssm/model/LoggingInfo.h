@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
      */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of an Amazon S3 bucket where execution logs are stored .</p>
+     */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>(Optional) The Amazon S3 bucket subfolder. </p>
      */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
+
+    /**
+     * <p>(Optional) The Amazon S3 bucket subfolder. </p>
+     */
     inline void SetS3KeyPrefix(const Aws::String& value) { m_s3KeyPrefixHasBeenSet = true; m_s3KeyPrefix = value; }
 
     /**
@@ -130,6 +140,11 @@ namespace Model
      * <p>The region where the Amazon S3 bucket is located.</p>
      */
     inline const Aws::String& GetS3Region() const{ return m_s3Region; }
+
+    /**
+     * <p>The region where the Amazon S3 bucket is located.</p>
+     */
+    inline bool S3RegionHasBeenSet() const { return m_s3RegionHasBeenSet; }
 
     /**
      * <p>The region where the Amazon S3 bucket is located.</p>

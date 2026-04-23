@@ -59,6 +59,12 @@ namespace Model
      * <p>Describes an AWS account's compliance with the AWS Firewall Manager
      * policy.</p>
      */
+    inline bool ComplianceStatusHasBeenSet() const { return m_complianceStatusHasBeenSet; }
+
+    /**
+     * <p>Describes an AWS account's compliance with the AWS Firewall Manager
+     * policy.</p>
+     */
     inline void SetComplianceStatus(const PolicyComplianceStatusType& value) { m_complianceStatusHasBeenSet = true; m_complianceStatus = value; }
 
     /**
@@ -92,6 +98,13 @@ namespace Model
      * resource is considered non-compliant if it is not associated with the specified
      * policy.</p>
      */
+    inline bool ViolatorCountHasBeenSet() const { return m_violatorCountHasBeenSet; }
+
+    /**
+     * <p>Number of resources that are non-compliant with the specified policy. A
+     * resource is considered non-compliant if it is not associated with the specified
+     * policy.</p>
+     */
     inline void SetViolatorCount(long long value) { m_violatorCountHasBeenSet = true; m_violatorCount = value; }
 
     /**
@@ -107,6 +120,12 @@ namespace Model
      * Manager policy.</p>
      */
     inline bool GetEvaluationLimitExceeded() const{ return m_evaluationLimitExceeded; }
+
+    /**
+     * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall
+     * Manager policy.</p>
+     */
+    inline bool EvaluationLimitExceededHasBeenSet() const { return m_evaluationLimitExceededHasBeenSet; }
 
     /**
      * <p>Indicates that over 100 resources are non-compliant with the AWS Firewall

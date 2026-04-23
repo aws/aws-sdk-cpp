@@ -41,7 +41,7 @@ namespace Model
    * used in <a>MatchmakingConfiguration</a> objects.</p> <p>A rule set may define
    * the following elements for a match. For detailed information and examples
    * showing how to construct a rule set, see <a
-   * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/match-rulesets.html">Build
    * a FlexMatch Rule Set</a>. </p> <ul> <li> <p>Teams -- Required. A rule set must
    * define one or multiple teams for the match and set minimum and maximum team
    * sizes. For example, a rule set might describe a 4x4 match that requires all
@@ -83,6 +83,11 @@ namespace Model
     /**
      * <p>Unique identifier for a matchmaking rule set</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking rule set</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -117,6 +122,13 @@ namespace Model
      * field.)</p>
      */
     inline const Aws::String& GetRuleSetBody() const{ return m_ruleSetBody; }
+
+    /**
+     * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
+     * comments14 are not allowed in JSON, but most elements support a description
+     * field.)</p>
+     */
+    inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
 
     /**
      * <p>Collection of matchmaking rules, formatted as a JSON string. (Note that
@@ -166,6 +178,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number

@@ -38,7 +38,8 @@ JobDefinition::JobDefinition() :
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_nodePropertiesHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ JobDefinition::JobDefinition(JsonView jsonValue) :
     m_parametersHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_containerPropertiesHasBeenSet(false),
-    m_timeoutHasBeenSet(false)
+    m_timeoutHasBeenSet(false),
+    m_nodePropertiesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -125,6 +127,13 @@ JobDefinition& JobDefinition::operator =(JsonView jsonValue)
     m_timeoutHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("nodeProperties"))
+  {
+    m_nodeProperties = jsonValue.GetObject("nodeProperties");
+
+    m_nodePropertiesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -188,6 +197,12 @@ JsonValue JobDefinition::Jsonize() const
   if(m_timeoutHasBeenSet)
   {
    payload.WithObject("timeout", m_timeout.Jsonize());
+
+  }
+
+  if(m_nodePropertiesHasBeenSet)
+  {
+   payload.WithObject("nodeProperties", m_nodeProperties.Jsonize());
 
   }
 

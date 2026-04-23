@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Number of active discovery connectors.</p>
      */
+    inline bool ActiveConnectorsHasBeenSet() const { return m_activeConnectorsHasBeenSet; }
+
+    /**
+     * <p>Number of active discovery connectors.</p>
+     */
     inline void SetActiveConnectors(int value) { m_activeConnectorsHasBeenSet = true; m_activeConnectors = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>Number of healthy discovery connectors.</p>
      */
     inline int GetHealthyConnectors() const{ return m_healthyConnectors; }
+
+    /**
+     * <p>Number of healthy discovery connectors.</p>
+     */
+    inline bool HealthyConnectorsHasBeenSet() const { return m_healthyConnectorsHasBeenSet; }
 
     /**
      * <p>Number of healthy discovery connectors.</p>
@@ -86,6 +96,11 @@ namespace Model
     /**
      * <p>Number of blacklisted discovery connectors.</p>
      */
+    inline bool BlackListedConnectorsHasBeenSet() const { return m_blackListedConnectorsHasBeenSet; }
+
+    /**
+     * <p>Number of blacklisted discovery connectors.</p>
+     */
     inline void SetBlackListedConnectors(int value) { m_blackListedConnectorsHasBeenSet = true; m_blackListedConnectors = value; }
 
     /**
@@ -98,6 +113,11 @@ namespace Model
      * <p>Number of discovery connectors with status SHUTDOWN,</p>
      */
     inline int GetShutdownConnectors() const{ return m_shutdownConnectors; }
+
+    /**
+     * <p>Number of discovery connectors with status SHUTDOWN,</p>
+     */
+    inline bool ShutdownConnectorsHasBeenSet() const { return m_shutdownConnectorsHasBeenSet; }
 
     /**
      * <p>Number of discovery connectors with status SHUTDOWN,</p>
@@ -118,6 +138,11 @@ namespace Model
     /**
      * <p>Number of unhealthy discovery connectors.</p>
      */
+    inline bool UnhealthyConnectorsHasBeenSet() const { return m_unhealthyConnectorsHasBeenSet; }
+
+    /**
+     * <p>Number of unhealthy discovery connectors.</p>
+     */
     inline void SetUnhealthyConnectors(int value) { m_unhealthyConnectorsHasBeenSet = true; m_unhealthyConnectors = value; }
 
     /**
@@ -134,6 +159,11 @@ namespace Model
     /**
      * <p>Total number of discovery connectors.</p>
      */
+    inline bool TotalConnectorsHasBeenSet() const { return m_totalConnectorsHasBeenSet; }
+
+    /**
+     * <p>Total number of discovery connectors.</p>
+     */
     inline void SetTotalConnectors(int value) { m_totalConnectorsHasBeenSet = true; m_totalConnectors = value; }
 
     /**
@@ -146,6 +176,11 @@ namespace Model
      * <p>Number of unknown discovery connectors.</p>
      */
     inline int GetUnknownConnectors() const{ return m_unknownConnectors; }
+
+    /**
+     * <p>Number of unknown discovery connectors.</p>
+     */
+    inline bool UnknownConnectorsHasBeenSet() const { return m_unknownConnectorsHasBeenSet; }
 
     /**
      * <p>Number of unknown discovery connectors.</p>

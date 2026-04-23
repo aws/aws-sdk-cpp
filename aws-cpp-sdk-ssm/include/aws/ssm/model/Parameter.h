@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The type of parameter. Valid values include the following: String, String
      * list, Secure string.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of parameter. Valid values include the following: String, String
+     * list, Secure string.</p>
+     */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>The parameter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The parameter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value.</p>
@@ -161,6 +177,11 @@ namespace Model
     /**
      * <p>The parameter version.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The parameter version.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -175,6 +196,13 @@ namespace Model
      * <p>parameter_name:version</p> <p>parameter_name:label</p>
      */
     inline const Aws::String& GetSelector() const{ return m_selector; }
+
+    /**
+     * <p>Either the version number or the label used to retrieve the parameter value.
+     * Specify selectors by using one of the following formats:</p>
+     * <p>parameter_name:version</p> <p>parameter_name:label</p>
+     */
+    inline bool SelectorHasBeenSet() const { return m_selectorHasBeenSet; }
 
     /**
      * <p>Either the version number or the label used to retrieve the parameter value.
@@ -229,6 +257,12 @@ namespace Model
      * <p>Applies to parameters that reference information in other AWS services.
      * SourceResult is the raw result or response from the source.</p>
      */
+    inline bool SourceResultHasBeenSet() const { return m_sourceResultHasBeenSet; }
+
+    /**
+     * <p>Applies to parameters that reference information in other AWS services.
+     * SourceResult is the raw result or response from the source.</p>
+     */
     inline void SetSourceResult(const Aws::String& value) { m_sourceResultHasBeenSet = true; m_sourceResult = value; }
 
     /**
@@ -272,6 +306,12 @@ namespace Model
      * <p>Date the parameter was last changed or updated and the parameter version was
      * created.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>Date the parameter was last changed or updated and the parameter version was
+     * created.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -297,6 +337,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the parameter.</p>
      */
     inline const Aws::String& GetARN() const{ return m_aRN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the parameter.</p>
+     */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the parameter.</p>

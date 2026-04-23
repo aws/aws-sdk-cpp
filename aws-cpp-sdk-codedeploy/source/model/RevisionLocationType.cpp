@@ -33,6 +33,7 @@ namespace Aws
         static const int S3_HASH = HashingUtils::HashString("S3");
         static const int GitHub_HASH = HashingUtils::HashString("GitHub");
         static const int String_HASH = HashingUtils::HashString("String");
+        static const int AppSpecContent_HASH = HashingUtils::HashString("AppSpecContent");
 
 
         RevisionLocationType GetRevisionLocationTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == String_HASH)
           {
             return RevisionLocationType::String;
+          }
+          else if (hashCode == AppSpecContent_HASH)
+          {
+            return RevisionLocationType::AppSpecContent;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "GitHub";
           case RevisionLocationType::String:
             return "String";
+          case RevisionLocationType::AppSpecContent:
+            return "AppSpecContent";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -77,7 +84,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

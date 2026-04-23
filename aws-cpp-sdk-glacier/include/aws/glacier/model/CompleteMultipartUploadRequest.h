@@ -67,6 +67,15 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -123,6 +132,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -155,6 +169,11 @@ namespace Model
      * <p>The upload ID of the multipart upload.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>The upload ID of the multipart upload.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>The upload ID of the multipart upload.</p>
@@ -192,6 +211,12 @@ namespace Model
      * of all the sizes of the individual parts that you uploaded.</p>
      */
     inline const Aws::String& GetArchiveSize() const{ return m_archiveSize; }
+
+    /**
+     * <p>The total size, in bytes, of the entire archive. This value should be the sum
+     * of all the sizes of the individual parts that you uploaded.</p>
+     */
+    inline bool ArchiveSizeHasBeenSet() const { return m_archiveSizeHasBeenSet; }
 
     /**
      * <p>The total size, in bytes, of the entire archive. This value should be the sum
@@ -237,6 +262,14 @@ namespace Model
      * Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256
+     * tree hash of the individual parts. If the value you specify in the request does
+     * not match the SHA256 tree hash of the final assembled archive as computed by
+     * Amazon Glacier, Amazon Glacier returns an error and the request fails.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>The SHA256 tree hash of the entire archive. It is the tree hash of SHA256

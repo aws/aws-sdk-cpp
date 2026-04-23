@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name of the Maintenance Window.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Maintenance Window.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>A description of the Maintenance Window.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the Maintenance Window.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p>Whether the Maintenance Window is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Whether the Maintenance Window is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -175,6 +195,11 @@ namespace Model
      * <p>The duration of the Maintenance Window in hours.</p>
      */
     inline int GetDuration() const{ return m_duration; }
+
+    /**
+     * <p>The duration of the Maintenance Window in hours.</p>
+     */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
 
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
@@ -197,6 +222,12 @@ namespace Model
      * <p>The number of hours before the end of the Maintenance Window that Systems
      * Manager stops scheduling new tasks for execution.</p>
      */
+    inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
+
+    /**
+     * <p>The number of hours before the end of the Maintenance Window that Systems
+     * Manager stops scheduling new tasks for execution.</p>
+     */
     inline void SetCutoff(int value) { m_cutoffHasBeenSet = true; m_cutoff = value; }
 
     /**
@@ -211,6 +242,12 @@ namespace Model
      * expression.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
@@ -259,6 +296,12 @@ namespace Model
      * <p>The time zone that the scheduled Maintenance Window executions are based on,
      * in Internet Assigned Numbers Authority (IANA) format.</p>
      */
+    inline bool ScheduleTimezoneHasBeenSet() const { return m_scheduleTimezoneHasBeenSet; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format.</p>
+     */
     inline void SetScheduleTimezone(const Aws::String& value) { m_scheduleTimezoneHasBeenSet = true; m_scheduleTimezone = value; }
 
     /**
@@ -297,6 +340,12 @@ namespace Model
      * Window is scheduled to become inactive.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become inactive.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
@@ -345,6 +394,12 @@ namespace Model
      * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
      * Window is scheduled to become active.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when the Maintenance
+     * Window is scheduled to become active.</p>
+     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -383,6 +438,12 @@ namespace Model
      * any specified times for the Maintenance Window to become active or inactive.</p>
      */
     inline const Aws::String& GetNextExecutionTime() const{ return m_nextExecutionTime; }
+
+    /**
+     * <p>The next time the Maintenance Window will actually run, taking into account
+     * any specified times for the Maintenance Window to become active or inactive.</p>
+     */
+    inline bool NextExecutionTimeHasBeenSet() const { return m_nextExecutionTimeHasBeenSet; }
 
     /**
      * <p>The next time the Maintenance Window will actually run, taking into account

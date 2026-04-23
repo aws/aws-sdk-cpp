@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>A list of identities.</p>
      */
+    inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
+
+    /**
+     * <p>A list of identities.</p>
+     */
     inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
     /**

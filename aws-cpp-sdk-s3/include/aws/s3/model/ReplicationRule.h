@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
      */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the rule. The maximum value is 255 characters.</p>
+     */
     inline void SetID(const Aws::String& value) { m_iDHasBeenSet = true; m_iD = value; }
 
     /**
@@ -115,6 +120,20 @@ namespace Model
      * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
      * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
      */
+    inline bool PriorityHasBeenSet() const { return m_priorityHasBeenSet; }
+
+    /**
+     * <p>The priority associated with the rule. If you specify multiple rules in a
+     * replication configuration, Amazon S3 prioritizes the rules to prevent conflicts
+     * when filtering. If two or more rules identify the same object based on a
+     * specified filter, the rule with higher priority takes precedence. For
+     * example:</p> <ul> <li> <p>Same object quality prefix based filter criteria If
+     * prefixes you specified in multiple rules overlap </p> </li> <li> <p>Same object
+     * qualify tag based filter criteria specified in multiple rules</p> </li> </ul>
+     * <p>For more information, see <a href="
+     * https://docs.aws.amazon.com/AmazonS3/latest/dev/crr.html">Cross-Region
+     * Replication (CRR)</a> in the <i>Amazon S3 Developer Guide</i>.</p>
+     */
     inline void SetPriority(int value) { m_priorityHasBeenSet = true; m_priority = value; }
 
     /**
@@ -136,6 +155,9 @@ namespace Model
     inline const ReplicationRuleFilter& GetFilter() const{ return m_filter; }
 
     
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    
     inline void SetFilter(const ReplicationRuleFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     
@@ -152,6 +174,11 @@ namespace Model
      * <p>If status isn't enabled, the rule is ignored.</p>
      */
     inline const ReplicationRuleStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>If status isn't enabled, the rule is ignored.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>If status isn't enabled, the rule is ignored.</p>
@@ -183,6 +210,16 @@ namespace Model
      * created with server-side encryption using AWS KMS-Managed Keys. </p>
      */
     inline const SourceSelectionCriteria& GetSourceSelectionCriteria() const{ return m_sourceSelectionCriteria; }
+
+    /**
+     * <p>A container that describes additional filters for identifying the source
+     * objects that you want to replicate. You can choose to enable or disable the
+     * replication of these objects. Currently, Amazon S3 supports only the filter that
+     * you can specify for objects created with server-side encryption using an AWS
+     * KMS-Managed Key (SSE-KMS). </p> <p> If you want Amazon S3 to replicate objects
+     * created with server-side encryption using AWS KMS-Managed Keys. </p>
+     */
+    inline bool SourceSelectionCriteriaHasBeenSet() const { return m_sourceSelectionCriteriaHasBeenSet; }
 
     /**
      * <p>A container that describes additional filters for identifying the source
@@ -233,6 +270,11 @@ namespace Model
     /**
      * <p>A container for information about the replication destination.</p>
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * <p>A container for information about the replication destination.</p>
+     */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -253,6 +295,9 @@ namespace Model
 
     
     inline const DeleteMarkerReplication& GetDeleteMarkerReplication() const{ return m_deleteMarkerReplication; }
+
+    
+    inline bool DeleteMarkerReplicationHasBeenSet() const { return m_deleteMarkerReplicationHasBeenSet; }
 
     
     inline void SetDeleteMarkerReplication(const DeleteMarkerReplication& value) { m_deleteMarkerReplicationHasBeenSet = true; m_deleteMarkerReplication = value; }

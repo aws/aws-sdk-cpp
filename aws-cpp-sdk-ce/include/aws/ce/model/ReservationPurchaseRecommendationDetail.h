@@ -49,25 +49,44 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline void SetAccountId(Aws::String&& value) { m_accountIdHasBeenSet = true; m_accountId = std::move(value); }
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline void SetAccountId(const char* value) { m_accountIdHasBeenSet = true; m_accountId.assign(value); }
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(const Aws::String& value) { SetAccountId(value); return *this;}
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(Aws::String&& value) { SetAccountId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The account that this RI recommendation is for.</p>
+     */
     inline ReservationPurchaseRecommendationDetail& WithAccountId(const char* value) { SetAccountId(value); return *this;}
 
 
@@ -75,6 +94,11 @@ namespace Model
      * <p>Details about the instances that AWS recommends that you purchase.</p>
      */
     inline const InstanceDetails& GetInstanceDetails() const{ return m_instanceDetails; }
+
+    /**
+     * <p>Details about the instances that AWS recommends that you purchase.</p>
+     */
+    inline bool InstanceDetailsHasBeenSet() const { return m_instanceDetailsHasBeenSet; }
 
     /**
      * <p>Details about the instances that AWS recommends that you purchase.</p>
@@ -101,6 +125,11 @@ namespace Model
      * <p>The number of instances that AWS recommends that you purchase.</p>
      */
     inline const Aws::String& GetRecommendedNumberOfInstancesToPurchase() const{ return m_recommendedNumberOfInstancesToPurchase; }
+
+    /**
+     * <p>The number of instances that AWS recommends that you purchase.</p>
+     */
+    inline bool RecommendedNumberOfInstancesToPurchaseHasBeenSet() const { return m_recommendedNumberOfInstancesToPurchaseHasBeenSet; }
 
     /**
      * <p>The number of instances that AWS recommends that you purchase.</p>
@@ -141,6 +170,11 @@ namespace Model
     /**
      * <p>The number of normalized units that AWS recommends that you purchase.</p>
      */
+    inline bool RecommendedNormalizedUnitsToPurchaseHasBeenSet() const { return m_recommendedNormalizedUnitsToPurchaseHasBeenSet; }
+
+    /**
+     * <p>The number of normalized units that AWS recommends that you purchase.</p>
+     */
     inline void SetRecommendedNormalizedUnitsToPurchase(const Aws::String& value) { m_recommendedNormalizedUnitsToPurchaseHasBeenSet = true; m_recommendedNormalizedUnitsToPurchase = value; }
 
     /**
@@ -175,6 +209,13 @@ namespace Model
      * purchases.</p>
      */
     inline const Aws::String& GetMinimumNumberOfInstancesUsedPerHour() const{ return m_minimumNumberOfInstancesUsedPerHour; }
+
+    /**
+     * <p>The minimum number of instances that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
+    inline bool MinimumNumberOfInstancesUsedPerHourHasBeenSet() const { return m_minimumNumberOfInstancesUsedPerHourHasBeenSet; }
 
     /**
      * <p>The minimum number of instances that you used in an hour during the
@@ -220,44 +261,58 @@ namespace Model
 
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline const Aws::String& GetMinimumNormalizedUnitsUsedPerHour() const{ return m_minimumNormalizedUnitsUsedPerHour; }
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
+    inline bool MinimumNormalizedUnitsUsedPerHourHasBeenSet() const { return m_minimumNormalizedUnitsUsedPerHourHasBeenSet; }
+
+    /**
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline void SetMinimumNormalizedUnitsUsedPerHour(const Aws::String& value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour = value; }
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline void SetMinimumNormalizedUnitsUsedPerHour(Aws::String&& value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour = std::move(value); }
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline void SetMinimumNormalizedUnitsUsedPerHour(const char* value) { m_minimumNormalizedUnitsUsedPerHourHasBeenSet = true; m_minimumNormalizedUnitsUsedPerHour.assign(value); }
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(const Aws::String& value) { SetMinimumNormalizedUnitsUsedPerHour(value); return *this;}
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(Aws::String&& value) { SetMinimumNormalizedUnitsUsedPerHour(std::move(value)); return *this;}
 
     /**
-     * <p>The minimum number of hours that you used in an hour during the historical
-     * period. AWS uses this to calculate your recommended reservation purchases.</p>
+     * <p>The minimum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
      */
     inline ReservationPurchaseRecommendationDetail& WithMinimumNormalizedUnitsUsedPerHour(const char* value) { SetMinimumNormalizedUnitsUsedPerHour(value); return *this;}
 
@@ -268,6 +323,13 @@ namespace Model
      * purchases.</p>
      */
     inline const Aws::String& GetMaximumNumberOfInstancesUsedPerHour() const{ return m_maximumNumberOfInstancesUsedPerHour; }
+
+    /**
+     * <p>The maximum number of instances that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
+    inline bool MaximumNumberOfInstancesUsedPerHourHasBeenSet() const { return m_maximumNumberOfInstancesUsedPerHourHasBeenSet; }
 
     /**
      * <p>The maximum number of instances that you used in an hour during the
@@ -324,6 +386,13 @@ namespace Model
      * historical period. AWS uses this to calculate your recommended reservation
      * purchases.</p>
      */
+    inline bool MaximumNormalizedUnitsUsedPerHourHasBeenSet() const { return m_maximumNormalizedUnitsUsedPerHourHasBeenSet; }
+
+    /**
+     * <p>The maximum number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
     inline void SetMaximumNormalizedUnitsUsedPerHour(const Aws::String& value) { m_maximumNormalizedUnitsUsedPerHourHasBeenSet = true; m_maximumNormalizedUnitsUsedPerHour = value; }
 
     /**
@@ -368,6 +437,13 @@ namespace Model
      * purchases.</p>
      */
     inline const Aws::String& GetAverageNumberOfInstancesUsedPerHour() const{ return m_averageNumberOfInstancesUsedPerHour; }
+
+    /**
+     * <p>The average number of instances that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
+    inline bool AverageNumberOfInstancesUsedPerHourHasBeenSet() const { return m_averageNumberOfInstancesUsedPerHourHasBeenSet; }
 
     /**
      * <p>The average number of instances that you used in an hour during the
@@ -424,6 +500,13 @@ namespace Model
      * historical period. AWS uses this to calculate your recommended reservation
      * purchases.</p>
      */
+    inline bool AverageNormalizedUnitsUsedPerHourHasBeenSet() const { return m_averageNormalizedUnitsUsedPerHourHasBeenSet; }
+
+    /**
+     * <p>The average number of normalized units that you used in an hour during the
+     * historical period. AWS uses this to calculate your recommended reservation
+     * purchases.</p>
+     */
     inline void SetAverageNormalizedUnitsUsedPerHour(const Aws::String& value) { m_averageNormalizedUnitsUsedPerHourHasBeenSet = true; m_averageNormalizedUnitsUsedPerHour = value; }
 
     /**
@@ -472,6 +555,12 @@ namespace Model
      * <p>The average utilization of your instances. AWS uses this to calculate your
      * recommended reservation purchases.</p>
      */
+    inline bool AverageUtilizationHasBeenSet() const { return m_averageUtilizationHasBeenSet; }
+
+    /**
+     * <p>The average utilization of your instances. AWS uses this to calculate your
+     * recommended reservation purchases.</p>
+     */
     inline void SetAverageUtilization(const Aws::String& value) { m_averageUtilizationHasBeenSet = true; m_averageUtilization = value; }
 
     /**
@@ -510,6 +599,12 @@ namespace Model
      * money, in months.</p>
      */
     inline const Aws::String& GetEstimatedBreakEvenInMonths() const{ return m_estimatedBreakEvenInMonths; }
+
+    /**
+     * <p>How long AWS estimates that it takes for this instance to start saving you
+     * money, in months.</p>
+     */
+    inline bool EstimatedBreakEvenInMonthsHasBeenSet() const { return m_estimatedBreakEvenInMonthsHasBeenSet; }
 
     /**
      * <p>How long AWS estimates that it takes for this instance to start saving you
@@ -556,6 +651,11 @@ namespace Model
     /**
      * <p>The currency code that AWS used to calculate the costs for this instance.</p>
      */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+
+    /**
+     * <p>The currency code that AWS used to calculate the costs for this instance.</p>
+     */
     inline void SetCurrencyCode(const Aws::String& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
@@ -589,6 +689,12 @@ namespace Model
      * month.</p>
      */
     inline const Aws::String& GetEstimatedMonthlySavingsAmount() const{ return m_estimatedMonthlySavingsAmount; }
+
+    /**
+     * <p>How much AWS estimates that this specific recommendation could save you in a
+     * month.</p>
+     */
+    inline bool EstimatedMonthlySavingsAmountHasBeenSet() const { return m_estimatedMonthlySavingsAmountHasBeenSet; }
 
     /**
      * <p>How much AWS estimates that this specific recommendation could save you in a
@@ -637,6 +743,12 @@ namespace Model
      * <p>How much AWS estimates that this specific recommendation could save you in a
      * month, as a percentage of your overall costs.</p>
      */
+    inline bool EstimatedMonthlySavingsPercentageHasBeenSet() const { return m_estimatedMonthlySavingsPercentageHasBeenSet; }
+
+    /**
+     * <p>How much AWS estimates that this specific recommendation could save you in a
+     * month, as a percentage of your overall costs.</p>
+     */
     inline void SetEstimatedMonthlySavingsPercentage(const Aws::String& value) { m_estimatedMonthlySavingsPercentageHasBeenSet = true; m_estimatedMonthlySavingsPercentage = value; }
 
     /**
@@ -678,6 +790,11 @@ namespace Model
     /**
      * <p>How much AWS estimates that you spend on On-Demand Instances in a month.</p>
      */
+    inline bool EstimatedMonthlyOnDemandCostHasBeenSet() const { return m_estimatedMonthlyOnDemandCostHasBeenSet; }
+
+    /**
+     * <p>How much AWS estimates that you spend on On-Demand Instances in a month.</p>
+     */
     inline void SetEstimatedMonthlyOnDemandCost(const Aws::String& value) { m_estimatedMonthlyOnDemandCostHasBeenSet = true; m_estimatedMonthlyOnDemandCost = value; }
 
     /**
@@ -711,6 +828,12 @@ namespace Model
      * specified historical period if you had had a reservation.</p>
      */
     inline const Aws::String& GetEstimatedReservationCostForLookbackPeriod() const{ return m_estimatedReservationCostForLookbackPeriod; }
+
+    /**
+     * <p>How much AWS estimates that you would have spent for all usage during the
+     * specified historical period if you had had a reservation.</p>
+     */
+    inline bool EstimatedReservationCostForLookbackPeriodHasBeenSet() const { return m_estimatedReservationCostForLookbackPeriodHasBeenSet; }
 
     /**
      * <p>How much AWS estimates that you would have spent for all usage during the
@@ -757,6 +880,11 @@ namespace Model
     /**
      * <p>How much purchasing this instance costs you upfront.</p>
      */
+    inline bool UpfrontCostHasBeenSet() const { return m_upfrontCostHasBeenSet; }
+
+    /**
+     * <p>How much purchasing this instance costs you upfront.</p>
+     */
     inline void SetUpfrontCost(const Aws::String& value) { m_upfrontCostHasBeenSet = true; m_upfrontCost = value; }
 
     /**
@@ -789,6 +917,11 @@ namespace Model
      * <p>How much purchasing this instance costs you on a monthly basis.</p>
      */
     inline const Aws::String& GetRecurringStandardMonthlyCost() const{ return m_recurringStandardMonthlyCost; }
+
+    /**
+     * <p>How much purchasing this instance costs you on a monthly basis.</p>
+     */
+    inline bool RecurringStandardMonthlyCostHasBeenSet() const { return m_recurringStandardMonthlyCostHasBeenSet; }
 
     /**
      * <p>How much purchasing this instance costs you on a monthly basis.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Identifier of the trust relationship.</p>
      */
+    inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the trust relationship.</p>
+     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Updates selective authentication for the trust.</p>
      */
     inline const SelectiveAuth& GetSelectiveAuth() const{ return m_selectiveAuth; }
+
+    /**
+     * <p>Updates selective authentication for the trust.</p>
+     */
+    inline bool SelectiveAuthHasBeenSet() const { return m_selectiveAuthHasBeenSet; }
 
     /**
      * <p>Updates selective authentication for the trust.</p>

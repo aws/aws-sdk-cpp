@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the repository where you want to post a comment on the comparison
      * between commits.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where you want to post a comment on the comparison
+     * between commits.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * 'before' commit.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+
+    /**
+     * <p>To establish the directionality of the comparison, the full commit ID of the
+     * 'before' commit.</p>
+     */
+    inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>To establish the directionality of the comparison, the full commit ID of the
@@ -142,6 +154,12 @@ namespace Model
      * <p>To establish the directionality of the comparison, the full commit ID of the
      * 'after' commit.</p>
      */
+    inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
+
+    /**
+     * <p>To establish the directionality of the comparison, the full commit ID of the
+     * 'after' commit.</p>
+     */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
@@ -183,6 +201,11 @@ namespace Model
     /**
      * <p>The location of the comparison where you want to comment.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>The location of the comparison where you want to comment.</p>
+     */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -205,6 +228,11 @@ namespace Model
      * <p>The content of the comment you want to make.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The content of the comment you want to make.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The content of the comment you want to make.</p>
@@ -244,6 +272,14 @@ namespace Model
      * return information about the initial request that used that token.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, client-generated idempotency token that when provided in a request,
+     * ensures the request cannot be repeated with a changed parameter. If a request is
+     * received with the same parameters and a token is included, the request will
+     * return information about the initial request that used that token.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, client-generated idempotency token that when provided in a request,

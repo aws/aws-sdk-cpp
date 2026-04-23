@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The data that populates a row in a query result table.</p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>The data that populates a row in a query result table.</p>
+     */
     inline void SetData(const Aws::Vector<Datum>& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**

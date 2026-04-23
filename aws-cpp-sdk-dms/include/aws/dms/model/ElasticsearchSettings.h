@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
      */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) used by service to access the IAM role.</p>
+     */
     inline void SetServiceAccessRoleArn(const Aws::String& value) { m_serviceAccessRoleArnHasBeenSet = true; m_serviceAccessRoleArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The endpoint for the ElasticSearch cluster.</p>
      */
     inline const Aws::String& GetEndpointUri() const{ return m_endpointUri; }
+
+    /**
+     * <p>The endpoint for the ElasticSearch cluster.</p>
+     */
+    inline bool EndpointUriHasBeenSet() const { return m_endpointUriHasBeenSet; }
 
     /**
      * <p>The endpoint for the ElasticSearch cluster.</p>
@@ -129,6 +139,12 @@ namespace Model
      * <p>The maximum percentage of records that can fail to be written before a full
      * load operation stops. </p>
      */
+    inline bool FullLoadErrorPercentageHasBeenSet() const { return m_fullLoadErrorPercentageHasBeenSet; }
+
+    /**
+     * <p>The maximum percentage of records that can fail to be written before a full
+     * load operation stops. </p>
+     */
     inline void SetFullLoadErrorPercentage(int value) { m_fullLoadErrorPercentageHasBeenSet = true; m_fullLoadErrorPercentage = value; }
 
     /**
@@ -143,6 +159,12 @@ namespace Model
      * Elasticsearch cluster.</p>
      */
     inline int GetErrorRetryDuration() const{ return m_errorRetryDuration; }
+
+    /**
+     * <p>The maximum number of seconds that DMS retries failed API requests to the
+     * Elasticsearch cluster.</p>
+     */
+    inline bool ErrorRetryDurationHasBeenSet() const { return m_errorRetryDurationHasBeenSet; }
 
     /**
      * <p>The maximum number of seconds that DMS retries failed API requests to the

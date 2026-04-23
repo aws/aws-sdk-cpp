@@ -57,6 +57,11 @@ namespace Model
     /**
      * A list of schedule actions to create.
      */
+    inline bool ScheduleActionsHasBeenSet() const { return m_scheduleActionsHasBeenSet; }
+
+    /**
+     * A list of schedule actions to create.
+     */
     inline void SetScheduleActions(const Aws::Vector<ScheduleAction>& value) { m_scheduleActionsHasBeenSet = true; m_scheduleActions = value; }
 
     /**

@@ -36,7 +36,7 @@ ListAccountsRequest::ListAccountsRequest() :
 
 Aws::String ListAccountsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListAccountsRequest::AddQueryStringParameters(URI& uri) const

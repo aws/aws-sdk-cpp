@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
      * create.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>[Required] The domain name of the <a>BasePathMapping</a> resource to
+     * create.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -96,6 +102,14 @@ namespace Model
      * name after the domain name.</p>
      */
     inline const Aws::String& GetBasePath() const{ return m_basePath; }
+
+    /**
+     * <p>The base path name that callers of the API must provide as part of the URL
+     * after the domain name. This value must be unique for all of the mappings across
+     * a single API. Leave this blank if you do not want callers to specify a base path
+     * name after the domain name.</p>
+     */
+    inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
 
     /**
      * <p>The base path name that callers of the API must provide as part of the URL
@@ -154,6 +168,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -188,6 +207,13 @@ namespace Model
      * base path name.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
+
+    /**
+     * <p>The name of the API's stage that you want to use for this mapping. Leave this
+     * blank if you do not want callers to explicitly specify the stage name after any
+     * base path name.</p>
+     */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>The name of the API's stage that you want to use for this mapping. Leave this

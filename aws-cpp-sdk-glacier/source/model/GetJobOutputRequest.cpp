@@ -33,7 +33,7 @@ GetJobOutputRequest::GetJobOutputRequest() :
 
 Aws::String GetJobOutputRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetJobOutputRequest::GetRequestSpecificHeaders() const

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The IAM instance profile.</p>
      */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
     inline void SetIamInstanceProfile(const IamInstanceProfileSpecification& value) { m_iamInstanceProfileHasBeenSet = true; m_iamInstanceProfile = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * <p>The ID of the existing IAM instance profile association.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID of the existing IAM instance profile association.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The ID of the existing IAM instance profile association.</p>

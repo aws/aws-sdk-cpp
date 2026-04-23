@@ -54,6 +54,11 @@ namespace Model
     /**
      * Unique reservation ID, e.g. '1234567'
      */
+    inline bool ReservationIdHasBeenSet() const { return m_reservationIdHasBeenSet; }
+
+    /**
+     * Unique reservation ID, e.g. '1234567'
+     */
     inline void SetReservationId(const Aws::String& value) { m_reservationIdHasBeenSet = true; m_reservationId = value; }
 
     /**

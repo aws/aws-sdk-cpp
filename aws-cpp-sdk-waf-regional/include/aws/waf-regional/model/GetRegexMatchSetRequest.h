@@ -56,6 +56,13 @@ namespace Model
      * get. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and
      * by <a>ListRegexMatchSets</a>.</p>
      */
+    inline bool RegexMatchSetIdHasBeenSet() const { return m_regexMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RegexMatchSetId</code> of the <a>RegexMatchSet</a> that you want to
+     * get. <code>RegexMatchSetId</code> is returned by <a>CreateRegexMatchSet</a> and
+     * by <a>ListRegexMatchSets</a>.</p>
+     */
     inline void SetRegexMatchSetId(const Aws::String& value) { m_regexMatchSetIdHasBeenSet = true; m_regexMatchSetId = value; }
 
     /**

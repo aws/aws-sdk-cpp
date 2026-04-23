@@ -24,10 +24,14 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/iot/IoTClient.h>
 #include <aws/iot/IoTEndpoint.h>
 #include <aws/iot/IoTErrorMarshaller.h>
 #include <aws/iot/model/AcceptCertificateTransferRequest.h>
+#include <aws/iot/model/AddThingToBillingGroupRequest.h>
 #include <aws/iot/model/AddThingToThingGroupRequest.h>
 #include <aws/iot/model/AssociateTargetsWithJobRequest.h>
 #include <aws/iot/model/AttachPolicyRequest.h>
@@ -39,7 +43,9 @@
 #include <aws/iot/model/CancelJobExecutionRequest.h>
 #include <aws/iot/model/ClearDefaultAuthorizerRequest.h>
 #include <aws/iot/model/CreateAuthorizerRequest.h>
+#include <aws/iot/model/CreateBillingGroupRequest.h>
 #include <aws/iot/model/CreateCertificateFromCsrRequest.h>
+#include <aws/iot/model/CreateDynamicThingGroupRequest.h>
 #include <aws/iot/model/CreateJobRequest.h>
 #include <aws/iot/model/CreateKeysAndCertificateRequest.h>
 #include <aws/iot/model/CreateOTAUpdateRequest.h>
@@ -55,8 +61,10 @@
 #include <aws/iot/model/CreateTopicRuleRequest.h>
 #include <aws/iot/model/DeleteAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DeleteAuthorizerRequest.h>
+#include <aws/iot/model/DeleteBillingGroupRequest.h>
 #include <aws/iot/model/DeleteCACertificateRequest.h>
 #include <aws/iot/model/DeleteCertificateRequest.h>
+#include <aws/iot/model/DeleteDynamicThingGroupRequest.h>
 #include <aws/iot/model/DeleteJobRequest.h>
 #include <aws/iot/model/DeleteJobExecutionRequest.h>
 #include <aws/iot/model/DeleteOTAUpdateRequest.h>
@@ -76,6 +84,7 @@
 #include <aws/iot/model/DescribeAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/DescribeAuditTaskRequest.h>
 #include <aws/iot/model/DescribeAuthorizerRequest.h>
+#include <aws/iot/model/DescribeBillingGroupRequest.h>
 #include <aws/iot/model/DescribeCACertificateRequest.h>
 #include <aws/iot/model/DescribeCertificateRequest.h>
 #include <aws/iot/model/DescribeDefaultAuthorizerRequest.h>
@@ -105,6 +114,7 @@
 #include <aws/iot/model/GetPolicyRequest.h>
 #include <aws/iot/model/GetPolicyVersionRequest.h>
 #include <aws/iot/model/GetRegistrationCodeRequest.h>
+#include <aws/iot/model/GetStatisticsRequest.h>
 #include <aws/iot/model/GetTopicRuleRequest.h>
 #include <aws/iot/model/GetV2LoggingOptionsRequest.h>
 #include <aws/iot/model/ListActiveViolationsRequest.h>
@@ -112,6 +122,7 @@
 #include <aws/iot/model/ListAuditFindingsRequest.h>
 #include <aws/iot/model/ListAuditTasksRequest.h>
 #include <aws/iot/model/ListAuthorizersRequest.h>
+#include <aws/iot/model/ListBillingGroupsRequest.h>
 #include <aws/iot/model/ListCACertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesRequest.h>
 #include <aws/iot/model/ListCertificatesByCARequest.h>
@@ -129,6 +140,7 @@
 #include <aws/iot/model/ListSecurityProfilesRequest.h>
 #include <aws/iot/model/ListSecurityProfilesForTargetRequest.h>
 #include <aws/iot/model/ListStreamsRequest.h>
+#include <aws/iot/model/ListTagsForResourceRequest.h>
 #include <aws/iot/model/ListTargetsForPolicyRequest.h>
 #include <aws/iot/model/ListTargetsForSecurityProfileRequest.h>
 #include <aws/iot/model/ListThingGroupsRequest.h>
@@ -138,6 +150,7 @@
 #include <aws/iot/model/ListThingRegistrationTasksRequest.h>
 #include <aws/iot/model/ListThingTypesRequest.h>
 #include <aws/iot/model/ListThingsRequest.h>
+#include <aws/iot/model/ListThingsInBillingGroupRequest.h>
 #include <aws/iot/model/ListThingsInThingGroupRequest.h>
 #include <aws/iot/model/ListTopicRulesRequest.h>
 #include <aws/iot/model/ListV2LoggingLevelsRequest.h>
@@ -146,6 +159,7 @@
 #include <aws/iot/model/RegisterCertificateRequest.h>
 #include <aws/iot/model/RegisterThingRequest.h>
 #include <aws/iot/model/RejectCertificateTransferRequest.h>
+#include <aws/iot/model/RemoveThingFromBillingGroupRequest.h>
 #include <aws/iot/model/RemoveThingFromThingGroupRequest.h>
 #include <aws/iot/model/ReplaceTopicRuleRequest.h>
 #include <aws/iot/model/SearchIndexRequest.h>
@@ -157,15 +171,20 @@
 #include <aws/iot/model/StartOnDemandAuditTaskRequest.h>
 #include <aws/iot/model/StartThingRegistrationTaskRequest.h>
 #include <aws/iot/model/StopThingRegistrationTaskRequest.h>
+#include <aws/iot/model/TagResourceRequest.h>
 #include <aws/iot/model/TestAuthorizationRequest.h>
 #include <aws/iot/model/TestInvokeAuthorizerRequest.h>
 #include <aws/iot/model/TransferCertificateRequest.h>
+#include <aws/iot/model/UntagResourceRequest.h>
 #include <aws/iot/model/UpdateAccountAuditConfigurationRequest.h>
 #include <aws/iot/model/UpdateAuthorizerRequest.h>
+#include <aws/iot/model/UpdateBillingGroupRequest.h>
 #include <aws/iot/model/UpdateCACertificateRequest.h>
 #include <aws/iot/model/UpdateCertificateRequest.h>
+#include <aws/iot/model/UpdateDynamicThingGroupRequest.h>
 #include <aws/iot/model/UpdateEventConfigurationsRequest.h>
 #include <aws/iot/model/UpdateIndexingConfigurationRequest.h>
+#include <aws/iot/model/UpdateJobRequest.h>
 #include <aws/iot/model/UpdateRoleAliasRequest.h>
 #include <aws/iot/model/UpdateScheduledAuditRequest.h>
 #include <aws/iot/model/UpdateSecurityProfileRequest.h>
@@ -224,25 +243,37 @@ IoTClient::~IoTClient()
 
 void IoTClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << IoTEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + IoTEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void IoTClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AcceptCertificateTransferOutcome IoTClient::AcceptCertificateTransfer(const AcceptCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AcceptCertificateTransfer", "Required field: CertificateId, is not set");
+    return AcceptCertificateTransferOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/accept-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -275,10 +306,45 @@ void IoTClient::AcceptCertificateTransferAsyncHelper(const AcceptCertificateTran
   handler(this, request, AcceptCertificateTransfer(request), context);
 }
 
+AddThingToBillingGroupOutcome IoTClient::AddThingToBillingGroup(const AddThingToBillingGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/addThingToBillingGroup";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddThingToBillingGroupOutcome(AddThingToBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddThingToBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+AddThingToBillingGroupOutcomeCallable IoTClient::AddThingToBillingGroupCallable(const AddThingToBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddThingToBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddThingToBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::AddThingToBillingGroupAsync(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddThingToBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::AddThingToBillingGroupAsyncHelper(const AddThingToBillingGroupRequest& request, const AddThingToBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddThingToBillingGroup(request), context);
+}
+
 AddThingToThingGroupOutcome IoTClient::AddThingToThingGroup(const AddThingToThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/addThingToThingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -312,8 +378,13 @@ void IoTClient::AddThingToThingGroupAsyncHelper(const AddThingToThingGroupReques
 
 AssociateTargetsWithJobOutcome IoTClient::AssociateTargetsWithJob(const AssociateTargetsWithJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateTargetsWithJob", "Required field: JobId, is not set");
+    return AssociateTargetsWithJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/targets";
@@ -349,8 +420,13 @@ void IoTClient::AssociateTargetsWithJobAsyncHelper(const AssociateTargetsWithJob
 
 AttachPolicyOutcome IoTClient::AttachPolicy(const AttachPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachPolicy", "Required field: PolicyName, is not set");
+    return AttachPolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/target-policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -385,8 +461,18 @@ void IoTClient::AttachPolicyAsyncHelper(const AttachPolicyRequest& request, cons
 
 AttachSecurityProfileOutcome IoTClient::AttachSecurityProfile(const AttachSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return AttachSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
+  if (!request.SecurityProfileTargetArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachSecurityProfile", "Required field: SecurityProfileTargetArn, is not set");
+    return AttachSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileTargetArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -422,8 +508,18 @@ void IoTClient::AttachSecurityProfileAsyncHelper(const AttachSecurityProfileRequ
 
 AttachThingPrincipalOutcome IoTClient::AttachThingPrincipal(const AttachThingPrincipalRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachThingPrincipal", "Required field: ThingName, is not set");
+    return AttachThingPrincipalOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  if (!request.PrincipalHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AttachThingPrincipal", "Required field: Principal, is not set");
+    return AttachThingPrincipalOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Principal]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -459,8 +555,13 @@ void IoTClient::AttachThingPrincipalAsyncHelper(const AttachThingPrincipalReques
 
 CancelAuditTaskOutcome IoTClient::CancelAuditTask(const CancelAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelAuditTask", "Required field: TaskId, is not set");
+    return CancelAuditTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks/";
   ss << request.GetTaskId();
   ss << "/cancel";
@@ -496,8 +597,13 @@ void IoTClient::CancelAuditTaskAsyncHelper(const CancelAuditTaskRequest& request
 
 CancelCertificateTransferOutcome IoTClient::CancelCertificateTransfer(const CancelCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelCertificateTransfer", "Required field: CertificateId, is not set");
+    return CancelCertificateTransferOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cancel-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -532,8 +638,13 @@ void IoTClient::CancelCertificateTransferAsyncHelper(const CancelCertificateTran
 
 CancelJobOutcome IoTClient::CancelJob(const CancelJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJob", "Required field: JobId, is not set");
+    return CancelJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/cancel";
@@ -569,8 +680,18 @@ void IoTClient::CancelJobAsyncHelper(const CancelJobRequest& request, const Canc
 
 CancelJobExecutionOutcome IoTClient::CancelJobExecution(const CancelJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJobExecution", "Required field: JobId, is not set");
+    return CancelJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelJobExecution", "Required field: ThingName, is not set");
+    return CancelJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -608,8 +729,8 @@ void IoTClient::CancelJobExecutionAsyncHelper(const CancelJobExecutionRequest& r
 
 ClearDefaultAuthorizerOutcome IoTClient::ClearDefaultAuthorizer(const ClearDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -643,8 +764,13 @@ void IoTClient::ClearDefaultAuthorizerAsyncHelper(const ClearDefaultAuthorizerRe
 
 CreateAuthorizerOutcome IoTClient::CreateAuthorizer(const CreateAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthorizerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAuthorizer", "Required field: AuthorizerName, is not set");
+    return CreateAuthorizerOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -677,10 +803,51 @@ void IoTClient::CreateAuthorizerAsyncHelper(const CreateAuthorizerRequest& reque
   handler(this, request, CreateAuthorizer(request), context);
 }
 
+CreateBillingGroupOutcome IoTClient::CreateBillingGroup(const CreateBillingGroupRequest& request) const
+{
+  if (!request.BillingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateBillingGroup", "Required field: BillingGroupName, is not set");
+    return CreateBillingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BillingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateBillingGroupOutcome(CreateBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateBillingGroupOutcomeCallable IoTClient::CreateBillingGroupCallable(const CreateBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateBillingGroupAsync(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateBillingGroupAsyncHelper(const CreateBillingGroupRequest& request, const CreateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateBillingGroup(request), context);
+}
+
 CreateCertificateFromCsrOutcome IoTClient::CreateCertificateFromCsr(const CreateCertificateFromCsrRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -712,10 +879,56 @@ void IoTClient::CreateCertificateFromCsrAsyncHelper(const CreateCertificateFromC
   handler(this, request, CreateCertificateFromCsr(request), context);
 }
 
+CreateDynamicThingGroupOutcome IoTClient::CreateDynamicThingGroup(const CreateDynamicThingGroupRequest& request) const
+{
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDynamicThingGroup", "Required field: ThingGroupName, is not set");
+    return CreateDynamicThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDynamicThingGroupOutcome(CreateDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+CreateDynamicThingGroupOutcomeCallable IoTClient::CreateDynamicThingGroupCallable(const CreateDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::CreateDynamicThingGroupAsync(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::CreateDynamicThingGroupAsyncHelper(const CreateDynamicThingGroupRequest& request, const CreateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDynamicThingGroup(request), context);
+}
+
 CreateJobOutcome IoTClient::CreateJob(const CreateJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateJob", "Required field: JobId, is not set");
+    return CreateJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -750,8 +963,8 @@ void IoTClient::CreateJobAsyncHelper(const CreateJobRequest& request, const Crea
 
 CreateKeysAndCertificateOutcome IoTClient::CreateKeysAndCertificate(const CreateKeysAndCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/keys-and-certificate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -785,8 +998,13 @@ void IoTClient::CreateKeysAndCertificateAsyncHelper(const CreateKeysAndCertifica
 
 CreateOTAUpdateOutcome IoTClient::CreateOTAUpdate(const CreateOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.OtaUpdateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateOTAUpdate", "Required field: OtaUpdateId, is not set");
+    return CreateOTAUpdateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OtaUpdateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -821,8 +1039,13 @@ void IoTClient::CreateOTAUpdateAsyncHelper(const CreateOTAUpdateRequest& request
 
 CreatePolicyOutcome IoTClient::CreatePolicy(const CreatePolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePolicy", "Required field: PolicyName, is not set");
+    return CreatePolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -857,8 +1080,13 @@ void IoTClient::CreatePolicyAsyncHelper(const CreatePolicyRequest& request, cons
 
 CreatePolicyVersionOutcome IoTClient::CreatePolicyVersion(const CreatePolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreatePolicyVersion", "Required field: PolicyName, is not set");
+    return CreatePolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
@@ -894,8 +1122,13 @@ void IoTClient::CreatePolicyVersionAsyncHelper(const CreatePolicyVersionRequest&
 
 CreateRoleAliasOutcome IoTClient::CreateRoleAlias(const CreateRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RoleAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateRoleAlias", "Required field: RoleAlias, is not set");
+    return CreateRoleAliasOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoleAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -930,8 +1163,13 @@ void IoTClient::CreateRoleAliasAsyncHelper(const CreateRoleAliasRequest& request
 
 CreateScheduledAuditOutcome IoTClient::CreateScheduledAudit(const CreateScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ScheduledAuditNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateScheduledAudit", "Required field: ScheduledAuditName, is not set");
+    return CreateScheduledAuditOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduledAuditName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -966,8 +1204,13 @@ void IoTClient::CreateScheduledAuditAsyncHelper(const CreateScheduledAuditReques
 
 CreateSecurityProfileOutcome IoTClient::CreateSecurityProfile(const CreateSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return CreateSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1002,8 +1245,13 @@ void IoTClient::CreateSecurityProfileAsyncHelper(const CreateSecurityProfileRequ
 
 CreateStreamOutcome IoTClient::CreateStream(const CreateStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateStream", "Required field: StreamId, is not set");
+    return CreateStreamOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1038,8 +1286,13 @@ void IoTClient::CreateStreamAsyncHelper(const CreateStreamRequest& request, cons
 
 CreateThingOutcome IoTClient::CreateThing(const CreateThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateThing", "Required field: ThingName, is not set");
+    return CreateThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1074,8 +1327,13 @@ void IoTClient::CreateThingAsyncHelper(const CreateThingRequest& request, const 
 
 CreateThingGroupOutcome IoTClient::CreateThingGroup(const CreateThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateThingGroup", "Required field: ThingGroupName, is not set");
+    return CreateThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1110,8 +1368,13 @@ void IoTClient::CreateThingGroupAsyncHelper(const CreateThingGroupRequest& reque
 
 CreateThingTypeOutcome IoTClient::CreateThingType(const CreateThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingTypeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateThingType", "Required field: ThingTypeName, is not set");
+    return CreateThingTypeOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingTypeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1146,8 +1409,13 @@ void IoTClient::CreateThingTypeAsyncHelper(const CreateThingTypeRequest& request
 
 CreateTopicRuleOutcome IoTClient::CreateTopicRule(const CreateTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTopicRule", "Required field: RuleName, is not set");
+    return CreateTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1182,8 +1450,8 @@ void IoTClient::CreateTopicRuleAsyncHelper(const CreateTopicRuleRequest& request
 
 DeleteAccountAuditConfigurationOutcome IoTClient::DeleteAccountAuditConfiguration(const DeleteAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1217,8 +1485,13 @@ void IoTClient::DeleteAccountAuditConfigurationAsyncHelper(const DeleteAccountAu
 
 DeleteAuthorizerOutcome IoTClient::DeleteAuthorizer(const DeleteAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthorizerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAuthorizer", "Required field: AuthorizerName, is not set");
+    return DeleteAuthorizerOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1251,10 +1524,56 @@ void IoTClient::DeleteAuthorizerAsyncHelper(const DeleteAuthorizerRequest& reque
   handler(this, request, DeleteAuthorizer(request), context);
 }
 
+DeleteBillingGroupOutcome IoTClient::DeleteBillingGroup(const DeleteBillingGroupRequest& request) const
+{
+  if (!request.BillingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBillingGroup", "Required field: BillingGroupName, is not set");
+    return DeleteBillingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BillingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteBillingGroupOutcome(DeleteBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteBillingGroupOutcomeCallable IoTClient::DeleteBillingGroupCallable(const DeleteBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteBillingGroupAsync(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteBillingGroupAsyncHelper(const DeleteBillingGroupRequest& request, const DeleteBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteBillingGroup(request), context);
+}
+
 DeleteCACertificateOutcome IoTClient::DeleteCACertificate(const DeleteCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCACertificate", "Required field: CertificateId, is not set");
+    return DeleteCACertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1289,8 +1608,13 @@ void IoTClient::DeleteCACertificateAsyncHelper(const DeleteCACertificateRequest&
 
 DeleteCertificateOutcome IoTClient::DeleteCertificate(const DeleteCertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCertificate", "Required field: CertificateId, is not set");
+    return DeleteCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1323,10 +1647,56 @@ void IoTClient::DeleteCertificateAsyncHelper(const DeleteCertificateRequest& req
   handler(this, request, DeleteCertificate(request), context);
 }
 
+DeleteDynamicThingGroupOutcome IoTClient::DeleteDynamicThingGroup(const DeleteDynamicThingGroupRequest& request) const
+{
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDynamicThingGroup", "Required field: ThingGroupName, is not set");
+    return DeleteDynamicThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteDynamicThingGroupOutcome(DeleteDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+DeleteDynamicThingGroupOutcomeCallable IoTClient::DeleteDynamicThingGroupCallable(const DeleteDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DeleteDynamicThingGroupAsync(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DeleteDynamicThingGroupAsyncHelper(const DeleteDynamicThingGroupRequest& request, const DeleteDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteDynamicThingGroup(request), context);
+}
+
 DeleteJobOutcome IoTClient::DeleteJob(const DeleteJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJob", "Required field: JobId, is not set");
+    return DeleteJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1361,8 +1731,23 @@ void IoTClient::DeleteJobAsyncHelper(const DeleteJobRequest& request, const Dele
 
 DeleteJobExecutionOutcome IoTClient::DeleteJobExecution(const DeleteJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobExecution", "Required field: JobId, is not set");
+    return DeleteJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobExecution", "Required field: ThingName, is not set");
+    return DeleteJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  if (!request.ExecutionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteJobExecution", "Required field: ExecutionNumber, is not set");
+    return DeleteJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ExecutionNumber]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -1401,8 +1786,13 @@ void IoTClient::DeleteJobExecutionAsyncHelper(const DeleteJobExecutionRequest& r
 
 DeleteOTAUpdateOutcome IoTClient::DeleteOTAUpdate(const DeleteOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.OtaUpdateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteOTAUpdate", "Required field: OtaUpdateId, is not set");
+    return DeleteOTAUpdateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OtaUpdateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1437,8 +1827,13 @@ void IoTClient::DeleteOTAUpdateAsyncHelper(const DeleteOTAUpdateRequest& request
 
 DeletePolicyOutcome IoTClient::DeletePolicy(const DeletePolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePolicy", "Required field: PolicyName, is not set");
+    return DeletePolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1473,8 +1868,18 @@ void IoTClient::DeletePolicyAsyncHelper(const DeletePolicyRequest& request, cons
 
 DeletePolicyVersionOutcome IoTClient::DeletePolicyVersion(const DeletePolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePolicyVersion", "Required field: PolicyName, is not set");
+    return DeletePolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  if (!request.PolicyVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePolicyVersion", "Required field: PolicyVersionId, is not set");
+    return DeletePolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -1511,8 +1916,8 @@ void IoTClient::DeletePolicyVersionAsyncHelper(const DeletePolicyVersionRequest&
 
 DeleteRegistrationCodeOutcome IoTClient::DeleteRegistrationCode(const DeleteRegistrationCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/registrationcode";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1546,8 +1951,13 @@ void IoTClient::DeleteRegistrationCodeAsyncHelper(const DeleteRegistrationCodeRe
 
 DeleteRoleAliasOutcome IoTClient::DeleteRoleAlias(const DeleteRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RoleAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteRoleAlias", "Required field: RoleAlias, is not set");
+    return DeleteRoleAliasOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoleAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1582,8 +1992,13 @@ void IoTClient::DeleteRoleAliasAsyncHelper(const DeleteRoleAliasRequest& request
 
 DeleteScheduledAuditOutcome IoTClient::DeleteScheduledAudit(const DeleteScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ScheduledAuditNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteScheduledAudit", "Required field: ScheduledAuditName, is not set");
+    return DeleteScheduledAuditOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduledAuditName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1618,8 +2033,13 @@ void IoTClient::DeleteScheduledAuditAsyncHelper(const DeleteScheduledAuditReques
 
 DeleteSecurityProfileOutcome IoTClient::DeleteSecurityProfile(const DeleteSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return DeleteSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1654,8 +2074,13 @@ void IoTClient::DeleteSecurityProfileAsyncHelper(const DeleteSecurityProfileRequ
 
 DeleteStreamOutcome IoTClient::DeleteStream(const DeleteStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteStream", "Required field: StreamId, is not set");
+    return DeleteStreamOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1690,8 +2115,13 @@ void IoTClient::DeleteStreamAsyncHelper(const DeleteStreamRequest& request, cons
 
 DeleteThingOutcome IoTClient::DeleteThing(const DeleteThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThing", "Required field: ThingName, is not set");
+    return DeleteThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1726,8 +2156,13 @@ void IoTClient::DeleteThingAsyncHelper(const DeleteThingRequest& request, const 
 
 DeleteThingGroupOutcome IoTClient::DeleteThingGroup(const DeleteThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThingGroup", "Required field: ThingGroupName, is not set");
+    return DeleteThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1762,8 +2197,13 @@ void IoTClient::DeleteThingGroupAsyncHelper(const DeleteThingGroupRequest& reque
 
 DeleteThingTypeOutcome IoTClient::DeleteThingType(const DeleteThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingTypeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteThingType", "Required field: ThingTypeName, is not set");
+    return DeleteThingTypeOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingTypeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1798,8 +2238,13 @@ void IoTClient::DeleteThingTypeAsyncHelper(const DeleteThingTypeRequest& request
 
 DeleteTopicRuleOutcome IoTClient::DeleteTopicRule(const DeleteTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTopicRule", "Required field: RuleName, is not set");
+    return DeleteTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1834,8 +2279,18 @@ void IoTClient::DeleteTopicRuleAsyncHelper(const DeleteTopicRuleRequest& request
 
 DeleteV2LoggingLevelOutcome IoTClient::DeleteV2LoggingLevel(const DeleteV2LoggingLevelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TargetTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteV2LoggingLevel", "Required field: TargetType, is not set");
+    return DeleteV2LoggingLevelOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetType]", false));
+  }
+  if (!request.TargetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteV2LoggingLevel", "Required field: TargetName, is not set");
+    return DeleteV2LoggingLevelOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1869,8 +2324,13 @@ void IoTClient::DeleteV2LoggingLevelAsyncHelper(const DeleteV2LoggingLevelReques
 
 DeprecateThingTypeOutcome IoTClient::DeprecateThingType(const DeprecateThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingTypeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeprecateThingType", "Required field: ThingTypeName, is not set");
+    return DeprecateThingTypeOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingTypeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   ss << "/deprecate";
@@ -1906,8 +2366,8 @@ void IoTClient::DeprecateThingTypeAsyncHelper(const DeprecateThingTypeRequest& r
 
 DescribeAccountAuditConfigurationOutcome IoTClient::DescribeAccountAuditConfiguration(const DescribeAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1941,8 +2401,13 @@ void IoTClient::DescribeAccountAuditConfigurationAsyncHelper(const DescribeAccou
 
 DescribeAuditTaskOutcome IoTClient::DescribeAuditTask(const DescribeAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAuditTask", "Required field: TaskId, is not set");
+    return DescribeAuditTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1977,8 +2442,13 @@ void IoTClient::DescribeAuditTaskAsyncHelper(const DescribeAuditTaskRequest& req
 
 DescribeAuthorizerOutcome IoTClient::DescribeAuthorizer(const DescribeAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthorizerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeAuthorizer", "Required field: AuthorizerName, is not set");
+    return DescribeAuthorizerOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2011,10 +2481,56 @@ void IoTClient::DescribeAuthorizerAsyncHelper(const DescribeAuthorizerRequest& r
   handler(this, request, DescribeAuthorizer(request), context);
 }
 
+DescribeBillingGroupOutcome IoTClient::DescribeBillingGroup(const DescribeBillingGroupRequest& request) const
+{
+  if (!request.BillingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBillingGroup", "Required field: BillingGroupName, is not set");
+    return DescribeBillingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BillingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeBillingGroupOutcome(DescribeBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+DescribeBillingGroupOutcomeCallable IoTClient::DescribeBillingGroupCallable(const DescribeBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::DescribeBillingGroupAsync(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::DescribeBillingGroupAsyncHelper(const DescribeBillingGroupRequest& request, const DescribeBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeBillingGroup(request), context);
+}
+
 DescribeCACertificateOutcome IoTClient::DescribeCACertificate(const DescribeCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCACertificate", "Required field: CertificateId, is not set");
+    return DescribeCACertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2049,8 +2565,13 @@ void IoTClient::DescribeCACertificateAsyncHelper(const DescribeCACertificateRequ
 
 DescribeCertificateOutcome IoTClient::DescribeCertificate(const DescribeCertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeCertificate", "Required field: CertificateId, is not set");
+    return DescribeCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2085,8 +2606,8 @@ void IoTClient::DescribeCertificateAsyncHelper(const DescribeCertificateRequest&
 
 DescribeDefaultAuthorizerOutcome IoTClient::DescribeDefaultAuthorizer(const DescribeDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2120,8 +2641,8 @@ void IoTClient::DescribeDefaultAuthorizerAsyncHelper(const DescribeDefaultAuthor
 
 DescribeEndpointOutcome IoTClient::DescribeEndpoint(const DescribeEndpointRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/endpoint";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2155,8 +2676,8 @@ void IoTClient::DescribeEndpointAsyncHelper(const DescribeEndpointRequest& reque
 
 DescribeEventConfigurationsOutcome IoTClient::DescribeEventConfigurations(const DescribeEventConfigurationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/event-configurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2190,8 +2711,13 @@ void IoTClient::DescribeEventConfigurationsAsyncHelper(const DescribeEventConfig
 
 DescribeIndexOutcome IoTClient::DescribeIndex(const DescribeIndexRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.IndexNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeIndex", "Required field: IndexName, is not set");
+    return DescribeIndexOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [IndexName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices/";
   ss << request.GetIndexName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2226,8 +2752,13 @@ void IoTClient::DescribeIndexAsyncHelper(const DescribeIndexRequest& request, co
 
 DescribeJobOutcome IoTClient::DescribeJob(const DescribeJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJob", "Required field: JobId, is not set");
+    return DescribeJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2262,8 +2793,18 @@ void IoTClient::DescribeJobAsyncHelper(const DescribeJobRequest& request, const 
 
 DescribeJobExecutionOutcome IoTClient::DescribeJobExecution(const DescribeJobExecutionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobExecution", "Required field: JobId, is not set");
+    return DescribeJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeJobExecution", "Required field: ThingName, is not set");
+    return DescribeJobExecutionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs/";
@@ -2300,8 +2841,13 @@ void IoTClient::DescribeJobExecutionAsyncHelper(const DescribeJobExecutionReques
 
 DescribeRoleAliasOutcome IoTClient::DescribeRoleAlias(const DescribeRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RoleAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRoleAlias", "Required field: RoleAlias, is not set");
+    return DescribeRoleAliasOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoleAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2336,8 +2882,13 @@ void IoTClient::DescribeRoleAliasAsyncHelper(const DescribeRoleAliasRequest& req
 
 DescribeScheduledAuditOutcome IoTClient::DescribeScheduledAudit(const DescribeScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ScheduledAuditNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeScheduledAudit", "Required field: ScheduledAuditName, is not set");
+    return DescribeScheduledAuditOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduledAuditName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2372,8 +2923,13 @@ void IoTClient::DescribeScheduledAuditAsyncHelper(const DescribeScheduledAuditRe
 
 DescribeSecurityProfileOutcome IoTClient::DescribeSecurityProfile(const DescribeSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return DescribeSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2408,8 +2964,13 @@ void IoTClient::DescribeSecurityProfileAsyncHelper(const DescribeSecurityProfile
 
 DescribeStreamOutcome IoTClient::DescribeStream(const DescribeStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeStream", "Required field: StreamId, is not set");
+    return DescribeStreamOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2444,8 +3005,13 @@ void IoTClient::DescribeStreamAsyncHelper(const DescribeStreamRequest& request, 
 
 DescribeThingOutcome IoTClient::DescribeThing(const DescribeThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThing", "Required field: ThingName, is not set");
+    return DescribeThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2480,8 +3046,13 @@ void IoTClient::DescribeThingAsyncHelper(const DescribeThingRequest& request, co
 
 DescribeThingGroupOutcome IoTClient::DescribeThingGroup(const DescribeThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThingGroup", "Required field: ThingGroupName, is not set");
+    return DescribeThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2516,8 +3087,13 @@ void IoTClient::DescribeThingGroupAsyncHelper(const DescribeThingGroupRequest& r
 
 DescribeThingRegistrationTaskOutcome IoTClient::DescribeThingRegistrationTask(const DescribeThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThingRegistrationTask", "Required field: TaskId, is not set");
+    return DescribeThingRegistrationTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2552,8 +3128,13 @@ void IoTClient::DescribeThingRegistrationTaskAsyncHelper(const DescribeThingRegi
 
 DescribeThingTypeOutcome IoTClient::DescribeThingType(const DescribeThingTypeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingTypeNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeThingType", "Required field: ThingTypeName, is not set");
+    return DescribeThingTypeOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingTypeName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types/";
   ss << request.GetThingTypeName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2588,8 +3169,13 @@ void IoTClient::DescribeThingTypeAsyncHelper(const DescribeThingTypeRequest& req
 
 DetachPolicyOutcome IoTClient::DetachPolicy(const DetachPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachPolicy", "Required field: PolicyName, is not set");
+    return DetachPolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/target-policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2624,8 +3210,18 @@ void IoTClient::DetachPolicyAsyncHelper(const DetachPolicyRequest& request, cons
 
 DetachSecurityProfileOutcome IoTClient::DetachSecurityProfile(const DetachSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return DetachSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
+  if (!request.SecurityProfileTargetArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachSecurityProfile", "Required field: SecurityProfileTargetArn, is not set");
+    return DetachSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileTargetArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -2661,8 +3257,18 @@ void IoTClient::DetachSecurityProfileAsyncHelper(const DetachSecurityProfileRequ
 
 DetachThingPrincipalOutcome IoTClient::DetachThingPrincipal(const DetachThingPrincipalRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachThingPrincipal", "Required field: ThingName, is not set");
+    return DetachThingPrincipalOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
+  if (!request.PrincipalHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DetachThingPrincipal", "Required field: Principal, is not set");
+    return DetachThingPrincipalOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Principal]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -2698,8 +3304,13 @@ void IoTClient::DetachThingPrincipalAsyncHelper(const DetachThingPrincipalReques
 
 DisableTopicRuleOutcome IoTClient::DisableTopicRule(const DisableTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisableTopicRule", "Required field: RuleName, is not set");
+    return DisableTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/disable";
@@ -2735,8 +3346,13 @@ void IoTClient::DisableTopicRuleAsyncHelper(const DisableTopicRuleRequest& reque
 
 EnableTopicRuleOutcome IoTClient::EnableTopicRule(const EnableTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("EnableTopicRule", "Required field: RuleName, is not set");
+    return EnableTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   ss << "/enable";
@@ -2772,8 +3388,8 @@ void IoTClient::EnableTopicRuleAsyncHelper(const EnableTopicRuleRequest& request
 
 GetEffectivePoliciesOutcome IoTClient::GetEffectivePolicies(const GetEffectivePoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/effective-policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -2807,8 +3423,8 @@ void IoTClient::GetEffectivePoliciesAsyncHelper(const GetEffectivePoliciesReques
 
 GetIndexingConfigurationOutcome IoTClient::GetIndexingConfiguration(const GetIndexingConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indexing/config";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2842,8 +3458,13 @@ void IoTClient::GetIndexingConfigurationAsyncHelper(const GetIndexingConfigurati
 
 GetJobDocumentOutcome IoTClient::GetJobDocument(const GetJobDocumentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetJobDocument", "Required field: JobId, is not set");
+    return GetJobDocumentOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/job-document";
@@ -2879,8 +3500,8 @@ void IoTClient::GetJobDocumentAsyncHelper(const GetJobDocumentRequest& request, 
 
 GetLoggingOptionsOutcome IoTClient::GetLoggingOptions(const GetLoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/loggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2914,8 +3535,13 @@ void IoTClient::GetLoggingOptionsAsyncHelper(const GetLoggingOptionsRequest& req
 
 GetOTAUpdateOutcome IoTClient::GetOTAUpdate(const GetOTAUpdateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.OtaUpdateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetOTAUpdate", "Required field: OtaUpdateId, is not set");
+    return GetOTAUpdateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OtaUpdateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates/";
   ss << request.GetOtaUpdateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2950,8 +3576,13 @@ void IoTClient::GetOTAUpdateAsyncHelper(const GetOTAUpdateRequest& request, cons
 
 GetPolicyOutcome IoTClient::GetPolicy(const GetPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: PolicyName, is not set");
+    return GetPolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2986,8 +3617,18 @@ void IoTClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const GetP
 
 GetPolicyVersionOutcome IoTClient::GetPolicyVersion(const GetPolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicyVersion", "Required field: PolicyName, is not set");
+    return GetPolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  if (!request.PolicyVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicyVersion", "Required field: PolicyVersionId, is not set");
+    return GetPolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -3024,8 +3665,8 @@ void IoTClient::GetPolicyVersionAsyncHelper(const GetPolicyVersionRequest& reque
 
 GetRegistrationCodeOutcome IoTClient::GetRegistrationCode(const GetRegistrationCodeRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/registrationcode";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3057,10 +3698,50 @@ void IoTClient::GetRegistrationCodeAsyncHelper(const GetRegistrationCodeRequest&
   handler(this, request, GetRegistrationCode(request), context);
 }
 
+GetStatisticsOutcome IoTClient::GetStatistics(const GetStatisticsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/indices/statistics";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetStatisticsOutcome(GetStatisticsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetStatisticsOutcome(outcome.GetError());
+  }
+}
+
+GetStatisticsOutcomeCallable IoTClient::GetStatisticsCallable(const GetStatisticsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetStatisticsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetStatistics(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::GetStatisticsAsync(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetStatisticsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::GetStatisticsAsyncHelper(const GetStatisticsRequest& request, const GetStatisticsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetStatistics(request), context);
+}
+
 GetTopicRuleOutcome IoTClient::GetTopicRule(const GetTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetTopicRule", "Required field: RuleName, is not set");
+    return GetTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3095,8 +3776,8 @@ void IoTClient::GetTopicRuleAsyncHelper(const GetTopicRuleRequest& request, cons
 
 GetV2LoggingOptionsOutcome IoTClient::GetV2LoggingOptions(const GetV2LoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3130,8 +3811,8 @@ void IoTClient::GetV2LoggingOptionsAsyncHelper(const GetV2LoggingOptionsRequest&
 
 ListActiveViolationsOutcome IoTClient::ListActiveViolations(const ListActiveViolationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/active-violations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3165,8 +3846,13 @@ void IoTClient::ListActiveViolationsAsyncHelper(const ListActiveViolationsReques
 
 ListAttachedPoliciesOutcome IoTClient::ListAttachedPolicies(const ListAttachedPoliciesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TargetHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAttachedPolicies", "Required field: Target, is not set");
+    return ListAttachedPoliciesOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Target]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/attached-policies/";
   ss << request.GetTarget();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3201,8 +3887,8 @@ void IoTClient::ListAttachedPoliciesAsyncHelper(const ListAttachedPoliciesReques
 
 ListAuditFindingsOutcome IoTClient::ListAuditFindings(const ListAuditFindingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/findings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -3236,8 +3922,18 @@ void IoTClient::ListAuditFindingsAsyncHelper(const ListAuditFindingsRequest& req
 
 ListAuditTasksOutcome IoTClient::ListAuditTasks(const ListAuditTasksRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StartTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditTasks", "Required field: StartTime, is not set");
+    return ListAuditTasksOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
+  }
+  if (!request.EndTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAuditTasks", "Required field: EndTime, is not set");
+    return ListAuditTasksOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTime]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3271,8 +3967,8 @@ void IoTClient::ListAuditTasksAsyncHelper(const ListAuditTasksRequest& request, 
 
 ListAuthorizersOutcome IoTClient::ListAuthorizers(const ListAuthorizersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizers/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3304,10 +4000,45 @@ void IoTClient::ListAuthorizersAsyncHelper(const ListAuthorizersRequest& request
   handler(this, request, ListAuthorizers(request), context);
 }
 
+ListBillingGroupsOutcome IoTClient::ListBillingGroups(const ListBillingGroupsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListBillingGroupsOutcome(ListBillingGroupsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListBillingGroupsOutcome(outcome.GetError());
+  }
+}
+
+ListBillingGroupsOutcomeCallable IoTClient::ListBillingGroupsCallable(const ListBillingGroupsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListBillingGroupsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListBillingGroups(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListBillingGroupsAsync(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListBillingGroupsAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListBillingGroupsAsyncHelper(const ListBillingGroupsRequest& request, const ListBillingGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListBillingGroups(request), context);
+}
+
 ListCACertificatesOutcome IoTClient::ListCACertificates(const ListCACertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3341,8 +4072,8 @@ void IoTClient::ListCACertificatesAsyncHelper(const ListCACertificatesRequest& r
 
 ListCertificatesOutcome IoTClient::ListCertificates(const ListCertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3376,8 +4107,13 @@ void IoTClient::ListCertificatesAsyncHelper(const ListCertificatesRequest& reque
 
 ListCertificatesByCAOutcome IoTClient::ListCertificatesByCA(const ListCertificatesByCARequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CaCertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCertificatesByCA", "Required field: CaCertificateId, is not set");
+    return ListCertificatesByCAOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CaCertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates-by-ca/";
   ss << request.GetCaCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3412,8 +4148,8 @@ void IoTClient::ListCertificatesByCAAsyncHelper(const ListCertificatesByCAReques
 
 ListIndicesOutcome IoTClient::ListIndices(const ListIndicesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3447,8 +4183,13 @@ void IoTClient::ListIndicesAsyncHelper(const ListIndicesRequest& request, const 
 
 ListJobExecutionsForJobOutcome IoTClient::ListJobExecutionsForJob(const ListJobExecutionsForJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobExecutionsForJob", "Required field: JobId, is not set");
+    return ListJobExecutionsForJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs/";
   ss << request.GetJobId();
   ss << "/things";
@@ -3484,8 +4225,13 @@ void IoTClient::ListJobExecutionsForJobAsyncHelper(const ListJobExecutionsForJob
 
 ListJobExecutionsForThingOutcome IoTClient::ListJobExecutionsForThing(const ListJobExecutionsForThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListJobExecutionsForThing", "Required field: ThingName, is not set");
+    return ListJobExecutionsForThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/jobs";
@@ -3521,8 +4267,8 @@ void IoTClient::ListJobExecutionsForThingAsyncHelper(const ListJobExecutionsForT
 
 ListJobsOutcome IoTClient::ListJobs(const ListJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3556,8 +4302,8 @@ void IoTClient::ListJobsAsyncHelper(const ListJobsRequest& request, const ListJo
 
 ListOTAUpdatesOutcome IoTClient::ListOTAUpdates(const ListOTAUpdatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/otaUpdates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3591,8 +4337,8 @@ void IoTClient::ListOTAUpdatesAsyncHelper(const ListOTAUpdatesRequest& request, 
 
 ListOutgoingCertificatesOutcome IoTClient::ListOutgoingCertificates(const ListOutgoingCertificatesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates-out-going";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3626,8 +4372,8 @@ void IoTClient::ListOutgoingCertificatesAsyncHelper(const ListOutgoingCertificat
 
 ListPoliciesOutcome IoTClient::ListPolicies(const ListPoliciesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3661,8 +4407,13 @@ void IoTClient::ListPoliciesAsyncHelper(const ListPoliciesRequest& request, cons
 
 ListPolicyVersionsOutcome IoTClient::ListPolicyVersions(const ListPolicyVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPolicyVersions", "Required field: PolicyName, is not set");
+    return ListPolicyVersionsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version";
@@ -3698,8 +4449,13 @@ void IoTClient::ListPolicyVersionsAsyncHelper(const ListPolicyVersionsRequest& r
 
 ListPrincipalThingsOutcome IoTClient::ListPrincipalThings(const ListPrincipalThingsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PrincipalHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListPrincipalThings", "Required field: Principal, is not set");
+    return ListPrincipalThingsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Principal]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/principals/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3733,8 +4489,8 @@ void IoTClient::ListPrincipalThingsAsyncHelper(const ListPrincipalThingsRequest&
 
 ListRoleAliasesOutcome IoTClient::ListRoleAliases(const ListRoleAliasesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3768,8 +4524,8 @@ void IoTClient::ListRoleAliasesAsyncHelper(const ListRoleAliasesRequest& request
 
 ListScheduledAuditsOutcome IoTClient::ListScheduledAudits(const ListScheduledAuditsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3803,8 +4559,8 @@ void IoTClient::ListScheduledAuditsAsyncHelper(const ListScheduledAuditsRequest&
 
 ListSecurityProfilesOutcome IoTClient::ListSecurityProfiles(const ListSecurityProfilesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3838,8 +4594,13 @@ void IoTClient::ListSecurityProfilesAsyncHelper(const ListSecurityProfilesReques
 
 ListSecurityProfilesForTargetOutcome IoTClient::ListSecurityProfilesForTarget(const ListSecurityProfilesForTargetRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileTargetArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSecurityProfilesForTarget", "Required field: SecurityProfileTargetArn, is not set");
+    return ListSecurityProfilesForTargetOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileTargetArn]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles-for-target";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3873,8 +4634,8 @@ void IoTClient::ListSecurityProfilesForTargetAsyncHelper(const ListSecurityProfi
 
 ListStreamsOutcome IoTClient::ListStreams(const ListStreamsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -3906,10 +4667,55 @@ void IoTClient::ListStreamsAsyncHelper(const ListStreamsRequest& request, const 
   handler(this, request, ListStreams(request), context);
 }
 
+ListTagsForResourceOutcome IoTClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable IoTClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ListTargetsForPolicyOutcome IoTClient::ListTargetsForPolicy(const ListTargetsForPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTargetsForPolicy", "Required field: PolicyName, is not set");
+    return ListTargetsForPolicyOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policy-targets/";
   ss << request.GetPolicyName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3944,8 +4750,13 @@ void IoTClient::ListTargetsForPolicyAsyncHelper(const ListTargetsForPolicyReques
 
 ListTargetsForSecurityProfileOutcome IoTClient::ListTargetsForSecurityProfile(const ListTargetsForSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTargetsForSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return ListTargetsForSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   ss << "/targets";
@@ -3981,8 +4792,8 @@ void IoTClient::ListTargetsForSecurityProfileAsyncHelper(const ListTargetsForSec
 
 ListThingGroupsOutcome IoTClient::ListThingGroups(const ListThingGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4016,8 +4827,13 @@ void IoTClient::ListThingGroupsAsyncHelper(const ListThingGroupsRequest& request
 
 ListThingGroupsForThingOutcome IoTClient::ListThingGroupsForThing(const ListThingGroupsForThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingGroupsForThing", "Required field: ThingName, is not set");
+    return ListThingGroupsForThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/thing-groups";
@@ -4053,8 +4869,13 @@ void IoTClient::ListThingGroupsForThingAsyncHelper(const ListThingGroupsForThing
 
 ListThingPrincipalsOutcome IoTClient::ListThingPrincipals(const ListThingPrincipalsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingPrincipals", "Required field: ThingName, is not set");
+    return ListThingPrincipalsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   ss << "/principals";
@@ -4090,8 +4911,18 @@ void IoTClient::ListThingPrincipalsAsyncHelper(const ListThingPrincipalsRequest&
 
 ListThingRegistrationTaskReportsOutcome IoTClient::ListThingRegistrationTaskReports(const ListThingRegistrationTaskReportsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingRegistrationTaskReports", "Required field: TaskId, is not set");
+    return ListThingRegistrationTaskReportsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
+  if (!request.ReportTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingRegistrationTaskReports", "Required field: ReportType, is not set");
+    return ListThingRegistrationTaskReportsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportType]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   ss << "/reports";
@@ -4127,8 +4958,8 @@ void IoTClient::ListThingRegistrationTaskReportsAsyncHelper(const ListThingRegis
 
 ListThingRegistrationTasksOutcome IoTClient::ListThingRegistrationTasks(const ListThingRegistrationTasksRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4162,8 +4993,8 @@ void IoTClient::ListThingRegistrationTasksAsyncHelper(const ListThingRegistratio
 
 ListThingTypesOutcome IoTClient::ListThingTypes(const ListThingTypesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-types";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4197,8 +5028,8 @@ void IoTClient::ListThingTypesAsyncHelper(const ListThingTypesRequest& request, 
 
 ListThingsOutcome IoTClient::ListThings(const ListThingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4230,10 +5061,57 @@ void IoTClient::ListThingsAsyncHelper(const ListThingsRequest& request, const Li
   handler(this, request, ListThings(request), context);
 }
 
+ListThingsInBillingGroupOutcome IoTClient::ListThingsInBillingGroup(const ListThingsInBillingGroupRequest& request) const
+{
+  if (!request.BillingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingsInBillingGroup", "Required field: BillingGroupName, is not set");
+    return ListThingsInBillingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BillingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  ss << "/things";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListThingsInBillingGroupOutcome(ListThingsInBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListThingsInBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+ListThingsInBillingGroupOutcomeCallable IoTClient::ListThingsInBillingGroupCallable(const ListThingsInBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListThingsInBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListThingsInBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::ListThingsInBillingGroupAsync(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListThingsInBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::ListThingsInBillingGroupAsyncHelper(const ListThingsInBillingGroupRequest& request, const ListThingsInBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListThingsInBillingGroup(request), context);
+}
+
 ListThingsInThingGroupOutcome IoTClient::ListThingsInThingGroup(const ListThingsInThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListThingsInThingGroup", "Required field: ThingGroupName, is not set");
+    return ListThingsInThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   ss << "/things";
@@ -4269,8 +5147,8 @@ void IoTClient::ListThingsInThingGroupAsyncHelper(const ListThingsInThingGroupRe
 
 ListTopicRulesOutcome IoTClient::ListTopicRules(const ListTopicRulesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4304,8 +5182,8 @@ void IoTClient::ListTopicRulesAsyncHelper(const ListTopicRulesRequest& request, 
 
 ListV2LoggingLevelsOutcome IoTClient::ListV2LoggingLevels(const ListV2LoggingLevelsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4339,8 +5217,18 @@ void IoTClient::ListV2LoggingLevelsAsyncHelper(const ListV2LoggingLevelsRequest&
 
 ListViolationEventsOutcome IoTClient::ListViolationEvents(const ListViolationEventsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StartTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListViolationEvents", "Required field: StartTime, is not set");
+    return ListViolationEventsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StartTime]", false));
+  }
+  if (!request.EndTimeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListViolationEvents", "Required field: EndTime, is not set");
+    return ListViolationEventsOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndTime]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/violation-events";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -4374,8 +5262,8 @@ void IoTClient::ListViolationEventsAsyncHelper(const ListViolationEventsRequest&
 
 RegisterCACertificateOutcome IoTClient::RegisterCACertificate(const RegisterCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4409,8 +5297,8 @@ void IoTClient::RegisterCACertificateAsyncHelper(const RegisterCACertificateRequ
 
 RegisterCertificateOutcome IoTClient::RegisterCertificate(const RegisterCertificateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificate/register";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4444,8 +5332,8 @@ void IoTClient::RegisterCertificateAsyncHelper(const RegisterCertificateRequest&
 
 RegisterThingOutcome IoTClient::RegisterThing(const RegisterThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4479,8 +5367,13 @@ void IoTClient::RegisterThingAsyncHelper(const RegisterThingRequest& request, co
 
 RejectCertificateTransferOutcome IoTClient::RejectCertificateTransfer(const RejectCertificateTransferRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RejectCertificateTransfer", "Required field: CertificateId, is not set");
+    return RejectCertificateTransferOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/reject-certificate-transfer/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4513,10 +5406,45 @@ void IoTClient::RejectCertificateTransferAsyncHelper(const RejectCertificateTran
   handler(this, request, RejectCertificateTransfer(request), context);
 }
 
+RemoveThingFromBillingGroupOutcome IoTClient::RemoveThingFromBillingGroup(const RemoveThingFromBillingGroupRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/removeThingFromBillingGroup";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveThingFromBillingGroupOutcome(RemoveThingFromBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RemoveThingFromBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+RemoveThingFromBillingGroupOutcomeCallable IoTClient::RemoveThingFromBillingGroupCallable(const RemoveThingFromBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveThingFromBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveThingFromBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::RemoveThingFromBillingGroupAsync(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveThingFromBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::RemoveThingFromBillingGroupAsyncHelper(const RemoveThingFromBillingGroupRequest& request, const RemoveThingFromBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveThingFromBillingGroup(request), context);
+}
+
 RemoveThingFromThingGroupOutcome IoTClient::RemoveThingFromThingGroup(const RemoveThingFromThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/removeThingFromThingGroup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -4550,8 +5478,13 @@ void IoTClient::RemoveThingFromThingGroupAsyncHelper(const RemoveThingFromThingG
 
 ReplaceTopicRuleOutcome IoTClient::ReplaceTopicRule(const ReplaceTopicRuleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RuleNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ReplaceTopicRule", "Required field: RuleName, is not set");
+    return ReplaceTopicRuleOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/rules/";
   ss << request.GetRuleName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -4586,8 +5519,8 @@ void IoTClient::ReplaceTopicRuleAsyncHelper(const ReplaceTopicRuleRequest& reque
 
 SearchIndexOutcome IoTClient::SearchIndex(const SearchIndexRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indices/search";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4621,8 +5554,8 @@ void IoTClient::SearchIndexAsyncHelper(const SearchIndexRequest& request, const 
 
 SetDefaultAuthorizerOutcome IoTClient::SetDefaultAuthorizer(const SetDefaultAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/default-authorizer";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4656,8 +5589,18 @@ void IoTClient::SetDefaultAuthorizerAsyncHelper(const SetDefaultAuthorizerReques
 
 SetDefaultPolicyVersionOutcome IoTClient::SetDefaultPolicyVersion(const SetDefaultPolicyVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PolicyNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetDefaultPolicyVersion", "Required field: PolicyName, is not set");
+    return SetDefaultPolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyName]", false));
+  }
+  if (!request.PolicyVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SetDefaultPolicyVersion", "Required field: PolicyVersionId, is not set");
+    return SetDefaultPolicyVersionOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PolicyVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/policies/";
   ss << request.GetPolicyName();
   ss << "/version/";
@@ -4694,8 +5637,8 @@ void IoTClient::SetDefaultPolicyVersionAsyncHelper(const SetDefaultPolicyVersion
 
 SetLoggingOptionsOutcome IoTClient::SetLoggingOptions(const SetLoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/loggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4729,8 +5672,8 @@ void IoTClient::SetLoggingOptionsAsyncHelper(const SetLoggingOptionsRequest& req
 
 SetV2LoggingLevelOutcome IoTClient::SetV2LoggingLevel(const SetV2LoggingLevelRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingLevel";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4764,8 +5707,8 @@ void IoTClient::SetV2LoggingLevelAsyncHelper(const SetV2LoggingLevelRequest& req
 
 SetV2LoggingOptionsOutcome IoTClient::SetV2LoggingOptions(const SetV2LoggingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v2LoggingOptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4799,8 +5742,8 @@ void IoTClient::SetV2LoggingOptionsAsyncHelper(const SetV2LoggingOptionsRequest&
 
 StartOnDemandAuditTaskOutcome IoTClient::StartOnDemandAuditTask(const StartOnDemandAuditTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4834,8 +5777,8 @@ void IoTClient::StartOnDemandAuditTaskAsyncHelper(const StartOnDemandAuditTaskRe
 
 StartThingRegistrationTaskOutcome IoTClient::StartThingRegistrationTask(const StartThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4869,8 +5812,13 @@ void IoTClient::StartThingRegistrationTaskAsyncHelper(const StartThingRegistrati
 
 StopThingRegistrationTaskOutcome IoTClient::StopThingRegistrationTask(const StopThingRegistrationTaskRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.TaskIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopThingRegistrationTask", "Required field: TaskId, is not set");
+    return StopThingRegistrationTaskOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TaskId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-registration-tasks/";
   ss << request.GetTaskId();
   ss << "/cancel";
@@ -4904,10 +5852,45 @@ void IoTClient::StopThingRegistrationTaskAsyncHelper(const StopThingRegistration
   handler(this, request, StopThingRegistrationTask(request), context);
 }
 
+TagResourceOutcome IoTClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable IoTClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
 TestAuthorizationOutcome IoTClient::TestAuthorization(const TestAuthorizationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/test-authorization";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -4941,8 +5924,13 @@ void IoTClient::TestAuthorizationAsyncHelper(const TestAuthorizationRequest& req
 
 TestInvokeAuthorizerOutcome IoTClient::TestInvokeAuthorizer(const TestInvokeAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthorizerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TestInvokeAuthorizer", "Required field: AuthorizerName, is not set");
+    return TestInvokeAuthorizerOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   ss << "/test";
@@ -4978,8 +5966,18 @@ void IoTClient::TestInvokeAuthorizerAsyncHelper(const TestInvokeAuthorizerReques
 
 TransferCertificateOutcome IoTClient::TransferCertificate(const TransferCertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TransferCertificate", "Required field: CertificateId, is not set");
+    return TransferCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
+  if (!request.TargetAwsAccountHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TransferCertificate", "Required field: TargetAwsAccount, is not set");
+    return TransferCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TargetAwsAccount]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/transfer-certificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5012,10 +6010,45 @@ void IoTClient::TransferCertificateAsyncHelper(const TransferCertificateRequest&
   handler(this, request, TransferCertificate(request), context);
 }
 
+UntagResourceOutcome IoTClient::UntagResource(const UntagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/untag";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable IoTClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateAccountAuditConfigurationOutcome IoTClient::UpdateAccountAuditConfiguration(const UpdateAccountAuditConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/configuration";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
@@ -5049,8 +6082,13 @@ void IoTClient::UpdateAccountAuditConfigurationAsyncHelper(const UpdateAccountAu
 
 UpdateAuthorizerOutcome IoTClient::UpdateAuthorizer(const UpdateAuthorizerRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthorizerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAuthorizer", "Required field: AuthorizerName, is not set");
+    return UpdateAuthorizerOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthorizerName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/authorizer/";
   ss << request.GetAuthorizerName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5083,10 +6121,56 @@ void IoTClient::UpdateAuthorizerAsyncHelper(const UpdateAuthorizerRequest& reque
   handler(this, request, UpdateAuthorizer(request), context);
 }
 
+UpdateBillingGroupOutcome IoTClient::UpdateBillingGroup(const UpdateBillingGroupRequest& request) const
+{
+  if (!request.BillingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBillingGroup", "Required field: BillingGroupName, is not set");
+    return UpdateBillingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BillingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/billing-groups/";
+  ss << request.GetBillingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateBillingGroupOutcome(UpdateBillingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateBillingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateBillingGroupOutcomeCallable IoTClient::UpdateBillingGroupCallable(const UpdateBillingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateBillingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateBillingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateBillingGroupAsync(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateBillingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateBillingGroupAsyncHelper(const UpdateBillingGroupRequest& request, const UpdateBillingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateBillingGroup(request), context);
+}
+
 UpdateCACertificateOutcome IoTClient::UpdateCACertificate(const UpdateCACertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCACertificate", "Required field: CertificateId, is not set");
+    return UpdateCACertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/cacertificate/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5121,8 +6205,18 @@ void IoTClient::UpdateCACertificateAsyncHelper(const UpdateCACertificateRequest&
 
 UpdateCertificateOutcome IoTClient::UpdateCertificate(const UpdateCertificateRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCertificate", "Required field: CertificateId, is not set");
+    return UpdateCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateId]", false));
+  }
+  if (!request.NewStatusHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCertificate", "Required field: NewStatus, is not set");
+    return UpdateCertificateOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [NewStatus]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/certificates/";
   ss << request.GetCertificateId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5155,10 +6249,51 @@ void IoTClient::UpdateCertificateAsyncHelper(const UpdateCertificateRequest& req
   handler(this, request, UpdateCertificate(request), context);
 }
 
+UpdateDynamicThingGroupOutcome IoTClient::UpdateDynamicThingGroup(const UpdateDynamicThingGroupRequest& request) const
+{
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDynamicThingGroup", "Required field: ThingGroupName, is not set");
+    return UpdateDynamicThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/dynamic-thing-groups/";
+  ss << request.GetThingGroupName();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateDynamicThingGroupOutcome(UpdateDynamicThingGroupResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateDynamicThingGroupOutcome(outcome.GetError());
+  }
+}
+
+UpdateDynamicThingGroupOutcomeCallable IoTClient::UpdateDynamicThingGroupCallable(const UpdateDynamicThingGroupRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateDynamicThingGroupOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateDynamicThingGroup(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateDynamicThingGroupAsync(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateDynamicThingGroupAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateDynamicThingGroupAsyncHelper(const UpdateDynamicThingGroupRequest& request, const UpdateDynamicThingGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateDynamicThingGroup(request), context);
+}
+
 UpdateEventConfigurationsOutcome IoTClient::UpdateEventConfigurations(const UpdateEventConfigurationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/event-configurations";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
@@ -5192,8 +6327,8 @@ void IoTClient::UpdateEventConfigurationsAsyncHelper(const UpdateEventConfigurat
 
 UpdateIndexingConfigurationOutcome IoTClient::UpdateIndexingConfiguration(const UpdateIndexingConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/indexing/config";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -5225,10 +6360,56 @@ void IoTClient::UpdateIndexingConfigurationAsyncHelper(const UpdateIndexingConfi
   handler(this, request, UpdateIndexingConfiguration(request), context);
 }
 
+UpdateJobOutcome IoTClient::UpdateJob(const UpdateJobRequest& request) const
+{
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateJob", "Required field: JobId, is not set");
+    return UpdateJobOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/jobs/";
+  ss << request.GetJobId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PATCH, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateJobOutcome(NoResult());
+  }
+  else
+  {
+    return UpdateJobOutcome(outcome.GetError());
+  }
+}
+
+UpdateJobOutcomeCallable IoTClient::UpdateJobCallable(const UpdateJobRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateJobOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateJob(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void IoTClient::UpdateJobAsync(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateJobAsyncHelper( request, handler, context ); } );
+}
+
+void IoTClient::UpdateJobAsyncHelper(const UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateJob(request), context);
+}
+
 UpdateRoleAliasOutcome IoTClient::UpdateRoleAlias(const UpdateRoleAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.RoleAliasHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateRoleAlias", "Required field: RoleAlias, is not set");
+    return UpdateRoleAliasOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RoleAlias]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/role-aliases/";
   ss << request.GetRoleAlias();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5263,8 +6444,13 @@ void IoTClient::UpdateRoleAliasAsyncHelper(const UpdateRoleAliasRequest& request
 
 UpdateScheduledAuditOutcome IoTClient::UpdateScheduledAudit(const UpdateScheduledAuditRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ScheduledAuditNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateScheduledAudit", "Required field: ScheduledAuditName, is not set");
+    return UpdateScheduledAuditOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ScheduledAuditName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/audit/scheduledaudits/";
   ss << request.GetScheduledAuditName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5299,8 +6485,13 @@ void IoTClient::UpdateScheduledAuditAsyncHelper(const UpdateScheduledAuditReques
 
 UpdateSecurityProfileOutcome IoTClient::UpdateSecurityProfile(const UpdateSecurityProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SecurityProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSecurityProfile", "Required field: SecurityProfileName, is not set");
+    return UpdateSecurityProfileOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SecurityProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profiles/";
   ss << request.GetSecurityProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5335,8 +6526,13 @@ void IoTClient::UpdateSecurityProfileAsyncHelper(const UpdateSecurityProfileRequ
 
 UpdateStreamOutcome IoTClient::UpdateStream(const UpdateStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.StreamIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateStream", "Required field: StreamId, is not set");
+    return UpdateStreamOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StreamId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/streams/";
   ss << request.GetStreamId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5371,8 +6567,13 @@ void IoTClient::UpdateStreamAsyncHelper(const UpdateStreamRequest& request, cons
 
 UpdateThingOutcome IoTClient::UpdateThing(const UpdateThingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThing", "Required field: ThingName, is not set");
+    return UpdateThingOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/things/";
   ss << request.GetThingName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5407,8 +6608,13 @@ void IoTClient::UpdateThingAsyncHelper(const UpdateThingRequest& request, const 
 
 UpdateThingGroupOutcome IoTClient::UpdateThingGroup(const UpdateThingGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingGroupNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateThingGroup", "Required field: ThingGroupName, is not set");
+    return UpdateThingGroupOutcome(Aws::Client::AWSError<IoTErrors>(IoTErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingGroupName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/";
   ss << request.GetThingGroupName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -5443,8 +6649,8 @@ void IoTClient::UpdateThingGroupAsyncHelper(const UpdateThingGroupRequest& reque
 
 UpdateThingGroupsForThingOutcome IoTClient::UpdateThingGroupsForThing(const UpdateThingGroupsForThingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/thing-groups/updateThingGroupsForThing";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -5478,8 +6684,8 @@ void IoTClient::UpdateThingGroupsForThingAsyncHelper(const UpdateThingGroupsForT
 
 ValidateSecurityProfileBehaviorsOutcome IoTClient::ValidateSecurityProfileBehaviors(const ValidateSecurityProfileBehaviorsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/security-profile-behaviors/validate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

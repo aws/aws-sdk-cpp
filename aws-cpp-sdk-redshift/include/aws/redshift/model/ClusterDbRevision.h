@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique identifier of the cluster.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the cluster.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A string representing the current cluster version.</p>
      */
     inline const Aws::String& GetCurrentDatabaseRevision() const{ return m_currentDatabaseRevision; }
+
+    /**
+     * <p>A string representing the current cluster version.</p>
+     */
+    inline bool CurrentDatabaseRevisionHasBeenSet() const { return m_currentDatabaseRevisionHasBeenSet; }
 
     /**
      * <p>A string representing the current cluster version.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The date on which the database revision was released.</p>
      */
+    inline bool DatabaseRevisionReleaseDateHasBeenSet() const { return m_databaseRevisionReleaseDateHasBeenSet; }
+
+    /**
+     * <p>The date on which the database revision was released.</p>
+     */
     inline void SetDatabaseRevisionReleaseDate(const Aws::Utils::DateTime& value) { m_databaseRevisionReleaseDateHasBeenSet = true; m_databaseRevisionReleaseDate = value; }
 
     /**
@@ -155,6 +170,12 @@ namespace Model
      * the database revision that a cluster can be updated to.</p>
      */
     inline const Aws::Vector<RevisionTarget>& GetRevisionTargets() const{ return m_revisionTargets; }
+
+    /**
+     * <p>A list of <code>RevisionTarget</code> objects, where each object describes
+     * the database revision that a cluster can be updated to.</p>
+     */
+    inline bool RevisionTargetsHasBeenSet() const { return m_revisionTargetsHasBeenSet; }
 
     /**
      * <p>A list of <code>RevisionTarget</code> objects, where each object describes

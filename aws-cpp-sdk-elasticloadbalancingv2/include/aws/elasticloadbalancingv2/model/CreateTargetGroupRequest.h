@@ -61,6 +61,13 @@ namespace Model
      * account, can have a maximum of 32 characters, must contain only alphanumeric
      * characters or hyphens, and must not begin or end with a hyphen.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the target group.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
+     * characters or hyphens, and must not begin or end with a hyphen.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -102,131 +109,181 @@ namespace Model
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline const ProtocolEnum& GetProtocol() const{ return m_protocol; }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol to use for routing traffic to the targets. For Application Load
+     * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetProtocol(const ProtocolEnum& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetProtocol(ProtocolEnum&& value) { m_protocolHasBeenSet = true; m_protocol = std::move(value); }
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithProtocol(const ProtocolEnum& value) { SetProtocol(value); return *this;}
 
     /**
      * <p>The protocol to use for routing traffic to the targets. For Application Load
      * Balancers, the supported protocols are HTTP and HTTPS. For Network Load
-     * Balancers, the supported protocol is TCP.</p>
+     * Balancers, the supported protocols are TCP and TLS. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithProtocol(ProtocolEnum&& value) { SetProtocol(std::move(value)); return *this;}
 
 
     /**
      * <p>The port on which the targets receive traffic. This port is used unless you
-     * specify a port override when registering the target.</p>
+     * specify a port override when registering the target. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline int GetPort() const{ return m_port; }
 
     /**
      * <p>The port on which the targets receive traffic. This port is used unless you
-     * specify a port override when registering the target.</p>
+     * specify a port override when registering the target. If the target is a Lambda
+     * function, this parameter does not apply.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port on which the targets receive traffic. This port is used unless you
+     * specify a port override when registering the target. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
      * <p>The port on which the targets receive traffic. This port is used unless you
-     * specify a port override when registering the target.</p>
+     * specify a port override when registering the target. If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithPort(int value) { SetPort(value); return *this;}
 
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetVpcId(Aws::String&& value) { m_vpcIdHasBeenSet = true; m_vpcId = std::move(value); }
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline void SetVpcId(const char* value) { m_vpcIdHasBeenSet = true; m_vpcId.assign(value); }
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(const Aws::String& value) { SetVpcId(value); return *this;}
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(Aws::String&& value) { SetVpcId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the virtual private cloud (VPC).</p>
+     * <p>The identifier of the virtual private cloud (VPC). If the target is a Lambda
+     * function, this parameter does not apply.</p>
      */
     inline CreateTargetGroupRequest& WithVpcId(const char* value) { SetVpcId(value); return *this;}
 
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline const ProtocolEnum& GetHealthCheckProtocol() const{ return m_healthCheckProtocol; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
+     */
+    inline bool HealthCheckProtocolHasBeenSet() const { return m_healthCheckProtocolHasBeenSet; }
+
+    /**
+     * <p>The protocol the load balancer uses when performing health checks on targets.
+     * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline void SetHealthCheckProtocol(const ProtocolEnum& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = value; }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline void SetHealthCheckProtocol(ProtocolEnum&& value) { m_healthCheckProtocolHasBeenSet = true; m_healthCheckProtocol = std::move(value); }
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckProtocol(const ProtocolEnum& value) { SetHealthCheckProtocol(value); return *this;}
 
     /**
      * <p>The protocol the load balancer uses when performing health checks on targets.
-     * The TCP protocol is supported only if the protocol of the target group is TCP.
      * For Application Load Balancers, the default is HTTP. For Network Load Balancers,
-     * the default is TCP.</p>
+     * the default is TCP. The TCP protocol is supported for health checks only if the
+     * protocol of the target group is TCP or TLS. The TLS protocol is not supported
+     * for health checks.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckProtocol(ProtocolEnum&& value) { SetHealthCheckProtocol(std::move(value)); return *this;}
 
@@ -237,6 +294,13 @@ namespace Model
      * receives traffic from the load balancer.</p>
      */
     inline const Aws::String& GetHealthCheckPort() const{ return m_healthCheckPort; }
+
+    /**
+     * <p>The port the load balancer uses when performing health checks on targets. The
+     * default is <code>traffic-port</code>, which is the port on which each target
+     * receives traffic from the load balancer.</p>
+     */
+    inline bool HealthCheckPortHasBeenSet() const { return m_healthCheckPortHasBeenSet; }
 
     /**
      * <p>The port the load balancer uses when performing health checks on targets. The
@@ -282,10 +346,45 @@ namespace Model
 
 
     /**
+     * <p>Indicates whether health checks are enabled. If the target type is
+     * <code>instance</code> or <code>ip</code>, the default is <code>true</code>. If
+     * the target type is <code>lambda</code>, the default is <code>false</code>.</p>
+     */
+    inline bool GetHealthCheckEnabled() const{ return m_healthCheckEnabled; }
+
+    /**
+     * <p>Indicates whether health checks are enabled. If the target type is
+     * <code>instance</code> or <code>ip</code>, the default is <code>true</code>. If
+     * the target type is <code>lambda</code>, the default is <code>false</code>.</p>
+     */
+    inline bool HealthCheckEnabledHasBeenSet() const { return m_healthCheckEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether health checks are enabled. If the target type is
+     * <code>instance</code> or <code>ip</code>, the default is <code>true</code>. If
+     * the target type is <code>lambda</code>, the default is <code>false</code>.</p>
+     */
+    inline void SetHealthCheckEnabled(bool value) { m_healthCheckEnabledHasBeenSet = true; m_healthCheckEnabled = value; }
+
+    /**
+     * <p>Indicates whether health checks are enabled. If the target type is
+     * <code>instance</code> or <code>ip</code>, the default is <code>true</code>. If
+     * the target type is <code>lambda</code>, the default is <code>false</code>.</p>
+     */
+    inline CreateTargetGroupRequest& WithHealthCheckEnabled(bool value) { SetHealthCheckEnabled(value); return *this;}
+
+
+    /**
      * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
      * targets for health checks. The default is /.</p>
      */
     inline const Aws::String& GetHealthCheckPath() const{ return m_healthCheckPath; }
+
+    /**
+     * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
+     * targets for health checks. The default is /.</p>
+     */
+    inline bool HealthCheckPathHasBeenSet() const { return m_healthCheckPathHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The ping path that is the destination on the
@@ -327,49 +426,81 @@ namespace Model
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds. The
-     * default is 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds. If the
+     * target type is <code>instance</code> or <code>ip</code>, the default is 30
+     * seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.</p>
      */
     inline int GetHealthCheckIntervalSeconds() const{ return m_healthCheckIntervalSeconds; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds. The
-     * default is 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds. If the
+     * target type is <code>instance</code> or <code>ip</code>, the default is 30
+     * seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.</p>
+     */
+    inline bool HealthCheckIntervalSecondsHasBeenSet() const { return m_healthCheckIntervalSecondsHasBeenSet; }
+
+    /**
+     * <p>The approximate amount of time, in seconds, between health checks of an
+     * individual target. For Application Load Balancers, the range is 5–300 seconds.
+     * For Network Load Balancers, the supported values are 10 or 30 seconds. If the
+     * target type is <code>instance</code> or <code>ip</code>, the default is 30
+     * seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.</p>
      */
     inline void SetHealthCheckIntervalSeconds(int value) { m_healthCheckIntervalSecondsHasBeenSet = true; m_healthCheckIntervalSeconds = value; }
 
     /**
      * <p>The approximate amount of time, in seconds, between health checks of an
      * individual target. For Application Load Balancers, the range is 5–300 seconds.
-     * For Network Load Balancers, the supported values are 10 or 30 seconds. The
-     * default is 30 seconds.</p>
+     * For Network Load Balancers, the supported values are 10 or 30 seconds. If the
+     * target type is <code>instance</code> or <code>ip</code>, the default is 30
+     * seconds. If the target type is <code>lambda</code>, the default is 35
+     * seconds.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckIntervalSeconds(int value) { SetHealthCheckIntervalSeconds(value); return *this;}
 
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For Application Load Balancers, the range is 2–60 seconds
-     * and the default is 5 seconds. For Network Load Balancers, this is 10 seconds for
-     * TCP and HTTPS health checks and 6 seconds for HTTP health checks.</p>
+     * a failed health check. For Application Load Balancers, the range is 2–120
+     * seconds and the default is 5 seconds if the target type is <code>instance</code>
+     * or <code>ip</code> and 30 seconds if the target type is <code>lambda</code>. For
+     * Network Load Balancers, this is 10 seconds for TCP and HTTPS health checks and 6
+     * seconds for HTTP health checks.</p>
      */
     inline int GetHealthCheckTimeoutSeconds() const{ return m_healthCheckTimeoutSeconds; }
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For Application Load Balancers, the range is 2–60 seconds
-     * and the default is 5 seconds. For Network Load Balancers, this is 10 seconds for
-     * TCP and HTTPS health checks and 6 seconds for HTTP health checks.</p>
+     * a failed health check. For Application Load Balancers, the range is 2–120
+     * seconds and the default is 5 seconds if the target type is <code>instance</code>
+     * or <code>ip</code> and 30 seconds if the target type is <code>lambda</code>. For
+     * Network Load Balancers, this is 10 seconds for TCP and HTTPS health checks and 6
+     * seconds for HTTP health checks.</p>
+     */
+    inline bool HealthCheckTimeoutSecondsHasBeenSet() const { return m_healthCheckTimeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, during which no response from a target means
+     * a failed health check. For Application Load Balancers, the range is 2–120
+     * seconds and the default is 5 seconds if the target type is <code>instance</code>
+     * or <code>ip</code> and 30 seconds if the target type is <code>lambda</code>. For
+     * Network Load Balancers, this is 10 seconds for TCP and HTTPS health checks and 6
+     * seconds for HTTP health checks.</p>
      */
     inline void SetHealthCheckTimeoutSeconds(int value) { m_healthCheckTimeoutSecondsHasBeenSet = true; m_healthCheckTimeoutSeconds = value; }
 
     /**
      * <p>The amount of time, in seconds, during which no response from a target means
-     * a failed health check. For Application Load Balancers, the range is 2–60 seconds
-     * and the default is 5 seconds. For Network Load Balancers, this is 10 seconds for
-     * TCP and HTTPS health checks and 6 seconds for HTTP health checks.</p>
+     * a failed health check. For Application Load Balancers, the range is 2–120
+     * seconds and the default is 5 seconds if the target type is <code>instance</code>
+     * or <code>ip</code> and 30 seconds if the target type is <code>lambda</code>. For
+     * Network Load Balancers, this is 10 seconds for TCP and HTTPS health checks and 6
+     * seconds for HTTP health checks.</p>
      */
     inline CreateTargetGroupRequest& WithHealthCheckTimeoutSeconds(int value) { SetHealthCheckTimeoutSeconds(value); return *this;}
 
@@ -380,6 +511,13 @@ namespace Model
      * For Network Load Balancers, the default is 3.</p>
      */
     inline int GetHealthyThresholdCount() const{ return m_healthyThresholdCount; }
+
+    /**
+     * <p>The number of consecutive health checks successes required before considering
+     * an unhealthy target healthy. For Application Load Balancers, the default is 5.
+     * For Network Load Balancers, the default is 3.</p>
+     */
+    inline bool HealthyThresholdCountHasBeenSet() const { return m_healthyThresholdCountHasBeenSet; }
 
     /**
      * <p>The number of consecutive health checks successes required before considering
@@ -408,6 +546,13 @@ namespace Model
      * target unhealthy. For Application Load Balancers, the default is 2. For Network
      * Load Balancers, this value must be the same as the healthy threshold count.</p>
      */
+    inline bool UnhealthyThresholdCountHasBeenSet() const { return m_unhealthyThresholdCountHasBeenSet; }
+
+    /**
+     * <p>The number of consecutive health check failures required before considering a
+     * target unhealthy. For Application Load Balancers, the default is 2. For Network
+     * Load Balancers, this value must be the same as the healthy threshold count.</p>
+     */
     inline void SetUnhealthyThresholdCount(int value) { m_unhealthyThresholdCountHasBeenSet = true; m_unhealthyThresholdCount = value; }
 
     /**
@@ -423,6 +568,12 @@ namespace Model
      * successful response from a target.</p>
      */
     inline const Matcher& GetMatcher() const{ return m_matcher; }
+
+    /**
+     * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
+     * successful response from a target.</p>
+     */
+    inline bool MatcherHasBeenSet() const { return m_matcherHasBeenSet; }
 
     /**
      * <p>[HTTP/HTTPS health checks] The HTTP codes to use when checking for a
@@ -451,66 +602,85 @@ namespace Model
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. You can't specify targets for a
-     * target group using both instance IDs and IP addresses.</p> <p>If the target type
-     * is <code>ip</code>, specify IP addresses from the subnets of the virtual private
-     * cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12,
-     * and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify
-     * publicly routable IP addresses.</p>
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
      */
     inline const TargetTypeEnum& GetTargetType() const{ return m_targetType; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. You can't specify targets for a
-     * target group using both instance IDs and IP addresses.</p> <p>If the target type
-     * is <code>ip</code>, specify IP addresses from the subnets of the virtual private
-     * cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12,
-     * and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify
-     * publicly routable IP addresses.</p>
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The type of target that you must specify when registering targets with this
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetTargetType(const TargetTypeEnum& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. You can't specify targets for a
-     * target group using both instance IDs and IP addresses.</p> <p>If the target type
-     * is <code>ip</code>, specify IP addresses from the subnets of the virtual private
-     * cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12,
-     * and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify
-     * publicly routable IP addresses.</p>
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
      */
     inline void SetTargetType(TargetTypeEnum&& value) { m_targetTypeHasBeenSet = true; m_targetType = std::move(value); }
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. You can't specify targets for a
-     * target group using both instance IDs and IP addresses.</p> <p>If the target type
-     * is <code>ip</code>, specify IP addresses from the subnets of the virtual private
-     * cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12,
-     * and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify
-     * publicly routable IP addresses.</p>
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(const TargetTypeEnum& value) { SetTargetType(value); return *this;}
 
     /**
      * <p>The type of target that you must specify when registering targets with this
-     * target group. The possible values are <code>instance</code> (targets are
-     * specified by instance ID) or <code>ip</code> (targets are specified by IP
-     * address). The default is <code>instance</code>. You can't specify targets for a
-     * target group using both instance IDs and IP addresses.</p> <p>If the target type
-     * is <code>ip</code>, specify IP addresses from the subnets of the virtual private
-     * cloud (VPC) for the target group, the RFC 1918 range (10.0.0.0/8, 172.16.0.0/12,
-     * and 192.168.0.0/16), and the RFC 6598 range (100.64.0.0/10). You can't specify
-     * publicly routable IP addresses.</p>
+     * target group. You can't specify targets for a target group using more than one
+     * target type.</p> <ul> <li> <p> <code>instance</code> - Targets are specified by
+     * instance ID. This is the default value.</p> </li> <li> <p> <code>ip</code> -
+     * Targets are specified by IP address. You can specify IP addresses from the
+     * subnets of the virtual private cloud (VPC) for the target group, the RFC 1918
+     * range (10.0.0.0/8, 172.16.0.0/12, and 192.168.0.0/16), and the RFC 6598 range
+     * (100.64.0.0/10). You can't specify publicly routable IP addresses.</p> </li>
+     * <li> <p> <code>lambda</code> - The target groups contains a single Lambda
+     * function.</p> </li> </ul>
      */
     inline CreateTargetGroupRequest& WithTargetType(TargetTypeEnum&& value) { SetTargetType(std::move(value)); return *this;}
 
@@ -533,6 +703,9 @@ namespace Model
 
     Aws::String m_healthCheckPort;
     bool m_healthCheckPortHasBeenSet;
+
+    bool m_healthCheckEnabled;
+    bool m_healthCheckEnabledHasBeenSet;
 
     Aws::String m_healthCheckPath;
     bool m_healthCheckPathHasBeenSet;

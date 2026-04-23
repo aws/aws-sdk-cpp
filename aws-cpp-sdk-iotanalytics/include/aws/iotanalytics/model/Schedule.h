@@ -51,7 +51,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
 
@@ -59,7 +60,17 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
+     */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>The expression that defines when to trigger an update. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
@@ -67,7 +78,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline void SetExpression(Aws::String&& value) { m_expressionHasBeenSet = true; m_expression = std::move(value); }
 
@@ -75,7 +87,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline void SetExpression(const char* value) { m_expressionHasBeenSet = true; m_expression.assign(value); }
 
@@ -83,7 +96,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline Schedule& WithExpression(const Aws::String& value) { SetExpression(value); return *this;}
 
@@ -91,7 +105,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline Schedule& WithExpression(Aws::String&& value) { SetExpression(std::move(value)); return *this;}
 
@@ -99,7 +114,8 @@ namespace Model
      * <p>The expression that defines when to trigger an update. For more information,
      * see <a
      * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/ScheduledEvents.html">
-     * Schedule Expressions for Rules</a> in the Amazon CloudWatch documentation.</p>
+     * Schedule Expressions for Rules</a> in the Amazon CloudWatch Events User
+     * Guide.</p>
      */
     inline Schedule& WithExpression(const char* value) { SetExpression(value); return *this;}
 

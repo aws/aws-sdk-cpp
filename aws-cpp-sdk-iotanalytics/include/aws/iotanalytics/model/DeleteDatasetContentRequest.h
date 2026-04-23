@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the data set whose content is deleted.</p>
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set whose content is deleted.</p>
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * default.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The version of the data set whose content is deleted. You can also use the
+     * strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest
+     * successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the
+     * default.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The version of the data set whose content is deleted. You can also use the

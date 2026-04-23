@@ -32,6 +32,7 @@ HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification() :
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
+    m_algorithmNameHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ HyperParameterAlgorithmSpecification::HyperParameterAlgorithmSpecification(JsonV
     m_trainingImageHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
+    m_algorithmNameHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -59,6 +61,13 @@ HyperParameterAlgorithmSpecification& HyperParameterAlgorithmSpecification::oper
     m_trainingInputMode = TrainingInputModeMapper::GetTrainingInputModeForName(jsonValue.GetString("TrainingInputMode"));
 
     m_trainingInputModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlgorithmName"))
+  {
+    m_algorithmName = jsonValue.GetString("AlgorithmName");
+
+    m_algorithmNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("MetricDefinitions"))
@@ -87,6 +96,12 @@ JsonValue HyperParameterAlgorithmSpecification::Jsonize() const
   if(m_trainingInputModeHasBeenSet)
   {
    payload.WithString("TrainingInputMode", TrainingInputModeMapper::GetNameForTrainingInputMode(m_trainingInputMode));
+  }
+
+  if(m_algorithmNameHasBeenSet)
+  {
+   payload.WithString("AlgorithmName", m_algorithmName);
+
   }
 
   if(m_metricDefinitionsHasBeenSet)

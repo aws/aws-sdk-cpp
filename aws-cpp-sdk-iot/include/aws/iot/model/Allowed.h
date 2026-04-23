@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A list of policies that allowed the authentication.</p>
      */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
+
+    /**
+     * <p>A list of policies that allowed the authentication.</p>
+     */
     inline void SetPolicies(const Aws::Vector<Policy>& value) { m_policiesHasBeenSet = true; m_policies = value; }
 
     /**

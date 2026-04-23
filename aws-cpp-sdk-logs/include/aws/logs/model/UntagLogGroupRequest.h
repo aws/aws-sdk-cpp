@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The tag keys. The corresponding tags are removed from the log group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys. The corresponding tags are removed from the log group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag keys. The corresponding tags are removed from the log group.</p>

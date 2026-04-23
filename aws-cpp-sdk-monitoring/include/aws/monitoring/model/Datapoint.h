@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The time stamp used for the data point.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp used for the data point.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * <p>The number of metric values that contributed to the aggregate value of this
      * data point.</p>
      */
+    inline bool SampleCountHasBeenSet() const { return m_sampleCountHasBeenSet; }
+
+    /**
+     * <p>The number of metric values that contributed to the aggregate value of this
+     * data point.</p>
+     */
     inline void SetSampleCount(double value) { m_sampleCountHasBeenSet = true; m_sampleCount = value; }
 
     /**
@@ -102,6 +113,11 @@ namespace Model
      * <p>The average of the metric values that correspond to the data point.</p>
      */
     inline double GetAverage() const{ return m_average; }
+
+    /**
+     * <p>The average of the metric values that correspond to the data point.</p>
+     */
+    inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
 
     /**
      * <p>The average of the metric values that correspond to the data point.</p>
@@ -122,6 +138,11 @@ namespace Model
     /**
      * <p>The sum of the metric values for the data point.</p>
      */
+    inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
+
+    /**
+     * <p>The sum of the metric values for the data point.</p>
+     */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
@@ -134,6 +155,11 @@ namespace Model
      * <p>The minimum metric value for the data point.</p>
      */
     inline double GetMinimum() const{ return m_minimum; }
+
+    /**
+     * <p>The minimum metric value for the data point.</p>
+     */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
 
     /**
      * <p>The minimum metric value for the data point.</p>
@@ -154,6 +180,11 @@ namespace Model
     /**
      * <p>The maximum metric value for the data point.</p>
      */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
+
+    /**
+     * <p>The maximum metric value for the data point.</p>
+     */
     inline void SetMaximum(double value) { m_maximumHasBeenSet = true; m_maximum = value; }
 
     /**
@@ -166,6 +197,11 @@ namespace Model
      * <p>The standard unit for the data point.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The standard unit for the data point.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The standard unit for the data point.</p>
@@ -192,6 +228,11 @@ namespace Model
      * <p>The percentile statistic for the data point.</p>
      */
     inline const Aws::Map<Aws::String, double>& GetExtendedStatistics() const{ return m_extendedStatistics; }
+
+    /**
+     * <p>The percentile statistic for the data point.</p>
+     */
+    inline bool ExtendedStatisticsHasBeenSet() const { return m_extendedStatisticsHasBeenSet; }
 
     /**
      * <p>The percentile statistic for the data point.</p>

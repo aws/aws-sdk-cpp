@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
      * <code>LogDestinationConfigs</code>.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the web ACL that you want to associate with
+     * <code>LogDestinationConfigs</code>.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogDestinationConfigs() const{ return m_logDestinationConfigs; }
+
+    /**
+     * <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
+     */
+    inline bool LogDestinationConfigsHasBeenSet() const { return m_logDestinationConfigsHasBeenSet; }
 
     /**
      * <p>An array of Amazon Kinesis Data Firehose ARNs.</p>
@@ -140,6 +151,13 @@ namespace Model
      * <code>xxx</code>. </p>
      */
     inline const Aws::Vector<FieldToMatch>& GetRedactedFields() const{ return m_redactedFields; }
+
+    /**
+     * <p>The parts of the request that you want redacted from the logs. For example,
+     * if you redact the cookie field, the cookie field in the firehose will be
+     * <code>xxx</code>. </p>
+     */
+    inline bool RedactedFieldsHasBeenSet() const { return m_redactedFieldsHasBeenSet; }
 
     /**
      * <p>The parts of the request that you want redacted from the logs. For example,

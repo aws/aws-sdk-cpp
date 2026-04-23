@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for TeletextSourceSettings<p><h3>See Also:</h3>   <a
+   * Teletext Source Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/TeletextSourceSettings">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,13 @@ namespace Model
      * be specified as a hexadecimal string with no "0x" prefix.
      */
     inline const Aws::String& GetPageNumber() const{ return m_pageNumber; }
+
+    /**
+     * Specifies the teletext page number within the data stream from which to extract
+     * captions. Range of 0x100 (256) to 0x8FF (2303). Unused for passthrough. Should
+     * be specified as a hexadecimal string with no "0x" prefix.
+     */
+    inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
 
     /**
      * Specifies the teletext page number within the data stream from which to extract

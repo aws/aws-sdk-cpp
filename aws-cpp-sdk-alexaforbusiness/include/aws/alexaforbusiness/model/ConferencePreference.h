@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the default conference provider.</p>
      */
+    inline bool DefaultConferenceProviderArnHasBeenSet() const { return m_defaultConferenceProviderArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the default conference provider.</p>
+     */
     inline void SetDefaultConferenceProviderArn(const Aws::String& value) { m_defaultConferenceProviderArnHasBeenSet = true; m_defaultConferenceProviderArn = value; }
 
     /**

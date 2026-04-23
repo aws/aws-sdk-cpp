@@ -47,73 +47,83 @@ namespace Model
 
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline const Aws::String& GetFileSystemId() const{ return m_fileSystemId; }
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
+     */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline void SetFileSystemId(Aws::String&& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = std::move(value); }
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline void SetFileSystemId(const char* value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId.assign(value); }
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline CreateMountTargetRequest& WithFileSystemId(const Aws::String& value) { SetFileSystemId(value); return *this;}
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline CreateMountTargetRequest& WithFileSystemId(Aws::String&& value) { SetFileSystemId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the file system for which to create the mount target.</p>
+     * <p>The ID of the file system for which to create the mount target.</p>
      */
     inline CreateMountTargetRequest& WithFileSystemId(const char* value) { SetFileSystemId(value); return *this;}
 
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline void SetSubnetId(Aws::String&& value) { m_subnetIdHasBeenSet = true; m_subnetId = std::move(value); }
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline void SetSubnetId(const char* value) { m_subnetIdHasBeenSet = true; m_subnetId.assign(value); }
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(const Aws::String& value) { SetSubnetId(value); return *this;}
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(Aws::String&& value) { SetSubnetId(std::move(value)); return *this;}
 
     /**
-     * <p>ID of the subnet to add the mount target in.</p>
+     * <p>The ID of the subnet to add the mount target in.</p>
      */
     inline CreateMountTargetRequest& WithSubnetId(const char* value) { SetSubnetId(value); return *this;}
 
@@ -122,6 +132,11 @@ namespace Model
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>Valid IPv4 address within the address range of the specified subnet.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>Valid IPv4 address within the address range of the specified subnet.</p>
@@ -159,6 +174,12 @@ namespace Model
      * These must be for the same VPC as subnet specified.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.
+     * These must be for the same VPC as subnet specified.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>Up to five VPC security group IDs, of the form <code>sg-xxxxxxxx</code>.

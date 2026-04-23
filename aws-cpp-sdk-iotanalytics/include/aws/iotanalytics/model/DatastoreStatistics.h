@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The estimated size of the data store.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The estimated size of the data store.</p>
+     */
     inline void SetSize(const EstimatedResourceSize& value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**

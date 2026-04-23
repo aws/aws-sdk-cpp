@@ -58,6 +58,12 @@ namespace Model
      * <p>The schema ARN in which the new <a>Facet</a> will be created. For more
      * information, see <a>arns</a>.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The schema ARN in which the new <a>Facet</a> will be created. For more
+     * information, see <a>arns</a>.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <a>Facet</a>, which is unique for a given schema.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * <p>The attributes that are associated with the <a>Facet</a>.</p>
      */
     inline const Aws::Vector<FacetAttribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes that are associated with the <a>Facet</a>.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes that are associated with the <a>Facet</a>.</p>
@@ -174,6 +190,18 @@ namespace Model
      * </ul>
      */
     inline const ObjectType& GetObjectType() const{ return m_objectType; }
+
+    /**
+     * <p>Specifies whether a given object created from this facet is of type node,
+     * leaf node, policy or index.</p> <ul> <li> <p>Node: Can have multiple children
+     * but one parent.</p> </li> </ul> <ul> <li> <p>Leaf node: Cannot have children but
+     * can have multiple parents.</p> </li> </ul> <ul> <li> <p>Policy: Allows you to
+     * store a policy document and policy type. For more information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+     * </li> </ul> <ul> <li> <p>Index: Can be created with the Index API.</p> </li>
+     * </ul>
+     */
+    inline bool ObjectTypeHasBeenSet() const { return m_objectTypeHasBeenSet; }
 
     /**
      * <p>Specifies whether a given object created from this facet is of type node,
@@ -231,6 +259,14 @@ namespace Model
      * during data plane operations.</p>
      */
     inline const FacetStyle& GetFacetStyle() const{ return m_facetStyle; }
+
+    /**
+     * <p>There are two different styles that you can define on any given facet,
+     * <code>Static</code> and <code>Dynamic</code>. For static facets, all attributes
+     * must be defined in the schema. For dynamic facets, attributes can be defined
+     * during data plane operations.</p>
+     */
+    inline bool FacetStyleHasBeenSet() const { return m_facetStyleHasBeenSet; }
 
     /**
      * <p>There are two different styles that you can define on any given facet,

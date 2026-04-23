@@ -51,37 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline void SetResourceArn(Aws::String&& value) { m_resourceArnHasBeenSet = true; m_resourceArn = std::move(value); }
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline void SetResourceArn(const char* value) { m_resourceArnHasBeenSet = true; m_resourceArn.assign(value); }
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline TagResourceRequest& WithResourceArn(const Aws::String& value) { SetResourceArn(value); return *this;}
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline TagResourceRequest& WithResourceArn(Aws::String&& value) { SetResourceArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the resource whose tags will be modified.</p>
+     * <p>The ARN of the resource whose tags you want to modify.</p>
      */
     inline TagResourceRequest& WithResourceArn(const char* value) { SetResourceArn(value); return *this;}
 
@@ -90,6 +95,11 @@ namespace Model
      * <p>The new or modified tags for the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The new or modified tags for the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The new or modified tags for the resource.</p>

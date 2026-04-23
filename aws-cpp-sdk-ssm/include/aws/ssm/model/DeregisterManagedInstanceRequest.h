@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID assigned to the managed instance when you registered it using the
      * activation process. </p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the managed instance when you registered it using the
+     * activation process. </p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**

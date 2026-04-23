@@ -48,6 +48,9 @@ namespace Model
     inline const ShardIteratorType& GetType() const{ return m_type; }
 
     
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    
     inline void SetType(const ShardIteratorType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     
@@ -62,6 +65,9 @@ namespace Model
 
     
     inline const Aws::String& GetSequenceNumber() const{ return m_sequenceNumber; }
+
+    
+    inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
 
     
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
@@ -84,6 +90,9 @@ namespace Model
 
     
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }

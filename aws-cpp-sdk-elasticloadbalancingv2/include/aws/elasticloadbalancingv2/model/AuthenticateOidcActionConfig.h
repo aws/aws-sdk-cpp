@@ -62,6 +62,12 @@ namespace Model
      * <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the
      * HTTPS protocol, the domain, and the path.</p>
      */
+    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+
+    /**
+     * <p>The OIDC issuer identifier of the IdP. This must be a full URL, including the
+     * HTTPS protocol, the domain, and the path.</p>
+     */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * HTTPS protocol, the domain, and the path.</p>
      */
     inline const Aws::String& GetAuthorizationEndpoint() const{ return m_authorizationEndpoint; }
+
+    /**
+     * <p>The authorization endpoint of the IdP. This must be a full URL, including the
+     * HTTPS protocol, the domain, and the path.</p>
+     */
+    inline bool AuthorizationEndpointHasBeenSet() const { return m_authorizationEndpointHasBeenSet; }
 
     /**
      * <p>The authorization endpoint of the IdP. This must be a full URL, including the
@@ -148,6 +160,12 @@ namespace Model
      * <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS
      * protocol, the domain, and the path.</p>
      */
+    inline bool TokenEndpointHasBeenSet() const { return m_tokenEndpointHasBeenSet; }
+
+    /**
+     * <p>The token endpoint of the IdP. This must be a full URL, including the HTTPS
+     * protocol, the domain, and the path.</p>
+     */
     inline void SetTokenEndpoint(const Aws::String& value) { m_tokenEndpointHasBeenSet = true; m_tokenEndpoint = value; }
 
     /**
@@ -186,6 +204,12 @@ namespace Model
      * HTTPS protocol, the domain, and the path.</p>
      */
     inline const Aws::String& GetUserInfoEndpoint() const{ return m_userInfoEndpoint; }
+
+    /**
+     * <p>The user info endpoint of the IdP. This must be a full URL, including the
+     * HTTPS protocol, the domain, and the path.</p>
+     */
+    inline bool UserInfoEndpointHasBeenSet() const { return m_userInfoEndpointHasBeenSet; }
 
     /**
      * <p>The user info endpoint of the IdP. This must be a full URL, including the
@@ -232,6 +256,11 @@ namespace Model
     /**
      * <p>The OAuth 2.0 client identifier.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The OAuth 2.0 client identifier.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -261,37 +290,58 @@ namespace Model
 
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline const Aws::String& GetClientSecret() const{ return m_clientSecret; }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
+     */
+    inline bool ClientSecretHasBeenSet() const { return m_clientSecretHasBeenSet; }
+
+    /**
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(const Aws::String& value) { m_clientSecretHasBeenSet = true; m_clientSecret = value; }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(Aws::String&& value) { m_clientSecretHasBeenSet = true; m_clientSecret = std::move(value); }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline void SetClientSecret(const char* value) { m_clientSecretHasBeenSet = true; m_clientSecret.assign(value); }
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(const Aws::String& value) { SetClientSecret(value); return *this;}
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(Aws::String&& value) { SetClientSecret(std::move(value)); return *this;}
 
     /**
-     * <p>The OAuth 2.0 client secret.</p>
+     * <p>The OAuth 2.0 client secret. This parameter is required if you are creating a
+     * rule. If you are modifying a rule, you can omit this parameter if you set
+     * <code>UseExistingClientSecret</code> to true.</p>
      */
     inline AuthenticateOidcActionConfig& WithClientSecret(const char* value) { SetClientSecret(value); return *this;}
 
@@ -301,6 +351,12 @@ namespace Model
      * AWSELBAuthSessionCookie.</p>
      */
     inline const Aws::String& GetSessionCookieName() const{ return m_sessionCookieName; }
+
+    /**
+     * <p>The name of the cookie used to maintain session information. The default is
+     * AWSELBAuthSessionCookie.</p>
+     */
+    inline bool SessionCookieNameHasBeenSet() const { return m_sessionCookieNameHasBeenSet; }
 
     /**
      * <p>The name of the cookie used to maintain session information. The default is
@@ -345,6 +401,13 @@ namespace Model
      * how to separate multiple values, see the documentation for your IdP.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The set of user claims to be requested from the IdP. The default is
+     * <code>openid</code>.</p> <p>To verify which scope values your IdP supports and
+     * how to separate multiple values, see the documentation for your IdP.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>The set of user claims to be requested from the IdP. The default is
@@ -399,6 +462,12 @@ namespace Model
      * <p>The maximum duration of the authentication session, in seconds. The default
      * is 604800 seconds (7 days).</p>
      */
+    inline bool SessionTimeoutHasBeenSet() const { return m_sessionTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum duration of the authentication session, in seconds. The default
+     * is 604800 seconds (7 days).</p>
+     */
     inline void SetSessionTimeout(long long value) { m_sessionTimeoutHasBeenSet = true; m_sessionTimeout = value; }
 
     /**
@@ -413,6 +482,12 @@ namespace Model
      * authorization endpoint.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAuthenticationRequestExtraParams() const{ return m_authenticationRequestExtraParams; }
+
+    /**
+     * <p>The query parameters (up to 10) to include in the redirect request to the
+     * authorization endpoint.</p>
+     */
+    inline bool AuthenticationRequestExtraParamsHasBeenSet() const { return m_authenticationRequestExtraParamsHasBeenSet; }
 
     /**
      * <p>The query parameters (up to 10) to include in the redirect request to the
@@ -497,6 +572,15 @@ namespace Model
      * target.</p> </li> <li> <p>authenticate<code/> - Redirect the request to the IdP
      * authorization endpoint. This is the default value.</p> </li> </ul>
      */
+    inline bool OnUnauthenticatedRequestHasBeenSet() const { return m_onUnauthenticatedRequestHasBeenSet; }
+
+    /**
+     * <p>The behavior if the user is not authenticated. The following are possible
+     * values:</p> <ul> <li> <p>deny<code/> - Return an HTTP 401 Unauthorized
+     * error.</p> </li> <li> <p>allow<code/> - Allow the request to be forwarded to the
+     * target.</p> </li> <li> <p>authenticate<code/> - Redirect the request to the IdP
+     * authorization endpoint. This is the default value.</p> </li> </ul>
+     */
     inline void SetOnUnauthenticatedRequest(const AuthenticateOidcActionConditionalBehaviorEnum& value) { m_onUnauthenticatedRequestHasBeenSet = true; m_onUnauthenticatedRequest = value; }
 
     /**
@@ -525,6 +609,31 @@ namespace Model
      * authorization endpoint. This is the default value.</p> </li> </ul>
      */
     inline AuthenticateOidcActionConfig& WithOnUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum&& value) { SetOnUnauthenticatedRequest(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline bool GetUseExistingClientSecret() const{ return m_useExistingClientSecret; }
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline bool UseExistingClientSecretHasBeenSet() const { return m_useExistingClientSecretHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline void SetUseExistingClientSecret(bool value) { m_useExistingClientSecretHasBeenSet = true; m_useExistingClientSecret = value; }
+
+    /**
+     * <p>Indicates whether to use the existing client secret when modifying a rule. If
+     * you are creating a rule, you can omit this parameter or set it to false.</p>
+     */
+    inline AuthenticateOidcActionConfig& WithUseExistingClientSecret(bool value) { SetUseExistingClientSecret(value); return *this;}
 
   private:
 
@@ -560,6 +669,9 @@ namespace Model
 
     AuthenticateOidcActionConditionalBehaviorEnum m_onUnauthenticatedRequest;
     bool m_onUnauthenticatedRequestHasBeenSet;
+
+    bool m_useExistingClientSecret;
+    bool m_useExistingClientSecretHasBeenSet;
   };
 
 } // namespace Model

@@ -30,7 +30,7 @@ ListTagsForVaultRequest::ListTagsForVaultRequest() :
 
 Aws::String ListTagsForVaultRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

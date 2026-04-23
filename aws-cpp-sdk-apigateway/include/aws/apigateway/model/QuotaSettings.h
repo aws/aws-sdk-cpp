@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The maximum number of requests that can be made in a given time period.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of requests that can be made in a given time period.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -68,6 +73,12 @@ namespace Model
      * period.</p>
      */
     inline int GetOffset() const{ return m_offset; }
+
+    /**
+     * <p>The number of requests subtracted from the given limit in the initial time
+     * period.</p>
+     */
+    inline bool OffsetHasBeenSet() const { return m_offsetHasBeenSet; }
 
     /**
      * <p>The number of requests subtracted from the given limit in the initial time
@@ -87,6 +98,12 @@ namespace Model
      * "MONTH".</p>
      */
     inline const QuotaPeriodType& GetPeriod() const{ return m_period; }
+
+    /**
+     * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or
+     * "MONTH".</p>
+     */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
 
     /**
      * <p>The time period in which the limit applies. Valid values are "DAY", "WEEK" or

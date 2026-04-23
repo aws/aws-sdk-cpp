@@ -34,7 +34,7 @@ ListInputSecurityGroupsRequest::ListInputSecurityGroupsRequest() :
 
 Aws::String ListInputSecurityGroupsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListInputSecurityGroupsRequest::AddQueryStringParameters(URI& uri) const

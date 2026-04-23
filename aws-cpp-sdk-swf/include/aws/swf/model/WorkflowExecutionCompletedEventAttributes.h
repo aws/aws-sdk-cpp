@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The result produced by the workflow execution upon successful completion.</p>
      */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
+
+    /**
+     * <p>The result produced by the workflow execution upon successful completion.</p>
+     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**
@@ -92,6 +97,15 @@ namespace Model
      * event.</p>
      */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>CompleteWorkflowExecution</code>
+     * decision to complete this execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the

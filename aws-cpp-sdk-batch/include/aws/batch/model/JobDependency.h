@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The job ID of the AWS Batch job associated with this dependency.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The job ID of the AWS Batch job associated with this dependency.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The type of the job dependency.</p>
      */
     inline const ArrayJobDependency& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the job dependency.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the job dependency.</p>

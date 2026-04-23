@@ -25,7 +25,8 @@ CreatePlatformVersionRequest::CreatePlatformVersionRequest() :
     m_platformVersionHasBeenSet(false),
     m_platformDefinitionBundleHasBeenSet(false),
     m_environmentNameHasBeenSet(false),
-    m_optionSettingsHasBeenSet(false)
+    m_optionSettingsHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -60,6 +61,16 @@ Aws::String CreatePlatformVersionRequest::SerializePayload() const
     {
       item.OutputToStream(ss, "OptionSettings.member.", optionSettingsCount, "");
       optionSettingsCount++;
+    }
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
     }
   }
 

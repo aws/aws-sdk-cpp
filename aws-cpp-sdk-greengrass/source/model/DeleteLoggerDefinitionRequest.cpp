@@ -29,7 +29,7 @@ DeleteLoggerDefinitionRequest::DeleteLoggerDefinitionRequest() :
 
 Aws::String DeleteLoggerDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

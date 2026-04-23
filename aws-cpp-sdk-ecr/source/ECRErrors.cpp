@@ -31,6 +31,7 @@ namespace ECRErrorMapper
 static const int LAYERS_NOT_FOUND_HASH = HashingUtils::HashString("LayersNotFoundException");
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int INVALID_LAYER_HASH = HashingUtils::HashString("InvalidLayerException");
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int INVALID_LAYER_PART_HASH = HashingUtils::HashString("InvalidLayerPartException");
 static const int REPOSITORY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryNotFoundException");
 static const int LAYER_PART_TOO_SMALL_HASH = HashingUtils::HashString("LayerPartTooSmallException");
@@ -44,6 +45,7 @@ static const int LIFECYCLE_POLICY_PREVIEW_NOT_FOUND_HASH = HashingUtils::HashStr
 static const int IMAGE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ImageAlreadyExistsException");
 static const int LAYER_INACCESSIBLE_HASH = HashingUtils::HashString("LayerInaccessibleException");
 static const int REPOSITORY_POLICY_NOT_FOUND_HASH = HashingUtils::HashString("RepositoryPolicyNotFoundException");
+static const int INVALID_TAG_PARAMETER_HASH = HashingUtils::HashString("InvalidTagParameterException");
 static const int LAYER_ALREADY_EXISTS_HASH = HashingUtils::HashString("LayerAlreadyExistsException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int IMAGE_NOT_FOUND_HASH = HashingUtils::HashString("ImageNotFoundException");
@@ -65,6 +67,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_LAYER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_LAYER), false);
+  }
+  else if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::TOO_MANY_TAGS), false);
   }
   else if (hashCode == INVALID_LAYER_PART_HASH)
   {
@@ -117,6 +123,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REPOSITORY_POLICY_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::REPOSITORY_POLICY_NOT_FOUND), false);
+  }
+  else if (hashCode == INVALID_TAG_PARAMETER_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ECRErrors::INVALID_TAG_PARAMETER), false);
   }
   else if (hashCode == LAYER_ALREADY_EXISTS_HASH)
   {

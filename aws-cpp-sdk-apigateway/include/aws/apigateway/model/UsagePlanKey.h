@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Id of a usage plan key.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The Id of a usage plan key.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * <code>API_KEY</code>.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of a usage plan key. Currently, the valid key type is
+     * <code>API_KEY</code>.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of a usage plan key. Currently, the valid key type is
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>The value of a usage plan key.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of a usage plan key.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -171,6 +187,11 @@ namespace Model
      * <p>The name of a usage plan key.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of a usage plan key.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of a usage plan key.</p>

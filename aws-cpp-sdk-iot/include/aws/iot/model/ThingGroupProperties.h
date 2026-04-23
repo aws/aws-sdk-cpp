@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The thing group description.</p>
      */
+    inline bool ThingGroupDescriptionHasBeenSet() const { return m_thingGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The thing group description.</p>
+     */
     inline void SetThingGroupDescription(const Aws::String& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The thing group attributes in JSON format.</p>
      */
     inline const AttributePayload& GetAttributePayload() const{ return m_attributePayload; }
+
+    /**
+     * <p>The thing group attributes in JSON format.</p>
+     */
+    inline bool AttributePayloadHasBeenSet() const { return m_attributePayloadHasBeenSet; }
 
     /**
      * <p>The thing group attributes in JSON format.</p>

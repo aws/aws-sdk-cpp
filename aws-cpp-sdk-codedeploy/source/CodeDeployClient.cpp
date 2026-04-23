@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/codedeploy/CodeDeployClient.h>
 #include <aws/codedeploy/CodeDeployEndpoint.h>
 #include <aws/codedeploy/CodeDeployErrorMarshaller.h>
@@ -31,7 +34,7 @@
 #include <aws/codedeploy/model/BatchGetApplicationRevisionsRequest.h>
 #include <aws/codedeploy/model/BatchGetApplicationsRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentGroupsRequest.h>
-#include <aws/codedeploy/model/BatchGetDeploymentInstancesRequest.h>
+#include <aws/codedeploy/model/BatchGetDeploymentTargetsRequest.h>
 #include <aws/codedeploy/model/BatchGetDeploymentsRequest.h>
 #include <aws/codedeploy/model/BatchGetOnPremisesInstancesRequest.h>
 #include <aws/codedeploy/model/ContinueDeploymentRequest.h>
@@ -49,13 +52,13 @@
 #include <aws/codedeploy/model/GetDeploymentRequest.h>
 #include <aws/codedeploy/model/GetDeploymentConfigRequest.h>
 #include <aws/codedeploy/model/GetDeploymentGroupRequest.h>
-#include <aws/codedeploy/model/GetDeploymentInstanceRequest.h>
+#include <aws/codedeploy/model/GetDeploymentTargetRequest.h>
 #include <aws/codedeploy/model/GetOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/ListApplicationRevisionsRequest.h>
 #include <aws/codedeploy/model/ListApplicationsRequest.h>
 #include <aws/codedeploy/model/ListDeploymentConfigsRequest.h>
 #include <aws/codedeploy/model/ListDeploymentGroupsRequest.h>
-#include <aws/codedeploy/model/ListDeploymentInstancesRequest.h>
+#include <aws/codedeploy/model/ListDeploymentTargetsRequest.h>
 #include <aws/codedeploy/model/ListDeploymentsRequest.h>
 #include <aws/codedeploy/model/ListGitHubAccountTokenNamesRequest.h>
 #include <aws/codedeploy/model/ListOnPremisesInstancesRequest.h>
@@ -63,7 +66,6 @@
 #include <aws/codedeploy/model/RegisterApplicationRevisionRequest.h>
 #include <aws/codedeploy/model/RegisterOnPremisesInstanceRequest.h>
 #include <aws/codedeploy/model/RemoveTagsFromOnPremisesInstancesRequest.h>
-#include <aws/codedeploy/model/SkipWaitTimeForInstanceTerminationRequest.h>
 #include <aws/codedeploy/model/StopDeploymentRequest.h>
 #include <aws/codedeploy/model/UpdateApplicationRequest.h>
 #include <aws/codedeploy/model/UpdateDeploymentGroupRequest.h>
@@ -117,25 +119,32 @@ CodeDeployClient::~CodeDeployClient()
 
 void CodeDeployClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << CodeDeployEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + CodeDeployEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void CodeDeployClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AddTagsToOnPremisesInstancesOutcome CodeDeployClient::AddTagsToOnPremisesInstances(const AddTagsToOnPremisesInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -169,8 +178,8 @@ void CodeDeployClient::AddTagsToOnPremisesInstancesAsyncHelper(const AddTagsToOn
 
 BatchGetApplicationRevisionsOutcome CodeDeployClient::BatchGetApplicationRevisions(const BatchGetApplicationRevisionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -204,8 +213,8 @@ void CodeDeployClient::BatchGetApplicationRevisionsAsyncHelper(const BatchGetApp
 
 BatchGetApplicationsOutcome CodeDeployClient::BatchGetApplications(const BatchGetApplicationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -239,8 +248,8 @@ void CodeDeployClient::BatchGetApplicationsAsyncHelper(const BatchGetApplication
 
 BatchGetDeploymentGroupsOutcome CodeDeployClient::BatchGetDeploymentGroups(const BatchGetDeploymentGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -272,45 +281,45 @@ void CodeDeployClient::BatchGetDeploymentGroupsAsyncHelper(const BatchGetDeploym
   handler(this, request, BatchGetDeploymentGroups(request), context);
 }
 
-BatchGetDeploymentInstancesOutcome CodeDeployClient::BatchGetDeploymentInstances(const BatchGetDeploymentInstancesRequest& request) const
+BatchGetDeploymentTargetsOutcome CodeDeployClient::BatchGetDeploymentTargets(const BatchGetDeploymentTargetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return BatchGetDeploymentInstancesOutcome(BatchGetDeploymentInstancesResult(outcome.GetResult()));
+    return BatchGetDeploymentTargetsOutcome(BatchGetDeploymentTargetsResult(outcome.GetResult()));
   }
   else
   {
-    return BatchGetDeploymentInstancesOutcome(outcome.GetError());
+    return BatchGetDeploymentTargetsOutcome(outcome.GetError());
   }
 }
 
-BatchGetDeploymentInstancesOutcomeCallable CodeDeployClient::BatchGetDeploymentInstancesCallable(const BatchGetDeploymentInstancesRequest& request) const
+BatchGetDeploymentTargetsOutcomeCallable CodeDeployClient::BatchGetDeploymentTargetsCallable(const BatchGetDeploymentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< BatchGetDeploymentInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDeploymentInstances(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< BatchGetDeploymentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->BatchGetDeploymentTargets(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void CodeDeployClient::BatchGetDeploymentInstancesAsync(const BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::BatchGetDeploymentTargetsAsync(const BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDeploymentInstancesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->BatchGetDeploymentTargetsAsyncHelper( request, handler, context ); } );
 }
 
-void CodeDeployClient::BatchGetDeploymentInstancesAsyncHelper(const BatchGetDeploymentInstancesRequest& request, const BatchGetDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::BatchGetDeploymentTargetsAsyncHelper(const BatchGetDeploymentTargetsRequest& request, const BatchGetDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, BatchGetDeploymentInstances(request), context);
+  handler(this, request, BatchGetDeploymentTargets(request), context);
 }
 
 BatchGetDeploymentsOutcome CodeDeployClient::BatchGetDeployments(const BatchGetDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -344,8 +353,8 @@ void CodeDeployClient::BatchGetDeploymentsAsyncHelper(const BatchGetDeploymentsR
 
 BatchGetOnPremisesInstancesOutcome CodeDeployClient::BatchGetOnPremisesInstances(const BatchGetOnPremisesInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -379,8 +388,8 @@ void CodeDeployClient::BatchGetOnPremisesInstancesAsyncHelper(const BatchGetOnPr
 
 ContinueDeploymentOutcome CodeDeployClient::ContinueDeployment(const ContinueDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -414,8 +423,8 @@ void CodeDeployClient::ContinueDeploymentAsyncHelper(const ContinueDeploymentReq
 
 CreateApplicationOutcome CodeDeployClient::CreateApplication(const CreateApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -449,8 +458,8 @@ void CodeDeployClient::CreateApplicationAsyncHelper(const CreateApplicationReque
 
 CreateDeploymentOutcome CodeDeployClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -484,8 +493,8 @@ void CodeDeployClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest
 
 CreateDeploymentConfigOutcome CodeDeployClient::CreateDeploymentConfig(const CreateDeploymentConfigRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -519,8 +528,8 @@ void CodeDeployClient::CreateDeploymentConfigAsyncHelper(const CreateDeploymentC
 
 CreateDeploymentGroupOutcome CodeDeployClient::CreateDeploymentGroup(const CreateDeploymentGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -554,8 +563,8 @@ void CodeDeployClient::CreateDeploymentGroupAsyncHelper(const CreateDeploymentGr
 
 DeleteApplicationOutcome CodeDeployClient::DeleteApplication(const DeleteApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -589,8 +598,8 @@ void CodeDeployClient::DeleteApplicationAsyncHelper(const DeleteApplicationReque
 
 DeleteDeploymentConfigOutcome CodeDeployClient::DeleteDeploymentConfig(const DeleteDeploymentConfigRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -624,8 +633,8 @@ void CodeDeployClient::DeleteDeploymentConfigAsyncHelper(const DeleteDeploymentC
 
 DeleteDeploymentGroupOutcome CodeDeployClient::DeleteDeploymentGroup(const DeleteDeploymentGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -659,8 +668,8 @@ void CodeDeployClient::DeleteDeploymentGroupAsyncHelper(const DeleteDeploymentGr
 
 DeleteGitHubAccountTokenOutcome CodeDeployClient::DeleteGitHubAccountToken(const DeleteGitHubAccountTokenRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -694,8 +703,8 @@ void CodeDeployClient::DeleteGitHubAccountTokenAsyncHelper(const DeleteGitHubAcc
 
 DeregisterOnPremisesInstanceOutcome CodeDeployClient::DeregisterOnPremisesInstance(const DeregisterOnPremisesInstanceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -729,8 +738,8 @@ void CodeDeployClient::DeregisterOnPremisesInstanceAsyncHelper(const DeregisterO
 
 GetApplicationOutcome CodeDeployClient::GetApplication(const GetApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -764,8 +773,8 @@ void CodeDeployClient::GetApplicationAsyncHelper(const GetApplicationRequest& re
 
 GetApplicationRevisionOutcome CodeDeployClient::GetApplicationRevision(const GetApplicationRevisionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -799,8 +808,8 @@ void CodeDeployClient::GetApplicationRevisionAsyncHelper(const GetApplicationRev
 
 GetDeploymentOutcome CodeDeployClient::GetDeployment(const GetDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -834,8 +843,8 @@ void CodeDeployClient::GetDeploymentAsyncHelper(const GetDeploymentRequest& requ
 
 GetDeploymentConfigOutcome CodeDeployClient::GetDeploymentConfig(const GetDeploymentConfigRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -869,8 +878,8 @@ void CodeDeployClient::GetDeploymentConfigAsyncHelper(const GetDeploymentConfigR
 
 GetDeploymentGroupOutcome CodeDeployClient::GetDeploymentGroup(const GetDeploymentGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -902,45 +911,45 @@ void CodeDeployClient::GetDeploymentGroupAsyncHelper(const GetDeploymentGroupReq
   handler(this, request, GetDeploymentGroup(request), context);
 }
 
-GetDeploymentInstanceOutcome CodeDeployClient::GetDeploymentInstance(const GetDeploymentInstanceRequest& request) const
+GetDeploymentTargetOutcome CodeDeployClient::GetDeploymentTarget(const GetDeploymentTargetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return GetDeploymentInstanceOutcome(GetDeploymentInstanceResult(outcome.GetResult()));
+    return GetDeploymentTargetOutcome(GetDeploymentTargetResult(outcome.GetResult()));
   }
   else
   {
-    return GetDeploymentInstanceOutcome(outcome.GetError());
+    return GetDeploymentTargetOutcome(outcome.GetError());
   }
 }
 
-GetDeploymentInstanceOutcomeCallable CodeDeployClient::GetDeploymentInstanceCallable(const GetDeploymentInstanceRequest& request) const
+GetDeploymentTargetOutcomeCallable CodeDeployClient::GetDeploymentTargetCallable(const GetDeploymentTargetRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentInstanceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeploymentInstance(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< GetDeploymentTargetOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeploymentTarget(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void CodeDeployClient::GetDeploymentInstanceAsync(const GetDeploymentInstanceRequest& request, const GetDeploymentInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::GetDeploymentTargetAsync(const GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentInstanceAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeploymentTargetAsyncHelper( request, handler, context ); } );
 }
 
-void CodeDeployClient::GetDeploymentInstanceAsyncHelper(const GetDeploymentInstanceRequest& request, const GetDeploymentInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::GetDeploymentTargetAsyncHelper(const GetDeploymentTargetRequest& request, const GetDeploymentTargetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, GetDeploymentInstance(request), context);
+  handler(this, request, GetDeploymentTarget(request), context);
 }
 
 GetOnPremisesInstanceOutcome CodeDeployClient::GetOnPremisesInstance(const GetOnPremisesInstanceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -974,8 +983,8 @@ void CodeDeployClient::GetOnPremisesInstanceAsyncHelper(const GetOnPremisesInsta
 
 ListApplicationRevisionsOutcome CodeDeployClient::ListApplicationRevisions(const ListApplicationRevisionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1009,8 +1018,8 @@ void CodeDeployClient::ListApplicationRevisionsAsyncHelper(const ListApplication
 
 ListApplicationsOutcome CodeDeployClient::ListApplications(const ListApplicationsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1044,8 +1053,8 @@ void CodeDeployClient::ListApplicationsAsyncHelper(const ListApplicationsRequest
 
 ListDeploymentConfigsOutcome CodeDeployClient::ListDeploymentConfigs(const ListDeploymentConfigsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1079,8 +1088,8 @@ void CodeDeployClient::ListDeploymentConfigsAsyncHelper(const ListDeploymentConf
 
 ListDeploymentGroupsOutcome CodeDeployClient::ListDeploymentGroups(const ListDeploymentGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1112,45 +1121,45 @@ void CodeDeployClient::ListDeploymentGroupsAsyncHelper(const ListDeploymentGroup
   handler(this, request, ListDeploymentGroups(request), context);
 }
 
-ListDeploymentInstancesOutcome CodeDeployClient::ListDeploymentInstances(const ListDeploymentInstancesRequest& request) const
+ListDeploymentTargetsOutcome CodeDeployClient::ListDeploymentTargets(const ListDeploymentTargetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
   {
-    return ListDeploymentInstancesOutcome(ListDeploymentInstancesResult(outcome.GetResult()));
+    return ListDeploymentTargetsOutcome(ListDeploymentTargetsResult(outcome.GetResult()));
   }
   else
   {
-    return ListDeploymentInstancesOutcome(outcome.GetError());
+    return ListDeploymentTargetsOutcome(outcome.GetError());
   }
 }
 
-ListDeploymentInstancesOutcomeCallable CodeDeployClient::ListDeploymentInstancesCallable(const ListDeploymentInstancesRequest& request) const
+ListDeploymentTargetsOutcomeCallable CodeDeployClient::ListDeploymentTargetsCallable(const ListDeploymentTargetsRequest& request) const
 {
-  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentInstancesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeploymentInstances(request); } );
+  auto task = Aws::MakeShared< std::packaged_task< ListDeploymentTargetsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeploymentTargets(request); } );
   auto packagedFunction = [task]() { (*task)(); };
   m_executor->Submit(packagedFunction);
   return task->get_future();
 }
 
-void CodeDeployClient::ListDeploymentInstancesAsync(const ListDeploymentInstancesRequest& request, const ListDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::ListDeploymentTargetsAsync(const ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentInstancesAsyncHelper( request, handler, context ); } );
+  m_executor->Submit( [this, request, handler, context](){ this->ListDeploymentTargetsAsyncHelper( request, handler, context ); } );
 }
 
-void CodeDeployClient::ListDeploymentInstancesAsyncHelper(const ListDeploymentInstancesRequest& request, const ListDeploymentInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+void CodeDeployClient::ListDeploymentTargetsAsyncHelper(const ListDeploymentTargetsRequest& request, const ListDeploymentTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
 {
-  handler(this, request, ListDeploymentInstances(request), context);
+  handler(this, request, ListDeploymentTargets(request), context);
 }
 
 ListDeploymentsOutcome CodeDeployClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1184,8 +1193,8 @@ void CodeDeployClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& 
 
 ListGitHubAccountTokenNamesOutcome CodeDeployClient::ListGitHubAccountTokenNames(const ListGitHubAccountTokenNamesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1219,8 +1228,8 @@ void CodeDeployClient::ListGitHubAccountTokenNamesAsyncHelper(const ListGitHubAc
 
 ListOnPremisesInstancesOutcome CodeDeployClient::ListOnPremisesInstances(const ListOnPremisesInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1254,8 +1263,8 @@ void CodeDeployClient::ListOnPremisesInstancesAsyncHelper(const ListOnPremisesIn
 
 PutLifecycleEventHookExecutionStatusOutcome CodeDeployClient::PutLifecycleEventHookExecutionStatus(const PutLifecycleEventHookExecutionStatusRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1289,8 +1298,8 @@ void CodeDeployClient::PutLifecycleEventHookExecutionStatusAsyncHelper(const Put
 
 RegisterApplicationRevisionOutcome CodeDeployClient::RegisterApplicationRevision(const RegisterApplicationRevisionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1324,8 +1333,8 @@ void CodeDeployClient::RegisterApplicationRevisionAsyncHelper(const RegisterAppl
 
 RegisterOnPremisesInstanceOutcome CodeDeployClient::RegisterOnPremisesInstance(const RegisterOnPremisesInstanceRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1359,8 +1368,8 @@ void CodeDeployClient::RegisterOnPremisesInstanceAsyncHelper(const RegisterOnPre
 
 RemoveTagsFromOnPremisesInstancesOutcome CodeDeployClient::RemoveTagsFromOnPremisesInstances(const RemoveTagsFromOnPremisesInstancesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1392,45 +1401,10 @@ void CodeDeployClient::RemoveTagsFromOnPremisesInstancesAsyncHelper(const Remove
   handler(this, request, RemoveTagsFromOnPremisesInstances(request), context);
 }
 
-SkipWaitTimeForInstanceTerminationOutcome CodeDeployClient::SkipWaitTimeForInstanceTermination(const SkipWaitTimeForInstanceTerminationRequest& request) const
-{
-  Aws::StringStream ss;
-  Aws::Http::URI uri = m_uri;
-  ss << "/";
-  uri.SetPath(uri.GetPath() + ss.str());
-  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
-  if(outcome.IsSuccess())
-  {
-    return SkipWaitTimeForInstanceTerminationOutcome(NoResult());
-  }
-  else
-  {
-    return SkipWaitTimeForInstanceTerminationOutcome(outcome.GetError());
-  }
-}
-
-SkipWaitTimeForInstanceTerminationOutcomeCallable CodeDeployClient::SkipWaitTimeForInstanceTerminationCallable(const SkipWaitTimeForInstanceTerminationRequest& request) const
-{
-  auto task = Aws::MakeShared< std::packaged_task< SkipWaitTimeForInstanceTerminationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->SkipWaitTimeForInstanceTermination(request); } );
-  auto packagedFunction = [task]() { (*task)(); };
-  m_executor->Submit(packagedFunction);
-  return task->get_future();
-}
-
-void CodeDeployClient::SkipWaitTimeForInstanceTerminationAsync(const SkipWaitTimeForInstanceTerminationRequest& request, const SkipWaitTimeForInstanceTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  m_executor->Submit( [this, request, handler, context](){ this->SkipWaitTimeForInstanceTerminationAsyncHelper( request, handler, context ); } );
-}
-
-void CodeDeployClient::SkipWaitTimeForInstanceTerminationAsyncHelper(const SkipWaitTimeForInstanceTerminationRequest& request, const SkipWaitTimeForInstanceTerminationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
-{
-  handler(this, request, SkipWaitTimeForInstanceTermination(request), context);
-}
-
 StopDeploymentOutcome CodeDeployClient::StopDeployment(const StopDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1464,8 +1438,8 @@ void CodeDeployClient::StopDeploymentAsyncHelper(const StopDeploymentRequest& re
 
 UpdateApplicationOutcome CodeDeployClient::UpdateApplication(const UpdateApplicationRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1499,8 +1473,8 @@ void CodeDeployClient::UpdateApplicationAsyncHelper(const UpdateApplicationReque
 
 UpdateDeploymentGroupOutcome CodeDeployClient::UpdateDeploymentGroup(const UpdateDeploymentGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

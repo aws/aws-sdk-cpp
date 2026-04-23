@@ -50,7 +50,10 @@ ContainerDetail::ContainerDetail() :
     m_reasonHasBeenSet(false),
     m_containerInstanceArnHasBeenSet(false),
     m_taskArnHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
+    m_logStreamNameHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
 }
 
@@ -76,7 +79,10 @@ ContainerDetail::ContainerDetail(JsonView jsonValue) :
     m_reasonHasBeenSet(false),
     m_containerInstanceArnHasBeenSet(false),
     m_taskArnHasBeenSet(false),
-    m_logStreamNameHasBeenSet(false)
+    m_logStreamNameHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_networkInterfacesHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -217,6 +223,33 @@ ContainerDetail& ContainerDetail::operator =(JsonView jsonValue)
     m_logStreamNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("networkInterfaces"))
+  {
+    Array<JsonView> networkInterfacesJsonList = jsonValue.GetArray("networkInterfaces");
+    for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+    {
+      m_networkInterfaces.push_back(networkInterfacesJsonList[networkInterfacesIndex].AsObject());
+    }
+    m_networkInterfacesHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceRequirements"))
+  {
+    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+    {
+      m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
+    }
+    m_resourceRequirementsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -348,6 +381,34 @@ JsonValue ContainerDetail::Jsonize() const
   if(m_logStreamNameHasBeenSet)
   {
    payload.WithString("logStreamName", m_logStreamName);
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_networkInterfacesHasBeenSet)
+  {
+   Array<JsonValue> networkInterfacesJsonList(m_networkInterfaces.size());
+   for(unsigned networkInterfacesIndex = 0; networkInterfacesIndex < networkInterfacesJsonList.GetLength(); ++networkInterfacesIndex)
+   {
+     networkInterfacesJsonList[networkInterfacesIndex].AsObject(m_networkInterfaces[networkInterfacesIndex].Jsonize());
+   }
+   payload.WithArray("networkInterfaces", std::move(networkInterfacesJsonList));
+
+  }
+
+  if(m_resourceRequirementsHasBeenSet)
+  {
+   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+   {
+     resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
+   }
+   payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
 
   }
 

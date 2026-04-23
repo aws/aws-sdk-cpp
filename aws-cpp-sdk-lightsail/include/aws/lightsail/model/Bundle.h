@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
      */
+    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
+
+    /**
+     * <p>The price in US dollars (e.g., <code>5.0</code>).</p>
+     */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
      */
     inline int GetCpuCount() const{ return m_cpuCount; }
+
+    /**
+     * <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
+     */
+    inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
 
     /**
      * <p>The number of vCPUs included in the bundle (e.g., <code>2</code>).</p>
@@ -90,6 +100,11 @@ namespace Model
     /**
      * <p>The size of the SSD (e.g., <code>30</code>).</p>
      */
+    inline bool DiskSizeInGbHasBeenSet() const { return m_diskSizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the SSD (e.g., <code>30</code>).</p>
+     */
     inline void SetDiskSizeInGb(int value) { m_diskSizeInGbHasBeenSet = true; m_diskSizeInGb = value; }
 
     /**
@@ -102,6 +117,11 @@ namespace Model
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle ID (e.g., <code>micro_1_0</code>).</p>
@@ -142,6 +162,11 @@ namespace Model
     /**
      * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 instance type (e.g., <code>t2.micro</code>).</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -178,6 +203,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the bundle is active.</p>
      */
+    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the bundle is active.</p>
+     */
     inline void SetIsActive(bool value) { m_isActiveHasBeenSet = true; m_isActive = value; }
 
     /**
@@ -190,6 +220,11 @@ namespace Model
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name for the bundle (e.g., <code>Micro</code>).</p>
@@ -238,6 +273,15 @@ namespace Model
      * the bundle. For example, you need a bundle with a power value of 500 or more to
      * create an instance that uses a blueprint with a minimum power value of 500.</p>
      */
+    inline bool PowerHasBeenSet() const { return m_powerHasBeenSet; }
+
+    /**
+     * <p>A numeric value that represents the power of the bundle (e.g.,
+     * <code>500</code>). You can use the bundle's power value in conjunction with a
+     * blueprint's minimum power value to determine whether the blueprint will run on
+     * the bundle. For example, you need a bundle with a power value of 500 or more to
+     * create an instance that uses a blueprint with a minimum power value of 500.</p>
+     */
     inline void SetPower(int value) { m_powerHasBeenSet = true; m_power = value; }
 
     /**
@@ -258,6 +302,11 @@ namespace Model
     /**
      * <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
      */
+    inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
+
+    /**
+     * <p>The amount of RAM in GB (e.g., <code>2.0</code>).</p>
+     */
     inline void SetRamSizeInGb(double value) { m_ramSizeInGbHasBeenSet = true; m_ramSizeInGb = value; }
 
     /**
@@ -270,6 +319,11 @@ namespace Model
      * <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
      */
     inline int GetTransferPerMonthInGb() const{ return m_transferPerMonthInGb; }
+
+    /**
+     * <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
+     */
+    inline bool TransferPerMonthInGbHasBeenSet() const { return m_transferPerMonthInGbHasBeenSet; }
 
     /**
      * <p>The data transfer rate per month in GB (e.g., <code>2000</code>).</p>
@@ -289,6 +343,14 @@ namespace Model
      * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
      */
     inline const Aws::Vector<InstancePlatform>& GetSupportedPlatforms() const{ return m_supportedPlatforms; }
+
+    /**
+     * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that
+     * the bundle supports. You can only launch a <code>WINDOWS</code> bundle on a
+     * blueprint that supports the <code>WINDOWS</code> platform.
+     * <code>LINUX_UNIX</code> blueprints require a <code>LINUX_UNIX</code> bundle.</p>
+     */
+    inline bool SupportedPlatformsHasBeenSet() const { return m_supportedPlatformsHasBeenSet; }
 
     /**
      * <p>The operating system platform (Linux/Unix-based or Windows Server-based) that

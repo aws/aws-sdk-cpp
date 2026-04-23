@@ -37,7 +37,7 @@ DescribeCommentsRequest::DescribeCommentsRequest() :
 
 Aws::String DescribeCommentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeCommentsRequest::GetRequestSpecificHeaders() const

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The identity provider name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The identity provider name.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
      * <p>The identity provider name.</p>
@@ -123,6 +133,12 @@ namespace Model
      * and <code>MetadataFile</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
+
+    /**
+     * <p>The identity provider details to be updated, such as <code>MetadataURL</code>
+     * and <code>MetadataFile</code>.</p>
+     */
+    inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
 
     /**
      * <p>The identity provider details to be updated, such as <code>MetadataURL</code>
@@ -199,6 +215,11 @@ namespace Model
     /**
      * <p>The identity provider attribute mapping to be changed.</p>
      */
+    inline bool AttributeMappingHasBeenSet() const { return m_attributeMappingHasBeenSet; }
+
+    /**
+     * <p>The identity provider attribute mapping to be changed.</p>
+     */
     inline void SetAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = value; }
 
     /**
@@ -256,6 +277,11 @@ namespace Model
      * <p>A list of identity provider identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
+
+    /**
+     * <p>A list of identity provider identifiers.</p>
+     */
+    inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }
 
     /**
      * <p>A list of identity provider identifiers.</p>

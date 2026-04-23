@@ -59,6 +59,11 @@ namespace Model
     /**
      * The body of the email message.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The body of the email message.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * forwarding is enabled.
      */
     inline const Aws::String& GetFeedbackForwardingAddress() const{ return m_feedbackForwardingAddress; }
+
+    /**
+     * The email address that bounces and complaints will be forwarded to when feedback
+     * forwarding is enabled.
+     */
+    inline bool FeedbackForwardingAddressHasBeenSet() const { return m_feedbackForwardingAddressHasBeenSet; }
 
     /**
      * The email address that bounces and complaints will be forwarded to when feedback
@@ -140,6 +151,12 @@ namespace Model
      * The email address used to send the email from. Defaults to use FromAddress
      * specified in the Email Channel.
      */
+    inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
+
+    /**
+     * The email address used to send the email from. Defaults to use FromAddress
+     * specified in the Email Channel.
+     */
     inline void SetFromAddress(const Aws::String& value) { m_fromAddressHasBeenSet = true; m_fromAddress = value; }
 
     /**
@@ -181,6 +198,11 @@ namespace Model
     /**
      * An email represented as a raw MIME message.
      */
+    inline bool RawEmailHasBeenSet() const { return m_rawEmailHasBeenSet; }
+
+    /**
+     * An email represented as a raw MIME message.
+     */
     inline void SetRawEmail(const RawEmail& value) { m_rawEmailHasBeenSet = true; m_rawEmail = value; }
 
     /**
@@ -204,6 +226,12 @@ namespace Model
      * email, each reply-to address will receive the reply.
      */
     inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
+
+    /**
+     * The reply-to email address(es) for the email. If the recipient replies to the
+     * email, each reply-to address will receive the reply.
+     */
+    inline bool ReplyToAddressesHasBeenSet() const { return m_replyToAddressesHasBeenSet; }
 
     /**
      * The reply-to email address(es) for the email. If the recipient replies to the
@@ -256,6 +284,11 @@ namespace Model
     /**
      * An email composed of a subject, a text part and a html part.
      */
+    inline bool SimpleEmailHasBeenSet() const { return m_simpleEmailHasBeenSet; }
+
+    /**
+     * An email composed of a subject, a text part and a html part.
+     */
     inline void SetSimpleEmail(const SimpleEmail& value) { m_simpleEmailHasBeenSet = true; m_simpleEmail = value; }
 
     /**
@@ -279,6 +312,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address

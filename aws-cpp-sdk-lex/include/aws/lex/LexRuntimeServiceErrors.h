@@ -50,6 +50,7 @@ enum class LexRuntimeServiceErrors
   INVALID_SIGNATURE = 21,
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
+  REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
   
   UNKNOWN = 100,
@@ -63,7 +64,6 @@ enum class LexRuntimeServiceErrors
   LOOP_DETECTED,
   NOT_ACCEPTABLE,
   NOT_FOUND,
-  REQUEST_TIMEOUT,
   UNSUPPORTED_MEDIA_TYPE
 };
 namespace LexRuntimeServiceErrorMapper

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The header name</p>
      */
+    inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
+
+    /**
+     * <p>The header name</p>
+     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The header value.</p>
      */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+
+    /**
+     * <p>The header value.</p>
+     */
+    inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
 
     /**
      * <p>The header value.</p>

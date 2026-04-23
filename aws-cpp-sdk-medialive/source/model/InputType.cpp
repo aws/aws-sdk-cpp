@@ -36,6 +36,7 @@ namespace Aws
         static const int RTMP_PULL_HASH = HashingUtils::HashString("RTMP_PULL");
         static const int URL_PULL_HASH = HashingUtils::HashString("URL_PULL");
         static const int MP4_FILE_HASH = HashingUtils::HashString("MP4_FILE");
+        static const int MEDIACONNECT_HASH = HashingUtils::HashString("MEDIACONNECT");
 
 
         InputType GetInputTypeForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return InputType::MP4_FILE;
           }
+          else if (hashCode == MEDIACONNECT_HASH)
+          {
+            return InputType::MEDIACONNECT;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "URL_PULL";
           case InputType::MP4_FILE:
             return "MP4_FILE";
+          case InputType::MEDIACONNECT:
+            return "MEDIACONNECT";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -98,7 +105,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

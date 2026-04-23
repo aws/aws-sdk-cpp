@@ -44,3 +44,26 @@ TEST(DnsTest, TestInvalidDnsLabels)
     ASSERT_FALSE(IsValidDnsLabel("c0nt@in$-$ymb01$"));
     ASSERT_FALSE(IsValidDnsLabel("0123456789012345678901234567890123456789012345678901234567890123")); // 64 characters
 }
+
+TEST(DnsTest, TestHost)
+{
+    ASSERT_TRUE(IsValidHost("www.amazon.com"));
+    ASSERT_TRUE(IsValidHost("a"));
+    ASSERT_TRUE(IsValidHost("a-b-c"));
+    ASSERT_TRUE(IsValidHost("a-b.c-d"));
+    ASSERT_TRUE(IsValidHost("amazon.com"));
+
+
+    ASSERT_FALSE(IsValidHost(""));
+    ASSERT_FALSE(IsValidHost("."));
+    ASSERT_FALSE(IsValidHost("@"));
+    ASSERT_FALSE(IsValidHost("-"));
+    ASSERT_FALSE(IsValidHost("/"));
+    ASSERT_FALSE(IsValidHost("abc@amazon.com"));
+    ASSERT_FALSE(IsValidHost("www.amazon.com/"));
+    ASSERT_FALSE(IsValidHost("www.amazon-.com"));
+    ASSERT_FALSE(IsValidHost("www.-amazon.com"));
+    ASSERT_FALSE(IsValidHost("0123456789012345678901234567890123456789012345678901234567890123")); // 64 characters
+    ASSERT_FALSE(IsValidHost("0123456789012345678901234567890123456789012345678901234567890123.com")); // 64 characters
+
+}

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the GitHub account connection to delete.</p>
      */
+    inline bool TokenNameHasBeenSet() const { return m_tokenNameHasBeenSet; }
+
+    /**
+     * <p>The name of the GitHub account connection to delete.</p>
+     */
     inline void SetTokenName(const Aws::String& value) { m_tokenNameHasBeenSet = true; m_tokenName = value; }
 
     /**

@@ -59,6 +59,12 @@ namespace Model
      * <p>The <code>workflowId</code> of the external workflow execution to be
      * canceled.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p>The <code>workflowId</code> of the external workflow execution to be
+     * canceled.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
      * <p>The <code>runId</code> of the external workflow execution to be canceled.</p>
@@ -144,6 +155,15 @@ namespace Model
      * cancellation request. This information can be useful for diagnosing problems by
      * tracing back the chain of events leading up to this event.</p>
      */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the
+     * <code>RequestCancelExternalWorkflowExecution</code> decision for this
+     * cancellation request. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
     /**
@@ -161,6 +181,12 @@ namespace Model
      * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>Data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>Data attached to the event that can be used by the decider in subsequent

@@ -62,6 +62,12 @@ namespace Model
      * <p>Specifies the attributes that should be indexed on. Currently only a single
      * attribute is supported.</p>
      */
+    inline bool OrderedIndexedAttributeListHasBeenSet() const { return m_orderedIndexedAttributeListHasBeenSet; }
+
+    /**
+     * <p>Specifies the attributes that should be indexed on. Currently only a single
+     * attribute is supported.</p>
+     */
     inline void SetOrderedIndexedAttributeList(const Aws::Vector<AttributeKey>& value) { m_orderedIndexedAttributeListHasBeenSet = true; m_orderedIndexedAttributeList = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>Indicates whether the attribute that is being indexed has unique values or
      * not.</p>
      */
+    inline bool IsUniqueHasBeenSet() const { return m_isUniqueHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the attribute that is being indexed has unique values or
+     * not.</p>
+     */
     inline void SetIsUnique(bool value) { m_isUniqueHasBeenSet = true; m_isUnique = value; }
 
     /**
@@ -118,6 +130,11 @@ namespace Model
      * <p>A reference to the parent object that contains the index object.</p>
      */
     inline const ObjectReference& GetParentReference() const{ return m_parentReference; }
+
+    /**
+     * <p>A reference to the parent object that contains the index object.</p>
+     */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the parent object that contains the index object.</p>
@@ -144,6 +161,11 @@ namespace Model
      * <p>The name of the link between the parent object and the index object.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The name of the link between the parent object and the index object.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The name of the link between the parent object and the index object.</p>
@@ -182,6 +204,13 @@ namespace Model
      * Support</a> for more information.</p>
      */
     inline const Aws::String& GetBatchReferenceName() const{ return m_batchReferenceName; }
+
+    /**
+     * <p>The batch reference name. See <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/transaction_support.html">Transaction
+     * Support</a> for more information.</p>
+     */
+    inline bool BatchReferenceNameHasBeenSet() const { return m_batchReferenceNameHasBeenSet; }
 
     /**
      * <p>The batch reference name. See <a

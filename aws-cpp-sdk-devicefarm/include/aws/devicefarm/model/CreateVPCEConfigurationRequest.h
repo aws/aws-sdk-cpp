@@ -54,6 +54,12 @@ namespace Model
      * <p>The friendly name you give to your VPC endpoint configuration, to manage your
      * configurations more easily.</p>
      */
+    inline bool VpceConfigurationNameHasBeenSet() const { return m_vpceConfigurationNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * configurations more easily.</p>
+     */
     inline void SetVpceConfigurationName(const Aws::String& value) { m_vpceConfigurationNameHasBeenSet = true; m_vpceConfigurationName = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * want Device Farm to test.</p>
      */
     inline const Aws::String& GetVpceServiceName() const{ return m_vpceServiceName; }
+
+    /**
+     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * want Device Farm to test.</p>
+     */
+    inline bool VpceServiceNameHasBeenSet() const { return m_vpceServiceNameHasBeenSet; }
 
     /**
      * <p>The name of the VPC endpoint service running inside your AWS account that you
@@ -140,6 +152,12 @@ namespace Model
      * <p>The DNS name of the service running in your VPC that you want Device Farm to
      * test.</p>
      */
+    inline bool ServiceDnsNameHasBeenSet() const { return m_serviceDnsNameHasBeenSet; }
+
+    /**
+     * <p>The DNS name of the service running in your VPC that you want Device Farm to
+     * test.</p>
+     */
     inline void SetServiceDnsName(const Aws::String& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = value; }
 
     /**
@@ -178,6 +196,12 @@ namespace Model
      * configuration.</p>
      */
     inline const Aws::String& GetVpceConfigurationDescription() const{ return m_vpceConfigurationDescription; }
+
+    /**
+     * <p>An optional description, providing more details about your VPC endpoint
+     * configuration.</p>
+     */
+    inline bool VpceConfigurationDescriptionHasBeenSet() const { return m_vpceConfigurationDescriptionHasBeenSet; }
 
     /**
      * <p>An optional description, providing more details about your VPC endpoint

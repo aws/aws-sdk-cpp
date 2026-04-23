@@ -58,6 +58,12 @@ namespace Model
      * <p>An email address that the DRT can use to contact you during a suspected
      * attack.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>An email address that the DRT can use to contact you during a suspected
+     * attack.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**

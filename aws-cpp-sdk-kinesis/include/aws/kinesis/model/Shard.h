@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The unique identifier of the shard within the stream.</p>
      */
+    inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the shard within the stream.</p>
+     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The shard ID of the shard's parent.</p>
      */
+    inline bool ParentShardIdHasBeenSet() const { return m_parentShardIdHasBeenSet; }
+
+    /**
+     * <p>The shard ID of the shard's parent.</p>
+     */
     inline void SetParentShardId(const Aws::String& value) { m_parentShardIdHasBeenSet = true; m_parentShardId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The shard ID of the shard adjacent to the shard's parent.</p>
      */
     inline const Aws::String& GetAdjacentParentShardId() const{ return m_adjacentParentShardId; }
+
+    /**
+     * <p>The shard ID of the shard adjacent to the shard's parent.</p>
+     */
+    inline bool AdjacentParentShardIdHasBeenSet() const { return m_adjacentParentShardIdHasBeenSet; }
 
     /**
      * <p>The shard ID of the shard adjacent to the shard's parent.</p>
@@ -168,6 +183,12 @@ namespace Model
      * <p>The range of possible hash key values for the shard, which is a set of
      * ordered contiguous positive integers.</p>
      */
+    inline bool HashKeyRangeHasBeenSet() const { return m_hashKeyRangeHasBeenSet; }
+
+    /**
+     * <p>The range of possible hash key values for the shard, which is a set of
+     * ordered contiguous positive integers.</p>
+     */
     inline void SetHashKeyRange(const HashKeyRange& value) { m_hashKeyRangeHasBeenSet = true; m_hashKeyRange = value; }
 
     /**
@@ -193,6 +214,11 @@ namespace Model
      * <p>The range of possible sequence numbers for the shard.</p>
      */
     inline const SequenceNumberRange& GetSequenceNumberRange() const{ return m_sequenceNumberRange; }
+
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
+    inline bool SequenceNumberRangeHasBeenSet() const { return m_sequenceNumberRangeHasBeenSet; }
 
     /**
      * <p>The range of possible sequence numbers for the shard.</p>

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for HlsOutputSettings<p><h3>See Also:</h3>   <a
+   * Hls Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsOutputSettings">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,12 @@ namespace Model
      * audio-only outputs.
      */
     inline const HlsSettings& GetHlsSettings() const{ return m_hlsSettings; }
+
+    /**
+     * Settings regarding the underlying stream. These settings are different for
+     * audio-only outputs.
+     */
+    inline bool HlsSettingsHasBeenSet() const { return m_hlsSettingsHasBeenSet; }
 
     /**
      * Settings regarding the underlying stream. These settings are different for
@@ -84,6 +90,12 @@ namespace Model
      * Identifiers\":#formatIdentifierParameters.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+
+    /**
+     * String concatenated to the end of the destination filename. Accepts \"Format
+     * Identifiers\":#formatIdentifierParameters.
+     */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
 
     /**
      * String concatenated to the end of the destination filename. Accepts \"Format
@@ -126,6 +138,11 @@ namespace Model
      * String concatenated to end of segment filenames.
      */
     inline const Aws::String& GetSegmentModifier() const{ return m_segmentModifier; }
+
+    /**
+     * String concatenated to end of segment filenames.
+     */
+    inline bool SegmentModifierHasBeenSet() const { return m_segmentModifierHasBeenSet; }
 
     /**
      * String concatenated to end of segment filenames.

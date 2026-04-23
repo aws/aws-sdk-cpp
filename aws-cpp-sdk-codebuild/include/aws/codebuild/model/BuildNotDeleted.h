@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the build that could not be successfully deleted.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the build that could not be successfully deleted.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * deleted.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>Additional information about the build that could not be successfully
+     * deleted.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>Additional information about the build that could not be successfully

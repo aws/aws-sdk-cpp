@@ -29,7 +29,7 @@ GetTrafficPolicyInstanceCountRequest::GetTrafficPolicyInstanceCountRequest()
 
 Aws::String GetTrafficPolicyInstanceCountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

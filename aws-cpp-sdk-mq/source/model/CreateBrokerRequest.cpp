@@ -41,6 +41,7 @@ CreateBrokerRequest::CreateBrokerRequest() :
     m_publiclyAccessibleHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_subnetIdsHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_usersHasBeenSet(false)
 {
 }
@@ -132,6 +133,17 @@ Aws::String CreateBrokerRequest::SerializePayload() const
      subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
    }
    payload.WithArray("subnetIds", std::move(subnetIdsJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

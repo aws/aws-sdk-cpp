@@ -60,6 +60,13 @@ namespace Model
      * bucket. If Put Object request does not specify any server-side encryption, this
      * default encryption will be applied.</p>
      */
+    inline bool ApplyServerSideEncryptionByDefaultHasBeenSet() const { return m_applyServerSideEncryptionByDefaultHasBeenSet; }
+
+    /**
+     * <p>Describes the default server-side encryption to apply to new objects in the
+     * bucket. If Put Object request does not specify any server-side encryption, this
+     * default encryption will be applied.</p>
+     */
     inline void SetApplyServerSideEncryptionByDefault(const ServerSideEncryptionByDefault& value) { m_applyServerSideEncryptionByDefaultHasBeenSet = true; m_applyServerSideEncryptionByDefault = value; }
 
     /**

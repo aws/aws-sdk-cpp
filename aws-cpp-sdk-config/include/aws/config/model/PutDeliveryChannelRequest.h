@@ -58,6 +58,12 @@ namespace Model
      * <p>The configuration delivery channel object that delivers the configuration
      * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
      */
+    inline bool DeliveryChannelHasBeenSet() const { return m_deliveryChannelHasBeenSet; }
+
+    /**
+     * <p>The configuration delivery channel object that delivers the configuration
+     * information to an Amazon S3 bucket and to an Amazon SNS topic.</p>
+     */
     inline void SetDeliveryChannel(const DeliveryChannel& value) { m_deliveryChannelHasBeenSet = true; m_deliveryChannel = value; }
 
     /**

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the user to delete in the organization. Required.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user to delete in the organization. Required.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the user's enrollment in the organization. Required.</p>
      */
     inline const Aws::String& GetEnrollmentId() const{ return m_enrollmentId; }
+
+    /**
+     * <p>The ARN of the user's enrollment in the organization. Required.</p>
+     */
+    inline bool EnrollmentIdHasBeenSet() const { return m_enrollmentIdHasBeenSet; }
 
     /**
      * <p>The ARN of the user's enrollment in the organization. Required.</p>

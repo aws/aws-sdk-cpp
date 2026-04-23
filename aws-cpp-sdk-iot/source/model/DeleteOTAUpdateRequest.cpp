@@ -36,7 +36,7 @@ DeleteOTAUpdateRequest::DeleteOTAUpdateRequest() :
 
 Aws::String DeleteOTAUpdateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteOTAUpdateRequest::AddQueryStringParameters(URI& uri) const

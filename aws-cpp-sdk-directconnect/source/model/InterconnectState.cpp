@@ -36,6 +36,7 @@ namespace Aws
         static const int down_HASH = HashingUtils::HashString("down");
         static const int deleting_HASH = HashingUtils::HashString("deleting");
         static const int deleted_HASH = HashingUtils::HashString("deleted");
+        static const int unknown_HASH = HashingUtils::HashString("unknown");
 
 
         InterconnectState GetInterconnectStateForName(const Aws::String& name)
@@ -65,6 +66,10 @@ namespace Aws
           {
             return InterconnectState::deleted;
           }
+          else if (hashCode == unknown_HASH)
+          {
+            return InterconnectState::unknown;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -91,6 +96,8 @@ namespace Aws
             return "deleting";
           case InterconnectState::deleted:
             return "deleted";
+          case InterconnectState::unknown:
+            return "unknown";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -98,7 +105,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

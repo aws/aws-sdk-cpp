@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
+    inline bool ReservedDBInstancesOfferingIdHasBeenSet() const { return m_reservedDBInstancesOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The offering identifier.</p>
+     */
     inline void SetReservedDBInstancesOfferingId(const Aws::String& value) { m_reservedDBInstancesOfferingIdHasBeenSet = true; m_reservedDBInstancesOfferingId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The DB instance class for the reserved DB instance.</p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
+    /**
+     * <p>The DB instance class for the reserved DB instance.</p>
+     */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The DB instance class for the reserved DB instance.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The duration of the offering in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the offering in seconds.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -145,6 +160,11 @@ namespace Model
      * <p>The fixed price charged for this offering.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
+    /**
+     * <p>The fixed price charged for this offering.</p>
+     */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
 
     /**
      * <p>The fixed price charged for this offering.</p>
@@ -165,6 +185,11 @@ namespace Model
     /**
      * <p>The hourly price charged for this offering.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The hourly price charged for this offering.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -177,6 +202,11 @@ namespace Model
      * <p>The currency code for the reserved DB instance offering.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code for the reserved DB instance offering.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code for the reserved DB instance offering.</p>
@@ -217,6 +247,11 @@ namespace Model
     /**
      * <p>The database engine used by the offering.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The database engine used by the offering.</p>
+     */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -249,6 +284,11 @@ namespace Model
      * <p>The offering type.</p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+
+    /**
+     * <p>The offering type.</p>
+     */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
 
     /**
      * <p>The offering type.</p>
@@ -289,6 +329,11 @@ namespace Model
     /**
      * <p>Indicates if the offering applies to Multi-AZ deployments.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Indicates if the offering applies to Multi-AZ deployments.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -301,6 +346,11 @@ namespace Model
      * <p>The recurring price charged to run this reserved DB instance.</p>
      */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+
+    /**
+     * <p>The recurring price charged to run this reserved DB instance.</p>
+     */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
 
     /**
      * <p>The recurring price charged to run this reserved DB instance.</p>

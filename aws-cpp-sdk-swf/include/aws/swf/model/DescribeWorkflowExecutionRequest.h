@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The workflow execution to describe.</p>
      */
     inline const WorkflowExecution& GetExecution() const{ return m_execution; }
+
+    /**
+     * <p>The workflow execution to describe.</p>
+     */
+    inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
 
     /**
      * <p>The workflow execution to describe.</p>

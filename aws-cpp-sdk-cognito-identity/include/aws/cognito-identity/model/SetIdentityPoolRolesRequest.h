@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>An identity pool ID in the format REGION:GUID.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>An identity pool ID in the format REGION:GUID.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * ARN.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRoles() const{ return m_roles; }
+
+    /**
+     * <p>The map of roles associated with this pool. For a given role, the key will be
+     * either "authenticated" or "unauthenticated" and the value will be the Role
+     * ARN.</p>
+     */
+    inline bool RolesHasBeenSet() const { return m_rolesHasBeenSet; }
 
     /**
      * <p>The map of roles associated with this pool. For a given role, the key will be
@@ -179,6 +191,15 @@ namespace Model
      * to 25 rules can be specified per identity provider.</p>
      */
     inline const Aws::Map<Aws::String, RoleMapping>& GetRoleMappings() const{ return m_roleMappings; }
+
+    /**
+     * <p>How users for a specific identity provider are to mapped to roles. This is a
+     * string to <a>RoleMapping</a> object map. The string identifies the identity
+     * provider, for example, "graph.facebook.com" or
+     * "cognito-idp-east-1.amazonaws.com/us-east-1_abcdefghi:app_client_id".</p> <p>Up
+     * to 25 rules can be specified per identity provider.</p>
+     */
+    inline bool RoleMappingsHasBeenSet() const { return m_roleMappingsHasBeenSet; }
 
     /**
      * <p>How users for a specific identity provider are to mapped to roles. This is a

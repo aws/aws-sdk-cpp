@@ -55,6 +55,11 @@ namespace Model
     /**
      * Country code of the remote IP address.
      */
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+
+    /**
+     * Country code of the remote IP address.
+     */
     inline void SetCountryCode(const Aws::String& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * Country name of the remote IP address.
      */
     inline const Aws::String& GetCountryName() const{ return m_countryName; }
+
+    /**
+     * Country name of the remote IP address.
+     */
+    inline bool CountryNameHasBeenSet() const { return m_countryNameHasBeenSet; }
 
     /**
      * Country name of the remote IP address.

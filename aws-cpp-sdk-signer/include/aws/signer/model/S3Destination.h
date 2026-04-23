@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * with the specified prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>An Amazon S3 prefix that you can use to limit responses to those that begin
+     * with the specified prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>An Amazon S3 prefix that you can use to limit responses to those that begin

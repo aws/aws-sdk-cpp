@@ -61,6 +61,13 @@ namespace Model
      * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
      * cluster-parameter-group, and cluster-security-group.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source type, such as cluster or parameter group, to which the described
+     * event categories apply.</p> <p>Valid values: cluster, cluster-snapshot,
+     * cluster-parameter-group, and cluster-security-group.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**

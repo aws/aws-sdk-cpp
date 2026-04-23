@@ -15,6 +15,9 @@
 \#include <aws/core/utils/json/JsonSerializer.h>
 \#include <aws/core/utils/memory/stl/AWSStringStream.h>
 \#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
 
 using namespace Aws;

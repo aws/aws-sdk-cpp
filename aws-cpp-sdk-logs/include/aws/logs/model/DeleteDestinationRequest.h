@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the destination.</p>
      */
+    inline bool DestinationNameHasBeenSet() const { return m_destinationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the destination.</p>
+     */
     inline void SetDestinationName(const Aws::String& value) { m_destinationNameHasBeenSet = true; m_destinationName = value; }
 
     /**

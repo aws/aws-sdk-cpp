@@ -30,7 +30,7 @@ LogoutUserRequest::LogoutUserRequest() :
 
 Aws::String LogoutUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

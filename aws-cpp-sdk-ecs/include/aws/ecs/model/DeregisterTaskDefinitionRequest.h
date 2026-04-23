@@ -56,6 +56,13 @@ namespace Model
      * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
      * definition to deregister. You must specify a <code>revision</code>.</p>
      */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
+
+    /**
+     * <p>The <code>family</code> and <code>revision</code>
+     * (<code>family:revision</code>) or full Amazon Resource Name (ARN) of the task
+     * definition to deregister. You must specify a <code>revision</code>.</p>
+     */
     inline void SetTaskDefinition(const Aws::String& value) { m_taskDefinitionHasBeenSet = true; m_taskDefinition = value; }
 
     /**

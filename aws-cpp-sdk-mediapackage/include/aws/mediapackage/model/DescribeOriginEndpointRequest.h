@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the OriginEndpoint.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the OriginEndpoint.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

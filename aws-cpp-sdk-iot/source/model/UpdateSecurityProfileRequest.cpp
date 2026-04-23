@@ -30,6 +30,13 @@ UpdateSecurityProfileRequest::UpdateSecurityProfileRequest() :
     m_securityProfileDescriptionHasBeenSet(false),
     m_behaviorsHasBeenSet(false),
     m_alertTargetsHasBeenSet(false),
+    m_additionalMetricsToRetainHasBeenSet(false),
+    m_deleteBehaviors(false),
+    m_deleteBehaviorsHasBeenSet(false),
+    m_deleteAlertTargets(false),
+    m_deleteAlertTargetsHasBeenSet(false),
+    m_deleteAdditionalMetricsToRetain(false),
+    m_deleteAdditionalMetricsToRetainHasBeenSet(false),
     m_expectedVersion(0),
     m_expectedVersionHasBeenSet(false)
 {
@@ -64,6 +71,35 @@ Aws::String UpdateSecurityProfileRequest::SerializePayload() const
      alertTargetsJsonMap.WithObject(AlertTargetTypeMapper::GetNameForAlertTargetType(alertTargetsItem.first), alertTargetsItem.second.Jsonize());
    }
    payload.WithObject("alertTargets", std::move(alertTargetsJsonMap));
+
+  }
+
+  if(m_additionalMetricsToRetainHasBeenSet)
+  {
+   Array<JsonValue> additionalMetricsToRetainJsonList(m_additionalMetricsToRetain.size());
+   for(unsigned additionalMetricsToRetainIndex = 0; additionalMetricsToRetainIndex < additionalMetricsToRetainJsonList.GetLength(); ++additionalMetricsToRetainIndex)
+   {
+     additionalMetricsToRetainJsonList[additionalMetricsToRetainIndex].AsString(m_additionalMetricsToRetain[additionalMetricsToRetainIndex]);
+   }
+   payload.WithArray("additionalMetricsToRetain", std::move(additionalMetricsToRetainJsonList));
+
+  }
+
+  if(m_deleteBehaviorsHasBeenSet)
+  {
+   payload.WithBool("deleteBehaviors", m_deleteBehaviors);
+
+  }
+
+  if(m_deleteAlertTargetsHasBeenSet)
+  {
+   payload.WithBool("deleteAlertTargets", m_deleteAlertTargets);
+
+  }
+
+  if(m_deleteAdditionalMetricsToRetainHasBeenSet)
+  {
+   payload.WithBool("deleteAdditionalMetricsToRetain", m_deleteAdditionalMetricsToRetain);
 
   }
 

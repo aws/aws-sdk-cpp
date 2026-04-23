@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the service that you want to get settings for.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the service that you want to get settings for.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

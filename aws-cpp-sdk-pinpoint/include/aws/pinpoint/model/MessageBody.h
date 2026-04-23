@@ -55,6 +55,11 @@ namespace Model
     /**
      * The error message that's returned from the API.
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * The error message that's returned from the API.
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The unique message body ID.
      */
     inline const Aws::String& GetRequestID() const{ return m_requestID; }
+
+    /**
+     * The unique message body ID.
+     */
+    inline bool RequestIDHasBeenSet() const { return m_requestIDHasBeenSet; }
 
     /**
      * The unique message body ID.

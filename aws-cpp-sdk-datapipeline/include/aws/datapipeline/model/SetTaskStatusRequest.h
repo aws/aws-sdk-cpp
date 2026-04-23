@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID of the task assigned to the task runner. This value is provided in the
      * response for <a>PollForTask</a>.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the task assigned to the task runner. This value is provided in the
+     * response for <a>PollForTask</a>.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>If <code>FINISHED</code>, the task successfully completed. If
      * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
      */
+    inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
+
+    /**
+     * <p>If <code>FINISHED</code>, the task successfully completed. If
+     * <code>FAILED</code>, the task ended unsuccessfully. Preconditions use false.</p>
+     */
     inline void SetTaskStatus(const TaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
 
     /**
@@ -129,6 +141,14 @@ namespace Model
      * reserved by the system.</p>
      */
     inline const Aws::String& GetErrorId() const{ return m_errorId; }
+
+    /**
+     * <p>If an error occurred during the task, this value specifies the error code.
+     * This value is set on the physical attempt object. It is used to display error
+     * information to the user. It should not start with string "Service_" which is
+     * reserved by the system.</p>
+     */
+    inline bool ErrorIdHasBeenSet() const { return m_errorIdHasBeenSet; }
 
     /**
      * <p>If an error occurred during the task, this value specifies the error code.
@@ -193,6 +213,14 @@ namespace Model
      * display error information to the user. The web service does not parse this
      * value.</p>
      */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
+
+    /**
+     * <p>If an error occurred during the task, this value specifies a text description
+     * of the error. This value is set on the physical attempt object. It is used to
+     * display error information to the user. The web service does not parse this
+     * value.</p>
+     */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessageHasBeenSet = true; m_errorMessage = value; }
 
     /**
@@ -243,6 +271,14 @@ namespace Model
      * this value.</p>
      */
     inline const Aws::String& GetErrorStackTrace() const{ return m_errorStackTrace; }
+
+    /**
+     * <p>If an error occurred during the task, this value specifies the stack trace
+     * associated with the error. This value is set on the physical attempt object. It
+     * is used to display error information to the user. The web service does not parse
+     * this value.</p>
+     */
+    inline bool ErrorStackTraceHasBeenSet() const { return m_errorStackTraceHasBeenSet; }
 
     /**
      * <p>If an error occurred during the task, this value specifies the stack trace

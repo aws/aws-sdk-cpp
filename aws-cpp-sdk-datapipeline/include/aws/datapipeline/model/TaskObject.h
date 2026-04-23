@@ -60,6 +60,12 @@ namespace Model
      * <p>An internal identifier for the task. This ID is passed to the
      * <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>An internal identifier for the task. This ID is passed to the
+     * <a>SetTaskStatus</a> and <a>ReportTaskProgress</a> actions.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline that provided the task.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline that provided the task.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * to track how many times a task is attempted.</p>
      */
     inline const Aws::String& GetAttemptId() const{ return m_attemptId; }
+
+    /**
+     * <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value
+     * to track how many times a task is attempted.</p>
+     */
+    inline bool AttemptIdHasBeenSet() const { return m_attemptIdHasBeenSet; }
 
     /**
      * <p>The ID of the pipeline task attempt object. AWS Data Pipeline uses this value
@@ -177,6 +194,12 @@ namespace Model
      * the output of the task.</p>
      */
     inline const Aws::Map<Aws::String, PipelineObject>& GetObjects() const{ return m_objects; }
+
+    /**
+     * <p>Connection information for the location where the task runner will publish
+     * the output of the task.</p>
+     */
+    inline bool ObjectsHasBeenSet() const { return m_objectsHasBeenSet; }
 
     /**
      * <p>Connection information for the location where the task runner will publish

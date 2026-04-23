@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The category for sorting the snapshots.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The category for sorting the snapshots.</p>
+     */
     inline void SetAttribute(const SnapshotAttributeToSortBy& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The order for listing the attributes.</p>
      */
     inline const SortByOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The order for listing the attributes.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The order for listing the attributes.</p>

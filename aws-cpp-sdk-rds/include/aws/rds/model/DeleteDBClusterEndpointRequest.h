@@ -56,6 +56,12 @@ namespace Model
      * <p>The identifier associated with the custom endpoint. This parameter is stored
      * as a lowercase string.</p>
      */
+    inline bool DBClusterEndpointIdentifierHasBeenSet() const { return m_dBClusterEndpointIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier associated with the custom endpoint. This parameter is stored
+     * as a lowercase string.</p>
+     */
     inline void SetDBClusterEndpointIdentifier(const Aws::String& value) { m_dBClusterEndpointIdentifierHasBeenSet = true; m_dBClusterEndpointIdentifier = value; }
 
     /**

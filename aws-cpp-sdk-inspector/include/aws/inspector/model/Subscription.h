@@ -60,6 +60,12 @@ namespace Model
      * <p>The ARN of the assessment template that is used during the event for which
      * the SNS notification is sent.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the assessment template that is used during the event for which
+     * the SNS notification is sent.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the
      * SNS notifications are sent.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon Simple Notification Service (SNS) topic to which the
+     * SNS notifications are sent.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -140,6 +152,11 @@ namespace Model
      * <p>The list of existing event subscriptions.</p>
      */
     inline const Aws::Vector<EventSubscription>& GetEventSubscriptions() const{ return m_eventSubscriptions; }
+
+    /**
+     * <p>The list of existing event subscriptions.</p>
+     */
+    inline bool EventSubscriptionsHasBeenSet() const { return m_eventSubscriptionsHasBeenSet; }
 
     /**
      * <p>The list of existing event subscriptions.</p>

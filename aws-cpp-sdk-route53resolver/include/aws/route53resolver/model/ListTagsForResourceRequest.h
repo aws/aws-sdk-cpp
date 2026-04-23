@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the resource that you want to list tags
      * for.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the resource that you want to list tags
+     * for.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * <code>ListTagsForResource</code> request. If you don't specify a value for
      * <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of tags that you want to return in the response to a
+     * <code>ListTagsForResource</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Resolver returns up to 100 tags.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +130,15 @@ namespace Model
      * the previous response. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>
+     * <p>If you have more than <code>MaxResults</code> tags, you can submit another
+     * <code>ListTagsForResource</code> request to get the next group of tags for the
+     * resource. In the next request, specify the value of <code>NextToken</code> from
+     * the previous response. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>For the first <code>ListTagsForResource</code> request, omit this value.</p>

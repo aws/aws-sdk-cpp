@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Thing group indexing mode.</p>
      */
+    inline bool ThingGroupIndexingModeHasBeenSet() const { return m_thingGroupIndexingModeHasBeenSet; }
+
+    /**
+     * <p>Thing group indexing mode.</p>
+     */
     inline void SetThingGroupIndexingMode(const ThingGroupIndexingMode& value) { m_thingGroupIndexingModeHasBeenSet = true; m_thingGroupIndexingMode = value; }
 
     /**

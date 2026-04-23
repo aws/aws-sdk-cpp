@@ -57,6 +57,12 @@ namespace Model
      * <p>Indicates whether the VPN connection uses static routes only. Static routes
      * must be used for devices that don't support BGP.</p>
      */
+    inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the VPN connection uses static routes only. Static routes
+     * must be used for devices that don't support BGP.</p>
+     */
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
 
     /**

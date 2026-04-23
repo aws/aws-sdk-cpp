@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The challenge name</p>
      */
+    inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
+
+    /**
+     * <p>The challenge name</p>
+     */
     inline void SetChallengeName(const ChallengeName& value) { m_challengeNameHasBeenSet = true; m_challengeName = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The challenge response.</p>
      */
     inline const ChallengeResponse& GetChallengeResponse() const{ return m_challengeResponse; }
+
+    /**
+     * <p>The challenge response.</p>
+     */
+    inline bool ChallengeResponseHasBeenSet() const { return m_challengeResponseHasBeenSet; }
 
     /**
      * <p>The challenge response.</p>

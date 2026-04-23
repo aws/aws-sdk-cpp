@@ -30,9 +30,13 @@ namespace Model
 
 ReservationAggregates::ReservationAggregates() : 
     m_utilizationPercentageHasBeenSet(false),
+    m_utilizationPercentageInUnitsHasBeenSet(false),
     m_purchasedHoursHasBeenSet(false),
+    m_purchasedUnitsHasBeenSet(false),
     m_totalActualHoursHasBeenSet(false),
+    m_totalActualUnitsHasBeenSet(false),
     m_unusedHoursHasBeenSet(false),
+    m_unusedUnitsHasBeenSet(false),
     m_onDemandCostOfRIHoursUsedHasBeenSet(false),
     m_netRISavingsHasBeenSet(false),
     m_totalPotentialRISavingsHasBeenSet(false),
@@ -44,9 +48,13 @@ ReservationAggregates::ReservationAggregates() :
 
 ReservationAggregates::ReservationAggregates(JsonView jsonValue) : 
     m_utilizationPercentageHasBeenSet(false),
+    m_utilizationPercentageInUnitsHasBeenSet(false),
     m_purchasedHoursHasBeenSet(false),
+    m_purchasedUnitsHasBeenSet(false),
     m_totalActualHoursHasBeenSet(false),
+    m_totalActualUnitsHasBeenSet(false),
     m_unusedHoursHasBeenSet(false),
+    m_unusedUnitsHasBeenSet(false),
     m_onDemandCostOfRIHoursUsedHasBeenSet(false),
     m_netRISavingsHasBeenSet(false),
     m_totalPotentialRISavingsHasBeenSet(false),
@@ -66,11 +74,25 @@ ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
     m_utilizationPercentageHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("UtilizationPercentageInUnits"))
+  {
+    m_utilizationPercentageInUnits = jsonValue.GetString("UtilizationPercentageInUnits");
+
+    m_utilizationPercentageInUnitsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("PurchasedHours"))
   {
     m_purchasedHours = jsonValue.GetString("PurchasedHours");
 
     m_purchasedHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PurchasedUnits"))
+  {
+    m_purchasedUnits = jsonValue.GetString("PurchasedUnits");
+
+    m_purchasedUnitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TotalActualHours"))
@@ -80,11 +102,25 @@ ReservationAggregates& ReservationAggregates::operator =(JsonView jsonValue)
     m_totalActualHoursHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("TotalActualUnits"))
+  {
+    m_totalActualUnits = jsonValue.GetString("TotalActualUnits");
+
+    m_totalActualUnitsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("UnusedHours"))
   {
     m_unusedHours = jsonValue.GetString("UnusedHours");
 
     m_unusedHoursHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("UnusedUnits"))
+  {
+    m_unusedUnits = jsonValue.GetString("UnusedUnits");
+
+    m_unusedUnitsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("OnDemandCostOfRIHoursUsed"))
@@ -142,9 +178,21 @@ JsonValue ReservationAggregates::Jsonize() const
 
   }
 
+  if(m_utilizationPercentageInUnitsHasBeenSet)
+  {
+   payload.WithString("UtilizationPercentageInUnits", m_utilizationPercentageInUnits);
+
+  }
+
   if(m_purchasedHoursHasBeenSet)
   {
    payload.WithString("PurchasedHours", m_purchasedHours);
+
+  }
+
+  if(m_purchasedUnitsHasBeenSet)
+  {
+   payload.WithString("PurchasedUnits", m_purchasedUnits);
 
   }
 
@@ -154,9 +202,21 @@ JsonValue ReservationAggregates::Jsonize() const
 
   }
 
+  if(m_totalActualUnitsHasBeenSet)
+  {
+   payload.WithString("TotalActualUnits", m_totalActualUnits);
+
+  }
+
   if(m_unusedHoursHasBeenSet)
   {
    payload.WithString("UnusedHours", m_unusedHours);
+
+  }
+
+  if(m_unusedUnitsHasBeenSet)
+  {
+   payload.WithString("UnusedUnits", m_unusedUnits);
 
   }
 

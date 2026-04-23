@@ -49,7 +49,7 @@ SearchRequest::SearchRequest() :
 
 Aws::String SearchRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void SearchRequest::AddQueryStringParameters(URI& uri) const

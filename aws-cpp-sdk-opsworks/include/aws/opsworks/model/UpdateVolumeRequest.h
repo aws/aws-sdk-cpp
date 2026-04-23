@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The volume ID.</p>
      */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
+
+    /**
+     * <p>The volume ID.</p>
+     */
     inline void SetVolumeId(const Aws::String& value) { m_volumeIdHasBeenSet = true; m_volumeId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The new name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The new name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The new mount point.</p>
      */
     inline const Aws::String& GetMountPoint() const{ return m_mountPoint; }
+
+    /**
+     * <p>The new mount point.</p>
+     */
+    inline bool MountPointHasBeenSet() const { return m_mountPointHasBeenSet; }
 
     /**
      * <p>The new mount point.</p>

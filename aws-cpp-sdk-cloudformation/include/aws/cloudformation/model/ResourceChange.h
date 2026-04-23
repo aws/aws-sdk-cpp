@@ -68,6 +68,13 @@ namespace Model
      * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
      * resource), or <code>Remove</code> (deletes a resource).</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The action that AWS CloudFormation takes on the resource, such as
+     * <code>Add</code> (adds a new resource), <code>Modify</code> (changes a
+     * resource), or <code>Remove</code> (deletes a resource).</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -96,6 +103,11 @@ namespace Model
      * <p>The resource's logical ID, which is defined in the stack's template.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+
+    /**
+     * <p>The resource's logical ID, which is defined in the stack's template.</p>
+     */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
      * <p>The resource's logical ID, which is defined in the stack's template.</p>
@@ -133,6 +145,12 @@ namespace Model
      * don't have physical IDs because they haven't been created.</p>
      */
     inline const Aws::String& GetPhysicalResourceId() const{ return m_physicalResourceId; }
+
+    /**
+     * <p>The resource's physical ID (resource name). Resources that you are adding
+     * don't have physical IDs because they haven't been created.</p>
+     */
+    inline bool PhysicalResourceIdHasBeenSet() const { return m_physicalResourceIdHasBeenSet; }
 
     /**
      * <p>The resource's physical ID (resource name). Resources that you are adding
@@ -176,6 +194,12 @@ namespace Model
      * <code>AWS::S3::Bucket</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The type of AWS CloudFormation resource, such as
+     * <code>AWS::S3::Bucket</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The type of AWS CloudFormation resource, such as
@@ -231,6 +255,24 @@ namespace Model
      * <code>Conditionally</code>, and then <code>Never</code>.</p>
      */
     inline const Replacement& GetReplacement() const{ return m_replacement; }
+
+    /**
+     * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
+     * replace the resource by creating a new one and deleting the old one. This value
+     * depends on the value of the <code>RequiresRecreation</code> property in the
+     * <code>ResourceTargetDefinition</code> structure. For example, if the
+     * <code>RequiresRecreation</code> field is <code>Always</code> and the
+     * <code>Evaluation</code> field is <code>Static</code>, <code>Replacement</code>
+     * is <code>True</code>. If the <code>RequiresRecreation</code> field is
+     * <code>Always</code> and the <code>Evaluation</code> field is
+     * <code>Dynamic</code>, <code>Replacement</code> is
+     * <code>Conditionally</code>.</p> <p>If you have multiple changes with different
+     * <code>RequiresRecreation</code> values, the <code>Replacement</code> value
+     * depends on the change with the most impact. A <code>RequiresRecreation</code>
+     * value of <code>Always</code> has the most impact, followed by
+     * <code>Conditionally</code>, and then <code>Never</code>.</p>
+     */
+    inline bool ReplacementHasBeenSet() const { return m_replacementHasBeenSet; }
 
     /**
      * <p>For the <code>Modify</code> action, indicates whether AWS CloudFormation will
@@ -317,6 +359,13 @@ namespace Model
      * triggering this update, such as a change in the resource attribute's
      * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
      */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>For the <code>Modify</code> action, indicates which resource attribute is
+     * triggering this update, such as a change in the resource attribute's
+     * <code>Metadata</code>, <code>Properties</code>, or <code>Tags</code>.</p>
+     */
     inline void SetScope(const Aws::Vector<ResourceAttribute>& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
@@ -361,6 +410,13 @@ namespace Model
      * CloudFormation will make to the resource. </p>
      */
     inline const Aws::Vector<ResourceChangeDetail>& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>For the <code>Modify</code> action, a list of
+     * <code>ResourceChangeDetail</code> structures that describes the changes that AWS
+     * CloudFormation will make to the resource. </p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>For the <code>Modify</code> action, a list of

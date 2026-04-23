@@ -42,7 +42,7 @@ namespace Model
    * name and values for the filters that you plan to use. For example, you can
    * filter for <code>INSTANCE_TYPE==m4.xlarge OR INSTANCE_TYPE==c4.large</code>. The
    * <code>Expression</code> for that looks like this:</p> <p> <code>{ "Dimensions":
-   * { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large” ] } }</code> </p>
+   * { "Key": "INSTANCE_TYPE", "Values": [ "m4.xlarge", “c4.large�� ] } }</code> </p>
    * <p>The list of dimension values are OR'd together to retrieve cost or usage
    * data. You can create <code>Expression</code> and <code>DimensionValues</code>
    * objects using either <code>with*</code> methods or <code>set*</code> methods in
@@ -78,6 +78,11 @@ namespace Model
      * <p>Return results that match either <code>Dimension</code> object.</p>
      */
     inline const Aws::Vector<Expression>& GetOr() const{ return m_or; }
+
+    /**
+     * <p>Return results that match either <code>Dimension</code> object.</p>
+     */
+    inline bool OrHasBeenSet() const { return m_orHasBeenSet; }
 
     /**
      * <p>Return results that match either <code>Dimension</code> object.</p>
@@ -118,6 +123,11 @@ namespace Model
     /**
      * <p>Return results that match both <code>Dimension</code> objects.</p>
      */
+    inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
+
+    /**
+     * <p>Return results that match both <code>Dimension</code> objects.</p>
+     */
     inline void SetAnd(const Aws::Vector<Expression>& value) { m_andHasBeenSet = true; m_and = value; }
 
     /**
@@ -154,12 +164,17 @@ namespace Model
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not[0] = value; }
+    inline bool NotHasBeenSet() const { return m_notHasBeenSet; }
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
      */
-    inline void SetNot(Expression&& value) { m_notHasBeenSet = true; m_not[0] = std::move(value); }
+    inline void SetNot(const Expression& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = value; }
+
+    /**
+     * <p>Return results that don't match a <code>Dimension</code> object.</p>
+     */
+    inline void SetNot(Expression&& value) { m_notHasBeenSet = true; m_not.resize(1); m_not[0] = std::move(value); }
 
     /**
      * <p>Return results that don't match a <code>Dimension</code> object.</p>
@@ -176,6 +191,11 @@ namespace Model
      * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
      */
     inline const DimensionValues& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The specific <code>Dimension</code> to use for <code>Expression</code>.</p>
@@ -202,6 +222,11 @@ namespace Model
      * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
      */
     inline const TagValues& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The specific <code>Tag</code> to use for <code>Expression</code>.</p>

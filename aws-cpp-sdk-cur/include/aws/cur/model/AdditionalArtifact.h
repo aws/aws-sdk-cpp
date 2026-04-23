@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     REDSHIFT,
-    QUICKSIGHT
+    QUICKSIGHT,
+    ATHENA
   };
 
 namespace AdditionalArtifactMapper

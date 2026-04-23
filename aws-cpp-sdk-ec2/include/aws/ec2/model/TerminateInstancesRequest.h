@@ -28,9 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for TerminateInstances.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/TerminateInstancesRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API TerminateInstancesRequest : public EC2Request
   {
@@ -55,6 +52,12 @@ namespace Model
      * recommend breaking up this request into smaller batches.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
+     * recommend breaking up this request into smaller batches.</p>
+     */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
      * <p>One or more instance IDs.</p> <p>Constraints: Up to 1000 instance IDs. We
@@ -106,6 +109,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

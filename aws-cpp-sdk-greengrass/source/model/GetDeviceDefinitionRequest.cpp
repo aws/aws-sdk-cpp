@@ -29,7 +29,7 @@ GetDeviceDefinitionRequest::GetDeviceDefinitionRequest() :
 
 Aws::String GetDeviceDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

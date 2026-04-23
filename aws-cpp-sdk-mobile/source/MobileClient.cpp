@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/mobile/MobileClient.h>
 #include <aws/mobile/MobileEndpoint.h>
 #include <aws/mobile/MobileErrorMarshaller.h>
@@ -86,25 +89,32 @@ MobileClient::~MobileClient()
 
 void MobileClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << MobileEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + MobileEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void MobileClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 CreateProjectOutcome MobileClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -138,8 +148,13 @@ void MobileClient::CreateProjectAsyncHelper(const CreateProjectRequest& request,
 
 DeleteProjectOutcome MobileClient::DeleteProject(const DeleteProjectRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteProject", "Required field: ProjectId, is not set");
+    return DeleteProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -174,8 +189,13 @@ void MobileClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& request,
 
 DescribeBundleOutcome MobileClient::DescribeBundle(const DescribeBundleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.BundleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeBundle", "Required field: BundleId, is not set");
+    return DescribeBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -210,8 +230,13 @@ void MobileClient::DescribeBundleAsyncHelper(const DescribeBundleRequest& reques
 
 DescribeProjectOutcome MobileClient::DescribeProject(const DescribeProjectRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeProject", "Required field: ProjectId, is not set");
+    return DescribeProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/project";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -245,8 +270,13 @@ void MobileClient::DescribeProjectAsyncHelper(const DescribeProjectRequest& requ
 
 ExportBundleOutcome MobileClient::ExportBundle(const ExportBundleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.BundleIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportBundle", "Required field: BundleId, is not set");
+    return ExportBundleOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles/";
   ss << request.GetBundleId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -281,8 +311,13 @@ void MobileClient::ExportBundleAsyncHelper(const ExportBundleRequest& request, c
 
 ExportProjectOutcome MobileClient::ExportProject(const ExportProjectRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ExportProject", "Required field: ProjectId, is not set");
+    return ExportProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/exports/";
   ss << request.GetProjectId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -317,8 +352,8 @@ void MobileClient::ExportProjectAsyncHelper(const ExportProjectRequest& request,
 
 ListBundlesOutcome MobileClient::ListBundles(const ListBundlesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/bundles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -352,8 +387,8 @@ void MobileClient::ListBundlesAsyncHelper(const ListBundlesRequest& request, con
 
 ListProjectsOutcome MobileClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/projects";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -387,8 +422,13 @@ void MobileClient::ListProjectsAsyncHelper(const ListProjectsRequest& request, c
 
 UpdateProjectOutcome MobileClient::UpdateProject(const UpdateProjectRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProjectIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateProject", "Required field: ProjectId, is not set");
+    return UpdateProjectOutcome(Aws::Client::AWSError<MobileErrors>(MobileErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProjectId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/update";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

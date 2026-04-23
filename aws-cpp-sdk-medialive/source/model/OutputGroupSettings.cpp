@@ -30,7 +30,9 @@ namespace Model
 
 OutputGroupSettings::OutputGroupSettings() : 
     m_archiveGroupSettingsHasBeenSet(false),
+    m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
+    m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
@@ -39,7 +41,9 @@ OutputGroupSettings::OutputGroupSettings() :
 
 OutputGroupSettings::OutputGroupSettings(JsonView jsonValue) : 
     m_archiveGroupSettingsHasBeenSet(false),
+    m_frameCaptureGroupSettingsHasBeenSet(false),
     m_hlsGroupSettingsHasBeenSet(false),
+    m_mediaPackageGroupSettingsHasBeenSet(false),
     m_msSmoothGroupSettingsHasBeenSet(false),
     m_rtmpGroupSettingsHasBeenSet(false),
     m_udpGroupSettingsHasBeenSet(false)
@@ -56,11 +60,25 @@ OutputGroupSettings& OutputGroupSettings::operator =(JsonView jsonValue)
     m_archiveGroupSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("frameCaptureGroupSettings"))
+  {
+    m_frameCaptureGroupSettings = jsonValue.GetObject("frameCaptureGroupSettings");
+
+    m_frameCaptureGroupSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hlsGroupSettings"))
   {
     m_hlsGroupSettings = jsonValue.GetObject("hlsGroupSettings");
 
     m_hlsGroupSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaPackageGroupSettings"))
+  {
+    m_mediaPackageGroupSettings = jsonValue.GetObject("mediaPackageGroupSettings");
+
+    m_mediaPackageGroupSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("msSmoothGroupSettings"))
@@ -97,9 +115,21 @@ JsonValue OutputGroupSettings::Jsonize() const
 
   }
 
+  if(m_frameCaptureGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("frameCaptureGroupSettings", m_frameCaptureGroupSettings.Jsonize());
+
+  }
+
   if(m_hlsGroupSettingsHasBeenSet)
   {
    payload.WithObject("hlsGroupSettings", m_hlsGroupSettings.Jsonize());
+
+  }
+
+  if(m_mediaPackageGroupSettingsHasBeenSet)
+  {
+   payload.WithObject("mediaPackageGroupSettings", m_mediaPackageGroupSettings.Jsonize());
 
   }
 

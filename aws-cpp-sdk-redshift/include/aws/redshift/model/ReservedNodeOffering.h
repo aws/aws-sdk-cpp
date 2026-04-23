@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The offering identifier.</p>
      */
+    inline bool ReservedNodeOfferingIdHasBeenSet() const { return m_reservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The offering identifier.</p>
+     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The node type offered by the reserved node offering.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+
+    /**
+     * <p>The node type offered by the reserved node offering.</p>
+     */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
      * <p>The node type offered by the reserved node offering.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The duration, in seconds, for which the offering will reserve the node.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration, in seconds, for which the offering will reserve the node.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -145,6 +160,12 @@ namespace Model
      * offering.</p>
      */
     inline double GetFixedPrice() const{ return m_fixedPrice; }
+
+    /**
+     * <p>The upfront fixed charge you will pay to purchase the specific reserved node
+     * offering.</p>
+     */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
 
     /**
      * <p>The upfront fixed charge you will pay to purchase the specific reserved node
@@ -169,6 +190,12 @@ namespace Model
      * <p>The rate you are charged for each hour the cluster that is using the offering
      * is running.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The rate you are charged for each hour the cluster that is using the offering
+     * is running.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -182,6 +209,11 @@ namespace Model
      * <p>The currency code for the compute nodes offering.</p>
      */
     inline const Aws::String& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code for the compute nodes offering.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code for the compute nodes offering.</p>
@@ -219,6 +251,12 @@ namespace Model
      * node offering.</p>
      */
     inline const Aws::String& GetOfferingType() const{ return m_offeringType; }
+
+    /**
+     * <p>The anticipated utilization of the reserved node, as defined in the reserved
+     * node offering.</p>
+     */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
 
     /**
      * <p>The anticipated utilization of the reserved node, as defined in the reserved
@@ -269,6 +307,13 @@ namespace Model
      * clusters using the node offering. Recurring charges are only in effect for
      * heavy-utilization reserved nodes.</p>
      */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
+
+    /**
+     * <p>The charge to your account regardless of whether you are creating any
+     * clusters using the node offering. Recurring charges are only in effect for
+     * heavy-utilization reserved nodes.</p>
+     */
     inline void SetRecurringCharges(const Aws::Vector<RecurringCharge>& value) { m_recurringChargesHasBeenSet = true; m_recurringCharges = value; }
 
     /**
@@ -309,6 +354,9 @@ namespace Model
 
     
     inline const ReservedNodeOfferingType& GetReservedNodeOfferingType() const{ return m_reservedNodeOfferingType; }
+
+    
+    inline bool ReservedNodeOfferingTypeHasBeenSet() const { return m_reservedNodeOfferingTypeHasBeenSet; }
 
     
     inline void SetReservedNodeOfferingType(const ReservedNodeOfferingType& value) { m_reservedNodeOfferingTypeHasBeenSet = true; m_reservedNodeOfferingType = value; }

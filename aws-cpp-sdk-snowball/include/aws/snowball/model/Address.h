@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique ID for an address.</p>
      */
+    inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID for an address.</p>
+     */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of a person to receive a Snowball at an address.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of a person to receive a Snowball at an address.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of a person to receive a Snowball at an address.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the company to receive a Snowball at an address.</p>
      */
+    inline bool CompanyHasBeenSet() const { return m_companyHasBeenSet; }
+
+    /**
+     * <p>The name of the company to receive a Snowball at an address.</p>
+     */
     inline void SetCompany(const Aws::String& value) { m_companyHasBeenSet = true; m_company = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
      */
     inline const Aws::String& GetStreet1() const{ return m_street1; }
+
+    /**
+     * <p>The first line in a street address that a Snowball is to be delivered to.</p>
+     */
+    inline bool Street1HasBeenSet() const { return m_street1HasBeenSet; }
 
     /**
      * <p>The first line in a street address that a Snowball is to be delivered to.</p>
@@ -201,6 +221,12 @@ namespace Model
      * to.</p>
      */
     inline const Aws::String& GetStreet2() const{ return m_street2; }
+
+    /**
+     * <p>The second line in a street address that a Snowball is to be delivered
+     * to.</p>
+     */
+    inline bool Street2HasBeenSet() const { return m_street2HasBeenSet; }
 
     /**
      * <p>The second line in a street address that a Snowball is to be delivered
@@ -247,6 +273,11 @@ namespace Model
     /**
      * <p>The third line in a street address that a Snowball is to be delivered to.</p>
      */
+    inline bool Street3HasBeenSet() const { return m_street3HasBeenSet; }
+
+    /**
+     * <p>The third line in a street address that a Snowball is to be delivered to.</p>
+     */
     inline void SetStreet3(const Aws::String& value) { m_street3HasBeenSet = true; m_street3 = value; }
 
     /**
@@ -279,6 +310,11 @@ namespace Model
      * <p>The city in an address that a Snowball is to be delivered to.</p>
      */
     inline const Aws::String& GetCity() const{ return m_city; }
+
+    /**
+     * <p>The city in an address that a Snowball is to be delivered to.</p>
+     */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
 
     /**
      * <p>The city in an address that a Snowball is to be delivered to.</p>
@@ -316,6 +352,12 @@ namespace Model
      * to.</p>
      */
     inline const Aws::String& GetStateOrProvince() const{ return m_stateOrProvince; }
+
+    /**
+     * <p>The state or province in an address that a Snowball is to be delivered
+     * to.</p>
+     */
+    inline bool StateOrProvinceHasBeenSet() const { return m_stateOrProvinceHasBeenSet; }
 
     /**
      * <p>The state or province in an address that a Snowball is to be delivered
@@ -362,6 +404,11 @@ namespace Model
     /**
      * <p>This field is no longer used and the value is ignored.</p>
      */
+    inline bool PrefectureOrDistrictHasBeenSet() const { return m_prefectureOrDistrictHasBeenSet; }
+
+    /**
+     * <p>This field is no longer used and the value is ignored.</p>
+     */
     inline void SetPrefectureOrDistrict(const Aws::String& value) { m_prefectureOrDistrictHasBeenSet = true; m_prefectureOrDistrict = value; }
 
     /**
@@ -394,6 +441,11 @@ namespace Model
      * <p>This field is no longer used and the value is ignored.</p>
      */
     inline const Aws::String& GetLandmark() const{ return m_landmark; }
+
+    /**
+     * <p>This field is no longer used and the value is ignored.</p>
+     */
+    inline bool LandmarkHasBeenSet() const { return m_landmarkHasBeenSet; }
 
     /**
      * <p>This field is no longer used and the value is ignored.</p>
@@ -434,6 +486,11 @@ namespace Model
     /**
      * <p>The country in an address that a Snowball is to be delivered to.</p>
      */
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
+
+    /**
+     * <p>The country in an address that a Snowball is to be delivered to.</p>
+     */
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
 
     /**
@@ -466,6 +523,11 @@ namespace Model
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
      */
     inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
+
+    /**
+     * <p>The postal code in an address that a Snowball is to be delivered to.</p>
+     */
+    inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
 
     /**
      * <p>The postal code in an address that a Snowball is to be delivered to.</p>
@@ -503,6 +565,12 @@ namespace Model
      * delivered to.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number associated with an address that a Snowball is to be
+     * delivered to.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * <p>The phone number associated with an address that a Snowball is to be
@@ -546,6 +614,12 @@ namespace Model
      * true. This field is not supported in most regions.</p>
      */
     inline bool GetIsRestricted() const{ return m_isRestricted; }
+
+    /**
+     * <p>If the address you are creating is a primary address, then set this option to
+     * true. This field is not supported in most regions.</p>
+     */
+    inline bool IsRestrictedHasBeenSet() const { return m_isRestrictedHasBeenSet; }
 
     /**
      * <p>If the address you are creating is a primary address, then set this option to

@@ -29,7 +29,7 @@ DeleteAccountRequest::DeleteAccountRequest() :
 
 Aws::String DeleteAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -54,6 +54,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * The ID of the logger definition.
      */
+    inline bool LoggerDefinitionIdHasBeenSet() const { return m_loggerDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the logger definition.
+     */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * A list of loggers.
      */
     inline const Aws::Vector<Logger>& GetLoggers() const{ return m_loggers; }
+
+    /**
+     * A list of loggers.
+     */
+    inline bool LoggersHasBeenSet() const { return m_loggersHasBeenSet; }
 
     /**
      * A list of loggers.

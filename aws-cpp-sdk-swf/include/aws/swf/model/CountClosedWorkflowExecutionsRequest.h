@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow executions to count.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * these in a request but not both.</p> </note>
      */
     inline const ExecutionTimeFilter& GetStartTimeFilter() const{ return m_startTimeFilter; }
+
+    /**
+     * <p>If specified, only workflow executions that meet the start time criteria of
+     * the filter are counted.</p> <note> <p> <code>startTimeFilter</code> and
+     * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.</p> </note>
+     */
+    inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions that meet the start time criteria of
@@ -140,6 +153,14 @@ namespace Model
      * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
      * these in a request but not both.</p> </note>
      */
+    inline bool CloseTimeFilterHasBeenSet() const { return m_closeTimeFilterHasBeenSet; }
+
+    /**
+     * <p>If specified, only workflow executions that meet the close time criteria of
+     * the filter are counted.</p> <note> <p> <code>startTimeFilter</code> and
+     * <code>closeTimeFilter</code> are mutually exclusive. You must specify one of
+     * these in a request but not both.</p> </note>
+     */
     inline void SetCloseTimeFilter(const ExecutionTimeFilter& value) { m_closeTimeFilterHasBeenSet = true; m_closeTimeFilter = value; }
 
     /**
@@ -175,6 +196,15 @@ namespace Model
      * </note>
      */
     inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
+
+    /**
+     * <p>If specified, only workflow executions matching the <code>WorkflowId</code>
+     * in the filter are counted.</p> <note> <p> <code>closeStatusFilter</code>,
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.</p>
+     * </note>
+     */
+    inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions matching the <code>WorkflowId</code>
@@ -229,6 +259,15 @@ namespace Model
      * are mutually exclusive. You can specify at most one of these in a request.</p>
      * </note>
      */
+    inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
+
+    /**
+     * <p>If specified, indicates the type of the workflow executions to be
+     * counted.</p> <note> <p> <code>closeStatusFilter</code>,
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.</p>
+     * </note>
+     */
     inline void SetTypeFilter(const WorkflowTypeFilter& value) { m_typeFilterHasBeenSet = true; m_typeFilter = value; }
 
     /**
@@ -267,6 +306,15 @@ namespace Model
      * </note>
      */
     inline const TagFilter& GetTagFilter() const{ return m_tagFilter; }
+
+    /**
+     * <p>If specified, only executions that have a tag that matches the filter are
+     * counted.</p> <note> <p> <code>closeStatusFilter</code>,
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.</p>
+     * </note>
+     */
+    inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
 
     /**
      * <p>If specified, only executions that have a tag that matches the filter are
@@ -314,6 +362,16 @@ namespace Model
      * </note>
      */
     inline const CloseStatusFilter& GetCloseStatusFilter() const{ return m_closeStatusFilter; }
+
+    /**
+     * <p>If specified, only workflow executions that match this close status are
+     * counted. This filter has an affect only if <code>executionStatus</code> is
+     * specified as <code>CLOSED</code>.</p> <note> <p> <code>closeStatusFilter</code>,
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.</p>
+     * </note>
+     */
+    inline bool CloseStatusFilterHasBeenSet() const { return m_closeStatusFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions that match this close status are

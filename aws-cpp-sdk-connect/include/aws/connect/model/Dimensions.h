@@ -59,6 +59,12 @@ namespace Model
      * <p>A <code>QueueReference</code> object used as one part of dimension for the
      * metrics results.</p>
      */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
+
+    /**
+     * <p>A <code>QueueReference</code> object used as one part of dimension for the
+     * metrics results.</p>
+     */
     inline void SetQueue(const QueueReference& value) { m_queueHasBeenSet = true; m_queue = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
      */
     inline const Channel& GetChannel() const{ return m_channel; }
+
+    /**
+     * <p>The channel used for grouping and filters. Only VOICE is supported.</p>
+     */
+    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
 
     /**
      * <p>The channel used for grouping and filters. Only VOICE is supported.</p>

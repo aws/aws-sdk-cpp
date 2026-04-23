@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the Lightsail load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lightsail load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * from the load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
+    /**
+     * <p>An array of strings containing the names of the instances you want to detach
+     * from the load balancer.</p>
+     */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
 
     /**
      * <p>An array of strings containing the names of the instances you want to detach

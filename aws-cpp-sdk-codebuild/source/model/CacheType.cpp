@@ -32,6 +32,7 @@ namespace Aws
 
         static const int NO_CACHE_HASH = HashingUtils::HashString("NO_CACHE");
         static const int S3_HASH = HashingUtils::HashString("S3");
+        static const int LOCAL_HASH = HashingUtils::HashString("LOCAL");
 
 
         CacheType GetCacheTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == S3_HASH)
           {
             return CacheType::S3;
+          }
+          else if (hashCode == LOCAL_HASH)
+          {
+            return CacheType::LOCAL;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "NO_CACHE";
           case CacheType::S3:
             return "S3";
+          case CacheType::LOCAL:
+            return "LOCAL";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

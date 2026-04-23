@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the account attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the account attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>One or more values for the account attribute.</p>
      */
     inline const Aws::Vector<AccountAttributeValue>& GetAttributeValues() const{ return m_attributeValues; }
+
+    /**
+     * <p>One or more values for the account attribute.</p>
+     */
+    inline bool AttributeValuesHasBeenSet() const { return m_attributeValuesHasBeenSet; }
 
     /**
      * <p>One or more values for the account attribute.</p>

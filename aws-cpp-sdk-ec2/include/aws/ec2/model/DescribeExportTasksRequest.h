@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>One or more export task IDs.</p>
      */
+    inline bool ExportTaskIdsHasBeenSet() const { return m_exportTaskIdsHasBeenSet; }
+
+    /**
+     * <p>One or more export task IDs.</p>
+     */
     inline void SetExportTaskIds(const Aws::Vector<Aws::String>& value) { m_exportTaskIdsHasBeenSet = true; m_exportTaskIds = value; }
 
     /**

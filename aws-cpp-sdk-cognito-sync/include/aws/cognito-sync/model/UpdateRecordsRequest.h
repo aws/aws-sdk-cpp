@@ -60,6 +60,12 @@ namespace Model
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * created by Amazon Cognito. GUID generation is unique within a region.
      */
     inline const Aws::String& GetIdentityId() const{ return m_identityId; }
+
+    /**
+     * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
+     * created by Amazon Cognito. GUID generation is unique within a region.
+     */
+    inline bool IdentityIdHasBeenSet() const { return m_identityIdHasBeenSet; }
 
     /**
      * A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE)
@@ -146,6 +158,12 @@ namespace Model
      * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
      * (underscore), '-' (dash), and '.' (dot).
      */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
+
+    /**
+     * A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_'
+     * (underscore), '-' (dash), and '.' (dot).
+     */
     inline void SetDatasetName(const Aws::String& value) { m_datasetNameHasBeenSet = true; m_datasetName = value; }
 
     /**
@@ -187,6 +205,11 @@ namespace Model
     /**
      * <p>The unique ID generated for this device by Cognito.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID generated for this device by Cognito.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -219,6 +242,11 @@ namespace Model
      * A list of patch operations.
      */
     inline const Aws::Vector<RecordPatch>& GetRecordPatches() const{ return m_recordPatches; }
+
+    /**
+     * A list of patch operations.
+     */
+    inline bool RecordPatchesHasBeenSet() const { return m_recordPatchesHasBeenSet; }
 
     /**
      * A list of patch operations.
@@ -256,6 +284,12 @@ namespace Model
      * and identity.
      */
     inline const Aws::String& GetSyncSessionToken() const{ return m_syncSessionToken; }
+
+    /**
+     * The SyncSessionToken returned by a previous call to ListRecords for this dataset
+     * and identity.
+     */
+    inline bool SyncSessionTokenHasBeenSet() const { return m_syncSessionTokenHasBeenSet; }
 
     /**
      * The SyncSessionToken returned by a previous call to ListRecords for this dataset
@@ -299,6 +333,12 @@ namespace Model
      * referenced in other methods. The ClientContext field is not yet implemented.
      */
     inline const Aws::String& GetClientContext() const{ return m_clientContext; }
+
+    /**
+     * Intended to supply a device ID that will populate the lastModifiedBy field
+     * referenced in other methods. The ClientContext field is not yet implemented.
+     */
+    inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
 
     /**
      * Intended to supply a device ID that will populate the lastModifiedBy field

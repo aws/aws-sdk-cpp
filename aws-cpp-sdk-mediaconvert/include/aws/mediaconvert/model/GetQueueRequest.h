@@ -50,6 +50,11 @@ namespace Model
     /**
      * The name of the queue that you want information about.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the queue that you want information about.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

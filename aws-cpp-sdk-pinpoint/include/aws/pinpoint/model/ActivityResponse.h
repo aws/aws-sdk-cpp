@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ID of the application to which the campaign applies.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The ID of the application to which the campaign applies.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The ID of the campaign to which the activity applies.
      */
     inline const Aws::String& GetCampaignId() const{ return m_campaignId; }
+
+    /**
+     * The ID of the campaign to which the activity applies.
+     */
+    inline bool CampaignIdHasBeenSet() const { return m_campaignIdHasBeenSet; }
 
     /**
      * The ID of the campaign to which the activity applies.
@@ -124,6 +134,12 @@ namespace Model
      * 8601 format.
      */
     inline const Aws::String& GetEnd() const{ return m_end; }
+
+    /**
+     * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
+     * 8601 format.
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * The actual time the activity was marked CANCELLED or COMPLETED. Provided in ISO
@@ -170,6 +186,11 @@ namespace Model
     /**
      * The unique activity ID.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The unique activity ID.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -204,6 +225,13 @@ namespace Model
 Valid values: SUCCESS, FAIL
      */
     inline const Aws::String& GetResult() const{ return m_result; }
+
+    /**
+     * Indicates whether the activity succeeded.
+
+Valid values: SUCCESS, FAIL
+     */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
      * Indicates whether the activity succeeded.
@@ -256,6 +284,11 @@ Valid values: SUCCESS, FAIL
     /**
      * The scheduled start time for the activity in ISO 8601 format.
      */
+    inline bool ScheduledStartHasBeenSet() const { return m_scheduledStartHasBeenSet; }
+
+    /**
+     * The scheduled start time for the activity in ISO 8601 format.
+     */
     inline void SetScheduledStart(const Aws::String& value) { m_scheduledStartHasBeenSet = true; m_scheduledStart = value; }
 
     /**
@@ -288,6 +321,11 @@ Valid values: SUCCESS, FAIL
      * The actual start time of the activity in ISO 8601 format.
      */
     inline const Aws::String& GetStart() const{ return m_start; }
+
+    /**
+     * The actual start time of the activity in ISO 8601 format.
+     */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
 
     /**
      * The actual start time of the activity in ISO 8601 format.
@@ -327,6 +365,14 @@ Valid values: PENDING, INITIALIZING, RUNNING,
      * PAUSED, CANCELLED, COMPLETED
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * The state of the activity.
+
+Valid values: PENDING, INITIALIZING, RUNNING,
+     * PAUSED, CANCELLED, COMPLETED
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * The state of the activity.
@@ -387,6 +433,12 @@ Valid values: PENDING, INITIALIZING, RUNNING,
      * The total number of endpoints to which the campaign successfully delivered
      * messages.
      */
+    inline bool SuccessfulEndpointCountHasBeenSet() const { return m_successfulEndpointCountHasBeenSet; }
+
+    /**
+     * The total number of endpoints to which the campaign successfully delivered
+     * messages.
+     */
     inline void SetSuccessfulEndpointCount(int value) { m_successfulEndpointCountHasBeenSet = true; m_successfulEndpointCount = value; }
 
     /**
@@ -404,6 +456,11 @@ Valid values: PENDING, INITIALIZING, RUNNING,
     /**
      * The total number of timezones completed.
      */
+    inline bool TimezonesCompletedCountHasBeenSet() const { return m_timezonesCompletedCountHasBeenSet; }
+
+    /**
+     * The total number of timezones completed.
+     */
     inline void SetTimezonesCompletedCount(int value) { m_timezonesCompletedCountHasBeenSet = true; m_timezonesCompletedCount = value; }
 
     /**
@@ -416,6 +473,11 @@ Valid values: PENDING, INITIALIZING, RUNNING,
      * The total number of unique timezones present in the segment.
      */
     inline int GetTimezonesTotalCount() const{ return m_timezonesTotalCount; }
+
+    /**
+     * The total number of unique timezones present in the segment.
+     */
+    inline bool TimezonesTotalCountHasBeenSet() const { return m_timezonesTotalCountHasBeenSet; }
 
     /**
      * The total number of unique timezones present in the segment.
@@ -438,6 +500,12 @@ Valid values: PENDING, INITIALIZING, RUNNING,
      * The total number of endpoints to which the campaign attempts to deliver
      * messages.
      */
+    inline bool TotalEndpointCountHasBeenSet() const { return m_totalEndpointCountHasBeenSet; }
+
+    /**
+     * The total number of endpoints to which the campaign attempts to deliver
+     * messages.
+     */
     inline void SetTotalEndpointCount(int value) { m_totalEndpointCountHasBeenSet = true; m_totalEndpointCount = value; }
 
     /**
@@ -451,6 +519,11 @@ Valid values: PENDING, INITIALIZING, RUNNING,
      * The ID of a variation of the campaign used for A/B testing.
      */
     inline const Aws::String& GetTreatmentId() const{ return m_treatmentId; }
+
+    /**
+     * The ID of a variation of the campaign used for A/B testing.
+     */
+    inline bool TreatmentIdHasBeenSet() const { return m_treatmentIdHasBeenSet; }
 
     /**
      * The ID of a variation of the campaign used for A/B testing.

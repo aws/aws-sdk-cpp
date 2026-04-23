@@ -62,6 +62,12 @@ namespace Model
      * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
      * gateways.</p>
      */
+    inline bool CustomerGatewayIdsHasBeenSet() const { return m_customerGatewayIdsHasBeenSet; }
+
+    /**
+     * <p>One or more customer gateway IDs.</p> <p>Default: Describes all your customer
+     * gateways.</p>
+     */
     inline void SetCustomerGatewayIds(const Aws::Vector<Aws::String>& value) { m_customerGatewayIdsHasBeenSet = true; m_customerGatewayIds = value; }
 
     /**
@@ -121,6 +127,27 @@ namespace Model
      * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>bgp-asn</code> - The customer
+     * gateway's Border Gateway Protocol (BGP) Autonomous System Number (ASN).</p>
+     * </li> <li> <p> <code>customer-gateway-id</code> - The ID of the customer
+     * gateway.</p> </li> <li> <p> <code>ip-address</code> - The IP address of the
+     * customer gateway's Internet-routable external interface.</p> </li> <li> <p>
+     * <code>state</code> - The state of the customer gateway (<code>pending</code> |
+     * <code>available</code> | <code>deleting</code> | <code>deleted</code>).</p>
+     * </li> <li> <p> <code>type</code> - The type of customer gateway. Currently, the
+     * only supported type is <code>ipsec.1</code>.</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>bgp-asn</code> - The customer
@@ -256,6 +283,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

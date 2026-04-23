@@ -65,6 +65,13 @@ namespace Model
      * evaluation for the rule. You can only specify one type if you also specify a
      * resource ID for <code>ComplianceResourceId</code>.</p>
      */
+    inline bool ComplianceResourceTypesHasBeenSet() const { return m_complianceResourceTypesHasBeenSet; }
+
+    /**
+     * <p>The resource types of only those AWS resources that you want to trigger an
+     * evaluation for the rule. You can only specify one type if you also specify a
+     * resource ID for <code>ComplianceResourceId</code>.</p>
+     */
     inline void SetComplianceResourceTypes(const Aws::Vector<Aws::String>& value) { m_complianceResourceTypesHasBeenSet = true; m_complianceResourceTypes = value; }
 
     /**
@@ -120,6 +127,12 @@ namespace Model
      * <p>The tag key that is applied to only those AWS resources that you want to
      * trigger an evaluation for the rule.</p>
      */
+    inline bool TagKeyHasBeenSet() const { return m_tagKeyHasBeenSet; }
+
+    /**
+     * <p>The tag key that is applied to only those AWS resources that you want to
+     * trigger an evaluation for the rule.</p>
+     */
     inline void SetTagKey(const Aws::String& value) { m_tagKeyHasBeenSet = true; m_tagKey = value; }
 
     /**
@@ -159,6 +172,13 @@ namespace Model
      * must also specify a value for <code>TagKey</code>.</p>
      */
     inline const Aws::String& GetTagValue() const{ return m_tagValue; }
+
+    /**
+     * <p>The tag value applied to only those AWS resources that you want to trigger an
+     * evaluation for the rule. If you specify a value for <code>TagValue</code>, you
+     * must also specify a value for <code>TagKey</code>.</p>
+     */
+    inline bool TagValueHasBeenSet() const { return m_tagValueHasBeenSet; }
 
     /**
      * <p>The tag value applied to only those AWS resources that you want to trigger an
@@ -209,6 +229,13 @@ namespace Model
      * <code>ComplianceResourceTypes</code>.</p>
      */
     inline const Aws::String& GetComplianceResourceId() const{ return m_complianceResourceId; }
+
+    /**
+     * <p>The ID of the only AWS resource that you want to trigger an evaluation for
+     * the rule. If you specify a resource ID, you must specify one resource type for
+     * <code>ComplianceResourceTypes</code>.</p>
+     */
+    inline bool ComplianceResourceIdHasBeenSet() const { return m_complianceResourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the only AWS resource that you want to trigger an evaluation for

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A status value with which to filter your results.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status value with which to filter your results.</p>
+     */
     inline void SetStatus(const SigningStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * your code image.</p>
      */
     inline const Aws::String& GetPlatformId() const{ return m_platformId; }
+
+    /**
+     * <p>The ID of microcontroller platform that you specified for the distribution of
+     * your code image.</p>
+     */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
 
     /**
      * <p>The ID of microcontroller platform that you specified for the distribution of
@@ -122,6 +133,11 @@ namespace Model
      * <p>The IAM principal that requested the signing job.</p>
      */
     inline const Aws::String& GetRequestedBy() const{ return m_requestedBy; }
+
+    /**
+     * <p>The IAM principal that requested the signing job.</p>
+     */
+    inline bool RequestedByHasBeenSet() const { return m_requestedByHasBeenSet; }
 
     /**
      * <p>The IAM principal that requested the signing job.</p>
@@ -170,6 +186,15 @@ namespace Model
      * <code>nextToken</code> value in a subsequent request to retrieve additional
      * items. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum number of items to return in the response. Use this
+     * parameter when paginating results. If additional items exist beyond the number
+     * you specify, the <code>nextToken</code> element is set in the response. Use the
+     * <code>nextToken</code> value in a subsequent request to retrieve additional
+     * items. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -189,6 +214,14 @@ namespace Model
      * you just received.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>String for specifying the next set of paginated results to return. After you
+     * receive a response with truncated results, use this parameter in a subsequent
+     * request. Set it to the value of <code>nextToken</code> from the response that
+     * you just received.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>String for specifying the next set of paginated results to return. After you

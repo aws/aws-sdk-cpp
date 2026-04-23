@@ -50,25 +50,44 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
@@ -76,6 +95,11 @@ namespace Model
      * <p>Character you use to group keys.</p>
      */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
+
+    /**
+     * <p>Character you use to group keys.</p>
+     */
+    inline bool DelimiterHasBeenSet() const { return m_delimiterHasBeenSet; }
 
     /**
      * <p>Character you use to group keys.</p>
@@ -112,6 +136,9 @@ namespace Model
     inline const EncodingType& GetEncodingType() const{ return m_encodingType; }
 
     
+    inline bool EncodingTypeHasBeenSet() const { return m_encodingTypeHasBeenSet; }
+
+    
     inline void SetEncodingType(const EncodingType& value) { m_encodingTypeHasBeenSet = true; m_encodingType = value; }
 
     
@@ -129,6 +156,12 @@ namespace Model
      * after which listing should begin.</p>
      */
     inline const Aws::String& GetKeyMarker() const{ return m_keyMarker; }
+
+    /**
+     * <p>Together with upload-id-marker, this parameter specifies the multipart upload
+     * after which listing should begin.</p>
+     */
+    inline bool KeyMarkerHasBeenSet() const { return m_keyMarkerHasBeenSet; }
 
     /**
      * <p>Together with upload-id-marker, this parameter specifies the multipart upload
@@ -179,6 +212,13 @@ namespace Model
      * the response body. 1,000 is the maximum number of uploads that can be returned
      * in a response.</p>
      */
+    inline bool MaxUploadsHasBeenSet() const { return m_maxUploadsHasBeenSet; }
+
+    /**
+     * <p>Sets the maximum number of multipart uploads, from 1 to 1,000, to return in
+     * the response body. 1,000 is the maximum number of uploads that can be returned
+     * in a response.</p>
+     */
     inline void SetMaxUploads(int value) { m_maxUploadsHasBeenSet = true; m_maxUploads = value; }
 
     /**
@@ -194,6 +234,12 @@ namespace Model
      * prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>Lists in-progress uploads only for those keys that begin with the specified
+     * prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>Lists in-progress uploads only for those keys that begin with the specified
@@ -244,6 +290,13 @@ namespace Model
      * should begin. If key-marker is not specified, the upload-id-marker parameter is
      * ignored.</p>
      */
+    inline bool UploadIdMarkerHasBeenSet() const { return m_uploadIdMarkerHasBeenSet; }
+
+    /**
+     * <p>Together with key-marker, specifies the multipart upload after which listing
+     * should begin. If key-marker is not specified, the upload-id-marker parameter is
+     * ignored.</p>
+     */
     inline void SetUploadIdMarker(const Aws::String& value) { m_uploadIdMarkerHasBeenSet = true; m_uploadIdMarker = value; }
 
     /**
@@ -284,6 +337,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

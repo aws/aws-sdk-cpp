@@ -67,6 +67,13 @@ namespace Model
      * instances. Any parameters that you specify in the Overrides override the same
      * parameters in the launch template.</p>
      */
+    inline bool LaunchTemplateAndOverridesHasBeenSet() const { return m_launchTemplateAndOverridesHasBeenSet; }
+
+    /**
+     * <p>The launch templates and overrides that were used for launching the
+     * instances. Any parameters that you specify in the Overrides override the same
+     * parameters in the launch template.</p>
+     */
     inline void SetLaunchTemplateAndOverrides(const LaunchTemplateAndOverridesResponse& value) { m_launchTemplateAndOverridesHasBeenSet = true; m_launchTemplateAndOverrides = value; }
 
     /**
@@ -101,6 +108,12 @@ namespace Model
      * <p>Indicates if the instance that was launched is a Spot Instance or On-Demand
      * Instance.</p>
      */
+    inline bool LifecycleHasBeenSet() const { return m_lifecycleHasBeenSet; }
+
+    /**
+     * <p>Indicates if the instance that was launched is a Spot Instance or On-Demand
+     * Instance.</p>
+     */
     inline void SetLifecycle(const InstanceLifecycle& value) { m_lifecycleHasBeenSet = true; m_lifecycle = value; }
 
     /**
@@ -126,6 +139,11 @@ namespace Model
      * <p>The IDs of the instances.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceIds() const{ return m_instanceIds; }
+
+    /**
+     * <p>The IDs of the instances.</p>
+     */
+    inline bool InstanceIdsHasBeenSet() const { return m_instanceIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the instances.</p>
@@ -171,6 +189,11 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -193,6 +216,11 @@ namespace Model
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
      */
     inline const PlatformValues& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The value is <code>Windows</code> for Windows instances; otherwise blank.</p>

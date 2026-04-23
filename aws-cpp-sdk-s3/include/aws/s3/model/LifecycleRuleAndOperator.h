@@ -51,25 +51,44 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefixHasBeenSet = true; m_prefix = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const char* value) { m_prefixHasBeenSet = true; m_prefix.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRuleAndOperator& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRuleAndOperator& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LifecycleRuleAndOperator& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
@@ -78,6 +97,12 @@ namespace Model
      * apply.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>All of these tags must exist in the object's tag set in order for the rule to
+     * apply.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>All of these tags must exist in the object's tag set in order for the rule to

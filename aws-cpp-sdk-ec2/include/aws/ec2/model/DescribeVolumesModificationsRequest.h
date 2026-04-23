@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -78,6 +86,12 @@ namespace Model
      * described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVolumeIds() const{ return m_volumeIds; }
+
+    /**
+     * <p>One or more volume IDs for which in-progress modifications will be
+     * described.</p>
+     */
+    inline bool VolumeIdsHasBeenSet() const { return m_volumeIdsHasBeenSet; }
 
     /**
      * <p>One or more volume IDs for which in-progress modifications will be
@@ -130,6 +144,15 @@ namespace Model
      * <code>original-volume-type</code>, <code>start-time</code>. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters. Supported filters: <code>volume-id</code>,
+     * <code>modification-state</code>, <code>target-size</code>,
+     * <code>target-iops</code>, <code>target-volume-type</code>,
+     * <code>original-size</code>, <code>original-iops</code>,
+     * <code>original-volume-type</code>, <code>start-time</code>. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters. Supported filters: <code>volume-id</code>,
@@ -196,6 +219,12 @@ namespace Model
      * <p>The <code>nextToken</code> value returned by a previous paginated
      * request.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned by a previous paginated
+     * request.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -234,6 +263,12 @@ namespace Model
      * paginated request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results (up to a limit of 500) to be returned in a
+     * paginated request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results (up to a limit of 500) to be returned in a

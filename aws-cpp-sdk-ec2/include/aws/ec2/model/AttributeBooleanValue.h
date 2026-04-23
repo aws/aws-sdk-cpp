@@ -58,6 +58,12 @@ namespace Model
      * <p>The attribute value. The valid values are <code>true</code> or
      * <code>false</code>.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The attribute value. The valid values are <code>true</code> or
+     * <code>false</code>.</p>
+     */
     inline void SetValue(bool value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**

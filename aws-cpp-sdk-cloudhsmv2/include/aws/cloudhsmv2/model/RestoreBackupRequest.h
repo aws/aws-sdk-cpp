@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the backup to be restored. To find the ID of a backup, use the
      * <a>DescribeBackups</a> operation.</p>
      */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the backup to be restored. To find the ID of a backup, use the
+     * <a>DescribeBackups</a> operation.</p>
+     */
     inline void SetBackupId(const Aws::String& value) { m_backupIdHasBeenSet = true; m_backupId = value; }
 
     /**

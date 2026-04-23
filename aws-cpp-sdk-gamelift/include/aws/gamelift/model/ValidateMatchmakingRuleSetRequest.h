@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Collection of matchmaking rules to validate, formatted as a JSON string.</p>
      */
+    inline bool RuleSetBodyHasBeenSet() const { return m_ruleSetBodyHasBeenSet; }
+
+    /**
+     * <p>Collection of matchmaking rules to validate, formatted as a JSON string.</p>
+     */
     inline void SetRuleSetBody(const Aws::String& value) { m_ruleSetBodyHasBeenSet = true; m_ruleSetBody = value; }
 
     /**

@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the cluster security group to which the operation was
      * applied.</p>
      */
+    inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster security group to which the operation was
+     * applied.</p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>A description of the security group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the security group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -137,6 +148,12 @@ namespace Model
      * associated with this cluster security group.</p>
      */
     inline const Aws::Vector<EC2SecurityGroup>& GetEC2SecurityGroups() const{ return m_eC2SecurityGroups; }
+
+    /**
+     * <p>A list of EC2 security groups that are permitted to access clusters
+     * associated with this cluster security group.</p>
+     */
+    inline bool EC2SecurityGroupsHasBeenSet() const { return m_eC2SecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of EC2 security groups that are permitted to access clusters
@@ -185,6 +202,12 @@ namespace Model
      * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
      * associated with this cluster security group.</p>
      */
+    inline bool IPRangesHasBeenSet() const { return m_iPRangesHasBeenSet; }
+
+    /**
+     * <p>A list of IP ranges (CIDR blocks) that are permitted to access clusters
+     * associated with this cluster security group.</p>
+     */
     inline void SetIPRanges(const Aws::Vector<IPRange>& value) { m_iPRangesHasBeenSet = true; m_iPRanges = value; }
 
     /**
@@ -222,6 +245,11 @@ namespace Model
      * <p>The list of tags for the cluster security group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the cluster security group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the cluster security group.</p>

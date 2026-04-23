@@ -62,6 +62,13 @@ namespace Model
      * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
      * operations.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the template. You will refer to this name when you send email
+     * using the <code>SendTemplatedEmail</code> or <code>SendBulkTemplatedEmail</code>
+     * operations.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The subject line of the email.</p>
      */
+    inline bool SubjectPartHasBeenSet() const { return m_subjectPartHasBeenSet; }
+
+    /**
+     * <p>The subject line of the email.</p>
+     */
     inline void SetSubjectPart(const Aws::String& value) { m_subjectPartHasBeenSet = true; m_subjectPart = value; }
 
     /**
@@ -141,6 +153,12 @@ namespace Model
      * display HTML.</p>
      */
     inline const Aws::String& GetTextPart() const{ return m_textPart; }
+
+    /**
+     * <p>The email body that will be visible to recipients whose email clients do not
+     * display HTML.</p>
+     */
+    inline bool TextPartHasBeenSet() const { return m_textPartHasBeenSet; }
 
     /**
      * <p>The email body that will be visible to recipients whose email clients do not
@@ -183,6 +201,11 @@ namespace Model
      * <p>The HTML body of the email.</p>
      */
     inline const Aws::String& GetHtmlPart() const{ return m_htmlPart; }
+
+    /**
+     * <p>The HTML body of the email.</p>
+     */
+    inline bool HtmlPartHasBeenSet() const { return m_htmlPartHasBeenSet; }
 
     /**
      * <p>The HTML body of the email.</p>

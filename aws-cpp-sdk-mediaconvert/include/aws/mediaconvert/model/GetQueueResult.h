@@ -42,19 +42,49 @@ namespace Model
     GetQueueResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * You can use queues to manage the resources that are available to your AWS
+     * account for running multiple transcoding jobs at the same time. If you don't
+     * specify a queue, the service sends all jobs through the default queue. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     inline const Queue& GetQueue() const{ return m_queue; }
 
-    
+    /**
+     * You can use queues to manage the resources that are available to your AWS
+     * account for running multiple transcoding jobs at the same time. If you don't
+     * specify a queue, the service sends all jobs through the default queue. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     inline void SetQueue(const Queue& value) { m_queue = value; }
 
-    
+    /**
+     * You can use queues to manage the resources that are available to your AWS
+     * account for running multiple transcoding jobs at the same time. If you don't
+     * specify a queue, the service sends all jobs through the default queue. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     inline void SetQueue(Queue&& value) { m_queue = std::move(value); }
 
-    
+    /**
+     * You can use queues to manage the resources that are available to your AWS
+     * account for running multiple transcoding jobs at the same time. If you don't
+     * specify a queue, the service sends all jobs through the default queue. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     inline GetQueueResult& WithQueue(const Queue& value) { SetQueue(value); return *this;}
 
-    
+    /**
+     * You can use queues to manage the resources that are available to your AWS
+     * account for running multiple transcoding jobs at the same time. If you don't
+     * specify a queue, the service sends all jobs through the default queue. For more
+     * information, see
+     * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html.
+     */
     inline GetQueueResult& WithQueue(Queue&& value) { SetQueue(std::move(value)); return *this;}
 
   private:

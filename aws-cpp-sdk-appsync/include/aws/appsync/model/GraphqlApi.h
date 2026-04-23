@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The API name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The API name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The API ID.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
+
+    /**
+     * <p>The API ID.</p>
+     */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
 
     /**
      * <p>The API ID.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The authentication type.</p>
      */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
+
+    /**
+     * <p>The authentication type.</p>
+     */
     inline void SetAuthenticationType(const AuthenticationType& value) { m_authenticationTypeHasBeenSet = true; m_authenticationType = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
     /**
      * <p>The Amazon CloudWatch Logs configuration.</p>
      */
+    inline bool LogConfigHasBeenSet() const { return m_logConfigHasBeenSet; }
+
+    /**
+     * <p>The Amazon CloudWatch Logs configuration.</p>
+     */
     inline void SetLogConfig(const LogConfig& value) { m_logConfigHasBeenSet = true; m_logConfig = value; }
 
     /**
@@ -177,53 +197,63 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline const UserPoolConfig& GetUserPoolConfig() const{ return m_userPoolConfig; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
+     */
+    inline bool UserPoolConfigHasBeenSet() const { return m_userPoolConfigHasBeenSet; }
+
+    /**
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(const UserPoolConfig& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = value; }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline void SetUserPoolConfig(UserPoolConfig&& value) { m_userPoolConfigHasBeenSet = true; m_userPoolConfig = std::move(value); }
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline GraphqlApi& WithUserPoolConfig(const UserPoolConfig& value) { SetUserPoolConfig(value); return *this;}
 
     /**
-     * <p>The Amazon Cognito User Pool configuration.</p>
+     * <p>The Amazon Cognito user pool configuration.</p>
      */
     inline GraphqlApi& WithUserPoolConfig(UserPoolConfig&& value) { SetUserPoolConfig(std::move(value)); return *this;}
 
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline const OpenIDConnectConfig& GetOpenIDConnectConfig() const{ return m_openIDConnectConfig; }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
+     */
+    inline bool OpenIDConnectConfigHasBeenSet() const { return m_openIDConnectConfigHasBeenSet; }
+
+    /**
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(const OpenIDConnectConfig& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = value; }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline void SetOpenIDConnectConfig(OpenIDConnectConfig&& value) { m_openIDConnectConfigHasBeenSet = true; m_openIDConnectConfig = std::move(value); }
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline GraphqlApi& WithOpenIDConnectConfig(const OpenIDConnectConfig& value) { SetOpenIDConnectConfig(value); return *this;}
 
     /**
-     * <p>The Open Id Connect configuration.</p>
+     * <p>The OpenID Connect configuration.</p>
      */
     inline GraphqlApi& WithOpenIDConnectConfig(OpenIDConnectConfig&& value) { SetOpenIDConnectConfig(std::move(value)); return *this;}
 
@@ -232,6 +262,11 @@ namespace Model
      * <p>The ARN.</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The ARN.</p>
@@ -268,6 +303,11 @@ namespace Model
      * <p>The URIs.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUris() const{ return m_uris; }
+
+    /**
+     * <p>The URIs.</p>
+     */
+    inline bool UrisHasBeenSet() const { return m_urisHasBeenSet; }
 
     /**
      * <p>The URIs.</p>

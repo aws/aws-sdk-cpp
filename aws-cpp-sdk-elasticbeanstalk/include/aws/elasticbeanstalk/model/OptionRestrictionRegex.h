@@ -60,6 +60,12 @@ namespace Model
      * <p>The regular expression pattern that a string configuration option value with
      * this restriction must match.</p>
      */
+    inline bool PatternHasBeenSet() const { return m_patternHasBeenSet; }
+
+    /**
+     * <p>The regular expression pattern that a string configuration option value with
+     * this restriction must match.</p>
+     */
     inline void SetPattern(const Aws::String& value) { m_patternHasBeenSet = true; m_pattern = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>A unique name representing this regular expression.</p>
      */
     inline const Aws::String& GetLabel() const{ return m_label; }
+
+    /**
+     * <p>A unique name representing this regular expression.</p>
+     */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
 
     /**
      * <p>A unique name representing this regular expression.</p>

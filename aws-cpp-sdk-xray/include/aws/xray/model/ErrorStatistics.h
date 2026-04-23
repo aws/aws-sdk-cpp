@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The number of requests that failed with a 419 throttling status code.</p>
      */
+    inline bool ThrottleCountHasBeenSet() const { return m_throttleCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests that failed with a 419 throttling status code.</p>
+     */
     inline void SetThrottleCount(long long value) { m_throttleCountHasBeenSet = true; m_throttleCount = value; }
 
     /**
@@ -67,6 +72,12 @@ namespace Model
      * codes.</p>
      */
     inline long long GetOtherCount() const{ return m_otherCount; }
+
+    /**
+     * <p>The number of requests that failed with untracked 4xx Client Error status
+     * codes.</p>
+     */
+    inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
 
     /**
      * <p>The number of requests that failed with untracked 4xx Client Error status
@@ -86,6 +97,12 @@ namespace Model
      * code.</p>
      */
     inline long long GetTotalCount() const{ return m_totalCount; }
+
+    /**
+     * <p>The total number of requests that failed with a 4xx Client Error status
+     * code.</p>
+     */
+    inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
 
     /**
      * <p>The total number of requests that failed with a 4xx Client Error status

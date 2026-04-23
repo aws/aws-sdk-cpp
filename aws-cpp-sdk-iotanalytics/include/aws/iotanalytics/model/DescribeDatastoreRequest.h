@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the data store</p>
      */
+    inline bool DatastoreNameHasBeenSet() const { return m_datastoreNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data store</p>
+     */
     inline void SetDatastoreName(const Aws::String& value) { m_datastoreNameHasBeenSet = true; m_datastoreName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * in the response.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
+
+    /**
+     * <p>If true, additional statistical information about the datastore is included
+     * in the response.</p>
+     */
+    inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
 
     /**
      * <p>If true, additional statistical information about the datastore is included

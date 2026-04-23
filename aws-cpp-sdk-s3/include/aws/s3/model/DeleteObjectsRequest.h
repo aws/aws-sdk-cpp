@@ -55,41 +55,75 @@ namespace Model
     inline bool ShouldComputeContentMd5() const override { return true; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Delete& GetDelete() const{ return m_delete; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetDelete(const Delete& value) { m_deleteHasBeenSet = true; m_delete = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelete(Delete&& value) { m_deleteHasBeenSet = true; m_delete = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsRequest& WithDelete(const Delete& value) { SetDelete(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline DeleteObjectsRequest& WithDelete(Delete&& value) { SetDelete(std::move(value)); return *this;}
 
 
@@ -98,6 +132,12 @@ namespace Model
      * the value that is displayed on your authentication device.</p>
      */
     inline const Aws::String& GetMFA() const{ return m_mFA; }
+
+    /**
+     * <p>The concatenation of the authentication device's serial number, a space, and
+     * the value that is displayed on your authentication device.</p>
+     */
+    inline bool MFAHasBeenSet() const { return m_mFAHasBeenSet; }
 
     /**
      * <p>The concatenation of the authentication device's serial number, a space, and
@@ -140,6 +180,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -152,8 +195,40 @@ namespace Model
     inline DeleteObjectsRequest& WithRequestPayer(RequestPayer&& value) { SetRequestPayer(std::move(value)); return *this;}
 
 
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline bool GetBypassGovernanceRetention() const{ return m_bypassGovernanceRetention; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline bool BypassGovernanceRetentionHasBeenSet() const { return m_bypassGovernanceRetentionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline void SetBypassGovernanceRetention(bool value) { m_bypassGovernanceRetentionHasBeenSet = true; m_bypassGovernanceRetention = value; }
+
+    /**
+     * <p>Specifies whether you want to delete this object even if it has a
+     * Governance-type Object Lock in place. You must have sufficient permissions to
+     * perform this operation.</p>
+     */
+    inline DeleteObjectsRequest& WithBypassGovernanceRetention(bool value) { SetBypassGovernanceRetention(value); return *this;}
+
+
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }
@@ -201,6 +276,9 @@ namespace Model
 
     RequestPayer m_requestPayer;
     bool m_requestPayerHasBeenSet;
+
+    bool m_bypassGovernanceRetention;
+    bool m_bypassGovernanceRetentionHasBeenSet;
 
     Aws::Map<Aws::String, Aws::String> m_customizedAccessLogTag;
     bool m_customizedAccessLogTagHasBeenSet;

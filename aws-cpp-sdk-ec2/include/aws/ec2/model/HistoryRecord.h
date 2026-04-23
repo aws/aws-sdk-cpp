@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Information about the event.</p>
      */
+    inline bool EventInformationHasBeenSet() const { return m_eventInformationHasBeenSet; }
+
+    /**
+     * <p>Information about the event.</p>
+     */
     inline void SetEventInformation(const EventInformation& value) { m_eventInformationHasBeenSet = true; m_eventInformation = value; }
 
     /**
@@ -86,6 +91,15 @@ namespace Model
      * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
      */
     inline const EventType& GetEventType() const{ return m_eventType; }
+
+    /**
+     * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
+     * Fleet request.</p> </li> <li> <p> <code>fleetRequestChange</code> - A change in
+     * the status or configuration of the Spot Fleet request.</p> </li> <li> <p>
+     * <code>instanceChange</code> - An instance was launched or terminated.</p> </li>
+     * <li> <p> <code>Information</code> - An informational event.</p> </li> </ul>
+     */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
 
     /**
      * <p>The event type.</p> <ul> <li> <p> <code>error</code> - An error with the Spot
@@ -129,6 +143,12 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The date and time of the event, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The date and time of the event, in UTC format (for example,

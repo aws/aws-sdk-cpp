@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The system-generated identifier for this shard.</p>
      */
+    inline bool ShardIdHasBeenSet() const { return m_shardIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated identifier for this shard.</p>
+     */
     inline void SetShardId(const Aws::String& value) { m_shardIdHasBeenSet = true; m_shardId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The range of possible sequence numbers for the shard.</p>
      */
+    inline bool SequenceNumberRangeHasBeenSet() const { return m_sequenceNumberRangeHasBeenSet; }
+
+    /**
+     * <p>The range of possible sequence numbers for the shard.</p>
+     */
     inline void SetSequenceNumberRange(const SequenceNumberRange& value) { m_sequenceNumberRangeHasBeenSet = true; m_sequenceNumberRange = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>The shard ID of the current shard's parent.</p>
      */
     inline const Aws::String& GetParentShardId() const{ return m_parentShardId; }
+
+    /**
+     * <p>The shard ID of the current shard's parent.</p>
+     */
+    inline bool ParentShardIdHasBeenSet() const { return m_parentShardIdHasBeenSet; }
 
     /**
      * <p>The shard ID of the current shard's parent.</p>

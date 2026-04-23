@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of resources.
      */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+
+    /**
+     * A list of resources.
+     */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**

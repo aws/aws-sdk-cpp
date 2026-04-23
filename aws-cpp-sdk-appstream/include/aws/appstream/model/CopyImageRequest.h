@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the image to copy.</p>
      */
+    inline bool SourceImageNameHasBeenSet() const { return m_sourceImageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the image to copy.</p>
+     */
     inline void SetSourceImageName(const Aws::String& value) { m_sourceImageNameHasBeenSet = true; m_sourceImageName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name that the image will have when it is copied to the destination.</p>
      */
     inline const Aws::String& GetDestinationImageName() const{ return m_destinationImageName; }
+
+    /**
+     * <p>The name that the image will have when it is copied to the destination.</p>
+     */
+    inline bool DestinationImageNameHasBeenSet() const { return m_destinationImageNameHasBeenSet; }
 
     /**
      * <p>The name that the image will have when it is copied to the destination.</p>
@@ -121,6 +131,12 @@ namespace Model
      * required, even if you are copying an image within the same region.</p>
      */
     inline const Aws::String& GetDestinationRegion() const{ return m_destinationRegion; }
+
+    /**
+     * <p>The destination region to which the image will be copied. This parameter is
+     * required, even if you are copying an image within the same region.</p>
+     */
+    inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
 
     /**
      * <p>The destination region to which the image will be copied. This parameter is
@@ -164,6 +180,12 @@ namespace Model
      * destination.</p>
      */
     inline const Aws::String& GetDestinationImageDescription() const{ return m_destinationImageDescription; }
+
+    /**
+     * <p>The description that the image will have when it is copied to the
+     * destination.</p>
+     */
+    inline bool DestinationImageDescriptionHasBeenSet() const { return m_destinationImageDescriptionHasBeenSet; }
 
     /**
      * <p>The description that the image will have when it is copied to the

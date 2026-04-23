@@ -56,6 +56,12 @@ namespace Model
      * <p>The value of <code>Id</code> for the traffic policy that you want to update
      * the comment for.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The value of <code>Id</code> for the traffic policy that you want to update
+     * the comment for.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * <p>The value of <code>Version</code> for the traffic policy that you want to
      * update the comment for.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The value of <code>Version</code> for the traffic policy that you want to
+     * update the comment for.</p>
+     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -112,6 +124,11 @@ namespace Model
      * <p>The new comment for the specified traffic policy and version.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The new comment for the specified traffic policy and version.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The new comment for the specified traffic policy and version.</p>

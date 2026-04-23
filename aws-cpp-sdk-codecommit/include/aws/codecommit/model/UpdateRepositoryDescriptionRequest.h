@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the repository to set or change the comment or description
      * for.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository to set or change the comment or description
+     * for.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * descriptions are limited to 1,000 characters.</p>
      */
     inline const Aws::String& GetRepositoryDescription() const{ return m_repositoryDescription; }
+
+    /**
+     * <p>The new comment or description for the specified repository. Repository
+     * descriptions are limited to 1,000 characters.</p>
+     */
+    inline bool RepositoryDescriptionHasBeenSet() const { return m_repositoryDescriptionHasBeenSet; }
 
     /**
      * <p>The new comment or description for the specified repository. Repository

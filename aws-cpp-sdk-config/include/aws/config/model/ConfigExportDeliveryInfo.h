@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Status of the last attempted delivery.</p>
      */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
+
+    /**
+     * <p>Status of the last attempted delivery.</p>
+     */
     inline void SetLastStatus(const DeliveryStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The error code from the last attempted delivery.</p>
      */
     inline const Aws::String& GetLastErrorCode() const{ return m_lastErrorCode; }
+
+    /**
+     * <p>The error code from the last attempted delivery.</p>
+     */
+    inline bool LastErrorCodeHasBeenSet() const { return m_lastErrorCodeHasBeenSet; }
 
     /**
      * <p>The error code from the last attempted delivery.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The error message from the last attempted delivery.</p>
      */
+    inline bool LastErrorMessageHasBeenSet() const { return m_lastErrorMessageHasBeenSet; }
+
+    /**
+     * <p>The error message from the last attempted delivery.</p>
+     */
     inline void SetLastErrorMessage(const Aws::String& value) { m_lastErrorMessageHasBeenSet = true; m_lastErrorMessage = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
     /**
      * <p>The time of the last attempted delivery.</p>
      */
+    inline bool LastAttemptTimeHasBeenSet() const { return m_lastAttemptTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the last attempted delivery.</p>
+     */
     inline void SetLastAttemptTime(const Aws::Utils::DateTime& value) { m_lastAttemptTimeHasBeenSet = true; m_lastAttemptTime = value; }
 
     /**
@@ -184,6 +204,11 @@ namespace Model
     /**
      * <p>The time of the last successful delivery.</p>
      */
+    inline bool LastSuccessfulTimeHasBeenSet() const { return m_lastSuccessfulTimeHasBeenSet; }
+
+    /**
+     * <p>The time of the last successful delivery.</p>
+     */
     inline void SetLastSuccessfulTime(const Aws::Utils::DateTime& value) { m_lastSuccessfulTimeHasBeenSet = true; m_lastSuccessfulTime = value; }
 
     /**
@@ -206,6 +231,11 @@ namespace Model
      * <p>The time that the next delivery occurs.</p>
      */
     inline const Aws::Utils::DateTime& GetNextDeliveryTime() const{ return m_nextDeliveryTime; }
+
+    /**
+     * <p>The time that the next delivery occurs.</p>
+     */
+    inline bool NextDeliveryTimeHasBeenSet() const { return m_nextDeliveryTimeHasBeenSet; }
 
     /**
      * <p>The time that the next delivery occurs.</p>

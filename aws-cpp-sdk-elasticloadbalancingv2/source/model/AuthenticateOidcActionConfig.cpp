@@ -43,7 +43,9 @@ AuthenticateOidcActionConfig::AuthenticateOidcActionConfig() :
     m_sessionTimeoutHasBeenSet(false),
     m_authenticationRequestExtraParamsHasBeenSet(false),
     m_onUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false)
+    m_onUnauthenticatedRequestHasBeenSet(false),
+    m_useExistingClientSecret(false),
+    m_useExistingClientSecretHasBeenSet(false)
 {
 }
 
@@ -60,7 +62,9 @@ AuthenticateOidcActionConfig::AuthenticateOidcActionConfig(const XmlNode& xmlNod
     m_sessionTimeoutHasBeenSet(false),
     m_authenticationRequestExtraParamsHasBeenSet(false),
     m_onUnauthenticatedRequest(AuthenticateOidcActionConditionalBehaviorEnum::NOT_SET),
-    m_onUnauthenticatedRequestHasBeenSet(false)
+    m_onUnauthenticatedRequestHasBeenSet(false),
+    m_useExistingClientSecret(false),
+    m_useExistingClientSecretHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -147,6 +151,12 @@ AuthenticateOidcActionConfig& AuthenticateOidcActionConfig::operator =(const Xml
       m_onUnauthenticatedRequest = AuthenticateOidcActionConditionalBehaviorEnumMapper::GetAuthenticateOidcActionConditionalBehaviorEnumForName(StringUtils::Trim(onUnauthenticatedRequestNode.GetText().c_str()).c_str());
       m_onUnauthenticatedRequestHasBeenSet = true;
     }
+    XmlNode useExistingClientSecretNode = resultNode.FirstChild("UseExistingClientSecret");
+    if(!useExistingClientSecretNode.IsNull())
+    {
+      m_useExistingClientSecret = StringUtils::ConvertToBool(StringUtils::Trim(useExistingClientSecretNode.GetText().c_str()).c_str());
+      m_useExistingClientSecretHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -217,6 +227,11 @@ void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const c
       oStream << location << index << locationValue << ".OnUnauthenticatedRequest=" << AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
   }
 
+  if(m_useExistingClientSecretHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
+  }
+
 }
 
 void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -273,6 +288,10 @@ void AuthenticateOidcActionConfig::OutputToStream(Aws::OStream& oStream, const c
   if(m_onUnauthenticatedRequestHasBeenSet)
   {
       oStream << location << ".OnUnauthenticatedRequest=" << AuthenticateOidcActionConditionalBehaviorEnumMapper::GetNameForAuthenticateOidcActionConditionalBehaviorEnum(m_onUnauthenticatedRequest) << "&";
+  }
+  if(m_useExistingClientSecretHasBeenSet)
+  {
+      oStream << location << ".UseExistingClientSecret=" << std::boolalpha << m_useExistingClientSecret << "&";
   }
 }
 

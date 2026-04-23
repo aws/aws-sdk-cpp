@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MetricsConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API MetricsConfiguration
   {
   public:
@@ -47,6 +52,11 @@ namespace Model
      * <p>The ID used to identify the metrics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID used to identify the metrics configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID used to identify the metrics configuration.</p>
@@ -85,6 +95,13 @@ namespace Model
      * tag, or a conjunction (MetricsAndOperator).</p>
      */
     inline const MetricsFilter& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>Specifies a metrics configuration filter. The metrics configuration will only
+     * include objects that meet the filter's criteria. A filter must be a prefix, a
+     * tag, or a conjunction (MetricsAndOperator).</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>Specifies a metrics configuration filter. The metrics configuration will only

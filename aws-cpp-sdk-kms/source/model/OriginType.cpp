@@ -32,6 +32,7 @@ namespace Aws
 
         static const int AWS_KMS_HASH = HashingUtils::HashString("AWS_KMS");
         static const int EXTERNAL_HASH = HashingUtils::HashString("EXTERNAL");
+        static const int AWS_CLOUDHSM_HASH = HashingUtils::HashString("AWS_CLOUDHSM");
 
 
         OriginType GetOriginTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == EXTERNAL_HASH)
           {
             return OriginType::EXTERNAL;
+          }
+          else if (hashCode == AWS_CLOUDHSM_HASH)
+          {
+            return OriginType::AWS_CLOUDHSM;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "AWS_KMS";
           case OriginType::EXTERNAL:
             return "EXTERNAL";
+          case OriginType::AWS_CLOUDHSM:
+            return "AWS_CLOUDHSM";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

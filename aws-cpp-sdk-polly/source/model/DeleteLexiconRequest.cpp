@@ -29,7 +29,7 @@ DeleteLexiconRequest::DeleteLexiconRequest() :
 
 Aws::String DeleteLexiconRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the aggregator.</p>
      */
     inline const Aws::String& GetConfigurationAggregatorArn() const{ return m_configurationAggregatorArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the aggregator.</p>
+     */
+    inline bool ConfigurationAggregatorArnHasBeenSet() const { return m_configurationAggregatorArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the aggregator.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Provides a list of source accounts and regions to be aggregated.</p>
      */
+    inline bool AccountAggregationSourcesHasBeenSet() const { return m_accountAggregationSourcesHasBeenSet; }
+
+    /**
+     * <p>Provides a list of source accounts and regions to be aggregated.</p>
+     */
     inline void SetAccountAggregationSources(const Aws::Vector<AccountAggregationSource>& value) { m_accountAggregationSourcesHasBeenSet = true; m_accountAggregationSources = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>Provides an organization and list of regions to be aggregated.</p>
      */
+    inline bool OrganizationAggregationSourceHasBeenSet() const { return m_organizationAggregationSourceHasBeenSet; }
+
+    /**
+     * <p>Provides an organization and list of regions to be aggregated.</p>
+     */
     inline void SetOrganizationAggregationSource(const OrganizationAggregationSource& value) { m_organizationAggregationSourceHasBeenSet = true; m_organizationAggregationSource = value; }
 
     /**
@@ -195,6 +215,11 @@ namespace Model
     /**
      * <p>The time stamp when the configuration aggregator was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp when the configuration aggregator was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -217,6 +242,11 @@ namespace Model
      * <p>The time of the last update.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time of the last update.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time of the last update.</p>

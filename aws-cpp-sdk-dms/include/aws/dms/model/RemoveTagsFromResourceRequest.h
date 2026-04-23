@@ -58,6 +58,12 @@ namespace Model
      * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
      * removed from.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>&gt;The Amazon Resource Name (ARN) of the AWS DMS resource the tag is to be
+     * removed from.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The tag key (name) of the tag to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The tag key (name) of the tag to be removed.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The tag key (name) of the tag to be removed.</p>

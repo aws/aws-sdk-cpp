@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts to release.</p>
      */
+    inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts to release.</p>
+     */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**

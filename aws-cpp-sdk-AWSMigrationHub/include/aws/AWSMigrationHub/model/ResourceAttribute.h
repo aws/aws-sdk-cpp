@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>Type of resource.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of resource.</p>
+     */
     inline void SetType(const ResourceAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>Value of the resource type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Value of the resource type.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>Value of the resource type.</p>

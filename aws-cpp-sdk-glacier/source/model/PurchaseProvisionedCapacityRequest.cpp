@@ -29,7 +29,7 @@ PurchaseProvisionedCapacityRequest::PurchaseProvisionedCapacityRequest() :
 
 Aws::String PurchaseProvisionedCapacityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

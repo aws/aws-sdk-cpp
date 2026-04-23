@@ -17,6 +17,8 @@
 #include <aws/lightsail/Lightsail_EXPORTS.h>
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +50,11 @@ namespace Model
      * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
      */
     inline const Aws::String& GetDiskName() const{ return m_diskName; }
+
+    /**
+     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
 
     /**
      * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
@@ -85,6 +92,12 @@ namespace Model
      * create the new storage disk.</p>
      */
     inline const Aws::String& GetDiskSnapshotName() const{ return m_diskSnapshotName; }
+
+    /**
+     * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
+     * create the new storage disk.</p>
+     */
+    inline bool DiskSnapshotNameHasBeenSet() const { return m_diskSnapshotNameHasBeenSet; }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-snapshot</code>) from which to
@@ -130,6 +143,14 @@ namespace Model
      * to list the Availability Zones where Lightsail is currently available.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone where you want to create the disk (e.g.,
+     * <code>us-east-2a</code>). Choose the same Availability Zone as the Lightsail
+     * instance where you want to create the disk.</p> <p>Use the GetRegions operation
+     * to list the Availability Zones where Lightsail is currently available.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where you want to create the disk (e.g.,
@@ -188,12 +209,74 @@ namespace Model
     /**
      * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
      */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
+     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
      * <p>The size of the disk in GB (e.g., <code>32</code>).</p>
      */
     inline CreateDiskFromSnapshotRequest& WithSizeInGb(int value) { SetSizeInGb(value); return *this;}
+
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateDiskFromSnapshotRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateDiskFromSnapshotRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateDiskFromSnapshotRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateDiskFromSnapshotRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -208,6 +291,9 @@ namespace Model
 
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

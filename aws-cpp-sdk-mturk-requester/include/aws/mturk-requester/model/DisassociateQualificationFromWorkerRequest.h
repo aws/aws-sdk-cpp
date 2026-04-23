@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Worker who possesses the Qualification to be revoked.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the Qualification type of the Qualification to be revoked.</p>
      */
     inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+
+    /**
+     * <p>The ID of the Qualification type of the Qualification to be revoked.</p>
+     */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
 
     /**
      * <p>The ID of the Qualification type of the Qualification to be revoked.</p>
@@ -121,6 +131,12 @@ namespace Model
      * had the Qualification sees this message.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A text message that explains why the Qualification was revoked. The user who
+     * had the Qualification sees this message.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A text message that explains why the Qualification was revoked. The user who

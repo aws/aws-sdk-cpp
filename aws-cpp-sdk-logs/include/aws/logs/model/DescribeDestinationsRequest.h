@@ -54,6 +54,12 @@ namespace Model
      * <p>The prefix to match. If you don't specify a value, no prefix filter is
      * applied.</p>
      */
+    inline bool DestinationNamePrefixHasBeenSet() const { return m_destinationNamePrefixHasBeenSet; }
+
+    /**
+     * <p>The prefix to match. If you don't specify a value, no prefix filter is
+     * applied.</p>
+     */
     inline void SetDestinationNamePrefix(const Aws::String& value) { m_destinationNamePrefixHasBeenSet = true; m_destinationNamePrefix = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * default is up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the

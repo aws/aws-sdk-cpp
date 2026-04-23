@@ -31,8 +31,15 @@ namespace Model
 PlaybackConfiguration::PlaybackConfiguration() : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_dashConfigurationHasBeenSet(false),
+    m_hlsConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playbackConfigurationArnHasBeenSet(false),
+    m_playbackEndpointPrefixHasBeenSet(false),
+    m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_transcodeProfileNameHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
 }
@@ -40,8 +47,15 @@ PlaybackConfiguration::PlaybackConfiguration() :
 PlaybackConfiguration::PlaybackConfiguration(JsonView jsonValue) : 
     m_adDecisionServerUrlHasBeenSet(false),
     m_cdnConfigurationHasBeenSet(false),
+    m_dashConfigurationHasBeenSet(false),
+    m_hlsConfigurationHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_playbackConfigurationArnHasBeenSet(false),
+    m_playbackEndpointPrefixHasBeenSet(false),
+    m_sessionInitializationEndpointPrefixHasBeenSet(false),
     m_slateAdUrlHasBeenSet(false),
+    m_tagsHasBeenSet(false),
+    m_transcodeProfileNameHasBeenSet(false),
     m_videoContentSourceUrlHasBeenSet(false)
 {
   *this = jsonValue;
@@ -63,6 +77,20 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_cdnConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DashConfiguration"))
+  {
+    m_dashConfiguration = jsonValue.GetObject("DashConfiguration");
+
+    m_dashConfigurationHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("HlsConfiguration"))
+  {
+    m_hlsConfiguration = jsonValue.GetObject("HlsConfiguration");
+
+    m_hlsConfigurationHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("Name"))
   {
     m_name = jsonValue.GetString("Name");
@@ -70,11 +98,49 @@ PlaybackConfiguration& PlaybackConfiguration::operator =(JsonView jsonValue)
     m_nameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("PlaybackConfigurationArn"))
+  {
+    m_playbackConfigurationArn = jsonValue.GetString("PlaybackConfigurationArn");
+
+    m_playbackConfigurationArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("PlaybackEndpointPrefix"))
+  {
+    m_playbackEndpointPrefix = jsonValue.GetString("PlaybackEndpointPrefix");
+
+    m_playbackEndpointPrefixHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("SessionInitializationEndpointPrefix"))
+  {
+    m_sessionInitializationEndpointPrefix = jsonValue.GetString("SessionInitializationEndpointPrefix");
+
+    m_sessionInitializationEndpointPrefixHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("SlateAdUrl"))
   {
     m_slateAdUrl = jsonValue.GetString("SlateAdUrl");
 
     m_slateAdUrlHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TranscodeProfileName"))
+  {
+    m_transcodeProfileName = jsonValue.GetString("TranscodeProfileName");
+
+    m_transcodeProfileNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("VideoContentSourceUrl"))
@@ -103,15 +169,62 @@ JsonValue PlaybackConfiguration::Jsonize() const
 
   }
 
+  if(m_dashConfigurationHasBeenSet)
+  {
+   payload.WithObject("DashConfiguration", m_dashConfiguration.Jsonize());
+
+  }
+
+  if(m_hlsConfigurationHasBeenSet)
+  {
+   payload.WithObject("HlsConfiguration", m_hlsConfiguration.Jsonize());
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("Name", m_name);
 
   }
 
+  if(m_playbackConfigurationArnHasBeenSet)
+  {
+   payload.WithString("PlaybackConfigurationArn", m_playbackConfigurationArn);
+
+  }
+
+  if(m_playbackEndpointPrefixHasBeenSet)
+  {
+   payload.WithString("PlaybackEndpointPrefix", m_playbackEndpointPrefix);
+
+  }
+
+  if(m_sessionInitializationEndpointPrefixHasBeenSet)
+  {
+   payload.WithString("SessionInitializationEndpointPrefix", m_sessionInitializationEndpointPrefix);
+
+  }
+
   if(m_slateAdUrlHasBeenSet)
   {
    payload.WithString("SlateAdUrl", m_slateAdUrl);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
+  }
+
+  if(m_transcodeProfileNameHasBeenSet)
+  {
+   payload.WithString("TranscodeProfileName", m_transcodeProfileName);
 
   }
 

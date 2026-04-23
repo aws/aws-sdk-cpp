@@ -63,6 +63,12 @@ namespace Model
      * The address of the endpoint as provided by your push provider. For example, the
      * DeviceToken or RegistrationId.
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * The address of the endpoint as provided by your push provider. For example, the
+     * DeviceToken or RegistrationId.
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
      * The ID of the application that is associated with the endpoint.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
+    /**
+     * The ID of the application that is associated with the endpoint.
+     */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
      * The ID of the application that is associated with the endpoint.
@@ -145,6 +156,20 @@ The Amazon Pinpoint console can't
      * attributes.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * Custom attributes that describe the endpoint by associating a name with an array
+     * of values. For example, an attribute named "interests" might have the following
+     * values: ["science", "politics", "travel"]. You can use these attributes as
+     * selection criteria when you create segments.
+
+The Amazon Pinpoint console can't
+     * display attribute names that include the following characters: hash/pound sign
+     * (#), colon (:), question mark (?), backslash (\), and forward slash (/). For
+     * this reason, you should avoid using these characters in the names of custom
+     * attributes.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * Custom attributes that describe the endpoint by associating a name with an array
@@ -301,6 +326,14 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
 Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
      * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
      */
+    inline bool ChannelTypeHasBeenSet() const { return m_channelTypeHasBeenSet; }
+
+    /**
+     * The channel type.
+
+Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
+     * APNS_VOIP_SANDBOX | ADM | SMS | EMAIL | BAIDU
+     */
     inline void SetChannelType(const ChannelType& value) { m_channelTypeHasBeenSet = true; m_channelType = value; }
 
     /**
@@ -335,6 +368,14 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
      * cohorts to the holdout or treatment allocations for a campaign.
      */
     inline const Aws::String& GetCohortId() const{ return m_cohortId; }
+
+    /**
+     * A number from 0-99 that represents the cohort the endpoint is assigned to.
+     * Endpoints are grouped into cohorts randomly, and each cohort contains
+     * approximately 1 percent of the endpoints for an app. Amazon Pinpoint assigns
+     * cohorts to the holdout or treatment allocations for a campaign.
+     */
+    inline bool CohortIdHasBeenSet() const { return m_cohortIdHasBeenSet; }
 
     /**
      * A number from 0-99 that represents the cohort the endpoint is assigned to.
@@ -393,6 +434,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
     /**
      * The date and time when the endpoint was created, shown in ISO 8601 format.
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * The date and time when the endpoint was created, shown in ISO 8601 format.
+     */
     inline void SetCreationDate(const Aws::String& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -429,6 +475,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
     /**
      * The endpoint demographic attributes.
      */
+    inline bool DemographicHasBeenSet() const { return m_demographicHasBeenSet; }
+
+    /**
+     * The endpoint demographic attributes.
+     */
     inline void SetDemographic(const EndpointDemographic& value) { m_demographicHasBeenSet = true; m_demographic = value; }
 
     /**
@@ -451,6 +502,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
      * The date and time when the endpoint was last updated, shown in ISO 8601 format.
      */
     inline const Aws::String& GetEffectiveDate() const{ return m_effectiveDate; }
+
+    /**
+     * The date and time when the endpoint was last updated, shown in ISO 8601 format.
+     */
+    inline bool EffectiveDateHasBeenSet() const { return m_effectiveDateHasBeenSet; }
 
     /**
      * The date and time when the endpoint was last updated, shown in ISO 8601 format.
@@ -491,6 +547,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
     /**
      * Unused.
      */
+    inline bool EndpointStatusHasBeenSet() const { return m_endpointStatusHasBeenSet; }
+
+    /**
+     * Unused.
+     */
     inline void SetEndpointStatus(const Aws::String& value) { m_endpointStatusHasBeenSet = true; m_endpointStatus = value; }
 
     /**
@@ -525,6 +586,13 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
      * IDs associated with the application.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The unique ID that you assigned to the endpoint. The ID should be a globally
+     * unique identifier (GUID) to ensure that it doesn't conflict with other endpoint
+     * IDs associated with the application.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The unique ID that you assigned to the endpoint. The ID should be a globally
@@ -577,6 +645,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
     /**
      * The endpoint location attributes.
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * The endpoint location attributes.
+     */
     inline void SetLocation(const EndpointLocation& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -599,6 +672,11 @@ Valid values: GCM | APNS | APNS_SANDBOX | APNS_VOIP |
      * Custom metrics that your app reports to Amazon Pinpoint.
      */
     inline const Aws::Map<Aws::String, double>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom metrics that your app reports to Amazon Pinpoint.
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * Custom metrics that your app reports to Amazon Pinpoint.
@@ -646,6 +724,17 @@ NONE - Users has
      * not opted out and receives all messages.
      */
     inline const Aws::String& GetOptOut() const{ return m_optOut; }
+
+    /**
+     * Indicates whether a user has opted out of receiving messages with one of the
+     * following values:
+
+ALL - User has opted out of all messages.
+
+NONE - Users has
+     * not opted out and receives all messages.
+     */
+    inline bool OptOutHasBeenSet() const { return m_optOutHasBeenSet; }
 
     /**
      * Indicates whether a user has opted out of receiving messages with one of the
@@ -722,6 +811,11 @@ NONE - Users has
     /**
      * The unique ID for the most recent request to update the endpoint.
      */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    /**
+     * The unique ID for the most recent request to update the endpoint.
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
@@ -754,6 +848,11 @@ NONE - Users has
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.
      */
     inline const EndpointUser& GetUser() const{ return m_user; }
+
+    /**
+     * Custom user-specific attributes that your app reports to Amazon Pinpoint.
+     */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * Custom user-specific attributes that your app reports to Amazon Pinpoint.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The transfer message.</p>
      */
+    inline bool TransferMessageHasBeenSet() const { return m_transferMessageHasBeenSet; }
+
+    /**
+     * <p>The transfer message.</p>
+     */
     inline void SetTransferMessage(const Aws::String& value) { m_transferMessageHasBeenSet = true; m_transferMessage = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The reason why the transfer was rejected.</p>
      */
     inline const Aws::String& GetRejectReason() const{ return m_rejectReason; }
+
+    /**
+     * <p>The reason why the transfer was rejected.</p>
+     */
+    inline bool RejectReasonHasBeenSet() const { return m_rejectReasonHasBeenSet; }
 
     /**
      * <p>The reason why the transfer was rejected.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The date the transfer took place.</p>
      */
+    inline bool TransferDateHasBeenSet() const { return m_transferDateHasBeenSet; }
+
+    /**
+     * <p>The date the transfer took place.</p>
+     */
     inline void SetTransferDate(const Aws::Utils::DateTime& value) { m_transferDateHasBeenSet = true; m_transferDate = value; }
 
     /**
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The date the transfer was accepted.</p>
      */
+    inline bool AcceptDateHasBeenSet() const { return m_acceptDateHasBeenSet; }
+
+    /**
+     * <p>The date the transfer was accepted.</p>
+     */
     inline void SetAcceptDate(const Aws::Utils::DateTime& value) { m_acceptDateHasBeenSet = true; m_acceptDate = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The date the transfer was rejected.</p>
      */
     inline const Aws::Utils::DateTime& GetRejectDate() const{ return m_rejectDate; }
+
+    /**
+     * <p>The date the transfer was rejected.</p>
+     */
+    inline bool RejectDateHasBeenSet() const { return m_rejectDateHasBeenSet; }
 
     /**
      * <p>The date the transfer was rejected.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * A unique identifier for the segment.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * A unique identifier for the segment.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * If specified contains a specific version of the segment included.
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * If specified contains a specific version of the segment included.
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * If specified contains a specific version of the segment included.

@@ -17,8 +17,8 @@
 #include <aws/ec2/EC2_EXPORTS.h>
 #include <aws/ec2/EC2Request.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
-#include <aws/ec2/model/Filter.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ec2/model/Filter.h>
 #include <utility>
 
 namespace Aws
@@ -78,6 +78,37 @@ namespace Model
      * connection.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p>
+     * <code>accepter-vpc-info.cidr-block</code> - The IPv4 CIDR block of the accepter
+     * VPC.</p> </li> <li> <p> <code>accepter-vpc-info.owner-id</code> - The AWS
+     * account ID of the owner of the accepter VPC.</p> </li> <li> <p>
+     * <code>accepter-vpc-info.vpc-id</code> - The ID of the accepter VPC.</p> </li>
+     * <li> <p> <code>expiration-time</code> - The expiration date and time for the VPC
+     * peering connection.</p> </li> <li> <p>
+     * <code>requester-vpc-info.cidr-block</code> - The IPv4 CIDR block of the
+     * requester's VPC.</p> </li> <li> <p> <code>requester-vpc-info.owner-id</code> -
+     * The AWS account ID of the owner of the requester VPC.</p> </li> <li> <p>
+     * <code>requester-vpc-info.vpc-id</code> - The ID of the requester VPC.</p> </li>
+     * <li> <p> <code>status-code</code> - The status of the VPC peering connection
+     * (<code>pending-acceptance</code> | <code>failed</code> | <code>expired</code> |
+     * <code>provisioning</code> | <code>active</code> | <code>deleting</code> |
+     * <code>deleted</code> | <code>rejected</code>).</p> </li> <li> <p>
+     * <code>status-message</code> - A message that provides more information about the
+     * status of the VPC peering connection, if applicable.</p> </li> <li> <p>
+     * <code>tag</code>:&lt;key&gt; - The key/value combination of a tag assigned to
+     * the resource. Use the tag key in the filter name and the tag value as the filter
+     * value. For example, to find all resources that have a tag with the key
+     * <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> <li> <p>
+     * <code>vpc-peering-connection-id</code> - The ID of the VPC peering
+     * connection.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p>
@@ -280,6 +311,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -296,6 +335,12 @@ namespace Model
      * VPC peering connections.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcPeeringConnectionIds() const{ return m_vpcPeeringConnectionIds; }
+
+    /**
+     * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
+     * VPC peering connections.</p>
+     */
+    inline bool VpcPeeringConnectionIdsHasBeenSet() const { return m_vpcPeeringConnectionIdsHasBeenSet; }
 
     /**
      * <p>One or more VPC peering connection IDs.</p> <p>Default: Describes all your
@@ -339,6 +384,76 @@ namespace Model
      */
     inline DescribeVpcPeeringConnectionsRequest& AddVpcPeeringConnectionIds(const char* value) { m_vpcPeeringConnectionIdsHasBeenSet = true; m_vpcPeeringConnectionIds.push_back(value); return *this; }
 
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
+
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline DescribeVpcPeeringConnectionsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
   private:
 
     Aws::Vector<Filter> m_filters;
@@ -349,6 +464,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_vpcPeeringConnectionIds;
     bool m_vpcPeeringConnectionIdsHasBeenSet;
+
+    Aws::String m_nextToken;
+    bool m_nextTokenHasBeenSet;
+
+    int m_maxResults;
+    bool m_maxResultsHasBeenSet;
   };
 
 } // namespace Model

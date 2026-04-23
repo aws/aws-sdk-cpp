@@ -57,6 +57,12 @@ namespace Model
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>
      */
+    inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
+     */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
+    inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
+
+    /**
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
+     */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
+    inline bool CertificateWalletHasBeenSet() const { return m_certificateWalletHasBeenSet; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
     inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
      * <p>The tags associated with the certificate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags associated with the certificate.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags associated with the certificate.</p>

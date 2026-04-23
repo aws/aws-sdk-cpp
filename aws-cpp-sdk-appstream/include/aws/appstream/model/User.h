@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the user.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the user.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The email address of the user.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>The email address of the user.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>The email address of the user.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>Specifies whether the user in the user pool is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the user in the user pool is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -146,6 +161,16 @@ namespace Model
      * <p>UNKNOWN – The user status is not known.</p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the user in the user pool. The status can be one of the
+     * following:</p> <ul> <li> <p>UNCONFIRMED – The user is created but not
+     * confirmed.</p> </li> <li> <p>CONFIRMED – The user is confirmed.</p> </li> <li>
+     * <p>ARCHIVED – The user is no longer active.</p> </li> <li> <p>COMPROMISED – The
+     * user is disabled because of a potential security threat.</p> </li> <li>
+     * <p>UNKNOWN – The user status is not known.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the user in the user pool. The status can be one of the
@@ -216,6 +241,11 @@ namespace Model
     /**
      * <p>The first name, or given name, of the user.</p>
      */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>The first name, or given name, of the user.</p>
+     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
@@ -248,6 +278,11 @@ namespace Model
      * <p>The last name, or surname, of the user.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    /**
+     * <p>The last name, or surname, of the user.</p>
+     */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
 
     /**
      * <p>The last name, or surname, of the user.</p>
@@ -288,6 +323,11 @@ namespace Model
     /**
      * <p>The date and time the user was created in the user pool.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the user was created in the user pool.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -310,6 +350,11 @@ namespace Model
      * <p>The authentication type for the user.</p>
      */
     inline const AuthenticationType& GetAuthenticationType() const{ return m_authenticationType; }
+
+    /**
+     * <p>The authentication type for the user.</p>
+     */
+    inline bool AuthenticationTypeHasBeenSet() const { return m_authenticationTypeHasBeenSet; }
 
     /**
      * <p>The authentication type for the user.</p>

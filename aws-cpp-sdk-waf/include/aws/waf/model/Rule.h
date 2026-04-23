@@ -79,6 +79,17 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
+     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
+     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
+     * <code>WebACL</code> or delete a one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
+     * and by <a>ListRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
@@ -147,6 +158,12 @@ namespace Model
      * <p>The friendly name or description for the <code>Rule</code>. You can't change
      * the name of a <code>Rule</code> after you create it.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The friendly name or description for the <code>Rule</code>. You can't change
+     * the name of a <code>Rule</code> after you create it.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -187,6 +204,14 @@ namespace Model
      * create the <code>Rule</code>.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>A friendly name or description for the metrics for this <code>Rule</code>.
+     * The name can contain only alphanumeric characters (A-Z, a-z, 0-9); the name
+     * can't contain whitespace. You can't change <code>MetricName</code> after you
+     * create the <code>Rule</code>.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>A friendly name or description for the metrics for this <code>Rule</code>.
@@ -244,6 +269,14 @@ namespace Model
      * <code>Rule</code>.</p>
      */
     inline const Aws::Vector<Predicate>& GetPredicates() const{ return m_predicates; }
+
+    /**
+     * <p>The <code>Predicates</code> object contains one <code>Predicate</code>
+     * element for each <a>ByteMatchSet</a>, <a>IPSet</a>, or
+     * <a>SqlInjectionMatchSet</a> object that you want to include in a
+     * <code>Rule</code>.</p>
+     */
+    inline bool PredicatesHasBeenSet() const { return m_predicatesHasBeenSet; }
 
     /**
      * <p>The <code>Predicates</code> object contains one <code>Predicate</code>

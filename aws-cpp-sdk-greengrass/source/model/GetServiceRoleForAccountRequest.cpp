@@ -28,7 +28,7 @@ GetServiceRoleForAccountRequest::GetServiceRoleForAccountRequest()
 
 Aws::String GetServiceRoleForAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

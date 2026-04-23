@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster parameter group.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * group is compatible with.</p>
      */
     inline const Aws::String& GetParameterGroupFamily() const{ return m_parameterGroupFamily; }
+
+    /**
+     * <p>The name of the cluster parameter group family that this cluster parameter
+     * group is compatible with.</p>
+     */
+    inline bool ParameterGroupFamilyHasBeenSet() const { return m_parameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The name of the cluster parameter group family that this cluster parameter
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The description of the parameter group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The list of tags for the cluster parameter group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the cluster parameter group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the cluster parameter group.</p>

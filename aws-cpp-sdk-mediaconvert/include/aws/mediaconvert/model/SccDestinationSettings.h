@@ -47,19 +47,64 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     inline const SccDestinationFramerate& GetFramerate() const{ return m_framerate; }
 
-    
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
+    inline bool FramerateHasBeenSet() const { return m_framerateHasBeenSet; }
+
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     inline void SetFramerate(const SccDestinationFramerate& value) { m_framerateHasBeenSet = true; m_framerate = value; }
 
-    
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     inline void SetFramerate(SccDestinationFramerate&& value) { m_framerateHasBeenSet = true; m_framerate = std::move(value); }
 
-    
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     inline SccDestinationSettings& WithFramerate(const SccDestinationFramerate& value) { SetFramerate(value); return *this;}
 
-    
+    /**
+     * Set Framerate (SccDestinationFramerate) to make sure that the captions and the
+     * video are synchronized in the output. Specify a frame rate that matches the
+     * frame rate of the associated video. If the video frame rate is 29.97, choose
+     * 29.97 dropframe (FRAMERATE_29_97_DROPFRAME) only if the video has
+     * video_insertion=true and drop_frame_timecode=true; otherwise, choose 29.97
+     * non-dropframe (FRAMERATE_29_97_NON_DROPFRAME).
+     */
     inline SccDestinationSettings& WithFramerate(SccDestinationFramerate&& value) { SetFramerate(std::move(value)); return *this;}
 
   private:

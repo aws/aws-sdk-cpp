@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Describes the code-signing profile.</p>
      */
+    inline bool SigningProfileParameterHasBeenSet() const { return m_signingProfileParameterHasBeenSet; }
+
+    /**
+     * <p>Describes the code-signing profile.</p>
+     */
     inline void SetSigningProfileParameter(const SigningProfileParameter& value) { m_signingProfileParameterHasBeenSet = true; m_signingProfileParameter = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The code-signing profile name.</p>
      */
     inline const Aws::String& GetSigningProfileName() const{ return m_signingProfileName; }
+
+    /**
+     * <p>The code-signing profile name.</p>
+     */
+    inline bool SigningProfileNameHasBeenSet() const { return m_signingProfileNameHasBeenSet; }
 
     /**
      * <p>The code-signing profile name.</p>
@@ -115,6 +125,11 @@ namespace Model
      * <p>The location to write the code-signed file.</p>
      */
     inline const Destination& GetDestination() const{ return m_destination; }
+
+    /**
+     * <p>The location to write the code-signed file.</p>
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * <p>The location to write the code-signed file.</p>

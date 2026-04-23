@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the stream being described.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream being described.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the stream being described.</p>
@@ -141,6 +151,22 @@ namespace Model
      * <code>UPDATING</code> state.</p> </li> </ul>
      */
     inline const StreamStatus& GetStreamStatus() const{ return m_streamStatus; }
+
+    /**
+     * <p>The current status of the stream being described. The stream status is one of
+     * the following states:</p> <ul> <li> <p> <code>CREATING</code> - The stream is
+     * being created. Kinesis Data Streams immediately returns and sets
+     * <code>StreamStatus</code> to <code>CREATING</code>.</p> </li> <li> <p>
+     * <code>DELETING</code> - The stream is being deleted. The specified stream is in
+     * the <code>DELETING</code> state until Kinesis Data Streams completes the
+     * deletion.</p> </li> <li> <p> <code>ACTIVE</code> - The stream exists and is
+     * ready for read and write operations or deletion. You should perform read and
+     * write operations only on an <code>ACTIVE</code> stream.</p> </li> <li> <p>
+     * <code>UPDATING</code> - Shards in the stream are being merged or split. Read and
+     * write operations continue to work while the stream is in the
+     * <code>UPDATING</code> state.</p> </li> </ul>
+     */
+    inline bool StreamStatusHasBeenSet() const { return m_streamStatusHasBeenSet; }
 
     /**
      * <p>The current status of the stream being described. The stream status is one of
@@ -215,6 +241,11 @@ namespace Model
     /**
      * <p>The shards that comprise the stream.</p>
      */
+    inline bool ShardsHasBeenSet() const { return m_shardsHasBeenSet; }
+
+    /**
+     * <p>The shards that comprise the stream.</p>
+     */
     inline void SetShards(const Aws::Vector<Shard>& value) { m_shardsHasBeenSet = true; m_shards = value; }
 
     /**
@@ -253,6 +284,12 @@ namespace Model
      * <p>If set to <code>true</code>, more shards in the stream are available to
      * describe.</p>
      */
+    inline bool HasMoreShardsHasBeenSet() const { return m_hasMoreShardsHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, more shards in the stream are available to
+     * describe.</p>
+     */
     inline void SetHasMoreShards(bool value) { m_hasMoreShardsHasBeenSet = true; m_hasMoreShards = value; }
 
     /**
@@ -270,6 +307,11 @@ namespace Model
     /**
      * <p>The current retention period, in hours.</p>
      */
+    inline bool RetentionPeriodHoursHasBeenSet() const { return m_retentionPeriodHoursHasBeenSet; }
+
+    /**
+     * <p>The current retention period, in hours.</p>
+     */
     inline void SetRetentionPeriodHours(int value) { m_retentionPeriodHoursHasBeenSet = true; m_retentionPeriodHours = value; }
 
     /**
@@ -282,6 +324,11 @@ namespace Model
      * <p>The approximate time that the stream was created.</p>
      */
     inline const Aws::Utils::DateTime& GetStreamCreationTimestamp() const{ return m_streamCreationTimestamp; }
+
+    /**
+     * <p>The approximate time that the stream was created.</p>
+     */
+    inline bool StreamCreationTimestampHasBeenSet() const { return m_streamCreationTimestampHasBeenSet; }
 
     /**
      * <p>The approximate time that the stream was created.</p>
@@ -308,6 +355,11 @@ namespace Model
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
      */
     inline const Aws::Vector<EnhancedMetrics>& GetEnhancedMonitoring() const{ return m_enhancedMonitoring; }
+
+    /**
+     * <p>Represents the current enhanced monitoring settings of the stream.</p>
+     */
+    inline bool EnhancedMonitoringHasBeenSet() const { return m_enhancedMonitoringHasBeenSet; }
 
     /**
      * <p>Represents the current enhanced monitoring settings of the stream.</p>
@@ -348,6 +400,15 @@ namespace Model
      * key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The server-side encryption type used on the stream. This parameter can be one
+     * of the following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
+     */
+    inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
      * <p>The server-side encryption type used on the stream. This parameter can be one
@@ -401,6 +462,22 @@ namespace Model
      * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified ARN to either an
+     * alias or a key, or an alias name prefixed by "alias/".You can also use a master
+     * key owned by Kinesis Data Streams by specifying the alias
+     * <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This

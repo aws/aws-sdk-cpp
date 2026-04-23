@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the development schema with the changes used for the upgrade.</p>
      */
+    inline bool DevelopmentSchemaArnHasBeenSet() const { return m_developmentSchemaArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the development schema with the changes used for the upgrade.</p>
+     */
     inline void SetDevelopmentSchemaArn(const Aws::String& value) { m_developmentSchemaArnHasBeenSet = true; m_developmentSchemaArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ARN of the published schema to be upgraded.</p>
      */
     inline const Aws::String& GetPublishedSchemaArn() const{ return m_publishedSchemaArn; }
+
+    /**
+     * <p>The ARN of the published schema to be upgraded.</p>
+     */
+    inline bool PublishedSchemaArnHasBeenSet() const { return m_publishedSchemaArnHasBeenSet; }
 
     /**
      * <p>The ARN of the published schema to be upgraded.</p>
@@ -119,6 +129,12 @@ namespace Model
      * This parameter is NOT optional.</p>
      */
     inline const Aws::String& GetMinorVersion() const{ return m_minorVersion; }
+
+    /**
+     * <p>Identifies the minor version of the published schema that will be created.
+     * This parameter is NOT optional.</p>
+     */
+    inline bool MinorVersionHasBeenSet() const { return m_minorVersionHasBeenSet; }
 
     /**
      * <p>Identifies the minor version of the published schema that will be created.
@@ -164,6 +180,14 @@ namespace Model
      * succeed. This parameter is optional and defaults to false.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Used for testing whether the Development schema provided is backwards
+     * compatible, or not, with the publish schema provided by the user to be upgraded.
+     * If schema compatibility fails, an exception would be thrown else the call would
+     * succeed. This parameter is optional and defaults to false.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Used for testing whether the Development schema provided is backwards

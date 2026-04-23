@@ -56,6 +56,11 @@ namespace Model
     /**
      * The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
      */
+    inline bool Scte35DescriptorsHasBeenSet() const { return m_scte35DescriptorsHasBeenSet; }
+
+    /**
+     * The list of SCTE-35 descriptors accompanying the SCTE-35 time_signal.
+     */
     inline void SetScte35Descriptors(const Aws::Vector<Scte35Descriptor>& value) { m_scte35DescriptorsHasBeenSet = true; m_scte35Descriptors = value; }
 
     /**

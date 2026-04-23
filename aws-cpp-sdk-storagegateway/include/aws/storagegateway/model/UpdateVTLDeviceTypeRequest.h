@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
      */
+    inline bool VTLDeviceARNHasBeenSet() const { return m_vTLDeviceARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the medium changer you want to select.</p>
+     */
     inline void SetVTLDeviceARN(const Aws::String& value) { m_vTLDeviceARNHasBeenSet = true; m_vTLDeviceARN = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * "STK-L700", "AWS-Gateway-VTL"</p>
      */
     inline const Aws::String& GetDeviceType() const{ return m_deviceType; }
+
+    /**
+     * <p>The type of medium changer you want to select.</p> <p> Valid Values:
+     * "STK-L700", "AWS-Gateway-VTL"</p>
+     */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
 
     /**
      * <p>The type of medium changer you want to select.</p> <p> Valid Values:

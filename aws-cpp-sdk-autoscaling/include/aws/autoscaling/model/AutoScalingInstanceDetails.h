@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the Auto Scaling group for the instance.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
+    /**
+     * <p>The name of the Auto Scaling group for the instance.</p>
+     */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group for the instance.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The Availability Zone for the instance.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the instance.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -160,51 +175,42 @@ namespace Model
 
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline const Aws::String& GetLifecycleState() const{ return m_lifecycleState; }
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
+     */
+    inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
+
+    /**
+     * <p>The lifecycle state for the instance.</p>
      */
     inline void SetLifecycleState(const Aws::String& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline void SetLifecycleState(Aws::String&& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = std::move(value); }
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline void SetLifecycleState(const char* value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState.assign(value); }
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const Aws::String& value) { SetLifecycleState(value); return *this;}
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(Aws::String&& value) { SetLifecycleState(std::move(value)); return *this;}
 
     /**
-     * <p>The lifecycle state for the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/AutoScalingGroupLifecycle.html">Auto
-     * Scaling Lifecycle</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p>
+     * <p>The lifecycle state for the instance.</p>
      */
     inline AutoScalingInstanceDetails& WithLifecycleState(const char* value) { SetLifecycleState(value); return *this;}
 
@@ -216,6 +222,14 @@ namespace Model
      * it.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The last reported health status of this instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and Amazon EC2 Auto Scaling should terminate and replace
+     * it.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
      * <p>The last reported health status of this instance. "Healthy" means that the
@@ -276,6 +290,12 @@ namespace Model
      * <p>The launch configuration used to launch the instance. This value is not
      * available if you attached the instance to the Auto Scaling group.</p>
      */
+    inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
+
+    /**
+     * <p>The launch configuration used to launch the instance. This value is not
+     * available if you attached the instance to the Auto Scaling group.</p>
+     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
@@ -317,6 +337,11 @@ namespace Model
     /**
      * <p>The launch template for the instance.</p>
      */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
@@ -340,6 +365,12 @@ namespace Model
      * Auto Scaling when scaling in.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool ProtectedFromScaleInHasBeenSet() const { return m_protectedFromScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2

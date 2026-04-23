@@ -35,6 +35,8 @@ namespace Aws
         static const int DOCUMENT_RENAMED_HASH = HashingUtils::HashString("DOCUMENT_RENAMED");
         static const int DOCUMENT_VERSION_UPLOADED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_UPLOADED");
         static const int DOCUMENT_VERSION_DELETED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_DELETED");
+        static const int DOCUMENT_VERSION_VIEWED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_VIEWED");
+        static const int DOCUMENT_VERSION_DOWNLOADED_HASH = HashingUtils::HashString("DOCUMENT_VERSION_DOWNLOADED");
         static const int DOCUMENT_RECYCLED_HASH = HashingUtils::HashString("DOCUMENT_RECYCLED");
         static const int DOCUMENT_RESTORED_HASH = HashingUtils::HashString("DOCUMENT_RESTORED");
         static const int DOCUMENT_REVERTED_HASH = HashingUtils::HashString("DOCUMENT_REVERTED");
@@ -85,6 +87,14 @@ namespace Aws
           else if (hashCode == DOCUMENT_VERSION_DELETED_HASH)
           {
             return ActivityType::DOCUMENT_VERSION_DELETED;
+          }
+          else if (hashCode == DOCUMENT_VERSION_VIEWED_HASH)
+          {
+            return ActivityType::DOCUMENT_VERSION_VIEWED;
+          }
+          else if (hashCode == DOCUMENT_VERSION_DOWNLOADED_HASH)
+          {
+            return ActivityType::DOCUMENT_VERSION_DOWNLOADED;
           }
           else if (hashCode == DOCUMENT_RECYCLED_HASH)
           {
@@ -214,6 +224,10 @@ namespace Aws
             return "DOCUMENT_VERSION_UPLOADED";
           case ActivityType::DOCUMENT_VERSION_DELETED:
             return "DOCUMENT_VERSION_DELETED";
+          case ActivityType::DOCUMENT_VERSION_VIEWED:
+            return "DOCUMENT_VERSION_VIEWED";
+          case ActivityType::DOCUMENT_VERSION_DOWNLOADED:
+            return "DOCUMENT_VERSION_DOWNLOADED";
           case ActivityType::DOCUMENT_RECYCLED:
             return "DOCUMENT_RECYCLED";
           case ActivityType::DOCUMENT_RESTORED:
@@ -273,7 +287,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

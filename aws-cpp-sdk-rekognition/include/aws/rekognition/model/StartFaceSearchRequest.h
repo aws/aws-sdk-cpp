@@ -56,6 +56,12 @@ namespace Model
      * <p>The video you want to search. The video must be stored in an Amazon S3
      * bucket. </p>
      */
+    inline bool VideoHasBeenSet() const { return m_videoHasBeenSet; }
+
+    /**
+     * <p>The video you want to search. The video must be stored in an Amazon S3
+     * bucket. </p>
+     */
     inline void SetVideo(const Video& value) { m_videoHasBeenSet = true; m_video = value; }
 
     /**
@@ -84,6 +90,14 @@ namespace Model
      * the same job from being accidently started more than once. </p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>Idempotent token used to identify the start request. If you use the same
+     * token with multiple <code>StartFaceSearch</code> requests, the same
+     * <code>JobId</code> is returned. Use <code>ClientRequestToken</code> to prevent
+     * the same job from being accidently started more than once. </p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>Idempotent token used to identify the start request. If you use the same
@@ -144,6 +158,12 @@ namespace Model
      * <p>The minimum confidence in the person match to return. For example, don't
      * return any matches where confidence in matches is less than 70%. </p>
      */
+    inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
+
+    /**
+     * <p>The minimum confidence in the person match to return. For example, don't
+     * return any matches where confidence in matches is less than 70%. </p>
+     */
     inline void SetFaceMatchThreshold(double value) { m_faceMatchThresholdHasBeenSet = true; m_faceMatchThreshold = value; }
 
     /**
@@ -157,6 +177,11 @@ namespace Model
      * <p>ID of the collection that contains the faces you want to search for.</p>
      */
     inline const Aws::String& GetCollectionId() const{ return m_collectionId; }
+
+    /**
+     * <p>ID of the collection that contains the faces you want to search for.</p>
+     */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
 
     /**
      * <p>ID of the collection that contains the faces you want to search for.</p>
@@ -199,6 +224,12 @@ namespace Model
      * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
      * publish the completion status of the search. </p>
      */
+    inline bool NotificationChannelHasBeenSet() const { return m_notificationChannelHasBeenSet; }
+
+    /**
+     * <p>The ARN of the Amazon SNS topic to which you want Amazon Rekognition Video to
+     * publish the completion status of the search. </p>
+     */
     inline void SetNotificationChannel(const NotificationChannel& value) { m_notificationChannelHasBeenSet = true; m_notificationChannel = value; }
 
     /**
@@ -225,6 +256,12 @@ namespace Model
      * published to the Amazon Simple Notification Service topic. </p>
      */
     inline const Aws::String& GetJobTag() const{ return m_jobTag; }
+
+    /**
+     * <p>Unique identifier you specify to identify the job in the completion status
+     * published to the Amazon Simple Notification Service topic. </p>
+     */
+    inline bool JobTagHasBeenSet() const { return m_jobTagHasBeenSet; }
 
     /**
      * <p>Unique identifier you specify to identify the job in the completion status

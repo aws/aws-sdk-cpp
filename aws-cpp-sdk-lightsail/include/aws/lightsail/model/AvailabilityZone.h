@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
      * (case-sensitive).</p>
      */
+    inline bool ZoneNameHasBeenSet() const { return m_zoneNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Availability Zone. The format is <code>us-east-2a</code>
+     * (case-sensitive).</p>
+     */
     inline void SetZoneName(const Aws::String& value) { m_zoneNameHasBeenSet = true; m_zoneName = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The state of the Availability Zone.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the Availability Zone.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the Availability Zone.</p>

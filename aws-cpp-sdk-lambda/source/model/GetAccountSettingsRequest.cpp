@@ -28,7 +28,7 @@ GetAccountSettingsRequest::GetAccountSettingsRequest()
 
 Aws::String GetAccountSettingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

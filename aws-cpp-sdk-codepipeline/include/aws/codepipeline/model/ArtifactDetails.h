@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The minimum number of artifacts allowed for the action type.</p>
      */
+    inline bool MinimumCountHasBeenSet() const { return m_minimumCountHasBeenSet; }
+
+    /**
+     * <p>The minimum number of artifacts allowed for the action type.</p>
+     */
     inline void SetMinimumCount(int value) { m_minimumCountHasBeenSet = true; m_minimumCount = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * <p>The maximum number of artifacts allowed for the action type.</p>
      */
     inline int GetMaximumCount() const{ return m_maximumCount; }
+
+    /**
+     * <p>The maximum number of artifacts allowed for the action type.</p>
+     */
+    inline bool MaximumCountHasBeenSet() const { return m_maximumCountHasBeenSet; }
 
     /**
      * <p>The maximum number of artifacts allowed for the action type.</p>

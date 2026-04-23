@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the instance.</p> <p>Valid values:
+     * <code>InService</code> | <code>OutOfService</code> | <code>Unknown</code> </p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state of the instance.</p> <p>Valid values:
@@ -135,6 +146,14 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetReasonCode() const{ return m_reasonCode; }
+
+    /**
+     * <p>Information about the cause of <code>OutOfService</code> instances.
+     * Specifically, whether the cause is Elastic Load Balancing or the instance.</p>
+     * <p>Valid values: <code>ELB</code> | <code>Instance</code> | <code>N/A</code>
+     * </p>
+     */
+    inline bool ReasonCodeHasBeenSet() const { return m_reasonCodeHasBeenSet; }
 
     /**
      * <p>Information about the cause of <code>OutOfService</code> instances.
@@ -203,6 +222,25 @@ namespace Model
      * <code>Instance is in terminated state.</code> </p> </li> </ul>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the instance state. This string can contain one or more of
+     * the following messages.</p> <ul> <li> <p> <code>N/A</code> </p> </li> <li> <p>
+     * <code>A transient error occurred. Please try again later.</code> </p> </li> <li>
+     * <p> <code>Instance has failed at least the UnhealthyThreshold number of health
+     * checks consecutively.</code> </p> </li> <li> <p> <code>Instance has not passed
+     * the configured HealthyThreshold number of health checks consecutively.</code>
+     * </p> </li> <li> <p> <code>Instance registration is still in progress.</code>
+     * </p> </li> <li> <p> <code>Instance is in the EC2 Availability Zone for which
+     * LoadBalancer is not configured to route traffic to.</code> </p> </li> <li> <p>
+     * <code>Instance is not currently registered with the LoadBalancer.</code> </p>
+     * </li> <li> <p> <code>Instance deregistration currently in progress.</code> </p>
+     * </li> <li> <p> <code>Disable Availability Zone is currently in progress.</code>
+     * </p> </li> <li> <p> <code>Instance is in pending state.</code> </p> </li> <li>
+     * <p> <code>Instance is in stopped state.</code> </p> </li> <li> <p>
+     * <code>Instance is in terminated state.</code> </p> </li> </ul>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the instance state. This string can contain one or more of

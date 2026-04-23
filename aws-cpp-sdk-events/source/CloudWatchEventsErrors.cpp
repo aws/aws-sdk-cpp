@@ -33,6 +33,7 @@ static const int POLICY_LENGTH_EXCEEDED_HASH = HashingUtils::HashString("PolicyL
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 static const int INTERNAL_HASH = HashingUtils::HashString("InternalException");
 static const int INVALID_EVENT_PATTERN_HASH = HashingUtils::HashString("InvalidEventPatternException");
+static const int MANAGED_RULE_HASH = HashingUtils::HashString("ManagedRuleException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -58,6 +59,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_EVENT_PATTERN_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::INVALID_EVENT_PATTERN), false);
+  }
+  else if (hashCode == MANAGED_RULE_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchEventsErrors::MANAGED_RULE), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

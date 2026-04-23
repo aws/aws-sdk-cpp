@@ -48,43 +48,49 @@ namespace Model
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline const Aws::Vector<MaintenanceWindowFilter>& GetFilters() const{ return m_filters; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Optional filters used to narrow down the scope of the returned Maintenance
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline void SetFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline void SetFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { m_filtersHasBeenSet = true; m_filters = std::move(value); }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline DescribeMaintenanceWindowsRequest& WithFilters(const Aws::Vector<MaintenanceWindowFilter>& value) { SetFilters(value); return *this;}
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline DescribeMaintenanceWindowsRequest& WithFilters(Aws::Vector<MaintenanceWindowFilter>&& value) { SetFilters(std::move(value)); return *this;}
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline DescribeMaintenanceWindowsRequest& AddFilters(const MaintenanceWindowFilter& value) { m_filtersHasBeenSet = true; m_filters.push_back(value); return *this; }
 
     /**
      * <p>Optional filters used to narrow down the scope of the returned Maintenance
-     * Windows. Supported filter keys are Name and Enabled.</p>
+     * Windows. Supported filter keys are <b>Name</b> and <b>Enabled</b>.</p>
      */
     inline DescribeMaintenanceWindowsRequest& AddFilters(MaintenanceWindowFilter&& value) { m_filtersHasBeenSet = true; m_filters.push_back(std::move(value)); return *this; }
 
@@ -95,6 +101,13 @@ namespace Model
      * results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of items to return for this call. The call also returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return for this call. The call also returns a
@@ -116,6 +129,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from

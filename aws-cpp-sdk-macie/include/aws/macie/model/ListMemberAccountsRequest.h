@@ -58,6 +58,14 @@ namespace Model
      * the action fill nextToken in the request with the value of nextToken from the
      * previous response to continue listing data. </p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Use this parameter when paginating results. Set the value of this parameter
+     * to null on your first call to the ListMemberAccounts action. Subsequent calls to
+     * the action fill nextToken in the request with the value of nextToken from the
+     * previous response to continue listing data. </p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +114,12 @@ namespace Model
      * the response. The default value is 250. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Use this parameter to indicate the maximum number of items that you want in
+     * the response. The default value is 250. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Use this parameter to indicate the maximum number of items that you want in

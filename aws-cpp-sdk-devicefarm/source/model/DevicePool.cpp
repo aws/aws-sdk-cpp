@@ -34,7 +34,9 @@ DevicePool::DevicePool() :
     m_descriptionHasBeenSet(false),
     m_type(DevicePoolType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_maxDevices(0),
+    m_maxDevicesHasBeenSet(false)
 {
 }
 
@@ -44,7 +46,9 @@ DevicePool::DevicePool(JsonView jsonValue) :
     m_descriptionHasBeenSet(false),
     m_type(DevicePoolType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_maxDevices(0),
+    m_maxDevicesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -89,6 +93,13 @@ DevicePool& DevicePool::operator =(JsonView jsonValue)
     m_rulesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("maxDevices"))
+  {
+    m_maxDevices = jsonValue.GetInteger("maxDevices");
+
+    m_maxDevicesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -127,6 +138,12 @@ JsonValue DevicePool::Jsonize() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_maxDevicesHasBeenSet)
+  {
+   payload.WithInteger("maxDevices", m_maxDevices);
 
   }
 

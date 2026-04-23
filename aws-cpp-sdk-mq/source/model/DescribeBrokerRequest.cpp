@@ -29,7 +29,7 @@ DescribeBrokerRequest::DescribeBrokerRequest() :
 
 Aws::String DescribeBrokerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

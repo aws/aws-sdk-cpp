@@ -26,7 +26,9 @@ CreateDevicePoolRequest::CreateDevicePoolRequest() :
     m_projectArnHasBeenSet(false),
     m_nameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_rulesHasBeenSet(false)
+    m_rulesHasBeenSet(false),
+    m_maxDevices(0),
+    m_maxDevicesHasBeenSet(false)
 {
 }
 
@@ -60,6 +62,12 @@ Aws::String CreateDevicePoolRequest::SerializePayload() const
      rulesJsonList[rulesIndex].AsObject(m_rules[rulesIndex].Jsonize());
    }
    payload.WithArray("rules", std::move(rulesJsonList));
+
+  }
+
+  if(m_maxDevicesHasBeenSet)
+  {
+   payload.WithInteger("maxDevices", m_maxDevices);
 
   }
 

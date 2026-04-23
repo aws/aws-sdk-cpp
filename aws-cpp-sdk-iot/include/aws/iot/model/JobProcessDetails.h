@@ -60,6 +60,13 @@ namespace Model
      * will be null after the job execution has finished rolling out to all the target
      * devices.</p>
      */
+    inline bool ProcessingTargetsHasBeenSet() const { return m_processingTargetsHasBeenSet; }
+
+    /**
+     * <p>The target devices to which the job execution is being rolled out. This value
+     * will be null after the job execution has finished rolling out to all the target
+     * devices.</p>
+     */
     inline void SetProcessingTargets(const Aws::Vector<Aws::String>& value) { m_processingTargetsHasBeenSet = true; m_processingTargets = value; }
 
     /**
@@ -113,6 +120,11 @@ namespace Model
     /**
      * <p>The number of things that cancelled the job.</p>
      */
+    inline bool NumberOfCanceledThingsHasBeenSet() const { return m_numberOfCanceledThingsHasBeenSet; }
+
+    /**
+     * <p>The number of things that cancelled the job.</p>
+     */
     inline void SetNumberOfCanceledThings(int value) { m_numberOfCanceledThingsHasBeenSet = true; m_numberOfCanceledThings = value; }
 
     /**
@@ -125,6 +137,11 @@ namespace Model
      * <p>The number of things which successfully completed the job.</p>
      */
     inline int GetNumberOfSucceededThings() const{ return m_numberOfSucceededThings; }
+
+    /**
+     * <p>The number of things which successfully completed the job.</p>
+     */
+    inline bool NumberOfSucceededThingsHasBeenSet() const { return m_numberOfSucceededThingsHasBeenSet; }
 
     /**
      * <p>The number of things which successfully completed the job.</p>
@@ -145,6 +162,11 @@ namespace Model
     /**
      * <p>The number of things that failed executing the job.</p>
      */
+    inline bool NumberOfFailedThingsHasBeenSet() const { return m_numberOfFailedThingsHasBeenSet; }
+
+    /**
+     * <p>The number of things that failed executing the job.</p>
+     */
     inline void SetNumberOfFailedThings(int value) { m_numberOfFailedThingsHasBeenSet = true; m_numberOfFailedThings = value; }
 
     /**
@@ -157,6 +179,11 @@ namespace Model
      * <p>The number of things that rejected the job.</p>
      */
     inline int GetNumberOfRejectedThings() const{ return m_numberOfRejectedThings; }
+
+    /**
+     * <p>The number of things that rejected the job.</p>
+     */
+    inline bool NumberOfRejectedThingsHasBeenSet() const { return m_numberOfRejectedThingsHasBeenSet; }
 
     /**
      * <p>The number of things that rejected the job.</p>
@@ -177,6 +204,11 @@ namespace Model
     /**
      * <p>The number of things that are awaiting execution of the job.</p>
      */
+    inline bool NumberOfQueuedThingsHasBeenSet() const { return m_numberOfQueuedThingsHasBeenSet; }
+
+    /**
+     * <p>The number of things that are awaiting execution of the job.</p>
+     */
     inline void SetNumberOfQueuedThings(int value) { m_numberOfQueuedThingsHasBeenSet = true; m_numberOfQueuedThings = value; }
 
     /**
@@ -189,6 +221,11 @@ namespace Model
      * <p>The number of things currently executing the job.</p>
      */
     inline int GetNumberOfInProgressThings() const{ return m_numberOfInProgressThings; }
+
+    /**
+     * <p>The number of things currently executing the job.</p>
+     */
+    inline bool NumberOfInProgressThingsHasBeenSet() const { return m_numberOfInProgressThingsHasBeenSet; }
 
     /**
      * <p>The number of things currently executing the job.</p>
@@ -213,6 +250,13 @@ namespace Model
      * they have been deleted or have been removed from the group that was a target of
      * the job.</p>
      */
+    inline bool NumberOfRemovedThingsHasBeenSet() const { return m_numberOfRemovedThingsHasBeenSet; }
+
+    /**
+     * <p>The number of things that are no longer scheduled to execute the job because
+     * they have been deleted or have been removed from the group that was a target of
+     * the job.</p>
+     */
     inline void SetNumberOfRemovedThings(int value) { m_numberOfRemovedThingsHasBeenSet = true; m_numberOfRemovedThings = value; }
 
     /**
@@ -228,6 +272,12 @@ namespace Model
      * <code>TIMED_OUT</code>.</p>
      */
     inline int GetNumberOfTimedOutThings() const{ return m_numberOfTimedOutThings; }
+
+    /**
+     * <p>The number of things whose job execution status is
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline bool NumberOfTimedOutThingsHasBeenSet() const { return m_numberOfTimedOutThingsHasBeenSet; }
 
     /**
      * <p>The number of things whose job execution status is

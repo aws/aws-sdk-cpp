@@ -59,6 +59,12 @@ namespace Model
      * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
      * ENABLED, DISABLED</p>
      */
+    inline bool ContinuousBackupsStatusHasBeenSet() const { return m_continuousBackupsStatusHasBeenSet; }
+
+    /**
+     * <p> <code>ContinuousBackupsStatus</code> can be one of the following states:
+     * ENABLED, DISABLED</p>
+     */
     inline void SetContinuousBackupsStatus(const ContinuousBackupsStatus& value) { m_continuousBackupsStatusHasBeenSet = true; m_continuousBackupsStatus = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * table.</p>
      */
     inline const PointInTimeRecoveryDescription& GetPointInTimeRecoveryDescription() const{ return m_pointInTimeRecoveryDescription; }
+
+    /**
+     * <p>The description of the point in time recovery settings applied to the
+     * table.</p>
+     */
+    inline bool PointInTimeRecoveryDescriptionHasBeenSet() const { return m_pointInTimeRecoveryDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the point in time recovery settings applied to the

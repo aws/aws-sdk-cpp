@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The Availability Zone in which the instance is running.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which the instance is running.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which the instance is running.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>A description of the current lifecycle state. The <code>Quarantined</code>
      * state is not used.</p>
      */
+    inline bool LifecycleStateHasBeenSet() const { return m_lifecycleStateHasBeenSet; }
+
+    /**
+     * <p>A description of the current lifecycle state. The <code>Quarantined</code>
+     * state is not used.</p>
+     */
     inline void SetLifecycleState(const LifecycleState& value) { m_lifecycleStateHasBeenSet = true; m_lifecycleState = value; }
 
     /**
@@ -161,6 +177,14 @@ namespace Model
      * replace it.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The last reported health status of the instance. "Healthy" means that the
+     * instance is healthy and should remain in service. "Unhealthy" means that the
+     * instance is unhealthy and that Amazon EC2 Auto Scaling should terminate and
+     * replace it.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
      * <p>The last reported health status of the instance. "Healthy" means that the
@@ -219,6 +243,11 @@ namespace Model
     /**
      * <p>The launch configuration associated with the instance.</p>
      */
+    inline bool LaunchConfigurationNameHasBeenSet() const { return m_launchConfigurationNameHasBeenSet; }
+
+    /**
+     * <p>The launch configuration associated with the instance.</p>
+     */
     inline void SetLaunchConfigurationName(const Aws::String& value) { m_launchConfigurationNameHasBeenSet = true; m_launchConfigurationName = value; }
 
     /**
@@ -255,6 +284,11 @@ namespace Model
     /**
      * <p>The launch template for the instance.</p>
      */
+    inline bool LaunchTemplateHasBeenSet() const { return m_launchTemplateHasBeenSet; }
+
+    /**
+     * <p>The launch template for the instance.</p>
+     */
     inline void SetLaunchTemplate(const LaunchTemplateSpecification& value) { m_launchTemplateHasBeenSet = true; m_launchTemplate = value; }
 
     /**
@@ -278,6 +312,12 @@ namespace Model
      * Auto Scaling when scaling in.</p>
      */
     inline bool GetProtectedFromScaleIn() const{ return m_protectedFromScaleIn; }
+
+    /**
+     * <p>Indicates whether the instance is protected from termination by Amazon EC2
+     * Auto Scaling when scaling in.</p>
+     */
+    inline bool ProtectedFromScaleInHasBeenSet() const { return m_protectedFromScaleInHasBeenSet; }
 
     /**
      * <p>Indicates whether the instance is protected from termination by Amazon EC2

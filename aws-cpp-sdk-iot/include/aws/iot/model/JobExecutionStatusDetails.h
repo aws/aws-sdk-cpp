@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The job execution status.</p>
      */
+    inline bool DetailsMapHasBeenSet() const { return m_detailsMapHasBeenSet; }
+
+    /**
+     * <p>The job execution status.</p>
+     */
     inline void SetDetailsMap(const Aws::Map<Aws::String, Aws::String>& value) { m_detailsMapHasBeenSet = true; m_detailsMap = value; }
 
     /**

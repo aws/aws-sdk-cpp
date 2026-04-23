@@ -41,7 +41,8 @@ CreateSMBFileShareRequest::CreateSMBFileShareRequest() :
     m_requesterPaysHasBeenSet(false),
     m_validUserListHasBeenSet(false),
     m_invalidUserListHasBeenSet(false),
-    m_authenticationHasBeenSet(false)
+    m_authenticationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -139,6 +140,17 @@ Aws::String CreateSMBFileShareRequest::SerializePayload() const
   if(m_authenticationHasBeenSet)
   {
    payload.WithString("Authentication", m_authentication);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
 
   }
 

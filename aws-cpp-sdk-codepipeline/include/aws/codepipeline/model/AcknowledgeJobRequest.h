@@ -58,6 +58,12 @@ namespace Model
      * <p>The unique system-generated ID of the job for which you want to confirm
      * receipt.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID of the job for which you want to confirm
+     * receipt.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * response of the <a>PollForJobs</a> request that returned this job.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
+
+    /**
+     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
+     * the job is being worked on by only one job worker. Get this number from the
+     * response of the <a>PollForJobs</a> request that returned this job.</p>
+     */
+    inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that

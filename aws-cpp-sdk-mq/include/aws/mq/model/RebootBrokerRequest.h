@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID that Amazon MQ generates for the broker.
      */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the broker.
+     */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**

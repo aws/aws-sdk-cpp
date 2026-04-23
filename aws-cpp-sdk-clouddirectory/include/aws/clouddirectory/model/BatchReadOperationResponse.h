@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Identifies which operation in a batch has succeeded.</p>
      */
+    inline bool SuccessfulResponseHasBeenSet() const { return m_successfulResponseHasBeenSet; }
+
+    /**
+     * <p>Identifies which operation in a batch has succeeded.</p>
+     */
     inline void SetSuccessfulResponse(const BatchReadSuccessfulResponse& value) { m_successfulResponseHasBeenSet = true; m_successfulResponse = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Identifies which operation in a batch has failed.</p>
      */
     inline const BatchReadException& GetExceptionResponse() const{ return m_exceptionResponse; }
+
+    /**
+     * <p>Identifies which operation in a batch has failed.</p>
+     */
+    inline bool ExceptionResponseHasBeenSet() const { return m_exceptionResponseHasBeenSet; }
 
     /**
      * <p>Identifies which operation in a batch has failed.</p>

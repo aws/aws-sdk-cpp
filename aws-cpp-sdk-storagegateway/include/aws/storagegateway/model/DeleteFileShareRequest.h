@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
      */
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file share to be deleted. </p>
+     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * and the file share enters the FORCE_DELETING status.</p>
      */
     inline bool GetForceDelete() const{ return m_forceDelete; }
+
+    /**
+     * <p>If this value is set to true, the operation deletes a file share immediately
+     * and aborts all data uploads to AWS. Otherwise, the file share is not deleted
+     * until all data is uploaded to AWS. This process aborts the data upload process,
+     * and the file share enters the FORCE_DELETING status.</p>
+     */
+    inline bool ForceDeleteHasBeenSet() const { return m_forceDeleteHasBeenSet; }
 
     /**
      * <p>If this value is set to true, the operation deletes a file share immediately

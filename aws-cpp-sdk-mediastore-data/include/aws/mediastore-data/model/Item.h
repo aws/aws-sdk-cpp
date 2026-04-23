@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the item.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the item.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The item type (folder or object).</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The item type (folder or object).</p>
+     */
     inline void SetType(const ItemType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The ETag that represents a unique instance of the item.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>The ETag that represents a unique instance of the item.</p>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p>The ETag that represents a unique instance of the item.</p>
@@ -155,6 +170,11 @@ namespace Model
     /**
      * <p>The date and time that the item was last modified.</p>
      */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p>The date and time that the item was last modified.</p>
+     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The content type of the item.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type of the item.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type of the item.</p>
@@ -213,6 +238,11 @@ namespace Model
      * <p>The length of the item in bytes.</p>
      */
     inline long long GetContentLength() const{ return m_contentLength; }
+
+    /**
+     * <p>The length of the item in bytes.</p>
+     */
+    inline bool ContentLengthHasBeenSet() const { return m_contentLengthHasBeenSet; }
 
     /**
      * <p>The length of the item in bytes.</p>

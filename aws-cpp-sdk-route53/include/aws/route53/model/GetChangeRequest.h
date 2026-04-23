@@ -57,6 +57,13 @@ namespace Model
      * value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code>
      * element when you submitted the request.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the change batch request. The value that you specify here is the
+     * value that <code>ChangeResourceRecordSets</code> returned in the <code>Id</code>
+     * element when you submitted the request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

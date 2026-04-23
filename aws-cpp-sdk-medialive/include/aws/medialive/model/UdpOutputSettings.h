@@ -36,7 +36,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for UdpOutputSettings<p><h3>See Also:</h3>   <a
+   * Udp Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UdpOutputSettings">AWS
    * API Reference</a></p>
    */
@@ -63,6 +63,14 @@ namespace Model
      * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
      * input disruptions, picture reordering, etc.
      */
+    inline bool BufferMsecHasBeenSet() const { return m_bufferMsecHasBeenSet; }
+
+    /**
+     * UDP output buffering in milliseconds. Larger values increase latency through the
+     * transcoder but simultaneously assist the transcoder in maintaining a constant,
+     * low-jitter UDP/RTP output while accommodating clock recovery, input switching,
+     * input disruptions, picture reordering, etc.
+     */
     inline void SetBufferMsec(int value) { m_bufferMsecHasBeenSet = true; m_bufferMsec = value; }
 
     /**
@@ -76,6 +84,9 @@ namespace Model
 
     
     inline const UdpContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+
+    
+    inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
 
     
     inline void SetContainerSettings(const UdpContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
@@ -95,6 +106,12 @@ namespace Model
      * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+
+    /**
+     * Destination address and port number for RTP or UDP packets. Can be unicast or
+     * multicast RTP or UDP (eg. rtp://239.10.10.10:5001 or udp://10.100.100.100:5002).
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * Destination address and port number for RTP or UDP packets. Can be unicast or
@@ -125,6 +142,11 @@ namespace Model
      * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
      */
     inline const FecOutputSettings& GetFecOutputSettings() const{ return m_fecOutputSettings; }
+
+    /**
+     * Settings for enabling and adjusting Forward Error Correction on UDP outputs.
+     */
+    inline bool FecOutputSettingsHasBeenSet() const { return m_fecOutputSettingsHasBeenSet; }
 
     /**
      * Settings for enabling and adjusting Forward Error Correction on UDP outputs.

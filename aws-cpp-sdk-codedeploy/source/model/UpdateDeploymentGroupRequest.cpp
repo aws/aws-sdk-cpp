@@ -38,6 +38,7 @@ UpdateDeploymentGroupRequest::UpdateDeploymentGroupRequest() :
     m_blueGreenDeploymentConfigurationHasBeenSet(false),
     m_loadBalancerInfoHasBeenSet(false),
     m_ec2TagSetHasBeenSet(false),
+    m_ecsServicesHasBeenSet(false),
     m_onPremisesTagSetHasBeenSet(false)
 {
 }
@@ -153,6 +154,17 @@ Aws::String UpdateDeploymentGroupRequest::SerializePayload() const
   if(m_ec2TagSetHasBeenSet)
   {
    payload.WithObject("ec2TagSet", m_ec2TagSet.Jsonize());
+
+  }
+
+  if(m_ecsServicesHasBeenSet)
+  {
+   Array<JsonValue> ecsServicesJsonList(m_ecsServices.size());
+   for(unsigned ecsServicesIndex = 0; ecsServicesIndex < ecsServicesJsonList.GetLength(); ++ecsServicesIndex)
+   {
+     ecsServicesJsonList[ecsServicesIndex].AsObject(m_ecsServices[ecsServicesIndex].Jsonize());
+   }
+   payload.WithArray("ecsServices", std::move(ecsServicesJsonList));
 
   }
 

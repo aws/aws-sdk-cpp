@@ -30,7 +30,7 @@ GetAuthorizerRequest::GetAuthorizerRequest() :
 
 Aws::String GetAuthorizerRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

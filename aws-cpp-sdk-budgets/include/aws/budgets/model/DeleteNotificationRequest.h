@@ -58,6 +58,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget whose
      * notification you want to delete.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget whose
+     * notification you want to delete.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The name of the budget whose notification you want to delete.</p>
      */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the budget whose notification you want to delete.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * <p>The notification that you want to delete.</p>
      */
     inline const Notification& GetNotification() const{ return m_notification; }
+
+    /**
+     * <p>The notification that you want to delete.</p>
+     */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
 
     /**
      * <p>The notification that you want to delete.</p>

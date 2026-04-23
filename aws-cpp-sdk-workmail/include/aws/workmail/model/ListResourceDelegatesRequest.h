@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier for the organization that contains the resource for which
      * delegates are listed.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization that contains the resource for which
+     * delegates are listed.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The identifier for the resource whose delegates are listed.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The identifier for the resource whose delegates are listed.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The identifier for the resource whose delegates are listed.</p>
@@ -133,6 +144,12 @@ namespace Model
      * <p>The token used to paginate through the delegates associated with a
      * resource.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token used to paginate through the delegates associated with a
+     * resource.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -170,6 +187,11 @@ namespace Model
      * <p>The number of maximum results in a page.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The number of maximum results in a page.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The number of maximum results in a page.</p>

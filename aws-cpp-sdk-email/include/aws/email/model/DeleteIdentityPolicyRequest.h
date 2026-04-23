@@ -69,6 +69,15 @@ namespace Model
      * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
      * successfully call this API, you must own the identity.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity that is associated with the policy that you want to delete. You
+     * can specify the identity by using its name or by using its Amazon Resource Name
+     * (ARN). Examples: <code>user@example.com</code>, <code>example.com</code>,
+     * <code>arn:aws:ses:us-east-1:123456789012:identity/example.com</code>.</p> <p>To
+     * successfully call this API, you must own the identity.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -121,6 +130,11 @@ namespace Model
      * <p>The name of the policy to be deleted.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The name of the policy to be deleted.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The name of the policy to be deleted.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * A request to start a channel
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * A request to start a channel
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**

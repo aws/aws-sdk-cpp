@@ -58,6 +58,12 @@ namespace Model
      * Represents the finding attribute (for example, accountId) by which to sort
      * findings.
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * Represents the finding attribute (for example, accountId) by which to sort
+     * findings.
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * Order by which the sorted findings are to be displayed.
      */
     inline const OrderBy& GetOrderBy() const{ return m_orderBy; }
+
+    /**
+     * Order by which the sorted findings are to be displayed.
+     */
+    inline bool OrderByHasBeenSet() const { return m_orderByHasBeenSet; }
 
     /**
      * Order by which the sorted findings are to be displayed.

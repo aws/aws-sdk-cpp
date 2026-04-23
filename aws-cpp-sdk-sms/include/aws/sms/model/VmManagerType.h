@@ -26,7 +26,9 @@ namespace Model
   enum class VmManagerType
   {
     NOT_SET,
-    VSPHERE
+    VSPHERE,
+    SCVMM,
+    HYPERV_MANAGER
   };
 
 namespace VmManagerTypeMapper

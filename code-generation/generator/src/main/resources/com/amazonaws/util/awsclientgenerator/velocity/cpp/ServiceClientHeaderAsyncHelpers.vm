@@ -1,7 +1,12 @@
         /**Async helpers**/
 #foreach($operation in $serviceModel.operations)
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#else
+#set($constText = "const ")
+#end
 #if($operation.request)
-        void ${operation.name}AsyncHelper(const Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ${operation.name}AsyncHelper(${constText}Model::${operation.request.shape.name}& request, const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 #else
         void ${operation.name}AsyncHelper(const ${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 #end

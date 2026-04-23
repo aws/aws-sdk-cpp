@@ -61,6 +61,12 @@ namespace Model
      * <p>The architecture of the virtual machine.</p> <p>Valid values:
      * <code>i386</code> | <code>x86_64</code> </p>
      */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The architecture of the virtual machine.</p> <p>Valid values:
+     * <code>i386</code> | <code>x86_64</code> </p>
+     */
     inline void SetArchitecture(const Aws::String& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>A description of the import task.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the import task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>Indicates whether the image is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the image is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -151,6 +167,12 @@ namespace Model
      * <code>xen</code> </p>
      */
     inline const Aws::String& GetHypervisor() const{ return m_hypervisor; }
+
+    /**
+     * <p>The target hypervisor for the import task.</p> <p>Valid values:
+     * <code>xen</code> </p>
+     */
+    inline bool HypervisorHasBeenSet() const { return m_hypervisorHasBeenSet; }
 
     /**
      * <p>The target hypervisor for the import task.</p> <p>Valid values:
@@ -197,6 +219,11 @@ namespace Model
     /**
      * <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) of the imported virtual machine.</p>
+     */
     inline void SetImageId(const Aws::String& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -229,6 +256,11 @@ namespace Model
      * <p>The ID of the import image task.</p>
      */
     inline const Aws::String& GetImportTaskId() const{ return m_importTaskId; }
+
+    /**
+     * <p>The ID of the import image task.</p>
+     */
+    inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
 
     /**
      * <p>The ID of the import image task.</p>
@@ -266,6 +298,12 @@ namespace Model
      * key (CMK) that was used to create the encrypted image.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted image.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
@@ -312,6 +350,11 @@ namespace Model
     /**
      * <p>The license type of the virtual machine.</p>
      */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
+
+    /**
+     * <p>The license type of the virtual machine.</p>
+     */
     inline void SetLicenseType(const Aws::String& value) { m_licenseTypeHasBeenSet = true; m_licenseType = value; }
 
     /**
@@ -344,6 +387,11 @@ namespace Model
      * <p>The description string for the import image task.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The description string for the import image task.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The description string for the import image task.</p>
@@ -384,6 +432,11 @@ namespace Model
     /**
      * <p>The percentage of progress of the import image task.</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>The percentage of progress of the import image task.</p>
+     */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -416,6 +469,11 @@ namespace Model
      * <p>Information about the snapshots.</p>
      */
     inline const Aws::Vector<SnapshotDetail>& GetSnapshotDetails() const{ return m_snapshotDetails; }
+
+    /**
+     * <p>Information about the snapshots.</p>
+     */
+    inline bool SnapshotDetailsHasBeenSet() const { return m_snapshotDetailsHasBeenSet; }
 
     /**
      * <p>Information about the snapshots.</p>
@@ -456,6 +514,11 @@ namespace Model
     /**
      * <p>A brief status for the import image task.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A brief status for the import image task.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -488,6 +551,11 @@ namespace Model
      * <p>A descriptive status message for the import image task.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A descriptive status message for the import image task.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A descriptive status message for the import image task.</p>

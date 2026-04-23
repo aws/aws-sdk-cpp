@@ -54,6 +54,9 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     

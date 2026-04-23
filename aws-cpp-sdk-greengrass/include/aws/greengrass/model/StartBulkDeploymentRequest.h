@@ -17,6 +17,7 @@
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/greengrass/GreengrassRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +49,11 @@ namespace Model
      * A client token used to correlate requests and responses.
      */
     inline const Aws::String& GetAmznClientToken() const{ return m_amznClientToken; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
 
     /**
      * A client token used to correlate requests and responses.
@@ -87,6 +93,14 @@ namespace Model
      * to the S3 bucket containing the input file.
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * The ARN of the execution role to associate with the bulk deployment operation.
+     * This IAM role must allow the ''greengrass:CreateDeployment'' action for all
+     * group versions that are listed in the input file. This IAM role must have access
+     * to the S3 bucket containing the input file.
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * The ARN of the execution role to associate with the bulk deployment operation.
@@ -142,8 +156,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline const Aws::String& GetInputFileUri() const{ return m_inputFileUri; }
 
@@ -152,8 +166,18 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
+     */
+    inline bool InputFileUriHasBeenSet() const { return m_inputFileUriHasBeenSet; }
+
+    /**
+     * The URI of the input file contained in the S3 bucket. The execution role must
+     * have ''getObject'' permissions on this bucket to access the input file. The
+     * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
+     * provides a list of group and version IDs and the deployment type. This file must
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(const Aws::String& value) { m_inputFileUriHasBeenSet = true; m_inputFileUri = value; }
 
@@ -162,8 +186,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(Aws::String&& value) { m_inputFileUriHasBeenSet = true; m_inputFileUri = std::move(value); }
 
@@ -172,8 +196,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline void SetInputFileUri(const char* value) { m_inputFileUriHasBeenSet = true; m_inputFileUri.assign(value); }
 
@@ -182,8 +206,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(const Aws::String& value) { SetInputFileUri(value); return *this;}
 
@@ -192,8 +216,8 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(Aws::String&& value) { SetInputFileUri(std::move(value)); return *this;}
 
@@ -202,10 +226,76 @@ namespace Model
      * have ''getObject'' permissions on this bucket to access the input file. The
      * input file is a JSON-serialized, line delimited file with UTF-8 encoding that
      * provides a list of group and version IDs and the deployment type. This file must
-     * be less than 100MB. Currently, Greengrass; supports only ''NewDeployment''
-     * deployment types.
+     * be less than 100 MB. Currently, AWS IoT Greengrass supports only
+     * ''NewDeployment'' deployment types.
      */
     inline StartBulkDeploymentRequest& WithInputFileUri(const char* value) { SetInputFileUri(value); return *this;}
+
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * Tag(s) to add to the new resource
+     */
+    inline StartBulkDeploymentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
 
   private:
 
@@ -217,6 +307,9 @@ namespace Model
 
     Aws::String m_inputFileUri;
     bool m_inputFileUriHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

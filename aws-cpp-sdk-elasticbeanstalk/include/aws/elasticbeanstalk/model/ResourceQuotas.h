@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The quota for applications in the AWS account.</p>
      */
+    inline bool ApplicationQuotaHasBeenSet() const { return m_applicationQuotaHasBeenSet; }
+
+    /**
+     * <p>The quota for applications in the AWS account.</p>
+     */
     inline void SetApplicationQuota(const ResourceQuota& value) { m_applicationQuotaHasBeenSet = true; m_applicationQuota = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The quota for application versions in the AWS account.</p>
      */
     inline const ResourceQuota& GetApplicationVersionQuota() const{ return m_applicationVersionQuota; }
+
+    /**
+     * <p>The quota for application versions in the AWS account.</p>
+     */
+    inline bool ApplicationVersionQuotaHasBeenSet() const { return m_applicationVersionQuotaHasBeenSet; }
 
     /**
      * <p>The quota for application versions in the AWS account.</p>
@@ -111,6 +121,11 @@ namespace Model
     /**
      * <p>The quota for environments in the AWS account.</p>
      */
+    inline bool EnvironmentQuotaHasBeenSet() const { return m_environmentQuotaHasBeenSet; }
+
+    /**
+     * <p>The quota for environments in the AWS account.</p>
+     */
     inline void SetEnvironmentQuota(const ResourceQuota& value) { m_environmentQuotaHasBeenSet = true; m_environmentQuota = value; }
 
     /**
@@ -137,6 +152,11 @@ namespace Model
     /**
      * <p>The quota for configuration templates in the AWS account.</p>
      */
+    inline bool ConfigurationTemplateQuotaHasBeenSet() const { return m_configurationTemplateQuotaHasBeenSet; }
+
+    /**
+     * <p>The quota for configuration templates in the AWS account.</p>
+     */
     inline void SetConfigurationTemplateQuota(const ResourceQuota& value) { m_configurationTemplateQuotaHasBeenSet = true; m_configurationTemplateQuota = value; }
 
     /**
@@ -159,6 +179,11 @@ namespace Model
      * <p>The quota for custom platforms in the AWS account.</p>
      */
     inline const ResourceQuota& GetCustomPlatformQuota() const{ return m_customPlatformQuota; }
+
+    /**
+     * <p>The quota for custom platforms in the AWS account.</p>
+     */
+    inline bool CustomPlatformQuotaHasBeenSet() const { return m_customPlatformQuotaHasBeenSet; }
 
     /**
      * <p>The quota for custom platforms in the AWS account.</p>

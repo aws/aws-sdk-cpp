@@ -29,7 +29,7 @@ GetEmailChannelRequest::GetEmailChannelRequest() :
 
 Aws::String GetEmailChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

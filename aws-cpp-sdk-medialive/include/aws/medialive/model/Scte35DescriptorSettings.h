@@ -55,6 +55,11 @@ namespace Model
     /**
      * SCTE-35 Segmentation Descriptor.
      */
+    inline bool SegmentationDescriptorScte35DescriptorSettingsHasBeenSet() const { return m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet; }
+
+    /**
+     * SCTE-35 Segmentation Descriptor.
+     */
     inline void SetSegmentationDescriptorScte35DescriptorSettings(const Scte35SegmentationDescriptor& value) { m_segmentationDescriptorScte35DescriptorSettingsHasBeenSet = true; m_segmentationDescriptorScte35DescriptorSettings = value; }
 
     /**

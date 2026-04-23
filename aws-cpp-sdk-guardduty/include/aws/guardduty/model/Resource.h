@@ -54,6 +54,9 @@ namespace Model
     inline const AccessKeyDetails& GetAccessKeyDetails() const{ return m_accessKeyDetails; }
 
     
+    inline bool AccessKeyDetailsHasBeenSet() const { return m_accessKeyDetailsHasBeenSet; }
+
+    
     inline void SetAccessKeyDetails(const AccessKeyDetails& value) { m_accessKeyDetailsHasBeenSet = true; m_accessKeyDetails = value; }
 
     
@@ -68,6 +71,9 @@ namespace Model
 
     
     inline const InstanceDetails& GetInstanceDetails() const{ return m_instanceDetails; }
+
+    
+    inline bool InstanceDetailsHasBeenSet() const { return m_instanceDetailsHasBeenSet; }
 
     
     inline void SetInstanceDetails(const InstanceDetails& value) { m_instanceDetailsHasBeenSet = true; m_instanceDetails = value; }
@@ -86,6 +92,11 @@ namespace Model
      * The type of the AWS resource.
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * The type of the AWS resource.
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * The type of the AWS resource.

@@ -34,7 +34,7 @@ ListJobsByPipelineRequest::ListJobsByPipelineRequest() :
 
 Aws::String ListJobsByPipelineRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListJobsByPipelineRequest::AddQueryStringParameters(URI& uri) const

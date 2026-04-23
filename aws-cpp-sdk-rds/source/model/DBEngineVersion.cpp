@@ -45,7 +45,8 @@ DBEngineVersion::DBEngineVersion() :
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
     m_supportsReadReplicaHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false)
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportedFeatureNamesHasBeenSet(false)
 {
 }
 
@@ -64,7 +65,8 @@ DBEngineVersion::DBEngineVersion(const XmlNode& xmlNode) :
     m_supportsLogExportsToCloudwatchLogsHasBeenSet(false),
     m_supportsReadReplica(false),
     m_supportsReadReplicaHasBeenSet(false),
-    m_supportedEngineModesHasBeenSet(false)
+    m_supportedEngineModesHasBeenSet(false),
+    m_supportedFeatureNamesHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -183,6 +185,18 @@ DBEngineVersion& DBEngineVersion::operator =(const XmlNode& xmlNode)
 
       m_supportedEngineModesHasBeenSet = true;
     }
+    XmlNode supportedFeatureNamesNode = resultNode.FirstChild("SupportedFeatureNames");
+    if(!supportedFeatureNamesNode.IsNull())
+    {
+      XmlNode supportedFeatureNamesMember = supportedFeatureNamesNode.FirstChild("member");
+      while(!supportedFeatureNamesMember.IsNull())
+      {
+        m_supportedFeatureNames.push_back(StringUtils::Trim(supportedFeatureNamesMember.GetText().c_str()));
+        supportedFeatureNamesMember = supportedFeatureNamesMember.NextNode("member");
+      }
+
+      m_supportedFeatureNamesHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -283,6 +297,15 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       }
   }
 
+  if(m_supportedFeatureNamesHasBeenSet)
+  {
+      unsigned supportedFeatureNamesIdx = 1;
+      for(auto& item : m_supportedFeatureNames)
+      {
+        oStream << location << index << locationValue << ".SupportedFeatureNames.member." << supportedFeatureNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+
 }
 
 void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -365,6 +388,14 @@ void DBEngineVersion::OutputToStream(Aws::OStream& oStream, const char* location
       for(auto& item : m_supportedEngineModes)
       {
         oStream << location << ".SupportedEngineModes.member." << supportedEngineModesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      }
+  }
+  if(m_supportedFeatureNamesHasBeenSet)
+  {
+      unsigned supportedFeatureNamesIdx = 1;
+      for(auto& item : m_supportedFeatureNames)
+      {
+        oStream << location << ".SupportedFeatureNames.member." << supportedFeatureNamesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
   }
 }

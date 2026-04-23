@@ -58,6 +58,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code>. </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the private CA. This must be of the
+     * form:</p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code>. </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -106,6 +114,12 @@ namespace Model
      * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
      */
     inline const Aws::String& GetAuditReportId() const{ return m_auditReportId; }
+
+    /**
+     * <p>The report ID returned by calling the
+     * <a>CreateCertificateAuthorityAuditReport</a> operation.</p>
+     */
+    inline bool AuditReportIdHasBeenSet() const { return m_auditReportIdHasBeenSet; }
 
     /**
      * <p>The report ID returned by calling the

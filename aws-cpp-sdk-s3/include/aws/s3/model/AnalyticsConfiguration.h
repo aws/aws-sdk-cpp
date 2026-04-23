@@ -34,6 +34,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AnalyticsConfiguration
   {
   public:
@@ -48,6 +53,11 @@ namespace Model
      * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier used to represent an analytics configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier used to represent an analytics configuration.</p>
@@ -92,6 +102,13 @@ namespace Model
      * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
      * filter is provided, all objects will be considered in any analysis.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>The filter used to describe a set of objects for analyses. A filter must have
+     * exactly one prefix, one tag, or one conjunction (AnalyticsAndOperator). If no
+     * filter is provided, all objects will be considered in any analysis.</p>
+     */
     inline void SetFilter(const AnalyticsFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -122,6 +139,13 @@ namespace Model
      * classes.</p>
      */
     inline const StorageClassAnalysis& GetStorageClassAnalysis() const{ return m_storageClassAnalysis; }
+
+    /**
+     * <p>If present, it indicates that data related to access patterns will be
+     * collected and made available to analyze the tradeoffs between different storage
+     * classes.</p>
+     */
+    inline bool StorageClassAnalysisHasBeenSet() const { return m_storageClassAnalysisHasBeenSet; }
 
     /**
      * <p>If present, it indicates that data related to access patterns will be

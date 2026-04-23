@@ -62,6 +62,12 @@ namespace Model
      * <p>The unique identifier for the customer master key (CMK) to which the grant
      * applies.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the customer master key (CMK) to which the grant
+     * applies.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The unique identifier for the grant.</p>
      */
+    inline bool GrantIdHasBeenSet() const { return m_grantIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the grant.</p>
+     */
     inline void SetGrantId(const Aws::String& value) { m_grantIdHasBeenSet = true; m_grantId = value; }
 
     /**
@@ -137,6 +148,13 @@ namespace Model
      * null.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name that identifies the grant. If a name was provided in the
+     * <a>CreateGrant</a> request, that name is returned. Otherwise this value is
+     * null.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name that identifies the grant. If a name was provided in the
@@ -189,6 +207,11 @@ namespace Model
     /**
      * <p>The date and time when the grant was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date and time when the grant was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -211,6 +234,11 @@ namespace Model
      * <p>The principal that receives the grant's permissions.</p>
      */
     inline const Aws::String& GetGranteePrincipal() const{ return m_granteePrincipal; }
+
+    /**
+     * <p>The principal that receives the grant's permissions.</p>
+     */
+    inline bool GranteePrincipalHasBeenSet() const { return m_granteePrincipalHasBeenSet; }
 
     /**
      * <p>The principal that receives the grant's permissions.</p>
@@ -251,6 +279,11 @@ namespace Model
     /**
      * <p>The principal that can retire the grant.</p>
      */
+    inline bool RetiringPrincipalHasBeenSet() const { return m_retiringPrincipalHasBeenSet; }
+
+    /**
+     * <p>The principal that can retire the grant.</p>
+     */
     inline void SetRetiringPrincipal(const Aws::String& value) { m_retiringPrincipalHasBeenSet = true; m_retiringPrincipal = value; }
 
     /**
@@ -283,6 +316,11 @@ namespace Model
      * <p>The AWS account under which the grant was issued.</p>
      */
     inline const Aws::String& GetIssuingAccount() const{ return m_issuingAccount; }
+
+    /**
+     * <p>The AWS account under which the grant was issued.</p>
+     */
+    inline bool IssuingAccountHasBeenSet() const { return m_issuingAccountHasBeenSet; }
 
     /**
      * <p>The AWS account under which the grant was issued.</p>
@@ -323,6 +361,11 @@ namespace Model
     /**
      * <p>The list of operations permitted by the grant.</p>
      */
+    inline bool OperationsHasBeenSet() const { return m_operationsHasBeenSet; }
+
+    /**
+     * <p>The list of operations permitted by the grant.</p>
+     */
     inline void SetOperations(const Aws::Vector<GrantOperation>& value) { m_operationsHasBeenSet = true; m_operations = value; }
 
     /**
@@ -356,6 +399,12 @@ namespace Model
      * certain subsequent operations that the grant allows.</p>
      */
     inline const GrantConstraints& GetConstraints() const{ return m_constraints; }
+
+    /**
+     * <p>A list of key-value pairs that must be present in the encryption context of
+     * certain subsequent operations that the grant allows.</p>
+     */
+    inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
 
     /**
      * <p>A list of key-value pairs that must be present in the encryption context of

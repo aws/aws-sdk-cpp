@@ -63,6 +63,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The ID of the organization.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
      * <p>The IDs of the users.</p>
      */
     inline const Aws::String& GetUserIds() const{ return m_userIds; }
+
+    /**
+     * <p>The IDs of the users.</p>
+     */
+    inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the users.</p>
@@ -176,6 +192,11 @@ namespace Model
     /**
      * <p>A query to filter users by user name.</p>
      */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p>A query to filter users by user name.</p>
+     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
 
     /**
@@ -212,6 +233,11 @@ namespace Model
     /**
      * <p>The state of the users. Specify "ALL" to include inactive users.</p>
      */
+    inline bool IncludeHasBeenSet() const { return m_includeHasBeenSet; }
+
+    /**
+     * <p>The state of the users. Specify "ALL" to include inactive users.</p>
+     */
     inline void SetInclude(const UserFilterType& value) { m_includeHasBeenSet = true; m_include = value; }
 
     /**
@@ -234,6 +260,11 @@ namespace Model
      * <p>The order for the results.</p>
      */
     inline const OrderType& GetOrder() const{ return m_order; }
+
+    /**
+     * <p>The order for the results.</p>
+     */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
 
     /**
      * <p>The order for the results.</p>
@@ -264,6 +295,11 @@ namespace Model
     /**
      * <p>The sorting criteria.</p>
      */
+    inline bool SortHasBeenSet() const { return m_sortHasBeenSet; }
+
+    /**
+     * <p>The sorting criteria.</p>
+     */
     inline void SetSort(const UserSortType& value) { m_sortHasBeenSet = true; m_sort = value; }
 
     /**
@@ -287,6 +323,12 @@ namespace Model
      * previous call.)</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results. (You received this marker from a
+     * previous call.)</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results. (You received this marker from a
@@ -333,6 +375,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -346,6 +393,12 @@ namespace Model
      * user storage quota and utilization information.</p>
      */
     inline const Aws::String& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the
+     * user storage quota and utilization information.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>A comma-separated list of values. Specify "STORAGE_METADATA" to include the

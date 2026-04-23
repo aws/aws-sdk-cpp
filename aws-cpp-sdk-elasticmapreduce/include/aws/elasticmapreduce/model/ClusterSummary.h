@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier for the cluster.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the cluster.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the cluster.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the cluster.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the cluster.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The details about the current status of the cluster.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The details about the current status of the cluster.</p>
+     */
     inline void SetStatus(const ClusterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -155,6 +170,16 @@ namespace Model
      * the actual billing rate.</p>
      */
     inline int GetNormalizedInstanceHours() const{ return m_normalizedInstanceHours; }
+
+    /**
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
+     * This value is incremented one time for every hour an m1.small instance runs.
+     * Larger instances are weighted more, so an EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
+     */
+    inline bool NormalizedInstanceHoursHasBeenSet() const { return m_normalizedInstanceHoursHasBeenSet; }
 
     /**
      * <p>An approximation of the cost of the cluster, represented in m1.small/hours.

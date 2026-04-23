@@ -60,6 +60,12 @@ namespace Model
      * <p>The identifier of an existing replication group. The snapshot is created from
      * this replication group.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of an existing replication group. The snapshot is created from
+     * this replication group.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The identifier of an existing cluster. The snapshot is created from this
      * cluster.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of an existing cluster. The snapshot is created from this
+     * cluster.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -140,6 +152,11 @@ namespace Model
      * <p>A name for the snapshot being created.</p>
      */
     inline const Aws::String& GetSnapshotName() const{ return m_snapshotName; }
+
+    /**
+     * <p>A name for the snapshot being created.</p>
+     */
+    inline bool SnapshotNameHasBeenSet() const { return m_snapshotNameHasBeenSet; }
 
     /**
      * <p>A name for the snapshot being created.</p>

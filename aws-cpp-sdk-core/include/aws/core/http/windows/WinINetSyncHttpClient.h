@@ -54,7 +54,8 @@ namespace Aws
             // WinHttp specific implementations
             void* OpenRequest(const Aws::Http::HttpRequest& request, void* connection, const Aws::StringStream& ss) const override;
             void DoAddHeaders(void* hHttpRequest, Aws::String& headerStr) const override;
-            uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead) const override;
+            uint64_t DoWriteData(void* hHttpRequest, char* streamBuffer, uint64_t bytesRead, bool isChunked) const override;
+            uint64_t FinalizeWriteData(void* hHttpRequest) const override;
             bool DoReceiveResponse(void* hHttpRequest) const override;
             bool DoQueryHeaders(void* hHttpRequest, std::shared_ptr<Aws::Http::HttpResponse>& response, Aws::StringStream& ss, uint64_t& read) const override;
             bool DoSendRequest(void* hHttpRequest) const override;

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the slot type for which versions should be returned.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the slot type for which versions should be returned.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * the next request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A pagination token for fetching the next page of slot type versions. If the
+     * response to this call is truncated, Amazon Lex returns a pagination token in the
+     * response. To fetch the next page of versions, specify the pagination token in
+     * the next request. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A pagination token for fetching the next page of slot type versions. If the
@@ -146,6 +159,12 @@ namespace Model
      * default is 10.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of slot type versions to return in the response. The
+     * default is 10.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of slot type versions to return in the response. The

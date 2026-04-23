@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the network interface attachment.</p>
      */
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface attachment.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * terminated.</p>
      */
     inline bool GetDeleteOnTermination() const{ return m_deleteOnTermination; }
+
+    /**
+     * <p>Indicates whether the network interface is deleted when the instance is
+     * terminated.</p>
+     */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
 
     /**
      * <p>Indicates whether the network interface is deleted when the instance is

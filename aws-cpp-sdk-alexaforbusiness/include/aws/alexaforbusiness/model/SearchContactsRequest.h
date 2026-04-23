@@ -57,6 +57,12 @@ namespace Model
      * <p>The filters to use to list a specified set of address books. The supported
      * filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>The filters to use to list a specified set of address books. The supported
+     * filter keys are DisplayName, FirstName, LastName, and AddressBookArns.</p>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * sort keys are DisplayName, FirstName, and LastName.</p>
      */
     inline const Aws::Vector<Sort>& GetSortCriteria() const{ return m_sortCriteria; }
+
+    /**
+     * <p>The sort order to use in listing the specified set of contacts. The supported
+     * sort keys are DisplayName, FirstName, and LastName.</p>
+     */
+    inline bool SortCriteriaHasBeenSet() const { return m_sortCriteriaHasBeenSet; }
 
     /**
      * <p>The sort order to use in listing the specified set of contacts. The supported
@@ -140,6 +152,14 @@ namespace Model
      * MaxResults.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response only includes results beyond the token, up to the value specified by
+     * MaxResults.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional token returned from a prior request. Use this token for
@@ -196,6 +216,13 @@ namespace Model
      * so that the remaining results can be retrieved.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified MaxResults value, a token is included in the response
+     * so that the remaining results can be retrieved.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results

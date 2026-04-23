@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the parameter you want to query.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter you want to query.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * for String and StringList parameter types.</p>
      */
     inline bool GetWithDecryption() const{ return m_withDecryption; }
+
+    /**
+     * <p>Return decrypted values for secure string parameters. This flag is ignored
+     * for String and StringList parameter types.</p>
+     */
+    inline bool WithDecryptionHasBeenSet() const { return m_withDecryptionHasBeenSet; }
 
     /**
      * <p>Return decrypted values for secure string parameters. This flag is ignored

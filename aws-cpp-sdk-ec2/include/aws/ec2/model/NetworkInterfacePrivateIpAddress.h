@@ -61,6 +61,12 @@ namespace Model
      * <p>The association information for an Elastic IP address (IPv4) associated with
      * the network interface.</p>
      */
+    inline bool AssociationHasBeenSet() const { return m_associationHasBeenSet; }
+
+    /**
+     * <p>The association information for an Elastic IP address (IPv4) associated with
+     * the network interface.</p>
+     */
     inline void SetAssociation(const NetworkInterfaceAssociation& value) { m_associationHasBeenSet = true; m_association = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * <p>Indicates whether this IPv4 address is the primary private IPv4 address of
      * the network interface.</p>
      */
+    inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this IPv4 address is the primary private IPv4 address of
+     * the network interface.</p>
+     */
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
 
     /**
@@ -105,6 +117,11 @@ namespace Model
      * <p>The private DNS name.</p>
      */
     inline const Aws::String& GetPrivateDnsName() const{ return m_privateDnsName; }
+
+    /**
+     * <p>The private DNS name.</p>
+     */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
 
     /**
      * <p>The private DNS name.</p>
@@ -141,6 +158,11 @@ namespace Model
      * <p>The private IPv4 address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IPv4 address.</p>

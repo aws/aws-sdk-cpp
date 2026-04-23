@@ -59,6 +59,13 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
+    inline bool CheckIdHasBeenSet() const { return m_checkIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the Trusted Advisor check to refresh. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
+     */
     inline void SetCheckId(const Aws::String& value) { m_checkIdHasBeenSet = true; m_checkId = value; }
 
     /**

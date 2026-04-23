@@ -60,6 +60,12 @@ namespace Model
      * <p>Describes the status of the cluster. While the transfer is in progress the
      * status is <code>transferringdata</code>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Describes the status of the cluster. While the transfer is in progress the
+     * status is <code>transferringdata</code>.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>Describes the data transfer rate in MB's per second.</p>
      */
+    inline bool CurrentRateInMegaBytesPerSecondHasBeenSet() const { return m_currentRateInMegaBytesPerSecondHasBeenSet; }
+
+    /**
+     * <p>Describes the data transfer rate in MB's per second.</p>
+     */
     inline void SetCurrentRateInMegaBytesPerSecond(double value) { m_currentRateInMegaBytesPerSecondHasBeenSet = true; m_currentRateInMegaBytesPerSecond = value; }
 
     /**
@@ -117,6 +128,11 @@ namespace Model
     /**
      * <p>Describes the total amount of data to be transfered in megabytes.</p>
      */
+    inline bool TotalDataInMegaBytesHasBeenSet() const { return m_totalDataInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>Describes the total amount of data to be transfered in megabytes.</p>
+     */
     inline void SetTotalDataInMegaBytes(long long value) { m_totalDataInMegaBytesHasBeenSet = true; m_totalDataInMegaBytes = value; }
 
     /**
@@ -129,6 +145,11 @@ namespace Model
      * <p>Describes the total amount of data that has been transfered in MB's.</p>
      */
     inline long long GetDataTransferredInMegaBytes() const{ return m_dataTransferredInMegaBytes; }
+
+    /**
+     * <p>Describes the total amount of data that has been transfered in MB's.</p>
+     */
+    inline bool DataTransferredInMegaBytesHasBeenSet() const { return m_dataTransferredInMegaBytesHasBeenSet; }
 
     /**
      * <p>Describes the total amount of data that has been transfered in MB's.</p>
@@ -151,6 +172,12 @@ namespace Model
      * <p>Describes the estimated number of seconds remaining to complete the
      * transfer.</p>
      */
+    inline bool EstimatedTimeToCompletionInSecondsHasBeenSet() const { return m_estimatedTimeToCompletionInSecondsHasBeenSet; }
+
+    /**
+     * <p>Describes the estimated number of seconds remaining to complete the
+     * transfer.</p>
+     */
     inline void SetEstimatedTimeToCompletionInSeconds(long long value) { m_estimatedTimeToCompletionInSecondsHasBeenSet = true; m_estimatedTimeToCompletionInSeconds = value; }
 
     /**
@@ -165,6 +192,12 @@ namespace Model
      * transfer.</p>
      */
     inline long long GetElapsedTimeInSeconds() const{ return m_elapsedTimeInSeconds; }
+
+    /**
+     * <p>Describes the number of seconds that have elapsed during the data
+     * transfer.</p>
+     */
+    inline bool ElapsedTimeInSecondsHasBeenSet() const { return m_elapsedTimeInSecondsHasBeenSet; }
 
     /**
      * <p>Describes the number of seconds that have elapsed during the data

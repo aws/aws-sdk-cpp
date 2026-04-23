@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the scheduled audit you want to delete.</p>
      */
+    inline bool ScheduledAuditNameHasBeenSet() const { return m_scheduledAuditNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scheduled audit you want to delete.</p>
+     */
     inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
 
     /**

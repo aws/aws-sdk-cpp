@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Provides the name of the DB parameter group.</p>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>Provides the name of the DB parameter group.</p>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * group is compatible with.</p>
      */
     inline const Aws::String& GetDBParameterGroupFamily() const{ return m_dBParameterGroupFamily; }
+
+    /**
+     * <p>Provides the name of the DB parameter group family that this DB parameter
+     * group is compatible with.</p>
+     */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>Provides the name of the DB parameter group family that this DB parameter
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>Provides the customer-specified description for this DB parameter group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Provides the customer-specified description for this DB parameter group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
      */
     inline const Aws::String& GetDBParameterGroupArn() const{ return m_dBParameterGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>
+     */
+    inline bool DBParameterGroupArnHasBeenSet() const { return m_dBParameterGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the DB parameter group.</p>

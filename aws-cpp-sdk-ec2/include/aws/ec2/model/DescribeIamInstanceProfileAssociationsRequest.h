@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>One or more IAM instance profile associations.</p>
      */
+    inline bool AssociationIdsHasBeenSet() const { return m_associationIdsHasBeenSet; }
+
+    /**
+     * <p>One or more IAM instance profile associations.</p>
+     */
     inline void SetAssociationIds(const Aws::Vector<Aws::String>& value) { m_associationIdsHasBeenSet = true; m_associationIds = value; }
 
     /**
@@ -96,6 +101,14 @@ namespace Model
      * <code>disassociating</code> | <code>disassociated</code>).</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-id</code> - The ID of
+     * the instance.</p> </li> <li> <p> <code>state</code> - The state of the
+     * association (<code>associating</code> | <code>associated</code> |
+     * <code>disassociating</code> | <code>disassociated</code>).</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>instance-id</code> - The ID of
@@ -158,6 +171,13 @@ namespace Model
      * remaining results, make another call with the returned <code>NextToken</code>
      * value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -172,6 +192,11 @@ namespace Model
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request the next page of results.</p>

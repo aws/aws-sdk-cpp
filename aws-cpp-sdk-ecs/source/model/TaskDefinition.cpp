@@ -46,7 +46,12 @@ TaskDefinition::TaskDefinition() :
     m_compatibilitiesHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_pidMode(PidMode::NOT_SET),
+    m_pidModeHasBeenSet(false),
+    m_ipcMode(IpcMode::NOT_SET),
+    m_ipcModeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
 }
 
@@ -68,7 +73,12 @@ TaskDefinition::TaskDefinition(JsonView jsonValue) :
     m_compatibilitiesHasBeenSet(false),
     m_requiresCompatibilitiesHasBeenSet(false),
     m_cpuHasBeenSet(false),
-    m_memoryHasBeenSet(false)
+    m_memoryHasBeenSet(false),
+    m_pidMode(PidMode::NOT_SET),
+    m_pidModeHasBeenSet(false),
+    m_ipcMode(IpcMode::NOT_SET),
+    m_ipcModeHasBeenSet(false),
+    m_proxyConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -198,6 +208,27 @@ TaskDefinition& TaskDefinition::operator =(JsonView jsonValue)
     m_memoryHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("pidMode"))
+  {
+    m_pidMode = PidModeMapper::GetPidModeForName(jsonValue.GetString("pidMode"));
+
+    m_pidModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ipcMode"))
+  {
+    m_ipcMode = IpcModeMapper::GetIpcModeForName(jsonValue.GetString("ipcMode"));
+
+    m_ipcModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("proxyConfiguration"))
+  {
+    m_proxyConfiguration = jsonValue.GetObject("proxyConfiguration");
+
+    m_proxyConfigurationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -320,6 +351,22 @@ JsonValue TaskDefinition::Jsonize() const
   if(m_memoryHasBeenSet)
   {
    payload.WithString("memory", m_memory);
+
+  }
+
+  if(m_pidModeHasBeenSet)
+  {
+   payload.WithString("pidMode", PidModeMapper::GetNameForPidMode(m_pidMode));
+  }
+
+  if(m_ipcModeHasBeenSet)
+  {
+   payload.WithString("ipcMode", IpcModeMapper::GetNameForIpcMode(m_ipcMode));
+  }
+
+  if(m_proxyConfigurationHasBeenSet)
+  {
+   payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
 
   }
 

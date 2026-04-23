@@ -29,7 +29,7 @@ GetApnsVoipChannelRequest::GetApnsVoipChannelRequest() :
 
 Aws::String GetApnsVoipChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

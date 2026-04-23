@@ -64,6 +64,14 @@ namespace Model
      * information, see <a
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
      */
+    inline bool PolicyToPathListHasBeenSet() const { return m_policyToPathListHasBeenSet; }
+
+    /**
+     * <p>Provides list of path to policies. Policies contain <code>PolicyId</code>,
+     * <code>ObjectIdentifier</code>, and <code>PolicyType</code>. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/key_concepts_directory.html#key_concepts_policies">Policies</a>.</p>
+     */
     inline void SetPolicyToPathList(const Aws::Vector<PolicyToPath>& value) { m_policyToPathListHasBeenSet = true; m_policyToPathList = value; }
 
     /**
@@ -111,6 +119,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

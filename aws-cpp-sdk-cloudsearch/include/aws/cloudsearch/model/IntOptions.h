@@ -63,6 +63,13 @@ namespace Model
      * can be important if you are using the field in an expression and that field is
      * not present in every document.
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * A value to use for the field if the field isn't specified for a document. This
+     * can be important if you are using the field in an expression and that field is
+     * not present in every document.
+     */
     inline void SetDefaultValue(long long value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -77,6 +84,11 @@ namespace Model
      * <p>The name of the source field to map to the field. </p>
      */
     inline const Aws::String& GetSourceField() const{ return m_sourceField; }
+
+    /**
+     * <p>The name of the source field to map to the field. </p>
+     */
+    inline bool SourceFieldHasBeenSet() const { return m_sourceFieldHasBeenSet; }
 
     /**
      * <p>The name of the source field to map to the field. </p>
@@ -117,6 +129,11 @@ namespace Model
     /**
      * <p>Whether facet information can be returned for the field.</p>
      */
+    inline bool FacetEnabledHasBeenSet() const { return m_facetEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether facet information can be returned for the field.</p>
+     */
     inline void SetFacetEnabled(bool value) { m_facetEnabledHasBeenSet = true; m_facetEnabled = value; }
 
     /**
@@ -129,6 +146,11 @@ namespace Model
      * <p>Whether the contents of the field are searchable.</p>
      */
     inline bool GetSearchEnabled() const{ return m_searchEnabled; }
+
+    /**
+     * <p>Whether the contents of the field are searchable.</p>
+     */
+    inline bool SearchEnabledHasBeenSet() const { return m_searchEnabledHasBeenSet; }
 
     /**
      * <p>Whether the contents of the field are searchable.</p>
@@ -149,6 +171,11 @@ namespace Model
     /**
      * <p>Whether the contents of the field can be returned in the search results.</p>
      */
+    inline bool ReturnEnabledHasBeenSet() const { return m_returnEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether the contents of the field can be returned in the search results.</p>
+     */
     inline void SetReturnEnabled(bool value) { m_returnEnabledHasBeenSet = true; m_returnEnabled = value; }
 
     /**
@@ -161,6 +188,11 @@ namespace Model
      * <p>Whether the field can be used to sort the search results.</p>
      */
     inline bool GetSortEnabled() const{ return m_sortEnabled; }
+
+    /**
+     * <p>Whether the field can be used to sort the search results.</p>
+     */
+    inline bool SortEnabledHasBeenSet() const { return m_sortEnabledHasBeenSet; }
 
     /**
      * <p>Whether the field can be used to sort the search results.</p>

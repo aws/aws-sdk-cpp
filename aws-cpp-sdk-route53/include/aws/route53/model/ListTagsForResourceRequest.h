@@ -59,6 +59,13 @@ namespace Model
      * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
      * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the resource.</p> <ul> <li> <p>The resource type for health
+     * checks is <code>healthcheck</code>.</p> </li> <li> <p>The resource type for
+     * hosted zones is <code>hostedzone</code>.</p> </li> </ul>
+     */
     inline void SetResourceType(const TagResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -87,6 +94,11 @@ namespace Model
      * <p>The ID of the resource for which you want to retrieve tags.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource for which you want to retrieve tags.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource for which you want to retrieve tags.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain that contains the task lists being polled.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that contains the task lists being polled.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -90,6 +95,16 @@ namespace Model
      * <code>arn</code>.</p>
      */
     inline const TaskList& GetTaskList() const{ return m_taskList; }
+
+    /**
+     * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
+     * string must not start or end with whitespace. It must not contain a
+     * <code>:</code> (colon), <code>/</code> (slash), <code>|</code> (vertical bar),
+     * or any control characters (<code>\u0000-\u001f</code> |
+     * <code>\u007f-\u009f</code>). Also, it must not contain the literal string
+     * <code>arn</code>.</p>
+     */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
 
     /**
      * <p>Specifies the task list to poll for activity tasks.</p> <p>The specified
@@ -139,6 +154,14 @@ namespace Model
      * defined.</p>
      */
     inline const Aws::String& GetIdentity() const{ return m_identity; }
+
+    /**
+     * <p>Identity of the worker making the request, recorded in the
+     * <code>ActivityTaskStarted</code> event in the workflow history. This enables
+     * diagnostic tracing when problems arise. The form of this identity is user
+     * defined.</p>
+     */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
 
     /**
      * <p>Identity of the worker making the request, recorded in the

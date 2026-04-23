@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the configuration to delete.</p>
      */
+    inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration to delete.</p>
+     */
     inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>One or more container overrides sent to a task.</p>
      */
+    inline bool ContainerOverridesHasBeenSet() const { return m_containerOverridesHasBeenSet; }
+
+    /**
+     * <p>One or more container overrides sent to a task.</p>
+     */
     inline void SetContainerOverrides(const Aws::Vector<ContainerOverride>& value) { m_containerOverridesHasBeenSet = true; m_containerOverrides = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * specified in this role.</p>
      */
     inline const Aws::String& GetTaskRoleArn() const{ return m_taskRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
+     * can assume. All containers in this task are granted the permissions that are
+     * specified in this role.</p>
+     */
+    inline bool TaskRoleArnHasBeenSet() const { return m_taskRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role that containers in this task
@@ -140,6 +152,12 @@ namespace Model
      * container agent and the Docker daemon can assume.</p>
      */
     inline const Aws::String& GetExecutionRoleArn() const{ return m_executionRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS
+     * container agent and the Docker daemon can assume.</p>
+     */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the task execution role that the Amazon ECS

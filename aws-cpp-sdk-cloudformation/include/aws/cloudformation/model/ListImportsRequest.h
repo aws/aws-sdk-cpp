@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the exported output value. AWS CloudFormation returns the stack
      * names that are importing this value. </p>
      */
+    inline bool ExportNameHasBeenSet() const { return m_exportNameHasBeenSet; }
+
+    /**
+     * <p>The name of the exported output value. AWS CloudFormation returns the stack
+     * names that are importing this value. </p>
+     */
     inline void SetExportName(const Aws::String& value) { m_exportNameHasBeenSet = true; m_exportName = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A string (provided by the <a>ListImports</a> response output) that identifies
+     * the next page of stacks that are importing the specified exported output value.
+     * </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A string (provided by the <a>ListImports</a> response output) that identifies

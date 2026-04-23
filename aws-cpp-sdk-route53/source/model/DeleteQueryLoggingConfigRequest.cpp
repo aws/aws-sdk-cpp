@@ -30,7 +30,7 @@ DeleteQueryLoggingConfigRequest::DeleteQueryLoggingConfigRequest() :
 
 Aws::String DeleteQueryLoggingConfigRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name or unique stack ID that is associated with the stack whose policy
      * you want to get.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique stack ID that is associated with the stack whose policy
+     * you want to get.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**

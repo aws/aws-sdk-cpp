@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The status code for the instance.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The status code for the instance.</p>
+     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * <code>pending</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The state of the instance (e.g., <code>running</code> or
+     * <code>pending</code>).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The state of the instance (e.g., <code>running</code> or

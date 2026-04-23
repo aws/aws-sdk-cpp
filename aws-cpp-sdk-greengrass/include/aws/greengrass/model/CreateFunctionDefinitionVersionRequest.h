@@ -17,6 +17,7 @@
 #include <aws/greengrass/Greengrass_EXPORTS.h>
 #include <aws/greengrass/GreengrassRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/greengrass/model/FunctionDefaultConfig.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/greengrass/model/Function.h>
 #include <utility>
@@ -58,6 +59,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -87,9 +93,51 @@ namespace Model
 
 
     /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline const FunctionDefaultConfig& GetDefaultConfig() const{ return m_defaultConfig; }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline bool DefaultConfigHasBeenSet() const { return m_defaultConfigHasBeenSet; }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline void SetDefaultConfig(const FunctionDefaultConfig& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = value; }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline void SetDefaultConfig(FunctionDefaultConfig&& value) { m_defaultConfigHasBeenSet = true; m_defaultConfig = std::move(value); }
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline CreateFunctionDefinitionVersionRequest& WithDefaultConfig(const FunctionDefaultConfig& value) { SetDefaultConfig(value); return *this;}
+
+    /**
+     * The default configuration that applies to all Lambda functions in this function
+     * definition version. Individual Lambda functions can override these settings.
+     */
+    inline CreateFunctionDefinitionVersionRequest& WithDefaultConfig(FunctionDefaultConfig&& value) { SetDefaultConfig(std::move(value)); return *this;}
+
+
+    /**
      * The ID of the Lambda function definition.
      */
     inline const Aws::String& GetFunctionDefinitionId() const{ return m_functionDefinitionId; }
+
+    /**
+     * The ID of the Lambda function definition.
+     */
+    inline bool FunctionDefinitionIdHasBeenSet() const { return m_functionDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the Lambda function definition.
@@ -130,6 +178,11 @@ namespace Model
     /**
      * A list of Lambda functions in this function definition version.
      */
+    inline bool FunctionsHasBeenSet() const { return m_functionsHasBeenSet; }
+
+    /**
+     * A list of Lambda functions in this function definition version.
+     */
     inline void SetFunctions(const Aws::Vector<Function>& value) { m_functionsHasBeenSet = true; m_functions = value; }
 
     /**
@@ -161,6 +214,9 @@ namespace Model
 
     Aws::String m_amznClientToken;
     bool m_amznClientTokenHasBeenSet;
+
+    FunctionDefaultConfig m_defaultConfig;
+    bool m_defaultConfigHasBeenSet;
 
     Aws::String m_functionDefinitionId;
     bool m_functionDefinitionIdHasBeenSet;

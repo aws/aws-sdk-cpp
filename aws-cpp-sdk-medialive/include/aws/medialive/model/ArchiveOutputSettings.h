@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for ArchiveOutputSettings<p><h3>See Also:</h3>   <a
+   * Archive Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveOutputSettings">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * Settings specific to the container type of the file.
      */
     inline const ArchiveContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
+
+    /**
+     * Settings specific to the container type of the file.
+     */
+    inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
 
     /**
      * Settings specific to the container type of the file.
@@ -79,6 +84,12 @@ namespace Model
      * container type.
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
+
+    /**
+     * Output file extension. If excluded, this will be auto-selected from the
+     * container type.
+     */
+    inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
     /**
      * Output file extension. If excluded, this will be auto-selected from the
@@ -122,6 +133,12 @@ namespace Model
      * multiple outputs of the same type.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+
+    /**
+     * String concatenated to the end of the destination filename.  Required for
+     * multiple outputs of the same type.
+     */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
 
     /**
      * String concatenated to the end of the destination filename.  Required for

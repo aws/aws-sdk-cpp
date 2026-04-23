@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of an AWS Signer platform.</p>
      */
+    inline bool PlatformIdHasBeenSet() const { return m_platformIdHasBeenSet; }
+
+    /**
+     * <p>The ID of an AWS Signer platform.</p>
+     */
     inline void SetPlatformId(const Aws::String& value) { m_platformIdHasBeenSet = true; m_platformId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The display name of an AWS Signer platform.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The display name of an AWS Signer platform.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The display name of an AWS Signer platform.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>Any partner entities linked to an AWS Signer platform.</p>
      */
+    inline bool PartnerHasBeenSet() const { return m_partnerHasBeenSet; }
+
+    /**
+     * <p>Any partner entities linked to an AWS Signer platform.</p>
+     */
     inline void SetPartner(const Aws::String& value) { m_partnerHasBeenSet = true; m_partner = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The types of targets that can be signed by an AWS Signer platform.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The types of targets that can be signed by an AWS Signer platform.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>The types of targets that can be signed by an AWS Signer platform.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The category of an AWS Signer platform.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of an AWS Signer platform.</p>
+     */
     inline void SetCategory(const Category& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -226,6 +251,12 @@ namespace Model
      * hash algorithm and encryption algorithm of a signing platform.</p>
      */
     inline const SigningConfiguration& GetSigningConfiguration() const{ return m_signingConfiguration; }
+
+    /**
+     * <p>The configuration of an AWS Signer platform. This includes the designated
+     * hash algorithm and encryption algorithm of a signing platform.</p>
+     */
+    inline bool SigningConfigurationHasBeenSet() const { return m_signingConfigurationHasBeenSet; }
 
     /**
      * <p>The configuration of an AWS Signer platform. This includes the designated
@@ -260,6 +291,11 @@ namespace Model
     /**
      * <p>The signing image format that is used by an AWS Signer platform.</p>
      */
+    inline bool SigningImageFormatHasBeenSet() const { return m_signingImageFormatHasBeenSet; }
+
+    /**
+     * <p>The signing image format that is used by an AWS Signer platform.</p>
+     */
     inline void SetSigningImageFormat(const SigningImageFormat& value) { m_signingImageFormatHasBeenSet = true; m_signingImageFormat = value; }
 
     /**
@@ -283,6 +319,12 @@ namespace Model
      * platform.</p>
      */
     inline int GetMaxSizeInMB() const{ return m_maxSizeInMB; }
+
+    /**
+     * <p>The maximum size (in MB) of code that can be signed by a AWS Signer
+     * platform.</p>
+     */
+    inline bool MaxSizeInMBHasBeenSet() const { return m_maxSizeInMBHasBeenSet; }
 
     /**
      * <p>The maximum size (in MB) of code that can be signed by a AWS Signer

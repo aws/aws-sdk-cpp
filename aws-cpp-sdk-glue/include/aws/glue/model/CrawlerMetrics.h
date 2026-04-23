@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the crawler.</p>
      */
+    inline bool CrawlerNameHasBeenSet() const { return m_crawlerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the crawler.</p>
+     */
     inline void SetCrawlerName(const Aws::String& value) { m_crawlerNameHasBeenSet = true; m_crawlerName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The estimated time left to complete a running crawl.</p>
      */
+    inline bool TimeLeftSecondsHasBeenSet() const { return m_timeLeftSecondsHasBeenSet; }
+
+    /**
+     * <p>The estimated time left to complete a running crawl.</p>
+     */
     inline void SetTimeLeftSeconds(double value) { m_timeLeftSecondsHasBeenSet = true; m_timeLeftSeconds = value; }
 
     /**
@@ -104,6 +114,12 @@ namespace Model
      * this run.</p>
      */
     inline bool GetStillEstimating() const{ return m_stillEstimating; }
+
+    /**
+     * <p>True if the crawler is still estimating how long it will take to complete
+     * this run.</p>
+     */
+    inline bool StillEstimatingHasBeenSet() const { return m_stillEstimatingHasBeenSet; }
 
     /**
      * <p>True if the crawler is still estimating how long it will take to complete
@@ -126,6 +142,11 @@ namespace Model
     /**
      * <p>The duration of the crawler's most recent run, in seconds.</p>
      */
+    inline bool LastRuntimeSecondsHasBeenSet() const { return m_lastRuntimeSecondsHasBeenSet; }
+
+    /**
+     * <p>The duration of the crawler's most recent run, in seconds.</p>
+     */
     inline void SetLastRuntimeSeconds(double value) { m_lastRuntimeSecondsHasBeenSet = true; m_lastRuntimeSeconds = value; }
 
     /**
@@ -138,6 +159,11 @@ namespace Model
      * <p>The median duration of this crawler's runs, in seconds.</p>
      */
     inline double GetMedianRuntimeSeconds() const{ return m_medianRuntimeSeconds; }
+
+    /**
+     * <p>The median duration of this crawler's runs, in seconds.</p>
+     */
+    inline bool MedianRuntimeSecondsHasBeenSet() const { return m_medianRuntimeSecondsHasBeenSet; }
 
     /**
      * <p>The median duration of this crawler's runs, in seconds.</p>
@@ -158,6 +184,11 @@ namespace Model
     /**
      * <p>The number of tables created by this crawler.</p>
      */
+    inline bool TablesCreatedHasBeenSet() const { return m_tablesCreatedHasBeenSet; }
+
+    /**
+     * <p>The number of tables created by this crawler.</p>
+     */
     inline void SetTablesCreated(int value) { m_tablesCreatedHasBeenSet = true; m_tablesCreated = value; }
 
     /**
@@ -174,6 +205,11 @@ namespace Model
     /**
      * <p>The number of tables updated by this crawler.</p>
      */
+    inline bool TablesUpdatedHasBeenSet() const { return m_tablesUpdatedHasBeenSet; }
+
+    /**
+     * <p>The number of tables updated by this crawler.</p>
+     */
     inline void SetTablesUpdated(int value) { m_tablesUpdatedHasBeenSet = true; m_tablesUpdated = value; }
 
     /**
@@ -186,6 +222,11 @@ namespace Model
      * <p>The number of tables deleted by this crawler.</p>
      */
     inline int GetTablesDeleted() const{ return m_tablesDeleted; }
+
+    /**
+     * <p>The number of tables deleted by this crawler.</p>
+     */
+    inline bool TablesDeletedHasBeenSet() const { return m_tablesDeletedHasBeenSet; }
 
     /**
      * <p>The number of tables deleted by this crawler.</p>

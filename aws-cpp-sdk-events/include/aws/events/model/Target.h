@@ -47,7 +47,7 @@ namespace Model
    * organization instead of directly by the account ID, then you must specify a
    * <code>RoleArn</code> with proper permissions in the <code>Target</code>
    * structure. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
+   * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/events/CloudWatchEvents-CrossAccountEventDelivery.html">Sending
    * and Receiving Events Between AWS Accounts</a> in the <i>Amazon CloudWatch Events
    * User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/Target">AWS API
@@ -66,6 +66,11 @@ namespace Model
      * <p>The ID of the target.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of the target.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the target.</p>
@@ -106,6 +111,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the target.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the target.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -140,6 +150,13 @@ namespace Model
      * different IAM role for each target.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target
+     * when the rule is triggered. If one rule triggers multiple targets, you can use a
+     * different IAM role for each target.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role to be used for this target
@@ -191,6 +208,14 @@ namespace Model
      * (JSON) Data Interchange Format</a>.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
+
+    /**
+     * <p>Valid JSON text passed to the target. In this case, nothing from the event
+     * itself is passed to the target. For more information, see <a
+     * href="http://www.rfc-editor.org/rfc/rfc7159.txt">The JavaScript Object Notation
+     * (JSON) Data Interchange Format</a>.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>Valid JSON text passed to the target. In this case, nothing from the event
@@ -255,6 +280,14 @@ namespace Model
      * notation. For more information about JSON paths, see <a
      * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
      */
+    inline bool InputPathHasBeenSet() const { return m_inputPathHasBeenSet; }
+
+    /**
+     * <p>The value of the JSONPath that is used for extracting part of the matched
+     * event when passing it to the target. You must use JSON dot notation, not bracket
+     * notation. For more information about JSON paths, see <a
+     * href="http://goessner.net/articles/JsonPath/">JSONPath</a>.</p>
+     */
     inline void SetInputPath(const Aws::String& value) { m_inputPathHasBeenSet = true; m_inputPath = value; }
 
     /**
@@ -310,6 +343,13 @@ namespace Model
      * event data. You can extract one or more key-value pairs from the event and then
      * use that data to send customized input to the target.</p>
      */
+    inline bool InputTransformerHasBeenSet() const { return m_inputTransformerHasBeenSet; }
+
+    /**
+     * <p>Settings to enable you to provide custom input to a target based on certain
+     * event data. You can extract one or more key-value pairs from the event and then
+     * use that data to send customized input to the target.</p>
+     */
     inline void SetInputTransformer(const InputTransformer& value) { m_inputTransformerHasBeenSet = true; m_inputTransformer = value; }
 
     /**
@@ -340,6 +380,13 @@ namespace Model
      * default is to use the <code>eventId</code> as the partition key.</p>
      */
     inline const KinesisParameters& GetKinesisParameters() const{ return m_kinesisParameters; }
+
+    /**
+     * <p>The custom parameter you can use to control the shard assignment, when the
+     * target is a Kinesis data stream. If you do not include this parameter, the
+     * default is to use the <code>eventId</code> as the partition key.</p>
+     */
+    inline bool KinesisParametersHasBeenSet() const { return m_kinesisParametersHasBeenSet; }
 
     /**
      * <p>The custom parameter you can use to control the shard assignment, when the
@@ -380,6 +427,12 @@ namespace Model
      * <p>Parameters used when you are using the rule to invoke Amazon EC2 Run
      * Command.</p>
      */
+    inline bool RunCommandParametersHasBeenSet() const { return m_runCommandParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters used when you are using the rule to invoke Amazon EC2 Run
+     * Command.</p>
+     */
     inline void SetRunCommandParameters(const RunCommandParameters& value) { m_runCommandParametersHasBeenSet = true; m_runCommandParameters = value; }
 
     /**
@@ -405,7 +458,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline const EcsParameters& GetEcsParameters() const{ return m_ecsParameters; }
@@ -414,7 +467,16 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
+     */
+    inline bool EcsParametersHasBeenSet() const { return m_ecsParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the Amazon ECS task definition and task count to be used, if the
+     * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
+     * see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline void SetEcsParameters(const EcsParameters& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = value; }
@@ -423,7 +485,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline void SetEcsParameters(EcsParameters&& value) { m_ecsParametersHasBeenSet = true; m_ecsParameters = std::move(value); }
@@ -432,7 +494,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline Target& WithEcsParameters(const EcsParameters& value) { SetEcsParameters(value); return *this;}
@@ -441,7 +503,7 @@ namespace Model
      * <p>Contains the Amazon ECS task definition and task count to be used, if the
      * event target is an Amazon ECS task. For more information about Amazon ECS tasks,
      * see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Task
      * Definitions </a> in the <i>Amazon EC2 Container Service Developer Guide</i>.</p>
      */
     inline Target& WithEcsParameters(EcsParameters&& value) { SetEcsParameters(std::move(value)); return *this;}
@@ -450,7 +512,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline const BatchParameters& GetBatchParameters() const{ return m_batchParameters; }
@@ -458,7 +520,15 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * the <i>AWS Batch User Guide</i>.</p>
+     */
+    inline bool BatchParametersHasBeenSet() const { return m_batchParametersHasBeenSet; }
+
+    /**
+     * <p>If the event target is an AWS Batch job, this contains the job definition,
+     * job name, and other parameters. For more information, see <a
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(const BatchParameters& value) { m_batchParametersHasBeenSet = true; m_batchParameters = value; }
@@ -466,7 +536,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline void SetBatchParameters(BatchParameters&& value) { m_batchParametersHasBeenSet = true; m_batchParameters = std::move(value); }
@@ -474,7 +544,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(const BatchParameters& value) { SetBatchParameters(value); return *this;}
@@ -482,7 +552,7 @@ namespace Model
     /**
      * <p>If the event target is an AWS Batch job, this contains the job definition,
      * job name, and other parameters. For more information, see <a
-     * href="http://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
+     * href="https://docs.aws.amazon.com/batch/latest/userguide/jobs.html">Jobs</a> in
      * the <i>AWS Batch User Guide</i>.</p>
      */
     inline Target& WithBatchParameters(BatchParameters&& value) { SetBatchParameters(std::move(value)); return *this;}
@@ -494,6 +564,13 @@ namespace Model
      * content-based deduplication enabled.</p>
      */
     inline const SqsParameters& GetSqsParameters() const{ return m_sqsParameters; }
+
+    /**
+     * <p>Contains the message group ID to use when the target is a FIFO queue.</p>
+     * <p>If you specify an SQS FIFO queue as a target, the queue must have
+     * content-based deduplication enabled.</p>
+     */
+    inline bool SqsParametersHasBeenSet() const { return m_sqsParametersHasBeenSet; }
 
     /**
      * <p>Contains the message group ID to use when the target is a FIFO queue.</p>

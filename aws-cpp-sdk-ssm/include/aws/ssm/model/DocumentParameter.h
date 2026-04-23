@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Parameters specified in a System Manager document that execute on the server
-   * when the command is run. </p><p><h3>See Also:</h3>   <a
+   * <p>Parameters specified in a System Manager document that run on the server when
+   * the command is run. </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DocumentParameter">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,11 @@ namespace Model
      * <p>The name of the parameter.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the parameter.</p>
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The type of parameter. The type can be either String or StringList.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of parameter. The type can be either String or StringList.</p>
+     */
     inline void SetType(const DocumentParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -116,6 +126,12 @@ namespace Model
      * and whether or not the parameter is optional.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of what the parameter does, how to use it, the default value,
+     * and whether or not the parameter is optional.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of what the parameter does, how to use it, the default value,
@@ -159,6 +175,12 @@ namespace Model
      * default value are required. Parameters with a default value are optional.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>If specified, the default values for the parameters. Parameters without a
+     * default value are required. Parameters with a default value are optional.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>If specified, the default values for the parameters. Parameters without a

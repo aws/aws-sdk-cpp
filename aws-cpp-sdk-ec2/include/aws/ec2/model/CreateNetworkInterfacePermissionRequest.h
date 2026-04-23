@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The AWS account ID.</p>
      */
     inline const Aws::String& GetAwsAccountId() const{ return m_awsAccountId; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The AWS service. Currently not supported.</p>
      */
+    inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
+
+    /**
+     * <p>The AWS service. Currently not supported.</p>
+     */
     inline void SetAwsService(const Aws::String& value) { m_awsServiceHasBeenSet = true; m_awsService = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The type of permission to grant.</p>
      */
+    inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
+
+    /**
+     * <p>The type of permission to grant.</p>
+     */
     inline void SetPermission(const InterfacePermissionType& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
     /**
@@ -192,6 +212,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

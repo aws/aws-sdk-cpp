@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The association ID.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The association ID.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The association version.</p>
      */
     inline const Aws::String& GetAssociationVersion() const{ return m_associationVersion; }
+
+    /**
+     * <p>The association version.</p>
+     */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
 
     /**
      * <p>The association version.</p>
@@ -127,6 +137,12 @@ namespace Model
      * to a schedule, then the ExecutionID is the same as the AssociationID.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+
+    /**
+     * <p>The execution ID. If the association does not run at intervals or according
+     * to a schedule, then the ExecutionID is the same as the AssociationID.</p>
+     */
+    inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
      * <p>The execution ID. If the association does not run at intervals or according
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The resource ID, for example, the instance ID where the association ran.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID, for example, the instance ID where the association ran.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -205,6 +226,11 @@ namespace Model
      * <p>The resource type, for example, instance.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
+
+    /**
+     * <p>The resource type, for example, instance.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
 
     /**
      * <p>The resource type, for example, instance.</p>
@@ -245,6 +271,11 @@ namespace Model
     /**
      * <p>The association execution status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The association execution status.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -277,6 +308,11 @@ namespace Model
      * <p>Detailed information about the execution status.</p>
      */
     inline const Aws::String& GetDetailedStatus() const{ return m_detailedStatus; }
+
+    /**
+     * <p>Detailed information about the execution status.</p>
+     */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
 
     /**
      * <p>Detailed information about the execution status.</p>
@@ -317,6 +353,11 @@ namespace Model
     /**
      * <p>The date of the last execution.</p>
      */
+    inline bool LastExecutionDateHasBeenSet() const { return m_lastExecutionDateHasBeenSet; }
+
+    /**
+     * <p>The date of the last execution.</p>
+     */
     inline void SetLastExecutionDate(const Aws::Utils::DateTime& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = value; }
 
     /**
@@ -339,6 +380,11 @@ namespace Model
      * <p>The location where the association details are saved.</p>
      */
     inline const OutputSource& GetOutputSource() const{ return m_outputSource; }
+
+    /**
+     * <p>The location where the association details are saved.</p>
+     */
+    inline bool OutputSourceHasBeenSet() const { return m_outputSourceHasBeenSet; }
 
     /**
      * <p>The location where the association details are saved.</p>

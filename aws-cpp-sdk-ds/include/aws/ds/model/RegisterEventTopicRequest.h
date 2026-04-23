@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Directory ID that will publish status messages to the SNS topic.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The Directory ID that will publish status messages to the SNS topic.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * SNS topic must be in the same region as the specified Directory ID.</p>
      */
     inline const Aws::String& GetTopicName() const{ return m_topicName; }
+
+    /**
+     * <p>The SNS topic name to which the directory will publish status messages. This
+     * SNS topic must be in the same region as the specified Directory ID.</p>
+     */
+    inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
 
     /**
      * <p>The SNS topic name to which the directory will publish status messages. This

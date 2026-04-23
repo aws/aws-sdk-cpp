@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A unique identifier for the session</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the session</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>The duration of the session.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the session.</p>
+     */
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -102,6 +112,12 @@ namespace Model
      * example, 2014-06-30T19:07:47.885Z</p>
      */
     inline const Aws::String& GetStartTimestamp() const{ return m_startTimestamp; }
+
+    /**
+     * <p>The time the event started in ISO 8601 standard date time format. For
+     * example, 2014-06-30T19:07:47.885Z</p>
+     */
+    inline bool StartTimestampHasBeenSet() const { return m_startTimestampHasBeenSet; }
 
     /**
      * <p>The time the event started in ISO 8601 standard date time format. For
@@ -145,6 +161,12 @@ namespace Model
      * example, 2014-06-30T19:07:47.885Z</p>
      */
     inline const Aws::String& GetStopTimestamp() const{ return m_stopTimestamp; }
+
+    /**
+     * <p>The time the event terminated in ISO 8601 standard date time format. For
+     * example, 2014-06-30T19:07:47.885Z</p>
+     */
+    inline bool StopTimestampHasBeenSet() const { return m_stopTimestampHasBeenSet; }
 
     /**
      * <p>The time the event terminated in ISO 8601 standard date time format. For

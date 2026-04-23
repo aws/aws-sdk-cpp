@@ -59,6 +59,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that was returned when you called
+     * <a>CreateCertificateAuthority</a>. This must be of the form: </p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code> </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -112,6 +120,12 @@ namespace Model
      * <p>The PEM-encoded certificate for your private CA. This must be signed by using
      * your on-premises CA.</p>
      */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
+
+    /**
+     * <p>The PEM-encoded certificate for your private CA. This must be signed by using
+     * your on-premises CA.</p>
+     */
     inline void SetCertificate(const Aws::Utils::ByteBuffer& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
@@ -140,6 +154,14 @@ namespace Model
      * the one preceding. </p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificateChain() const{ return m_certificateChain; }
+
+    /**
+     * <p>A PEM-encoded file that contains all of your certificates, other than the
+     * certificate you're importing, chaining up to your root CA. Your on-premises root
+     * certificate is the last in the chain, and each certificate in the chain signs
+     * the one preceding. </p>
+     */
+    inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>A PEM-encoded file that contains all of your certificates, other than the

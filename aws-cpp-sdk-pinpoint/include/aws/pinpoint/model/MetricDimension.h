@@ -57,6 +57,12 @@ namespace Model
      * The operator that you're using to compare metric values. Possible values:
      * GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
      */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
+
+    /**
+     * The operator that you're using to compare metric values. Possible values:
+     * GREATER_THAN, LESS_THAN, GREATER_THAN_OR_EQUAL, LESS_THAN_OR_EQUAL, or EQUAL
+     */
     inline void SetComparisonOperator(const Aws::String& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * The value to be compared.
      */
     inline double GetValue() const{ return m_value; }
+
+    /**
+     * The value to be compared.
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * The value to be compared.

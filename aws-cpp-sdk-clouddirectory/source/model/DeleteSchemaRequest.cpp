@@ -30,7 +30,7 @@ DeleteSchemaRequest::DeleteSchemaRequest() :
 
 Aws::String DeleteSchemaRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteSchemaRequest::GetRequestSpecificHeaders() const

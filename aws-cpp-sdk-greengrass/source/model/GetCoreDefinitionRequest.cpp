@@ -29,7 +29,7 @@ GetCoreDefinitionRequest::GetCoreDefinitionRequest() :
 
 Aws::String GetCoreDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

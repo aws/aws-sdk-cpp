@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the IP address filter to delete.</p>
      */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IP address filter to delete.</p>
+     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**

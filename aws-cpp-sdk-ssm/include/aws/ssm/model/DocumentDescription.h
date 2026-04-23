@@ -25,6 +25,7 @@
 #include <aws/ssm/model/DocumentParameter.h>
 #include <aws/ssm/model/PlatformType.h>
 #include <aws/ssm/model/Tag.h>
+#include <aws/ssm/model/AttachmentInformation.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,11 @@ namespace Model
      * <p>The SHA1 hash of the document, which you can use for verification.</p>
      */
     inline const Aws::String& GetSha1() const{ return m_sha1; }
+
+    /**
+     * <p>The SHA1 hash of the document, which you can use for verification.</p>
+     */
+    inline bool Sha1HasBeenSet() const { return m_sha1HasBeenSet; }
 
     /**
      * <p>The SHA1 hash of the document, which you can use for verification.</p>
@@ -102,6 +108,12 @@ namespace Model
      * <p>The Sha256 or Sha1 hash created by the system when the document was created.
      * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
+    inline bool HashHasBeenSet() const { return m_hashHasBeenSet; }
+
+    /**
+     * <p>The Sha256 or Sha1 hash created by the system when the document was created.
+     * </p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
     inline void SetHash(const Aws::String& value) { m_hashHasBeenSet = true; m_hash = value; }
 
     /**
@@ -136,27 +148,38 @@ namespace Model
 
 
     /**
-     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline const DocumentHashType& GetHashType() const{ return m_hashType; }
 
     /**
-     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     */
+    inline bool HashTypeHasBeenSet() const { return m_hashTypeHasBeenSet; }
+
+    /**
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline void SetHashType(const DocumentHashType& value) { m_hashTypeHasBeenSet = true; m_hashType = value; }
 
     /**
-     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline void SetHashType(DocumentHashType&& value) { m_hashTypeHasBeenSet = true; m_hashType = std::move(value); }
 
     /**
-     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline DocumentDescription& WithHashType(const DocumentHashType& value) { SetHashType(value); return *this;}
 
     /**
-     * <p>Sha256 or Sha1.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
+     * <p>The hash type of the document. Valid values include <code>Sha256</code> or
+     * <code>Sha1</code>.</p> <note> <p>Sha1 hashes have been deprecated.</p> </note>
      */
     inline DocumentDescription& WithHashType(DocumentHashType&& value) { SetHashType(std::move(value)); return *this;}
 
@@ -165,6 +188,11 @@ namespace Model
      * <p>The name of the Systems Manager document.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Systems Manager document.</p>
@@ -198,9 +226,55 @@ namespace Model
 
 
     /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline bool VersionNameHasBeenSet() const { return m_versionNameHasBeenSet; }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionNameHasBeenSet = true; m_versionName = value; }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionNameHasBeenSet = true; m_versionName = std::move(value); }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionNameHasBeenSet = true; m_versionName.assign(value); }
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline DocumentDescription& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline DocumentDescription& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the artifact associated with the document.</p>
+     */
+    inline DocumentDescription& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>The AWS user account that created the document.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>The AWS user account that created the document.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>The AWS user account that created the document.</p>
@@ -241,6 +315,11 @@ namespace Model
     /**
      * <p>The date when the document was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the document was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -267,6 +346,11 @@ namespace Model
     /**
      * <p>The status of the Systems Manager document.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Systems Manager document.</p>
+     */
     inline void SetStatus(const DocumentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -286,9 +370,79 @@ namespace Model
 
 
     /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline bool StatusInformationHasBeenSet() const { return m_statusInformationHasBeenSet; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(const Aws::String& value) { m_statusInformationHasBeenSet = true; m_statusInformation = value; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(Aws::String&& value) { m_statusInformationHasBeenSet = true; m_statusInformation = std::move(value); }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(const char* value) { m_statusInformationHasBeenSet = true; m_statusInformation.assign(value); }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline DocumentDescription& WithStatusInformation(const Aws::String& value) { SetStatusInformation(value); return *this;}
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline DocumentDescription& WithStatusInformation(Aws::String&& value) { SetStatusInformation(std::move(value)); return *this;}
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline DocumentDescription& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
+
+
+    /**
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The document version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The document version.</p>
@@ -329,6 +483,11 @@ namespace Model
     /**
      * <p>A description of the document. </p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the document. </p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -361,6 +520,11 @@ namespace Model
      * <p>A description of the parameters for a document.</p>
      */
     inline const Aws::Vector<DocumentParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A description of the parameters for a document.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A description of the parameters for a document.</p>
@@ -401,6 +565,11 @@ namespace Model
     /**
      * <p>The list of OS platforms compatible with this Systems Manager document. </p>
      */
+    inline bool PlatformTypesHasBeenSet() const { return m_platformTypesHasBeenSet; }
+
+    /**
+     * <p>The list of OS platforms compatible with this Systems Manager document. </p>
+     */
     inline void SetPlatformTypes(const Aws::Vector<PlatformType>& value) { m_platformTypesHasBeenSet = true; m_platformTypes = value; }
 
     /**
@@ -430,27 +599,32 @@ namespace Model
 
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document.</p>
      */
     inline const DocumentType& GetDocumentType() const{ return m_documentType; }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document.</p>
+     */
+    inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+
+    /**
+     * <p>The type of document.</p>
      */
     inline void SetDocumentType(const DocumentType& value) { m_documentTypeHasBeenSet = true; m_documentType = value; }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document.</p>
      */
     inline void SetDocumentType(DocumentType&& value) { m_documentTypeHasBeenSet = true; m_documentType = std::move(value); }
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document.</p>
      */
     inline DocumentDescription& WithDocumentType(const DocumentType& value) { SetDocumentType(value); return *this;}
 
     /**
-     * <p>The type of document. </p>
+     * <p>The type of document.</p>
      */
     inline DocumentDescription& WithDocumentType(DocumentType&& value) { SetDocumentType(std::move(value)); return *this;}
 
@@ -459,6 +633,11 @@ namespace Model
      * <p>The schema version.</p>
      */
     inline const Aws::String& GetSchemaVersion() const{ return m_schemaVersion; }
+
+    /**
+     * <p>The schema version.</p>
+     */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
 
     /**
      * <p>The schema version.</p>
@@ -499,6 +678,11 @@ namespace Model
     /**
      * <p>The latest version of the document.</p>
      */
+    inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
+
+    /**
+     * <p>The latest version of the document.</p>
+     */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
@@ -531,6 +715,11 @@ namespace Model
      * <p>The default version.</p>
      */
     inline const Aws::String& GetDefaultVersion() const{ return m_defaultVersion; }
+
+    /**
+     * <p>The default version.</p>
+     */
+    inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
 
     /**
      * <p>The default version.</p>
@@ -571,6 +760,11 @@ namespace Model
     /**
      * <p>The document format, either JSON or YAML.</p>
      */
+    inline bool DocumentFormatHasBeenSet() const { return m_documentFormatHasBeenSet; }
+
+    /**
+     * <p>The document format, either JSON or YAML.</p>
+     */
     inline void SetDocumentFormat(const DocumentFormat& value) { m_documentFormatHasBeenSet = true; m_documentFormat = value; }
 
     /**
@@ -596,6 +790,14 @@ namespace Model
      * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
      */
     inline const Aws::String& GetTargetType() const{ return m_targetType; }
+
+    /**
+     * <p>The target type which defines the kinds of resources the document can run on.
+     * For example, /AWS::EC2::Instance. For a list of valid resource types, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a> in the <i>AWS CloudFormation User Guide</i>. </p>
+     */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
 
     /**
      * <p>The target type which defines the kinds of resources the document can run on.
@@ -654,6 +856,11 @@ namespace Model
     /**
      * <p>The tags, or metadata, that have been applied to the document.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags, or metadata, that have been applied to the document.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -681,6 +888,55 @@ namespace Model
      */
     inline DocumentDescription& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline const Aws::Vector<AttachmentInformation>& GetAttachmentsInformation() const{ return m_attachmentsInformation; }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline bool AttachmentsInformationHasBeenSet() const { return m_attachmentsInformationHasBeenSet; }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline void SetAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = value; }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline void SetAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation = std::move(value); }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline DocumentDescription& WithAttachmentsInformation(const Aws::Vector<AttachmentInformation>& value) { SetAttachmentsInformation(value); return *this;}
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline DocumentDescription& WithAttachmentsInformation(Aws::Vector<AttachmentInformation>&& value) { SetAttachmentsInformation(std::move(value)); return *this;}
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline DocumentDescription& AddAttachmentsInformation(const AttachmentInformation& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(value); return *this; }
+
+    /**
+     * <p>Details about the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline DocumentDescription& AddAttachmentsInformation(AttachmentInformation&& value) { m_attachmentsInformationHasBeenSet = true; m_attachmentsInformation.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_sha1;
@@ -695,6 +951,9 @@ namespace Model
     Aws::String m_name;
     bool m_nameHasBeenSet;
 
+    Aws::String m_versionName;
+    bool m_versionNameHasBeenSet;
+
     Aws::String m_owner;
     bool m_ownerHasBeenSet;
 
@@ -703,6 +962,9 @@ namespace Model
 
     DocumentStatus m_status;
     bool m_statusHasBeenSet;
+
+    Aws::String m_statusInformation;
+    bool m_statusInformationHasBeenSet;
 
     Aws::String m_documentVersion;
     bool m_documentVersionHasBeenSet;
@@ -736,6 +998,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::Vector<AttachmentInformation> m_attachmentsInformation;
+    bool m_attachmentsInformationHasBeenSet;
   };
 
 } // namespace Model

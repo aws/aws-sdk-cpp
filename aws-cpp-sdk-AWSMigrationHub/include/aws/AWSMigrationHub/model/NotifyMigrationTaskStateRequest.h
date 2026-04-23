@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>The name of the ProgressUpdateStream. </p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>Unique identifier that references the migration task.</p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+
+    /**
+     * <p>Unique identifier that references the migration task.</p>
+     */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
      * <p>Unique identifier that references the migration task.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>Information about the task's progress and status.</p>
      */
+    inline bool TaskHasBeenSet() const { return m_taskHasBeenSet; }
+
+    /**
+     * <p>Information about the task's progress and status.</p>
+     */
     inline void SetTask(const Task& value) { m_taskHasBeenSet = true; m_task = value; }
 
     /**
@@ -148,6 +163,11 @@ namespace Model
      * <p>The timestamp when the task was gathered.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDateTime() const{ return m_updateDateTime; }
+
+    /**
+     * <p>The timestamp when the task was gathered.</p>
+     */
+    inline bool UpdateDateTimeHasBeenSet() const { return m_updateDateTimeHasBeenSet; }
 
     /**
      * <p>The timestamp when the task was gathered.</p>
@@ -182,6 +202,13 @@ namespace Model
      * expect an update. If Migration Hub does not receive an update within the
      * specified interval, then the migration task will be considered stale.</p>
      */
+    inline bool NextUpdateSecondsHasBeenSet() const { return m_nextUpdateSecondsHasBeenSet; }
+
+    /**
+     * <p>Number of seconds after the UpdateDateTime within which the Migration Hub can
+     * expect an update. If Migration Hub does not receive an update within the
+     * specified interval, then the migration task will be considered stale.</p>
+     */
     inline void SetNextUpdateSeconds(int value) { m_nextUpdateSecondsHasBeenSet = true; m_nextUpdateSeconds = value; }
 
     /**
@@ -197,6 +224,12 @@ namespace Model
      * to test if the caller has permission to make the call.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Optional boolean flag to indicate whether any effect should take place. Used
+     * to test if the caller has permission to make the call.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used

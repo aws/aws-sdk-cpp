@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the instance for which you want to get metrics data.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance for which you want to get metrics data.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The metric name to get data about. </p>
      */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
+
+    /**
+     * <p>The metric name to get data about. </p>
+     */
     inline void SetMetricName(const InstanceMetricName& value) { m_metricNameHasBeenSet = true; m_metricName = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The granularity, in seconds, of the returned data points.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The granularity, in seconds, of the returned data points.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -131,6 +146,11 @@ namespace Model
      * <p>The start time of the time period.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The start time of the time period.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The start time of the time period.</p>
@@ -161,6 +181,11 @@ namespace Model
     /**
      * <p>The end time of the time period.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end time of the time period.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -187,6 +212,11 @@ namespace Model
     /**
      * <p>The unit. The list of valid values is below.</p>
      */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+
+    /**
+     * <p>The unit. The list of valid values is below.</p>
+     */
     inline void SetUnit(const MetricUnit& value) { m_unitHasBeenSet = true; m_unit = value; }
 
     /**
@@ -209,6 +239,11 @@ namespace Model
      * <p>The instance statistics. </p>
      */
     inline const Aws::Vector<MetricStatistic>& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>The instance statistics. </p>
+     */
+    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
      * <p>The instance statistics. </p>

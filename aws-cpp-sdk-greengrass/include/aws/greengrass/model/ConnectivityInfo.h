@@ -55,6 +55,11 @@ namespace Model
     /**
      * The endpoint for the Greengrass core. Can be an IP address or DNS.
      */
+    inline bool HostAddressHasBeenSet() const { return m_hostAddressHasBeenSet; }
+
+    /**
+     * The endpoint for the Greengrass core. Can be an IP address or DNS.
+     */
     inline void SetHostAddress(const Aws::String& value) { m_hostAddressHasBeenSet = true; m_hostAddress = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The ID of the connectivity information.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the connectivity information.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the connectivity information.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * Metadata for this endpoint.
      */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
+
+    /**
+     * Metadata for this endpoint.
+     */
     inline void SetMetadata(const Aws::String& value) { m_metadataHasBeenSet = true; m_metadata = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * The port of the Greengrass core. Usually 8883.
      */
     inline int GetPortNumber() const{ return m_portNumber; }
+
+    /**
+     * The port of the Greengrass core. Usually 8883.
+     */
+    inline bool PortNumberHasBeenSet() const { return m_portNumberHasBeenSet; }
 
     /**
      * The port of the Greengrass core. Usually 8883.

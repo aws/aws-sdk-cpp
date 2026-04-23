@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A node type to which the parameter value applies.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>A node type to which the parameter value applies.</p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The parameter value for this node type.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The parameter value for this node type.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value for this node type.</p>

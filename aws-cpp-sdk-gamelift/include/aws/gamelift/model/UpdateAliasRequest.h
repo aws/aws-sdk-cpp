@@ -58,6 +58,12 @@ namespace Model
      * <p>Unique identifier for a fleet alias. Specify the alias you want to
      * update.</p>
      */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet alias. Specify the alias you want to
+     * update.</p>
+     */
     inline void SetAliasId(const Aws::String& value) { m_aliasIdHasBeenSet = true; m_aliasId = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -142,6 +154,11 @@ namespace Model
     /**
      * <p>Human-readable description of an alias.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Human-readable description of an alias.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -174,6 +191,11 @@ namespace Model
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>
      */
     inline const RoutingStrategy& GetRoutingStrategy() const{ return m_routingStrategy; }
+
+    /**
+     * <p>Object that specifies the fleet and routing type to use for the alias.</p>
+     */
+    inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
 
     /**
      * <p>Object that specifies the fleet and routing type to use for the alias.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The elastic IP (EIP) address for the cluster.</p>
      */
+    inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
+
+    /**
+     * <p>The elastic IP (EIP) address for the cluster.</p>
+     */
     inline void SetElasticIp(const Aws::String& value) { m_elasticIpHasBeenSet = true; m_elasticIp = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The status of the elastic IP (EIP) address.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the elastic IP (EIP) address.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the elastic IP (EIP) address.</p>

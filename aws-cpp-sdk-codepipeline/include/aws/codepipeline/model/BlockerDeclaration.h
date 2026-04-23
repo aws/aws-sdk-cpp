@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const BlockerType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

@@ -63,6 +63,14 @@ namespace Model
      * Selector <N>", which denotes that the Nth Caption Selector will be used from
      * each input.
      */
+    inline bool CaptionSelectorNameHasBeenSet() const { return m_captionSelectorNameHasBeenSet; }
+
+    /**
+     * Specifies which "Caption Selector":#inputs-caption_selector to use from each
+     * input when generating captions. The name should be of the format "Caption
+     * Selector <N>", which denotes that the Nth Caption Selector will be used from
+     * each input.
+     */
     inline void SetCaptionSelectorName(const Aws::String& value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName = value; }
 
     /**
@@ -108,85 +116,171 @@ namespace Model
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline const Aws::String& GetCustomLanguageCode() const{ return m_customLanguageCode; }
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
+     */
+    inline bool CustomLanguageCodeHasBeenSet() const { return m_customLanguageCodeHasBeenSet; }
+
+    /**
+     * Indicates the language of the caption output track, using the ISO 639-2 or ISO
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline void SetCustomLanguageCode(const Aws::String& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = value; }
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline void SetCustomLanguageCode(Aws::String&& value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode = std::move(value); }
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline void SetCustomLanguageCode(const char* value) { m_customLanguageCodeHasBeenSet = true; m_customLanguageCode.assign(value); }
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline CaptionDescription& WithCustomLanguageCode(const Aws::String& value) { SetCustomLanguageCode(value); return *this;}
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline CaptionDescription& WithCustomLanguageCode(Aws::String&& value) { SetCustomLanguageCode(std::move(value)); return *this;}
 
     /**
      * Indicates the language of the caption output track, using the ISO 639-2 or ISO
-     * 639-3 three-letter language code
+     * 639-3 three-letter language code. For most captions output formats, the encoder
+     * puts this language information in the output captions metadata. If your output
+     * captions format is DVB-Sub or Burn in, the encoder uses this language
+     * information to choose the font language for rendering the captions text.
      */
     inline CaptionDescription& WithCustomLanguageCode(const char* value) { SetCustomLanguageCode(value); return *this;}
 
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline const CaptionDestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline void SetDestinationSettings(CaptionDestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline CaptionDescription& WithDestinationSettings(const CaptionDestinationSettings& value) { SetDestinationSettings(value); return *this;}
 
-    
+    /**
+     * Specific settings required by destination type. Note that
+     * burnin_destination_settings are not available if the source of the caption data
+     * is Embedded or Teletext.
+     */
     inline CaptionDescription& WithDestinationSettings(CaptionDestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
 
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
      */
     inline const LanguageCode& GetLanguageCode() const{ return m_languageCode; }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
      */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
      */
     inline void SetLanguageCode(LanguageCode&& value) { m_languageCodeHasBeenSet = true; m_languageCode = std::move(value); }
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
      */
     inline CaptionDescription& WithLanguageCode(const LanguageCode& value) { SetLanguageCode(value); return *this;}
 
     /**
-     * Indicates the language of the caption output track.
+     * Specify the language of this captions output track. For most captions output
+     * formats, the encoder puts this language information in the output captions
+     * metadata. If your output captions format is DVB-Sub or Burn in, the encoder uses
+     * this language information to choose the font language for rendering the captions
+     * text.
      */
     inline CaptionDescription& WithLanguageCode(LanguageCode&& value) { SetLanguageCode(std::move(value)); return *this;}
 
@@ -196,6 +290,12 @@ namespace Model
      * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
      */
     inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
+
+    /**
+     * Human readable information to indicate captions available for players (eg.
+     * English, or Spanish). Alphanumeric characters, spaces, and underscore are legal.
+     */
+    inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
 
     /**
      * Human readable information to indicate captions available for players (eg.

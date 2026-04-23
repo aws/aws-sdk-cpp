@@ -30,7 +30,7 @@ GetEndpointRequest::GetEndpointRequest() :
 
 Aws::String GetEndpointRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

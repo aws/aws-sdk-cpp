@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>An invalidation. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Invalidation">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Invalidation">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Invalidation
@@ -54,6 +54,12 @@ namespace Model
      * <code>IDFDVBD632BHDS5</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier for the invalidation request. For example:
+     * <code>IDFDVBD632BHDS5</code>.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier for the invalidation request. For example:
@@ -102,6 +108,12 @@ namespace Model
      * <p>The status of the invalidation request. When the invalidation batch is
      * finished, the status is <code>Completed</code>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the invalidation request. When the invalidation batch is
+     * finished, the status is <code>Completed</code>.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The date and time the invalidation request was first made. </p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the invalidation request was first made. </p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -165,6 +182,11 @@ namespace Model
      * <p>The current invalidation information for the batch request. </p>
      */
     inline const InvalidationBatch& GetInvalidationBatch() const{ return m_invalidationBatch; }
+
+    /**
+     * <p>The current invalidation information for the batch request. </p>
+     */
+    inline bool InvalidationBatchHasBeenSet() const { return m_invalidationBatchHasBeenSet; }
 
     /**
      * <p>The current invalidation information for the batch request. </p>

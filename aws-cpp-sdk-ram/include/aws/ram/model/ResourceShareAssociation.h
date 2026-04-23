@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * ARN of an OU or organization from AWS Organizations.</p>
      */
     inline const Aws::String& GetAssociatedEntity() const{ return m_associatedEntity; }
+
+    /**
+     * <p>The associated entity. For resource associations, this is the ARN of the
+     * resource. For principal associations, this is the ID of an AWS account or the
+     * ARN of an OU or organization from AWS Organizations.</p>
+     */
+    inline bool AssociatedEntityHasBeenSet() const { return m_associatedEntityHasBeenSet; }
 
     /**
      * <p>The associated entity. For resource associations, this is the ARN of the
@@ -144,6 +156,11 @@ namespace Model
     /**
      * <p>The association type.</p>
      */
+    inline bool AssociationTypeHasBeenSet() const { return m_associationTypeHasBeenSet; }
+
+    /**
+     * <p>The association type.</p>
+     */
     inline void SetAssociationType(const ResourceShareAssociationType& value) { m_associationTypeHasBeenSet = true; m_associationType = value; }
 
     /**
@@ -170,6 +187,11 @@ namespace Model
     /**
      * <p>The status of the association.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the association.</p>
+     */
     inline void SetStatus(const ResourceShareAssociationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -192,6 +214,11 @@ namespace Model
      * <p>A message about the status of the association.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message about the status of the association.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A message about the status of the association.</p>
@@ -232,6 +259,11 @@ namespace Model
     /**
      * <p>The time when the association was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the association was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -254,6 +286,11 @@ namespace Model
      * <p>The time when the association was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time when the association was last updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the association was last updated.</p>
@@ -281,6 +318,12 @@ namespace Model
      * account that owns the resource share.</p>
      */
     inline bool GetExternal() const{ return m_external; }
+
+    /**
+     * <p>Indicates whether the principal belongs to the same organization as the AWS
+     * account that owns the resource share.</p>
+     */
+    inline bool ExternalHasBeenSet() const { return m_externalHasBeenSet; }
 
     /**
      * <p>Indicates whether the principal belongs to the same organization as the AWS

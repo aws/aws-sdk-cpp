@@ -34,7 +34,7 @@ ListPipelinesRequest::ListPipelinesRequest() :
 
 Aws::String ListPipelinesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPipelinesRequest::AddQueryStringParameters(URI& uri) const

@@ -62,6 +62,16 @@ namespace Model
      * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
      * contain the literal string <code>arn</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the domain to register. The name must be unique in the region that
+     * the domain is registered in.</p> <p>The specified string must not start or end
+     * with whitespace. It must not contain a <code>:</code> (colon), <code>/</code>
+     * (slash), <code>|</code> (vertical bar), or any control characters
+     * (<code>\u0000-\u001f</code> | <code>\u007f-\u009f</code>). Also, it must not
+     * contain the literal string <code>arn</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
     /**
      * <p>A text description of the domain.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A text description of the domain.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -164,6 +179,20 @@ namespace Model
      * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetWorkflowExecutionRetentionPeriodInDays() const{ return m_workflowExecutionRetentionPeriodInDays; }
+
+    /**
+     * <p>The duration (in days) that records and histories of workflow executions on
+     * the domain should be kept by the service. After the retention period, the
+     * workflow execution isn't available in the results of visibility calls.</p> <p>If
+     * you pass the value <code>NONE</code> or <code>0</code> (zero), then the workflow
+     * execution history isn't retained. As soon as the workflow execution completes,
+     * the execution record and its history are deleted.</p> <p>The maximum workflow
+     * execution retention period is 90 days. For more information about Amazon SWF
+     * service limits, see: <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/swf-dg-limits.html">Amazon
+     * SWF Service Limits</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool WorkflowExecutionRetentionPeriodInDaysHasBeenSet() const { return m_workflowExecutionRetentionPeriodInDaysHasBeenSet; }
 
     /**
      * <p>The duration (in days) that records and histories of workflow executions on

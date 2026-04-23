@@ -55,7 +55,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for M2tsSettings<p><h3>See Also:</h3>   <a
+   * M2ts Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/M2tsSettings">AWS
    * API Reference</a></p>
    */
@@ -76,6 +76,15 @@ namespace Model
      * when not connected to an active input stream.
      */
     inline const M2tsAbsentInputAudioBehavior& GetAbsentInputAudioBehavior() const{ return m_absentInputAudioBehavior; }
+
+    /**
+     * When set to drop, output audio streams will be removed from the program if the
+     * selected input audio stream is removed from the input. This allows the output
+     * audio configuration to dynamically change based on input configuration. If this
+     * is set to encodeSilence, all output audio streams will output encoded silence
+     * when not connected to an active input stream.
+     */
+    inline bool AbsentInputAudioBehaviorHasBeenSet() const { return m_absentInputAudioBehaviorHasBeenSet; }
 
     /**
      * When set to drop, output audio streams will be removed from the program if the
@@ -124,6 +133,12 @@ namespace Model
      * When set to enabled, uses ARIB-compliant field muxing and removes video
      * descriptor.
      */
+    inline bool AribHasBeenSet() const { return m_aribHasBeenSet; }
+
+    /**
+     * When set to enabled, uses ARIB-compliant field muxing and removes video
+     * descriptor.
+     */
     inline void SetArib(const M2tsArib& value) { m_aribHasBeenSet = true; m_arib = value; }
 
     /**
@@ -151,6 +166,13 @@ namespace Model
      * (or 0x1ff6).
      */
     inline const Aws::String& GetAribCaptionsPid() const{ return m_aribCaptionsPid; }
+
+    /**
+     * Packet Identifier (PID) for ARIB Captions in the transport stream. Can be
+     * entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182
+     * (or 0x1ff6).
+     */
+    inline bool AribCaptionsPidHasBeenSet() const { return m_aribCaptionsPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for ARIB Captions in the transport stream. Can be
@@ -207,6 +229,13 @@ namespace Model
      * unused pids.  If set to useConfigured, ARIB Captions will be on the configured
      * pid number.
      */
+    inline bool AribCaptionsPidControlHasBeenSet() const { return m_aribCaptionsPidControlHasBeenSet; }
+
+    /**
+     * If set to auto, pid number used for ARIB Captions will be auto-selected from
+     * unused pids.  If set to useConfigured, ARIB Captions will be on the configured
+     * pid number.
+     */
     inline void SetAribCaptionsPidControl(const M2tsAribCaptionsPidControl& value) { m_aribCaptionsPidControlHasBeenSet = true; m_aribCaptionsPidControl = value; }
 
     /**
@@ -241,6 +270,12 @@ namespace Model
      * When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to
      * atsc, the ATSC model is used.
      */
+    inline bool AudioBufferModelHasBeenSet() const { return m_audioBufferModelHasBeenSet; }
+
+    /**
+     * When set to dvb, uses DVB buffer model for Dolby Digital audio.  When set to
+     * atsc, the ATSC model is used.
+     */
     inline void SetAudioBufferModel(const M2tsAudioBufferModel& value) { m_audioBufferModelHasBeenSet = true; m_audioBufferModel = value; }
 
     /**
@@ -270,6 +305,11 @@ namespace Model
     /**
      * The number of audio frames to insert for each PES packet.
      */
+    inline bool AudioFramesPerPesHasBeenSet() const { return m_audioFramesPerPesHasBeenSet; }
+
+    /**
+     * The number of audio frames to insert for each PES packet.
+     */
     inline void SetAudioFramesPerPes(int value) { m_audioFramesPerPesHasBeenSet = true; m_audioFramesPerPes = value; }
 
     /**
@@ -285,6 +325,14 @@ namespace Model
      * specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetAudioPids() const{ return m_audioPids; }
+
+    /**
+     * Packet Identifier (PID) of the elementary audio stream(s) in the transport
+     * stream. Multiple values are accepted, and can be entered in ranges and/or by
+     * comma separation. Can be entered as decimal or hexadecimal values. Each PID
+     * specified must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool AudioPidsHasBeenSet() const { return m_audioPidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary audio stream(s) in the transport
@@ -345,6 +393,12 @@ namespace Model
      * When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for
      * EAC3. When set to dvb, uses stream type = 0x06.
      */
+    inline bool AudioStreamTypeHasBeenSet() const { return m_audioStreamTypeHasBeenSet; }
+
+    /**
+     * When set to atsc, uses stream type = 0x81 for AC3 and stream type = 0x87 for
+     * EAC3. When set to dvb, uses stream type = 0x06.
+     */
     inline void SetAudioStreamType(const M2tsAudioStreamType& value) { m_audioStreamTypeHasBeenSet = true; m_audioStreamType = value; }
 
     /**
@@ -376,6 +430,12 @@ namespace Model
      * The output bitrate of the transport stream in bits per second. Setting to 0 lets
      * the muxer automatically determine the appropriate bitrate.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * The output bitrate of the transport stream in bits per second. Setting to 0 lets
+     * the muxer automatically determine the appropriate bitrate.
+     */
     inline void SetBitrate(int value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -391,6 +451,13 @@ namespace Model
      * may not be able to play back the stream without interruptions.
      */
     inline const M2tsBufferModel& GetBufferModel() const{ return m_bufferModel; }
+
+    /**
+     * If set to multiplex, use multiplex buffer model for accurate interleaving. 
+     * Setting to bufferModel to none can lead to lower latency, but low-memory devices
+     * may not be able to play back the stream without interruptions.
+     */
+    inline bool BufferModelHasBeenSet() const { return m_bufferModelHasBeenSet; }
 
     /**
      * If set to multiplex, use multiplex buffer model for accurate interleaving. 
@@ -429,6 +496,11 @@ namespace Model
     /**
      * When set to enabled, generates captionServiceDescriptor in PMT.
      */
+    inline bool CcDescriptorHasBeenSet() const { return m_ccDescriptorHasBeenSet; }
+
+    /**
+     * When set to enabled, generates captionServiceDescriptor in PMT.
+     */
     inline void SetCcDescriptor(const M2tsCcDescriptor& value) { m_ccDescriptorHasBeenSet = true; m_ccDescriptor = value; }
 
     /**
@@ -452,6 +524,12 @@ namespace Model
      * interval.
      */
     inline const DvbNitSettings& GetDvbNitSettings() const{ return m_dvbNitSettings; }
+
+    /**
+     * Inserts DVB Network Information Table (NIT) at the specified table repetition
+     * interval.
+     */
+    inline bool DvbNitSettingsHasBeenSet() const { return m_dvbNitSettingsHasBeenSet; }
 
     /**
      * Inserts DVB Network Information Table (NIT) at the specified table repetition
@@ -488,6 +566,12 @@ namespace Model
      * Inserts DVB Service Description Table (SDT) at the specified table repetition
      * interval.
      */
+    inline bool DvbSdtSettingsHasBeenSet() const { return m_dvbSdtSettingsHasBeenSet; }
+
+    /**
+     * Inserts DVB Service Description Table (SDT) at the specified table repetition
+     * interval.
+     */
     inline void SetDvbSdtSettings(const DvbSdtSettings& value) { m_dvbSdtSettingsHasBeenSet = true; m_dvbSdtSettings = value; }
 
     /**
@@ -516,6 +600,14 @@ namespace Model
      * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetDvbSubPids() const{ return m_dvbSubPids; }
+
+    /**
+     * Packet Identifier (PID) for input source DVB Subtitle data to this output.
+     * Multiple values are accepted, and can be entered in ranges and/or by comma
+     * separation. Can be entered as decimal or hexadecimal values.  Each PID specified
+     * must be in the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool DvbSubPidsHasBeenSet() const { return m_dvbSubPidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for input source DVB Subtitle data to this output.
@@ -576,6 +668,12 @@ namespace Model
      * Inserts DVB Time and Date Table (TDT) at the specified table repetition
      * interval.
      */
+    inline bool DvbTdtSettingsHasBeenSet() const { return m_dvbTdtSettingsHasBeenSet; }
+
+    /**
+     * Inserts DVB Time and Date Table (TDT) at the specified table repetition
+     * interval.
+     */
     inline void SetDvbTdtSettings(const DvbTdtSettings& value) { m_dvbTdtSettingsHasBeenSet = true; m_dvbTdtSettings = value; }
 
     /**
@@ -603,6 +701,13 @@ namespace Model
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetDvbTeletextPid() const{ return m_dvbTeletextPid; }
+
+    /**
+     * Packet Identifier (PID) for input source DVB Teletext data to this output. Can
+     * be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool DvbTeletextPidHasBeenSet() const { return m_dvbTeletextPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for input source DVB Teletext data to this output. Can
@@ -657,6 +762,12 @@ namespace Model
      * If set to passthrough, passes any EBIF data from the input source to this
      * output.
      */
+    inline bool EbifHasBeenSet() const { return m_ebifHasBeenSet; }
+
+    /**
+     * If set to passthrough, passes any EBIF data from the input source to this
+     * output.
+     */
     inline void SetEbif(const M2tsEbifControl& value) { m_ebifHasBeenSet = true; m_ebif = value; }
 
     /**
@@ -686,6 +797,15 @@ namespace Model
      * always follow the video interval.
      */
     inline const M2tsAudioInterval& GetEbpAudioInterval() const{ return m_ebpAudioInterval; }
+
+    /**
+     * When videoAndFixedIntervals is selected, audio EBP markers will be added to
+     * partitions 3 and 4. The interval between these additional markers will be fixed,
+     * and will be slightly shorter than the video EBP marker interval. Only available
+     * when EBP Cablelabs segmentation markers are selected.  Partitions 1 and 2 will
+     * always follow the video interval.
+     */
+    inline bool EbpAudioIntervalHasBeenSet() const { return m_ebpAudioIntervalHasBeenSet; }
 
     /**
      * When videoAndFixedIntervals is selected, audio EBP markers will be added to
@@ -742,6 +862,16 @@ namespace Model
      * does not add latency to the system. The Live Event must be configured elsewhere
      * to create sufficient latency to make the lookahead accurate.
      */
+    inline bool EbpLookaheadMsHasBeenSet() const { return m_ebpLookaheadMsHasBeenSet; }
+
+    /**
+     * When set, enforces that Encoder Boundary Points do not come within the specified
+     * time interval of each other by looking ahead at input video. If another EBP is
+     * going to come in within the specified time interval, the current EBP is not
+     * emitted, and the segment is "stretched" to the next marker.  The lookahead value
+     * does not add latency to the system. The Live Event must be configured elsewhere
+     * to create sufficient latency to make the lookahead accurate.
+     */
     inline void SetEbpLookaheadMs(int value) { m_ebpLookaheadMsHasBeenSet = true; m_ebpLookaheadMs = value; }
 
     /**
@@ -761,6 +891,13 @@ namespace Model
      * EBP markers will be placed on only the video PID.
      */
     inline const M2tsEbpPlacement& GetEbpPlacement() const{ return m_ebpPlacement; }
+
+    /**
+     * Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP
+     * markers will be placed on the video PID and all audio PIDs.  If set to videoPid,
+     * EBP markers will be placed on only the video PID.
+     */
+    inline bool EbpPlacementHasBeenSet() const { return m_ebpPlacementHasBeenSet; }
 
     /**
      * Controls placement of EBP on Audio PIDs. If set to videoAndAudioPids, EBP
@@ -795,6 +932,11 @@ namespace Model
      * This field is unused and deprecated.
      */
     inline const Aws::String& GetEcmPid() const{ return m_ecmPid; }
+
+    /**
+     * This field is unused and deprecated.
+     */
+    inline bool EcmPidHasBeenSet() const { return m_ecmPidHasBeenSet; }
 
     /**
      * This field is unused and deprecated.
@@ -835,6 +977,11 @@ namespace Model
     /**
      * Include or exclude the ES Rate field in the PES header.
      */
+    inline bool EsRateInPesHasBeenSet() const { return m_esRateInPesHasBeenSet; }
+
+    /**
+     * Include or exclude the ES Rate field in the PES header.
+     */
     inline void SetEsRateInPes(const M2tsEsRateInPes& value) { m_esRateInPesHasBeenSet = true; m_esRateInPes = value; }
 
     /**
@@ -859,6 +1006,13 @@ namespace Model
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetEtvPlatformPid() const{ return m_etvPlatformPid; }
+
+    /**
+     * Packet Identifier (PID) for input source ETV Platform data to this output. Can
+     * be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool EtvPlatformPidHasBeenSet() const { return m_etvPlatformPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for input source ETV Platform data to this output. Can
@@ -915,6 +1069,13 @@ namespace Model
      * entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182
      * (or 0x1ff6).
      */
+    inline bool EtvSignalPidHasBeenSet() const { return m_etvSignalPidHasBeenSet; }
+
+    /**
+     * Packet Identifier (PID) for input source ETV Signal data to this output. Can be
+     * entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182
+     * (or 0x1ff6).
+     */
     inline void SetEtvSignalPid(const Aws::String& value) { m_etvSignalPidHasBeenSet = true; m_etvSignalPid = value; }
 
     /**
@@ -961,6 +1122,11 @@ namespace Model
     /**
      * The length in seconds of each fragment. Only used with EBP markers.
      */
+    inline bool FragmentTimeHasBeenSet() const { return m_fragmentTimeHasBeenSet; }
+
+    /**
+     * The length in seconds of each fragment. Only used with EBP markers.
+     */
     inline void SetFragmentTime(double value) { m_fragmentTimeHasBeenSet = true; m_fragmentTime = value; }
 
     /**
@@ -973,6 +1139,11 @@ namespace Model
      * If set to passthrough, passes any KLV data from the input source to this output.
      */
     inline const M2tsKlv& GetKlv() const{ return m_klv; }
+
+    /**
+     * If set to passthrough, passes any KLV data from the input source to this output.
+     */
+    inline bool KlvHasBeenSet() const { return m_klvHasBeenSet; }
 
     /**
      * If set to passthrough, passes any KLV data from the input source to this output.
@@ -1002,6 +1173,14 @@ namespace Model
      * the range of 32 (or 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetKlvDataPids() const{ return m_klvDataPids; }
+
+    /**
+     * Packet Identifier (PID) for input source KLV data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool KlvDataPidsHasBeenSet() const { return m_klvDataPidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for input source KLV data to this output. Multiple
@@ -1064,6 +1243,13 @@ namespace Model
      * stream. This can be used if a downstream encryption system requires periodic
      * null packets.
      */
+    inline bool NullPacketBitrateHasBeenSet() const { return m_nullPacketBitrateHasBeenSet; }
+
+    /**
+     * Value in bits per second of extra null packets to insert into the transport
+     * stream. This can be used if a downstream encryption system requires periodic
+     * null packets.
+     */
     inline void SetNullPacketBitrate(double value) { m_nullPacketBitrateHasBeenSet = true; m_nullPacketBitrate = value; }
 
     /**
@@ -1084,6 +1270,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.  Valid values are 0, 10..1000.
      */
+    inline bool PatIntervalHasBeenSet() const { return m_patIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.  Valid values are 0, 10..1000.
+     */
     inline void SetPatInterval(int value) { m_patIntervalHasBeenSet = true; m_patInterval = value; }
 
     /**
@@ -1099,6 +1291,13 @@ namespace Model
      * only when the PCR PID is the same as the video or audio elementary stream.
      */
     inline const M2tsPcrControl& GetPcrControl() const{ return m_pcrControl; }
+
+    /**
+     * When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for
+     * every Packetized Elementary Stream (PES) header. This parameter is effective
+     * only when the PCR PID is the same as the video or audio elementary stream.
+     */
+    inline bool PcrControlHasBeenSet() const { return m_pcrControlHasBeenSet; }
 
     /**
      * When set to pcrEveryPesPacket, a Program Clock Reference value is inserted for
@@ -1139,6 +1338,12 @@ namespace Model
      * Maximum time in milliseconds between Program Clock Reference (PCRs) inserted
      * into the transport stream.
      */
+    inline bool PcrPeriodHasBeenSet() const { return m_pcrPeriodHasBeenSet; }
+
+    /**
+     * Maximum time in milliseconds between Program Clock Reference (PCRs) inserted
+     * into the transport stream.
+     */
     inline void SetPcrPeriod(int value) { m_pcrPeriodHasBeenSet = true; m_pcrPeriod = value; }
 
     /**
@@ -1155,6 +1360,14 @@ namespace Model
      * 32 (or 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetPcrPid() const{ return m_pcrPid; }
+
+    /**
+     * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
+     * stream. When no value is given, the encoder will assign the same value as the
+     * Video PID. Can be entered as a decimal or hexadecimal value.  Valid values are
+     * 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool PcrPidHasBeenSet() const { return m_pcrPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the Program Clock Reference (PCR) in the transport
@@ -1215,6 +1428,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream. Valid values are 0, 10..1000.
      */
+    inline bool PmtIntervalHasBeenSet() const { return m_pmtIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream. Valid values are 0, 10..1000.
+     */
     inline void SetPmtInterval(int value) { m_pmtIntervalHasBeenSet = true; m_pmtInterval = value; }
 
     /**
@@ -1230,6 +1449,13 @@ namespace Model
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetPmtPid() const{ return m_pmtPid; }
+
+    /**
+     * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
+     * Can be entered as a decimal or hexadecimal value. Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool PmtPidHasBeenSet() const { return m_pmtPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for the Program Map Table (PMT) in the transport stream.
@@ -1282,6 +1508,11 @@ namespace Model
     /**
      * The value of the program number field in the Program Map Table.
      */
+    inline bool ProgramNumHasBeenSet() const { return m_programNumHasBeenSet; }
+
+    /**
+     * The value of the program number field in the Program Map Table.
+     */
     inline void SetProgramNum(int value) { m_programNumHasBeenSet = true; m_programNum = value; }
 
     /**
@@ -1295,6 +1526,12 @@ namespace Model
      * bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
      */
     inline const M2tsRateMode& GetRateMode() const{ return m_rateMode; }
+
+    /**
+     * When vbr, does not insert null packets into transport stream to fill specified
+     * bitrate. The bitrate setting acts as the maximum bitrate when vbr is set.
+     */
+    inline bool RateModeHasBeenSet() const { return m_rateModeHasBeenSet; }
 
     /**
      * When vbr, does not insert null packets into transport stream to fill specified
@@ -1328,6 +1565,14 @@ namespace Model
      * the range of 32 (or 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetScte27Pids() const{ return m_scte27Pids; }
+
+    /**
+     * Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple
+     * values are accepted, and can be entered in ranges and/or by comma separation.
+     * Can be entered as decimal or hexadecimal values.  Each PID specified must be in
+     * the range of 32 (or 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool Scte27PidsHasBeenSet() const { return m_scte27PidsHasBeenSet; }
 
     /**
      * Packet Identifier (PID) for input source SCTE-27 data to this output. Multiple
@@ -1386,6 +1631,11 @@ namespace Model
     /**
      * Optionally pass SCTE-35 signals from the input source to this output.
      */
+    inline bool Scte35ControlHasBeenSet() const { return m_scte35ControlHasBeenSet; }
+
+    /**
+     * Optionally pass SCTE-35 signals from the input source to this output.
+     */
     inline void SetScte35Control(const M2tsScte35Control& value) { m_scte35ControlHasBeenSet = true; m_scte35Control = value; }
 
     /**
@@ -1410,6 +1660,13 @@ namespace Model
      * (or 0x1ff6).
      */
     inline const Aws::String& GetScte35Pid() const{ return m_scte35Pid; }
+
+    /**
+     * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
+     * entered as a decimal or hexadecimal value.  Valid values are 32 (or 0x20)..8182
+     * (or 0x1ff6).
+     */
+    inline bool Scte35PidHasBeenSet() const { return m_scte35PidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the SCTE-35 stream in the transport stream. Can be
@@ -1474,6 +1731,17 @@ namespace Model
      * OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the
      * adaptation field using a legacy proprietary format.
      */
+    inline bool SegmentationMarkersHasBeenSet() const { return m_segmentationMarkersHasBeenSet; }
+
+    /**
+     * Inserts segmentation markers at each segmentationTime period. raiSegstart sets
+     * the Random Access Indicator bit in the adaptation field. raiAdapt sets the RAI
+     * bit and adds the current timecode in the private data bytes. psiSegstart inserts
+     * PAT and PMT tables at the start of segments. ebp adds Encoder Boundary Point
+     * information to the adaptation field as per OpenCable specification
+     * OC-SP-EBP-I01-130118. ebpLegacy adds Encoder Boundary Point information to the
+     * adaptation field using a legacy proprietary format.
+     */
     inline void SetSegmentationMarkers(const M2tsSegmentationMarkers& value) { m_segmentationMarkersHasBeenSet = true; m_segmentationMarkers = value; }
 
     /**
@@ -1528,6 +1796,25 @@ When
      * is a slight exception to this rule.
      */
     inline const M2tsSegmentationStyle& GetSegmentationStyle() const{ return m_segmentationStyle; }
+
+    /**
+     * The segmentation style parameter controls how segmentation markers are inserted
+     * into the transport stream. With avails, it is possible that segments may be
+     * truncated, which can influence where future segmentation markers are
+     * inserted.
+
+When a segmentation style of "resetCadence" is selected and a segment
+     * is truncated due to an avail, we will reset the segmentation cadence. This means
+     * the subsequent segment will have a duration of $segmentationTime seconds.
+
+When
+     * a segmentation style of "maintainCadence" is selected and a segment is truncated
+     * due to an avail, we will not reset the segmentation cadence. This means the
+     * subsequent segment will likely be truncated as well. However, all segments after
+     * that will have a duration of $segmentationTime seconds. Note that EBP lookahead
+     * is a slight exception to this rule.
+     */
+    inline bool SegmentationStyleHasBeenSet() const { return m_segmentationStyleHasBeenSet; }
 
     /**
      * The segmentation style parameter controls how segmentation markers are inserted
@@ -1614,6 +1901,11 @@ When
     /**
      * The length in seconds of each segment. Required unless markers is set to None_.
      */
+    inline bool SegmentationTimeHasBeenSet() const { return m_segmentationTimeHasBeenSet; }
+
+    /**
+     * The length in seconds of each segment. Required unless markers is set to None_.
+     */
     inline void SetSegmentationTime(double value) { m_segmentationTimeHasBeenSet = true; m_segmentationTime = value; }
 
     /**
@@ -1627,6 +1919,12 @@ When
      * output.
      */
     inline const M2tsTimedMetadataBehavior& GetTimedMetadataBehavior() const{ return m_timedMetadataBehavior; }
+
+    /**
+     * When set to passthrough, timed metadata will be passed through from input to
+     * output.
+     */
+    inline bool TimedMetadataBehaviorHasBeenSet() const { return m_timedMetadataBehaviorHasBeenSet; }
 
     /**
      * When set to passthrough, timed metadata will be passed through from input to
@@ -1659,6 +1957,13 @@ When
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetTimedMetadataPid() const{ return m_timedMetadataPid; }
+
+    /**
+     * Packet Identifier (PID) of the timed metadata stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool TimedMetadataPidHasBeenSet() const { return m_timedMetadataPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the timed metadata stream in the transport stream.
@@ -1711,6 +2016,11 @@ When
     /**
      * The value of the transport stream ID field in the Program Map Table.
      */
+    inline bool TransportStreamIdHasBeenSet() const { return m_transportStreamIdHasBeenSet; }
+
+    /**
+     * The value of the transport stream ID field in the Program Map Table.
+     */
     inline void SetTransportStreamId(int value) { m_transportStreamIdHasBeenSet = true; m_transportStreamId = value; }
 
     /**
@@ -1725,6 +2035,13 @@ When
      * 0x20)..8182 (or 0x1ff6).
      */
     inline const Aws::String& GetVideoPid() const{ return m_videoPid; }
+
+    /**
+     * Packet Identifier (PID) of the elementary video stream in the transport stream.
+     * Can be entered as a decimal or hexadecimal value.  Valid values are 32 (or
+     * 0x20)..8182 (or 0x1ff6).
+     */
+    inline bool VideoPidHasBeenSet() const { return m_videoPidHasBeenSet; }
 
     /**
      * Packet Identifier (PID) of the elementary video stream in the transport stream.

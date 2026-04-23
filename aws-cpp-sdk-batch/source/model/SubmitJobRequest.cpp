@@ -30,6 +30,7 @@ SubmitJobRequest::SubmitJobRequest() :
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_containerOverridesHasBeenSet(false),
+    m_nodeOverridesHasBeenSet(false),
     m_retryStrategyHasBeenSet(false),
     m_timeoutHasBeenSet(false)
 {
@@ -88,6 +89,12 @@ Aws::String SubmitJobRequest::SerializePayload() const
   if(m_containerOverridesHasBeenSet)
   {
    payload.WithObject("containerOverrides", m_containerOverrides.Jsonize());
+
+  }
+
+  if(m_nodeOverridesHasBeenSet)
+  {
+   payload.WithObject("nodeOverrides", m_nodeOverrides.Jsonize());
 
   }
 

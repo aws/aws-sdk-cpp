@@ -60,6 +60,13 @@ namespace Model
      * the IP address that you want to remove. To get this ID, use
      * <a>GetResolverEndpoint</a>.</p>
      */
+    inline bool IpIdHasBeenSet() const { return m_ipIdHasBeenSet; }
+
+    /**
+     * <p> <i>Only when removing an IP address from a resolver endpoint</i>: The ID of
+     * the IP address that you want to remove. To get this ID, use
+     * <a>GetResolverEndpoint</a>.</p>
+     */
     inline void SetIpId(const Aws::String& value) { m_ipIdHasBeenSet = true; m_ipId = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * <p>The ID of the subnet that includes the IP address that you want to update. To
      * get this ID, use <a>GetResolverEndpoint</a>.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet that includes the IP address that you want to update. To
+     * get this ID, use <a>GetResolverEndpoint</a>.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -145,6 +158,11 @@ namespace Model
      * <p>The new IP address.</p>
      */
     inline const Aws::String& GetIp() const{ return m_ip; }
+
+    /**
+     * <p>The new IP address.</p>
+     */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
 
     /**
      * <p>The new IP address.</p>

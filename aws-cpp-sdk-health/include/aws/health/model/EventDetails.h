@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Summary information about the event.</p>
      */
+    inline bool EventHasBeenSet() const { return m_eventHasBeenSet; }
+
+    /**
+     * <p>Summary information about the event.</p>
+     */
     inline void SetEvent(const Event& value) { m_eventHasBeenSet = true; m_event = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The most recent description of the event.</p>
      */
     inline const Aws::String& GetEventDescription() const{ return m_eventDescription; }
+
+    /**
+     * <p>The most recent description of the event.</p>
+     */
+    inline bool EventDescriptionHasBeenSet() const { return m_eventDescriptionHasBeenSet; }
 
     /**
      * <p>The most recent description of the event.</p>
@@ -118,6 +128,11 @@ namespace Model
      * <p>Additional metadata about the event.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEventMetadata() const{ return m_eventMetadata; }
+
+    /**
+     * <p>Additional metadata about the event.</p>
+     */
+    inline bool EventMetadataHasBeenSet() const { return m_eventMetadataHasBeenSet; }
 
     /**
      * <p>Additional metadata about the event.</p>

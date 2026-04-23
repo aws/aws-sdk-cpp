@@ -39,6 +39,8 @@ namespace Aws
         static const int s3_ObjectRemoved_HASH = HashingUtils::HashString("s3:ObjectRemoved:*");
         static const int s3_ObjectRemoved_Delete_HASH = HashingUtils::HashString("s3:ObjectRemoved:Delete");
         static const int s3_ObjectRemoved_DeleteMarkerCreated_HASH = HashingUtils::HashString("s3:ObjectRemoved:DeleteMarkerCreated");
+        static const int s3_ObjectRestore_Post_HASH = HashingUtils::HashString("s3:ObjectRestore:Post");
+        static const int s3_ObjectRestore_Completed_HASH = HashingUtils::HashString("s3:ObjectRestore:Completed");
 
 
         Event GetEventForName(const Aws::String& name)
@@ -80,6 +82,14 @@ namespace Aws
           {
             return Event::s3_ObjectRemoved_DeleteMarkerCreated;
           }
+          else if (hashCode == s3_ObjectRestore_Post_HASH)
+          {
+            return Event::s3_ObjectRestore_Post;
+          }
+          else if (hashCode == s3_ObjectRestore_Completed_HASH)
+          {
+            return Event::s3_ObjectRestore_Completed;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -112,6 +122,10 @@ namespace Aws
             return "s3:ObjectRemoved:Delete";
           case Event::s3_ObjectRemoved_DeleteMarkerCreated:
             return "s3:ObjectRemoved:DeleteMarkerCreated";
+          case Event::s3_ObjectRestore_Post:
+            return "s3:ObjectRestore:Post";
+          case Event::s3_ObjectRestore_Completed:
+            return "s3:ObjectRestore:Completed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -119,7 +133,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

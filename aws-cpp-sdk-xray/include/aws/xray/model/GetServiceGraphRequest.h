@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The start of the time frame for which to generate a graph.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time frame for which to generate a graph.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -70,35 +75,127 @@ namespace Model
 
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>The end of the time frame for which to generate a graph.</p>
+     * <p>The end of the timeframe for which to generate a graph.</p>
      */
     inline GetServiceGraphRequest& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
+
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline const Aws::String& GetGroupARN() const{ return m_groupARN; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline bool GroupARNHasBeenSet() const { return m_groupARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(const Aws::String& value) { m_groupARNHasBeenSet = true; m_groupARN = value; }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(Aws::String&& value) { m_groupARNHasBeenSet = true; m_groupARN = std::move(value); }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline void SetGroupARN(const char* value) { m_groupARNHasBeenSet = true; m_groupARN.assign(value); }
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(const Aws::String& value) { SetGroupARN(value); return *this;}
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(Aws::String&& value) { SetGroupARN(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of a group to generate a graph based on.</p>
+     */
+    inline GetServiceGraphRequest& WithGroupARN(const char* value) { SetGroupARN(value); return *this;}
 
 
     /**
      * <p>Pagination token. Not used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token. Not used.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination token. Not used.</p>
@@ -137,6 +234,12 @@ namespace Model
 
     Aws::Utils::DateTime m_endTime;
     bool m_endTimeHasBeenSet;
+
+    Aws::String m_groupName;
+    bool m_groupNameHasBeenSet;
+
+    Aws::String m_groupARN;
+    bool m_groupARNHasBeenSet;
 
     Aws::String m_nextToken;
     bool m_nextTokenHasBeenSet;

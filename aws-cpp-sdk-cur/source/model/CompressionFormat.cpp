@@ -32,6 +32,7 @@ namespace Aws
 
         static const int ZIP_HASH = HashingUtils::HashString("ZIP");
         static const int GZIP_HASH = HashingUtils::HashString("GZIP");
+        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
 
 
         CompressionFormat GetCompressionFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == GZIP_HASH)
           {
             return CompressionFormat::GZIP;
+          }
+          else if (hashCode == Parquet_HASH)
+          {
+            return CompressionFormat::Parquet;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "ZIP";
           case CompressionFormat::GZIP:
             return "GZIP";
+          case CompressionFormat::Parquet:
+            return "Parquet";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

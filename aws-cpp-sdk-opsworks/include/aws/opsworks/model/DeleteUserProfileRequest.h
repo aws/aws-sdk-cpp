@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
      */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
+
+    /**
+     * <p>The user's IAM ARN. This can also be a federated user's ARN.</p>
+     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**

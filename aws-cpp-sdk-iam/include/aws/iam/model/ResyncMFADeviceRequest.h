@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -57,7 +57,16 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -66,7 +75,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -75,7 +84,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -84,7 +93,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -93,7 +102,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -102,7 +111,7 @@ namespace Model
 
     /**
      * <p>The name of the user whose MFA device you want to resynchronize.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -112,8 +121,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -121,8 +130,17 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
+     * with no spaces. You can also include any of the following characters:
+     * _+=,.@-</p>
+     */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
+
+    /**
+     * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -130,8 +148,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -139,8 +157,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -148,8 +166,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -157,8 +175,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -166,8 +184,8 @@ namespace Model
 
     /**
      * <p>Serial number that uniquely identifies the MFA device.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters consisting of upper and lowercase alphanumeric characters
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters consisting of upper and lowercase alphanumeric characters
      * with no spaces. You can also include any of the following characters:
      * _+=,.@-</p>
      */
@@ -179,6 +197,12 @@ namespace Model
      * parameter is a sequence of six digits.</p>
      */
     inline const Aws::String& GetAuthenticationCode1() const{ return m_authenticationCode1; }
+
+    /**
+     * <p>An authentication code emitted by the device.</p> <p>The format for this
+     * parameter is a sequence of six digits.</p>
+     */
+    inline bool AuthenticationCode1HasBeenSet() const { return m_authenticationCode1HasBeenSet; }
 
     /**
      * <p>An authentication code emitted by the device.</p> <p>The format for this
@@ -222,6 +246,12 @@ namespace Model
      * this parameter is a sequence of six digits.</p>
      */
     inline const Aws::String& GetAuthenticationCode2() const{ return m_authenticationCode2; }
+
+    /**
+     * <p>A subsequent authentication code emitted by the device.</p> <p>The format for
+     * this parameter is a sequence of six digits.</p>
+     */
+    inline bool AuthenticationCode2HasBeenSet() const { return m_authenticationCode2HasBeenSet; }
 
     /**
      * <p>A subsequent authentication code emitted by the device.</p> <p>The format for

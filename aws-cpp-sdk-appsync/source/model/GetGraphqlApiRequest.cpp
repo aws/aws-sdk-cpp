@@ -29,7 +29,7 @@ GetGraphqlApiRequest::GetGraphqlApiRequest() :
 
 Aws::String GetGraphqlApiRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

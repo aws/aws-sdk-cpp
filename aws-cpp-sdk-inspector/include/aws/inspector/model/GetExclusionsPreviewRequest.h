@@ -55,6 +55,12 @@ namespace Model
      * <p>The ARN that specifies the assessment template for which the exclusions
      * preview was requested.</p>
      */
+    inline bool AssessmentTemplateArnHasBeenSet() const { return m_assessmentTemplateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment template for which the exclusions
+     * preview was requested.</p>
+     */
     inline void SetAssessmentTemplateArn(const Aws::String& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The unique identifier associated of the exclusions preview.</p>
      */
+    inline bool PreviewTokenHasBeenSet() const { return m_previewTokenHasBeenSet; }
+
+    /**
+     * <p>The unique identifier associated of the exclusions preview.</p>
+     */
     inline void SetPreviewToken(const Aws::String& value) { m_previewTokenHasBeenSet = true; m_previewToken = value; }
 
     /**
@@ -131,6 +142,14 @@ namespace Model
      * nextToken from the previous response to continue listing data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the GetExclusionsPreviewRequest action.
+     * Subsequent calls to the action fill nextToken in the request with the value of
+     * nextToken from the previous response to continue listing data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -191,6 +210,12 @@ namespace Model
      * <p>You can use this parameter to indicate the maximum number of items you want
      * in the response. The default value is 100. The maximum value is 500.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>You can use this parameter to indicate the maximum number of items you want
+     * in the response. The default value is 100. The maximum value is 500.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -205,6 +230,12 @@ namespace Model
      * description, and recommendation.</p>
      */
     inline const Locale& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale into which you want to translate the exclusion's title,
+     * description, and recommendation.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * <p>The locale into which you want to translate the exclusion's title,

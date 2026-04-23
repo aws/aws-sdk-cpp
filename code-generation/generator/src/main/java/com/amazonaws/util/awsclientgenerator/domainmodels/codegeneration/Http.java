@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 
 @Data
 public class Http {
-    private static final Pattern URI_PARAM_PATTERN = Pattern.compile(".*\\{[\\w\\d]+\\}");
+    private static final Pattern URI_PARAM_PATTERN = Pattern.compile(".*\\{[\\w\\d-]+\\}");
 
     private String method;
     private String requestUri;
@@ -33,7 +33,7 @@ public class Http {
 
     public List<String> getRequestUriParts() {
         String sanitizedUri = requestUri.replace("+", "");
-        return Arrays.asList(sanitizedUri.split("\\{[\\w\\d]+\\}"));
+        return Arrays.asList(sanitizedUri.split("\\{[\\w\\d-]+\\}"));
     }
 
     public List<String> getRequestParameters() {

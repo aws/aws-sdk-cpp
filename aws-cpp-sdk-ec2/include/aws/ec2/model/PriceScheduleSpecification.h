@@ -59,6 +59,12 @@ namespace Model
      * <p>The currency for transacting the Reserved Instance resale. At this time, the
      * only supported currency is <code>USD</code>.</p>
      */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+
+    /**
+     * <p>The currency for transacting the Reserved Instance resale. At this time, the
+     * only supported currency is <code>USD</code>.</p>
+     */
     inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
@@ -88,6 +94,11 @@ namespace Model
     /**
      * <p>The fixed price for the term.</p>
      */
+    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
+
+    /**
+     * <p>The fixed price for the term.</p>
+     */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
     /**
@@ -101,6 +112,12 @@ namespace Model
      * second to the last month before the capacity reservation expires.</p>
      */
     inline long long GetTerm() const{ return m_term; }
+
+    /**
+     * <p>The number of months remaining in the reservation. For example, 2 is the
+     * second to the last month before the capacity reservation expires.</p>
+     */
+    inline bool TermHasBeenSet() const { return m_termHasBeenSet; }
 
     /**
      * <p>The number of months remaining in the reservation. For example, 2 is the

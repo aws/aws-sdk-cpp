@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the DB security group to revoke ingress from.</p>
      */
+    inline bool DBSecurityGroupNameHasBeenSet() const { return m_dBSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB security group to revoke ingress from.</p>
+     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * be provided. </p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
+
+    /**
+     * <p> The IP range to revoke access from. Must be a valid CIDR range. If
+     * <code>CIDRIP</code> is specified, <code>EC2SecurityGroupName</code>,
+     * <code>EC2SecurityGroupId</code> and <code>EC2SecurityGroupOwnerId</code> can't
+     * be provided. </p>
+     */
+    inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
 
     /**
      * <p> The IP range to revoke access from. Must be a valid CIDR range. If
@@ -156,6 +169,14 @@ namespace Model
      * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
      * <code>EC2SecurityGroupId</code> must be provided. </p>
      */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p> The name of the EC2 security group to revoke access from. For VPC DB
+     * security groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
@@ -206,6 +227,14 @@ namespace Model
      * <code>EC2SecurityGroupId</code> must be provided. </p>
      */
     inline const Aws::String& GetEC2SecurityGroupId() const{ return m_eC2SecurityGroupId; }
+
+    /**
+     * <p> The id of the EC2 security group to revoke access from. For VPC DB security
+     * groups, <code>EC2SecurityGroupId</code> must be provided. Otherwise,
+     * EC2SecurityGroupOwnerId and either <code>EC2SecurityGroupName</code> or
+     * <code>EC2SecurityGroupId</code> must be provided. </p>
+     */
+    inline bool EC2SecurityGroupIdHasBeenSet() const { return m_eC2SecurityGroupIdHasBeenSet; }
 
     /**
      * <p> The id of the EC2 security group to revoke access from. For VPC DB security
@@ -265,6 +294,16 @@ namespace Model
      * provided. </p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
+    /**
+     * <p> The AWS Account Number of the owner of the EC2 security group specified in
+     * the <code>EC2SecurityGroupName</code> parameter. The AWS Access Key ID is not an
+     * acceptable value. For VPC DB security groups, <code>EC2SecurityGroupId</code>
+     * must be provided. Otherwise, EC2SecurityGroupOwnerId and either
+     * <code>EC2SecurityGroupName</code> or <code>EC2SecurityGroupId</code> must be
+     * provided. </p>
+     */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p> The AWS Account Number of the owner of the EC2 security group specified in

@@ -53,53 +53,63 @@ namespace Model
 
 
     /**
-     * <p>The EC2 instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
     inline const EC2InstanceDetails& GetEC2InstanceDetails() const{ return m_eC2InstanceDetails; }
 
     /**
-     * <p>The EC2 instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
+     */
+    inline bool EC2InstanceDetailsHasBeenSet() const { return m_eC2InstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
     inline void SetEC2InstanceDetails(const EC2InstanceDetails& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = value; }
 
     /**
-     * <p>The EC2 instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
     inline void SetEC2InstanceDetails(EC2InstanceDetails&& value) { m_eC2InstanceDetailsHasBeenSet = true; m_eC2InstanceDetails = std::move(value); }
 
     /**
-     * <p>The EC2 instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
     inline InstanceDetails& WithEC2InstanceDetails(const EC2InstanceDetails& value) { SetEC2InstanceDetails(value); return *this;}
 
     /**
-     * <p>The EC2 instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon EC2 instances that AWS recommends that you purchase.</p>
      */
     inline InstanceDetails& WithEC2InstanceDetails(EC2InstanceDetails&& value) { SetEC2InstanceDetails(std::move(value)); return *this;}
 
 
     /**
-     * <p>The RDS instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline const RDSInstanceDetails& GetRDSInstanceDetails() const{ return m_rDSInstanceDetails; }
 
     /**
-     * <p>The RDS instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
+     */
+    inline bool RDSInstanceDetailsHasBeenSet() const { return m_rDSInstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline void SetRDSInstanceDetails(const RDSInstanceDetails& value) { m_rDSInstanceDetailsHasBeenSet = true; m_rDSInstanceDetails = value; }
 
     /**
-     * <p>The RDS instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline void SetRDSInstanceDetails(RDSInstanceDetails&& value) { m_rDSInstanceDetailsHasBeenSet = true; m_rDSInstanceDetails = std::move(value); }
 
     /**
-     * <p>The RDS instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline InstanceDetails& WithRDSInstanceDetails(const RDSInstanceDetails& value) { SetRDSInstanceDetails(value); return *this;}
 
     /**
-     * <p>The RDS instances that AWS recommends that you purchase.</p>
+     * <p>The Amazon RDS instances that AWS recommends that you purchase.</p>
      */
     inline InstanceDetails& WithRDSInstanceDetails(RDSInstanceDetails&& value) { SetRDSInstanceDetails(std::move(value)); return *this;}
 
@@ -108,6 +118,11 @@ namespace Model
      * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
      */
     inline const RedshiftInstanceDetails& GetRedshiftInstanceDetails() const{ return m_redshiftInstanceDetails; }
+
+    /**
+     * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
+     */
+    inline bool RedshiftInstanceDetailsHasBeenSet() const { return m_redshiftInstanceDetailsHasBeenSet; }
 
     /**
      * <p>The Amazon Redshift instances that AWS recommends that you purchase.</p>
@@ -138,6 +153,11 @@ namespace Model
     /**
      * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
      */
+    inline bool ElastiCacheInstanceDetailsHasBeenSet() const { return m_elastiCacheInstanceDetailsHasBeenSet; }
+
+    /**
+     * <p>The ElastiCache instances that AWS recommends that you purchase.</p>
+     */
     inline void SetElastiCacheInstanceDetails(const ElastiCacheInstanceDetails& value) { m_elastiCacheInstanceDetailsHasBeenSet = true; m_elastiCacheInstanceDetails = value; }
 
     /**
@@ -160,6 +180,11 @@ namespace Model
      * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
      */
     inline const ESInstanceDetails& GetESInstanceDetails() const{ return m_eSInstanceDetails; }
+
+    /**
+     * <p>The Amazon ES instances that AWS recommends that you purchase.</p>
+     */
+    inline bool ESInstanceDetailsHasBeenSet() const { return m_eSInstanceDetailsHasBeenSet; }
 
     /**
      * <p>The Amazon ES instances that AWS recommends that you purchase.</p>

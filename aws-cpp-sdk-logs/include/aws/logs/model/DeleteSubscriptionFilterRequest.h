@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the subscription filter.</p>
      */
     inline const Aws::String& GetFilterName() const{ return m_filterName; }
+
+    /**
+     * <p>The name of the subscription filter.</p>
+     */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
 
     /**
      * <p>The name of the subscription filter.</p>

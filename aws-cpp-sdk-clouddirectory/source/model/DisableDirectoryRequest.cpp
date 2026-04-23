@@ -30,7 +30,7 @@ DisableDirectoryRequest::DisableDirectoryRequest() :
 
 Aws::String DisableDirectoryRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DisableDirectoryRequest::GetRequestSpecificHeaders() const

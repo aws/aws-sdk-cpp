@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
+    inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**

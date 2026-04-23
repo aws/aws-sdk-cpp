@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Filters the list of classifiers based on status. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Filters the list of classifiers based on status. </p>
+     */
     inline void SetStatus(const ModelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -83,6 +88,14 @@ namespace Model
      * newest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const{ return m_submitTimeBefore; }
+
+    /**
+     * <p>Filters the list of classifiers based on the time that the classifier was
+     * submitted for processing. Returns only classifiers submitted before the
+     * specified time. Classifiers are returned in ascending order, oldest to
+     * newest.</p>
+     */
+    inline bool SubmitTimeBeforeHasBeenSet() const { return m_submitTimeBeforeHasBeenSet; }
 
     /**
      * <p>Filters the list of classifiers based on the time that the classifier was
@@ -123,6 +136,13 @@ namespace Model
      * time. Classifiers are returned in descending order, newest to oldest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const{ return m_submitTimeAfter; }
+
+    /**
+     * <p>Filters the list of classifiers based on the time that the classifier was
+     * submitted for processing. Returns only classifiers submitted after the specified
+     * time. Classifiers are returned in descending order, newest to oldest.</p>
+     */
+    inline bool SubmitTimeAfterHasBeenSet() const { return m_submitTimeAfterHasBeenSet; }
 
     /**
      * <p>Filters the list of classifiers based on the time that the classifier was

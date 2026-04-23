@@ -29,7 +29,8 @@ namespace Model
     Enabled,
     Disabled,
     PendingDeletion,
-    PendingImport
+    PendingImport,
+    Unavailable
   };
 
 namespace KeyStateMapper

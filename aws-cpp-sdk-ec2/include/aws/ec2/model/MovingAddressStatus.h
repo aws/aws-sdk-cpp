@@ -61,6 +61,12 @@ namespace Model
      * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
      * platform, or restored to the EC2-Classic platform.</p>
      */
+    inline bool MoveStatusHasBeenSet() const { return m_moveStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the Elastic IP address that's being moved to the EC2-VPC
+     * platform, or restored to the EC2-Classic platform.</p>
+     */
     inline void SetMoveStatus(const MoveStatus& value) { m_moveStatusHasBeenSet = true; m_moveStatus = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The Elastic IP address.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The Elastic IP address.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The Elastic IP address.</p>

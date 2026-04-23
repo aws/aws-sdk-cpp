@@ -56,6 +56,10 @@ namespace Aws
         static const int INVALID_LAMBDA_CONFIGURATION_HASH = HashingUtils::HashString("INVALID_LAMBDA_CONFIGURATION");
         static const int INVALID_LAMBDA_FUNCTION_HASH = HashingUtils::HashString("INVALID_LAMBDA_FUNCTION");
         static const int HOOK_EXECUTION_FAILURE_HASH = HashingUtils::HashString("HOOK_EXECUTION_FAILURE");
+        static const int AUTOSCALING_VALIDATION_ERROR_HASH = HashingUtils::HashString("AUTOSCALING_VALIDATION_ERROR");
+        static const int INVALID_ECS_SERVICE_HASH = HashingUtils::HashString("INVALID_ECS_SERVICE");
+        static const int ECS_UPDATE_ERROR_HASH = HashingUtils::HashString("ECS_UPDATE_ERROR");
+        static const int INVALID_REVISION_HASH = HashingUtils::HashString("INVALID_REVISION");
 
 
         ErrorCode GetErrorCodeForName(const Aws::String& name)
@@ -165,6 +169,22 @@ namespace Aws
           {
             return ErrorCode::HOOK_EXECUTION_FAILURE;
           }
+          else if (hashCode == AUTOSCALING_VALIDATION_ERROR_HASH)
+          {
+            return ErrorCode::AUTOSCALING_VALIDATION_ERROR;
+          }
+          else if (hashCode == INVALID_ECS_SERVICE_HASH)
+          {
+            return ErrorCode::INVALID_ECS_SERVICE;
+          }
+          else if (hashCode == ECS_UPDATE_ERROR_HASH)
+          {
+            return ErrorCode::ECS_UPDATE_ERROR;
+          }
+          else if (hashCode == INVALID_REVISION_HASH)
+          {
+            return ErrorCode::INVALID_REVISION;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -231,6 +251,14 @@ namespace Aws
             return "INVALID_LAMBDA_FUNCTION";
           case ErrorCode::HOOK_EXECUTION_FAILURE:
             return "HOOK_EXECUTION_FAILURE";
+          case ErrorCode::AUTOSCALING_VALIDATION_ERROR:
+            return "AUTOSCALING_VALIDATION_ERROR";
+          case ErrorCode::INVALID_ECS_SERVICE:
+            return "INVALID_ECS_SERVICE";
+          case ErrorCode::ECS_UPDATE_ERROR:
+            return "ECS_UPDATE_ERROR";
+          case ErrorCode::INVALID_REVISION:
+            return "INVALID_REVISION";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -238,7 +266,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

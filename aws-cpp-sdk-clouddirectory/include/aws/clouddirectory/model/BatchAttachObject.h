@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The parent object reference.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>The parent object reference.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The child object reference that is to be attached to the object.</p>
      */
+    inline bool ChildReferenceHasBeenSet() const { return m_childReferenceHasBeenSet; }
+
+    /**
+     * <p>The child object reference that is to be attached to the object.</p>
+     */
     inline void SetChildReference(const ObjectReference& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The name of the link.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The name of the link.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The name of the link.</p>

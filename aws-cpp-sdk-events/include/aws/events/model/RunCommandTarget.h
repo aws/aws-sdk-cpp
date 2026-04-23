@@ -61,6 +61,12 @@ namespace Model
      * <p>Can be either <code>tag:</code> <i>tag-key</i> or
      * <code>InstanceIds</code>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Can be either <code>tag:</code> <i>tag-key</i> or
+     * <code>InstanceIds</code>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>
+     * is a list of tag values. If <code>Key</code> is <code>InstanceIds</code>,
+     * <code>Values</code> is a list of Amazon EC2 instance IDs.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>If <code>Key</code> is <code>tag:</code> <i>tag-key</i>, <code>Values</code>

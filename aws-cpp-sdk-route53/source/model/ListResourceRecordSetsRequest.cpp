@@ -38,7 +38,7 @@ ListResourceRecordSetsRequest::ListResourceRecordSetsRequest() :
 
 Aws::String ListResourceRecordSetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListResourceRecordSetsRequest::AddQueryStringParameters(URI& uri) const

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique Trust ID of the trust relationship to verify.</p>
      */
+    inline bool TrustIdHasBeenSet() const { return m_trustIdHasBeenSet; }
+
+    /**
+     * <p>The unique Trust ID of the trust relationship to verify.</p>
+     */
     inline void SetTrustId(const Aws::String& value) { m_trustIdHasBeenSet = true; m_trustId = value; }
 
     /**

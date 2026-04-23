@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the classifier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * JsonPath Custom Classifiers</a>.</p>
      */
     inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+
+    /**
+     * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
+     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
+     * JsonPath Custom Classifiers</a>.</p>
+     */
+    inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to

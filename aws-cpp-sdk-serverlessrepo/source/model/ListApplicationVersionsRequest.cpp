@@ -35,7 +35,7 @@ ListApplicationVersionsRequest::ListApplicationVersionsRequest() :
 
 Aws::String ListApplicationVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListApplicationVersionsRequest::AddQueryStringParameters(URI& uri) const

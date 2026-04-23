@@ -62,6 +62,14 @@ namespace Model
      * variables</a>. The format must include at least
      * <code>$context.requestId</code>.</p>
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * <p>A single line format of the access logs of data, as specified by selected <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-mapping-template-reference.html#context-variable-reference">$context
+     * variables</a>. The format must include at least
+     * <code>$context.requestId</code>.</p>
+     */
     inline void SetFormat(const Aws::String& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -109,6 +117,11 @@ namespace Model
      * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
+    /**
+     * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>
+     */
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
      * <p>The ARN of the CloudWatch Logs log group to receive access logs.</p>

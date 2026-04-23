@@ -60,6 +60,12 @@ namespace Model
      * <p>The customer-assigned name of the certificate. Valid characters are A-z and
      * 0-9.</p>
      */
+    inline bool CertificateIdentifierHasBeenSet() const { return m_certificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>The customer-assigned name of the certificate. Valid characters are A-z and
+     * 0-9.</p>
+     */
     inline void SetCertificateIdentifier(const Aws::String& value) { m_certificateIdentifierHasBeenSet = true; m_certificateIdentifier = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The date that the certificate was created.</p>
      */
+    inline bool CertificateCreationDateHasBeenSet() const { return m_certificateCreationDateHasBeenSet; }
+
+    /**
+     * <p>The date that the certificate was created.</p>
+     */
     inline void SetCertificateCreationDate(const Aws::Utils::DateTime& value) { m_certificateCreationDateHasBeenSet = true; m_certificateCreationDate = value; }
 
     /**
@@ -123,6 +134,11 @@ namespace Model
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
      */
     inline const Aws::String& GetCertificatePem() const{ return m_certificatePem; }
+
+    /**
+     * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
+     */
+    inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
 
     /**
      * <p>The contents of the .pem X.509 certificate file for the certificate.</p>
@@ -163,6 +179,11 @@ namespace Model
     /**
      * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
      */
+    inline bool CertificateWalletHasBeenSet() const { return m_certificateWalletHasBeenSet; }
+
+    /**
+     * <p>The location of the imported Oracle Wallet certificate for use with SSL.</p>
+     */
     inline void SetCertificateWallet(const Aws::Utils::ByteBuffer& value) { m_certificateWalletHasBeenSet = true; m_certificateWallet = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the certificate.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the certificate.</p>
@@ -225,6 +251,11 @@ namespace Model
     /**
      * <p>The owner of the certificate.</p>
      */
+    inline bool CertificateOwnerHasBeenSet() const { return m_certificateOwnerHasBeenSet; }
+
+    /**
+     * <p>The owner of the certificate.</p>
+     */
     inline void SetCertificateOwner(const Aws::String& value) { m_certificateOwnerHasBeenSet = true; m_certificateOwner = value; }
 
     /**
@@ -261,6 +292,11 @@ namespace Model
     /**
      * <p>The beginning date that the certificate is valid.</p>
      */
+    inline bool ValidFromDateHasBeenSet() const { return m_validFromDateHasBeenSet; }
+
+    /**
+     * <p>The beginning date that the certificate is valid.</p>
+     */
     inline void SetValidFromDate(const Aws::Utils::DateTime& value) { m_validFromDateHasBeenSet = true; m_validFromDate = value; }
 
     /**
@@ -287,6 +323,11 @@ namespace Model
     /**
      * <p>The final date that the certificate is valid.</p>
      */
+    inline bool ValidToDateHasBeenSet() const { return m_validToDateHasBeenSet; }
+
+    /**
+     * <p>The final date that the certificate is valid.</p>
+     */
     inline void SetValidToDate(const Aws::Utils::DateTime& value) { m_validToDateHasBeenSet = true; m_validToDate = value; }
 
     /**
@@ -309,6 +350,11 @@ namespace Model
      * <p>The signing algorithm for the certificate.</p>
      */
     inline const Aws::String& GetSigningAlgorithm() const{ return m_signingAlgorithm; }
+
+    /**
+     * <p>The signing algorithm for the certificate.</p>
+     */
+    inline bool SigningAlgorithmHasBeenSet() const { return m_signingAlgorithmHasBeenSet; }
 
     /**
      * <p>The signing algorithm for the certificate.</p>
@@ -345,6 +391,11 @@ namespace Model
      * <p>The key length of the cryptographic algorithm being used.</p>
      */
     inline int GetKeyLength() const{ return m_keyLength; }
+
+    /**
+     * <p>The key length of the cryptographic algorithm being used.</p>
+     */
+    inline bool KeyLengthHasBeenSet() const { return m_keyLengthHasBeenSet; }
 
     /**
      * <p>The key length of the cryptographic algorithm being used.</p>

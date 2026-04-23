@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The update behavior when the crawler finds a changed schema.</p>
      */
+    inline bool UpdateBehaviorHasBeenSet() const { return m_updateBehaviorHasBeenSet; }
+
+    /**
+     * <p>The update behavior when the crawler finds a changed schema.</p>
+     */
     inline void SetUpdateBehavior(const UpdateBehavior& value) { m_updateBehaviorHasBeenSet = true; m_updateBehavior = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The deletion behavior when the crawler finds a deleted object.</p>
      */
     inline const DeleteBehavior& GetDeleteBehavior() const{ return m_deleteBehavior; }
+
+    /**
+     * <p>The deletion behavior when the crawler finds a deleted object.</p>
+     */
+    inline bool DeleteBehaviorHasBeenSet() const { return m_deleteBehaviorHasBeenSet; }
 
     /**
      * <p>The deletion behavior when the crawler finds a deleted object.</p>

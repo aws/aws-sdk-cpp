@@ -56,6 +56,13 @@ namespace Model
      * the tags. Currently, the supported resources are Amazon ECS tasks, services,
      * task definitions, clusters, and container instances.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the resource for which to list
+     * the tags. Currently, the supported resources are Amazon ECS tasks, services,
+     * task definitions, clusters, and container instances.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

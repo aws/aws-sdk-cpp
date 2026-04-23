@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the S3 bucket where the disk image is located.</p>
      */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
+
+    /**
+     * <p>The name of the S3 bucket where the disk image is located.</p>
+     */
     inline void SetS3Bucket(const Aws::String& value) { m_s3BucketHasBeenSet = true; m_s3Bucket = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The file name of the disk image.</p>
      */
     inline const Aws::String& GetS3Key() const{ return m_s3Key; }
+
+    /**
+     * <p>The file name of the disk image.</p>
+     */
+    inline bool S3KeyHasBeenSet() const { return m_s3KeyHasBeenSet; }
 
     /**
      * <p>The file name of the disk image.</p>

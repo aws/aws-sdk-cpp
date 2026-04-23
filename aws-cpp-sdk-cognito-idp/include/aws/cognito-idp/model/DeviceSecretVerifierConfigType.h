@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The password verifier.</p>
      */
+    inline bool PasswordVerifierHasBeenSet() const { return m_passwordVerifierHasBeenSet; }
+
+    /**
+     * <p>The password verifier.</p>
+     */
     inline void SetPasswordVerifier(const Aws::String& value) { m_passwordVerifierHasBeenSet = true; m_passwordVerifier = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The salt.</p>
      */
     inline const Aws::String& GetSalt() const{ return m_salt; }
+
+    /**
+     * <p>The salt.</p>
+     */
+    inline bool SaltHasBeenSet() const { return m_saltHasBeenSet; }
 
     /**
      * <p>The salt.</p>

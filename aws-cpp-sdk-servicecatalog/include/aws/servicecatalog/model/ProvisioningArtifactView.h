@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Summary information about a product view.</p>
      */
+    inline bool ProductViewSummaryHasBeenSet() const { return m_productViewSummaryHasBeenSet; }
+
+    /**
+     * <p>Summary information about a product view.</p>
+     */
     inline void SetProductViewSummary(const ProductViewSummary& value) { m_productViewSummaryHasBeenSet = true; m_productViewSummary = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * known as a product version.</p>
      */
     inline const ProvisioningArtifact& GetProvisioningArtifact() const{ return m_provisioningArtifact; }
+
+    /**
+     * <p>Information about a provisioning artifact. A provisioning artifact is also
+     * known as a product version.</p>
+     */
+    inline bool ProvisioningArtifactHasBeenSet() const { return m_provisioningArtifactHasBeenSet; }
 
     /**
      * <p>Information about a provisioning artifact. A provisioning artifact is also

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * it is ignored with no error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
+
+    /**
+     * <p>The names of one or more policies. If you omit this parameter, all policies
+     * are described. If a group name is provided, the results are limited to that
+     * group. This list is limited to 50 items. If you specify an unknown policy name,
+     * it is ignored with no error.</p>
+     */
+    inline bool PolicyNamesHasBeenSet() const { return m_policyNamesHasBeenSet; }
 
     /**
      * <p>The names of one or more policies. If you omit this parameter, all policies
@@ -149,50 +162,56 @@ namespace Model
 
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyTypes() const{ return m_policyTypes; }
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
+     */
+    inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
+
+    /**
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetPolicyTypes(const Aws::Vector<Aws::String>& value) { m_policyTypesHasBeenSet = true; m_policyTypes = value; }
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline void SetPolicyTypes(Aws::Vector<Aws::String>&& value) { m_policyTypesHasBeenSet = true; m_policyTypes = std::move(value); }
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(const Aws::Vector<Aws::String>& value) { SetPolicyTypes(value); return *this;}
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline DescribePoliciesRequest& WithPolicyTypes(Aws::Vector<Aws::String>&& value) { SetPolicyTypes(std::move(value)); return *this;}
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const Aws::String& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(Aws::String&& value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>One or more policy types. Valid values are <code>SimpleScaling</code> and
-     * <code>StepScaling</code>.</p>
+     * <p>One or more policy types. The valid values are <code>SimpleScaling</code>,
+     * <code>StepScaling</code>, and <code>TargetTrackingScaling</code>.</p>
      */
     inline DescribePoliciesRequest& AddPolicyTypes(const char* value) { m_policyTypesHasBeenSet = true; m_policyTypes.push_back(value); return *this; }
 
@@ -202,6 +221,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -242,19 +267,25 @@ namespace Model
 
     /**
      * <p>The maximum number of items to be returned with each call. The default value
-     * is 50 and the maximum value is 100.</p>
+     * is <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
      * <p>The maximum number of items to be returned with each call. The default value
-     * is 50 and the maximum value is 100.</p>
+     * is <code>50</code> and the maximum value is <code>100</code>.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be returned with each call. The default value
+     * is <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
      * <p>The maximum number of items to be returned with each call. The default value
-     * is 50 and the maximum value is 100.</p>
+     * is <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline DescribePoliciesRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

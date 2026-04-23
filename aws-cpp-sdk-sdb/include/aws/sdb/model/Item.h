@@ -59,6 +59,11 @@ namespace Model
     /**
      * The name of the item.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the item.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p></p>
      */
+    inline bool AlternateNameEncodingHasBeenSet() const { return m_alternateNameEncodingHasBeenSet; }
+
+    /**
+     * <p></p>
+     */
     inline void SetAlternateNameEncoding(const Aws::String& value) { m_alternateNameEncodingHasBeenSet = true; m_alternateNameEncoding = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * A list of attributes.
      */
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * A list of attributes.
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * A list of attributes.

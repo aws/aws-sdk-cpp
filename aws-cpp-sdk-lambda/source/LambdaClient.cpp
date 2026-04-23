@@ -24,9 +24,13 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/lambda/LambdaClient.h>
 #include <aws/lambda/LambdaEndpoint.h>
 #include <aws/lambda/LambdaErrorMarshaller.h>
+#include <aws/lambda/model/AddLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/AddPermissionRequest.h>
 #include <aws/lambda/model/CreateAliasRequest.h>
 #include <aws/lambda/model/CreateEventSourceMappingRequest.h>
@@ -35,20 +39,27 @@
 #include <aws/lambda/model/DeleteEventSourceMappingRequest.h>
 #include <aws/lambda/model/DeleteFunctionRequest.h>
 #include <aws/lambda/model/DeleteFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/DeleteLayerVersionRequest.h>
 #include <aws/lambda/model/GetAccountSettingsRequest.h>
 #include <aws/lambda/model/GetAliasRequest.h>
 #include <aws/lambda/model/GetEventSourceMappingRequest.h>
 #include <aws/lambda/model/GetFunctionRequest.h>
 #include <aws/lambda/model/GetFunctionConfigurationRequest.h>
+#include <aws/lambda/model/GetLayerVersionRequest.h>
+#include <aws/lambda/model/GetLayerVersionPolicyRequest.h>
 #include <aws/lambda/model/GetPolicyRequest.h>
 #include <aws/lambda/model/InvokeRequest.h>
 #include <aws/lambda/model/ListAliasesRequest.h>
 #include <aws/lambda/model/ListEventSourceMappingsRequest.h>
 #include <aws/lambda/model/ListFunctionsRequest.h>
+#include <aws/lambda/model/ListLayerVersionsRequest.h>
+#include <aws/lambda/model/ListLayersRequest.h>
 #include <aws/lambda/model/ListTagsRequest.h>
 #include <aws/lambda/model/ListVersionsByFunctionRequest.h>
+#include <aws/lambda/model/PublishLayerVersionRequest.h>
 #include <aws/lambda/model/PublishVersionRequest.h>
 #include <aws/lambda/model/PutFunctionConcurrencyRequest.h>
+#include <aws/lambda/model/RemoveLayerVersionPermissionRequest.h>
 #include <aws/lambda/model/RemovePermissionRequest.h>
 #include <aws/lambda/model/TagResourceRequest.h>
 #include <aws/lambda/model/UntagResourceRequest.h>
@@ -106,25 +117,86 @@ LambdaClient::~LambdaClient()
 
 void LambdaClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << LambdaEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + LambdaEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
+}
 
-  m_uri = ss.str();
+void LambdaClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
+AddLayerVersionPermissionOutcome LambdaClient::AddLayerVersionPermission(const AddLayerVersionPermissionRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddLayerVersionPermission", "Required field: LayerName, is not set");
+    return AddLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddLayerVersionPermission", "Required field: VersionNumber, is not set");
+    return AddLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return AddLayerVersionPermissionOutcome(AddLayerVersionPermissionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return AddLayerVersionPermissionOutcome(outcome.GetError());
+  }
+}
+
+AddLayerVersionPermissionOutcomeCallable LambdaClient::AddLayerVersionPermissionCallable(const AddLayerVersionPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< AddLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->AddLayerVersionPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::AddLayerVersionPermissionAsync(const AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->AddLayerVersionPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::AddLayerVersionPermissionAsyncHelper(const AddLayerVersionPermissionRequest& request, const AddLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, AddLayerVersionPermission(request), context);
 }
 
 AddPermissionOutcome LambdaClient::AddPermission(const AddPermissionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddPermission", "Required field: FunctionName, is not set");
+    return AddPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
@@ -160,8 +232,13 @@ void LambdaClient::AddPermissionAsyncHelper(const AddPermissionRequest& request,
 
 CreateAliasOutcome LambdaClient::CreateAlias(const CreateAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateAlias", "Required field: FunctionName, is not set");
+    return CreateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
@@ -197,8 +274,8 @@ void LambdaClient::CreateAliasAsyncHelper(const CreateAliasRequest& request, con
 
 CreateEventSourceMappingOutcome LambdaClient::CreateEventSourceMapping(const CreateEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -232,8 +309,8 @@ void LambdaClient::CreateEventSourceMappingAsyncHelper(const CreateEventSourceMa
 
 CreateFunctionOutcome LambdaClient::CreateFunction(const CreateFunctionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -267,8 +344,18 @@ void LambdaClient::CreateFunctionAsyncHelper(const CreateFunctionRequest& reques
 
 DeleteAliasOutcome LambdaClient::DeleteAlias(const DeleteAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAlias", "Required field: FunctionName, is not set");
+    return DeleteAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAlias", "Required field: Name, is not set");
+    return DeleteAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -305,8 +392,13 @@ void LambdaClient::DeleteAliasAsyncHelper(const DeleteAliasRequest& request, con
 
 DeleteEventSourceMappingOutcome LambdaClient::DeleteEventSourceMapping(const DeleteEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UUIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEventSourceMapping", "Required field: UUID, is not set");
+    return DeleteEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -341,8 +433,13 @@ void LambdaClient::DeleteEventSourceMappingAsyncHelper(const DeleteEventSourceMa
 
 DeleteFunctionOutcome LambdaClient::DeleteFunction(const DeleteFunctionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunction", "Required field: FunctionName, is not set");
+    return DeleteFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -377,8 +474,13 @@ void LambdaClient::DeleteFunctionAsyncHelper(const DeleteFunctionRequest& reques
 
 DeleteFunctionConcurrencyOutcome LambdaClient::DeleteFunctionConcurrency(const DeleteFunctionConcurrencyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunctionConcurrency", "Required field: FunctionName, is not set");
+    return DeleteFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-10-31/functions/";
   ss << request.GetFunctionName();
   ss << "/concurrency";
@@ -412,10 +514,58 @@ void LambdaClient::DeleteFunctionConcurrencyAsyncHelper(const DeleteFunctionConc
   handler(this, request, DeleteFunctionConcurrency(request), context);
 }
 
+DeleteLayerVersionOutcome LambdaClient::DeleteLayerVersion(const DeleteLayerVersionRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLayerVersion", "Required field: LayerName, is not set");
+    return DeleteLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLayerVersion", "Required field: VersionNumber, is not set");
+    return DeleteLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteLayerVersionOutcome(NoResult());
+  }
+  else
+  {
+    return DeleteLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+DeleteLayerVersionOutcomeCallable LambdaClient::DeleteLayerVersionCallable(const DeleteLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::DeleteLayerVersionAsync(const DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::DeleteLayerVersionAsyncHelper(const DeleteLayerVersionRequest& request, const DeleteLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteLayerVersion(request), context);
+}
+
 GetAccountSettingsOutcome LambdaClient::GetAccountSettings(const GetAccountSettingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2016-08-19/account-settings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -449,8 +599,18 @@ void LambdaClient::GetAccountSettingsAsyncHelper(const GetAccountSettingsRequest
 
 GetAliasOutcome LambdaClient::GetAlias(const GetAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAlias", "Required field: FunctionName, is not set");
+    return GetAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAlias", "Required field: Name, is not set");
+    return GetAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -487,8 +647,13 @@ void LambdaClient::GetAliasAsyncHelper(const GetAliasRequest& request, const Get
 
 GetEventSourceMappingOutcome LambdaClient::GetEventSourceMapping(const GetEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UUIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEventSourceMapping", "Required field: UUID, is not set");
+    return GetEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -523,8 +688,13 @@ void LambdaClient::GetEventSourceMappingAsyncHelper(const GetEventSourceMappingR
 
 GetFunctionOutcome LambdaClient::GetFunction(const GetFunctionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunction", "Required field: FunctionName, is not set");
+    return GetFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -559,8 +729,13 @@ void LambdaClient::GetFunctionAsyncHelper(const GetFunctionRequest& request, con
 
 GetFunctionConfigurationOutcome LambdaClient::GetFunctionConfiguration(const GetFunctionConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionConfiguration", "Required field: FunctionName, is not set");
+    return GetFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";
@@ -594,10 +769,112 @@ void LambdaClient::GetFunctionConfigurationAsyncHelper(const GetFunctionConfigur
   handler(this, request, GetFunctionConfiguration(request), context);
 }
 
+GetLayerVersionOutcome LambdaClient::GetLayerVersion(const GetLayerVersionRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLayerVersion", "Required field: LayerName, is not set");
+    return GetLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLayerVersion", "Required field: VersionNumber, is not set");
+    return GetLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLayerVersionOutcome(GetLayerVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+GetLayerVersionOutcomeCallable LambdaClient::GetLayerVersionCallable(const GetLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetLayerVersionAsync(const GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetLayerVersionAsyncHelper(const GetLayerVersionRequest& request, const GetLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLayerVersion(request), context);
+}
+
+GetLayerVersionPolicyOutcome LambdaClient::GetLayerVersionPolicy(const GetLayerVersionPolicyRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLayerVersionPolicy", "Required field: LayerName, is not set");
+    return GetLayerVersionPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLayerVersionPolicy", "Required field: VersionNumber, is not set");
+    return GetLayerVersionPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetLayerVersionPolicyOutcome(GetLayerVersionPolicyResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetLayerVersionPolicyOutcome(outcome.GetError());
+  }
+}
+
+GetLayerVersionPolicyOutcomeCallable LambdaClient::GetLayerVersionPolicyCallable(const GetLayerVersionPolicyRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetLayerVersionPolicyOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetLayerVersionPolicy(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::GetLayerVersionPolicyAsync(const GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetLayerVersionPolicyAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::GetLayerVersionPolicyAsyncHelper(const GetLayerVersionPolicyRequest& request, const GetLayerVersionPolicyResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetLayerVersionPolicy(request), context);
+}
+
 GetPolicyOutcome LambdaClient::GetPolicy(const GetPolicyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: FunctionName, is not set");
+    return GetPolicyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy";
@@ -633,8 +910,13 @@ void LambdaClient::GetPolicyAsyncHelper(const GetPolicyRequest& request, const G
 
 InvokeOutcome LambdaClient::Invoke(const InvokeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("Invoke", "Required field: FunctionName, is not set");
+    return InvokeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/invocations";
@@ -670,8 +952,13 @@ void LambdaClient::InvokeAsyncHelper(const InvokeRequest& request, const InvokeR
 
 ListAliasesOutcome LambdaClient::ListAliases(const ListAliasesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListAliases", "Required field: FunctionName, is not set");
+    return ListAliasesOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases";
@@ -707,8 +994,8 @@ void LambdaClient::ListAliasesAsyncHelper(const ListAliasesRequest& request, con
 
 ListEventSourceMappingsOutcome LambdaClient::ListEventSourceMappings(const ListEventSourceMappingsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -742,8 +1029,8 @@ void LambdaClient::ListEventSourceMappingsAsyncHelper(const ListEventSourceMappi
 
 ListFunctionsOutcome LambdaClient::ListFunctions(const ListFunctionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -775,10 +1062,92 @@ void LambdaClient::ListFunctionsAsyncHelper(const ListFunctionsRequest& request,
   handler(this, request, ListFunctions(request), context);
 }
 
+ListLayerVersionsOutcome LambdaClient::ListLayerVersions(const ListLayerVersionsRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListLayerVersions", "Required field: LayerName, is not set");
+    return ListLayerVersionsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLayerVersionsOutcome(ListLayerVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLayerVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListLayerVersionsOutcomeCallable LambdaClient::ListLayerVersionsCallable(const ListLayerVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLayerVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayerVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListLayerVersionsAsync(const ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLayerVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListLayerVersionsAsyncHelper(const ListLayerVersionsRequest& request, const ListLayerVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLayerVersions(request), context);
+}
+
+ListLayersOutcome LambdaClient::ListLayers(const ListLayersRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListLayersOutcome(ListLayersResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListLayersOutcome(outcome.GetError());
+  }
+}
+
+ListLayersOutcomeCallable LambdaClient::ListLayersCallable(const ListLayersRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListLayersOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListLayers(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::ListLayersAsync(const ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListLayersAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::ListLayersAsyncHelper(const ListLayersRequest& request, const ListLayersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListLayers(request), context);
+}
+
 ListTagsOutcome LambdaClient::ListTags(const ListTagsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTags", "Required field: Resource, is not set");
+    return ListTagsOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -813,8 +1182,13 @@ void LambdaClient::ListTagsAsyncHelper(const ListTagsRequest& request, const Lis
 
 ListVersionsByFunctionOutcome LambdaClient::ListVersionsByFunction(const ListVersionsByFunctionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListVersionsByFunction", "Required field: FunctionName, is not set");
+    return ListVersionsByFunctionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
@@ -848,10 +1222,57 @@ void LambdaClient::ListVersionsByFunctionAsyncHelper(const ListVersionsByFunctio
   handler(this, request, ListVersionsByFunction(request), context);
 }
 
+PublishLayerVersionOutcome LambdaClient::PublishLayerVersion(const PublishLayerVersionRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishLayerVersion", "Required field: LayerName, is not set");
+    return PublishLayerVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PublishLayerVersionOutcome(PublishLayerVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PublishLayerVersionOutcome(outcome.GetError());
+  }
+}
+
+PublishLayerVersionOutcomeCallable LambdaClient::PublishLayerVersionCallable(const PublishLayerVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PublishLayerVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PublishLayerVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::PublishLayerVersionAsync(const PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PublishLayerVersionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::PublishLayerVersionAsyncHelper(const PublishLayerVersionRequest& request, const PublishLayerVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PublishLayerVersion(request), context);
+}
+
 PublishVersionOutcome LambdaClient::PublishVersion(const PublishVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PublishVersion", "Required field: FunctionName, is not set");
+    return PublishVersionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/versions";
@@ -887,8 +1308,13 @@ void LambdaClient::PublishVersionAsyncHelper(const PublishVersionRequest& reques
 
 PutFunctionConcurrencyOutcome LambdaClient::PutFunctionConcurrency(const PutFunctionConcurrencyRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutFunctionConcurrency", "Required field: FunctionName, is not set");
+    return PutFunctionConcurrencyOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-10-31/functions/";
   ss << request.GetFunctionName();
   ss << "/concurrency";
@@ -922,10 +1348,75 @@ void LambdaClient::PutFunctionConcurrencyAsyncHelper(const PutFunctionConcurrenc
   handler(this, request, PutFunctionConcurrency(request), context);
 }
 
+RemoveLayerVersionPermissionOutcome LambdaClient::RemoveLayerVersionPermission(const RemoveLayerVersionPermissionRequest& request) const
+{
+  if (!request.LayerNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveLayerVersionPermission", "Required field: LayerName, is not set");
+    return RemoveLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LayerName]", false));
+  }
+  if (!request.VersionNumberHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveLayerVersionPermission", "Required field: VersionNumber, is not set");
+    return RemoveLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionNumber]", false));
+  }
+  if (!request.StatementIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveLayerVersionPermission", "Required field: StatementId, is not set");
+    return RemoveLayerVersionPermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2018-10-31/layers/";
+  ss << request.GetLayerName();
+  ss << "/versions/";
+  ss << request.GetVersionNumber();
+  ss << "/policy/";
+  ss << request.GetStatementId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RemoveLayerVersionPermissionOutcome(NoResult());
+  }
+  else
+  {
+    return RemoveLayerVersionPermissionOutcome(outcome.GetError());
+  }
+}
+
+RemoveLayerVersionPermissionOutcomeCallable LambdaClient::RemoveLayerVersionPermissionCallable(const RemoveLayerVersionPermissionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RemoveLayerVersionPermissionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RemoveLayerVersionPermission(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void LambdaClient::RemoveLayerVersionPermissionAsync(const RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RemoveLayerVersionPermissionAsyncHelper( request, handler, context ); } );
+}
+
+void LambdaClient::RemoveLayerVersionPermissionAsyncHelper(const RemoveLayerVersionPermissionRequest& request, const RemoveLayerVersionPermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RemoveLayerVersionPermission(request), context);
+}
+
 RemovePermissionOutcome LambdaClient::RemovePermission(const RemovePermissionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: FunctionName, is not set");
+    return RemovePermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.StatementIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemovePermission", "Required field: StatementId, is not set");
+    return RemovePermissionOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [StatementId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/policy/";
@@ -962,8 +1453,13 @@ void LambdaClient::RemovePermissionAsyncHelper(const RemovePermissionRequest& re
 
 TagResourceOutcome LambdaClient::TagResource(const TagResourceRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: Resource, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -998,8 +1494,18 @@ void LambdaClient::TagResourceAsyncHelper(const TagResourceRequest& request, con
 
 UntagResourceOutcome LambdaClient::UntagResource(const UntagResourceRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: Resource, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Resource]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2017-03-31/tags/";
   ss << request.GetResource();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1034,8 +1540,18 @@ void LambdaClient::UntagResourceAsyncHelper(const UntagResourceRequest& request,
 
 UpdateAliasOutcome LambdaClient::UpdateAlias(const UpdateAliasRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAlias", "Required field: FunctionName, is not set");
+    return UpdateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
+  if (!request.NameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAlias", "Required field: Name, is not set");
+    return UpdateAliasOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Name]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/aliases/";
@@ -1072,8 +1588,13 @@ void LambdaClient::UpdateAliasAsyncHelper(const UpdateAliasRequest& request, con
 
 UpdateEventSourceMappingOutcome LambdaClient::UpdateEventSourceMapping(const UpdateEventSourceMappingRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UUIDHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEventSourceMapping", "Required field: UUID, is not set");
+    return UpdateEventSourceMappingOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UUID]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/event-source-mappings/";
   ss << request.GetUUID();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1108,8 +1629,13 @@ void LambdaClient::UpdateEventSourceMappingAsyncHelper(const UpdateEventSourceMa
 
 UpdateFunctionCodeOutcome LambdaClient::UpdateFunctionCode(const UpdateFunctionCodeRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunctionCode", "Required field: FunctionName, is not set");
+    return UpdateFunctionCodeOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/code";
@@ -1145,8 +1671,13 @@ void LambdaClient::UpdateFunctionCodeAsyncHelper(const UpdateFunctionCodeRequest
 
 UpdateFunctionConfigurationOutcome LambdaClient::UpdateFunctionConfiguration(const UpdateFunctionConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunctionConfiguration", "Required field: FunctionName, is not set");
+    return UpdateFunctionConfigurationOutcome(Aws::Client::AWSError<LambdaErrors>(LambdaErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-03-31/functions/";
   ss << request.GetFunctionName();
   ss << "/configuration";

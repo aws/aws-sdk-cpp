@@ -33,7 +33,7 @@ GetDatasetContentRequest::GetDatasetContentRequest() :
 
 Aws::String GetDatasetContentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetDatasetContentRequest::AddQueryStringParameters(URI& uri) const

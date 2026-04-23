@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of the CA certificate. This operation will list all registered device
      * certificate that were signed by this CA certificate.</p>
      */
+    inline bool CaCertificateIdHasBeenSet() const { return m_caCertificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the CA certificate. This operation will list all registered device
+     * certificate that were signed by this CA certificate.</p>
+     */
     inline void SetCaCertificateId(const Aws::String& value) { m_caCertificateIdHasBeenSet = true; m_caCertificateId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The result page size.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The result page size.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -115,6 +126,11 @@ namespace Model
      * <p>The marker for the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The marker for the next set of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The marker for the next set of results.</p>
@@ -152,6 +168,12 @@ namespace Model
      * ascending order, based on the creation date.</p>
      */
     inline bool GetAscendingOrder() const{ return m_ascendingOrder; }
+
+    /**
+     * <p>Specifies the order for results. If True, the results are returned in
+     * ascending order, based on the creation date.</p>
+     */
+    inline bool AscendingOrderHasBeenSet() const { return m_ascendingOrderHasBeenSet; }
 
     /**
      * <p>Specifies the order for results. If True, the results are returned in

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the project to remove tags from.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the project to remove tags from.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The tags to remove from the project.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to remove from the project.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to remove from the project.</p>

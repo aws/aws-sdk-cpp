@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the name of the option group.</p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the option group.</p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Provides a description of the option group.</p>
      */
     inline const Aws::String& GetOptionGroupDescription() const{ return m_optionGroupDescription; }
+
+    /**
+     * <p>Provides a description of the option group.</p>
+     */
+    inline bool OptionGroupDescriptionHasBeenSet() const { return m_optionGroupDescriptionHasBeenSet; }
 
     /**
      * <p>Provides a description of the option group.</p>
@@ -128,6 +138,12 @@ namespace Model
      * to.</p>
      */
     inline const Aws::String& GetEngineName() const{ return m_engineName; }
+
+    /**
+     * <p>Indicates the name of the engine that this option group can be applied
+     * to.</p>
+     */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
 
     /**
      * <p>Indicates the name of the engine that this option group can be applied
@@ -174,6 +190,11 @@ namespace Model
     /**
      * <p>Indicates the major engine version associated with this option group.</p>
      */
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
+
+    /**
+     * <p>Indicates the major engine version associated with this option group.</p>
+     */
     inline void SetMajorEngineVersion(const Aws::String& value) { m_majorEngineVersionHasBeenSet = true; m_majorEngineVersion = value; }
 
     /**
@@ -206,6 +227,11 @@ namespace Model
      * <p>Indicates what options are available in the option group.</p>
      */
     inline const Aws::Vector<Option>& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Indicates what options are available in the option group.</p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
      * <p>Indicates what options are available in the option group.</p>
@@ -250,6 +276,13 @@ namespace Model
      * instances. The value <code>true</code> indicates the option group can be applied
      * to both VPC and non-VPC instances. </p>
      */
+    inline bool AllowsVpcAndNonVpcInstanceMembershipsHasBeenSet() const { return m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this option group can be applied to both VPC and non-VPC
+     * instances. The value <code>true</code> indicates the option group can be applied
+     * to both VPC and non-VPC instances. </p>
+     */
     inline void SetAllowsVpcAndNonVpcInstanceMemberships(bool value) { m_allowsVpcAndNonVpcInstanceMembershipsHasBeenSet = true; m_allowsVpcAndNonVpcInstanceMemberships = value; }
 
     /**
@@ -269,6 +302,16 @@ namespace Model
      * this field. </p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
+     * field is blank. If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is
+     * <code>true</code> and this field is blank, then this option group can be applied
+     * to both VPC and non-VPC instances. If this field contains a value, then this
+     * option group can only be applied to instances that are in the VPC indicated by
+     * this field. </p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>If <b>AllowsVpcAndNonVpcInstanceMemberships</b> is <code>false</code>, this
@@ -335,6 +378,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the option group.</p>
      */
     inline const Aws::String& GetOptionGroupArn() const{ return m_optionGroupArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the option group.</p>
+     */
+    inline bool OptionGroupArnHasBeenSet() const { return m_optionGroupArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the option group.</p>

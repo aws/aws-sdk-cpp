@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Minimum length to require for IAM user passwords.</p>
      */
+    inline bool MinimumPasswordLengthHasBeenSet() const { return m_minimumPasswordLengthHasBeenSet; }
+
+    /**
+     * <p>Minimum length to require for IAM user passwords.</p>
+     */
     inline void SetMinimumPasswordLength(int value) { m_minimumPasswordLengthHasBeenSet = true; m_minimumPasswordLength = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>Specifies whether to require symbols for IAM user passwords.</p>
      */
     inline bool GetRequireSymbols() const{ return m_requireSymbols; }
+
+    /**
+     * <p>Specifies whether to require symbols for IAM user passwords.</p>
+     */
+    inline bool RequireSymbolsHasBeenSet() const { return m_requireSymbolsHasBeenSet; }
 
     /**
      * <p>Specifies whether to require symbols for IAM user passwords.</p>
@@ -89,6 +99,11 @@ namespace Model
     /**
      * <p>Specifies whether to require numbers for IAM user passwords.</p>
      */
+    inline bool RequireNumbersHasBeenSet() const { return m_requireNumbersHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to require numbers for IAM user passwords.</p>
+     */
     inline void SetRequireNumbers(bool value) { m_requireNumbersHasBeenSet = true; m_requireNumbers = value; }
 
     /**
@@ -101,6 +116,11 @@ namespace Model
      * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
      */
     inline bool GetRequireUppercaseCharacters() const{ return m_requireUppercaseCharacters; }
+
+    /**
+     * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
+     */
+    inline bool RequireUppercaseCharactersHasBeenSet() const { return m_requireUppercaseCharactersHasBeenSet; }
 
     /**
      * <p>Specifies whether to require uppercase characters for IAM user passwords.</p>
@@ -121,6 +141,11 @@ namespace Model
     /**
      * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
      */
+    inline bool RequireLowercaseCharactersHasBeenSet() const { return m_requireLowercaseCharactersHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to require lowercase characters for IAM user passwords.</p>
+     */
     inline void SetRequireLowercaseCharacters(bool value) { m_requireLowercaseCharactersHasBeenSet = true; m_requireLowercaseCharacters = value; }
 
     /**
@@ -133,6 +158,11 @@ namespace Model
      * <p>Specifies whether IAM users are allowed to change their own password.</p>
      */
     inline bool GetAllowUsersToChangePassword() const{ return m_allowUsersToChangePassword; }
+
+    /**
+     * <p>Specifies whether IAM users are allowed to change their own password.</p>
+     */
+    inline bool AllowUsersToChangePasswordHasBeenSet() const { return m_allowUsersToChangePasswordHasBeenSet; }
 
     /**
      * <p>Specifies whether IAM users are allowed to change their own password.</p>
@@ -157,6 +187,13 @@ namespace Model
      * <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
      * MaxPasswordAge is 0 or not present.</p>
      */
+    inline bool ExpirePasswordsHasBeenSet() const { return m_expirePasswordsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether passwords in the account expire. Returns true if
+     * <code>MaxPasswordAge</code> contains a value greater than 0. Returns false if
+     * MaxPasswordAge is 0 or not present.</p>
+     */
     inline void SetExpirePasswords(bool value) { m_expirePasswordsHasBeenSet = true; m_expirePasswords = value; }
 
     /**
@@ -171,6 +208,11 @@ namespace Model
      * <p>The number of days that an IAM user password is valid.</p>
      */
     inline int GetMaxPasswordAge() const{ return m_maxPasswordAge; }
+
+    /**
+     * <p>The number of days that an IAM user password is valid.</p>
+     */
+    inline bool MaxPasswordAgeHasBeenSet() const { return m_maxPasswordAgeHasBeenSet; }
 
     /**
      * <p>The number of days that an IAM user password is valid.</p>
@@ -193,6 +235,12 @@ namespace Model
      * <p>Specifies the number of previous passwords that IAM users are prevented from
      * reusing.</p>
      */
+    inline bool PasswordReusePreventionHasBeenSet() const { return m_passwordReusePreventionHasBeenSet; }
+
+    /**
+     * <p>Specifies the number of previous passwords that IAM users are prevented from
+     * reusing.</p>
+     */
     inline void SetPasswordReusePrevention(int value) { m_passwordReusePreventionHasBeenSet = true; m_passwordReusePrevention = value; }
 
     /**
@@ -207,6 +255,12 @@ namespace Model
      * their password has expired.</p>
      */
     inline bool GetHardExpiry() const{ return m_hardExpiry; }
+
+    /**
+     * <p>Specifies whether IAM users are prevented from setting a new password after
+     * their password has expired.</p>
+     */
+    inline bool HardExpiryHasBeenSet() const { return m_hardExpiryHasBeenSet; }
 
     /**
      * <p>Specifies whether IAM users are prevented from setting a new password after

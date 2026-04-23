@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the database.</p>
      */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
+
+    /**
+     * <p>The name of the database.</p>
+     */
     inline void SetDatabase(const Aws::String& value) { m_databaseHasBeenSet = true; m_database = value; }
 
     /**

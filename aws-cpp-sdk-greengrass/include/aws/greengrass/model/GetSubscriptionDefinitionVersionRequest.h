@@ -58,6 +58,12 @@ namespace Model
      * The token for the next set of results, or ''null'' if there are no additional
      * results.
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * The ID of the subscription definition.
      */
+    inline bool SubscriptionDefinitionIdHasBeenSet() const { return m_subscriptionDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the subscription definition.
+     */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * The ID of the subscription definition version.
      */
     inline const Aws::String& GetSubscriptionDefinitionVersionId() const{ return m_subscriptionDefinitionVersionId; }
+
+    /**
+     * The ID of the subscription definition version.
+     */
+    inline bool SubscriptionDefinitionVersionIdHasBeenSet() const { return m_subscriptionDefinitionVersionIdHasBeenSet; }
 
     /**
      * The ID of the subscription definition version.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The lowest estimated age.</p>
      */
+    inline bool LowHasBeenSet() const { return m_lowHasBeenSet; }
+
+    /**
+     * <p>The lowest estimated age.</p>
+     */
     inline void SetLow(int value) { m_lowHasBeenSet = true; m_low = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The highest estimated age.</p>
      */
     inline int GetHigh() const{ return m_high; }
+
+    /**
+     * <p>The highest estimated age.</p>
+     */
+    inline bool HighHasBeenSet() const { return m_highHasBeenSet; }
 
     /**
      * <p>The highest estimated age.</p>

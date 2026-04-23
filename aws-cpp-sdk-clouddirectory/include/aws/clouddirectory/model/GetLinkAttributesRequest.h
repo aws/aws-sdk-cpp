@@ -61,6 +61,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
      * Links</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that is associated with the Directory where
+     * the typed link resides. For more information, see <a>arns</a> or <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/directory_objects_links.html#directory_objects_links_typedlink">Typed
+     * Links</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -112,6 +120,11 @@ namespace Model
     /**
      * <p>Allows a typed link specifier to be accepted as input.</p>
      */
+    inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
+
+    /**
+     * <p>Allows a typed link specifier to be accepted as input.</p>
+     */
     inline void SetTypedLinkSpecifier(const TypedLinkSpecifier& value) { m_typedLinkSpecifierHasBeenSet = true; m_typedLinkSpecifier = value; }
 
     /**
@@ -134,6 +147,11 @@ namespace Model
      * <p>A list of attribute names whose values will be retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>A list of attribute names whose values will be retrieved.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>A list of attribute names whose values will be retrieved.</p>
@@ -176,6 +194,12 @@ namespace Model
      * link.</p>
      */
     inline const ConsistencyLevel& GetConsistencyLevel() const{ return m_consistencyLevel; }
+
+    /**
+     * <p>The consistency level at which to retrieve the attributes on a typed
+     * link.</p>
+     */
+    inline bool ConsistencyLevelHasBeenSet() const { return m_consistencyLevelHasBeenSet; }
 
     /**
      * <p>The consistency level at which to retrieve the attributes on a typed

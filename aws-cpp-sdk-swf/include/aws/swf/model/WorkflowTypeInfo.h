@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The workflow type this information is about.</p>
      */
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
+
+    /**
+     * <p>The workflow type this information is about.</p>
+     */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The current status of the workflow type.</p>
      */
     inline const RegistrationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The current status of the workflow type.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The current status of the workflow type.</p>
@@ -107,6 +117,12 @@ namespace Model
      * <a>RegisterWorkflowType</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the type registered through
+     * <a>RegisterWorkflowType</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the type registered through
@@ -153,6 +169,11 @@ namespace Model
     /**
      * <p>The date when this type was registered.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date when this type was registered.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -176,6 +197,12 @@ namespace Model
      * was deprecated.</p>
      */
     inline const Aws::Utils::DateTime& GetDeprecationDate() const{ return m_deprecationDate; }
+
+    /**
+     * <p>If the type is in deprecated state, then it is set to the date when the type
+     * was deprecated.</p>
+     */
+    inline bool DeprecationDateHasBeenSet() const { return m_deprecationDateHasBeenSet; }
 
     /**
      * <p>If the type is in deprecated state, then it is set to the date when the type

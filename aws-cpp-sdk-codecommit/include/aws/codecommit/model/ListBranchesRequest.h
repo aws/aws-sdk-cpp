@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository that contains the branches.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository that contains the branches.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>An enumeration token that allows the operation to batch the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that allows the operation to batch the results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An enumeration token that allows the operation to batch the results.</p>

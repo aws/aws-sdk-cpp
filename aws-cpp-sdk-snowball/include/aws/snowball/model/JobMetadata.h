@@ -70,6 +70,12 @@ namespace Model
      * <p>The automatically generated ID for a job, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The automatically generated ID for a job, for example
+     * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -111,6 +117,11 @@ namespace Model
     /**
      * <p>The current status of the jobs.</p>
      */
+    inline bool JobStateHasBeenSet() const { return m_jobStateHasBeenSet; }
+
+    /**
+     * <p>The current status of the jobs.</p>
+     */
     inline void SetJobState(const JobState& value) { m_jobStateHasBeenSet = true; m_jobState = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
      * <p>The type of job.</p>
      */
     inline const JobType& GetJobType() const{ return m_jobType; }
+
+    /**
+     * <p>The type of job.</p>
+     */
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     /**
      * <p>The type of job.</p>
@@ -163,6 +179,11 @@ namespace Model
     /**
      * <p>The type of device used with this job.</p>
      */
+    inline bool SnowballTypeHasBeenSet() const { return m_snowballTypeHasBeenSet; }
+
+    /**
+     * <p>The type of device used with this job.</p>
+     */
     inline void SetSnowballType(const SnowballType& value) { m_snowballTypeHasBeenSet = true; m_snowballType = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
      * <p>The creation date for this job.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The creation date for this job.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The creation date for this job.</p>
@@ -219,6 +245,13 @@ namespace Model
      * object represents an Amazon S3 bucket that your transferred data will be
      * exported from or imported into.</p>
      */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+
+    /**
+     * <p>An array of <code>S3Resource</code> objects. Each <code>S3Resource</code>
+     * object represents an Amazon S3 bucket that your transferred data will be
+     * exported from or imported into.</p>
+     */
     inline void SetResources(const JobResource& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
@@ -247,6 +280,11 @@ namespace Model
      * <p>The description of the job, provided at job creation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the job, provided at job creation.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the job, provided at job creation.</p>
@@ -286,6 +324,14 @@ namespace Model
      * API action in AWS KMS.</p>
      */
     inline const Aws::String& GetKmsKeyARN() const{ return m_kmsKeyARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
+     * key associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/kms/latest/APIReference/API_CreateKey.html">CreateKey</a>
+     * API action in AWS KMS.</p>
+     */
+    inline bool KmsKeyARNHasBeenSet() const { return m_kmsKeyARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the AWS Key Management Service (AWS KMS)
@@ -348,6 +394,13 @@ namespace Model
      * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
      * API action in AWS Identity and Access Management (IAM).</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The role ARN associated with this job. This ARN was created using the <a
+     * href="http://docs.aws.amazon.com/IAM/latest/APIReference/API_CreateRole.html">CreateRole</a>
+     * API action in AWS Identity and Access Management (IAM).</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -394,6 +447,11 @@ namespace Model
     /**
      * <p>The ID for the address that you want the Snowball shipped to.</p>
      */
+    inline bool AddressIdHasBeenSet() const { return m_addressIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the address that you want the Snowball shipped to.</p>
+     */
     inline void SetAddressId(const Aws::String& value) { m_addressIdHasBeenSet = true; m_addressId = value; }
 
     /**
@@ -432,6 +490,12 @@ namespace Model
      * <p>A job's shipping information, including inbound and outbound tracking numbers
      * and shipping speed options.</p>
      */
+    inline bool ShippingDetailsHasBeenSet() const { return m_shippingDetailsHasBeenSet; }
+
+    /**
+     * <p>A job's shipping information, including inbound and outbound tracking numbers
+     * and shipping speed options.</p>
+     */
     inline void SetShippingDetails(const ShippingDetails& value) { m_shippingDetailsHasBeenSet = true; m_shippingDetails = value; }
 
     /**
@@ -459,6 +523,13 @@ namespace Model
      * use 80 TB capacity Snowballs.</p>
      */
     inline const SnowballCapacity& GetSnowballCapacityPreference() const{ return m_snowballCapacityPreference; }
+
+    /**
+     * <p>The Snowball capacity preference for this job, specified at job creation. In
+     * US regions, you can choose between 50 TB and 80 TB Snowballs. All other regions
+     * use 80 TB capacity Snowballs.</p>
+     */
+    inline bool SnowballCapacityPreferenceHasBeenSet() const { return m_snowballCapacityPreferenceHasBeenSet; }
 
     /**
      * <p>The Snowball capacity preference for this job, specified at job creation. In
@@ -496,6 +567,14 @@ namespace Model
      * <code>JobMetadata</code> data type.</p>
      */
     inline const Notification& GetNotification() const{ return m_notification; }
+
+    /**
+     * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings
+     * associated with a specific job. The <code>Notification</code> object is returned
+     * as a part of the response syntax of the <code>DescribeJob</code> action in the
+     * <code>JobMetadata</code> data type.</p>
+     */
+    inline bool NotificationHasBeenSet() const { return m_notificationHasBeenSet; }
 
     /**
      * <p>The Amazon Simple Notification Service (Amazon SNS) notification settings
@@ -544,6 +623,14 @@ namespace Model
      * <code>JobState</code> value of <code>InProgress</code>, for both import and
      * export jobs.</p>
      */
+    inline bool DataTransferProgressHasBeenSet() const { return m_dataTransferProgressHasBeenSet; }
+
+    /**
+     * <p>A value that defines the real-time status of a Snowball's data transfer while
+     * the device is at AWS. This data is only available while a job has a
+     * <code>JobState</code> value of <code>InProgress</code>, for both import and
+     * export jobs.</p>
+     */
     inline void SetDataTransferProgress(const DataTransfer& value) { m_dataTransferProgressHasBeenSet = true; m_dataTransferProgress = value; }
 
     /**
@@ -578,6 +665,14 @@ namespace Model
      * your job part is being delivered to you.</p>
      */
     inline const JobLogs& GetJobLogInfo() const{ return m_jobLogInfo; }
+
+    /**
+     * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
+     * jobs, the PDF job report becomes available at the end of the import process. For
+     * export jobs, your job report typically becomes available while the Snowball for
+     * your job part is being delivered to you.</p>
+     */
+    inline bool JobLogInfoHasBeenSet() const { return m_jobLogInfoHasBeenSet; }
 
     /**
      * <p>Links to Amazon S3 presigned URLs for the job report and logs. For import
@@ -622,6 +717,12 @@ namespace Model
      * <p>The 39-character ID for the cluster, for example
      * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The 39-character ID for the cluster, for example
+     * <code>CID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -660,6 +761,12 @@ namespace Model
      * shipped to its primary address. This field is not supported in most regions.</p>
      */
     inline const Aws::String& GetForwardingAddressId() const{ return m_forwardingAddressId; }
+
+    /**
+     * <p>The ID of the address that you want a job shipped to, after it will be
+     * shipped to its primary address. This field is not supported in most regions.</p>
+     */
+    inline bool ForwardingAddressIdHasBeenSet() const { return m_forwardingAddressIdHasBeenSet; }
 
     /**
      * <p>The ID of the address that you want a job shipped to, after it will be

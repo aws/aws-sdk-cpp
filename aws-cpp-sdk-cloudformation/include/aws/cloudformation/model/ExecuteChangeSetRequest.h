@@ -60,6 +60,12 @@ namespace Model
      * <p>The name or ARN of the change set that you want use to update the specified
      * stack.</p>
      */
+    inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or ARN of the change set that you want use to update the specified
+     * stack.</p>
+     */
     inline void SetChangeSetName(const Aws::String& value) { m_changeSetNameHasBeenSet = true; m_changeSetName = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * that is associated with the change set you want to execute.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
+     * that is associated with the change set you want to execute.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>If you specified the name of a change set, specify the stack name or ID (ARN)
@@ -144,6 +156,15 @@ namespace Model
      * CloudFormation successfully received them.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify
+     * this token if you plan to retry requests so that AWS CloudFormation knows that
+     * you're not attempting to execute a change set to update a stack with the same
+     * name. You might retry <code>ExecuteChangeSet</code> requests to ensure that AWS
+     * CloudFormation successfully received them.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for this <code>ExecuteChangeSet</code> request. Specify

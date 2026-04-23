@@ -57,6 +57,12 @@ namespace Model
      * <p>The start time of the time range.</p> <note> <p>Specify null to leave the
      * start time open-ended.</p> </note>
      */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+
+    /**
+     * <p>The start time of the time range.</p> <note> <p>Specify null to leave the
+     * start time open-ended.</p> </note>
+     */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
@@ -83,6 +89,12 @@ namespace Model
      * time open-ended.</p> </note>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The end time of the time range.</p> <note> <p>Specify null to leave the end
+     * time open-ended.</p> </note>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>The end time of the time range.</p> <note> <p>Specify null to leave the end

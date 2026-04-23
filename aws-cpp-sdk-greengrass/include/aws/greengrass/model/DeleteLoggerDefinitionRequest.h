@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the logger definition.
      */
+    inline bool LoggerDefinitionIdHasBeenSet() const { return m_loggerDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the logger definition.
+     */
     inline void SetLoggerDefinitionId(const Aws::String& value) { m_loggerDefinitionIdHasBeenSet = true; m_loggerDefinitionId = value; }
 
     /**

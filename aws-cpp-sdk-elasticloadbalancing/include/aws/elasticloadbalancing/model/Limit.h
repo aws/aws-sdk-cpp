@@ -62,6 +62,13 @@ namespace Model
      * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
      * <p>classic-registered-instances</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the limit. The possible values are:</p> <ul> <li>
+     * <p>classic-listeners</p> </li> <li> <p>classic-load-balancers</p> </li> <li>
+     * <p>classic-registered-instances</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>The maximum value of the limit.</p>
      */
     inline const Aws::String& GetMax() const{ return m_max; }
+
+    /**
+     * <p>The maximum value of the limit.</p>
+     */
+    inline bool MaxHasBeenSet() const { return m_maxHasBeenSet; }
 
     /**
      * <p>The maximum value of the limit.</p>

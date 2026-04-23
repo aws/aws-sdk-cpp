@@ -29,7 +29,7 @@ GetLexiconRequest::GetLexiconRequest() :
 
 Aws::String GetLexiconRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

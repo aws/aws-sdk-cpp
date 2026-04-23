@@ -37,7 +37,7 @@ ListTrafficPolicyInstancesRequest::ListTrafficPolicyInstancesRequest() :
 
 Aws::String ListTrafficPolicyInstancesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTrafficPolicyInstancesRequest::AddQueryStringParameters(URI& uri) const

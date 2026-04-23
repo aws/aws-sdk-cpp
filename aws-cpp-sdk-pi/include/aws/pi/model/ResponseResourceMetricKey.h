@@ -65,6 +65,15 @@ namespace Model
      * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
      * active sessions for the database engine.</p> </li> </ul>
      */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
+
+    /**
+     * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * scaled representation of the number of active sessions for the database
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
+     * active sessions for the database engine.</p> </li> </ul>
+     */
     inline void SetMetric(const Aws::String& value) { m_metricHasBeenSet = true; m_metric = value; }
 
     /**
@@ -117,6 +126,11 @@ namespace Model
      * <p>The valid dimensions for the metric.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetDimensions() const{ return m_dimensions; }
+
+    /**
+     * <p>The valid dimensions for the metric.</p>
+     */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
 
     /**
      * <p>The valid dimensions for the metric.</p>

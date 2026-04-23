@@ -58,7 +58,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
@@ -66,7 +66,15 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * Idempotency</a>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, case-sensitive key supplied by the client to ensure that the
+     * request is idempotent. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const Aws::String& value) { m_clientTokenHasBeenSet = true; m_clientToken = value; }
@@ -74,7 +82,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(Aws::String&& value) { m_clientTokenHasBeenSet = true; m_clientToken = std::move(value); }
@@ -82,7 +90,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline void SetClientToken(const char* value) { m_clientTokenHasBeenSet = true; m_clientToken.assign(value); }
@@ -90,7 +98,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline ReservedInstancesListing& WithClientToken(const Aws::String& value) { SetClientToken(value); return *this;}
@@ -98,7 +106,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline ReservedInstancesListing& WithClientToken(Aws::String&& value) { SetClientToken(std::move(value)); return *this;}
@@ -106,7 +114,7 @@ namespace Model
     /**
      * <p>A unique, case-sensitive key supplied by the client to ensure that the
      * request is idempotent. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Ensuring
      * Idempotency</a>.</p>
      */
     inline ReservedInstancesListing& WithClientToken(const char* value) { SetClientToken(value); return *this;}
@@ -116,6 +124,11 @@ namespace Model
      * <p>The time the listing was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The time the listing was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The time the listing was created.</p>
@@ -142,6 +155,11 @@ namespace Model
      * <p>The number of instances in this state.</p>
      */
     inline const Aws::Vector<InstanceCount>& GetInstanceCounts() const{ return m_instanceCounts; }
+
+    /**
+     * <p>The number of instances in this state.</p>
+     */
+    inline bool InstanceCountsHasBeenSet() const { return m_instanceCountsHasBeenSet; }
 
     /**
      * <p>The number of instances in this state.</p>
@@ -182,6 +200,11 @@ namespace Model
     /**
      * <p>The price of the Reserved Instance listing.</p>
      */
+    inline bool PriceSchedulesHasBeenSet() const { return m_priceSchedulesHasBeenSet; }
+
+    /**
+     * <p>The price of the Reserved Instance listing.</p>
+     */
     inline void SetPriceSchedules(const Aws::Vector<PriceSchedule>& value) { m_priceSchedulesHasBeenSet = true; m_priceSchedules = value; }
 
     /**
@@ -214,6 +237,11 @@ namespace Model
      * <p>The ID of the Reserved Instance.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
 
     /**
      * <p>The ID of the Reserved Instance.</p>
@@ -254,6 +282,11 @@ namespace Model
     /**
      * <p>The ID of the Reserved Instance listing.</p>
      */
+    inline bool ReservedInstancesListingIdHasBeenSet() const { return m_reservedInstancesListingIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Reserved Instance listing.</p>
+     */
     inline void SetReservedInstancesListingId(const Aws::String& value) { m_reservedInstancesListingIdHasBeenSet = true; m_reservedInstancesListingId = value; }
 
     /**
@@ -290,6 +323,11 @@ namespace Model
     /**
      * <p>The status of the Reserved Instance listing.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Reserved Instance listing.</p>
+     */
     inline void SetStatus(const ListingStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -313,6 +351,12 @@ namespace Model
      * response can be blank.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The reason for the current status of the Reserved Instance listing. The
+     * response can be blank.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The reason for the current status of the Reserved Instance listing. The
@@ -359,6 +403,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the resource.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the resource.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -391,6 +440,11 @@ namespace Model
      * <p>The last modified timestamp of the listing.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateDate() const{ return m_updateDate; }
+
+    /**
+     * <p>The last modified timestamp of the listing.</p>
+     */
+    inline bool UpdateDateHasBeenSet() const { return m_updateDateHasBeenSet; }
 
     /**
      * <p>The last modified timestamp of the listing.</p>

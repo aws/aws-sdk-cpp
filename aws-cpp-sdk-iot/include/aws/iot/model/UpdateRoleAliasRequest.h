@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The role alias to update.</p>
      */
+    inline bool RoleAliasHasBeenSet() const { return m_roleAliasHasBeenSet; }
+
+    /**
+     * <p>The role alias to update.</p>
+     */
     inline void SetRoleAlias(const Aws::String& value) { m_roleAliasHasBeenSet = true; m_roleAlias = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The role ARN.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The role ARN.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The number of seconds the credential will be valid.</p>
      */
     inline int GetCredentialDurationSeconds() const{ return m_credentialDurationSeconds; }
+
+    /**
+     * <p>The number of seconds the credential will be valid.</p>
+     */
+    inline bool CredentialDurationSecondsHasBeenSet() const { return m_credentialDurationSecondsHasBeenSet; }
 
     /**
      * <p>The number of seconds the credential will be valid.</p>

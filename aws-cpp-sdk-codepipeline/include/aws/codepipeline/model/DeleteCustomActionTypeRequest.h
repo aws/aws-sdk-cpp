@@ -59,6 +59,12 @@ namespace Model
      * <p>The category of the custom action that you want to delete, such as source or
      * deploy.</p>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of the custom action that you want to delete, such as source or
+     * deploy.</p>
+     */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
+
+    /**
+     * <p>The provider of the service used in the custom action, such as AWS
+     * CodeDeploy.</p>
+     */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -127,6 +139,11 @@ namespace Model
      * <p>The version of the custom action to delete.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the custom action to delete.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the custom action to delete.</p>

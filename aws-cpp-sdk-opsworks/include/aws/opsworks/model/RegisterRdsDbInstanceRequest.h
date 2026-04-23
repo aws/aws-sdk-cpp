@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The Amazon RDS instance's ARN.</p>
      */
     inline const Aws::String& GetRdsDbInstanceArn() const{ return m_rdsDbInstanceArn; }
+
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
+    inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon RDS instance's ARN.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The database's master user name.</p>
      */
+    inline bool DbUserHasBeenSet() const { return m_dbUserHasBeenSet; }
+
+    /**
+     * <p>The database's master user name.</p>
+     */
     inline void SetDbUser(const Aws::String& value) { m_dbUserHasBeenSet = true; m_dbUser = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The database password.</p>
      */
     inline const Aws::String& GetDbPassword() const{ return m_dbPassword; }
+
+    /**
+     * <p>The database password.</p>
+     */
+    inline bool DbPasswordHasBeenSet() const { return m_dbPasswordHasBeenSet; }
 
     /**
      * <p>The database password.</p>

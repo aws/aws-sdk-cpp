@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The version of the response card format.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the response card format.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>The content type of the response.</p>
      */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The content type of the response.</p>
+     */
     inline void SetContentType(const ContentType& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>An array of attachment objects representing options.</p>
      */
     inline const Aws::Vector<GenericAttachment>& GetGenericAttachments() const{ return m_genericAttachments; }
+
+    /**
+     * <p>An array of attachment objects representing options.</p>
+     */
+    inline bool GenericAttachmentsHasBeenSet() const { return m_genericAttachmentsHasBeenSet; }
 
     /**
      * <p>An array of attachment objects representing options.</p>

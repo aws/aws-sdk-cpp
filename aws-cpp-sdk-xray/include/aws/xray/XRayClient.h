@@ -22,9 +22,13 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/xray/model/BatchGetTracesResult.h>
+#include <aws/xray/model/CreateGroupResult.h>
 #include <aws/xray/model/CreateSamplingRuleResult.h>
+#include <aws/xray/model/DeleteGroupResult.h>
 #include <aws/xray/model/DeleteSamplingRuleResult.h>
 #include <aws/xray/model/GetEncryptionConfigResult.h>
+#include <aws/xray/model/GetGroupResult.h>
+#include <aws/xray/model/GetGroupsResult.h>
 #include <aws/xray/model/GetSamplingRulesResult.h>
 #include <aws/xray/model/GetSamplingStatisticSummariesResult.h>
 #include <aws/xray/model/GetSamplingTargetsResult.h>
@@ -34,6 +38,7 @@
 #include <aws/xray/model/PutEncryptionConfigResult.h>
 #include <aws/xray/model/PutTelemetryRecordsResult.h>
 #include <aws/xray/model/PutTraceSegmentsResult.h>
+#include <aws/xray/model/UpdateGroupResult.h>
 #include <aws/xray/model/UpdateSamplingRuleResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
@@ -76,9 +81,13 @@ namespace XRay
 namespace Model
 {
         class BatchGetTracesRequest;
+        class CreateGroupRequest;
         class CreateSamplingRuleRequest;
+        class DeleteGroupRequest;
         class DeleteSamplingRuleRequest;
         class GetEncryptionConfigRequest;
+        class GetGroupRequest;
+        class GetGroupsRequest;
         class GetSamplingRulesRequest;
         class GetSamplingStatisticSummariesRequest;
         class GetSamplingTargetsRequest;
@@ -88,12 +97,17 @@ namespace Model
         class PutEncryptionConfigRequest;
         class PutTelemetryRecordsRequest;
         class PutTraceSegmentsRequest;
+        class UpdateGroupRequest;
         class UpdateSamplingRuleRequest;
 
         typedef Aws::Utils::Outcome<BatchGetTracesResult, Aws::Client::AWSError<XRayErrors>> BatchGetTracesOutcome;
+        typedef Aws::Utils::Outcome<CreateGroupResult, Aws::Client::AWSError<XRayErrors>> CreateGroupOutcome;
         typedef Aws::Utils::Outcome<CreateSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> CreateSamplingRuleOutcome;
+        typedef Aws::Utils::Outcome<DeleteGroupResult, Aws::Client::AWSError<XRayErrors>> DeleteGroupOutcome;
         typedef Aws::Utils::Outcome<DeleteSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> DeleteSamplingRuleOutcome;
         typedef Aws::Utils::Outcome<GetEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> GetEncryptionConfigOutcome;
+        typedef Aws::Utils::Outcome<GetGroupResult, Aws::Client::AWSError<XRayErrors>> GetGroupOutcome;
+        typedef Aws::Utils::Outcome<GetGroupsResult, Aws::Client::AWSError<XRayErrors>> GetGroupsOutcome;
         typedef Aws::Utils::Outcome<GetSamplingRulesResult, Aws::Client::AWSError<XRayErrors>> GetSamplingRulesOutcome;
         typedef Aws::Utils::Outcome<GetSamplingStatisticSummariesResult, Aws::Client::AWSError<XRayErrors>> GetSamplingStatisticSummariesOutcome;
         typedef Aws::Utils::Outcome<GetSamplingTargetsResult, Aws::Client::AWSError<XRayErrors>> GetSamplingTargetsOutcome;
@@ -103,12 +117,17 @@ namespace Model
         typedef Aws::Utils::Outcome<PutEncryptionConfigResult, Aws::Client::AWSError<XRayErrors>> PutEncryptionConfigOutcome;
         typedef Aws::Utils::Outcome<PutTelemetryRecordsResult, Aws::Client::AWSError<XRayErrors>> PutTelemetryRecordsOutcome;
         typedef Aws::Utils::Outcome<PutTraceSegmentsResult, Aws::Client::AWSError<XRayErrors>> PutTraceSegmentsOutcome;
+        typedef Aws::Utils::Outcome<UpdateGroupResult, Aws::Client::AWSError<XRayErrors>> UpdateGroupOutcome;
         typedef Aws::Utils::Outcome<UpdateSamplingRuleResult, Aws::Client::AWSError<XRayErrors>> UpdateSamplingRuleOutcome;
 
         typedef std::future<BatchGetTracesOutcome> BatchGetTracesOutcomeCallable;
+        typedef std::future<CreateGroupOutcome> CreateGroupOutcomeCallable;
         typedef std::future<CreateSamplingRuleOutcome> CreateSamplingRuleOutcomeCallable;
+        typedef std::future<DeleteGroupOutcome> DeleteGroupOutcomeCallable;
         typedef std::future<DeleteSamplingRuleOutcome> DeleteSamplingRuleOutcomeCallable;
         typedef std::future<GetEncryptionConfigOutcome> GetEncryptionConfigOutcomeCallable;
+        typedef std::future<GetGroupOutcome> GetGroupOutcomeCallable;
+        typedef std::future<GetGroupsOutcome> GetGroupsOutcomeCallable;
         typedef std::future<GetSamplingRulesOutcome> GetSamplingRulesOutcomeCallable;
         typedef std::future<GetSamplingStatisticSummariesOutcome> GetSamplingStatisticSummariesOutcomeCallable;
         typedef std::future<GetSamplingTargetsOutcome> GetSamplingTargetsOutcomeCallable;
@@ -118,15 +137,20 @@ namespace Model
         typedef std::future<PutEncryptionConfigOutcome> PutEncryptionConfigOutcomeCallable;
         typedef std::future<PutTelemetryRecordsOutcome> PutTelemetryRecordsOutcomeCallable;
         typedef std::future<PutTraceSegmentsOutcome> PutTraceSegmentsOutcomeCallable;
+        typedef std::future<UpdateGroupOutcome> UpdateGroupOutcomeCallable;
         typedef std::future<UpdateSamplingRuleOutcome> UpdateSamplingRuleOutcomeCallable;
 } // namespace Model
 
   class XRayClient;
 
     typedef std::function<void(const XRayClient*, const Model::BatchGetTracesRequest&, const Model::BatchGetTracesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchGetTracesResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::CreateGroupRequest&, const Model::CreateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::CreateSamplingRuleRequest&, const Model::CreateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateSamplingRuleResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::DeleteGroupRequest&, const Model::DeleteGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::DeleteSamplingRuleRequest&, const Model::DeleteSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteSamplingRuleResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetEncryptionConfigRequest&, const Model::GetEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetEncryptionConfigResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetGroupRequest&, const Model::GetGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::GetGroupsRequest&, const Model::GetGroupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetGroupsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingRulesRequest&, const Model::GetSamplingRulesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingRulesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingStatisticSummariesRequest&, const Model::GetSamplingStatisticSummariesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingStatisticSummariesResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::GetSamplingTargetsRequest&, const Model::GetSamplingTargetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetSamplingTargetsResponseReceivedHandler;
@@ -136,6 +160,7 @@ namespace Model
     typedef std::function<void(const XRayClient*, const Model::PutEncryptionConfigRequest&, const Model::PutEncryptionConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutEncryptionConfigResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTelemetryRecordsRequest&, const Model::PutTelemetryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTelemetryRecordsResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::PutTraceSegmentsRequest&, const Model::PutTraceSegmentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutTraceSegmentsResponseReceivedHandler;
+    typedef std::function<void(const XRayClient*, const Model::UpdateGroupRequest&, const Model::UpdateGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGroupResponseReceivedHandler;
     typedef std::function<void(const XRayClient*, const Model::UpdateSamplingRuleRequest&, const Model::UpdateSamplingRuleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateSamplingRuleResponseReceivedHandler;
 
   /**
@@ -206,6 +231,34 @@ namespace Model
         virtual void BatchGetTracesAsync(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Creates a group resource with a name and a filter expression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateGroupOutcome CreateGroup(const Model::CreateGroupRequest& request) const;
+
+        /**
+         * <p>Creates a group resource with a name and a filter expression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateGroupOutcomeCallable CreateGroupCallable(const Model::CreateGroupRequest& request) const;
+
+        /**
+         * <p>Creates a group resource with a name and a filter expression. </p><p><h3>See
+         * Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/CreateGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateGroupAsync(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a rule to control sampling behavior for instrumented applications.
          * Services retrieve rules with <a>GetSamplingRules</a>, and evaluate each rule in
          * ascending order of <i>priority</i> for each request. If a rule matches, the
@@ -250,6 +303,31 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateSamplingRuleAsync(const Model::CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteGroupOutcome DeleteGroup(const Model::DeleteGroupRequest& request) const;
+
+        /**
+         * <p>Deletes a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteGroupOutcomeCallable DeleteGroupCallable(const Model::DeleteGroupRequest& request) const;
+
+        /**
+         * <p>Deletes a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/DeleteGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteGroupAsync(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Deletes a sampling rule.</p><p><h3>See Also:</h3>   <a
@@ -303,6 +381,56 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void GetEncryptionConfigAsync(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves group resource details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetGroupOutcome GetGroup(const Model::GetGroupRequest& request) const;
+
+        /**
+         * <p>Retrieves group resource details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGroupOutcomeCallable GetGroupCallable(const Model::GetGroupRequest& request) const;
+
+        /**
+         * <p>Retrieves group resource details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroup">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGroupAsync(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Retrieves all active group details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">AWS API
+         * Reference</a></p>
+         */
+        virtual Model::GetGroupsOutcome GetGroups(const Model::GetGroupsRequest& request) const;
+
+        /**
+         * <p>Retrieves all active group details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">AWS API
+         * Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetGroupsOutcomeCallable GetGroupsCallable(const Model::GetGroupsRequest& request) const;
+
+        /**
+         * <p>Retrieves all active group details.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/GetGroups">AWS API
+         * Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetGroupsAsync(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves all sampling rules.</p><p><h3>See Also:</h3>   <a
@@ -695,6 +823,31 @@ namespace Model
         virtual void PutTraceSegmentsAsync(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Updates a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateGroupOutcome UpdateGroup(const Model::UpdateGroupRequest& request) const;
+
+        /**
+         * <p>Updates a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateGroupOutcomeCallable UpdateGroupCallable(const Model::UpdateGroupRequest& request) const;
+
+        /**
+         * <p>Updates a group resource.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateGroup">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateGroupAsync(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Modifies a sampling rule's configuration.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/xray-2016-04-12/UpdateSamplingRule">AWS
          * API Reference</a></p>
@@ -719,15 +872,19 @@ namespace Model
          */
         virtual void UpdateSamplingRuleAsync(const Model::UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void BatchGetTracesAsyncHelper(const Model::BatchGetTracesRequest& request, const BatchGetTracesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateSamplingRuleAsyncHelper(const Model::CreateSamplingRuleRequest& request, const CreateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteSamplingRuleAsyncHelper(const Model::DeleteSamplingRuleRequest& request, const DeleteSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetEncryptionConfigAsyncHelper(const Model::GetEncryptionConfigRequest& request, const GetEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetGroupAsyncHelper(const Model::GetGroupRequest& request, const GetGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetGroupsAsyncHelper(const Model::GetGroupsRequest& request, const GetGroupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingRulesAsyncHelper(const Model::GetSamplingRulesRequest& request, const GetSamplingRulesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingStatisticSummariesAsyncHelper(const Model::GetSamplingStatisticSummariesRequest& request, const GetSamplingStatisticSummariesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetSamplingTargetsAsyncHelper(const Model::GetSamplingTargetsRequest& request, const GetSamplingTargetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -737,9 +894,11 @@ namespace Model
         void PutEncryptionConfigAsyncHelper(const Model::PutEncryptionConfigRequest& request, const PutEncryptionConfigResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTelemetryRecordsAsyncHelper(const Model::PutTelemetryRecordsRequest& request, const PutTelemetryRecordsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutTraceSegmentsAsyncHelper(const Model::PutTraceSegmentsRequest& request, const PutTraceSegmentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateGroupAsyncHelper(const Model::UpdateGroupRequest& request, const UpdateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateSamplingRuleAsyncHelper(const Model::UpdateSamplingRuleRequest& request, const UpdateSamplingRuleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

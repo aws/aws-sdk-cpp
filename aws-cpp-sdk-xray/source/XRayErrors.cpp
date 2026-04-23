@@ -28,7 +28,6 @@ namespace XRay
 namespace XRayErrorMapper
 {
 
-static const int THROTTLED_HASH = HashingUtils::HashString("ThrottledException");
 static const int RULE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("RuleLimitExceededException");
 static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 
@@ -37,11 +36,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == THROTTLED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::THROTTLED), false);
-  }
-  else if (hashCode == RULE_LIMIT_EXCEEDED_HASH)
+  if (hashCode == RULE_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(XRayErrors::RULE_LIMIT_EXCEEDED), false);
   }

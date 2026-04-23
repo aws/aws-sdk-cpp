@@ -28,7 +28,8 @@ CreateNamedQueryRequest::CreateNamedQueryRequest() :
     m_databaseHasBeenSet(false),
     m_queryStringHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
-    m_clientRequestTokenHasBeenSet(true)
+    m_clientRequestTokenHasBeenSet(true),
+    m_workGroupHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,12 @@ Aws::String CreateNamedQueryRequest::SerializePayload() const
   if(m_clientRequestTokenHasBeenSet)
   {
    payload.WithString("ClientRequestToken", m_clientRequestToken);
+
+  }
+
+  if(m_workGroupHasBeenSet)
+  {
+   payload.WithString("WorkGroup", m_workGroup);
 
   }
 

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
+    inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
     inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>Indicates whether the volume is deleted on instance termination.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume is deleted on instance termination.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -98,6 +108,11 @@ namespace Model
      * <p>The attachment state.</p>
      */
     inline const AttachmentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The attachment state.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The attachment state.</p>
@@ -124,6 +139,11 @@ namespace Model
      * <p>The ID of the EBS volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the EBS volume.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
      * <p>The ID of the EBS volume.</p>

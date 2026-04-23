@@ -57,6 +57,12 @@ namespace Model
      * <p>The number of times to attempt to retry, if the job fails. Valid values are
      * 1–10.</p>
      */
+    inline bool AttemptsHasBeenSet() const { return m_attemptsHasBeenSet; }
+
+    /**
+     * <p>The number of times to attempt to retry, if the job fails. Valid values are
+     * 1–10.</p>
+     */
     inline void SetAttempts(int value) { m_attemptsHasBeenSet = true; m_attempts = value; }
 
     /**

@@ -58,6 +58,12 @@ namespace Model
      * <p>Unique identifier for a matchmaking configuration(s) to retrieve. To request
      * all existing configurations, leave this parameter empty.</p>
      */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking configuration(s) to retrieve. To request
+     * all existing configurations, leave this parameter empty.</p>
+     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * all matchmaking configurations that use this rule set.</p>
      */
     inline const Aws::String& GetRuleSetName() const{ return m_ruleSetName; }
+
+    /**
+     * <p>Unique identifier for a matchmaking rule set. Use this parameter to retrieve
+     * all matchmaking configurations that use this rule set.</p>
+     */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
 
     /**
      * <p>Unique identifier for a matchmaking rule set. Use this parameter to retrieve
@@ -152,6 +164,13 @@ namespace Model
      * <code>NextToken</code> to get results as a set of sequential pages. This
      * parameter is limited to 10.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return. Use this parameter with
+     * <code>NextToken</code> to get results as a set of sequential pages. This
+     * parameter is limited to 10.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -168,6 +187,13 @@ namespace Model
      * beginning of the result set, do not specify a value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Token that indicates the start of the next sequential page of results. Use
+     * the token that is returned with a previous call to this action. To start at the
+     * beginning of the result set, do not specify a value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Token that indicates the start of the next sequential page of results. Use

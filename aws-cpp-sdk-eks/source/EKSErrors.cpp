@@ -33,6 +33,7 @@ static const int RESOURCE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("Resour
 static const int SERVER_HASH = HashingUtils::HashString("ServerException");
 static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseException");
 static const int UNSUPPORTED_AVAILABILITY_ZONE_HASH = HashingUtils::HashString("UnsupportedAvailabilityZoneException");
+static const int INVALID_REQUEST_HASH = HashingUtils::HashString("InvalidRequestException");
 static const int CLIENT_HASH = HashingUtils::HashString("ClientException");
 
 
@@ -59,6 +60,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == UNSUPPORTED_AVAILABILITY_ZONE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::UNSUPPORTED_AVAILABILITY_ZONE), false);
+  }
+  else if (hashCode == INVALID_REQUEST_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(EKSErrors::INVALID_REQUEST), false);
   }
   else if (hashCode == CLIENT_HASH)
   {

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The stream ID.</p>
      */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
     inline void SetStreamId(const Aws::String& value) { m_streamIdHasBeenSet = true; m_streamId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The description of the stream.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the stream.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the stream.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The files associated with the stream.</p>
      */
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
+
+    /**
+     * <p>The files associated with the stream.</p>
+     */
     inline void SetFiles(const Aws::Vector<StreamFile>& value) { m_filesHasBeenSet = true; m_files = value; }
 
     /**
@@ -157,6 +172,12 @@ namespace Model
      * files.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * files.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>An IAM role that allows the IoT service principal assumes to access your S3

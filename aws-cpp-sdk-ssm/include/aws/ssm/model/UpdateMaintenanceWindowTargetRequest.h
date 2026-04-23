@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Maintenance Window ID with which to modify the target.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The Maintenance Window ID with which to modify the target.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The target ID to modify.</p>
      */
     inline const Aws::String& GetWindowTargetId() const{ return m_windowTargetId; }
+
+    /**
+     * <p>The target ID to modify.</p>
+     */
+    inline bool WindowTargetIdHasBeenSet() const { return m_windowTargetIdHasBeenSet; }
 
     /**
      * <p>The target ID to modify.</p>
@@ -126,6 +136,11 @@ namespace Model
     /**
      * <p>The targets to add or replace.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The targets to add or replace.</p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -159,6 +174,12 @@ namespace Model
      * while running tasks for these targets in this Maintenance Window.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
+
+    /**
+     * <p>User-provided value that will be included in any CloudWatch events raised
+     * while running tasks for these targets in this Maintenance Window.</p>
+     */
+    inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
      * <p>User-provided value that will be included in any CloudWatch events raised
@@ -205,6 +226,11 @@ namespace Model
     /**
      * <p>A name for the update.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A name for the update.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -237,6 +263,11 @@ namespace Model
      * <p>An optional description for the update.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the update.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional description for the update.</p>
@@ -275,6 +306,13 @@ namespace Model
      * request. Optional fields that are not specified are set to null.</p>
      */
     inline bool GetReplace() const{ return m_replace; }
+
+    /**
+     * <p>If True, then all fields that are required by the
+     * RegisterTargetWithMaintenanceWindow action are also required for this API
+     * request. Optional fields that are not specified are set to null.</p>
+     */
+    inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
      * <p>If True, then all fields that are required by the

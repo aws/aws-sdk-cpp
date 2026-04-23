@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Associate a public IP address with a server that you are launching. </p>
      */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+
+    /**
+     * <p>Associate a public IP address with a server that you are launching. </p>
+     */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
@@ -76,6 +81,11 @@ namespace Model
     /**
      * <p>The number of automated backups to keep. </p>
      */
+    inline bool BackupRetentionCountHasBeenSet() const { return m_backupRetentionCountHasBeenSet; }
+
+    /**
+     * <p>The number of automated backups to keep. </p>
+     */
     inline void SetBackupRetentionCount(int value) { m_backupRetentionCountHasBeenSet = true; m_backupRetentionCount = value; }
 
     /**
@@ -88,6 +98,11 @@ namespace Model
      * <p>The name of the server. </p>
      */
     inline const Aws::String& GetServerName() const{ return m_serverName; }
+
+    /**
+     * <p>The name of the server. </p>
+     */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
 
     /**
      * <p>The name of the server. </p>
@@ -130,6 +145,12 @@ namespace Model
      * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
      * </p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>Time stamp of server creation. Example <code>2016-07-29T13:38:47.520Z</code>
+     * </p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -155,6 +176,11 @@ namespace Model
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
      */
     inline const Aws::String& GetCloudFormationStackArn() const{ return m_cloudFormationStackArn; }
+
+    /**
+     * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
+     */
+    inline bool CloudFormationStackArnHasBeenSet() const { return m_cloudFormationStackArnHasBeenSet; }
 
     /**
      * <p>The ARN of the CloudFormation stack that was used to create the server. </p>
@@ -197,6 +223,12 @@ namespace Model
      * <p>Disables automated backups. The number of stored backups is dependent on the
      * value of PreferredBackupCount. </p>
      */
+    inline bool DisableAutomatedBackupHasBeenSet() const { return m_disableAutomatedBackupHasBeenSet; }
+
+    /**
+     * <p>Disables automated backups. The number of stored backups is dependent on the
+     * value of PreferredBackupCount. </p>
+     */
     inline void SetDisableAutomatedBackup(bool value) { m_disableAutomatedBackupHasBeenSet = true; m_disableAutomatedBackup = value; }
 
     /**
@@ -211,6 +243,12 @@ namespace Model
      * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p> A DNS name that can be used to access the engine. Example:
+     * <code>myserver-asdfghjkl.us-east-1.opsworks.io</code> </p>
+     */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p> A DNS name that can be used to access the engine. Example:
@@ -259,6 +297,12 @@ namespace Model
      * <p>The engine type of the server. Valid values in this release include
      * <code>Chef</code> and <code>Puppet</code>. </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The engine type of the server. Valid values in this release include
+     * <code>Chef</code> and <code>Puppet</code>. </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -297,6 +341,12 @@ namespace Model
      * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
      */
     inline const Aws::String& GetEngineModel() const{ return m_engineModel; }
+
+    /**
+     * <p>The engine model of the server. Valid values in this release include
+     * <code>Monolithic</code> for Puppet and <code>Single</code> for Chef. </p>
+     */
+    inline bool EngineModelHasBeenSet() const { return m_engineModelHasBeenSet; }
 
     /**
      * <p>The engine model of the server. Valid values in this release include
@@ -357,6 +407,29 @@ namespace Model
      * console after the server is online.</p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>The response of a createServer() request returns the master credential to
+     * access the server in EngineAttributes. These credentials are not stored by AWS
+     * OpsWorks CM; they are returned only as part of the result of createServer().
+     * </p> <p class="title"> <b>Attributes returned in a createServer response for
+     * Chef</b> </p> <ul> <li> <p> <code>CHEF_PIVOTAL_KEY</code>: A base64-encoded RSA
+     * private key that is generated by AWS OpsWorks for Chef Automate. This private
+     * key is required to access the Chef API.</p> </li> <li> <p>
+     * <code>CHEF_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file contains
+     * a Chef starter kit, which includes a README, a configuration file, and the
+     * required RSA private key. Save this file, unzip it, and then change to the
+     * directory where you've unzipped the file contents. From this directory, you can
+     * run Knife commands.</p> </li> </ul> <p class="title"> <b>Attributes returned in
+     * a createServer response for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_STARTER_KIT</code>: A base64-encoded ZIP file. The ZIP file
+     * contains a Puppet starter kit, including a README and a required private key.
+     * Save this file, unzip it, and then change to the directory where you've unzipped
+     * the file contents.</p> </li> <li> <p> <code>PUPPET_ADMIN_PASSWORD</code>: An
+     * administrator password that you can use to sign in to the Puppet Enterprise
+     * console after the server is online.</p> </li> </ul>
+     */
+    inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
 
     /**
      * <p>The response of a createServer() request returns the master credential to
@@ -509,6 +582,13 @@ namespace Model
      * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
      * is <code>2017</code>. </p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version of the server. For a Chef server, the valid value for
+     * EngineVersion is currently <code>12</code>. For a Puppet server, the valid value
+     * is <code>2017</code>. </p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -555,6 +635,11 @@ namespace Model
     /**
      * <p>The instance profile ARN of the server. </p>
      */
+    inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
+
+    /**
+     * <p>The instance profile ARN of the server. </p>
+     */
     inline void SetInstanceProfileArn(const Aws::String& value) { m_instanceProfileArnHasBeenSet = true; m_instanceProfileArn = value; }
 
     /**
@@ -588,6 +673,12 @@ namespace Model
      * This might not be the same instance type that is shown in the EC2 console. </p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p> The instance type for the server, as specified in the CloudFormation stack.
+     * This might not be the same instance type that is shown in the EC2 console. </p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p> The instance type for the server, as specified in the CloudFormation stack.
@@ -634,6 +725,11 @@ namespace Model
     /**
      * <p>The key pair associated with the server. </p>
      */
+    inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
+
+    /**
+     * <p>The key pair associated with the server. </p>
+     */
     inline void SetKeyPair(const Aws::String& value) { m_keyPairHasBeenSet = true; m_keyPair = value; }
 
     /**
@@ -672,6 +768,12 @@ namespace Model
      * <p>The status of the most recent server maintenance run. Shows
      * <code>SUCCESS</code> or <code>FAILED</code>. </p>
      */
+    inline bool MaintenanceStatusHasBeenSet() const { return m_maintenanceStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the most recent server maintenance run. Shows
+     * <code>SUCCESS</code> or <code>FAILED</code>. </p>
+     */
     inline void SetMaintenanceStatus(const MaintenanceStatus& value) { m_maintenanceStatusHasBeenSet = true; m_maintenanceStatus = value; }
 
     /**
@@ -697,6 +799,11 @@ namespace Model
      * <p>The preferred maintenance period specified for the server. </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The preferred maintenance period specified for the server. </p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The preferred maintenance period specified for the server. </p>
@@ -737,6 +844,11 @@ namespace Model
     /**
      * <p>The preferred backup period specified for the server. </p>
      */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+
+    /**
+     * <p>The preferred backup period specified for the server. </p>
+     */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
@@ -771,6 +883,13 @@ namespace Model
      * console. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p> The security group IDs for the server, as specified in the CloudFormation
+     * stack. These might not be the same security groups that are shown in the EC2
+     * console. </p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p> The security group IDs for the server, as specified in the CloudFormation
@@ -830,6 +949,11 @@ namespace Model
     /**
      * <p>The service role ARN used to create the server. </p>
      */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
+
+    /**
+     * <p>The service role ARN used to create the server. </p>
+     */
     inline void SetServiceRoleArn(const Aws::String& value) { m_serviceRoleArnHasBeenSet = true; m_serviceRoleArn = value; }
 
     /**
@@ -870,6 +994,13 @@ namespace Model
      * such as creating, running, or backing up the server, as well as the server's
      * health state. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The server's status. This field displays the states of actions in progress,
+     * such as creating, running, or backing up the server, as well as the server's
+     * health state. </p>
+     */
     inline void SetStatus(const ServerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -900,6 +1031,13 @@ namespace Model
      * for health check results). </p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p> Depending on the server status, this field has either a human-readable
+     * message (such as a create or backup error), or an escaped block of JSON (used
+     * for health check results). </p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p> Depending on the server status, this field has either a human-readable
@@ -952,6 +1090,11 @@ namespace Model
     /**
      * <p> The subnet IDs specified in a CreateServer request. </p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p> The subnet IDs specified in a CreateServer request. </p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -989,6 +1132,11 @@ namespace Model
      * <p>The ARN of the server. </p>
      */
     inline const Aws::String& GetServerArn() const{ return m_serverArn; }
+
+    /**
+     * <p>The ARN of the server. </p>
+     */
+    inline bool ServerArnHasBeenSet() const { return m_serverArnHasBeenSet; }
 
     /**
      * <p>The ARN of the server. </p>

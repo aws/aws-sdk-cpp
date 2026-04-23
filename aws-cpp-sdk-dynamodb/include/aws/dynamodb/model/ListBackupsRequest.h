@@ -56,6 +56,12 @@ namespace Model
      * <p>The backups from the table specified by <code>TableName</code> are listed.
      * </p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The backups from the table specified by <code>TableName</code> are listed.
+     * </p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>Maximum number of backups to return at once.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Maximum number of backups to return at once.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -110,6 +121,12 @@ namespace Model
      * <code>TimeRangeLowerBound</code> is inclusive.</p>
      */
     inline const Aws::Utils::DateTime& GetTimeRangeLowerBound() const{ return m_timeRangeLowerBound; }
+
+    /**
+     * <p>Only backups created after this time are listed.
+     * <code>TimeRangeLowerBound</code> is inclusive.</p>
+     */
+    inline bool TimeRangeLowerBoundHasBeenSet() const { return m_timeRangeLowerBoundHasBeenSet; }
 
     /**
      * <p>Only backups created after this time are listed.
@@ -146,6 +163,12 @@ namespace Model
      * <p>Only backups created before this time are listed.
      * <code>TimeRangeUpperBound</code> is exclusive. </p>
      */
+    inline bool TimeRangeUpperBoundHasBeenSet() const { return m_timeRangeUpperBoundHasBeenSet; }
+
+    /**
+     * <p>Only backups created before this time are listed.
+     * <code>TimeRangeUpperBound</code> is exclusive. </p>
+     */
     inline void SetTimeRangeUpperBound(const Aws::Utils::DateTime& value) { m_timeRangeUpperBoundHasBeenSet = true; m_timeRangeUpperBound = value; }
 
     /**
@@ -175,6 +198,15 @@ namespace Model
      * results. </p>
      */
     inline const Aws::String& GetExclusiveStartBackupArn() const{ return m_exclusiveStartBackupArn; }
+
+    /**
+     * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
+     * when the current page of results was returned, inclusive of the current page of
+     * results. This value may be specified as the <code>ExclusiveStartBackupArn</code>
+     * of a new <code>ListBackups</code> operation in order to fetch the next page of
+     * results. </p>
+     */
+    inline bool ExclusiveStartBackupArnHasBeenSet() const { return m_exclusiveStartBackupArnHasBeenSet; }
 
     /**
      * <p> <code>LastEvaluatedBackupArn</code> is the ARN of the backup last evaluated
@@ -240,6 +272,16 @@ namespace Model
      * SYSTEM).</p> </li> </ul>
      */
     inline const BackupTypeFilter& GetBackupType() const{ return m_backupType; }
+
+    /**
+     * <p>The backups from the table specified by <code>BackupType</code> are
+     * listed.</p> <p>Where <code>BackupType</code> can be:</p> <ul> <li> <p>
+     * <code>USER</code> - On-demand backup created by you.</p> </li> <li> <p>
+     * <code>SYSTEM</code> - On-demand backup automatically created by DynamoDB.</p>
+     * </li> <li> <p> <code>ALL</code> - All types of on-demand backups (USER and
+     * SYSTEM).</p> </li> </ul>
+     */
+    inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
 
     /**
      * <p>The backups from the table specified by <code>BackupType</code> are

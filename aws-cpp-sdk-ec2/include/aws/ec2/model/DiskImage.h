@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>A description of the disk image.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the disk image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>Information about the disk image.</p>
      */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>Information about the disk image.</p>
+     */
     inline void SetImage(const DiskImageDetail& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>Information about the volume.</p>
      */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
+
+    /**
+     * <p>Information about the volume.</p>
+     */
+    inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
 
     /**
      * <p>Information about the volume.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the cache engine.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the cache engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The version number of the cache engine.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the cache engine.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the cache engine.</p>
@@ -129,6 +139,14 @@ namespace Model
      * <code>redis4.0</code> </p>
      */
     inline const Aws::String& GetCacheParameterGroupFamily() const{ return m_cacheParameterGroupFamily; }
+
+    /**
+     * <p>The name of the cache parameter group family associated with this cache
+     * engine.</p> <p>Valid values are: <code>memcached1.4</code> |
+     * <code>redis2.6</code> | <code>redis2.8</code> | <code>redis3.2</code> |
+     * <code>redis4.0</code> </p>
+     */
+    inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }
 
     /**
      * <p>The name of the cache parameter group family associated with this cache
@@ -187,6 +205,11 @@ namespace Model
     /**
      * <p>The description of the cache engine.</p>
      */
+    inline bool CacheEngineDescriptionHasBeenSet() const { return m_cacheEngineDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the cache engine.</p>
+     */
     inline void SetCacheEngineDescription(const Aws::String& value) { m_cacheEngineDescriptionHasBeenSet = true; m_cacheEngineDescription = value; }
 
     /**
@@ -219,6 +242,11 @@ namespace Model
      * <p>The description of the cache engine version.</p>
      */
     inline const Aws::String& GetCacheEngineVersionDescription() const{ return m_cacheEngineVersionDescription; }
+
+    /**
+     * <p>The description of the cache engine version.</p>
+     */
+    inline bool CacheEngineVersionDescriptionHasBeenSet() const { return m_cacheEngineVersionDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the cache engine version.</p>

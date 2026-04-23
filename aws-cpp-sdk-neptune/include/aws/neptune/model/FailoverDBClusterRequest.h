@@ -61,6 +61,13 @@ namespace Model
      * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
      * of an existing DBCluster.</p> </li> </ul>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>A DB cluster identifier to force a failover for. This parameter is not
+     * case-sensitive.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier
+     * of an existing DBCluster.</p> </li> </ul>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * example, <code>mydbcluster-replica1</code>.</p>
      */
     inline const Aws::String& GetTargetDBInstanceIdentifier() const{ return m_targetDBInstanceIdentifier; }
+
+    /**
+     * <p>The name of the instance to promote to the primary instance.</p> <p>You must
+     * specify the instance identifier for an Read Replica in the DB cluster. For
+     * example, <code>mydbcluster-replica1</code>.</p>
+     */
+    inline bool TargetDBInstanceIdentifierHasBeenSet() const { return m_targetDBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The name of the instance to promote to the primary instance.</p> <p>You must

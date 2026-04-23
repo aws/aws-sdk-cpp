@@ -37,7 +37,7 @@ GetObjectTorrentRequest::GetObjectTorrentRequest() :
 
 Aws::String GetObjectTorrentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectTorrentRequest::AddQueryStringParameters(URI& uri) const

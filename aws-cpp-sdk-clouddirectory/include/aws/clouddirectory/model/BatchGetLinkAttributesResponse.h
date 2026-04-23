@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The attributes that are associated with the typed link.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The attributes that are associated with the typed link.</p>
+     */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**

@@ -28,6 +28,7 @@ namespace SFN
 namespace SFNErrorMapper
 {
 
+static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTags");
 static const int MISSING_REQUIRED_PARAMETER_HASH = HashingUtils::HashString("MissingRequiredParameter");
 static const int EXECUTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ExecutionLimitExceeded");
 static const int TASK_TIMED_OUT_HASH = HashingUtils::HashString("TaskTimedOut");
@@ -53,7 +54,11 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
+  if (hashCode == TOO_MANY_TAGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::TOO_MANY_TAGS), false);
+  }
+  else if (hashCode == MISSING_REQUIRED_PARAMETER_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SFNErrors::MISSING_REQUIRED_PARAMETER), false);
   }

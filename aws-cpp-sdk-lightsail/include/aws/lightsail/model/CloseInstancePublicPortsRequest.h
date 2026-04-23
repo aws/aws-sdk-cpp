@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Information about the public port you are trying to close.</p>
      */
+    inline bool PortInfoHasBeenSet() const { return m_portInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the public port you are trying to close.</p>
+     */
     inline void SetPortInfo(const PortInfo& value) { m_portInfoHasBeenSet = true; m_portInfo = value; }
 
     /**
@@ -76,6 +81,12 @@ namespace Model
      * ports.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The name of the instance on which you're attempting to close the public
+     * ports.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The name of the instance on which you're attempting to close the public

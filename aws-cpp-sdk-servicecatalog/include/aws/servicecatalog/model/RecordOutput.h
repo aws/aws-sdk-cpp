@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The output key.</p>
      */
+    inline bool OutputKeyHasBeenSet() const { return m_outputKeyHasBeenSet; }
+
+    /**
+     * <p>The output key.</p>
+     */
     inline void SetOutputKey(const Aws::String& value) { m_outputKeyHasBeenSet = true; m_outputKey = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The output value.</p>
      */
+    inline bool OutputValueHasBeenSet() const { return m_outputValueHasBeenSet; }
+
+    /**
+     * <p>The output value.</p>
+     */
     inline void SetOutputValue(const Aws::String& value) { m_outputValueHasBeenSet = true; m_outputValue = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The description of the output.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the output.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the output.</p>

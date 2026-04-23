@@ -35,7 +35,7 @@ GetUsagePlansRequest::GetUsagePlansRequest() :
 
 Aws::String GetUsagePlansRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetUsagePlansRequest::AddQueryStringParameters(URI& uri) const

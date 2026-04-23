@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the execution you want state machine
      * information for.</p>
      */
+    inline bool ExecutionArnHasBeenSet() const { return m_executionArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the execution you want state machine
+     * information for.</p>
+     */
     inline void SetExecutionArn(const Aws::String& value) { m_executionArnHasBeenSet = true; m_executionArn = value; }
 
     /**

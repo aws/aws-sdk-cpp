@@ -17,6 +17,7 @@
 #include <aws/iot1click-projects/IoT1ClickProjects_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -50,9 +51,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the project.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectSummary& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectSummary& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectSummary& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The name of the project being summarized.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project being summarized.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The name of the project being summarized.</p>
@@ -95,6 +142,12 @@ namespace Model
      * <p>The date when the project was originally created, in UNIX epoch time
      * format.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the project was originally created, in UNIX epoch time
+     * format.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -128,6 +181,13 @@ namespace Model
      * project was not updated, then <code>createdDate</code> and
      * <code>updatedDate</code> are the same.</p>
      */
+    inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
+
+    /**
+     * <p>The date when the project was last updated, in UNIX epoch time format. If the
+     * project was not updated, then <code>createdDate</code> and
+     * <code>updatedDate</code> are the same.</p>
+     */
     inline void SetUpdatedDate(const Aws::Utils::DateTime& value) { m_updatedDateHasBeenSet = true; m_updatedDate = value; }
 
     /**
@@ -151,7 +211,76 @@ namespace Model
      */
     inline ProjectSummary& WithUpdatedDate(Aws::Utils::DateTime&& value) { SetUpdatedDate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectSummary& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
@@ -161,6 +290,9 @@ namespace Model
 
     Aws::Utils::DateTime m_updatedDate;
     bool m_updatedDateHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

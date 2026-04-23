@@ -58,6 +58,12 @@ namespace Model
      * <p>A filter that returns only transform jobs created after the specified
      * time.</p>
      */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only transform jobs created after the specified
+     * time.</p>
+     */
     inline void SetCreationTimeAfter(const Aws::Utils::DateTime& value) { m_creationTimeAfterHasBeenSet = true; m_creationTimeAfter = value; }
 
     /**
@@ -84,6 +90,12 @@ namespace Model
      * time.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeBefore() const{ return m_creationTimeBefore; }
+
+    /**
+     * <p>A filter that returns only transform jobs created before the specified
+     * time.</p>
+     */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
 
     /**
      * <p>A filter that returns only transform jobs created before the specified
@@ -120,6 +132,12 @@ namespace Model
      * <p>A filter that returns only transform jobs modified after the specified
      * time.</p>
      */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only transform jobs modified after the specified
+     * time.</p>
+     */
     inline void SetLastModifiedTimeAfter(const Aws::Utils::DateTime& value) { m_lastModifiedTimeAfterHasBeenSet = true; m_lastModifiedTimeAfter = value; }
 
     /**
@@ -151,6 +169,12 @@ namespace Model
      * <p>A filter that returns only transform jobs modified before the specified
      * time.</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only transform jobs modified before the specified
+     * time.</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -177,6 +201,12 @@ namespace Model
      * whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the transform job name. This filter returns only transform jobs
+     * whose name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the transform job name. This filter returns only transform jobs
@@ -223,6 +253,11 @@ namespace Model
     /**
      * <p>A filter that retrieves only transform jobs with a specific status.</p>
      */
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that retrieves only transform jobs with a specific status.</p>
+     */
     inline void SetStatusEquals(const TransformJobStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
@@ -245,6 +280,11 @@ namespace Model
      * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
      */
     inline const SortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>The field to sort results by. The default is <code>CreationTime</code>.</p>
@@ -275,6 +315,11 @@ namespace Model
     /**
      * <p>The sort order for results. The default is <code>Descending</code>.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>The sort order for results. The default is <code>Descending</code>.</p>
+     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -299,6 +344,13 @@ namespace Model
      * set of transform jobs, use the token in the next request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the result of the previous <code>ListTransformJobs</code> request was
+     * truncated, the response includes a <code>NextToken</code>. To retrieve the next
+     * set of transform jobs, use the token in the next request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the result of the previous <code>ListTransformJobs</code> request was
@@ -348,6 +400,12 @@ namespace Model
      * value is <code>10</code>.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of transform jobs to return in the response. The default
+     * value is <code>10</code>.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of transform jobs to return in the response. The default

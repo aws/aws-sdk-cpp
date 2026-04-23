@@ -65,6 +65,13 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) for the root.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
+     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -106,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -115,7 +122,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
+     * ARNs in Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -124,7 +140,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -133,7 +149,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -142,7 +158,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -151,7 +167,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -160,7 +176,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the root.</p> <p>For more information about
      * ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -174,6 +190,14 @@ namespace Model
      * character range.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name of the root.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> that is used to
+     * validate this parameter is a string of any of the characters in the ASCII
+     * character range.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name of the root.</p> <p>The <a
@@ -233,6 +257,16 @@ namespace Model
      * availability of the policy types in that organization.</p> </note>
      */
     inline const Aws::Vector<PolicyTypeSummary>& GetPolicyTypes() const{ return m_policyTypes; }
+
+    /**
+     * <p>The types of policies that are currently enabled for the root and therefore
+     * can be attached to the root or to its OUs or accounts.</p> <note> <p>Even if a
+     * policy type is shown as available in the organization, you can separately enable
+     * and disable them at the root level by using <a>EnablePolicyType</a> and
+     * <a>DisablePolicyType</a>. Use <a>DescribeOrganization</a> to see the
+     * availability of the policy types in that organization.</p> </note>
+     */
+    inline bool PolicyTypesHasBeenSet() const { return m_policyTypesHasBeenSet; }
 
     /**
      * <p>The types of policies that are currently enabled for the root and therefore

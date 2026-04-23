@@ -60,6 +60,13 @@ namespace Model
      * Specifying the check ID of a check that is automatically refreshed causes an
      * <code>InvalidParameterValue</code> error.</p>
      */
+    inline bool CheckIdsHasBeenSet() const { return m_checkIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Trusted Advisor checks to get the status of. <b>Note:</b>
+     * Specifying the check ID of a check that is automatically refreshed causes an
+     * <code>InvalidParameterValue</code> error.</p>
+     */
     inline void SetCheckIds(const Aws::Vector<Aws::String>& value) { m_checkIdsHasBeenSet = true; m_checkIds = value; }
 
     /**

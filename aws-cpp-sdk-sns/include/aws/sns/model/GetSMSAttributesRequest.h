@@ -67,6 +67,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
      * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>A list of the individual attribute names, such as
+     * <code>MonthlySpendLimit</code>, for which you want values.</p> <p>For all
+     * attribute names, see <a
+     * href="http://docs.aws.amazon.com/sns/latest/api/API_SetSMSAttributes.html">SetSMSAttributes</a>.</p>
+     * <p>If you don't use this parameter, Amazon SNS returns all SMS attributes.</p>
+     */
     inline void SetAttributes(const Aws::Vector<Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**

@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the <a>Deployment</a> that the stage points to.</p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The identifier of a client certificate for an API stage.</p>
      */
     inline const Aws::String& GetClientCertificateId() const{ return m_clientCertificateId; }
+
+    /**
+     * <p>The identifier of a client certificate for an API stage.</p>
+     */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
 
     /**
      * <p>The identifier of a client certificate for an API stage.</p>
@@ -134,6 +144,12 @@ namespace Model
      * Identifier (URI) of a call to API Gateway.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the stage is the first path segment in the Uniform Resource
+     * Identifier (URI) of a call to API Gateway.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the stage is the first path segment in the Uniform Resource
@@ -180,6 +196,11 @@ namespace Model
     /**
      * <p>The stage's description.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The stage's description.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -216,6 +237,11 @@ namespace Model
     /**
      * <p>Specifies whether a cache cluster is enabled for the stage.</p>
      */
+    inline bool CacheClusterEnabledHasBeenSet() const { return m_cacheClusterEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether a cache cluster is enabled for the stage.</p>
+     */
     inline void SetCacheClusterEnabled(bool value) { m_cacheClusterEnabledHasBeenSet = true; m_cacheClusterEnabled = value; }
 
     /**
@@ -228,6 +254,11 @@ namespace Model
      * <p>The size of the cache cluster for the stage, if enabled.</p>
      */
     inline const CacheClusterSize& GetCacheClusterSize() const{ return m_cacheClusterSize; }
+
+    /**
+     * <p>The size of the cache cluster for the stage, if enabled.</p>
+     */
+    inline bool CacheClusterSizeHasBeenSet() const { return m_cacheClusterSizeHasBeenSet; }
 
     /**
      * <p>The size of the cache cluster for the stage, if enabled.</p>
@@ -258,6 +289,11 @@ namespace Model
     /**
      * <p>The status of the cache cluster for the stage, if enabled.</p>
      */
+    inline bool CacheClusterStatusHasBeenSet() const { return m_cacheClusterStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the cache cluster for the stage, if enabled.</p>
+     */
     inline void SetCacheClusterStatus(const CacheClusterStatus& value) { m_cacheClusterStatusHasBeenSet = true; m_cacheClusterStatus = value; }
 
     /**
@@ -283,6 +319,14 @@ namespace Model
      * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
      */
     inline const Aws::Map<Aws::String, MethodSetting>& GetMethodSettings() const{ return m_methodSettings; }
+
+    /**
+     * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
+     * (designated as <code>/{method_setting_key</code> below) are method paths defined
+     * as <code>{resource_path}/{http_method}</code> for an individual method override,
+     * or <code>/\* /\*</code> for overriding all methods in the stage. </p>
+     */
+    inline bool MethodSettingsHasBeenSet() const { return m_methodSettingsHasBeenSet; }
 
     /**
      * <p>A map that defines the method settings for a <a>Stage</a> resource. Keys
@@ -377,6 +421,13 @@ namespace Model
      * names can have alphanumeric and underscore characters, and the values must match
      * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
+
+    /**
+     * <p>A map that defines the stage variables for a <a>Stage</a> resource. Variable
+     * names can have alphanumeric and underscore characters, and the values must match
+     * <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+     */
     inline void SetVariables(const Aws::Map<Aws::String, Aws::String>& value) { m_variablesHasBeenSet = true; m_variables = value; }
 
     /**
@@ -458,6 +509,11 @@ namespace Model
     /**
      * <p>The version of the associated API documentation.</p>
      */
+    inline bool DocumentationVersionHasBeenSet() const { return m_documentationVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
     inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
 
     /**
@@ -494,6 +550,11 @@ namespace Model
     /**
      * <p>Settings for logging access in this stage.</p>
      */
+    inline bool AccessLogSettingsHasBeenSet() const { return m_accessLogSettingsHasBeenSet; }
+
+    /**
+     * <p>Settings for logging access in this stage.</p>
+     */
     inline void SetAccessLogSettings(const AccessLogSettings& value) { m_accessLogSettingsHasBeenSet = true; m_accessLogSettings = value; }
 
     /**
@@ -516,6 +577,11 @@ namespace Model
      * <p>Settings for the canary deployment in this stage.</p>
      */
     inline const CanarySettings& GetCanarySettings() const{ return m_canarySettings; }
+
+    /**
+     * <p>Settings for the canary deployment in this stage.</p>
+     */
+    inline bool CanarySettingsHasBeenSet() const { return m_canarySettingsHasBeenSet; }
 
     /**
      * <p>Settings for the canary deployment in this stage.</p>
@@ -548,6 +614,12 @@ namespace Model
      * <p>Specifies whether active tracing with X-ray is enabled for the
      * <a>Stage</a>.</p>
      */
+    inline bool TracingEnabledHasBeenSet() const { return m_tracingEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
     inline void SetTracingEnabled(bool value) { m_tracingEnabledHasBeenSet = true; m_tracingEnabled = value; }
 
     /**
@@ -561,6 +633,11 @@ namespace Model
      * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
      */
     inline const Aws::String& GetWebAclArn() const{ return m_webAclArn; }
+
+    /**
+     * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
+     */
+    inline bool WebAclArnHasBeenSet() const { return m_webAclArnHasBeenSet; }
 
     /**
      * <p>The ARN of the WebAcl associated with the <a>Stage</a>.</p>
@@ -598,6 +675,12 @@ namespace Model
      * resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The collection of tags. Each tag element is associated with a given
+     * resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The collection of tags. Each tag element is associated with a given
@@ -674,6 +757,11 @@ namespace Model
     /**
      * <p>The timestamp when the stage was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the stage was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -696,6 +784,11 @@ namespace Model
      * <p>The timestamp when the stage last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedDate() const{ return m_lastUpdatedDate; }
+
+    /**
+     * <p>The timestamp when the stage last updated.</p>
+     */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
 
     /**
      * <p>The timestamp when the stage last updated.</p>

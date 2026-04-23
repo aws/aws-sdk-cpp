@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the configuration set that you want to associate with a dedicated
      * IP pool.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to associate with a dedicated
+     * IP pool.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * configuration set.</p>
      */
     inline const Aws::String& GetSendingPoolName() const{ return m_sendingPoolName; }
+
+    /**
+     * <p>The name of the dedicated IP pool that you want to associate with the
+     * configuration set.</p>
+     */
+    inline bool SendingPoolNameHasBeenSet() const { return m_sendingPoolNameHasBeenSet; }
 
     /**
      * <p>The name of the dedicated IP pool that you want to associate with the

@@ -64,6 +64,13 @@ namespace Model
      * <code>HourlyPrice</code> amounts are specified. At this time, the only supported
      * currency is <code>USD</code>.</p>
      */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
+
+    /**
+     * <p>The currency in which the <code>UpfrontPrice</code> and
+     * <code>HourlyPrice</code> amounts are specified. At this time, the only supported
+     * currency is <code>USD</code>.</p>
+     */
     inline void SetCurrencyCode(const CurrencyCodeValues& value) { m_currencyCodeHasBeenSet = true; m_currencyCode = value; }
 
     /**
@@ -96,6 +103,11 @@ namespace Model
     /**
      * <p>The duration of the reservation's term in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the reservation's term in seconds.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -108,6 +120,11 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
+     */
+    inline bool HostIdSetHasBeenSet() const { return m_hostIdSetHasBeenSet; }
 
     /**
      * <p>The IDs of the Dedicated Hosts associated with the reservation.</p>
@@ -153,6 +170,11 @@ namespace Model
     /**
      * <p>The ID of the reservation.</p>
      */
+    inline bool HostReservationIdHasBeenSet() const { return m_hostReservationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the reservation.</p>
+     */
     inline void SetHostReservationId(const Aws::String& value) { m_hostReservationIdHasBeenSet = true; m_hostReservationId = value; }
 
     /**
@@ -185,6 +207,11 @@ namespace Model
      * <p>The hourly price of the reservation per hour.</p>
      */
     inline const Aws::String& GetHourlyPrice() const{ return m_hourlyPrice; }
+
+    /**
+     * <p>The hourly price of the reservation per hour.</p>
+     */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
 
     /**
      * <p>The hourly price of the reservation per hour.</p>
@@ -222,6 +249,12 @@ namespace Model
      * associated with.</p>
      */
     inline const Aws::String& GetInstanceFamily() const{ return m_instanceFamily; }
+
+    /**
+     * <p>The instance family on the Dedicated Host that the reservation can be
+     * associated with.</p>
+     */
+    inline bool InstanceFamilyHasBeenSet() const { return m_instanceFamilyHasBeenSet; }
 
     /**
      * <p>The instance family on the Dedicated Host that the reservation can be
@@ -268,6 +301,11 @@ namespace Model
     /**
      * <p>The payment option for the reservation.</p>
      */
+    inline bool PaymentOptionHasBeenSet() const { return m_paymentOptionHasBeenSet; }
+
+    /**
+     * <p>The payment option for the reservation.</p>
+     */
     inline void SetPaymentOption(const PaymentOption& value) { m_paymentOptionHasBeenSet = true; m_paymentOption = value; }
 
     /**
@@ -290,6 +328,11 @@ namespace Model
      * <p>The upfront price of the reservation.</p>
      */
     inline const Aws::String& GetUpfrontPrice() const{ return m_upfrontPrice; }
+
+    /**
+     * <p>The upfront price of the reservation.</p>
+     */
+    inline bool UpfrontPriceHasBeenSet() const { return m_upfrontPriceHasBeenSet; }
 
     /**
      * <p>The upfront price of the reservation.</p>

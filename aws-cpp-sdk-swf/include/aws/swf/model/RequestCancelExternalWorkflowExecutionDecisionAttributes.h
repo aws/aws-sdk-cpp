@@ -72,6 +72,12 @@ namespace Model
      * <p> The <code>workflowId</code> of the external workflow execution to
      * cancel.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p> The <code>workflowId</code> of the external workflow execution to
+     * cancel.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
@@ -113,6 +119,11 @@ namespace Model
     /**
      * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
      */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
+
+    /**
+     * <p>The <code>runId</code> of the external workflow execution to cancel.</p>
+     */
     inline void SetRunId(const Aws::String& value) { m_runIdHasBeenSet = true; m_runId = value; }
 
     /**
@@ -146,6 +157,12 @@ namespace Model
      * workflow tasks.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>The data attached to the event that can be used by the decider in subsequent
+     * workflow tasks.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>The data attached to the event that can be used by the decider in subsequent

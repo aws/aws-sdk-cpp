@@ -62,6 +62,12 @@ namespace Model
      * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
      * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>[Required] The Tag keys to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>[Required] The Tag keys to delete.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>[Required] The Tag keys to delete.</p>

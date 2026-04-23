@@ -48,7 +48,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -57,7 +57,16 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>Name of the user to update. If you're changing the name of the user, this is
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -66,7 +75,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +84,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -84,7 +93,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -93,7 +102,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -102,7 +111,7 @@ namespace Model
 
     /**
      * <p>Name of the user to update. If you're changing the name of the user, this is
-     * the original user name.</p> <p>This parameter allows (per its <a
+     * the original user name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -112,7 +121,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -123,7 +132,18 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of either a forward slash (/) by itself or a string that must begin
+     * and end with forward slashes. In addition, it can contain any ASCII character
+     * from the ! (\u0021) through the DEL character (\u007F), including most
+     * punctuation characters, digits, and upper and lowercased letters.</p>
+     */
+    inline bool NewPathHasBeenSet() const { return m_newPathHasBeenSet; }
+
+    /**
+     * <p>New path for the IAM user. Include this parameter only if you're changing the
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -134,7 +154,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -145,7 +165,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -156,7 +176,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -167,7 +187,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -178,7 +198,7 @@ namespace Model
 
     /**
      * <p>New path for the IAM user. Include this parameter only if you're changing the
-     * user's path.</p> <p>This parameter allows (per its <a
+     * user's path.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of either a forward slash (/) by itself or a string that must begin
      * and end with forward slashes. In addition, it can contain any ASCII character
@@ -190,7 +210,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -199,7 +219,16 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p>
+     */
+    inline bool NewUserNameHasBeenSet() const { return m_newUserNameHasBeenSet; }
+
+    /**
+     * <p>New name for the user. Include this parameter only if you're changing the
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -208,7 +237,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -217,7 +246,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -226,7 +255,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -235,7 +264,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -244,7 +273,7 @@ namespace Model
 
     /**
      * <p>New name for the user. Include this parameter only if you're changing the
-     * user's name.</p> <p>This parameter allows (per its <a
+     * user's name.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * Body override. If specified will override default body.
      */
+    inline bool BodyOverrideHasBeenSet() const { return m_bodyOverrideHasBeenSet; }
+
+    /**
+     * Body override. If specified will override default body.
+     */
     inline void SetBodyOverride(const Aws::String& value) { m_bodyOverrideHasBeenSet = true; m_bodyOverride = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * or added to the email/sms delivery receipt event attributes.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+
+    /**
+     * A map of custom attributes to attributes to be attached to the message for this
+     * address. This payload is added to the push notification's 'data.pinpoint' object
+     * or added to the email/sms delivery receipt event attributes.
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
     /**
      * A map of custom attributes to attributes to be attached to the message for this
@@ -180,6 +192,12 @@ namespace Model
      * The Raw JSON formatted string to be used as the payload. This value overrides
      * the message.
      */
+    inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
     inline void SetRawContent(const Aws::String& value) { m_rawContentHasBeenSet = true; m_rawContent = value; }
 
     /**
@@ -219,6 +237,13 @@ namespace Model
      * the all other substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * A map of substitution values for the message to be merged with the
+     * DefaultMessage's substitutions. Substitutions on this map take precedence over
+     * the all other substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * A map of substitution values for the message to be merged with the
@@ -295,6 +320,11 @@ namespace Model
      * Title override. If specified will override default title if applicable.
      */
     inline const Aws::String& GetTitleOverride() const{ return m_titleOverride; }
+
+    /**
+     * Title override. If specified will override default title if applicable.
+     */
+    inline bool TitleOverrideHasBeenSet() const { return m_titleOverrideHasBeenSet; }
 
     /**
      * Title override. If specified will override default title if applicable.

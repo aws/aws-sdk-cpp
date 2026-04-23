@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster parameter group.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The status of parameter updates.</p>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+
+    /**
+     * <p>The status of parameter updates.</p>
+     */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
 
     /**
      * <p>The status of parameter updates.</p>
@@ -131,6 +141,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<ClusterParameterStatus>& GetClusterParameterStatusList() const{ return m_clusterParameterStatusList; }
+
+    /**
+     * <p>The list of parameter statuses.</p> <p> For more information about parameters
+     * and parameter groups, go to <a
+     * href="http://docs.aws.amazon.com/redshift/latest/mgmt/working-with-parameter-groups.html">Amazon
+     * Redshift Parameter Groups</a> in the <i>Amazon Redshift Cluster Management
+     * Guide</i>.</p>
+     */
+    inline bool ClusterParameterStatusListHasBeenSet() const { return m_clusterParameterStatusListHasBeenSet; }
 
     /**
      * <p>The list of parameter statuses.</p> <p> For more information about parameters

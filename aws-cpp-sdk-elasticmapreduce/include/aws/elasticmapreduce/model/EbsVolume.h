@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
      */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+
+    /**
+     * <p>The device name that is exposed to the instance, such as /dev/sdh.</p>
+     */
     inline void SetDevice(const Aws::String& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The volume identifier of the EBS volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The volume identifier of the EBS volume.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
      * <p>The volume identifier of the EBS volume.</p>

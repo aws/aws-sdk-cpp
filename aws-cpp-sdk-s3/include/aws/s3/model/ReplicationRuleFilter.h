@@ -62,6 +62,12 @@ namespace Model
      * <p>An object keyname prefix that identifies the subset of objects to which the
      * rule applies.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>An object keyname prefix that identifies the subset of objects to which the
+     * rule applies.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
      * to objects that have the tag in their tag set.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p>A container for specifying a tag key and value. </p> <p>The rule applies only
+     * to objects that have the tag in their tag set.</p>
+     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
@@ -136,6 +148,17 @@ namespace Model
      * tag.</p> </li> </ul>
      */
     inline const ReplicationRuleAndOperator& GetAnd() const{ return m_and; }
+
+    /**
+     * <p>A container for specifying rule filters. The filters determine the subset of
+     * objects to which the rule applies. This element is required only if you specify
+     * more than one filter. For example: </p> <ul> <li> <p>If you specify both a
+     * <code>Prefix</code> and a <code>Tag</code> filter, wrap these filters in an
+     * <code>And</code> tag.</p> </li> <li> <p>If you specify a filter based on
+     * multiple tags, wrap the <code>Tag</code> elements in an <code>And</code>
+     * tag.</p> </li> </ul>
+     */
+    inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
 
     /**
      * <p>A container for specifying rule filters. The filters determine the subset of

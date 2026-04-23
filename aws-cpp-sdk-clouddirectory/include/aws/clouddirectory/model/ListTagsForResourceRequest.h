@@ -52,6 +52,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
      * directories.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource. Tagging is only supported for
+     * directories.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * supported for tagging.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token. This is for future use. Currently pagination is not
+     * supported for tagging.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token. This is for future use. Currently pagination is not
@@ -134,6 +146,13 @@ namespace Model
      * currently.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The <code>MaxResults</code> parameter sets the maximum number of results
+     * returned in a single page. This is for future use and is not supported
+     * currently.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The <code>MaxResults</code> parameter sets the maximum number of results

@@ -29,7 +29,7 @@ DeleteEventSourceMappingRequest::DeleteEventSourceMappingRequest() :
 
 Aws::String DeleteEventSourceMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

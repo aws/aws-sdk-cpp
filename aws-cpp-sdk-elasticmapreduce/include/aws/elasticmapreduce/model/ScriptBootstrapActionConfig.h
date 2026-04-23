@@ -59,6 +59,12 @@ namespace Model
      * <p>Location of the script to run during a bootstrap action. Can be either a
      * location in Amazon S3 or on a local file system.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>Location of the script to run during a bootstrap action. Can be either a
+     * location in Amazon S3 or on a local file system.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+
+    /**
+     * <p>A list of command line arguments to pass to the bootstrap action script.</p>
+     */
+    inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
 
     /**
      * <p>A list of command line arguments to pass to the bootstrap action script.</p>

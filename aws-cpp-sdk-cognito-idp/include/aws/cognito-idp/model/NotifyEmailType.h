@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The subject.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The subject.</p>
+     */
     inline void SetSubject(const Aws::String& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The HTML body.</p>
      */
+    inline bool HtmlBodyHasBeenSet() const { return m_htmlBodyHasBeenSet; }
+
+    /**
+     * <p>The HTML body.</p>
+     */
     inline void SetHtmlBody(const Aws::String& value) { m_htmlBodyHasBeenSet = true; m_htmlBody = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The text body.</p>
      */
     inline const Aws::String& GetTextBody() const{ return m_textBody; }
+
+    /**
+     * <p>The text body.</p>
+     */
+    inline bool TextBodyHasBeenSet() const { return m_textBodyHasBeenSet; }
 
     /**
      * <p>The text body.</p>

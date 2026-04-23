@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the email source.</p>
      */
+    inline bool SourceArnHasBeenSet() const { return m_sourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the email source.</p>
+     */
     inline void SetSourceArn(const Aws::String& value) { m_sourceArnHasBeenSet = true; m_sourceArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The destination to which the receiver of the email should reply to.</p>
      */
     inline const Aws::String& GetReplyToEmailAddress() const{ return m_replyToEmailAddress; }
+
+    /**
+     * <p>The destination to which the receiver of the email should reply to.</p>
+     */
+    inline bool ReplyToEmailAddressHasBeenSet() const { return m_replyToEmailAddressHasBeenSet; }
 
     /**
      * <p>The destination to which the receiver of the email should reply to.</p>

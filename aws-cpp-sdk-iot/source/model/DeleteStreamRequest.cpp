@@ -29,7 +29,7 @@ DeleteStreamRequest::DeleteStreamRequest() :
 
 Aws::String DeleteStreamRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

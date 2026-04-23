@@ -32,6 +32,7 @@ namespace Aws
 
         static const int DNS_PUBLIC_HASH = HashingUtils::HashString("DNS_PUBLIC");
         static const int DNS_PRIVATE_HASH = HashingUtils::HashString("DNS_PRIVATE");
+        static const int HTTP_HASH = HashingUtils::HashString("HTTP");
 
 
         NamespaceType GetNamespaceTypeForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == DNS_PRIVATE_HASH)
           {
             return NamespaceType::DNS_PRIVATE;
+          }
+          else if (hashCode == HTTP_HASH)
+          {
+            return NamespaceType::HTTP;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "DNS_PUBLIC";
           case NamespaceType::DNS_PRIVATE:
             return "DNS_PRIVATE";
+          case NamespaceType::HTTP:
+            return "HTTP";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

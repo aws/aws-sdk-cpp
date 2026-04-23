@@ -38,7 +38,7 @@ GetObjectAclRequest::GetObjectAclRequest() :
 
 Aws::String GetObjectAclRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetObjectAclRequest::AddQueryStringParameters(URI& uri) const

@@ -66,6 +66,16 @@ namespace Model
      * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
      * </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the state.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The JSON output data of the state.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
+
+    /**
+     * <p>The JSON output data of the state.</p>
+     */
+    inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
 
     /**
      * <p>The JSON output data of the state.</p>

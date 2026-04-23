@@ -30,6 +30,8 @@ namespace Model
 
 DashPackage::DashPackage() : 
     m_encryptionHasBeenSet(false),
+    m_manifestLayout(ManifestLayout::NOT_SET),
+    m_manifestLayoutHasBeenSet(false),
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
     m_minBufferTimeSeconds(0),
@@ -41,6 +43,8 @@ DashPackage::DashPackage() :
     m_profileHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
+    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
+    m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
     m_suggestedPresentationDelaySecondsHasBeenSet(false)
@@ -49,6 +53,8 @@ DashPackage::DashPackage() :
 
 DashPackage::DashPackage(JsonView jsonValue) : 
     m_encryptionHasBeenSet(false),
+    m_manifestLayout(ManifestLayout::NOT_SET),
+    m_manifestLayoutHasBeenSet(false),
     m_manifestWindowSeconds(0),
     m_manifestWindowSecondsHasBeenSet(false),
     m_minBufferTimeSeconds(0),
@@ -60,6 +66,8 @@ DashPackage::DashPackage(JsonView jsonValue) :
     m_profileHasBeenSet(false),
     m_segmentDurationSeconds(0),
     m_segmentDurationSecondsHasBeenSet(false),
+    m_segmentTemplateFormat(SegmentTemplateFormat::NOT_SET),
+    m_segmentTemplateFormatHasBeenSet(false),
     m_streamSelectionHasBeenSet(false),
     m_suggestedPresentationDelaySeconds(0),
     m_suggestedPresentationDelaySecondsHasBeenSet(false)
@@ -74,6 +82,13 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_encryption = jsonValue.GetObject("encryption");
 
     m_encryptionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("manifestLayout"))
+  {
+    m_manifestLayout = ManifestLayoutMapper::GetManifestLayoutForName(jsonValue.GetString("manifestLayout"));
+
+    m_manifestLayoutHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("manifestWindowSeconds"))
@@ -121,6 +136,13 @@ DashPackage& DashPackage::operator =(JsonView jsonValue)
     m_segmentDurationSecondsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("segmentTemplateFormat"))
+  {
+    m_segmentTemplateFormat = SegmentTemplateFormatMapper::GetSegmentTemplateFormatForName(jsonValue.GetString("segmentTemplateFormat"));
+
+    m_segmentTemplateFormatHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("streamSelection"))
   {
     m_streamSelection = jsonValue.GetObject("streamSelection");
@@ -146,6 +168,11 @@ JsonValue DashPackage::Jsonize() const
   {
    payload.WithObject("encryption", m_encryption.Jsonize());
 
+  }
+
+  if(m_manifestLayoutHasBeenSet)
+  {
+   payload.WithString("manifestLayout", ManifestLayoutMapper::GetNameForManifestLayout(m_manifestLayout));
   }
 
   if(m_manifestWindowSecondsHasBeenSet)
@@ -186,6 +213,11 @@ JsonValue DashPackage::Jsonize() const
   {
    payload.WithInteger("segmentDurationSeconds", m_segmentDurationSeconds);
 
+  }
+
+  if(m_segmentTemplateFormatHasBeenSet)
+  {
+   payload.WithString("segmentTemplateFormat", SegmentTemplateFormatMapper::GetNameForSegmentTemplateFormat(m_segmentTemplateFormat));
   }
 
   if(m_streamSelectionHasBeenSet)

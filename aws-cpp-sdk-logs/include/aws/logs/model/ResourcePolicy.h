@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the resource policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The details of the policy.</p>
      */
+    inline bool PolicyDocumentHasBeenSet() const { return m_policyDocumentHasBeenSet; }
+
+    /**
+     * <p>The details of the policy.</p>
+     */
     inline void SetPolicyDocument(const Aws::String& value) { m_policyDocumentHasBeenSet = true; m_policyDocument = value; }
 
     /**
@@ -121,19 +131,25 @@ namespace Model
 
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
+     * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline void SetLastUpdatedTime(long long value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
-     * <p>Time stamp showing when this policy was last updated, expressed as the number
+     * <p>Timestamp showing when this policy was last updated, expressed as the number
      * of milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline ResourcePolicy& WithLastUpdatedTime(long long value) { SetLastUpdatedTime(value); return *this;}

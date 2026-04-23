@@ -53,6 +53,12 @@ namespace Model
      * <p>The maximum number of streams to return in the response. The default is
      * 10,000.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of streams to return in the response. The default is
+     * 10,000.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -69,6 +75,14 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
+     * operation is truncated, the call returns the <code>NextToken</code> in the
+     * response. To get another batch of streams, provide this token in your next
+     * request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If you specify this parameter, when the result of a <code>ListStreams</code>
@@ -124,6 +138,12 @@ namespace Model
      * you can specify only the prefix of a stream name as a condition. </p>
      */
     inline const StreamNameCondition& GetStreamNameCondition() const{ return m_streamNameCondition; }
+
+    /**
+     * <p>Optional: Returns only streams that satisfy a specific condition. Currently,
+     * you can specify only the prefix of a stream name as a condition. </p>
+     */
+    inline bool StreamNameConditionHasBeenSet() const { return m_streamNameConditionHasBeenSet; }
 
     /**
      * <p>Optional: Returns only streams that satisfy a specific condition. Currently,

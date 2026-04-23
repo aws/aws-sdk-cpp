@@ -2,11 +2,12 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(const ${operation.request.shape.name}& request) const
 {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientOperationEndpointPrepareCommonBody.vm")
   Aws::StringStream ss;
 #set($uriParts = $operation.http.requestUriParts)
 #set($uriVars = $operation.http.requestParameters)
 #set($partIndex = 1)
-  Aws::Http::URI uri = m_uri;
 #set($uriPartString = "${uriParts.get(0)}")
 #set($queryStart = false)
 #if($uriPartString.contains("?"))
@@ -94,8 +95,11 @@ void ${className}::${operation.name}AsyncHelper(const ${operation.request.shape.
 ${operation.name}Outcome ${className}::${operation.name}() const
 {
   Aws::StringStream ss;
+#if($metadata.hasEndpointTrait)
+  ss << m_baseUri << "${operation.http.requestUri}";
+#else
   ss << m_uri << "${operation.http.requestUri}";
-
+#end
 #if($operation.result && $operation.result.shape.hasStreamMembers())
   StreamOutcome outcome = MakeRequestWithUnparsedResponse(ss.str(), HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}");
 #elseif($operation.request)

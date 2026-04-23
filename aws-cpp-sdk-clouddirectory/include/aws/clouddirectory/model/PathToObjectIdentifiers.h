@@ -59,6 +59,12 @@ namespace Model
      * <p>The path that is used to identify the object starting from directory
      * root.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path that is used to identify the object starting from directory
+     * root.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * object in the request.</p>
      */
     inline const Aws::Vector<Aws::String>& GetObjectIdentifiers() const{ return m_objectIdentifiers; }
+
+    /**
+     * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the
+     * object in the request.</p>
+     */
+    inline bool ObjectIdentifiersHasBeenSet() const { return m_objectIdentifiersHasBeenSet; }
 
     /**
      * <p>Lists <code>ObjectIdentifiers</code> starting from directory root to the

@@ -60,6 +60,12 @@ namespace Model
      * <p>Specific list of instances to be terminated when shrinking an instance
      * group.</p>
      */
+    inline bool InstancesToTerminateHasBeenSet() const { return m_instancesToTerminateHasBeenSet; }
+
+    /**
+     * <p>Specific list of instances to be terminated when shrinking an instance
+     * group.</p>
+     */
     inline void SetInstancesToTerminate(const Aws::Vector<Aws::String>& value) { m_instancesToTerminateHasBeenSet = true; m_instancesToTerminate = value; }
 
     /**
@@ -109,6 +115,12 @@ namespace Model
      * <p>Specific list of instances to be protected when shrinking an instance
      * group.</p>
      */
+    inline bool InstancesToProtectHasBeenSet() const { return m_instancesToProtectHasBeenSet; }
+
+    /**
+     * <p>Specific list of instances to be protected when shrinking an instance
+     * group.</p>
+     */
     inline void SetInstancesToProtect(const Aws::Vector<Aws::String>& value) { m_instancesToProtectHasBeenSet = true; m_instancesToProtect = value; }
 
     /**
@@ -153,6 +165,12 @@ namespace Model
      * terminated.</p>
      */
     inline int GetInstanceTerminationTimeout() const{ return m_instanceTerminationTimeout; }
+
+    /**
+     * <p>Decommissioning timeout override for the specific list of instances to be
+     * terminated.</p>
+     */
+    inline bool InstanceTerminationTimeoutHasBeenSet() const { return m_instanceTerminationTimeoutHasBeenSet; }
 
     /**
      * <p>Decommissioning timeout override for the specific list of instances to be

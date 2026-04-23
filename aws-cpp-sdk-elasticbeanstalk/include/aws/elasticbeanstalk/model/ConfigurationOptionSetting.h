@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p> A specification identifying an individual configuration option along with
    * its current value. For a list of possible option values, go to <a
-   * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
+   * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option
    * Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticbeanstalk-2010-12-01/ConfigurationOptionSetting">AWS
@@ -57,6 +57,11 @@ namespace Model
      * <p>A unique resource name for a time-based scaling configuration option.</p>
      */
     inline const Aws::String& GetResourceName() const{ return m_resourceName; }
+
+    /**
+     * <p>A unique resource name for a time-based scaling configuration option.</p>
+     */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
 
     /**
      * <p>A unique resource name for a time-based scaling configuration option.</p>
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>A unique namespace identifying the option's associated AWS resource.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>A unique namespace identifying the option's associated AWS resource.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The name of the configuration option.</p>
      */
+    inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration option.</p>
+     */
     inline void SetOptionName(const Aws::String& value) { m_optionNameHasBeenSet = true; m_optionName = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The current value for the configuration option.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The current value for the configuration option.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The current value for the configuration option.</p>

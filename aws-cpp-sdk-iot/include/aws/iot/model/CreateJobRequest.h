@@ -21,7 +21,9 @@
 #include <aws/iot/model/PresignedUrlConfig.h>
 #include <aws/iot/model/TargetSelection.h>
 #include <aws/iot/model/JobExecutionsRolloutConfig.h>
+#include <aws/iot/model/AbortConfig.h>
 #include <aws/iot/model/TimeoutConfig.h>
+#include <aws/iot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +54,12 @@ namespace Model
      * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>A job identifier which must be unique for your AWS account. We recommend
+     * using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>A job identifier which must be unique for your AWS account. We recommend
@@ -98,6 +106,11 @@ namespace Model
     /**
      * <p>A list of things and thing groups to which the job should be sent.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>A list of things and thing groups to which the job should be sent.</p>
+     */
     inline void SetTargets(const Aws::Vector<Aws::String>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -139,6 +152,11 @@ namespace Model
     /**
      * <p>An S3 link to the job document.</p>
      */
+    inline bool DocumentSourceHasBeenSet() const { return m_documentSourceHasBeenSet; }
+
+    /**
+     * <p>An S3 link to the job document.</p>
+     */
     inline void SetDocumentSource(const Aws::String& value) { m_documentSourceHasBeenSet = true; m_documentSource = value; }
 
     /**
@@ -168,37 +186,82 @@ namespace Model
 
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+
+    /**
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline void SetDocument(Aws::String&& value) { m_documentHasBeenSet = true; m_document = std::move(value); }
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline void SetDocument(const char* value) { m_documentHasBeenSet = true; m_document.assign(value); }
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline CreateJobRequest& WithDocument(const Aws::String& value) { SetDocument(value); return *this;}
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline CreateJobRequest& WithDocument(Aws::String&& value) { SetDocument(std::move(value)); return *this;}
 
     /**
-     * <p>The job document.</p>
+     * <p>The job document.</p> <note> <p>If the job document resides in an S3 bucket,
+     * you must use a placeholder link when specifying the document.</p> <p>The
+     * placeholder link is of the following form:</p> <p>
+     * <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code>
+     * </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in
+     * the bucket to which you are linking.</p> </note>
      */
     inline CreateJobRequest& WithDocument(const char* value) { SetDocument(value); return *this;}
 
@@ -207,6 +270,11 @@ namespace Model
      * <p>A short text description of the job.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A short text description of the job.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A short text description of the job.</p>
@@ -247,6 +315,11 @@ namespace Model
     /**
      * <p>Configuration information for pre-signed S3 URLs.</p>
      */
+    inline bool PresignedUrlConfigHasBeenSet() const { return m_presignedUrlConfigHasBeenSet; }
+
+    /**
+     * <p>Configuration information for pre-signed S3 URLs.</p>
+     */
     inline void SetPresignedUrlConfig(const PresignedUrlConfig& value) { m_presignedUrlConfigHasBeenSet = true; m_presignedUrlConfig = value; }
 
     /**
@@ -274,6 +347,16 @@ namespace Model
      * originally in the group.</p>
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+
+    /**
+     * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
+     * complete after all those things specified as targets have completed the job
+     * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
+     * detected in a target. For example, a job will run on a thing when the thing is
+     * added to a target group, even after the job was completed by all things
+     * originally in the group.</p>
+     */
+    inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
     /**
      * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
@@ -324,6 +407,11 @@ namespace Model
     /**
      * <p>Allows you to create a staged rollout of the job.</p>
      */
+    inline bool JobExecutionsRolloutConfigHasBeenSet() const { return m_jobExecutionsRolloutConfigHasBeenSet; }
+
+    /**
+     * <p>Allows you to create a staged rollout of the job.</p>
+     */
     inline void SetJobExecutionsRolloutConfig(const JobExecutionsRolloutConfig& value) { m_jobExecutionsRolloutConfigHasBeenSet = true; m_jobExecutionsRolloutConfig = value; }
 
     /**
@@ -343,6 +431,37 @@ namespace Model
 
 
     /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline const AbortConfig& GetAbortConfig() const{ return m_abortConfig; }
+
+    /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline bool AbortConfigHasBeenSet() const { return m_abortConfigHasBeenSet; }
+
+    /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline void SetAbortConfig(const AbortConfig& value) { m_abortConfigHasBeenSet = true; m_abortConfig = value; }
+
+    /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline void SetAbortConfig(AbortConfig&& value) { m_abortConfigHasBeenSet = true; m_abortConfig = std::move(value); }
+
+    /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline CreateJobRequest& WithAbortConfig(const AbortConfig& value) { SetAbortConfig(value); return *this;}
+
+    /**
+     * <p>Allows you to create criteria to abort a job.</p>
+     */
+    inline CreateJobRequest& WithAbortConfig(AbortConfig&& value) { SetAbortConfig(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies the amount of time each device has to finish its execution of the
      * job. The timer is started when the job execution status is set to
      * <code>IN_PROGRESS</code>. If the job execution status is not set to another
@@ -350,6 +469,15 @@ namespace Model
      * <code>TIMED_OUT</code>.</p>
      */
     inline const TimeoutConfig& GetTimeoutConfig() const{ return m_timeoutConfig; }
+
+    /**
+     * <p>Specifies the amount of time each device has to finish its execution of the
+     * job. The timer is started when the job execution status is set to
+     * <code>IN_PROGRESS</code>. If the job execution status is not set to another
+     * terminal state before the time expires, it will be automatically set to
+     * <code>TIMED_OUT</code>.</p>
+     */
+    inline bool TimeoutConfigHasBeenSet() const { return m_timeoutConfigHasBeenSet; }
 
     /**
      * <p>Specifies the amount of time each device has to finish its execution of the
@@ -387,6 +515,47 @@ namespace Model
      */
     inline CreateJobRequest& WithTimeoutConfig(TimeoutConfig&& value) { SetTimeoutConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline CreateJobRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline CreateJobRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline CreateJobRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the job.</p>
+     */
+    inline CreateJobRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_jobId;
@@ -413,8 +582,14 @@ namespace Model
     JobExecutionsRolloutConfig m_jobExecutionsRolloutConfig;
     bool m_jobExecutionsRolloutConfigHasBeenSet;
 
+    AbortConfig m_abortConfig;
+    bool m_abortConfigHasBeenSet;
+
     TimeoutConfig m_timeoutConfig;
     bool m_timeoutConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

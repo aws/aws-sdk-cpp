@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioCodecSettings<p><h3>See Also:</h3>   <a
+   * Audio Codec Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,9 @@ namespace Model
 
     
     inline const AacSettings& GetAacSettings() const{ return m_aacSettings; }
+
+    
+    inline bool AacSettingsHasBeenSet() const { return m_aacSettingsHasBeenSet; }
 
     
     inline void SetAacSettings(const AacSettings& value) { m_aacSettingsHasBeenSet = true; m_aacSettings = value; }
@@ -71,6 +74,9 @@ namespace Model
     inline const Ac3Settings& GetAc3Settings() const{ return m_ac3Settings; }
 
     
+    inline bool Ac3SettingsHasBeenSet() const { return m_ac3SettingsHasBeenSet; }
+
+    
     inline void SetAc3Settings(const Ac3Settings& value) { m_ac3SettingsHasBeenSet = true; m_ac3Settings = value; }
 
     
@@ -85,6 +91,9 @@ namespace Model
 
     
     inline const Eac3Settings& GetEac3Settings() const{ return m_eac3Settings; }
+
+    
+    inline bool Eac3SettingsHasBeenSet() const { return m_eac3SettingsHasBeenSet; }
 
     
     inline void SetEac3Settings(const Eac3Settings& value) { m_eac3SettingsHasBeenSet = true; m_eac3Settings = value; }
@@ -103,6 +112,9 @@ namespace Model
     inline const Mp2Settings& GetMp2Settings() const{ return m_mp2Settings; }
 
     
+    inline bool Mp2SettingsHasBeenSet() const { return m_mp2SettingsHasBeenSet; }
+
+    
     inline void SetMp2Settings(const Mp2Settings& value) { m_mp2SettingsHasBeenSet = true; m_mp2Settings = value; }
 
     
@@ -117,6 +129,9 @@ namespace Model
 
     
     inline const PassThroughSettings& GetPassThroughSettings() const{ return m_passThroughSettings; }
+
+    
+    inline bool PassThroughSettingsHasBeenSet() const { return m_passThroughSettingsHasBeenSet; }
 
     
     inline void SetPassThroughSettings(const PassThroughSettings& value) { m_passThroughSettingsHasBeenSet = true; m_passThroughSettings = value; }

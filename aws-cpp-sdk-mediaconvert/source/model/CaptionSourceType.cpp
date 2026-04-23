@@ -33,12 +33,15 @@ namespace Aws
         static const int ANCILLARY_HASH = HashingUtils::HashString("ANCILLARY");
         static const int DVB_SUB_HASH = HashingUtils::HashString("DVB_SUB");
         static const int EMBEDDED_HASH = HashingUtils::HashString("EMBEDDED");
+        static const int SCTE20_HASH = HashingUtils::HashString("SCTE20");
         static const int SCC_HASH = HashingUtils::HashString("SCC");
         static const int TTML_HASH = HashingUtils::HashString("TTML");
         static const int STL_HASH = HashingUtils::HashString("STL");
         static const int SRT_HASH = HashingUtils::HashString("SRT");
+        static const int SMI_HASH = HashingUtils::HashString("SMI");
         static const int TELETEXT_HASH = HashingUtils::HashString("TELETEXT");
         static const int NULL_SOURCE_HASH = HashingUtils::HashString("NULL_SOURCE");
+        static const int IMSC_HASH = HashingUtils::HashString("IMSC");
 
 
         CaptionSourceType GetCaptionSourceTypeForName(const Aws::String& name)
@@ -56,6 +59,10 @@ namespace Aws
           {
             return CaptionSourceType::EMBEDDED;
           }
+          else if (hashCode == SCTE20_HASH)
+          {
+            return CaptionSourceType::SCTE20;
+          }
           else if (hashCode == SCC_HASH)
           {
             return CaptionSourceType::SCC;
@@ -72,6 +79,10 @@ namespace Aws
           {
             return CaptionSourceType::SRT;
           }
+          else if (hashCode == SMI_HASH)
+          {
+            return CaptionSourceType::SMI;
+          }
           else if (hashCode == TELETEXT_HASH)
           {
             return CaptionSourceType::TELETEXT;
@@ -79,6 +90,10 @@ namespace Aws
           else if (hashCode == NULL_SOURCE_HASH)
           {
             return CaptionSourceType::NULL_SOURCE;
+          }
+          else if (hashCode == IMSC_HASH)
+          {
+            return CaptionSourceType::IMSC;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -100,6 +115,8 @@ namespace Aws
             return "DVB_SUB";
           case CaptionSourceType::EMBEDDED:
             return "EMBEDDED";
+          case CaptionSourceType::SCTE20:
+            return "SCTE20";
           case CaptionSourceType::SCC:
             return "SCC";
           case CaptionSourceType::TTML:
@@ -108,10 +125,14 @@ namespace Aws
             return "STL";
           case CaptionSourceType::SRT:
             return "SRT";
+          case CaptionSourceType::SMI:
+            return "SMI";
           case CaptionSourceType::TELETEXT:
             return "TELETEXT";
           case CaptionSourceType::NULL_SOURCE:
             return "NULL_SOURCE";
+          case CaptionSourceType::IMSC:
+            return "IMSC";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -119,7 +140,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

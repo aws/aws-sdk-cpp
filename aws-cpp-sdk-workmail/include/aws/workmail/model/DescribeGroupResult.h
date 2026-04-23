@@ -154,93 +154,93 @@ namespace Model
 
     /**
      * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline const EntityState& GetState() const{ return m_state; }
 
     /**
      * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(const EntityState& value) { m_state = value; }
 
     /**
      * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline void SetState(EntityState&& value) { m_state = std::move(value); }
 
     /**
      * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeGroupResult& WithState(const EntityState& value) { SetState(value); return *this;}
 
     /**
      * <p>The state of the user: enabled (registered to Amazon WorkMail) or disabled
-     * (deregistered or never registered to Amazon WorkMail).</p>
+     * (deregistered or never registered to WorkMail).</p>
      */
     inline DescribeGroupResult& WithState(EntityState&& value) { SetState(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when a user was registered to Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+     * format.</p>
      */
     inline const Aws::Utils::DateTime& GetEnabledDate() const{ return m_enabledDate; }
 
     /**
-     * <p>The date and time when a user was registered to Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+     * format.</p>
      */
     inline void SetEnabledDate(const Aws::Utils::DateTime& value) { m_enabledDate = value; }
 
     /**
-     * <p>The date and time when a user was registered to Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+     * format.</p>
      */
     inline void SetEnabledDate(Aws::Utils::DateTime&& value) { m_enabledDate = std::move(value); }
 
     /**
-     * <p>The date and time when a user was registered to Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+     * format.</p>
      */
     inline DescribeGroupResult& WithEnabledDate(const Aws::Utils::DateTime& value) { SetEnabledDate(value); return *this;}
 
     /**
-     * <p>The date and time when a user was registered to Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was registered to WorkMail, in UNIX epoch time
+     * format.</p>
      */
     inline DescribeGroupResult& WithEnabledDate(Aws::Utils::DateTime&& value) { SetEnabledDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch
+     * time format.</p>
      */
     inline const Aws::Utils::DateTime& GetDisabledDate() const{ return m_disabledDate; }
 
     /**
-     * <p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch
+     * time format.</p>
      */
     inline void SetDisabledDate(const Aws::Utils::DateTime& value) { m_disabledDate = value; }
 
     /**
-     * <p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch
+     * time format.</p>
      */
     inline void SetDisabledDate(Aws::Utils::DateTime&& value) { m_disabledDate = std::move(value); }
 
     /**
-     * <p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch
+     * time format.</p>
      */
     inline DescribeGroupResult& WithDisabledDate(const Aws::Utils::DateTime& value) { SetDisabledDate(value); return *this;}
 
     /**
-     * <p>The date and time when a user was deregistered from Amazon WorkMail, in UNIX
-     * epoch time format.</p>
+     * <p>The date and time when a user was deregistered from WorkMail, in UNIX epoch
+     * time format.</p>
      */
     inline DescribeGroupResult& WithDisabledDate(Aws::Utils::DateTime&& value) { SetDisabledDate(std::move(value)); return *this;}
 

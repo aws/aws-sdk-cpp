@@ -54,6 +54,12 @@ namespace Model
      * <p> The ID of the Qualification request, as returned by the
      * <code>ListQualificationRequests</code> operation. </p>
      */
+    inline bool QualificationRequestIdHasBeenSet() const { return m_qualificationRequestIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Qualification request, as returned by the
+     * <code>ListQualificationRequests</code> operation. </p>
+     */
     inline void SetQualificationRequestId(const Aws::String& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * Worker who made the request.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A text message explaining why the request was rejected, to be shown to the
+     * Worker who made the request.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A text message explaining why the request was rejected, to be shown to the

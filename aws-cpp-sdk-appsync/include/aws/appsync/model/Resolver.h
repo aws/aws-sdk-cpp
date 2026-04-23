@@ -16,6 +16,8 @@
 #pragma once
 #include <aws/appsync/AppSync_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/appsync/model/ResolverKind.h>
+#include <aws/appsync/model/PipelineConfig.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +53,11 @@ namespace Model
      * <p>The resolver type name.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * <p>The resolver type name.</p>
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The resolver type name.</p>
@@ -91,6 +98,11 @@ namespace Model
     /**
      * <p>The resolver field name.</p>
      */
+    inline bool FieldNameHasBeenSet() const { return m_fieldNameHasBeenSet; }
+
+    /**
+     * <p>The resolver field name.</p>
+     */
     inline void SetFieldName(const Aws::String& value) { m_fieldNameHasBeenSet = true; m_fieldName = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
      * <p>The resolver data source name.</p>
      */
     inline const Aws::String& GetDataSourceName() const{ return m_dataSourceName; }
+
+    /**
+     * <p>The resolver data source name.</p>
+     */
+    inline bool DataSourceNameHasBeenSet() const { return m_dataSourceNameHasBeenSet; }
 
     /**
      * <p>The resolver data source name.</p>
@@ -163,6 +180,11 @@ namespace Model
     /**
      * <p>The resolver ARN.</p>
      */
+    inline bool ResolverArnHasBeenSet() const { return m_resolverArnHasBeenSet; }
+
+    /**
+     * <p>The resolver ARN.</p>
+     */
     inline void SetResolverArn(const Aws::String& value) { m_resolverArnHasBeenSet = true; m_resolverArn = value; }
 
     /**
@@ -195,6 +217,11 @@ namespace Model
      * <p>The request mapping template.</p>
      */
     inline const Aws::String& GetRequestMappingTemplate() const{ return m_requestMappingTemplate; }
+
+    /**
+     * <p>The request mapping template.</p>
+     */
+    inline bool RequestMappingTemplateHasBeenSet() const { return m_requestMappingTemplateHasBeenSet; }
 
     /**
      * <p>The request mapping template.</p>
@@ -235,6 +262,11 @@ namespace Model
     /**
      * <p>The response mapping template.</p>
      */
+    inline bool ResponseMappingTemplateHasBeenSet() const { return m_responseMappingTemplateHasBeenSet; }
+
+    /**
+     * <p>The response mapping template.</p>
+     */
     inline void SetResponseMappingTemplate(const Aws::String& value) { m_responseMappingTemplateHasBeenSet = true; m_responseMappingTemplate = value; }
 
     /**
@@ -262,6 +294,104 @@ namespace Model
      */
     inline Resolver& WithResponseMappingTemplate(const char* value) { SetResponseMappingTemplate(value); return *this;}
 
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline const ResolverKind& GetKind() const{ return m_kind; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline bool KindHasBeenSet() const { return m_kindHasBeenSet; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline void SetKind(const ResolverKind& value) { m_kindHasBeenSet = true; m_kind = value; }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline void SetKind(ResolverKind&& value) { m_kindHasBeenSet = true; m_kind = std::move(value); }
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline Resolver& WithKind(const ResolverKind& value) { SetKind(value); return *this;}
+
+    /**
+     * <p>The resolver type.</p> <ul> <li> <p> <b>UNIT</b>: A UNIT resolver type. A
+     * UNIT resolver is the default resolver type. A UNIT resolver enables you to
+     * execute a GraphQL query against a single data source.</p> </li> <li> <p>
+     * <b>PIPELINE</b>: A PIPELINE resolver type. A PIPELINE resolver enables you to
+     * execute a series of <code>Function</code> in a serial manner. You can use a
+     * pipeline resolver to execute a GraphQL query against multiple data sources.</p>
+     * </li> </ul>
+     */
+    inline Resolver& WithKind(ResolverKind&& value) { SetKind(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline const PipelineConfig& GetPipelineConfig() const{ return m_pipelineConfig; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline bool PipelineConfigHasBeenSet() const { return m_pipelineConfigHasBeenSet; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline void SetPipelineConfig(const PipelineConfig& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = value; }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline void SetPipelineConfig(PipelineConfig&& value) { m_pipelineConfigHasBeenSet = true; m_pipelineConfig = std::move(value); }
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline Resolver& WithPipelineConfig(const PipelineConfig& value) { SetPipelineConfig(value); return *this;}
+
+    /**
+     * <p>The <code>PipelineConfig</code>.</p>
+     */
+    inline Resolver& WithPipelineConfig(PipelineConfig&& value) { SetPipelineConfig(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_typeName;
@@ -281,6 +411,12 @@ namespace Model
 
     Aws::String m_responseMappingTemplate;
     bool m_responseMappingTemplateHasBeenSet;
+
+    ResolverKind m_kind;
+    bool m_kindHasBeenSet;
+
+    PipelineConfig m_pipelineConfig;
+    bool m_pipelineConfigHasBeenSet;
   };
 
 } // namespace Model

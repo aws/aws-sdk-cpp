@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the bucket to which an analytics configuration is stored.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the bucket to which an analytics configuration is stored.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The identifier used to represent an analytics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The identifier used to represent an analytics configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The identifier used to represent an analytics configuration.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The configuration and any analyses for the analytics filter.</p>
      */
+    inline bool AnalyticsConfigurationHasBeenSet() const { return m_analyticsConfigurationHasBeenSet; }
+
+    /**
+     * <p>The configuration and any analyses for the analytics filter.</p>
+     */
     inline void SetAnalyticsConfiguration(const AnalyticsConfiguration& value) { m_analyticsConfigurationHasBeenSet = true; m_analyticsConfiguration = value; }
 
     /**
@@ -150,6 +165,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

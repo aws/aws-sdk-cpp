@@ -29,7 +29,7 @@ StopChannelRequest::StopChannelRequest() :
 
 Aws::String StopChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

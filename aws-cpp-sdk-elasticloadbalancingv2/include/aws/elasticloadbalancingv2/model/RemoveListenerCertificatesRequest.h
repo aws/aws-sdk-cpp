@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the listener.</p>
      */
+    inline bool ListenerArnHasBeenSet() const { return m_listenerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the listener.</p>
+     */
     inline void SetListenerArn(const Aws::String& value) { m_listenerArnHasBeenSet = true; m_listenerArn = value; }
 
     /**
@@ -85,37 +90,58 @@ namespace Model
 
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline const Aws::Vector<Certificate>& GetCertificates() const{ return m_certificates; }
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
+     */
+    inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+
+    /**
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline void SetCertificates(const Aws::Vector<Certificate>& value) { m_certificatesHasBeenSet = true; m_certificates = value; }
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline void SetCertificates(Aws::Vector<Certificate>&& value) { m_certificatesHasBeenSet = true; m_certificates = std::move(value); }
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline RemoveListenerCertificatesRequest& WithCertificates(const Aws::Vector<Certificate>& value) { SetCertificates(value); return *this;}
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline RemoveListenerCertificatesRequest& WithCertificates(Aws::Vector<Certificate>&& value) { SetCertificates(std::move(value)); return *this;}
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline RemoveListenerCertificatesRequest& AddCertificates(const Certificate& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(value); return *this; }
 
     /**
-     * <p>The certificate to remove. You can specify one certificate per call.</p>
+     * <p>The certificate to remove. You can specify one certificate per call. Set
+     * <code>CertificateArn</code> to the certificate ARN but do not set
+     * <code>IsDefault</code>.</p>
      */
     inline RemoveListenerCertificatesRequest& AddCertificates(Certificate&& value) { m_certificatesHasBeenSet = true; m_certificates.push_back(std::move(value)); return *this; }
 

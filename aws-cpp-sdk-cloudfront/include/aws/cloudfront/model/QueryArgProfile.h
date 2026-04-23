@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Query argument-profile mapping for field-level encryption.</p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/QueryArgProfile">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/QueryArgProfile">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API QueryArgProfile
@@ -52,6 +52,11 @@ namespace Model
      * <p>Query argument for field-level encryption query argument-profile mapping.</p>
      */
     inline const Aws::String& GetQueryArg() const{ return m_queryArg; }
+
+    /**
+     * <p>Query argument for field-level encryption query argument-profile mapping.</p>
+     */
+    inline bool QueryArgHasBeenSet() const { return m_queryArgHasBeenSet; }
 
     /**
      * <p>Query argument for field-level encryption query argument-profile mapping.</p>
@@ -89,6 +94,12 @@ namespace Model
      * mapping</p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
+
+    /**
+     * <p>ID of profile to use for field-level encryption query argument-profile
+     * mapping</p>
+     */
+    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
 
     /**
      * <p>ID of profile to use for field-level encryption query argument-profile

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The target type.</p>
      */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The target type.</p>
+     */
     inline void SetTargetType(const LogTargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The target name.</p>
      */
     inline const Aws::String& GetTargetName() const{ return m_targetName; }
+
+    /**
+     * <p>The target name.</p>
+     */
+    inline bool TargetNameHasBeenSet() const { return m_targetNameHasBeenSet; }
 
     /**
      * <p>The target name.</p>

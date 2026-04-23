@@ -49,9 +49,71 @@ namespace Model
 
 
     /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(Aws::String&& value) { m_certificateArnHasBeenSet = true; m_certificateArn = std::move(value); }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline void SetCertificateArn(const char* value) { m_certificateArnHasBeenSet = true; m_certificateArn.assign(value); }
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const Aws::String& value) { SetCertificateArn(value); return *this;}
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(Aws::String&& value) { SetCertificateArn(std::move(value)); return *this;}
+
+    /**
+     * Optional AWS Certificate Manager ARN for a certificate to send to the
+     * keyprovider. The certificate holds a key used by the keyprovider to encrypt the
+     * keys in its response.
+     */
+    inline SpekeKeyProvider& WithCertificateArn(const char* value) { SetCertificateArn(value); return *this;}
+
+
+    /**
      * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * The SPEKE-compliant server uses Resource ID (ResourceId) to identify content.
@@ -89,6 +151,12 @@ namespace Model
      * support a max of two system ids. Other group types support one system id.
      */
     inline const Aws::Vector<Aws::String>& GetSystemIds() const{ return m_systemIds; }
+
+    /**
+     * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
+     * support a max of two system ids. Other group types support one system id.
+     */
+    inline bool SystemIdsHasBeenSet() const { return m_systemIdsHasBeenSet; }
 
     /**
      * Relates to SPEKE implementation. DRM system identifiers. DASH output groups
@@ -143,6 +211,12 @@ namespace Model
      * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
      * content.
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * Use URL (Url) to specify the SPEKE-compliant server that will provide keys for
+     * content.
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -176,6 +250,9 @@ namespace Model
     inline SpekeKeyProvider& WithUrl(const char* value) { SetUrl(value); return *this;}
 
   private:
+
+    Aws::String m_certificateArn;
+    bool m_certificateArnHasBeenSet;
 
     Aws::String m_resourceId;
     bool m_resourceIdHasBeenSet;

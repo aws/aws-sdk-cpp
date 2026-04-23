@@ -80,6 +80,15 @@ GetResourceDefinitionResult& GetResourceDefinitionResult::operator =(const Aws::
 
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

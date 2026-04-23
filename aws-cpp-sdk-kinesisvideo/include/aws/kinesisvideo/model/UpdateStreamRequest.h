@@ -54,6 +54,13 @@ namespace Model
      * name is an identifier for the stream, and must be unique for each account and
      * region.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream whose metadata you want to update.</p> <p>The stream
+     * name is an identifier for the stream, and must be unique for each account and
+     * region.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -100,6 +107,11 @@ namespace Model
     /**
      * <p>The ARN of the stream whose metadata you want to update.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stream whose metadata you want to update.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -132,6 +144,11 @@ namespace Model
      * <p>The version of the stream whose metadata you want to update.</p>
      */
     inline const Aws::String& GetCurrentVersion() const{ return m_currentVersion; }
+
+    /**
+     * <p>The version of the stream whose metadata you want to update.</p>
+     */
+    inline bool CurrentVersionHasBeenSet() const { return m_currentVersionHasBeenSet; }
 
     /**
      * <p>The version of the stream whose metadata you want to update.</p>
@@ -170,6 +187,13 @@ namespace Model
      * </note>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
+     * current implementation, Kinesis Video Streams does not use this name. </p>
+     * </note>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The name of the device that is writing to the stream. </p> <note> <p> In the
@@ -226,6 +250,19 @@ namespace Model
      * <code>video/h264</code> as the <code>MediaType</code>.</p>
      */
     inline const Aws::String& GetMediaType() const{ return m_mediaType; }
+
+    /**
+     * <p>The stream's media type. Use <code>MediaType</code> to specify the type of
+     * content that the stream contains to the consumers of the stream. For more
+     * information about media types, see <a
+     * href="http://www.iana.org/assignments/media-types/media-types.xhtml">Media
+     * Types</a>. If you choose to specify the <code>MediaType</code>, see <a
+     * href="https://tools.ietf.org/html/rfc6838#section-4.2">Naming
+     * Requirements</a>.</p> <p>To play video on the console, you must specify the
+     * correct video type. For example, if the video in the stream is H.264, specify
+     * <code>video/h264</code> as the <code>MediaType</code>.</p>
+     */
+    inline bool MediaTypeHasBeenSet() const { return m_mediaTypeHasBeenSet; }
 
     /**
      * <p>The stream's media type. Use <code>MediaType</code> to specify the type of

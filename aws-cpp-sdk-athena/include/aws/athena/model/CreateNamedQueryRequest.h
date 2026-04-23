@@ -46,73 +46,83 @@ namespace Model
 
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The query name.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline CreateNamedQueryRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline CreateNamedQueryRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>The plain language name for the query.</p>
+     * <p>The query name.</p>
      */
     inline CreateNamedQueryRequest& WithName(const char* value) { SetName(value); return *this;}
 
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The query description.</p>
      */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline void SetDescription(Aws::String&& value) { m_descriptionHasBeenSet = true; m_description = std::move(value); }
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline void SetDescription(const char* value) { m_descriptionHasBeenSet = true; m_description.assign(value); }
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline CreateNamedQueryRequest& WithDescription(const Aws::String& value) { SetDescription(value); return *this;}
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline CreateNamedQueryRequest& WithDescription(Aws::String&& value) { SetDescription(std::move(value)); return *this;}
 
     /**
-     * <p>A brief explanation of the query.</p>
+     * <p>The query description.</p>
      */
     inline CreateNamedQueryRequest& WithDescription(const char* value) { SetDescription(value); return *this;}
 
@@ -121,6 +131,11 @@ namespace Model
      * <p>The database to which the query belongs.</p>
      */
     inline const Aws::String& GetDatabase() const{ return m_database; }
+
+    /**
+     * <p>The database to which the query belongs.</p>
+     */
+    inline bool DatabaseHasBeenSet() const { return m_databaseHasBeenSet; }
 
     /**
      * <p>The database to which the query belongs.</p>
@@ -154,37 +169,42 @@ namespace Model
 
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline const Aws::String& GetQueryString() const{ return m_queryString; }
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
+     */
+    inline bool QueryStringHasBeenSet() const { return m_queryStringHasBeenSet; }
+
+    /**
+     * <p>The contents of the query with all query statements.</p>
      */
     inline void SetQueryString(const Aws::String& value) { m_queryStringHasBeenSet = true; m_queryString = value; }
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline void SetQueryString(Aws::String&& value) { m_queryStringHasBeenSet = true; m_queryString = std::move(value); }
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline void SetQueryString(const char* value) { m_queryStringHasBeenSet = true; m_queryString.assign(value); }
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline CreateNamedQueryRequest& WithQueryString(const Aws::String& value) { SetQueryString(value); return *this;}
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline CreateNamedQueryRequest& WithQueryString(Aws::String&& value) { SetQueryString(std::move(value)); return *this;}
 
     /**
-     * <p>The text of the query itself. In other words, all query statements.</p>
+     * <p>The contents of the query with all query statements.</p>
      */
     inline CreateNamedQueryRequest& WithQueryString(const char* value) { SetQueryString(value); return *this;}
 
@@ -200,6 +220,18 @@ namespace Model
      * token or the action will fail.</p> </important>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique case-sensitive string used to ensure the request to create the query
+     * is idempotent (executes only once). If another <code>CreateNamedQuery</code>
+     * request is received, the same response is returned and another query is not
+     * created. If a parameter has changed, for example, the <code>QueryString</code>,
+     * an error is returned.</p> <important> <p>This token is listed as not required
+     * because AWS SDKs (for example the AWS SDK for Java) auto-generate the token for
+     * users. If you are not using the AWS SDK or the AWS CLI, you must provide this
+     * token or the action will fail.</p> </important>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique case-sensitive string used to ensure the request to create the query
@@ -273,6 +305,47 @@ namespace Model
      */
     inline CreateNamedQueryRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline const Aws::String& GetWorkGroup() const{ return m_workGroup; }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline bool WorkGroupHasBeenSet() const { return m_workGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline void SetWorkGroup(const Aws::String& value) { m_workGroupHasBeenSet = true; m_workGroup = value; }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline void SetWorkGroup(Aws::String&& value) { m_workGroupHasBeenSet = true; m_workGroup = std::move(value); }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline void SetWorkGroup(const char* value) { m_workGroupHasBeenSet = true; m_workGroup.assign(value); }
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline CreateNamedQueryRequest& WithWorkGroup(const Aws::String& value) { SetWorkGroup(value); return *this;}
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline CreateNamedQueryRequest& WithWorkGroup(Aws::String&& value) { SetWorkGroup(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the workgroup in which the named query is being created.</p>
+     */
+    inline CreateNamedQueryRequest& WithWorkGroup(const char* value) { SetWorkGroup(value); return *this;}
+
   private:
 
     Aws::String m_name;
@@ -289,6 +362,9 @@ namespace Model
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;
+
+    Aws::String m_workGroup;
+    bool m_workGroupHasBeenSet;
   };
 
 } // namespace Model

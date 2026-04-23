@@ -39,7 +39,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/Invalidation.html#invalidation-specifying-objects">Specifying
    * the Objects to Invalidate</a> in the <i>Amazon CloudFront Developer Guide</i>.
    * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Paths">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Paths">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Paths
@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The number of objects that you want to invalidate.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of objects that you want to invalidate.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +78,12 @@ namespace Model
      * invalidate.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains a list of the paths that you want to
+     * invalidate.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains a list of the paths that you want to

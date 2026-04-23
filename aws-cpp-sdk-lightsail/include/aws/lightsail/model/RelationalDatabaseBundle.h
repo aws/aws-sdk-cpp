@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID for the database bundle.</p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the database bundle.</p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name for the database bundle.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name for the database bundle.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for the database bundle.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The cost of the database bundle in US currency.</p>
      */
+    inline bool PriceHasBeenSet() const { return m_priceHasBeenSet; }
+
+    /**
+     * <p>The cost of the database bundle in US currency.</p>
+     */
     inline void SetPrice(double value) { m_priceHasBeenSet = true; m_price = value; }
 
     /**
@@ -141,6 +156,12 @@ namespace Model
      * bundle.</p>
      */
     inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
+
+    /**
+     * <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database
+     * bundle.</p>
+     */
+    inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
 
     /**
      * <p>The amount of RAM in GB (for example, <code>2.0</code>) for the database
@@ -163,6 +184,11 @@ namespace Model
     /**
      * <p>The size of the disk for the database bundle.</p>
      */
+    inline bool DiskSizeInGbHasBeenSet() const { return m_diskSizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk for the database bundle.</p>
+     */
     inline void SetDiskSizeInGb(int value) { m_diskSizeInGbHasBeenSet = true; m_diskSizeInGb = value; }
 
     /**
@@ -175,6 +201,11 @@ namespace Model
      * <p>The data transfer rate per month in GB for the database bundle.</p>
      */
     inline int GetTransferPerMonthInGb() const{ return m_transferPerMonthInGb; }
+
+    /**
+     * <p>The data transfer rate per month in GB for the database bundle.</p>
+     */
+    inline bool TransferPerMonthInGbHasBeenSet() const { return m_transferPerMonthInGbHasBeenSet; }
 
     /**
      * <p>The data transfer rate per month in GB for the database bundle.</p>
@@ -195,6 +226,11 @@ namespace Model
     /**
      * <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
      */
+    inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
+
+    /**
+     * <p>The number of virtual CPUs (vCPUs) for the database bundle.</p>
+     */
     inline void SetCpuCount(int value) { m_cpuCountHasBeenSet = true; m_cpuCount = value; }
 
     /**
@@ -211,6 +247,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the database bundle is encrypted.</p>
      */
+    inline bool IsEncryptedHasBeenSet() const { return m_isEncryptedHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the database bundle is encrypted.</p>
+     */
     inline void SetIsEncrypted(bool value) { m_isEncryptedHasBeenSet = true; m_isEncrypted = value; }
 
     /**
@@ -223,6 +264,11 @@ namespace Model
      * <p>A Boolean value indicating whether the database bundle is active.</p>
      */
     inline bool GetIsActive() const{ return m_isActive; }
+
+    /**
+     * <p>A Boolean value indicating whether the database bundle is active.</p>
+     */
+    inline bool IsActiveHasBeenSet() const { return m_isActiveHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating whether the database bundle is active.</p>

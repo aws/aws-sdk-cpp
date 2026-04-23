@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the snapshot copy grant to delete.</p>
      */
+    inline bool SnapshotCopyGrantNameHasBeenSet() const { return m_snapshotCopyGrantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the snapshot copy grant to delete.</p>
+     */
     inline void SetSnapshotCopyGrantName(const Aws::String& value) { m_snapshotCopyGrantNameHasBeenSet = true; m_snapshotCopyGrantName = value; }
 
     /**

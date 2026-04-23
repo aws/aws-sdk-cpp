@@ -18,6 +18,8 @@
 #include <aws/elasticbeanstalk/ElasticBeanstalkRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/elasticbeanstalk/model/ApplicationResourceLifecycleConfig.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/elasticbeanstalk/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -56,6 +58,13 @@ namespace Model
      * <code>InvalidParameterValue</code> error.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p>The name of the application.</p> <p>Constraint: This name must be unique
+     * within your account. If the specified name already exists, the action returns an
+     * <code>InvalidParameterValue</code> error.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of the application.</p> <p>Constraint: This name must be unique
@@ -108,6 +117,11 @@ namespace Model
     /**
      * <p>Describes the application.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Describes the application.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -146,6 +160,12 @@ namespace Model
      * <p>Specify an application resource lifecycle configuration to prevent your
      * application from accumulating too many versions.</p>
      */
+    inline bool ResourceLifecycleConfigHasBeenSet() const { return m_resourceLifecycleConfigHasBeenSet; }
+
+    /**
+     * <p>Specify an application resource lifecycle configuration to prevent your
+     * application from accumulating too many versions.</p>
+     */
     inline void SetResourceLifecycleConfig(const ApplicationResourceLifecycleConfig& value) { m_resourceLifecycleConfigHasBeenSet = true; m_resourceLifecycleConfig = value; }
 
     /**
@@ -166,6 +186,63 @@ namespace Model
      */
     inline CreateApplicationRequest& WithResourceLifecycleConfig(ApplicationResourceLifecycleConfig&& value) { SetResourceLifecycleConfig(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline CreateApplicationRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline CreateApplicationRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline CreateApplicationRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk
+     * applies these tags only to the application. Environments that you create in the
+     * application don't inherit the tags.</p>
+     */
+    inline CreateApplicationRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_applicationName;
@@ -176,6 +253,9 @@ namespace Model
 
     ApplicationResourceLifecycleConfig m_resourceLifecycleConfig;
     bool m_resourceLifecycleConfigHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,13 @@ namespace Model
      * VPC, you must specify the security group ID.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
+
+    /**
+     * <p>The ID of the security group. You must specify either the security group ID
+     * or the security group name in the request. For security groups in a nondefault
+     * VPC, you must specify the security group ID.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
 
     /**
      * <p>The ID of the security group. You must specify either the security group ID
@@ -133,6 +148,12 @@ namespace Model
      * <p>[Default VPC] The name of the security group. You must specify either the
      * security group ID or the security group name in the request.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>[Default VPC] The name of the security group. You must specify either the
+     * security group ID or the security group name in the request.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -170,6 +191,11 @@ namespace Model
      * <p>The IP permissions for the security group rule.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissions() const{ return m_ipPermissions; }
+
+    /**
+     * <p>The IP permissions for the security group rule.</p>
+     */
+    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
 
     /**
      * <p>The IP permissions for the security group rule.</p>

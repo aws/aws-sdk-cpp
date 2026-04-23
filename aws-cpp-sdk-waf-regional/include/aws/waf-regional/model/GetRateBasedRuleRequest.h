@@ -56,6 +56,13 @@ namespace Model
      * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
      * <a>ListRateBasedRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleId</code> of the <a>RateBasedRule</a> that you want to get.
+     * <code>RuleId</code> is returned by <a>CreateRateBasedRule</a> and by
+     * <a>ListRateBasedRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**

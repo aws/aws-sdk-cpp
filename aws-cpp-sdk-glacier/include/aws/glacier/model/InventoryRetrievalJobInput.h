@@ -60,6 +60,13 @@ namespace Model
      * includes archives created on or after this date. This value should be a string
      * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The start of the date range in UTC for vault inventory retrieval that
+     * includes archives created on or after this date. This value should be a string
+     * in the ISO 8601 date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
+     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -104,6 +111,13 @@ namespace Model
      * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>The end of the date range in UTC for vault inventory retrieval that includes
+     * archives created before this date. This value should be a string in the ISO 8601
+     * date format, for example <code>2013-03-20T17:03:43Z</code>.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>The end of the date range in UTC for vault inventory retrieval that includes
@@ -158,6 +172,12 @@ namespace Model
      * <p>Specifies the maximum number of inventory items returned per vault inventory
      * retrieval request. Valid values are greater than or equal to 1.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum number of inventory items returned per vault inventory
+     * retrieval request. Valid values are greater than or equal to 1.</p>
+     */
     inline void SetLimit(const Aws::String& value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -198,6 +218,14 @@ namespace Model
      * items, this value is <code>null</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An opaque string that represents where to continue pagination of the vault
+     * inventory retrieval results. You use the marker in a new <b>InitiateJob</b>
+     * request to obtain additional inventory items. If there are no more inventory
+     * items, this value is <code>null</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An opaque string that represents where to continue pagination of the vault

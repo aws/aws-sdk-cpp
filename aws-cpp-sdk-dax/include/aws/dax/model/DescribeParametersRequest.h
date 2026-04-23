@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the parameter group.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * system-defined parameter.</p>
      */
     inline const Aws::String& GetSource() const{ return m_source; }
+
+    /**
+     * <p>How the parameter is defined. For example, <code>system</code> denotes a
+     * system-defined parameter.</p>
+     */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
 
     /**
      * <p>How the parameter is defined. For example, <code>system</code> denotes a
@@ -137,6 +148,14 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>The value
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified <code>MaxResults</code> value, a token is included in
+     * the response so that the remaining results can be retrieved.</p> <p>The value
+     * for <code>MaxResults</code> must be between 20 and 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -155,6 +174,14 @@ namespace Model
      * <code>MaxResults</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * <code>MaxResults</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional token returned from a prior request. Use this token for

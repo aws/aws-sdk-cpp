@@ -60,6 +60,12 @@ namespace Model
      * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
      * action.</p>
      */
+    inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
+
+    /**
+     * <p>PlatformApplicationArn for ListEndpointsByPlatformApplicationInput
+     * action.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**
@@ -99,6 +105,13 @@ namespace Model
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>NextToken string is used when calling ListEndpointsByPlatformApplication
+     * action to retrieve additional records that are available after the first page
+     * results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>NextToken string is used when calling ListEndpointsByPlatformApplication

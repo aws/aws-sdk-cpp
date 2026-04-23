@@ -34,7 +34,7 @@ GetSubscriptionDefinitionVersionRequest::GetSubscriptionDefinitionVersionRequest
 
 Aws::String GetSubscriptionDefinitionVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSubscriptionDefinitionVersionRequest::AddQueryStringParameters(URI& uri) const

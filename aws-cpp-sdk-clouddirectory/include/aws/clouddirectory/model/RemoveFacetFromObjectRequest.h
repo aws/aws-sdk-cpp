@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the directory in which the object resides.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the directory in which the object resides.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
      */
+    inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
+
+    /**
+     * <p>The facet to remove. See <a>SchemaFacet</a> for details.</p>
+     */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
      * <p>A reference to the object to remove the facet from.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+
+    /**
+     * <p>A reference to the object to remove the facet from.</p>
+     */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the object to remove the facet from.</p>

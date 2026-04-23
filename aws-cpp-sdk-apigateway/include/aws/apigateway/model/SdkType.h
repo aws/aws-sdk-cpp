@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of an <a>SdkType</a> instance.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of an <a>SdkType</a> instance.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
      */
     inline const Aws::String& GetFriendlyName() const{ return m_friendlyName; }
+
+    /**
+     * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
+     */
+    inline bool FriendlyNameHasBeenSet() const { return m_friendlyNameHasBeenSet; }
 
     /**
      * <p>The user-friendly name of an <a>SdkType</a> instance.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The description of an <a>SdkType</a>.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of an <a>SdkType</a>.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>
      */
     inline const Aws::Vector<SdkConfigurationProperty>& GetConfigurationProperties() const{ return m_configurationProperties; }
+
+    /**
+     * <p>A list of configuration properties of an <a>SdkType</a>.</p>
+     */
+    inline bool ConfigurationPropertiesHasBeenSet() const { return m_configurationPropertiesHasBeenSet; }
 
     /**
      * <p>A list of configuration properties of an <a>SdkType</a>.</p>

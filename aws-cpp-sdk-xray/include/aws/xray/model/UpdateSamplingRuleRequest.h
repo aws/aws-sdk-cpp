@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The rule and fields to change.</p>
      */
+    inline bool SamplingRuleUpdateHasBeenSet() const { return m_samplingRuleUpdateHasBeenSet; }
+
+    /**
+     * <p>The rule and fields to change.</p>
+     */
     inline void SetSamplingRuleUpdate(const SamplingRuleUpdate& value) { m_samplingRuleUpdateHasBeenSet = true; m_samplingRuleUpdate = value; }
 
     /**

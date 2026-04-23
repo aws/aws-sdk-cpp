@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The access key ID that identifies the temporary security credentials.</p>
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The access key ID that identifies the temporary security credentials.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The secret access key that can be used to sign requests.</p>
      */
     inline const Aws::String& GetSecretAccessKey() const{ return m_secretAccessKey; }
+
+    /**
+     * <p>The secret access key that can be used to sign requests.</p>
+     */
+    inline bool SecretAccessKeyHasBeenSet() const { return m_secretAccessKeyHasBeenSet; }
 
     /**
      * <p>The secret access key that can be used to sign requests.</p>
@@ -132,6 +142,12 @@ namespace Model
      * <p>The token that users must pass to the service API to use the temporary
      * credentials.</p>
      */
+    inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
+
+    /**
+     * <p>The token that users must pass to the service API to use the temporary
+     * credentials.</p>
+     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /**
@@ -169,6 +185,11 @@ namespace Model
      * <p>The date on which the current credentials expire.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
+
+    /**
+     * <p>The date on which the current credentials expire.</p>
+     */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
      * <p>The date on which the current credentials expire.</p>

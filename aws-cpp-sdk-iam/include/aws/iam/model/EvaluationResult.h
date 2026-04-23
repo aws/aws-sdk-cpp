@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the API operation tested on the indicated resource.</p>
      */
+    inline bool EvalActionNameHasBeenSet() const { return m_evalActionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the API operation tested on the indicated resource.</p>
+     */
     inline void SetEvalActionName(const Aws::String& value) { m_evalActionNameHasBeenSet = true; m_evalActionName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The ARN of the resource that the indicated API operation was tested on.</p>
      */
     inline const Aws::String& GetEvalResourceName() const{ return m_evalResourceName; }
+
+    /**
+     * <p>The ARN of the resource that the indicated API operation was tested on.</p>
+     */
+    inline bool EvalResourceNameHasBeenSet() const { return m_evalResourceNameHasBeenSet; }
 
     /**
      * <p>The ARN of the resource that the indicated API operation was tested on.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>The result of the simulation.</p>
      */
+    inline bool EvalDecisionHasBeenSet() const { return m_evalDecisionHasBeenSet; }
+
+    /**
+     * <p>The result of the simulation.</p>
+     */
     inline void SetEvalDecision(const PolicyEvaluationDecisionType& value) { m_evalDecisionHasBeenSet = true; m_evalDecision = value; }
 
     /**
@@ -159,8 +174,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline const Aws::Vector<Statement>& GetMatchedStatements() const{ return m_matchedStatements; }
 
@@ -168,8 +183,17 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
+     */
+    inline bool MatchedStatementsHasBeenSet() const { return m_matchedStatementsHasBeenSet; }
+
+    /**
+     * <p>A list of the statements in the input policies that determine the result for
+     * this scenario. Remember that even if multiple statements allow the operation on
+     * the resource, if only one statement denies that operation, then the explicit
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline void SetMatchedStatements(const Aws::Vector<Statement>& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = value; }
 
@@ -177,8 +201,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline void SetMatchedStatements(Aws::Vector<Statement>&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements = std::move(value); }
 
@@ -186,8 +210,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(const Aws::Vector<Statement>& value) { SetMatchedStatements(value); return *this;}
 
@@ -195,8 +219,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline EvaluationResult& WithMatchedStatements(Aws::Vector<Statement>&& value) { SetMatchedStatements(std::move(value)); return *this;}
 
@@ -204,8 +228,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(const Statement& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(value); return *this; }
 
@@ -213,8 +237,8 @@ namespace Model
      * <p>A list of the statements in the input policies that determine the result for
      * this scenario. Remember that even if multiple statements allow the operation on
      * the resource, if only one statement denies that operation, then the explicit
-     * deny overrides any allow, and the deny statement is the only entry included in
-     * the result.</p>
+     * deny overrides any allow. Inaddition, the deny statement is the only entry
+     * included in the result.</p>
      */
     inline EvaluationResult& AddMatchedStatements(Statement&& value) { m_matchedStatementsHasBeenSet = true; m_matchedStatements.push_back(std::move(value)); return *this; }
 
@@ -230,6 +254,18 @@ namespace Model
      * <a>GetContextKeysForPrincipalPolicy</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+
+    /**
+     * <p>A list of context keys that are required by the included input policies but
+     * that were not provided by one of the input parameters. This list is used when
+     * the resource in a simulation is "*", either explicitly, or when the
+     * <code>ResourceArns</code> parameter blank. If you include a list of resources,
+     * then any missing context values are instead included under the
+     * <code>ResourceSpecificResults</code> section. To discover the context keys used
+     * by a set of policies, you can call <a>GetContextKeysForCustomPolicy</a> or
+     * <a>GetContextKeysForPrincipalPolicy</a>.</p>
+     */
+    inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
 
     /**
      * <p>A list of context keys that are required by the included input policies but
@@ -328,6 +364,13 @@ namespace Model
      * policies affect the results of the simulation. Only applies if the simulated
      * user's account is part of an organization.</p>
      */
+    inline bool OrganizationsDecisionDetailHasBeenSet() const { return m_organizationsDecisionDetailHasBeenSet; }
+
+    /**
+     * <p>A structure that details how AWS Organizations and its service control
+     * policies affect the results of the simulation. Only applies if the simulated
+     * user's account is part of an organization.</p>
+     */
     inline void SetOrganizationsDecisionDetail(const OrganizationsDecisionDetail& value) { m_organizationsDecisionDetailHasBeenSet = true; m_organizationsDecisionDetail = value; }
 
     /**
@@ -358,7 +401,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& GetEvalDecisionDetails() const{ return m_evalDecisionDetails; }
@@ -369,7 +412,18 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * IAM Roles Differ from Resource-based Policies</a> </p>
+     */
+    inline bool EvalDecisionDetailsHasBeenSet() const { return m_evalDecisionDetailsHasBeenSet; }
+
+    /**
+     * <p>Additional details about the results of the evaluation decision. When there
+     * are both IAM policies and resource policies, this parameter explains how each
+     * set of policies contributes to the final evaluation decision. When simulating
+     * cross-account access to a resource, both the resource-based policy and the
+     * caller's IAM policy must grant access. See <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = value; }
@@ -380,7 +434,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline void SetEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails = std::move(value); }
@@ -391,7 +445,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(const Aws::Map<Aws::String, PolicyEvaluationDecisionType>& value) { SetEvalDecisionDetails(value); return *this;}
@@ -402,7 +456,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& WithEvalDecisionDetails(Aws::Map<Aws::String, PolicyEvaluationDecisionType>&& value) { SetEvalDecisionDetails(std::move(value)); return *this;}
@@ -413,7 +467,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
@@ -424,7 +478,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), value); return *this; }
@@ -435,7 +489,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const Aws::String& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
@@ -446,7 +500,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(Aws::String&& key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(std::move(key), std::move(value)); return *this; }
@@ -457,7 +511,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, PolicyEvaluationDecisionType&& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, std::move(value)); return *this; }
@@ -468,7 +522,7 @@ namespace Model
      * set of policies contributes to the final evaluation decision. When simulating
      * cross-account access to a resource, both the resource-based policy and the
      * caller's IAM policy must grant access. See <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_compare-resource-policies.html">How
      * IAM Roles Differ from Resource-based Policies</a> </p>
      */
     inline EvaluationResult& AddEvalDecisionDetails(const char* key, const PolicyEvaluationDecisionType& value) { m_evalDecisionDetailsHasBeenSet = true; m_evalDecisionDetails.emplace(key, value); return *this; }
@@ -479,6 +533,12 @@ namespace Model
      * EvalActionName on each resource.</p>
      */
     inline const Aws::Vector<ResourceSpecificResult>& GetResourceSpecificResults() const{ return m_resourceSpecificResults; }
+
+    /**
+     * <p>The individual results of the simulation of the API operation specified in
+     * EvalActionName on each resource.</p>
+     */
+    inline bool ResourceSpecificResultsHasBeenSet() const { return m_resourceSpecificResultsHasBeenSet; }
 
     /**
      * <p>The individual results of the simulation of the API operation specified in

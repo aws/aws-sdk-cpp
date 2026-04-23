@@ -56,6 +56,13 @@ namespace Model
      * by a forward slash (alias/). Aliases that begin with "alias/aws" are
      * reserved.</p>
      */
+    inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+
+    /**
+     * <p>The alias to be deleted. The name must start with the word "alias" followed
+     * by a forward slash (alias/). Aliases that begin with "alias/aws" are
+     * reserved.</p>
+     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**

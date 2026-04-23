@@ -20,6 +20,8 @@
 #include <aws/acm-pca/model/RevocationConfiguration.h>
 #include <aws/acm-pca/model/CertificateAuthorityType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/acm-pca/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +59,12 @@ namespace Model
      * <p>Name and bit size of the private key algorithm, the name of the signing
      * algorithm, and X.500 certificate subject information.</p>
      */
+    inline bool CertificateAuthorityConfigurationHasBeenSet() const { return m_certificateAuthorityConfigurationHasBeenSet; }
+
+    /**
+     * <p>Name and bit size of the private key algorithm, the name of the signing
+     * algorithm, and X.500 certificate subject information.</p>
+     */
     inline void SetCertificateAuthorityConfiguration(const CertificateAuthorityConfiguration& value) { m_certificateAuthorityConfigurationHasBeenSet = true; m_certificateAuthorityConfiguration = value; }
 
     /**
@@ -87,6 +95,16 @@ namespace Model
      * </p>
      */
     inline const RevocationConfiguration& GetRevocationConfiguration() const{ return m_revocationConfiguration; }
+
+    /**
+     * <p>Contains a Boolean value that you can use to enable a certification
+     * revocation list (CRL) for the CA, the name of the S3 bucket to which ACM PCA
+     * will write the CRL, and an optional CNAME alias that you can use to hide the
+     * name of your bucket in the <b>CRL Distribution Points</b> extension of your CA
+     * certificate. For more information, see the <a>CrlConfiguration</a> structure.
+     * </p>
+     */
+    inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
 
     /**
      * <p>Contains a Boolean value that you can use to enable a certification
@@ -139,6 +157,12 @@ namespace Model
      * <p>The type of the certificate authority. Currently, this must be
      * <b>SUBORDINATE</b>.</p>
      */
+    inline bool CertificateAuthorityTypeHasBeenSet() const { return m_certificateAuthorityTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the certificate authority. Currently, this must be
+     * <b>SUBORDINATE</b>.</p>
+     */
     inline void SetCertificateAuthorityType(const CertificateAuthorityType& value) { m_certificateAuthorityTypeHasBeenSet = true; m_certificateAuthorityType = value; }
 
     /**
@@ -170,6 +194,17 @@ namespace Model
      * recognizes that you are requesting multiple certificates.</p>
      */
     inline const Aws::String& GetIdempotencyToken() const{ return m_idempotencyToken; }
+
+    /**
+     * <p>Alphanumeric string that can be used to distinguish between calls to
+     * <b>CreateCertificateAuthority</b>. Idempotency tokens time out after five
+     * minutes. Therefore, if you call <b>CreateCertificateAuthority</b> multiple times
+     * with the same idempotency token within a five minute period, ACM PCA recognizes
+     * that you are requesting only one certificate. As a result, ACM PCA issues only
+     * one. If you change the idempotency token for each call, however, ACM PCA
+     * recognizes that you are requesting multiple certificates.</p>
+     */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
 
     /**
      * <p>Alphanumeric string that can be used to distinguish between calls to
@@ -237,6 +272,55 @@ namespace Model
      */
     inline CreateCertificateAuthorityRequest& WithIdempotencyToken(const char* value) { SetIdempotencyToken(value); return *this;}
 
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Key-value pairs that will be attached to the new private CA. You can
+     * associate up to 50 tags with a private CA.</p>
+     */
+    inline CreateCertificateAuthorityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     CertificateAuthorityConfiguration m_certificateAuthorityConfiguration;
@@ -250,6 +334,9 @@ namespace Model
 
     Aws::String m_idempotencyToken;
     bool m_idempotencyTokenHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

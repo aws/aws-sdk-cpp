@@ -51,43 +51,43 @@ namespace Model
 
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline const Aws::Map<SummaryKeyType, int>& GetSummaryMap() const{ return m_summaryMap; }
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline void SetSummaryMap(const Aws::Map<SummaryKeyType, int>& value) { m_summaryMap = value; }
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline void SetSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { m_summaryMap = std::move(value); }
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline GetAccountSummaryResult& WithSummaryMap(const Aws::Map<SummaryKeyType, int>& value) { SetSummaryMap(value); return *this;}
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline GetAccountSummaryResult& WithSummaryMap(Aws::Map<SummaryKeyType, int>&& value) { SetSummaryMap(std::move(value)); return *this;}
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline GetAccountSummaryResult& AddSummaryMap(const SummaryKeyType& key, int value) { m_summaryMap.emplace(key, value); return *this; }
 
     /**
-     * <p>A set of key value pairs containing information about IAM entity usage and
+     * <p>A set of key–value pairs containing information about IAM entity usage and
      * IAM quotas.</p>
      */
     inline GetAccountSummaryResult& AddSummaryMap(SummaryKeyType&& key, int value) { m_summaryMap.emplace(std::move(key), value); return *this; }

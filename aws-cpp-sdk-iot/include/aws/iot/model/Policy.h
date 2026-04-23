@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The policy name.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The policy name.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The policy ARN.</p>
      */
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
+    /**
+     * <p>The policy ARN.</p>
+     */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     /**
      * <p>The policy ARN.</p>

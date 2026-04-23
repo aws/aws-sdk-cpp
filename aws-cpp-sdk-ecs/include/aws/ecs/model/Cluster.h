@@ -71,6 +71,16 @@ namespace Model
      * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
      * </code>..</p>
      */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the cluster. The ARN contains
+     * the <code>arn:aws:ecs</code> namespace, followed by the Region of the cluster,
+     * the AWS account ID of the cluster owner, the <code>cluster</code> namespace, and
+     * then the cluster name. For example,
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:cluster/<i>test</i>
+     * </code>..</p>
+     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>A user-generated string that you use to identify your cluster.</p>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>A user-generated string that you use to identify your cluster.</p>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
@@ -167,6 +182,14 @@ namespace Model
      * tasks.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
+     * <code>INACTIVE</code>. <code>ACTIVE</code> indicates that you can register
+     * container instances with the cluster and the associated instances can accept
+     * tasks.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the cluster. The valid values are <code>ACTIVE</code> or
@@ -229,6 +252,13 @@ namespace Model
      * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
      * status.</p>
      */
+    inline bool RegisteredContainerInstancesCountHasBeenSet() const { return m_registeredContainerInstancesCountHasBeenSet; }
+
+    /**
+     * <p>The number of container instances registered into the cluster. This includes
+     * container instances in both <code>ACTIVE</code> and <code>DRAINING</code>
+     * status.</p>
+     */
     inline void SetRegisteredContainerInstancesCount(int value) { m_registeredContainerInstancesCountHasBeenSet = true; m_registeredContainerInstancesCount = value; }
 
     /**
@@ -249,6 +279,12 @@ namespace Model
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
      * state.</p>
      */
+    inline bool RunningTasksCountHasBeenSet() const { return m_runningTasksCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state.</p>
+     */
     inline void SetRunningTasksCount(int value) { m_runningTasksCountHasBeenSet = true; m_runningTasksCount = value; }
 
     /**
@@ -263,6 +299,12 @@ namespace Model
      * state.</p>
      */
     inline int GetPendingTasksCount() const{ return m_pendingTasksCount; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
+     * state.</p>
+     */
+    inline bool PendingTasksCountHasBeenSet() const { return m_pendingTasksCountHasBeenSet; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
@@ -289,6 +331,13 @@ namespace Model
      * <code>ACTIVE</code> state. You can view these services with
      * <a>ListServices</a>.</p>
      */
+    inline bool ActiveServicesCountHasBeenSet() const { return m_activeServicesCountHasBeenSet; }
+
+    /**
+     * <p>The number of services that are running on the cluster in an
+     * <code>ACTIVE</code> state. You can view these services with
+     * <a>ListServices</a>.</p>
+     */
     inline void SetActiveServicesCount(int value) { m_activeServicesCountHasBeenSet = true; m_activeServicesCount = value; }
 
     /**
@@ -309,6 +358,17 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Vector<KeyValuePair>& GetStatistics() const{ return m_statistics; }
+
+    /**
+     * <p>Additional information about your clusters that are separated by launch type,
+     * including:</p> <ul> <li> <p>runningEC2TasksCount</p> </li> <li>
+     * <p>RunningFargateTasksCount</p> </li> <li> <p>pendingEC2TasksCount</p> </li>
+     * <li> <p>pendingFargateTasksCount</p> </li> <li> <p>activeEC2ServiceCount</p>
+     * </li> <li> <p>activeFargateServiceCount</p> </li> <li>
+     * <p>drainingEC2ServiceCount</p> </li> <li> <p>drainingFargateServiceCount</p>
+     * </li> </ul>
+     */
+    inline bool StatisticsHasBeenSet() const { return m_statisticsHasBeenSet; }
 
     /**
      * <p>Additional information about your clusters that are separated by launch type,
@@ -384,6 +444,14 @@ namespace Model
      * tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the cluster to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the cluster to help you categorize and

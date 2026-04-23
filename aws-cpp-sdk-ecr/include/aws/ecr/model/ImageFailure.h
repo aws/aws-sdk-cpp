@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The image ID associated with the failure.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>The image ID associated with the failure.</p>
+     */
     inline void SetImageId(const ImageIdentifier& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The code associated with the failure.</p>
      */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>The code associated with the failure.</p>
+     */
     inline void SetFailureCode(const ImageFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason for the failure.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>The reason for the failure.</p>

@@ -64,6 +64,14 @@ namespace Model
      * types include the following: AWS:AWSComponent, AWS:Application,
      * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the inventory type. Default inventory item type names start with
+     * AWS. Custom inventory type names will start with Custom. Default inventory item
+     * types include the following: AWS:AWSComponent, AWS:Application,
+     * AWS:InstanceInformation, AWS:Network, and AWS:WindowsUpdate.</p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * <p>The schema version for the inventory item.</p>
      */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version for the inventory item.</p>
+     */
     inline void SetSchemaVersion(const Aws::String& value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
@@ -147,6 +160,11 @@ namespace Model
      * <p>The time the inventory information was collected.</p>
      */
     inline const Aws::String& GetCaptureTime() const{ return m_captureTime; }
+
+    /**
+     * <p>The time the inventory information was collected.</p>
+     */
+    inline bool CaptureTimeHasBeenSet() const { return m_captureTimeHasBeenSet; }
 
     /**
      * <p>The time the inventory information was collected.</p>
@@ -186,6 +204,14 @@ namespace Model
      * last update. </p>
      */
     inline const Aws::String& GetContentHash() const{ return m_contentHash; }
+
+    /**
+     * <p>MD5 hash of the inventory item type contents. The content hash is used to
+     * determine whether to update inventory information. The PutInventory API does not
+     * update the inventory item type contents if the MD5 hash has not changed since
+     * last update. </p>
+     */
+    inline bool ContentHashHasBeenSet() const { return m_contentHashHasBeenSet; }
 
     /**
      * <p>MD5 hash of the inventory item type contents. The content hash is used to
@@ -244,6 +270,11 @@ namespace Model
     /**
      * <p>The inventory data of the inventory type.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>The inventory data of the inventory type.</p>
+     */
     inline void SetContent(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -279,6 +310,14 @@ namespace Model
      * <code>AWS:ComplianceItem</code> type.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetContext() const{ return m_context; }
+
+    /**
+     * <p>A map of associated properties for a specified inventory type. For example,
+     * with this attribute, you can specify the <code>ExecutionId</code>,
+     * <code>ExecutionType</code>, <code>ComplianceType</code> properties of the
+     * <code>AWS:ComplianceItem</code> type.</p>
+     */
+    inline bool ContextHasBeenSet() const { return m_contextHasBeenSet; }
 
     /**
      * <p>A map of associated properties for a specified inventory type. For example,

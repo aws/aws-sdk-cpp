@@ -31,12 +31,13 @@ namespace ACMPCAErrorMapper
 static const int REQUEST_IN_PROGRESS_HASH = HashingUtils::HashString("RequestInProgressException");
 static const int TOO_MANY_TAGS_HASH = HashingUtils::HashString("TooManyTagsException");
 static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
-static const int CERTIFICATE_MISMATCH_HASH = HashingUtils::HashString("CertificateMismatchException");
 static const int INVALID_TAG_HASH = HashingUtils::HashString("InvalidTagException");
+static const int CERTIFICATE_MISMATCH_HASH = HashingUtils::HashString("CertificateMismatchException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
 static const int MALFORMED_CERTIFICATE_HASH = HashingUtils::HashString("MalformedCertificateException");
 static const int REQUEST_ALREADY_PROCESSED_HASH = HashingUtils::HashString("RequestAlreadyProcessedException");
+static const int PERMISSION_ALREADY_EXISTS_HASH = HashingUtils::HashString("PermissionAlreadyExistsException");
 static const int REQUEST_FAILED_HASH = HashingUtils::HashString("RequestFailedException");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_POLICY_HASH = HashingUtils::HashString("InvalidPolicyException");
@@ -61,13 +62,13 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::CONCURRENT_MODIFICATION), false);
   }
-  else if (hashCode == CERTIFICATE_MISMATCH_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::CERTIFICATE_MISMATCH), false);
-  }
   else if (hashCode == INVALID_TAG_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::INVALID_TAG), false);
+  }
+  else if (hashCode == CERTIFICATE_MISMATCH_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::CERTIFICATE_MISMATCH), false);
   }
   else if (hashCode == INVALID_STATE_HASH)
   {
@@ -84,6 +85,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == REQUEST_ALREADY_PROCESSED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::REQUEST_ALREADY_PROCESSED), false);
+  }
+  else if (hashCode == PERMISSION_ALREADY_EXISTS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMPCAErrors::PERMISSION_ALREADY_EXISTS), false);
   }
   else if (hashCode == REQUEST_FAILED_HASH)
   {

@@ -32,6 +32,7 @@ namespace Aws
 
         static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
         static const int QUICKSIGHT_HASH = HashingUtils::HashString("QUICKSIGHT");
+        static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
 
 
         AdditionalArtifact GetAdditionalArtifactForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == QUICKSIGHT_HASH)
           {
             return AdditionalArtifact::QUICKSIGHT;
+          }
+          else if (hashCode == ATHENA_HASH)
+          {
+            return AdditionalArtifact::ATHENA;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "REDSHIFT";
           case AdditionalArtifact::QUICKSIGHT:
             return "QUICKSIGHT";
+          case AdditionalArtifact::ATHENA:
+            return "ATHENA";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

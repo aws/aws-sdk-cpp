@@ -64,6 +64,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,11 @@ namespace Model
      * <p>The ID of the AFI.</p>
      */
     inline const Aws::String& GetFpgaImageId() const{ return m_fpgaImageId; }
+
+    /**
+     * <p>The ID of the AFI.</p>
+     */
+    inline bool FpgaImageIdHasBeenSet() const { return m_fpgaImageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AFI.</p>
@@ -119,6 +132,11 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute.</p>
+     */
     inline void SetAttribute(const FpgaImageAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -141,6 +159,11 @@ namespace Model
      * <p>The operation type.</p>
      */
     inline const OperationType& GetOperationType() const{ return m_operationType; }
+
+    /**
+     * <p>The operation type.</p>
+     */
+    inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
 
     /**
      * <p>The operation type.</p>
@@ -168,6 +191,12 @@ namespace Model
      * <code>loadPermission</code> attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+
+    /**
+     * <p>One or more AWS account IDs. This parameter is valid only when modifying the
+     * <code>loadPermission</code> attribute.</p>
+     */
+    inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
      * <p>One or more AWS account IDs. This parameter is valid only when modifying the
@@ -222,6 +251,12 @@ namespace Model
      * <p>One or more user groups. This parameter is valid only when modifying the
      * <code>loadPermission</code> attribute.</p>
      */
+    inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
+
+    /**
+     * <p>One or more user groups. This parameter is valid only when modifying the
+     * <code>loadPermission</code> attribute.</p>
+     */
     inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
 
     /**
@@ -267,6 +302,13 @@ namespace Model
      * <code>productCodes</code> attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductCodes() const{ return m_productCodes; }
+
+    /**
+     * <p>One or more product codes. After you add a product code to an AFI, it can't
+     * be removed. This parameter is valid only when modifying the
+     * <code>productCodes</code> attribute.</p>
+     */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
      * <p>One or more product codes. After you add a product code to an AFI, it can't
@@ -326,6 +368,11 @@ namespace Model
     /**
      * <p>The load permission for the AFI.</p>
      */
+    inline bool LoadPermissionHasBeenSet() const { return m_loadPermissionHasBeenSet; }
+
+    /**
+     * <p>The load permission for the AFI.</p>
+     */
     inline void SetLoadPermission(const LoadPermissionModifications& value) { m_loadPermissionHasBeenSet = true; m_loadPermission = value; }
 
     /**
@@ -348,6 +395,11 @@ namespace Model
      * <p>A description for the AFI.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the AFI.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the AFI.</p>
@@ -384,6 +436,11 @@ namespace Model
      * <p>A name for the AFI.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A name for the AFI.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A name for the AFI.</p>

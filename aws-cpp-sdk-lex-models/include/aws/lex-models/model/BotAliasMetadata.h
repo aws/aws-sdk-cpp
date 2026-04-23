@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the bot alias.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot alias.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A description of the bot alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the bot alias.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the bot alias.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The version of the Amazon Lex bot to which the alias points.</p>
      */
+    inline bool BotVersionHasBeenSet() const { return m_botVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the Amazon Lex bot to which the alias points.</p>
+     */
     inline void SetBotVersion(const Aws::String& value) { m_botVersionHasBeenSet = true; m_botVersion = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The name of the bot to which the alias points.</p>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
+
+    /**
+     * <p>The name of the bot to which the alias points.</p>
+     */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
 
     /**
      * <p>The name of the bot to which the alias points.</p>
@@ -202,6 +222,12 @@ namespace Model
      * <p>The date that the bot alias was updated. When you create a resource, the
      * creation date and last updated date are the same.</p>
      */
+    inline bool LastUpdatedDateHasBeenSet() const { return m_lastUpdatedDateHasBeenSet; }
+
+    /**
+     * <p>The date that the bot alias was updated. When you create a resource, the
+     * creation date and last updated date are the same.</p>
+     */
     inline void SetLastUpdatedDate(const Aws::Utils::DateTime& value) { m_lastUpdatedDateHasBeenSet = true; m_lastUpdatedDate = value; }
 
     /**
@@ -231,6 +257,11 @@ namespace Model
     /**
      * <p>The date that the bot alias was created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date that the bot alias was created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -253,6 +284,11 @@ namespace Model
      * <p>Checksum of the bot alias.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>Checksum of the bot alias.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>Checksum of the bot alias.</p>

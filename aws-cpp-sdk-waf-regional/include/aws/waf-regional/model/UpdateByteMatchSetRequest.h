@@ -58,6 +58,13 @@ namespace Model
      * update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
      * by <a>ListByteMatchSets</a>.</p>
      */
+    inline bool ByteMatchSetIdHasBeenSet() const { return m_byteMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>ByteMatchSetId</code> of the <a>ByteMatchSet</a> that you want to
+     * update. <code>ByteMatchSetId</code> is returned by <a>CreateByteMatchSet</a> and
+     * by <a>ListByteMatchSets</a>.</p>
+     */
     inline void SetByteMatchSetId(const Aws::String& value) { m_byteMatchSetIdHasBeenSet = true; m_byteMatchSetId = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**
@@ -143,6 +155,18 @@ namespace Model
      * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
      */
     inline const Aws::Vector<ByteMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert
+     * into or delete from a <a>ByteMatchSet</a>. For more information, see the
+     * applicable data types:</p> <ul> <li> <p> <a>ByteMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>ByteMatchTuple</code> </p> </li> <li> <p>
+     * <a>ByteMatchTuple</a>: Contains <code>FieldToMatch</code>,
+     * <code>PositionalConstraint</code>, <code>TargetString</code>, and
+     * <code>TextTransformation</code> </p> </li> <li> <p> <a>FieldToMatch</a>:
+     * Contains <code>Data</code> and <code>Type</code> </p> </li> </ul>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>ByteMatchSetUpdate</code> objects that you want to insert

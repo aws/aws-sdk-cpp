@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p> Details of the cancellation.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p> Details of the cancellation.</p>
+     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**

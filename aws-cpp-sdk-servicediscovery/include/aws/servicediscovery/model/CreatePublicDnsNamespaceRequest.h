@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name that you want to assign to this namespace.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name that you want to assign to this namespace.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,14 @@ namespace Model
      * string, for example, a date/time stamp.</p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed
+     * <code>CreatePublicDnsNamespace</code> requests to be retried without the risk of
+     * executing the operation twice. <code>CreatorRequestId</code> can be any unique
+     * string, for example, a date/time stamp.</p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that identifies the request and that allows failed
@@ -142,6 +155,11 @@ namespace Model
      * <p>A description for the namespace.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description for the namespace.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description for the namespace.</p>

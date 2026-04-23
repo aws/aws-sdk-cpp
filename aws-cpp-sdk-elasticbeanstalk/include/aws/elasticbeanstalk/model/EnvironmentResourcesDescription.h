@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Describes the LoadBalancer.</p>
      */
+    inline bool LoadBalancerHasBeenSet() const { return m_loadBalancerHasBeenSet; }
+
+    /**
+     * <p>Describes the LoadBalancer.</p>
+     */
     inline void SetLoadBalancer(const LoadBalancerDescription& value) { m_loadBalancerHasBeenSet = true; m_loadBalancer = value; }
 
     /**

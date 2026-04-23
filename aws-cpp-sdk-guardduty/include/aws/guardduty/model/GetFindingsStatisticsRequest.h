@@ -58,6 +58,12 @@ namespace Model
      * The ID of the detector that specifies the GuardDuty service whose findings'
      * statistics you want to retrieve.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The ID of the detector that specifies the GuardDuty service whose findings'
+     * statistics you want to retrieve.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * Represents the criteria used for querying findings.
      */
+    inline bool FindingCriteriaHasBeenSet() const { return m_findingCriteriaHasBeenSet; }
+
+    /**
+     * Represents the criteria used for querying findings.
+     */
     inline void SetFindingCriteria(const FindingCriteria& value) { m_findingCriteriaHasBeenSet = true; m_findingCriteria = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * Types of finding statistics to retrieve.
      */
     inline const Aws::Vector<FindingStatisticType>& GetFindingStatisticTypes() const{ return m_findingStatisticTypes; }
+
+    /**
+     * Types of finding statistics to retrieve.
+     */
+    inline bool FindingStatisticTypesHasBeenSet() const { return m_findingStatisticTypesHasBeenSet; }
 
     /**
      * Types of finding statistics to retrieve.

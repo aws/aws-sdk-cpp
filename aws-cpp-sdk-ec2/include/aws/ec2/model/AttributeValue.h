@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The attribute value. The value is case-sensitive.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The attribute value. The value is case-sensitive.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**

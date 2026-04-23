@@ -91,9 +91,9 @@ namespace Model
      * <code>GetMediaForFragmentList</code> call also include the following additional
      * Matroska (MKV) tags: </p> <ul> <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER -
      * Fragment number returned in the chunk.</p> </li> <li>
-     * <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the
+     * <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the
      * fragment.</p> </li> <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP -
-     * Producer-side time stamp of the fragment.</p> </li> </ul> <p>The following tags
+     * Producer-side timestamp of the fragment.</p> </li> </ul> <p>The following tags
      * will be included if an exception occurs:</p> <ul> <li>
      * <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the
      * exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer
@@ -110,9 +110,9 @@ namespace Model
      * <code>GetMediaForFragmentList</code> call also include the following additional
      * Matroska (MKV) tags: </p> <ul> <li> <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER -
      * Fragment number returned in the chunk.</p> </li> <li>
-     * <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side time stamp of the
+     * <p>AWS_KINESISVIDEO_SERVER_SIDE_TIMESTAMP - Server-side timestamp of the
      * fragment.</p> </li> <li> <p>AWS_KINESISVIDEO_PRODUCER_SIDE_TIMESTAMP -
-     * Producer-side time stamp of the fragment.</p> </li> </ul> <p>The following tags
+     * Producer-side timestamp of the fragment.</p> </li> </ul> <p>The following tags
      * will be included if an exception occurs:</p> <ul> <li>
      * <p>AWS_KINESISVIDEO_FRAGMENT_NUMBER - The number of the fragment that threw the
      * exception</p> </li> <li> <p>AWS_KINESISVIDEO_EXCEPTION_ERROR_CODE - The integer

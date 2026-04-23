@@ -50,44 +50,50 @@ namespace Model
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline RegisterApplicationRevisionRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -96,6 +102,11 @@ namespace Model
      * <p>A comment about the revision.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A comment about the revision.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A comment about the revision.</p>
@@ -133,6 +144,12 @@ namespace Model
      * location.</p>
      */
     inline const RevisionLocation& GetRevision() const{ return m_revision; }
+
+    /**
+     * <p>Information about the application revision to register, including type and
+     * location.</p>
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * <p>Information about the application revision to register, including type and

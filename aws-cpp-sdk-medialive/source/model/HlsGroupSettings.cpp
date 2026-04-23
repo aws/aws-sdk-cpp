@@ -46,6 +46,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
+    m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
+    m_iFrameOnlyPlaylistsHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -73,6 +75,8 @@ HlsGroupSettings::HlsGroupSettings() :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_redundantManifest(HlsRedundantManifest::NOT_SET),
+    m_redundantManifestHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
     m_segmentationMode(HlsSegmentationMode::NOT_SET),
@@ -110,6 +114,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_encryptionType(HlsEncryptionType::NOT_SET),
     m_encryptionTypeHasBeenSet(false),
     m_hlsCdnSettingsHasBeenSet(false),
+    m_iFrameOnlyPlaylists(IFrameOnlyPlaylistType::NOT_SET),
+    m_iFrameOnlyPlaylistsHasBeenSet(false),
     m_indexNSegments(0),
     m_indexNSegmentsHasBeenSet(false),
     m_inputLossAction(InputLossActionForHlsOut::NOT_SET),
@@ -137,6 +143,8 @@ HlsGroupSettings::HlsGroupSettings(JsonView jsonValue) :
     m_programDateTimeHasBeenSet(false),
     m_programDateTimePeriod(0),
     m_programDateTimePeriodHasBeenSet(false),
+    m_redundantManifest(HlsRedundantManifest::NOT_SET),
+    m_redundantManifestHasBeenSet(false),
     m_segmentLength(0),
     m_segmentLengthHasBeenSet(false),
     m_segmentationMode(HlsSegmentationMode::NOT_SET),
@@ -249,6 +257,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_hlsCdnSettingsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iFrameOnlyPlaylists"))
+  {
+    m_iFrameOnlyPlaylists = IFrameOnlyPlaylistTypeMapper::GetIFrameOnlyPlaylistTypeForName(jsonValue.GetString("iFrameOnlyPlaylists"));
+
+    m_iFrameOnlyPlaylistsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("indexNSegments"))
   {
     m_indexNSegments = jsonValue.GetInteger("indexNSegments");
@@ -352,6 +367,13 @@ HlsGroupSettings& HlsGroupSettings::operator =(JsonView jsonValue)
     m_programDateTimePeriod = jsonValue.GetInteger("programDateTimePeriod");
 
     m_programDateTimePeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("redundantManifest"))
+  {
+    m_redundantManifest = HlsRedundantManifestMapper::GetHlsRedundantManifestForName(jsonValue.GetString("redundantManifest"));
+
+    m_redundantManifestHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("segmentLength"))
@@ -494,6 +516,11 @@ JsonValue HlsGroupSettings::Jsonize() const
 
   }
 
+  if(m_iFrameOnlyPlaylistsHasBeenSet)
+  {
+   payload.WithString("iFrameOnlyPlaylists", IFrameOnlyPlaylistTypeMapper::GetNameForIFrameOnlyPlaylistType(m_iFrameOnlyPlaylists));
+  }
+
   if(m_indexNSegmentsHasBeenSet)
   {
    payload.WithInteger("indexNSegments", m_indexNSegments);
@@ -574,6 +601,11 @@ JsonValue HlsGroupSettings::Jsonize() const
   {
    payload.WithInteger("programDateTimePeriod", m_programDateTimePeriod);
 
+  }
+
+  if(m_redundantManifestHasBeenSet)
+  {
+   payload.WithString("redundantManifest", HlsRedundantManifestMapper::GetNameForHlsRedundantManifest(m_redundantManifest));
   }
 
   if(m_segmentLengthHasBeenSet)

@@ -27,6 +27,7 @@ using namespace Aws::Utils;
 using namespace Aws;
 
 DeleteChannelResult::DeleteChannelResult() : 
+    m_channelClass(ChannelClass::NOT_SET),
     m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
@@ -34,6 +35,7 @@ DeleteChannelResult::DeleteChannelResult() :
 }
 
 DeleteChannelResult::DeleteChannelResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
+    m_channelClass(ChannelClass::NOT_SET),
     m_logLevel(LogLevel::NOT_SET),
     m_pipelinesRunningCount(0),
     m_state(ChannelState::NOT_SET)
@@ -47,6 +49,12 @@ DeleteChannelResult& DeleteChannelResult::operator =(const Aws::AmazonWebService
   if(jsonValue.ValueExists("arn"))
   {
     m_arn = jsonValue.GetString("arn");
+
+  }
+
+  if(jsonValue.ValueExists("channelClass"))
+  {
+    m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));
 
   }
 
@@ -123,6 +131,15 @@ DeleteChannelResult& DeleteChannelResult::operator =(const Aws::AmazonWebService
   {
     m_state = ChannelStateMapper::GetChannelStateForName(jsonValue.GetString("state"));
 
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
   }
 
 

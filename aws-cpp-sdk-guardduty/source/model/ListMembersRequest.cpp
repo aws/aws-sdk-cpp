@@ -36,7 +36,7 @@ ListMembersRequest::ListMembersRequest() :
 
 Aws::String ListMembersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListMembersRequest::AddQueryStringParameters(URI& uri) const

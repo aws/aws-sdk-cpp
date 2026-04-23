@@ -34,7 +34,7 @@ ListGraphqlApisRequest::ListGraphqlApisRequest() :
 
 Aws::String ListGraphqlApisRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListGraphqlApisRequest::AddQueryStringParameters(URI& uri) const

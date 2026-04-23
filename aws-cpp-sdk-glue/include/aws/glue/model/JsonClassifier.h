@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the classifier.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the classifier.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The time this classifier was registered.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time this classifier was registered.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The time this classifier was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdated() const{ return m_lastUpdated; }
+
+    /**
+     * <p>The time this classifier was last updated.</p>
+     */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
 
     /**
      * <p>The time this classifier was last updated.</p>
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The version of this classifier.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of this classifier.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -159,6 +179,14 @@ namespace Model
      * JsonPath Custom Classifiers</a>.</p>
      */
     inline const Aws::String& GetJsonPath() const{ return m_jsonPath; }
+
+    /**
+     * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to
+     * classify. AWS Glue supports a subset of JsonPath, as described in <a
+     * href="https://docs.aws.amazon.com/glue/latest/dg/custom-classifier.html#custom-classifier-json">Writing
+     * JsonPath Custom Classifiers</a>.</p>
+     */
+    inline bool JsonPathHasBeenSet() const { return m_jsonPathHasBeenSet; }
 
     /**
      * <p>A <code>JsonPath</code> string defining the JSON data for the classifier to

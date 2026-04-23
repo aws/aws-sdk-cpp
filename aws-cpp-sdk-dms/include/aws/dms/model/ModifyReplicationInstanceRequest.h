@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>The amount of storage (in gigabytes) to be allocated for the replication
      * instance.</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gigabytes) to be allocated for the replication
+     * instance.</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -108,6 +119,12 @@ namespace Model
      * next maintenance window.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+
+    /**
+     * <p>Indicates whether the changes should be applied immediately or during the
+     * next maintenance window.</p>
+     */
+    inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
      * <p>Indicates whether the changes should be applied immediately or during the
@@ -128,6 +145,13 @@ namespace Model
      * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
      */
     inline const Aws::String& GetReplicationInstanceClass() const{ return m_replicationInstanceClass; }
+
+    /**
+     * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
+     * Values: <code>dms.t2.micro | dms.t2.small | dms.t2.medium | dms.t2.large |
+     * dms.c4.large | dms.c4.xlarge | dms.c4.2xlarge | dms.c4.4xlarge </code> </p>
+     */
+    inline bool ReplicationInstanceClassHasBeenSet() const { return m_replicationInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the replication instance.</p> <p> Valid
@@ -178,6 +202,13 @@ namespace Model
      * instance. </p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p> Specifies the VPC security group to be used with the replication instance.
+     * The VPC security group must work with the VPC containing the replication
+     * instance. </p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p> Specifies the VPC security group to be used with the replication instance.
@@ -240,6 +271,18 @@ namespace Model
      * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The weekly time range (in UTC) during which system maintenance can occur,
+     * which might result in an outage. Changing this parameter does not result in an
+     * outage, except in the following situation, and the change is asynchronously
+     * applied as soon as possible. If moving this window to the current time, there
+     * must be at least 30 minutes between the current time and end of the window to
+     * ensure pending changes are applied.</p> <p>Default: Uses existing setting</p>
+     * <p>Format: ddd:hh24:mi-ddd:hh24:mi</p> <p>Valid Days: Mon | Tue | Wed | Thu |
+     * Fri | Sat | Sun</p> <p>Constraints: Must be at least 30 minutes</p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The weekly time range (in UTC) during which system maintenance can occur,
@@ -326,6 +369,13 @@ namespace Model
      * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
      * to <code>true</code>. </p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p> Specifies if the replication instance is a Multi-AZ deployment. You cannot
+     * set the <code>AvailabilityZone</code> parameter if the Multi-AZ parameter is set
+     * to <code>true</code>. </p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -340,6 +390,11 @@ namespace Model
      * <p>The engine version number of the replication instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version number of the replication instance.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The engine version number of the replication instance.</p>
@@ -388,6 +443,15 @@ namespace Model
      * a value for the <code>EngineVersion</code> parameter that is a different major
      * version than the replication instance's current version.</p>
      */
+    inline bool AllowMajorVersionUpgradeHasBeenSet() const { return m_allowMajorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Indicates that major version upgrades are allowed. Changing this parameter
+     * does not result in an outage and the change is asynchronously applied as soon as
+     * possible.</p> <p>Constraints: This parameter must be set to true when specifying
+     * a value for the <code>EngineVersion</code> parameter that is a different major
+     * version than the replication instance's current version.</p>
+     */
     inline void SetAllowMajorVersionUpgrade(bool value) { m_allowMajorVersionUpgradeHasBeenSet = true; m_allowMajorVersionUpgrade = value; }
 
     /**
@@ -420,6 +484,17 @@ namespace Model
      * minor version is available, and AWS DMS has enabled auto patching for that
      * engine version. </p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p> Indicates that minor version upgrades will be applied automatically to the
+     * replication instance during the maintenance window. Changing this parameter does
+     * not result in an outage except in the following case and the change is
+     * asynchronously applied as soon as possible. An outage will result if this
+     * parameter is set to <code>true</code> during the maintenance window, and a newer
+     * minor version is available, and AWS DMS has enabled auto patching for that
+     * engine version. </p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -439,6 +514,12 @@ namespace Model
      * string.</p>
      */
     inline const Aws::String& GetReplicationInstanceIdentifier() const{ return m_replicationInstanceIdentifier; }
+
+    /**
+     * <p>The replication instance identifier. This parameter is stored as a lowercase
+     * string.</p>
+     */
+    inline bool ReplicationInstanceIdentifierHasBeenSet() const { return m_replicationInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The replication instance identifier. This parameter is stored as a lowercase

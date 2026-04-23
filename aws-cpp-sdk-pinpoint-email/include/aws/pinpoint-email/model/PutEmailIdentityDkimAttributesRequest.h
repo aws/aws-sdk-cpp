@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The email identity that you want to change the DKIM settings for.</p>
      */
+    inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
+
+    /**
+     * <p>The email identity that you want to change the DKIM settings for.</p>
+     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**
@@ -92,6 +97,15 @@ namespace Model
      * DKIM-signed.</p>
      */
     inline bool GetSigningEnabled() const{ return m_signingEnabled; }
+
+    /**
+     * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set
+     * this value <code>true</code>, then the messages that Amazon Pinpoint sends from
+     * the identity are DKIM-signed. When you set this value to <code>false</code>,
+     * then the messages that Amazon Pinpoint sends from the identity aren't
+     * DKIM-signed.</p>
+     */
+    inline bool SigningEnabledHasBeenSet() const { return m_signingEnabledHasBeenSet; }
 
     /**
      * <p>Sets the DKIM signing configuration for the identity.</p> <p>When you set

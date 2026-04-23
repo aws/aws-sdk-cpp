@@ -29,7 +29,7 @@ CancelJobRequest::CancelJobRequest() :
 
 Aws::String CancelJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

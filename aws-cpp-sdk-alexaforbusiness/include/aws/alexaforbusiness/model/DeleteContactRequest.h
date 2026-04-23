@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the contact to delete.</p>
      */
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the contact to delete.</p>
+     */
     inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
 
     /**

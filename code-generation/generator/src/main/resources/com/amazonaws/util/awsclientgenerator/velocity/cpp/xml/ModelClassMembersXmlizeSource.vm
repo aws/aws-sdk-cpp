@@ -2,6 +2,15 @@
 #if($shape.members.entrySet().size() == 0)
   AWS_UNREFERENCED_PARAM(parentNode);
 #end
+#if(!$callFromRequestShape && $shape.xmlNamespace) 
+##If requestShape has xmlNamespace field, then it has already added xml attribute before calling into this vm.
+#if($shape.xmlNamespace.prefix)
+#set($xmlnsKey = "xmlns:${shape.xmlNamespace.prefix}")
+#else
+#set($xmlnsKey = "xmlns")
+#end
+  parentNode.SetAttributeValue("${xmlnsKey}", "${shape.xmlNamespace.uri}");
+#end
 #foreach($entry in $shape.members.entrySet())
 #if($entry.value.usedForPayload)
 #set($spaces = '')
@@ -11,7 +20,6 @@
 #if($member.locationName)
 #set($serializationName = $member.locationName)
 #end
-#if($member.usedForPayload)
 #set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
 #set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
 #set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
@@ -21,33 +29,61 @@
   {
 #end
 #if($member.shape.enum)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}));
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${member.shape.name}Mapper::GetNameFor${member.shape.name}(${memberVarName}));
+#end
 #elseif($member.shape.boolean)
+#if($member.xmlAttribute)
+  ${spaces}ss << std::boolalpha << ${memberVarName};
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ss.str());
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}ss << std::boolalpha << ${memberVarName};
   ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+#end
   ${spaces}ss.str("");
 #elseif($member.shape.primitive)
+#if($member.xmlAttribute)
+  ${spaces}ss << ${memberVarName};
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ss.str());
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}ss << ${memberVarName};
   ${spaces}${lowerCaseVarName}Node.SetText(ss.str());
+#end
   ${spaces}ss.str("");
 #elseif($member.shape.string)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
+#end
 #elseif($member.shape.timeStamp)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName}.ToGmtString(DateFormat::ISO_8601));
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName}.ToGmtString(DateFormat::ISO_8601));
+#end
 #elseif($member.shape.blob)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", HashingUtils::Base64Encode(${memberVarName}));
+#else
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${lowerCaseVarName}Node.SetText(HashingUtils::Base64Encode(${memberVarName}));
+#end
 #elseif($member.shape.structure)
   ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
   ${spaces}${memberVarName}.AddToNode(${lowerCaseVarName}Node);
 #elseif($member.shape.list)
-#if(!$member.shape.flattened)
+#if($member.flattened)
   ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${memberName}");
+#elseif(!$member.shape.flattened)
+  ${spaces}XmlNode ${lowerCaseVarName}ParentNode = parentNode.CreateChildElement("${serializationName}");
 #end
   ${spaces}for(const auto& item : $memberVarName)
   ${spaces}{
@@ -76,11 +112,10 @@
     ${spaces}item.AddToNode(${lowerCaseVarName}Node);
 #end
   ${spaces}}
-#end
+#end##End of member.shape is structure or list
 #if(!$member.required && $useRequiredField)
   }
 
 #end
-#end
-#end
-#end
+#end##End if usedForPayload
+#end##End foreach

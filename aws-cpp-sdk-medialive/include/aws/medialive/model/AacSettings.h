@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AacSettings<p><h3>See Also:</h3>   <a
+   * Aac Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AacSettings">AWS
    * API Reference</a></p>
    */
@@ -63,6 +63,12 @@ namespace Model
      * Average bitrate in bits/second. Valid values depend on rate control mode and
      * profile.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Valid values depend on rate control mode and
+     * profile.
+     */
     inline void SetBitrate(double value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -79,6 +85,14 @@ namespace Model
      * data emitted in the PES header as per ETSI TS 101 154 Annex E.
      */
     inline const AacCodingMode& GetCodingMode() const{ return m_codingMode; }
+
+    /**
+     * Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
+     * and profile. The adReceiverMix setting receives a stereo description plus
+     * control track and emits a mono AAC encode of the description track, with control
+     * data emitted in the PES header as per ETSI TS 101 154 Annex E.
+     */
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
 
     /**
      * Mono, Stereo, or 5.1 channel layout. Valid values depend on rate control mode
@@ -126,6 +140,20 @@ Leave set to "normal" when input does not contain pre-mixed
      * audio + AD.
      */
     inline const AacInputType& GetInputType() const{ return m_inputType; }
+
+    /**
+     * Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD
+     * (narration) as a stereo pair.  The Audio Type field (audioType) will be set to
+     * 3, which signals to downstream systems that this stream contains "broadcaster
+     * mixed AD". Note that the input received by the encoder must contain pre-mixed
+     * audio; the encoder does not perform the mixing. The values in audioTypeControl
+     * and audioType (in AudioDescription) are ignored when set to
+     * broadcasterMixedAd.
+
+Leave set to "normal" when input does not contain pre-mixed
+     * audio + AD.
+     */
+    inline bool InputTypeHasBeenSet() const { return m_inputTypeHasBeenSet; }
 
     /**
      * Set to "broadcasterMixedAd" when input contains pre-mixed main audio + AD
@@ -192,6 +220,11 @@ Leave set to "normal" when input does not contain pre-mixed
     /**
      * AAC Profile.
      */
+    inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
+
+    /**
+     * AAC Profile.
+     */
     inline void SetProfile(const AacProfile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
@@ -214,6 +247,11 @@ Leave set to "normal" when input does not contain pre-mixed
      * Rate Control Mode.
      */
     inline const AacRateControlMode& GetRateControlMode() const{ return m_rateControlMode; }
+
+    /**
+     * Rate Control Mode.
+     */
+    inline bool RateControlModeHasBeenSet() const { return m_rateControlModeHasBeenSet; }
 
     /**
      * Rate Control Mode.
@@ -244,6 +282,11 @@ Leave set to "normal" when input does not contain pre-mixed
     /**
      * Sets LATM / LOAS AAC output for raw containers.
      */
+    inline bool RawFormatHasBeenSet() const { return m_rawFormatHasBeenSet; }
+
+    /**
+     * Sets LATM / LOAS AAC output for raw containers.
+     */
     inline void SetRawFormat(const AacRawFormat& value) { m_rawFormatHasBeenSet = true; m_rawFormat = value; }
 
     /**
@@ -270,6 +313,11 @@ Leave set to "normal" when input does not contain pre-mixed
     /**
      * Sample rate in Hz. Valid values depend on rate control mode and profile.
      */
+    inline bool SampleRateHasBeenSet() const { return m_sampleRateHasBeenSet; }
+
+    /**
+     * Sample rate in Hz. Valid values depend on rate control mode and profile.
+     */
     inline void SetSampleRate(double value) { m_sampleRateHasBeenSet = true; m_sampleRate = value; }
 
     /**
@@ -283,6 +331,12 @@ Leave set to "normal" when input does not contain pre-mixed
      * Stream containers.
      */
     inline const AacSpec& GetSpec() const{ return m_spec; }
+
+    /**
+     * Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport
+     * Stream containers.
+     */
+    inline bool SpecHasBeenSet() const { return m_specHasBeenSet; }
 
     /**
      * Use MPEG-2 AAC audio instead of MPEG-4 AAC audio for raw or MPEG-2 Transport
@@ -313,6 +367,11 @@ Leave set to "normal" when input does not contain pre-mixed
      * VBR Quality Level - Only used if rateControlMode is VBR.
      */
     inline const AacVbrQuality& GetVbrQuality() const{ return m_vbrQuality; }
+
+    /**
+     * VBR Quality Level - Only used if rateControlMode is VBR.
+     */
+    inline bool VbrQualityHasBeenSet() const { return m_vbrQualityHasBeenSet; }
 
     /**
      * VBR Quality Level - Only used if rateControlMode is VBR.

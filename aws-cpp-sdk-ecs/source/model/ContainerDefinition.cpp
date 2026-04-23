@@ -49,6 +49,11 @@ ContainerDefinition::ContainerDefinition() :
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_secretsHasBeenSet(false),
+    m_dependsOnHasBeenSet(false),
+    m_startTimeout(0),
+    m_startTimeoutHasBeenSet(false),
+    m_stopTimeout(0),
+    m_stopTimeoutHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -70,7 +75,8 @@ ContainerDefinition::ContainerDefinition() :
     m_ulimitsHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_systemControlsHasBeenSet(false)
+    m_systemControlsHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
 }
 
@@ -95,6 +101,11 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_volumesFromHasBeenSet(false),
     m_linuxParametersHasBeenSet(false),
     m_secretsHasBeenSet(false),
+    m_dependsOnHasBeenSet(false),
+    m_startTimeout(0),
+    m_startTimeoutHasBeenSet(false),
+    m_stopTimeout(0),
+    m_stopTimeoutHasBeenSet(false),
     m_hostnameHasBeenSet(false),
     m_userHasBeenSet(false),
     m_workingDirectoryHasBeenSet(false),
@@ -116,7 +127,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_ulimitsHasBeenSet(false),
     m_logConfigurationHasBeenSet(false),
     m_healthCheckHasBeenSet(false),
-    m_systemControlsHasBeenSet(false)
+    m_systemControlsHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -259,6 +271,30 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_secretsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("dependsOn"))
+  {
+    Array<JsonView> dependsOnJsonList = jsonValue.GetArray("dependsOn");
+    for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
+    {
+      m_dependsOn.push_back(dependsOnJsonList[dependsOnIndex].AsObject());
+    }
+    m_dependsOnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("startTimeout"))
+  {
+    m_startTimeout = jsonValue.GetInteger("startTimeout");
+
+    m_startTimeoutHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("stopTimeout"))
+  {
+    m_stopTimeout = jsonValue.GetInteger("stopTimeout");
+
+    m_stopTimeoutHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("hostname"))
   {
     m_hostname = jsonValue.GetString("hostname");
@@ -397,6 +433,16 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
       m_systemControls.push_back(systemControlsJsonList[systemControlsIndex].AsObject());
     }
     m_systemControlsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceRequirements"))
+  {
+    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+    {
+      m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
+    }
+    m_resourceRequirementsHasBeenSet = true;
   }
 
   return *this;
@@ -542,6 +588,29 @@ JsonValue ContainerDefinition::Jsonize() const
 
   }
 
+  if(m_dependsOnHasBeenSet)
+  {
+   Array<JsonValue> dependsOnJsonList(m_dependsOn.size());
+   for(unsigned dependsOnIndex = 0; dependsOnIndex < dependsOnJsonList.GetLength(); ++dependsOnIndex)
+   {
+     dependsOnJsonList[dependsOnIndex].AsObject(m_dependsOn[dependsOnIndex].Jsonize());
+   }
+   payload.WithArray("dependsOn", std::move(dependsOnJsonList));
+
+  }
+
+  if(m_startTimeoutHasBeenSet)
+  {
+   payload.WithInteger("startTimeout", m_startTimeout);
+
+  }
+
+  if(m_stopTimeoutHasBeenSet)
+  {
+   payload.WithInteger("stopTimeout", m_stopTimeout);
+
+  }
+
   if(m_hostnameHasBeenSet)
   {
    payload.WithString("hostname", m_hostname);
@@ -676,6 +745,17 @@ JsonValue ContainerDefinition::Jsonize() const
      systemControlsJsonList[systemControlsIndex].AsObject(m_systemControls[systemControlsIndex].Jsonize());
    }
    payload.WithArray("systemControls", std::move(systemControlsJsonList));
+
+  }
+
+  if(m_resourceRequirementsHasBeenSet)
+  {
+   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+   {
+     resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
+   }
+   payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
 
   }
 

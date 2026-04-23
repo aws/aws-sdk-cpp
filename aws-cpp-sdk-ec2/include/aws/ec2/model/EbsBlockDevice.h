@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -68,52 +73,77 @@ namespace Model
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * <code>io1</code> volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
+     * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
+     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
+     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000
+     * IOPS.</p> <p>Condition: This parameter is required for requests to create
+     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
      */
     inline int GetIops() const{ return m_iops; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * <code>io1</code> volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
+     * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
+     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
+     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000
+     * IOPS.</p> <p>Condition: This parameter is required for requests to create
+     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The number of I/O operations per second (IOPS) that the volume supports. For
+     * <code>io1</code> volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
+     * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
+     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
+     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000
+     * IOPS.</p> <p>Condition: This parameter is required for requests to create
+     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
      */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
      * <p>The number of I/O operations per second (IOPS) that the volume supports. For
-     * <code>io1</code>, this represents the number of IOPS that are provisioned for
-     * the volume. For <code>gp2</code>, this represents the baseline performance of
-     * the volume and the rate at which the volume accumulates I/O credits for
-     * bursting. For more information about General Purpose SSD baseline performance,
-     * I/O credits, and bursting, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
+     * <code>io1</code> volumes, this represents the number of IOPS that are
+     * provisioned for the volume. For <code>gp2</code> volumes, this represents the
+     * baseline performance of the volume and the rate at which the volume accumulates
+     * I/O credits for bursting. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/EBSVolumeTypes.html">Amazon
      * EBS Volume Types</a> in the <i>Amazon Elastic Compute Cloud User Guide</i>.</p>
-     * <p>Constraint: Range is 100-20000 IOPS for <code>io1</code> volumes and
-     * 100-10000 IOPS for <code>gp2</code> volumes.</p> <p>Condition: This parameter is
-     * required for requests to create <code>io1</code> volumes; it is not used in
-     * requests to create <code>gp2</code>, <code>st1</code>, <code>sc1</code>, or
-     * <code>standard</code> volumes.</p>
+     * <p>Constraints: Range is 100-16,000 IOPS for <code>gp2</code> volumes and 100 to
+     * 64,000IOPS for <code>io1</code> volumes, in most Regions. The maximum IOPS for
+     * <code>io1</code> of 64,000 is guaranteed only on <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html#ec2-nitro-instances">Nitro-based
+     * instances</a>. Other instance families guarantee performance up to 32,000
+     * IOPS.</p> <p>Condition: This parameter is required for requests to create
+     * <code>io1</code> volumes; it is not used in requests to create <code>gp2</code>,
+     * <code>st1</code>, <code>sc1</code>, or <code>standard</code> volumes.</p>
      */
     inline EbsBlockDevice& WithIops(int value) { SetIops(value); return *this;}
 
@@ -122,6 +152,11 @@ namespace Model
      * <p>The ID of the snapshot.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The ID of the snapshot.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The ID of the snapshot.</p>
@@ -176,6 +211,18 @@ namespace Model
      * the volume from a snapshot and don't specify a volume size, the default is the
      * snapshot size.</p>
      */
+    inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p> <p>Constraints: 1-16384 for General
+     * Purpose SSD (<code>gp2</code>), 4-16384 for Provisioned IOPS SSD
+     * (<code>io1</code>), 500-16384 for Throughput Optimized HDD (<code>st1</code>),
+     * 500-16384 for Cold HDD (<code>sc1</code>), and 1-1024 for Magnetic
+     * (<code>standard</code>) volumes. If you specify a snapshot, the volume size must
+     * be equal to or larger than the snapshot size.</p> <p>Default: If you're creating
+     * the volume from a snapshot and don't specify a volume size, the default is the
+     * snapshot size.</p>
+     */
     inline void SetVolumeSize(int value) { m_volumeSizeHasBeenSet = true; m_volumeSize = value; }
 
     /**
@@ -197,6 +244,13 @@ namespace Model
      * <code>standard</code> </p>
      */
     inline const VolumeType& GetVolumeType() const{ return m_volumeType; }
+
+    /**
+     * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
+     * <code>sc1</code>, or <code>standard</code>.</p> <p>Default:
+     * <code>standard</code> </p>
+     */
+    inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
 
     /**
      * <p>The volume type: <code>gp2</code>, <code>io1</code>, <code>st1</code>,
@@ -229,7 +283,7 @@ namespace Model
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * attached to instances that support Amazon EBS encryption.</p> <p>If you are
      * creating a volume from a snapshot, you cannot specify an encryption value. This
      * is because only blank volumes can be encrypted on creation. If you are creating
      * a snapshot from an existing EBS volume, you cannot specify an encryption value
@@ -241,7 +295,19 @@ namespace Model
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * attached to instances that support Amazon EBS encryption.</p> <p>If you are
+     * creating a volume from a snapshot, you cannot specify an encryption value. This
+     * is because only blank volumes can be encrypted on creation. If you are creating
+     * a snapshot from an existing EBS volume, you cannot specify an encryption value
+     * that differs from that of the EBS volume. We recommend that you omit the
+     * encryption value from the block device mappings when creating an image from an
+     * instance.</p>
+     */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
+     * attached to instances that support Amazon EBS encryption.</p> <p>If you are
      * creating a volume from a snapshot, you cannot specify an encryption value. This
      * is because only blank volumes can be encrypted on creation. If you are creating
      * a snapshot from an existing EBS volume, you cannot specify an encryption value
@@ -253,7 +319,7 @@ namespace Model
 
     /**
      * <p>Indicates whether the EBS volume is encrypted. Encrypted volumes can only be
-     * attached to instances that support Amazon EBS encryption. </p> <p>If you are
+     * attached to instances that support Amazon EBS encryption.</p> <p>If you are
      * creating a volume from a snapshot, you cannot specify an encryption value. This
      * is because only blank volumes can be encrypted on creation. If you are creating
      * a snapshot from an existing EBS volume, you cannot specify an encryption value
@@ -268,11 +334,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
 
@@ -280,11 +346,23 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
+     * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
+     * on <code>BlockDeviceMapping</code> objects called by <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * and <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline void SetKmsKeyId(const Aws::String& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = value; }
 
@@ -292,11 +370,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline void SetKmsKeyId(Aws::String&& value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId = std::move(value); }
 
@@ -304,11 +382,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline void SetKmsKeyId(const char* value) { m_kmsKeyIdHasBeenSet = true; m_kmsKeyId.assign(value); }
 
@@ -316,11 +394,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline EbsBlockDevice& WithKmsKeyId(const Aws::String& value) { SetKmsKeyId(value); return *this;}
 
@@ -328,11 +406,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline EbsBlockDevice& WithKmsKeyId(Aws::String&& value) { SetKmsKeyId(std::move(value)); return *this;}
 
@@ -340,11 +418,11 @@ namespace Model
      * <p>Identifier (key ID, key alias, ID ARN, or alias ARN) for a user-managed CMK
      * under which the EBS volume is encrypted.</p> <p>This parameter is only supported
      * on <code>BlockDeviceMapping</code> objects called by <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RunInstances.html">RunInstances</a>,
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotFleet.html">RequestSpotFleet</a>,
      * and <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_RequestSpotInstances.html">RequestSpotInstances</a>.</p>
      */
     inline EbsBlockDevice& WithKmsKeyId(const char* value) { SetKmsKeyId(value); return *this;}
 

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The description for a warning returned by the document service.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>The description for a warning returned by the document service.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**

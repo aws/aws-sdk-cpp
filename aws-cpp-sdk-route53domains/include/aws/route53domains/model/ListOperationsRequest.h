@@ -61,6 +61,13 @@ namespace Model
      * that you submitted after a specified date and time. Specify the date and time in
      * Coordinated Universal time (UTC).</p>
      */
+    inline bool SubmittedSinceHasBeenSet() const { return m_submittedSinceHasBeenSet; }
+
+    /**
+     * <p>An optional parameter that lets you get information about all the operations
+     * that you submitted after a specified date and time. Specify the date and time in
+     * Coordinated Universal time (UTC).</p>
+     */
     inline void SetSubmittedSince(const Aws::Utils::DateTime& value) { m_submittedSinceHasBeenSet = true; m_submittedSince = value; }
 
     /**
@@ -94,6 +101,16 @@ namespace Model
      * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>For an initial request for a list of operations, omit this element. If the
+     * number of operations that are not yet complete is greater than the value that
+     * you specified for <code>MaxItems</code>, you can use <code>Marker</code> to
+     * return additional operations. Get the value of <code>NextPageMarker</code> from
+     * the previous response, and submit another request that includes the value of
+     * <code>NextPageMarker</code> in the <code>Marker</code> element.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>For an initial request for a list of operations, omit this element. If the
@@ -160,6 +177,11 @@ namespace Model
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>
      */
     inline int GetMaxItems() const{ return m_maxItems; }
+
+    /**
+     * <p>Number of domains to be returned.</p> <p>Default: 20</p>
+     */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
 
     /**
      * <p>Number of domains to be returned.</p> <p>Default: 20</p>

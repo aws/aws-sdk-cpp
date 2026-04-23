@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The revision of the published schema to upgrade the directory to.</p>
      */
+    inline bool PublishedSchemaArnHasBeenSet() const { return m_publishedSchemaArnHasBeenSet; }
+
+    /**
+     * <p>The revision of the published schema to upgrade the directory to.</p>
+     */
     inline void SetPublishedSchemaArn(const Aws::String& value) { m_publishedSchemaArnHasBeenSet = true; m_publishedSchemaArn = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The ARN for the directory to which the upgraded schema will be applied.</p>
      */
     inline const Aws::String& GetDirectoryArn() const{ return m_directoryArn; }
+
+    /**
+     * <p>The ARN for the directory to which the upgraded schema will be applied.</p>
+     */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
 
     /**
      * <p>The ARN for the directory to which the upgraded schema will be applied.</p>
@@ -120,6 +130,13 @@ namespace Model
      * would succeed but no changes will be saved. This parameter is optional.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Used for testing whether the major version schemas are backward compatible or
+     * not. If schema compatibility fails, an exception would be thrown else the call
+     * would succeed but no changes will be saved. This parameter is optional.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Used for testing whether the major version schemas are backward compatible or

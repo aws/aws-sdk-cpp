@@ -56,6 +56,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -99,6 +106,12 @@ namespace Model
      * <a>CopyProduct</a>.</p>
      */
     inline const Aws::String& GetCopyProductToken() const{ return m_copyProductToken; }
+
+    /**
+     * <p>The token for the copy product operation. This token is returned by
+     * <a>CopyProduct</a>.</p>
+     */
+    inline bool CopyProductTokenHasBeenSet() const { return m_copyProductTokenHasBeenSet; }
 
     /**
      * <p>The token for the copy product operation. This token is returned by

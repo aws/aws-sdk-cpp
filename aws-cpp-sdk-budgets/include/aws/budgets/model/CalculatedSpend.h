@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The amount of cost, usage, or RI units that you have used.</p>
      */
+    inline bool ActualSpendHasBeenSet() const { return m_actualSpendHasBeenSet; }
+
+    /**
+     * <p>The amount of cost, usage, or RI units that you have used.</p>
+     */
     inline void SetActualSpend(const Spend& value) { m_actualSpendHasBeenSet = true; m_actualSpend = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The amount of cost, usage, or RI units that you are forecasted to use.</p>
      */
     inline const Spend& GetForecastedSpend() const{ return m_forecastedSpend; }
+
+    /**
+     * <p>The amount of cost, usage, or RI units that you are forecasted to use.</p>
+     */
+    inline bool ForecastedSpendHasBeenSet() const { return m_forecastedSpendHasBeenSet; }
 
     /**
      * <p>The amount of cost, usage, or RI units that you are forecasted to use.</p>

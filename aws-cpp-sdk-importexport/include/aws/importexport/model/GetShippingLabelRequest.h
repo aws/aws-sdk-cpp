@@ -51,6 +51,9 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetJobIds() const{ return m_jobIds; }
 
     
+    inline bool JobIdsHasBeenSet() const { return m_jobIdsHasBeenSet; }
+
+    
     inline void SetJobIds(const Aws::Vector<Aws::String>& value) { m_jobIdsHasBeenSet = true; m_jobIds = value; }
 
     
@@ -76,6 +79,9 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
@@ -96,6 +102,9 @@ namespace Model
 
     
     inline const Aws::String& GetCompany() const{ return m_company; }
+
+    
+    inline bool CompanyHasBeenSet() const { return m_companyHasBeenSet; }
 
     
     inline void SetCompany(const Aws::String& value) { m_companyHasBeenSet = true; m_company = value; }
@@ -120,6 +129,9 @@ namespace Model
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
 
     
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+
+    
     inline void SetPhoneNumber(const Aws::String& value) { m_phoneNumberHasBeenSet = true; m_phoneNumber = value; }
 
     
@@ -140,6 +152,9 @@ namespace Model
 
     
     inline const Aws::String& GetCountry() const{ return m_country; }
+
+    
+    inline bool CountryHasBeenSet() const { return m_countryHasBeenSet; }
 
     
     inline void SetCountry(const Aws::String& value) { m_countryHasBeenSet = true; m_country = value; }
@@ -164,6 +179,9 @@ namespace Model
     inline const Aws::String& GetStateOrProvince() const{ return m_stateOrProvince; }
 
     
+    inline bool StateOrProvinceHasBeenSet() const { return m_stateOrProvinceHasBeenSet; }
+
+    
     inline void SetStateOrProvince(const Aws::String& value) { m_stateOrProvinceHasBeenSet = true; m_stateOrProvince = value; }
 
     
@@ -184,6 +202,9 @@ namespace Model
 
     
     inline const Aws::String& GetCity() const{ return m_city; }
+
+    
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
 
     
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
@@ -208,6 +229,9 @@ namespace Model
     inline const Aws::String& GetPostalCode() const{ return m_postalCode; }
 
     
+    inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
+
+    
     inline void SetPostalCode(const Aws::String& value) { m_postalCodeHasBeenSet = true; m_postalCode = value; }
 
     
@@ -228,6 +252,9 @@ namespace Model
 
     
     inline const Aws::String& GetStreet1() const{ return m_street1; }
+
+    
+    inline bool Street1HasBeenSet() const { return m_street1HasBeenSet; }
 
     
     inline void SetStreet1(const Aws::String& value) { m_street1HasBeenSet = true; m_street1 = value; }
@@ -252,6 +279,9 @@ namespace Model
     inline const Aws::String& GetStreet2() const{ return m_street2; }
 
     
+    inline bool Street2HasBeenSet() const { return m_street2HasBeenSet; }
+
+    
     inline void SetStreet2(const Aws::String& value) { m_street2HasBeenSet = true; m_street2 = value; }
 
     
@@ -274,6 +304,9 @@ namespace Model
     inline const Aws::String& GetStreet3() const{ return m_street3; }
 
     
+    inline bool Street3HasBeenSet() const { return m_street3HasBeenSet; }
+
+    
     inline void SetStreet3(const Aws::String& value) { m_street3HasBeenSet = true; m_street3 = value; }
 
     
@@ -294,6 +327,9 @@ namespace Model
 
     
     inline const Aws::String& GetAPIVersion() const{ return m_aPIVersion; }
+
+    
+    inline bool APIVersionHasBeenSet() const { return m_aPIVersionHasBeenSet; }
 
     
     inline void SetAPIVersion(const Aws::String& value) { m_aPIVersionHasBeenSet = true; m_aPIVersion = value; }

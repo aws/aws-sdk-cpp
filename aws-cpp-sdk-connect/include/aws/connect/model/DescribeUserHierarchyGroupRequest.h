@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier for the hierarchy group to return.</p>
      */
+    inline bool HierarchyGroupIdHasBeenSet() const { return m_hierarchyGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the hierarchy group to return.</p>
+     */
     inline void SetHierarchyGroupId(const Aws::String& value) { m_hierarchyGroupIdHasBeenSet = true; m_hierarchyGroupId = value; }
 
     /**
@@ -87,6 +92,16 @@ namespace Model
      * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The identifier for your Amazon Connect instance. To find the ID of your
+     * instance, open the AWS console and select Amazon Connect. Select the alias of
+     * the instance in the Instance alias column. The instance ID is displayed in the
+     * Overview section of your instance settings. For example, the instance ID is the
+     * set of characters at the end of the instance ARN, after instance/, such as
+     * 10a4c4eb-f57e-4d4c-b602-bf39176ced07.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The identifier for your Amazon Connect instance. To find the ID of your

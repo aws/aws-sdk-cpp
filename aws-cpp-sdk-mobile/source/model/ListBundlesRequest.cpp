@@ -34,7 +34,7 @@ ListBundlesRequest::ListBundlesRequest() :
 
 Aws::String ListBundlesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBundlesRequest::AddQueryStringParameters(URI& uri) const

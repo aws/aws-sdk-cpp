@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of an Amazon Redshift event.</p>
      */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of an Amazon Redshift event.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The category of an Amazon Redshift event.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p>The category of an Amazon Redshift event.</p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p>The category of an Amazon Redshift event.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The description of an Amazon Redshift event.</p>
      */
+    inline bool EventDescriptionHasBeenSet() const { return m_eventDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of an Amazon Redshift event.</p>
+     */
     inline void SetEventDescription(const Aws::String& value) { m_eventDescriptionHasBeenSet = true; m_eventDescription = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
      */
     inline const Aws::String& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
      * <p>The severity of the event.</p> <p>Values: ERROR, INFO</p>

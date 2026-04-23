@@ -18,6 +18,8 @@
 #include <aws/iot/IoTRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot/model/ThingGroupProperties.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +49,11 @@ namespace Model
      * <p>The thing group name to create.</p>
      */
     inline const Aws::String& GetThingGroupName() const{ return m_thingGroupName; }
+
+    /**
+     * <p>The thing group name to create.</p>
+     */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
 
     /**
      * <p>The thing group name to create.</p>
@@ -87,6 +94,11 @@ namespace Model
     /**
      * <p>The name of the parent thing group.</p>
      */
+    inline bool ParentGroupNameHasBeenSet() const { return m_parentGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parent thing group.</p>
+     */
     inline void SetParentGroupName(const Aws::String& value) { m_parentGroupNameHasBeenSet = true; m_parentGroupName = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
     /**
      * <p>The thing group properties.</p>
      */
+    inline bool ThingGroupPropertiesHasBeenSet() const { return m_thingGroupPropertiesHasBeenSet; }
+
+    /**
+     * <p>The thing group properties.</p>
+     */
     inline void SetThingGroupProperties(const ThingGroupProperties& value) { m_thingGroupPropertiesHasBeenSet = true; m_thingGroupProperties = value; }
 
     /**
@@ -140,6 +157,47 @@ namespace Model
      */
     inline CreateThingGroupRequest& WithThingGroupProperties(ThingGroupProperties&& value) { SetThingGroupProperties(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline CreateThingGroupRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline CreateThingGroupRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline CreateThingGroupRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage the thing group.</p>
+     */
+    inline CreateThingGroupRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_thingGroupName;
@@ -150,6 +208,9 @@ namespace Model
 
     ThingGroupProperties m_thingGroupProperties;
     bool m_thingGroupPropertiesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

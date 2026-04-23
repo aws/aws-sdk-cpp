@@ -61,6 +61,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that the stack instance is associated
      * with.</p>
      */
+    inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set that the stack instance is associated
+     * with.</p>
+     */
     inline void SetStackSetId(const Aws::String& value) { m_stackSetIdHasBeenSet = true; m_stackSetId = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The name of the AWS region that the stack instance is associated with.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS region that the stack instance is associated with.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -138,6 +149,11 @@ namespace Model
     /**
      * <p>The name of the AWS account that the stack instance is associated with.</p>
      */
+    inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS account that the stack instance is associated with.</p>
+     */
     inline void SetAccount(const Aws::String& value) { m_accountHasBeenSet = true; m_account = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The ID of the stack instance.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The ID of the stack instance.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The ID of the stack instance.</p>
@@ -220,6 +241,25 @@ namespace Model
      * </li> </ul>
      */
     inline const StackInstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the stack instance, in terms of its synchronization with its
+     * associated stack set.</p> <ul> <li> <p> <code>INOPERABLE</code>: A
+     * <code>DeleteStackInstances</code> operation has failed and left the stack in an
+     * unstable state. Stacks in this state are excluded from further
+     * <code>UpdateStackSet</code> operations. You might need to perform a
+     * <code>DeleteStackInstances</code> operation, with <code>RetainStacks</code> set
+     * to <code>true</code>, to delete the stack instance, and then delete the stack
+     * manually.</p> </li> <li> <p> <code>OUTDATED</code>: The stack isn't currently up
+     * to date with the stack set because:</p> <ul> <li> <p>The associated stack failed
+     * during a <code>CreateStackSet</code> or <code>UpdateStackSet</code> operation.
+     * </p> </li> <li> <p>The stack was part of a <code>CreateStackSet</code> or
+     * <code>UpdateStackSet</code> operation that failed or was stopped before the
+     * stack was created or updated. </p> </li> </ul> </li> <li> <p>
+     * <code>CURRENT</code>: The stack is currently up to date with the stack set.</p>
+     * </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the stack instance, in terms of its synchronization with its
@@ -303,6 +343,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>The explanation for the specific status code assigned to this stack
+     * instance.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>The explanation for the specific status code assigned to this stack

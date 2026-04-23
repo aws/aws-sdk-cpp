@@ -56,6 +56,12 @@ namespace Model
      * <p>If <code>true</code>, email sending is enabled for the configuration set. If
      * <code>false</code>, email sending is disabled for the configuration set.</p>
      */
+    inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, email sending is enabled for the configuration set. If
+     * <code>false</code>, email sending is disabled for the configuration set.</p>
+     */
     inline void SetSendingEnabled(bool value) { m_sendingEnabledHasBeenSet = true; m_sendingEnabled = value; }
 
     /**

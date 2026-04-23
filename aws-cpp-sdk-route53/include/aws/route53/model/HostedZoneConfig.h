@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Any comments that you want to include about the hosted zone.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>Any comments that you want to include about the hosted zone.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A value that indicates whether this is a private hosted zone.</p>
      */
     inline bool GetPrivateZone() const{ return m_privateZone; }
+
+    /**
+     * <p>A value that indicates whether this is a private hosted zone.</p>
+     */
+    inline bool PrivateZoneHasBeenSet() const { return m_privateZoneHasBeenSet; }
 
     /**
      * <p>A value that indicates whether this is a private hosted zone.</p>

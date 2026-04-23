@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the environment that contains the environment member you want to
      * add.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment that contains the environment member you want to
+     * add.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment member you want to add.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -132,6 +143,15 @@ namespace Model
      * </ul>
      */
     inline const MemberPermissions& GetPermissions() const{ return m_permissions; }
+
+    /**
+     * <p>The type of environment member permissions you want to associate with this
+     * environment member. Available values include:</p> <ul> <li> <p>
+     * <code>read-only</code>: Has read-only access to the environment.</p> </li> <li>
+     * <p> <code>read-write</code>: Has read-write access to the environment.</p> </li>
+     * </ul>
+     */
+    inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
 
     /**
      * <p>The type of environment member permissions you want to associate with this

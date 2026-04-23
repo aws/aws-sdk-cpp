@@ -35,7 +35,7 @@ GetRequestValidatorsRequest::GetRequestValidatorsRequest() :
 
 Aws::String GetRequestValidatorsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetRequestValidatorsRequest::AddQueryStringParameters(URI& uri) const

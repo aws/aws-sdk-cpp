@@ -47,6 +47,8 @@ JobDetail::JobDetail() :
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_containerHasBeenSet(false),
+    m_nodeDetailsHasBeenSet(false),
+    m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false)
 {
@@ -71,6 +73,8 @@ JobDetail::JobDetail(JsonView jsonValue) :
     m_jobDefinitionHasBeenSet(false),
     m_parametersHasBeenSet(false),
     m_containerHasBeenSet(false),
+    m_nodeDetailsHasBeenSet(false),
+    m_nodePropertiesHasBeenSet(false),
     m_arrayPropertiesHasBeenSet(false),
     m_timeoutHasBeenSet(false)
 {
@@ -184,6 +188,20 @@ JobDetail& JobDetail::operator =(JsonView jsonValue)
     m_container = jsonValue.GetObject("container");
 
     m_containerHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nodeDetails"))
+  {
+    m_nodeDetails = jsonValue.GetObject("nodeDetails");
+
+    m_nodeDetailsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("nodeProperties"))
+  {
+    m_nodeProperties = jsonValue.GetObject("nodeProperties");
+
+    m_nodePropertiesHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("arrayProperties"))
@@ -302,6 +320,18 @@ JsonValue JobDetail::Jsonize() const
   if(m_containerHasBeenSet)
   {
    payload.WithObject("container", m_container.Jsonize());
+
+  }
+
+  if(m_nodeDetailsHasBeenSet)
+  {
+   payload.WithObject("nodeDetails", m_nodeDetails.Jsonize());
+
+  }
+
+  if(m_nodePropertiesHasBeenSet)
+  {
+   payload.WithObject("nodeProperties", m_nodeProperties.Jsonize());
 
   }
 

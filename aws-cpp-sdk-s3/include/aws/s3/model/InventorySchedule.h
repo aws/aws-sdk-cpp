@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventorySchedule">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API InventorySchedule
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>Specifies how frequently inventory results are produced.</p>
      */
     inline const InventoryFrequency& GetFrequency() const{ return m_frequency; }
+
+    /**
+     * <p>Specifies how frequently inventory results are produced.</p>
+     */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
      * <p>Specifies how frequently inventory results are produced.</p>

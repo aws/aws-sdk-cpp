@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
      * AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>The name of the database in the catalog in which the table resides. For Hive
      * compatibility, this name is entirely lowercase.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database in the catalog in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the table for which to retrieve the definition. For Hive
+     * compatibility, this name is entirely lowercase.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the table for which to retrieve the definition. For Hive

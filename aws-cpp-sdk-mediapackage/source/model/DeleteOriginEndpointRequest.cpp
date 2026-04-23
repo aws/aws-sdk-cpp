@@ -29,7 +29,7 @@ DeleteOriginEndpointRequest::DeleteOriginEndpointRequest() :
 
 Aws::String DeleteOriginEndpointRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique identifier of the reserved node offering you want to purchase.</p>
      */
+    inline bool ReservedNodeOfferingIdHasBeenSet() const { return m_reservedNodeOfferingIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the reserved node offering you want to purchase.</p>
+     */
     inline void SetReservedNodeOfferingId(const Aws::String& value) { m_reservedNodeOfferingIdHasBeenSet = true; m_reservedNodeOfferingId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * <code>1</code> </p>
      */
     inline int GetNodeCount() const{ return m_nodeCount; }
+
+    /**
+     * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:
+     * <code>1</code> </p>
+     */
+    inline bool NodeCountHasBeenSet() const { return m_nodeCountHasBeenSet; }
 
     /**
      * <p>The number of reserved nodes that you want to purchase.</p> <p>Default:

@@ -60,6 +60,12 @@ namespace Model
      * <p>The status of the restore action. Returns starting, restoring, completed, or
      * failed.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the restore action. Returns starting, restoring, completed, or
+     * failed.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -103,6 +109,12 @@ namespace Model
      * <p>The number of megabytes per second being transferred from the backup storage.
      * Returns the average rate for a completed backup.</p>
      */
+    inline bool CurrentRestoreRateInMegaBytesPerSecondHasBeenSet() const { return m_currentRestoreRateInMegaBytesPerSecondHasBeenSet; }
+
+    /**
+     * <p>The number of megabytes per second being transferred from the backup storage.
+     * Returns the average rate for a completed backup.</p>
+     */
     inline void SetCurrentRestoreRateInMegaBytesPerSecond(double value) { m_currentRestoreRateInMegaBytesPerSecondHasBeenSet = true; m_currentRestoreRateInMegaBytesPerSecond = value; }
 
     /**
@@ -120,6 +132,11 @@ namespace Model
     /**
      * <p>The size of the set of snapshot data used to restore the cluster.</p>
      */
+    inline bool SnapshotSizeInMegaBytesHasBeenSet() const { return m_snapshotSizeInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The size of the set of snapshot data used to restore the cluster.</p>
+     */
     inline void SetSnapshotSizeInMegaBytes(long long value) { m_snapshotSizeInMegaBytesHasBeenSet = true; m_snapshotSizeInMegaBytes = value; }
 
     /**
@@ -132,6 +149,11 @@ namespace Model
      * <p>The number of megabytes that have been transferred from snapshot storage.</p>
      */
     inline long long GetProgressInMegaBytes() const{ return m_progressInMegaBytes; }
+
+    /**
+     * <p>The number of megabytes that have been transferred from snapshot storage.</p>
+     */
+    inline bool ProgressInMegaBytesHasBeenSet() const { return m_progressInMegaBytesHasBeenSet; }
 
     /**
      * <p>The number of megabytes that have been transferred from snapshot storage.</p>
@@ -154,6 +176,12 @@ namespace Model
      * <p>The amount of time an in-progress restore has been running, or the amount of
      * time it took a completed restore to finish.</p>
      */
+    inline bool ElapsedTimeInSecondsHasBeenSet() const { return m_elapsedTimeInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time an in-progress restore has been running, or the amount of
+     * time it took a completed restore to finish.</p>
+     */
     inline void SetElapsedTimeInSeconds(long long value) { m_elapsedTimeInSecondsHasBeenSet = true; m_elapsedTimeInSeconds = value; }
 
     /**
@@ -168,6 +196,12 @@ namespace Model
      * 0 for a completed restore.</p>
      */
     inline long long GetEstimatedTimeToCompletionInSeconds() const{ return m_estimatedTimeToCompletionInSeconds; }
+
+    /**
+     * <p>The estimate of the time remaining before the restore will complete. Returns
+     * 0 for a completed restore.</p>
+     */
+    inline bool EstimatedTimeToCompletionInSecondsHasBeenSet() const { return m_estimatedTimeToCompletionInSecondsHasBeenSet; }
 
     /**
      * <p>The estimate of the time remaining before the restore will complete. Returns

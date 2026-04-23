@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The zero-based index of the document in the input list.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The zero-based index of the document in the input list.</p>
+     */
     inline void SetIndex(int value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -71,6 +76,12 @@ namespace Model
      * document.</p>
      */
     inline const Aws::Vector<KeyPhrase>& GetKeyPhrases() const{ return m_keyPhrases; }
+
+    /**
+     * <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in the
+     * document.</p>
+     */
+    inline bool KeyPhrasesHasBeenSet() const { return m_keyPhrasesHasBeenSet; }
 
     /**
      * <p>One or more <a>KeyPhrase</a> objects, one for each key phrase detected in the

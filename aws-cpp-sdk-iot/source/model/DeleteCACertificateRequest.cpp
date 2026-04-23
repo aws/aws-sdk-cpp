@@ -29,7 +29,7 @@ DeleteCACertificateRequest::DeleteCACertificateRequest() :
 
 Aws::String DeleteCACertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

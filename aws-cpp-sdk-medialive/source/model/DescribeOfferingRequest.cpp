@@ -29,7 +29,7 @@ DescribeOfferingRequest::DescribeOfferingRequest() :
 
 Aws::String DescribeOfferingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

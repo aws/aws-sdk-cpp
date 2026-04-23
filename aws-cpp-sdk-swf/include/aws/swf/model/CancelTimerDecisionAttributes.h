@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p> The unique ID of the timer to cancel.</p>
      */
+    inline bool TimerIdHasBeenSet() const { return m_timerIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of the timer to cancel.</p>
+     */
     inline void SetTimerId(const Aws::String& value) { m_timerIdHasBeenSet = true; m_timerId = value; }
 
     /**

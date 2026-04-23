@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The path that is referenced from the root.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path that is referenced from the root.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>List of policy objects.</p>
      */
     inline const Aws::Vector<PolicyAttachment>& GetPolicies() const{ return m_policies; }
+
+    /**
+     * <p>List of policy objects.</p>
+     */
+    inline bool PoliciesHasBeenSet() const { return m_policiesHasBeenSet; }
 
     /**
      * <p>List of policy objects.</p>

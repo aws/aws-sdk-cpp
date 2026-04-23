@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the pipeline to be updated.</p>
      */
+    inline bool PipelineHasBeenSet() const { return m_pipelineHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline to be updated.</p>
+     */
     inline void SetPipeline(const PipelineDeclaration& value) { m_pipelineHasBeenSet = true; m_pipeline = value; }
 
     /**

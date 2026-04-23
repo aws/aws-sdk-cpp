@@ -29,7 +29,7 @@ DeleteReservationRequest::DeleteReservationRequest() :
 
 Aws::String DeleteReservationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The URL of the queue.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the queue.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The list of tags to be removed from the specified queue.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The list of tags to be removed from the specified queue.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The list of tags to be removed from the specified queue.</p>

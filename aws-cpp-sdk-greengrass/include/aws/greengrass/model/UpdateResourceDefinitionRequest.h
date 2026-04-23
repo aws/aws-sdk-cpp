@@ -50,6 +50,11 @@ namespace Model
     /**
      * The name of the definition.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the definition.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the resource definition.
      */
     inline const Aws::String& GetResourceDefinitionId() const{ return m_resourceDefinitionId; }
+
+    /**
+     * The ID of the resource definition.
+     */
+    inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the resource definition.

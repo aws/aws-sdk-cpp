@@ -64,6 +64,14 @@ namespace Model
      * human-readable. It does not affect your outputs. Use up to twelve characters
      * that are either letters, numbers, spaces, or underscores.
      */
+    inline bool CustomNameHasBeenSet() const { return m_customNameHasBeenSet; }
+
+    /**
+     * Use Custom Group Name (CustomName) to specify a name for the output group. This
+     * value is displayed on the console and can make your job settings JSON more
+     * human-readable. It does not affect your outputs. Use up to twelve characters
+     * that are either letters, numbers, spaces, or underscores.
+     */
     inline void SetCustomName(const Aws::String& value) { m_customNameHasBeenSet = true; m_customName = value; }
 
     /**
@@ -115,6 +123,11 @@ namespace Model
     /**
      * Name of the output group
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * Name of the output group
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -143,19 +156,34 @@ namespace Model
     inline OutputGroup& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline const OutputGroupSettings& GetOutputGroupSettings() const{ return m_outputGroupSettings; }
 
-    
+    /**
+     * Output Group settings, including type
+     */
+    inline bool OutputGroupSettingsHasBeenSet() const { return m_outputGroupSettingsHasBeenSet; }
+
+    /**
+     * Output Group settings, including type
+     */
     inline void SetOutputGroupSettings(const OutputGroupSettings& value) { m_outputGroupSettingsHasBeenSet = true; m_outputGroupSettings = value; }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline void SetOutputGroupSettings(OutputGroupSettings&& value) { m_outputGroupSettingsHasBeenSet = true; m_outputGroupSettings = std::move(value); }
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline OutputGroup& WithOutputGroupSettings(const OutputGroupSettings& value) { SetOutputGroupSettings(value); return *this;}
 
-    
+    /**
+     * Output Group settings, including type
+     */
     inline OutputGroup& WithOutputGroupSettings(OutputGroupSettings&& value) { SetOutputGroupSettings(std::move(value)); return *this;}
 
 
@@ -163,6 +191,11 @@ namespace Model
      * This object holds groups of encoding settings, one group of settings per output.
      */
     inline const Aws::Vector<Output>& GetOutputs() const{ return m_outputs; }
+
+    /**
+     * This object holds groups of encoding settings, one group of settings per output.
+     */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
      * This object holds groups of encoding settings, one group of settings per output.

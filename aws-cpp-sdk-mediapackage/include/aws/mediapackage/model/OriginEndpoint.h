@@ -20,6 +20,7 @@
 #include <aws/mediapackage/model/DashPackage.h>
 #include <aws/mediapackage/model/HlsPackage.h>
 #include <aws/mediapackage/model/MssPackage.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
@@ -60,6 +61,11 @@ namespace Model
     /**
      * The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) assigned to the OriginEndpoint.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * The ID of the Channel the OriginEndpoint is associated with.
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * The ID of the Channel the OriginEndpoint is associated with.
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**
@@ -128,6 +139,9 @@ namespace Model
     inline const CmafPackage& GetCmafPackage() const{ return m_cmafPackage; }
 
     
+    inline bool CmafPackageHasBeenSet() const { return m_cmafPackageHasBeenSet; }
+
+    
     inline void SetCmafPackage(const CmafPackage& value) { m_cmafPackageHasBeenSet = true; m_cmafPackage = value; }
 
     
@@ -142,6 +156,9 @@ namespace Model
 
     
     inline const DashPackage& GetDashPackage() const{ return m_dashPackage; }
+
+    
+    inline bool DashPackageHasBeenSet() const { return m_dashPackageHasBeenSet; }
 
     
     inline void SetDashPackage(const DashPackage& value) { m_dashPackageHasBeenSet = true; m_dashPackage = value; }
@@ -160,6 +177,11 @@ namespace Model
      * A short text description of the OriginEndpoint.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * A short text description of the OriginEndpoint.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * A short text description of the OriginEndpoint.
@@ -196,6 +218,9 @@ namespace Model
     inline const HlsPackage& GetHlsPackage() const{ return m_hlsPackage; }
 
     
+    inline bool HlsPackageHasBeenSet() const { return m_hlsPackageHasBeenSet; }
+
+    
     inline void SetHlsPackage(const HlsPackage& value) { m_hlsPackageHasBeenSet = true; m_hlsPackage = value; }
 
     
@@ -212,6 +237,11 @@ namespace Model
      * The ID of the OriginEndpoint.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The ID of the OriginEndpoint.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The ID of the OriginEndpoint.
@@ -252,6 +282,11 @@ namespace Model
     /**
      * A short string appended to the end of the OriginEndpoint URL.
      */
+    inline bool ManifestNameHasBeenSet() const { return m_manifestNameHasBeenSet; }
+
+    /**
+     * A short string appended to the end of the OriginEndpoint URL.
+     */
     inline void SetManifestName(const Aws::String& value) { m_manifestNameHasBeenSet = true; m_manifestName = value; }
 
     /**
@@ -284,6 +319,9 @@ namespace Model
     inline const MssPackage& GetMssPackage() const{ return m_mssPackage; }
 
     
+    inline bool MssPackageHasBeenSet() const { return m_mssPackageHasBeenSet; }
+
+    
     inline void SetMssPackage(const MssPackage& value) { m_mssPackageHasBeenSet = true; m_mssPackage = value; }
 
     
@@ -310,6 +348,14 @@ If not
      * specified, startover playback will be disabled for the OriginEndpoint.
 
      */
+    inline bool StartoverWindowSecondsHasBeenSet() const { return m_startoverWindowSecondsHasBeenSet; }
+
+    /**
+     * Maximum duration (seconds) of content to retain for startover playback.
+If not
+     * specified, startover playback will be disabled for the OriginEndpoint.
+
+     */
     inline void SetStartoverWindowSeconds(int value) { m_startoverWindowSecondsHasBeenSet = true; m_startoverWindowSeconds = value; }
 
     /**
@@ -321,6 +367,46 @@ If not
     inline OriginEndpoint& WithStartoverWindowSeconds(int value) { SetStartoverWindowSeconds(value); return *this;}
 
 
+    
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    
+    inline OriginEndpoint& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    
+    inline OriginEndpoint& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    
+    inline OriginEndpoint& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    
+    inline OriginEndpoint& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+
     /**
      * Amount of delay (seconds) to enforce on the playback of live content.
 If not
@@ -328,6 +414,14 @@ If not
 
      */
     inline int GetTimeDelaySeconds() const{ return m_timeDelaySeconds; }
+
+    /**
+     * Amount of delay (seconds) to enforce on the playback of live content.
+If not
+     * specified, there will be no time delay in effect for the OriginEndpoint.
+
+     */
+    inline bool TimeDelaySecondsHasBeenSet() const { return m_timeDelaySecondsHasBeenSet; }
 
     /**
      * Amount of delay (seconds) to enforce on the playback of live content.
@@ -350,6 +444,11 @@ If not
      * The URL of the packaged OriginEndpoint for consumption.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL of the packaged OriginEndpoint for consumption.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL of the packaged OriginEndpoint for consumption.
@@ -387,6 +486,12 @@ If not
      * OriginEndpoint.
      */
     inline const Aws::Vector<Aws::String>& GetWhitelist() const{ return m_whitelist; }
+
+    /**
+     * A list of source IP CIDR blocks that will be allowed to access the
+     * OriginEndpoint.
+     */
+    inline bool WhitelistHasBeenSet() const { return m_whitelistHasBeenSet; }
 
     /**
      * A list of source IP CIDR blocks that will be allowed to access the
@@ -461,6 +566,9 @@ If not
 
     int m_startoverWindowSeconds;
     bool m_startoverWindowSecondsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
 
     int m_timeDelaySeconds;
     bool m_timeDelaySecondsHasBeenSet;

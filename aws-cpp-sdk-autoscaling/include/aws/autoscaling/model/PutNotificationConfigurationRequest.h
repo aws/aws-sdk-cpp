@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * (Amazon SNS) topic.</p>
      */
     inline const Aws::String& GetTopicARN() const{ return m_topicARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
+     * (Amazon SNS) topic.</p>
+     */
+    inline bool TopicARNHasBeenSet() const { return m_topicARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Simple Notification Service
@@ -132,6 +143,13 @@ namespace Model
      * <a>DescribeAutoScalingNotificationTypes</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationTypes() const{ return m_notificationTypes; }
+
+    /**
+     * <p>The type of event that causes the notification to be sent. For more
+     * information about notification types supported by Amazon EC2 Auto Scaling, see
+     * <a>DescribeAutoScalingNotificationTypes</a>.</p>
+     */
+    inline bool NotificationTypesHasBeenSet() const { return m_notificationTypesHasBeenSet; }
 
     /**
      * <p>The type of event that causes the notification to be sent. For more

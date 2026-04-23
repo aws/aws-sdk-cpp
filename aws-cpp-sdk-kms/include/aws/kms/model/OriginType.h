@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     AWS_KMS,
-    EXTERNAL
+    EXTERNAL,
+    AWS_CLOUDHSM
   };
 
 namespace OriginTypeMapper

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The certificate data, in PEM format.</p>
      */
+    inline bool CertificatePemHasBeenSet() const { return m_certificatePemHasBeenSet; }
+
+    /**
+     * <p>The certificate data, in PEM format.</p>
+     */
     inline void SetCertificatePem(const Aws::String& value) { m_certificatePemHasBeenSet = true; m_certificatePem = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The CA certificate used to sign the device certificate being registered.</p>
      */
+    inline bool CaCertificatePemHasBeenSet() const { return m_caCertificatePemHasBeenSet; }
+
+    /**
+     * <p>The CA certificate used to sign the device certificate being registered.</p>
+     */
     inline void SetCaCertificatePem(const Aws::String& value) { m_caCertificatePemHasBeenSet = true; m_caCertificatePem = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * <p>The status of the register certificate request.</p>
      */
     inline const CertificateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the register certificate request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the register certificate request.</p>

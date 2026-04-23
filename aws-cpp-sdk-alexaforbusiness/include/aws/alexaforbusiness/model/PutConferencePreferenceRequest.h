@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The conference preference of a specific conference provider.</p>
      */
+    inline bool ConferencePreferenceHasBeenSet() const { return m_conferencePreferenceHasBeenSet; }
+
+    /**
+     * <p>The conference preference of a specific conference provider.</p>
+     */
     inline void SetConferencePreference(const ConferencePreference& value) { m_conferencePreferenceHasBeenSet = true; m_conferencePreference = value; }
 
     /**

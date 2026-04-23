@@ -60,6 +60,12 @@ namespace Model
      * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
      * uses to retrieve the data encryption keys stored in an HSM.</p>
      */
+    inline bool HsmClientCertificateIdentifierHasBeenSet() const { return m_hsmClientCertificateIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the HSM client certificate the Amazon Redshift cluster
+     * uses to retrieve the data encryption keys stored in an HSM.</p>
+     */
     inline void SetHsmClientCertificateIdentifier(const Aws::String& value) { m_hsmClientCertificateIdentifierHasBeenSet = true; m_hsmClientCertificateIdentifier = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
      */
     inline const Aws::String& GetHsmConfigurationIdentifier() const{ return m_hsmConfigurationIdentifier; }
+
+    /**
+     * <p>Specifies the name of the HSM configuration that contains the information the
+     * Amazon Redshift cluster can use to retrieve and store keys in an HSM.</p>
+     */
+    inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
 
     /**
      * <p>Specifies the name of the HSM configuration that contains the information the
@@ -142,6 +154,13 @@ namespace Model
      * applying</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM
+     * settings changes specified in a modify cluster command.</p> <p>Values: active,
+     * applying</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Reports whether the Amazon Redshift cluster has finished applying any HSM

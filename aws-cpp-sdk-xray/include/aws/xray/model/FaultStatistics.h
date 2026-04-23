@@ -56,6 +56,12 @@ namespace Model
      * <p>The number of requests that failed with untracked 5xx Server Error status
      * codes.</p>
      */
+    inline bool OtherCountHasBeenSet() const { return m_otherCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests that failed with untracked 5xx Server Error status
+     * codes.</p>
+     */
     inline void SetOtherCount(long long value) { m_otherCountHasBeenSet = true; m_otherCount = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * code.</p>
      */
     inline long long GetTotalCount() const{ return m_totalCount; }
+
+    /**
+     * <p>The total number of requests that failed with a 5xx Server Error status
+     * code.</p>
+     */
+    inline bool TotalCountHasBeenSet() const { return m_totalCountHasBeenSet; }
 
     /**
      * <p>The total number of requests that failed with a 5xx Server Error status

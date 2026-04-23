@@ -32,6 +32,7 @@ namespace Model
 
 Subnet::Subnet() : 
     m_availabilityZoneHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_availableIpAddressCount(0),
     m_availableIpAddressCountHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -43,15 +44,18 @@ Subnet::Subnet() :
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_assignIpv6AddressOnCreation(false),
     m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
 }
 
 Subnet::Subnet(const XmlNode& xmlNode) : 
     m_availabilityZoneHasBeenSet(false),
+    m_availabilityZoneIdHasBeenSet(false),
     m_availableIpAddressCount(0),
     m_availableIpAddressCountHasBeenSet(false),
     m_cidrBlockHasBeenSet(false),
@@ -63,10 +67,12 @@ Subnet::Subnet(const XmlNode& xmlNode) :
     m_stateHasBeenSet(false),
     m_subnetIdHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_assignIpv6AddressOnCreation(false),
     m_assignIpv6AddressOnCreationHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
-    m_tagsHasBeenSet(false)
+    m_tagsHasBeenSet(false),
+    m_subnetArnHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -82,6 +88,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
     {
       m_availabilityZone = StringUtils::Trim(availabilityZoneNode.GetText().c_str());
       m_availabilityZoneHasBeenSet = true;
+    }
+    XmlNode availabilityZoneIdNode = resultNode.FirstChild("availabilityZoneId");
+    if(!availabilityZoneIdNode.IsNull())
+    {
+      m_availabilityZoneId = StringUtils::Trim(availabilityZoneIdNode.GetText().c_str());
+      m_availabilityZoneIdHasBeenSet = true;
     }
     XmlNode availableIpAddressCountNode = resultNode.FirstChild("availableIpAddressCount");
     if(!availableIpAddressCountNode.IsNull())
@@ -125,6 +137,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
     }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
+    }
     XmlNode assignIpv6AddressOnCreationNode = resultNode.FirstChild("assignIpv6AddressOnCreation");
     if(!assignIpv6AddressOnCreationNode.IsNull())
     {
@@ -155,6 +173,12 @@ Subnet& Subnet::operator =(const XmlNode& xmlNode)
 
       m_tagsHasBeenSet = true;
     }
+    XmlNode subnetArnNode = resultNode.FirstChild("subnetArn");
+    if(!subnetArnNode.IsNull())
+    {
+      m_subnetArn = StringUtils::Trim(subnetArnNode.GetText().c_str());
+      m_subnetArnHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -165,6 +189,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << index << locationValue << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
 
   if(m_availableIpAddressCountHasBeenSet)
@@ -202,6 +231,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_assignIpv6AddressOnCreationHasBeenSet)
   {
       oStream << location << index << locationValue << ".AssignIpv6AddressOnCreation=" << std::boolalpha << m_assignIpv6AddressOnCreation << "&";
@@ -229,6 +263,11 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location, unsigne
       }
   }
 
+  if(m_subnetArnHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SubnetArn=" << StringUtils::URLEncode(m_subnetArn.c_str()) << "&";
+  }
+
 }
 
 void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -236,6 +275,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_availabilityZoneHasBeenSet)
   {
       oStream << location << ".AvailabilityZone=" << StringUtils::URLEncode(m_availabilityZone.c_str()) << "&";
+  }
+  if(m_availabilityZoneIdHasBeenSet)
+  {
+      oStream << location << ".AvailabilityZoneId=" << StringUtils::URLEncode(m_availabilityZoneId.c_str()) << "&";
   }
   if(m_availableIpAddressCountHasBeenSet)
   {
@@ -265,6 +308,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
   if(m_assignIpv6AddressOnCreationHasBeenSet)
   {
       oStream << location << ".AssignIpv6AddressOnCreation=" << std::boolalpha << m_assignIpv6AddressOnCreation << "&";
@@ -288,6 +335,10 @@ void Subnet::OutputToStream(Aws::OStream& oStream, const char* location) const
         tagsSs << location <<  ".TagSet." << tagsIdx++;
         item.OutputToStream(oStream, tagsSs.str().c_str());
       }
+  }
+  if(m_subnetArnHasBeenSet)
+  {
+      oStream << location << ".SubnetArn=" << StringUtils::URLEncode(m_subnetArn.c_str()) << "&";
   }
 }
 

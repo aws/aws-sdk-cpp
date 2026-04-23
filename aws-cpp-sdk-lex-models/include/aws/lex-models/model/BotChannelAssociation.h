@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the association between the bot and the channel. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the association between the bot and the channel. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A text description of the association you are creating. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A text description of the association you are creating. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A text description of the association you are creating. </p>
@@ -129,6 +139,12 @@ namespace Model
      * association is being made. </p>
      */
     inline const Aws::String& GetBotAlias() const{ return m_botAlias; }
+
+    /**
+     * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
+     * association is being made. </p>
+     */
+    inline bool BotAliasHasBeenSet() const { return m_botAliasHasBeenSet; }
 
     /**
      * <p>An alias pointing to the specific version of the Amazon Lex bot to which this
@@ -173,6 +189,13 @@ namespace Model
      * and Twilio.</p> </note>
      */
     inline const Aws::String& GetBotName() const{ return m_botName; }
+
+    /**
+     * <p>The name of the Amazon Lex bot to which this association is being made. </p>
+     * <note> <p>Currently, Amazon Lex supports associations with Facebook and Slack,
+     * and Twilio.</p> </note>
+     */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon Lex bot to which this association is being made. </p>
@@ -227,6 +250,12 @@ namespace Model
      * <p>The date that the association between the Amazon Lex bot and the channel was
      * created. </p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date that the association between the Amazon Lex bot and the channel was
+     * created. </p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -258,6 +287,12 @@ namespace Model
      * <p>Specifies the type of association by indicating the type of channel being
      * established between the Amazon Lex bot and the external messaging platform.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of association by indicating the type of channel being
+     * established between the Amazon Lex bot and the external messaging platform.</p>
+     */
     inline void SetType(const ChannelType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -284,6 +319,12 @@ namespace Model
      * </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetBotConfiguration() const{ return m_botConfiguration; }
+
+    /**
+     * <p>Provides information necessary to communicate with the messaging platform.
+     * </p>
+     */
+    inline bool BotConfigurationHasBeenSet() const { return m_botConfigurationHasBeenSet; }
 
     /**
      * <p>Provides information necessary to communicate with the messaging platform.
@@ -370,6 +411,16 @@ namespace Model
      * about the reason for the failure, see the <code>failureReason</code> field.</p>
      * </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the bot channel. </p> <ul> <li> <p> <code>CREATED</code> - The
+     * channel has been created and is ready for use.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code> - Channel creation is in progress.</p> </li> <li> <p>
+     * <code>FAILED</code> - There was an error creating the channel. For information
+     * about the reason for the failure, see the <code>failureReason</code> field.</p>
+     * </li> </ul>
+     */
     inline void SetStatus(const ChannelStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -408,6 +459,12 @@ namespace Model
      * that it failed to create the association.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason
+     * that it failed to create the association.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>If <code>status</code> is <code>FAILED</code>, Amazon Lex provides the reason

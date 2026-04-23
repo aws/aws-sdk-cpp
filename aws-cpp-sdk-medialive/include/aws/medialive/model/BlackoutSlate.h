@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for BlackoutSlate<p><h3>See Also:</h3>   <a
+   * Blackout Slate<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/BlackoutSlate">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,12 @@ namespace Model
      * images are supported.
      */
     inline const InputLocation& GetBlackoutSlateImage() const{ return m_blackoutSlateImage; }
+
+    /**
+     * Blackout slate image to be used. Leave empty for solid black. Only bmp and png
+     * images are supported.
+     */
+    inline bool BlackoutSlateImageHasBeenSet() const { return m_blackoutSlateImageHasBeenSet; }
 
     /**
      * Blackout slate image to be used. Leave empty for solid black. Only bmp and png
@@ -90,6 +96,16 @@ namespace Model
      * entered in "Network ID".
      */
     inline const BlackoutSlateNetworkEndBlackout& GetNetworkEndBlackout() const{ return m_networkEndBlackout; }
+
+    /**
+     * Setting to enabled causes the encoder to blackout the video, audio, and
+     * captions, and raise the "Network Blackout Image" slate when an SCTE104/35
+     * Network End Segmentation Descriptor is encountered. The blackout will be lifted
+     * when the Network Start Segmentation Descriptor is encountered. The Network End
+     * and Network Start descriptors must contain a network ID that matches the value
+     * entered in "Network ID".
+     */
+    inline bool NetworkEndBlackoutHasBeenSet() const { return m_networkEndBlackoutHasBeenSet; }
 
     /**
      * Setting to enabled causes the encoder to blackout the video, audio, and
@@ -142,6 +158,12 @@ namespace Model
      * Path to local file to use as Network End Blackout image. Image will be scaled to
      * fill the entire output raster.
      */
+    inline bool NetworkEndBlackoutImageHasBeenSet() const { return m_networkEndBlackoutImageHasBeenSet; }
+
+    /**
+     * Path to local file to use as Network End Blackout image. Image will be scaled to
+     * fill the entire output raster.
+     */
     inline void SetNetworkEndBlackoutImage(const InputLocation& value) { m_networkEndBlackoutImageHasBeenSet = true; m_networkEndBlackoutImage = value; }
 
     /**
@@ -168,6 +190,12 @@ namespace Model
      * "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
      */
     inline const Aws::String& GetNetworkId() const{ return m_networkId; }
+
+    /**
+     * Provides Network ID that matches EIDR ID format (e.g.,
+     * "10.XXXX/XXXX-XXXX-XXXX-XXXX-XXXX-C").
+     */
+    inline bool NetworkIdHasBeenSet() const { return m_networkIdHasBeenSet; }
 
     /**
      * Provides Network ID that matches EIDR ID format (e.g.,
@@ -211,6 +239,12 @@ namespace Model
      * indicated by program metadata.
      */
     inline const BlackoutSlateState& GetState() const{ return m_state; }
+
+    /**
+     * When set to enabled, causes video, audio and captions to be blanked when
+     * indicated by program metadata.
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * When set to enabled, causes video, audio and captions to be blanked when

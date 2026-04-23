@@ -60,6 +60,13 @@ namespace Model
      * name of your configuration recorder by using the
      * <code>DescribeConfigurationRecorders</code> action.</p>
      */
+    inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration recorder to be deleted. You can retrieve the
+     * name of your configuration recorder by using the
+     * <code>DescribeConfigurationRecorders</code> action.</p>
+     */
     inline void SetConfigurationRecorderName(const Aws::String& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
 
     /**

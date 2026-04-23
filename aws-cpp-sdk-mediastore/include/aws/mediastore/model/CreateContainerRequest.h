@@ -58,6 +58,14 @@ namespace Model
      * an example, you could create a container named <code>movies</code> in every
      * region, as long as you don’t have an existing container with that name.</p>
      */
+    inline bool ContainerNameHasBeenSet() const { return m_containerNameHasBeenSet; }
+
+    /**
+     * <p>The name for the container. The name must be from 1 to 255 characters.
+     * Container names must be unique to your AWS account within a specific region. As
+     * an example, you could create a container named <code>movies</code> in every
+     * region, as long as you don’t have an existing container with that name.</p>
+     */
     inline void SetContainerName(const Aws::String& value) { m_containerNameHasBeenSet = true; m_containerName = value; }
 
     /**

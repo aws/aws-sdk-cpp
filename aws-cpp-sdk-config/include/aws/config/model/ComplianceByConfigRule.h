@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the AWS Config rule.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Indicates whether the AWS Config rule is compliant.</p>
      */
     inline const Compliance& GetCompliance() const{ return m_compliance; }
+
+    /**
+     * <p>Indicates whether the AWS Config rule is compliant.</p>
+     */
+    inline bool ComplianceHasBeenSet() const { return m_complianceHasBeenSet; }
 
     /**
      * <p>Indicates whether the AWS Config rule is compliant.</p>

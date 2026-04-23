@@ -65,6 +65,13 @@ namespace Model
      * Device Farm will extract to external data for Android or the app's sandbox for
      * iOS.</p>
      */
+    inline bool ExtraDataPackageArnHasBeenSet() const { return m_extraDataPackageArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the extra data for the run. The extra data is a .zip file that AWS
+     * Device Farm will extract to external data for Android or the app's sandbox for
+     * iOS.</p>
+     */
     inline void SetExtraDataPackageArn(const Aws::String& value) { m_extraDataPackageArnHasBeenSet = true; m_extraDataPackageArn = value; }
 
     /**
@@ -111,6 +118,11 @@ namespace Model
     /**
      * <p>Reserved for internal use.</p>
      */
+    inline bool NetworkProfileArnHasBeenSet() const { return m_networkProfileArnHasBeenSet; }
+
+    /**
+     * <p>Reserved for internal use.</p>
+     */
     inline void SetNetworkProfileArn(const Aws::String& value) { m_networkProfileArnHasBeenSet = true; m_networkProfileArn = value; }
 
     /**
@@ -143,6 +155,11 @@ namespace Model
      * <p>Information about the locale that is used for the run.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>Information about the locale that is used for the run.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * <p>Information about the locale that is used for the run.</p>
@@ -183,6 +200,11 @@ namespace Model
     /**
      * <p>Information about the location that is used for the run.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Information about the location that is used for the run.</p>
+     */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -206,6 +228,12 @@ namespace Model
      * configurations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
+     * configurations.</p>
+     */
+    inline bool VpceConfigurationArnsHasBeenSet() const { return m_vpceConfigurationArnsHasBeenSet; }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) for your VPC endpoint
@@ -260,6 +288,12 @@ namespace Model
      * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
      * configuration.</p>
      */
+    inline bool CustomerArtifactPathsHasBeenSet() const { return m_customerArtifactPathsHasBeenSet; }
+
+    /**
+     * <p>Input <code>CustomerArtifactPaths</code> object for the scheduled run
+     * configuration.</p>
+     */
     inline void SetCustomerArtifactPaths(const CustomerArtifactPaths& value) { m_customerArtifactPathsHasBeenSet = true; m_customerArtifactPaths = value; }
 
     /**
@@ -289,6 +323,11 @@ namespace Model
     /**
      * <p>Information about the radio states for the run.</p>
      */
+    inline bool RadiosHasBeenSet() const { return m_radiosHasBeenSet; }
+
+    /**
+     * <p>Information about the radio states for the run.</p>
+     */
     inline void SetRadios(const Radios& value) { m_radiosHasBeenSet = true; m_radios = value; }
 
     /**
@@ -311,6 +350,11 @@ namespace Model
      * <p>A list of auxiliary apps for the run.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAuxiliaryApps() const{ return m_auxiliaryApps; }
+
+    /**
+     * <p>A list of auxiliary apps for the run.</p>
+     */
+    inline bool AuxiliaryAppsHasBeenSet() const { return m_auxiliaryAppsHasBeenSet; }
 
     /**
      * <p>A list of auxiliary apps for the run.</p>
@@ -354,6 +398,13 @@ namespace Model
      * <code>metered</code>.</p>
      */
     inline const BillingMethod& GetBillingMethod() const{ return m_billingMethod; }
+
+    /**
+     * <p>Specifies the billing method for a test run: <code>metered</code> or
+     * <code>unmetered</code>. If the parameter is not specified, the default value is
+     * <code>metered</code>.</p>
+     */
+    inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
 
     /**
      * <p>Specifies the billing method for a test run: <code>metered</code> or

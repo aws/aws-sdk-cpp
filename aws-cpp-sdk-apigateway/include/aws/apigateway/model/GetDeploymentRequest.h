@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * information about.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>[Required] The identifier of the <a>Deployment</a> resource to get
+     * information about.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
      * <p>[Required] The identifier of the <a>Deployment</a> resource to get
@@ -145,6 +156,20 @@ namespace Model
      * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEmbed() const{ return m_embed; }
+
+    /**
+     * <p>A query parameter to retrieve the specified embedded resources of the
+     * returned <a>Deployment</a> resource in the response. In a REST API call, this
+     * <code>embed</code> parameter value is a list of comma-separated strings, as in
+     * <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=var1,var2</code>. The
+     * SDK and other platform-dependent libraries might use a different format for the
+     * list. Currently, this request supports only retrieval of the embedded API
+     * summary this way. Hence, the parameter value must be a single-valued list
+     * containing only the <code>"apisummary"</code> string. For example, <code>GET
+     * /restapis/{restapi_id}/deployments/{deployment_id}?embed=apisummary</code>.</p>
+     */
+    inline bool EmbedHasBeenSet() const { return m_embedHasBeenSet; }
 
     /**
      * <p>A query parameter to retrieve the specified embedded resources of the

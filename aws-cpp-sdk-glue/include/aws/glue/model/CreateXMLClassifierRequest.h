@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>An identifier of the data format that the classifier matches.</p>
      */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
+
+    /**
+     * <p>An identifier of the data format that the classifier matches.</p>
+     */
     inline void SetClassification(const Aws::String& value) { m_classificationHasBeenSet = true; m_classification = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the classifier.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the classifier.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the classifier.</p>
@@ -129,6 +139,16 @@ namespace Model
      * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
      */
     inline const Aws::String& GetRowTag() const{ return m_rowTag; }
+
+    /**
+     * <p>The XML tag designating the element that contains each record in an XML
+     * document being parsed. Note that this cannot identify a self-closing element
+     * (closed by <code>/&gt;</code>). An empty row element that contains only
+     * attributes can be parsed as long as it ends with a closing tag (for example,
+     * <code>&lt;row item_a="A" item_b="B"&gt;&lt;/row&gt;</code> is okay, but
+     * <code>&lt;row item_a="A" item_b="B" /&gt;</code> is not).</p>
+     */
+    inline bool RowTagHasBeenSet() const { return m_rowTagHasBeenSet; }
 
     /**
      * <p>The XML tag designating the element that contains each record in an XML

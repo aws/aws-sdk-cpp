@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The status of the IP range, for example, "authorized".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the IP range, for example, "authorized".</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
      */
+    inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
+
+    /**
+     * <p>The IP range in Classless Inter-Domain Routing (CIDR) notation.</p>
+     */
     inline void SetCIDRIP(const Aws::String& value) { m_cIDRIPHasBeenSet = true; m_cIDRIP = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The list of tags for the IP range.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the IP range.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the IP range.</p>

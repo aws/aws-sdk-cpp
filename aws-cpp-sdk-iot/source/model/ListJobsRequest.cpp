@@ -40,7 +40,7 @@ ListJobsRequest::ListJobsRequest() :
 
 Aws::String ListJobsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListJobsRequest::AddQueryStringParameters(URI& uri) const

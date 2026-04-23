@@ -23,6 +23,8 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateChannelRequest::CreateChannelRequest() : 
+    m_channelClass(ChannelClass::NOT_SET),
+    m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
     m_inputAttachmentsHasBeenSet(false),
@@ -32,13 +34,19 @@ CreateChannelRequest::CreateChannelRequest() :
     m_nameHasBeenSet(false),
     m_requestId(Aws::Utils::UUID::RandomUUID()),
     m_requestIdHasBeenSet(true),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 Aws::String CreateChannelRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_channelClassHasBeenSet)
+  {
+   payload.WithString("channelClass", ChannelClassMapper::GetNameForChannelClass(m_channelClass));
+  }
 
   if(m_destinationsHasBeenSet)
   {
@@ -94,6 +102,17 @@ Aws::String CreateChannelRequest::SerializePayload() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("roleArn", m_roleArn);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

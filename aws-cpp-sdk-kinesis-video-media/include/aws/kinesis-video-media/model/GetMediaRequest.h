@@ -55,6 +55,13 @@ namespace Model
      * If you don't specify the <code>streamName</code>, you must specify the
      * <code>streamARN</code>.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The Kinesis video stream name from where you want to get the media content.
+     * If you don't specify the <code>streamName</code>, you must specify the
+     * <code>streamARN</code>.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -105,6 +112,13 @@ namespace Model
      * don't specify the <code>streamARN</code>, you must specify the
      * <code>streamName</code>.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the stream from where you want to get the media content. If you
+     * don't specify the <code>streamARN</code>, you must specify the
+     * <code>streamName</code>.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -147,6 +161,11 @@ namespace Model
      * <p>Identifies the starting chunk to get from the specified stream. </p>
      */
     inline const StartSelector& GetStartSelector() const{ return m_startSelector; }
+
+    /**
+     * <p>Identifies the starting chunk to get from the specified stream. </p>
+     */
+    inline bool StartSelectorHasBeenSet() const { return m_startSelectorHasBeenSet; }
 
     /**
      * <p>Identifies the starting chunk to get from the specified stream. </p>

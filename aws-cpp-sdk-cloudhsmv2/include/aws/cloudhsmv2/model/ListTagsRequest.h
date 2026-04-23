@@ -54,6 +54,12 @@ namespace Model
      * <p>The cluster identifier (ID) for the cluster whose tags you are getting. To
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier (ID) for the cluster whose tags you are getting. To
+     * find the cluster ID, use <a>DescribeClusters</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * Use this value to get more tags.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>NextToken</code> value that you received in the previous response.
+     * Use this value to get more tags.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>NextToken</code> value that you received in the previous response.
@@ -136,6 +148,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of tags to return in the response. When there are more
+     * tags than the number you specify, the response contains a <code>NextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of tags to return in the response. When there are more

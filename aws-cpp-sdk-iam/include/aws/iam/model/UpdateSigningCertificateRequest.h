@@ -49,7 +49,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -58,7 +58,16 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a>) a string of characters consisting of upper and lowercase
+     * alphanumeric characters with no spaces. You can also include any of the
+     * following characters: _+=,.@-</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -67,7 +76,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -76,7 +85,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -85,7 +94,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -94,7 +103,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -103,7 +112,7 @@ namespace Model
 
     /**
      * <p>The name of the IAM user the signing certificate belongs to.</p> <p>This
-     * parameter allows (per its <a href="http://wikipedia.org/wiki/regex">regex
+     * parameter allows (through its <a href="http://wikipedia.org/wiki/regex">regex
      * pattern</a>) a string of characters consisting of upper and lowercase
      * alphanumeric characters with no spaces. You can also include any of the
      * following characters: _+=,.@-</p>
@@ -113,56 +122,64 @@ namespace Model
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline const Aws::String& GetCertificateId() const{ return m_certificateId; }
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
+     * digit.</p>
+     */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline void SetCertificateId(Aws::String&& value) { m_certificateIdHasBeenSet = true; m_certificateId = std::move(value); }
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline void SetCertificateId(const char* value) { m_certificateIdHasBeenSet = true; m_certificateId.assign(value); }
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline UpdateSigningCertificateRequest& WithCertificateId(const Aws::String& value) { SetCertificateId(value); return *this;}
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline UpdateSigningCertificateRequest& WithCertificateId(Aws::String&& value) { SetCertificateId(std::move(value)); return *this;}
 
     /**
      * <p>The ID of the signing certificate you want to update.</p> <p>This parameter
-     * allows (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
-     * string of characters that can consist of any upper or lowercased letter or
+     * allows (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>)
+     * a string of characters that can consist of any upper or lowercased letter or
      * digit.</p>
      */
     inline UpdateSigningCertificateRequest& WithCertificateId(const char* value) { SetCertificateId(value); return *this;}
@@ -174,6 +191,13 @@ namespace Model
      * means that the certificate cannot be used.</p>
      */
     inline const StatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p> The status you want to assign to the certificate. <code>Active</code> means
+     * that the certificate can be used for API calls to AWS <code>Inactive</code>
+     * means that the certificate cannot be used.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p> The status you want to assign to the certificate. <code>Active</code> means

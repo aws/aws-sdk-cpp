@@ -50,37 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline const Aws::String& GetContainerHostname() const{ return m_containerHostname; }
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
+     */
+    inline bool ContainerHostnameHasBeenSet() const { return m_containerHostnameHasBeenSet; }
+
+    /**
+     * <p>This parameter is ignored.</p>
      */
     inline void SetContainerHostname(const Aws::String& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = value; }
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline void SetContainerHostname(Aws::String&& value) { m_containerHostnameHasBeenSet = true; m_containerHostname = std::move(value); }
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline void SetContainerHostname(const char* value) { m_containerHostnameHasBeenSet = true; m_containerHostname.assign(value); }
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline ContainerDefinition& WithContainerHostname(const Aws::String& value) { SetContainerHostname(value); return *this;}
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline ContainerDefinition& WithContainerHostname(Aws::String&& value) { SetContainerHostname(std::move(value)); return *this;}
 
     /**
-     * <p>The DNS host name for the container after Amazon SageMaker deploys it.</p>
+     * <p>This parameter is ignored.</p>
      */
     inline ContainerDefinition& WithContainerHostname(const char* value) { SetContainerHostname(value); return *this;}
 
@@ -93,7 +98,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
@@ -106,7 +111,20 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * Your Own Algorithms with Amazon SageMaker</a> </p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The Amazon EC2 Container Registry (Amazon ECR) path where inference code is
+     * stored. If you are using your own custom algorithm instead of an algorithm
+     * provided by Amazon SageMaker, the inference code must meet Amazon SageMaker
+     * requirements. Amazon SageMaker supports both
+     * <code>registry/repository[:tag]</code> and
+     * <code>registry/repository[@digest]</code> image path formats. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline void SetImage(const Aws::String& value) { m_imageHasBeenSet = true; m_image = value; }
@@ -119,7 +137,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline void SetImage(Aws::String&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
@@ -132,7 +150,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline void SetImage(const char* value) { m_imageHasBeenSet = true; m_image.assign(value); }
@@ -145,7 +163,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(const Aws::String& value) { SetImage(value); return *this;}
@@ -158,7 +176,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(Aws::String&& value) { SetImage(std::move(value)); return *this;}
@@ -171,7 +189,7 @@ namespace Model
      * <code>registry/repository[:tag]</code> and
      * <code>registry/repository[@digest]</code> image path formats. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/your-algorithms.html">Using
      * Your Own Algorithms with Amazon SageMaker</a> </p>
      */
     inline ContainerDefinition& WithImage(const char* value) { SetImage(value); return *this;}
@@ -190,6 +208,20 @@ namespace Model
      * Management User Guide</i>.</p>
      */
     inline const Aws::String& GetModelDataUrl() const{ return m_modelDataUrl; }
+
+    /**
+     * <p>The S3 path where the model artifacts, which result from model training, are
+     * stored. This path must point to a single gzip compressed tar archive (.tar.gz
+     * suffix). </p> <p>If you provide a value for this parameter, Amazon SageMaker
+     * uses AWS Security Token Service to download model artifacts from the S3 path you
+     * provide. AWS STS is activated in your IAM user account by default. If you
+     * previously deactivated AWS STS for a region, you need to reactivate AWS STS for
+     * that region. For more information, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+     * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
+     * Management User Guide</i>.</p>
+     */
+    inline bool ModelDataUrlHasBeenSet() const { return m_modelDataUrlHasBeenSet; }
 
     /**
      * <p>The S3 path where the model artifacts, which result from model training, are
@@ -288,6 +320,13 @@ namespace Model
      * in the <code>Environment</code> string to string map can have length of up to
      * 1024. We support up to 16 entries in the map. </p>
      */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
+
+    /**
+     * <p>The environment variables to set in the Docker container. Each key and value
+     * in the <code>Environment</code> string to string map can have length of up to
+     * 1024. We support up to 16 entries in the map. </p>
+     */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environmentHasBeenSet = true; m_environment = value; }
 
     /**
@@ -360,6 +399,47 @@ namespace Model
      */
     inline ContainerDefinition& AddEnvironment(const char* key, const char* value) { m_environmentHasBeenSet = true; m_environment.emplace(key, value); return *this; }
 
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline const Aws::String& GetModelPackageName() const{ return m_modelPackageName; }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline bool ModelPackageNameHasBeenSet() const { return m_modelPackageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline void SetModelPackageName(const Aws::String& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = value; }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline void SetModelPackageName(Aws::String&& value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName = std::move(value); }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline void SetModelPackageName(const char* value) { m_modelPackageNameHasBeenSet = true; m_modelPackageName.assign(value); }
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(const Aws::String& value) { SetModelPackageName(value); return *this;}
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(Aws::String&& value) { SetModelPackageName(std::move(value)); return *this;}
+
+    /**
+     * <p>The name of the model package to use to create the model.</p>
+     */
+    inline ContainerDefinition& WithModelPackageName(const char* value) { SetModelPackageName(value); return *this;}
+
   private:
 
     Aws::String m_containerHostname;
@@ -373,6 +453,9 @@ namespace Model
 
     Aws::Map<Aws::String, Aws::String> m_environment;
     bool m_environmentHasBeenSet;
+
+    Aws::String m_modelPackageName;
+    bool m_modelPackageNameHasBeenSet;
   };
 
 } // namespace Model

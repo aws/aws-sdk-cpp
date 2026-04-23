@@ -29,7 +29,7 @@ DescribePipelineRequest::DescribePipelineRequest() :
 
 Aws::String DescribePipelineRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> A unique identifier of the Review action result. </p>
      */
+    inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
+
+    /**
+     * <p> A unique identifier of the Review action result. </p>
+     */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * results about the Assignment itself. </p>
      */
     inline const Aws::String& GetSubjectId() const{ return m_subjectId; }
+
+    /**
+     * <p>The HITID or AssignmentId about which this result was taken. Note that
+     * HIT-level Review Policies will often emit results about both the HIT itself and
+     * its Assignments, while Assignment-level review policies generally only emit
+     * results about the Assignment itself. </p>
+     */
+    inline bool SubjectIdHasBeenSet() const { return m_subjectIdHasBeenSet; }
 
     /**
      * <p>The HITID or AssignmentId about which this result was taken. Note that
@@ -149,6 +162,11 @@ namespace Model
     /**
      * <p> The type of the object from the SubjectId field.</p>
      */
+    inline bool SubjectTypeHasBeenSet() const { return m_subjectTypeHasBeenSet; }
+
+    /**
+     * <p> The type of the object from the SubjectId field.</p>
+     */
     inline void SetSubjectType(const Aws::String& value) { m_subjectTypeHasBeenSet = true; m_subjectType = value; }
 
     /**
@@ -186,6 +204,16 @@ namespace Model
      * HIT. </p>
      */
     inline const Aws::String& GetQuestionId() const{ return m_questionId; }
+
+    /**
+     * <p> Specifies the QuestionId the result is describing. Depending on whether the
+     * TargetType is a HIT or Assignment this results could specify multiple values. If
+     * TargetType is HIT and QuestionId is absent, then the result describes results of
+     * the HIT, including the HIT agreement score. If ObjectType is Assignment and
+     * QuestionId is absent, then the result describes the Worker's performance on the
+     * HIT. </p>
+     */
+    inline bool QuestionIdHasBeenSet() const { return m_questionIdHasBeenSet; }
 
     /**
      * <p> Specifies the QuestionId the result is describing. Depending on whether the
@@ -256,6 +284,11 @@ namespace Model
     /**
      * <p> Key identifies the particular piece of reviewed information. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p> Key identifies the particular piece of reviewed information. </p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -288,6 +321,11 @@ namespace Model
      * <p> The values of Key provided by the review policies you have selected. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p> The values of Key provided by the review policies you have selected. </p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p> The values of Key provided by the review policies you have selected. </p>

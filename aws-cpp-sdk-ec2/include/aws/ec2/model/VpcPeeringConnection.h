@@ -64,6 +64,12 @@ namespace Model
      * <p>Information about the accepter VPC. CIDR block information is only returned
      * when describing an active VPC peering connection.</p>
      */
+    inline bool AccepterVpcInfoHasBeenSet() const { return m_accepterVpcInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the accepter VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
+     */
     inline void SetAccepterVpcInfo(const VpcPeeringConnectionVpcInfo& value) { m_accepterVpcInfoHasBeenSet = true; m_accepterVpcInfo = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
     /**
      * <p>The time that an unaccepted VPC peering connection will expire.</p>
      */
+    inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
+
+    /**
+     * <p>The time that an unaccepted VPC peering connection will expire.</p>
+     */
     inline void SetExpirationTime(const Aws::Utils::DateTime& value) { m_expirationTimeHasBeenSet = true; m_expirationTime = value; }
 
     /**
@@ -116,6 +127,12 @@ namespace Model
      * when describing an active VPC peering connection.</p>
      */
     inline const VpcPeeringConnectionVpcInfo& GetRequesterVpcInfo() const{ return m_requesterVpcInfo; }
+
+    /**
+     * <p>Information about the requester VPC. CIDR block information is only returned
+     * when describing an active VPC peering connection.</p>
+     */
+    inline bool RequesterVpcInfoHasBeenSet() const { return m_requesterVpcInfoHasBeenSet; }
 
     /**
      * <p>Information about the requester VPC. CIDR block information is only returned
@@ -150,6 +167,11 @@ namespace Model
     /**
      * <p>The status of the VPC peering connection.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the VPC peering connection.</p>
+     */
     inline void SetStatus(const VpcPeeringConnectionStateReason& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -172,6 +194,11 @@ namespace Model
      * <p>Any tags assigned to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the resource.</p>
@@ -208,6 +235,11 @@ namespace Model
      * <p>The ID of the VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of the VPC peering connection.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC peering connection.</p>

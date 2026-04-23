@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The list of users.</p>
      */
+    inline bool UsersHasBeenSet() const { return m_usersHasBeenSet; }
+
+    /**
+     * <p>The list of users.</p>
+     */
     inline void SetUsers(const Aws::Vector<UserMetadata>& value) { m_usersHasBeenSet = true; m_users = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The list of user groups.</p>
      */
     inline const Aws::Vector<GroupMetadata>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The list of user groups.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The list of user groups.</p>

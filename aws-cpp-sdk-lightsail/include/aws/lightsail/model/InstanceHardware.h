@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of vCPUs the instance has.</p>
      */
+    inline bool CpuCountHasBeenSet() const { return m_cpuCountHasBeenSet; }
+
+    /**
+     * <p>The number of vCPUs the instance has.</p>
+     */
     inline void SetCpuCount(int value) { m_cpuCountHasBeenSet = true; m_cpuCount = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The disks attached to the instance.</p>
      */
     inline const Aws::Vector<Disk>& GetDisks() const{ return m_disks; }
+
+    /**
+     * <p>The disks attached to the instance.</p>
+     */
+    inline bool DisksHasBeenSet() const { return m_disksHasBeenSet; }
 
     /**
      * <p>The disks attached to the instance.</p>
@@ -104,6 +114,11 @@ namespace Model
      * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
      */
     inline double GetRamSizeInGb() const{ return m_ramSizeInGb; }
+
+    /**
+     * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>
+     */
+    inline bool RamSizeInGbHasBeenSet() const { return m_ramSizeInGbHasBeenSet; }
 
     /**
      * <p>The amount of RAM in GB on the instance (e.g., <code>1.0</code>).</p>

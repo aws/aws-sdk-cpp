@@ -45,7 +45,9 @@ FpgaImage::FpgaImage() :
     m_productCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_public(false),
-    m_publicHasBeenSet(false)
+    m_publicHasBeenSet(false),
+    m_dataRetentionSupport(false),
+    m_dataRetentionSupportHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ FpgaImage::FpgaImage(const XmlNode& xmlNode) :
     m_productCodesHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_public(false),
-    m_publicHasBeenSet(false)
+    m_publicHasBeenSet(false),
+    m_dataRetentionSupport(false),
+    m_dataRetentionSupportHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -171,6 +175,12 @@ FpgaImage& FpgaImage::operator =(const XmlNode& xmlNode)
       m_public = StringUtils::ConvertToBool(StringUtils::Trim(publicNode.GetText().c_str()).c_str());
       m_publicHasBeenSet = true;
     }
+    XmlNode dataRetentionSupportNode = resultNode.FirstChild("dataRetentionSupport");
+    if(!dataRetentionSupportNode.IsNull())
+    {
+      m_dataRetentionSupport = StringUtils::ConvertToBool(StringUtils::Trim(dataRetentionSupportNode.GetText().c_str()).c_str());
+      m_dataRetentionSupportHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -264,6 +274,11 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location, unsi
       oStream << location << index << locationValue << ".Public=" << std::boolalpha << m_public << "&";
   }
 
+  if(m_dataRetentionSupportHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".DataRetentionSupport=" << std::boolalpha << m_dataRetentionSupport << "&";
+  }
+
 }
 
 void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -339,6 +354,10 @@ void FpgaImage::OutputToStream(Aws::OStream& oStream, const char* location) cons
   if(m_publicHasBeenSet)
   {
       oStream << location << ".Public=" << std::boolalpha << m_public << "&";
+  }
+  if(m_dataRetentionSupportHasBeenSet)
+  {
+      oStream << location << ".DataRetentionSupport=" << std::boolalpha << m_dataRetentionSupport << "&";
   }
 }
 

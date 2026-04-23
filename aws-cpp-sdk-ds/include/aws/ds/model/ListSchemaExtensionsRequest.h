@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier of the directory from which to retrieve the schema extension
      * information.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory from which to retrieve the schema extension
+     * information.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
      * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>ListSchemaExtensions.NextToken</code> value from a previous call to
+     * <code>ListSchemaExtensions</code>. Pass null if this is the first call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -134,6 +146,11 @@ namespace Model
      * <p>The maximum number of items to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items to return.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items to return.</p>

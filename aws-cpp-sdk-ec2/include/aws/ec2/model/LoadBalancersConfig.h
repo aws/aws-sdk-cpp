@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Classic Load Balancers.</p>
      */
+    inline bool ClassicLoadBalancersConfigHasBeenSet() const { return m_classicLoadBalancersConfigHasBeenSet; }
+
+    /**
+     * <p>The Classic Load Balancers.</p>
+     */
     inline void SetClassicLoadBalancersConfig(const ClassicLoadBalancersConfig& value) { m_classicLoadBalancersConfigHasBeenSet = true; m_classicLoadBalancersConfig = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The target groups.</p>
      */
     inline const TargetGroupsConfig& GetTargetGroupsConfig() const{ return m_targetGroupsConfig; }
+
+    /**
+     * <p>The target groups.</p>
+     */
+    inline bool TargetGroupsConfigHasBeenSet() const { return m_targetGroupsConfigHasBeenSet; }
 
     /**
      * <p>The target groups.</p>

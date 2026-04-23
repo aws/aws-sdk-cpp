@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the queried <a>SdkType</a> instance.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

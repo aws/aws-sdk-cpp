@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The reference that identifies the object whose attributes will be listed.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>The reference that identifies the object whose attributes will be listed.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * range.</p>
      */
     inline const Aws::Vector<TypedLinkAttributeRange>& GetFilterAttributeRanges() const{ return m_filterAttributeRanges; }
+
+    /**
+     * <p>Provides range filters for multiple attributes. When providing ranges to
+     * typed link selection, any inexact ranges must be specified at the end. Any
+     * attributes that do not have a range specified are presumed to match the entire
+     * range.</p>
+     */
+    inline bool FilterAttributeRangesHasBeenSet() const { return m_filterAttributeRangesHasBeenSet; }
 
     /**
      * <p>Provides range filters for multiple attributes. When providing ranges to
@@ -147,6 +160,12 @@ namespace Model
      * <p>Filters are interpreted in the order of the attributes defined on the typed
      * link facet, not the order they are supplied to any API calls.</p>
      */
+    inline bool FilterTypedLinkHasBeenSet() const { return m_filterTypedLinkHasBeenSet; }
+
+    /**
+     * <p>Filters are interpreted in the order of the attributes defined on the typed
+     * link facet, not the order they are supplied to any API calls.</p>
+     */
     inline void SetFilterTypedLink(const TypedLinkSchemaAndFacetName& value) { m_filterTypedLinkHasBeenSet = true; m_filterTypedLink = value; }
 
     /**
@@ -172,6 +191,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>
@@ -208,6 +232,11 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to retrieve.</p>

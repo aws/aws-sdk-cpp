@@ -56,6 +56,11 @@ namespace Model
     /**
      * Id of the channel whose schedule is being updated.
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * Id of the channel whose schedule is being updated.
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * Schedule actions to create in the schedule.
      */
+    inline bool CreatesHasBeenSet() const { return m_createsHasBeenSet; }
+
+    /**
+     * Schedule actions to create in the schedule.
+     */
     inline void SetCreates(const BatchScheduleActionCreateRequest& value) { m_createsHasBeenSet = true; m_creates = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * Schedule actions to delete from the schedule.
      */
     inline const BatchScheduleActionDeleteRequest& GetDeletes() const{ return m_deletes; }
+
+    /**
+     * Schedule actions to delete from the schedule.
+     */
+    inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
 
     /**
      * Schedule actions to delete from the schedule.

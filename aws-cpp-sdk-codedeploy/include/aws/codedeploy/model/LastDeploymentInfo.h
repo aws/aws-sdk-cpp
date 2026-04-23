@@ -51,37 +51,42 @@ namespace Model
 
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline LastDeploymentInfo& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline LastDeploymentInfo& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline LastDeploymentInfo& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
@@ -90,6 +95,11 @@ namespace Model
      * <p>The status of the most recent deployment.</p>
      */
     inline const DeploymentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the most recent deployment.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the most recent deployment.</p>
@@ -113,62 +123,74 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
-     * group completed.</p>
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
-     * group completed.</p>
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
      */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
-     * group completed.</p>
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
      */
     inline void SetEndTime(Aws::Utils::DateTime&& value) { m_endTimeHasBeenSet = true; m_endTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
-     * group completed.</p>
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
      */
     inline LastDeploymentInfo& WithEndTime(const Aws::Utils::DateTime& value) { SetEndTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
-     * group completed.</p>
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group was complete.</p>
      */
     inline LastDeploymentInfo& WithEndTime(Aws::Utils::DateTime&& value) { SetEndTime(std::move(value)); return *this;}
 
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
      * group started.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateTime() const{ return m_createTime; }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
+     * group started.</p>
+     */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
      * group started.</p>
      */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
      * group started.</p>
      */
     inline void SetCreateTime(Aws::Utils::DateTime&& value) { m_createTimeHasBeenSet = true; m_createTime = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
      * group started.</p>
      */
     inline LastDeploymentInfo& WithCreateTime(const Aws::Utils::DateTime& value) { SetCreateTime(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the most recent deployment to the deployment
+     * <p>A timestamp that indicates when the most recent deployment to the deployment
      * group started.</p>
      */
     inline LastDeploymentInfo& WithCreateTime(Aws::Utils::DateTime&& value) { SetCreateTime(std::move(value)); return *this;}

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * which a temporary extension is granted to the remaining quota.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>[Required] The identifier of the API key associated with the usage plan in
+     * which a temporary extension is granted to the remaining quota.</p>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>[Required] The identifier of the API key associated with the usage plan in
@@ -132,6 +143,12 @@ namespace Model
      * the order specified in this list.</p>
      */
     inline const Aws::Vector<PatchOperation>& GetPatchOperations() const{ return m_patchOperations; }
+
+    /**
+     * <p>A list of update operations to be applied to the specified resource and in
+     * the order specified in this list.</p>
+     */
+    inline bool PatchOperationsHasBeenSet() const { return m_patchOperationsHasBeenSet; }
 
     /**
      * <p>A list of update operations to be applied to the specified resource and in

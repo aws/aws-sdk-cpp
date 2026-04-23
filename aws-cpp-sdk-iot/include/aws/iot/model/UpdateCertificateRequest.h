@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -103,6 +109,15 @@ namespace Model
      * used.</p>
      */
     inline const CertificateStatus& GetNewStatus() const{ return m_newStatus; }
+
+    /**
+     * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER
+     * will result in an exception being thrown. PENDING_TRANSFER is a status used
+     * internally by AWS IoT. It is not intended for developer use.</p> <p>
+     * <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be
+     * used.</p>
+     */
+    inline bool NewStatusHasBeenSet() const { return m_newStatusHasBeenSet; }
 
     /**
      * <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER

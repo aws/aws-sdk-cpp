@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the virtual interface.</p>
      */
+    inline bool VirtualInterfaceIdHasBeenSet() const { return m_virtualInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the virtual interface.</p>
+     */
     inline void SetVirtualInterfaceId(const Aws::String& value) { m_virtualInterfaceIdHasBeenSet = true; m_virtualInterfaceId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Information about the BGP peer.</p>
      */
     inline const NewBGPPeer& GetNewBGPPeer() const{ return m_newBGPPeer; }
+
+    /**
+     * <p>Information about the BGP peer.</p>
+     */
+    inline bool NewBGPPeerHasBeenSet() const { return m_newBGPPeerHasBeenSet; }
 
     /**
      * <p>Information about the BGP peer.</p>

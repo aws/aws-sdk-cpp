@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The semantic version of the new version.</p>
      */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
+
+    /**
+     * <p>The semantic version of the new version.</p>
+     */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
@@ -115,37 +125,99 @@ namespace Model
 
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline bool SourceCodeArchiveUrlHasBeenSet() const { return m_sourceCodeArchiveUrlHasBeenSet; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const Aws::String& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = value; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(Aws::String&& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = std::move(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const char* value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl.assign(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionRequest& WithSourceCodeArchiveUrl(const Aws::String& value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionRequest& WithSourceCodeArchiveUrl(Aws::String&& value) { SetSourceCodeArchiveUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationVersionRequest& WithSourceCodeArchiveUrl(const char* value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
+     */
+    inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationVersionRequest& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 
@@ -154,6 +226,11 @@ namespace Model
      * <p>The raw packaged AWS SAM template of your application.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+
+    /**
+     * <p>The raw packaged AWS SAM template of your application.</p>
+     */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
      * <p>The raw packaged AWS SAM template of your application.</p>
@@ -194,6 +271,11 @@ namespace Model
     /**
      * <p>A link to the packaged AWS SAM template of your application.</p>
      */
+    inline bool TemplateUrlHasBeenSet() const { return m_templateUrlHasBeenSet; }
+
+    /**
+     * <p>A link to the packaged AWS SAM template of your application.</p>
+     */
     inline void SetTemplateUrl(const Aws::String& value) { m_templateUrlHasBeenSet = true; m_templateUrl = value; }
 
     /**
@@ -228,6 +310,9 @@ namespace Model
 
     Aws::String m_semanticVersion;
     bool m_semanticVersionHasBeenSet;
+
+    Aws::String m_sourceCodeArchiveUrl;
+    bool m_sourceCodeArchiveUrlHasBeenSet;
 
     Aws::String m_sourceCodeUrl;
     bool m_sourceCodeUrlHasBeenSet;

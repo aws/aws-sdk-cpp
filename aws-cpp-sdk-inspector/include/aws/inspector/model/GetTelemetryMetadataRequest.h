@@ -54,6 +54,12 @@ namespace Model
      * <p>The ARN that specifies the assessment run that has the telemetry data that
      * you want to obtain.</p>
      */
+    inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment run that has the telemetry data that
+     * you want to obtain.</p>
+     */
     inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
 
     /**

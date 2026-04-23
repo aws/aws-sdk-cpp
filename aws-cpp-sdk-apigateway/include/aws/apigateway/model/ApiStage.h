@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>API Id of the associated API stage in a usage plan.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>API Id of the associated API stage in a usage plan.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>API stage name of the associated API stage in a usage plan.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
+
+    /**
+     * <p>API stage name of the associated API stage in a usage plan.</p>
+     */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>API stage name of the associated API stage in a usage plan.</p>
@@ -127,6 +137,12 @@ namespace Model
      * plan.</p>
      */
     inline const Aws::Map<Aws::String, ThrottleSettings>& GetThrottle() const{ return m_throttle; }
+
+    /**
+     * <p>Map containing method level throttling information for API stage in a usage
+     * plan.</p>
+     */
+    inline bool ThrottleHasBeenSet() const { return m_throttleHasBeenSet; }
 
     /**
      * <p>Map containing method level throttling information for API stage in a usage

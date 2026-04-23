@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The ID of the service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    /**
+     * <p>The ID of the service.</p>
+     */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
      * <p>The ID of the service.</p>
@@ -114,6 +127,13 @@ namespace Model
      * specify an asterisk (*).</p>
      */
     inline const Aws::Vector<Aws::String>& GetAddAllowedPrincipals() const{ return m_addAllowedPrincipals; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * granted to the principals in this list. To grant permissions to all principals,
+     * specify an asterisk (*).</p>
+     */
+    inline bool AddAllowedPrincipalsHasBeenSet() const { return m_addAllowedPrincipalsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
@@ -170,6 +190,12 @@ namespace Model
      * revoked for principals in this list.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveAllowedPrincipals() const{ return m_removeAllowedPrincipals; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are
+     * revoked for principals in this list.</p>
+     */
+    inline bool RemoveAllowedPrincipalsHasBeenSet() const { return m_removeAllowedPrincipalsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of one or more principals. Permissions are

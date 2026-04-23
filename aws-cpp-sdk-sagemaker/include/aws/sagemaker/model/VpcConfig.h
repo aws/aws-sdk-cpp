@@ -38,9 +38,9 @@ namespace Model
    * <p>Specifies a VPC that your training jobs and hosted models have access to.
    * Control access to and from your training and model containers by configuring the
    * VPC. For more information, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/host-vpc.html">Protect
    * Endpoints by Using an Amazon Virtual Private Cloud</a> and <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
    * Training Jobs by Using an Amazon Virtual Private Cloud</a>. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/VpcConfig">AWS
@@ -60,6 +60,12 @@ namespace Model
      * groups for the VPC that is specified in the <code>Subnets</code> field.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security
+     * groups for the VPC that is specified in the <code>Subnets</code> field.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The VPC security group IDs, in the form sg-xxxxxxxx. Specify the security
@@ -109,6 +115,12 @@ namespace Model
      * job or model. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The ID of the subnets in the VPC to which you want to connect your training
+     * job or model. </p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>The ID of the subnets in the VPC to which you want to connect your training

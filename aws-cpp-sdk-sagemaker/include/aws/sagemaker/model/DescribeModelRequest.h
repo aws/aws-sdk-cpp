@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the model.</p>
      */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model.</p>
+     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID that Amazon Route 53 assigns to a reusable delegation set.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * created the reusable delegation set.</p>
      */
     inline const Aws::String& GetCallerReference() const{ return m_callerReference; }
+
+    /**
+     * <p>The value that you specified for <code>CallerReference</code> when you
+     * created the reusable delegation set.</p>
+     */
+    inline bool CallerReferenceHasBeenSet() const { return m_callerReferenceHasBeenSet; }
 
     /**
      * <p>The value that you specified for <code>CallerReference</code> when you
@@ -134,6 +145,12 @@ namespace Model
      * hosted zone or for a reusable delegation set.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNameServers() const{ return m_nameServers; }
+
+    /**
+     * <p>A complex type that contains a list of the authoritative name servers for a
+     * hosted zone or for a reusable delegation set.</p>
+     */
+    inline bool NameServersHasBeenSet() const { return m_nameServersHasBeenSet; }
 
     /**
      * <p>A complex type that contains a list of the authoritative name servers for a

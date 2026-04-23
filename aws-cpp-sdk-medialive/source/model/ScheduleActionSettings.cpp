@@ -29,7 +29,9 @@ namespace Model
 {
 
 ScheduleActionSettings::ScheduleActionSettings() : 
+    m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
+    m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -39,7 +41,9 @@ ScheduleActionSettings::ScheduleActionSettings() :
 }
 
 ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) : 
+    m_hlsTimedMetadataSettingsHasBeenSet(false),
     m_inputSwitchSettingsHasBeenSet(false),
+    m_pauseStateSettingsHasBeenSet(false),
     m_scte35ReturnToNetworkSettingsHasBeenSet(false),
     m_scte35SpliceInsertSettingsHasBeenSet(false),
     m_scte35TimeSignalSettingsHasBeenSet(false),
@@ -51,11 +55,25 @@ ScheduleActionSettings::ScheduleActionSettings(JsonView jsonValue) :
 
 ScheduleActionSettings& ScheduleActionSettings::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("hlsTimedMetadataSettings"))
+  {
+    m_hlsTimedMetadataSettings = jsonValue.GetObject("hlsTimedMetadataSettings");
+
+    m_hlsTimedMetadataSettingsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputSwitchSettings"))
   {
     m_inputSwitchSettings = jsonValue.GetObject("inputSwitchSettings");
 
     m_inputSwitchSettingsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("pauseStateSettings"))
+  {
+    m_pauseStateSettings = jsonValue.GetObject("pauseStateSettings");
+
+    m_pauseStateSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("scte35ReturnToNetworkSettings"))
@@ -100,9 +118,21 @@ JsonValue ScheduleActionSettings::Jsonize() const
 {
   JsonValue payload;
 
+  if(m_hlsTimedMetadataSettingsHasBeenSet)
+  {
+   payload.WithObject("hlsTimedMetadataSettings", m_hlsTimedMetadataSettings.Jsonize());
+
+  }
+
   if(m_inputSwitchSettingsHasBeenSet)
   {
    payload.WithObject("inputSwitchSettings", m_inputSwitchSettings.Jsonize());
+
+  }
+
+  if(m_pauseStateSettingsHasBeenSet)
+  {
+   payload.WithObject("pauseStateSettings", m_pauseStateSettings.Jsonize());
 
   }
 

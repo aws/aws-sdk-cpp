@@ -46,6 +46,7 @@ Service::Service() :
     m_platformVersionHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
+    m_taskSetsHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
@@ -57,6 +58,7 @@ Service::Service() :
     m_healthCheckGracePeriodSecondsHasBeenSet(false),
     m_schedulingStrategy(SchedulingStrategy::NOT_SET),
     m_schedulingStrategyHasBeenSet(false),
+    m_deploymentControllerHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_enableECSManagedTags(false),
@@ -84,6 +86,7 @@ Service::Service(JsonView jsonValue) :
     m_platformVersionHasBeenSet(false),
     m_taskDefinitionHasBeenSet(false),
     m_deploymentConfigurationHasBeenSet(false),
+    m_taskSetsHasBeenSet(false),
     m_deploymentsHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_eventsHasBeenSet(false),
@@ -95,6 +98,7 @@ Service::Service(JsonView jsonValue) :
     m_healthCheckGracePeriodSecondsHasBeenSet(false),
     m_schedulingStrategy(SchedulingStrategy::NOT_SET),
     m_schedulingStrategyHasBeenSet(false),
+    m_deploymentControllerHasBeenSet(false),
     m_tagsHasBeenSet(false),
     m_createdByHasBeenSet(false),
     m_enableECSManagedTags(false),
@@ -204,6 +208,16 @@ Service& Service::operator =(JsonView jsonValue)
     m_deploymentConfigurationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("taskSets"))
+  {
+    Array<JsonView> taskSetsJsonList = jsonValue.GetArray("taskSets");
+    for(unsigned taskSetsIndex = 0; taskSetsIndex < taskSetsJsonList.GetLength(); ++taskSetsIndex)
+    {
+      m_taskSets.push_back(taskSetsJsonList[taskSetsIndex].AsObject());
+    }
+    m_taskSetsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("deployments"))
   {
     Array<JsonView> deploymentsJsonList = jsonValue.GetArray("deployments");
@@ -277,6 +291,13 @@ Service& Service::operator =(JsonView jsonValue)
     m_schedulingStrategy = SchedulingStrategyMapper::GetSchedulingStrategyForName(jsonValue.GetString("schedulingStrategy"));
 
     m_schedulingStrategyHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("deploymentController"))
+  {
+    m_deploymentController = jsonValue.GetObject("deploymentController");
+
+    m_deploymentControllerHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("tags"))
@@ -404,6 +425,17 @@ JsonValue Service::Jsonize() const
 
   }
 
+  if(m_taskSetsHasBeenSet)
+  {
+   Array<JsonValue> taskSetsJsonList(m_taskSets.size());
+   for(unsigned taskSetsIndex = 0; taskSetsIndex < taskSetsJsonList.GetLength(); ++taskSetsIndex)
+   {
+     taskSetsJsonList[taskSetsIndex].AsObject(m_taskSets[taskSetsIndex].Jsonize());
+   }
+   payload.WithArray("taskSets", std::move(taskSetsJsonList));
+
+  }
+
   if(m_deploymentsHasBeenSet)
   {
    Array<JsonValue> deploymentsJsonList(m_deployments.size());
@@ -474,6 +506,12 @@ JsonValue Service::Jsonize() const
   if(m_schedulingStrategyHasBeenSet)
   {
    payload.WithString("schedulingStrategy", SchedulingStrategyMapper::GetNameForSchedulingStrategy(m_schedulingStrategy));
+  }
+
+  if(m_deploymentControllerHasBeenSet)
+  {
+   payload.WithObject("deploymentController", m_deploymentController.Jsonize());
+
   }
 
   if(m_tagsHasBeenSet)

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool FilterKeyHasBeenSet() const { return m_filterKeyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetFilterKey(const DescribeActivationsFilterKeys& value) { m_filterKeyHasBeenSet = true; m_filterKey = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The filter values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetFilterValues() const{ return m_filterValues; }
+
+    /**
+     * <p>The filter values.</p>
+     */
+    inline bool FilterValuesHasBeenSet() const { return m_filterValuesHasBeenSet; }
 
     /**
      * <p>The filter values.</p>

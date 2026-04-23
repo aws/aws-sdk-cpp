@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the resource to which to add tags.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource to which to add tags.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -85,6 +90,13 @@ namespace Model
      * and tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to add to the specified resource. A tag is a string-to-string map of
+     * key-value pairs. Tag keys can have a maximum character length of 128 characters,
+     * and tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to add to the specified resource. A tag is a string-to-string map of

@@ -58,6 +58,12 @@ namespace Model
      * <p>The self-service action identifier. For example,
      * <code>act-fs7abcd89wxyz</code>.</p>
      */
+    inline bool ServiceActionIdHasBeenSet() const { return m_serviceActionIdHasBeenSet; }
+
+    /**
+     * <p>The self-service action identifier. For example,
+     * <code>act-fs7abcd89wxyz</code>.</p>
+     */
     inline void SetServiceActionId(const Aws::String& value) { m_serviceActionIdHasBeenSet = true; m_serviceActionId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier. For example, <code>prod-abcdzk7xy33qa</code>.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * <code>pa-4abcdjnxjj6ne</code>.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact. For example,
+     * <code>pa-4abcdjnxjj6ne</code>.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact. For example,

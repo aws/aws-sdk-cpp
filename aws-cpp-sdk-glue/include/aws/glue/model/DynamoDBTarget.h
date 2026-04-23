@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the DynamoDB table to crawl.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The name of the DynamoDB table to crawl.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**

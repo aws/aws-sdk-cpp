@@ -16,8 +16,10 @@
 #pragma once
 #include <aws/mediapackage/MediaPackage_EXPORTS.h>
 #include <aws/mediapackage/model/DashEncryption.h>
+#include <aws/mediapackage/model/ManifestLayout.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackage/model/Profile.h>
+#include <aws/mediapackage/model/SegmentTemplateFormat.h>
 #include <aws/mediapackage/model/StreamSelection.h>
 #include <aws/mediapackage/model/__PeriodTriggersElement.h>
 #include <utility>
@@ -56,6 +58,9 @@ namespace Model
     inline const DashEncryption& GetEncryption() const{ return m_encryption; }
 
     
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
+
+    
     inline void SetEncryption(const DashEncryption& value) { m_encryptionHasBeenSet = true; m_encryption = value; }
 
     
@@ -69,9 +74,63 @@ namespace Model
 
 
     /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline const ManifestLayout& GetManifestLayout() const{ return m_manifestLayout; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline bool ManifestLayoutHasBeenSet() const { return m_manifestLayoutHasBeenSet; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(const ManifestLayout& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = value; }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline void SetManifestLayout(ManifestLayout&& value) { m_manifestLayoutHasBeenSet = true; m_manifestLayout = std::move(value); }
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashPackage& WithManifestLayout(const ManifestLayout& value) { SetManifestLayout(value); return *this;}
+
+    /**
+     * Determines the position of some tags in the Media Presentation Description
+     * (MPD).  When set to FULL, elements like SegmentTemplate and ContentProtection
+     * are included in each Representation.  When set to COMPACT, duplicate elements
+     * are combined and presented at the AdaptationSet level.
+     */
+    inline DashPackage& WithManifestLayout(ManifestLayout&& value) { SetManifestLayout(std::move(value)); return *this;}
+
+
+    /**
      * Time window (in seconds) contained in each manifest.
      */
     inline int GetManifestWindowSeconds() const{ return m_manifestWindowSeconds; }
+
+    /**
+     * Time window (in seconds) contained in each manifest.
+     */
+    inline bool ManifestWindowSecondsHasBeenSet() const { return m_manifestWindowSecondsHasBeenSet; }
 
     /**
      * Time window (in seconds) contained in each manifest.
@@ -94,6 +153,12 @@ namespace Model
      * Minimum duration (in seconds) that a player will buffer media before starting
      * the presentation.
      */
+    inline bool MinBufferTimeSecondsHasBeenSet() const { return m_minBufferTimeSecondsHasBeenSet; }
+
+    /**
+     * Minimum duration (in seconds) that a player will buffer media before starting
+     * the presentation.
+     */
     inline void SetMinBufferTimeSeconds(int value) { m_minBufferTimeSecondsHasBeenSet = true; m_minBufferTimeSeconds = value; }
 
     /**
@@ -108,6 +173,12 @@ namespace Model
      * Streaming over HTTP (DASH) Media Presentation Description (MPD).
      */
     inline int GetMinUpdatePeriodSeconds() const{ return m_minUpdatePeriodSeconds; }
+
+    /**
+     * Minimum duration (in seconds) between potential changes to the Dynamic Adaptive
+     * Streaming over HTTP (DASH) Media Presentation Description (MPD).
+     */
+    inline bool MinUpdatePeriodSecondsHasBeenSet() const { return m_minUpdatePeriodSecondsHasBeenSet; }
 
     /**
      * Minimum duration (in seconds) between potential changes to the Dynamic Adaptive
@@ -134,6 +205,19 @@ the
 
      */
     inline const Aws::Vector<__PeriodTriggersElement>& GetPeriodTriggers() const{ return m_periodTriggers; }
+
+    /**
+     * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
+     * over HTTP (DASH)
+Media Presentation Description (MPD) will be partitioned into
+     * multiple periods. If empty, the content will not
+be partitioned into more than
+     * one period. If the list contains "ADS", new periods will be created where
+the
+     * Channel source contains SCTE-35 ad markers.
+
+     */
+    inline bool PeriodTriggersHasBeenSet() const { return m_periodTriggersHasBeenSet; }
 
     /**
      * A list of triggers that controls when the outgoing Dynamic Adaptive Streaming
@@ -224,6 +308,12 @@ the
      * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
      * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
      */
+    inline bool ProfileHasBeenSet() const { return m_profileHasBeenSet; }
+
+    /**
+     * The Dynamic Adaptive Streaming over HTTP (DASH) profile type.  When set to
+     * "HBBTV_1_5", HbbTV 1.5 compliant output is enabled.
+     */
     inline void SetProfile(const Profile& value) { m_profileHasBeenSet = true; m_profile = value; }
 
     /**
@@ -259,6 +349,14 @@ rounded to the
      * nearest multiple of the source segment duration.
 
      */
+    inline bool SegmentDurationSecondsHasBeenSet() const { return m_segmentDurationSecondsHasBeenSet; }
+
+    /**
+     * Duration (in seconds) of each segment. Actual segments will be
+rounded to the
+     * nearest multiple of the source segment duration.
+
+     */
     inline void SetSegmentDurationSeconds(int value) { m_segmentDurationSecondsHasBeenSet = true; m_segmentDurationSeconds = value; }
 
     /**
@@ -270,8 +368,66 @@ rounded to the
     inline DashPackage& WithSegmentDurationSeconds(int value) { SetSegmentDurationSeconds(value); return *this;}
 
 
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline const SegmentTemplateFormat& GetSegmentTemplateFormat() const{ return m_segmentTemplateFormat; }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline bool SegmentTemplateFormatHasBeenSet() const { return m_segmentTemplateFormatHasBeenSet; }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(const SegmentTemplateFormat& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = value; }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline void SetSegmentTemplateFormat(SegmentTemplateFormat&& value) { m_segmentTemplateFormatHasBeenSet = true; m_segmentTemplateFormat = std::move(value); }
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(const SegmentTemplateFormat& value) { SetSegmentTemplateFormat(value); return *this;}
+
+    /**
+     * Determines the type of SegmentTimeline included in the Media Presentation
+     * Description (MPD).  When set to NUMBER_WITH_TIMELINE, a full timeline is
+     * presented in each SegmentTemplate, with $Number$ media URLs.  When set to
+     * TIME_WITH_TIMELINE, a full timeline is presented in each SegmentTemplate, with
+     * $Time$ media URLs.
+     */
+    inline DashPackage& WithSegmentTemplateFormat(SegmentTemplateFormat&& value) { SetSegmentTemplateFormat(std::move(value)); return *this;}
+
+
     
     inline const StreamSelection& GetStreamSelection() const{ return m_streamSelection; }
+
+    
+    inline bool StreamSelectionHasBeenSet() const { return m_streamSelectionHasBeenSet; }
 
     
     inline void SetStreamSelection(const StreamSelection& value) { m_streamSelectionHasBeenSet = true; m_streamSelection = value; }
@@ -294,6 +450,11 @@ rounded to the
     /**
      * Duration (in seconds) to delay live content before presentation.
      */
+    inline bool SuggestedPresentationDelaySecondsHasBeenSet() const { return m_suggestedPresentationDelaySecondsHasBeenSet; }
+
+    /**
+     * Duration (in seconds) to delay live content before presentation.
+     */
     inline void SetSuggestedPresentationDelaySeconds(int value) { m_suggestedPresentationDelaySecondsHasBeenSet = true; m_suggestedPresentationDelaySeconds = value; }
 
     /**
@@ -305,6 +466,9 @@ rounded to the
 
     DashEncryption m_encryption;
     bool m_encryptionHasBeenSet;
+
+    ManifestLayout m_manifestLayout;
+    bool m_manifestLayoutHasBeenSet;
 
     int m_manifestWindowSeconds;
     bool m_manifestWindowSecondsHasBeenSet;
@@ -323,6 +487,9 @@ rounded to the
 
     int m_segmentDurationSeconds;
     bool m_segmentDurationSecondsHasBeenSet;
+
+    SegmentTemplateFormat m_segmentTemplateFormat;
+    bool m_segmentTemplateFormatHasBeenSet;
 
     StreamSelection m_streamSelection;
     bool m_streamSelectionHasBeenSet;

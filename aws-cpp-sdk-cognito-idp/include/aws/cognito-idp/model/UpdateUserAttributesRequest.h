@@ -62,6 +62,13 @@ namespace Model
      * attributes, you must prepend the <code>custom:</code> prefix to the attribute
      * name.</p>
      */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
+
+    /**
+     * <p>An array of name-value pairs representing user attributes.</p> <p>For custom
+     * attributes, you must prepend the <code>custom:</code> prefix to the attribute
+     * name.</p>
+     */
     inline void SetUserAttributes(const Aws::Vector<AttributeType>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>The access token for the request to update user attributes.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p>The access token for the request to update user attributes.</p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>The access token for the request to update user attributes.</p>

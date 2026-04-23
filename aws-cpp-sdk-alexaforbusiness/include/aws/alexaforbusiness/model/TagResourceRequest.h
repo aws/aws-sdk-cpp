@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the resource to which to add metadata tags. Required. </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource to which to add metadata tags. Required. </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * Required. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be added to the specified resource. Do not provide system tags.
+     * Required. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be added to the specified resource. Do not provide system tags.

@@ -57,6 +57,11 @@ namespace Model
     /**
      * Required. The date and time of the configuration revision.
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * Required. The date and time of the configuration revision.
+     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * The description of the configuration revision.
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * The description of the configuration revision.
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * The description of the configuration revision.
@@ -115,6 +125,11 @@ namespace Model
      * Required. The revision number of the configuration.
      */
     inline int GetRevision() const{ return m_revision; }
+
+    /**
+     * Required. The revision number of the configuration.
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * Required. The revision number of the configuration.

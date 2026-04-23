@@ -36,7 +36,8 @@ Disk::Disk() :
     m_diskSizeInBytes(0),
     m_diskSizeInBytesHasBeenSet(false),
     m_diskAllocationTypeHasBeenSet(false),
-    m_diskAllocationResourceHasBeenSet(false)
+    m_diskAllocationResourceHasBeenSet(false),
+    m_diskAttributeListHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Disk::Disk(JsonView jsonValue) :
     m_diskSizeInBytes(0),
     m_diskSizeInBytesHasBeenSet(false),
     m_diskAllocationTypeHasBeenSet(false),
-    m_diskAllocationResourceHasBeenSet(false)
+    m_diskAllocationResourceHasBeenSet(false),
+    m_diskAttributeListHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,16 @@ Disk& Disk::operator =(JsonView jsonValue)
     m_diskAllocationResourceHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DiskAttributeList"))
+  {
+    Array<JsonView> diskAttributeListJsonList = jsonValue.GetArray("DiskAttributeList");
+    for(unsigned diskAttributeListIndex = 0; diskAttributeListIndex < diskAttributeListJsonList.GetLength(); ++diskAttributeListIndex)
+    {
+      m_diskAttributeList.push_back(diskAttributeListJsonList[diskAttributeListIndex].AsString());
+    }
+    m_diskAttributeListHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +162,17 @@ JsonValue Disk::Jsonize() const
   if(m_diskAllocationResourceHasBeenSet)
   {
    payload.WithString("DiskAllocationResource", m_diskAllocationResource);
+
+  }
+
+  if(m_diskAttributeListHasBeenSet)
+  {
+   Array<JsonValue> diskAttributeListJsonList(m_diskAttributeList.size());
+   for(unsigned diskAttributeListIndex = 0; diskAttributeListIndex < diskAttributeListJsonList.GetLength(); ++diskAttributeListIndex)
+   {
+     diskAttributeListJsonList[diskAttributeListIndex].AsString(m_diskAttributeList[diskAttributeListIndex]);
+   }
+   payload.WithArray("DiskAttributeList", std::move(diskAttributeListJsonList));
 
   }
 

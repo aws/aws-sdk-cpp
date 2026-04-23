@@ -33,7 +33,7 @@ DeleteFunctionRequest::DeleteFunctionRequest() :
 
 Aws::String DeleteFunctionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteFunctionRequest::AddQueryStringParameters(URI& uri) const

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier of the directory whose schema extension will be canceled.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory whose schema extension will be canceled.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier of the schema extension that will be canceled.</p>
      */
     inline const Aws::String& GetSchemaExtensionId() const{ return m_schemaExtensionId; }
+
+    /**
+     * <p>The identifier of the schema extension that will be canceled.</p>
+     */
+    inline bool SchemaExtensionIdHasBeenSet() const { return m_schemaExtensionIdHasBeenSet; }
 
     /**
      * <p>The identifier of the schema extension that will be canceled.</p>

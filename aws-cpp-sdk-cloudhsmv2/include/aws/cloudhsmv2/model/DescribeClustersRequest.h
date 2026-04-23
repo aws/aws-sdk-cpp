@@ -66,6 +66,17 @@ namespace Model
      * <code>states</code> filter to return only clusters that match the specified
      * state.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters to limit the items returned in the response.</p> <p>Use
+     * the <code>clusterIds</code> filter to return only the specified clusters.
+     * Specify clusters by their cluster identifier (ID).</p> <p>Use the
+     * <code>vpcIds</code> filter to return only the clusters in the specified virtual
+     * private clouds (VPCs). Specify VPCs by their VPC identifier (ID).</p> <p>Use the
+     * <code>states</code> filter to return only clusters that match the specified
+     * state.</p>
+     */
     inline void SetFilters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -178,6 +189,12 @@ namespace Model
      * <p>The <code>NextToken</code> value that you received in the previous response.
      * Use this value to get more clusters.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>NextToken</code> value that you received in the previous response.
+     * Use this value to get more clusters.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -217,6 +234,13 @@ namespace Model
      * <code>NextToken</code> value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of clusters to return in the response. When there are more
+     * clusters than the number you specify, the response contains a
+     * <code>NextToken</code> value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of clusters to return in the response. When there are more

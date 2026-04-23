@@ -69,6 +69,16 @@ namespace Model
      * The build project stores build output in Amazon Simple Storage Service (Amazon
      * S3).</p> </li> </ul>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of build output artifact. Valid values include:</p> <ul> <li> <p>
+     * <code>CODEPIPELINE</code>: The build project has build output generated through
+     * AWS CodePipeline.</p> </li> <li> <p> <code>NO_ARTIFACTS</code>: The build
+     * project does not produce any build output.</p> </li> <li> <p> <code>S3</code>:
+     * The build project stores build output in Amazon Simple Storage Service (Amazon
+     * S3).</p> </li> </ul>
+     */
     inline void SetType(const ArtifactsType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -113,6 +123,18 @@ namespace Model
      * bucket.</p> </li> </ul>
      */
     inline const Aws::String& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>Information about the build output artifact location:</p> <ul> <li> <p>If
+     * <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
+     * this value if specified. This is because AWS CodePipeline manages its build
+     * output locations instead of AWS CodeBuild.</p> </li> <li> <p>If
+     * <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if
+     * specified, because no build output is produced.</p> </li> <li> <p>If
+     * <code>type</code> is set to <code>S3</code>, this is the name of the output
+     * bucket.</p> </li> </ul>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>Information about the build output artifact location:</p> <ul> <li> <p>If
@@ -203,6 +225,23 @@ namespace Model
      * bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that
+     * AWS CodeBuild uses to name and store the output artifact:</p> <ul> <li> <p>If
+     * <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
+     * this value if specified. This is because AWS CodePipeline manages its build
+     * output names instead of AWS CodeBuild.</p> </li> <li> <p>If <code>type</code> is
+     * set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     * build output is produced.</p> </li> <li> <p>If <code>type</code> is set to
+     * <code>S3</code>, this is the path to the output artifact. If <code>path</code>
+     * is not specified, <code>path</code> is not used.</p> </li> </ul> <p>For example,
+     * if <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>NONE</code>, and <code>name</code> is
+     * set to <code>MyArtifact.zip</code>, the output artifact is stored in the output
+     * bucket at <code>MyArtifacts/MyArtifact.zip</code>.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>Along with <code>namespaceType</code> and <code>name</code>, the pattern that
@@ -345,6 +384,26 @@ namespace Model
      * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
      * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
      */
+    inline bool NamespaceTypeHasBeenSet() const { return m_namespaceTypeHasBeenSet; }
+
+    /**
+     * <p>Along with <code>path</code> and <code>name</code>, the pattern that AWS
+     * CodeBuild uses to determine the name and location to store the output
+     * artifact:</p> <ul> <li> <p>If <code>type</code> is set to
+     * <code>CODEPIPELINE</code>, AWS CodePipeline ignores this value if specified.
+     * This is because AWS CodePipeline manages its build output names instead of AWS
+     * CodeBuild.</p> </li> <li> <p>If <code>type</code> is set to
+     * <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no build
+     * output is produced.</p> </li> <li> <p>If <code>type</code> is set to
+     * <code>S3</code>, valid values include:</p> <ul> <li> <p> <code>BUILD_ID</code>:
+     * Include the build ID in the location of the build output artifact.</p> </li>
+     * <li> <p> <code>NONE</code>: Do not include the build ID. This is the default if
+     * <code>namespaceType</code> is not specified.</p> </li> </ul> </li> </ul> <p>For
+     * example, if <code>path</code> is set to <code>MyArtifacts</code>,
+     * <code>namespaceType</code> is set to <code>BUILD_ID</code>, and
+     * <code>name</code> is set to <code>MyArtifact.zip</code>, the output artifact is
+     * stored in <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>.</p>
+     */
     inline void SetNamespaceType(const ArtifactNamespace& value) { m_namespaceTypeHasBeenSet = true; m_namespaceType = value; }
 
     /**
@@ -432,6 +491,31 @@ namespace Model
      * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
+     * AWS CodeBuild uses to name and store the output artifact:</p> <ul> <li> <p>If
+     * <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
+     * this value if specified. This is because AWS CodePipeline manages its build
+     * output names instead of AWS CodeBuild.</p> </li> <li> <p>If <code>type</code> is
+     * set to <code>NO_ARTIFACTS</code>, this value is ignored if specified, because no
+     * build output is produced.</p> </li> <li> <p>If <code>type</code> is set to
+     * <code>S3</code>, this is the name of the output artifact object. If you set the
+     * name to be a forward slash ("/"), the artifact is stored in the root of the
+     * output bucket.</p> </li> </ul> <p>For example:</p> <ul> <li> <p> If
+     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
+     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * <code>MyArtifact.zip</code>, then the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i>/MyArtifact.zip</code>. </p> </li> <li> <p> If
+     * <code>path</code> is empty, <code>namespaceType</code> is set to
+     * <code>NONE</code>, and <code>name</code> is set to "<code>/</code>", the output
+     * artifact is stored in the root of the output bucket. </p> </li> <li> <p> If
+     * <code>path</code> is set to <code>MyArtifacts</code>, <code>namespaceType</code>
+     * is set to <code>BUILD_ID</code>, and <code>name</code> is set to
+     * "<code>/</code>", the output artifact is stored in
+     * <code>MyArtifacts/<i>build-ID</i> </code>. </p> </li> </ul>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Along with <code>path</code> and <code>namespaceType</code>, the pattern that
@@ -614,6 +698,22 @@ namespace Model
      * output bucket a ZIP file that contains the build output.</p> </li> </ul> </li>
      * </ul>
      */
+    inline bool PackagingHasBeenSet() const { return m_packagingHasBeenSet; }
+
+    /**
+     * <p>The type of build output artifact to create:</p> <ul> <li> <p>If
+     * <code>type</code> is set to <code>CODEPIPELINE</code>, AWS CodePipeline ignores
+     * this value if specified. This is because AWS CodePipeline manages its build
+     * output artifacts instead of AWS CodeBuild.</p> </li> <li> <p>If
+     * <code>type</code> is set to <code>NO_ARTIFACTS</code>, this value is ignored if
+     * specified, because no build output is produced.</p> </li> <li> <p>If
+     * <code>type</code> is set to <code>S3</code>, valid values include:</p> <ul> <li>
+     * <p> <code>NONE</code>: AWS CodeBuild creates in the output bucket a folder that
+     * contains the build output. This is the default if <code>packaging</code> is not
+     * specified.</p> </li> <li> <p> <code>ZIP</code>: AWS CodeBuild creates in the
+     * output bucket a ZIP file that contains the build output.</p> </li> </ul> </li>
+     * </ul>
+     */
     inline void SetPackaging(const ArtifactPackaging& value) { m_packagingHasBeenSet = true; m_packaging = value; }
 
     /**
@@ -679,6 +779,14 @@ namespace Model
      * time and uses the Shell Command Language. For example, you can append a date and
      * time to your artifact name so that it is always unique. </p>
      */
+    inline bool OverrideArtifactNameHasBeenSet() const { return m_overrideArtifactNameHasBeenSet; }
+
+    /**
+     * <p> If this flag is set, a name specified in the build spec file overrides the
+     * artifact name. The name specified in a build spec file is calculated at build
+     * time and uses the Shell Command Language. For example, you can append a date and
+     * time to your artifact name so that it is always unique. </p>
+     */
     inline void SetOverrideArtifactName(bool value) { m_overrideArtifactNameHasBeenSet = true; m_overrideArtifactName = value; }
 
     /**
@@ -704,6 +812,14 @@ namespace Model
      * S3). If this is set with another artifacts type, an invalidInputException is
      * thrown. </p>
      */
+    inline bool EncryptionDisabledHasBeenSet() const { return m_encryptionDisabledHasBeenSet; }
+
+    /**
+     * <p> Set to true if you do not want your output artifacts encrypted. This option
+     * is valid only if your artifacts type is Amazon Simple Storage Service (Amazon
+     * S3). If this is set with another artifacts type, an invalidInputException is
+     * thrown. </p>
+     */
     inline void SetEncryptionDisabled(bool value) { m_encryptionDisabledHasBeenSet = true; m_encryptionDisabled = value; }
 
     /**
@@ -719,6 +835,11 @@ namespace Model
      * <p> An identifier for this artifact definition. </p>
      */
     inline const Aws::String& GetArtifactIdentifier() const{ return m_artifactIdentifier; }
+
+    /**
+     * <p> An identifier for this artifact definition. </p>
+     */
+    inline bool ArtifactIdentifierHasBeenSet() const { return m_artifactIdentifierHasBeenSet; }
 
     /**
      * <p> An identifier for this artifact definition. </p>

@@ -65,6 +65,13 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID
      * string requires "o-" followed by from 10 to 32 lower-case letters or digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of an organization.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for an organization ID
+     * string requires "o-" followed by from 10 to 32 lower-case letters or digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -106,7 +113,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -115,7 +122,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
+     * information about ARNs in Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -124,7 +140,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -133,7 +149,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -142,7 +158,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -151,7 +167,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -160,7 +176,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an organization.</p> <p>For more
      * information about ARNs in Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -172,7 +188,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -183,7 +199,18 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * All Features in Your Organization</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool FeatureSetHasBeenSet() const { return m_featureSetHasBeenSet; }
+
+    /**
+     * <p>Specifies the functionality that currently is available to the organization.
+     * If set to "ALL", then all features are enabled and policies can be applied to
+     * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
+     * consolidated billing functionality is available. For more information, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -194,7 +221,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -205,7 +232,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -216,7 +243,7 @@ namespace Model
      * If set to "ALL", then all features are enabled and policies can be applied to
      * accounts in the organization. If set to "CONSOLIDATED_BILLING", then only
      * consolidated billing functionality is available. For more information, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/orgs_manage_org_support-all-features.html">Enabling
      * All Features in Your Organization</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -227,7 +254,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -237,7 +264,17 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * Formats Supported by Organizations</a> in the <i>AWS Organizations User
+     * Guide</i>.</p>
+     */
+    inline bool MasterAccountArnHasBeenSet() const { return m_masterAccountArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the account that is designated as the
+     * master account for the organization.</p> <p>For more information about ARNs in
+     * Organizations, see <a
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -247,7 +284,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -257,7 +294,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -267,7 +304,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -277,7 +314,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -287,7 +324,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that is designated as the
      * master account for the organization.</p> <p>For more information about ARNs in
      * Organizations, see <a
-     * href="http://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
+     * href="https://docs.aws.amazon.com/organizations/latest/userguide/orgs_permissions.html#orgs-permissions-arns">ARN
      * Formats Supported by Organizations</a> in the <i>AWS Organizations User
      * Guide</i>.</p>
      */
@@ -300,6 +337,13 @@ namespace Model
      * account ID string requires exactly 12 digits.</p>
      */
     inline const Aws::String& GetMasterAccountId() const{ return m_masterAccountId; }
+
+    /**
+     * <p>The unique identifier (ID) of the master account of an organization.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an
+     * account ID string requires exactly 12 digits.</p>
+     */
+    inline bool MasterAccountIdHasBeenSet() const { return m_masterAccountIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the master account of an organization.</p>
@@ -354,6 +398,12 @@ namespace Model
      * <p>The email address that is associated with the AWS account that is designated
      * as the master account for the organization.</p>
      */
+    inline bool MasterAccountEmailHasBeenSet() const { return m_masterAccountEmailHasBeenSet; }
+
+    /**
+     * <p>The email address that is associated with the AWS account that is designated
+     * as the master account for the organization.</p>
+     */
     inline void SetMasterAccountEmail(const Aws::String& value) { m_masterAccountEmailHasBeenSet = true; m_masterAccountEmail = value; }
 
     /**
@@ -396,6 +446,16 @@ namespace Model
      * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
      */
     inline const Aws::Vector<PolicyTypeSummary>& GetAvailablePolicyTypes() const{ return m_availablePolicyTypes; }
+
+    /**
+     * <p>A list of policy types that are enabled for this organization. For example,
+     * if your organization has all features enabled, then service control policies
+     * (SCPs) are included in the list.</p> <note> <p>Even if a policy type is shown as
+     * available in the organization, you can separately enable and disable them at the
+     * root level by using <a>EnablePolicyType</a> and <a>DisablePolicyType</a>. Use
+     * <a>ListRoots</a> to see the status of a policy type in that root.</p> </note>
+     */
+    inline bool AvailablePolicyTypesHasBeenSet() const { return m_availablePolicyTypesHasBeenSet; }
 
     /**
      * <p>A list of policy types that are enabled for this organization. For example,

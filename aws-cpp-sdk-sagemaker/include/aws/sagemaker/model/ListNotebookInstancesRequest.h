@@ -52,9 +52,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
@@ -62,9 +62,19 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
+     * the response includes a <code>NextToken</code>. You can use this token in your
+     * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
@@ -72,9 +82,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
@@ -82,9 +92,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
@@ -92,9 +102,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline ListNotebookInstancesRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
@@ -102,9 +112,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline ListNotebookInstancesRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
@@ -112,9 +122,9 @@ namespace Model
      * <p> If the previous call to the <code>ListNotebookInstances</code> is truncated,
      * the response includes a <code>NextToken</code>. You can use this token in your
      * subsequent <code>ListNotebookInstances</code> request to fetch the next set of
-     * notebook instances. </p> <note> <p> You might specify a filter or a sort order
-     * in your request. When response is truncated, you must use the same values for
-     * the filer and sort order in the next request. </p> </note>
+     * notebook instances. </p> <note> <p>You might specify a filter or a sort order in
+     * your request. When response is truncated, you must use the same values for the
+     * filer and sort order in the next request. </p> </note>
      */
     inline ListNotebookInstancesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -123,6 +133,11 @@ namespace Model
      * <p>The maximum number of notebook instances to return.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of notebook instances to return.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of notebook instances to return.</p>
@@ -139,6 +154,11 @@ namespace Model
      * <p>The field to sort results by. The default is <code>Name</code>.</p>
      */
     inline const NotebookInstanceSortKey& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>The field to sort results by. The default is <code>Name</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>The field to sort results by. The default is <code>Name</code>.</p>
@@ -169,6 +189,11 @@ namespace Model
     /**
      * <p>The sort order for results. </p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>The sort order for results. </p>
+     */
     inline void SetSortOrder(const NotebookInstanceSortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -192,6 +217,12 @@ namespace Model
      * instances whose name contains the specified string.</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>A string in the notebook instances' name. This filter returns only notebook
+     * instances whose name contains the specified string.</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>A string in the notebook instances' name. This filter returns only notebook
@@ -240,6 +271,12 @@ namespace Model
      * <p>A filter that returns only notebook instances that were created before the
      * specified time (timestamp). </p>
      */
+    inline bool CreationTimeBeforeHasBeenSet() const { return m_creationTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only notebook instances that were created before the
+     * specified time (timestamp). </p>
+     */
     inline void SetCreationTimeBefore(const Aws::Utils::DateTime& value) { m_creationTimeBeforeHasBeenSet = true; m_creationTimeBefore = value; }
 
     /**
@@ -266,6 +303,12 @@ namespace Model
      * specified time (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTimeAfter() const{ return m_creationTimeAfter; }
+
+    /**
+     * <p>A filter that returns only notebook instances that were created after the
+     * specified time (timestamp).</p>
+     */
+    inline bool CreationTimeAfterHasBeenSet() const { return m_creationTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only notebook instances that were created after the
@@ -302,6 +345,12 @@ namespace Model
      * <p>A filter that returns only notebook instances that were modified before the
      * specified time (timestamp).</p>
      */
+    inline bool LastModifiedTimeBeforeHasBeenSet() const { return m_lastModifiedTimeBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only notebook instances that were modified before the
+     * specified time (timestamp).</p>
+     */
     inline void SetLastModifiedTimeBefore(const Aws::Utils::DateTime& value) { m_lastModifiedTimeBeforeHasBeenSet = true; m_lastModifiedTimeBefore = value; }
 
     /**
@@ -328,6 +377,12 @@ namespace Model
      * specified time (timestamp).</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTimeAfter() const{ return m_lastModifiedTimeAfter; }
+
+    /**
+     * <p>A filter that returns only notebook instances that were modified after the
+     * specified time (timestamp).</p>
+     */
+    inline bool LastModifiedTimeAfterHasBeenSet() const { return m_lastModifiedTimeAfterHasBeenSet; }
 
     /**
      * <p>A filter that returns only notebook instances that were modified after the
@@ -362,6 +417,11 @@ namespace Model
     /**
      * <p>A filter that returns only notebook instances with the specified status.</p>
      */
+    inline bool StatusEqualsHasBeenSet() const { return m_statusEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only notebook instances with the specified status.</p>
+     */
     inline void SetStatusEquals(const NotebookInstanceStatus& value) { m_statusEqualsHasBeenSet = true; m_statusEquals = value; }
 
     /**
@@ -387,6 +447,14 @@ namespace Model
      * the specified string.</p>
      */
     inline const Aws::String& GetNotebookInstanceLifecycleConfigNameContains() const{ return m_notebookInstanceLifecycleConfigNameContains; }
+
+    /**
+     * <p>A string in the name of a notebook instances lifecycle configuration
+     * associated with this notebook instance. This filter returns only notebook
+     * instances associated with a lifecycle configuration with a name that contains
+     * the specified string.</p>
+     */
+    inline bool NotebookInstanceLifecycleConfigNameContainsHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameContainsHasBeenSet; }
 
     /**
      * <p>A string in the name of a notebook instances lifecycle configuration
@@ -436,6 +504,112 @@ namespace Model
      */
     inline ListNotebookInstancesRequest& WithNotebookInstanceLifecycleConfigNameContains(const char* value) { SetNotebookInstanceLifecycleConfigNameContains(value); return *this;}
 
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline const Aws::String& GetDefaultCodeRepositoryContains() const{ return m_defaultCodeRepositoryContains; }
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline bool DefaultCodeRepositoryContainsHasBeenSet() const { return m_defaultCodeRepositoryContainsHasBeenSet; }
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(const Aws::String& value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains = value; }
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(Aws::String&& value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains = std::move(value); }
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline void SetDefaultCodeRepositoryContains(const char* value) { m_defaultCodeRepositoryContainsHasBeenSet = true; m_defaultCodeRepositoryContains.assign(value); }
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(const Aws::String& value) { SetDefaultCodeRepositoryContains(value); return *this;}
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(Aws::String&& value) { SetDefaultCodeRepositoryContains(std::move(value)); return *this;}
+
+    /**
+     * <p>A string in the name or URL of a Git repository associated with this notebook
+     * instance. This filter returns only notebook instances associated with a git
+     * repository with a name that contains the specified string.</p>
+     */
+    inline ListNotebookInstancesRequest& WithDefaultCodeRepositoryContains(const char* value) { SetDefaultCodeRepositoryContains(value); return *this;}
+
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline const Aws::String& GetAdditionalCodeRepositoryEquals() const{ return m_additionalCodeRepositoryEquals; }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline bool AdditionalCodeRepositoryEqualsHasBeenSet() const { return m_additionalCodeRepositoryEqualsHasBeenSet; }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(const Aws::String& value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals = value; }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(Aws::String&& value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals = std::move(value); }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline void SetAdditionalCodeRepositoryEquals(const char* value) { m_additionalCodeRepositoryEqualsHasBeenSet = true; m_additionalCodeRepositoryEquals.assign(value); }
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(const Aws::String& value) { SetAdditionalCodeRepositoryEquals(value); return *this;}
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(Aws::String&& value) { SetAdditionalCodeRepositoryEquals(std::move(value)); return *this;}
+
+    /**
+     * <p>A filter that returns only notebook instances with associated with the
+     * specified git repository.</p>
+     */
+    inline ListNotebookInstancesRequest& WithAdditionalCodeRepositoryEquals(const char* value) { SetAdditionalCodeRepositoryEquals(value); return *this;}
+
   private:
 
     Aws::String m_nextToken;
@@ -470,6 +644,12 @@ namespace Model
 
     Aws::String m_notebookInstanceLifecycleConfigNameContains;
     bool m_notebookInstanceLifecycleConfigNameContainsHasBeenSet;
+
+    Aws::String m_defaultCodeRepositoryContains;
+    bool m_defaultCodeRepositoryContainsHasBeenSet;
+
+    Aws::String m_additionalCodeRepositoryEquals;
+    bool m_additionalCodeRepositoryEqualsHasBeenSet;
   };
 
 } // namespace Model

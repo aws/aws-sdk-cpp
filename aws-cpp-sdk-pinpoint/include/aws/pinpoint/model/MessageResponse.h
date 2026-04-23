@@ -58,6 +58,11 @@ namespace Model
     /**
      * Application id of the message.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * Application id of the message.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * the key and the result as the value.
      */
     inline const Aws::Map<Aws::String, EndpointMessageResult>& GetEndpointResult() const{ return m_endpointResult; }
+
+    /**
+     * A map containing a multi part response for each address, with the endpointId as
+     * the key and the result as the value.
+     */
+    inline bool EndpointResultHasBeenSet() const { return m_endpointResultHasBeenSet; }
 
     /**
      * A map containing a multi part response for each address, with the endpointId as
@@ -161,6 +172,11 @@ namespace Model
     /**
      * Original request Id for which this message was delivered.
      */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    /**
+     * Original request Id for which this message was delivered.
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
@@ -194,6 +210,12 @@ namespace Model
      * key(Email address, phone number or push token) and the result as the value.
      */
     inline const Aws::Map<Aws::String, MessageResult>& GetResult() const{ return m_result; }
+
+    /**
+     * A map containing a multi part response for each address, with the address as the
+     * key(Email address, phone number or push token) and the result as the value.
+     */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
      * A map containing a multi part response for each address, with the address as the

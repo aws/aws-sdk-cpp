@@ -17,6 +17,7 @@
 #include <aws/iotanalytics/IoTAnalytics_EXPORTS.h>
 #include <aws/iotanalytics/IoTAnalyticsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/DateTime.h>
 #include <utility>
 
 namespace Aws
@@ -52,6 +53,11 @@ namespace Model
      * <p>The name of the data set whose contents information you want to list.</p>
      */
     inline const Aws::String& GetDatasetName() const{ return m_datasetName; }
+
+    /**
+     * <p>The name of the data set whose contents information you want to list.</p>
+     */
+    inline bool DatasetNameHasBeenSet() const { return m_datasetNameHasBeenSet; }
 
     /**
      * <p>The name of the data set whose contents information you want to list.</p>
@@ -92,6 +98,11 @@ namespace Model
     /**
      * <p>The token for the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -128,12 +139,103 @@ namespace Model
     /**
      * <p>The maximum number of results to return in this request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in this request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
      * <p>The maximum number of results to return in this request.</p>
      */
     inline ListDatasetContentsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
+
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledOnOrAfter() const{ return m_scheduledOnOrAfter; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline bool ScheduledOnOrAfterHasBeenSet() const { return m_scheduledOnOrAfterHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline void SetScheduledOnOrAfter(const Aws::Utils::DateTime& value) { m_scheduledOnOrAfterHasBeenSet = true; m_scheduledOnOrAfter = value; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline void SetScheduledOnOrAfter(Aws::Utils::DateTime&& value) { m_scheduledOnOrAfterHasBeenSet = true; m_scheduledOnOrAfter = std::move(value); }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline ListDatasetContentsRequest& WithScheduledOnOrAfter(const Aws::Utils::DateTime& value) { SetScheduledOnOrAfter(value); return *this;}
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled on or after the given time. See the field
+     * <code>triggers.schedule</code> in the CreateDataset request. (timestamp)</p>
+     */
+    inline ListDatasetContentsRequest& WithScheduledOnOrAfter(Aws::Utils::DateTime&& value) { SetScheduledOnOrAfter(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline const Aws::Utils::DateTime& GetScheduledBefore() const{ return m_scheduledBefore; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline bool ScheduledBeforeHasBeenSet() const { return m_scheduledBeforeHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline void SetScheduledBefore(const Aws::Utils::DateTime& value) { m_scheduledBeforeHasBeenSet = true; m_scheduledBefore = value; }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline void SetScheduledBefore(Aws::Utils::DateTime&& value) { m_scheduledBeforeHasBeenSet = true; m_scheduledBefore = std::move(value); }
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline ListDatasetContentsRequest& WithScheduledBefore(const Aws::Utils::DateTime& value) { SetScheduledBefore(value); return *this;}
+
+    /**
+     * <p>A filter to limit results to those data set contents whose creation is
+     * scheduled before the given time. See the field <code>triggers.schedule</code> in
+     * the CreateDataset request. (timestamp)</p>
+     */
+    inline ListDatasetContentsRequest& WithScheduledBefore(Aws::Utils::DateTime&& value) { SetScheduledBefore(std::move(value)); return *this;}
 
   private:
 
@@ -145,6 +247,12 @@ namespace Model
 
     int m_maxResults;
     bool m_maxResultsHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledOnOrAfter;
+    bool m_scheduledOnOrAfterHasBeenSet;
+
+    Aws::Utils::DateTime m_scheduledBefore;
+    bool m_scheduledBeforeHasBeenSet;
   };
 
 } // namespace Model

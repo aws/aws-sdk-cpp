@@ -88,19 +88,29 @@ namespace Model
     inline UploadPartCopyResult& WithCopySourceVersionId(const char* value) { SetCopySourceVersionId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const CopyPartResult& GetCopyPartResult() const{ return m_copyPartResult; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopyPartResult(const CopyPartResult& value) { m_copyPartResult = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCopyPartResult(CopyPartResult&& value) { m_copyPartResult = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyResult& WithCopyPartResult(const CopyPartResult& value) { SetCopyPartResult(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline UploadPartCopyResult& WithCopyPartResult(CopyPartResult&& value) { SetCopyPartResult(std::move(value)); return *this;}
 
 

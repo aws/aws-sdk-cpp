@@ -24,6 +24,7 @@
 #include <aws/monitoring/model/StandardUnit.h>
 #include <aws/monitoring/model/ComparisonOperator.h>
 #include <aws/monitoring/model/Dimension.h>
+#include <aws/monitoring/model/MetricDataQuery.h>
 #include <utility>
 
 namespace Aws
@@ -64,6 +65,11 @@ namespace Model
     /**
      * <p>The name of the alarm.</p>
      */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The name of the alarm.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
      */
     inline const Aws::String& GetAlarmArn() const{ return m_alarmArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the alarm.</p>
+     */
+    inline bool AlarmArnHasBeenSet() const { return m_alarmArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the alarm.</p>
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The description of the alarm.</p>
      */
+    inline bool AlarmDescriptionHasBeenSet() const { return m_alarmDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the alarm.</p>
+     */
     inline void SetAlarmDescription(const Aws::String& value) { m_alarmDescriptionHasBeenSet = true; m_alarmDescription = value; }
 
     /**
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The time stamp of the last update to the alarm configuration.</p>
      */
+    inline bool AlarmConfigurationUpdatedTimestampHasBeenSet() const { return m_alarmConfigurationUpdatedTimestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp of the last update to the alarm configuration.</p>
+     */
     inline void SetAlarmConfigurationUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_alarmConfigurationUpdatedTimestampHasBeenSet = true; m_alarmConfigurationUpdatedTimestamp = value; }
 
     /**
@@ -200,6 +221,12 @@ namespace Model
      * <p>Indicates whether actions should be executed during any changes to the alarm
      * state.</p>
      */
+    inline bool ActionsEnabledHasBeenSet() const { return m_actionsEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether actions should be executed during any changes to the alarm
+     * state.</p>
+     */
     inline void SetActionsEnabled(bool value) { m_actionsEnabledHasBeenSet = true; m_actionsEnabled = value; }
 
     /**
@@ -215,6 +242,13 @@ namespace Model
      * (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetOKActions() const{ return m_oKActions; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to the <code>OK</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
+     */
+    inline bool OKActionsHasBeenSet() const { return m_oKActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the <code>OK</code>
@@ -278,6 +312,13 @@ namespace Model
      * state from any other state. Each action is specified as an Amazon Resource Name
      * (ARN).</p>
      */
+    inline bool AlarmActionsHasBeenSet() const { return m_alarmActionsHasBeenSet; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to the <code>ALARM</code>
+     * state from any other state. Each action is specified as an Amazon Resource Name
+     * (ARN).</p>
+     */
     inline void SetAlarmActions(const Aws::Vector<Aws::String>& value) { m_alarmActionsHasBeenSet = true; m_alarmActions = value; }
 
     /**
@@ -329,6 +370,13 @@ namespace Model
      * specified as an Amazon Resource Name (ARN).</p>
      */
     inline const Aws::Vector<Aws::String>& GetInsufficientDataActions() const{ return m_insufficientDataActions; }
+
+    /**
+     * <p>The actions to execute when this alarm transitions to the
+     * <code>INSUFFICIENT_DATA</code> state from any other state. Each action is
+     * specified as an Amazon Resource Name (ARN).</p>
+     */
+    inline bool InsufficientDataActionsHasBeenSet() const { return m_insufficientDataActionsHasBeenSet; }
 
     /**
      * <p>The actions to execute when this alarm transitions to the
@@ -388,6 +436,11 @@ namespace Model
     /**
      * <p>The state value for the alarm.</p>
      */
+    inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
+
+    /**
+     * <p>The state value for the alarm.</p>
+     */
     inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
 
     /**
@@ -410,6 +463,11 @@ namespace Model
      * <p>An explanation for the alarm state, in text format.</p>
      */
     inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+
+    /**
+     * <p>An explanation for the alarm state, in text format.</p>
+     */
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
 
     /**
      * <p>An explanation for the alarm state, in text format.</p>
@@ -450,6 +508,11 @@ namespace Model
     /**
      * <p>An explanation for the alarm state, in JSON format.</p>
      */
+    inline bool StateReasonDataHasBeenSet() const { return m_stateReasonDataHasBeenSet; }
+
+    /**
+     * <p>An explanation for the alarm state, in JSON format.</p>
+     */
     inline void SetStateReasonData(const Aws::String& value) { m_stateReasonDataHasBeenSet = true; m_stateReasonData = value; }
 
     /**
@@ -486,6 +549,11 @@ namespace Model
     /**
      * <p>The time stamp of the last update to the alarm state.</p>
      */
+    inline bool StateUpdatedTimestampHasBeenSet() const { return m_stateUpdatedTimestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp of the last update to the alarm state.</p>
+     */
     inline void SetStateUpdatedTimestamp(const Aws::Utils::DateTime& value) { m_stateUpdatedTimestampHasBeenSet = true; m_stateUpdatedTimestamp = value; }
 
     /**
@@ -508,6 +576,11 @@ namespace Model
      * <p>The name of the metric associated with the alarm.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>The name of the metric associated with the alarm.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>The name of the metric associated with the alarm.</p>
@@ -544,6 +617,11 @@ namespace Model
      * <p>The namespace of the metric associated with the alarm.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace of the metric associated with the alarm.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace of the metric associated with the alarm.</p>
@@ -586,6 +664,12 @@ namespace Model
      * <p>The statistic for the metric associated with the alarm, other than
      * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
      */
+    inline bool StatisticHasBeenSet() const { return m_statisticHasBeenSet; }
+
+    /**
+     * <p>The statistic for the metric associated with the alarm, other than
+     * percentile. For percentile statistics, use <code>ExtendedStatistic</code>.</p>
+     */
     inline void SetStatistic(const Statistic& value) { m_statisticHasBeenSet = true; m_statistic = value; }
 
     /**
@@ -612,6 +696,12 @@ namespace Model
      * value between p0.0 and p100.</p>
      */
     inline const Aws::String& GetExtendedStatistic() const{ return m_extendedStatistic; }
+
+    /**
+     * <p>The percentile statistic for the metric associated with the alarm. Specify a
+     * value between p0.0 and p100.</p>
+     */
+    inline bool ExtendedStatisticHasBeenSet() const { return m_extendedStatisticHasBeenSet; }
 
     /**
      * <p>The percentile statistic for the metric associated with the alarm. Specify a
@@ -658,6 +748,11 @@ namespace Model
     /**
      * <p>The dimensions for the metric associated with the alarm.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>The dimensions for the metric associated with the alarm.</p>
+     */
     inline void SetDimensions(const Aws::Vector<Dimension>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -694,6 +789,11 @@ namespace Model
     /**
      * <p>The period, in seconds, over which the statistic is applied.</p>
      */
+    inline bool PeriodHasBeenSet() const { return m_periodHasBeenSet; }
+
+    /**
+     * <p>The period, in seconds, over which the statistic is applied.</p>
+     */
     inline void SetPeriod(int value) { m_periodHasBeenSet = true; m_period = value; }
 
     /**
@@ -706,6 +806,11 @@ namespace Model
      * <p>The unit of the metric associated with the alarm.</p>
      */
     inline const StandardUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit of the metric associated with the alarm.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit of the metric associated with the alarm.</p>
@@ -738,6 +843,12 @@ namespace Model
      * <p>The number of periods over which data is compared to the specified
      * threshold.</p>
      */
+    inline bool EvaluationPeriodsHasBeenSet() const { return m_evaluationPeriodsHasBeenSet; }
+
+    /**
+     * <p>The number of periods over which data is compared to the specified
+     * threshold.</p>
+     */
     inline void SetEvaluationPeriods(int value) { m_evaluationPeriodsHasBeenSet = true; m_evaluationPeriods = value; }
 
     /**
@@ -751,6 +862,11 @@ namespace Model
      * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
      */
     inline int GetDatapointsToAlarm() const{ return m_datapointsToAlarm; }
+
+    /**
+     * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
+     */
+    inline bool DatapointsToAlarmHasBeenSet() const { return m_datapointsToAlarmHasBeenSet; }
 
     /**
      * <p>The number of datapoints that must be breaching to trigger the alarm.</p>
@@ -771,6 +887,11 @@ namespace Model
     /**
      * <p>The value to compare with the specified statistic.</p>
      */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+
+    /**
+     * <p>The value to compare with the specified statistic.</p>
+     */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
@@ -784,6 +905,12 @@ namespace Model
      * threshold. The specified statistic value is used as the first operand.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+
+    /**
+     * <p>The arithmetic operation to use when comparing the specified statistic and
+     * threshold. The specified statistic value is used as the first operand.</p>
+     */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
 
     /**
      * <p>The arithmetic operation to use when comparing the specified statistic and
@@ -815,6 +942,12 @@ namespace Model
      * omitted, the default behavior of <code>missing</code> is used.</p>
      */
     inline const Aws::String& GetTreatMissingData() const{ return m_treatMissingData; }
+
+    /**
+     * <p>Sets how this alarm is to handle missing data points. If this parameter is
+     * omitted, the default behavior of <code>missing</code> is used.</p>
+     */
+    inline bool TreatMissingDataHasBeenSet() const { return m_treatMissingDataHasBeenSet; }
 
     /**
      * <p>Sets how this alarm is to handle missing data points. If this parameter is
@@ -869,6 +1002,15 @@ namespace Model
      * used, the alarm is always evaluated and possibly changes state no matter how
      * many data points are available.</p>
      */
+    inline bool EvaluateLowSampleCountPercentileHasBeenSet() const { return m_evaluateLowSampleCountPercentileHasBeenSet; }
+
+    /**
+     * <p>Used only for alarms based on percentiles. If <code>ignore</code>, the alarm
+     * state does not change during periods with too few data points to be
+     * statistically significant. If <code>evaluate</code> or this parameter is not
+     * used, the alarm is always evaluated and possibly changes state no matter how
+     * many data points are available.</p>
+     */
     inline void SetEvaluateLowSampleCountPercentile(const Aws::String& value) { m_evaluateLowSampleCountPercentileHasBeenSet = true; m_evaluateLowSampleCountPercentile = value; }
 
     /**
@@ -915,6 +1057,47 @@ namespace Model
      * many data points are available.</p>
      */
     inline MetricAlarm& WithEvaluateLowSampleCountPercentile(const char* value) { SetEvaluateLowSampleCountPercentile(value); return *this;}
+
+
+    /**
+     * <p/>
+     */
+    inline const Aws::Vector<MetricDataQuery>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p/>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
+    inline void SetMetrics(const Aws::Vector<MetricDataQuery>& value) { m_metricsHasBeenSet = true; m_metrics = value; }
+
+    /**
+     * <p/>
+     */
+    inline void SetMetrics(Aws::Vector<MetricDataQuery>&& value) { m_metricsHasBeenSet = true; m_metrics = std::move(value); }
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& WithMetrics(const Aws::Vector<MetricDataQuery>& value) { SetMetrics(value); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& WithMetrics(Aws::Vector<MetricDataQuery>&& value) { SetMetrics(std::move(value)); return *this;}
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& AddMetrics(const MetricDataQuery& value) { m_metricsHasBeenSet = true; m_metrics.push_back(value); return *this; }
+
+    /**
+     * <p/>
+     */
+    inline MetricAlarm& AddMetrics(MetricDataQuery&& value) { m_metricsHasBeenSet = true; m_metrics.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -992,6 +1175,9 @@ namespace Model
 
     Aws::String m_evaluateLowSampleCountPercentile;
     bool m_evaluateLowSampleCountPercentileHasBeenSet;
+
+    Aws::Vector<MetricDataQuery> m_metrics;
+    bool m_metricsHasBeenSet;
   };
 
 } // namespace Model

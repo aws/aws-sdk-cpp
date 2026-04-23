@@ -61,6 +61,13 @@ namespace Model
      * for a particular parameter, AWS CloudFormation uses the default value that is
      * specified in your template.</p>
      */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
+
+    /**
+     * <p>The key associated with the parameter. If you don't specify a key and value
+     * for a particular parameter, AWS CloudFormation uses the default value that is
+     * specified in your template.</p>
+     */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The input value associated with the parameter.</p>
      */
+    inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
+
+    /**
+     * <p>The input value associated with the parameter.</p>
+     */
     inline void SetParameterValue(const Aws::String& value) { m_parameterValueHasBeenSet = true; m_parameterValue = value; }
 
     /**
@@ -147,6 +159,13 @@ namespace Model
      * using for a given parameter key. If you specify <code>true</code>, do not
      * specify a parameter value.</p>
      */
+    inline bool UsePreviousValueHasBeenSet() const { return m_usePreviousValueHasBeenSet; }
+
+    /**
+     * <p>During a stack update, use the existing parameter value that the stack is
+     * using for a given parameter key. If you specify <code>true</code>, do not
+     * specify a parameter value.</p>
+     */
     inline void SetUsePreviousValue(bool value) { m_usePreviousValueHasBeenSet = true; m_usePreviousValue = value; }
 
     /**
@@ -164,6 +183,14 @@ namespace Model
      * <code>SSM</code> parameter types</a> in the template.</p>
      */
     inline const Aws::String& GetResolvedValue() const{ return m_resolvedValue; }
+
+    /**
+     * <p>Read-only. The value that corresponds to a Systems Manager parameter key.
+     * This field is returned only for <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/parameters-section-structure.html#aws-ssm-parameter-types">
+     * <code>SSM</code> parameter types</a> in the template.</p>
+     */
+    inline bool ResolvedValueHasBeenSet() const { return m_resolvedValueHasBeenSet; }
 
     /**
      * <p>Read-only. The value that corresponds to a Systems Manager parameter key.

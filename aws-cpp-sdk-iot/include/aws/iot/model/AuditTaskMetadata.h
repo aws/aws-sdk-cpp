@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of this audit.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of this audit.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or
      * "CANCELED".</p>
      */
+    inline bool TaskStatusHasBeenSet() const { return m_taskStatusHasBeenSet; }
+
+    /**
+     * <p>The status of this audit: one of "IN_PROGRESS", "COMPLETED", "FAILED" or
+     * "CANCELED".</p>
+     */
     inline void SetTaskStatus(const AuditTaskStatus& value) { m_taskStatusHasBeenSet = true; m_taskStatus = value; }
 
     /**
@@ -121,6 +132,12 @@ namespace Model
      * "SCHEDULED_AUDIT_TASK".</p>
      */
     inline const AuditTaskType& GetTaskType() const{ return m_taskType; }
+
+    /**
+     * <p>The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or
+     * "SCHEDULED_AUDIT_TASK".</p>
+     */
+    inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
 
     /**
      * <p>The type of this audit: one of "ON_DEMAND_AUDIT_TASK" or

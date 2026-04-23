@@ -60,6 +60,13 @@ namespace Model
      * Unicode characters. The key must be unique for the resource to which it
      * applies.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key in a key-value pair. The key must be must be no longer than 128
+     * Unicode characters. The key must be unique for the resource to which it
+     * applies.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * Unicode characters.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value in a key-value pair of a tag. The value must be no longer than 256
+     * Unicode characters.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value in a key-value pair of a tag. The value must be no longer than 256

@@ -28,7 +28,7 @@ DescribeAccountAuditConfigurationRequest::DescribeAccountAuditConfigurationReque
 
 Aws::String DescribeAccountAuditConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

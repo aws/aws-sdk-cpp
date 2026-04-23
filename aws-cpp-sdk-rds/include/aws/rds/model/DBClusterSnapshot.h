@@ -63,6 +63,12 @@ namespace Model
      * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
      * snapshot can be restored in.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>Provides the list of EC2 Availability Zones that instances in the DB cluster
+     * snapshot can be restored in.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<Aws::String>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -110,6 +116,11 @@ namespace Model
     /**
      * <p>Specifies the identifier for the DB cluster snapshot.</p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the identifier for the DB cluster snapshot.</p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**
@@ -143,6 +154,12 @@ namespace Model
      * snapshot was created from.</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
+     * snapshot was created from.</p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>Specifies the DB cluster identifier of the DB cluster that this DB cluster
@@ -191,6 +208,12 @@ namespace Model
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
      */
+    inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC).</p>
+     */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
@@ -216,6 +239,11 @@ namespace Model
      * <p>Specifies the name of the database engine.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Specifies the name of the database engine.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -256,6 +284,11 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -268,6 +301,11 @@ namespace Model
      * <p>Specifies the status of this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the status of this DB cluster snapshot.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the status of this DB cluster snapshot.</p>
@@ -310,6 +348,12 @@ namespace Model
      * <p>Specifies the port that the DB cluster was listening on at the time of the
      * snapshot.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the port that the DB cluster was listening on at the time of the
+     * snapshot.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -323,6 +367,11 @@ namespace Model
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>Provides the VPC ID associated with the DB cluster snapshot.</p>
@@ -365,6 +414,12 @@ namespace Model
      * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
      * Time (UTC).</p>
      */
+    inline bool ClusterCreateTimeHasBeenSet() const { return m_clusterCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the time when the DB cluster was created, in Universal Coordinated
+     * Time (UTC).</p>
+     */
     inline void SetClusterCreateTime(const Aws::Utils::DateTime& value) { m_clusterCreateTimeHasBeenSet = true; m_clusterCreateTime = value; }
 
     /**
@@ -390,6 +445,11 @@ namespace Model
      * <p>Provides the master username for the DB cluster snapshot.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>Provides the master username for the DB cluster snapshot.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>Provides the master username for the DB cluster snapshot.</p>
@@ -430,6 +490,11 @@ namespace Model
     /**
      * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>Provides the version of the database engine for this DB cluster snapshot.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -462,6 +527,11 @@ namespace Model
      * <p>Provides the license model information for this DB cluster snapshot.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>Provides the license model information for this DB cluster snapshot.</p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>Provides the license model information for this DB cluster snapshot.</p>
@@ -502,6 +572,11 @@ namespace Model
     /**
      * <p>Provides the type of the DB cluster snapshot.</p>
      */
+    inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
+
+    /**
+     * <p>Provides the type of the DB cluster snapshot.</p>
+     */
     inline void SetSnapshotType(const Aws::String& value) { m_snapshotTypeHasBeenSet = true; m_snapshotType = value; }
 
     /**
@@ -538,6 +613,11 @@ namespace Model
     /**
      * <p>Specifies the percentage of the estimated data that has been transferred.</p>
      */
+    inline bool PercentProgressHasBeenSet() const { return m_percentProgressHasBeenSet; }
+
+    /**
+     * <p>Specifies the percentage of the estimated data that has been transferred.</p>
+     */
     inline void SetPercentProgress(int value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
 
     /**
@@ -550,6 +630,11 @@ namespace Model
      * <p>Specifies whether the DB cluster snapshot is encrypted.</p>
      */
     inline bool GetStorageEncrypted() const{ return m_storageEncrypted; }
+
+    /**
+     * <p>Specifies whether the DB cluster snapshot is encrypted.</p>
+     */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
 
     /**
      * <p>Specifies whether the DB cluster snapshot is encrypted.</p>
@@ -567,6 +652,12 @@ namespace Model
      * encrypted DB cluster snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB cluster snapshot.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>If <code>StorageEncrypted</code> is true, the AWS KMS key identifier for the
@@ -613,6 +704,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
      */
+    inline bool DBClusterSnapshotArnHasBeenSet() const { return m_dBClusterSnapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB cluster snapshot.</p>
+     */
     inline void SetDBClusterSnapshotArn(const Aws::String& value) { m_dBClusterSnapshotArnHasBeenSet = true; m_dBClusterSnapshotArn = value; }
 
     /**
@@ -647,6 +743,13 @@ namespace Model
      * value.</p>
      */
     inline const Aws::String& GetSourceDBClusterSnapshotArn() const{ return m_sourceDBClusterSnapshotArn; }
+
+    /**
+     * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
+     * Amazon Resource Name (ARN) for the source DB cluster snapshot, otherwise, a null
+     * value.</p>
+     */
+    inline bool SourceDBClusterSnapshotArnHasBeenSet() const { return m_sourceDBClusterSnapshotArnHasBeenSet; }
 
     /**
      * <p>If the DB cluster snapshot was copied from a source DB cluster snapshot, the
@@ -696,6 +799,12 @@ namespace Model
      * database accounts is enabled, and otherwise false.</p>
      */
     inline bool GetIAMDatabaseAuthenticationEnabled() const{ return m_iAMDatabaseAuthenticationEnabled; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
+     */
+    inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
 
     /**
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to

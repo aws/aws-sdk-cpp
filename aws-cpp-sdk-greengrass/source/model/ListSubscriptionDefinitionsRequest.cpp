@@ -33,7 +33,7 @@ ListSubscriptionDefinitionsRequest::ListSubscriptionDefinitionsRequest() :
 
 Aws::String ListSubscriptionDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListSubscriptionDefinitionsRequest::AddQueryStringParameters(URI& uri) const

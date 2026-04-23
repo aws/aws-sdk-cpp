@@ -35,8 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioNormalizationSettings<p><h3>See Also:</h3>  
-   * <a
+   * Audio Normalization Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioNormalizationSettings">AWS
    * API Reference</a></p>
    */
@@ -54,6 +53,12 @@ namespace Model
      * specification, itu17702 conforms to the EBU R-128 specification.
      */
     inline const AudioNormalizationAlgorithm& GetAlgorithm() const{ return m_algorithm; }
+
+    /**
+     * Audio normalization algorithm to use. itu17701 conforms to the CALM Act
+     * specification, itu17702 conforms to the EBU R-128 specification.
+     */
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
 
     /**
      * Audio normalization algorithm to use. itu17701 conforms to the CALM Act
@@ -90,6 +95,12 @@ namespace Model
      * When set to correctAudio the output audio is corrected using the chosen
      * algorithm. If set to measureOnly, the audio will be measured but not adjusted.
      */
+    inline bool AlgorithmControlHasBeenSet() const { return m_algorithmControlHasBeenSet; }
+
+    /**
+     * When set to correctAudio the output audio is corrected using the chosen
+     * algorithm. If set to measureOnly, the audio will be measured but not adjusted.
+     */
     inline void SetAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
 
     /**
@@ -118,6 +129,14 @@ namespace Model
      * a target of -23 LKFS.
      */
     inline double GetTargetLkfs() const{ return m_targetLkfs; }
+
+    /**
+     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default
+     * value will be used according to the chosen algorithm.  The CALM Act (1770-1)
+     * recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends
+     * a target of -23 LKFS.
+     */
+    inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
 
     /**
      * Target LKFS(loudness) to adjust volume to. If no value is entered, a default

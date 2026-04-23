@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The engine type of a DB instance.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The engine type of a DB instance.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The engine version of a DB instance.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The engine version of a DB instance.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The engine version of a DB instance.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The DB instance class for a DB instance.</p>
      */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The DB instance class for a DB instance.</p>
+     */
     inline void SetDBInstanceClass(const Aws::String& value) { m_dBInstanceClassHasBeenSet = true; m_dBInstanceClass = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p>The license model for a DB instance.</p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for a DB instance.</p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model for a DB instance.</p>
@@ -206,6 +226,11 @@ namespace Model
     /**
      * <p>A list of Availability Zones for a DB instance.</p>
      */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
+
+    /**
+     * <p>A list of Availability Zones for a DB instance.</p>
+     */
     inline void SetAvailabilityZones(const Aws::Vector<AvailabilityZone>& value) { m_availabilityZonesHasBeenSet = true; m_availabilityZones = value; }
 
     /**
@@ -242,6 +267,11 @@ namespace Model
     /**
      * <p>Indicates whether a DB instance is Multi-AZ capable.</p>
      */
+    inline bool MultiAZCapableHasBeenSet() const { return m_multiAZCapableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance is Multi-AZ capable.</p>
+     */
     inline void SetMultiAZCapable(bool value) { m_multiAZCapableHasBeenSet = true; m_multiAZCapable = value; }
 
     /**
@@ -254,6 +284,11 @@ namespace Model
      * <p>Indicates whether a DB instance can have a Read Replica.</p>
      */
     inline bool GetReadReplicaCapable() const{ return m_readReplicaCapable; }
+
+    /**
+     * <p>Indicates whether a DB instance can have a Read Replica.</p>
+     */
+    inline bool ReadReplicaCapableHasBeenSet() const { return m_readReplicaCapableHasBeenSet; }
 
     /**
      * <p>Indicates whether a DB instance can have a Read Replica.</p>
@@ -274,6 +309,11 @@ namespace Model
     /**
      * <p>Indicates whether a DB instance is in a VPC.</p>
      */
+    inline bool VpcHasBeenSet() const { return m_vpcHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance is in a VPC.</p>
+     */
     inline void SetVpc(bool value) { m_vpcHasBeenSet = true; m_vpc = value; }
 
     /**
@@ -290,6 +330,11 @@ namespace Model
     /**
      * <p>Indicates whether a DB instance supports encrypted storage.</p>
      */
+    inline bool SupportsStorageEncryptionHasBeenSet() const { return m_supportsStorageEncryptionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports encrypted storage.</p>
+     */
     inline void SetSupportsStorageEncryption(bool value) { m_supportsStorageEncryptionHasBeenSet = true; m_supportsStorageEncryption = value; }
 
     /**
@@ -302,6 +347,11 @@ namespace Model
      * <p>Indicates the storage type for a DB instance.</p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Indicates the storage type for a DB instance.</p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Indicates the storage type for a DB instance.</p>
@@ -342,6 +392,11 @@ namespace Model
     /**
      * <p>Indicates whether a DB instance supports provisioned IOPS.</p>
      */
+    inline bool SupportsIopsHasBeenSet() const { return m_supportsIopsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports provisioned IOPS.</p>
+     */
     inline void SetSupportsIops(bool value) { m_supportsIopsHasBeenSet = true; m_supportsIops = value; }
 
     /**
@@ -355,6 +410,12 @@ namespace Model
      * from 1 to 60 seconds.</p>
      */
     inline bool GetSupportsEnhancedMonitoring() const{ return m_supportsEnhancedMonitoring; }
+
+    /**
+     * <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals
+     * from 1 to 60 seconds.</p>
+     */
+    inline bool SupportsEnhancedMonitoringHasBeenSet() const { return m_supportsEnhancedMonitoringHasBeenSet; }
 
     /**
      * <p>Indicates whether a DB instance supports Enhanced Monitoring at intervals
@@ -377,6 +438,11 @@ namespace Model
     /**
      * <p>Indicates whether a DB instance supports IAM database authentication.</p>
      */
+    inline bool SupportsIAMDatabaseAuthenticationHasBeenSet() const { return m_supportsIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a DB instance supports IAM database authentication.</p>
+     */
     inline void SetSupportsIAMDatabaseAuthentication(bool value) { m_supportsIAMDatabaseAuthenticationHasBeenSet = true; m_supportsIAMDatabaseAuthentication = value; }
 
     /**
@@ -389,6 +455,11 @@ namespace Model
      * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
      */
     inline bool GetSupportsPerformanceInsights() const{ return m_supportsPerformanceInsights; }
+
+    /**
+     * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
+     */
+    inline bool SupportsPerformanceInsightsHasBeenSet() const { return m_supportsPerformanceInsightsHasBeenSet; }
 
     /**
      * <p>True if a DB instance supports Performance Insights, otherwise false.</p>
@@ -409,6 +480,11 @@ namespace Model
     /**
      * <p>Minimum storage size for a DB instance.</p>
      */
+    inline bool MinStorageSizeHasBeenSet() const { return m_minStorageSizeHasBeenSet; }
+
+    /**
+     * <p>Minimum storage size for a DB instance.</p>
+     */
     inline void SetMinStorageSize(int value) { m_minStorageSizeHasBeenSet = true; m_minStorageSize = value; }
 
     /**
@@ -421,6 +497,11 @@ namespace Model
      * <p>Maximum storage size for a DB instance.</p>
      */
     inline int GetMaxStorageSize() const{ return m_maxStorageSize; }
+
+    /**
+     * <p>Maximum storage size for a DB instance.</p>
+     */
+    inline bool MaxStorageSizeHasBeenSet() const { return m_maxStorageSizeHasBeenSet; }
 
     /**
      * <p>Maximum storage size for a DB instance.</p>
@@ -441,6 +522,11 @@ namespace Model
     /**
      * <p>Minimum total provisioned IOPS for a DB instance.</p>
      */
+    inline bool MinIopsPerDbInstanceHasBeenSet() const { return m_minIopsPerDbInstanceHasBeenSet; }
+
+    /**
+     * <p>Minimum total provisioned IOPS for a DB instance.</p>
+     */
     inline void SetMinIopsPerDbInstance(int value) { m_minIopsPerDbInstanceHasBeenSet = true; m_minIopsPerDbInstance = value; }
 
     /**
@@ -453,6 +539,11 @@ namespace Model
      * <p>Maximum total provisioned IOPS for a DB instance.</p>
      */
     inline int GetMaxIopsPerDbInstance() const{ return m_maxIopsPerDbInstance; }
+
+    /**
+     * <p>Maximum total provisioned IOPS for a DB instance.</p>
+     */
+    inline bool MaxIopsPerDbInstanceHasBeenSet() const { return m_maxIopsPerDbInstanceHasBeenSet; }
 
     /**
      * <p>Maximum total provisioned IOPS for a DB instance.</p>
@@ -473,6 +564,11 @@ namespace Model
     /**
      * <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
      */
+    inline bool MinIopsPerGibHasBeenSet() const { return m_minIopsPerGibHasBeenSet; }
+
+    /**
+     * <p>Minimum provisioned IOPS per GiB for a DB instance.</p>
+     */
     inline void SetMinIopsPerGib(double value) { m_minIopsPerGibHasBeenSet = true; m_minIopsPerGib = value; }
 
     /**
@@ -485,6 +581,11 @@ namespace Model
      * <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
      */
     inline double GetMaxIopsPerGib() const{ return m_maxIopsPerGib; }
+
+    /**
+     * <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
+     */
+    inline bool MaxIopsPerGibHasBeenSet() const { return m_maxIopsPerGibHasBeenSet; }
 
     /**
      * <p>Maximum provisioned IOPS per GiB for a DB instance.</p>
@@ -502,6 +603,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::Vector<AvailableProcessorFeature>& GetAvailableProcessorFeatures() const{ return m_availableProcessorFeatures; }
+
+    /**
+     * <p>A list of the available processor features for the DB instance class of a DB
+     * instance.</p>
+     */
+    inline bool AvailableProcessorFeaturesHasBeenSet() const { return m_availableProcessorFeaturesHasBeenSet; }
 
     /**
      * <p>A list of the available processor features for the DB instance class of a DB
@@ -544,6 +651,11 @@ namespace Model
      * <p>A list of the supported DB engine modes.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedEngineModes() const{ return m_supportedEngineModes; }
+
+    /**
+     * <p>A list of the supported DB engine modes.</p>
+     */
+    inline bool SupportedEngineModesHasBeenSet() const { return m_supportedEngineModesHasBeenSet; }
 
     /**
      * <p>A list of the supported DB engine modes.</p>

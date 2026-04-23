@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of cores on the Dedicated Host.</p>
      */
+    inline bool CoresHasBeenSet() const { return m_coresHasBeenSet; }
+
+    /**
+     * <p>The number of cores on the Dedicated Host.</p>
+     */
     inline void SetCores(int value) { m_coresHasBeenSet = true; m_cores = value; }
 
     /**
@@ -70,6 +75,12 @@ namespace Model
      * <code>m3.medium</code>).</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type size that the Dedicated Host supports (for example,
+     * <code>m3.medium</code>).</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type size that the Dedicated Host supports (for example,
@@ -116,6 +127,11 @@ namespace Model
     /**
      * <p>The number of sockets on the Dedicated Host.</p>
      */
+    inline bool SocketsHasBeenSet() const { return m_socketsHasBeenSet; }
+
+    /**
+     * <p>The number of sockets on the Dedicated Host.</p>
+     */
     inline void SetSockets(int value) { m_socketsHasBeenSet = true; m_sockets = value; }
 
     /**
@@ -128,6 +144,11 @@ namespace Model
      * <p>The number of vCPUs on the Dedicated Host.</p>
      */
     inline int GetTotalVCpus() const{ return m_totalVCpus; }
+
+    /**
+     * <p>The number of vCPUs on the Dedicated Host.</p>
+     */
+    inline bool TotalVCpusHasBeenSet() const { return m_totalVCpusHasBeenSet; }
 
     /**
      * <p>The number of vCPUs on the Dedicated Host.</p>

@@ -65,6 +65,13 @@ namespace Model
      * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
      * only.</p>
      */
+    inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the header to add. Must be between 1 and 50 characters,
+     * inclusive, and consist of alphanumeric (a-z, A-Z, 0-9) characters and dashes
+     * only.</p>
+     */
     inline void SetHeaderName(const Aws::String& value) { m_headerNameHasBeenSet = true; m_headerName = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * ("\r" or "\n").</p>
      */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+
+    /**
+     * <p>Must be less than 2048 characters, and must not contain newline characters
+     * ("\r" or "\n").</p>
+     */
+    inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
 
     /**
      * <p>Must be less than 2048 characters, and must not contain newline characters

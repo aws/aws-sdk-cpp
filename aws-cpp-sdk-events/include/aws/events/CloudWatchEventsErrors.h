@@ -50,6 +50,7 @@ enum class CloudWatchEventsErrors
   INVALID_SIGNATURE = 21,
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
+  REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
   
   UNKNOWN = 100,
@@ -59,6 +60,7 @@ enum class CloudWatchEventsErrors
   INTERNAL,
   INVALID_EVENT_PATTERN,
   LIMIT_EXCEEDED,
+  MANAGED_RULE,
   POLICY_LENGTH_EXCEEDED
 };
 namespace CloudWatchEventsErrorMapper

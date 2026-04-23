@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The key for the tag. May not be null.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key for the tag. May not be null.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The tag's value. May be null.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The tag's value. May be null.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The tag's value. May be null.</p>

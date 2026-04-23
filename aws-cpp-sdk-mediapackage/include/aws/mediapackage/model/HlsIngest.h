@@ -57,6 +57,11 @@ namespace Model
     /**
      * A list of endpoints to which the source stream should be sent.
      */
+    inline bool IngestEndpointsHasBeenSet() const { return m_ingestEndpointsHasBeenSet; }
+
+    /**
+     * A list of endpoints to which the source stream should be sent.
+     */
     inline void SetIngestEndpoints(const Aws::Vector<IngestEndpoint>& value) { m_ingestEndpointsHasBeenSet = true; m_ingestEndpoints = value; }
 
     /**

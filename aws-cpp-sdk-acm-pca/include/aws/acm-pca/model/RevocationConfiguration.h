@@ -62,6 +62,12 @@ namespace Model
      * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
      * your private CA.</p>
      */
+    inline bool CrlConfigurationHasBeenSet() const { return m_crlConfigurationHasBeenSet; }
+
+    /**
+     * <p>Configuration of the certificate revocation list (CRL), if any, maintained by
+     * your private CA.</p>
+     */
     inline void SetCrlConfiguration(const CrlConfiguration& value) { m_crlConfigurationHasBeenSet = true; m_crlConfiguration = value; }
 
     /**

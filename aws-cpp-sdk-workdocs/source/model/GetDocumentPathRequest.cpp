@@ -37,7 +37,7 @@ GetDocumentPathRequest::GetDocumentPathRequest() :
 
 Aws::String GetDocumentPathRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDocumentPathRequest::GetRequestSpecificHeaders() const

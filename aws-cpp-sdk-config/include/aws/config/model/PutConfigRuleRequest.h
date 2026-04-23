@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The rule that you want to add to your account.</p>
      */
+    inline bool ConfigRuleHasBeenSet() const { return m_configRuleHasBeenSet; }
+
+    /**
+     * <p>The rule that you want to add to your account.</p>
+     */
     inline void SetConfigRule(const ConfigRule& value) { m_configRuleHasBeenSet = true; m_configRule = value; }
 
     /**

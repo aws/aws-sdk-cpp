@@ -70,6 +70,12 @@ namespace Model
      * <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3)
      * bucket and, optionally, publishes a notification to Amazon SNS.</p>
      */
+    inline bool S3ActionHasBeenSet() const { return m_s3ActionHasBeenSet; }
+
+    /**
+     * <p>Saves the received message to an Amazon Simple Storage Service (Amazon S3)
+     * bucket and, optionally, publishes a notification to Amazon SNS.</p>
+     */
     inline void SetS3Action(const S3Action& value) { m_s3ActionHasBeenSet = true; m_s3Action = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * (Amazon SNS).</p>
      */
     inline const BounceAction& GetBounceAction() const{ return m_bounceAction; }
+
+    /**
+     * <p>Rejects the received email by returning a bounce response to the sender and,
+     * optionally, publishes a notification to Amazon Simple Notification Service
+     * (Amazon SNS).</p>
+     */
+    inline bool BounceActionHasBeenSet() const { return m_bounceActionHasBeenSet; }
 
     /**
      * <p>Rejects the received email by returning a bounce response to the sender and,
@@ -137,6 +150,12 @@ namespace Model
      * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
      * Amazon SNS.</p>
      */
+    inline bool WorkmailActionHasBeenSet() const { return m_workmailActionHasBeenSet; }
+
+    /**
+     * <p>Calls Amazon WorkMail and, optionally, publishes a notification to Amazon
+     * Amazon SNS.</p>
+     */
     inline void SetWorkmailAction(const WorkmailAction& value) { m_workmailActionHasBeenSet = true; m_workmailAction = value; }
 
     /**
@@ -163,6 +182,12 @@ namespace Model
      * Amazon SNS.</p>
      */
     inline const LambdaAction& GetLambdaAction() const{ return m_lambdaAction; }
+
+    /**
+     * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
+     * Amazon SNS.</p>
+     */
+    inline bool LambdaActionHasBeenSet() const { return m_lambdaActionHasBeenSet; }
 
     /**
      * <p>Calls an AWS Lambda function, and optionally, publishes a notification to
@@ -199,6 +224,12 @@ namespace Model
      * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
      * notification to Amazon SNS.</p>
      */
+    inline bool StopActionHasBeenSet() const { return m_stopActionHasBeenSet; }
+
+    /**
+     * <p>Terminates the evaluation of the receipt rule set and optionally publishes a
+     * notification to Amazon SNS.</p>
+     */
     inline void SetStopAction(const StopAction& value) { m_stopActionHasBeenSet = true; m_stopAction = value; }
 
     /**
@@ -228,6 +259,11 @@ namespace Model
     /**
      * <p>Adds a header to the received email.</p>
      */
+    inline bool AddHeaderActionHasBeenSet() const { return m_addHeaderActionHasBeenSet; }
+
+    /**
+     * <p>Adds a header to the received email.</p>
+     */
     inline void SetAddHeaderAction(const AddHeaderAction& value) { m_addHeaderActionHasBeenSet = true; m_addHeaderAction = value; }
 
     /**
@@ -250,6 +286,11 @@ namespace Model
      * <p>Publishes the email content within a notification to Amazon SNS.</p>
      */
     inline const SNSAction& GetSNSAction() const{ return m_sNSAction; }
+
+    /**
+     * <p>Publishes the email content within a notification to Amazon SNS.</p>
+     */
+    inline bool SNSActionHasBeenSet() const { return m_sNSActionHasBeenSet; }
 
     /**
      * <p>Publishes the email content within a notification to Amazon SNS.</p>

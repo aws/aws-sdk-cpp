@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The crawler name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The crawler name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * as data in Amazon S3.</p>
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
+     * as data in Amazon S3.</p>
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * <p>The IAM role (or ARN of an IAM role) used to access customer resources, such
@@ -144,6 +155,11 @@ namespace Model
     /**
      * <p>A collection of targets to crawl.</p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>A collection of targets to crawl.</p>
+     */
     inline void SetTargets(const CrawlerTargets& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -166,6 +182,11 @@ namespace Model
      * <p>The database where metadata is written by this crawler.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The database where metadata is written by this crawler.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The database where metadata is written by this crawler.</p>
@@ -206,6 +227,11 @@ namespace Model
     /**
      * <p>A description of the crawler.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the crawler.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -238,6 +264,11 @@ namespace Model
      * <p>A list of custom classifiers associated with the crawler.</p>
      */
     inline const Aws::Vector<Aws::String>& GetClassifiers() const{ return m_classifiers; }
+
+    /**
+     * <p>A list of custom classifiers associated with the crawler.</p>
+     */
+    inline bool ClassifiersHasBeenSet() const { return m_classifiersHasBeenSet; }
 
     /**
      * <p>A list of custom classifiers associated with the crawler.</p>
@@ -283,6 +314,11 @@ namespace Model
     /**
      * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
      */
+    inline bool SchemaChangePolicyHasBeenSet() const { return m_schemaChangePolicyHasBeenSet; }
+
+    /**
+     * <p>Sets the behavior when the crawler finds a changed or deleted object.</p>
+     */
     inline void SetSchemaChangePolicy(const SchemaChangePolicy& value) { m_schemaChangePolicyHasBeenSet = true; m_schemaChangePolicy = value; }
 
     /**
@@ -309,6 +345,11 @@ namespace Model
     /**
      * <p>Indicates whether the crawler is running, or whether a run is pending.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the crawler is running, or whether a run is pending.</p>
+     */
     inline void SetState(const CrawlerState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -331,6 +372,11 @@ namespace Model
      * <p>The prefix added to the names of tables that are created.</p>
      */
     inline const Aws::String& GetTablePrefix() const{ return m_tablePrefix; }
+
+    /**
+     * <p>The prefix added to the names of tables that are created.</p>
+     */
+    inline bool TablePrefixHasBeenSet() const { return m_tablePrefixHasBeenSet; }
 
     /**
      * <p>The prefix added to the names of tables that are created.</p>
@@ -371,6 +417,11 @@ namespace Model
     /**
      * <p>For scheduled crawlers, the schedule when the crawler runs.</p>
      */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>For scheduled crawlers, the schedule when the crawler runs.</p>
+     */
     inline void SetSchedule(const Schedule& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
@@ -399,6 +450,12 @@ namespace Model
      * <p>If the crawler is running, contains the total time elapsed since the last
      * crawl began.</p>
      */
+    inline bool CrawlElapsedTimeHasBeenSet() const { return m_crawlElapsedTimeHasBeenSet; }
+
+    /**
+     * <p>If the crawler is running, contains the total time elapsed since the last
+     * crawl began.</p>
+     */
     inline void SetCrawlElapsedTime(long long value) { m_crawlElapsedTimeHasBeenSet = true; m_crawlElapsedTime = value; }
 
     /**
@@ -412,6 +469,11 @@ namespace Model
      * <p>The time when the crawler was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time when the crawler was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The time when the crawler was created.</p>
@@ -442,6 +504,11 @@ namespace Model
     /**
      * <p>The time the crawler was last updated.</p>
      */
+    inline bool LastUpdatedHasBeenSet() const { return m_lastUpdatedHasBeenSet; }
+
+    /**
+     * <p>The time the crawler was last updated.</p>
+     */
     inline void SetLastUpdated(const Aws::Utils::DateTime& value) { m_lastUpdatedHasBeenSet = true; m_lastUpdated = value; }
 
     /**
@@ -465,6 +532,12 @@ namespace Model
      * occurred.</p>
      */
     inline const LastCrawlInfo& GetLastCrawl() const{ return m_lastCrawl; }
+
+    /**
+     * <p>The status of the last crawl, and potentially error information if an error
+     * occurred.</p>
+     */
+    inline bool LastCrawlHasBeenSet() const { return m_lastCrawlHasBeenSet; }
 
     /**
      * <p>The status of the last crawl, and potentially error information if an error
@@ -499,6 +572,11 @@ namespace Model
     /**
      * <p>The version of the crawler.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the crawler.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -514,6 +592,14 @@ namespace Model
      * a Crawler</a>.</p>
      */
     inline const Aws::String& GetConfiguration() const{ return m_configuration; }
+
+    /**
+     * <p>Crawler configuration information. This versioned JSON string allows users to
+     * specify aspects of a crawler's behavior. For more information, see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/crawler-configuration.html">Configuring
+     * a Crawler</a>.</p>
+     */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
 
     /**
      * <p>Crawler configuration information. This versioned JSON string allows users to
@@ -569,6 +655,12 @@ namespace Model
      * Crawler.</p>
      */
     inline const Aws::String& GetCrawlerSecurityConfiguration() const{ return m_crawlerSecurityConfiguration; }
+
+    /**
+     * <p>The name of the SecurityConfiguration structure to be used by this
+     * Crawler.</p>
+     */
+    inline bool CrawlerSecurityConfigurationHasBeenSet() const { return m_crawlerSecurityConfigurationHasBeenSet; }
 
     /**
      * <p>The name of the SecurityConfiguration structure to be used by this

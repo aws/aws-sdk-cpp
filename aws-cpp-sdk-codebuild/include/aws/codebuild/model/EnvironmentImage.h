@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the Docker image.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Docker image.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The description of the Docker image.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the Docker image.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>A list of environment image versions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+
+    /**
+     * <p>A list of environment image versions.</p>
+     */
+    inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
      * <p>A list of environment image versions.</p>

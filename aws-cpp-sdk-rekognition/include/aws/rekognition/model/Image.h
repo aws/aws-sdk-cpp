@@ -74,6 +74,11 @@ namespace Model
     /**
      * <p>Blob of image bytes up to 5 MBs.</p>
      */
+    inline bool BytesHasBeenSet() const { return m_bytesHasBeenSet; }
+
+    /**
+     * <p>Blob of image bytes up to 5 MBs.</p>
+     */
     inline void SetBytes(const Aws::Utils::ByteBuffer& value) { m_bytesHasBeenSet = true; m_bytes = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>Identifies an S3 object as the image source.</p>
      */
     inline const S3Object& GetS3Object() const{ return m_s3Object; }
+
+    /**
+     * <p>Identifies an S3 object as the image source.</p>
+     */
+    inline bool S3ObjectHasBeenSet() const { return m_s3ObjectHasBeenSet; }
 
     /**
      * <p>Identifies an S3 object as the image source.</p>

@@ -50,37 +50,42 @@ namespace Model
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline const Aws::String& GetCloudFormationStackARN() const{ return m_cloudFormationStackARN; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
+     */
+    inline bool CloudFormationStackARNHasBeenSet() const { return m_cloudFormationStackARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline void SetCloudFormationStackARN(const Aws::String& value) { m_cloudFormationStackARNHasBeenSet = true; m_cloudFormationStackARN = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline void SetCloudFormationStackARN(Aws::String&& value) { m_cloudFormationStackARNHasBeenSet = true; m_cloudFormationStackARN = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline void SetCloudFormationStackARN(const char* value) { m_cloudFormationStackARNHasBeenSet = true; m_cloudFormationStackARN.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline ApplicationSource& WithCloudFormationStackARN(const Aws::String& value) { SetCloudFormationStackARN(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline ApplicationSource& WithCloudFormationStackARN(Aws::String&& value) { SetCloudFormationStackARN(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of a CloudFormation stack.</p>
+     * <p>The Amazon Resource Name (ARN) of a AWS CloudFormation stack.</p>
      */
     inline ApplicationSource& WithCloudFormationStackARN(const char* value) { SetCloudFormationStackARN(value); return *this;}
 
@@ -89,6 +94,11 @@ namespace Model
      * <p>A set of tags (up to 50).</p>
      */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+
+    /**
+     * <p>A set of tags (up to 50).</p>
+     */
+    inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
 
     /**
      * <p>A set of tags (up to 50).</p>

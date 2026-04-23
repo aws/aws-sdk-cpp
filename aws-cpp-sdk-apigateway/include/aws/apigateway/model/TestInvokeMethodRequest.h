@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>[Required] Specifies a test invoke method request's resource ID.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>[Required] Specifies a test invoke method request's resource ID.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>[Required] Specifies a test invoke method request's resource ID.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
      */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+
+    /**
+     * <p>[Required] Specifies a test invoke method request's HTTP method.</p>
+     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * Use this to specify path parameters and query string parameters.</p>
      */
     inline const Aws::String& GetPathWithQueryString() const{ return m_pathWithQueryString; }
+
+    /**
+     * <p>The URI path, including query string, of the simulated invocation request.
+     * Use this to specify path parameters and query string parameters.</p>
+     */
+    inline bool PathWithQueryStringHasBeenSet() const { return m_pathWithQueryStringHasBeenSet; }
 
     /**
      * <p>The URI path, including query string, of the simulated invocation request.
@@ -204,6 +225,12 @@ namespace Model
      * invocation request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetMultiValueHeaders() const{ return m_multiValueHeaders; }
+
+    /**
+     * <p>The headers as a map from string to list of values to simulate an incoming
+     * invocation request.</p>
+     */
+    inline bool MultiValueHeadersHasBeenSet() const { return m_multiValueHeadersHasBeenSet; }
 
     /**
      * <p>The headers as a map from string to list of values to simulate an incoming
@@ -278,6 +305,13 @@ namespace Model
      * Gateway will use the certificate when making the HTTPS request to the defined
      * back-end endpoint.</p>
      */
+    inline bool ClientCertificateIdHasBeenSet() const { return m_clientCertificateIdHasBeenSet; }
+
+    /**
+     * <p>A <a>ClientCertificate</a> identifier to use in the test invocation. API
+     * Gateway will use the certificate when making the HTTPS request to the defined
+     * back-end endpoint.</p>
+     */
     inline void SetClientCertificateId(const Aws::String& value) { m_clientCertificateIdHasBeenSet = true; m_clientCertificateId = value; }
 
     /**
@@ -321,6 +355,12 @@ namespace Model
      * <a>Stage</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStageVariables() const{ return m_stageVariables; }
+
+    /**
+     * <p>A key-value map of stage variables to simulate an invocation on a deployed
+     * <a>Stage</a>.</p>
+     */
+    inline bool StageVariablesHasBeenSet() const { return m_stageVariablesHasBeenSet; }
 
     /**
      * <p>A key-value map of stage variables to simulate an invocation on a deployed
@@ -397,6 +437,11 @@ namespace Model
     /**
      * <p>The simulated request body of an incoming invocation request.</p>
      */
+    inline bool RequestBodyHasBeenSet() const { return m_requestBodyHasBeenSet; }
+
+    /**
+     * <p>The simulated request body of an incoming invocation request.</p>
+     */
     inline void SetRequestBody(const Aws::String& value) { m_requestBodyHasBeenSet = true; m_requestBody = value; }
 
     /**
@@ -429,6 +474,11 @@ namespace Model
      * <p>A key-value map of headers to simulate an incoming invocation request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetRequestHeaders() const{ return m_requestHeaders; }
+
+    /**
+     * <p>A key-value map of headers to simulate an incoming invocation request.</p>
+     */
+    inline bool RequestHeadersHasBeenSet() const { return m_requestHeadersHasBeenSet; }
 
     /**
      * <p>A key-value map of headers to simulate an incoming invocation request.</p>

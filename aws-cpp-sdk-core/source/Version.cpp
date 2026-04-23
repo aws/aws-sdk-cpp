@@ -15,8 +15,6 @@
 
 #include <aws/core/Version.h>
 #include <aws/core/VersionConfig.h>
-#include <cstdio>
-#include <cassert>
 
 namespace Aws
 {

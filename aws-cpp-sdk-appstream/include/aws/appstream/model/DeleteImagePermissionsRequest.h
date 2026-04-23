@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the private image.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the private image.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -81,37 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline const Aws::String& GetSharedAccountId() const{ return m_sharedAccountId; }
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
+     */
+    inline bool SharedAccountIdHasBeenSet() const { return m_sharedAccountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline void SetSharedAccountId(const Aws::String& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = value; }
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline void SetSharedAccountId(Aws::String&& value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId = std::move(value); }
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline void SetSharedAccountId(const char* value) { m_sharedAccountIdHasBeenSet = true; m_sharedAccountId.assign(value); }
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline DeleteImagePermissionsRequest& WithSharedAccountId(const Aws::String& value) { SetSharedAccountId(value); return *this;}
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline DeleteImagePermissionsRequest& WithSharedAccountId(Aws::String&& value) { SetSharedAccountId(std::move(value)); return *this;}
 
     /**
-     * <p>The 12-digit ID of the AWS account for which to delete image permissions.</p>
+     * <p>The 12-digit identifier of the AWS account for which to delete image
+     * permissions.</p>
      */
     inline DeleteImagePermissionsRequest& WithSharedAccountId(const char* value) { SetSharedAccountId(value); return *this;}
 

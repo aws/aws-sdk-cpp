@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Key name that uniquely identifies a signed code image in your bucket.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>Key name that uniquely identifies a signed code image in your bucket.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>Key name that uniquely identifies a signed code image in your bucket.</p>

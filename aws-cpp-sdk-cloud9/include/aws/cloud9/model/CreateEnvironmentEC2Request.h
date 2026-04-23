@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the environment to create.</p> <p>This name is visible to other
      * AWS IAM users in the same AWS account.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the environment to create.</p> <p>This name is visible to other
+     * AWS IAM users in the same AWS account.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The description of the environment to create.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the environment to create.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -130,6 +141,14 @@ namespace Model
      * Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
+
+    /**
+     * <p>A unique, case-sensitive string that helps AWS Cloud9 to ensure this
+     * operation completes no more than one time.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/Run_Instance_Idempotency.html">Client
+     * Tokens</a> in the <i>Amazon EC2 API Reference</i>.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive string that helps AWS Cloud9 to ensure this
@@ -190,6 +209,12 @@ namespace Model
      * <p>The type of instance to connect to the environment (for example,
      * <code>t2.micro</code>).</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of instance to connect to the environment (for example,
+     * <code>t2.micro</code>).</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -228,6 +253,12 @@ namespace Model
      * with the Amazon EC2 instance.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate
+     * with the Amazon EC2 instance.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet in Amazon VPC that AWS Cloud9 will use to communicate
@@ -276,6 +307,12 @@ namespace Model
      * <p>The number of minutes until the running instance is shut down after the
      * environment has last been used.</p>
      */
+    inline bool AutomaticStopTimeMinutesHasBeenSet() const { return m_automaticStopTimeMinutesHasBeenSet; }
+
+    /**
+     * <p>The number of minutes until the running instance is shut down after the
+     * environment has last been used.</p>
+     */
     inline void SetAutomaticStopTimeMinutes(int value) { m_automaticStopTimeMinutesHasBeenSet = true; m_automaticStopTimeMinutes = value; }
 
     /**
@@ -291,6 +328,13 @@ namespace Model
      * to this environment's creator.</p>
      */
     inline const Aws::String& GetOwnerArn() const{ return m_ownerArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the
+     * ARN of any AWS IAM principal. If this value is not specified, the ARN defaults
+     * to this environment's creator.</p>
+     */
+    inline bool OwnerArnHasBeenSet() const { return m_ownerArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the environment owner. This ARN can be the

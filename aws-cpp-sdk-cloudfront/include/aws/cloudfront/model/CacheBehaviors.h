@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex type that contains zero or more <code>CacheBehavior</code>
    * elements. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CacheBehaviors">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CacheBehaviors">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CacheBehaviors
@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of cache behaviors for this distribution. </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of cache behaviors for this distribution. </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -70,6 +75,12 @@ namespace Model
      * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
      */
     inline const Aws::Vector<CacheBehavior>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Optional: A complex type that contains cache behaviors for this distribution.
+     * If <code>Quantity</code> is <code>0</code>, you can omit <code>Items</code>.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Optional: A complex type that contains cache behaviors for this distribution.

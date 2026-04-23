@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool TelemetryRecordsHasBeenSet() const { return m_telemetryRecordsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetTelemetryRecords(const Aws::Vector<TelemetryRecord>& value) { m_telemetryRecordsHasBeenSet = true; m_telemetryRecords = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetEC2InstanceId() const{ return m_eC2InstanceId; }
+
+    /**
+     * <p/>
+     */
+    inline bool EC2InstanceIdHasBeenSet() const { return m_eC2InstanceIdHasBeenSet; }
 
     /**
      * <p/>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p/>
      */
     inline const Aws::String& GetResourceARN() const{ return m_resourceARN; }
+
+    /**
+     * <p/>
+     */
+    inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
 
     /**
      * <p/>

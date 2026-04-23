@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the volume status.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the volume status.</p>
+     */
     inline void SetName(const VolumeStatusName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The intended status of the volume status.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The intended status of the volume status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The intended status of the volume status.</p>

@@ -55,6 +55,12 @@ namespace Model
      * <p>An array of IAM or federated user ARNs that identify the users to be
      * described.</p>
      */
+    inline bool IamUserArnsHasBeenSet() const { return m_iamUserArnsHasBeenSet; }
+
+    /**
+     * <p>An array of IAM or federated user ARNs that identify the users to be
+     * described.</p>
+     */
     inline void SetIamUserArns(const Aws::Vector<Aws::String>& value) { m_iamUserArnsHasBeenSet = true; m_iamUserArns = value; }
 
     /**

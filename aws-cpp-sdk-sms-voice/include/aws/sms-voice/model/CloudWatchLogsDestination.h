@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * An object that contains information about a event destination that sends data to
-   * Amazon CloudWatch Logs.<p><h3>See Also:</h3>   <a
+   * An object that contains information about an event destination that sends data
+   * to Amazon CloudWatch Logs.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CloudWatchLogsDestination">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,12 @@ namespace Model
      * role that is able to write event data to an Amazon CloudWatch destination.
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
+     * role that is able to write event data to an Amazon CloudWatch destination.
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of an Amazon Identity and Access Management (IAM)
@@ -95,6 +101,11 @@ namespace Model
      * The name of the Amazon CloudWatch Log Group that you want to record events in.
      */
     inline const Aws::String& GetLogGroupArn() const{ return m_logGroupArn; }
+
+    /**
+     * The name of the Amazon CloudWatch Log Group that you want to record events in.
+     */
+    inline bool LogGroupArnHasBeenSet() const { return m_logGroupArnHasBeenSet; }
 
     /**
      * The name of the Amazon CloudWatch Log Group that you want to record events in.

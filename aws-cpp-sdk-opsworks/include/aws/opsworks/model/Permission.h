@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>A stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>A stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -90,6 +95,14 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetIamUserArn() const{ return m_iamUserArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
+     * (IAM) role. For more information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.</p>
+     */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for an AWS Identity and Access Management
@@ -148,6 +161,11 @@ namespace Model
     /**
      * <p>Whether the user can use SSH.</p>
      */
+    inline bool AllowSshHasBeenSet() const { return m_allowSshHasBeenSet; }
+
+    /**
+     * <p>Whether the user can use SSH.</p>
+     */
     inline void SetAllowSsh(bool value) { m_allowSshHasBeenSet = true; m_allowSsh = value; }
 
     /**
@@ -160,6 +178,11 @@ namespace Model
      * <p>Whether the user can use <b>sudo</b>.</p>
      */
     inline bool GetAllowSudo() const{ return m_allowSudo; }
+
+    /**
+     * <p>Whether the user can use <b>sudo</b>.</p>
+     */
+    inline bool AllowSudoHasBeenSet() const { return m_allowSudoHasBeenSet; }
 
     /**
      * <p>Whether the user can use <b>sudo</b>.</p>
@@ -182,6 +205,17 @@ namespace Model
      * User Permissions</a> </p>
      */
     inline const Aws::String& GetLevel() const{ return m_level; }
+
+    /**
+     * <p>The user's permission level, which must be the following:</p> <ul> <li> <p>
+     * <code>deny</code> </p> </li> <li> <p> <code>show</code> </p> </li> <li> <p>
+     * <code>deploy</code> </p> </li> <li> <p> <code>manage</code> </p> </li> <li> <p>
+     * <code>iam_only</code> </p> </li> </ul> <p>For more information on the
+     * permissions associated with these levels, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/opsworks-security-users.html">Managing
+     * User Permissions</a> </p>
+     */
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
     /**
      * <p>The user's permission level, which must be the following:</p> <ul> <li> <p>

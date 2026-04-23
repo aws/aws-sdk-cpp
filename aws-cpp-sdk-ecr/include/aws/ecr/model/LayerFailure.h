@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The layer digest associated with the failure.</p>
      */
+    inline bool LayerDigestHasBeenSet() const { return m_layerDigestHasBeenSet; }
+
+    /**
+     * <p>The layer digest associated with the failure.</p>
+     */
     inline void SetLayerDigest(const Aws::String& value) { m_layerDigestHasBeenSet = true; m_layerDigest = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The failure code associated with the failure.</p>
      */
+    inline bool FailureCodeHasBeenSet() const { return m_failureCodeHasBeenSet; }
+
+    /**
+     * <p>The failure code associated with the failure.</p>
+     */
     inline void SetFailureCode(const LayerFailureCode& value) { m_failureCodeHasBeenSet = true; m_failureCode = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The reason for the failure.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>The reason for the failure.</p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>The reason for the failure.</p>

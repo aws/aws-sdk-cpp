@@ -59,6 +59,12 @@ namespace Model
      * <p>The server-side encryption algorithm used when storing job results in Amazon
      * S3 (e.g., AES256, aws:kms).</p>
      */
+    inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
+
+    /**
+     * <p>The server-side encryption algorithm used when storing job results in Amazon
+     * S3 (e.g., AES256, aws:kms).</p>
+     */
     inline void SetEncryptionType(const ServerSideEncryption& value) { m_encryptionTypeHasBeenSet = true; m_encryptionType = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * key ID to use for encryption of job results.</p>
      */
     inline const Aws::String& GetKMSKeyId() const{ return m_kMSKeyId; }
+
+    /**
+     * <p>If the encryption type is aws:kms, this optional value specifies the AWS KMS
+     * key ID to use for encryption of job results.</p>
+     */
+    inline bool KMSKeyIdHasBeenSet() const { return m_kMSKeyIdHasBeenSet; }
 
     /**
      * <p>If the encryption type is aws:kms, this optional value specifies the AWS KMS
@@ -128,6 +140,12 @@ namespace Model
      * the encryption context for the restore results.</p>
      */
     inline const Aws::String& GetKMSContext() const{ return m_kMSContext; }
+
+    /**
+     * <p>If the encryption type is aws:kms, this optional value can be used to specify
+     * the encryption context for the restore results.</p>
+     */
+    inline bool KMSContextHasBeenSet() const { return m_kMSContextHasBeenSet; }
 
     /**
      * <p>If the encryption type is aws:kms, this optional value can be used to specify

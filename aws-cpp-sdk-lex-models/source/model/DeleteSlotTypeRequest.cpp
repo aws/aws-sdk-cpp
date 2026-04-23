@@ -29,7 +29,7 @@ DeleteSlotTypeRequest::DeleteSlotTypeRequest() :
 
 Aws::String DeleteSlotTypeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

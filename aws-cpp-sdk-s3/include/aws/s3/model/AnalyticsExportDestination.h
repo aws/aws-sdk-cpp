@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsExportDestination">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AnalyticsExportDestination
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>A destination signifying output to an S3 bucket.</p>
      */
     inline const AnalyticsS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
+
+    /**
+     * <p>A destination signifying output to an S3 bucket.</p>
+     */
+    inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
 
     /**
      * <p>A destination signifying output to an S3 bucket.</p>

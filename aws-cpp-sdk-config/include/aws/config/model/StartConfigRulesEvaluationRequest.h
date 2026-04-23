@@ -58,6 +58,12 @@ namespace Model
      * <p>The list of names of AWS Config rules that you want to run evaluations
      * for.</p>
      */
+    inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
+
+    /**
+     * <p>The list of names of AWS Config rules that you want to run evaluations
+     * for.</p>
+     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**

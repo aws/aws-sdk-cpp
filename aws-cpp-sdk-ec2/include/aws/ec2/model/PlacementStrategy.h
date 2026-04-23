@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     cluster,
-    spread
+    spread,
+    partition
   };
 
 namespace PlacementStrategyMapper

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The CloudTrail ID of the event returned.</p>
      */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
+
+    /**
+     * <p>The CloudTrail ID of the event returned.</p>
+     */
     inline void SetEventId(const Aws::String& value) { m_eventIdHasBeenSet = true; m_eventId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the event returned.</p>
      */
     inline const Aws::String& GetEventName() const{ return m_eventName; }
+
+    /**
+     * <p>The name of the event returned.</p>
+     */
+    inline bool EventNameHasBeenSet() const { return m_eventNameHasBeenSet; }
 
     /**
      * <p>The name of the event returned.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>Information about whether the event is a write event or a read event. </p>
      */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+
+    /**
+     * <p>Information about whether the event is a write event or a read event. </p>
+     */
     inline void SetReadOnly(const Aws::String& value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
@@ -166,6 +181,13 @@ namespace Model
      * temporary credentials.</p>
      */
     inline const Aws::String& GetAccessKeyId() const{ return m_accessKeyId; }
+
+    /**
+     * <p>The AWS access key ID that was used to sign the request. If the request was
+     * made with temporary security credentials, this is the access key ID of the
+     * temporary credentials.</p>
+     */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS access key ID that was used to sign the request. If the request was
@@ -218,6 +240,11 @@ namespace Model
     /**
      * <p>The date and time of the event returned.</p>
      */
+    inline bool EventTimeHasBeenSet() const { return m_eventTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time of the event returned.</p>
+     */
     inline void SetEventTime(const Aws::Utils::DateTime& value) { m_eventTimeHasBeenSet = true; m_eventTime = value; }
 
     /**
@@ -240,6 +267,11 @@ namespace Model
      * <p>The AWS service that the request was made to.</p>
      */
     inline const Aws::String& GetEventSource() const{ return m_eventSource; }
+
+    /**
+     * <p>The AWS service that the request was made to.</p>
+     */
+    inline bool EventSourceHasBeenSet() const { return m_eventSourceHasBeenSet; }
 
     /**
      * <p>The AWS service that the request was made to.</p>
@@ -277,6 +309,12 @@ namespace Model
      * returned.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>A user name or role name of the requester that called the API in the event
+     * returned.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>A user name or role name of the requester that called the API in the event
@@ -323,6 +361,11 @@ namespace Model
     /**
      * <p>A list of resources referenced by the event returned.</p>
      */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
+
+    /**
+     * <p>A list of resources referenced by the event returned.</p>
+     */
     inline void SetResources(const Aws::Vector<Resource>& value) { m_resourcesHasBeenSet = true; m_resources = value; }
 
     /**
@@ -355,6 +398,11 @@ namespace Model
      * <p>A JSON string that contains a representation of the event returned.</p>
      */
     inline const Aws::String& GetCloudTrailEvent() const{ return m_cloudTrailEvent; }
+
+    /**
+     * <p>A JSON string that contains a representation of the event returned.</p>
+     */
+    inline bool CloudTrailEventHasBeenSet() const { return m_cloudTrailEventHasBeenSet; }
 
     /**
      * <p>A JSON string that contains a representation of the event returned.</p>

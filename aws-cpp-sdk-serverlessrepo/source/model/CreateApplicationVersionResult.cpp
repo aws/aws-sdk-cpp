@@ -82,6 +82,12 @@ CreateApplicationVersionResult& CreateApplicationVersionResult::operator =(const
 
   }
 
+  if(jsonValue.ValueExists("sourceCodeArchiveUrl"))
+  {
+    m_sourceCodeArchiveUrl = jsonValue.GetString("sourceCodeArchiveUrl");
+
+  }
+
   if(jsonValue.ValueExists("sourceCodeUrl"))
   {
     m_sourceCodeUrl = jsonValue.GetString("sourceCodeUrl");

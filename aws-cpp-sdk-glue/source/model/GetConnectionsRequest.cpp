@@ -25,6 +25,8 @@ using namespace Aws::Utils;
 GetConnectionsRequest::GetConnectionsRequest() : 
     m_catalogIdHasBeenSet(false),
     m_filterHasBeenSet(false),
+    m_hidePassword(false),
+    m_hidePasswordHasBeenSet(false),
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false)
@@ -44,6 +46,12 @@ Aws::String GetConnectionsRequest::SerializePayload() const
   if(m_filterHasBeenSet)
   {
    payload.WithObject("Filter", m_filter.Jsonize());
+
+  }
+
+  if(m_hidePasswordHasBeenSet)
+  {
+   payload.WithBool("HidePassword", m_hidePassword);
 
   }
 

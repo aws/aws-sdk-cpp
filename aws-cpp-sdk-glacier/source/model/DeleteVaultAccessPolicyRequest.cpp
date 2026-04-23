@@ -30,7 +30,7 @@ DeleteVaultAccessPolicyRequest::DeleteVaultAccessPolicyRequest() :
 
 Aws::String DeleteVaultAccessPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

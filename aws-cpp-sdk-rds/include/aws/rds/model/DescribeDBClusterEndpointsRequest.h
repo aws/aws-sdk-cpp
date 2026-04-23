@@ -58,6 +58,12 @@ namespace Model
      * <p>The DB cluster identifier of the DB cluster associated with the endpoint.
      * This parameter is stored as a lowercase string.</p>
      */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB cluster identifier of the DB cluster associated with the endpoint.
+     * This parameter is stored as a lowercase string.</p>
+     */
     inline void SetDBClusterIdentifier(const Aws::String& value) { m_dBClusterIdentifierHasBeenSet = true; m_dBClusterIdentifier = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * lowercase string.</p>
      */
     inline const Aws::String& GetDBClusterEndpointIdentifier() const{ return m_dBClusterEndpointIdentifier; }
+
+    /**
+     * <p>The identifier of the endpoint to describe. This parameter is stored as a
+     * lowercase string.</p>
+     */
+    inline bool DBClusterEndpointIdentifierHasBeenSet() const { return m_dBClusterEndpointIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the endpoint to describe. This parameter is stored as a
@@ -150,6 +162,23 @@ namespace Model
      * <code>deleting</code>, <code>modifying</code>. </p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A set of name-value pairs that define which endpoints to include in the
+     * output. The filters are specified as name-value pairs, in the format
+     * <code>Name=<i>endpoint_type</i>,Values=<i>endpoint_type1</i>,<i>endpoint_type2</i>,...</code>.
+     * <code>Name</code> can be one of: <code>db-cluster-endpoint-type</code>,
+     * <code>db-cluster-endpoint-custom-type</code>,
+     * <code>db-cluster-endpoint-id</code>, <code>db-cluster-endpoint-status</code>.
+     * <code>Values</code> for the <code> db-cluster-endpoint-type</code> filter can be
+     * one or more of: <code>reader</code>, <code>writer</code>, <code>custom</code>.
+     * <code>Values</code> for the <code>db-cluster-endpoint-custom-type</code> filter
+     * can be one or more of: <code>reader</code>, <code>any</code>.
+     * <code>Values</code> for the <code>db-cluster-endpoint-status</code> filter can
+     * be one or more of: <code>available</code>, <code>creating</code>,
+     * <code>deleting</code>, <code>modifying</code>. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A set of name-value pairs that define which endpoints to include in the
@@ -268,6 +297,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -286,6 +323,14 @@ namespace Model
      * <code>MaxRecords</code>. </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p> An optional pagination token provided by a previous
+     * <a>DescribeDBClusterEndpoints</a> request. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>. </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p> An optional pagination token provided by a previous

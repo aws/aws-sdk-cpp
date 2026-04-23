@@ -64,6 +64,14 @@ namespace Model
      * S3 bucket from which Elastic Transcoder gets the files to transcode and the
      * bucket into which Elastic Transcoder puts the transcoded files.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The <code>Id</code> of the pipeline that you want Elastic Transcoder to use
+     * for transcoding. The pipeline determines several settings, including the Amazon
+     * S3 bucket from which Elastic Transcoder gets the files to transcode and the
+     * bucket into which Elastic Transcoder puts the transcoded files.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -117,6 +125,12 @@ namespace Model
      * <p>A section of the request body that provides information about the file that
      * is being transcoded.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>A section of the request body that provides information about the file that
+     * is being transcoded.</p>
+     */
     inline void SetInput(const JobInput& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -143,6 +157,12 @@ namespace Model
      * are being transcoded.</p>
      */
     inline const Aws::Vector<JobInput>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * <p>A section of the request body that provides information about the files that
+     * are being transcoded.</p>
+     */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * <p>A section of the request body that provides information about the files that
@@ -193,6 +213,13 @@ namespace Model
      * (target) file. We strongly recommend that you use the <code>Outputs</code>
      * syntax instead of the <code>Output</code> syntax. </p>
      */
+    inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
+
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) file. We strongly recommend that you use the <code>Outputs</code>
+     * syntax instead of the <code>Output</code> syntax. </p>
+     */
     inline void SetOutput(const CreateJobOutput& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
@@ -223,6 +250,13 @@ namespace Model
      * instead of the <code>Output</code> syntax. </p>
      */
     inline const Aws::Vector<CreateJobOutput>& GetOutputs() const{ return m_outputs; }
+
+    /**
+     * <p> A section of the request body that provides information about the transcoded
+     * (target) files. We recommend that you use the <code>Outputs</code> syntax
+     * instead of the <code>Output</code> syntax. </p>
+     */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
 
     /**
      * <p> A section of the request body that provides information about the transcoded
@@ -273,6 +307,13 @@ namespace Model
      * playlists.</p>
      */
     inline const Aws::String& GetOutputKeyPrefix() const{ return m_outputKeyPrefix; }
+
+    /**
+     * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
+     * of all files that this job creates, including output files, thumbnails, and
+     * playlists.</p>
+     */
+    inline bool OutputKeyPrefixHasBeenSet() const { return m_outputKeyPrefixHasBeenSet; }
 
     /**
      * <p>The value, if any, that you want Elastic Transcoder to prepend to the names
@@ -331,6 +372,14 @@ namespace Model
      * contains information about the master playlists that you want Elastic Transcoder
      * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
      */
+    inline bool PlaylistsHasBeenSet() const { return m_playlistsHasBeenSet; }
+
+    /**
+     * <p>If you specify a preset in <code>PresetId</code> for which the value of
+     * <code>Container</code> is fmp4 (Fragmented MP4) or ts (MPEG-TS), Playlists
+     * contains information about the master playlists that you want Elastic Transcoder
+     * to create.</p> <p>The maximum number of master playlists in a job is 30.</p>
+     */
     inline void SetPlaylists(const Aws::Vector<CreateJobPlaylist>& value) { m_playlistsHasBeenSet = true; m_playlists = value; }
 
     /**
@@ -382,6 +431,15 @@ namespace Model
      * specify them.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
+
+    /**
+     * <p>User-defined metadata that you want to associate with an Elastic Transcoder
+     * job. You specify metadata in <code>key/value</code> pairs, and you can add up to
+     * 10 <code>key/value</code> pairs per job. Elastic Transcoder does not guarantee
+     * that <code>key/value</code> pairs are returned in the same order in which you
+     * specify them.</p>
+     */
+    inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
 
     /**
      * <p>User-defined metadata that you want to associate with an Elastic Transcoder

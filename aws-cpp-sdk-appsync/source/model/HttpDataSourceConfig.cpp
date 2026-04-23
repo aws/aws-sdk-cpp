@@ -29,12 +29,14 @@ namespace Model
 {
 
 HttpDataSourceConfig::HttpDataSourceConfig() : 
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_authorizationConfigHasBeenSet(false)
 {
 }
 
 HttpDataSourceConfig::HttpDataSourceConfig(JsonView jsonValue) : 
-    m_endpointHasBeenSet(false)
+    m_endpointHasBeenSet(false),
+    m_authorizationConfigHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ HttpDataSourceConfig& HttpDataSourceConfig::operator =(JsonView jsonValue)
     m_endpointHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("authorizationConfig"))
+  {
+    m_authorizationConfig = jsonValue.GetObject("authorizationConfig");
+
+    m_authorizationConfigHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue HttpDataSourceConfig::Jsonize() const
   if(m_endpointHasBeenSet)
   {
    payload.WithString("endpoint", m_endpoint);
+
+  }
+
+  if(m_authorizationConfigHasBeenSet)
+  {
+   payload.WithObject("authorizationConfig", m_authorizationConfig.Jsonize());
 
   }
 

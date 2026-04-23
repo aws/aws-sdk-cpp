@@ -59,6 +59,11 @@ namespace Model
     /**
      * List of dimensions to include or exclude.
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * List of dimensions to include or exclude.
+     */
     inline void SetDimensions(const Aws::Vector<SegmentDimensions>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -99,6 +104,19 @@ NOTE: If you specify an imported segment for this attribute, the
      * of the imported segment, without any filters applied to it.
      */
     inline const Aws::Vector<SegmentReference>& GetSourceSegments() const{ return m_sourceSegments; }
+
+    /**
+     * The base segment that you build your segment on. The source segment defines the
+     * starting "universe" of endpoints. When you add dimensions to the segment, it
+     * filters the source segment based on the dimensions that you specify. You can
+     * specify more than one dimensional segment. You can only specify one imported
+     * segment.
+
+NOTE: If you specify an imported segment for this attribute, the
+     * segment size estimate that appears in the Amazon Pinpoint console shows the size
+     * of the imported segment, without any filters applied to it.
+     */
+    inline bool SourceSegmentsHasBeenSet() const { return m_sourceSegmentsHasBeenSet; }
 
     /**
      * The base segment that you build your segment on. The source segment defines the
@@ -191,6 +209,13 @@ NOTE: If you specify an imported segment for this attribute, the
      * three source segments, should the resulting segment be based on any or all of
      * the segments? Acceptable values: ANY or ALL.
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * Specify how to handle multiple source segments. For example, if you specify
+     * three source segments, should the resulting segment be based on any or all of
+     * the segments? Acceptable values: ANY or ALL.
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -222,6 +247,14 @@ NOTE: If you specify an imported segment for this attribute, the
      * NONE.
      */
     inline const Type& GetType() const{ return m_type; }
+
+    /**
+     * Specify how to handle multiple segment dimensions. For example, if you specify
+     * three dimensions, should the resulting segment include endpoints that are
+     * matched by all, any, or none of the dimensions? Acceptable values: ALL, ANY, or
+     * NONE.
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * Specify how to handle multiple segment dimensions. For example, if you specify

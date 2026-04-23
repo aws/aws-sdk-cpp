@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The CPU's frequency.</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>The CPU's frequency.</p>
+     */
     inline void SetFrequency(const Aws::String& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The CPU's architecture, for example x86 or ARM.</p>
      */
     inline const Aws::String& GetArchitecture() const{ return m_architecture; }
+
+    /**
+     * <p>The CPU's architecture, for example x86 or ARM.</p>
+     */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
 
     /**
      * <p>The CPU's architecture, for example x86 or ARM.</p>
@@ -126,6 +136,12 @@ namespace Model
      * 1.2 GHz CPU is expressed as 1200000000.</p>
      */
     inline double GetClock() const{ return m_clock; }
+
+    /**
+     * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a
+     * 1.2 GHz CPU is expressed as 1200000000.</p>
+     */
+    inline bool ClockHasBeenSet() const { return m_clockHasBeenSet; }
 
     /**
      * <p>The clock speed of the device's CPU, expressed in hertz (Hz). For example, a

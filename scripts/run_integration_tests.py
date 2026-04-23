@@ -43,11 +43,13 @@ def Main():
     arguments = ParseArguments()
 
     configDir = ""
+    testDir = ""
     exeExtension = ""
 
     #Visual Studio puts executables into a configuration sub-dir, so append that.
     if platform.system() == "Windows":
         configDir = arguments["configuration"]
+        testDir = "bin"
         exeExtension = ".exe"
 
     testList = [ "aws-cpp-sdk-dynamodb-integration-tests",
@@ -57,12 +59,13 @@ def Main():
                  "aws-cpp-sdk-cognitoidentity-integration-tests",
                  "aws-cpp-sdk-transfer-tests",
                  "aws-cpp-sdk-s3-encryption-integration-tests",
+                 "aws-cpp-sdk-mediastore-data-integration-tests",
                  #"aws-cpp-sdk-redshift-integration-tests", # Don't run this test unless you really want to, it will cost you a lot of money. The test takes around a half hour to finish.
                  #"aws-cpp-sdk-cloudfront-integration-tests", # This test will cost you a lot of money as well.
                  "aws-cpp-sdk-ec2-integration-tests" ]
 
     for testName in testList:
-        testExe = arguments["buildDir"] + "/" + testName + "/" + configDir + "/" + testName + exeExtension
+        testExe = arguments["buildDir"] + "/" + (testDir if testDir else testName) + "/" + configDir + "/" + testName + exeExtension
         # when build with BUILD_ONLY, not all test binaries will be generated.
         if not os.path.isfile(testExe):
             continue

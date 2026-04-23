@@ -52,11 +52,67 @@ namespace Model
 
 
     /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline const Aws::String& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(const Aws::String& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(Aws::String&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline void SetChannelClass(const char* value) { m_channelClassHasBeenSet = true; m_channelClass.assign(value); }
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(const Aws::String& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(Aws::String&& value) { SetChannelClass(std::move(value)); return *this;}
+
+    /**
+     * Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
+
+     */
+    inline ListOfferingsRequest& WithChannelClass(const char* value) { SetChannelClass(value); return *this;}
+
+
+    /**
      * Filter to offerings that match the configuration of an existing channel, e.g.
      * '2345678' (a channel ID)
 
      */
     inline const Aws::String& GetChannelConfiguration() const{ return m_channelConfiguration; }
+
+    /**
+     * Filter to offerings that match the configuration of an existing channel, e.g.
+     * '2345678' (a channel ID)
+
+     */
+    inline bool ChannelConfigurationHasBeenSet() const { return m_channelConfigurationHasBeenSet; }
 
     /**
      * Filter to offerings that match the configuration of an existing channel, e.g.
@@ -109,6 +165,11 @@ namespace Model
     /**
      * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
      */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * Filter by codec, 'AVC', 'HEVC', 'MPEG2', or 'AUDIO'
+     */
     inline void SetCodec(const Aws::String& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
@@ -141,6 +202,9 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     
@@ -152,6 +216,12 @@ namespace Model
 
      */
     inline const Aws::String& GetMaximumBitrate() const{ return m_maximumBitrate; }
+
+    /**
+     * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
+
+     */
+    inline bool MaximumBitrateHasBeenSet() const { return m_maximumBitrateHasBeenSet; }
 
     /**
      * Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
@@ -198,6 +268,11 @@ namespace Model
     /**
      * Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
      */
+    inline bool MaximumFramerateHasBeenSet() const { return m_maximumFramerateHasBeenSet; }
+
+    /**
+     * Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
+     */
     inline void SetMaximumFramerate(const Aws::String& value) { m_maximumFramerateHasBeenSet = true; m_maximumFramerate = value; }
 
     /**
@@ -230,6 +305,9 @@ namespace Model
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     
@@ -252,6 +330,11 @@ namespace Model
      * Filter by resolution, 'SD', 'HD', or 'UHD'
      */
     inline const Aws::String& GetResolution() const{ return m_resolution; }
+
+    /**
+     * Filter by resolution, 'SD', 'HD', or 'UHD'
+     */
+    inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
      * Filter by resolution, 'SD', 'HD', or 'UHD'
@@ -292,6 +375,11 @@ namespace Model
     /**
      * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * Filter by resource type, 'INPUT', 'OUTPUT', or 'CHANNEL'
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -325,6 +413,12 @@ namespace Model
 
      */
     inline const Aws::String& GetSpecialFeature() const{ return m_specialFeature; }
+
+    /**
+     * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
+
+     */
+    inline bool SpecialFeatureHasBeenSet() const { return m_specialFeatureHasBeenSet; }
 
     /**
      * Filter by special feature, 'ADVANCED_AUDIO' or 'AUDIO_NORMALIZATION'
@@ -373,6 +467,12 @@ namespace Model
      * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
 
      */
+    inline bool VideoQualityHasBeenSet() const { return m_videoQualityHasBeenSet; }
+
+    /**
+     * Filter by video quality, 'STANDARD', 'ENHANCED', or 'PREMIUM'
+
+     */
     inline void SetVideoQuality(const Aws::String& value) { m_videoQualityHasBeenSet = true; m_videoQuality = value; }
 
     /**
@@ -406,6 +506,9 @@ namespace Model
     inline ListOfferingsRequest& WithVideoQuality(const char* value) { SetVideoQuality(value); return *this;}
 
   private:
+
+    Aws::String m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     Aws::String m_channelConfiguration;
     bool m_channelConfigurationHasBeenSet;

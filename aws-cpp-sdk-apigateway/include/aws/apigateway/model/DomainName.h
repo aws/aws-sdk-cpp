@@ -71,6 +71,12 @@ namespace Model
      * <p>The custom domain name as an API host name, for example,
      * <code>my-api.example.com</code>.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The custom domain name as an API host name, for example,
+     * <code>my-api.example.com</code>.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -109,6 +115,12 @@ namespace Model
      * this domain name.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The name of the certificate that will be used by edge-optimized endpoint for
+     * this domain name.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
 
     /**
      * <p>The name of the certificate that will be used by edge-optimized endpoint for
@@ -153,6 +165,13 @@ namespace Model
      * only supported source.</p>
      */
     inline const Aws::String& GetCertificateArn() const{ return m_certificateArn; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used by
+     * edge-optimized endpoint for this domain name. AWS Certificate Manager is the
+     * only supported source.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
 
     /**
      * <p>The reference to an AWS-managed certificate that will be used by
@@ -207,6 +226,12 @@ namespace Model
      * <p>The timestamp when the certificate that was used by edge-optimized endpoint
      * for this domain name was uploaded.</p>
      */
+    inline bool CertificateUploadDateHasBeenSet() const { return m_certificateUploadDateHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the certificate that was used by edge-optimized endpoint
+     * for this domain name was uploaded.</p>
+     */
     inline void SetCertificateUploadDate(const Aws::Utils::DateTime& value) { m_certificateUploadDateHasBeenSet = true; m_certificateUploadDate = value; }
 
     /**
@@ -235,6 +260,14 @@ namespace Model
      * by API Gateway when you create a regional endpoint.</p>
      */
     inline const Aws::String& GetRegionalDomainName() const{ return m_regionalDomainName; }
+
+    /**
+     * <p>The domain name associated with the regional endpoint for this custom domain
+     * name. You set up this association by adding a DNS record that points the custom
+     * domain name to this regional domain name. The regional domain name is returned
+     * by API Gateway when you create a regional endpoint.</p>
+     */
+    inline bool RegionalDomainNameHasBeenSet() const { return m_regionalDomainNameHasBeenSet; }
 
     /**
      * <p>The domain name associated with the regional endpoint for this custom domain
@@ -294,6 +327,16 @@ namespace Model
      * Regions and Endpoints for API Gateway</a>. </p>
      */
     inline const Aws::String& GetRegionalHostedZoneId() const{ return m_regionalHostedZoneId; }
+
+    /**
+     * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
+    inline bool RegionalHostedZoneIdHasBeenSet() const { return m_regionalHostedZoneIdHasBeenSet; }
 
     /**
      * <p>The region-specific Amazon Route 53 Hosted Zone ID of the regional endpoint.
@@ -366,6 +409,12 @@ namespace Model
      * <p>The name of the certificate that will be used for validating the regional
      * domain name.</p>
      */
+    inline bool RegionalCertificateNameHasBeenSet() const { return m_regionalCertificateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the certificate that will be used for validating the regional
+     * domain name.</p>
+     */
     inline void SetRegionalCertificateName(const Aws::String& value) { m_regionalCertificateNameHasBeenSet = true; m_regionalCertificateName = value; }
 
     /**
@@ -405,6 +454,13 @@ namespace Model
      * source.</p>
      */
     inline const Aws::String& GetRegionalCertificateArn() const{ return m_regionalCertificateArn; }
+
+    /**
+     * <p>The reference to an AWS-managed certificate that will be used for validating
+     * the regional domain name. AWS Certificate Manager is the only supported
+     * source.</p>
+     */
+    inline bool RegionalCertificateArnHasBeenSet() const { return m_regionalCertificateArnHasBeenSet; }
 
     /**
      * <p>The reference to an AWS-managed certificate that will be used for validating
@@ -458,6 +514,16 @@ namespace Model
      * CloudFront documentation</a>.</p>
      */
     inline const Aws::String& GetDistributionDomainName() const{ return m_distributionDomainName; }
+
+    /**
+     * <p>The domain name of the Amazon CloudFront distribution associated with this
+     * custom domain name for an edge-optimized endpoint. You set up this association
+     * when adding a DNS record pointing the custom domain name to this distribution
+     * name. For more information about CloudFront distributions, see the <a
+     * href="https://aws.amazon.com/documentation/cloudfront/" target="_blank">Amazon
+     * CloudFront documentation</a>.</p>
+     */
+    inline bool DistributionDomainNameHasBeenSet() const { return m_distributionDomainNameHasBeenSet; }
 
     /**
      * <p>The domain name of the Amazon CloudFront distribution associated with this
@@ -540,6 +606,17 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
      * Regions and Endpoints for API Gateway</a>. </p>
      */
+    inline bool DistributionHostedZoneIdHasBeenSet() const { return m_distributionHostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>The region-agnostic Amazon Route 53 Hosted Zone ID of the edge-optimized
+     * endpoint. The valid value is <code>Z2FDTNDATAQYW2</code> for all the regions.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/apigateway/latest/developerguide/apigateway-regional-api-custom-domain-create.html">Set
+     * up a Regional Custom Domain Name</a> and <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/rande.html#apigateway_region">AWS
+     * Regions and Endpoints for API Gateway</a>. </p>
+     */
     inline void SetDistributionHostedZoneId(const Aws::String& value) { m_distributionHostedZoneIdHasBeenSet = true; m_distributionHostedZoneId = value; }
 
     /**
@@ -603,6 +680,12 @@ namespace Model
      * types of the domain name. </p>
      */
     inline const EndpointConfiguration& GetEndpointConfiguration() const{ return m_endpointConfiguration; }
+
+    /**
+     * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint
+     * types of the domain name. </p>
+     */
+    inline bool EndpointConfigurationHasBeenSet() const { return m_endpointConfigurationHasBeenSet; }
 
     /**
      * <p>The endpoint configuration of this <a>DomainName</a> showing the endpoint

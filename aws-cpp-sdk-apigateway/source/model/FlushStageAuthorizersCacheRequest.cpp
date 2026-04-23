@@ -30,7 +30,7 @@ FlushStageAuthorizersCacheRequest::FlushStageAuthorizersCacheRequest() :
 
 Aws::String FlushStageAuthorizersCacheRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

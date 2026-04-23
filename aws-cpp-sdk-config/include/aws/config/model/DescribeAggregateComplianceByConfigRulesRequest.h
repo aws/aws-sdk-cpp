@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregator.</p>
      */
+    inline bool ConfigurationAggregatorNameHasBeenSet() const { return m_configurationAggregatorNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregator.</p>
+     */
     inline void SetConfigurationAggregatorName(const Aws::String& value) { m_configurationAggregatorNameHasBeenSet = true; m_configurationAggregatorName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>Filters the results by ConfigRuleComplianceFilters object. </p>
+     */
     inline void SetFilters(const ConfigRuleComplianceFilters& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -117,6 +127,12 @@ namespace Model
      * <p>The maximum number of evaluation results returned on each page. The default
      * is maximum. If you specify 0, AWS Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of evaluation results returned on each page. The default
+     * is maximum. If you specify 0, AWS Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -131,6 +147,12 @@ namespace Model
      * page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The nextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The nextToken string returned on a previous page that you use to get the next

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon RDS instance's ARN.</p>
      */
+    inline bool RdsDbInstanceArnHasBeenSet() const { return m_rdsDbInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon RDS instance's ARN.</p>
+     */
     inline void SetRdsDbInstanceArn(const Aws::String& value) { m_rdsDbInstanceArnHasBeenSet = true; m_rdsDbInstanceArn = value; }
 
     /**

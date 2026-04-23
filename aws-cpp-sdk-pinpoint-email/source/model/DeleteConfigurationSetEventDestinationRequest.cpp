@@ -30,7 +30,7 @@ DeleteConfigurationSetEventDestinationRequest::DeleteConfigurationSetEventDestin
 
 Aws::String DeleteConfigurationSetEventDestinationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteConfigurationSetEventDestinationRequest::GetRequestSpecificHeaders() const

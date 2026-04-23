@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
      */
+    inline bool GranularityHasBeenSet() const { return m_granularityHasBeenSet; }
+
+    /**
+     * <p>The granularity. The only valid value is <code>1Minute</code>.</p>
+     */
     inline void SetGranularity(const Aws::String& value) { m_granularityHasBeenSet = true; m_granularity = value; }
 
     /**

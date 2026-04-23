@@ -58,6 +58,14 @@ namespace Model
      * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
      * lower-case letters or digits.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the policy for which you want to know its
+     * attachments.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for a policy ID string requires "p-" followed by from 8 to 128
+     * lower-case letters or digits.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -108,6 +116,14 @@ namespace Model
      * where the output should continue from.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Use this parameter if you receive a <code>NextToken</code> response in a
+     * previous request that indicates that there is more output available. Set it to
+     * the value of the previous call's <code>NextToken</code> response to indicate
+     * where the output should continue from.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Use this parameter if you receive a <code>NextToken</code> response in a
@@ -170,6 +186,19 @@ namespace Model
      * every operation to ensure that you receive all of the results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>(Optional) Use this to limit the number of results you want included per page
+     * in the response. If you do not include this parameter, it defaults to a value
+     * that is specific to the operation. If additional items exist beyond the maximum
+     * you specify, the <code>NextToken</code> response element is present and has a
+     * value (is not null). Include that value as the <code>NextToken</code> request
+     * parameter in the next call to the operation to get the next part of the results.
+     * Note that Organizations might return fewer results than the maximum even when
+     * there are more results available. You should check <code>NextToken</code> after
+     * every operation to ensure that you receive all of the results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>(Optional) Use this to limit the number of results you want included per page

@@ -35,6 +35,7 @@ namespace Aws
         static const int AMAZON_ELASTICSEARCH_HASH = HashingUtils::HashString("AMAZON_ELASTICSEARCH");
         static const int NONE_HASH = HashingUtils::HashString("NONE");
         static const int HTTP_HASH = HashingUtils::HashString("HTTP");
+        static const int RELATIONAL_DATABASE_HASH = HashingUtils::HashString("RELATIONAL_DATABASE");
 
 
         DataSourceType GetDataSourceTypeForName(const Aws::String& name)
@@ -60,6 +61,10 @@ namespace Aws
           {
             return DataSourceType::HTTP;
           }
+          else if (hashCode == RELATIONAL_DATABASE_HASH)
+          {
+            return DataSourceType::RELATIONAL_DATABASE;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +89,8 @@ namespace Aws
             return "NONE";
           case DataSourceType::HTTP:
             return "HTTP";
+          case DataSourceType::RELATIONAL_DATABASE:
+            return "RELATIONAL_DATABASE";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -91,7 +98,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

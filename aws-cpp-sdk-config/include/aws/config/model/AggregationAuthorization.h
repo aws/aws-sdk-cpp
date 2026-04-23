@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
      */
+    inline bool AggregationAuthorizationArnHasBeenSet() const { return m_aggregationAuthorizationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the aggregation object.</p>
+     */
     inline void SetAggregationAuthorizationArn(const Aws::String& value) { m_aggregationAuthorizationArnHasBeenSet = true; m_aggregationAuthorizationArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The 12-digit account ID of the account authorized to aggregate data.</p>
      */
     inline const Aws::String& GetAuthorizedAccountId() const{ return m_authorizedAccountId; }
+
+    /**
+     * <p>The 12-digit account ID of the account authorized to aggregate data.</p>
+     */
+    inline bool AuthorizedAccountIdHasBeenSet() const { return m_authorizedAccountIdHasBeenSet; }
 
     /**
      * <p>The 12-digit account ID of the account authorized to aggregate data.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The region authorized to collect aggregated data.</p>
      */
+    inline bool AuthorizedAwsRegionHasBeenSet() const { return m_authorizedAwsRegionHasBeenSet; }
+
+    /**
+     * <p>The region authorized to collect aggregated data.</p>
+     */
     inline void SetAuthorizedAwsRegion(const Aws::String& value) { m_authorizedAwsRegionHasBeenSet = true; m_authorizedAwsRegion = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The time stamp when the aggregation authorization was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The time stamp when the aggregation authorization was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The time stamp when the aggregation authorization was created.</p>

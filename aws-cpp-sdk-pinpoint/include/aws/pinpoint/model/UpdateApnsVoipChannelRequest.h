@@ -47,6 +47,9 @@ namespace Model
     inline const APNSVoipChannelRequest& GetAPNSVoipChannelRequest() const{ return m_aPNSVoipChannelRequest; }
 
     
+    inline bool APNSVoipChannelRequestHasBeenSet() const { return m_aPNSVoipChannelRequestHasBeenSet; }
+
+    
     inline void SetAPNSVoipChannelRequest(const APNSVoipChannelRequest& value) { m_aPNSVoipChannelRequestHasBeenSet = true; m_aPNSVoipChannelRequest = value; }
 
     
@@ -63,6 +66,11 @@ namespace Model
      * The unique ID of your Amazon Pinpoint application.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
      * The unique ID of your Amazon Pinpoint application.

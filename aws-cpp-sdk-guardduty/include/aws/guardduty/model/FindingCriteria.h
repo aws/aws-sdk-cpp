@@ -59,6 +59,12 @@ namespace Model
      * Represents a map of finding properties that match specified conditions and
      * values when querying findings.
      */
+    inline bool CriterionHasBeenSet() const { return m_criterionHasBeenSet; }
+
+    /**
+     * Represents a map of finding properties that match specified conditions and
+     * values when querying findings.
+     */
     inline void SetCriterion(const Aws::Map<Aws::String, Condition>& value) { m_criterionHasBeenSet = true; m_criterion = value; }
 
     /**

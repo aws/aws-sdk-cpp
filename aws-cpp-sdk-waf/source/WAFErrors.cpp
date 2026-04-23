@@ -39,6 +39,7 @@ static const int W_A_F_INTERNAL_ERROR_HASH = HashingUtils::HashString("WAFIntern
 static const int W_A_F_INVALID_REGEX_PATTERN_HASH = HashingUtils::HashString("WAFInvalidRegexPatternException");
 static const int W_A_F_INVALID_PARAMETER_HASH = HashingUtils::HashString("WAFInvalidParameterException");
 static const int W_A_F_SUBSCRIPTION_NOT_FOUND_HASH = HashingUtils::HashString("WAFSubscriptionNotFoundException");
+static const int W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH = HashingUtils::HashString("WAFServiceLinkedRoleErrorException");
 static const int W_A_F_NONEXISTENT_ITEM_HASH = HashingUtils::HashString("WAFNonexistentItemException");
 static const int W_A_F_INVALID_ACCOUNT_HASH = HashingUtils::HashString("WAFInvalidAccountException");
 static const int W_A_F_STALE_DATA_HASH = HashingUtils::HashString("WAFStaleDataException");
@@ -91,6 +92,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == W_A_F_SUBSCRIPTION_NOT_FOUND_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFErrors::W_A_F_SUBSCRIPTION_NOT_FOUND), false);
+  }
+  else if (hashCode == W_A_F_SERVICE_LINKED_ROLE_ERROR_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(WAFErrors::W_A_F_SERVICE_LINKED_ROLE_ERROR), false);
   }
   else if (hashCode == W_A_F_NONEXISTENT_ITEM_HASH)
   {

@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The name of the job flow.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the job flow.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -99,6 +104,12 @@ namespace Model
      * is not provided, logs are not created.</p>
      */
     inline const Aws::String& GetLogUri() const{ return m_logUri; }
+
+    /**
+     * <p>The location in Amazon S3 to write the log files of the job flow. If a value
+     * is not provided, logs are not created.</p>
+     */
+    inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
 
     /**
      * <p>The location in Amazon S3 to write the log files of the job flow. If a value
@@ -145,6 +156,11 @@ namespace Model
     /**
      * <p>A JSON string for selecting additional features.</p>
      */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
+
+    /**
+     * <p>A JSON string for selecting additional features.</p>
+     */
     inline void SetAdditionalInfo(const Aws::String& value) { m_additionalInfoHasBeenSet = true; m_additionalInfo = value; }
 
     /**
@@ -179,6 +195,13 @@ namespace Model
      * <code>CustomAmiID</code>.</p>
      */
     inline const Aws::String& GetAmiVersion() const{ return m_amiVersion; }
+
+    /**
+     * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
+     * 4.0 and later, <code>ReleaseLabel</code> is used. To specify a custom AMI, use
+     * <code>CustomAmiID</code>.</p>
+     */
+    inline bool AmiVersionHasBeenSet() const { return m_amiVersionHasBeenSet; }
 
     /**
      * <p>Applies only to Amazon EMR AMI versions 3.x and 2.x. For Amazon EMR releases
@@ -229,7 +252,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -241,7 +264,19 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
+     */
+    inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -253,7 +288,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -265,7 +300,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -277,7 +312,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -289,7 +324,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -301,7 +336,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -312,6 +347,11 @@ namespace Model
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
      */
     inline const JobFlowInstancesConfig& GetInstances() const{ return m_instances; }
+
+    /**
+     * <p>A specification of the number and type of Amazon EC2 instances.</p>
+     */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
 
     /**
      * <p>A specification of the number and type of Amazon EC2 instances.</p>
@@ -338,6 +378,11 @@ namespace Model
      * <p>A list of steps to run.</p>
      */
     inline const Aws::Vector<StepConfig>& GetSteps() const{ return m_steps; }
+
+    /**
+     * <p>A list of steps to run.</p>
+     */
+    inline bool StepsHasBeenSet() const { return m_stepsHasBeenSet; }
 
     /**
      * <p>A list of steps to run.</p>
@@ -380,6 +425,12 @@ namespace Model
      * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
      * nodes.</p>
      */
+    inline bool BootstrapActionsHasBeenSet() const { return m_bootstrapActionsHasBeenSet; }
+
+    /**
+     * <p>A list of bootstrap actions to run before Hadoop starts on the cluster
+     * nodes.</p>
+     */
     inline void SetBootstrapActions(const Aws::Vector<BootstrapActionConfig>& value) { m_bootstrapActionsHasBeenSet = true; m_bootstrapActions = value; }
 
     /**
@@ -417,7 +468,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -428,7 +479,18 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
+     * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
+     * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
+     */
+    inline bool SupportedProductsHasBeenSet() const { return m_supportedProductsHasBeenSet; }
+
+    /**
+     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     * third-party software to use. For more information, see the <a
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -439,7 +501,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -450,7 +512,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -461,7 +523,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -472,7 +534,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -483,7 +545,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -494,7 +556,7 @@ namespace Model
      * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
      * later, use Applications.</p> </note> <p>A list of strings that indicates
      * third-party software to use. For more information, see the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Currently supported values are:</p> <ul> <li>
      * <p>"mapr-m3" - launch the job flow using MapR M3 Edition.</p> </li> <li>
      * <p>"mapr-m5" - launch the job flow using MapR M5 Edition.</p> </li> </ul>
@@ -509,7 +571,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -530,7 +592,28 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
+     * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
+     * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
+     * arguments specifying "--edition,m3" or "--edition,m5" - launch the job flow
+     * using MapR M3 or M5 Edition respectively.</p> </li> <li> <p>"mapr-m7" - launch
+     * the cluster using MapR M7 Edition.</p> </li> <li> <p>"hunk" - launch the cluster
+     * with the Hunk Big Data Analtics Platform.</p> </li> <li> <p>"hue"- launch the
+     * cluster with Hue installed.</p> </li> <li> <p>"spark" - launch the cluster with
+     * Apache Spark installed.</p> </li> <li> <p>"ganglia" - launch the cluster with
+     * the Ganglia Monitoring System installed.</p> </li> </ul>
+     */
+    inline bool NewSupportedProductsHasBeenSet() const { return m_newSupportedProductsHasBeenSet; }
+
+    /**
+     * <note> <p>For Amazon EMR releases 3.x and 2.x. For Amazon EMR releases 4.x and
+     * later, use Applications.</p> </note> <p>A list of strings that indicates
+     * third-party software to use with the job flow that accepts a user argument list.
+     * EMR accepts and forwards the argument list to the corresponding installation
+     * script as bootstrap action arguments. For more information, see "Launch a Job
+     * Flow on the MapR Distribution for Hadoop" in the <a
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -551,7 +634,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -572,7 +655,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -593,7 +676,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -614,7 +697,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -635,7 +718,7 @@ namespace Model
      * EMR accepts and forwards the argument list to the corresponding installation
      * script as bootstrap action arguments. For more information, see "Launch a Job
      * Flow on the MapR Distribution for Hadoop" in the <a
-     * href="http://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
+     * href="https://docs.aws.amazon.com/emr/latest/DeveloperGuide/emr-dg.pdf">Amazon
      * EMR Developer Guide</a>. Supported values are:</p> <ul> <li> <p>"mapr-m3" -
      * launch the cluster using MapR M3 Edition.</p> </li> <li> <p>"mapr-m5" - launch
      * the cluster using MapR M5 Edition.</p> </li> <li> <p>"mapr" with the user
@@ -651,51 +734,74 @@ namespace Model
 
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
+
+    /**
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline void SetApplications(const Aws::Vector<Application>& value) { m_applicationsHasBeenSet = true; m_applications = value; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline void SetApplications(Aws::Vector<Application>&& value) { m_applicationsHasBeenSet = true; m_applications = std::move(value); }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(const Aws::Vector<Application>& value) { SetApplications(value); return *this;}
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& WithApplications(Aws::Vector<Application>&& value) { SetApplications(std::move(value)); return *this;}
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(const Application& value) { m_applicationsHasBeenSet = true; m_applications.push_back(value); return *this; }
 
     /**
-     * <p>For Amazon EMR releases 4.0 and later. A list of applications for the
-     * cluster. Valid values are: "Hadoop", "Hive", "Mahout", "Pig", and "Spark." They
-     * are case insensitive.</p>
+     * <p>Applies to Amazon EMR releases 4.0 and later. A case-insensitive list of
+     * applications for Amazon EMR to install and configure when launching the cluster.
+     * For a list of applications available for each Amazon EMR release version, see
+     * the <a href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">Amazon EMR
+     * Release Guide</a>.</p>
      */
     inline RunJobFlowRequest& AddApplications(Application&& value) { m_applicationsHasBeenSet = true; m_applications.push_back(std::move(value)); return *this; }
 
@@ -705,6 +811,12 @@ namespace Model
      * for the EMR cluster you are creating.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
+    /**
+     * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
+     * for the EMR cluster you are creating.</p>
+     */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
      * <p>For Amazon EMR releases 4.0 and later. The list of configurations supplied
@@ -759,6 +871,15 @@ namespace Model
      * manage the cluster. If it is set to <code>false</code>, only the IAM user that
      * created the cluster can view and manage it.</p>
      */
+    inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
+
+    /**
+     * <p>Whether the cluster is visible to all IAM users of the AWS account associated
+     * with the cluster. If this value is set to <code>true</code>, all IAM users of
+     * that AWS account can view and (if they have the proper policy permissions set)
+     * manage the cluster. If it is set to <code>false</code>, only the IAM user that
+     * created the cluster can view and manage it.</p>
+     */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
@@ -778,6 +899,14 @@ namespace Model
      * have already created it using the CLI or console.</p>
      */
     inline const Aws::String& GetJobFlowRole() const{ return m_jobFlowRole; }
+
+    /**
+     * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
+     * The EC2 instances of the cluster assume this role. The default role is
+     * <code>EMR_EC2_DefaultRole</code>. In order to use the default role, you must
+     * have already created it using the CLI or console.</p>
+     */
+    inline bool JobFlowRoleHasBeenSet() const { return m_jobFlowRoleHasBeenSet; }
 
     /**
      * <p>Also called instance profile and EC2 role. An IAM role for an EMR cluster.
@@ -838,6 +967,12 @@ namespace Model
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
      * resources on your behalf.</p>
      */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
+
+    /**
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.</p>
+     */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRoleHasBeenSet = true; m_serviceRole = value; }
 
     /**
@@ -876,6 +1011,12 @@ namespace Model
      * instances.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
+     * instances.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associate with a cluster and propagate to Amazon EC2
@@ -922,6 +1063,11 @@ namespace Model
     /**
      * <p>The name of a security configuration to apply to the cluster.</p>
      */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The name of a security configuration to apply to the cluster.</p>
+     */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
 
     /**
@@ -957,6 +1103,14 @@ namespace Model
      * an instance group.</p>
      */
     inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline bool AutoScalingRoleHasBeenSet() const { return m_autoScalingRoleHasBeenSet; }
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -1039,6 +1193,23 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
+    inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
+
+    /**
+     * <p>Specifies the way that individual Amazon EC2 instances terminate when an
+     * automatic scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
     /**
@@ -1098,15 +1269,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline const Aws::String& GetCustomAmiId() const{ return m_customAmiId; }
@@ -1116,15 +1287,33 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * a Linux AMI</a>. </p>
+     */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
+     * launches cluster EC2 instances. For more information about custom AMIs in Amazon
+     * EMR, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
+     * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
+     * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
+     * information about creating a custom AMI, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
@@ -1134,15 +1323,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline void SetCustomAmiId(Aws::String&& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = std::move(value); }
@@ -1152,15 +1341,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline void SetCustomAmiId(const char* value) { m_customAmiIdHasBeenSet = true; m_customAmiId.assign(value); }
@@ -1170,15 +1359,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline RunJobFlowRequest& WithCustomAmiId(const Aws::String& value) { SetCustomAmiId(value); return *this;}
@@ -1188,15 +1377,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline RunJobFlowRequest& WithCustomAmiId(Aws::String&& value) { SetCustomAmiId(std::move(value)); return *this;}
@@ -1206,15 +1395,15 @@ namespace Model
      * Amazon EBS-backed Linux AMI. If specified, Amazon EMR uses this AMI when it
      * launches cluster EC2 instances. For more information about custom AMIs in Amazon
      * EMR, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-custom-ami.html">Using
      * a Custom AMI</a> in the <i>Amazon EMR Management Guide</i>. If omitted, the
      * cluster uses the base Linux AMI for the <code>ReleaseLabel</code> specified. For
      * Amazon EMR versions 2.x and 3.x, use <code>AmiVersion</code> instead.</p> <p>For
      * information about creating a custom AMI, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/creating-an-ami-ebs.html">Creating
      * an Amazon EBS-Backed Linux AMI</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide for Linux Instances</i>. For information about finding an AMI ID, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/finding-an-ami.html">Finding
      * a Linux AMI</a>. </p>
      */
     inline RunJobFlowRequest& WithCustomAmiId(const char* value) { SetCustomAmiId(value); return *this;}
@@ -1225,6 +1414,12 @@ namespace Model
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
      */
     inline int GetEbsRootVolumeSize() const{ return m_ebsRootVolumeSize; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
+    inline bool EbsRootVolumeSizeHasBeenSet() const { return m_ebsRootVolumeSizeHasBeenSet; }
 
     /**
      * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
@@ -1247,6 +1442,15 @@ namespace Model
      * specified, no updates are applied, and all updates must be applied manually.</p>
      */
     inline const RepoUpgradeOnBoot& GetRepoUpgradeOnBoot() const{ return m_repoUpgradeOnBoot; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
+     * from the Amazon Linux AMI package repositories to apply automatically when the
+     * instance boots using the AMI. If omitted, the default is <code>SECURITY</code>,
+     * which indicates that only security updates are applied. If <code>NONE</code> is
+     * specified, no updates are applied, and all updates must be applied manually.</p>
+     */
+    inline bool RepoUpgradeOnBootHasBeenSet() const { return m_repoUpgradeOnBootHasBeenSet; }
 
     /**
      * <p>Applies only when <code>CustomAmiID</code> is used. Specifies which updates
@@ -1288,7 +1492,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
@@ -1296,7 +1500,15 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline bool KerberosAttributesHasBeenSet() const { return m_kerberosAttributesHasBeenSet; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
@@ -1304,7 +1516,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
@@ -1312,7 +1524,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
@@ -1320,7 +1532,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline RunJobFlowRequest& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}

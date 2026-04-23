@@ -35,7 +35,7 @@ ListTargetsForSecurityProfileRequest::ListTargetsForSecurityProfileRequest() :
 
 Aws::String ListTargetsForSecurityProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTargetsForSecurityProfileRequest::AddQueryStringParameters(URI& uri) const

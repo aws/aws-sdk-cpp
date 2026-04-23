@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * can't specify <code>true</code>.)</p>
      */
     inline bool GetForceFailover() const{ return m_forceFailover; }
+
+    /**
+     * <p>If this parameter is <code>true</code>, the reboot is conducted through a
+     * Multi-AZ failover. (If the instance isn't configured for Multi-AZ, then you
+     * can't specify <code>true</code>.)</p>
+     */
+    inline bool ForceFailoverHasBeenSet() const { return m_forceFailoverHasBeenSet; }
 
     /**
      * <p>If this parameter is <code>true</code>, the reboot is conducted through a

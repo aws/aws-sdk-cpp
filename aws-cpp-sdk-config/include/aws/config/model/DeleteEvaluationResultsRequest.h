@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the AWS Config rule for which you want to delete the evaluation
      * results.</p>
      */
+    inline bool ConfigRuleNameHasBeenSet() const { return m_configRuleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS Config rule for which you want to delete the evaluation
+     * results.</p>
+     */
     inline void SetConfigRuleName(const Aws::String& value) { m_configRuleNameHasBeenSet = true; m_configRuleName = value; }
 
     /**

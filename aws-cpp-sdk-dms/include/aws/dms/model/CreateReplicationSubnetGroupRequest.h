@@ -63,6 +63,14 @@ namespace Model
      * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
      * <p>Example: <code>mySubnetgroup</code> </p>
      */
+    inline bool ReplicationSubnetGroupIdentifierHasBeenSet() const { return m_replicationSubnetGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name for the replication subnet group. This value is stored as a
+     * lowercase string.</p> <p>Constraints: Must contain no more than 255 alphanumeric
+     * characters, periods, spaces, underscores, or hyphens. Must not be "default".</p>
+     * <p>Example: <code>mySubnetgroup</code> </p>
+     */
     inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**
@@ -114,6 +122,11 @@ namespace Model
     /**
      * <p>The description for the subnet group.</p>
      */
+    inline bool ReplicationSubnetGroupDescriptionHasBeenSet() const { return m_replicationSubnetGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description for the subnet group.</p>
+     */
     inline void SetReplicationSubnetGroupDescription(const Aws::String& value) { m_replicationSubnetGroupDescriptionHasBeenSet = true; m_replicationSubnetGroupDescription = value; }
 
     /**
@@ -146,6 +159,11 @@ namespace Model
      * <p>The EC2 subnet IDs for the subnet group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>The EC2 subnet IDs for the subnet group.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>The EC2 subnet IDs for the subnet group.</p>
@@ -187,6 +205,11 @@ namespace Model
      * <p>The tag to be assigned to the subnet group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag to be assigned to the subnet group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tag to be assigned to the subnet group.</p>

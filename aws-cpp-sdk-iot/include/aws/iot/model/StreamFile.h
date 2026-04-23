@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The file ID.</p>
      */
+    inline bool FileIdHasBeenSet() const { return m_fileIdHasBeenSet; }
+
+    /**
+     * <p>The file ID.</p>
+     */
     inline void SetFileId(int value) { m_fileIdHasBeenSet = true; m_fileId = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The location of the file in S3.</p>
      */
     inline const S3Location& GetS3Location() const{ return m_s3Location; }
+
+    /**
+     * <p>The location of the file in S3.</p>
+     */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
 
     /**
      * <p>The location of the file in S3.</p>

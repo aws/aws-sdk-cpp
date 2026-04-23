@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ARN of the resource group.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource group.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * is used in the <a>CreateResourceGroup</a> action.</p>
      */
     inline const Aws::Vector<ResourceGroupTag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags (key and value pairs) of the resource group. This data type property
+     * is used in the <a>CreateResourceGroup</a> action.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags (key and value pairs) of the resource group. This data type property
@@ -136,6 +147,11 @@ namespace Model
      * <p>The time at which resource group is created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The time at which resource group is created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The time at which resource group is created.</p>

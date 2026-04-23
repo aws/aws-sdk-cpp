@@ -62,6 +62,12 @@ namespace Model
      * <p>One part of a key-value pair that make up a tag. A key is a general label
      * that acts like a category for more specific tag values.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>One part of a key-value pair that make up a tag. A key is a general label
+     * that acts like a category for more specific tag values.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * descriptor within a tag category (key).</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The optional part of a key-value pair that make up a tag. A value acts as a
+     * descriptor within a tag category (key).</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The optional part of a key-value pair that make up a tag. A value acts as a

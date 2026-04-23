@@ -35,6 +35,8 @@ OnDemandOptions::OnDemandOptions() :
     m_allocationStrategyHasBeenSet(false),
     m_singleInstanceType(false),
     m_singleInstanceTypeHasBeenSet(false),
+    m_singleAvailabilityZone(false),
+    m_singleAvailabilityZoneHasBeenSet(false),
     m_minTargetCapacity(0),
     m_minTargetCapacityHasBeenSet(false)
 {
@@ -45,6 +47,8 @@ OnDemandOptions::OnDemandOptions(const XmlNode& xmlNode) :
     m_allocationStrategyHasBeenSet(false),
     m_singleInstanceType(false),
     m_singleInstanceTypeHasBeenSet(false),
+    m_singleAvailabilityZone(false),
+    m_singleAvailabilityZoneHasBeenSet(false),
     m_minTargetCapacity(0),
     m_minTargetCapacityHasBeenSet(false)
 {
@@ -69,6 +73,12 @@ OnDemandOptions& OnDemandOptions::operator =(const XmlNode& xmlNode)
       m_singleInstanceType = StringUtils::ConvertToBool(StringUtils::Trim(singleInstanceTypeNode.GetText().c_str()).c_str());
       m_singleInstanceTypeHasBeenSet = true;
     }
+    XmlNode singleAvailabilityZoneNode = resultNode.FirstChild("singleAvailabilityZone");
+    if(!singleAvailabilityZoneNode.IsNull())
+    {
+      m_singleAvailabilityZone = StringUtils::ConvertToBool(StringUtils::Trim(singleAvailabilityZoneNode.GetText().c_str()).c_str());
+      m_singleAvailabilityZoneHasBeenSet = true;
+    }
     XmlNode minTargetCapacityNode = resultNode.FirstChild("minTargetCapacity");
     if(!minTargetCapacityNode.IsNull())
     {
@@ -92,6 +102,11 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
   }
 
+  if(m_singleAvailabilityZoneHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".SingleAvailabilityZone=" << std::boolalpha << m_singleAvailabilityZone << "&";
+  }
+
   if(m_minTargetCapacityHasBeenSet)
   {
       oStream << location << index << locationValue << ".MinTargetCapacity=" << m_minTargetCapacity << "&";
@@ -108,6 +123,10 @@ void OnDemandOptions::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_singleInstanceTypeHasBeenSet)
   {
       oStream << location << ".SingleInstanceType=" << std::boolalpha << m_singleInstanceType << "&";
+  }
+  if(m_singleAvailabilityZoneHasBeenSet)
+  {
+      oStream << location << ".SingleAvailabilityZone=" << std::boolalpha << m_singleAvailabilityZone << "&";
   }
   if(m_minTargetCapacityHasBeenSet)
   {

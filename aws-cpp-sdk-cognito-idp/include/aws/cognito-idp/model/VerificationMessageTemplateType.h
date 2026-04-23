@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The SMS message template.</p>
      */
+    inline bool SmsMessageHasBeenSet() const { return m_smsMessageHasBeenSet; }
+
+    /**
+     * <p>The SMS message template.</p>
+     */
     inline void SetSmsMessage(const Aws::String& value) { m_smsMessageHasBeenSet = true; m_smsMessage = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The email message template.</p>
      */
     inline const Aws::String& GetEmailMessage() const{ return m_emailMessage; }
+
+    /**
+     * <p>The email message template.</p>
+     */
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
 
     /**
      * <p>The email message template.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The subject line for the email message template.</p>
      */
+    inline bool EmailSubjectHasBeenSet() const { return m_emailSubjectHasBeenSet; }
+
+    /**
+     * <p>The subject line for the email message template.</p>
+     */
     inline void SetEmailSubject(const Aws::String& value) { m_emailSubjectHasBeenSet = true; m_emailSubject = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The email message template for sending a confirmation link to the user.</p>
      */
     inline const Aws::String& GetEmailMessageByLink() const{ return m_emailMessageByLink; }
+
+    /**
+     * <p>The email message template for sending a confirmation link to the user.</p>
+     */
+    inline bool EmailMessageByLinkHasBeenSet() const { return m_emailMessageByLinkHasBeenSet; }
 
     /**
      * <p>The email message template for sending a confirmation link to the user.</p>
@@ -202,6 +222,12 @@ namespace Model
      * <p>The subject line for the email message template for sending a confirmation
      * link to the user.</p>
      */
+    inline bool EmailSubjectByLinkHasBeenSet() const { return m_emailSubjectByLinkHasBeenSet; }
+
+    /**
+     * <p>The subject line for the email message template for sending a confirmation
+     * link to the user.</p>
+     */
     inline void SetEmailSubjectByLink(const Aws::String& value) { m_emailSubjectByLinkHasBeenSet = true; m_emailSubjectByLink = value; }
 
     /**
@@ -239,6 +265,11 @@ namespace Model
      * <p>The default email option.</p>
      */
     inline const DefaultEmailOptionType& GetDefaultEmailOption() const{ return m_defaultEmailOption; }
+
+    /**
+     * <p>The default email option.</p>
+     */
+    inline bool DefaultEmailOptionHasBeenSet() const { return m_defaultEmailOptionHasBeenSet; }
 
     /**
      * <p>The default email option.</p>

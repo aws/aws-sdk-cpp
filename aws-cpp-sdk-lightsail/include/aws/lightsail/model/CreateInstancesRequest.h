@@ -18,6 +18,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +52,13 @@ namespace Model
      * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
+    /**
+     * <p>The names to use for your new Lightsail instances. Separate multiple values
+     * using quotation marks and commas, for example:
+     * <code>["MyFirstInstance","MySecondInstance"]</code> </p>
+     */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
 
     /**
      * <p>The names to use for your new Lightsail instances. Separate multiple values
@@ -111,6 +119,16 @@ namespace Model
      * Zones</code> parameter to your request.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone in which to create your instance. Use the following
+     * format: <code>us-east-2a</code> (case sensitive). You can get a list of
+     * Availability Zones by using the <a
+     * href="http://docs.aws.amazon.com/lightsail/2016-11-28/api-reference/API_GetRegions.html">get
+     * regions</a> operation. Be sure to add the <code>include Availability
+     * Zones</code> parameter to your request.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone in which to create your instance. Use the following
@@ -187,6 +205,14 @@ namespace Model
      * blueprints operation to return a list of available images (or
      * <i>blueprints</i>).</p>
      */
+    inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
+
+    /**
+     * <p>The ID for a virtual private server image (e.g.,
+     * <code>app_wordpress_4_4</code> or <code>app_lamp_7_0</code>). Use the get
+     * blueprints operation to return a list of available images (or
+     * <i>blueprints</i>).</p>
+     */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
@@ -240,6 +266,12 @@ namespace Model
      * <p>The bundle of specification information for your virtual private server (or
      * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
      */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
+
+    /**
+     * <p>The bundle of specification information for your virtual private server (or
+     * <i>instance</i>), including the pricing plan (e.g., <code>micro_1_0</code>).</p>
+     */
     inline void SetBundleId(const Aws::String& value) { m_bundleIdHasBeenSet = true; m_bundleId = value; }
 
     /**
@@ -284,6 +316,18 @@ namespace Model
      * Guide</a>.</p> </note>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
+
+    /**
+     * <p>A launch script you can create that configures a server with additional user
+     * data. For example, you might want to run <code>apt-get -y update</code>.</p>
+     * <note> <p>Depending on the machine image you choose, the command to get software
+     * on your instance varies. Amazon Linux and CentOS use <code>yum</code>, Debian
+     * and Ubuntu use <code>apt-get</code>, and FreeBSD uses <code>pkg</code>. For a
+     * complete list, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/getting-started/article/compare-options-choose-lightsail-instance-image">Dev
+     * Guide</a>.</p> </note>
+     */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>A launch script you can create that configures a server with additional user
@@ -366,6 +410,11 @@ namespace Model
     /**
      * <p>The name of your key pair.</p>
      */
+    inline bool KeyPairNameHasBeenSet() const { return m_keyPairNameHasBeenSet; }
+
+    /**
+     * <p>The name of your key pair.</p>
+     */
     inline void SetKeyPairName(const Aws::String& value) { m_keyPairNameHasBeenSet = true; m_keyPairName = value; }
 
     /**
@@ -393,6 +442,63 @@ namespace Model
      */
     inline CreateInstancesRequest& WithKeyPairName(const char* value) { SetKeyPairName(value); return *this;}
 
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateInstancesRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateInstancesRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateInstancesRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateInstancesRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::Vector<Aws::String> m_instanceNames;
@@ -412,6 +518,9 @@ namespace Model
 
     Aws::String m_keyPairName;
     bool m_keyPairNameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

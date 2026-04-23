@@ -36,13 +36,16 @@ DiskSnapshot::DiskSnapshot() :
     m_locationHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
     m_state(DiskSnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_fromDiskNameHasBeenSet(false),
-    m_fromDiskArnHasBeenSet(false)
+    m_fromDiskArnHasBeenSet(false),
+    m_fromInstanceNameHasBeenSet(false),
+    m_fromInstanceArnHasBeenSet(false)
 {
 }
 
@@ -54,13 +57,16 @@ DiskSnapshot::DiskSnapshot(JsonView jsonValue) :
     m_locationHasBeenSet(false),
     m_resourceType(ResourceType::NOT_SET),
     m_resourceTypeHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_sizeInGb(0),
     m_sizeInGbHasBeenSet(false),
     m_state(DiskSnapshotState::NOT_SET),
     m_stateHasBeenSet(false),
     m_progressHasBeenSet(false),
     m_fromDiskNameHasBeenSet(false),
-    m_fromDiskArnHasBeenSet(false)
+    m_fromDiskArnHasBeenSet(false),
+    m_fromInstanceNameHasBeenSet(false),
+    m_fromInstanceArnHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -109,6 +115,16 @@ DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
     m_resourceTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Array<JsonView> tagsJsonList = jsonValue.GetArray("tags");
+    for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+    {
+      m_tags.push_back(tagsJsonList[tagsIndex].AsObject());
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("sizeInGb"))
   {
     m_sizeInGb = jsonValue.GetInteger("sizeInGb");
@@ -142,6 +158,20 @@ DiskSnapshot& DiskSnapshot::operator =(JsonView jsonValue)
     m_fromDiskArn = jsonValue.GetString("fromDiskArn");
 
     m_fromDiskArnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fromInstanceName"))
+  {
+    m_fromInstanceName = jsonValue.GetString("fromInstanceName");
+
+    m_fromInstanceNameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("fromInstanceArn"))
+  {
+    m_fromInstanceArn = jsonValue.GetString("fromInstanceArn");
+
+    m_fromInstanceArnHasBeenSet = true;
   }
 
   return *this;
@@ -185,6 +215,17 @@ JsonValue DiskSnapshot::Jsonize() const
    payload.WithString("resourceType", ResourceTypeMapper::GetNameForResourceType(m_resourceType));
   }
 
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
+
+  }
+
   if(m_sizeInGbHasBeenSet)
   {
    payload.WithInteger("sizeInGb", m_sizeInGb);
@@ -211,6 +252,18 @@ JsonValue DiskSnapshot::Jsonize() const
   if(m_fromDiskArnHasBeenSet)
   {
    payload.WithString("fromDiskArn", m_fromDiskArn);
+
+  }
+
+  if(m_fromInstanceNameHasBeenSet)
+  {
+   payload.WithString("fromInstanceName", m_fromInstanceName);
+
+  }
+
+  if(m_fromInstanceArnHasBeenSet)
+  {
+   payload.WithString("fromInstanceArn", m_fromInstanceArn);
 
   }
 

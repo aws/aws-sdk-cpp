@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier (ID) of the protection.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the protection.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * distributions</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name of the protection. For example, <code>My CloudFront
+     * distributions</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name of the protection. For example, <code>My CloudFront
@@ -131,6 +142,11 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
      */
     inline const Aws::String& GetResourceArn() const{ return m_resourceArn; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>
+     */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
 
     /**
      * <p>The ARN (Amazon Resource Name) of the AWS resource that is protected.</p>

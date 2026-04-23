@@ -73,6 +73,12 @@ GetContentModerationResult& GetContentModerationResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("ModerationModelVersion"))
+  {
+    m_moderationModelVersion = jsonValue.GetString("ModerationModelVersion");
+
+  }
+
 
 
   return *this;

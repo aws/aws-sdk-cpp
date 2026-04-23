@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for RtmpOutputSettings<p><h3>See Also:</h3>   <a
+   * Rtmp Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpOutputSettings">AWS
    * API Reference</a></p>
    */
@@ -54,6 +54,13 @@ namespace Model
      * certificates to fail.
      */
     inline const RtmpOutputCertificateMode& GetCertificateMode() const{ return m_certificateMode; }
+
+    /**
+     * If set to verifyAuthenticity, verify the tls certificate chain to a trusted
+     * Certificate Authority (CA).  This will cause rtmps outputs with self-signed
+     * certificates to fail.
+     */
+    inline bool CertificateModeHasBeenSet() const { return m_certificateModeHasBeenSet; }
 
     /**
      * If set to verifyAuthenticity, verify the tls certificate chain to a trusted
@@ -94,6 +101,12 @@ namespace Model
      * Number of seconds to wait before retrying a connection to the Flash Media server
      * if the connection is lost.
      */
+    inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
+
+    /**
+     * Number of seconds to wait before retrying a connection to the Flash Media server
+     * if the connection is lost.
+     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
 
     /**
@@ -109,6 +122,13 @@ namespace Model
      * accept format identifiers.
      */
     inline const OutputLocationRef& GetDestination() const{ return m_destination; }
+
+    /**
+     * The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For
+     * connection to Akamai, a username and password must be supplied. URI fields
+     * accept format identifiers.
+     */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
 
     /**
      * The RTMP endpoint excluding the stream name (eg. rtmp://host/appname). For
@@ -143,6 +163,11 @@ namespace Model
      * Number of retry attempts.
      */
     inline int GetNumRetries() const{ return m_numRetries; }
+
+    /**
+     * Number of retry attempts.
+     */
+    inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
 
     /**
      * Number of retry attempts.

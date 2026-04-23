@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The group name.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The group name.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The group ARN.</p>
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+
+    /**
+     * <p>The group ARN.</p>
+     */
+    inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
 
     /**
      * <p>The group ARN.</p>

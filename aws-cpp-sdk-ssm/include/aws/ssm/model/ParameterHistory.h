@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The type of parameter used.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of parameter used.</p>
+     */
     inline void SetType(const ParameterType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The ID of the query key used for this parameter.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The ID of the query key used for this parameter.</p>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The ID of the query key used for this parameter.</p>
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p>Date the parameter was last changed or updated.</p>
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>Date the parameter was last changed or updated.</p>
+     */
     inline void SetLastModifiedDate(const Aws::Utils::DateTime& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -179,6 +199,12 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::String& GetLastModifiedUser() const{ return m_lastModifiedUser; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
+     * parameter.</p>
+     */
+    inline bool LastModifiedUserHasBeenSet() const { return m_lastModifiedUserHasBeenSet; }
 
     /**
      * <p>Amazon Resource Name (ARN) of the AWS user who last changed the
@@ -225,6 +251,11 @@ namespace Model
     /**
      * <p>Information about the parameter.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Information about the parameter.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -257,6 +288,11 @@ namespace Model
      * <p>The parameter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The parameter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The parameter value.</p>
@@ -294,6 +330,12 @@ namespace Model
      * <p>a-zA-Z0-9_.-</p>
      */
     inline const Aws::String& GetAllowedPattern() const{ return m_allowedPattern; }
+
+    /**
+     * <p>Parameter names can include the following letters and symbols.</p>
+     * <p>a-zA-Z0-9_.-</p>
+     */
+    inline bool AllowedPatternHasBeenSet() const { return m_allowedPatternHasBeenSet; }
 
     /**
      * <p>Parameter names can include the following letters and symbols.</p>
@@ -340,6 +382,11 @@ namespace Model
     /**
      * <p>The parameter version.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The parameter version.</p>
+     */
     inline void SetVersion(long long value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -352,6 +399,11 @@ namespace Model
      * <p>Labels assigned to the parameter version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels assigned to the parameter version.</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>Labels assigned to the parameter version.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the argument or property.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the argument or property.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The value of the argument or property.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the argument or property.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>True if the value is used as a parameter.</p>
      */
     inline bool GetParam() const{ return m_param; }
+
+    /**
+     * <p>True if the value is used as a parameter.</p>
+     */
+    inline bool ParamHasBeenSet() const { return m_paramHasBeenSet; }
 
     /**
      * <p>True if the value is used as a parameter.</p>

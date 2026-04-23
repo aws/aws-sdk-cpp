@@ -63,6 +63,13 @@ namespace Model
      * you might have 5 requests (<code>request_count</code>) within the most recent
      * time slice of 10 seconds (<code>duration</code>).</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The amount of time that the metrics cover (usually 10 seconds). For example,
+     * you might have 5 requests (<code>request_count</code>) within the most recent
+     * time slice of 10 seconds (<code>duration</code>).</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -83,6 +90,12 @@ namespace Model
      * <p>Average number of requests handled by the web server per second over the last
      * 10 seconds.</p>
      */
+    inline bool RequestCountHasBeenSet() const { return m_requestCountHasBeenSet; }
+
+    /**
+     * <p>Average number of requests handled by the web server per second over the last
+     * 10 seconds.</p>
+     */
     inline void SetRequestCount(int value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
 
     /**
@@ -97,6 +110,12 @@ namespace Model
      * in each type of status code response.</p>
      */
     inline const StatusCodes& GetStatusCodes() const{ return m_statusCodes; }
+
+    /**
+     * <p>Represents the percentage of requests over the last 10 seconds that resulted
+     * in each type of status code response.</p>
+     */
+    inline bool StatusCodesHasBeenSet() const { return m_statusCodesHasBeenSet; }
 
     /**
      * <p>Represents the percentage of requests over the last 10 seconds that resulted
@@ -128,6 +147,12 @@ namespace Model
      * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
      */
     inline const Latency& GetLatency() const{ return m_latency; }
+
+    /**
+     * <p>Represents the average latency for the slowest X percent of requests over the
+     * last 10 seconds. Latencies are in seconds with one millisecond resolution.</p>
+     */
+    inline bool LatencyHasBeenSet() const { return m_latencyHasBeenSet; }
 
     /**
      * <p>Represents the average latency for the slowest X percent of requests over the

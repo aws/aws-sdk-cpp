@@ -60,6 +60,13 @@ namespace Model
      * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
      * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
      */
+    inline bool CheckRunStatusHasBeenSet() const { return m_checkRunStatusHasBeenSet; }
+
+    /**
+     * <p>The completion status of this check, one of "IN_PROGRESS",
+     * "WAITING_FOR_DATA_COLLECTION", "CANCELED", "COMPLETED_COMPLIANT",
+     * "COMPLETED_NON_COMPLIANT", or "FAILED".</p>
+     */
     inline void SetCheckRunStatus(const AuditCheckRunStatus& value) { m_checkRunStatusHasBeenSet = true; m_checkRunStatus = value; }
 
     /**
@@ -92,6 +99,11 @@ namespace Model
     /**
      * <p>True if the check completed and found all resources compliant.</p>
      */
+    inline bool CheckCompliantHasBeenSet() const { return m_checkCompliantHasBeenSet; }
+
+    /**
+     * <p>True if the check completed and found all resources compliant.</p>
+     */
     inline void SetCheckCompliant(bool value) { m_checkCompliantHasBeenSet = true; m_checkCompliant = value; }
 
     /**
@@ -104,6 +116,11 @@ namespace Model
      * <p>The number of resources on which the check was performed.</p>
      */
     inline long long GetTotalResourcesCount() const{ return m_totalResourcesCount; }
+
+    /**
+     * <p>The number of resources on which the check was performed.</p>
+     */
+    inline bool TotalResourcesCountHasBeenSet() const { return m_totalResourcesCountHasBeenSet; }
 
     /**
      * <p>The number of resources on which the check was performed.</p>
@@ -124,6 +141,11 @@ namespace Model
     /**
      * <p>The number of resources that the check found non-compliant.</p>
      */
+    inline bool NonCompliantResourcesCountHasBeenSet() const { return m_nonCompliantResourcesCountHasBeenSet; }
+
+    /**
+     * <p>The number of resources that the check found non-compliant.</p>
+     */
     inline void SetNonCompliantResourcesCount(long long value) { m_nonCompliantResourcesCountHasBeenSet = true; m_nonCompliantResourcesCount = value; }
 
     /**
@@ -137,6 +159,12 @@ namespace Model
      * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The code of any error encountered when performing this check during this
+     * audit. One of "INSUFFICIENT_PERMISSIONS", or "AUDIT_CHECK_DISABLED".</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The code of any error encountered when performing this check during this
@@ -180,6 +208,12 @@ namespace Model
      * during this audit.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message associated with any error encountered when performing this check
+     * during this audit.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message associated with any error encountered when performing this check

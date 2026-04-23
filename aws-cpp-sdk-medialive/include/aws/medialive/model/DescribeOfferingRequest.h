@@ -53,6 +53,11 @@ namespace Model
     /**
      * Unique offering ID, e.g. '87654321'
      */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
+
+    /**
+     * Unique offering ID, e.g. '87654321'
+     */
     inline void SetOfferingId(const Aws::String& value) { m_offeringIdHasBeenSet = true; m_offeringId = value; }
 
     /**

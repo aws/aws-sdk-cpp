@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the account requesting to aggregate data.</p>
      */
+    inline bool RequesterAccountIdHasBeenSet() const { return m_requesterAccountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the account requesting to aggregate data.</p>
+     */
     inline void SetRequesterAccountId(const Aws::String& value) { m_requesterAccountIdHasBeenSet = true; m_requesterAccountId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The region requesting to aggregate data. </p>
      */
     inline const Aws::String& GetRequesterAwsRegion() const{ return m_requesterAwsRegion; }
+
+    /**
+     * <p>The region requesting to aggregate data. </p>
+     */
+    inline bool RequesterAwsRegionHasBeenSet() const { return m_requesterAwsRegionHasBeenSet; }
 
     /**
      * <p>The region requesting to aggregate data. </p>

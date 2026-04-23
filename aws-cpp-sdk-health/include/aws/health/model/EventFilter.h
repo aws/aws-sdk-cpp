@@ -67,6 +67,14 @@ namespace Model
      * "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
      * </p>
      */
+    inline bool EventArnsHasBeenSet() const { return m_eventArnsHasBeenSet; }
+
+    /**
+     * <p>A list of event ARNs (unique identifiers). For example:
+     * <code>"arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-CDE456",
+     * "arn:aws:health:us-west-1::event/EBS/AWS_EBS_LOST_VOLUME/AWS_EBS_LOST_VOLUME_CHI789_JKL101"</code>
+     * </p>
+     */
     inline void SetEventArns(const Aws::Vector<Aws::String>& value) { m_eventArnsHasBeenSet = true; m_eventArns = value; }
 
     /**
@@ -130,6 +138,13 @@ namespace Model
      * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
      * </p>
      */
+    inline bool EventTypeCodesHasBeenSet() const { return m_eventTypeCodesHasBeenSet; }
+
+    /**
+     * <p>A list of unique identifiers for event types. For example,
+     * <code>"AWS_EC2_SYSTEM_MAINTENANCE_EVENT","AWS_RDS_MAINTENANCE_SCHEDULED"</code>
+     * </p>
+     */
     inline void SetEventTypeCodes(const Aws::Vector<Aws::String>& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes = value; }
 
     /**
@@ -185,6 +200,12 @@ namespace Model
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
      */
+    inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
+
+    /**
+     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
+     * <code>RDS</code>.</p>
+     */
     inline void SetServices(const Aws::Vector<Aws::String>& value) { m_servicesHasBeenSet = true; m_services = value; }
 
     /**
@@ -232,6 +253,11 @@ namespace Model
     /**
      * <p>A list of AWS regions.</p>
      */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+
+    /**
+     * <p>A list of AWS regions.</p>
+     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
@@ -269,6 +295,11 @@ namespace Model
      * <p>A list of AWS availability zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>A list of AWS availability zones.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of AWS availability zones.</p>
@@ -314,6 +345,11 @@ namespace Model
     /**
      * <p>A list of dates and times that the event began.</p>
      */
+    inline bool StartTimesHasBeenSet() const { return m_startTimesHasBeenSet; }
+
+    /**
+     * <p>A list of dates and times that the event began.</p>
+     */
     inline void SetStartTimes(const Aws::Vector<DateTimeRange>& value) { m_startTimesHasBeenSet = true; m_startTimes = value; }
 
     /**
@@ -346,6 +382,11 @@ namespace Model
      * <p>A list of dates and times that the event ended.</p>
      */
     inline const Aws::Vector<DateTimeRange>& GetEndTimes() const{ return m_endTimes; }
+
+    /**
+     * <p>A list of dates and times that the event ended.</p>
+     */
+    inline bool EndTimesHasBeenSet() const { return m_endTimesHasBeenSet; }
 
     /**
      * <p>A list of dates and times that the event ended.</p>
@@ -386,6 +427,11 @@ namespace Model
     /**
      * <p>A list of dates and times that the event was last updated.</p>
      */
+    inline bool LastUpdatedTimesHasBeenSet() const { return m_lastUpdatedTimesHasBeenSet; }
+
+    /**
+     * <p>A list of dates and times that the event was last updated.</p>
+     */
     inline void SetLastUpdatedTimes(const Aws::Vector<DateTimeRange>& value) { m_lastUpdatedTimesHasBeenSet = true; m_lastUpdatedTimes = value; }
 
     /**
@@ -418,6 +464,11 @@ namespace Model
      * <p>A list of entity ARNs (unique identifiers).</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntityArns() const{ return m_entityArns; }
+
+    /**
+     * <p>A list of entity ARNs (unique identifiers).</p>
+     */
+    inline bool EntityArnsHasBeenSet() const { return m_entityArnsHasBeenSet; }
 
     /**
      * <p>A list of entity ARNs (unique identifiers).</p>
@@ -460,6 +511,12 @@ namespace Model
      * (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetEntityValues() const{ return m_entityValues; }
+
+    /**
+     * <p>A list of entity identifiers, such as EC2 instance IDs
+     * (<code>i-34ab692e</code>) or EBS volumes (<code>vol-426ab23e</code>).</p>
+     */
+    inline bool EntityValuesHasBeenSet() const { return m_entityValuesHasBeenSet; }
 
     /**
      * <p>A list of entity identifiers, such as EC2 instance IDs
@@ -514,6 +571,12 @@ namespace Model
      * <p>A list of event type category codes (<code>issue</code>,
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
      */
+    inline bool EventTypeCategoriesHasBeenSet() const { return m_eventTypeCategoriesHasBeenSet; }
+
+    /**
+     * <p>A list of event type category codes (<code>issue</code>,
+     * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
+     */
     inline void SetEventTypeCategories(const Aws::Vector<EventTypeCategory>& value) { m_eventTypeCategoriesHasBeenSet = true; m_eventTypeCategories = value; }
 
     /**
@@ -555,6 +618,11 @@ namespace Model
     /**
      * <p>A map of entity tags attached to the affected entity.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A map of entity tags attached to the affected entity.</p>
+     */
     inline void SetTags(const Aws::Vector<Aws::Map<Aws::String, Aws::String>>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -587,6 +655,11 @@ namespace Model
      * <p>A list of event status codes.</p>
      */
     inline const Aws::Vector<EventStatusCode>& GetEventStatusCodes() const{ return m_eventStatusCodes; }
+
+    /**
+     * <p>A list of event status codes.</p>
+     */
+    inline bool EventStatusCodesHasBeenSet() const { return m_eventStatusCodesHasBeenSet; }
 
     /**
      * <p>A list of event status codes.</p>

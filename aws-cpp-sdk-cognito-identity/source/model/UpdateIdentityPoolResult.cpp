@@ -100,6 +100,15 @@ UpdateIdentityPoolResult& UpdateIdentityPoolResult::operator =(const Aws::Amazon
     }
   }
 
+  if(jsonValue.ValueExists("IdentityPoolTags"))
+  {
+    Aws::Map<Aws::String, JsonView> identityPoolTagsJsonMap = jsonValue.GetObject("IdentityPoolTags").GetAllObjects();
+    for(auto& identityPoolTagsItem : identityPoolTagsJsonMap)
+    {
+      m_identityPoolTags[identityPoolTagsItem.first] = identityPoolTagsItem.second.AsString();
+    }
+  }
+
 
 
   return *this;

@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/model/DestinationSettings.h>
 #include <aws/mediaconvert/model/DashIsoEncryptionSettings.h>
 #include <aws/mediaconvert/model/DashIsoHbbtvCompliance.h>
 #include <aws/mediaconvert/model/DashIsoSegmentControl.h>
@@ -58,6 +59,13 @@ namespace Model
      * than the manifest file.
      */
     inline const Aws::String& GetBaseUrl() const{ return m_baseUrl; }
+
+    /**
+     * A partial URI prefix that will be put in the manifest (.mpd) file at the top
+     * level BaseURL element. Can be used if streams are delivered from a different URL
+     * than the manifest file.
+     */
+    inline bool BaseUrlHasBeenSet() const { return m_baseUrlHasBeenSet; }
 
     /**
      * A partial URI prefix that will be put in the manifest (.mpd) file at the top
@@ -118,6 +126,15 @@ namespace Model
      * If your job has multiple inputs, the service uses the filename of the first
      * input file.
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * Use Destination (Destination) to specify the S3 output location and the output
+     * filename base. Destination accepts format identifiers. If you do not specify the
+     * base filename in the URI, the service will use the filename of the input file.
+     * If your job has multiple inputs, the service uses the filename of the first
+     * input file.
+     */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -167,9 +184,51 @@ namespace Model
 
 
     /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline const DestinationSettings& GetDestinationSettings() const{ return m_destinationSettings; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(const DestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline void SetDestinationSettings(DestinationSettings&& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = std::move(value); }
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline DashIsoGroupSettings& WithDestinationSettings(const DestinationSettings& value) { SetDestinationSettings(value); return *this;}
+
+    /**
+     * Settings associated with the destination. Will vary based on the type of
+     * destination
+     */
+    inline DashIsoGroupSettings& WithDestinationSettings(DestinationSettings&& value) { SetDestinationSettings(std::move(value)); return *this;}
+
+
+    /**
      * DRM settings.
      */
     inline const DashIsoEncryptionSettings& GetEncryption() const{ return m_encryption; }
+
+    /**
+     * DRM settings.
+     */
+    inline bool EncryptionHasBeenSet() const { return m_encryptionHasBeenSet; }
 
     /**
      * DRM settings.
@@ -210,6 +269,16 @@ namespace Model
      * and it does not cause the creation of many output files as in other output
      * types.
      */
+    inline bool FragmentLengthHasBeenSet() const { return m_fragmentLengthHasBeenSet; }
+
+    /**
+     * Length of fragments to generate (in seconds). Fragment length must be compatible
+     * with GOP size and Framerate. Note that fragments will end on the next keyframe
+     * after this number of seconds, so actual fragment length may be longer. When Emit
+     * Single File is checked, the fragmentation is internal to a single output file
+     * and it does not cause the creation of many output files as in other output
+     * types.
+     */
     inline void SetFragmentLength(int value) { m_fragmentLengthHasBeenSet = true; m_fragmentLength = value; }
 
     /**
@@ -223,19 +292,34 @@ namespace Model
     inline DashIsoGroupSettings& WithFragmentLength(int value) { SetFragmentLength(value); return *this;}
 
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline const DashIsoHbbtvCompliance& GetHbbtvCompliance() const{ return m_hbbtvCompliance; }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
+    inline bool HbbtvComplianceHasBeenSet() const { return m_hbbtvComplianceHasBeenSet; }
+
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline void SetHbbtvCompliance(const DashIsoHbbtvCompliance& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = value; }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline void SetHbbtvCompliance(DashIsoHbbtvCompliance&& value) { m_hbbtvComplianceHasBeenSet = true; m_hbbtvCompliance = std::move(value); }
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline DashIsoGroupSettings& WithHbbtvCompliance(const DashIsoHbbtvCompliance& value) { SetHbbtvCompliance(value); return *this;}
 
-    
+    /**
+     * Supports HbbTV specification as indicated
+     */
     inline DashIsoGroupSettings& WithHbbtvCompliance(DashIsoHbbtvCompliance&& value) { SetHbbtvCompliance(std::move(value)); return *this;}
 
 
@@ -244,6 +328,12 @@ namespace Model
      * playout.
      */
     inline int GetMinBufferTime() const{ return m_minBufferTime; }
+
+    /**
+     * Minimum time of initially buffered media that is needed to ensure smooth
+     * playout.
+     */
+    inline bool MinBufferTimeHasBeenSet() const { return m_minBufferTimeHasBeenSet; }
 
     /**
      * Minimum time of initially buffered media that is needed to ensure smooth
@@ -258,19 +348,46 @@ namespace Model
     inline DashIsoGroupSettings& WithMinBufferTime(int value) { SetMinBufferTime(value); return *this;}
 
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline const DashIsoSegmentControl& GetSegmentControl() const{ return m_segmentControl; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
+    inline bool SegmentControlHasBeenSet() const { return m_segmentControlHasBeenSet; }
+
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(const DashIsoSegmentControl& value) { m_segmentControlHasBeenSet = true; m_segmentControl = value; }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline void SetSegmentControl(DashIsoSegmentControl&& value) { m_segmentControlHasBeenSet = true; m_segmentControl = std::move(value); }
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline DashIsoGroupSettings& WithSegmentControl(const DashIsoSegmentControl& value) { SetSegmentControl(value); return *this;}
 
-    
+    /**
+     * When set to SINGLE_FILE, a single output file is generated, which is internally
+     * segmented using the Fragment Length and Segment Length. When set to
+     * SEGMENTED_FILES, separate segment files will be created.
+     */
     inline DashIsoGroupSettings& WithSegmentControl(DashIsoSegmentControl&& value) { SetSegmentControl(std::move(value)); return *this;}
 
 
@@ -282,6 +399,15 @@ namespace Model
      * other output types.
      */
     inline int GetSegmentLength() const{ return m_segmentLength; }
+
+    /**
+     * Length of mpd segments to create (in seconds). Note that segments will end on
+     * the next keyframe after this number of seconds, so actual segment length may be
+     * longer. When Emit Single File is checked, the segmentation is internal to a
+     * single output file and it does not cause the creation of many output files as in
+     * other output types.
+     */
+    inline bool SegmentLengthHasBeenSet() const { return m_segmentLengthHasBeenSet; }
 
     /**
      * Length of mpd segments to create (in seconds). Note that segments will end on
@@ -303,37 +429,68 @@ namespace Model
 
 
     /**
-     * When ENABLED, segment durations are indicated in the manifest using
-     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
-     * from AdaptationSet.
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
      */
     inline const DashIsoWriteSegmentTimelineInRepresentation& GetWriteSegmentTimelineInRepresentation() const{ return m_writeSegmentTimelineInRepresentation; }
 
     /**
-     * When ENABLED, segment durations are indicated in the manifest using
-     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
-     * from AdaptationSet.
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
+     */
+    inline bool WriteSegmentTimelineInRepresentationHasBeenSet() const { return m_writeSegmentTimelineInRepresentationHasBeenSet; }
+
+    /**
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
      */
     inline void SetWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = value; }
 
     /**
-     * When ENABLED, segment durations are indicated in the manifest using
-     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
-     * from AdaptationSet.
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
      */
     inline void SetWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { m_writeSegmentTimelineInRepresentationHasBeenSet = true; m_writeSegmentTimelineInRepresentation = std::move(value); }
 
     /**
-     * When ENABLED, segment durations are indicated in the manifest using
-     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
-     * from AdaptationSet.
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
      */
     inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(const DashIsoWriteSegmentTimelineInRepresentation& value) { SetWriteSegmentTimelineInRepresentation(value); return *this;}
 
     /**
-     * When ENABLED, segment durations are indicated in the manifest using
-     * SegmentTimeline and SegmentTimeline will be promoted down into Representation
-     * from AdaptationSet.
+     * When you enable Precise segment duration in manifests
+     * (writeSegmentTimelineInRepresentation), your DASH manifest shows precise segment
+     * durations. The segment duration information appears inside the SegmentTimeline
+     * element, inside SegmentTemplate at the Representation level. When this feature
+     * isn't enabled, the segment durations in your DASH manifest are approximate. The
+     * segment duration information appears in the duration attribute of the
+     * SegmentTemplate element.
      */
     inline DashIsoGroupSettings& WithWriteSegmentTimelineInRepresentation(DashIsoWriteSegmentTimelineInRepresentation&& value) { SetWriteSegmentTimelineInRepresentation(std::move(value)); return *this;}
 
@@ -344,6 +501,9 @@ namespace Model
 
     Aws::String m_destination;
     bool m_destinationHasBeenSet;
+
+    DestinationSettings m_destinationSettings;
+    bool m_destinationSettingsHasBeenSet;
 
     DashIsoEncryptionSettings m_encryption;
     bool m_encryptionHasBeenSet;

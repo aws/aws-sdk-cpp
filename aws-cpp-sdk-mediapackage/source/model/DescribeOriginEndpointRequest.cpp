@@ -29,7 +29,7 @@ DescribeOriginEndpointRequest::DescribeOriginEndpointRequest() :
 
 Aws::String DescribeOriginEndpointRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

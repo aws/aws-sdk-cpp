@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The ARN of the directory you are listing.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the directory you are listing.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * used will list all minor version ARNs for a major version.</p>
      */
     inline const Aws::String& GetSchemaArn() const{ return m_schemaArn; }
+
+    /**
+     * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
+     * used will list all minor version ARNs for a major version.</p>
+     */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
 
     /**
      * <p>The response for <code>ListAppliedSchemaArns</code> when this parameter is
@@ -129,6 +140,11 @@ namespace Model
     /**
      * <p>The pagination token.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -161,6 +177,11 @@ namespace Model
      * <p>The maximum number of results to retrieve.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to retrieve.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to retrieve.</p>

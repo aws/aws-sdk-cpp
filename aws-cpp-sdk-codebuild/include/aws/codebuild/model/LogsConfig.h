@@ -60,6 +60,12 @@ namespace Model
      * <p> Information about Amazon CloudWatch Logs for a build project. Amazon
      * CloudWatch Logs are enabled by default. </p>
      */
+    inline bool CloudWatchLogsHasBeenSet() const { return m_cloudWatchLogsHasBeenSet; }
+
+    /**
+     * <p> Information about Amazon CloudWatch Logs for a build project. Amazon
+     * CloudWatch Logs are enabled by default. </p>
+     */
     inline void SetCloudWatchLogs(const CloudWatchLogsConfig& value) { m_cloudWatchLogsHasBeenSet = true; m_cloudWatchLogs = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * are not enabled by default. </p>
      */
     inline const S3LogsConfig& GetS3Logs() const{ return m_s3Logs; }
+
+    /**
+     * <p> Information about logs built to an S3 bucket for a build project. S3 logs
+     * are not enabled by default. </p>
+     */
+    inline bool S3LogsHasBeenSet() const { return m_s3LogsHasBeenSet; }
 
     /**
      * <p> Information about logs built to an S3 bucket for a build project. S3 logs

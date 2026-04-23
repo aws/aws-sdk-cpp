@@ -28,7 +28,6 @@ namespace SNS
 namespace SNSErrorMapper
 {
 
-static const int THROTTLED_HASH = HashingUtils::HashString("Throttled");
 static const int SUBSCRIPTION_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("SubscriptionLimitExceeded");
 static const int K_M_S_DISABLED_HASH = HashingUtils::HashString("KMSDisabled");
 static const int PLATFORM_APPLICATION_DISABLED_HASH = HashingUtils::HashString("PlatformApplicationDisabled");
@@ -51,11 +50,7 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
 {
   int hashCode = HashingUtils::HashString(errorName);
 
-  if (hashCode == THROTTLED_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::THROTTLED), false);
-  }
-  else if (hashCode == SUBSCRIPTION_LIMIT_EXCEEDED_HASH)
+  if (hashCode == SUBSCRIPTION_LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SNSErrors::SUBSCRIPTION_LIMIT_EXCEEDED), false);
   }

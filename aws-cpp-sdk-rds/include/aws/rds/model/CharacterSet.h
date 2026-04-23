@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the character set.</p>
      */
+    inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the character set.</p>
+     */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The description of the character set.</p>
      */
     inline const Aws::String& GetCharacterSetDescription() const{ return m_characterSetDescription; }
+
+    /**
+     * <p>The description of the character set.</p>
+     */
+    inline bool CharacterSetDescriptionHasBeenSet() const { return m_characterSetDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the character set.</p>

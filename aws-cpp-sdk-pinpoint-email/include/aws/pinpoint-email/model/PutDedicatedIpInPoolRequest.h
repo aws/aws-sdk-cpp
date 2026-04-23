@@ -60,6 +60,13 @@ namespace Model
      * specify has to be a dedicated IP address that's associated with your Amazon
      * Pinpoint account.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>The IP address that you want to move to the dedicated IP pool. The value you
+     * specify has to be a dedicated IP address that's associated with your Amazon
+     * Pinpoint account.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * have to specify an IP pool that already exists.</p>
      */
     inline const Aws::String& GetDestinationPoolName() const{ return m_destinationPoolName; }
+
+    /**
+     * <p>The name of the IP pool that you want to add the dedicated IP address to. You
+     * have to specify an IP pool that already exists.</p>
+     */
+    inline bool DestinationPoolNameHasBeenSet() const { return m_destinationPoolNameHasBeenSet; }
 
     /**
      * <p>The name of the IP pool that you want to add the dedicated IP address to. You

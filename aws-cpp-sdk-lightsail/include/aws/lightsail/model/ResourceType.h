@@ -37,7 +37,9 @@ namespace Model
     Disk,
     DiskSnapshot,
     RelationalDatabase,
-    RelationalDatabaseSnapshot
+    RelationalDatabaseSnapshot,
+    ExportSnapshotRecord,
+    CloudFormationStackRecord
   };
 
 namespace ResourceTypeMapper

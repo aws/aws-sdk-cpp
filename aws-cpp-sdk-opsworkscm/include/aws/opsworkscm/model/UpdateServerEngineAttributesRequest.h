@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the server to update. </p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>The name of the server to update. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The name of the engine attribute to update. </p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the engine attribute to update. </p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The value to set for the attribute. </p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The value to set for the attribute. </p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The value to set for the attribute. </p>

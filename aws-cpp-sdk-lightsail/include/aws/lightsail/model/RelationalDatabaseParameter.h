@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Specifies the valid range of values for the parameter.</p>
      */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
+
+    /**
+     * <p>Specifies the valid range of values for the parameter.</p>
+     */
     inline void SetAllowedValues(const Aws::String& value) { m_allowedValuesHasBeenSet = true; m_allowedValues = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * <code>immediate</code> or <code>pending-reboot</code>.</p>
      */
     inline const Aws::String& GetApplyMethod() const{ return m_applyMethod; }
+
+    /**
+     * <p>Indicates when parameter updates are applied.</p> <p>Can be
+     * <code>immediate</code> or <code>pending-reboot</code>.</p>
+     */
+    inline bool ApplyMethodHasBeenSet() const { return m_applyMethodHasBeenSet; }
 
     /**
      * <p>Indicates when parameter updates are applied.</p> <p>Can be
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>Specifies the engine-specific parameter type.</p>
      */
+    inline bool ApplyTypeHasBeenSet() const { return m_applyTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the engine-specific parameter type.</p>
+     */
     inline void SetApplyType(const Aws::String& value) { m_applyTypeHasBeenSet = true; m_applyType = value; }
 
     /**
@@ -166,6 +182,11 @@ namespace Model
      * <p>Specifies the valid data type for the parameter.</p>
      */
     inline const Aws::String& GetDataType() const{ return m_dataType; }
+
+    /**
+     * <p>Specifies the valid data type for the parameter.</p>
+     */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
 
     /**
      * <p>Specifies the valid data type for the parameter.</p>
@@ -206,6 +227,11 @@ namespace Model
     /**
      * <p>Provides a description of the parameter.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Provides a description of the parameter.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -242,6 +268,11 @@ namespace Model
     /**
      * <p>A Boolean value indicating whether the parameter can be modified.</p>
      */
+    inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether the parameter can be modified.</p>
+     */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
@@ -254,6 +285,11 @@ namespace Model
      * <p>Specifies the name of the parameter.</p>
      */
     inline const Aws::String& GetParameterName() const{ return m_parameterName; }
+
+    /**
+     * <p>Specifies the name of the parameter.</p>
+     */
+    inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
 
     /**
      * <p>Specifies the name of the parameter.</p>
@@ -290,6 +326,11 @@ namespace Model
      * <p>Specifies the value of the parameter.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+
+    /**
+     * <p>Specifies the value of the parameter.</p>
+     */
+    inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
 
     /**
      * <p>Specifies the value of the parameter.</p>

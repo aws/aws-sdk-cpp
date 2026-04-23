@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the association between a network ACL and a subnet.</p>
      */
+    inline bool NetworkAclAssociationIdHasBeenSet() const { return m_networkAclAssociationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the association between a network ACL and a subnet.</p>
+     */
     inline void SetNetworkAclAssociationId(const Aws::String& value) { m_networkAclAssociationIdHasBeenSet = true; m_networkAclAssociationId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The ID of the network ACL.</p>
      */
+    inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network ACL.</p>
+     */
     inline void SetNetworkAclId(const Aws::String& value) { m_networkAclIdHasBeenSet = true; m_networkAclId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>Descriptive label that is associated with game session queue. Queue names
      * must be unique within each region.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Descriptive label that is associated with game session queue. Queue names
+     * must be unique within each region.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -105,6 +111,13 @@ namespace Model
      * in the queue. When a request exceeds this time, the game session placement
      * changes to a <code>TIMED_OUT</code> status.</p>
      */
+    inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>Maximum time, in seconds, that a new game session placement request remains
+     * in the queue. When a request exceeds this time, the game session placement
+     * changes to a <code>TIMED_OUT</code> status.</p>
+     */
     inline void SetTimeoutInSeconds(int value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
 
     /**
@@ -127,6 +140,19 @@ namespace Model
      * collection of policies.</p>
      */
     inline const Aws::Vector<PlayerLatencyPolicy>& GetPlayerLatencyPolicies() const{ return m_playerLatencyPolicies; }
+
+    /**
+     * <p>Collection of latency policies to apply when processing game sessions
+     * placement requests with player latency information. Multiple policies are
+     * evaluated in order of the maximum latency value, starting with the lowest
+     * latency values. With just one policy, it is enforced at the start of the game
+     * session placement for the duration period. With multiple policies, each policy
+     * is enforced consecutively for its duration period. For example, a queue might
+     * enforce a 60-second policy followed by a 120-second policy, and then no policy
+     * for the remainder of the placement. When updating policies, provide a complete
+     * collection of policies.</p>
+     */
+    inline bool PlayerLatencyPoliciesHasBeenSet() const { return m_playerLatencyPoliciesHasBeenSet; }
 
     /**
      * <p>Collection of latency policies to apply when processing game sessions
@@ -214,6 +240,14 @@ namespace Model
      * provide a complete list of destinations.</p>
      */
     inline const Aws::Vector<GameSessionQueueDestination>& GetDestinations() const{ return m_destinations; }
+
+    /**
+     * <p>List of fleets that can be used to fulfill game session placement requests in
+     * the queue. Fleets are identified by either a fleet ARN or a fleet alias ARN.
+     * Destinations are listed in default preference order. When updating this list,
+     * provide a complete list of destinations.</p>
+     */
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     /**
      * <p>List of fleets that can be used to fulfill game session placement requests in

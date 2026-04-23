@@ -35,7 +35,7 @@ SuggestRequest::SuggestRequest() :
 
 Aws::String SuggestRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void SuggestRequest::AddQueryStringParameters(URI& uri) const

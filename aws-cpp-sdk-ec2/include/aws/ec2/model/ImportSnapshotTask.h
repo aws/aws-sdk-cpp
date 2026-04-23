@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A description of the import snapshot task.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the import snapshot task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The ID of the import snapshot task.</p>
      */
+    inline bool ImportTaskIdHasBeenSet() const { return m_importTaskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the import snapshot task.</p>
+     */
     inline void SetImportTaskId(const Aws::String& value) { m_importTaskIdHasBeenSet = true; m_importTaskId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>Describes an import snapshot task.</p>
      */
     inline const SnapshotTaskDetail& GetSnapshotTaskDetail() const{ return m_snapshotTaskDetail; }
+
+    /**
+     * <p>Describes an import snapshot task.</p>
+     */
+    inline bool SnapshotTaskDetailHasBeenSet() const { return m_snapshotTaskDetailHasBeenSet; }
 
     /**
      * <p>Describes an import snapshot task.</p>

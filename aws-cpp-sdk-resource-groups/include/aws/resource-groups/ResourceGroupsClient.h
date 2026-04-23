@@ -414,8 +414,8 @@ namespace Model
         virtual void SearchResourcesAsync(const Model::SearchResourcesRequest& request, const SearchResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Adds specified tags to a resource with the specified ARN. Existing tags on a
-         * resource are not changed if they are not specified in the request
+         * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
+         * resource group are not changed if they are not specified in the request
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
@@ -423,8 +423,8 @@ namespace Model
         virtual Model::TagOutcome Tag(const Model::TagRequest& request) const;
 
         /**
-         * <p>Adds specified tags to a resource with the specified ARN. Existing tags on a
-         * resource are not changed if they are not specified in the request
+         * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
+         * resource group are not changed if they are not specified in the request
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
@@ -434,8 +434,8 @@ namespace Model
         virtual Model::TagOutcomeCallable TagCallable(const Model::TagRequest& request) const;
 
         /**
-         * <p>Adds specified tags to a resource with the specified ARN. Existing tags on a
-         * resource are not changed if they are not specified in the request
+         * <p>Adds tags to a resource group with the specified ARN. Existing tags on a
+         * resource group are not changed if they are not specified in the request
          * parameters.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/resource-groups-2017-11-27/Tag">AWS
          * API Reference</a></p>
@@ -525,10 +525,10 @@ namespace Model
          */
         virtual void UpdateGroupQueryAsync(const Model::UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateGroupAsyncHelper(const Model::CreateGroupRequest& request, const CreateGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteGroupAsyncHelper(const Model::DeleteGroupRequest& request, const DeleteGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -544,6 +544,7 @@ namespace Model
         void UpdateGroupQueryAsyncHelper(const Model::UpdateGroupQueryRequest& request, const UpdateGroupQueryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

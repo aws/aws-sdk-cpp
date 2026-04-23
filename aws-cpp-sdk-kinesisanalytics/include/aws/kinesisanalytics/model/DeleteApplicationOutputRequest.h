@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Amazon Kinesis Analytics application name.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Amazon Kinesis Analytics application name.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -97,6 +102,14 @@ namespace Model
      * the version specified is not the current version, the
      * <code>ConcurrentModificationException</code> is returned. </p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Amazon Kinesis Analytics application version. You can use the
+     * <a>DescribeApplication</a> operation to get the current application version. If
+     * the version specified is not the current version, the
+     * <code>ConcurrentModificationException</code> is returned. </p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -117,6 +130,16 @@ namespace Model
      * operation to get the specific <code>OutputId</code>. </p>
      */
     inline const Aws::String& GetOutputId() const{ return m_outputId; }
+
+    /**
+     * <p>The ID of the configuration to delete. Each output configuration that is
+     * added to the application, either when the application is created or later using
+     * the <a>AddApplicationOutput</a> operation, has a unique ID. You need to provide
+     * the ID to uniquely identify the output configuration that you want to delete
+     * from the application configuration. You can use the <a>DescribeApplication</a>
+     * operation to get the specific <code>OutputId</code>. </p>
+     */
+    inline bool OutputIdHasBeenSet() const { return m_outputIdHasBeenSet; }
 
     /**
      * <p>The ID of the configuration to delete. Each output configuration that is

@@ -34,6 +34,7 @@ namespace Aws
         static const int ADDITIONAL_VERIFICATION_REQUIRED_HASH = HashingUtils::HashString("ADDITIONAL_VERIFICATION_REQUIRED");
         static const int DOMAIN_NOT_ALLOWED_HASH = HashingUtils::HashString("DOMAIN_NOT_ALLOWED");
         static const int INVALID_PUBLIC_DOMAIN_HASH = HashingUtils::HashString("INVALID_PUBLIC_DOMAIN");
+        static const int DOMAIN_VALIDATION_DENIED_HASH = HashingUtils::HashString("DOMAIN_VALIDATION_DENIED");
         static const int CAA_ERROR_HASH = HashingUtils::HashString("CAA_ERROR");
         static const int PCA_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("PCA_LIMIT_EXCEEDED");
         static const int PCA_INVALID_ARN_HASH = HashingUtils::HashString("PCA_INVALID_ARN");
@@ -41,6 +42,8 @@ namespace Aws
         static const int PCA_REQUEST_FAILED_HASH = HashingUtils::HashString("PCA_REQUEST_FAILED");
         static const int PCA_RESOURCE_NOT_FOUND_HASH = HashingUtils::HashString("PCA_RESOURCE_NOT_FOUND");
         static const int PCA_INVALID_ARGS_HASH = HashingUtils::HashString("PCA_INVALID_ARGS");
+        static const int PCA_INVALID_DURATION_HASH = HashingUtils::HashString("PCA_INVALID_DURATION");
+        static const int PCA_ACCESS_DENIED_HASH = HashingUtils::HashString("PCA_ACCESS_DENIED");
         static const int OTHER_HASH = HashingUtils::HashString("OTHER");
 
 
@@ -62,6 +65,10 @@ namespace Aws
           else if (hashCode == INVALID_PUBLIC_DOMAIN_HASH)
           {
             return FailureReason::INVALID_PUBLIC_DOMAIN;
+          }
+          else if (hashCode == DOMAIN_VALIDATION_DENIED_HASH)
+          {
+            return FailureReason::DOMAIN_VALIDATION_DENIED;
           }
           else if (hashCode == CAA_ERROR_HASH)
           {
@@ -91,6 +98,14 @@ namespace Aws
           {
             return FailureReason::PCA_INVALID_ARGS;
           }
+          else if (hashCode == PCA_INVALID_DURATION_HASH)
+          {
+            return FailureReason::PCA_INVALID_DURATION;
+          }
+          else if (hashCode == PCA_ACCESS_DENIED_HASH)
+          {
+            return FailureReason::PCA_ACCESS_DENIED;
+          }
           else if (hashCode == OTHER_HASH)
           {
             return FailureReason::OTHER;
@@ -117,6 +132,8 @@ namespace Aws
             return "DOMAIN_NOT_ALLOWED";
           case FailureReason::INVALID_PUBLIC_DOMAIN:
             return "INVALID_PUBLIC_DOMAIN";
+          case FailureReason::DOMAIN_VALIDATION_DENIED:
+            return "DOMAIN_VALIDATION_DENIED";
           case FailureReason::CAA_ERROR:
             return "CAA_ERROR";
           case FailureReason::PCA_LIMIT_EXCEEDED:
@@ -131,6 +148,10 @@ namespace Aws
             return "PCA_RESOURCE_NOT_FOUND";
           case FailureReason::PCA_INVALID_ARGS:
             return "PCA_INVALID_ARGS";
+          case FailureReason::PCA_INVALID_DURATION:
+            return "PCA_INVALID_DURATION";
+          case FailureReason::PCA_ACCESS_DENIED:
+            return "PCA_ACCESS_DENIED";
           case FailureReason::OTHER:
             return "OTHER";
           default:
@@ -140,7 +161,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

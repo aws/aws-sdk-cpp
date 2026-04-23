@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
      */
+    inline bool ClassicLinkDnsSupportedHasBeenSet() const { return m_classicLinkDnsSupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether ClassicLink DNS support is enabled for the VPC.</p>
+     */
     inline void SetClassicLinkDnsSupported(bool value) { m_classicLinkDnsSupportedHasBeenSet = true; m_classicLinkDnsSupported = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

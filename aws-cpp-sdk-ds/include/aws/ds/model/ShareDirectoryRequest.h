@@ -56,6 +56,12 @@ namespace Model
      * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
      * with other AWS accounts.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the AWS Managed Microsoft AD directory that you want to share
+     * with other AWS accounts.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -96,6 +102,14 @@ namespace Model
      * invitation.</p>
      */
     inline const Aws::String& GetShareNotes() const{ return m_shareNotes; }
+
+    /**
+     * <p>A directory share request that is sent by the directory owner to the
+     * directory consumer. The request includes a typed message to help the directory
+     * consumer administrator determine whether to approve or reject the share
+     * invitation.</p>
+     */
+    inline bool ShareNotesHasBeenSet() const { return m_shareNotesHasBeenSet; }
 
     /**
      * <p>A directory share request that is sent by the directory owner to the
@@ -156,6 +170,12 @@ namespace Model
      * <p>Identifier for the directory consumer account with whom the directory is to
      * be shared.</p>
      */
+    inline bool ShareTargetHasBeenSet() const { return m_shareTargetHasBeenSet; }
+
+    /**
+     * <p>Identifier for the directory consumer account with whom the directory is to
+     * be shared.</p>
+     */
     inline void SetShareTarget(const ShareTarget& value) { m_shareTargetHasBeenSet = true; m_shareTarget = value; }
 
     /**
@@ -184,6 +204,14 @@ namespace Model
      * (<code>HANDSHAKE</code>).</p>
      */
     inline const ShareMethod& GetShareMethod() const{ return m_shareMethod; }
+
+    /**
+     * <p>The method used when sharing a directory to determine whether the directory
+     * should be shared within your AWS organization (<code>ORGANIZATIONS</code>) or
+     * with any AWS account by sending a directory sharing request
+     * (<code>HANDSHAKE</code>).</p>
+     */
+    inline bool ShareMethodHasBeenSet() const { return m_shareMethodHasBeenSet; }
 
     /**
      * <p>The method used when sharing a directory to determine whether the directory

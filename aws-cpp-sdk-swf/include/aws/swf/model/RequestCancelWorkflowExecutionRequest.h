@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution to cancel.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow execution to cancel.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The workflowId of the workflow execution to cancel.</p>
      */
+    inline bool WorkflowIdHasBeenSet() const { return m_workflowIdHasBeenSet; }
+
+    /**
+     * <p>The workflowId of the workflow execution to cancel.</p>
+     */
     inline void SetWorkflowId(const Aws::String& value) { m_workflowIdHasBeenSet = true; m_workflowId = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The runId of the workflow execution to cancel.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>The runId of the workflow execution to cancel.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
      * <p>The runId of the workflow execution to cancel.</p>

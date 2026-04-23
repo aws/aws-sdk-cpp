@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier of the cluster for which to list the instances.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster for which to list the instances.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The identifier of the instance group for which to list the instances.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
+    /**
+     * <p>The identifier of the instance group for which to list the instances.</p>
+     */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
      * <p>The identifier of the instance group for which to list the instances.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The type of instance group for which to list the instances.</p>
      */
+    inline bool InstanceGroupTypesHasBeenSet() const { return m_instanceGroupTypesHasBeenSet; }
+
+    /**
+     * <p>The type of instance group for which to list the instances.</p>
+     */
     inline void SetInstanceGroupTypes(const Aws::Vector<InstanceGroupType>& value) { m_instanceGroupTypesHasBeenSet = true; m_instanceGroupTypes = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The unique identifier of the instance fleet.</p>
      */
     inline const Aws::String& GetInstanceFleetId() const{ return m_instanceFleetId; }
+
+    /**
+     * <p>The unique identifier of the instance fleet.</p>
+     */
+    inline bool InstanceFleetIdHasBeenSet() const { return m_instanceFleetIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the instance fleet.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
      */
+    inline bool InstanceFleetTypeHasBeenSet() const { return m_instanceFleetTypeHasBeenSet; }
+
+    /**
+     * <p>The node type of the instance fleet. For example MASTER, CORE, or TASK.</p>
+     */
     inline void SetInstanceFleetType(const InstanceFleetType& value) { m_instanceFleetTypeHasBeenSet = true; m_instanceFleetType = value; }
 
     /**
@@ -226,6 +251,12 @@ namespace Model
      * request.</p>
      */
     inline const Aws::Vector<InstanceState>& GetInstanceStates() const{ return m_instanceStates; }
+
+    /**
+     * <p>A list of instance states that will filter the instances returned with this
+     * request.</p>
+     */
+    inline bool InstanceStatesHasBeenSet() const { return m_instanceStatesHasBeenSet; }
 
     /**
      * <p>A list of instance states that will filter the instances returned with this
@@ -268,6 +299,11 @@ namespace Model
      * <p>The pagination token that indicates the next set of results to retrieve.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results to retrieve.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The pagination token that indicates the next set of results to retrieve.</p>

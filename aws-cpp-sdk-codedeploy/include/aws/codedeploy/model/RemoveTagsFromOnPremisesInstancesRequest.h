@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The tag key-value pairs to remove from the on-premises instances.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag key-value pairs to remove from the on-premises instances.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The names of the on-premises instances from which to remove tags.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
+    /**
+     * <p>The names of the on-premises instances from which to remove tags.</p>
+     */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
 
     /**
      * <p>The names of the on-premises instances from which to remove tags.</p>

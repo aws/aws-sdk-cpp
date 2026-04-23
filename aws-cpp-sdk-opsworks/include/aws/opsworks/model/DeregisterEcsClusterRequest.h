@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The cluster's Amazon Resource Number (ARN).</p>
      */
+    inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
+
+    /**
+     * <p>The cluster's Amazon Resource Number (ARN).</p>
+     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /**

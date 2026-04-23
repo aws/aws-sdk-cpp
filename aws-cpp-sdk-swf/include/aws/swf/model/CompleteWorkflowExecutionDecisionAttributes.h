@@ -71,6 +71,12 @@ namespace Model
      * <p>The result of the workflow execution. The form of the result is
      * implementation defined.</p>
      */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
+
+    /**
+     * <p>The result of the workflow execution. The form of the result is
+     * implementation defined.</p>
+     */
     inline void SetResult(const Aws::String& value) { m_resultHasBeenSet = true; m_result = value; }
 
     /**

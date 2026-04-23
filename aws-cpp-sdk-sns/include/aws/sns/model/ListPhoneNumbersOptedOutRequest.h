@@ -62,6 +62,13 @@ namespace Model
      * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that
      * are available after the first page of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A <code>NextToken</code> string is used when you call the
+     * <code>ListPhoneNumbersOptedOut</code> action to retrieve additional records that
+     * are available after the first page of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**

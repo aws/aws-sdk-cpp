@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The prefix to match.</p>
      */
+    inline bool LogGroupNamePrefixHasBeenSet() const { return m_logGroupNamePrefixHasBeenSet; }
+
+    /**
+     * <p>The prefix to match.</p>
+     */
     inline void SetLogGroupNamePrefix(const Aws::String& value) { m_logGroupNamePrefixHasBeenSet = true; m_logGroupNamePrefix = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -128,6 +139,12 @@ namespace Model
      * default is up to 50 items.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items returned. If you don't specify a value, the

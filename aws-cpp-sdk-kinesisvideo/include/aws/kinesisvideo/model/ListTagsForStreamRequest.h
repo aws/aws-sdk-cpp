@@ -54,6 +54,13 @@ namespace Model
      * <code>ListTagsForStream</code> call is truncated, the response includes a token
      * that you can use in the next request to fetch the next batch of tags.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>If you specify this parameter and the result of a
+     * <code>ListTagsForStream</code> call is truncated, the response includes a token
+     * that you can use in the next request to fetch the next batch of tags.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -102,6 +109,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
      * for.</p>
      */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream that you want to list tags
+     * for.</p>
+     */
     inline void SetStreamARN(const Aws::String& value) { m_streamARNHasBeenSet = true; m_streamARN = value; }
 
     /**
@@ -139,6 +152,11 @@ namespace Model
      * <p>The name of the stream that you want to list tags for.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>The name of the stream that you want to list tags for.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>The name of the stream that you want to list tags for.</p>

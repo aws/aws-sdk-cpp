@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     TAGGED,
-    UNTAGGED
+    UNTAGGED,
+    ANY
   };
 
 namespace TagStatusMapper

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The prefix used when this CNAME is reserved.</p>
      */
+    inline bool CNAMEPrefixHasBeenSet() const { return m_cNAMEPrefixHasBeenSet; }
+
+    /**
+     * <p>The prefix used when this CNAME is reserved.</p>
+     */
     inline void SetCNAMEPrefix(const Aws::String& value) { m_cNAMEPrefixHasBeenSet = true; m_cNAMEPrefix = value; }
 
     /**

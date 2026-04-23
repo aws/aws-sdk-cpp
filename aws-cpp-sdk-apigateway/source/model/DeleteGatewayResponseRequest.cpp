@@ -31,7 +31,7 @@ DeleteGatewayResponseRequest::DeleteGatewayResponseRequest() :
 
 Aws::String DeleteGatewayResponseRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

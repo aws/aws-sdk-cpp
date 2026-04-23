@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/dynamodb/model/ProvisionedThroughput.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/KeySchemaElement.h>
 #include <utility>
 
@@ -60,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the table for which the backup was created. </p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the table for which the backup was created. </p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>Unique identifier for the table for which the backup was created. </p>
      */
     inline const Aws::String& GetTableId() const{ return m_tableId; }
+
+    /**
+     * <p>Unique identifier for the table for which the backup was created. </p>
+     */
+    inline bool TableIdHasBeenSet() const { return m_tableIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for the table for which the backup was created. </p>
@@ -132,6 +143,11 @@ namespace Model
     /**
      * <p>ARN of the table for which backup was created. </p>
      */
+    inline bool TableArnHasBeenSet() const { return m_tableArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the table for which backup was created. </p>
+     */
     inline void SetTableArn(const Aws::String& value) { m_tableArnHasBeenSet = true; m_tableArn = value; }
 
     /**
@@ -168,6 +184,11 @@ namespace Model
     /**
      * <p>Size of the table in bytes. Please note this is an approximate value.</p>
      */
+    inline bool TableSizeBytesHasBeenSet() const { return m_tableSizeBytesHasBeenSet; }
+
+    /**
+     * <p>Size of the table in bytes. Please note this is an approximate value.</p>
+     */
     inline void SetTableSizeBytes(long long value) { m_tableSizeBytesHasBeenSet = true; m_tableSizeBytes = value; }
 
     /**
@@ -180,6 +201,11 @@ namespace Model
      * <p>Schema of the table. </p>
      */
     inline const Aws::Vector<KeySchemaElement>& GetKeySchema() const{ return m_keySchema; }
+
+    /**
+     * <p>Schema of the table. </p>
+     */
+    inline bool KeySchemaHasBeenSet() const { return m_keySchemaHasBeenSet; }
 
     /**
      * <p>Schema of the table. </p>
@@ -220,6 +246,11 @@ namespace Model
     /**
      * <p>Time when the source table was created. </p>
      */
+    inline bool TableCreationDateTimeHasBeenSet() const { return m_tableCreationDateTimeHasBeenSet; }
+
+    /**
+     * <p>Time when the source table was created. </p>
+     */
     inline void SetTableCreationDateTime(const Aws::Utils::DateTime& value) { m_tableCreationDateTimeHasBeenSet = true; m_tableCreationDateTime = value; }
 
     /**
@@ -242,6 +273,11 @@ namespace Model
      * <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
      */
     inline const ProvisionedThroughput& GetProvisionedThroughput() const{ return m_provisionedThroughput; }
+
+    /**
+     * <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
+     */
+    inline bool ProvisionedThroughputHasBeenSet() const { return m_provisionedThroughputHasBeenSet; }
 
     /**
      * <p>Read IOPs and Write IOPS on the table when the backup was created.</p>
@@ -272,12 +308,84 @@ namespace Model
     /**
      * <p>Number of items in the table. Please note this is an approximate value. </p>
      */
+    inline bool ItemCountHasBeenSet() const { return m_itemCountHasBeenSet; }
+
+    /**
+     * <p>Number of items in the table. Please note this is an approximate value. </p>
+     */
     inline void SetItemCount(long long value) { m_itemCountHasBeenSet = true; m_itemCount = value; }
 
     /**
      * <p>Number of items in the table. Please note this is an approximate value. </p>
      */
     inline SourceTableDetails& WithItemCount(long long value) { SetItemCount(value); return *this;}
+
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline const BillingMode& GetBillingMode() const{ return m_billingMode; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline bool BillingModeHasBeenSet() const { return m_billingModeHasBeenSet; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(const BillingMode& value) { m_billingModeHasBeenSet = true; m_billingMode = value; }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline void SetBillingMode(BillingMode&& value) { m_billingModeHasBeenSet = true; m_billingMode = std::move(value); }
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline SourceTableDetails& WithBillingMode(const BillingMode& value) { SetBillingMode(value); return *this;}
+
+    /**
+     * <p>Controls how you are charged for read and write throughput and how you manage
+     * capacity. This setting can be changed later.</p> <ul> <li> <p>
+     * <code>PROVISIONED</code> - Sets the read/write capacity mode to
+     * <code>PROVISIONED</code>. We recommend using <code>PROVISIONED</code> for
+     * predictable workloads.</p> </li> <li> <p> <code>PAY_PER_REQUEST</code> - Sets
+     * the read/write capacity mode to <code>PAY_PER_REQUEST</code>. We recommend using
+     * <code>PAY_PER_REQUEST</code> for unpredictable workloads. </p> </li> </ul>
+     */
+    inline SourceTableDetails& WithBillingMode(BillingMode&& value) { SetBillingMode(std::move(value)); return *this;}
 
   private:
 
@@ -304,6 +412,9 @@ namespace Model
 
     long long m_itemCount;
     bool m_itemCountHasBeenSet;
+
+    BillingMode m_billingMode;
+    bool m_billingModeHasBeenSet;
   };
 
 } // namespace Model

@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
      * network profile.</p>
      */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
+     * network profile.</p>
+     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The name you wish to specify for the new network profile.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name you wish to specify for the new network profile.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>The description of the network profile.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the network profile.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the network profile.</p>
@@ -170,6 +186,12 @@ namespace Model
      * <p>The type of network profile you wish to create. Valid values are listed
      * below.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of network profile you wish to create. Valid values are listed
+     * below.</p>
+     */
     inline void SetType(const NetworkProfileType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -201,6 +223,12 @@ namespace Model
      * <p>The data throughput rate in bits per second, as an integer from 0 to
      * 104857600.</p>
      */
+    inline bool UplinkBandwidthBitsHasBeenSet() const { return m_uplinkBandwidthBitsHasBeenSet; }
+
+    /**
+     * <p>The data throughput rate in bits per second, as an integer from 0 to
+     * 104857600.</p>
+     */
     inline void SetUplinkBandwidthBits(long long value) { m_uplinkBandwidthBitsHasBeenSet = true; m_uplinkBandwidthBits = value; }
 
     /**
@@ -215,6 +243,12 @@ namespace Model
      * 104857600.</p>
      */
     inline long long GetDownlinkBandwidthBits() const{ return m_downlinkBandwidthBits; }
+
+    /**
+     * <p>The data throughput rate in bits per second, as an integer from 0 to
+     * 104857600.</p>
+     */
+    inline bool DownlinkBandwidthBitsHasBeenSet() const { return m_downlinkBandwidthBitsHasBeenSet; }
 
     /**
      * <p>The data throughput rate in bits per second, as an integer from 0 to
@@ -239,6 +273,12 @@ namespace Model
      * <p>Delay time for all packets to destination in milliseconds as an integer from
      * 0 to 2000.</p>
      */
+    inline bool UplinkDelayMsHasBeenSet() const { return m_uplinkDelayMsHasBeenSet; }
+
+    /**
+     * <p>Delay time for all packets to destination in milliseconds as an integer from
+     * 0 to 2000.</p>
+     */
     inline void SetUplinkDelayMs(long long value) { m_uplinkDelayMsHasBeenSet = true; m_uplinkDelayMs = value; }
 
     /**
@@ -253,6 +293,12 @@ namespace Model
      * 0 to 2000.</p>
      */
     inline long long GetDownlinkDelayMs() const{ return m_downlinkDelayMs; }
+
+    /**
+     * <p>Delay time for all packets to destination in milliseconds as an integer from
+     * 0 to 2000.</p>
+     */
+    inline bool DownlinkDelayMsHasBeenSet() const { return m_downlinkDelayMsHasBeenSet; }
 
     /**
      * <p>Delay time for all packets to destination in milliseconds as an integer from
@@ -277,6 +323,12 @@ namespace Model
      * <p>Time variation in the delay of received packets in milliseconds as an integer
      * from 0 to 2000.</p>
      */
+    inline bool UplinkJitterMsHasBeenSet() const { return m_uplinkJitterMsHasBeenSet; }
+
+    /**
+     * <p>Time variation in the delay of received packets in milliseconds as an integer
+     * from 0 to 2000.</p>
+     */
     inline void SetUplinkJitterMs(long long value) { m_uplinkJitterMsHasBeenSet = true; m_uplinkJitterMs = value; }
 
     /**
@@ -291,6 +343,12 @@ namespace Model
      * from 0 to 2000.</p>
      */
     inline long long GetDownlinkJitterMs() const{ return m_downlinkJitterMs; }
+
+    /**
+     * <p>Time variation in the delay of received packets in milliseconds as an integer
+     * from 0 to 2000.</p>
+     */
+    inline bool DownlinkJitterMsHasBeenSet() const { return m_downlinkJitterMsHasBeenSet; }
 
     /**
      * <p>Time variation in the delay of received packets in milliseconds as an integer
@@ -315,6 +373,12 @@ namespace Model
      * <p>Proportion of transmitted packets that fail to arrive from 0 to 100
      * percent.</p>
      */
+    inline bool UplinkLossPercentHasBeenSet() const { return m_uplinkLossPercentHasBeenSet; }
+
+    /**
+     * <p>Proportion of transmitted packets that fail to arrive from 0 to 100
+     * percent.</p>
+     */
     inline void SetUplinkLossPercent(int value) { m_uplinkLossPercentHasBeenSet = true; m_uplinkLossPercent = value; }
 
     /**
@@ -328,6 +392,11 @@ namespace Model
      * <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
      */
     inline int GetDownlinkLossPercent() const{ return m_downlinkLossPercent; }
+
+    /**
+     * <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>
+     */
+    inline bool DownlinkLossPercentHasBeenSet() const { return m_downlinkLossPercentHasBeenSet; }
 
     /**
      * <p>Proportion of received packets that fail to arrive from 0 to 100 percent.</p>

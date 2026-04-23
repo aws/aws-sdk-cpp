@@ -66,6 +66,14 @@ namespace Model
      * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
      * resource after it has been created, see <a>CreateTags</a>.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource to tag. Currently, the resource types that support
+     * tagging on creation are <code>fleet</code>, <code>dedicated-host</code>,
+     * <code>instance</code>, <code>snapshot</code>, and <code>volume</code>. To tag a
+     * resource after it has been created, see <a>CreateTags</a>.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -97,6 +105,11 @@ namespace Model
      * <p>The tags to apply to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to apply to the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to apply to the resource.</p>

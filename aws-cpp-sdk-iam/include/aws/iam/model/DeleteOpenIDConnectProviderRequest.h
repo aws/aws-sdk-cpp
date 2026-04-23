@@ -58,6 +58,13 @@ namespace Model
      * object to delete. You can get a list of OpenID Connect provider resource ARNs by
      * using the <a>ListOpenIDConnectProviders</a> operation.</p>
      */
+    inline bool OpenIDConnectProviderArnHasBeenSet() const { return m_openIDConnectProviderArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM OpenID Connect provider resource
+     * object to delete. You can get a list of OpenID Connect provider resource ARNs by
+     * using the <a>ListOpenIDConnectProviders</a> operation.</p>
+     */
     inline void SetOpenIDConnectProviderArn(const Aws::String& value) { m_openIDConnectProviderArnHasBeenSet = true; m_openIDConnectProviderArn = value; }
 
     /**

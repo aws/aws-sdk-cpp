@@ -29,7 +29,7 @@ DeletePipelineRequest::DeletePipelineRequest() :
 
 Aws::String DeletePipelineRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

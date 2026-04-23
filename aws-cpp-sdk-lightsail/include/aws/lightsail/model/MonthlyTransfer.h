@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The amount allocated per month (in GB).</p>
      */
+    inline bool GbPerMonthAllocatedHasBeenSet() const { return m_gbPerMonthAllocatedHasBeenSet; }
+
+    /**
+     * <p>The amount allocated per month (in GB).</p>
+     */
     inline void SetGbPerMonthAllocated(int value) { m_gbPerMonthAllocatedHasBeenSet = true; m_gbPerMonthAllocated = value; }
 
     /**

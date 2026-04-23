@@ -31,7 +31,7 @@ DeactivateUserRequest::DeactivateUserRequest() :
 
 Aws::String DeactivateUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeactivateUserRequest::GetRequestSpecificHeaders() const

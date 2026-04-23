@@ -16,7 +16,9 @@
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
 #include <aws/mediaconvert/model/AvailBlanking.h>
+#include <aws/mediaconvert/model/EsamSettings.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mediaconvert/model/MotionImageInserter.h>
 #include <aws/mediaconvert/model/NielsenConfiguration.h>
 #include <aws/mediaconvert/model/TimecodeConfig.h>
 #include <aws/mediaconvert/model/TimedMetadataInsertion.h>
@@ -64,6 +66,12 @@ namespace Model
      * When specified, this offset (in milliseconds) is added to the input Ad Avail PTS
      * time.
      */
+    inline bool AdAvailOffsetHasBeenSet() const { return m_adAvailOffsetHasBeenSet; }
+
+    /**
+     * When specified, this offset (in milliseconds) is added to the input Ad Avail PTS
+     * time.
+     */
     inline void SetAdAvailOffset(int value) { m_adAvailOffsetHasBeenSet = true; m_adAvailOffset = value; }
 
     /**
@@ -78,6 +86,12 @@ namespace Model
      * and audio muted during SCTE-35 triggered ad avails.
      */
     inline const AvailBlanking& GetAvailBlanking() const{ return m_availBlanking; }
+
+    /**
+     * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
+     * and audio muted during SCTE-35 triggered ad avails.
+     */
+    inline bool AvailBlankingHasBeenSet() const { return m_availBlankingHasBeenSet; }
 
     /**
      * Settings for ad avail blanking.  Video can be blanked or overlaid with an image,
@@ -105,11 +119,49 @@ namespace Model
 
 
     /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline const EsamSettings& GetEsam() const{ return m_esam; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline bool EsamHasBeenSet() const { return m_esamHasBeenSet; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline void SetEsam(const EsamSettings& value) { m_esamHasBeenSet = true; m_esam = value; }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline void SetEsam(EsamSettings&& value) { m_esamHasBeenSet = true; m_esam = std::move(value); }
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline JobSettings& WithEsam(const EsamSettings& value) { SetEsam(value); return *this;}
+
+    /**
+     * Settings for Event Signaling And Messaging (ESAM).
+     */
+    inline JobSettings& WithEsam(EsamSettings&& value) { SetEsam(std::move(value)); return *this;}
+
+
+    /**
      * Use Inputs (inputs) to define source file used in the transcode job. There can
      * be multiple inputs add in a job. These inputs will be concantenated together to
      * create the output.
      */
     inline const Aws::Vector<Input>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * Use Inputs (inputs) to define source file used in the transcode job. There can
+     * be multiple inputs add in a job. These inputs will be concantenated together to
+     * create the output.
+     */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * Use Inputs (inputs) to define source file used in the transcode job. There can
@@ -154,19 +206,71 @@ namespace Model
     inline JobSettings& AddInputs(Input&& value) { m_inputsHasBeenSet = true; m_inputs.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline const MotionImageInserter& GetMotionImageInserter() const{ return m_motionImageInserter; }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline bool MotionImageInserterHasBeenSet() const { return m_motionImageInserterHasBeenSet; }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline void SetMotionImageInserter(const MotionImageInserter& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = value; }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline void SetMotionImageInserter(MotionImageInserter&& value) { m_motionImageInserterHasBeenSet = true; m_motionImageInserter = std::move(value); }
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline JobSettings& WithMotionImageInserter(const MotionImageInserter& value) { SetMotionImageInserter(value); return *this;}
+
+    /**
+     * Overlay motion graphics on top of your video. The motion graphics that you
+     * specify here appear on all outputs in all output groups.
+     */
+    inline JobSettings& WithMotionImageInserter(MotionImageInserter&& value) { SetMotionImageInserter(std::move(value)); return *this;}
+
+
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline const NielsenConfiguration& GetNielsenConfiguration() const{ return m_nielsenConfiguration; }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
+    inline bool NielsenConfigurationHasBeenSet() const { return m_nielsenConfigurationHasBeenSet; }
+
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline void SetNielsenConfiguration(const NielsenConfiguration& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = value; }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline void SetNielsenConfiguration(NielsenConfiguration&& value) { m_nielsenConfigurationHasBeenSet = true; m_nielsenConfiguration = std::move(value); }
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline JobSettings& WithNielsenConfiguration(const NielsenConfiguration& value) { SetNielsenConfiguration(value); return *this;}
 
-    
+    /**
+     * Settings for Nielsen Configuration
+     */
     inline JobSettings& WithNielsenConfiguration(NielsenConfiguration&& value) { SetNielsenConfiguration(std::move(value)); return *this;}
 
 
@@ -183,6 +287,20 @@ namespace Model
      * CmafGroupSettings
      */
     inline const Aws::Vector<OutputGroup>& GetOutputGroups() const{ return m_outputGroups; }
+
+    /**
+     * (OutputGroups) contains one group of settings for each set of outputs that share
+     * a common package type. All unpackaged files (MPEG-4, MPEG-2 TS, Quicktime, MXF,
+     * and no container) are grouped in a single output group as well. Required in
+     * (OutputGroups) is a group of settings that apply to the whole group. This
+     * required object depends on the value you set for (Type) under
+     * (OutputGroups)>(OutputGroupSettings). Type, settings object pairs are as
+     * follows. * FILE_GROUP_SETTINGS, FileGroupSettings * HLS_GROUP_SETTINGS,
+     * HlsGroupSettings * DASH_ISO_GROUP_SETTINGS, DashIsoGroupSettings *
+     * MS_SMOOTH_GROUP_SETTINGS, MsSmoothGroupSettings * CMAF_GROUP_SETTINGS,
+     * CmafGroupSettings
+     */
+    inline bool OutputGroupsHasBeenSet() const { return m_outputGroupsHasBeenSet; }
 
     /**
      * (OutputGroups) contains one group of settings for each set of outputs that share
@@ -277,6 +395,11 @@ namespace Model
     /**
      * Contains settings used to acquire and adjust timecode information from inputs.
      */
+    inline bool TimecodeConfigHasBeenSet() const { return m_timecodeConfigHasBeenSet; }
+
+    /**
+     * Contains settings used to acquire and adjust timecode information from inputs.
+     */
     inline void SetTimecodeConfig(const TimecodeConfig& value) { m_timecodeConfigHasBeenSet = true; m_timecodeConfig = value; }
 
     /**
@@ -295,19 +418,52 @@ namespace Model
     inline JobSettings& WithTimecodeConfig(TimecodeConfig&& value) { SetTimecodeConfig(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline const TimedMetadataInsertion& GetTimedMetadataInsertion() const{ return m_timedMetadataInsertion; }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
+    inline bool TimedMetadataInsertionHasBeenSet() const { return m_timedMetadataInsertionHasBeenSet; }
+
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline void SetTimedMetadataInsertion(const TimedMetadataInsertion& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = value; }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline void SetTimedMetadataInsertion(TimedMetadataInsertion&& value) { m_timedMetadataInsertionHasBeenSet = true; m_timedMetadataInsertion = std::move(value); }
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline JobSettings& WithTimedMetadataInsertion(const TimedMetadataInsertion& value) { SetTimedMetadataInsertion(value); return *this;}
 
-    
+    /**
+     * Enable Timed metadata insertion (TimedMetadataInsertion) to include ID3 tags in
+     * your job. To include timed metadata, you must enable it here, enable it in each
+     * output container, and specify tags and timecodes in ID3 insertion (Id3Insertion)
+     * objects.
+     */
     inline JobSettings& WithTimedMetadataInsertion(TimedMetadataInsertion&& value) { SetTimedMetadataInsertion(std::move(value)); return *this;}
 
   private:
@@ -318,8 +474,14 @@ namespace Model
     AvailBlanking m_availBlanking;
     bool m_availBlankingHasBeenSet;
 
+    EsamSettings m_esam;
+    bool m_esamHasBeenSet;
+
     Aws::Vector<Input> m_inputs;
     bool m_inputsHasBeenSet;
+
+    MotionImageInserter m_motionImageInserter;
+    bool m_motionImageInserterHasBeenSet;
 
     NielsenConfiguration m_nielsenConfiguration;
     bool m_nielsenConfigurationHasBeenSet;

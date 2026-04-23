@@ -36,6 +36,7 @@ Version::Version() :
     m_resourcesSupported(false),
     m_resourcesSupportedHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
+    m_sourceCodeArchiveUrlHasBeenSet(false),
     m_sourceCodeUrlHasBeenSet(false),
     m_templateUrlHasBeenSet(false)
 {
@@ -49,6 +50,7 @@ Version::Version(JsonView jsonValue) :
     m_resourcesSupported(false),
     m_resourcesSupportedHasBeenSet(false),
     m_semanticVersionHasBeenSet(false),
+    m_sourceCodeArchiveUrlHasBeenSet(false),
     m_sourceCodeUrlHasBeenSet(false),
     m_templateUrlHasBeenSet(false)
 {
@@ -103,6 +105,13 @@ Version& Version::operator =(JsonView jsonValue)
     m_semanticVersion = jsonValue.GetString("semanticVersion");
 
     m_semanticVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("sourceCodeArchiveUrl"))
+  {
+    m_sourceCodeArchiveUrl = jsonValue.GetString("sourceCodeArchiveUrl");
+
+    m_sourceCodeArchiveUrlHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("sourceCodeUrl"))
@@ -169,6 +178,12 @@ JsonValue Version::Jsonize() const
   if(m_semanticVersionHasBeenSet)
   {
    payload.WithString("semanticVersion", m_semanticVersion);
+
+  }
+
+  if(m_sourceCodeArchiveUrlHasBeenSet)
+  {
+   payload.WithString("sourceCodeArchiveUrl", m_sourceCodeArchiveUrl);
 
   }
 

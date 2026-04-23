@@ -55,12 +55,15 @@ RunInstancesRequest::RunInstancesRequest() :
     m_networkInterfacesHasBeenSet(false),
     m_privateIpAddressHasBeenSet(false),
     m_elasticGpuSpecificationHasBeenSet(false),
+    m_elasticInferenceAcceleratorsHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_launchTemplateHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_creditSpecificationHasBeenSet(false),
     m_cpuOptionsHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false)
+    m_capacityReservationSpecificationHasBeenSet(false),
+    m_hibernationOptionsHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
 }
 
@@ -230,6 +233,16 @@ Aws::String RunInstancesRequest::SerializePayload() const
     }
   }
 
+  if(m_elasticInferenceAcceleratorsHasBeenSet)
+  {
+    unsigned elasticInferenceAcceleratorsCount = 1;
+    for(auto& item : m_elasticInferenceAccelerators)
+    {
+      item.OutputToStream(ss, "ElasticInferenceAccelerator.", elasticInferenceAcceleratorsCount, "");
+      elasticInferenceAcceleratorsCount++;
+    }
+  }
+
   if(m_tagSpecificationsHasBeenSet)
   {
     unsigned tagSpecificationsCount = 1;
@@ -263,6 +276,21 @@ Aws::String RunInstancesRequest::SerializePayload() const
   if(m_capacityReservationSpecificationHasBeenSet)
   {
     m_capacityReservationSpecification.OutputToStream(ss, "CapacityReservationSpecification");
+  }
+
+  if(m_hibernationOptionsHasBeenSet)
+  {
+    m_hibernationOptions.OutputToStream(ss, "HibernationOptions");
+  }
+
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+    unsigned licenseSpecificationsCount = 1;
+    for(auto& item : m_licenseSpecifications)
+    {
+      item.OutputToStream(ss, "LicenseSpecification.", licenseSpecificationsCount, "");
+      licenseSpecificationsCount++;
+    }
   }
 
   ss << "Version=2016-11-15";

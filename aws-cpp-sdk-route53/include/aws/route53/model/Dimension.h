@@ -58,6 +58,12 @@ namespace Model
      * <p>For the metric that the CloudWatch alarm is associated with, the name of one
      * dimension.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the name of one
+     * dimension.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * dimension.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>For the metric that the CloudWatch alarm is associated with, the value of one
+     * dimension.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>For the metric that the CloudWatch alarm is associated with, the value of one

@@ -33,7 +33,7 @@ DeleteAccountAuditConfigurationRequest::DeleteAccountAuditConfigurationRequest()
 
 Aws::String DeleteAccountAuditConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteAccountAuditConfigurationRequest::AddQueryStringParameters(URI& uri) const

@@ -50,13 +50,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -64,13 +64,27 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * including most punctuation characters, digits, and upper and lowercased
+     * letters.</p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p> The path to the role. For more information about paths, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
+     * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -78,13 +92,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -92,13 +106,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -106,13 +120,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -120,13 +134,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -134,13 +148,13 @@ namespace Model
 
     /**
      * <p> The path to the role. For more information about paths, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p> <p>This parameter is optional.
      * If it is not included, it defaults to a slash (/).</p> <p>This parameter allows
-     * (per its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string
-     * of characters consisting of either a forward slash (/) by itself or a string
-     * that must begin and end with forward slashes. In addition, it can contain any
-     * ASCII character from the ! (\u0021) through the DEL character (\u007F),
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters consisting of either a forward slash (/) by itself or a
+     * string that must begin and end with forward slashes. In addition, it can contain
+     * any ASCII character from the ! (\u0021) through the DEL character (\u007F),
      * including most punctuation characters, digits, and upper and lowercased
      * letters.</p>
      */
@@ -148,7 +162,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -158,7 +172,17 @@ namespace Model
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
+     * consisting of upper and lowercase alphanumeric characters with no spaces. You
+     * can also include any of the following characters: _+=,.@-</p> <p>Role names are
+     * not distinguished by case. For example, you cannot create roles named both
+     * "PRODROLE" and "prodrole".</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -168,7 +192,7 @@ namespace Model
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -178,7 +202,7 @@ namespace Model
     inline void SetRoleName(Aws::String&& value) { m_roleNameHasBeenSet = true; m_roleName = std::move(value); }
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -188,7 +212,7 @@ namespace Model
     inline void SetRoleName(const char* value) { m_roleNameHasBeenSet = true; m_roleName.assign(value); }
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -198,7 +222,7 @@ namespace Model
     inline CreateRoleRequest& WithRoleName(const Aws::String& value) { SetRoleName(value); return *this;}
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -208,7 +232,7 @@ namespace Model
     inline CreateRoleRequest& WithRoleName(Aws::String&& value) { SetRoleName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the role to create.</p> <p>This parameter allows (per its <a
+     * <p>The name of the role to create.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p> <p>Role names are
@@ -229,6 +253,18 @@ namespace Model
      * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
      */
     inline const Aws::String& GetAssumeRolePolicyDocument() const{ return m_assumeRolePolicyDocument; }
+
+    /**
+     * <p>The trust relationship policy document that grants an entity permission to
+     * assume the role.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> used to validate this parameter is a string of characters consisting
+     * of the following:</p> <ul> <li> <p>Any printable ASCII character ranging from
+     * the space character (\u0020) through the end of the ASCII character range</p>
+     * </li> <li> <p>The printable characters in the Basic Latin and Latin-1 Supplement
+     * character set (through \u00FF)</p> </li> <li> <p>The special characters tab
+     * (\u0009), line feed (\u000A), and carriage return (\u000D)</p> </li> </ul>
+     */
+    inline bool AssumeRolePolicyDocumentHasBeenSet() const { return m_assumeRolePolicyDocumentHasBeenSet; }
 
     /**
      * <p>The trust relationship policy document that grants an entity permission to
@@ -311,6 +347,11 @@ namespace Model
     /**
      * <p>A description of the role.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the role.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -340,84 +381,6 @@ namespace Model
 
 
     /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline CreateRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline CreateRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline CreateRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
-
-    /**
-     * <p>A list of tags that you want to attach to the newly created role. Each tag
-     * consists of a key name and an associated value. For more information about
-     * tagging, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
-     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
-     * tags is invalid or if you exceed the allowed number of tags per role, then the
-     * entire request fails and the role is not created.</p> </note>
-     */
-    inline CreateRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
-
-
-    /**
      * <p>The maximum session duration (in seconds) that you want to set for the
      * specified role. If you do not specify a value for this setting, the default
      * maximum of one hour is applied. This setting can have a value from 1 hour to 12
@@ -431,7 +394,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline int GetMaxSessionDuration() const{ return m_maxSessionDuration; }
@@ -450,7 +413,26 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool MaxSessionDurationHasBeenSet() const { return m_maxSessionDurationHasBeenSet; }
+
+    /**
+     * <p>The maximum session duration (in seconds) that you want to set for the
+     * specified role. If you do not specify a value for this setting, the default
+     * maximum of one hour is applied. This setting can have a value from 1 hour to 12
+     * hours.</p> <p>Anyone who assumes the role from the AWS CLI or API can use the
+     * <code>DurationSeconds</code> API parameter or the <code>duration-seconds</code>
+     * CLI parameter to request a longer session. The <code>MaxSessionDuration</code>
+     * setting determines the maximum duration that can be requested using the
+     * <code>DurationSeconds</code> parameter. If users don't specify a value for the
+     * <code>DurationSeconds</code> parameter, their security credentials are valid for
+     * one hour by default. This applies when you use the <code>AssumeRole*</code> API
+     * operations or the <code>assume-role*</code> CLI operations but does not apply
+     * when you use those operations to create a console URL. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetMaxSessionDuration(int value) { m_maxSessionDurationHasBeenSet = true; m_maxSessionDuration = value; }
@@ -469,7 +451,7 @@ namespace Model
      * operations or the <code>assume-role*</code> CLI operations but does not apply
      * when you use those operations to create a console URL. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use.html">Using
      * IAM Roles</a> in the <i>IAM User Guide</i>.</p>
      */
     inline CreateRoleRequest& WithMaxSessionDuration(int value) { SetMaxSessionDuration(value); return *this;}
@@ -480,6 +462,12 @@ namespace Model
      * role.</p>
      */
     inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
 
     /**
      * <p>The ARN of the policy that is used to set the permissions boundary for the
@@ -517,6 +505,95 @@ namespace Model
      */
     inline CreateRoleRequest& WithPermissionsBoundary(const char* value) { SetPermissionsBoundary(value); return *this;}
 
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline CreateRoleRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline CreateRoleRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline CreateRoleRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of tags that you want to attach to the newly created role. Each tag
+     * consists of a key name and an associated value. For more information about
+     * tagging, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+     * Identities</a> in the <i>IAM User Guide</i>.</p> <note> <p>If any one of the
+     * tags is invalid or if you exceed the allowed number of tags per role, then the
+     * entire request fails and the role is not created.</p> </note>
+     */
+    inline CreateRoleRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_path;
@@ -531,14 +608,14 @@ namespace Model
     Aws::String m_description;
     bool m_descriptionHasBeenSet;
 
-    Aws::Vector<Tag> m_tags;
-    bool m_tagsHasBeenSet;
-
     int m_maxSessionDuration;
     bool m_maxSessionDurationHasBeenSet;
 
     Aws::String m_permissionsBoundary;
     bool m_permissionsBoundaryHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

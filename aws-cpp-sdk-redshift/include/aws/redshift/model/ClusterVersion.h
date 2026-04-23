@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The version number used by the cluster.</p>
      */
+    inline bool ClusterVersionHasBeenSet() const { return m_clusterVersionHasBeenSet; }
+
+    /**
+     * <p>The version number used by the cluster.</p>
+     */
     inline void SetClusterVersion(const Aws::String& value) { m_clusterVersionHasBeenSet = true; m_clusterVersion = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The name of the cluster parameter group family for the cluster.</p>
      */
+    inline bool ClusterParameterGroupFamilyHasBeenSet() const { return m_clusterParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster parameter group family for the cluster.</p>
+     */
     inline void SetClusterParameterGroupFamily(const Aws::String& value) { m_clusterParameterGroupFamilyHasBeenSet = true; m_clusterParameterGroupFamily = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The description of the cluster version.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the cluster version.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the cluster version.</p>

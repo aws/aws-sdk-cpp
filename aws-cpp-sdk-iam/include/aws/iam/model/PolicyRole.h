@@ -38,7 +38,7 @@ namespace Model
    * <p>This data type is used as a response element in the
    * <a>ListEntitiesForPolicy</a> operation. </p> <p>For more information about
    * managed policies, refer to <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyRole">AWS API
@@ -59,6 +59,11 @@ namespace Model
      * <p>The name (friendly name, not ARN) identifying the role.</p>
      */
     inline const Aws::String& GetRoleName() const{ return m_roleName; }
+
+    /**
+     * <p>The name (friendly name, not ARN) identifying the role.</p>
+     */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
 
     /**
      * <p>The name (friendly name, not ARN) identifying the role.</p>
@@ -94,7 +99,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline const Aws::String& GetRoleId() const{ return m_roleId; }
@@ -102,7 +107,15 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * Identifiers</a> in the <i>IAM User Guide</i>.</p>
+     */
+    inline bool RoleIdHasBeenSet() const { return m_roleIdHasBeenSet; }
+
+    /**
+     * <p>The stable and unique string identifying the role. For more information about
+     * IDs, see <a
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRoleId(const Aws::String& value) { m_roleIdHasBeenSet = true; m_roleId = value; }
@@ -110,7 +123,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRoleId(Aws::String&& value) { m_roleIdHasBeenSet = true; m_roleId = std::move(value); }
@@ -118,7 +131,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline void SetRoleId(const char* value) { m_roleIdHasBeenSet = true; m_roleId.assign(value); }
@@ -126,7 +139,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyRole& WithRoleId(const Aws::String& value) { SetRoleId(value); return *this;}
@@ -134,7 +147,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyRole& WithRoleId(Aws::String&& value) { SetRoleId(std::move(value)); return *this;}
@@ -142,7 +155,7 @@ namespace Model
     /**
      * <p>The stable and unique string identifying the role. For more information about
      * IDs, see <a
-     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
+     * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_identifiers.html">IAM
      * Identifiers</a> in the <i>IAM User Guide</i>.</p>
      */
     inline PolicyRole& WithRoleId(const char* value) { SetRoleId(value); return *this;}

@@ -52,6 +52,12 @@ namespace Model
      * <p>The name of the bot that you want to create a new version of. The name is
      * case sensitive. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot that you want to create a new version of. The name is
+     * case sensitive. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +99,15 @@ namespace Model
      * checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
      */
     inline const Aws::String& GetChecksum() const{ return m_checksum; }
+
+    /**
+     * <p>Identifies a specific revision of the <code>$LATEST</code> version of the
+     * bot. If you specify a checksum and the <code>$LATEST</code> version of the bot
+     * has a different checksum, a <code>PreconditionFailedException</code> exception
+     * is returned and Amazon Lex doesn't publish a new version. If you don't specify a
+     * checksum, Amazon Lex publishes the <code>$LATEST</code> version.</p>
+     */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
 
     /**
      * <p>Identifies a specific revision of the <code>$LATEST</code> version of the

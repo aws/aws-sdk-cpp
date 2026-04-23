@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>An array of query IDs.</p>
      */
+    inline bool NamedQueryIdsHasBeenSet() const { return m_namedQueryIdsHasBeenSet; }
+
+    /**
+     * <p>An array of query IDs.</p>
+     */
     inline void SetNamedQueryIds(const Aws::Vector<Aws::String>& value) { m_namedQueryIdsHasBeenSet = true; m_namedQueryIds = value; }
 
     /**

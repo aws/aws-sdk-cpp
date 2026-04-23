@@ -62,6 +62,13 @@ namespace Model
      * service that created the resource. When a resource is created by another
      * service, you can't edit or delete it using Amazon Route 53. </p>
      */
+    inline bool ServicePrincipalHasBeenSet() const { return m_servicePrincipalHasBeenSet; }
+
+    /**
+     * <p>If the health check or hosted zone was created by another service, the
+     * service that created the resource. When a resource is created by another
+     * service, you can't edit or delete it using Amazon Route 53. </p>
+     */
     inline void SetServicePrincipal(const Aws::String& value) { m_servicePrincipalHasBeenSet = true; m_servicePrincipal = value; }
 
     /**
@@ -107,6 +114,14 @@ namespace Model
      * 53. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>If the health check or hosted zone was created by another service, an
+     * optional description that can be provided by the other service. When a resource
+     * is created by another service, you can't edit or delete it using Amazon Route
+     * 53. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>If the health check or hosted zone was created by another service, an

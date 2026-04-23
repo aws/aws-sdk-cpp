@@ -56,6 +56,11 @@ namespace Model
     /**
      * The URL of the broker's ActiveMQ Web Console.
      */
+    inline bool ConsoleURLHasBeenSet() const { return m_consoleURLHasBeenSet; }
+
+    /**
+     * The URL of the broker's ActiveMQ Web Console.
+     */
     inline void SetConsoleURL(const Aws::String& value) { m_consoleURLHasBeenSet = true; m_consoleURL = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The broker's wire-level protocol endpoints.
      */
     inline const Aws::Vector<Aws::String>& GetEndpoints() const{ return m_endpoints; }
+
+    /**
+     * The broker's wire-level protocol endpoints.
+     */
+    inline bool EndpointsHasBeenSet() const { return m_endpointsHasBeenSet; }
 
     /**
      * The broker's wire-level protocol endpoints.
@@ -129,6 +139,11 @@ namespace Model
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * The IP address of the Elastic Network Interface (ENI) attached to the broker.
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * The IP address of the Elastic Network Interface (ENI) attached to the broker.

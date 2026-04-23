@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Name of the Amazon Kinesis Analytics application to update.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the Amazon Kinesis Analytics application to update.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <p>The current application version ID. You can use the
      * <a>DescribeApplication</a> operation to get this value.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>The current application version ID. You can use the
+     * <a>DescribeApplication</a> operation to get this value.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -104,6 +115,11 @@ namespace Model
      * <p>Describes application updates.</p>
      */
     inline const ApplicationUpdate& GetApplicationUpdate() const{ return m_applicationUpdate; }
+
+    /**
+     * <p>Describes application updates.</p>
+     */
+    inline bool ApplicationUpdateHasBeenSet() const { return m_applicationUpdateHasBeenSet; }
 
     /**
      * <p>Describes application updates.</p>

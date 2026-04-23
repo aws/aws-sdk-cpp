@@ -56,6 +56,13 @@ namespace Model
      * the policy.</p> <p>The user making the request must be the owner of the
      * RuleGroup.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the RuleGroup from which you want to delete
+     * the policy.</p> <p>The user making the request must be the owner of the
+     * RuleGroup.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

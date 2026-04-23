@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Authorization information.</p>
      */
+    inline bool AuthInfoHasBeenSet() const { return m_authInfoHasBeenSet; }
+
+    /**
+     * <p>Authorization information.</p>
+     */
     inline void SetAuthInfo(const AuthInfo& value) { m_authInfoHasBeenSet = true; m_authInfo = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
     /**
      * <p>The policies and statements that allowed the specified action.</p>
      */
+    inline bool AllowedHasBeenSet() const { return m_allowedHasBeenSet; }
+
+    /**
+     * <p>The policies and statements that allowed the specified action.</p>
+     */
     inline void SetAllowed(const Allowed& value) { m_allowedHasBeenSet = true; m_allowed = value; }
 
     /**
@@ -108,6 +118,11 @@ namespace Model
      * <p>The policies and statements that denied the specified action.</p>
      */
     inline const Denied& GetDenied() const{ return m_denied; }
+
+    /**
+     * <p>The policies and statements that denied the specified action.</p>
+     */
+    inline bool DeniedHasBeenSet() const { return m_deniedHasBeenSet; }
 
     /**
      * <p>The policies and statements that denied the specified action.</p>
@@ -142,6 +157,13 @@ namespace Model
      * taken into account when determining the authorization decision. An explicit deny
      * statement can override multiple allow statements.</p>
      */
+    inline bool AuthDecisionHasBeenSet() const { return m_authDecisionHasBeenSet; }
+
+    /**
+     * <p>The final authorization decision of this scenario. Multiple statements are
+     * taken into account when determining the authorization decision. An explicit deny
+     * statement can override multiple allow statements.</p>
+     */
     inline void SetAuthDecision(const AuthDecision& value) { m_authDecisionHasBeenSet = true; m_authDecision = value; }
 
     /**
@@ -170,6 +192,11 @@ namespace Model
      * <p>Contains any missing context values found while evaluating policy.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMissingContextValues() const{ return m_missingContextValues; }
+
+    /**
+     * <p>Contains any missing context values found while evaluating policy.</p>
+     */
+    inline bool MissingContextValuesHasBeenSet() const { return m_missingContextValuesHasBeenSet; }
 
     /**
      * <p>Contains any missing context values found while evaluating policy.</p>

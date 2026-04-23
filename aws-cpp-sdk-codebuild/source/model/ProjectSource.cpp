@@ -34,6 +34,7 @@ ProjectSource::ProjectSource() :
     m_locationHasBeenSet(false),
     m_gitCloneDepth(0),
     m_gitCloneDepthHasBeenSet(false),
+    m_gitSubmodulesConfigHasBeenSet(false),
     m_buildspecHasBeenSet(false),
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
@@ -50,6 +51,7 @@ ProjectSource::ProjectSource(JsonView jsonValue) :
     m_locationHasBeenSet(false),
     m_gitCloneDepth(0),
     m_gitCloneDepthHasBeenSet(false),
+    m_gitSubmodulesConfigHasBeenSet(false),
     m_buildspecHasBeenSet(false),
     m_authHasBeenSet(false),
     m_reportBuildStatus(false),
@@ -82,6 +84,13 @@ ProjectSource& ProjectSource::operator =(JsonView jsonValue)
     m_gitCloneDepth = jsonValue.GetInteger("gitCloneDepth");
 
     m_gitCloneDepthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("gitSubmodulesConfig"))
+  {
+    m_gitSubmodulesConfig = jsonValue.GetObject("gitSubmodulesConfig");
+
+    m_gitSubmodulesConfigHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("buildspec"))
@@ -140,6 +149,12 @@ JsonValue ProjectSource::Jsonize() const
   if(m_gitCloneDepthHasBeenSet)
   {
    payload.WithInteger("gitCloneDepth", m_gitCloneDepth);
+
+  }
+
+  if(m_gitSubmodulesConfigHasBeenSet)
+  {
+   payload.WithObject("gitSubmodulesConfig", m_gitSubmodulesConfig.Jsonize());
 
   }
 

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Name of the source table that is being restored.</p>
      */
+    inline bool SourceTableNameHasBeenSet() const { return m_sourceTableNameHasBeenSet; }
+
+    /**
+     * <p>Name of the source table that is being restored.</p>
+     */
     inline void SetSourceTableName(const Aws::String& value) { m_sourceTableNameHasBeenSet = true; m_sourceTableName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The name of the new table to which it must be restored to.</p>
      */
     inline const Aws::String& GetTargetTableName() const{ return m_targetTableName; }
+
+    /**
+     * <p>The name of the new table to which it must be restored to.</p>
+     */
+    inline bool TargetTableNameHasBeenSet() const { return m_targetTableNameHasBeenSet; }
 
     /**
      * <p>The name of the new table to which it must be restored to.</p>
@@ -129,6 +139,13 @@ namespace Model
      * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
      * time. </p>
      */
+    inline bool UseLatestRestorableTimeHasBeenSet() const { return m_useLatestRestorableTimeHasBeenSet; }
+
+    /**
+     * <p>Restore the table to the latest possible time.
+     * <code>LatestRestorableDateTime</code> is typically 5 minutes before the current
+     * time. </p>
+     */
     inline void SetUseLatestRestorableTime(bool value) { m_useLatestRestorableTimeHasBeenSet = true; m_useLatestRestorableTime = value; }
 
     /**
@@ -143,6 +160,11 @@ namespace Model
      * <p>Time in the past to restore the table to.</p>
      */
     inline const Aws::Utils::DateTime& GetRestoreDateTime() const{ return m_restoreDateTime; }
+
+    /**
+     * <p>Time in the past to restore the table to.</p>
+     */
+    inline bool RestoreDateTimeHasBeenSet() const { return m_restoreDateTimeHasBeenSet; }
 
     /**
      * <p>Time in the past to restore the table to.</p>

@@ -44,19 +44,29 @@ namespace Model
     GetBucketAclResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Owner& GetOwner() const{ return m_owner; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_owner = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(Owner&& value) { m_owner = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketAclResult& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetBucketAclResult& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 

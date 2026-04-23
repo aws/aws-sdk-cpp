@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A node identifier that is unique within the node's graph.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>A node identifier that is unique within the node's graph.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The type of node this is.</p>
      */
     inline const Aws::String& GetNodeType() const{ return m_nodeType; }
+
+    /**
+     * <p>The type of node this is.</p>
+     */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
 
     /**
      * <p>The type of node this is.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>Properties of the node, in the form of name-value pairs.</p>
      */
+    inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
+
+    /**
+     * <p>Properties of the node, in the form of name-value pairs.</p>
+     */
     inline void SetArgs(const Aws::Vector<CodeGenNodeArg>& value) { m_argsHasBeenSet = true; m_args = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The line number of the node.</p>
      */
     inline int GetLineNumber() const{ return m_lineNumber; }
+
+    /**
+     * <p>The line number of the node.</p>
+     */
+    inline bool LineNumberHasBeenSet() const { return m_lineNumberHasBeenSet; }
 
     /**
      * <p>The line number of the node.</p>

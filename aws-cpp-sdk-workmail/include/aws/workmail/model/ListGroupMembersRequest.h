@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the group exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the group exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -81,37 +86,50 @@ namespace Model
 
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier for the group to which the members are associated.</p>
+     * <p>The identifier for the group to which the members (users or groups) are
+     * associated.</p>
      */
     inline ListGroupMembersRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
@@ -121,6 +139,12 @@ namespace Model
      * not contain any tokens.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p> The token to use to retrieve the next page of results. The first call does
+     * not contain any tokens.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> The token to use to retrieve the next page of results. The first call does
@@ -163,6 +187,11 @@ namespace Model
      * <p>The maximum number of results to return in a single call.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in a single call.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in a single call.</p>

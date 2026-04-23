@@ -92,37 +92,37 @@ namespace Model
 
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline const Aws::String& GetToken() const{ return m_token; }
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline void SetToken(const Aws::String& value) { m_token = value; }
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline void SetToken(Aws::String&& value) { m_token = std::move(value); }
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline void SetToken(const char* value) { m_token.assign(value); }
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline GetOpenIdTokenResult& WithToken(const Aws::String& value) { SetToken(value); return *this;}
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline GetOpenIdTokenResult& WithToken(Aws::String&& value) { SetToken(std::move(value)); return *this;}
 
     /**
-     * <p>An OpenID token, valid for 15 minutes.</p>
+     * <p>An OpenID token, valid for 10 minutes.</p>
      */
     inline GetOpenIdTokenResult& WithToken(const char* value) { SetToken(value); return *this;}
 

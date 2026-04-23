@@ -60,6 +60,13 @@ namespace Model
      * <a>StartDeliveryStreamEncryption</a> and
      * <a>StopDeliveryStreamEncryption</a>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>For a full description of the different values of this status, see
+     * <a>StartDeliveryStreamEncryption</a> and
+     * <a>StopDeliveryStreamEncryption</a>.</p>
+     */
     inline void SetStatus(const DeliveryStreamEncryptionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

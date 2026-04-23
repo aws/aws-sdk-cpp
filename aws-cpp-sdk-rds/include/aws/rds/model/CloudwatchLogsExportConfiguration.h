@@ -41,7 +41,7 @@ namespace Model
    * which logs will be exported (or not exported) to CloudWatch Logs. The values
    * within these arrays depend on the DB engine being used. For more information,
    * see <a
-   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
    * Database Logs to Amazon CloudWatch Logs </a> in the <i>Amazon RDS User
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/CloudwatchLogsExportConfiguration">AWS
@@ -62,6 +62,11 @@ namespace Model
      * <p>The list of log types to enable.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableLogTypes() const{ return m_enableLogTypes; }
+
+    /**
+     * <p>The list of log types to enable.</p>
+     */
+    inline bool EnableLogTypesHasBeenSet() const { return m_enableLogTypesHasBeenSet; }
 
     /**
      * <p>The list of log types to enable.</p>
@@ -103,6 +108,11 @@ namespace Model
      * <p>The list of log types to disable.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDisableLogTypes() const{ return m_disableLogTypes; }
+
+    /**
+     * <p>The list of log types to disable.</p>
+     */
+    inline bool DisableLogTypesHasBeenSet() const { return m_disableLogTypesHasBeenSet; }
 
     /**
      * <p>The list of log types to disable.</p>

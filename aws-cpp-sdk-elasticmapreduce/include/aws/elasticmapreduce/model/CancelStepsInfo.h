@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The encrypted StepId of a step.</p>
      */
+    inline bool StepIdHasBeenSet() const { return m_stepIdHasBeenSet; }
+
+    /**
+     * <p>The encrypted StepId of a step.</p>
+     */
     inline void SetStepId(const Aws::String& value) { m_stepIdHasBeenSet = true; m_stepId = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
      * FAILED.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of a CancelSteps Request. The value may be SUBMITTED or
+     * FAILED.</p>
+     */
     inline void SetStatus(const CancelStepsRequestStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p>The reason for the failure if the CancelSteps request fails.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>The reason for the failure if the CancelSteps request fails.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>The reason for the failure if the CancelSteps request fails.</p>

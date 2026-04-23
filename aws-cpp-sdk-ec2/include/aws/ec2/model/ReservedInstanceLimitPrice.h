@@ -60,6 +60,12 @@ namespace Model
      * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
      * on the total order (instanceCount * price).</p>
      */
+    inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+
+    /**
+     * <p>Used for Reserved Instance Marketplace offerings. Specifies the limit price
+     * on the total order (instanceCount * price).</p>
+     */
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
@@ -74,6 +80,12 @@ namespace Model
      * this time, the only supported currency is <code>USD</code>.</p>
      */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency in which the <code>limitPrice</code> amount is specified. At
+     * this time, the only supported currency is <code>USD</code>.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency in which the <code>limitPrice</code> amount is specified. At

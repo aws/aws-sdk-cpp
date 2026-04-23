@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     CAPABILITY_IAM,
-    CAPABILITY_NAMED_IAM
+    CAPABILITY_NAMED_IAM,
+    CAPABILITY_AUTO_EXPAND
   };
 
 namespace CapabilityMapper

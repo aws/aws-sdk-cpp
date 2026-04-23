@@ -53,6 +53,11 @@ namespace Model
     /**
      * Optional. A description of the queue that you are creating.
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * Optional. A description of the queue that you are creating.
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * The name of the queue that you are creating.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the queue that you are creating.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -118,47 +128,56 @@ namespace Model
 
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline const PricingPlan& GetPricingPlan() const{ return m_pricingPlan; }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
+     */
+    inline bool PricingPlanHasBeenSet() const { return m_pricingPlanHasBeenSet; }
+
+    /**
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline void SetPricingPlan(const PricingPlan& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = value; }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline void SetPricingPlan(PricingPlan&& value) { m_pricingPlanHasBeenSet = true; m_pricingPlan = std::move(value); }
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline CreateQueueRequest& WithPricingPlan(const PricingPlan& value) { SetPricingPlan(value); return *this;}
 
     /**
-     * Optional; default is on-demand. Specifies whether the pricing plan for the queue
-     * is on-demand or reserved. The pricing plan for the queue determines whether you
-     * pay on-demand or reserved pricing for the transcoding jobs you run through the
-     * queue. For reserved queue pricing, you must set up a contract. You can create a
-     * reserved queue contract through the AWS Elemental MediaConvert console.
+     * Specifies whether the pricing plan for the queue is on-demand or reserved. For
+     * on-demand, you pay per minute, billed in increments of .01 minute. For reserved,
+     * you pay for the transcoding capacity of the entire queue, regardless of how much
+     * or how little you use it. Reserved pricing requires a 12-month commitment. When
+     * you use the API to create a queue, the default is on-demand.
      */
     inline CreateQueueRequest& WithPricingPlan(PricingPlan&& value) { SetPricingPlan(std::move(value)); return *this;}
 
@@ -168,6 +187,12 @@ namespace Model
      * queues and not applicable to on-demand queues.
      */
     inline const ReservationPlanSettings& GetReservationPlanSettings() const{ return m_reservationPlanSettings; }
+
+    /**
+     * Details about the pricing plan for your reserved queue. Required for reserved
+     * queues and not applicable to on-demand queues.
+     */
+    inline bool ReservationPlanSettingsHasBeenSet() const { return m_reservationPlanSettingsHasBeenSet; }
 
     /**
      * Details about the pricing plan for your reserved queue. Required for reserved
@@ -199,6 +224,12 @@ namespace Model
      * key-value pair or with only a key.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The tags that you want to add to the resource. You can tag resources with a
+     * key-value pair or with only a key.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * The tags that you want to add to the resource. You can tag resources with a

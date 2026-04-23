@@ -34,7 +34,7 @@ ListDatastoresRequest::ListDatastoresRequest() :
 
 Aws::String ListDatastoresRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDatastoresRequest::AddQueryStringParameters(URI& uri) const

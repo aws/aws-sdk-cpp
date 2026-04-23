@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the violation event.</p>
      */
+    inline bool ViolationIdHasBeenSet() const { return m_violationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the violation event.</p>
+     */
     inline void SetViolationId(const Aws::String& value) { m_violationIdHasBeenSet = true; m_violationId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the thing responsible for the violation event.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing responsible for the violation event.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing responsible for the violation event.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the security profile whose behavior was violated.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security profile whose behavior was violated.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The behavior which was violated.</p>
      */
+    inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
+
+    /**
+     * <p>The behavior which was violated.</p>
+     */
     inline void SetBehavior(const Behavior& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
 
     /**
@@ -190,6 +210,11 @@ namespace Model
      * <p>The value of the metric (the measurement).</p>
      */
     inline const MetricValue& GetMetricValue() const{ return m_metricValue; }
+
+    /**
+     * <p>The value of the metric (the measurement).</p>
+     */
+    inline bool MetricValueHasBeenSet() const { return m_metricValueHasBeenSet; }
 
     /**
      * <p>The value of the metric (the measurement).</p>
@@ -220,6 +245,11 @@ namespace Model
     /**
      * <p>The type of violation event.</p>
      */
+    inline bool ViolationEventTypeHasBeenSet() const { return m_violationEventTypeHasBeenSet; }
+
+    /**
+     * <p>The type of violation event.</p>
+     */
     inline void SetViolationEventType(const ViolationEventType& value) { m_violationEventTypeHasBeenSet = true; m_violationEventType = value; }
 
     /**
@@ -242,6 +272,11 @@ namespace Model
      * <p>The time the violation event occurred.</p>
      */
     inline const Aws::Utils::DateTime& GetViolationEventTime() const{ return m_violationEventTime; }
+
+    /**
+     * <p>The time the violation event occurred.</p>
+     */
+    inline bool ViolationEventTimeHasBeenSet() const { return m_violationEventTimeHasBeenSet; }
 
     /**
      * <p>The time the violation event occurred.</p>

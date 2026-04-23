@@ -21,6 +21,7 @@
 #include <aws/devicefarm/model/CPU.h>
 #include <aws/devicefarm/model/Resolution.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/devicefarm/model/DeviceAvailability.h>
 #include <aws/devicefarm/model/DeviceInstance.h>
 #include <utility>
 
@@ -62,6 +63,11 @@ namespace Model
     /**
      * <p>The device's ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The device's ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The device's display name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The device's display name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The device's display name.</p>
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>The device's manufacturer name.</p>
      */
+    inline bool ManufacturerHasBeenSet() const { return m_manufacturerHasBeenSet; }
+
+    /**
+     * <p>The device's manufacturer name.</p>
+     */
     inline void SetManufacturer(const Aws::String& value) { m_manufacturerHasBeenSet = true; m_manufacturer = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
     /**
      * <p>The device's model name.</p>
      */
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+
+    /**
+     * <p>The device's model name.</p>
+     */
     inline void SetModel(const Aws::String& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
@@ -202,6 +223,11 @@ namespace Model
      * <p>The device's model ID.</p>
      */
     inline const Aws::String& GetModelId() const{ return m_modelId; }
+
+    /**
+     * <p>The device's model ID.</p>
+     */
+    inline bool ModelIdHasBeenSet() const { return m_modelIdHasBeenSet; }
 
     /**
      * <p>The device's model ID.</p>
@@ -246,6 +272,13 @@ namespace Model
      * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
      * factor.</p> </li> </ul>
      */
+    inline bool FormFactorHasBeenSet() const { return m_formFactorHasBeenSet; }
+
+    /**
+     * <p>The device's form factor.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PHONE: The phone form factor.</p> </li> <li> <p>TABLET: The tablet form
+     * factor.</p> </li> </ul>
+     */
     inline void SetFormFactor(const DeviceFormFactor& value) { m_formFactorHasBeenSet = true; m_formFactor = value; }
 
     /**
@@ -282,6 +315,13 @@ namespace Model
      * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
      * </li> </ul>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The device's platform.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ANDROID: The Android platform.</p> </li> <li> <p>IOS: The iOS platform.</p>
+     * </li> </ul>
+     */
     inline void SetPlatform(const DevicePlatform& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -310,6 +350,11 @@ namespace Model
      * <p>The device's operating system type.</p>
      */
     inline const Aws::String& GetOs() const{ return m_os; }
+
+    /**
+     * <p>The device's operating system type.</p>
+     */
+    inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
 
     /**
      * <p>The device's operating system type.</p>
@@ -350,6 +395,11 @@ namespace Model
     /**
      * <p>Information about the device's CPU.</p>
      */
+    inline bool CpuHasBeenSet() const { return m_cpuHasBeenSet; }
+
+    /**
+     * <p>Information about the device's CPU.</p>
+     */
     inline void SetCpu(const CPU& value) { m_cpuHasBeenSet = true; m_cpu = value; }
 
     /**
@@ -372,6 +422,11 @@ namespace Model
      * <p>The resolution of the device.</p>
      */
     inline const Resolution& GetResolution() const{ return m_resolution; }
+
+    /**
+     * <p>The resolution of the device.</p>
+     */
+    inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
      * <p>The resolution of the device.</p>
@@ -402,6 +457,11 @@ namespace Model
     /**
      * <p>The device's heap size, expressed in bytes.</p>
      */
+    inline bool HeapSizeHasBeenSet() const { return m_heapSizeHasBeenSet; }
+
+    /**
+     * <p>The device's heap size, expressed in bytes.</p>
+     */
     inline void SetHeapSize(long long value) { m_heapSizeHasBeenSet = true; m_heapSize = value; }
 
     /**
@@ -418,6 +478,11 @@ namespace Model
     /**
      * <p>The device's total memory size, expressed in bytes.</p>
      */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
+
+    /**
+     * <p>The device's total memory size, expressed in bytes.</p>
+     */
     inline void SetMemory(long long value) { m_memoryHasBeenSet = true; m_memory = value; }
 
     /**
@@ -430,6 +495,11 @@ namespace Model
      * <p>The device's image name.</p>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The device's image name.</p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * <p>The device's image name.</p>
@@ -470,6 +540,11 @@ namespace Model
     /**
      * <p>The device's carrier.</p>
      */
+    inline bool CarrierHasBeenSet() const { return m_carrierHasBeenSet; }
+
+    /**
+     * <p>The device's carrier.</p>
+     */
     inline void SetCarrier(const Aws::String& value) { m_carrierHasBeenSet = true; m_carrier = value; }
 
     /**
@@ -502,6 +577,11 @@ namespace Model
      * <p>The device's radio.</p>
      */
     inline const Aws::String& GetRadio() const{ return m_radio; }
+
+    /**
+     * <p>The device's radio.</p>
+     */
+    inline bool RadioHasBeenSet() const { return m_radioHasBeenSet; }
 
     /**
      * <p>The device's radio.</p>
@@ -544,6 +624,12 @@ namespace Model
      * <p>Specifies whether remote access has been enabled for the specified
      * device.</p>
      */
+    inline bool RemoteAccessEnabledHasBeenSet() const { return m_remoteAccessEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether remote access has been enabled for the specified
+     * device.</p>
+     */
     inline void SetRemoteAccessEnabled(bool value) { m_remoteAccessEnabledHasBeenSet = true; m_remoteAccessEnabled = value; }
 
     /**
@@ -563,6 +649,12 @@ namespace Model
      * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
      * device.</p>
      */
+    inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
+
+    /**
+     * <p>This flag is set to <code>true</code> if remote debugging is enabled for the
+     * device.</p>
+     */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
@@ -577,6 +669,12 @@ namespace Model
      * type are PRIVATE and PUBLIC.</p>
      */
     inline const Aws::String& GetFleetType() const{ return m_fleetType; }
+
+    /**
+     * <p>The type of fleet to which this device belongs. Possible values for fleet
+     * type are PRIVATE and PUBLIC.</p>
+     */
+    inline bool FleetTypeHasBeenSet() const { return m_fleetTypeHasBeenSet; }
 
     /**
      * <p>The type of fleet to which this device belongs. Possible values for fleet
@@ -623,6 +721,11 @@ namespace Model
     /**
      * <p>The name of the fleet to which this device belongs.</p>
      */
+    inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the fleet to which this device belongs.</p>
+     */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
@@ -659,6 +762,11 @@ namespace Model
     /**
      * <p>The instances belonging to this device.</p>
      */
+    inline bool InstancesHasBeenSet() const { return m_instancesHasBeenSet; }
+
+    /**
+     * <p>The instances belonging to this device.</p>
+     */
     inline void SetInstances(const Aws::Vector<DeviceInstance>& value) { m_instancesHasBeenSet = true; m_instances = value; }
 
     /**
@@ -685,6 +793,43 @@ namespace Model
      * <p>The instances belonging to this device.</p>
      */
     inline Device& AddInstances(DeviceInstance&& value) { m_instancesHasBeenSet = true; m_instances.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline const DeviceAvailability& GetAvailability() const{ return m_availability; }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline bool AvailabilityHasBeenSet() const { return m_availabilityHasBeenSet; }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline void SetAvailability(const DeviceAvailability& value) { m_availabilityHasBeenSet = true; m_availability = value; }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline void SetAvailability(DeviceAvailability&& value) { m_availabilityHasBeenSet = true; m_availability = std::move(value); }
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline Device& WithAvailability(const DeviceAvailability& value) { SetAvailability(value); return *this;}
+
+    /**
+     * <p>Reflects how likely a device will be available for a test run. It is
+     * currently available in the ListDevices and GetDevice API methods.</p>
+     */
+    inline Device& WithAvailability(DeviceAvailability&& value) { SetAvailability(std::move(value)); return *this;}
 
   private:
 
@@ -747,6 +892,9 @@ namespace Model
 
     Aws::Vector<DeviceInstance> m_instances;
     bool m_instancesHasBeenSet;
+
+    DeviceAvailability m_availability;
+    bool m_availabilityHasBeenSet;
   };
 
 } // namespace Model

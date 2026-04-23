@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException.</code> </p>
      */
+    inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of writes consumed per second before DynamoDB returns a
+     * <code>ThrottlingException.</code> </p>
+     */
     inline void SetProvisionedWriteCapacityUnits(long long value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
 
     /**
@@ -116,6 +128,12 @@ namespace Model
      * units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_provisionedWriteCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>AutoScaling settings for managing a global secondary index's write capacity
+     * units.</p>
+     */
+    inline bool ProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
      * <p>AutoScaling settings for managing a global secondary index's write capacity

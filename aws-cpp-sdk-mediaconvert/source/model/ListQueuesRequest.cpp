@@ -38,7 +38,7 @@ ListQueuesRequest::ListQueuesRequest() :
 
 Aws::String ListQueuesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListQueuesRequest::AddQueryStringParameters(URI& uri) const

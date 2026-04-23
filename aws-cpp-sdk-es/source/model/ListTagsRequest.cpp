@@ -32,7 +32,7 @@ ListTagsRequest::ListTagsRequest() :
 
 Aws::String ListTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTagsRequest::AddQueryStringParameters(URI& uri) const

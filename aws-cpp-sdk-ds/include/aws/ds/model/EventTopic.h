@@ -60,6 +60,12 @@ namespace Model
      * <p>The Directory ID of an AWS Directory Service directory that will publish
      * status messages to an SNS topic.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The Directory ID of an AWS Directory Service directory that will publish
+     * status messages to an SNS topic.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * directory.</p>
      */
     inline const Aws::String& GetTopicName() const{ return m_topicName; }
+
+    /**
+     * <p>The name of an AWS SNS topic the receives status messages from the
+     * directory.</p>
+     */
+    inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
 
     /**
      * <p>The name of an AWS SNS topic the receives status messages from the
@@ -144,6 +156,11 @@ namespace Model
     /**
      * <p>The SNS topic ARN (Amazon Resource Name).</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The SNS topic ARN (Amazon Resource Name).</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -182,6 +199,12 @@ namespace Model
      * <p>The date and time of when you associated your directory with the SNS
      * topic.</p>
      */
+    inline bool CreatedDateTimeHasBeenSet() const { return m_createdDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time of when you associated your directory with the SNS
+     * topic.</p>
+     */
     inline void SetCreatedDateTime(const Aws::Utils::DateTime& value) { m_createdDateTimeHasBeenSet = true; m_createdDateTime = value; }
 
     /**
@@ -207,6 +230,11 @@ namespace Model
      * <p>The topic registration status.</p>
      */
     inline const TopicStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The topic registration status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The topic registration status.</p>

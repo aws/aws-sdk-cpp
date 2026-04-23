@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Information about the columns returned in a query result metadata.</p>
      */
+    inline bool ColumnInfoHasBeenSet() const { return m_columnInfoHasBeenSet; }
+
+    /**
+     * <p>Information about the columns returned in a query result metadata.</p>
+     */
     inline void SetColumnInfo(const Aws::Vector<ColumnInfo>& value) { m_columnInfoHasBeenSet = true; m_columnInfo = value; }
 
     /**

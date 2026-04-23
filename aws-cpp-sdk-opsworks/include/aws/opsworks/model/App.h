@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The app ID.</p>
      */
+    inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+
+    /**
+     * <p>The app ID.</p>
+     */
     inline void SetAppId(const Aws::String& value) { m_appIdHasBeenSet = true; m_appId = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The app stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The app stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The app stack ID.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The app's short name.</p>
      */
+    inline bool ShortnameHasBeenSet() const { return m_shortnameHasBeenSet; }
+
+    /**
+     * <p>The app's short name.</p>
+     */
     inline void SetShortname(const Aws::String& value) { m_shortnameHasBeenSet = true; m_shortname = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The app name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The app name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The app name.</p>
@@ -207,6 +227,11 @@ namespace Model
     /**
      * <p>A description of the app.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the app.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -239,6 +264,11 @@ namespace Model
      * <p>The app's data sources.</p>
      */
     inline const Aws::Vector<DataSource>& GetDataSources() const{ return m_dataSources; }
+
+    /**
+     * <p>The app's data sources.</p>
+     */
+    inline bool DataSourcesHasBeenSet() const { return m_dataSourcesHasBeenSet; }
 
     /**
      * <p>The app's data sources.</p>
@@ -279,6 +309,11 @@ namespace Model
     /**
      * <p>The app type.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The app type.</p>
+     */
     inline void SetType(const AppType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -301,6 +336,11 @@ namespace Model
      * <p>A <code>Source</code> object that describes the app repository.</p>
      */
     inline const Source& GetAppSource() const{ return m_appSource; }
+
+    /**
+     * <p>A <code>Source</code> object that describes the app repository.</p>
+     */
+    inline bool AppSourceHasBeenSet() const { return m_appSourceHasBeenSet; }
 
     /**
      * <p>A <code>Source</code> object that describes the app repository.</p>
@@ -328,6 +368,12 @@ namespace Model
      * example: <code>'www.example.com, example.com'</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetDomains() const{ return m_domains; }
+
+    /**
+     * <p>The app vhost settings with multiple domains separated by commas. For
+     * example: <code>'www.example.com, example.com'</code> </p>
+     */
+    inline bool DomainsHasBeenSet() const { return m_domainsHasBeenSet; }
 
     /**
      * <p>The app vhost settings with multiple domains separated by commas. For
@@ -380,6 +426,11 @@ namespace Model
     /**
      * <p>Whether to enable SSL for the app.</p>
      */
+    inline bool EnableSslHasBeenSet() const { return m_enableSslHasBeenSet; }
+
+    /**
+     * <p>Whether to enable SSL for the app.</p>
+     */
     inline void SetEnableSsl(bool value) { m_enableSslHasBeenSet = true; m_enableSsl = value; }
 
     /**
@@ -392,6 +443,11 @@ namespace Model
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
      */
     inline const SslConfiguration& GetSslConfiguration() const{ return m_sslConfiguration; }
+
+    /**
+     * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
+     */
+    inline bool SslConfigurationHasBeenSet() const { return m_sslConfigurationHasBeenSet; }
 
     /**
      * <p>An <code>SslConfiguration</code> object with the SSL configuration.</p>
@@ -418,6 +474,11 @@ namespace Model
      * <p>The stack attributes.</p>
      */
     inline const Aws::Map<AppAttributesKeys, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The stack attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The stack attributes.</p>
@@ -478,6 +539,11 @@ namespace Model
     /**
      * <p>When the app was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>When the app was created.</p>
+     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -520,6 +586,21 @@ namespace Model
      * an "Environment: is too large (maximum is 10KB)" message.</p> </note>
      */
     inline const Aws::Vector<EnvironmentVariable>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>An array of <code>EnvironmentVariable</code> objects that specify environment
+     * variables to be associated with the app. After you deploy the app, these
+     * variables are defined on the associated app server instances. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingapps-creating.html#workingapps-creating-environment">
+     * Environment Variables</a>. </p> <note> <p>There is no specific limit on the
+     * number of environment variables. However, the size of the associated data
+     * structure - which includes the variable names, values, and protected flag values
+     * - cannot exceed 10 KB (10240 Bytes). This limit should accommodate most if not
+     * all use cases, but if you do exceed it, you will cause an exception (API) with
+     * an "Environment: is too large (maximum is 10KB)" message.</p> </note>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>An array of <code>EnvironmentVariable</code> objects that specify environment

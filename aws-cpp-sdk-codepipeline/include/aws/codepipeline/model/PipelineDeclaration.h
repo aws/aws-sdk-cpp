@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the action to be performed.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the action to be performed.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * actionRoleArn.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform
+     * actions with no actionRoleArn, or to use to assume roles for actions with an
+     * actionRoleArn.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for AWS CodePipeline to use to either perform
@@ -148,6 +160,12 @@ namespace Model
      * <p>Represents information about the Amazon S3 bucket where artifacts are stored
      * for the pipeline. </p>
      */
+    inline bool ArtifactStoreHasBeenSet() const { return m_artifactStoreHasBeenSet; }
+
+    /**
+     * <p>Represents information about the Amazon S3 bucket where artifacts are stored
+     * for the pipeline. </p>
+     */
     inline void SetArtifactStore(const ArtifactStore& value) { m_artifactStoreHasBeenSet = true; m_artifactStore = value; }
 
     /**
@@ -177,6 +195,15 @@ namespace Model
      * pipeline, you must use artifactStores.</p>
      */
     inline const Aws::Map<Aws::String, ArtifactStore>& GetArtifactStores() const{ return m_artifactStores; }
+
+    /**
+     * <p>A mapping of artifactStore objects and their corresponding regions. There
+     * must be an artifact store for the pipeline region and for each cross-region
+     * action within the pipeline. You can only use either artifactStore or
+     * artifactStores, not both.</p> <p>If you create a cross-region action in your
+     * pipeline, you must use artifactStores.</p>
+     */
+    inline bool ArtifactStoresHasBeenSet() const { return m_artifactStoresHasBeenSet; }
 
     /**
      * <p>A mapping of artifactStore objects and their corresponding regions. There
@@ -277,6 +304,11 @@ namespace Model
     /**
      * <p>The stage in which to perform the action.</p>
      */
+    inline bool StagesHasBeenSet() const { return m_stagesHasBeenSet; }
+
+    /**
+     * <p>The stage in which to perform the action.</p>
+     */
     inline void SetStages(const Aws::Vector<StageDeclaration>& value) { m_stagesHasBeenSet = true; m_stages = value; }
 
     /**
@@ -311,6 +343,13 @@ namespace Model
      * updated.</p>
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the pipeline. A new pipeline always has a version
+     * number of 1. This number is automatically incremented when a pipeline is
+     * updated.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the pipeline. A new pipeline always has a version

@@ -58,6 +58,13 @@ namespace Model
      * you. If you create more than one subnet in your VPC, we may not necessarily
      * select a different zone for each subnet.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the subnet.</p> <p>Default: AWS selects one for
+     * you. If you create more than one subnet in your VPC, we may not necessarily
+     * select a different zone for each subnet.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -97,10 +104,57 @@ namespace Model
 
 
     /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline CreateSubnetRequest& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+
+
+    /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
      * <code>10.0.0.0/24</code>.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
+     * <code>10.0.0.0/24</code>.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 network range for the subnet, in CIDR notation. For example,
@@ -149,6 +203,12 @@ namespace Model
      * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
      * use a /64 prefix length.</p>
      */
+    inline bool Ipv6CidrBlockHasBeenSet() const { return m_ipv6CidrBlockHasBeenSet; }
+
+    /**
+     * <p>The IPv6 network range for the subnet, in CIDR notation. The subnet size must
+     * use a /64 prefix length.</p>
+     */
     inline void SetIpv6CidrBlock(const Aws::String& value) { m_ipv6CidrBlockHasBeenSet = true; m_ipv6CidrBlock = value; }
 
     /**
@@ -186,6 +246,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>
@@ -232,6 +297,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -246,6 +319,9 @@ namespace Model
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet;
 
     Aws::String m_cidrBlock;
     bool m_cidrBlockHasBeenSet;

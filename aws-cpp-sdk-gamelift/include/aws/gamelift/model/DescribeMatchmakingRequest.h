@@ -58,6 +58,12 @@ namespace Model
      * <p>Unique identifier for a matchmaking ticket. You can include up to 10 ID
      * values. </p>
      */
+    inline bool TicketIdsHasBeenSet() const { return m_ticketIdsHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a matchmaking ticket. You can include up to 10 ID
+     * values. </p>
+     */
     inline void SetTicketIds(const Aws::Vector<Aws::String>& value) { m_ticketIdsHasBeenSet = true; m_ticketIds = value; }
 
     /**

@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AccelerateConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AccelerateConfiguration
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>The accelerate configuration of the bucket.</p>
      */
     inline const BucketAccelerateStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The accelerate configuration of the bucket.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The accelerate configuration of the bucket.</p>

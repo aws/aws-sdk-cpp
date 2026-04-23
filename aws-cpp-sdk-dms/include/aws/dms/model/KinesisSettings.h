@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams
      * endpoint.</p>
      */
+    inline bool StreamArnHasBeenSet() const { return m_streamArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the Amazon Kinesis Data Streams
+     * endpoint.</p>
+     */
     inline void SetStreamArn(const Aws::String& value) { m_streamArnHasBeenSet = true; m_streamArn = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * <p>The output format for the records created on the endpoint. The message format
      * is <code>JSON</code>.</p>
      */
+    inline bool MessageFormatHasBeenSet() const { return m_messageFormatHasBeenSet; }
+
+    /**
+     * <p>The output format for the records created on the endpoint. The message format
+     * is <code>JSON</code>.</p>
+     */
     inline void SetMessageFormat(const MessageFormatValue& value) { m_messageFormatHasBeenSet = true; m_messageFormat = value; }
 
     /**
@@ -127,6 +139,12 @@ namespace Model
      * Amazon Kinesis data stream.</p>
      */
     inline const Aws::String& GetServiceAccessRoleArn() const{ return m_serviceAccessRoleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the
+     * Amazon Kinesis data stream.</p>
+     */
+    inline bool ServiceAccessRoleArnHasBeenSet() const { return m_serviceAccessRoleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the IAM role that DMS uses to write to the

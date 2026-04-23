@@ -49,7 +49,10 @@ TEST(HashingUtilsTest, TestBase64Encoding)
 TEST(HashingUtilsTest, TestBase64Decoding)
 {
     //these are the standard testing vectors from RFC 4648
-    ByteBuffer test1 = HashingUtils::Base64Decode("");
+    ByteBuffer test0 = HashingUtils::Base64Decode("");
+    ASSERT_EQ(ByteBuffer((unsigned char*)"", 0), test0);
+
+    ByteBuffer test1 = HashingUtils::Base64Decode("X");
     ASSERT_EQ(ByteBuffer((unsigned char*)"", 0), test1);
 
     ByteBuffer test2 = HashingUtils::Base64Decode("Zg==");

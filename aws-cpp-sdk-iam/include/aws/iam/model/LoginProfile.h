@@ -62,6 +62,12 @@ namespace Model
      * <p>The name of the user, which can be used for signing in to the AWS Management
      * Console.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user, which can be used for signing in to the AWS Management
+     * Console.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The date when the password for the user was created.</p>
      */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
+
+    /**
+     * <p>The date when the password for the user was created.</p>
+     */
     inline void SetCreateDate(const Aws::Utils::DateTime& value) { m_createDateHasBeenSet = true; m_createDate = value; }
 
     /**
@@ -126,6 +137,12 @@ namespace Model
      * sign-in.</p>
      */
     inline bool GetPasswordResetRequired() const{ return m_passwordResetRequired; }
+
+    /**
+     * <p>Specifies whether the user is required to set a new password on next
+     * sign-in.</p>
+     */
+    inline bool PasswordResetRequiredHasBeenSet() const { return m_passwordResetRequiredHasBeenSet; }
 
     /**
      * <p>Specifies whether the user is required to set a new password on next

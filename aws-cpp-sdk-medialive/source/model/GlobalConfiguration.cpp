@@ -34,6 +34,8 @@ GlobalConfiguration::GlobalConfiguration() :
     m_inputEndAction(GlobalConfigurationInputEndAction::NOT_SET),
     m_inputEndActionHasBeenSet(false),
     m_inputLossBehaviorHasBeenSet(false),
+    m_outputLockingMode(GlobalConfigurationOutputLockingMode::NOT_SET),
+    m_outputLockingModeHasBeenSet(false),
     m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
     m_outputTimingSourceHasBeenSet(false),
     m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
@@ -47,6 +49,8 @@ GlobalConfiguration::GlobalConfiguration(JsonView jsonValue) :
     m_inputEndAction(GlobalConfigurationInputEndAction::NOT_SET),
     m_inputEndActionHasBeenSet(false),
     m_inputLossBehaviorHasBeenSet(false),
+    m_outputLockingMode(GlobalConfigurationOutputLockingMode::NOT_SET),
+    m_outputLockingModeHasBeenSet(false),
     m_outputTimingSource(GlobalConfigurationOutputTimingSource::NOT_SET),
     m_outputTimingSourceHasBeenSet(false),
     m_supportLowFramerateInputs(GlobalConfigurationLowFramerateInputs::NOT_SET),
@@ -76,6 +80,13 @@ GlobalConfiguration& GlobalConfiguration::operator =(JsonView jsonValue)
     m_inputLossBehavior = jsonValue.GetObject("inputLossBehavior");
 
     m_inputLossBehaviorHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("outputLockingMode"))
+  {
+    m_outputLockingMode = GlobalConfigurationOutputLockingModeMapper::GetGlobalConfigurationOutputLockingModeForName(jsonValue.GetString("outputLockingMode"));
+
+    m_outputLockingModeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("outputTimingSource"))
@@ -114,6 +125,11 @@ JsonValue GlobalConfiguration::Jsonize() const
   {
    payload.WithObject("inputLossBehavior", m_inputLossBehavior.Jsonize());
 
+  }
+
+  if(m_outputLockingModeHasBeenSet)
+  {
+   payload.WithString("outputLockingMode", GlobalConfigurationOutputLockingModeMapper::GetNameForGlobalConfigurationOutputLockingMode(m_outputLockingMode));
   }
 
   if(m_outputTimingSourceHasBeenSet)

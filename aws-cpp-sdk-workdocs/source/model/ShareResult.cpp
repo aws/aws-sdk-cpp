@@ -30,6 +30,7 @@ namespace Model
 
 ShareResult::ShareResult() : 
     m_principalIdHasBeenSet(false),
+    m_inviteePrincipalIdHasBeenSet(false),
     m_role(RoleType::NOT_SET),
     m_roleHasBeenSet(false),
     m_status(ShareStatusType::NOT_SET),
@@ -41,6 +42,7 @@ ShareResult::ShareResult() :
 
 ShareResult::ShareResult(JsonView jsonValue) : 
     m_principalIdHasBeenSet(false),
+    m_inviteePrincipalIdHasBeenSet(false),
     m_role(RoleType::NOT_SET),
     m_roleHasBeenSet(false),
     m_status(ShareStatusType::NOT_SET),
@@ -58,6 +60,13 @@ ShareResult& ShareResult::operator =(JsonView jsonValue)
     m_principalId = jsonValue.GetString("PrincipalId");
 
     m_principalIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("InviteePrincipalId"))
+  {
+    m_inviteePrincipalId = jsonValue.GetString("InviteePrincipalId");
+
+    m_inviteePrincipalIdHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("Role"))
@@ -98,6 +107,12 @@ JsonValue ShareResult::Jsonize() const
   if(m_principalIdHasBeenSet)
   {
    payload.WithString("PrincipalId", m_principalId);
+
+  }
+
+  if(m_inviteePrincipalIdHasBeenSet)
+  {
+   payload.WithString("InviteePrincipalId", m_inviteePrincipalId);
 
   }
 

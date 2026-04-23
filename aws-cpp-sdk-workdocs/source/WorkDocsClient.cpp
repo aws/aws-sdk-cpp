@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/workdocs/WorkDocsClient.h>
 #include <aws/workdocs/WorkDocsEndpoint.h>
 #include <aws/workdocs/WorkDocsErrorMarshaller.h>
@@ -60,6 +63,7 @@
 #include <aws/workdocs/model/GetDocumentVersionRequest.h>
 #include <aws/workdocs/model/GetFolderRequest.h>
 #include <aws/workdocs/model/GetFolderPathRequest.h>
+#include <aws/workdocs/model/GetResourcesRequest.h>
 #include <aws/workdocs/model/InitiateDocumentVersionUploadRequest.h>
 #include <aws/workdocs/model/RemoveAllResourcePermissionsRequest.h>
 #include <aws/workdocs/model/RemoveResourcePermissionRequest.h>
@@ -117,25 +121,42 @@ WorkDocsClient::~WorkDocsClient()
 
 void WorkDocsClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << WorkDocsEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + WorkDocsEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void WorkDocsClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AbortDocumentVersionUploadOutcome WorkDocsClient::AbortDocumentVersionUpload(const AbortDocumentVersionUploadRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortDocumentVersionUpload", "Required field: DocumentId, is not set");
+    return AbortDocumentVersionUploadOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AbortDocumentVersionUpload", "Required field: VersionId, is not set");
+    return AbortDocumentVersionUploadOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -172,8 +193,13 @@ void WorkDocsClient::AbortDocumentVersionUploadAsyncHelper(const AbortDocumentVe
 
 ActivateUserOutcome WorkDocsClient::ActivateUser(const ActivateUserRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ActivateUser", "Required field: UserId, is not set");
+    return ActivateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   ss << "/activation";
@@ -209,8 +235,13 @@ void WorkDocsClient::ActivateUserAsyncHelper(const ActivateUserRequest& request,
 
 AddResourcePermissionsOutcome WorkDocsClient::AddResourcePermissions(const AddResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AddResourcePermissions", "Required field: ResourceId, is not set");
+    return AddResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -246,8 +277,18 @@ void WorkDocsClient::AddResourcePermissionsAsyncHelper(const AddResourcePermissi
 
 CreateCommentOutcome WorkDocsClient::CreateComment(const CreateCommentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateComment", "Required field: DocumentId, is not set");
+    return CreateCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateComment", "Required field: VersionId, is not set");
+    return CreateCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -285,8 +326,13 @@ void WorkDocsClient::CreateCommentAsyncHelper(const CreateCommentRequest& reques
 
 CreateCustomMetadataOutcome WorkDocsClient::CreateCustomMetadata(const CreateCustomMetadataRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateCustomMetadata", "Required field: ResourceId, is not set");
+    return CreateCustomMetadataOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/customMetadata";
@@ -322,8 +368,8 @@ void WorkDocsClient::CreateCustomMetadataAsyncHelper(const CreateCustomMetadataR
 
 CreateFolderOutcome WorkDocsClient::CreateFolder(const CreateFolderRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -357,8 +403,13 @@ void WorkDocsClient::CreateFolderAsyncHelper(const CreateFolderRequest& request,
 
 CreateLabelsOutcome WorkDocsClient::CreateLabels(const CreateLabelsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLabels", "Required field: ResourceId, is not set");
+    return CreateLabelsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/labels";
@@ -394,8 +445,13 @@ void WorkDocsClient::CreateLabelsAsyncHelper(const CreateLabelsRequest& request,
 
 CreateNotificationSubscriptionOutcome WorkDocsClient::CreateNotificationSubscription(const CreateNotificationSubscriptionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.OrganizationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateNotificationSubscription", "Required field: OrganizationId, is not set");
+    return CreateNotificationSubscriptionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
@@ -431,8 +487,8 @@ void WorkDocsClient::CreateNotificationSubscriptionAsyncHelper(const CreateNotif
 
 CreateUserOutcome WorkDocsClient::CreateUser(const CreateUserRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -466,8 +522,13 @@ void WorkDocsClient::CreateUserAsyncHelper(const CreateUserRequest& request, con
 
 DeactivateUserOutcome WorkDocsClient::DeactivateUser(const DeactivateUserRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeactivateUser", "Required field: UserId, is not set");
+    return DeactivateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   ss << "/activation";
@@ -503,8 +564,23 @@ void WorkDocsClient::DeactivateUserAsyncHelper(const DeactivateUserRequest& requ
 
 DeleteCommentOutcome WorkDocsClient::DeleteComment(const DeleteCommentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteComment", "Required field: DocumentId, is not set");
+    return DeleteCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteComment", "Required field: VersionId, is not set");
+    return DeleteCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
+  if (!request.CommentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteComment", "Required field: CommentId, is not set");
+    return DeleteCommentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CommentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -543,8 +619,13 @@ void WorkDocsClient::DeleteCommentAsyncHelper(const DeleteCommentRequest& reques
 
 DeleteCustomMetadataOutcome WorkDocsClient::DeleteCustomMetadata(const DeleteCustomMetadataRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCustomMetadata", "Required field: ResourceId, is not set");
+    return DeleteCustomMetadataOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/customMetadata";
@@ -580,8 +661,13 @@ void WorkDocsClient::DeleteCustomMetadataAsyncHelper(const DeleteCustomMetadataR
 
 DeleteDocumentOutcome WorkDocsClient::DeleteDocument(const DeleteDocumentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDocument", "Required field: DocumentId, is not set");
+    return DeleteDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -616,8 +702,13 @@ void WorkDocsClient::DeleteDocumentAsyncHelper(const DeleteDocumentRequest& requ
 
 DeleteFolderOutcome WorkDocsClient::DeleteFolder(const DeleteFolderRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolder", "Required field: FolderId, is not set");
+    return DeleteFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -652,8 +743,13 @@ void WorkDocsClient::DeleteFolderAsyncHelper(const DeleteFolderRequest& request,
 
 DeleteFolderContentsOutcome WorkDocsClient::DeleteFolderContents(const DeleteFolderContentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFolderContents", "Required field: FolderId, is not set");
+    return DeleteFolderContentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/contents";
@@ -689,8 +785,13 @@ void WorkDocsClient::DeleteFolderContentsAsyncHelper(const DeleteFolderContentsR
 
 DeleteLabelsOutcome WorkDocsClient::DeleteLabels(const DeleteLabelsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLabels", "Required field: ResourceId, is not set");
+    return DeleteLabelsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/labels";
@@ -726,8 +827,18 @@ void WorkDocsClient::DeleteLabelsAsyncHelper(const DeleteLabelsRequest& request,
 
 DeleteNotificationSubscriptionOutcome WorkDocsClient::DeleteNotificationSubscription(const DeleteNotificationSubscriptionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteNotificationSubscription", "Required field: SubscriptionId, is not set");
+    return DeleteNotificationSubscriptionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionId]", false));
+  }
+  if (!request.OrganizationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteNotificationSubscription", "Required field: OrganizationId, is not set");
+    return DeleteNotificationSubscriptionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions/";
@@ -764,8 +875,13 @@ void WorkDocsClient::DeleteNotificationSubscriptionAsyncHelper(const DeleteNotif
 
 DeleteUserOutcome WorkDocsClient::DeleteUser(const DeleteUserRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUser", "Required field: UserId, is not set");
+    return DeleteUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -800,8 +916,8 @@ void WorkDocsClient::DeleteUserAsyncHelper(const DeleteUserRequest& request, con
 
 DescribeActivitiesOutcome WorkDocsClient::DescribeActivities(const DescribeActivitiesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/activities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -835,8 +951,18 @@ void WorkDocsClient::DescribeActivitiesAsyncHelper(const DescribeActivitiesReque
 
 DescribeCommentsOutcome WorkDocsClient::DescribeComments(const DescribeCommentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeComments", "Required field: DocumentId, is not set");
+    return DescribeCommentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeComments", "Required field: VersionId, is not set");
+    return DescribeCommentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -874,8 +1000,13 @@ void WorkDocsClient::DescribeCommentsAsyncHelper(const DescribeCommentsRequest& 
 
 DescribeDocumentVersionsOutcome WorkDocsClient::DescribeDocumentVersions(const DescribeDocumentVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeDocumentVersions", "Required field: DocumentId, is not set");
+    return DescribeDocumentVersionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions";
@@ -911,8 +1042,13 @@ void WorkDocsClient::DescribeDocumentVersionsAsyncHelper(const DescribeDocumentV
 
 DescribeFolderContentsOutcome WorkDocsClient::DescribeFolderContents(const DescribeFolderContentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeFolderContents", "Required field: FolderId, is not set");
+    return DescribeFolderContentsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/contents";
@@ -948,8 +1084,13 @@ void WorkDocsClient::DescribeFolderContentsAsyncHelper(const DescribeFolderConte
 
 DescribeGroupsOutcome WorkDocsClient::DescribeGroups(const DescribeGroupsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SearchQueryHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeGroups", "Required field: SearchQuery, is not set");
+    return DescribeGroupsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SearchQuery]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -983,8 +1124,13 @@ void WorkDocsClient::DescribeGroupsAsyncHelper(const DescribeGroupsRequest& requ
 
 DescribeNotificationSubscriptionsOutcome WorkDocsClient::DescribeNotificationSubscriptions(const DescribeNotificationSubscriptionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.OrganizationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeNotificationSubscriptions", "Required field: OrganizationId, is not set");
+    return DescribeNotificationSubscriptionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [OrganizationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/organizations/";
   ss << request.GetOrganizationId();
   ss << "/subscriptions";
@@ -1020,8 +1166,13 @@ void WorkDocsClient::DescribeNotificationSubscriptionsAsyncHelper(const Describe
 
 DescribeResourcePermissionsOutcome WorkDocsClient::DescribeResourcePermissions(const DescribeResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeResourcePermissions", "Required field: ResourceId, is not set");
+    return DescribeResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -1057,8 +1208,13 @@ void WorkDocsClient::DescribeResourcePermissionsAsyncHelper(const DescribeResour
 
 DescribeRootFoldersOutcome WorkDocsClient::DescribeRootFolders(const DescribeRootFoldersRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthenticationTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeRootFolders", "Required field: AuthenticationToken, is not set");
+    return DescribeRootFoldersOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthenticationToken]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/me/root";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1092,8 +1248,8 @@ void WorkDocsClient::DescribeRootFoldersAsyncHelper(const DescribeRootFoldersReq
 
 DescribeUsersOutcome WorkDocsClient::DescribeUsers(const DescribeUsersRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1127,8 +1283,13 @@ void WorkDocsClient::DescribeUsersAsyncHelper(const DescribeUsersRequest& reques
 
 GetCurrentUserOutcome WorkDocsClient::GetCurrentUser(const GetCurrentUserRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AuthenticationTokenHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCurrentUser", "Required field: AuthenticationToken, is not set");
+    return GetCurrentUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AuthenticationToken]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/me";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1162,8 +1323,13 @@ void WorkDocsClient::GetCurrentUserAsyncHelper(const GetCurrentUserRequest& requ
 
 GetDocumentOutcome WorkDocsClient::GetDocument(const GetDocumentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocument", "Required field: DocumentId, is not set");
+    return GetDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1198,8 +1364,13 @@ void WorkDocsClient::GetDocumentAsyncHelper(const GetDocumentRequest& request, c
 
 GetDocumentPathOutcome WorkDocsClient::GetDocumentPath(const GetDocumentPathRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentPath", "Required field: DocumentId, is not set");
+    return GetDocumentPathOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/path";
@@ -1235,8 +1406,18 @@ void WorkDocsClient::GetDocumentPathAsyncHelper(const GetDocumentPathRequest& re
 
 GetDocumentVersionOutcome WorkDocsClient::GetDocumentVersion(const GetDocumentVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentVersion", "Required field: DocumentId, is not set");
+    return GetDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDocumentVersion", "Required field: VersionId, is not set");
+    return GetDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -1273,8 +1454,13 @@ void WorkDocsClient::GetDocumentVersionAsyncHelper(const GetDocumentVersionReque
 
 GetFolderOutcome WorkDocsClient::GetFolder(const GetFolderRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFolder", "Required field: FolderId, is not set");
+    return GetFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1309,8 +1495,13 @@ void WorkDocsClient::GetFolderAsyncHelper(const GetFolderRequest& request, const
 
 GetFolderPathOutcome WorkDocsClient::GetFolderPath(const GetFolderPathRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFolderPath", "Required field: FolderId, is not set");
+    return GetFolderPathOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   ss << "/path";
@@ -1344,10 +1535,45 @@ void WorkDocsClient::GetFolderPathAsyncHelper(const GetFolderPathRequest& reques
   handler(this, request, GetFolderPath(request), context);
 }
 
+GetResourcesOutcome WorkDocsClient::GetResources(const GetResourcesRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/api/v1/resources";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetResourcesOutcome(GetResourcesResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetResourcesOutcome(outcome.GetError());
+  }
+}
+
+GetResourcesOutcomeCallable WorkDocsClient::GetResourcesCallable(const GetResourcesRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetResourcesOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetResources(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void WorkDocsClient::GetResourcesAsync(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetResourcesAsyncHelper( request, handler, context ); } );
+}
+
+void WorkDocsClient::GetResourcesAsyncHelper(const GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetResources(request), context);
+}
+
 InitiateDocumentVersionUploadOutcome WorkDocsClient::InitiateDocumentVersionUpload(const InitiateDocumentVersionUploadRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1381,8 +1607,13 @@ void WorkDocsClient::InitiateDocumentVersionUploadAsyncHelper(const InitiateDocu
 
 RemoveAllResourcePermissionsOutcome WorkDocsClient::RemoveAllResourcePermissions(const RemoveAllResourcePermissionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveAllResourcePermissions", "Required field: ResourceId, is not set");
+    return RemoveAllResourcePermissionsOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions";
@@ -1418,8 +1649,18 @@ void WorkDocsClient::RemoveAllResourcePermissionsAsyncHelper(const RemoveAllReso
 
 RemoveResourcePermissionOutcome WorkDocsClient::RemoveResourcePermission(const RemoveResourcePermissionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveResourcePermission", "Required field: ResourceId, is not set");
+    return RemoveResourcePermissionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceId]", false));
+  }
+  if (!request.PrincipalIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveResourcePermission", "Required field: PrincipalId, is not set");
+    return RemoveResourcePermissionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PrincipalId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/resources/";
   ss << request.GetResourceId();
   ss << "/permissions/";
@@ -1456,8 +1697,13 @@ void WorkDocsClient::RemoveResourcePermissionAsyncHelper(const RemoveResourcePer
 
 UpdateDocumentOutcome WorkDocsClient::UpdateDocument(const UpdateDocumentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDocument", "Required field: DocumentId, is not set");
+    return UpdateDocumentOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1492,8 +1738,18 @@ void WorkDocsClient::UpdateDocumentAsyncHelper(const UpdateDocumentRequest& requ
 
 UpdateDocumentVersionOutcome WorkDocsClient::UpdateDocumentVersion(const UpdateDocumentVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DocumentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDocumentVersion", "Required field: DocumentId, is not set");
+    return UpdateDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DocumentId]", false));
+  }
+  if (!request.VersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDocumentVersion", "Required field: VersionId, is not set");
+    return UpdateDocumentVersionOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/documents/";
   ss << request.GetDocumentId();
   ss << "/versions/";
@@ -1530,8 +1786,13 @@ void WorkDocsClient::UpdateDocumentVersionAsyncHelper(const UpdateDocumentVersio
 
 UpdateFolderOutcome WorkDocsClient::UpdateFolder(const UpdateFolderRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FolderIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFolder", "Required field: FolderId, is not set");
+    return UpdateFolderOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FolderId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/folders/";
   ss << request.GetFolderId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1566,8 +1827,13 @@ void WorkDocsClient::UpdateFolderAsyncHelper(const UpdateFolderRequest& request,
 
 UpdateUserOutcome WorkDocsClient::UpdateUser(const UpdateUserRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateUser", "Required field: UserId, is not set");
+    return UpdateUserOutcome(Aws::Client::AWSError<WorkDocsErrors>(WorkDocsErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/api/v1/users/";
   ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());

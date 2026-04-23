@@ -62,6 +62,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -141,6 +153,12 @@ namespace Model
      * all products to which the administrator has access.</p>
      */
     inline const Aws::Map<ProductViewFilterBy, Aws::Vector<Aws::String>>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>The search filters. If no search filters are specified, the output includes
+     * all products to which the administrator has access.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>The search filters. If no search filters are specified, the output includes
@@ -199,6 +217,11 @@ namespace Model
     /**
      * <p>The sort field. If no value is specified, the results are not sorted.</p>
      */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
+
+    /**
+     * <p>The sort field. If no value is specified, the results are not sorted.</p>
+     */
     inline void SetSortBy(const ProductViewSortBy& value) { m_sortByHasBeenSet = true; m_sortBy = value; }
 
     /**
@@ -221,6 +244,11 @@ namespace Model
      * <p>The sort order. If no value is specified, the results are not sorted.</p>
      */
     inline const SortOrder& GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>The sort order. If no value is specified, the results are not sorted.</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>The sort order. If no value is specified, the results are not sorted.</p>
@@ -248,6 +276,12 @@ namespace Model
      * results, use null.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>The page token for the next set of results. To retrieve the first set of
+     * results, use null.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>The page token for the next set of results. To retrieve the first set of
@@ -294,6 +328,11 @@ namespace Model
     /**
      * <p>The maximum number of items to return with this call.</p>
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return with this call.</p>
+     */
     inline void SetPageSize(int value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -306,6 +345,11 @@ namespace Model
      * <p>Access level of the source of the product.</p>
      */
     inline const ProductSource& GetProductSource() const{ return m_productSource; }
+
+    /**
+     * <p>Access level of the source of the product.</p>
+     */
+    inline bool ProductSourceHasBeenSet() const { return m_productSourceHasBeenSet; }
 
     /**
      * <p>Access level of the source of the product.</p>

@@ -57,6 +57,12 @@ namespace Model
      * <p>The name for the alarm. This name must be unique within the AWS account. The
      * maximum length is 255 characters.</p>
      */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The name for the alarm. This name must be unique within the AWS account. The
+     * maximum length is 255 characters.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The value of the state.</p>
      */
+    inline bool StateValueHasBeenSet() const { return m_stateValueHasBeenSet; }
+
+    /**
+     * <p>The value of the state.</p>
+     */
     inline void SetStateValue(const StateValue& value) { m_stateValueHasBeenSet = true; m_stateValue = value; }
 
     /**
@@ -120,6 +131,11 @@ namespace Model
      * <p>The reason that this alarm is set to this specific state, in text format.</p>
      */
     inline const Aws::String& GetStateReason() const{ return m_stateReason; }
+
+    /**
+     * <p>The reason that this alarm is set to this specific state, in text format.</p>
+     */
+    inline bool StateReasonHasBeenSet() const { return m_stateReasonHasBeenSet; }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in text format.</p>
@@ -156,6 +172,11 @@ namespace Model
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
      */
     inline const Aws::String& GetStateReasonData() const{ return m_stateReasonData; }
+
+    /**
+     * <p>The reason that this alarm is set to this specific state, in JSON format.</p>
+     */
+    inline bool StateReasonDataHasBeenSet() const { return m_stateReasonDataHasBeenSet; }
 
     /**
      * <p>The reason that this alarm is set to this specific state, in JSON format.</p>

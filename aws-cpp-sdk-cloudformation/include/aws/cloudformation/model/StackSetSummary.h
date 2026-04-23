@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the stack set.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stack set.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the stack set.</p>
      */
     inline const Aws::String& GetStackSetId() const{ return m_stackSetId; }
+
+    /**
+     * <p>The ID of the stack set.</p>
+     */
+    inline bool StackSetIdHasBeenSet() const { return m_stackSetIdHasBeenSet; }
 
     /**
      * <p>The ID of the stack set.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>A description of the stack set that you specify when the stack set is created
      * or updated.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the stack set that you specify when the stack set is created
+     * or updated.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The status of the stack set.</p>
      */
     inline const StackSetStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the stack set.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the stack set.</p>

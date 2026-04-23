@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Represents a successfully deleted message.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Represents a successfully deleted message.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

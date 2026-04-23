@@ -52,6 +52,9 @@ namespace Model
     inline const Transferable& GetTransferable() const{ return m_transferable; }
 
     
+    inline bool TransferableHasBeenSet() const { return m_transferableHasBeenSet; }
+
+    
     inline void SetTransferable(const Transferable& value) { m_transferableHasBeenSet = true; m_transferable = value; }
 
     

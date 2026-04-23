@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
      * AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the table resides. If none is supplied, the
+     * AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * compatibility, this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the catalog database in which the table resides. For Hive
+     * compatibility, this name is entirely lowercase.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the catalog database in which the table resides. For Hive
@@ -141,6 +153,12 @@ namespace Model
      * <p>An updated <code>TableInput</code> object to define the metadata table in the
      * catalog.</p>
      */
+    inline bool TableInputHasBeenSet() const { return m_tableInputHasBeenSet; }
+
+    /**
+     * <p>An updated <code>TableInput</code> object to define the metadata table in the
+     * catalog.</p>
+     */
     inline void SetTableInput(const TableInput& value) { m_tableInputHasBeenSet = true; m_tableInput = value; }
 
     /**
@@ -168,6 +186,13 @@ namespace Model
      * however, <code>UpdateTable</code> does not create the archived version.</p>
      */
     inline bool GetSkipArchive() const{ return m_skipArchive; }
+
+    /**
+     * <p>By default, <code>UpdateTable</code> always creates an archived version of
+     * the table before updating it. If <code>skipArchive</code> is set to true,
+     * however, <code>UpdateTable</code> does not create the archived version.</p>
+     */
+    inline bool SkipArchiveHasBeenSet() const { return m_skipArchiveHasBeenSet; }
 
     /**
      * <p>By default, <code>UpdateTable</code> always creates an archived version of

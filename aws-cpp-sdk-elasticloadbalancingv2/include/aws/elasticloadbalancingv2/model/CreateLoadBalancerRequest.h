@@ -66,6 +66,14 @@ namespace Model
      * characters or hyphens, must not begin or end with a hyphen, and must not begin
      * with "internal-".</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p> <p>This name must be unique per region per
+     * account, can have a maximum of 32 characters, must contain only alphanumeric
+     * characters or hyphens, must not begin or end with a hyphen, and must not begin
+     * with "internal-".</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -117,6 +125,15 @@ namespace Model
      * one or more Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones.</p> <p>[Network Load Balancers] You can specify subnets from
+     * one or more Availability Zones.</p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>The IDs of the public subnets. You can specify only one subnet per
@@ -200,6 +217,16 @@ namespace Model
      * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
      * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
      */
+    inline bool SubnetMappingsHasBeenSet() const { return m_subnetMappingsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the public subnets. You can specify only one subnet per
+     * Availability Zone. You must specify either subnets or subnet mappings.</p>
+     * <p>[Application Load Balancers] You must specify subnets from at least two
+     * Availability Zones. You cannot specify Elastic IP addresses for your
+     * subnets.</p> <p>[Network Load Balancers] You can specify subnets from one or
+     * more Availability Zones. You can specify one Elastic IP address per subnet.</p>
+     */
     inline void SetSubnetMappings(const Aws::Vector<SubnetMapping>& value) { m_subnetMappingsHasBeenSet = true; m_subnetMappings = value; }
 
     /**
@@ -258,6 +285,12 @@ namespace Model
      * balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>[Application Load Balancers] The IDs of the security groups for the load
+     * balancer.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>[Application Load Balancers] The IDs of the security groups for the load
@@ -326,6 +359,19 @@ namespace Model
      * access to the VPC for the load balancer.</p> <p>The default is an
      * Internet-facing load balancer.</p>
      */
+    inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
+
+    /**
+     * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
+     * DNS name of an Internet-facing load balancer is publicly resolvable to the
+     * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
+     * load balancer have only private IP addresses. The DNS name of an internal load
+     * balancer is publicly resolvable to the private IP addresses of the nodes.
+     * Therefore, internal load balancers can only route requests from clients with
+     * access to the VPC for the load balancer.</p> <p>The default is an
+     * Internet-facing load balancer.</p>
+     */
     inline void SetScheme(const LoadBalancerSchemeEnum& value) { m_schemeHasBeenSet = true; m_scheme = value; }
 
     /**
@@ -376,6 +422,11 @@ namespace Model
     /**
      * <p>One or more tags to assign to the load balancer.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags to assign to the load balancer.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -412,6 +463,11 @@ namespace Model
     /**
      * <p>The type of load balancer. The default is <code>application</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of load balancer. The default is <code>application</code>.</p>
+     */
     inline void SetType(const LoadBalancerTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -437,6 +493,14 @@ namespace Model
      * load balancers must use <code>ipv4</code>.</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>[Application Load Balancers] The type of IP addresses used by the subnets for
+     * your load balancer. The possible values are <code>ipv4</code> (for IPv4
+     * addresses) and <code>dualstack</code> (for IPv4 and IPv6 addresses). Internal
+     * load balancers must use <code>ipv4</code>.</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>[Application Load Balancers] The type of IP addresses used by the subnets for

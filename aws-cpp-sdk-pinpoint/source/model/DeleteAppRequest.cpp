@@ -29,7 +29,7 @@ DeleteAppRequest::DeleteAppRequest() :
 
 Aws::String DeleteAppRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

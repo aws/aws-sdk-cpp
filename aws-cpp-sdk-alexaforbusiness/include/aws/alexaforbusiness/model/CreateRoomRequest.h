@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name for the room.</p>
      */
+    inline bool RoomNameHasBeenSet() const { return m_roomNameHasBeenSet; }
+
+    /**
+     * <p>The name for the room.</p>
+     */
     inline void SetRoomName(const Aws::String& value) { m_roomNameHasBeenSet = true; m_roomName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The description for the room.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description for the room.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description for the room.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The profile ARN for the room.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The profile ARN for the room.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The calendar ARN for the room.</p>
      */
     inline const Aws::String& GetProviderCalendarId() const{ return m_providerCalendarId; }
+
+    /**
+     * <p>The calendar ARN for the room.</p>
+     */
+    inline bool ProviderCalendarIdHasBeenSet() const { return m_providerCalendarIdHasBeenSet; }
 
     /**
      * <p>The calendar ARN for the room.</p>
@@ -201,6 +221,12 @@ namespace Model
      * <p>A unique, user-specified identifier for this request that ensures
      * idempotency. </p>
      */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>A unique, user-specified identifier for this request that ensures
+     * idempotency. </p>
+     */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
@@ -238,6 +264,11 @@ namespace Model
      * <p>The tags for the room.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags for the room.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags for the room.</p>

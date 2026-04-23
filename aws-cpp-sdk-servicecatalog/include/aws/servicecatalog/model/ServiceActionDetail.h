@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Summary information about the self-service action.</p>
      */
+    inline bool ServiceActionSummaryHasBeenSet() const { return m_serviceActionSummaryHasBeenSet; }
+
+    /**
+     * <p>Summary information about the self-service action.</p>
+     */
     inline void SetServiceActionSummary(const ServiceActionSummary& value) { m_serviceActionSummaryHasBeenSet = true; m_serviceActionSummary = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>A map that defines the self-service action.</p>
      */
     inline const Aws::Map<ServiceActionDefinitionKey, Aws::String>& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>A map that defines the self-service action.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
      * <p>A map that defines the self-service action.</p>

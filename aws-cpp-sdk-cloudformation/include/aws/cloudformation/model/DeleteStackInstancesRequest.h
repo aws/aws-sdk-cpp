@@ -59,6 +59,12 @@ namespace Model
      * <p>The name or unique ID of the stack set that you want to delete stack
      * instances for.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set that you want to delete stack
+     * instances for.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAccounts() const{ return m_accounts; }
+
+    /**
+     * <p>The names of the AWS accounts that you want to delete stack instances
+     * for.</p>
+     */
+    inline bool AccountsHasBeenSet() const { return m_accountsHasBeenSet; }
 
     /**
      * <p>The names of the AWS accounts that you want to delete stack instances
@@ -149,6 +161,11 @@ namespace Model
     /**
      * <p>The regions where you want to delete stack set instances. </p>
      */
+    inline bool RegionsHasBeenSet() const { return m_regionsHasBeenSet; }
+
+    /**
+     * <p>The regions where you want to delete stack set instances. </p>
+     */
     inline void SetRegions(const Aws::Vector<Aws::String>& value) { m_regionsHasBeenSet = true; m_regions = value; }
 
     /**
@@ -190,6 +207,11 @@ namespace Model
     /**
      * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
      */
+    inline bool OperationPreferencesHasBeenSet() const { return m_operationPreferencesHasBeenSet; }
+
+    /**
+     * <p>Preferences for how AWS CloudFormation performs this stack set operation.</p>
+     */
     inline void SetOperationPreferences(const StackSetOperationPreferences& value) { m_operationPreferencesHasBeenSet = true; m_operationPreferences = value; }
 
     /**
@@ -224,6 +246,15 @@ namespace Model
      * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
      * set operation options</a>.</p>
      */
+    inline bool RetainStacksHasBeenSet() const { return m_retainStacksHasBeenSet; }
+
+    /**
+     * <p>Removes the stack instances from the specified stack set, but doesn't delete
+     * the stacks. You can't reassociate a retained stack or add an existing, saved
+     * stack to a new stack set.</p> <p>For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/stacksets-concepts.html#stackset-ops-options">Stack
+     * set operation options</a>.</p>
+     */
     inline void SetRetainStacks(bool value) { m_retainStacksHasBeenSet = true; m_retainStacks = value; }
 
     /**
@@ -247,6 +278,18 @@ namespace Model
      * is <code>OUTDATED</code>. </p>
      */
     inline const Aws::String& GetOperationId() const{ return m_operationId; }
+
+    /**
+     * <p>The unique identifier for this stack set operation. </p> <p>If you don't
+     * specify an operation ID, the SDK generates one automatically. </p> <p>The
+     * operation ID also functions as an idempotency token, to ensure that AWS
+     * CloudFormation performs the stack set operation only once, even if you retry the
+     * request multiple times. You can retry stack set operation requests to ensure
+     * that AWS CloudFormation successfully received them.</p> <p>Repeating this stack
+     * set operation with a new operation ID retries all stack instances whose status
+     * is <code>OUTDATED</code>. </p>
+     */
+    inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for this stack set operation. </p> <p>If you don't

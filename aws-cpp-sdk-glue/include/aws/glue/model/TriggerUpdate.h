@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>A description of this trigger.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of this trigger.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of this trigger.</p>
@@ -131,6 +141,14 @@ namespace Model
      * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
      */
     inline const Aws::String& GetSchedule() const{ return m_schedule; }
+
+    /**
+     * <p>A <code>cron</code> expression used to specify the schedule (see <a
+     * href="http://docs.aws.amazon.com/glue/latest/dg/monitor-data-warehouse-schedule.html">Time-Based
+     * Schedules for Jobs and Crawlers</a>. For example, to run something every day at
+     * 12:15 UTC, you would specify: <code>cron(15 12 * * ? *)</code>.</p>
+     */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
 
     /**
      * <p>A <code>cron</code> expression used to specify the schedule (see <a
@@ -189,6 +207,11 @@ namespace Model
     /**
      * <p>The actions initiated by this trigger.</p>
      */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+
+    /**
+     * <p>The actions initiated by this trigger.</p>
+     */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
@@ -221,6 +244,11 @@ namespace Model
      * <p>The predicate of this trigger, which defines when it will fire.</p>
      */
     inline const Predicate& GetPredicate() const{ return m_predicate; }
+
+    /**
+     * <p>The predicate of this trigger, which defines when it will fire.</p>
+     */
+    inline bool PredicateHasBeenSet() const { return m_predicateHasBeenSet; }
 
     /**
      * <p>The predicate of this trigger, which defines when it will fire.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Whether to enable Berkshelf.</p>
      */
+    inline bool ManageBerkshelfHasBeenSet() const { return m_manageBerkshelfHasBeenSet; }
+
+    /**
+     * <p>Whether to enable Berkshelf.</p>
+     */
     inline void SetManageBerkshelf(bool value) { m_manageBerkshelfHasBeenSet = true; m_manageBerkshelf = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The Berkshelf version.</p>
      */
     inline const Aws::String& GetBerkshelfVersion() const{ return m_berkshelfVersion; }
+
+    /**
+     * <p>The Berkshelf version.</p>
+     */
+    inline bool BerkshelfVersionHasBeenSet() const { return m_berkshelfVersionHasBeenSet; }
 
     /**
      * <p>The Berkshelf version.</p>

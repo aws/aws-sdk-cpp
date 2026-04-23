@@ -57,6 +57,13 @@ namespace Model
      * one to a few seconds, depending upon whether the underlying token bucket is at
      * its full capacity.</p>
      */
+    inline bool BurstLimitHasBeenSet() const { return m_burstLimitHasBeenSet; }
+
+    /**
+     * <p>The API request burst limit, the maximum rate limit over a time ranging from
+     * one to a few seconds, depending upon whether the underlying token bucket is at
+     * its full capacity.</p>
+     */
     inline void SetBurstLimit(int value) { m_burstLimitHasBeenSet = true; m_burstLimit = value; }
 
     /**
@@ -71,6 +78,11 @@ namespace Model
      * <p>The API request steady-state rate limit.</p>
      */
     inline double GetRateLimit() const{ return m_rateLimit; }
+
+    /**
+     * <p>The API request steady-state rate limit.</p>
+     */
+    inline bool RateLimitHasBeenSet() const { return m_rateLimitHasBeenSet; }
 
     /**
      * <p>The API request steady-state rate limit.</p>

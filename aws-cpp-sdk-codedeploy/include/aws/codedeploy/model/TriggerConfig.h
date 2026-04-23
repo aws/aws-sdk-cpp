@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the notification trigger.</p>
      */
+    inline bool TriggerNameHasBeenSet() const { return m_triggerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the notification trigger.</p>
+     */
     inline void SetTriggerName(const Aws::String& value) { m_triggerNameHasBeenSet = true; m_triggerName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * notifications about deployment or instance events are sent.</p>
      */
     inline const Aws::String& GetTriggerTargetArn() const{ return m_triggerTargetArn; }
+
+    /**
+     * <p>The ARN of the Amazon Simple Notification Service topic through which
+     * notifications about deployment or instance events are sent.</p>
+     */
+    inline bool TriggerTargetArnHasBeenSet() const { return m_triggerTargetArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon Simple Notification Service topic through which
@@ -133,6 +144,11 @@ namespace Model
      * <p>The event type or types for which notifications are triggered.</p>
      */
     inline const Aws::Vector<TriggerEventType>& GetTriggerEvents() const{ return m_triggerEvents; }
+
+    /**
+     * <p>The event type or types for which notifications are triggered.</p>
+     */
+    inline bool TriggerEventsHasBeenSet() const { return m_triggerEventsHasBeenSet; }
 
     /**
      * <p>The event type or types for which notifications are triggered.</p>

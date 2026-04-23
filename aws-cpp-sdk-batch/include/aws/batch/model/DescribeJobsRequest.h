@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>A space-separated list of up to 100 job IDs.</p>
      */
+    inline bool JobsHasBeenSet() const { return m_jobsHasBeenSet; }
+
+    /**
+     * <p>A space-separated list of up to 100 job IDs.</p>
+     */
     inline void SetJobs(const Aws::Vector<Aws::String>& value) { m_jobsHasBeenSet = true; m_jobs = value; }
 
     /**

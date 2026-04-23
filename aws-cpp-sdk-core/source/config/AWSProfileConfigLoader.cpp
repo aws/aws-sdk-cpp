@@ -68,6 +68,7 @@ namespace Aws
         static const char* const SESSION_TOKEN_KEY = "aws_session_token";
         static const char* const ROLE_ARN_KEY = "role_arn";
         static const char* const EXTERNAL_ID_KEY = "external_id";
+        static const char* const CREDENTIAL_PROCESS_COMMAND = "credential_process";
         static const char* const SOURCE_PROFILE_KEY = "source_profile";
         static const char* const PROFILE_PREFIX = "profile ";
         static const char EQ = '=';
@@ -137,7 +138,7 @@ namespace Aws
                     }
                 }
 
-                FlushProfileAndReset(line, 0, 0);
+                FlushProfileAndReset(line, std::string::npos, std::string::npos);
             }
 
         private:
@@ -201,6 +202,13 @@ namespace Aws
                     {
                         AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found source profile " << sourceProfileIter->second);
                         profile.SetSourceProfile(sourceProfileIter->second);
+                    }
+
+                    auto credentialProcessIter = m_profileKeyValuePairs.find(CREDENTIAL_PROCESS_COMMAND);
+                    if (credentialProcessIter != m_profileKeyValuePairs.end())
+                    {
+                        AWS_LOGSTREAM_DEBUG(PARSER_TAG, "found credential process " << credentialProcessIter->second);
+                        profile.SetCredentialProcess(credentialProcessIter->second);
                     }
                     profile.SetAllKeyValPairs(m_profileKeyValuePairs);
 

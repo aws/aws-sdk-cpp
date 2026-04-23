@@ -15,12 +15,15 @@
 
 #pragma once
 #include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+#include <aws/mediaconvert/model/AccelerationSettings.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediaconvert/model/BillingTagsSource.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/mediaconvert/model/JobPhase.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediaconvert/model/JobSettings.h>
 #include <aws/mediaconvert/model/JobStatus.h>
+#include <aws/mediaconvert/model/StatusUpdateInterval.h>
 #include <aws/mediaconvert/model/Timing.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mediaconvert/model/OutputGroupDetail.h>
@@ -59,9 +62,51 @@ namespace Model
 
 
     /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline const AccelerationSettings& GetAccelerationSettings() const{ return m_accelerationSettings; }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline bool AccelerationSettingsHasBeenSet() const { return m_accelerationSettingsHasBeenSet; }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline void SetAccelerationSettings(const AccelerationSettings& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = value; }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline void SetAccelerationSettings(AccelerationSettings&& value) { m_accelerationSettingsHasBeenSet = true; m_accelerationSettings = std::move(value); }
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline Job& WithAccelerationSettings(const AccelerationSettings& value) { SetAccelerationSettings(value); return *this;}
+
+    /**
+     * Accelerated transcoding is currently in private preview. Contact AWS for more
+     * information.
+     */
+    inline Job& WithAccelerationSettings(AccelerationSettings&& value) { SetAccelerationSettings(std::move(value)); return *this;}
+
+
+    /**
      * An identifier for this resource that is unique within all of AWS.
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * An identifier for this resource that is unique within all of AWS.
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * An identifier for this resource that is unique within all of AWS.
@@ -94,19 +139,58 @@ namespace Model
     inline Job& WithArn(const char* value) { SetArn(value); return *this;}
 
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline const BillingTagsSource& GetBillingTagsSource() const{ return m_billingTagsSource; }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
+    inline bool BillingTagsSourceHasBeenSet() const { return m_billingTagsSourceHasBeenSet; }
+
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline void SetBillingTagsSource(const BillingTagsSource& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = value; }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline void SetBillingTagsSource(BillingTagsSource&& value) { m_billingTagsSourceHasBeenSet = true; m_billingTagsSource = std::move(value); }
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline Job& WithBillingTagsSource(const BillingTagsSource& value) { SetBillingTagsSource(value); return *this;}
 
-    
+    /**
+     * Optional. Choose a tag type that AWS Billing and Cost Management will use to
+     * sort your AWS Elemental MediaConvert costs on any billing report that you set
+     * up. Any transcoding outputs that don't have an associated tag will appear in
+     * your billing report unsorted. If you don't choose a valid value for this field,
+     * your job outputs will appear on the billing report unsorted.
+     */
     inline Job& WithBillingTagsSource(BillingTagsSource&& value) { SetBillingTagsSource(std::move(value)); return *this;}
 
 
@@ -114,6 +198,11 @@ namespace Model
      * The time, in Unix epoch format in seconds, when the job got created.
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time, in Unix epoch format in seconds, when the job got created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * The time, in Unix epoch format in seconds, when the job got created.
@@ -137,9 +226,45 @@ namespace Model
 
 
     /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline const JobPhase& GetCurrentPhase() const{ return m_currentPhase; }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline bool CurrentPhaseHasBeenSet() const { return m_currentPhaseHasBeenSet; }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline void SetCurrentPhase(const JobPhase& value) { m_currentPhaseHasBeenSet = true; m_currentPhase = value; }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline void SetCurrentPhase(JobPhase&& value) { m_currentPhaseHasBeenSet = true; m_currentPhase = std::move(value); }
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline Job& WithCurrentPhase(const JobPhase& value) { SetCurrentPhase(value); return *this;}
+
+    /**
+     * A job's phase can be PROBING, TRANSCODING OR UPLOADING
+     */
+    inline Job& WithCurrentPhase(JobPhase&& value) { SetCurrentPhase(std::move(value)); return *this;}
+
+
+    /**
      * Error code for the job
      */
     inline int GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * Error code for the job
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * Error code for the job
@@ -156,6 +281,11 @@ namespace Model
      * Error message of Job
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * Error message of Job
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * Error message of Job
@@ -198,6 +328,12 @@ namespace Model
      * A portion of the job's ARN, unique within your AWS Elemental MediaConvert
      * resources
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * A portion of the job's ARN, unique within your AWS Elemental MediaConvert
+     * resources
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -232,10 +368,69 @@ namespace Model
 
 
     /**
+     * An estimate of how far your job has progressed. This estimate is shown as a
+     * percentage of the total time from when your job leaves its queue to when your
+     * output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert
+     * provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the
+     * response to GetJob and ListJobs requests. The jobPercentComplete estimate is
+     * reliable for the following input containers: Quicktime, Transport Stream, MP4,
+     * and MXF. For some jobs, including audio-only jobs and jobs that use input
+     * clipping, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
+     */
+    inline int GetJobPercentComplete() const{ return m_jobPercentComplete; }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a
+     * percentage of the total time from when your job leaves its queue to when your
+     * output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert
+     * provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the
+     * response to GetJob and ListJobs requests. The jobPercentComplete estimate is
+     * reliable for the following input containers: Quicktime, Transport Stream, MP4,
+     * and MXF. For some jobs, including audio-only jobs and jobs that use input
+     * clipping, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
+     */
+    inline bool JobPercentCompleteHasBeenSet() const { return m_jobPercentCompleteHasBeenSet; }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a
+     * percentage of the total time from when your job leaves its queue to when your
+     * output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert
+     * provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the
+     * response to GetJob and ListJobs requests. The jobPercentComplete estimate is
+     * reliable for the following input containers: Quicktime, Transport Stream, MP4,
+     * and MXF. For some jobs, including audio-only jobs and jobs that use input
+     * clipping, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
+     */
+    inline void SetJobPercentComplete(int value) { m_jobPercentCompleteHasBeenSet = true; m_jobPercentComplete = value; }
+
+    /**
+     * An estimate of how far your job has progressed. This estimate is shown as a
+     * percentage of the total time from when your job leaves its queue to when your
+     * output files appear in your output Amazon S3 bucket. AWS Elemental MediaConvert
+     * provides jobPercentComplete in CloudWatch STATUS_UPDATE events and in the
+     * response to GetJob and ListJobs requests. The jobPercentComplete estimate is
+     * reliable for the following input containers: Quicktime, Transport Stream, MP4,
+     * and MXF. For some jobs, including audio-only jobs and jobs that use input
+     * clipping, the service can't provide information about job progress. In those
+     * cases, jobPercentComplete returns a null value.
+     */
+    inline Job& WithJobPercentComplete(int value) { SetJobPercentComplete(value); return *this;}
+
+
+    /**
      * The job template that the job is created from, if it is created from a job
      * template.
      */
     inline const Aws::String& GetJobTemplate() const{ return m_jobTemplate; }
+
+    /**
+     * The job template that the job is created from, if it is created from a job
+     * template.
+     */
+    inline bool JobTemplateHasBeenSet() const { return m_jobTemplateHasBeenSet; }
 
     /**
      * The job template that the job is created from, if it is created from a job
@@ -282,6 +477,11 @@ namespace Model
     /**
      * List of output group details
      */
+    inline bool OutputGroupDetailsHasBeenSet() const { return m_outputGroupDetailsHasBeenSet; }
+
+    /**
+     * List of output group details
+     */
     inline void SetOutputGroupDetails(const Aws::Vector<OutputGroupDetail>& value) { m_outputGroupDetailsHasBeenSet = true; m_outputGroupDetails = value; }
 
     /**
@@ -317,6 +517,14 @@ namespace Model
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
      */
     inline const Aws::String& GetQueue() const{ return m_queue; }
+
+    /**
+     * Optional. When you create a job, you can specify a queue to send it to. If you
+     * don't specify, the job will go to the default queue. For more about queues, see
+     * the User Guide topic at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html
+     */
+    inline bool QueueHasBeenSet() const { return m_queueHasBeenSet; }
 
     /**
      * Optional. When you create a job, you can specify a queue to send it to. If you
@@ -368,11 +576,43 @@ namespace Model
 
 
     /**
+     * The number of times that the service automatically attempted to process your job
+     * after encountering an error.
+     */
+    inline int GetRetryCount() const{ return m_retryCount; }
+
+    /**
+     * The number of times that the service automatically attempted to process your job
+     * after encountering an error.
+     */
+    inline bool RetryCountHasBeenSet() const { return m_retryCountHasBeenSet; }
+
+    /**
+     * The number of times that the service automatically attempted to process your job
+     * after encountering an error.
+     */
+    inline void SetRetryCount(int value) { m_retryCountHasBeenSet = true; m_retryCount = value; }
+
+    /**
+     * The number of times that the service automatically attempted to process your job
+     * after encountering an error.
+     */
+    inline Job& WithRetryCount(int value) { SetRetryCount(value); return *this;}
+
+
+    /**
      * The IAM role you use for creating this job. For details about permissions, see
      * the User Guide topic at the User Guide at
      * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
      */
     inline const Aws::String& GetRole() const{ return m_role; }
+
+    /**
+     * The IAM role you use for creating this job. For details about permissions, see
+     * the User Guide topic at the User Guide at
+     * http://docs.aws.amazon.com/mediaconvert/latest/ug/iam-role.html
+     */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
 
     /**
      * The IAM role you use for creating this job. For details about permissions, see
@@ -417,51 +657,151 @@ namespace Model
     inline Job& WithRole(const char* value) { SetRole(value); return *this;}
 
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline const JobSettings& GetSettings() const{ return m_settings; }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline void SetSettings(const JobSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline void SetSettings(JobSettings&& value) { m_settingsHasBeenSet = true; m_settings = std::move(value); }
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline Job& WithSettings(const JobSettings& value) { SetSettings(value); return *this;}
 
-    
+    /**
+     * JobSettings contains all the transcode settings for a job.
+     */
     inline Job& WithSettings(JobSettings&& value) { SetSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline const JobStatus& GetStatus() const{ return m_status; }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline void SetStatus(JobStatus&& value) { m_statusHasBeenSet = true; m_status = std::move(value); }
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline Job& WithStatus(const JobStatus& value) { SetStatus(value); return *this;}
 
-    
+    /**
+     * A job's status can be SUBMITTED, PROGRESSING, COMPLETE, CANCELED, or ERROR.
+     */
     inline Job& WithStatus(JobStatus&& value) { SetStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline const StatusUpdateInterval& GetStatusUpdateInterval() const{ return m_statusUpdateInterval; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline bool StatusUpdateIntervalHasBeenSet() const { return m_statusUpdateIntervalHasBeenSet; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline void SetStatusUpdateInterval(const StatusUpdateInterval& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = value; }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline void SetStatusUpdateInterval(StatusUpdateInterval&& value) { m_statusUpdateIntervalHasBeenSet = true; m_statusUpdateInterval = std::move(value); }
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline Job& WithStatusUpdateInterval(const StatusUpdateInterval& value) { SetStatusUpdateInterval(value); return *this;}
+
+    /**
+     * Specify how often MediaConvert sends STATUS_UPDATE events to Amazon CloudWatch
+     * Events. Set the interval, in seconds, between status updates. MediaConvert sends
+     * an update at this interval from the time the service begins processing your job
+     * to the time it completes the transcode or encounters an error.
+     */
+    inline Job& WithStatusUpdateInterval(StatusUpdateInterval&& value) { SetStatusUpdateInterval(std::move(value)); return *this;}
+
+
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
     inline const Timing& GetTiming() const{ return m_timing; }
 
-    
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
+    inline bool TimingHasBeenSet() const { return m_timingHasBeenSet; }
+
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
     inline void SetTiming(const Timing& value) { m_timingHasBeenSet = true; m_timing = value; }
 
-    
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
     inline void SetTiming(Timing&& value) { m_timingHasBeenSet = true; m_timing = std::move(value); }
 
-    
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
     inline Job& WithTiming(const Timing& value) { SetTiming(value); return *this;}
 
-    
+    /**
+     * Information about when jobs are submitted, started, and finished is specified in
+     * Unix epoch format in seconds.
+     */
     inline Job& WithTiming(Timing&& value) { SetTiming(std::move(value)); return *this;}
 
 
@@ -470,6 +810,12 @@ namespace Model
      * specify metadata in key/value pairs.
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetUserMetadata() const{ return m_userMetadata; }
+
+    /**
+     * User-defined metadata that you want to associate with an MediaConvert job. You
+     * specify metadata in key/value pairs.
+     */
+    inline bool UserMetadataHasBeenSet() const { return m_userMetadataHasBeenSet; }
 
     /**
      * User-defined metadata that you want to associate with an MediaConvert job. You
@@ -539,6 +885,9 @@ namespace Model
 
   private:
 
+    AccelerationSettings m_accelerationSettings;
+    bool m_accelerationSettingsHasBeenSet;
+
     Aws::String m_arn;
     bool m_arnHasBeenSet;
 
@@ -547,6 +896,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdAt;
     bool m_createdAtHasBeenSet;
+
+    JobPhase m_currentPhase;
+    bool m_currentPhaseHasBeenSet;
 
     int m_errorCode;
     bool m_errorCodeHasBeenSet;
@@ -557,6 +909,9 @@ namespace Model
     Aws::String m_id;
     bool m_idHasBeenSet;
 
+    int m_jobPercentComplete;
+    bool m_jobPercentCompleteHasBeenSet;
+
     Aws::String m_jobTemplate;
     bool m_jobTemplateHasBeenSet;
 
@@ -566,6 +921,9 @@ namespace Model
     Aws::String m_queue;
     bool m_queueHasBeenSet;
 
+    int m_retryCount;
+    bool m_retryCountHasBeenSet;
+
     Aws::String m_role;
     bool m_roleHasBeenSet;
 
@@ -574,6 +932,9 @@ namespace Model
 
     JobStatus m_status;
     bool m_statusHasBeenSet;
+
+    StatusUpdateInterval m_statusUpdateInterval;
+    bool m_statusUpdateIntervalHasBeenSet;
 
     Timing m_timing;
     bool m_timingHasBeenSet;

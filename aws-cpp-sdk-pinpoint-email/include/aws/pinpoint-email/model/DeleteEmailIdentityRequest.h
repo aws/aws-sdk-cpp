@@ -60,6 +60,12 @@ namespace Model
      * <p>The identity (that is, the email address or domain) that you want to delete
      * from your Amazon Pinpoint account.</p>
      */
+    inline bool EmailIdentityHasBeenSet() const { return m_emailIdentityHasBeenSet; }
+
+    /**
+     * <p>The identity (that is, the email address or domain) that you want to delete
+     * from your Amazon Pinpoint account.</p>
+     */
     inline void SetEmailIdentity(const Aws::String& value) { m_emailIdentityHasBeenSet = true; m_emailIdentity = value; }
 
     /**

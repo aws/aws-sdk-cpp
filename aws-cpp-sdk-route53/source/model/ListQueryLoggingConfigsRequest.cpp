@@ -35,7 +35,7 @@ ListQueryLoggingConfigsRequest::ListQueryLoggingConfigsRequest() :
 
 Aws::String ListQueryLoggingConfigsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListQueryLoggingConfigsRequest::AddQueryStringParameters(URI& uri) const

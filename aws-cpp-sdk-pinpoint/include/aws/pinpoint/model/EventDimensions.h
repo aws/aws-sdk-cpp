@@ -61,6 +61,12 @@ namespace Model
      * Custom attributes that your app reports to Amazon Pinpoint. You can use these
      * attributes as selection criteria when you create an event filter.
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * Custom attributes that your app reports to Amazon Pinpoint. You can use these
+     * attributes as selection criteria when you create an event filter.
+     */
     inline void SetAttributes(const Aws::Map<Aws::String, AttributeDimension>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -130,6 +136,13 @@ namespace Model
      * standard event type that Amazon Pinpoint generates, such as _session.start, or a
      * custom event that's specific to your app.
      */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
+
+    /**
+     * The name of the event that causes the campaign to be sent. This can be a
+     * standard event type that Amazon Pinpoint generates, such as _session.start, or a
+     * custom event that's specific to your app.
+     */
     inline void SetEventType(const SetDimension& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
@@ -159,6 +172,12 @@ namespace Model
      * attributes as selection criteria when you create an event filter.
      */
     inline const Aws::Map<Aws::String, MetricDimension>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * Custom metrics that your app reports to Amazon Pinpoint. You can use these
+     * attributes as selection criteria when you create an event filter.
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * Custom metrics that your app reports to Amazon Pinpoint. You can use these

@@ -28,7 +28,8 @@ CreateActivationRequest::CreateActivationRequest() :
     m_iamRoleHasBeenSet(false),
     m_registrationLimit(0),
     m_registrationLimitHasBeenSet(false),
-    m_expirationDateHasBeenSet(false)
+    m_expirationDateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -63,6 +64,17 @@ Aws::String CreateActivationRequest::SerializePayload() const
   if(m_expirationDateHasBeenSet)
   {
    payload.WithDouble("ExpirationDate", m_expirationDate.SecondsWithMSPrecision());
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("Tags", std::move(tagsJsonList));
+
   }
 
   return payload.View().WriteReadable();

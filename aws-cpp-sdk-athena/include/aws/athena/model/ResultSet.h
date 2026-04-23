@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The rows in the table.</p>
      */
+    inline bool RowsHasBeenSet() const { return m_rowsHasBeenSet; }
+
+    /**
+     * <p>The rows in the table.</p>
+     */
     inline void SetRows(const Aws::Vector<Row>& value) { m_rowsHasBeenSet = true; m_rows = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * query results.</p>
      */
     inline const ResultSetMetadata& GetResultSetMetadata() const{ return m_resultSetMetadata; }
+
+    /**
+     * <p>The metadata that describes the column structure and data types of a table of
+     * query results.</p>
+     */
+    inline bool ResultSetMetadataHasBeenSet() const { return m_resultSetMetadataHasBeenSet; }
 
     /**
      * <p>The metadata that describes the column structure and data types of a table of

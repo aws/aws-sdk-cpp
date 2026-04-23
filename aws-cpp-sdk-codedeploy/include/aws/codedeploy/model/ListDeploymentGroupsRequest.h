@@ -49,44 +49,50 @@ namespace Model
 
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(Aws::String&& value) { m_applicationNameHasBeenSet = true; m_applicationName = std::move(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline void SetApplicationName(const char* value) { m_applicationNameHasBeenSet = true; m_applicationName.assign(value); }
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentGroupsRequest& WithApplicationName(const Aws::String& value) { SetApplicationName(value); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentGroupsRequest& WithApplicationName(Aws::String&& value) { SetApplicationName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of an AWS CodeDeploy application associated with the applicable IAM
-     * user or AWS account.</p>
+     * <p>The name of an AWS CodeDeploy application associated with the IAM user or AWS
+     * account.</p>
      */
     inline ListDeploymentGroupsRequest& WithApplicationName(const char* value) { SetApplicationName(value); return *this;}
 
@@ -96,6 +102,12 @@ namespace Model
      * be used to return the next set of deployment groups in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier returned from the previous list deployment groups call. It can
+     * be used to return the next set of deployment groups in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier returned from the previous list deployment groups call. It can

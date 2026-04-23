@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The unique identifier for the cluster.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the cluster.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
      * <p>The name of the cluster.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the cluster.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the cluster.</p>
@@ -137,6 +147,11 @@ namespace Model
     /**
      * <p>The current status details about the cluster.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current status details about the cluster.</p>
+     */
     inline void SetStatus(const ClusterStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -160,6 +175,12 @@ namespace Model
      * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
      */
     inline const Ec2InstanceAttributes& GetEc2InstanceAttributes() const{ return m_ec2InstanceAttributes; }
+
+    /**
+     * <p>Provides information about the EC2 instances in a cluster grouped by
+     * category. For example, key name, subnet ID, IAM instance profile, and so on.</p>
+     */
+    inline bool Ec2InstanceAttributesHasBeenSet() const { return m_ec2InstanceAttributesHasBeenSet; }
 
     /**
      * <p>Provides information about the EC2 instances in a cluster grouped by
@@ -194,6 +215,15 @@ namespace Model
      * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
      */
     inline const InstanceCollectionType& GetInstanceCollectionType() const{ return m_instanceCollectionType; }
+
+    /**
+     * <note> <p>The instance fleet configuration is available only in Amazon EMR
+     * versions 4.8.0 and later, excluding 5.0.x versions.</p> </note> <p>The instance
+     * group configuration of the cluster. A value of <code>INSTANCE_GROUP</code>
+     * indicates a uniform instance group configuration. A value of
+     * <code>INSTANCE_FLEET</code> indicates an instance fleets configuration.</p>
+     */
+    inline bool InstanceCollectionTypeHasBeenSet() const { return m_instanceCollectionTypeHasBeenSet; }
 
     /**
      * <note> <p>The instance fleet configuration is available only in Amazon EMR
@@ -242,6 +272,12 @@ namespace Model
      * <p>The path to the Amazon S3 location where logs for this cluster are
      * stored.</p>
      */
+    inline bool LogUriHasBeenSet() const { return m_logUriHasBeenSet; }
+
+    /**
+     * <p>The path to the Amazon S3 location where logs for this cluster are
+     * stored.</p>
+     */
     inline void SetLogUri(const Aws::String& value) { m_logUriHasBeenSet = true; m_logUri = value; }
 
     /**
@@ -283,6 +319,11 @@ namespace Model
     /**
      * <p>The AMI version requested for this cluster.</p>
      */
+    inline bool RequestedAmiVersionHasBeenSet() const { return m_requestedAmiVersionHasBeenSet; }
+
+    /**
+     * <p>The AMI version requested for this cluster.</p>
+     */
     inline void SetRequestedAmiVersion(const Aws::String& value) { m_requestedAmiVersionHasBeenSet = true; m_requestedAmiVersion = value; }
 
     /**
@@ -315,6 +356,11 @@ namespace Model
      * <p>The AMI version running on this cluster.</p>
      */
     inline const Aws::String& GetRunningAmiVersion() const{ return m_runningAmiVersion; }
+
+    /**
+     * <p>The AMI version running on this cluster.</p>
+     */
+    inline bool RunningAmiVersionHasBeenSet() const { return m_runningAmiVersionHasBeenSet; }
 
     /**
      * <p>The AMI version running on this cluster.</p>
@@ -353,7 +399,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -365,7 +411,19 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * The release label applies only to Amazon EMR releases versions 4.x and later.
+     * Earlier versions use <code>AmiVersion</code>.</p>
+     */
+    inline bool ReleaseLabelHasBeenSet() const { return m_releaseLabelHasBeenSet; }
+
+    /**
+     * <p>The Amazon EMR release label, which determines the version of open-source
+     * application packages installed on the cluster. Release labels are in the form
+     * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
+     * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
+     * versions and included application versions and features, see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -377,7 +435,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -389,7 +447,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -401,7 +459,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -413,7 +471,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -425,7 +483,7 @@ namespace Model
      * <code>emr-x.x.x</code>, where x.x.x is an Amazon EMR release version, for
      * example, <code>emr-5.14.0</code>. For more information about Amazon EMR release
      * versions and included application versions and features, see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/">http://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
+     * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/">https://docs.aws.amazon.com/emr/latest/ReleaseGuide/</a>.
      * The release label applies only to Amazon EMR releases versions 4.x and later.
      * Earlier versions use <code>AmiVersion</code>.</p>
      */
@@ -437,6 +495,12 @@ namespace Model
      * steps.</p>
      */
     inline bool GetAutoTerminate() const{ return m_autoTerminate; }
+
+    /**
+     * <p>Specifies whether the cluster should terminate after completing all
+     * steps.</p>
+     */
+    inline bool AutoTerminateHasBeenSet() const { return m_autoTerminateHasBeenSet; }
 
     /**
      * <p>Specifies whether the cluster should terminate after completing all
@@ -457,6 +521,13 @@ namespace Model
      * event of a cluster error.</p>
      */
     inline bool GetTerminationProtected() const{ return m_terminationProtected; }
+
+    /**
+     * <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2
+     * instances from being terminated by an API call or user intervention, or in the
+     * event of a cluster error.</p>
+     */
+    inline bool TerminationProtectedHasBeenSet() const { return m_terminationProtectedHasBeenSet; }
 
     /**
      * <p>Indicates whether Amazon EMR will lock the cluster to prevent the EC2
@@ -491,6 +562,16 @@ namespace Model
      * user that created the cluster can view and manage it. This value can be changed
      * using the <a>SetVisibleToAllUsers</a> action.</p>
      */
+    inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the cluster is visible to all IAM users of the AWS account
+     * associated with the cluster. If this value is set to <code>true</code>, all IAM
+     * users of that AWS account can view and manage the cluster if they have the
+     * proper policy permissions set. If this value is <code>false</code>, only the IAM
+     * user that created the cluster can view and manage it. This value can be changed
+     * using the <a>SetVisibleToAllUsers</a> action.</p>
+     */
     inline void SetVisibleToAllUsers(bool value) { m_visibleToAllUsersHasBeenSet = true; m_visibleToAllUsers = value; }
 
     /**
@@ -508,6 +589,11 @@ namespace Model
      * <p>The applications installed on this cluster.</p>
      */
     inline const Aws::Vector<Application>& GetApplications() const{ return m_applications; }
+
+    /**
+     * <p>The applications installed on this cluster.</p>
+     */
+    inline bool ApplicationsHasBeenSet() const { return m_applicationsHasBeenSet; }
 
     /**
      * <p>The applications installed on this cluster.</p>
@@ -548,6 +634,11 @@ namespace Model
     /**
      * <p>A list of tags associated with a cluster.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags associated with a cluster.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -581,6 +672,12 @@ namespace Model
      * resources on your behalf.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
+     * resources on your behalf.</p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The IAM role that will be assumed by the Amazon EMR service to access AWS
@@ -637,6 +734,16 @@ namespace Model
      * incremented by four. This result is only an approximation and does not reflect
      * the actual billing rate.</p>
      */
+    inline bool NormalizedInstanceHoursHasBeenSet() const { return m_normalizedInstanceHoursHasBeenSet; }
+
+    /**
+     * <p>An approximation of the cost of the cluster, represented in m1.small/hours.
+     * This value is incremented one time for every hour an m1.small instance runs.
+     * Larger instances are weighted more, so an EC2 instance that is roughly four
+     * times more expensive would result in the normalized instance hours being
+     * incremented by four. This result is only an approximation and does not reflect
+     * the actual billing rate.</p>
+     */
     inline void SetNormalizedInstanceHours(int value) { m_normalizedInstanceHoursHasBeenSet = true; m_normalizedInstanceHours = value; }
 
     /**
@@ -655,6 +762,12 @@ namespace Model
      * is the private DNS name. On a public subnet, this is the public DNS name.</p>
      */
     inline const Aws::String& GetMasterPublicDnsName() const{ return m_masterPublicDnsName; }
+
+    /**
+     * <p>The DNS name of the master node. If the cluster is on a private subnet, this
+     * is the private DNS name. On a public subnet, this is the public DNS name.</p>
+     */
+    inline bool MasterPublicDnsNameHasBeenSet() const { return m_masterPublicDnsNameHasBeenSet; }
 
     /**
      * <p>The DNS name of the master node. If the cluster is on a private subnet, this
@@ -703,6 +816,12 @@ namespace Model
      * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
      * supplied to the EMR cluster.</p>
      */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+
+    /**
+     * <p>Applies only to Amazon EMR releases 4.x and later. The list of Configurations
+     * supplied to the EMR cluster.</p>
+     */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
@@ -744,6 +863,11 @@ namespace Model
     /**
      * <p>The name of the security configuration applied to the cluster.</p>
      */
+    inline bool SecurityConfigurationHasBeenSet() const { return m_securityConfigurationHasBeenSet; }
+
+    /**
+     * <p>The name of the security configuration applied to the cluster.</p>
+     */
     inline void SetSecurityConfiguration(const Aws::String& value) { m_securityConfigurationHasBeenSet = true; m_securityConfiguration = value; }
 
     /**
@@ -779,6 +903,14 @@ namespace Model
      * an instance group.</p>
      */
     inline const Aws::String& GetAutoScalingRole() const{ return m_autoScalingRole; }
+
+    /**
+     * <p>An IAM role for automatic scaling policies. The default role is
+     * <code>EMR_AutoScaling_DefaultRole</code>. The IAM role provides permissions that
+     * the automatic scaling feature requires to launch and terminate EC2 instances in
+     * an instance group.</p>
+     */
+    inline bool AutoScalingRoleHasBeenSet() const { return m_autoScalingRoleHasBeenSet; }
 
     /**
      * <p>An IAM role for automatic scaling policies. The default role is
@@ -861,6 +993,23 @@ namespace Model
      * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
      * Amazon EMR earlier than 5.1.0.</p>
      */
+    inline bool ScaleDownBehaviorHasBeenSet() const { return m_scaleDownBehaviorHasBeenSet; }
+
+    /**
+     * <p>The way that individual Amazon EC2 instances terminate when an automatic
+     * scale-in activity occurs or an instance group is resized.
+     * <code>TERMINATE_AT_INSTANCE_HOUR</code> indicates that Amazon EMR terminates
+     * nodes at the instance-hour boundary, regardless of when the request to terminate
+     * the instance was submitted. This option is only available with Amazon EMR 5.1.0
+     * and later and is the default for clusters created using that version.
+     * <code>TERMINATE_AT_TASK_COMPLETION</code> indicates that Amazon EMR blacklists
+     * and drains tasks from nodes before terminating the Amazon EC2 instances,
+     * regardless of the instance-hour boundary. With either behavior, Amazon EMR
+     * removes the least active nodes first and blocks instance termination if it could
+     * lead to HDFS corruption. <code>TERMINATE_AT_TASK_COMPLETION</code> is available
+     * only in Amazon EMR version 4.1.0 and later, and is the default for versions of
+     * Amazon EMR earlier than 5.1.0.</p>
+     */
     inline void SetScaleDownBehavior(const ScaleDownBehavior& value) { m_scaleDownBehaviorHasBeenSet = true; m_scaleDownBehavior = value; }
 
     /**
@@ -925,6 +1074,12 @@ namespace Model
      * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
      * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
      */
+    inline bool CustomAmiIdHasBeenSet() const { return m_customAmiIdHasBeenSet; }
+
+    /**
+     * <p>Available only in Amazon EMR version 5.7.0 and later. The ID of a custom
+     * Amazon EBS-backed Linux AMI if the cluster uses a custom AMI.</p>
+     */
     inline void SetCustomAmiId(const Aws::String& value) { m_customAmiIdHasBeenSet = true; m_customAmiId = value; }
 
     /**
@@ -968,6 +1123,12 @@ namespace Model
      * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
      * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
      */
+    inline bool EbsRootVolumeSizeHasBeenSet() const { return m_ebsRootVolumeSizeHasBeenSet; }
+
+    /**
+     * <p>The size, in GiB, of the EBS root device volume of the Linux AMI that is used
+     * for each EC2 instance. Available in Amazon EMR version 4.x and later.</p>
+     */
     inline void SetEbsRootVolumeSize(int value) { m_ebsRootVolumeSizeHasBeenSet = true; m_ebsRootVolumeSize = value; }
 
     /**
@@ -983,6 +1144,13 @@ namespace Model
      * instance boots using the AMI.</p>
      */
     inline const RepoUpgradeOnBoot& GetRepoUpgradeOnBoot() const{ return m_repoUpgradeOnBoot; }
+
+    /**
+     * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
+     * updates that are applied from the Amazon Linux AMI package repositories when an
+     * instance boots using the AMI.</p>
+     */
+    inline bool RepoUpgradeOnBootHasBeenSet() const { return m_repoUpgradeOnBootHasBeenSet; }
 
     /**
      * <p>Applies only when <code>CustomAmiID</code> is used. Specifies the type of
@@ -1016,7 +1184,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline const KerberosAttributes& GetKerberosAttributes() const{ return m_kerberosAttributes; }
@@ -1024,7 +1192,15 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
+     */
+    inline bool KerberosAttributesHasBeenSet() const { return m_kerberosAttributesHasBeenSet; }
+
+    /**
+     * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
+     * using a security configuration. For more information see <a
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(const KerberosAttributes& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = value; }
@@ -1032,7 +1208,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline void SetKerberosAttributes(KerberosAttributes&& value) { m_kerberosAttributesHasBeenSet = true; m_kerberosAttributes = std::move(value); }
@@ -1040,7 +1216,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline Cluster& WithKerberosAttributes(const KerberosAttributes& value) { SetKerberosAttributes(value); return *this;}
@@ -1048,7 +1224,7 @@ namespace Model
     /**
      * <p>Attributes for Kerberos configuration when Kerberos authentication is enabled
      * using a security configuration. For more information see <a
-     * href="http://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
+     * href="https://docs.aws.amazon.com/emr/latest/ManagementGuide/emr-kerberos.html">Use
      * Kerberos Authentication</a> in the <i>EMR Management Guide</i>.</p>
      */
     inline Cluster& WithKerberosAttributes(KerberosAttributes&& value) { SetKerberosAttributes(std::move(value)); return *this;}

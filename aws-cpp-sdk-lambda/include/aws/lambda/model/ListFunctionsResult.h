@@ -50,37 +50,37 @@ namespace Model
 
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarker = value; }
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(Aws::String&& value) { m_nextMarker = std::move(value); }
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline void SetNextMarker(const char* value) { m_nextMarker.assign(value); }
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListFunctionsResult& WithNextMarker(const Aws::String& value) { SetNextMarker(value); return *this;}
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListFunctionsResult& WithNextMarker(Aws::String&& value) { SetNextMarker(std::move(value)); return *this;}
 
     /**
-     * <p>A string, present if there are more functions.</p>
+     * <p>The pagination token that's included if more results are available.</p>
      */
     inline ListFunctionsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Availability Zone for the modified Reserved Instances.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the modified Reserved Instances.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -89,17 +94,26 @@ namespace Model
 
 
     /**
-     * <p>The number of modified Reserved Instances.</p>
+     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
+     * field for a request.</p> </note>
      */
     inline int GetInstanceCount() const{ return m_instanceCount; }
 
     /**
-     * <p>The number of modified Reserved Instances.</p>
+     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
+     * field for a request.</p> </note>
+     */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
+     * field for a request.</p> </note>
      */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
-     * <p>The number of modified Reserved Instances.</p>
+     * <p>The number of modified Reserved Instances.</p> <note> <p>This is a required
+     * field for a request.</p> </note>
      */
     inline ReservedInstancesConfiguration& WithInstanceCount(int value) { SetInstanceCount(value); return *this;}
 
@@ -108,6 +122,11 @@ namespace Model
      * <p>The instance type for the modified Reserved Instances.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type for the modified Reserved Instances.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type for the modified Reserved Instances.</p>
@@ -135,6 +154,12 @@ namespace Model
      * EC2-Classic or EC2-VPC.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The network platform of the modified Reserved Instances, which is either
+     * EC2-Classic or EC2-VPC.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The network platform of the modified Reserved Instances, which is either
@@ -178,6 +203,12 @@ namespace Model
      * instances in a specific Availability Zone.</p>
      */
     inline const Scope& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>Whether the Reserved Instance is applied to instances in a region or
+     * instances in a specific Availability Zone.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>Whether the Reserved Instance is applied to instances in a region or

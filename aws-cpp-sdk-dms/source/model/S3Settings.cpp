@@ -36,7 +36,26 @@ S3Settings::S3Settings() :
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_compressionType(CompressionTypeValue::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_encryptionMode(EncryptionModeValue::NOT_SET),
+    m_encryptionModeHasBeenSet(false),
+    m_serverSideEncryptionKmsKeyIdHasBeenSet(false),
+    m_dataFormat(DataFormatValue::NOT_SET),
+    m_dataFormatHasBeenSet(false),
+    m_encodingType(EncodingTypeValue::NOT_SET),
+    m_encodingTypeHasBeenSet(false),
+    m_dictPageSizeLimit(0),
+    m_dictPageSizeLimitHasBeenSet(false),
+    m_rowGroupLength(0),
+    m_rowGroupLengthHasBeenSet(false),
+    m_dataPageSize(0),
+    m_dataPageSizeHasBeenSet(false),
+    m_parquetVersion(ParquetVersionValue::NOT_SET),
+    m_parquetVersionHasBeenSet(false),
+    m_enableStatistics(false),
+    m_enableStatisticsHasBeenSet(false),
+    m_cdcInsertsOnly(false),
+    m_cdcInsertsOnlyHasBeenSet(false)
 {
 }
 
@@ -48,7 +67,26 @@ S3Settings::S3Settings(JsonView jsonValue) :
     m_bucketFolderHasBeenSet(false),
     m_bucketNameHasBeenSet(false),
     m_compressionType(CompressionTypeValue::NOT_SET),
-    m_compressionTypeHasBeenSet(false)
+    m_compressionTypeHasBeenSet(false),
+    m_encryptionMode(EncryptionModeValue::NOT_SET),
+    m_encryptionModeHasBeenSet(false),
+    m_serverSideEncryptionKmsKeyIdHasBeenSet(false),
+    m_dataFormat(DataFormatValue::NOT_SET),
+    m_dataFormatHasBeenSet(false),
+    m_encodingType(EncodingTypeValue::NOT_SET),
+    m_encodingTypeHasBeenSet(false),
+    m_dictPageSizeLimit(0),
+    m_dictPageSizeLimitHasBeenSet(false),
+    m_rowGroupLength(0),
+    m_rowGroupLengthHasBeenSet(false),
+    m_dataPageSize(0),
+    m_dataPageSizeHasBeenSet(false),
+    m_parquetVersion(ParquetVersionValue::NOT_SET),
+    m_parquetVersionHasBeenSet(false),
+    m_enableStatistics(false),
+    m_enableStatisticsHasBeenSet(false),
+    m_cdcInsertsOnly(false),
+    m_cdcInsertsOnlyHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +142,76 @@ S3Settings& S3Settings::operator =(JsonView jsonValue)
     m_compressionTypeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("EncryptionMode"))
+  {
+    m_encryptionMode = EncryptionModeValueMapper::GetEncryptionModeValueForName(jsonValue.GetString("EncryptionMode"));
+
+    m_encryptionModeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ServerSideEncryptionKmsKeyId"))
+  {
+    m_serverSideEncryptionKmsKeyId = jsonValue.GetString("ServerSideEncryptionKmsKeyId");
+
+    m_serverSideEncryptionKmsKeyIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataFormat"))
+  {
+    m_dataFormat = DataFormatValueMapper::GetDataFormatValueForName(jsonValue.GetString("DataFormat"));
+
+    m_dataFormatHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EncodingType"))
+  {
+    m_encodingType = EncodingTypeValueMapper::GetEncodingTypeValueForName(jsonValue.GetString("EncodingType"));
+
+    m_encodingTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DictPageSizeLimit"))
+  {
+    m_dictPageSizeLimit = jsonValue.GetInteger("DictPageSizeLimit");
+
+    m_dictPageSizeLimitHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("RowGroupLength"))
+  {
+    m_rowGroupLength = jsonValue.GetInteger("RowGroupLength");
+
+    m_rowGroupLengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("DataPageSize"))
+  {
+    m_dataPageSize = jsonValue.GetInteger("DataPageSize");
+
+    m_dataPageSizeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ParquetVersion"))
+  {
+    m_parquetVersion = ParquetVersionValueMapper::GetParquetVersionValueForName(jsonValue.GetString("ParquetVersion"));
+
+    m_parquetVersionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("EnableStatistics"))
+  {
+    m_enableStatistics = jsonValue.GetBool("EnableStatistics");
+
+    m_enableStatisticsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("CdcInsertsOnly"))
+  {
+    m_cdcInsertsOnly = jsonValue.GetBool("CdcInsertsOnly");
+
+    m_cdcInsertsOnlyHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -150,6 +258,62 @@ JsonValue S3Settings::Jsonize() const
   if(m_compressionTypeHasBeenSet)
   {
    payload.WithString("CompressionType", CompressionTypeValueMapper::GetNameForCompressionTypeValue(m_compressionType));
+  }
+
+  if(m_encryptionModeHasBeenSet)
+  {
+   payload.WithString("EncryptionMode", EncryptionModeValueMapper::GetNameForEncryptionModeValue(m_encryptionMode));
+  }
+
+  if(m_serverSideEncryptionKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("ServerSideEncryptionKmsKeyId", m_serverSideEncryptionKmsKeyId);
+
+  }
+
+  if(m_dataFormatHasBeenSet)
+  {
+   payload.WithString("DataFormat", DataFormatValueMapper::GetNameForDataFormatValue(m_dataFormat));
+  }
+
+  if(m_encodingTypeHasBeenSet)
+  {
+   payload.WithString("EncodingType", EncodingTypeValueMapper::GetNameForEncodingTypeValue(m_encodingType));
+  }
+
+  if(m_dictPageSizeLimitHasBeenSet)
+  {
+   payload.WithInteger("DictPageSizeLimit", m_dictPageSizeLimit);
+
+  }
+
+  if(m_rowGroupLengthHasBeenSet)
+  {
+   payload.WithInteger("RowGroupLength", m_rowGroupLength);
+
+  }
+
+  if(m_dataPageSizeHasBeenSet)
+  {
+   payload.WithInteger("DataPageSize", m_dataPageSize);
+
+  }
+
+  if(m_parquetVersionHasBeenSet)
+  {
+   payload.WithString("ParquetVersion", ParquetVersionValueMapper::GetNameForParquetVersionValue(m_parquetVersion));
+  }
+
+  if(m_enableStatisticsHasBeenSet)
+  {
+   payload.WithBool("EnableStatistics", m_enableStatistics);
+
+  }
+
+  if(m_cdcInsertsOnlyHasBeenSet)
+  {
+   payload.WithBool("CdcInsertsOnly", m_cdcInsertsOnly);
+
   }
 
   return payload;

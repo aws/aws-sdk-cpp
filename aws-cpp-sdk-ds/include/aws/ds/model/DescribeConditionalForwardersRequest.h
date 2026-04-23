@@ -58,6 +58,12 @@ namespace Model
      * <p>The directory ID for which to get the list of associated conditional
      * forwarders.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The directory ID for which to get the list of associated conditional
+     * forwarders.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * conditional forwarders are returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoteDomainNames() const{ return m_remoteDomainNames; }
+
+    /**
+     * <p>The fully qualified domain names (FQDN) of the remote domains for which to
+     * get the list of associated conditional forwarders. If this member is null, all
+     * conditional forwarders are returned.</p>
+     */
+    inline bool RemoteDomainNamesHasBeenSet() const { return m_remoteDomainNamesHasBeenSet; }
 
     /**
      * <p>The fully qualified domain names (FQDN) of the remote domains for which to

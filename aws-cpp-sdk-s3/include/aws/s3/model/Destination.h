@@ -67,6 +67,15 @@ namespace Model
      * same bucket as the destination. A replication configuration can replicate
      * objects to only one destination bucket. </p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the bucket where you want Amazon S3 to
+     * store replicas of the object identified by the rule. </p> <p> If there are
+     * multiple rules in your replication configuration, all rules must specify the
+     * same bucket as the destination. A replication configuration can replicate
+     * objects to only one destination bucket. </p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -123,6 +132,15 @@ namespace Model
      * this is the account ID of the owner of the destination bucket. </p>
      */
     inline const Aws::String& GetAccount() const{ return m_account; }
+
+    /**
+     * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
+     * value only if Access Control Translation is enabled. </p> <p>In a cross-account
+     * scenario, if you change replica ownership to the AWS account that owns the
+     * destination bucket by adding the <code>AccessControlTranslation</code> element,
+     * this is the account ID of the owner of the destination bucket. </p>
+     */
+    inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
 
     /**
      * <p>The account ID of the destination bucket. Currently, Amazon S3 verifies this
@@ -189,6 +207,12 @@ namespace Model
      * <p> The class of storage used to store the object. By default Amazon S3 uses
      * storage class of the source object when creating a replica. </p>
      */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
+
+    /**
+     * <p> The class of storage used to store the object. By default Amazon S3 uses
+     * storage class of the source object when creating a replica. </p>
+     */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
@@ -219,6 +243,16 @@ namespace Model
      * the source object. </p>
      */
     inline const AccessControlTranslation& GetAccessControlTranslation() const{ return m_accessControlTranslation; }
+
+    /**
+     * <p>A container for information about access control for replicas. </p> <p>Use
+     * this element only in a cross-account scenario where source and destination
+     * bucket owners are not the same to change replica ownership to the AWS account
+     * that owns the destination bucket. If you don't add this element to the
+     * replication configuration, the replicas are owned by same AWS account that owns
+     * the source object. </p>
+     */
+    inline bool AccessControlTranslationHasBeenSet() const { return m_accessControlTranslationHasBeenSet; }
 
     /**
      * <p>A container for information about access control for replicas. </p> <p>Use
@@ -267,6 +301,13 @@ namespace Model
      * element. </p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>A container that provides information about encryption. If
+     * <code>SourceSelectionCriteria</code> is specified, you must specify this
+     * element. </p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>A container that provides information about encryption. If

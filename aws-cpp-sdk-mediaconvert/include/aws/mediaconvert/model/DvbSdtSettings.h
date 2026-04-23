@@ -49,19 +49,64 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
     inline const OutputSdt& GetOutputSdt() const{ return m_outputSdt; }
 
-    
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
+    inline bool OutputSdtHasBeenSet() const { return m_outputSdtHasBeenSet; }
+
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
     inline void SetOutputSdt(const OutputSdt& value) { m_outputSdtHasBeenSet = true; m_outputSdt = value; }
 
-    
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
     inline void SetOutputSdt(OutputSdt&& value) { m_outputSdtHasBeenSet = true; m_outputSdt = std::move(value); }
 
-    
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
     inline DvbSdtSettings& WithOutputSdt(const OutputSdt& value) { SetOutputSdt(value); return *this;}
 
-    
+    /**
+     * Selects method of inserting SDT information into output stream.  "Follow input
+     * SDT" copies SDT information from input stream to  output stream. "Follow input
+     * SDT if present" copies SDT information from  input stream to output stream if
+     * SDT information is present in the input, otherwise it will fall back on the
+     * user-defined values. Enter "SDT  Manually" means user will enter the SDT
+     * information. "No SDT" means output  stream will not contain SDT information.
+     */
     inline DvbSdtSettings& WithOutputSdt(OutputSdt&& value) { SetOutputSdt(std::move(value)); return *this;}
 
 
@@ -70,6 +115,12 @@ namespace Model
      * transport stream.
      */
     inline int GetSdtInterval() const{ return m_sdtInterval; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
+    inline bool SdtIntervalHasBeenSet() const { return m_sdtIntervalHasBeenSet; }
 
     /**
      * The number of milliseconds between instances of this table in the output
@@ -89,6 +140,12 @@ namespace Model
      * Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * The service name placed in the service_descriptor in the Service Description
+     * Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * The service name placed in the service_descriptor in the Service Description
@@ -132,6 +189,12 @@ namespace Model
      * Description Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceProviderName() const{ return m_serviceProviderName; }
+
+    /**
+     * The service provider name placed in the service_descriptor in the Service
+     * Description Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceProviderNameHasBeenSet() const { return m_serviceProviderNameHasBeenSet; }
 
     /**
      * The service provider name placed in the service_descriptor in the Service

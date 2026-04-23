@@ -36,6 +36,7 @@ Vpc::Vpc() :
     m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
@@ -52,6 +53,7 @@ Vpc::Vpc(const XmlNode& xmlNode) :
     m_state(VpcState::NOT_SET),
     m_stateHasBeenSet(false),
     m_vpcIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_instanceTenancy(Tenancy::NOT_SET),
     m_instanceTenancyHasBeenSet(false),
     m_ipv6CidrBlockAssociationSetHasBeenSet(false),
@@ -92,6 +94,12 @@ Vpc& Vpc::operator =(const XmlNode& xmlNode)
     {
       m_vpcId = StringUtils::Trim(vpcIdNode.GetText().c_str());
       m_vpcIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode instanceTenancyNode = resultNode.FirstChild("instanceTenancy");
     if(!instanceTenancyNode.IsNull())
@@ -168,6 +176,11 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location, unsigned i
       oStream << location << index << locationValue << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_instanceTenancyHasBeenSet)
   {
       oStream << location << index << locationValue << ".InstanceTenancy=" << TenancyMapper::GetNameForTenancy(m_instanceTenancy) << "&";
@@ -230,6 +243,10 @@ void Vpc::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_vpcIdHasBeenSet)
   {
       oStream << location << ".VpcId=" << StringUtils::URLEncode(m_vpcId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_instanceTenancyHasBeenSet)
   {

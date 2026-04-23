@@ -40,7 +40,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioDescription<p><h3>See Also:</h3>   <a
+   * Audio Description<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioDescription">AWS
    * API Reference</a></p>
    */
@@ -57,6 +57,11 @@ namespace Model
      * Advanced audio normalization settings.
      */
     inline const AudioNormalizationSettings& GetAudioNormalizationSettings() const{ return m_audioNormalizationSettings; }
+
+    /**
+     * Advanced audio normalization settings.
+     */
+    inline bool AudioNormalizationSettingsHasBeenSet() const { return m_audioNormalizationSettingsHasBeenSet; }
 
     /**
      * Advanced audio normalization settings.
@@ -83,6 +88,11 @@ namespace Model
      * The name of the AudioSelector used as the source for this AudioDescription.
      */
     inline const Aws::String& GetAudioSelectorName() const{ return m_audioSelectorName; }
+
+    /**
+     * The name of the AudioSelector used as the source for this AudioDescription.
+     */
+    inline bool AudioSelectorNameHasBeenSet() const { return m_audioSelectorNameHasBeenSet; }
 
     /**
      * The name of the AudioSelector used as the source for this AudioDescription.
@@ -125,6 +135,12 @@ namespace Model
      * Applies only if audioTypeControl is useConfigured. The values for audioType are
      * defined in ISO-IEC 13818-1.
      */
+    inline bool AudioTypeHasBeenSet() const { return m_audioTypeHasBeenSet; }
+
+    /**
+     * Applies only if audioTypeControl is useConfigured. The values for audioType are
+     * defined in ISO-IEC 13818-1.
+     */
     inline void SetAudioType(const AudioType& value) { m_audioTypeHasBeenSet = true; m_audioType = value; }
 
     /**
@@ -158,6 +174,19 @@ Note
      * broadcasterMixedAd.
      */
     inline const AudioDescriptionAudioTypeControl& GetAudioTypeControl() const{ return m_audioTypeControl; }
+
+    /**
+     * Determines how audio type is determined.
+  followInput: If the input contains an
+     * ISO 639 audioType, then that value is passed through to the output. If the input
+     * contains no ISO 639 audioType, the value in Audio Type is included in the
+     * output.
+  useConfigured: The value in Audio Type is included in the output.
+Note
+     * that this field and audioType are both ignored if inputType is
+     * broadcasterMixedAd.
+     */
+    inline bool AudioTypeControlHasBeenSet() const { return m_audioTypeControlHasBeenSet; }
 
     /**
      * Determines how audio type is determined.
@@ -220,6 +249,11 @@ Note
     /**
      * Audio codec settings.
      */
+    inline bool CodecSettingsHasBeenSet() const { return m_codecSettingsHasBeenSet; }
+
+    /**
+     * Audio codec settings.
+     */
     inline void SetCodecSettings(const AudioCodecSettings& value) { m_codecSettingsHasBeenSet = true; m_codecSettings = value; }
 
     /**
@@ -244,6 +278,13 @@ Note
      * specified in the input.
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * Indicates the language of the audio output track. Only used if
+     * languageControlMode is useConfigured, or there is no ISO 639 language code
+     * specified in the input.
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * Indicates the language of the audio output track. Only used if
@@ -302,6 +343,14 @@ Note
      * when useConfigured is set, or when followInput is selected but there is no ISO
      * 639 language code specified by the input.
      */
+    inline bool LanguageCodeControlHasBeenSet() const { return m_languageCodeControlHasBeenSet; }
+
+    /**
+     * Choosing followInput will cause the ISO 639 language code of the output to
+     * follow the ISO 639 language code of the input. The languageCode will be used
+     * when useConfigured is set, or when followInput is selected but there is no ISO
+     * 639 language code specified by the input.
+     */
     inline void SetLanguageCodeControl(const AudioDescriptionLanguageCodeControl& value) { m_languageCodeControlHasBeenSet = true; m_languageCodeControl = value; }
 
     /**
@@ -335,6 +384,13 @@ Note
      * Live Event.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of this AudioDescription. Outputs will use this name to uniquely
+     * identify this AudioDescription.  Description names should be unique within this
+     * Live Event.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of this AudioDescription. Outputs will use this name to uniquely
@@ -389,6 +445,12 @@ Note
      * Settings that control how input audio channels are remixed into the output audio
      * channels.
      */
+    inline bool RemixSettingsHasBeenSet() const { return m_remixSettingsHasBeenSet; }
+
+    /**
+     * Settings that control how input audio channels are remixed into the output audio
+     * channels.
+     */
     inline void SetRemixSettings(const RemixSettings& value) { m_remixSettingsHasBeenSet = true; m_remixSettings = value; }
 
     /**
@@ -415,6 +477,12 @@ Note
      * player (eg. English, or Director Commentary).
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the
+     * player (eg. English, or Director Commentary).
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * Used for MS Smooth and Apple HLS outputs. Indicates the name displayed by the

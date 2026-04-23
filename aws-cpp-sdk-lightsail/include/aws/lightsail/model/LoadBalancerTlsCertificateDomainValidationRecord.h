@@ -59,6 +59,12 @@ namespace Model
      * <p>A fully qualified domain name in the certificate. For example,
      * <code>example.com</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A fully qualified domain name in the certificate. For example,
+     * <code>example.com</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * validation.</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of validation record. For example, <code>CNAME</code> for domain
+     * validation.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of validation record. For example, <code>CNAME</code> for domain
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The value for that type.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value for that type.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -179,6 +196,11 @@ namespace Model
     /**
      * <p>The validation status. Valid values are listed below.</p>
      */
+    inline bool ValidationStatusHasBeenSet() const { return m_validationStatusHasBeenSet; }
+
+    /**
+     * <p>The validation status. Valid values are listed below.</p>
+     */
     inline void SetValidationStatus(const LoadBalancerTlsCertificateDomainStatus& value) { m_validationStatusHasBeenSet = true; m_validationStatus = value; }
 
     /**
@@ -201,6 +223,11 @@ namespace Model
      * <p>The domain name against which your SSL/TLS certificate was validated.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The domain name against which your SSL/TLS certificate was validated.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The domain name against which your SSL/TLS certificate was validated.</p>

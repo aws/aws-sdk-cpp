@@ -224,31 +224,36 @@ namespace Model
 
     /**
      * <p>Status of the template creation workflow.</p><p>Possible values: PREPARING |
-     * ACTIVE | EXPIRED</p>
+     * ACTIVE | EXPIRED
+ </p>
      */
     inline const Status& GetStatus() const{ return m_status; }
 
     /**
      * <p>Status of the template creation workflow.</p><p>Possible values: PREPARING |
-     * ACTIVE | EXPIRED</p>
+     * ACTIVE | EXPIRED
+ </p>
      */
     inline void SetStatus(const Status& value) { m_status = value; }
 
     /**
      * <p>Status of the template creation workflow.</p><p>Possible values: PREPARING |
-     * ACTIVE | EXPIRED</p>
+     * ACTIVE | EXPIRED
+ </p>
      */
     inline void SetStatus(Status&& value) { m_status = std::move(value); }
 
     /**
      * <p>Status of the template creation workflow.</p><p>Possible values: PREPARING |
-     * ACTIVE | EXPIRED</p>
+     * ACTIVE | EXPIRED
+ </p>
      */
     inline GetCloudFormationTemplateResult& WithStatus(const Status& value) { SetStatus(value); return *this;}
 
     /**
      * <p>Status of the template creation workflow.</p><p>Possible values: PREPARING |
-     * ACTIVE | EXPIRED</p>
+     * ACTIVE | EXPIRED
+ </p>
      */
     inline GetCloudFormationTemplateResult& WithStatus(Status&& value) { SetStatus(std::move(value)); return *this;}
 

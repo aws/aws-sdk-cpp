@@ -64,6 +64,13 @@ namespace Model
      * <p>Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> |
      * <code>PlatformStatus</code> | <code>PlatformOwner</code> </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The custom platform attribute to which the filter values are applied.</p>
+     * <p>Valid Values: <code>PlatformName</code> | <code>PlatformVersion</code> |
+     * <code>PlatformStatus</code> | <code>PlatformOwner</code> </p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -111,6 +118,16 @@ namespace Model
      * <code>begins_with</code> | <code>ends_with</code> </p>
      */
     inline const Aws::String& GetOperator() const{ return m_operator; }
+
+    /**
+     * <p>The operator to apply to the <code>Type</code> with each of the
+     * <code>Values</code>.</p> <p> Valid Values: <code>=</code> (equal to) |
+     * <code>!=</code> (not equal to) | <code>&lt;</code> (less than) |
+     * <code>&lt;=</code> (less than or equal to) | <code>&gt;</code> (greater than) |
+     * <code>&gt;=</code> (greater than or equal to) | <code>contains</code> |
+     * <code>begins_with</code> | <code>ends_with</code> </p>
+     */
+    inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
 
     /**
      * <p>The operator to apply to the <code>Type</code> with each of the
@@ -177,6 +194,11 @@ namespace Model
      * <p>The list of values applied to the custom platform attribute.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The list of values applied to the custom platform attribute.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The list of values applied to the custom platform attribute.</p>

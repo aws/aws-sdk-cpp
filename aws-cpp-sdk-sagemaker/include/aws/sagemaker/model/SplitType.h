@@ -28,7 +28,8 @@ namespace Model
     NOT_SET,
     None,
     Line,
-    RecordIO
+    RecordIO,
+    TFRecord
   };
 
 namespace SplitTypeMapper

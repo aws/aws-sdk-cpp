@@ -64,6 +64,15 @@ namespace Model
      * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
      * can associate with the specified private hosted zone.</p> </li> </ul>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The limit that you requested. Valid values include the following:</p> <ul>
+     * <li> <p> <b>MAX_RRSETS_BY_ZONE</b>: The maximum number of records that you can
+     * create in the specified hosted zone.</p> </li> <li> <p>
+     * <b>MAX_VPCS_ASSOCIATED_BY_ZONE</b>: The maximum number of Amazon VPCs that you
+     * can associate with the specified private hosted zone.</p> </li> </ul>
+     */
     inline void SetType(const HostedZoneLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -98,6 +107,11 @@ namespace Model
      * <p>The current value for the limit that is specified by <code>Type</code>.</p>
      */
     inline long long GetValue() const{ return m_value; }
+
+    /**
+     * <p>The current value for the limit that is specified by <code>Type</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The current value for the limit that is specified by <code>Type</code>.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The number of listed Reserved Instances in the state specified by the
      * <code>state</code>.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of listed Reserved Instances in the state specified by the
+     * <code>state</code>.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -72,6 +78,11 @@ namespace Model
      * <p>The states of the listed Reserved Instances.</p>
      */
     inline const ListingState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The states of the listed Reserved Instances.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The states of the listed Reserved Instances.</p>

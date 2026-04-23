@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>An Amazon S3 storage location.</p>
      */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 storage location.</p>
+     */
     inline void SetS3(const S3Storage& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**

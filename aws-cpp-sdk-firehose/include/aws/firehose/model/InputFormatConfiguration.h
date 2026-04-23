@@ -60,6 +60,13 @@ namespace Model
      * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
      * request.</p>
      */
+    inline bool DeserializerHasBeenSet() const { return m_deserializerHasBeenSet; }
+
+    /**
+     * <p>Specifies which deserializer to use. You can choose either the Apache Hive
+     * JSON SerDe or the OpenX JSON SerDe. If both are non-null, the server rejects the
+     * request.</p>
+     */
     inline void SetDeserializer(const Deserializer& value) { m_deserializerHasBeenSet = true; m_deserializer = value; }
 
     /**

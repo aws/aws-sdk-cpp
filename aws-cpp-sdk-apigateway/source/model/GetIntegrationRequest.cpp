@@ -31,7 +31,7 @@ GetIntegrationRequest::GetIntegrationRequest() :
 
 Aws::String GetIntegrationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

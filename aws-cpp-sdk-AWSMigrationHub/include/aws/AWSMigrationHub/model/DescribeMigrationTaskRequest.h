@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>The name of the ProgressUpdateStream. </p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier given to the MigrationTask.</p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+
+    /**
+     * <p>The identifier given to the MigrationTask.</p>
+     */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
      * <p>The identifier given to the MigrationTask.</p>

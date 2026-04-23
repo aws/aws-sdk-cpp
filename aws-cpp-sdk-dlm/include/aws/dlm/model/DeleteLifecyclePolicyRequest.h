@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier of the lifecycle policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the lifecycle policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**

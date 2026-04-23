@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the DAX resource to which tags should be added.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DAX resource to which tags should be added.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The tags to be assigned to the DAX resource. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the DAX resource. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the DAX resource. </p>

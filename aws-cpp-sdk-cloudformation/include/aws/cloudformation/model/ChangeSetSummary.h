@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the stack with which the change set is associated.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the stack with which the change set is associated.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The name of the stack with which the change set is associated.</p>
      */
     inline const Aws::String& GetStackName() const{ return m_stackName; }
+
+    /**
+     * <p>The name of the stack with which the change set is associated.</p>
+     */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
 
     /**
      * <p>The name of the stack with which the change set is associated.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The ID of the change set.</p>
      */
+    inline bool ChangeSetIdHasBeenSet() const { return m_changeSetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the change set.</p>
+     */
     inline void SetChangeSetId(const Aws::String& value) { m_changeSetIdHasBeenSet = true; m_changeSetId = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
      * <p>The name of the change set.</p>
      */
     inline const Aws::String& GetChangeSetName() const{ return m_changeSetName; }
+
+    /**
+     * <p>The name of the change set.</p>
+     */
+    inline bool ChangeSetNameHasBeenSet() const { return m_changeSetNameHasBeenSet; }
 
     /**
      * <p>The name of the change set.</p>
@@ -213,6 +233,15 @@ namespace Model
      * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
      * because the stack was already updated.</p>
      */
+    inline bool ExecutionStatusHasBeenSet() const { return m_executionStatusHasBeenSet; }
+
+    /**
+     * <p>If the change set execution status is <code>AVAILABLE</code>, you can execute
+     * the change set. If you can’t execute the change set, the status indicates why.
+     * For example, a change set might be in an <code>UNAVAILABLE</code> state because
+     * AWS CloudFormation is still creating it or in an <code>OBSOLETE</code> state
+     * because the stack was already updated.</p>
+     */
     inline void SetExecutionStatus(const ExecutionStatus& value) { m_executionStatusHasBeenSet = true; m_executionStatus = value; }
 
     /**
@@ -253,6 +282,12 @@ namespace Model
      * <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
      * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The state of the change set, such as <code>CREATE_IN_PROGRESS</code>,
+     * <code>CREATE_COMPLETE</code>, or <code>FAILED</code>.</p>
+     */
     inline void SetStatus(const ChangeSetStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -280,6 +315,13 @@ namespace Model
      * message.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A description of the change set's status. For example, if your change set is
+     * in the <code>FAILED</code> state, AWS CloudFormation shows the error
+     * message.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A description of the change set's status. For example, if your change set is
@@ -332,6 +374,11 @@ namespace Model
     /**
      * <p>The start time when the change set was created, in UTC.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The start time when the change set was created, in UTC.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -354,6 +401,11 @@ namespace Model
      * <p>Descriptive information about the change set.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Descriptive information about the change set.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Descriptive information about the change set.</p>

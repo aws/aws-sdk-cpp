@@ -38,7 +38,7 @@ GetUsageRequest::GetUsageRequest() :
 
 Aws::String GetUsageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetUsageRequest::AddQueryStringParameters(URI& uri) const

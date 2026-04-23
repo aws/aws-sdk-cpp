@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the target.</p>
      */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the target.</p>
+     */
     inline void SetTargetId(const Aws::String& value) { m_targetIdHasBeenSet = true; m_targetId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * same time.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code that indicates why the target removal failed. If the value is
+     * <code>ConcurrentModificationException</code>, too many requests were made at the
+     * same time.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code that indicates why the target removal failed. If the value is
@@ -138,6 +150,11 @@ namespace Model
      * <p>The error message that explains why the target removal failed.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message that explains why the target removal failed.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message that explains why the target removal failed.</p>

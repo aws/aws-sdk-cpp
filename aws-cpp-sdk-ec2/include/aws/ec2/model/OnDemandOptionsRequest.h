@@ -68,6 +68,16 @@ namespace Model
      * launch template override, launching the highest priority first. If you do not
      * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
      */
+    inline bool AllocationStrategyHasBeenSet() const { return m_allocationStrategyHasBeenSet; }
+
+    /**
+     * <p>The order of the launch template overrides to use in fulfilling On-Demand
+     * capacity. If you specify <code>lowest-price</code>, EC2 Fleet uses price to
+     * determine the order, launching the lowest price first. If you specify
+     * <code>prioritized</code>, EC2 Fleet uses the priority that you assigned to each
+     * launch template override, launching the highest priority first. If you do not
+     * specify a value, EC2 Fleet defaults to <code>lowest-price</code>.</p>
+     */
     inline void SetAllocationStrategy(const FleetOnDemandAllocationStrategy& value) { m_allocationStrategyHasBeenSet = true; m_allocationStrategy = value; }
 
     /**
@@ -111,6 +121,12 @@ namespace Model
      * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
      * Instances in the fleet.</p>
      */
+    inline bool SingleInstanceTypeHasBeenSet() const { return m_singleInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates that the fleet uses a single instance type to launch all On-Demand
+     * Instances in the fleet.</p>
+     */
     inline void SetSingleInstanceType(bool value) { m_singleInstanceTypeHasBeenSet = true; m_singleInstanceType = value; }
 
     /**
@@ -121,10 +137,41 @@ namespace Model
 
 
     /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline bool GetSingleAvailabilityZone() const{ return m_singleAvailabilityZone; }
+
+    /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline bool SingleAvailabilityZoneHasBeenSet() const { return m_singleAvailabilityZoneHasBeenSet; }
+
+    /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline void SetSingleAvailabilityZone(bool value) { m_singleAvailabilityZoneHasBeenSet = true; m_singleAvailabilityZone = value; }
+
+    /**
+     * <p>Indicates that the fleet launches all On-Demand Instances into a single
+     * Availability Zone.</p>
+     */
+    inline OnDemandOptionsRequest& WithSingleAvailabilityZone(bool value) { SetSingleAvailabilityZone(value); return *this;}
+
+
+    /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
      * minimum target capacity is not reached, the fleet launches no instances.</p>
      */
     inline int GetMinTargetCapacity() const{ return m_minTargetCapacity; }
+
+    /**
+     * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
+     * minimum target capacity is not reached, the fleet launches no instances.</p>
+     */
+    inline bool MinTargetCapacityHasBeenSet() const { return m_minTargetCapacityHasBeenSet; }
 
     /**
      * <p>The minimum target capacity for On-Demand Instances in the fleet. If the
@@ -145,6 +192,9 @@ namespace Model
 
     bool m_singleInstanceType;
     bool m_singleInstanceTypeHasBeenSet;
+
+    bool m_singleAvailabilityZone;
+    bool m_singleAvailabilityZoneHasBeenSet;
 
     int m_minTargetCapacity;
     bool m_minTargetCapacityHasBeenSet;

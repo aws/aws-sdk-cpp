@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The status of the EC2 security group.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the EC2 security group.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the EC2 Security Group.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
+
+    /**
+     * <p>The name of the EC2 Security Group.</p>
+     */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the EC2 Security Group.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>The AWS ID of the owner of the EC2 security group specified in the
      * <code>EC2SecurityGroupName</code> field. </p>
      */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The AWS ID of the owner of the EC2 security group specified in the
+     * <code>EC2SecurityGroupName</code> field. </p>
+     */
     inline void SetEC2SecurityGroupOwnerId(const Aws::String& value) { m_eC2SecurityGroupOwnerIdHasBeenSet = true; m_eC2SecurityGroupOwnerId = value; }
 
     /**
@@ -170,6 +186,11 @@ namespace Model
      * <p>The list of tags for the EC2 security group.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the EC2 security group.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the EC2 security group.</p>

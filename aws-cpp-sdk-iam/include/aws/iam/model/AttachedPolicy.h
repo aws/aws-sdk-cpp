@@ -40,7 +40,7 @@ namespace Model
    * <a>ListAttachedRolePolicies</a>, <a>ListAttachedUserPolicies</a>, and
    * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
    * about managed policies, refer to <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/AttachedPolicy">AWS
@@ -61,6 +61,11 @@ namespace Model
      * <p>The friendly name of the attached policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The friendly name of the attached policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The friendly name of the attached policy.</p>
@@ -95,6 +100,9 @@ namespace Model
 
     
     inline const Aws::String& GetPolicyArn() const{ return m_policyArn; }
+
+    
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
 
     
     inline void SetPolicyArn(const Aws::String& value) { m_policyArnHasBeenSet = true; m_policyArn = value; }

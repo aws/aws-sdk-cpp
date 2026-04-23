@@ -29,6 +29,7 @@ namespace Model
 {
 
 SpekeKeyProvider::SpekeKeyProvider() : 
+    m_certificateArnHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_systemIdsHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -36,6 +37,7 @@ SpekeKeyProvider::SpekeKeyProvider() :
 }
 
 SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue) : 
+    m_certificateArnHasBeenSet(false),
     m_resourceIdHasBeenSet(false),
     m_systemIdsHasBeenSet(false),
     m_urlHasBeenSet(false)
@@ -45,6 +47,13 @@ SpekeKeyProvider::SpekeKeyProvider(JsonView jsonValue) :
 
 SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("certificateArn"))
+  {
+    m_certificateArn = jsonValue.GetString("certificateArn");
+
+    m_certificateArnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("resourceId"))
   {
     m_resourceId = jsonValue.GetString("resourceId");
@@ -75,6 +84,12 @@ SpekeKeyProvider& SpekeKeyProvider::operator =(JsonView jsonValue)
 JsonValue SpekeKeyProvider::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_certificateArnHasBeenSet)
+  {
+   payload.WithString("certificateArn", m_certificateArn);
+
+  }
 
   if(m_resourceIdHasBeenSet)
   {

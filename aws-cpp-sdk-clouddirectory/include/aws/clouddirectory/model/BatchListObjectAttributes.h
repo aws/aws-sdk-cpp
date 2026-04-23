@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Reference of the object whose attributes need to be listed.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference of the object whose attributes need to be listed.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>
@@ -122,6 +132,12 @@ namespace Model
      * <p>The maximum number of items to be retrieved in a single call. This is an
      * approximate number.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to be retrieved in a single call. This is an
+     * approximate number.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -136,6 +152,12 @@ namespace Model
      * certain facet.</p>
      */
     inline const SchemaFacet& GetFacetFilter() const{ return m_facetFilter; }
+
+    /**
+     * <p>Used to filter the list of object attributes that are associated with a
+     * certain facet.</p>
+     */
+    inline bool FacetFilterHasBeenSet() const { return m_facetFilterHasBeenSet; }
 
     /**
      * <p>Used to filter the list of object attributes that are associated with a

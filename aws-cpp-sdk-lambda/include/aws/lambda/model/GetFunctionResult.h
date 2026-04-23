@@ -38,12 +38,6 @@ namespace Lambda
 {
 namespace Model
 {
-  /**
-   * <p>This response contains the object for the Lambda function location (see
-   * <a>FunctionCodeLocation</a>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/GetFunctionResponse">AWS
-   * API Reference</a></p>
-   */
   class AWS_LAMBDA_API GetFunctionResult
   {
   public:
@@ -53,179 +47,162 @@ namespace Model
 
 
     /**
-     * <p>The function's configuration.</p>
+     * <p>The configuration of the function or version.</p>
      */
     inline const FunctionConfiguration& GetConfiguration() const{ return m_configuration; }
 
     /**
-     * <p>The function's configuration.</p>
+     * <p>The configuration of the function or version.</p>
      */
     inline void SetConfiguration(const FunctionConfiguration& value) { m_configuration = value; }
 
     /**
-     * <p>The function's configuration.</p>
+     * <p>The configuration of the function or version.</p>
      */
     inline void SetConfiguration(FunctionConfiguration&& value) { m_configuration = std::move(value); }
 
     /**
-     * <p>The function's configuration.</p>
+     * <p>The configuration of the function or version.</p>
      */
     inline GetFunctionResult& WithConfiguration(const FunctionConfiguration& value) { SetConfiguration(value); return *this;}
 
     /**
-     * <p>The function's configuration.</p>
+     * <p>The configuration of the function or version.</p>
      */
     inline GetFunctionResult& WithConfiguration(FunctionConfiguration&& value) { SetConfiguration(std::move(value)); return *this;}
 
 
     /**
-     * <p>The function's code.</p>
+     * <p>The deployment package of the function or version.</p>
      */
     inline const FunctionCodeLocation& GetCode() const{ return m_code; }
 
     /**
-     * <p>The function's code.</p>
+     * <p>The deployment package of the function or version.</p>
      */
     inline void SetCode(const FunctionCodeLocation& value) { m_code = value; }
 
     /**
-     * <p>The function's code.</p>
+     * <p>The deployment package of the function or version.</p>
      */
     inline void SetCode(FunctionCodeLocation&& value) { m_code = std::move(value); }
 
     /**
-     * <p>The function's code.</p>
+     * <p>The deployment package of the function or version.</p>
      */
     inline GetFunctionResult& WithCode(const FunctionCodeLocation& value) { SetCode(value); return *this;}
 
     /**
-     * <p>The function's code.</p>
+     * <p>The deployment package of the function or version.</p>
      */
     inline GetFunctionResult& WithCode(FunctionCodeLocation&& value) { SetCode(std::move(value)); return *this;}
 
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>Returns the list of tags associated with the function. For more information,
-     * see <a href="http://docs.aws.amazon.com/lambda/latest/dg/tagging.html">Tagging
-     * Lambda Functions</a> in the <b>AWS Lambda Developer Guide</b>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/tagging.html">tags</a>.</p>
      */
     inline GetFunctionResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
 
 
     /**
-     * <p>The concurrent execution limit set for this function. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * concurrency</a>.</p>
      */
     inline const Concurrency& GetConcurrency() const{ return m_concurrency; }
 
     /**
-     * <p>The concurrent execution limit set for this function. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * concurrency</a>.</p>
      */
     inline void SetConcurrency(const Concurrency& value) { m_concurrency = value; }
 
     /**
-     * <p>The concurrent execution limit set for this function. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * concurrency</a>.</p>
      */
     inline void SetConcurrency(Concurrency&& value) { m_concurrency = std::move(value); }
 
     /**
-     * <p>The concurrent execution limit set for this function. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(const Concurrency& value) { SetConcurrency(value); return *this;}
 
     /**
-     * <p>The concurrent execution limit set for this function. For more information,
-     * see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The function's <a
+     * href="https://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">reserved
+     * concurrency</a>.</p>
      */
     inline GetFunctionResult& WithConcurrency(Concurrency&& value) { SetConcurrency(std::move(value)); return *this;}
 

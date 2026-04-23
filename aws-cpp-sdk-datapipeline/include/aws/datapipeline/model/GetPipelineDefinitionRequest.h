@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * or <code>active</code> to use the last definition that was activated.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the pipeline definition to retrieve. Set this parameter to
+     * <code>latest</code> (default) to use the last definition saved to the pipeline
+     * or <code>active</code> to use the last definition that was activated.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the pipeline definition to retrieve. Set this parameter to

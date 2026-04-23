@@ -66,6 +66,13 @@ namespace Model
      * instance inherits the default stack setting or to a a version number for a fixed
      * agent version.</p>
      */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
+
+    /**
+     * <p>The agent version. This parameter is set to <code>INHERIT</code> if the
+     * instance inherits the default stack setting or to a a version number for a fixed
+     * agent version.</p>
+     */
     inline void SetAgentVersion(const Aws::String& value) { m_agentVersionHasBeenSet = true; m_agentVersion = value; }
 
     /**
@@ -111,6 +118,14 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
+    /**
+     * <p>A custom AMI ID to be used to create the instance. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinginstances-custom-ami.html">Instances</a>
+     * </p>
+     */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
      * <p>A custom AMI ID to be used to create the instance. For more information, see
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The instance architecture: "i386" or "x86_64".</p>
      */
+    inline bool ArchitectureHasBeenSet() const { return m_architectureHasBeenSet; }
+
+    /**
+     * <p>The instance architecture: "i386" or "x86_64".</p>
+     */
     inline void SetArchitecture(const Architecture& value) { m_architectureHasBeenSet = true; m_architecture = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * <p>The instance's Amazon Resource Number (ARN).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The instance's Amazon Resource Number (ARN).</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The instance's Amazon Resource Number (ARN).</p>
@@ -231,6 +256,11 @@ namespace Model
     /**
      * <p>For load-based or time-based instances, the type.</p>
      */
+    inline bool AutoScalingTypeHasBeenSet() const { return m_autoScalingTypeHasBeenSet; }
+
+    /**
+     * <p>For load-based or time-based instances, the type.</p>
+     */
     inline void SetAutoScalingType(const AutoScalingType& value) { m_autoScalingTypeHasBeenSet = true; m_autoScalingType = value; }
 
     /**
@@ -255,6 +285,13 @@ namespace Model
      * Endpoints</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The instance Availability Zone. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html">Regions and
+     * Endpoints</a>.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The instance Availability Zone. For more information, see <a
@@ -309,6 +346,12 @@ namespace Model
      * <p>An array of <code>BlockDeviceMapping</code> objects that specify the
      * instance's block device mappings.</p>
      */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+
+    /**
+     * <p>An array of <code>BlockDeviceMapping</code> objects that specify the
+     * instance's block device mappings.</p>
+     */
     inline void SetBlockDeviceMappings(const Aws::Vector<BlockDeviceMapping>& value) { m_blockDeviceMappingsHasBeenSet = true; m_blockDeviceMappings = value; }
 
     /**
@@ -350,6 +393,11 @@ namespace Model
     /**
      * <p>The time that the instance was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time that the instance was created.</p>
+     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -386,6 +434,11 @@ namespace Model
     /**
      * <p>Whether this is an Amazon EBS-optimized instance.</p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>Whether this is an Amazon EBS-optimized instance.</p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -398,6 +451,11 @@ namespace Model
      * <p>The ID of the associated Amazon EC2 instance.</p>
      */
     inline const Aws::String& GetEc2InstanceId() const{ return m_ec2InstanceId; }
+
+    /**
+     * <p>The ID of the associated Amazon EC2 instance.</p>
+     */
+    inline bool Ec2InstanceIdHasBeenSet() const { return m_ec2InstanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the associated Amazon EC2 instance.</p>
@@ -438,6 +496,11 @@ namespace Model
     /**
      * <p>For container instances, the Amazon ECS cluster's ARN.</p>
      */
+    inline bool EcsClusterArnHasBeenSet() const { return m_ecsClusterArnHasBeenSet; }
+
+    /**
+     * <p>For container instances, the Amazon ECS cluster's ARN.</p>
+     */
     inline void SetEcsClusterArn(const Aws::String& value) { m_ecsClusterArnHasBeenSet = true; m_ecsClusterArn = value; }
 
     /**
@@ -470,6 +533,11 @@ namespace Model
      * <p>For container instances, the instance's ARN.</p>
      */
     inline const Aws::String& GetEcsContainerInstanceArn() const{ return m_ecsContainerInstanceArn; }
+
+    /**
+     * <p>For container instances, the instance's ARN.</p>
+     */
+    inline bool EcsContainerInstanceArnHasBeenSet() const { return m_ecsContainerInstanceArnHasBeenSet; }
 
     /**
      * <p>For container instances, the instance's ARN.</p>
@@ -508,6 +576,13 @@ namespace Model
      * IP address </a>.</p>
      */
     inline const Aws::String& GetElasticIp() const{ return m_elasticIp; }
+
+    /**
+     * <p>The instance <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address </a>.</p>
+     */
+    inline bool ElasticIpHasBeenSet() const { return m_elasticIpHasBeenSet; }
 
     /**
      * <p>The instance <a
@@ -560,6 +635,11 @@ namespace Model
     /**
      * <p>The instance host name.</p>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The instance host name.</p>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
@@ -593,6 +673,12 @@ namespace Model
      * <code>on-premises</code>.</p>
      */
     inline const Aws::String& GetInfrastructureClass() const{ return m_infrastructureClass; }
+
+    /**
+     * <p>For registered instances, the infrastructure class: <code>ec2</code> or
+     * <code>on-premises</code>.</p>
+     */
+    inline bool InfrastructureClassHasBeenSet() const { return m_infrastructureClassHasBeenSet; }
 
     /**
      * <p>For registered instances, the infrastructure class: <code>ec2</code> or
@@ -653,6 +739,18 @@ namespace Model
      * recommend using the default value of <code>true</code>, to ensure that your
      * instances have the latest security updates.</p> </note>
      */
+    inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
+
+    /**
+     * <p>Whether to install operating system and package updates when the instance
+     * boots. The default value is <code>true</code>. If this value is set to
+     * <code>false</code>, you must then update your instances manually by using
+     * <a>CreateDeployment</a> to run the <code>update_dependencies</code> stack
+     * command or by manually running <code>yum</code> (Amazon Linux) or
+     * <code>apt-get</code> (Ubuntu) on the instances. </p> <note> <p>We strongly
+     * recommend using the default value of <code>true</code>, to ensure that your
+     * instances have the latest security updates.</p> </note>
+     */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
     /**
@@ -672,6 +770,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>
@@ -711,6 +814,14 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+
+    /**
+     * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
+     * see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.</p>
+     */
+    inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
 
     /**
      * <p>The ARN of the instance's IAM profile. For more information about IAM ARNs,
@@ -769,6 +880,11 @@ namespace Model
     /**
      * <p>The instance type, such as <code>t2.micro</code>.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type, such as <code>t2.micro</code>.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -802,6 +918,12 @@ namespace Model
      * <a>DescribeServiceErrors</a>.</p>
      */
     inline const Aws::String& GetLastServiceErrorId() const{ return m_lastServiceErrorId; }
+
+    /**
+     * <p>The ID of the last service error. For more information, call
+     * <a>DescribeServiceErrors</a>.</p>
+     */
+    inline bool LastServiceErrorIdHasBeenSet() const { return m_lastServiceErrorIdHasBeenSet; }
 
     /**
      * <p>The ID of the last service error. For more information, call
@@ -848,6 +970,11 @@ namespace Model
     /**
      * <p>An array containing the instance layer IDs.</p>
      */
+    inline bool LayerIdsHasBeenSet() const { return m_layerIdsHasBeenSet; }
+
+    /**
+     * <p>An array containing the instance layer IDs.</p>
+     */
     inline void SetLayerIds(const Aws::Vector<Aws::String>& value) { m_layerIdsHasBeenSet = true; m_layerIds = value; }
 
     /**
@@ -889,6 +1016,11 @@ namespace Model
     /**
      * <p>The instance's operating system.</p>
      */
+    inline bool OsHasBeenSet() const { return m_osHasBeenSet; }
+
+    /**
+     * <p>The instance's operating system.</p>
+     */
     inline void SetOs(const Aws::String& value) { m_osHasBeenSet = true; m_os = value; }
 
     /**
@@ -921,6 +1053,11 @@ namespace Model
      * <p>The instance's platform.</p>
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * <p>The instance's platform.</p>
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * <p>The instance's platform.</p>
@@ -961,6 +1098,11 @@ namespace Model
     /**
      * <p>The instance's private DNS name.</p>
      */
+    inline bool PrivateDnsHasBeenSet() const { return m_privateDnsHasBeenSet; }
+
+    /**
+     * <p>The instance's private DNS name.</p>
+     */
     inline void SetPrivateDns(const Aws::String& value) { m_privateDnsHasBeenSet = true; m_privateDns = value; }
 
     /**
@@ -993,6 +1135,11 @@ namespace Model
      * <p>The instance's private IP address.</p>
      */
     inline const Aws::String& GetPrivateIp() const{ return m_privateIp; }
+
+    /**
+     * <p>The instance's private IP address.</p>
+     */
+    inline bool PrivateIpHasBeenSet() const { return m_privateIpHasBeenSet; }
 
     /**
      * <p>The instance's private IP address.</p>
@@ -1033,6 +1180,11 @@ namespace Model
     /**
      * <p>The instance public DNS name.</p>
      */
+    inline bool PublicDnsHasBeenSet() const { return m_publicDnsHasBeenSet; }
+
+    /**
+     * <p>The instance public DNS name.</p>
+     */
     inline void SetPublicDns(const Aws::String& value) { m_publicDnsHasBeenSet = true; m_publicDns = value; }
 
     /**
@@ -1065,6 +1217,11 @@ namespace Model
      * <p>The instance public IP address.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The instance public IP address.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The instance public IP address.</p>
@@ -1105,6 +1262,11 @@ namespace Model
     /**
      * <p>For registered instances, who performed the registration.</p>
      */
+    inline bool RegisteredByHasBeenSet() const { return m_registeredByHasBeenSet; }
+
+    /**
+     * <p>For registered instances, who performed the registration.</p>
+     */
     inline void SetRegisteredBy(const Aws::String& value) { m_registeredByHasBeenSet = true; m_registeredBy = value; }
 
     /**
@@ -1137,6 +1299,11 @@ namespace Model
      * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
      */
     inline const Aws::String& GetReportedAgentVersion() const{ return m_reportedAgentVersion; }
+
+    /**
+     * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
+     */
+    inline bool ReportedAgentVersionHasBeenSet() const { return m_reportedAgentVersionHasBeenSet; }
 
     /**
      * <p>The instance's reported AWS OpsWorks Stacks agent version.</p>
@@ -1177,6 +1344,11 @@ namespace Model
     /**
      * <p>For registered instances, the reported operating system.</p>
      */
+    inline bool ReportedOsHasBeenSet() const { return m_reportedOsHasBeenSet; }
+
+    /**
+     * <p>For registered instances, the reported operating system.</p>
+     */
     inline void SetReportedOs(const ReportedOs& value) { m_reportedOsHasBeenSet = true; m_reportedOs = value; }
 
     /**
@@ -1201,6 +1373,13 @@ namespace Model
      * for the Root Device</a>.</p>
      */
     inline const RootDeviceType& GetRootDeviceType() const{ return m_rootDeviceType; }
+
+    /**
+     * <p>The instance's root device type. For more information, see <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ComponentsAMIs.html#storage-for-the-root-device">Storage
+     * for the Root Device</a>.</p>
+     */
+    inline bool RootDeviceTypeHasBeenSet() const { return m_rootDeviceTypeHasBeenSet; }
 
     /**
      * <p>The instance's root device type. For more information, see <a
@@ -1239,6 +1418,11 @@ namespace Model
     /**
      * <p>The root device volume ID.</p>
      */
+    inline bool RootDeviceVolumeIdHasBeenSet() const { return m_rootDeviceVolumeIdHasBeenSet; }
+
+    /**
+     * <p>The root device volume ID.</p>
+     */
     inline void SetRootDeviceVolumeId(const Aws::String& value) { m_rootDeviceVolumeIdHasBeenSet = true; m_rootDeviceVolumeId = value; }
 
     /**
@@ -1271,6 +1455,11 @@ namespace Model
      * <p>An array containing the instance security group IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>An array containing the instance security group IDs.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>An array containing the instance security group IDs.</p>
@@ -1316,6 +1505,11 @@ namespace Model
     /**
      * <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
      */
+    inline bool SshHostDsaKeyFingerprintHasBeenSet() const { return m_sshHostDsaKeyFingerprintHasBeenSet; }
+
+    /**
+     * <p>The SSH key's Deep Security Agent (DSA) fingerprint.</p>
+     */
     inline void SetSshHostDsaKeyFingerprint(const Aws::String& value) { m_sshHostDsaKeyFingerprintHasBeenSet = true; m_sshHostDsaKeyFingerprint = value; }
 
     /**
@@ -1348,6 +1542,11 @@ namespace Model
      * <p>The SSH key's RSA fingerprint.</p>
      */
     inline const Aws::String& GetSshHostRsaKeyFingerprint() const{ return m_sshHostRsaKeyFingerprint; }
+
+    /**
+     * <p>The SSH key's RSA fingerprint.</p>
+     */
+    inline bool SshHostRsaKeyFingerprintHasBeenSet() const { return m_sshHostRsaKeyFingerprintHasBeenSet; }
 
     /**
      * <p>The SSH key's RSA fingerprint.</p>
@@ -1388,6 +1587,11 @@ namespace Model
     /**
      * <p>The instance's Amazon EC2 key-pair name.</p>
      */
+    inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
+
+    /**
+     * <p>The instance's Amazon EC2 key-pair name.</p>
+     */
     inline void SetSshKeyName(const Aws::String& value) { m_sshKeyNameHasBeenSet = true; m_sshKeyName = value; }
 
     /**
@@ -1420,6 +1624,11 @@ namespace Model
      * <p>The stack ID.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The stack ID.</p>
@@ -1465,6 +1674,20 @@ namespace Model
      * <code>terminating</code> </p> </li> </ul>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
+     * <p> <code>connection_lost</code> </p> </li> <li> <p> <code>online</code> </p>
+     * </li> <li> <p> <code>pending</code> </p> </li> <li> <p> <code>rebooting</code>
+     * </p> </li> <li> <p> <code>requested</code> </p> </li> <li> <p>
+     * <code>running_setup</code> </p> </li> <li> <p> <code>setup_failed</code> </p>
+     * </li> <li> <p> <code>shutting_down</code> </p> </li> <li> <p>
+     * <code>start_failed</code> </p> </li> <li> <p> <code>stop_failed</code> </p>
+     * </li> <li> <p> <code>stopped</code> </p> </li> <li> <p> <code>stopping</code>
+     * </p> </li> <li> <p> <code>terminated</code> </p> </li> <li> <p>
+     * <code>terminating</code> </p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The instance status:</p> <ul> <li> <p> <code>booting</code> </p> </li> <li>
@@ -1561,6 +1784,12 @@ namespace Model
      * <p>The instance's subnet ID; applicable only if the stack is running in a
      * VPC.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The instance's subnet ID; applicable only if the stack is running in a
+     * VPC.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -1604,6 +1833,12 @@ namespace Model
      * <p>The instance's tenancy option, such as <code>dedicated</code> or
      * <code>host</code>.</p>
      */
+    inline bool TenancyHasBeenSet() const { return m_tenancyHasBeenSet; }
+
+    /**
+     * <p>The instance's tenancy option, such as <code>dedicated</code> or
+     * <code>host</code>.</p>
+     */
     inline void SetTenancy(const Aws::String& value) { m_tenancyHasBeenSet = true; m_tenancy = value; }
 
     /**
@@ -1642,6 +1877,12 @@ namespace Model
      * <code>hvm</code>.</p>
      */
     inline const VirtualizationType& GetVirtualizationType() const{ return m_virtualizationType; }
+
+    /**
+     * <p>The instance's virtualization type: <code>paravirtual</code> or
+     * <code>hvm</code>.</p>
+     */
+    inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
 
     /**
      * <p>The instance's virtualization type: <code>paravirtual</code> or

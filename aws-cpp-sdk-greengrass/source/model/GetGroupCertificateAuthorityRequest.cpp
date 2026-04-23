@@ -30,7 +30,7 @@ GetGroupCertificateAuthorityRequest::GetGroupCertificateAuthorityRequest() :
 
 Aws::String GetGroupCertificateAuthorityRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

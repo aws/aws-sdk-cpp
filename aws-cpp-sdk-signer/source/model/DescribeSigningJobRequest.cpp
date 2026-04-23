@@ -29,7 +29,7 @@ DescribeSigningJobRequest::DescribeSigningJobRequest() :
 
 Aws::String DescribeSigningJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

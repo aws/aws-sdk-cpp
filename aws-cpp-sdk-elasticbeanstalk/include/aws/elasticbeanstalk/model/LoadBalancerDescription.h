@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the LoadBalancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the LoadBalancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The domain name of the LoadBalancer.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain name of the LoadBalancer.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>A list of Listeners used by the LoadBalancer.</p>
      */
     inline const Aws::Vector<Listener>& GetListeners() const{ return m_listeners; }
+
+    /**
+     * <p>A list of Listeners used by the LoadBalancer.</p>
+     */
+    inline bool ListenersHasBeenSet() const { return m_listenersHasBeenSet; }
 
     /**
      * <p>A list of Listeners used by the LoadBalancer.</p>

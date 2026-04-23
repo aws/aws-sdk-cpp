@@ -38,6 +38,9 @@ namespace Aws
         static const int Windows_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Windows with SQL Server Enterprise");
         static const int Windows_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Windows with SQL Server Standard");
         static const int Windows_with_SQL_Server_Web_HASH = HashingUtils::HashString("Windows with SQL Server Web");
+        static const int Linux_with_SQL_Server_Standard_HASH = HashingUtils::HashString("Linux with SQL Server Standard");
+        static const int Linux_with_SQL_Server_Web_HASH = HashingUtils::HashString("Linux with SQL Server Web");
+        static const int Linux_with_SQL_Server_Enterprise_HASH = HashingUtils::HashString("Linux with SQL Server Enterprise");
 
 
         CapacityReservationInstancePlatform GetCapacityReservationInstancePlatformForName(const Aws::String& name)
@@ -75,6 +78,18 @@ namespace Aws
           {
             return CapacityReservationInstancePlatform::Windows_with_SQL_Server_Web;
           }
+          else if (hashCode == Linux_with_SQL_Server_Standard_HASH)
+          {
+            return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Standard;
+          }
+          else if (hashCode == Linux_with_SQL_Server_Web_HASH)
+          {
+            return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Web;
+          }
+          else if (hashCode == Linux_with_SQL_Server_Enterprise_HASH)
+          {
+            return CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -105,6 +120,12 @@ namespace Aws
             return "Windows with SQL Server Standard";
           case CapacityReservationInstancePlatform::Windows_with_SQL_Server_Web:
             return "Windows with SQL Server Web";
+          case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Standard:
+            return "Linux with SQL Server Standard";
+          case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Web:
+            return "Linux with SQL Server Web";
+          case CapacityReservationInstancePlatform::Linux_with_SQL_Server_Enterprise:
+            return "Linux with SQL Server Enterprise";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -112,7 +133,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

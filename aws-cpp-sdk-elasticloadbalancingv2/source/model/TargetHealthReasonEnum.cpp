@@ -40,6 +40,7 @@ namespace Aws
         static const int Target_DeregistrationInProgress_HASH = HashingUtils::HashString("Target.DeregistrationInProgress");
         static const int Target_InvalidState_HASH = HashingUtils::HashString("Target.InvalidState");
         static const int Target_IpUnusable_HASH = HashingUtils::HashString("Target.IpUnusable");
+        static const int Target_HealthCheckDisabled_HASH = HashingUtils::HashString("Target.HealthCheckDisabled");
         static const int Elb_InternalError_HASH = HashingUtils::HashString("Elb.InternalError");
 
 
@@ -86,6 +87,10 @@ namespace Aws
           {
             return TargetHealthReasonEnum::Target_IpUnusable;
           }
+          else if (hashCode == Target_HealthCheckDisabled_HASH)
+          {
+            return TargetHealthReasonEnum::Target_HealthCheckDisabled;
+          }
           else if (hashCode == Elb_InternalError_HASH)
           {
             return TargetHealthReasonEnum::Elb_InternalError;
@@ -124,6 +129,8 @@ namespace Aws
             return "Target.InvalidState";
           case TargetHealthReasonEnum::Target_IpUnusable:
             return "Target.IpUnusable";
+          case TargetHealthReasonEnum::Target_HealthCheckDisabled:
+            return "Target.HealthCheckDisabled";
           case TargetHealthReasonEnum::Elb_InternalError:
             return "Elb.InternalError";
           default:
@@ -133,7 +140,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Identifiers of the job flows to receive the new visibility setting.</p>
      */
+    inline bool JobFlowIdsHasBeenSet() const { return m_jobFlowIdsHasBeenSet; }
+
+    /**
+     * <p>Identifiers of the job flows to receive the new visibility setting.</p>
+     */
     inline void SetJobFlowIds(const Aws::Vector<Aws::String>& value) { m_jobFlowIdsHasBeenSet = true; m_jobFlowIds = value; }
 
     /**
@@ -97,6 +102,15 @@ namespace Model
      * a cluster can view and manage it.</p>
      */
     inline bool GetVisibleToAllUsers() const{ return m_visibleToAllUsers; }
+
+    /**
+     * <p>Whether the specified clusters are visible to all IAM users of the AWS
+     * account associated with the cluster. If this value is set to True, all IAM users
+     * of that AWS account can view and, if they have the proper IAM policy permissions
+     * set, manage the clusters. If it is set to False, only the IAM user that created
+     * a cluster can view and manage it.</p>
+     */
+    inline bool VisibleToAllUsersHasBeenSet() const { return m_visibleToAllUsersHasBeenSet; }
 
     /**
      * <p>Whether the specified clusters are visible to all IAM users of the AWS

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the transform job that you want to view details of.</p>
      */
+    inline bool TransformJobNameHasBeenSet() const { return m_transformJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the transform job that you want to view details of.</p>
+     */
     inline void SetTransformJobName(const Aws::String& value) { m_transformJobNameHasBeenSet = true; m_transformJobName = value; }
 
     /**

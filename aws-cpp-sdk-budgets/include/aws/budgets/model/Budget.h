@@ -72,6 +72,13 @@ namespace Model
      * <code>:</code> and <code>\</code> characters aren't allowed in
      * <code>BudgetName</code>.</p>
      */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
+
+    /**
+     * <p>The name of a budget. The name must be unique within accounts. The
+     * <code>:</code> and <code>\</code> characters aren't allowed in
+     * <code>BudgetName</code>.</p>
+     */
     inline void SetBudgetName(const Aws::String& value) { m_budgetNameHasBeenSet = true; m_budgetName = value; }
 
     /**
@@ -126,6 +133,15 @@ namespace Model
      * utilization or coverage budgets default to <code>100</code>, which is the only
      * valid value for RI utilization or coverage budgets.</p>
      */
+    inline bool BudgetLimitHasBeenSet() const { return m_budgetLimitHasBeenSet; }
+
+    /**
+     * <p>The total amount of cost, usage, RI utilization, or RI coverage that you want
+     * to track with your budget.</p> <p> <code>BudgetLimit</code> is required for cost
+     * or usage budgets, but optional for RI utilization or coverage budgets. RI
+     * utilization or coverage budgets default to <code>100</code>, which is the only
+     * valid value for RI utilization or coverage budgets.</p>
+     */
     inline void SetBudgetLimit(const Spend& value) { m_budgetLimitHasBeenSet = true; m_budgetLimit = value; }
 
     /**
@@ -165,6 +181,16 @@ namespace Model
      * Service</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetCostFilters() const{ return m_costFilters; }
+
+    /**
+     * <p>The cost filters, such as service or region, that are applied to a
+     * budget.</p> <p>AWS Budgets supports the following services as a filter for RI
+     * budgets:</p> <ul> <li> <p>Amazon Elastic Compute Cloud - Compute</p> </li> <li>
+     * <p>Amazon Redshift</p> </li> <li> <p>Amazon Relational Database Service</p>
+     * </li> <li> <p>Amazon ElastiCache</p> </li> <li> <p>Amazon Elasticsearch
+     * Service</p> </li> </ul>
+     */
+    inline bool CostFiltersHasBeenSet() const { return m_costFiltersHasBeenSet; }
 
     /**
      * <p>The cost filters, such as service or region, that are applied to a
@@ -279,6 +305,13 @@ namespace Model
      * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
      * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
      */
+    inline bool CostTypesHasBeenSet() const { return m_costTypesHasBeenSet; }
+
+    /**
+     * <p>The types of costs that are included in this <code>COST</code> budget.</p>
+     * <p> <code>USAGE</code>, <code>RI_UTILIZATION</code>, and
+     * <code>RI_COVERAGE</code> budgets do not have <code>CostTypes</code>.</p>
+     */
     inline void SetCostTypes(const CostTypes& value) { m_costTypesHasBeenSet = true; m_costTypes = value; }
 
     /**
@@ -309,6 +342,13 @@ namespace Model
      * <code>RI_COVERAGE</code> budgets.</p>
      */
     inline const TimeUnit& GetTimeUnit() const{ return m_timeUnit; }
+
+    /**
+     * <p>The length of time until a budget resets the actual and forecasted spend.
+     * <code>DAILY</code> is available only for <code>RI_UTILIZATION</code> and
+     * <code>RI_COVERAGE</code> budgets.</p>
+     */
+    inline bool TimeUnitHasBeenSet() const { return m_timeUnitHasBeenSet; }
 
     /**
      * <p>The length of time until a budget resets the actual and forecasted spend.
@@ -355,6 +395,23 @@ namespace Model
      * the budget and all associated notifications and subscribers.</p>
      */
     inline const TimePeriod& GetTimePeriod() const{ return m_timePeriod; }
+
+    /**
+     * <p>The period of time that is covered by a budget. The period has a start date
+     * and an end date. The start date must come before the end date. The end date must
+     * come before <code>06/15/87 00:00 UTC</code>. </p> <p>If you create your budget
+     * and don't specify a start date, AWS defaults to the start of your chosen time
+     * period (DAILY, MONTHLY, QUARTERLY, or ANNUALLY). For example, if you created
+     * your budget on January 24, 2018, chose <code>DAILY</code>, and didn't set a
+     * start date, AWS set your start date to <code>01/24/18 00:00 UTC</code>. If you
+     * chose <code>MONTHLY</code>, AWS set your start date to <code>01/01/18 00:00
+     * UTC</code>. If you didn't specify an end date, AWS set your end date to
+     * <code>06/15/87 00:00 UTC</code>. The defaults are the same for the AWS Billing
+     * and Cost Management console and the API. </p> <p>You can change either date with
+     * the <code>UpdateBudget</code> operation.</p> <p>After the end date, AWS deletes
+     * the budget and all associated notifications and subscribers.</p>
+     */
+    inline bool TimePeriodHasBeenSet() const { return m_timePeriodHasBeenSet; }
 
     /**
      * <p>The period of time that is covered by a budget. The period has a start date
@@ -433,6 +490,11 @@ namespace Model
     /**
      * <p>The actual and forecasted cost or usage that the budget tracks.</p>
      */
+    inline bool CalculatedSpendHasBeenSet() const { return m_calculatedSpendHasBeenSet; }
+
+    /**
+     * <p>The actual and forecasted cost or usage that the budget tracks.</p>
+     */
     inline void SetCalculatedSpend(const CalculatedSpend& value) { m_calculatedSpendHasBeenSet = true; m_calculatedSpend = value; }
 
     /**
@@ -456,6 +518,12 @@ namespace Model
      * coverage.</p>
      */
     inline const BudgetType& GetBudgetType() const{ return m_budgetType; }
+
+    /**
+     * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
+     * coverage.</p>
+     */
+    inline bool BudgetTypeHasBeenSet() const { return m_budgetTypeHasBeenSet; }
 
     /**
      * <p>Whether this budget tracks monetary costs, usage, RI utilization, or RI
@@ -486,6 +554,11 @@ namespace Model
      * <p>The last time that you updated this budget.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The last time that you updated this budget.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The last time that you updated this budget.</p>

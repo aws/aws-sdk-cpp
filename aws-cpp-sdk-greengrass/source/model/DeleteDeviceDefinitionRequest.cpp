@@ -29,7 +29,7 @@ DeleteDeviceDefinitionRequest::DeleteDeviceDefinitionRequest() :
 
 Aws::String DeleteDeviceDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

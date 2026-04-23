@@ -60,6 +60,13 @@ namespace Model
      * this prefix followed by a UUID. Step Functions automatically creates a unique
      * name for each state machine execution if one is not provided.</p>
      */
+    inline bool ExecutionNamePrefixHasBeenSet() const { return m_executionNamePrefixHasBeenSet; }
+
+    /**
+     * <p>(Optional) A name will be given to the state machine execution consisting of
+     * this prefix followed by a UUID. Step Functions automatically creates a unique
+     * name for each state machine execution if one is not provided.</p>
+     */
     inline void SetExecutionNamePrefix(const Aws::String& value) { m_executionNamePrefixHasBeenSet = true; m_executionNamePrefix = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * <p>The name of the Step Functions state machine whose execution will be
      * started.</p>
      */
+    inline bool StateMachineNameHasBeenSet() const { return m_stateMachineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Step Functions state machine whose execution will be
+     * started.</p>
+     */
     inline void SetStateMachineName(const Aws::String& value) { m_stateMachineNameHasBeenSet = true; m_stateMachineName = value; }
 
     /**
@@ -146,6 +159,12 @@ namespace Model
      * machine ("Action":"states:StartExecution").</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the role that grants IoT permission to start execution of a state
+     * machine ("Action":"states:StartExecution").</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the role that grants IoT permission to start execution of a state

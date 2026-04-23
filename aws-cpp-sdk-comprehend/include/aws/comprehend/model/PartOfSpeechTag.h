@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Identifies the part of speech that the token represents.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p>Identifies the part of speech that the token represents.</p>
+     */
     inline void SetTag(const PartOfSpeechTagType& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * correctly identified.</p>
      */
     inline double GetScore() const{ return m_score; }
+
+    /**
+     * <p>The confidence that Amazon Comprehend has that the part of speech was
+     * correctly identified.</p>
+     */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
 
     /**
      * <p>The confidence that Amazon Comprehend has that the part of speech was

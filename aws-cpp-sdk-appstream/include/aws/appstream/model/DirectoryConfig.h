@@ -37,8 +37,9 @@ namespace Model
 {
 
   /**
-   * <p>Configuration information for the directory used to join
-   * domains.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the configuration information for the directory used to join a
+   * streaming instance to a Microsoft Active Directory domain.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/DirectoryConfig">AWS
    * API Reference</a></p>
    */
@@ -56,6 +57,12 @@ namespace Model
      * corp.example.com).</p>
      */
     inline const Aws::String& GetDirectoryName() const{ return m_directoryName; }
+
+    /**
+     * <p>The fully qualified name of the directory (for example,
+     * corp.example.com).</p>
+     */
+    inline bool DirectoryNameHasBeenSet() const { return m_directoryNameHasBeenSet; }
 
     /**
      * <p>The fully qualified name of the directory (for example,
@@ -99,6 +106,12 @@ namespace Model
      * accounts.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOrganizationalUnitDistinguishedNames() const{ return m_organizationalUnitDistinguishedNames; }
+
+    /**
+     * <p>The distinguished names of the organizational units for computer
+     * accounts.</p>
+     */
+    inline bool OrganizationalUnitDistinguishedNamesHasBeenSet() const { return m_organizationalUnitDistinguishedNamesHasBeenSet; }
 
     /**
      * <p>The distinguished names of the organizational units for computer
@@ -153,6 +166,12 @@ namespace Model
      * <p>The credentials for the service account used by the streaming instance to
      * connect to the directory.</p>
      */
+    inline bool ServiceAccountCredentialsHasBeenSet() const { return m_serviceAccountCredentialsHasBeenSet; }
+
+    /**
+     * <p>The credentials for the service account used by the streaming instance to
+     * connect to the directory.</p>
+     */
     inline void SetServiceAccountCredentials(const ServiceAccountCredentials& value) { m_serviceAccountCredentialsHasBeenSet = true; m_serviceAccountCredentials = value; }
 
     /**
@@ -178,6 +197,11 @@ namespace Model
      * <p>The time the directory configuration was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTime() const{ return m_createdTime; }
+
+    /**
+     * <p>The time the directory configuration was created.</p>
+     */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
 
     /**
      * <p>The time the directory configuration was created.</p>

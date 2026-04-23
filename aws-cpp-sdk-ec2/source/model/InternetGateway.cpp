@@ -33,6 +33,7 @@ namespace Model
 InternetGateway::InternetGateway() : 
     m_attachmentsHasBeenSet(false),
     m_internetGatewayIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -40,6 +41,7 @@ InternetGateway::InternetGateway() :
 InternetGateway::InternetGateway(const XmlNode& xmlNode) : 
     m_attachmentsHasBeenSet(false),
     m_internetGatewayIdHasBeenSet(false),
+    m_ownerIdHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
   *this = xmlNode;
@@ -68,6 +70,12 @@ InternetGateway& InternetGateway::operator =(const XmlNode& xmlNode)
     {
       m_internetGatewayId = StringUtils::Trim(internetGatewayIdNode.GetText().c_str());
       m_internetGatewayIdHasBeenSet = true;
+    }
+    XmlNode ownerIdNode = resultNode.FirstChild("ownerId");
+    if(!ownerIdNode.IsNull())
+    {
+      m_ownerId = StringUtils::Trim(ownerIdNode.GetText().c_str());
+      m_ownerIdHasBeenSet = true;
     }
     XmlNode tagsNode = resultNode.FirstChild("tagSet");
     if(!tagsNode.IsNull())
@@ -104,6 +112,11 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
       oStream << location << index << locationValue << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
   }
 
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
+  }
+
   if(m_tagsHasBeenSet)
   {
       unsigned tagsIdx = 1;
@@ -132,6 +145,10 @@ void InternetGateway::OutputToStream(Aws::OStream& oStream, const char* location
   if(m_internetGatewayIdHasBeenSet)
   {
       oStream << location << ".InternetGatewayId=" << StringUtils::URLEncode(m_internetGatewayId.c_str()) << "&";
+  }
+  if(m_ownerIdHasBeenSet)
+  {
+      oStream << location << ".OwnerId=" << StringUtils::URLEncode(m_ownerId.c_str()) << "&";
   }
   if(m_tagsHasBeenSet)
   {

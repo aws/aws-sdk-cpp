@@ -26,7 +26,9 @@ UpdateInputRequest::UpdateInputRequest() :
     m_destinationsHasBeenSet(false),
     m_inputIdHasBeenSet(false),
     m_inputSecurityGroupsHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_sourcesHasBeenSet(false)
 {
 }
@@ -57,9 +59,26 @@ Aws::String UpdateInputRequest::SerializePayload() const
 
   }
 
+  if(m_mediaConnectFlowsHasBeenSet)
+  {
+   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+   {
+     mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
+   }
+   payload.WithArray("mediaConnectFlows", std::move(mediaConnectFlowsJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 

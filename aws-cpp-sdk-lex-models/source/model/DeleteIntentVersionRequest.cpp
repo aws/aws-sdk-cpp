@@ -30,7 +30,7 @@ DeleteIntentVersionRequest::DeleteIntentVersionRequest() :
 
 Aws::String DeleteIntentVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -60,6 +60,13 @@ namespace Model
      * can filter results based on whether they are <code>TAGGED</code> or
      * <code>UNTAGGED</code>.</p>
      */
+    inline bool TagStatusHasBeenSet() const { return m_tagStatusHasBeenSet; }
+
+    /**
+     * <p>The tag status with which to filter your <a>DescribeImages</a> results. You
+     * can filter results based on whether they are <code>TAGGED</code> or
+     * <code>UNTAGGED</code>.</p>
+     */
     inline void SetTagStatus(const TagStatus& value) { m_tagStatusHasBeenSet = true; m_tagStatus = value; }
 
     /**

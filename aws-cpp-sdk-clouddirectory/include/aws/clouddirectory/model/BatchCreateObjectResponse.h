@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID that is associated with the object.</p>
      */
+    inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ID that is associated with the object.</p>
+     */
     inline void SetObjectIdentifier(const Aws::String& value) { m_objectIdentifierHasBeenSet = true; m_objectIdentifier = value; }
 
     /**

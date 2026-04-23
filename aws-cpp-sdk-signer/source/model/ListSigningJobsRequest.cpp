@@ -38,7 +38,7 @@ ListSigningJobsRequest::ListSigningJobsRequest() :
 
 Aws::String ListSigningJobsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListSigningJobsRequest::AddQueryStringParameters(URI& uri) const

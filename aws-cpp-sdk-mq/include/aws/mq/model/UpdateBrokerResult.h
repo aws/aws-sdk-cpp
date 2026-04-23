@@ -123,37 +123,51 @@ namespace Model
 
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline UpdateBrokerResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 

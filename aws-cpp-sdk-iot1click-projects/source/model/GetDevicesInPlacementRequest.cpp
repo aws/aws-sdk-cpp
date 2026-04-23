@@ -30,7 +30,7 @@ GetDevicesInPlacementRequest::GetDevicesInPlacementRequest() :
 
 Aws::String GetDevicesInPlacementRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

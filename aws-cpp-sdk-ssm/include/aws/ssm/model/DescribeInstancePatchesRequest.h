@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the instance whose patch state information should be retrieved.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance whose patch state information should be retrieved.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * between 1 and 256 characters)</p>
      */
     inline const Aws::Vector<PatchOrchestratorFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
+     * between 1 and 128 characters)</p> <p>Values (array of strings, each string
+     * between 1 and 256 characters)</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Each entry in the array is a structure containing:</p> <p>Key (string,
@@ -142,6 +154,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -179,6 +197,11 @@ namespace Model
      * <p>The maximum number of patches to return (per page).</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of patches to return (per page).</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of patches to return (per page).</p>

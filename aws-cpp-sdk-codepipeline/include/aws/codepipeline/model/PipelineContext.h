@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
      * be unique across all pipeline names under an Amazon Web Services account.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline. This is a user-specified value. Pipeline names must
+     * be unique across all pipeline names under an Amazon Web Services account.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The stage of the pipeline.</p>
      */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
+
+    /**
+     * <p>The stage of the pipeline.</p>
+     */
     inline void SetStage(const StageContext& value) { m_stageHasBeenSet = true; m_stage = value; }
 
     /**
@@ -123,6 +134,11 @@ namespace Model
      * <p>The context of an action to a job worker within the stage of a pipeline.</p>
      */
     inline const ActionContext& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The context of an action to a job worker within the stage of a pipeline.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The context of an action to a job worker within the stage of a pipeline.</p>

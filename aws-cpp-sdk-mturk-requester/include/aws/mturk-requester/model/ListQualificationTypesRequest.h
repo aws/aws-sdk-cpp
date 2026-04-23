@@ -54,6 +54,12 @@ namespace Model
      * <p> A text query against all of the searchable attributes of Qualification
      * types. </p>
      */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p> A text query against all of the searchable attributes of Qualification
+     * types. </p>
+     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
 
     /**
@@ -105,6 +111,16 @@ namespace Model
      * false, all Qualification types, including those managed by the system, are
      * considered. Valid values are True | False. </p>
      */
+    inline bool MustBeRequestableHasBeenSet() const { return m_mustBeRequestableHasBeenSet; }
+
+    /**
+     * <p>Specifies that only Qualification types that a user can request through the
+     * Amazon Mechanical Turk web site, such as by taking a Qualification test, are
+     * returned as results of the search. Some Qualification types, such as those
+     * assigned automatically by the system, cannot be requested directly by users. If
+     * false, all Qualification types, including those managed by the system, are
+     * considered. Valid values are True | False. </p>
+     */
     inline void SetMustBeRequestable(bool value) { m_mustBeRequestableHasBeenSet = true; m_mustBeRequestable = value; }
 
     /**
@@ -128,6 +144,12 @@ namespace Model
      * <p> Specifies that only Qualification types that the Requester created are
      * returned. If false, the operation returns all Qualification types. </p>
      */
+    inline bool MustBeOwnedByCallerHasBeenSet() const { return m_mustBeOwnedByCallerHasBeenSet; }
+
+    /**
+     * <p> Specifies that only Qualification types that the Requester created are
+     * returned. If false, the operation returns all Qualification types. </p>
+     */
     inline void SetMustBeOwnedByCaller(bool value) { m_mustBeOwnedByCallerHasBeenSet = true; m_mustBeOwnedByCaller = value; }
 
     /**
@@ -139,6 +161,9 @@ namespace Model
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
@@ -163,6 +188,11 @@ namespace Model
      * <p> The maximum number of results to return in a single call. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> The maximum number of results to return in a single call. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> The maximum number of results to return in a single call. </p>

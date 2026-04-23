@@ -65,6 +65,15 @@ namespace Model
      * delivery channel, and then you must use the PutDeliveryChannel command to create
      * a delivery channel that has the desired name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery channel. By default, AWS Config assigns the name
+     * "default" when creating the delivery channel. To change the delivery channel
+     * name, you must use the DeleteDeliveryChannel action to delete your current
+     * delivery channel, and then you must use the PutDeliveryChannel command to create
+     * a delivery channel that has the desired name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -118,7 +127,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
@@ -128,7 +137,17 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket to which AWS Config delivers configuration
+     * snapshots and configuration history files.</p> <p>If you specify a bucket that
+     * belongs to another AWS account, that bucket must have policies that grant access
+     * permissions to AWS Config. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(const Aws::String& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = value; }
@@ -138,7 +157,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(Aws::String&& value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName = std::move(value); }
@@ -148,7 +167,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetS3BucketName(const char* value) { m_s3BucketNameHasBeenSet = true; m_s3BucketName.assign(value); }
@@ -158,7 +177,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const Aws::String& value) { SetS3BucketName(value); return *this;}
@@ -168,7 +187,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(Aws::String&& value) { SetS3BucketName(std::move(value)); return *this;}
@@ -178,7 +197,7 @@ namespace Model
      * snapshots and configuration history files.</p> <p>If you specify a bucket that
      * belongs to another AWS account, that bucket must have policies that grant access
      * permissions to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/s3-bucket-policy.html">Permissions
      * for the Amazon S3 Bucket</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithS3BucketName(const char* value) { SetS3BucketName(value); return *this;}
@@ -188,6 +207,11 @@ namespace Model
      * <p>The prefix for the specified Amazon S3 bucket.</p>
      */
     inline const Aws::String& GetS3KeyPrefix() const{ return m_s3KeyPrefix; }
+
+    /**
+     * <p>The prefix for the specified Amazon S3 bucket.</p>
+     */
+    inline bool S3KeyPrefixHasBeenSet() const { return m_s3KeyPrefixHasBeenSet; }
 
     /**
      * <p>The prefix for the specified Amazon S3 bucket.</p>
@@ -225,7 +249,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline const Aws::String& GetSnsTopicARN() const{ return m_snsTopicARN; }
@@ -235,7 +259,17 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
+     */
+    inline bool SnsTopicARNHasBeenSet() const { return m_snsTopicARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which AWS Config
+     * sends notifications about configuration changes.</p> <p>If you choose a topic
+     * from another account, the topic must have policies that grant access permissions
+     * to AWS Config. For more information, see <a
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(const Aws::String& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = value; }
@@ -245,7 +279,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(Aws::String&& value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN = std::move(value); }
@@ -255,7 +289,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline void SetSnsTopicARN(const char* value) { m_snsTopicARNHasBeenSet = true; m_snsTopicARN.assign(value); }
@@ -265,7 +299,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const Aws::String& value) { SetSnsTopicARN(value); return *this;}
@@ -275,7 +309,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(Aws::String&& value) { SetSnsTopicARN(std::move(value)); return *this;}
@@ -285,7 +319,7 @@ namespace Model
      * sends notifications about configuration changes.</p> <p>If you choose a topic
      * from another account, the topic must have policies that grant access permissions
      * to AWS Config. For more information, see <a
-     * href="http://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
+     * href="https://docs.aws.amazon.com/config/latest/developerguide/sns-topic-policy.html">Permissions
      * for the Amazon SNS Topic</a> in the AWS Config Developer Guide.</p>
      */
     inline DeliveryChannel& WithSnsTopicARN(const char* value) { SetSnsTopicARN(value); return *this;}
@@ -296,6 +330,12 @@ namespace Model
      * Amazon S3 bucket.</p>
      */
     inline const ConfigSnapshotDeliveryProperties& GetConfigSnapshotDeliveryProperties() const{ return m_configSnapshotDeliveryProperties; }
+
+    /**
+     * <p>The options for how often AWS Config delivers configuration snapshots to the
+     * Amazon S3 bucket.</p>
+     */
+    inline bool ConfigSnapshotDeliveryPropertiesHasBeenSet() const { return m_configSnapshotDeliveryPropertiesHasBeenSet; }
 
     /**
      * <p>The options for how often AWS Config delivers configuration snapshots to the

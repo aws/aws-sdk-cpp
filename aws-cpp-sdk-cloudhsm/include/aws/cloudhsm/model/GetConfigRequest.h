@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the client.</p>
      */
+    inline bool ClientArnHasBeenSet() const { return m_clientArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the client.</p>
+     */
     inline void SetClientArn(const Aws::String& value) { m_clientArnHasBeenSet = true; m_clientArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * <p>The client version.</p>
      */
+    inline bool ClientVersionHasBeenSet() const { return m_clientVersionHasBeenSet; }
+
+    /**
+     * <p>The client version.</p>
+     */
     inline void SetClientVersion(const ClientVersion& value) { m_clientVersionHasBeenSet = true; m_clientVersion = value; }
 
     /**
@@ -113,6 +123,12 @@ namespace Model
      * associated with the client.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHapgList() const{ return m_hapgList; }
+
+    /**
+     * <p>A list of ARNs that identify the high-availability partition groups that are
+     * associated with the client.</p>
+     */
+    inline bool HapgListHasBeenSet() const { return m_hapgListHasBeenSet; }
 
     /**
      * <p>A list of ARNs that identify the high-availability partition groups that are

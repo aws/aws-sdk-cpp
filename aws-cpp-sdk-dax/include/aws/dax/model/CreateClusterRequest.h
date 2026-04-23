@@ -63,6 +63,15 @@ namespace Model
      * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
      * consecutive hyphens.</p> </li> </ul>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier. This parameter is stored as a lowercase string.</p>
+     * <p> <b>Constraints:</b> </p> <ul> <li> <p>A name must contain from 1 to 20
+     * alphanumeric characters or hyphens.</p> </li> <li> <p>The first character must
+     * be a letter.</p> </li> <li> <p>A name cannot end with a hyphen or contain two
+     * consecutive hyphens.</p> </li> </ul>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**
@@ -119,6 +128,11 @@ namespace Model
     /**
      * <p>The compute and memory capacity of the nodes in the cluster.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>The compute and memory capacity of the nodes in the cluster.</p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -151,6 +165,11 @@ namespace Model
      * <p>A description of the cluster.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the cluster.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the cluster.</p>
@@ -201,6 +220,16 @@ namespace Model
      * <p>AWS recommends that you have at least two read replicas per cluster.</p>
      * </note>
      */
+    inline bool ReplicationFactorHasBeenSet() const { return m_replicationFactorHasBeenSet; }
+
+    /**
+     * <p>The number of nodes in the DAX cluster. A replication factor of 1 will create
+     * a single-node cluster, without any read replicas. For additional fault
+     * tolerance, you can create a multiple node cluster with one or more read
+     * replicas. To do this, set <i>ReplicationFactor</i> to 2 or more.</p> <note>
+     * <p>AWS recommends that you have at least two read replicas per cluster.</p>
+     * </note>
+     */
     inline void SetReplicationFactor(int value) { m_replicationFactorHasBeenSet = true; m_replicationFactor = value; }
 
     /**
@@ -220,6 +249,13 @@ namespace Model
      * parameter if you want to distribute the nodes across multiple AZs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
+     * nodes belonging to the cluster are placed in these Availability Zones. Use this
+     * parameter if you want to distribute the nodes across multiple AZs.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones (AZs) in which the cluster nodes will be created. All
@@ -285,6 +321,14 @@ namespace Model
      * the subnets that you specify in a subnet group must exist in the same VPC.</p>
      * </important>
      */
+    inline bool SubnetGroupNameHasBeenSet() const { return m_subnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the subnet group to be used for the replication group.</p>
+     * <important> <p>DAX clusters can only run in an Amazon VPC environment. All of
+     * the subnets that you specify in a subnet group must exist in the same VPC.</p>
+     * </important>
+     */
     inline void SetSubnetGroupName(const Aws::String& value) { m_subnetGroupNameHasBeenSet = true; m_subnetGroupName = value; }
 
     /**
@@ -334,6 +378,13 @@ namespace Model
      * not specified, DAX assigns the default VPC security group to each node.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>A list of security group IDs to be assigned to each node in the DAX cluster.
+     * (Each of the security group ID is system-generated.)</p> <p>If this parameter is
+     * not specified, DAX assigns the default VPC security group to each node.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of security group IDs to be assigned to each node in the DAX cluster.
@@ -399,6 +450,21 @@ namespace Model
      * week.</p> </note>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>Specifies the weekly time range during which maintenance on the DAX cluster
+     * is performed. It is specified as a range in the format ddd:hh24:mi-ddd:hh24:mi
+     * (24H Clock UTC). The minimum maintenance window is a 60 minute period. Valid
+     * values for <code>ddd</code> are:</p> <ul> <li> <p> <code>sun</code> </p> </li>
+     * <li> <p> <code>mon</code> </p> </li> <li> <p> <code>tue</code> </p> </li> <li>
+     * <p> <code>wed</code> </p> </li> <li> <p> <code>thu</code> </p> </li> <li> <p>
+     * <code>fri</code> </p> </li> <li> <p> <code>sat</code> </p> </li> </ul>
+     * <p>Example: <code>sun:05:00-sun:09:00</code> </p> <note> <p>If you don't specify
+     * a preferred maintenance window when you create or modify a cache cluster, DAX
+     * assigns a 60-minute maintenance window on a randomly selected day of the
+     * week.</p> </note>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>Specifies the weekly time range during which maintenance on the DAX cluster
@@ -503,6 +569,13 @@ namespace Model
      * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
      * cluster owner.</p> </note>
      */
+    inline bool NotificationTopicArnHasBeenSet() const { return m_notificationTopicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which notifications
+     * will be sent.</p> <note> <p>The Amazon SNS topic owner must be same as the DAX
+     * cluster owner.</p> </note>
+     */
     inline void SetNotificationTopicArn(const Aws::String& value) { m_notificationTopicArnHasBeenSet = true; m_notificationTopicArn = value; }
 
     /**
@@ -547,6 +620,13 @@ namespace Model
      * your behalf.</p>
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime,
+     * DAX will assume this role and use the role's permissions to access DynamoDB on
+     * your behalf.</p>
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * <p>A valid Amazon Resource Name (ARN) that identifies an IAM role. At runtime,
@@ -599,6 +679,11 @@ namespace Model
     /**
      * <p>The parameter group to be associated with the DAX cluster.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The parameter group to be associated with the DAX cluster.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -631,6 +716,11 @@ namespace Model
      * <p>A set of tags to associate with the DAX cluster. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A set of tags to associate with the DAX cluster. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A set of tags to associate with the DAX cluster. </p>
@@ -668,6 +758,12 @@ namespace Model
      * cluster.</p>
      */
     inline const SSESpecification& GetSSESpecification() const{ return m_sSESpecification; }
+
+    /**
+     * <p>Represents the settings used to enable server-side encryption on the
+     * cluster.</p>
+     */
+    inline bool SSESpecificationHasBeenSet() const { return m_sSESpecificationHasBeenSet; }
 
     /**
      * <p>Represents the settings used to enable server-side encryption on the

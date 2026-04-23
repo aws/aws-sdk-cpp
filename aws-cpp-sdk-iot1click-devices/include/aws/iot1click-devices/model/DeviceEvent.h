@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>An object representing the device associated with the event.</p>
      */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
+
+    /**
+     * <p>An object representing the device associated with the event.</p>
+     */
     inline void SetDevice(const Device& value) { m_deviceHasBeenSet = true; m_device = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
      * <p>A serialized JSON object representing the device-type specific event.</p>
      */
     inline const Aws::String& GetStdEvent() const{ return m_stdEvent; }
+
+    /**
+     * <p>A serialized JSON object representing the device-type specific event.</p>
+     */
+    inline bool StdEventHasBeenSet() const { return m_stdEventHasBeenSet; }
 
     /**
      * <p>A serialized JSON object representing the device-type specific event.</p>

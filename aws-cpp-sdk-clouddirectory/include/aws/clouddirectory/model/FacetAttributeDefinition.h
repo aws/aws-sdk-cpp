@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The type of the attribute.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the attribute.</p>
+     */
     inline void SetType(const FacetAttributeType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The default value of the attribute (if configured).</p>
      */
     inline const TypedAttributeValue& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value of the attribute (if configured).</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value of the attribute (if configured).</p>
@@ -113,6 +123,11 @@ namespace Model
     /**
      * <p>Whether the attribute is mutable or not.</p>
      */
+    inline bool IsImmutableHasBeenSet() const { return m_isImmutableHasBeenSet; }
+
+    /**
+     * <p>Whether the attribute is mutable or not.</p>
+     */
     inline void SetIsImmutable(bool value) { m_isImmutableHasBeenSet = true; m_isImmutable = value; }
 
     /**
@@ -125,6 +140,11 @@ namespace Model
      * <p>Validation rules attached to the attribute definition.</p>
      */
     inline const Aws::Map<Aws::String, Rule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>Validation rules attached to the attribute definition.</p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>Validation rules attached to the attribute definition.</p>

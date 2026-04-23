@@ -56,6 +56,13 @@ namespace Model
      * information, the redacted fields details, and the Amazon Resource Name (ARN) of
      * the web ACL to monitor.</p>
      */
+    inline bool LoggingConfigurationHasBeenSet() const { return m_loggingConfigurationHasBeenSet; }
+
+    /**
+     * <p>The Amazon Kinesis Data Firehose that contains the inspected traffic
+     * information, the redacted fields details, and the Amazon Resource Name (ARN) of
+     * the web ACL to monitor.</p>
+     */
     inline void SetLoggingConfiguration(const LoggingConfiguration& value) { m_loggingConfigurationHasBeenSet = true; m_loggingConfiguration = value; }
 
     /**

@@ -56,6 +56,11 @@ namespace Model
     /**
      * Upper bound on number of records to return.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Upper bound on number of records to return.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * A token used to resume pagination from the end of a previous request.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * A token used to resume pagination from the end of a previous request.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * A token used to resume pagination from the end of a previous request.

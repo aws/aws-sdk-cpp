@@ -61,6 +61,12 @@ namespace Model
      * <p>The name of the configuration set that the tracking options should be
      * associated with.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that the tracking options should be
+     * associated with.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -96,6 +102,9 @@ namespace Model
 
     
     inline const TrackingOptions& GetTrackingOptions() const{ return m_trackingOptions; }
+
+    
+    inline bool TrackingOptionsHasBeenSet() const { return m_trackingOptionsHasBeenSet; }
 
     
     inline void SetTrackingOptions(const TrackingOptions& value) { m_trackingOptionsHasBeenSet = true; m_trackingOptions = value; }

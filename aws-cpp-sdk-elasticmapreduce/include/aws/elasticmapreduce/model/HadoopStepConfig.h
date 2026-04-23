@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The path to the JAR file that runs during the step.</p>
      */
+    inline bool JarHasBeenSet() const { return m_jarHasBeenSet; }
+
+    /**
+     * <p>The path to the JAR file that runs during the step.</p>
+     */
     inline void SetJar(const Aws::String& value) { m_jarHasBeenSet = true; m_jar = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * these properties to pass key value pairs to your main function.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+
+    /**
+     * <p>The list of Java properties that are set when the step runs. You can use
+     * these properties to pass key value pairs to your main function.</p>
+     */
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>The list of Java properties that are set when the step runs. You can use
@@ -170,6 +181,12 @@ namespace Model
      * <p>The name of the main class in the specified Java file. If not specified, the
      * JAR file should specify a main class in its manifest file.</p>
      */
+    inline bool MainClassHasBeenSet() const { return m_mainClassHasBeenSet; }
+
+    /**
+     * <p>The name of the main class in the specified Java file. If not specified, the
+     * JAR file should specify a main class in its manifest file.</p>
+     */
     inline void SetMainClass(const Aws::String& value) { m_mainClassHasBeenSet = true; m_mainClass = value; }
 
     /**
@@ -208,6 +225,12 @@ namespace Model
      * for execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+
+    /**
+     * <p>The list of command line arguments to pass to the JAR file's main function
+     * for execution.</p>
+     */
+    inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
 
     /**
      * <p>The list of command line arguments to pass to the JAR file's main function

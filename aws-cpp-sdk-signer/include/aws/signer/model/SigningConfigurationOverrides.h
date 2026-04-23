@@ -59,6 +59,12 @@ namespace Model
      * <p>A specified override of the default encryption algorithm that is used in an
      * AWS Signer job.</p>
      */
+    inline bool EncryptionAlgorithmHasBeenSet() const { return m_encryptionAlgorithmHasBeenSet; }
+
+    /**
+     * <p>A specified override of the default encryption algorithm that is used in an
+     * AWS Signer job.</p>
+     */
     inline void SetEncryptionAlgorithm(const EncryptionAlgorithm& value) { m_encryptionAlgorithmHasBeenSet = true; m_encryptionAlgorithm = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * Signer job.</p>
      */
     inline const HashAlgorithm& GetHashAlgorithm() const{ return m_hashAlgorithm; }
+
+    /**
+     * <p>A specified override of the default hash algorithm that is used in an AWS
+     * Signer job.</p>
+     */
+    inline bool HashAlgorithmHasBeenSet() const { return m_hashAlgorithmHasBeenSet; }
 
     /**
      * <p>A specified override of the default hash algorithm that is used in an AWS

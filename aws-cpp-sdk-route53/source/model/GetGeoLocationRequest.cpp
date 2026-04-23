@@ -35,7 +35,7 @@ GetGeoLocationRequest::GetGeoLocationRequest() :
 
 Aws::String GetGeoLocationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetGeoLocationRequest::AddQueryStringParameters(URI& uri) const

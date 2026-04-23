@@ -58,6 +58,12 @@ namespace Model
      * <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on
      * the table.</p>
      */
+    inline bool StreamEnabledHasBeenSet() const { return m_streamEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether DynamoDB Streams is enabled (true) or disabled (false) on
+     * the table.</p>
+     */
     inline void SetStreamEnabled(bool value) { m_streamEnabledHasBeenSet = true; m_streamEnabled = value; }
 
     /**
@@ -80,6 +86,20 @@ namespace Model
      * item are written to the stream.</p> </li> </ul>
      */
     inline const StreamViewType& GetStreamViewType() const{ return m_streamViewType; }
+
+    /**
+     * <p> When an item in the table is modified, <code>StreamViewType</code>
+     * determines what information is written to the stream for this table. Valid
+     * values for <code>StreamViewType</code> are:</p> <ul> <li> <p>
+     * <code>KEYS_ONLY</code> - Only the key attributes of the modified item are
+     * written to the stream.</p> </li> <li> <p> <code>NEW_IMAGE</code> - The entire
+     * item, as it appears after it was modified, is written to the stream.</p> </li>
+     * <li> <p> <code>OLD_IMAGE</code> - The entire item, as it appeared before it was
+     * modified, is written to the stream.</p> </li> <li> <p>
+     * <code>NEW_AND_OLD_IMAGES</code> - Both the new and the old item images of the
+     * item are written to the stream.</p> </li> </ul>
+     */
+    inline bool StreamViewTypeHasBeenSet() const { return m_streamViewTypeHasBeenSet; }
 
     /**
      * <p> When an item in the table is modified, <code>StreamViewType</code>

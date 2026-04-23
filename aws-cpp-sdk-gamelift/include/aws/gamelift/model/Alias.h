@@ -36,13 +36,12 @@ namespace Model
 {
 
   /**
-   * <p>Properties describing a fleet alias.</p> <p>Alias-related operations
-   * include:</p> <ul> <li> <p> <a>CreateAlias</a> </p> </li> <li> <p>
-   * <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a> </p> </li> <li> <p>
-   * <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a> </p> </li> <li> <p>
-   * <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS API
-   * Reference</a></p>
+   * <p>Properties describing a fleet alias.</p> <ul> <li> <p> <a>CreateAlias</a>
+   * </p> </li> <li> <p> <a>ListAliases</a> </p> </li> <li> <p> <a>DescribeAlias</a>
+   * </p> </li> <li> <p> <a>UpdateAlias</a> </p> </li> <li> <p> <a>DeleteAlias</a>
+   * </p> </li> <li> <p> <a>ResolveAlias</a> </p> </li> </ul><p><h3>See Also:</h3>  
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/Alias">AWS
+   * API Reference</a></p>
    */
   class AWS_GAMELIFT_API Alias
   {
@@ -57,6 +56,11 @@ namespace Model
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+
+    /**
+     * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
+     */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for an alias; alias IDs are unique within a region.</p>
@@ -94,6 +98,12 @@ namespace Model
      * to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with an alias. Alias names do not need
+     * to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with an alias. Alias names do not need
@@ -140,6 +150,11 @@ namespace Model
     /**
      * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
      */
+    inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for an alias; alias ARNs are unique across all regions.</p>
+     */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
 
     /**
@@ -172,6 +187,11 @@ namespace Model
      * <p>Human-readable description of an alias.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>Human-readable description of an alias.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>Human-readable description of an alias.</p>
@@ -212,6 +232,11 @@ namespace Model
     /**
      * <p>Alias configuration for the alias, including routing type and settings.</p>
      */
+    inline bool RoutingStrategyHasBeenSet() const { return m_routingStrategyHasBeenSet; }
+
+    /**
+     * <p>Alias configuration for the alias, including routing type and settings.</p>
+     */
     inline void SetRoutingStrategy(const RoutingStrategy& value) { m_routingStrategyHasBeenSet = true; m_routingStrategy = value; }
 
     /**
@@ -235,6 +260,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number
@@ -267,6 +298,13 @@ namespace Model
      * "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was last modified. Format is a
+     * number expressed in Unix time as milliseconds (for example
+     * "1469498468.057").</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was last modified. Format is a

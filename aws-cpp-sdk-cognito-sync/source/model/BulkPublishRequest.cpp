@@ -29,7 +29,7 @@ BulkPublishRequest::BulkPublishRequest() :
 
 Aws::String BulkPublishRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

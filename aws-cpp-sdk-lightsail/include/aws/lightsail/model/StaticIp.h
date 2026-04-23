@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the static IP (e.g., <code>StaticIP-Ohio-EXAMPLE</code>).</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
      */
     inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
+     * <code>arn:aws:lightsail:us-east-2:123456789101:StaticIp/9cbb4a9e-f8e3-4dfe-b57e-12345EXAMPLE</code>).</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the static IP (e.g.,
@@ -135,6 +146,13 @@ namespace Model
      * our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about an instance or another resource in Lightsail. This code enables
+     * our support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -189,6 +207,12 @@ namespace Model
      * <p>The timestamp when the static IP was created (e.g.,
      * <code>1479735304.222</code>).</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the static IP was created (e.g.,
+     * <code>1479735304.222</code>).</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -214,6 +238,11 @@ namespace Model
      * <p>The region and Availability Zone where the static IP was created.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The region and Availability Zone where the static IP was created.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The region and Availability Zone where the static IP was created.</p>
@@ -244,6 +273,11 @@ namespace Model
     /**
      * <p>The resource type (usually <code>StaticIp</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type (usually <code>StaticIp</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -266,6 +300,11 @@ namespace Model
      * <p>The static IP address.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The static IP address.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The static IP address.</p>
@@ -308,6 +347,12 @@ namespace Model
      * <p>The instance where the static IP is attached (e.g.,
      * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
+    inline bool AttachedToHasBeenSet() const { return m_attachedToHasBeenSet; }
+
+    /**
+     * <p>The instance where the static IP is attached (e.g.,
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     */
     inline void SetAttachedTo(const Aws::String& value) { m_attachedToHasBeenSet = true; m_attachedTo = value; }
 
     /**
@@ -345,6 +390,11 @@ namespace Model
      * <p>A Boolean value indicating whether the static IP is attached.</p>
      */
     inline bool GetIsAttached() const{ return m_isAttached; }
+
+    /**
+     * <p>A Boolean value indicating whether the static IP is attached.</p>
+     */
+    inline bool IsAttachedHasBeenSet() const { return m_isAttachedHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating whether the static IP is attached.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the database to create when the DB instance is created. Follow
      * the naming rules specified in <a>CreateDBInstance</a>. </p>
      */
+    inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database to create when the DB instance is created. Follow
+     * the naming rules specified in <a>CreateDBInstance</a>. </p>
+     */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
@@ -100,6 +106,15 @@ namespace Model
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p>The DB instance identifier. This parameter is stored as a lowercase string.
+     * </p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The DB instance identifier. This parameter is stored as a lowercase string.
@@ -172,6 +187,15 @@ namespace Model
      * restore operation can succeed. You can also allocate additional memory for
      * future growth. </p> </note>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gigabytes) to allocate initially for the DB
+     * instance. Follow the allocation rules specified in <a>CreateDBInstance</a>. </p>
+     * <note> <p>Be sure to allocate enough memory for your new DB instance so that the
+     * restore operation can succeed. You can also allocate additional memory for
+     * future growth. </p> </note>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -189,7 +213,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -200,7 +224,18 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
+     * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
+     */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
+
+    /**
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions, or for all database engines. For the full list of DB instance classes,
+     * and availability for your engine, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -211,7 +246,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -222,7 +257,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -233,7 +268,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -244,7 +279,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -255,7 +290,7 @@ namespace Model
      * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
      * Regions, or for all database engines. For the full list of DB instance classes,
      * and availability for your engine, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html">DB
      * Instance Class</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Importing from
      * Amazon S3 is not supported on the db.t2.micro DB instance class. </p>
      */
@@ -267,6 +302,12 @@ namespace Model
      * Values: <code>mysql</code> </p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * Values: <code>mysql</code> </p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The name of the database engine to be used for this instance. </p> <p>Valid
@@ -312,6 +353,14 @@ namespace Model
      * engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
+     * 1 to 16 letters or numbers.</p> </li> <li> <p>First character must be a
+     * letter.</p> </li> <li> <p>Can't be a reserved word for the chosen database
+     * engine.</p> </li> </ul>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>The name for the master user. </p> <p>Constraints: </p> <ul> <li> <p>Must be
@@ -374,6 +423,13 @@ namespace Model
      * ASCII character except "/", """, or "@". </p> <p>Constraints: Must contain from
      * 8 to 41 characters.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@". </p> <p>Constraints: Must contain from
+     * 8 to 41 characters.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -417,6 +473,12 @@ namespace Model
      * <p>Default: The default DB security group for the database engine.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+
+    /**
+     * <p>A list of DB security groups to associate with this DB instance.</p>
+     * <p>Default: The default DB security group for the database engine.</p>
+     */
+    inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
@@ -469,6 +531,11 @@ namespace Model
     /**
      * <p>A list of VPC security groups to associate with this DB instance. </p>
      */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>A list of VPC security groups to associate with this DB instance. </p>
+     */
     inline void SetVpcSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_vpcSecurityGroupIdsHasBeenSet = true; m_vpcSecurityGroupIds = value; }
 
     /**
@@ -505,7 +572,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -518,7 +585,20 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
+     * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
+     * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
+     * parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone that the DB instance is created in. For information
+     * about AWS Regions and Availability Zones, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -531,7 +611,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -544,7 +624,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -557,7 +637,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -570,7 +650,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -583,7 +663,7 @@ namespace Model
     /**
      * <p>The Availability Zone that the DB instance is created in. For information
      * about AWS Regions and Availability Zones, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.RegionsAndAvailabilityZones.html">Regions
      * and Availability Zones</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Default:
      * A random, system-chosen Availability Zone in the endpoint's AWS Region. </p> <p>
      * Example: <code>us-east-1d</code> </p> <p>Constraint: The AvailabilityZone
@@ -598,6 +678,11 @@ namespace Model
      * <p>A DB subnet group to associate with this DB instance.</p>
      */
     inline const Aws::String& GetDBSubnetGroupName() const{ return m_dBSubnetGroupName; }
+
+    /**
+     * <p>A DB subnet group to associate with this DB instance.</p>
+     */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
 
     /**
      * <p>A DB subnet group to associate with this DB instance.</p>
@@ -633,7 +718,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -646,7 +731,20 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be in the format
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
+     * Wed, Thu, Fri, Sat, Sun.</p> </li> <li> <p>Must be in Universal Coordinated Time
+     * (UTC).</p> </li> <li> <p>Must not conflict with the preferred backup window.</p>
+     * </li> <li> <p>Must be at least 30 minutes.</p> </li> </ul>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
+
+    /**
+     * <p>The time range each week during which system maintenance can occur, in
+     * Universal Coordinated Time (UTC). For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -659,7 +757,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -672,7 +770,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -685,7 +783,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -698,7 +796,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -711,7 +809,7 @@ namespace Model
     /**
      * <p>The time range each week during which system maintenance can occur, in
      * Universal Coordinated Time (UTC). For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_UpgradeDBInstance.Maintenance.html#Concepts.DBMaintenance">Amazon
      * RDS Maintenance Window</a> in the <i>Amazon RDS User Guide.</i> </p>
      * <p>Constraints:</p> <ul> <li> <p>Must be in the format
      * <code>ddd:hh24:mi-ddd:hh24:mi</code>.</p> </li> <li> <p>Valid Days: Mon, Tue,
@@ -728,6 +826,13 @@ namespace Model
      * is used. </p>
      */
     inline const Aws::String& GetDBParameterGroupName() const{ return m_dBParameterGroupName; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default parameter group for the specified engine
+     * is used. </p>
+     */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the DB parameter group to associate with this DB instance. If
@@ -784,6 +889,13 @@ namespace Model
      * parameter to a positive number enables backups. For more information, see
      * <a>CreateDBInstance</a>. </p>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automated backups are retained. Setting this
+     * parameter to a positive number enables backups. For more information, see
+     * <a>CreateDBInstance</a>. </p>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -797,7 +909,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -809,7 +921,19 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
+     * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
+     * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
+     * conflict with the preferred maintenance window.</p> </li> <li> <p>Must be at
+     * least 30 minutes.</p> </li> </ul>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+
+    /**
+     * <p>The time range each day during which automated backups are created if
+     * automated backups are enabled. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -821,7 +945,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -833,7 +957,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -845,7 +969,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -857,7 +981,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -869,7 +993,7 @@ namespace Model
     /**
      * <p>The time range each day during which automated backups are created if
      * automated backups are enabled. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_WorkingWithAutomatedBackups.html#USER_WorkingWithAutomatedBackups.BackupWindow">The
      * Backup Window</a> in the <i>Amazon RDS User Guide.</i> </p> <p>Constraints:</p>
      * <ul> <li> <p>Must be in the format <code>hh24:mi-hh24:mi</code>.</p> </li> <li>
      * <p>Must be in Universal Coordinated Time (UTC).</p> </li> <li> <p>Must not
@@ -885,6 +1009,13 @@ namespace Model
      * <p>Default: <code>3306</code> </p>
      */
     inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number on which the database accepts connections. </p> <p>Type:
+     * Integer </p> <p>Valid Values: <code>1150</code>-<code>65535</code> </p>
+     * <p>Default: <code>3306</code> </p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number on which the database accepts connections. </p> <p>Type:
@@ -911,6 +1042,12 @@ namespace Model
      * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
      * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is a Multi-AZ deployment. If MultiAZ is set
+     * to <code>true</code>, you can't set the AvailabilityZone parameter. </p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -926,6 +1063,13 @@ namespace Model
      * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to use. Choose the latest minor
+     * version of your database engine. For information about engine versions, see
+     * <a>CreateDBInstance</a>, or call <a>DescribeDBEngineVersions</a>. </p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use. Choose the latest minor
@@ -982,6 +1126,13 @@ namespace Model
      * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
      * <code>true</code> </p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>True to indicate that minor engine upgrades are applied automatically to the
+     * DB instance during the maintenance window, and otherwise false. </p> <p>Default:
+     * <code>true</code> </p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -997,6 +1148,12 @@ namespace Model
      * <code>general-public-license</code>. </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>The license model for this DB instance. Use
+     * <code>general-public-license</code>. </p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>The license model for this DB instance. Use
@@ -1039,7 +1196,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
      */
@@ -1049,7 +1206,17 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
+     * User Guide.</i> </p>
+     */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to
+     * allocate initially for the DB instance. For information about valid Iops values,
+     * see see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
      */
@@ -1059,7 +1226,7 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to
      * allocate initially for the DB instance. For information about valid Iops values,
      * see see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/CHAP_Storage.html#USER_PIOPS">Amazon
      * RDS Provisioned IOPS Storage to Improve Performance</a> in the <i>Amazon RDS
      * User Guide.</i> </p>
      */
@@ -1072,6 +1239,13 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>The name of the option group to associate with this DB instance. If this
+     * argument is omitted, the default option group for the specified engine is used.
+     * </p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the option group to associate with this DB instance. If this
@@ -1132,6 +1306,15 @@ namespace Model
      * with a DNS name that resolves to a private IP address. For more information, see
      * <a>CreateDBInstance</a>.</p>
      */
+    inline bool PubliclyAccessibleHasBeenSet() const { return m_publiclyAccessibleHasBeenSet; }
+
+    /**
+     * <p>Specifies the accessibility options for the DB instance. A value of true
+     * specifies an Internet-facing instance with a publicly resolvable DNS name, which
+     * resolves to a public IP address. A value of false specifies an internal instance
+     * with a DNS name that resolves to a private IP address. For more information, see
+     * <a>CreateDBInstance</a>.</p>
+     */
     inline void SetPubliclyAccessible(bool value) { m_publiclyAccessibleHasBeenSet = true; m_publiclyAccessible = value; }
 
     /**
@@ -1147,7 +1330,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
@@ -1155,7 +1338,15 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of tags to associate with this DB instance. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
@@ -1163,7 +1354,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
@@ -1171,7 +1362,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
@@ -1179,7 +1370,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
@@ -1187,7 +1378,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
@@ -1195,7 +1386,7 @@ namespace Model
     /**
      * <p>A list of tags to associate with this DB instance. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Tagging.html">Tagging
      * Amazon RDS Resources</a> in the <i>Amazon RDS User Guide.</i> </p>
      */
     inline RestoreDBInstanceFromS3Request& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
@@ -1209,6 +1400,15 @@ namespace Model
      * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
      */
     inline const Aws::String& GetStorageType() const{ return m_storageType; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB instance. </p>
+     * <p>Valid values: <code>standard</code> | <code>gp2</code> | <code>io1</code>
+     * </p> <p>If you specify <code>io1</code>, you must also include a value for the
+     * <code>Iops</code> parameter. </p> <p>Default: <code>io1</code> if the
+     * <code>Iops</code> parameter is specified; otherwise <code>standard</code> </p>
+     */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
 
     /**
      * <p>Specifies the storage type to be associated with the DB instance. </p>
@@ -1273,6 +1473,11 @@ namespace Model
     /**
      * <p>Specifies whether the new DB instance is encrypted or not. </p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the new DB instance is encrypted or not. </p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -1294,6 +1499,20 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for an encrypted DB instance. </p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a DB instance with the same AWS account that owns the KMS
+     * encryption key used to encrypt the new DB instance, then you can use the KMS key
+     * alias instead of the ARN for the KM encryption key. </p> <p>If the
+     * <code>StorageEncrypted</code> parameter is true, and you do not specify a value
+     * for the <code>KmsKeyId</code> parameter, then Amazon RDS will use your default
+     * encryption key. AWS KMS creates the default encryption key for your AWS account.
+     * Your AWS account has a different default encryption key for each AWS Region.
+     * </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for an encrypted DB instance. </p> <p>The KMS key
@@ -1381,20 +1600,26 @@ namespace Model
 
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. </p> <p>Default: false. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline bool GetCopyTagsToSnapshot() const{ return m_copyTagsToSnapshot; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. </p> <p>Default: false. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
+     */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
-     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
-     * and otherwise false. </p> <p>Default: false. </p>
+     * <p>True to copy all tags from the restored DB instance to snapshots of the
+     * restored DB instance, and otherwise false. </p> <p>Default: false. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithCopyTagsToSnapshot(bool value) { SetCopyTagsToSnapshot(value); return *this;}
 
@@ -1407,6 +1632,15 @@ namespace Model
      * <p>Valid Values: 0, 1, 5, 10, 15, 30, 60 </p> <p>Default: <code>0</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * metrics, specify 0. </p> <p>If <code>MonitoringRoleArn</code> is specified, then
+     * you must also set <code>MonitoringInterval</code> to a value other than 0. </p>
+     * <p>Valid Values: 0, 1, 5, 10, 15, 30, 60 </p> <p>Default: <code>0</code> </p>
+     */
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1432,7 +1666,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1444,7 +1678,19 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
+     * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
+     * you must supply a <code>MonitoringRoleArn</code> value. </p>
+     */
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the IAM role that permits RDS to send enhanced monitoring metrics
+     * to Amazon CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
+     * a monitoring role, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1456,7 +1702,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1468,7 +1714,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1480,7 +1726,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1492,7 +1738,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1504,7 +1750,7 @@ namespace Model
      * to Amazon CloudWatch Logs. For example,
      * <code>arn:aws:iam:123456789012:role/emaccess</code>. For information on creating
      * a monitoring role, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_Monitoring.OS.html#USER_Monitoring.OS.Enabling">Setting
      * Up and Enabling Enhanced Monitoring</a> in the <i>Amazon RDS User Guide.</i>
      * </p> <p>If <code>MonitoringInterval</code> is set to a value other than 0, then
      * you must supply a <code>MonitoringRoleArn</code> value. </p>
@@ -1518,6 +1764,13 @@ namespace Model
      * </p>
      */
     inline bool GetEnableIAMDatabaseAuthentication() const{ return m_enableIAMDatabaseAuthentication; }
+
+    /**
+     * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
+     * to database accounts, and otherwise false. </p> <p>Default: <code>false</code>
+     * </p>
+     */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
 
     /**
      * <p>True to enable mapping of AWS Identity and Access Management (IAM) accounts
@@ -1539,6 +1792,12 @@ namespace Model
      * <code>mysql</code> </p>
      */
     inline const Aws::String& GetSourceEngine() const{ return m_sourceEngine; }
+
+    /**
+     * <p>The name of the engine of your source database. </p> <p>Valid Values:
+     * <code>mysql</code> </p>
+     */
+    inline bool SourceEngineHasBeenSet() const { return m_sourceEngineHasBeenSet; }
 
     /**
      * <p>The name of the engine of your source database. </p> <p>Valid Values:
@@ -1587,6 +1846,12 @@ namespace Model
      * <p>The engine version of your source database. </p> <p>Valid Values:
      * <code>5.6</code> </p>
      */
+    inline bool SourceEngineVersionHasBeenSet() const { return m_sourceEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The engine version of your source database. </p> <p>Valid Values:
+     * <code>5.6</code> </p>
+     */
     inline void SetSourceEngineVersion(const Aws::String& value) { m_sourceEngineVersionHasBeenSet = true; m_sourceEngineVersion = value; }
 
     /**
@@ -1625,6 +1890,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>The name of your Amazon S3 bucket that contains your database backup file.
+     * </p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>The name of your Amazon S3 bucket that contains your database backup file.
@@ -1671,6 +1942,11 @@ namespace Model
     /**
      * <p>The prefix of your Amazon S3 bucket. </p>
      */
+    inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
+
+    /**
+     * <p>The prefix of your Amazon S3 bucket. </p>
+     */
     inline void SetS3Prefix(const Aws::String& value) { m_s3PrefixHasBeenSet = true; m_s3Prefix = value; }
 
     /**
@@ -1704,6 +1980,12 @@ namespace Model
      * access your Amazon S3 bucket. </p>
      */
     inline const Aws::String& GetS3IngestionRoleArn() const{ return m_s3IngestionRoleArn; }
+
+    /**
+     * <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to
+     * access your Amazon S3 bucket. </p>
+     */
+    inline bool S3IngestionRoleArnHasBeenSet() const { return m_s3IngestionRoleArnHasBeenSet; }
 
     /**
      * <p>An AWS Identity and Access Management (IAM) role to allow Amazon RDS to
@@ -1745,7 +2027,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -1754,7 +2036,16 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
+     * User Guide</i>. </p>
+     */
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
+
+    /**
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p> <p>For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -1763,7 +2054,7 @@ namespace Model
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
      * </p> <p>For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_PerfInsights.html">Using
      * Amazon Performance Insights</a> in the <i>Amazon Relational Database Service
      * User Guide</i>. </p>
      */
@@ -1776,6 +2067,13 @@ namespace Model
      * key alias for the KMS encryption key. </p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), the KMS key identifier, or the KMS
+     * key alias for the KMS encryption key. </p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
@@ -1830,6 +2128,12 @@ namespace Model
      * <p>The amount of time, in days, to retain Performance Insights data. Valid
      * values are 7 or 731 (2 years). </p>
      */
+    inline bool PerformanceInsightsRetentionPeriodHasBeenSet() const { return m_performanceInsightsRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in days, to retain Performance Insights data. Valid
+     * values are 7 or 731 (2 years). </p>
+     */
     inline void SetPerformanceInsightsRetentionPeriod(int value) { m_performanceInsightsRetentionPeriodHasBeenSet = true; m_performanceInsightsRetentionPeriod = value; }
 
     /**
@@ -1843,7 +2147,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1853,7 +2157,17 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
+     * Guide</i>.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
+
+    /**
+     * <p>The list of logs that the restored DB instance is to export to CloudWatch
+     * Logs. The values in the list depend on the DB engine being used. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1863,7 +2177,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1873,7 +2187,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1883,7 +2197,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1893,7 +2207,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1903,7 +2217,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1913,7 +2227,7 @@ namespace Model
      * <p>The list of logs that the restored DB instance is to export to CloudWatch
      * Logs. The values in the list depend on the DB engine being used. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_LogAccess.html#USER_LogAccess.Procedural.UploadtoCloudWatch">Publishing
      * Database Logs to Amazon CloudWatch Logs</a> in the <i>Amazon RDS User
      * Guide</i>.</p>
      */
@@ -1925,6 +2239,12 @@ namespace Model
      * instance class of the DB instance.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance.</p>
+     */
+    inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
@@ -1973,6 +2293,12 @@ namespace Model
      * <p>A value that specifies that the DB instance class of the DB instance uses its
      * default processor features.</p>
      */
+    inline bool UseDefaultProcessorFeaturesHasBeenSet() const { return m_useDefaultProcessorFeaturesHasBeenSet; }
+
+    /**
+     * <p>A value that specifies that the DB instance class of the DB instance uses its
+     * default processor features.</p>
+     */
     inline void SetUseDefaultProcessorFeatures(bool value) { m_useDefaultProcessorFeaturesHasBeenSet = true; m_useDefaultProcessorFeatures = value; }
 
     /**
@@ -1986,7 +2312,7 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline bool GetDeletionProtection() const{ return m_deletionProtection; }
@@ -1995,7 +2321,16 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * Deleting a DB Instance</a>. </p>
+     */
+    inline bool DeletionProtectionHasBeenSet() const { return m_deletionProtectionHasBeenSet; }
+
+    /**
+     * <p>Indicates if the DB instance should have deletion protection enabled. The
+     * database can't be deleted when this value is set to true. The default is false.
+     * For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline void SetDeletionProtection(bool value) { m_deletionProtectionHasBeenSet = true; m_deletionProtection = value; }
@@ -2004,7 +2339,7 @@ namespace Model
      * <p>Indicates if the DB instance should have deletion protection enabled. The
      * database can't be deleted when this value is set to true. The default is false.
      * For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
+     * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_DeleteInstance.html">
      * Deleting a DB Instance</a>. </p>
      */
     inline RestoreDBInstanceFromS3Request& WithDeletionProtection(bool value) { SetDeletionProtection(value); return *this;}

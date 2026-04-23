@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A description of the task.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the task.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The instance operating system.</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The instance operating system.</p>
+     */
     inline void SetPlatform(const PlatformValues& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
      * <p>One or more volumes.</p>
      */
     inline const Aws::Vector<ImportInstanceVolumeDetailItem>& GetVolumes() const{ return m_volumes; }
+
+    /**
+     * <p>One or more volumes.</p>
+     */
+    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
      * <p>One or more volumes.</p>

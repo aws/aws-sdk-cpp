@@ -63,6 +63,15 @@ namespace Model
      * associated with the credentials used to sign the request. If you use an account
      * ID, do not include any hyphens ('-') in the ID. </p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>AccountId</code> value is the AWS account ID of the account that
+     * owns the vault. You can either specify an AWS account ID or optionally a single
+     * '<code>-</code>' (hyphen), in which case Amazon Glacier uses the AWS account ID
+     * associated with the credentials used to sign the request. If you use an account
+     * ID, do not include any hyphens ('-') in the ID. </p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -119,6 +128,11 @@ namespace Model
     /**
      * <p>The name of the vault.</p>
      */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
     inline void SetVaultName(const Aws::String& value) { m_vaultNameHasBeenSet = true; m_vaultName = value; }
 
     /**
@@ -151,6 +165,11 @@ namespace Model
      * <p>The upload ID of the multipart upload.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>The upload ID of the multipart upload.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>The upload ID of the multipart upload.</p>
@@ -191,6 +210,11 @@ namespace Model
     /**
      * <p>The SHA256 tree hash of the data being uploaded.</p>
      */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
+
+    /**
+     * <p>The SHA256 tree hash of the data being uploaded.</p>
+     */
     inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
 
     /**
@@ -226,6 +250,14 @@ namespace Model
      * header is Content-Range:bytes 0-4194303/ *.</p>
      */
     inline const Aws::String& GetRange() const{ return m_range; }
+
+    /**
+     * <p>Identifies the range of bytes in the assembled archive that will be uploaded
+     * in this part. Amazon Glacier uses this information to assemble the archive in
+     * the proper sequence. The format of this header follows RFC 2616. An example
+     * header is Content-Range:bytes 0-4194303/ *.</p>
+     */
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>Identifies the range of bytes in the assembled archive that will be uploaded

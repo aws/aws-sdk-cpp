@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The identifier for the organization under which the resource exists.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the organization under which the resource exists.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The identifier of the resource from which delegates' set members are removed.
+     * </p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The identifier of the resource from which delegates' set members are removed.
@@ -128,6 +139,12 @@ namespace Model
      * delegates.</p>
      */
     inline const Aws::String& GetEntityId() const{ return m_entityId; }
+
+    /**
+     * <p>The identifier for the member (user, group) to be removed from the resource's
+     * delegates.</p>
+     */
+    inline bool EntityIdHasBeenSet() const { return m_entityIdHasBeenSet; }
 
     /**
      * <p>The identifier for the member (user, group) to be removed from the resource's

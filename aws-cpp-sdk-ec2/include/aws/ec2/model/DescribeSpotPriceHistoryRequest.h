@@ -88,6 +88,24 @@ namespace Model
      * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
      * </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>availability-zone</code> - The
+     * Availability Zone for which prices should be returned.</p> </li> <li> <p>
+     * <code>instance-type</code> - The type of instance (for example,
+     * <code>m3.medium</code>).</p> </li> <li> <p> <code>product-description</code> -
+     * The product description for the Spot price (<code>Linux/UNIX</code> | <code>SUSE
+     * Linux</code> | <code>Windows</code> | <code>Linux/UNIX (Amazon VPC)</code> |
+     * <code>SUSE Linux (Amazon VPC)</code> | <code>Windows (Amazon VPC)</code>).</p>
+     * </li> <li> <p> <code>spot-price</code> - The Spot price. The value must match
+     * exactly (or use wildcards; greater than or less than comparison is not
+     * supported).</p> </li> <li> <p> <code>timestamp</code> - The time stamp of the
+     * Spot price history, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z). You can use
+     * wildcards (* and ?). Greater than or less than comparison is not supported.</p>
+     * </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -189,6 +207,11 @@ namespace Model
     /**
      * <p>Filters the results by the specified Availability Zone.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>Filters the results by the specified Availability Zone.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -231,6 +254,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -248,6 +279,13 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The date and time, up to the current date, from which to stop retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The date and time, up to the current date, from which to stop retrieving the
@@ -282,6 +320,11 @@ namespace Model
      * <p>Filters the results by the specified instance types.</p>
      */
     inline const Aws::Vector<InstanceType>& GetInstanceTypes() const{ return m_instanceTypes; }
+
+    /**
+     * <p>Filters the results by the specified instance types.</p>
+     */
+    inline bool InstanceTypesHasBeenSet() const { return m_instanceTypesHasBeenSet; }
 
     /**
      * <p>Filters the results by the specified instance types.</p>
@@ -326,6 +369,13 @@ namespace Model
      * between 1 and 1000. The default value is 1000. To retrieve the remaining
      * results, make another call with the returned <code>NextToken</code> value.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. Specify a value
+     * between 1 and 1000. The default value is 1000. To retrieve the remaining
+     * results, make another call with the returned <code>NextToken</code> value.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -340,6 +390,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -376,6 +431,11 @@ namespace Model
      * <p>Filters the results by the specified basic product descriptions.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductDescriptions() const{ return m_productDescriptions; }
+
+    /**
+     * <p>Filters the results by the specified basic product descriptions.</p>
+     */
+    inline bool ProductDescriptionsHasBeenSet() const { return m_productDescriptionsHasBeenSet; }
 
     /**
      * <p>Filters the results by the specified basic product descriptions.</p>
@@ -419,6 +479,13 @@ namespace Model
      * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The date and time, up to the past 90 days, from which to start retrieving the
+     * price history data, in UTC format (for example,
+     * <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The date and time, up to the past 90 days, from which to start retrieving the

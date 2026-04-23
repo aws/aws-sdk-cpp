@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Information about the associated run.</p>
      */
+    inline bool RunHasBeenSet() const { return m_runHasBeenSet; }
+
+    /**
+     * <p>Information about the associated run.</p>
+     */
     inline void SetRun(const ProblemDetail& value) { m_runHasBeenSet = true; m_run = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>Information about the associated job.</p>
      */
     inline const ProblemDetail& GetJob() const{ return m_job; }
+
+    /**
+     * <p>Information about the associated job.</p>
+     */
+    inline bool JobHasBeenSet() const { return m_jobHasBeenSet; }
 
     /**
      * <p>Information about the associated job.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>Information about the associated suite.</p>
      */
+    inline bool SuiteHasBeenSet() const { return m_suiteHasBeenSet; }
+
+    /**
+     * <p>Information about the associated suite.</p>
+     */
     inline void SetSuite(const ProblemDetail& value) { m_suiteHasBeenSet = true; m_suite = value; }
 
     /**
@@ -136,6 +151,11 @@ namespace Model
     /**
      * <p>Information about the associated test.</p>
      */
+    inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
+
+    /**
+     * <p>Information about the associated test.</p>
+     */
     inline void SetTest(const ProblemDetail& value) { m_testHasBeenSet = true; m_test = value; }
 
     /**
@@ -158,6 +178,11 @@ namespace Model
      * <p>Information about the associated device.</p>
      */
     inline const Device& GetDevice() const{ return m_device; }
+
+    /**
+     * <p>Information about the associated device.</p>
+     */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
 
     /**
      * <p>Information about the associated device.</p>
@@ -189,6 +214,16 @@ namespace Model
      * <p>STOPPED: A stopped condition.</p> </li> </ul>
      */
     inline const ExecutionResult& GetResult() const{ return m_result; }
+
+    /**
+     * <p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>PENDING: A pending condition.</p> </li> <li> <p>PASSED: A passing
+     * condition.</p> </li> <li> <p>WARNED: A warning condition.</p> </li> <li>
+     * <p>FAILED: A failed condition.</p> </li> <li> <p>SKIPPED: A skipped
+     * condition.</p> </li> <li> <p>ERRORED: An error condition.</p> </li> <li>
+     * <p>STOPPED: A stopped condition.</p> </li> </ul>
+     */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
      * <p>The problem's result.</p> <p>Allowed values include:</p> <ul> <li>
@@ -235,6 +270,11 @@ namespace Model
      * <p>A message about the problem's result.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A message about the problem's result.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A message about the problem's result.</p>

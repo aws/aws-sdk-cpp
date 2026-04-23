@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the patch group registered with the patch baseline.</p>
      */
+    inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the patch group registered with the patch baseline.</p>
+     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The patch baseline the patch group is registered with.</p>
      */
     inline const PatchBaselineIdentity& GetBaselineIdentity() const{ return m_baselineIdentity; }
+
+    /**
+     * <p>The patch baseline the patch group is registered with.</p>
+     */
+    inline bool BaselineIdentityHasBeenSet() const { return m_baselineIdentityHasBeenSet; }
 
     /**
      * <p>The patch baseline the patch group is registered with.</p>

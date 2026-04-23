@@ -64,6 +64,11 @@ namespace Model
     /**
      * The message to ADM channels. Overrides the default push notification message.
      */
+    inline bool ADMMessageHasBeenSet() const { return m_aDMMessageHasBeenSet; }
+
+    /**
+     * The message to ADM channels. Overrides the default push notification message.
+     */
     inline void SetADMMessage(const ADMMessage& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * The message to APNS channels. Overrides the default push notification message.
      */
     inline const APNSMessage& GetAPNSMessage() const{ return m_aPNSMessage; }
+
+    /**
+     * The message to APNS channels. Overrides the default push notification message.
+     */
+    inline bool APNSMessageHasBeenSet() const { return m_aPNSMessageHasBeenSet; }
 
     /**
      * The message to APNS channels. Overrides the default push notification message.
@@ -113,6 +123,12 @@ namespace Model
      * message.
      */
     inline const BaiduMessage& GetBaiduMessage() const{ return m_baiduMessage; }
+
+    /**
+     * The message to Baidu GCM channels. Overrides the default push notification
+     * message.
+     */
+    inline bool BaiduMessageHasBeenSet() const { return m_baiduMessageHasBeenSet; }
 
     /**
      * The message to Baidu GCM channels. Overrides the default push notification
@@ -147,6 +163,11 @@ namespace Model
     /**
      * The default message for all channels.
      */
+    inline bool DefaultMessageHasBeenSet() const { return m_defaultMessageHasBeenSet; }
+
+    /**
+     * The default message for all channels.
+     */
     inline void SetDefaultMessage(const DefaultMessage& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = value; }
 
     /**
@@ -169,6 +190,11 @@ namespace Model
      * The default push notification message for all push channels.
      */
     inline const DefaultPushNotificationMessage& GetDefaultPushNotificationMessage() const{ return m_defaultPushNotificationMessage; }
+
+    /**
+     * The default push notification message for all push channels.
+     */
+    inline bool DefaultPushNotificationMessageHasBeenSet() const { return m_defaultPushNotificationMessageHasBeenSet; }
 
     /**
      * The default push notification message for all push channels.
@@ -199,6 +225,11 @@ namespace Model
     /**
      * The message to Email channels. Overrides the default message.
      */
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
+
+    /**
+     * The message to Email channels. Overrides the default message.
+     */
     inline void SetEmailMessage(const EmailMessage& value) { m_emailMessageHasBeenSet = true; m_emailMessage = value; }
 
     /**
@@ -221,6 +252,11 @@ namespace Model
      * The message to GCM channels. Overrides the default push notification message.
      */
     inline const GCMMessage& GetGCMMessage() const{ return m_gCMMessage; }
+
+    /**
+     * The message to GCM channels. Overrides the default push notification message.
+     */
+    inline bool GCMMessageHasBeenSet() const { return m_gCMMessageHasBeenSet; }
 
     /**
      * The message to GCM channels. Overrides the default push notification message.
@@ -251,6 +287,11 @@ namespace Model
     /**
      * The message to SMS channels. Overrides the default message.
      */
+    inline bool SMSMessageHasBeenSet() const { return m_sMSMessageHasBeenSet; }
+
+    /**
+     * The message to SMS channels. Overrides the default message.
+     */
     inline void SetSMSMessage(const SMSMessage& value) { m_sMSMessageHasBeenSet = true; m_sMSMessage = value; }
 
     /**
@@ -273,6 +314,11 @@ namespace Model
      * The message to Voice channels. Overrides the default message.
      */
     inline const VoiceMessage& GetVoiceMessage() const{ return m_voiceMessage; }
+
+    /**
+     * The message to Voice channels. Overrides the default message.
+     */
+    inline bool VoiceMessageHasBeenSet() const { return m_voiceMessageHasBeenSet; }
 
     /**
      * The message to Voice channels. Overrides the default message.

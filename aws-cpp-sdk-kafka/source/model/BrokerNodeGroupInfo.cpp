@@ -1,0 +1,146 @@
+﻿/*
+* Copyright 2010-2017 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+*
+* Licensed under the Apache License, Version 2.0 (the "License").
+* You may not use this file except in compliance with the License.
+* A copy of the License is located at
+*
+*  http://aws.amazon.com/apache2.0
+*
+* or in the "license" file accompanying this file. This file is distributed
+* on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either
+* express or implied. See the License for the specific language governing
+* permissions and limitations under the License.
+*/
+
+#include <aws/kafka/model/BrokerNodeGroupInfo.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws
+{
+namespace Kafka
+{
+namespace Model
+{
+
+BrokerNodeGroupInfo::BrokerNodeGroupInfo() : 
+    m_brokerAZDistribution(BrokerAZDistribution::NOT_SET),
+    m_brokerAZDistributionHasBeenSet(false),
+    m_clientSubnetsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false),
+    m_storageInfoHasBeenSet(false)
+{
+}
+
+BrokerNodeGroupInfo::BrokerNodeGroupInfo(JsonView jsonValue) : 
+    m_brokerAZDistribution(BrokerAZDistribution::NOT_SET),
+    m_brokerAZDistributionHasBeenSet(false),
+    m_clientSubnetsHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_securityGroupsHasBeenSet(false),
+    m_storageInfoHasBeenSet(false)
+{
+  *this = jsonValue;
+}
+
+BrokerNodeGroupInfo& BrokerNodeGroupInfo::operator =(JsonView jsonValue)
+{
+  if(jsonValue.ValueExists("brokerAZDistribution"))
+  {
+    m_brokerAZDistribution = BrokerAZDistributionMapper::GetBrokerAZDistributionForName(jsonValue.GetString("brokerAZDistribution"));
+
+    m_brokerAZDistributionHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("clientSubnets"))
+  {
+    Array<JsonView> clientSubnetsJsonList = jsonValue.GetArray("clientSubnets");
+    for(unsigned clientSubnetsIndex = 0; clientSubnetsIndex < clientSubnetsJsonList.GetLength(); ++clientSubnetsIndex)
+    {
+      m_clientSubnets.push_back(clientSubnetsJsonList[clientSubnetsIndex].AsString());
+    }
+    m_clientSubnetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("securityGroups"))
+  {
+    Array<JsonView> securityGroupsJsonList = jsonValue.GetArray("securityGroups");
+    for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
+    {
+      m_securityGroups.push_back(securityGroupsJsonList[securityGroupsIndex].AsString());
+    }
+    m_securityGroupsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("storageInfo"))
+  {
+    m_storageInfo = jsonValue.GetObject("storageInfo");
+
+    m_storageInfoHasBeenSet = true;
+  }
+
+  return *this;
+}
+
+JsonValue BrokerNodeGroupInfo::Jsonize() const
+{
+  JsonValue payload;
+
+  if(m_brokerAZDistributionHasBeenSet)
+  {
+   payload.WithString("brokerAZDistribution", BrokerAZDistributionMapper::GetNameForBrokerAZDistribution(m_brokerAZDistribution));
+  }
+
+  if(m_clientSubnetsHasBeenSet)
+  {
+   Array<JsonValue> clientSubnetsJsonList(m_clientSubnets.size());
+   for(unsigned clientSubnetsIndex = 0; clientSubnetsIndex < clientSubnetsJsonList.GetLength(); ++clientSubnetsIndex)
+   {
+     clientSubnetsJsonList[clientSubnetsIndex].AsString(m_clientSubnets[clientSubnetsIndex]);
+   }
+   payload.WithArray("clientSubnets", std::move(clientSubnetsJsonList));
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_securityGroupsHasBeenSet)
+  {
+   Array<JsonValue> securityGroupsJsonList(m_securityGroups.size());
+   for(unsigned securityGroupsIndex = 0; securityGroupsIndex < securityGroupsJsonList.GetLength(); ++securityGroupsIndex)
+   {
+     securityGroupsJsonList[securityGroupsIndex].AsString(m_securityGroups[securityGroupsIndex]);
+   }
+   payload.WithArray("securityGroups", std::move(securityGroupsJsonList));
+
+  }
+
+  if(m_storageInfoHasBeenSet)
+  {
+   payload.WithObject("storageInfo", m_storageInfo.Jsonize());
+
+  }
+
+  return payload;
+}
+
+} // namespace Model
+} // namespace Kafka
+} // namespace Aws

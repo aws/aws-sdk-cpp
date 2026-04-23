@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Represents the facet being added to the object.</p>
      */
+    inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
+
+    /**
+     * <p>Represents the facet being added to the object.</p>
+     */
     inline void SetSchemaFacet(const SchemaFacet& value) { m_schemaFacetHasBeenSet = true; m_schemaFacet = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The attributes to set on the object.</p>
      */
     inline const Aws::Vector<AttributeKeyAndValue>& GetObjectAttributeList() const{ return m_objectAttributeList; }
+
+    /**
+     * <p>The attributes to set on the object.</p>
+     */
+    inline bool ObjectAttributeListHasBeenSet() const { return m_objectAttributeListHasBeenSet; }
 
     /**
      * <p>The attributes to set on the object.</p>
@@ -117,6 +127,11 @@ namespace Model
      * <p>A reference to the object being mutated.</p>
      */
     inline const ObjectReference& GetObjectReference() const{ return m_objectReference; }
+
+    /**
+     * <p>A reference to the object being mutated.</p>
+     */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the object being mutated.</p>

@@ -57,6 +57,12 @@ namespace Model
      * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
      * type name and version must be unique with in a domain.</p> </note>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> The name of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * type name and version must be unique with in a domain.</p> </note>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p> The version of the workflow type.</p> <note> <p>The combination of workflow
+     * type name and version must be unique with in a domain.</p> </note>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p> The version of the workflow type.</p> <note> <p>The combination of workflow

@@ -56,6 +56,12 @@ namespace Model
      * <p>The Automation execution ID for which you want step execution
      * descriptions.</p>
      */
+    inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The Automation execution ID for which you want step execution
+     * descriptions.</p>
+     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * <p>One or more filters to limit the number of step executions returned by the
      * request.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters to limit the number of step executions returned by the
+     * request.</p>
+     */
     inline void SetFilters(const Aws::Vector<StepExecutionFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -137,6 +149,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -187,6 +205,13 @@ namespace Model
      * token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return for this call. The call also returns a
+     * token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -202,6 +227,12 @@ namespace Model
      * start time. The default value is false.</p>
      */
     inline bool GetReverseOrder() const{ return m_reverseOrder; }
+
+    /**
+     * <p>A boolean that indicates whether to list step executions in reverse order by
+     * start time. The default value is false.</p>
+     */
+    inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
 
     /**
      * <p>A boolean that indicates whether to list step executions in reverse order by

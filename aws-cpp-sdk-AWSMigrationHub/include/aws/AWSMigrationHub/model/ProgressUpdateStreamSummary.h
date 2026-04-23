@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
+    inline bool ProgressUpdateStreamNameHasBeenSet() const { return m_progressUpdateStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the ProgressUpdateStream. </p>
+     */
     inline void SetProgressUpdateStreamName(const Aws::String& value) { m_progressUpdateStreamNameHasBeenSet = true; m_progressUpdateStreamName = value; }
 
     /**

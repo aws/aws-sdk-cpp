@@ -35,7 +35,9 @@ namespace Model
 {
 
   /**
-   * <p>Represents a target tracking scaling policy.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a target tracking configuration to use with AWS Auto Scaling. Used
+   * with <a>ScalingInstruction</a> and <a>ScalingPolicy</a>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-plans-2018-01-06/TargetTrackingConfiguration">AWS
    * API Reference</a></p>
    */
@@ -49,53 +51,75 @@ namespace Model
 
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline const PredefinedScalingMetricSpecification& GetPredefinedScalingMetricSpecification() const{ return m_predefinedScalingMetricSpecification; }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
+     */
+    inline bool PredefinedScalingMetricSpecificationHasBeenSet() const { return m_predefinedScalingMetricSpecificationHasBeenSet; }
+
+    /**
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = value; }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline void SetPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { m_predefinedScalingMetricSpecificationHasBeenSet = true; m_predefinedScalingMetricSpecification = std::move(value); }
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(const PredefinedScalingMetricSpecification& value) { SetPredefinedScalingMetricSpecification(value); return *this;}
 
     /**
-     * <p>A predefined metric.</p>
+     * <p>A predefined metric. You can specify either a predefined metric or a
+     * customized metric.</p>
      */
     inline TargetTrackingConfiguration& WithPredefinedScalingMetricSpecification(PredefinedScalingMetricSpecification&& value) { SetPredefinedScalingMetricSpecification(std::move(value)); return *this;}
 
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline const CustomizedScalingMetricSpecification& GetCustomizedScalingMetricSpecification() const{ return m_customizedScalingMetricSpecification; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
+     */
+    inline bool CustomizedScalingMetricSpecificationHasBeenSet() const { return m_customizedScalingMetricSpecificationHasBeenSet; }
+
+    /**
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline void SetCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = value; }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline void SetCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { m_customizedScalingMetricSpecificationHasBeenSet = true; m_customizedScalingMetricSpecification = std::move(value); }
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(const CustomizedScalingMetricSpecification& value) { SetCustomizedScalingMetricSpecification(value); return *this;}
 
     /**
-     * <p>A customized metric.</p>
+     * <p>A customized metric. You can specify either a predefined metric or a
+     * customized metric. </p>
      */
     inline TargetTrackingConfiguration& WithCustomizedScalingMetricSpecification(CustomizedScalingMetricSpecification&& value) { SetCustomizedScalingMetricSpecification(std::move(value)); return *this;}
 
@@ -105,6 +129,12 @@ namespace Model
      * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
      */
     inline double GetTargetValue() const{ return m_targetValue; }
+
+    /**
+     * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
+     * (Base 10) or 2e-360 to 2e360 (Base 2).</p>
+     */
+    inline bool TargetValueHasBeenSet() const { return m_targetValueHasBeenSet; }
 
     /**
      * <p>The target value for the metric. The range is 8.515920e-109 to 1.174271e+108
@@ -120,38 +150,47 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
-     * value is <code>true</code>, scale in is disabled and the target tracking policy
-     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
-     * and the target tracking policy can remove capacity from the scalable resource.
-     * The default value is <code>false</code>.</p>
+     * <p>Indicates whether scale in by the target tracking scaling policy is disabled.
+     * If the value is <code>true</code>, scale in is disabled and the target tracking
+     * scaling policy doesn't remove capacity from the scalable resource. Otherwise,
+     * scale in is enabled and the target tracking scaling policy can remove capacity
+     * from the scalable resource. </p> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetDisableScaleIn() const{ return m_disableScaleIn; }
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
-     * value is <code>true</code>, scale in is disabled and the target tracking policy
-     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
-     * and the target tracking policy can remove capacity from the scalable resource.
-     * The default value is <code>false</code>.</p>
+     * <p>Indicates whether scale in by the target tracking scaling policy is disabled.
+     * If the value is <code>true</code>, scale in is disabled and the target tracking
+     * scaling policy doesn't remove capacity from the scalable resource. Otherwise,
+     * scale in is enabled and the target tracking scaling policy can remove capacity
+     * from the scalable resource. </p> <p>The default value is <code>false</code>.</p>
+     */
+    inline bool DisableScaleInHasBeenSet() const { return m_disableScaleInHasBeenSet; }
+
+    /**
+     * <p>Indicates whether scale in by the target tracking scaling policy is disabled.
+     * If the value is <code>true</code>, scale in is disabled and the target tracking
+     * scaling policy doesn't remove capacity from the scalable resource. Otherwise,
+     * scale in is enabled and the target tracking scaling policy can remove capacity
+     * from the scalable resource. </p> <p>The default value is <code>false</code>.</p>
      */
     inline void SetDisableScaleIn(bool value) { m_disableScaleInHasBeenSet = true; m_disableScaleIn = value; }
 
     /**
-     * <p>Indicates whether scale in by the target tracking policy is disabled. If the
-     * value is <code>true</code>, scale in is disabled and the target tracking policy
-     * won't remove capacity from the scalable resource. Otherwise, scale in is enabled
-     * and the target tracking policy can remove capacity from the scalable resource.
-     * The default value is <code>false</code>.</p>
+     * <p>Indicates whether scale in by the target tracking scaling policy is disabled.
+     * If the value is <code>true</code>, scale in is disabled and the target tracking
+     * scaling policy doesn't remove capacity from the scalable resource. Otherwise,
+     * scale in is enabled and the target tracking scaling policy can remove capacity
+     * from the scalable resource. </p> <p>The default value is <code>false</code>.</p>
      */
     inline TargetTrackingConfiguration& WithDisableScaleIn(bool value) { SetDisableScaleIn(value); return *this;}
 
 
     /**
-     * <p>The amount of time, in seconds, after a scale out activity completes before
-     * another scale out activity can start. This value is not used if the scalable
+     * <p>The amount of time, in seconds, after a scale-out activity completes before
+     * another scale-out activity can start. This value is not used if the scalable
      * resource is an Auto Scaling group.</p> <p>While the cooldown period is in
-     * effect, the capacity that has been added by the previous scale out event that
+     * effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the
      * next scale out. The intention is to continuously (but not excessively) scale
      * out.</p>
@@ -159,10 +198,21 @@ namespace Model
     inline int GetScaleOutCooldown() const{ return m_scaleOutCooldown; }
 
     /**
-     * <p>The amount of time, in seconds, after a scale out activity completes before
-     * another scale out activity can start. This value is not used if the scalable
+     * <p>The amount of time, in seconds, after a scale-out activity completes before
+     * another scale-out activity can start. This value is not used if the scalable
      * resource is an Auto Scaling group.</p> <p>While the cooldown period is in
-     * effect, the capacity that has been added by the previous scale out event that
+     * effect, the capacity that has been added by the previous scale-out event that
+     * initiated the cooldown is calculated as part of the desired capacity for the
+     * next scale out. The intention is to continuously (but not excessively) scale
+     * out.</p>
+     */
+    inline bool ScaleOutCooldownHasBeenSet() const { return m_scaleOutCooldownHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale-out activity completes before
+     * another scale-out activity can start. This value is not used if the scalable
+     * resource is an Auto Scaling group.</p> <p>While the cooldown period is in
+     * effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the
      * next scale out. The intention is to continuously (but not excessively) scale
      * out.</p>
@@ -170,10 +220,10 @@ namespace Model
     inline void SetScaleOutCooldown(int value) { m_scaleOutCooldownHasBeenSet = true; m_scaleOutCooldown = value; }
 
     /**
-     * <p>The amount of time, in seconds, after a scale out activity completes before
-     * another scale out activity can start. This value is not used if the scalable
+     * <p>The amount of time, in seconds, after a scale-out activity completes before
+     * another scale-out activity can start. This value is not used if the scalable
      * resource is an Auto Scaling group.</p> <p>While the cooldown period is in
-     * effect, the capacity that has been added by the previous scale out event that
+     * effect, the capacity that has been added by the previous scale-out event that
      * initiated the cooldown is calculated as part of the desired capacity for the
      * next scale out. The intention is to continuously (but not excessively) scale
      * out.</p>
@@ -187,7 +237,7 @@ namespace Model
      * resource is an Auto Scaling group.</p> <p>The cooldown period is used to block
      * subsequent scale in requests until it has expired. The intention is to scale in
      * conservatively to protect your application's availability. However, if another
-     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * alarm triggers a scale-out policy during the cooldown period after a scale-in,
      * AWS Auto Scaling scales out your scalable target immediately.</p>
      */
     inline int GetScaleInCooldown() const{ return m_scaleInCooldown; }
@@ -198,7 +248,18 @@ namespace Model
      * resource is an Auto Scaling group.</p> <p>The cooldown period is used to block
      * subsequent scale in requests until it has expired. The intention is to scale in
      * conservatively to protect your application's availability. However, if another
-     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * alarm triggers a scale-out policy during the cooldown period after a scale-in,
+     * AWS Auto Scaling scales out your scalable target immediately.</p>
+     */
+    inline bool ScaleInCooldownHasBeenSet() const { return m_scaleInCooldownHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, after a scale in activity completes before
+     * another scale in activity can start. This value is not used if the scalable
+     * resource is an Auto Scaling group.</p> <p>The cooldown period is used to block
+     * subsequent scale in requests until it has expired. The intention is to scale in
+     * conservatively to protect your application's availability. However, if another
+     * alarm triggers a scale-out policy during the cooldown period after a scale-in,
      * AWS Auto Scaling scales out your scalable target immediately.</p>
      */
     inline void SetScaleInCooldown(int value) { m_scaleInCooldownHasBeenSet = true; m_scaleInCooldown = value; }
@@ -209,7 +270,7 @@ namespace Model
      * resource is an Auto Scaling group.</p> <p>The cooldown period is used to block
      * subsequent scale in requests until it has expired. The intention is to scale in
      * conservatively to protect your application's availability. However, if another
-     * alarm triggers a scale out policy during the cooldown period after a scale-in,
+     * alarm triggers a scale-out policy during the cooldown period after a scale-in,
      * AWS Auto Scaling scales out your scalable target immediately.</p>
      */
     inline TargetTrackingConfiguration& WithScaleInCooldown(int value) { SetScaleInCooldown(value); return *this;}
@@ -221,6 +282,13 @@ namespace Model
      * an Auto Scaling group.</p>
      */
     inline int GetEstimatedInstanceWarmup() const{ return m_estimatedInstanceWarmup; }
+
+    /**
+     * <p>The estimated time, in seconds, until a newly launched instance can
+     * contribute to the CloudWatch metrics. This value is used only if the resource is
+     * an Auto Scaling group.</p>
+     */
+    inline bool EstimatedInstanceWarmupHasBeenSet() const { return m_estimatedInstanceWarmupHasBeenSet; }
 
     /**
      * <p>The estimated time, in seconds, until a newly launched instance can

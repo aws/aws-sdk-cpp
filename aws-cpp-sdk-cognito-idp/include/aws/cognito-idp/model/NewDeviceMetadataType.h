@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
+
+    /**
+     * <p>The device key.</p>
+     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The device group key.</p>
      */
     inline const Aws::String& GetDeviceGroupKey() const{ return m_deviceGroupKey; }
+
+    /**
+     * <p>The device group key.</p>
+     */
+    inline bool DeviceGroupKeyHasBeenSet() const { return m_deviceGroupKeyHasBeenSet; }
 
     /**
      * <p>The device group key.</p>

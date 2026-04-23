@@ -54,6 +54,12 @@ namespace Model
      * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
      * delete.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster to
+     * delete.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The canned ACL to apply to the bucket.</p>
      */
+    inline bool ACLHasBeenSet() const { return m_aCLHasBeenSet; }
+
+    /**
+     * <p>The canned ACL to apply to the bucket.</p>
+     */
     inline void SetACL(const BucketCannedACL& value) { m_aCLHasBeenSet = true; m_aCL = value; }
 
     /**
@@ -79,63 +84,116 @@ namespace Model
     inline PutBucketAclRequest& WithACL(BucketCannedACL&& value) { SetACL(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const AccessControlPolicy& GetAccessControlPolicy() const{ return m_accessControlPolicy; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool AccessControlPolicyHasBeenSet() const { return m_accessControlPolicyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetAccessControlPolicy(const AccessControlPolicy& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetAccessControlPolicy(AccessControlPolicy&& value) { m_accessControlPolicyHasBeenSet = true; m_accessControlPolicy = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithAccessControlPolicy(const AccessControlPolicy& value) { SetAccessControlPolicy(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithAccessControlPolicy(AccessControlPolicy&& value) { SetAccessControlPolicy(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetContentMD5() const{ return m_contentMD5; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool ContentMD5HasBeenSet() const { return m_contentMD5HasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(const Aws::String& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(Aws::String&& value) { m_contentMD5HasBeenSet = true; m_contentMD5 = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContentMD5(const char* value) { m_contentMD5HasBeenSet = true; m_contentMD5.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithContentMD5(const Aws::String& value) { SetContentMD5(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithContentMD5(Aws::String&& value) { SetContentMD5(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutBucketAclRequest& WithContentMD5(const char* value) { SetContentMD5(value); return *this;}
 
 
@@ -144,6 +202,12 @@ namespace Model
      * bucket.</p>
      */
     inline const Aws::String& GetGrantFullControl() const{ return m_grantFullControl; }
+
+    /**
+     * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
+     * bucket.</p>
+     */
+    inline bool GrantFullControlHasBeenSet() const { return m_grantFullControlHasBeenSet; }
 
     /**
      * <p>Allows grantee the read, write, read ACP, and write ACP permissions on the
@@ -190,6 +254,11 @@ namespace Model
     /**
      * <p>Allows grantee to list the objects in the bucket.</p>
      */
+    inline bool GrantReadHasBeenSet() const { return m_grantReadHasBeenSet; }
+
+    /**
+     * <p>Allows grantee to list the objects in the bucket.</p>
+     */
     inline void SetGrantRead(const Aws::String& value) { m_grantReadHasBeenSet = true; m_grantRead = value; }
 
     /**
@@ -222,6 +291,11 @@ namespace Model
      * <p>Allows grantee to read the bucket ACL.</p>
      */
     inline const Aws::String& GetGrantReadACP() const{ return m_grantReadACP; }
+
+    /**
+     * <p>Allows grantee to read the bucket ACL.</p>
+     */
+    inline bool GrantReadACPHasBeenSet() const { return m_grantReadACPHasBeenSet; }
 
     /**
      * <p>Allows grantee to read the bucket ACL.</p>
@@ -262,6 +336,11 @@ namespace Model
     /**
      * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
      */
+    inline bool GrantWriteHasBeenSet() const { return m_grantWriteHasBeenSet; }
+
+    /**
+     * <p>Allows grantee to create, overwrite, and delete any object in the bucket.</p>
+     */
     inline void SetGrantWrite(const Aws::String& value) { m_grantWriteHasBeenSet = true; m_grantWrite = value; }
 
     /**
@@ -298,6 +377,11 @@ namespace Model
     /**
      * <p>Allows grantee to write the ACL for the applicable bucket.</p>
      */
+    inline bool GrantWriteACPHasBeenSet() const { return m_grantWriteACPHasBeenSet; }
+
+    /**
+     * <p>Allows grantee to write the ACL for the applicable bucket.</p>
+     */
     inline void SetGrantWriteACP(const Aws::String& value) { m_grantWriteACPHasBeenSet = true; m_grantWriteACP = value; }
 
     /**
@@ -328,6 +412,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

@@ -30,7 +30,7 @@ GetDocumentationPartRequest::GetDocumentationPartRequest() :
 
 Aws::String GetDocumentationPartRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

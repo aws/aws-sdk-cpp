@@ -30,7 +30,7 @@ DeleteUserRequest::DeleteUserRequest() :
 
 Aws::String DeleteUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

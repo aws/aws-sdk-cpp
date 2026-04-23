@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The device key.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+
+    /**
+     * <p>The device key.</p>
+     */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
 
     /**
      * <p>The device key.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The configuration of the device secret verifier.</p>
      */
+    inline bool DeviceSecretVerifierConfigHasBeenSet() const { return m_deviceSecretVerifierConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration of the device secret verifier.</p>
+     */
     inline void SetDeviceSecretVerifierConfig(const DeviceSecretVerifierConfigType& value) { m_deviceSecretVerifierConfigHasBeenSet = true; m_deviceSecretVerifierConfig = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>The device name.</p>
      */
     inline const Aws::String& GetDeviceName() const{ return m_deviceName; }
+
+    /**
+     * <p>The device name.</p>
+     */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
 
     /**
      * <p>The device name.</p>

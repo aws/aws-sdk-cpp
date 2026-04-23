@@ -36,6 +36,7 @@ static const int PARAMETER_VERSION_LABEL_LIMIT_EXCEEDED_HASH = HashingUtils::Has
 static const int INVALID_FILTER_VALUE_HASH = HashingUtils::HashString("InvalidFilterValue");
 static const int INVALID_AGGREGATOR_HASH = HashingUtils::HashString("InvalidAggregatorException");
 static const int INVALID_INVENTORY_REQUEST_HASH = HashingUtils::HashString("InvalidInventoryRequestException");
+static const int DUPLICATE_DOCUMENT_VERSION_NAME_HASH = HashingUtils::HashString("DuplicateDocumentVersionName");
 static const int RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH = HashingUtils::HashString("ResourceDataSyncCountExceededException");
 static const int INVALID_DELETE_INVENTORY_PARAMETERS_HASH = HashingUtils::HashString("InvalidDeleteInventoryParametersException");
 static const int INVALID_DOCUMENT_HASH = HashingUtils::HashString("InvalidDocument");
@@ -85,6 +86,7 @@ static const int ITEM_CONTENT_MISMATCH_HASH = HashingUtils::HashString("ItemCont
 static const int MAX_DOCUMENT_SIZE_EXCEEDED_HASH = HashingUtils::HashString("MaxDocumentSizeExceeded");
 static const int TOTAL_SIZE_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("TotalSizeLimitExceededException");
 static const int INVALID_RESOURCE_TYPE_HASH = HashingUtils::HashString("InvalidResourceType");
+static const int SERVICE_SETTING_NOT_FOUND_HASH = HashingUtils::HashString("ServiceSettingNotFound");
 static const int INVALID_ROLE_HASH = HashingUtils::HashString("InvalidRole");
 static const int INVALID_ASSOCIATION_HASH = HashingUtils::HashString("InvalidAssociation");
 static const int INVALID_DOCUMENT_OPERATION_HASH = HashingUtils::HashString("InvalidDocumentOperation");
@@ -163,6 +165,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_INVENTORY_REQUEST_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_INVENTORY_REQUEST), false);
+  }
+  else if (hashCode == DUPLICATE_DOCUMENT_VERSION_NAME_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::DUPLICATE_DOCUMENT_VERSION_NAME), false);
   }
   else if (hashCode == RESOURCE_DATA_SYNC_COUNT_EXCEEDED_HASH)
   {
@@ -359,6 +365,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == INVALID_RESOURCE_TYPE_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::INVALID_RESOURCE_TYPE), false);
+  }
+  else if (hashCode == SERVICE_SETTING_NOT_FOUND_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SSMErrors::SERVICE_SETTING_NOT_FOUND), false);
   }
   else if (hashCode == INVALID_ROLE_HASH)
   {

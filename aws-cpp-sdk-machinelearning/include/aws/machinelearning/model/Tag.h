@@ -58,6 +58,12 @@ namespace Model
      * <p>A unique identifier for the tag. Valid characters include Unicode letters,
      * digits, white space, _, ., /, =, +, -, %, and @.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the tag. Valid characters include Unicode letters,
+     * digits, white space, _, ., /, =, +, -, %, and @.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * and @.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>An optional string, typically used to describe or define the tag. Valid
+     * characters include Unicode letters, digits, white space, _, ., /, =, +, -, %,
+     * and @.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>An optional string, typically used to describe or define the tag. Valid

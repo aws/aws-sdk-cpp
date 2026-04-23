@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The ID that Resolver assigned to the resolver rule when you created it.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID that Resolver assigned to the resolver rule when you created it.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -99,6 +104,13 @@ namespace Model
      * to be retried without the risk of executing the operation twice. </p>
      */
     inline const Aws::String& GetCreatorRequestId() const{ return m_creatorRequestId; }
+
+    /**
+     * <p>A unique string that you specified when you created the resolver rule.
+     * <code>CreatorRequestId</code>identifies the request and allows failed requests
+     * to be retried without the risk of executing the operation twice. </p>
+     */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
 
     /**
      * <p>A unique string that you specified when you created the resolver rule.
@@ -153,6 +165,12 @@ namespace Model
      * <p>The ARN (Amazon Resource Name) for the resolver rule specified by
      * <code>Id</code>.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN (Amazon Resource Name) for the resolver rule specified by
+     * <code>Id</code>.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -193,6 +211,14 @@ namespace Model
      * that contains the most specific domain name (www.example.com).</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>DNS queries for this domain name are forwarded to the IP addresses that are
+     * specified in <code>TargetIps</code>. If a query matches multiple resolver rules
+     * (example.com and www.example.com), the query is routed using the resolver rule
+     * that contains the most specific domain name (www.example.com).</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>DNS queries for this domain name are forwarded to the IP addresses that are
@@ -251,6 +277,11 @@ namespace Model
     /**
      * <p>A code that specifies the current status of the resolver rule.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A code that specifies the current status of the resolver rule.</p>
+     */
     inline void SetStatus(const ResolverRuleStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -273,6 +304,11 @@ namespace Model
      * <p>A detailed description of the status of a resolver rule.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed description of the status of a resolver rule.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed description of the status of a resolver rule.</p>
@@ -315,6 +351,12 @@ namespace Model
      * <p>This value is always <code>FORWARD</code>. Other resolver rule types aren't
      * supported.</p>
      */
+    inline bool RuleTypeHasBeenSet() const { return m_ruleTypeHasBeenSet; }
+
+    /**
+     * <p>This value is always <code>FORWARD</code>. Other resolver rule types aren't
+     * supported.</p>
+     */
     inline void SetRuleType(const RuleTypeOption& value) { m_ruleTypeHasBeenSet = true; m_ruleType = value; }
 
     /**
@@ -341,6 +383,12 @@ namespace Model
      * resolver rule.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name for the resolver rule, which you specified when you created the
+     * resolver rule.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name for the resolver rule, which you specified when you created the
@@ -389,6 +437,12 @@ namespace Model
      * <p>An array that contains the IP addresses and ports that you want to forward
      * </p>
      */
+    inline bool TargetIpsHasBeenSet() const { return m_targetIpsHasBeenSet; }
+
+    /**
+     * <p>An array that contains the IP addresses and ports that you want to forward
+     * </p>
+     */
     inline void SetTargetIps(const Aws::Vector<TargetAddress>& value) { m_targetIpsHasBeenSet = true; m_targetIps = value; }
 
     /**
@@ -430,6 +484,11 @@ namespace Model
     /**
      * <p>The ID of the endpoint that the rule is associated with.</p>
      */
+    inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the endpoint that the rule is associated with.</p>
+     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**
@@ -463,6 +522,12 @@ namespace Model
      * that the rule is shared with.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>When a rule is shared with another AWS account, the account ID of the account
+     * that the rule is shared with.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>When a rule is shared with another AWS account, the account ID of the account
@@ -507,6 +572,13 @@ namespace Model
      * with the current account.</p>
      */
     inline const ShareStatus& GetShareStatus() const{ return m_shareStatus; }
+
+    /**
+     * <p>Whether the rules is shared and, if so, whether the current account is
+     * sharing the rule with another account, or another account is sharing the rule
+     * with the current account.</p>
+     */
+    inline bool ShareStatusHasBeenSet() const { return m_shareStatusHasBeenSet; }
 
     /**
      * <p>Whether the rules is shared and, if so, whether the current account is

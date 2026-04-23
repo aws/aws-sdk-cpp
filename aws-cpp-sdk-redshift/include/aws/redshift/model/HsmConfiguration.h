@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the Amazon Redshift HSM configuration.</p>
      */
+    inline bool HsmConfigurationIdentifierHasBeenSet() const { return m_hsmConfigurationIdentifierHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon Redshift HSM configuration.</p>
+     */
     inline void SetHsmConfigurationIdentifier(const Aws::String& value) { m_hsmConfigurationIdentifierHasBeenSet = true; m_hsmConfigurationIdentifier = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>A text description of the HSM configuration.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A text description of the HSM configuration.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A text description of the HSM configuration.</p>
@@ -131,6 +141,12 @@ namespace Model
      * HSM.</p>
      */
     inline const Aws::String& GetHsmIpAddress() const{ return m_hsmIpAddress; }
+
+    /**
+     * <p>The IP address that the Amazon Redshift cluster must use to access the
+     * HSM.</p>
+     */
+    inline bool HsmIpAddressHasBeenSet() const { return m_hsmIpAddressHasBeenSet; }
 
     /**
      * <p>The IP address that the Amazon Redshift cluster must use to access the
@@ -179,6 +195,12 @@ namespace Model
      * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
      * store their database encryption keys.</p>
      */
+    inline bool HsmPartitionNameHasBeenSet() const { return m_hsmPartitionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the partition in the HSM where the Amazon Redshift clusters will
+     * store their database encryption keys.</p>
+     */
     inline void SetHsmPartitionName(const Aws::String& value) { m_hsmPartitionNameHasBeenSet = true; m_hsmPartitionName = value; }
 
     /**
@@ -216,6 +238,11 @@ namespace Model
      * <p>The list of tags for the HSM configuration.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags for the HSM configuration.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags for the HSM configuration.</p>

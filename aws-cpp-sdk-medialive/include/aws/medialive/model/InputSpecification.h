@@ -57,6 +57,11 @@ namespace Model
     /**
      * Input codec
      */
+    inline bool CodecHasBeenSet() const { return m_codecHasBeenSet; }
+
+    /**
+     * Input codec
+     */
     inline void SetCodec(const InputCodec& value) { m_codecHasBeenSet = true; m_codec = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * Maximum input bitrate, categorized coarsely
      */
+    inline bool MaximumBitrateHasBeenSet() const { return m_maximumBitrateHasBeenSet; }
+
+    /**
+     * Maximum input bitrate, categorized coarsely
+     */
     inline void SetMaximumBitrate(const InputMaximumBitrate& value) { m_maximumBitrateHasBeenSet = true; m_maximumBitrate = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * Input resolution, categorized coarsely
      */
     inline const InputResolution& GetResolution() const{ return m_resolution; }
+
+    /**
+     * Input resolution, categorized coarsely
+     */
+    inline bool ResolutionHasBeenSet() const { return m_resolutionHasBeenSet; }
 
     /**
      * Input resolution, categorized coarsely

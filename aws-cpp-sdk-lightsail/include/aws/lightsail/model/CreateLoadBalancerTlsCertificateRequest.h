@@ -18,6 +18,7 @@
 #include <aws/lightsail/LightsailRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -49,6 +50,11 @@ namespace Model
      * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
+    /**
+     * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
+     */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
 
     /**
      * <p>The load balancer name where you want to create the SSL/TLS certificate.</p>
@@ -90,6 +96,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
      */
     inline const Aws::String& GetCertificateName() const{ return m_certificateName; }
+
+    /**
+     * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
+     * your account at one time. Each Lightsail load balancer can have up to 2
+     * certificates associated with it at one time. There is also an overall limit to
+     * the number of certificates that can be issue in a 365-day period. For more
+     * information, see <a
+     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-limits.html">Limits</a>.</p>
+     */
+    inline bool CertificateNameHasBeenSet() const { return m_certificateNameHasBeenSet; }
 
     /**
      * <p>The SSL/TLS certificate name.</p> <p>You can have up to 10 certificates in
@@ -162,6 +178,12 @@ namespace Model
      * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
      * certificate.</p>
      */
+    inline bool CertificateDomainNameHasBeenSet() const { return m_certificateDomainNameHasBeenSet; }
+
+    /**
+     * <p>The domain name (e.g., <code>example.com</code>) for your SSL/TLS
+     * certificate.</p>
+     */
     inline void SetCertificateDomainName(const Aws::String& value) { m_certificateDomainNameHasBeenSet = true; m_certificateDomainName = value; }
 
     /**
@@ -202,6 +224,14 @@ namespace Model
      * support wildcards (e.g., <code>*.example.com</code>).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCertificateAlternativeNames() const{ return m_certificateAlternativeNames; }
+
+    /**
+     * <p>An array of strings listing alternative domains and subdomains for your
+     * SSL/TLS certificate. Lightsail will de-dupe the names for you. You can have a
+     * maximum of 9 alternative names (in addition to the 1 primary domain). We do not
+     * support wildcards (e.g., <code>*.example.com</code>).</p>
+     */
+    inline bool CertificateAlternativeNamesHasBeenSet() const { return m_certificateAlternativeNamesHasBeenSet; }
 
     /**
      * <p>An array of strings listing alternative domains and subdomains for your
@@ -259,6 +289,63 @@ namespace Model
      */
     inline CreateLoadBalancerTlsCertificateRequest& AddCertificateAlternativeNames(const char* value) { m_certificateAlternativeNamesHasBeenSet = true; m_certificateAlternativeNames.push_back(value); return *this; }
 
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateLoadBalancerTlsCertificateRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateLoadBalancerTlsCertificateRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateLoadBalancerTlsCertificateRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values to add to the resource during create.</p>
+     * <p>To tag a resource after it has been created, see the <code>tag
+     * resource</code> operation.</p>
+     */
+    inline CreateLoadBalancerTlsCertificateRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_loadBalancerName;
@@ -272,6 +359,9 @@ namespace Model
 
     Aws::Vector<Aws::String> m_certificateAlternativeNames;
     bool m_certificateAlternativeNamesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

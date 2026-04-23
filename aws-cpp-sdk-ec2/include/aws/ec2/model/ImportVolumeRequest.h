@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Availability Zone for the resulting EBS volume.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone for the resulting EBS volume.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A description of the volume.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the volume.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the volume.</p>
@@ -137,6 +147,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -152,6 +170,11 @@ namespace Model
      * <p>The disk image.</p>
      */
     inline const DiskImageDetail& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The disk image.</p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * <p>The disk image.</p>
@@ -178,6 +201,11 @@ namespace Model
      * <p>The volume size.</p>
      */
     inline const VolumeDetail& GetVolume() const{ return m_volume; }
+
+    /**
+     * <p>The volume size.</p>
+     */
+    inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
 
     /**
      * <p>The volume size.</p>

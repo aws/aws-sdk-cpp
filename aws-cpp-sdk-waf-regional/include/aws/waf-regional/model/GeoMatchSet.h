@@ -72,6 +72,18 @@ namespace Model
      * <a>DeleteGeoMatchSet</a>).</p> <p> <code>GeoMatchSetId</code> is returned by
      * <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.</p>
      */
+    inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>GeoMatchSetId</code> for an <code>GeoMatchSet</code>. You use
+     * <code>GeoMatchSetId</code> to get information about a <code>GeoMatchSet</code>
+     * (see <a>GeoMatchSet</a>), update a <code>GeoMatchSet</code> (see
+     * <a>UpdateGeoMatchSet</a>), insert a <code>GeoMatchSet</code> into a
+     * <code>Rule</code> or delete one from a <code>Rule</code> (see
+     * <a>UpdateRule</a>), and delete a <code>GeoMatchSet</code> from AWS WAF (see
+     * <a>DeleteGeoMatchSet</a>).</p> <p> <code>GeoMatchSetId</code> is returned by
+     * <a>CreateGeoMatchSet</a> and by <a>ListGeoMatchSets</a>.</p>
+     */
     inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
 
     /**
@@ -145,6 +157,12 @@ namespace Model
      * <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change
      * the name of an <code>GeoMatchSet</code> after you create it.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change
+     * the name of an <code>GeoMatchSet</code> after you create it.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -183,6 +201,12 @@ namespace Model
      * you want AWS WAF to search for.</p>
      */
     inline const Aws::Vector<GeoMatchConstraint>& GetGeoMatchConstraints() const{ return m_geoMatchConstraints; }
+
+    /**
+     * <p>An array of <a>GeoMatchConstraint</a> objects, which contain the country that
+     * you want AWS WAF to search for.</p>
+     */
+    inline bool GeoMatchConstraintsHasBeenSet() const { return m_geoMatchConstraintsHasBeenSet; }
 
     /**
      * <p>An array of <a>GeoMatchConstraint</a> objects, which contain the country that

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource that you want to tag.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * SageMaker sets the value to an empty string. </p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An array of <code>Tag</code> objects. Each tag is a key-value pair. Only the
+     * <code>key</code> parameter is required. If you don't specify a value, Amazon
+     * SageMaker sets the value to an empty string. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>An array of <code>Tag</code> objects. Each tag is a key-value pair. Only the

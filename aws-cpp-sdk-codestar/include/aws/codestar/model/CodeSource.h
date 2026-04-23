@@ -59,6 +59,12 @@ namespace Model
      * <p>Information about the Amazon S3 location where the source code files provided
      * with the project request are stored. </p>
      */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+
+    /**
+     * <p>Information about the Amazon S3 location where the source code files provided
+     * with the project request are stored. </p>
+     */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**

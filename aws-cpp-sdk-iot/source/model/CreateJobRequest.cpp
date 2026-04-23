@@ -32,7 +32,9 @@ CreateJobRequest::CreateJobRequest() :
     m_targetSelection(TargetSelection::NOT_SET),
     m_targetSelectionHasBeenSet(false),
     m_jobExecutionsRolloutConfigHasBeenSet(false),
-    m_timeoutConfigHasBeenSet(false)
+    m_abortConfigHasBeenSet(false),
+    m_timeoutConfigHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -86,9 +88,26 @@ Aws::String CreateJobRequest::SerializePayload() const
 
   }
 
+  if(m_abortConfigHasBeenSet)
+  {
+   payload.WithObject("abortConfig", m_abortConfig.Jsonize());
+
+  }
+
   if(m_timeoutConfigHasBeenSet)
   {
    payload.WithObject("timeoutConfig", m_timeoutConfig.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

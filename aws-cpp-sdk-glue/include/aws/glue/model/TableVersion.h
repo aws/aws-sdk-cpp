@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The table in question</p>
      */
+    inline bool TableHasBeenSet() const { return m_tableHasBeenSet; }
+
+    /**
+     * <p>The table in question</p>
+     */
     inline void SetTable(const Table& value) { m_tableHasBeenSet = true; m_table = value; }
 
     /**
@@ -79,6 +84,12 @@ namespace Model
      * a string representation of an integer. Each version is incremented by 1.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The ID value that identifies this table version. A <code>VersionId</code> is
+     * a string representation of an integer. Each version is incremented by 1.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The ID value that identifies this table version. A <code>VersionId</code> is

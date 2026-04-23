@@ -58,6 +58,12 @@ namespace Model
      * <p>Name of your existing Amazon Kinesis Analytics application to which you want
      * to add the streaming source.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of your existing Amazon Kinesis Analytics application to which you want
+     * to add the streaming source.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -103,6 +109,13 @@ namespace Model
      * <a>DescribeApplication</a> operation to find the current application
      * version.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Current version of your Amazon Kinesis Analytics application. You can use the
+     * <a>DescribeApplication</a> operation to find the current application
+     * version.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -117,6 +130,11 @@ namespace Model
      * <p>The <a>Input</a> to add.</p>
      */
     inline const Input& GetInput() const{ return m_input; }
+
+    /**
+     * <p>The <a>Input</a> to add.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>The <a>Input</a> to add.</p>

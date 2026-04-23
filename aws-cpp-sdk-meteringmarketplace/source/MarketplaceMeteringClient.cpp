@@ -24,11 +24,15 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/meteringmarketplace/MarketplaceMeteringClient.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringEndpoint.h>
 #include <aws/meteringmarketplace/MarketplaceMeteringErrorMarshaller.h>
 #include <aws/meteringmarketplace/model/BatchMeterUsageRequest.h>
 #include <aws/meteringmarketplace/model/MeterUsageRequest.h>
+#include <aws/meteringmarketplace/model/RegisterUsageRequest.h>
 #include <aws/meteringmarketplace/model/ResolveCustomerRequest.h>
 
 using namespace Aws;
@@ -80,25 +84,32 @@ MarketplaceMeteringClient::~MarketplaceMeteringClient()
 
 void MarketplaceMeteringClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << MarketplaceMeteringEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + MarketplaceMeteringEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void MarketplaceMeteringClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 BatchMeterUsageOutcome MarketplaceMeteringClient::BatchMeterUsage(const BatchMeterUsageRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -132,8 +143,8 @@ void MarketplaceMeteringClient::BatchMeterUsageAsyncHelper(const BatchMeterUsage
 
 MeterUsageOutcome MarketplaceMeteringClient::MeterUsage(const MeterUsageRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -165,10 +176,45 @@ void MarketplaceMeteringClient::MeterUsageAsyncHelper(const MeterUsageRequest& r
   handler(this, request, MeterUsage(request), context);
 }
 
+RegisterUsageOutcome MarketplaceMeteringClient::RegisterUsage(const RegisterUsageRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return RegisterUsageOutcome(RegisterUsageResult(outcome.GetResult()));
+  }
+  else
+  {
+    return RegisterUsageOutcome(outcome.GetError());
+  }
+}
+
+RegisterUsageOutcomeCallable MarketplaceMeteringClient::RegisterUsageCallable(const RegisterUsageRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< RegisterUsageOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->RegisterUsage(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void MarketplaceMeteringClient::RegisterUsageAsync(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->RegisterUsageAsyncHelper( request, handler, context ); } );
+}
+
+void MarketplaceMeteringClient::RegisterUsageAsyncHelper(const RegisterUsageRequest& request, const RegisterUsageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, RegisterUsage(request), context);
+}
+
 ResolveCustomerOutcome MarketplaceMeteringClient::ResolveCustomer(const ResolveCustomerRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

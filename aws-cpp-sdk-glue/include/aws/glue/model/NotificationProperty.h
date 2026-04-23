@@ -56,6 +56,12 @@ namespace Model
      * <p>After a job run starts, the number of minutes to wait before sending a job
      * run delay notification.</p>
      */
+    inline bool NotifyDelayAfterHasBeenSet() const { return m_notifyDelayAfterHasBeenSet; }
+
+    /**
+     * <p>After a job run starts, the number of minutes to wait before sending a job
+     * run delay notification.</p>
+     */
     inline void SetNotifyDelayAfter(int value) { m_notifyDelayAfterHasBeenSet = true; m_notifyDelayAfter = value; }
 
     /**

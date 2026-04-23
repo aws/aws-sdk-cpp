@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Specifies the source table.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>Specifies the source table.</p>
+     */
     inline void SetSource(const CatalogEntry& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -76,6 +81,11 @@ namespace Model
      * <p>A list of target tables.</p>
      */
     inline const Aws::Vector<CatalogEntry>& GetSinks() const{ return m_sinks; }
+
+    /**
+     * <p>A list of target tables.</p>
+     */
+    inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
 
     /**
      * <p>A list of target tables.</p>
@@ -112,6 +122,11 @@ namespace Model
      * <p>Parameters for the mapping.</p>
      */
     inline const Location& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>Parameters for the mapping.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>Parameters for the mapping.</p>

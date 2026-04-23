@@ -26,7 +26,8 @@ using namespace Aws::Utils;
 StartBulkDeploymentRequest::StartBulkDeploymentRequest() : 
     m_amznClientTokenHasBeenSet(false),
     m_executionRoleArnHasBeenSet(false),
-    m_inputFileUriHasBeenSet(false)
+    m_inputFileUriHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -43,6 +44,17 @@ Aws::String StartBulkDeploymentRequest::SerializePayload() const
   if(m_inputFileUriHasBeenSet)
   {
    payload.WithString("InputFileUri", m_inputFileUri);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

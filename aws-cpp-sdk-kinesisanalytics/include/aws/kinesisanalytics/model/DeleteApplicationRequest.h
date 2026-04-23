@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the Amazon Kinesis Analytics application to delete.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * value. </p>
      */
     inline const Aws::Utils::DateTime& GetCreateTimestamp() const{ return m_createTimestamp; }
+
+    /**
+     * <p> You can use the <code>DescribeApplication</code> operation to get this
+     * value. </p>
+     */
+    inline bool CreateTimestampHasBeenSet() const { return m_createTimestampHasBeenSet; }
 
     /**
      * <p> You can use the <code>DescribeApplication</code> operation to get this

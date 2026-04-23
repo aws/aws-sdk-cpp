@@ -38,7 +38,7 @@ namespace Model
    * <p>An attribute is a name-value pair associated with an Amazon ECS object.
    * Attributes enable you to extend the Amazon ECS data model by adding custom
    * metadata to your resources. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
    * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Attribute">AWS API
@@ -58,6 +58,12 @@ namespace Model
      * numbers, hyphens, underscores, and periods are allowed.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, underscores, and periods are allowed.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -102,6 +108,13 @@ namespace Model
      * and spaces are allowed.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the attribute. Up to 128 letters (uppercase and lowercase),
+     * numbers, hyphens, underscores, periods, at signs (@), forward slashes, colons,
+     * and spaces are allowed.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the attribute. Up to 128 letters (uppercase and lowercase),
@@ -158,6 +171,13 @@ namespace Model
      * required if you use the short form ID for a resource instead of the full
      * ARN.</p>
      */
+    inline bool TargetTypeHasBeenSet() const { return m_targetTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the target with which to attach the attribute. This parameter is
+     * required if you use the short form ID for a resource instead of the full
+     * ARN.</p>
+     */
     inline void SetTargetType(const TargetType& value) { m_targetTypeHasBeenSet = true; m_targetType = value; }
 
     /**
@@ -187,6 +207,12 @@ namespace Model
      * full Amazon Resource Name (ARN).</p>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
+
+    /**
+     * <p>The ID of the target. You can specify the short form ID for a resource or the
+     * full Amazon Resource Name (ARN).</p>
+     */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p>The ID of the target. You can specify the short form ID for a resource or the

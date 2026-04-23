@@ -60,6 +60,14 @@ namespace Model
      * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
      * </code> </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the private CA that issued the certificate to
+     * be revoked. This must be of the form:</p> <p>
+     * <code>arn:aws:acm-pca:<i>region</i>:<i>account</i>:certificate-authority/<i>12345678-1234-1234-1234-123456789012</i>
+     * </code> </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -111,6 +119,11 @@ namespace Model
     /**
      * <p>Revocation information for your private CA.</p>
      */
+    inline bool RevocationConfigurationHasBeenSet() const { return m_revocationConfigurationHasBeenSet; }
+
+    /**
+     * <p>Revocation information for your private CA.</p>
+     */
     inline void SetRevocationConfiguration(const RevocationConfiguration& value) { m_revocationConfigurationHasBeenSet = true; m_revocationConfiguration = value; }
 
     /**
@@ -133,6 +146,11 @@ namespace Model
      * <p>Status of your private CA.</p>
      */
     inline const CertificateAuthorityStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Status of your private CA.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Status of your private CA.</p>

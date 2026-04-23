@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the delivery channel through which the snapshot is delivered.</p>
      */
+    inline bool DeliveryChannelNameHasBeenSet() const { return m_deliveryChannelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery channel through which the snapshot is delivered.</p>
+     */
     inline void SetDeliveryChannelName(const Aws::String& value) { m_deliveryChannelNameHasBeenSet = true; m_deliveryChannelName = value; }
 
     /**

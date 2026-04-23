@@ -62,6 +62,13 @@ namespace Model
      * IDs. If a deadline is not yet available for this resource type, this field is
      * not returned.</p>
      */
+    inline bool DeadlineHasBeenSet() const { return m_deadlineHasBeenSet; }
+
+    /**
+     * <p>The date in UTC at which you are permanently switched over to using longer
+     * IDs. If a deadline is not yet available for this resource type, this field is
+     * not returned.</p>
+     */
     inline void SetDeadline(const Aws::Utils::DateTime& value) { m_deadlineHasBeenSet = true; m_deadline = value; }
 
     /**
@@ -90,6 +97,11 @@ namespace Model
      * <p>The type of resource.</p>
      */
     inline const Aws::String& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The type of resource.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The type of resource.</p>
@@ -127,6 +139,12 @@ namespace Model
      * resource.</p>
      */
     inline bool GetUseLongIds() const{ return m_useLongIds; }
+
+    /**
+     * <p>Indicates whether longer IDs (17-character IDs) are enabled for the
+     * resource.</p>
+     */
+    inline bool UseLongIdsHasBeenSet() const { return m_useLongIdsHasBeenSet; }
 
     /**
      * <p>Indicates whether longer IDs (17-character IDs) are enabled for the

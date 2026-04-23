@@ -35,7 +35,7 @@ GetSegmentExportJobsRequest::GetSegmentExportJobsRequest() :
 
 Aws::String GetSegmentExportJobsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSegmentExportJobsRequest::AddQueryStringParameters(URI& uri) const

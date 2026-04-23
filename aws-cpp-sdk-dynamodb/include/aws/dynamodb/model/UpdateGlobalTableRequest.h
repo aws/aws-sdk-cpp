@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The global table name.</p>
      */
+    inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
+
+    /**
+     * <p>The global table name.</p>
+     */
     inline void SetGlobalTableName(const Aws::String& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>A list of regions that should be added or removed from the global table.</p>
      */
     inline const Aws::Vector<ReplicaUpdate>& GetReplicaUpdates() const{ return m_replicaUpdates; }
+
+    /**
+     * <p>A list of regions that should be added or removed from the global table.</p>
+     */
+    inline bool ReplicaUpdatesHasBeenSet() const { return m_replicaUpdatesHasBeenSet; }
 
     /**
      * <p>A list of regions that should be added or removed from the global table.</p>

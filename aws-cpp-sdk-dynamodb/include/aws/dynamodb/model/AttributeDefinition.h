@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A name for the attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>A name for the attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * of type Binary</p> </li> </ul>
      */
     inline const ScalarAttributeType& GetAttributeType() const{ return m_attributeType; }
+
+    /**
+     * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -
+     * the attribute is of type String</p> </li> <li> <p> <code>N</code> - the
+     * attribute is of type Number</p> </li> <li> <p> <code>B</code> - the attribute is
+     * of type Binary</p> </li> </ul>
+     */
+    inline bool AttributeTypeHasBeenSet() const { return m_attributeTypeHasBeenSet; }
 
     /**
      * <p>The data type for the attribute, where:</p> <ul> <li> <p> <code>S</code> -

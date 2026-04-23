@@ -66,6 +66,15 @@ namespace Model
      * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
      * is no default value.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the unique stack ID that is associated with the stack, which are
+     * not always interchangeable:</p> <ul> <li> <p>Running stacks: You can specify
+     * either the stack's name or its unique stack ID.</p> </li> <li> <p>Deleted
+     * stacks: You must specify the unique stack ID.</p> </li> </ul> <p>Default: There
+     * is no default value.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -119,6 +128,12 @@ namespace Model
      * <p>Default: There is no default value.</p>
      */
     inline const Aws::String& GetLogicalResourceId() const{ return m_logicalResourceId; }
+
+    /**
+     * <p>The logical name of the resource as specified in the template.</p>
+     * <p>Default: There is no default value.</p>
+     */
+    inline bool LogicalResourceIdHasBeenSet() const { return m_logicalResourceIdHasBeenSet; }
 
     /**
      * <p>The logical name of the resource as specified in the template.</p>

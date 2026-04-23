@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of schedule actions to delete.
      */
+    inline bool ActionNamesHasBeenSet() const { return m_actionNamesHasBeenSet; }
+
+    /**
+     * A list of schedule actions to delete.
+     */
     inline void SetActionNames(const Aws::Vector<Aws::String>& value) { m_actionNamesHasBeenSet = true; m_actionNames = value; }
 
     /**

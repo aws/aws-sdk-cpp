@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p> A unique identifier for the HIT.</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p> A unique identifier for the HIT.</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The ID of the HIT type of this HIT</p>
      */
     inline const Aws::String& GetHITTypeId() const{ return m_hITTypeId; }
+
+    /**
+     * <p>The ID of the HIT type of this HIT</p>
+     */
+    inline bool HITTypeIdHasBeenSet() const { return m_hITTypeIdHasBeenSet; }
 
     /**
      * <p>The ID of the HIT type of this HIT</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p> The ID of the HIT Group of this HIT.</p>
      */
+    inline bool HITGroupIdHasBeenSet() const { return m_hITGroupIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the HIT Group of this HIT.</p>
+     */
     inline void SetHITGroupId(const Aws::String& value) { m_hITGroupIdHasBeenSet = true; m_hITGroupId = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
      * <p> The ID of the HIT Layout of this HIT.</p>
      */
     inline const Aws::String& GetHITLayoutId() const{ return m_hITLayoutId; }
+
+    /**
+     * <p> The ID of the HIT Layout of this HIT.</p>
+     */
+    inline bool HITLayoutIdHasBeenSet() const { return m_hITLayoutIdHasBeenSet; }
 
     /**
      * <p> The ID of the HIT Layout of this HIT.</p>
@@ -206,6 +226,11 @@ namespace Model
     /**
      * <p> The date and time the HIT was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p> The date and time the HIT was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -228,6 +253,11 @@ namespace Model
      * <p> The title of the HIT.</p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * <p> The title of the HIT.</p>
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * <p> The title of the HIT.</p>
@@ -268,6 +298,11 @@ namespace Model
     /**
      * <p> A general description of the HIT.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p> A general description of the HIT.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -302,6 +337,13 @@ namespace Model
      * structure.</p>
      */
     inline const Aws::String& GetQuestion() const{ return m_question; }
+
+    /**
+     * <p> The data the Worker completing the HIT uses produce the results. This is
+     * either either a QuestionForm, HTMLQuestion or an ExternalQuestion data
+     * structure.</p>
+     */
+    inline bool QuestionHasBeenSet() const { return m_questionHasBeenSet; }
 
     /**
      * <p> The data the Worker completing the HIT uses produce the results. This is
@@ -358,6 +400,13 @@ namespace Model
      * Search terms similar to the keywords of a HIT are more likely to have the HIT in
      * the search results.</p>
      */
+    inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
+
+    /**
+     * <p> One or more words or phrases that describe the HIT, separated by commas.
+     * Search terms similar to the keywords of a HIT are more likely to have the HIT in
+     * the search results.</p>
+     */
     inline void SetKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
     /**
@@ -406,6 +455,12 @@ namespace Model
      * <p>The status of the HIT and its assignments. Valid Values are Assignable |
      * Unassignable | Reviewable | Reviewing | Disposed. </p>
      */
+    inline bool HITStatusHasBeenSet() const { return m_hITStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the HIT and its assignments. Valid Values are Assignable |
+     * Unassignable | Reviewable | Reviewing | Disposed. </p>
+     */
     inline void SetHITStatus(const HITStatus& value) { m_hITStatusHasBeenSet = true; m_hITStatus = value; }
 
     /**
@@ -437,6 +492,12 @@ namespace Model
      * <p>The number of times the HIT can be accepted and completed before the HIT
      * becomes unavailable. </p>
      */
+    inline bool MaxAssignmentsHasBeenSet() const { return m_maxAssignmentsHasBeenSet; }
+
+    /**
+     * <p>The number of times the HIT can be accepted and completed before the HIT
+     * becomes unavailable. </p>
+     */
     inline void SetMaxAssignments(int value) { m_maxAssignmentsHasBeenSet = true; m_maxAssignments = value; }
 
     /**
@@ -448,6 +509,9 @@ namespace Model
 
     
     inline const Aws::String& GetReward() const{ return m_reward; }
+
+    
+    inline bool RewardHasBeenSet() const { return m_rewardHasBeenSet; }
 
     
     inline void SetReward(const Aws::String& value) { m_rewardHasBeenSet = true; m_reward = value; }
@@ -482,6 +546,14 @@ namespace Model
      * This is the amount of time the Requester has to reject an assignment submitted
      * by a Worker before the assignment is auto-approved and the Worker is paid. </p>
      */
+    inline bool AutoApprovalDelayInSecondsHasBeenSet() const { return m_autoApprovalDelayInSecondsHasBeenSet; }
+
+    /**
+     * <p>The amount of time, in seconds, after the Worker submits an assignment for
+     * the HIT that the results are automatically approved by Amazon Mechanical Turk.
+     * This is the amount of time the Requester has to reject an assignment submitted
+     * by a Worker before the assignment is auto-approved and the Worker is paid. </p>
+     */
     inline void SetAutoApprovalDelayInSeconds(long long value) { m_autoApprovalDelayInSecondsHasBeenSet = true; m_autoApprovalDelayInSeconds = value; }
 
     /**
@@ -497,6 +569,11 @@ namespace Model
      * <p>The date and time the HIT expires.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
+
+    /**
+     * <p>The date and time the HIT expires.</p>
+     */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
      * <p>The date and time the HIT expires.</p>
@@ -529,6 +606,12 @@ namespace Model
      * <p> The length of time, in seconds, that a Worker has to complete the HIT after
      * accepting it.</p>
      */
+    inline bool AssignmentDurationInSecondsHasBeenSet() const { return m_assignmentDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p> The length of time, in seconds, that a Worker has to complete the HIT after
+     * accepting it.</p>
+     */
     inline void SetAssignmentDurationInSeconds(long long value) { m_assignmentDurationInSecondsHasBeenSet = true; m_assignmentDurationInSeconds = value; }
 
     /**
@@ -543,6 +626,12 @@ namespace Model
      * field is visible only to the creator of the HIT.</p>
      */
     inline const Aws::String& GetRequesterAnnotation() const{ return m_requesterAnnotation; }
+
+    /**
+     * <p> An arbitrary data field the Requester who created the HIT can use. This
+     * field is visible only to the creator of the HIT.</p>
+     */
+    inline bool RequesterAnnotationHasBeenSet() const { return m_requesterAnnotationHasBeenSet; }
 
     /**
      * <p> An arbitrary data field the Requester who created the HIT can use. This
@@ -589,6 +678,15 @@ namespace Model
      * each <code>QualificationRequirement</code> structure. </p>
      */
     inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const{ return m_qualificationRequirements; }
+
+    /**
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
+     */
+    inline bool QualificationRequirementsHasBeenSet() const { return m_qualificationRequirementsHasBeenSet; }
 
     /**
      * <p> Conditions that a Worker's Qualifications must meet in order to accept the
@@ -655,6 +753,12 @@ namespace Model
      * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
      * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
      */
+    inline bool HITReviewStatusHasBeenSet() const { return m_hITReviewStatusHasBeenSet; }
+
+    /**
+     * <p> Indicates the review status of the HIT. Valid Values are NotReviewed |
+     * MarkedForReview | ReviewedAppropriate | ReviewedInappropriate.</p>
+     */
     inline void SetHITReviewStatus(const HITReviewStatus& value) { m_hITReviewStatusHasBeenSet = true; m_hITReviewStatus = value; }
 
     /**
@@ -688,6 +792,13 @@ namespace Model
      * accepted by Workers, but have not yet been submitted, returned, or
      * abandoned.</p>
      */
+    inline bool NumberOfAssignmentsPendingHasBeenSet() const { return m_numberOfAssignmentsPendingHasBeenSet; }
+
+    /**
+     * <p> The number of assignments for this HIT that are being previewed or have been
+     * accepted by Workers, but have not yet been submitted, returned, or
+     * abandoned.</p>
+     */
     inline void SetNumberOfAssignmentsPending(int value) { m_numberOfAssignmentsPendingHasBeenSet = true; m_numberOfAssignmentsPending = value; }
 
     /**
@@ -708,6 +819,12 @@ namespace Model
      * <p> The number of assignments for this HIT that are available for Workers to
      * accept.</p>
      */
+    inline bool NumberOfAssignmentsAvailableHasBeenSet() const { return m_numberOfAssignmentsAvailableHasBeenSet; }
+
+    /**
+     * <p> The number of assignments for this HIT that are available for Workers to
+     * accept.</p>
+     */
     inline void SetNumberOfAssignmentsAvailable(int value) { m_numberOfAssignmentsAvailableHasBeenSet = true; m_numberOfAssignmentsAvailable = value; }
 
     /**
@@ -722,6 +839,12 @@ namespace Model
      * rejected.</p>
      */
     inline int GetNumberOfAssignmentsCompleted() const{ return m_numberOfAssignmentsCompleted; }
+
+    /**
+     * <p> The number of assignments for this HIT that have been approved or
+     * rejected.</p>
+     */
+    inline bool NumberOfAssignmentsCompletedHasBeenSet() const { return m_numberOfAssignmentsCompletedHasBeenSet; }
 
     /**
      * <p> The number of assignments for this HIT that have been approved or

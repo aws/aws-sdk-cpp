@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of resources that you want AWS Config to list in the response.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resources that you want AWS Config to list in the response.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -81,6 +86,13 @@ namespace Model
      * of the specified type that it has discovered.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceIds() const{ return m_resourceIds; }
+
+    /**
+     * <p>The IDs of only those resources that you want AWS Config to list in the
+     * response. If you do not specify this parameter, AWS Config lists all resources
+     * of the specified type that it has discovered.</p>
+     */
+    inline bool ResourceIdsHasBeenSet() const { return m_resourceIdsHasBeenSet; }
 
     /**
      * <p>The IDs of only those resources that you want AWS Config to list in the
@@ -144,6 +156,13 @@ namespace Model
      * the response. If you do not specify this parameter, AWS Config lists all
      * resources of the specified type that it has discovered.</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The custom name of only those resources that you want AWS Config to list in
+     * the response. If you do not specify this parameter, AWS Config lists all
+     * resources of the specified type that it has discovered.</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -194,6 +213,13 @@ namespace Model
      * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resource identifiers returned on each page. The default
+     * is 100. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -214,6 +240,12 @@ namespace Model
      * <p>Specifies whether AWS Config includes deleted resources in the results. By
      * default, deleted resources are not included.</p>
      */
+    inline bool IncludeDeletedResourcesHasBeenSet() const { return m_includeDeletedResourcesHasBeenSet; }
+
+    /**
+     * <p>Specifies whether AWS Config includes deleted resources in the results. By
+     * default, deleted resources are not included.</p>
+     */
     inline void SetIncludeDeletedResources(bool value) { m_includeDeletedResourcesHasBeenSet = true; m_includeDeletedResources = value; }
 
     /**
@@ -228,6 +260,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

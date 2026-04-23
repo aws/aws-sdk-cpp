@@ -161,14 +161,11 @@ namespace Model
   /**
    * <p>AWS Snowball is a petabyte-scale data transport solution that uses secure
    * devices to transfer large amounts of data between your on-premises data centers
-   * and Amazon Simple Storage Service (Amazon S3). The Snowball commands described
-   * here provide access to the same functionality that is available in the AWS
-   * Snowball Management Console, which enables you to create and manage jobs for
-   * Snowball. To transfer data locally with a Snowball device, you'll need to use
-   * the Snowball client or the Amazon S3 API adapter for Snowball. For more
-   * information, see the <a
-   * href="http://docs.aws.amazon.com/AWSImportExport/latest/ug/api-reference.html">User
-   * Guide</a>.</p>
+   * and Amazon Simple Storage Service (Amazon S3). The commands described here
+   * provide access to the same functionality that is available in the AWS Snowball
+   * Management Console, which enables you to create and manage jobs for Snowball and
+   * Snowball Edge devices. To transfer data locally with a device, you'll need to
+   * use the Snowball client or the Amazon S3 API adapter for Snowball.</p>
    */
   class AWS_SNOWBALL_API SnowballClient : public Aws::Client::AWSJsonClient
   {
@@ -719,11 +716,12 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
-         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
-         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on
+         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
+         * more information on compatible AMIs, see <a
+         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
+         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          */
@@ -731,11 +729,12 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
-         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
-         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on
+         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
+         * more information on compatible AMIs, see <a
+         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
+         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *
@@ -745,11 +744,12 @@ namespace Model
 
         /**
          * <p>This action returns a list of the different Amazon EC2 Amazon Machine Images
-         * (AMIs) that are owned by your AWS account that would be supported for use on a
-         * Snowball Edge device. Currently, supported AMIs are based on the CentOS 7
-         * (x86_64) - with Updates HVM, Ubuntu Server 14.04 LTS (HVM), and Ubuntu 16.04 LTS
-         * - Xenial (HVM) images, available on the AWS Marketplace.</p><p><h3>See
-         * Also:</h3>   <a
+         * (AMIs) that are owned by your AWS account that would be supported for use on
+         * <code>EDGE</code>, <code>EDGE_C</code>, and <code>EDGE_CG</code> devices. For
+         * more information on compatible AMIs, see <a
+         * href="http://docs.aws.amazon.com/snowball/latest/developer-guide/using-ec2.html">Using
+         * Amazon EC2 Compute Instances</a> in the <i>AWS Snowball Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/snowball-2016-06-30/ListCompatibleImages">AWS
          * API Reference</a></p>
          *
@@ -868,10 +868,10 @@ namespace Model
          */
         virtual void UpdateJobAsync(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CancelClusterAsyncHelper(const Model::CancelClusterRequest& request, const CancelClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -893,6 +893,7 @@ namespace Model
         void UpdateJobAsyncHelper(const Model::UpdateJobRequest& request, const UpdateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

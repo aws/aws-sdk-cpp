@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the session.</p>
      */
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the session.</p>
+     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The instance that the Session Manager session connected to.</p>
      */
     inline const Aws::String& GetTarget() const{ return m_target; }
+
+    /**
+     * <p>The instance that the Session Manager session connected to.</p>
+     */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
 
     /**
      * <p>The instance that the Session Manager session connected to.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The status of the session. For example, "Connected" or "Terminated".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the session. For example, "Connected" or "Terminated".</p>
+     */
     inline void SetStatus(const SessionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
      */
     inline const Aws::Utils::DateTime& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
+     */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The date and time, in ISO-8601 Extended format, when the session began.</p>
@@ -185,6 +205,12 @@ namespace Model
      * <p>The date and time, in ISO-8601 Extended format, when the session was
      * terminated.</p>
      */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, when the session was
+     * terminated.</p>
+     */
     inline void SetEndDate(const Aws::Utils::DateTime& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
@@ -212,6 +238,13 @@ namespace Model
      * <code>SSM-SessionManagerRunShell</code>.</p>
      */
     inline const Aws::String& GetDocumentName() const{ return m_documentName; }
+
+    /**
+     * <p>The name of the Session Manager SSM document used to define the parameters
+     * and plugin settings for the session. For example,
+     * <code>SSM-SessionManagerRunShell</code>.</p>
+     */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
 
     /**
      * <p>The name of the Session Manager SSM document used to define the parameters
@@ -264,6 +297,11 @@ namespace Model
     /**
      * <p>The ID of the AWS user account that started the session.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS user account that started the session.</p>
+     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -300,6 +338,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetDetails(const Aws::String& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
@@ -332,6 +375,11 @@ namespace Model
      * <p>Reserved for future use.</p>
      */
     inline const SessionManagerOutputUrl& GetOutputUrl() const{ return m_outputUrl; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
+    inline bool OutputUrlHasBeenSet() const { return m_outputUrlHasBeenSet; }
 
     /**
      * <p>Reserved for future use.</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>Specifies whether persistent application settings are enabled for users
      * during their streaming sessions.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether persistent application settings are enabled for users
+     * during their streaming sessions.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -72,6 +78,12 @@ namespace Model
      * settings are stored.</p>
      */
     inline const Aws::String& GetSettingsGroup() const{ return m_settingsGroup; }
+
+    /**
+     * <p>The path prefix for the S3 bucket where users’ persistent application
+     * settings are stored.</p>
+     */
+    inline bool SettingsGroupHasBeenSet() const { return m_settingsGroupHasBeenSet; }
 
     /**
      * <p>The path prefix for the S3 bucket where users’ persistent application
@@ -117,6 +129,14 @@ namespace Model
      * and the Region. </p>
      */
     inline const Aws::String& GetS3BucketName() const{ return m_s3BucketName; }
+
+    /**
+     * <p>The S3 bucket where users’ persistent application settings are stored. When
+     * persistent application settings are enabled for the first time for an account in
+     * an AWS Region, an S3 bucket is created. The bucket is unique to the AWS account
+     * and the Region. </p>
+     */
+    inline bool S3BucketNameHasBeenSet() const { return m_s3BucketNameHasBeenSet; }
 
     /**
      * <p>The S3 bucket where users’ persistent application settings are stored. When

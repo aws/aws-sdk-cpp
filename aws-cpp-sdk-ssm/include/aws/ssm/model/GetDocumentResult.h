@@ -16,8 +16,11 @@
 #pragma once
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/model/DocumentStatus.h>
 #include <aws/ssm/model/DocumentType.h>
 #include <aws/ssm/model/DocumentFormat.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/AttachmentContent.h>
 #include <utility>
 
 namespace Aws
@@ -81,6 +84,56 @@ namespace Model
 
 
     /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline const Aws::String& GetVersionName() const{ return m_versionName; }
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline void SetVersionName(const Aws::String& value) { m_versionName = value; }
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline void SetVersionName(Aws::String&& value) { m_versionName = std::move(value); }
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline void SetVersionName(const char* value) { m_versionName.assign(value); }
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline GetDocumentResult& WithVersionName(const Aws::String& value) { SetVersionName(value); return *this;}
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline GetDocumentResult& WithVersionName(Aws::String&& value) { SetVersionName(std::move(value)); return *this;}
+
+    /**
+     * <p>The version of the artifact associated with the document. For example,
+     * "Release 12, Update 6". This value is unique across all versions of a document,
+     * and cannot be changed.</p>
+     */
+    inline GetDocumentResult& WithVersionName(const char* value) { SetVersionName(value); return *this;}
+
+
+    /**
      * <p>The document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
@@ -114,6 +167,99 @@ namespace Model
      * <p>The document version.</p>
      */
     inline GetDocumentResult& WithDocumentVersion(const char* value) { SetDocumentVersion(value); return *this;}
+
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and
+     * <code>Deleting</code>.</p>
+     */
+    inline const DocumentStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and
+     * <code>Deleting</code>.</p>
+     */
+    inline void SetStatus(const DocumentStatus& value) { m_status = value; }
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and
+     * <code>Deleting</code>.</p>
+     */
+    inline void SetStatus(DocumentStatus&& value) { m_status = std::move(value); }
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and
+     * <code>Deleting</code>.</p>
+     */
+    inline GetDocumentResult& WithStatus(const DocumentStatus& value) { SetStatus(value); return *this;}
+
+    /**
+     * <p>The status of the Systems Manager document, such as <code>Creating</code>,
+     * <code>Active</code>, <code>Updating</code>, <code>Failed</code>, and
+     * <code>Deleting</code>.</p>
+     */
+    inline GetDocumentResult& WithStatus(DocumentStatus&& value) { SetStatus(std::move(value)); return *this;}
+
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline const Aws::String& GetStatusInformation() const{ return m_statusInformation; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(const Aws::String& value) { m_statusInformation = value; }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(Aws::String&& value) { m_statusInformation = std::move(value); }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline void SetStatusInformation(const char* value) { m_statusInformation.assign(value); }
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline GetDocumentResult& WithStatusInformation(const Aws::String& value) { SetStatusInformation(value); return *this;}
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline GetDocumentResult& WithStatusInformation(Aws::String&& value) { SetStatusInformation(std::move(value)); return *this;}
+
+    /**
+     * <p>A message returned by AWS Systems Manager that explains the
+     * <code>Status</code> value. For example, a <code>Failed</code> status might be
+     * explained by the <code>StatusInformation</code> message, "The specified S3
+     * bucket does not exist. Verify that the URL of the S3 bucket is correct."</p>
+     */
+    inline GetDocumentResult& WithStatusInformation(const char* value) { SetStatusInformation(value); return *this;}
 
 
     /**
@@ -203,17 +349,68 @@ namespace Model
      */
     inline GetDocumentResult& WithDocumentFormat(DocumentFormat&& value) { SetDocumentFormat(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline const Aws::Vector<AttachmentContent>& GetAttachmentsContent() const{ return m_attachmentsContent; }
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline void SetAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { m_attachmentsContent = value; }
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline void SetAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { m_attachmentsContent = std::move(value); }
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline GetDocumentResult& WithAttachmentsContent(const Aws::Vector<AttachmentContent>& value) { SetAttachmentsContent(value); return *this;}
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline GetDocumentResult& WithAttachmentsContent(Aws::Vector<AttachmentContent>&& value) { SetAttachmentsContent(std::move(value)); return *this;}
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline GetDocumentResult& AddAttachmentsContent(const AttachmentContent& value) { m_attachmentsContent.push_back(value); return *this; }
+
+    /**
+     * <p>A description of the document attachments, including names, locations, sizes,
+     * etc.</p>
+     */
+    inline GetDocumentResult& AddAttachmentsContent(AttachmentContent&& value) { m_attachmentsContent.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
 
+    Aws::String m_versionName;
+
     Aws::String m_documentVersion;
+
+    DocumentStatus m_status;
+
+    Aws::String m_statusInformation;
 
     Aws::String m_content;
 
     DocumentType m_documentType;
 
     DocumentFormat m_documentFormat;
+
+    Aws::Vector<AttachmentContent> m_attachmentsContent;
   };
 
 } // namespace Model

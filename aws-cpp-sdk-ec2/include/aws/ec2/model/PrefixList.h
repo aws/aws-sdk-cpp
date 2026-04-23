@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The IP address range of the AWS service.</p>
      */
+    inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
+
+    /**
+     * <p>The IP address range of the AWS service.</p>
+     */
     inline void SetCidrs(const Aws::Vector<Aws::String>& value) { m_cidrsHasBeenSet = true; m_cidrs = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The ID of the prefix.</p>
      */
+    inline bool PrefixListIdHasBeenSet() const { return m_prefixListIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the prefix.</p>
+     */
     inline void SetPrefixListId(const Aws::String& value) { m_prefixListIdHasBeenSet = true; m_prefixListId = value; }
 
     /**
@@ -131,6 +141,11 @@ namespace Model
      * <p>The name of the prefix.</p>
      */
     inline const Aws::String& GetPrefixListName() const{ return m_prefixListName; }
+
+    /**
+     * <p>The name of the prefix.</p>
+     */
+    inline bool PrefixListNameHasBeenSet() const { return m_prefixListNameHasBeenSet; }
 
     /**
      * <p>The name of the prefix.</p>

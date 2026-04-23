@@ -53,6 +53,12 @@ namespace Model
      * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
      * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
+
+    /**
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     */
     inline void SetAuthor(const Aws::String& value) { m_authorHasBeenSet = true; m_author = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * <p>The description of the application.</p><p>Minimum length=1. Maximum
      * length=256</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -130,50 +142,49 @@ namespace Model
 
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline const Aws::String& GetHomePageUrl() const{ return m_homePageUrl; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline bool HomePageUrlHasBeenSet() const { return m_homePageUrlHasBeenSet; }
+
+    /**
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = value; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(Aws::String&& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = std::move(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const char* value) { m_homePageUrlHasBeenSet = true; m_homePageUrl.assign(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(const Aws::String& value) { SetHomePageUrl(value); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(Aws::String&& value) { SetHomePageUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationRequest& WithHomePageUrl(const char* value) { SetHomePageUrl(value); return *this;}
@@ -185,6 +196,13 @@ namespace Model
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
@@ -244,6 +262,15 @@ namespace Model
      * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
     inline const Aws::String& GetLicenseBody() const{ return m_licenseBody; }
+
+    /**
+     * <p>A local text file that contains the license of the app that matches the
+     * spdxLicenseID value of your application.
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+     */
+    inline bool LicenseBodyHasBeenSet() const { return m_licenseBodyHasBeenSet; }
 
     /**
      * <p>A local text file that contains the license of the app that matches the
@@ -312,6 +339,13 @@ namespace Model
      * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
      * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
      */
+    inline bool LicenseUrlHasBeenSet() const { return m_licenseUrlHasBeenSet; }
+
+    /**
+     * <p>A link to the S3 object that contains the license of the app that matches the
+     * spdxLicenseID value of your application.</p><p>Maximum size 5 MB</p><p>You can
+     * specify only one of licenseBody and licenseUrl; otherwise, an error results.</p>
+     */
     inline void SetLicenseUrl(const Aws::String& value) { m_licenseUrlHasBeenSet = true; m_licenseUrl = value; }
 
     /**
@@ -360,6 +394,12 @@ namespace Model
      * <p>The name of the application that you want to publish.</p><p>Minimum length=1.
      * Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the application that you want to publish.</p><p>Minimum length=1.
+     * Maximum length=140</p><p>Pattern: "[a-zA-Z0-9\\-]+";</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -401,6 +441,15 @@ namespace Model
      * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
      */
     inline const Aws::String& GetReadmeBody() const{ return m_readmeBody; }
+
+    /**
+     * <p>A local text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.
+ The file has the format
+     * file://&lt;path>/&lt;filename>.</p><p>Maximum size 5 MB</p><p>You can specify
+     * only one of readmeBody and readmeUrl; otherwise, an error results.</p>
+     */
+    inline bool ReadmeBodyHasBeenSet() const { return m_readmeBodyHasBeenSet; }
 
     /**
      * <p>A local text readme file in Markdown language that contains a more detailed
@@ -471,6 +520,14 @@ namespace Model
      * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
      * error results.</p>
      */
+    inline bool ReadmeUrlHasBeenSet() const { return m_readmeUrlHasBeenSet; }
+
+    /**
+     * <p>A link to the S3 object in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5
+     * MB</p><p>You can specify only one of readmeBody and readmeUrl; otherwise, an
+     * error results.</p>
+     */
     inline void SetReadmeUrl(const Aws::String& value) { m_readmeUrlHasBeenSet = true; m_readmeUrl = value; }
 
     /**
@@ -528,6 +585,14 @@ namespace Model
      * href="https://semver.org/">https://semver.org/</a>
  </p>
      */
+    inline bool SemanticVersionHasBeenSet() const { return m_semanticVersionHasBeenSet; }
+
+    /**
+     * <p>The semantic version of the application:</p><p>
+ <a
+     * href="https://semver.org/">https://semver.org/</a>
+ </p>
+     */
     inline void SetSemanticVersion(const Aws::String& value) { m_semanticVersionHasBeenSet = true; m_semanticVersion = value; }
 
     /**
@@ -572,37 +637,99 @@ namespace Model
 
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline const Aws::String& GetSourceCodeArchiveUrl() const{ return m_sourceCodeArchiveUrl; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline bool SourceCodeArchiveUrlHasBeenSet() const { return m_sourceCodeArchiveUrlHasBeenSet; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const Aws::String& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = value; }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(Aws::String&& value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl = std::move(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline void SetSourceCodeArchiveUrl(const char* value) { m_sourceCodeArchiveUrlHasBeenSet = true; m_sourceCodeArchiveUrl.assign(value); }
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(const Aws::String& value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(Aws::String&& value) { SetSourceCodeArchiveUrl(std::move(value)); return *this;}
+
+    /**
+     * <p>A link to the S3 object that contains the ZIP archive of the source code for
+     * this version of your application.</p><p>Maximum size 50 MB</p>
+     */
+    inline CreateApplicationRequest& WithSourceCodeArchiveUrl(const char* value) { SetSourceCodeArchiveUrl(value); return *this;}
+
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline const Aws::String& GetSourceCodeUrl() const{ return m_sourceCodeUrl; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
+     */
+    inline bool SourceCodeUrlHasBeenSet() const { return m_sourceCodeUrlHasBeenSet; }
+
+    /**
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const Aws::String& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = value; }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(Aws::String&& value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl = std::move(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline void SetSourceCodeUrl(const char* value) { m_sourceCodeUrlHasBeenSet = true; m_sourceCodeUrl.assign(value); }
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(const Aws::String& value) { SetSourceCodeUrl(value); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(Aws::String&& value) { SetSourceCodeUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A link to a public repository for the source code of your application.</p>
+     * <p>A link to a public repository for the source code of your application, for
+     * example the URL of a specific GitHub commit.</p>
      */
     inline CreateApplicationRequest& WithSourceCodeUrl(const char* value) { SetSourceCodeUrl(value); return *this;}
 
@@ -612,6 +739,12 @@ namespace Model
      * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
      */
     inline const Aws::String& GetSpdxLicenseId() const{ return m_spdxLicenseId; }
+
+    /**
+     * <p>A valid identifier from <a
+     * href="https://spdx.org/licenses/">https://spdx.org/licenses/</a>.</p>
+     */
+    inline bool SpdxLicenseIdHasBeenSet() const { return m_spdxLicenseIdHasBeenSet; }
 
     /**
      * <p>A valid identifier from <a
@@ -657,6 +790,14 @@ namespace Model
      * templateBody and templateUrl; otherwise an error results.</p>
      */
     inline const Aws::String& GetTemplateBody() const{ return m_templateBody; }
+
+    /**
+     * <p>The local raw packaged AWS SAM template file of your application.
+ The file
+     * has the format file://&lt;path>/&lt;filename>.</p><p>You can specify only one of
+     * templateBody and templateUrl; otherwise an error results.</p>
+     */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
 
     /**
      * <p>The local raw packaged AWS SAM template file of your application.
@@ -713,6 +854,13 @@ namespace Model
      * otherwise an error results.</p>
      */
     inline const Aws::String& GetTemplateUrl() const{ return m_templateUrl; }
+
+    /**
+     * <p>A link to the S3 object containing the packaged AWS SAM template of your
+     * application.</p><p>You can specify only one of templateBody and templateUrl;
+     * otherwise an error results.</p>
+     */
+    inline bool TemplateUrlHasBeenSet() const { return m_templateUrlHasBeenSet; }
 
     /**
      * <p>A link to the S3 object containing the packaged AWS SAM template of your
@@ -787,6 +935,9 @@ namespace Model
 
     Aws::String m_semanticVersion;
     bool m_semanticVersionHasBeenSet;
+
+    Aws::String m_sourceCodeArchiveUrl;
+    bool m_sourceCodeArchiveUrlHasBeenSet;
 
     Aws::String m_sourceCodeUrl;
     bool m_sourceCodeUrlHasBeenSet;

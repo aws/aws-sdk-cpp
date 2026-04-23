@@ -56,6 +56,11 @@ namespace Model
     /**
      * The number of entries you want on each page in the response.
      */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+
+    /**
+     * The number of entries you want on each page in the response.
+     */
     inline void SetPageSize(const Aws::String& value) { m_pageSizeHasBeenSet = true; m_pageSize = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * page of results in a paginated response.
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * The NextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * The NextToken string returned on a previous page that you use to get the next

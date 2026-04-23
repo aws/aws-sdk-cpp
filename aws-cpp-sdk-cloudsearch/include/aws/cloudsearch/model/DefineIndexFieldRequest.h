@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
 
     
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     
@@ -78,6 +81,11 @@ namespace Model
      * <p>The index field and field options you want to configure. </p>
      */
     inline const IndexField& GetIndexField() const{ return m_indexField; }
+
+    /**
+     * <p>The index field and field options you want to configure. </p>
+     */
+    inline bool IndexFieldHasBeenSet() const { return m_indexFieldHasBeenSet; }
 
     /**
      * <p>The index field and field options you want to configure. </p>

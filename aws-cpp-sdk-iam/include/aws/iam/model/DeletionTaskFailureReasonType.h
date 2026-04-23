@@ -64,6 +64,12 @@ namespace Model
      * <p>A short description of the reason that the service-linked role deletion
      * failed.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>A short description of the reason that the service-linked role deletion
+     * failed.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -106,6 +112,16 @@ namespace Model
      * with the role and the region in which the resources are being used.</p>
      */
     inline const Aws::Vector<RoleUsageType>& GetRoleUsageList() const{ return m_roleUsageList; }
+
+    /**
+     * <p>A list of objects that contains details about the service-linked role
+     * deletion failure, if that information is returned by the service. If the
+     * service-linked role has active sessions or if any resources that were used by
+     * the role have not been deleted from the linked service, the role can't be
+     * deleted. This parameter includes a list of the resources that are associated
+     * with the role and the region in which the resources are being used.</p>
+     */
+    inline bool RoleUsageListHasBeenSet() const { return m_roleUsageListHasBeenSet; }
 
     /**
      * <p>A list of objects that contains details about the service-linked role

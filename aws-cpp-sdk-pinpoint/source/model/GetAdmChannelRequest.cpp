@@ -29,7 +29,7 @@ GetAdmChannelRequest::GetAdmChannelRequest() :
 
 Aws::String GetAdmChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

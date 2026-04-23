@@ -50,7 +50,7 @@ Aws::String RestoreObjectRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void RestoreObjectRequest::AddQueryStringParameters(URI& uri) const

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The document ID of a document that matches the search request.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The document ID of a document that matches the search request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The fields returned from a document that matches the search request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>The fields returned from a document that matches the search request.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>The fields returned from a document that matches the search request.</p>
@@ -146,6 +156,11 @@ namespace Model
      * <p>The expressions returned from a document that matches the search request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExprs() const{ return m_exprs; }
+
+    /**
+     * <p>The expressions returned from a document that matches the search request.</p>
+     */
+    inline bool ExprsHasBeenSet() const { return m_exprsHasBeenSet; }
 
     /**
      * <p>The expressions returned from a document that matches the search request.</p>
@@ -207,6 +222,11 @@ namespace Model
      * <p>The highlights returned from a document that matches the search request.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetHighlights() const{ return m_highlights; }
+
+    /**
+     * <p>The highlights returned from a document that matches the search request.</p>
+     */
+    inline bool HighlightsHasBeenSet() const { return m_highlightsHasBeenSet; }
 
     /**
      * <p>The highlights returned from a document that matches the search request.</p>

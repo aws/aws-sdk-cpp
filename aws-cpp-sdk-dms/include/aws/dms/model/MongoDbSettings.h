@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The user name you use to access the MongoDB source endpoint. </p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name you use to access the MongoDB source endpoint. </p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * endpoint. </p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p> The password for the user account you use to access the MongoDB source
+     * endpoint. </p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p> The password for the user account you use to access the MongoDB source
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p> The name of the server on the MongoDB source endpoint. </p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p> The name of the server on the MongoDB source endpoint. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p> The port value for the MongoDB source endpoint. </p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p> The port value for the MongoDB source endpoint. </p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -185,6 +206,11 @@ namespace Model
      * <p> The database name on the MongoDB source endpoint. </p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p> The database name on the MongoDB source endpoint. </p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p> The database name on the MongoDB source endpoint. </p>
@@ -229,6 +255,13 @@ namespace Model
      * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
      * password parameters are not used and can be empty. </p>
      */
+    inline bool AuthTypeHasBeenSet() const { return m_authTypeHasBeenSet; }
+
+    /**
+     * <p> The authentication type you use to access the MongoDB source endpoint.</p>
+     * <p>Valid values: NO, PASSWORD </p> <p>When NO is selected, user name and
+     * password parameters are not used and can be empty. </p>
+     */
     inline void SetAuthType(const AuthTypeValue& value) { m_authTypeHasBeenSet = true; m_authType = value; }
 
     /**
@@ -260,6 +293,14 @@ namespace Model
      * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
      */
     inline const AuthMechanismValue& GetAuthMechanism() const{ return m_authMechanism; }
+
+    /**
+     * <p> The authentication mechanism you use to access the MongoDB source
+     * endpoint.</p> <p>Valid values: DEFAULT, MONGODB_CR, SCRAM_SHA_1 </p> <p>DEFAULT
+     * – For MongoDB version 2.x, use MONGODB_CR. For MongoDB version 3.x, use
+     * SCRAM_SHA_1. This attribute is not used when authType=No.</p>
+     */
+    inline bool AuthMechanismHasBeenSet() const { return m_authMechanismHasBeenSet; }
 
     /**
      * <p> The authentication mechanism you use to access the MongoDB source
@@ -306,6 +347,13 @@ namespace Model
      * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
      * table mode.</p>
      */
+    inline bool NestingLevelHasBeenSet() const { return m_nestingLevelHasBeenSet; }
+
+    /**
+     * <p> Specifies either document or table mode. </p> <p>Valid values: NONE, ONE</p>
+     * <p>Default value is NONE. Specify NONE to use document mode. Specify ONE to use
+     * table mode.</p>
+     */
     inline void SetNestingLevel(const NestingLevelValue& value) { m_nestingLevelHasBeenSet = true; m_nestingLevel = value; }
 
     /**
@@ -335,6 +383,12 @@ namespace Model
      * is set to NONE. </p> <p>Default value is false. </p>
      */
     inline const Aws::String& GetExtractDocId() const{ return m_extractDocId; }
+
+    /**
+     * <p> Specifies the document ID. Use this attribute when <code>NestingLevel</code>
+     * is set to NONE. </p> <p>Default value is false. </p>
+     */
+    inline bool ExtractDocIdHasBeenSet() const { return m_extractDocIdHasBeenSet; }
 
     /**
      * <p> Specifies the document ID. Use this attribute when <code>NestingLevel</code>
@@ -379,6 +433,13 @@ namespace Model
      * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
      */
     inline const Aws::String& GetDocsToInvestigate() const{ return m_docsToInvestigate; }
+
+    /**
+     * <p> Indicates the number of documents to preview to determine the document
+     * organization. Use this attribute when <code>NestingLevel</code> is set to ONE.
+     * </p> <p>Must be a positive value greater than 0. Default value is 1000.</p>
+     */
+    inline bool DocsToInvestigateHasBeenSet() const { return m_docsToInvestigateHasBeenSet; }
 
     /**
      * <p> Indicates the number of documents to preview to determine the document
@@ -433,6 +494,12 @@ namespace Model
      * <p> The MongoDB database name. This attribute is not used when
      * <code>authType=NO</code>. </p> <p>The default is admin.</p>
      */
+    inline bool AuthSourceHasBeenSet() const { return m_authSourceHasBeenSet; }
+
+    /**
+     * <p> The MongoDB database name. This attribute is not used when
+     * <code>authType=NO</code>. </p> <p>The default is admin.</p>
+     */
     inline void SetAuthSource(const Aws::String& value) { m_authSourceHasBeenSet = true; m_authSource = value; }
 
     /**
@@ -474,6 +541,15 @@ namespace Model
      * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier that is used to encrypt the content on the
+     * replication instance. If you don't specify a value for the <code>KmsKeyId</code>
+     * parameter, then AWS DMS uses your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier that is used to encrypt the content on the

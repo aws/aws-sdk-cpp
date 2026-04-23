@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Enables or disables data processing.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Enables or disables data processing.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The data processors.</p>
      */
     inline const Aws::Vector<Processor>& GetProcessors() const{ return m_processors; }
+
+    /**
+     * <p>The data processors.</p>
+     */
+    inline bool ProcessorsHasBeenSet() const { return m_processorsHasBeenSet; }
 
     /**
      * <p>The data processors.</p>

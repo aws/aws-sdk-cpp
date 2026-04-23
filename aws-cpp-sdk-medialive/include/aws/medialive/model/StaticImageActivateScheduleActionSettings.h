@@ -59,6 +59,13 @@ namespace Model
      * set to 0 the duration is unlimited and the image will remain until it is
      * explicitly deactivated.
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * The duration in milliseconds for the image to remain on the video. If omitted or
+     * set to 0 the duration is unlimited and the image will remain until it is
+     * explicitly deactivated.
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -79,6 +86,12 @@ namespace Model
      * The time in milliseconds for the image to fade in. The fade-in starts at the
      * start time of the overlay. Default is 0 (no fade-in).
      */
+    inline bool FadeInHasBeenSet() const { return m_fadeInHasBeenSet; }
+
+    /**
+     * The time in milliseconds for the image to fade in. The fade-in starts at the
+     * start time of the overlay. Default is 0 (no fade-in).
+     */
     inline void SetFadeIn(int value) { m_fadeInHasBeenSet = true; m_fadeIn = value; }
 
     /**
@@ -94,6 +107,13 @@ namespace Model
      * effectively extends the duration. Default is 0 (no fade-out).
      */
     inline int GetFadeOut() const{ return m_fadeOut; }
+
+    /**
+     * Applies only if a duration is specified. The time in milliseconds for the image
+     * to fade out. The fade-out starts when the duration time is hit, so it
+     * effectively extends the duration. Default is 0 (no fade-out).
+     */
+    inline bool FadeOutHasBeenSet() const { return m_fadeOutHasBeenSet; }
 
     /**
      * Applies only if a duration is specified. The time in milliseconds for the image
@@ -122,6 +142,13 @@ namespace Model
      * will be scaled up or down to the specified height. Leave blank to use the native
      * height of the overlay.
      */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * The height of the image when inserted into the video, in pixels. The overlay
+     * will be scaled up or down to the specified height. Leave blank to use the native
+     * height of the overlay.
+     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
@@ -138,6 +165,13 @@ namespace Model
      * the input video.
      */
     inline const InputLocation& GetImage() const{ return m_image; }
+
+    /**
+     * The location and filename of the image file to overlay on the video. The file
+     * must be a 32-bit BMP, PNG, or TGA file, and must not be larger (in pixels) than
+     * the input video.
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * The location and filename of the image file to overlay on the video. The file
@@ -182,6 +216,14 @@ namespace Model
      * placement causes the overlay to extend beyond the right edge of the underlying
      * video, then the overlay is cropped on the right.
      */
+    inline bool ImageXHasBeenSet() const { return m_imageXHasBeenSet; }
+
+    /**
+     * Placement of the left edge of the overlay relative to the left edge of the video
+     * frame, in pixels. 0 (the default) is the left edge of the frame. If the
+     * placement causes the overlay to extend beyond the right edge of the underlying
+     * video, then the overlay is cropped on the right.
+     */
     inline void SetImageX(int value) { m_imageXHasBeenSet = true; m_imageX = value; }
 
     /**
@@ -200,6 +242,14 @@ namespace Model
      * then the overlay is cropped on the bottom.
      */
     inline int GetImageY() const{ return m_imageY; }
+
+    /**
+     * Placement of the top edge of the overlay relative to the top edge of the video
+     * frame, in pixels. 0 (the default) is the top edge of the frame. If the placement
+     * causes the overlay to extend beyond the bottom edge of the underlying video,
+     * then the overlay is cropped on the bottom.
+     */
+    inline bool ImageYHasBeenSet() const { return m_imageYHasBeenSet; }
 
     /**
      * Placement of the top edge of the overlay relative to the top edge of the video
@@ -232,6 +282,14 @@ namespace Model
      * that overlays with higher values of layer are inserted on top of overlays with
      * lower values of layer. Default is 0.
      */
+    inline bool LayerHasBeenSet() const { return m_layerHasBeenSet; }
+
+    /**
+     * The number of the layer, 0 to 7. There are 8 layers that can be overlaid on the
+     * video, each layer with a different image. The layers are in Z order, which means
+     * that overlays with higher values of layer are inserted on top of overlays with
+     * lower values of layer. Default is 0.
+     */
     inline void SetLayer(int value) { m_layerHasBeenSet = true; m_layer = value; }
 
     /**
@@ -251,6 +309,11 @@ namespace Model
     /**
      * Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
      */
+    inline bool OpacityHasBeenSet() const { return m_opacityHasBeenSet; }
+
+    /**
+     * Opacity of image where 0 is transparent and 100 is fully opaque. Default is 100.
+     */
     inline void SetOpacity(int value) { m_opacityHasBeenSet = true; m_opacity = value; }
 
     /**
@@ -265,6 +328,13 @@ namespace Model
      * of the overlay.
      */
     inline int GetWidth() const{ return m_width; }
+
+    /**
+     * The width of the image when inserted into the video, in pixels. The overlay will
+     * be scaled up or down to the specified width. Leave blank to use the native width
+     * of the overlay.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * The width of the image when inserted into the video, in pixels. The overlay will

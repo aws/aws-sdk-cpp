@@ -29,7 +29,7 @@ DeleteVpcLinkRequest::DeleteVpcLinkRequest() :
 
 Aws::String DeleteVpcLinkRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

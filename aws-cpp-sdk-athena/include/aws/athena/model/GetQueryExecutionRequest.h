@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique ID of the query execution.</p>
      */
+    inline bool QueryExecutionIdHasBeenSet() const { return m_queryExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the query execution.</p>
+     */
     inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = value; }
 
     /**

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The database name. </p> <p>Type: String</p>
      */
+    inline bool DBNameHasBeenSet() const { return m_dBNameHasBeenSet; }
+
+    /**
+     * <p>The database name. </p> <p>Type: String</p>
+     */
     inline void SetDBName(const Aws::String& value) { m_dBNameHasBeenSet = true; m_dBName = value; }
 
     /**
@@ -95,6 +100,15 @@ namespace Model
      * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p>The DB instance identifier. This parameter is stored as a lowercase
+     * string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters,
+     * numbers, or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul> <p>Example: <code>mydbinstance</code> </p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>The DB instance identifier. This parameter is stored as a lowercase
@@ -165,6 +179,14 @@ namespace Model
      * grow as the amount of data in your database increases, though you are only
      * charged for the space that you use in a Neptune cluster volume.</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>The amount of storage (in gibibytes) to allocate for the DB instance.</p>
+     * <p>Type: Integer</p> <p>Not applicable. Neptune cluster volumes automatically
+     * grow as the amount of data in your database increases, though you are only
+     * charged for the space that you use in a Neptune cluster volume.</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -182,6 +204,13 @@ namespace Model
      * Regions. </p>
      */
     inline const Aws::String& GetDBInstanceClass() const{ return m_dBInstanceClass; }
+
+    /**
+     * <p>The compute and memory capacity of the DB instance, for example,
+     * <code>db.m4.large</code>. Not all DB instance classes are available in all AWS
+     * Regions. </p>
+     */
+    inline bool DBInstanceClassHasBeenSet() const { return m_dBInstanceClassHasBeenSet; }
 
     /**
      * <p>The compute and memory capacity of the DB instance, for example,
@@ -236,6 +265,12 @@ namespace Model
      * <p>The name of the database engine to be used for this instance. </p> <p>Valid
      * Values: <code>neptune</code> </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine to be used for this instance. </p> <p>Valid
+     * Values: <code>neptune</code> </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -277,6 +312,11 @@ namespace Model
     /**
      * <p>The name for the master user. Not used.</p>
      */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
+
+    /**
+     * <p>The name for the master user. Not used.</p>
+     */
     inline void SetMasterUsername(const Aws::String& value) { m_masterUsernameHasBeenSet = true; m_masterUsername = value; }
 
     /**
@@ -310,6 +350,12 @@ namespace Model
      * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
      */
     inline const Aws::String& GetMasterUserPassword() const{ return m_masterUserPassword; }
+
+    /**
+     * <p>The password for the master user. The password can include any printable
+     * ASCII character except "/", """, or "@".</p> <p> Not used. </p>
+     */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
 
     /**
      * <p>The password for the master user. The password can include any printable
@@ -353,6 +399,12 @@ namespace Model
      * <p>Default: The default DB security group for the database engine.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDBSecurityGroups() const{ return m_dBSecurityGroups; }
+
+    /**
+     * <p>A list of DB security groups to associate with this DB instance.</p>
+     * <p>Default: The default DB security group for the database engine.</p>
+     */
+    inline bool DBSecurityGroupsHasBeenSet() const { return m_dBSecurityGroupsHasBeenSet; }
 
     /**
      * <p>A list of DB security groups to associate with this DB instance.</p>
@@ -405,6 +457,15 @@ namespace Model
      * VPC.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcSecurityGroupIds() const{ return m_vpcSecurityGroupIds; }
+
+    /**
+     * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
+     * <p>Not applicable. The associated list of EC2 VPC security groups is managed by
+     * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     * <p>Default: The default EC2 VPC security group for the DB subnet group's
+     * VPC.</p>
+     */
+    inline bool VpcSecurityGroupIdsHasBeenSet() const { return m_vpcSecurityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of EC2 VPC security groups to associate with this DB instance.</p>
@@ -488,6 +549,16 @@ namespace Model
      * <code>true</code>. The specified Availability Zone must be in the same AWS
      * Region as the current endpoint. </p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p> The EC2 Availability Zone that the DB instance is created in. </p>
+     * <p>Default: A random, system-chosen Availability Zone in the endpoint's AWS
+     * Region.</p> <p> Example: <code>us-east-1d</code> </p> <p> Constraint: The
+     * AvailabilityZone parameter can't be specified if the MultiAZ parameter is set to
+     * <code>true</code>. The specified Availability Zone must be in the same AWS
+     * Region as the current endpoint. </p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -551,6 +622,12 @@ namespace Model
      * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
      * DB subnet group, then it is a non-VPC DB instance.</p>
      */
+    inline bool DBSubnetGroupNameHasBeenSet() const { return m_dBSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>A DB subnet group to associate with this DB instance.</p> <p>If there is no
+     * DB subnet group, then it is a non-VPC DB instance.</p>
+     */
     inline void SetDBSubnetGroupName(const Aws::String& value) { m_dBSubnetGroupNameHasBeenSet = true; m_dBSubnetGroupName = value; }
 
     /**
@@ -593,6 +670,16 @@ namespace Model
      * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p>The time range each week during which system maintenance can occur, in
+     * Universal Coordinated Time (UTC). </p> <p> Format:
+     * <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p>The default is a 30-minute window
+     * selected at random from an 8-hour block of time for each AWS Region, occurring
+     * on a random day of the week. </p> <p>Valid Days: Mon, Tue, Wed, Thu, Fri, Sat,
+     * Sun.</p> <p>Constraints: Minimum 30-minute window.</p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p>The time range each week during which system maintenance can occur, in
@@ -671,6 +758,15 @@ namespace Model
      * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
      * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group to associate with this DB instance. If
+     * this argument is omitted, the default DBParameterGroup for the specified engine
+     * is used.</p> <p>Constraints:</p> <ul> <li> <p>Must be 1 to 255 letters, numbers,
+     * or hyphens.</p> </li> <li> <p>First character must be a letter</p> </li> <li>
+     * <p>Cannot end with a hyphen or contain two consecutive hyphens</p> </li> </ul>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
@@ -737,6 +833,16 @@ namespace Model
      * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
      * </ul>
      */
+    inline bool BackupRetentionPeriodHasBeenSet() const { return m_backupRetentionPeriodHasBeenSet; }
+
+    /**
+     * <p>The number of days for which automated backups are retained.</p> <p>Not
+     * applicable. The retention period for automated backups is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p> <p>Default: 1</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must be a value from 0 to 35</p> </li> <li>
+     * <p>Cannot be set to 0 if the DB instance is a source to Read Replicas</p> </li>
+     * </ul>
+     */
     inline void SetBackupRetentionPeriod(int value) { m_backupRetentionPeriodHasBeenSet = true; m_backupRetentionPeriod = value; }
 
     /**
@@ -756,6 +862,13 @@ namespace Model
      * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
     inline const Aws::String& GetPreferredBackupWindow() const{ return m_preferredBackupWindow; }
+
+    /**
+     * <p> The daily time range during which automated backups are created. </p> <p>Not
+     * applicable. The daily time range for creating automated backups is managed by
+     * the DB cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
 
     /**
      * <p> The daily time range during which automated backups are created. </p> <p>Not
@@ -814,6 +927,14 @@ namespace Model
      * <a>CreateDBCluster</a>.</p> <p> Default: <code>8182</code> </p> <p>Type:
      * Integer</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>The port number on which the database accepts connections.</p> <p>Not
+     * applicable. The port is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p> Default: <code>8182</code> </p> <p>Type:
+     * Integer</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -835,6 +956,12 @@ namespace Model
      * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
      * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
      */
+    inline bool MultiAZHasBeenSet() const { return m_multiAZHasBeenSet; }
+
+    /**
+     * <p>Specifies if the DB instance is a Multi-AZ deployment. You can't set the
+     * AvailabilityZone parameter if the MultiAZ parameter is set to true.</p>
+     */
     inline void SetMultiAZ(bool value) { m_multiAZHasBeenSet = true; m_multiAZ = value; }
 
     /**
@@ -848,6 +975,11 @@ namespace Model
      * <p>The version number of the database engine to use.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine to use.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine to use.</p>
@@ -890,6 +1022,12 @@ namespace Model
      * <p>Indicates that minor engine upgrades are applied automatically to the DB
      * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
      */
+    inline bool AutoMinorVersionUpgradeHasBeenSet() const { return m_autoMinorVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>Indicates that minor engine upgrades are applied automatically to the DB
+     * instance during the maintenance window.</p> <p>Default: <code>true</code> </p>
+     */
     inline void SetAutoMinorVersionUpgrade(bool value) { m_autoMinorVersionUpgradeHasBeenSet = true; m_autoMinorVersionUpgrade = value; }
 
     /**
@@ -905,6 +1043,13 @@ namespace Model
      * <code>general-public-license</code> </p>
      */
     inline const Aws::String& GetLicenseModel() const{ return m_licenseModel; }
+
+    /**
+     * <p>License model information for this DB instance.</p> <p> Valid values:
+     * <code>license-included</code> | <code>bring-your-own-license</code> |
+     * <code>general-public-license</code> </p>
+     */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
 
     /**
      * <p>License model information for this DB instance.</p> <p> Valid values:
@@ -959,6 +1104,12 @@ namespace Model
      * <p>The amount of Provisioned IOPS (input/output operations per second) to be
      * initially allocated for the DB instance. </p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>The amount of Provisioned IOPS (input/output operations per second) to be
+     * initially allocated for the DB instance. </p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -975,6 +1126,14 @@ namespace Model
      * be removed from a DB instance once it is associated with a DB instance</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>Indicates that the DB instance should be associated with the specified option
+     * group.</p> <p>Permanent options, such as the TDE option for Oracle Advanced
+     * Security TDE, can't be removed from an option group, and that option group can't
+     * be removed from a DB instance once it is associated with a DB instance</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>Indicates that the DB instance should be associated with the specified option
@@ -1037,6 +1196,13 @@ namespace Model
      * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
      * cluster. For more information, see <a>CreateDBCluster</a>.</p>
      */
+    inline bool CharacterSetNameHasBeenSet() const { return m_characterSetNameHasBeenSet; }
+
+    /**
+     * <p>Indicates that the DB instance should be associated with the specified
+     * CharacterSet.</p> <p>Not applicable. The character set is managed by the DB
+     * cluster. For more information, see <a>CreateDBCluster</a>.</p>
+     */
     inline void SetCharacterSetName(const Aws::String& value) { m_characterSetNameHasBeenSet = true; m_characterSetName = value; }
 
     /**
@@ -1079,6 +1245,9 @@ namespace Model
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
 
     
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     
@@ -1103,6 +1272,13 @@ namespace Model
      * String</p>
      */
     inline const Aws::String& GetDBClusterIdentifier() const{ return m_dBClusterIdentifier; }
+
+    /**
+     * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
+     * information on creating a DB cluster, see <a>CreateDBCluster</a>.</p> <p>Type:
+     * String</p>
+     */
+    inline bool DBClusterIdentifierHasBeenSet() const { return m_dBClusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the DB cluster that the instance will belong to.</p> <p>For
@@ -1157,6 +1333,12 @@ namespace Model
      * <p>Specifies the storage type to be associated with the DB instance.</p> <p>Not
      * applicable. Storage is managed by the DB Cluster.</p>
      */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage type to be associated with the DB instance.</p> <p>Not
+     * applicable. Storage is managed by the DB Cluster.</p>
+     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
@@ -1200,6 +1382,12 @@ namespace Model
      * <p>The ARN from the key store with which to associate the instance for TDE
      * encryption.</p>
      */
+    inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
+
+    /**
+     * <p>The ARN from the key store with which to associate the instance for TDE
+     * encryption.</p>
+     */
     inline void SetTdeCredentialArn(const Aws::String& value) { m_tdeCredentialArnHasBeenSet = true; m_tdeCredentialArn = value; }
 
     /**
@@ -1238,6 +1426,12 @@ namespace Model
      * device.</p>
      */
     inline const Aws::String& GetTdeCredentialPassword() const{ return m_tdeCredentialPassword; }
+
+    /**
+     * <p>The password for the given ARN from the key store in order to access the
+     * device.</p>
+     */
+    inline bool TdeCredentialPasswordHasBeenSet() const { return m_tdeCredentialPasswordHasBeenSet; }
 
     /**
      * <p>The password for the given ARN from the key store in order to access the
@@ -1288,6 +1482,13 @@ namespace Model
      * encryption for DB instances is managed by the DB cluster. For more information,
      * see <a>CreateDBCluster</a>.</p> <p>Default: false</p>
      */
+    inline bool StorageEncryptedHasBeenSet() const { return m_storageEncryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB instance is encrypted.</p> <p>Not applicable. The
+     * encryption for DB instances is managed by the DB cluster. For more information,
+     * see <a>CreateDBCluster</a>.</p> <p>Default: false</p>
+     */
     inline void SetStorageEncrypted(bool value) { m_storageEncryptedHasBeenSet = true; m_storageEncrypted = value; }
 
     /**
@@ -1312,6 +1513,21 @@ namespace Model
      * default encryption key for each AWS Region.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
+     * identifier is the Amazon Resource Name (ARN) for the KMS encryption key. If you
+     * are creating a DB instance with the same AWS account that owns the KMS
+     * encryption key used to encrypt the new DB instance, then you can use the KMS key
+     * alias instead of the ARN for the KM encryption key.</p> <p>Not applicable. The
+     * KMS key identifier is managed by the DB cluster. For more information, see
+     * <a>CreateDBCluster</a>.</p> <p>If the <code>StorageEncrypted</code> parameter is
+     * true, and you do not specify a value for the <code>KmsKeyId</code> parameter,
+     * then Amazon Neptune will use your default encryption key. AWS KMS creates the
+     * default encryption key for your AWS account. Your AWS account has a different
+     * default encryption key for each AWS Region.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for an encrypted DB instance.</p> <p>The KMS key
@@ -1412,6 +1628,11 @@ namespace Model
     /**
      * <p>Specify the Active Directory Domain to create the instance in.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Specify the Active Directory Domain to create the instance in.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -1450,6 +1671,12 @@ namespace Model
      * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
      * and otherwise false. The default is false.</p>
      */
+    inline bool CopyTagsToSnapshotHasBeenSet() const { return m_copyTagsToSnapshotHasBeenSet; }
+
+    /**
+     * <p>True to copy all tags from the DB instance to snapshots of the DB instance,
+     * and otherwise false. The default is false.</p>
+     */
     inline void SetCopyTagsToSnapshot(bool value) { m_copyTagsToSnapshotHasBeenSet = true; m_copyTagsToSnapshot = value; }
 
     /**
@@ -1467,6 +1694,15 @@ namespace Model
      * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
      */
     inline int GetMonitoringInterval() const{ return m_monitoringInterval; }
+
+    /**
+     * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
+     * collected for the DB instance. To disable collecting Enhanced Monitoring
+     * metrics, specify 0. The default is 0.</p> <p>If <code>MonitoringRoleArn</code>
+     * is specified, then you must also set <code>MonitoringInterval</code> to a value
+     * other than 0.</p> <p>Valid Values: <code>0, 1, 5, 10, 15, 30, 60</code> </p>
+     */
+    inline bool MonitoringIntervalHasBeenSet() const { return m_monitoringIntervalHasBeenSet; }
 
     /**
      * <p>The interval, in seconds, between points when Enhanced Monitoring metrics are
@@ -1495,6 +1731,15 @@ namespace Model
      * supply a <code>MonitoringRoleArn</code> value.</p>
      */
     inline const Aws::String& GetMonitoringRoleArn() const{ return m_monitoringRoleArn; }
+
+    /**
+     * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
+     * metrics to Amazon CloudWatch Logs. For example,
+     * <code>arn:aws:iam:123456789012:role/emaccess</code>.</p> <p>If
+     * <code>MonitoringInterval</code> is set to a value other than 0, then you must
+     * supply a <code>MonitoringRoleArn</code> value.</p>
+     */
+    inline bool MonitoringRoleArnHasBeenSet() const { return m_monitoringRoleArnHasBeenSet; }
 
     /**
      * <p>The ARN for the IAM role that permits Neptune to send enhanced monitoring
@@ -1561,6 +1806,12 @@ namespace Model
      * <p>Specify the name of the IAM role to be used when making API calls to the
      * Directory Service.</p>
      */
+    inline bool DomainIAMRoleNameHasBeenSet() const { return m_domainIAMRoleNameHasBeenSet; }
+
+    /**
+     * <p>Specify the name of the IAM role to be used when making API calls to the
+     * Directory Service.</p>
+     */
     inline void SetDomainIAMRoleName(const Aws::String& value) { m_domainIAMRoleNameHasBeenSet = true; m_domainIAMRoleName = value; }
 
     /**
@@ -1606,6 +1857,13 @@ namespace Model
      * primary instance after a failure of the existing primary instance. </p>
      * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
      */
+    inline bool PromotionTierHasBeenSet() const { return m_promotionTierHasBeenSet; }
+
+    /**
+     * <p>A value that specifies the order in which an Read Replica is promoted to the
+     * primary instance after a failure of the existing primary instance. </p>
+     * <p>Default: 1</p> <p>Valid Values: 0 - 15</p>
+     */
     inline void SetPromotionTier(int value) { m_promotionTierHasBeenSet = true; m_promotionTier = value; }
 
     /**
@@ -1620,6 +1878,11 @@ namespace Model
      * <p>The time zone of the DB instance. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB instance. </p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The time zone of the DB instance. </p>
@@ -1662,6 +1925,12 @@ namespace Model
      * <p>True to enable AWS Identity and Access Management (IAM) authentication for
      * Neptune.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool EnableIAMDatabaseAuthenticationHasBeenSet() const { return m_enableIAMDatabaseAuthenticationHasBeenSet; }
+
+    /**
+     * <p>True to enable AWS Identity and Access Management (IAM) authentication for
+     * Neptune.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetEnableIAMDatabaseAuthentication(bool value) { m_enableIAMDatabaseAuthenticationHasBeenSet = true; m_enableIAMDatabaseAuthentication = value; }
 
     /**
@@ -1676,6 +1945,12 @@ namespace Model
      * </p>
      */
     inline bool GetEnablePerformanceInsights() const{ return m_enablePerformanceInsights; }
+
+    /**
+     * <p>True to enable Performance Insights for the DB instance, and otherwise false.
+     * </p>
+     */
+    inline bool EnablePerformanceInsightsHasBeenSet() const { return m_enablePerformanceInsightsHasBeenSet; }
 
     /**
      * <p>True to enable Performance Insights for the DB instance, and otherwise false.
@@ -1696,6 +1971,13 @@ namespace Model
      * alias for the KMS encryption key.</p>
      */
     inline const Aws::String& GetPerformanceInsightsKMSKeyId() const{ return m_performanceInsightsKMSKeyId; }
+
+    /**
+     * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
+     * KMS key ID is the Amazon Resource Name (ARN), KMS key identifier, or the KMS key
+     * alias for the KMS encryption key.</p>
+     */
+    inline bool PerformanceInsightsKMSKeyIdHasBeenSet() const { return m_performanceInsightsKMSKeyIdHasBeenSet; }
 
     /**
      * <p>The AWS KMS key identifier for encryption of Performance Insights data. The
@@ -1745,6 +2027,12 @@ namespace Model
      * Logs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEnableCloudwatchLogsExports() const{ return m_enableCloudwatchLogsExports; }
+
+    /**
+     * <p>The list of log types that need to be enabled for exporting to CloudWatch
+     * Logs.</p>
+     */
+    inline bool EnableCloudwatchLogsExportsHasBeenSet() const { return m_enableCloudwatchLogsExportsHasBeenSet; }
 
     /**
      * <p>The list of log types that need to be enabled for exporting to CloudWatch

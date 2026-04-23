@@ -61,6 +61,13 @@ namespace Model
      * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
      * error. </p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to update. If no such application is found,
+     * <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code>
+     * error. </p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -104,6 +111,12 @@ namespace Model
      * Elastic Beanstalk does not update the description.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A new description for the application.</p> <p>Default: If not specified, AWS
+     * Elastic Beanstalk does not update the description.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A new description for the application.</p> <p>Default: If not specified, AWS

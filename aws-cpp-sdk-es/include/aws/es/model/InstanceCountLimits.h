@@ -51,6 +51,9 @@ namespace Model
     inline int GetMinimumInstanceCount() const{ return m_minimumInstanceCount; }
 
     
+    inline bool MinimumInstanceCountHasBeenSet() const { return m_minimumInstanceCountHasBeenSet; }
+
+    
     inline void SetMinimumInstanceCount(int value) { m_minimumInstanceCountHasBeenSet = true; m_minimumInstanceCount = value; }
 
     
@@ -59,6 +62,9 @@ namespace Model
 
     
     inline int GetMaximumInstanceCount() const{ return m_maximumInstanceCount; }
+
+    
+    inline bool MaximumInstanceCountHasBeenSet() const { return m_maximumInstanceCountHasBeenSet; }
 
     
     inline void SetMaximumInstanceCount(int value) { m_maximumInstanceCountHasBeenSet = true; m_maximumInstanceCount = value; }

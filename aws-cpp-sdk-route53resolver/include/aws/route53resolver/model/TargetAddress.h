@@ -58,6 +58,12 @@ namespace Model
      * <p>One IP address that you want to forward DNS queries to. You can specify only
      * IPv4 addresses.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>One IP address that you want to forward DNS queries to. You can specify only
+     * IPv4 addresses.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
      */
     inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port at <code>Ip</code> that you want to forward DNS queries to.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The new event configuration values.</p>
      */
+    inline bool EventConfigurationsHasBeenSet() const { return m_eventConfigurationsHasBeenSet; }
+
+    /**
+     * <p>The new event configuration values.</p>
+     */
     inline void SetEventConfigurations(const Aws::Map<EventType, Configuration>& value) { m_eventConfigurationsHasBeenSet = true; m_eventConfigurations = value; }
 
     /**

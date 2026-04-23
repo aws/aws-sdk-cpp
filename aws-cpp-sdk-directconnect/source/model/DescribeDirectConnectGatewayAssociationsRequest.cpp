@@ -23,11 +23,13 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 DescribeDirectConnectGatewayAssociationsRequest::DescribeDirectConnectGatewayAssociationsRequest() : 
+    m_associationIdHasBeenSet(false),
+    m_associatedGatewayIdHasBeenSet(false),
     m_directConnectGatewayIdHasBeenSet(false),
-    m_virtualGatewayIdHasBeenSet(false),
     m_maxResults(0),
     m_maxResultsHasBeenSet(false),
-    m_nextTokenHasBeenSet(false)
+    m_nextTokenHasBeenSet(false),
+    m_virtualGatewayIdHasBeenSet(false)
 {
 }
 
@@ -35,15 +37,21 @@ Aws::String DescribeDirectConnectGatewayAssociationsRequest::SerializePayload() 
 {
   JsonValue payload;
 
-  if(m_directConnectGatewayIdHasBeenSet)
+  if(m_associationIdHasBeenSet)
   {
-   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
+   payload.WithString("associationId", m_associationId);
 
   }
 
-  if(m_virtualGatewayIdHasBeenSet)
+  if(m_associatedGatewayIdHasBeenSet)
   {
-   payload.WithString("virtualGatewayId", m_virtualGatewayId);
+   payload.WithString("associatedGatewayId", m_associatedGatewayId);
+
+  }
+
+  if(m_directConnectGatewayIdHasBeenSet)
+  {
+   payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
 
   }
 
@@ -56,6 +64,12 @@ Aws::String DescribeDirectConnectGatewayAssociationsRequest::SerializePayload() 
   if(m_nextTokenHasBeenSet)
   {
    payload.WithString("nextToken", m_nextToken);
+
+  }
+
+  if(m_virtualGatewayIdHasBeenSet)
+  {
+   payload.WithString("virtualGatewayId", m_virtualGatewayId);
 
   }
 

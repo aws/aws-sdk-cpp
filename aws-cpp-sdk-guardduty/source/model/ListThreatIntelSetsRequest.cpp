@@ -35,7 +35,7 @@ ListThreatIntelSetsRequest::ListThreatIntelSetsRequest() :
 
 Aws::String ListThreatIntelSetsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListThreatIntelSetsRequest::AddQueryStringParameters(URI& uri) const

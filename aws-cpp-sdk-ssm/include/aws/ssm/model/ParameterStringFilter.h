@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the filter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * Recursive and OneLevel.</p>
      */
     inline const Aws::String& GetOption() const{ return m_option; }
+
+    /**
+     * <p>Valid options are Equals and BeginsWith. For Path filter, valid options are
+     * Recursive and OneLevel.</p>
+     */
+    inline bool OptionHasBeenSet() const { return m_optionHasBeenSet; }
 
     /**
      * <p>Valid options are Equals and BeginsWith. For Path filter, valid options are
@@ -133,6 +144,11 @@ namespace Model
      * <p>The value you want to search for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value you want to search for.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value you want to search for.</p>

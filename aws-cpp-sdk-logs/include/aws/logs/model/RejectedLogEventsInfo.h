@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The log events that are too new.</p>
      */
+    inline bool TooNewLogEventStartIndexHasBeenSet() const { return m_tooNewLogEventStartIndexHasBeenSet; }
+
+    /**
+     * <p>The log events that are too new.</p>
+     */
     inline void SetTooNewLogEventStartIndex(int value) { m_tooNewLogEventStartIndexHasBeenSet = true; m_tooNewLogEventStartIndex = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
     /**
      * <p>The log events that are too old.</p>
      */
+    inline bool TooOldLogEventEndIndexHasBeenSet() const { return m_tooOldLogEventEndIndexHasBeenSet; }
+
+    /**
+     * <p>The log events that are too old.</p>
+     */
     inline void SetTooOldLogEventEndIndex(int value) { m_tooOldLogEventEndIndexHasBeenSet = true; m_tooOldLogEventEndIndex = value; }
 
     /**
@@ -81,6 +91,11 @@ namespace Model
      * <p>The expired log events.</p>
      */
     inline int GetExpiredLogEventEndIndex() const{ return m_expiredLogEventEndIndex; }
+
+    /**
+     * <p>The expired log events.</p>
+     */
+    inline bool ExpiredLogEventEndIndexHasBeenSet() const { return m_expiredLogEventEndIndexHasBeenSet; }
 
     /**
      * <p>The expired log events.</p>

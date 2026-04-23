@@ -66,6 +66,13 @@ namespace Model
      * This should be present only if we are querying for Elasticsearch <code>
      * <a>Limits</a> </code> for existing domain. </p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p> DomainName represents the name of the Domain that we are trying to modify.
+     * This should be present only if we are querying for Elasticsearch <code>
+     * <a>Limits</a> </code> for existing domain. </p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -114,6 +121,12 @@ namespace Model
      * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
      * <code> <a>Limits</a> </code> are needed. </p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p> The instance type for an Elasticsearch cluster for which Elasticsearch
+     * <code> <a>Limits</a> </code> are needed. </p>
+     */
     inline void SetInstanceType(const ESPartitionInstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -140,6 +153,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetElasticsearchVersion() const{ return m_elasticsearchVersion; }
+
+    /**
+     * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.
+     * </p>
+     */
+    inline bool ElasticsearchVersionHasBeenSet() const { return m_elasticsearchVersionHasBeenSet; }
 
     /**
      * <p> Version of Elasticsearch for which <code> <a>Limits</a> </code> are needed.

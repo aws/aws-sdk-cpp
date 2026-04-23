@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>A unique identifier of the snapshot schedule to delete.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier of the snapshot schedule to delete.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**

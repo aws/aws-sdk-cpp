@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for RtmpCaptionInfoDestinationSettings<p><h3>See
-   * Also:</h3>   <a
+   * Rtmp Caption Info Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpCaptionInfoDestinationSettings">AWS
    * API Reference</a></p>
    */

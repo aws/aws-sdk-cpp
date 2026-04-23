@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the DB security group.</p>
      */
+    inline bool DBSecurityGroupNameHasBeenSet() const { return m_dBSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DB security group.</p>
+     */
     inline void SetDBSecurityGroupName(const Aws::String& value) { m_dBSecurityGroupNameHasBeenSet = true; m_dBSecurityGroupName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The status of the DB security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the DB security group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the DB security group.</p>

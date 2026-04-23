@@ -58,6 +58,14 @@ namespace Model
      * containers. This token is included in a response only if there actually are more
      * containers to list.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>Only if you used <code>MaxResults</code> in the first command, enter the
+     * token (which was included in the previous response) to obtain the next set of
+     * containers. This token is included in a response only if there actually are more
+     * containers to list.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -106,6 +114,12 @@ namespace Model
      * characters. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>Enter the maximum number of containers in the response. Use from 1 to 255
+     * characters. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>Enter the maximum number of containers in the response. Use from 1 to 255

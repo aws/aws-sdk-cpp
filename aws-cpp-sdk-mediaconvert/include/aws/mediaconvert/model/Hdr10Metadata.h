@@ -32,13 +32,16 @@ namespace Model
 {
 
   /**
-   * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
-   * to provide missing metadata. These values vary depending on the input video and
-   * must be provided by a color grader. Range is 0 to 50,000, each increment
-   * represents 0.00002 in CIE1931 color coordinate. Note that these settings are not
-   * color correction. Note that if you are creating HDR outputs inside of an HLS
-   * CMAF package, to comply with the Apple specification, you must use the HVC1 for
-   * H.265 setting.<p><h3>See Also:</h3>   <a
+   * Use the "HDR master display information" (Hdr10Metadata) settings to correct HDR
+   * metadata or to provide missing metadata. These values vary depending on the
+   * input video and must be provided by a color grader. Range is 0 to 50,000; each
+   * increment represents 0.00002 in CIE1931 color coordinate. Note that these
+   * settings are not color correction. Note that if you are creating HDR outputs
+   * inside of an HLS CMAF package, to comply with the Apple specification, you must
+   * use the following settings. Set "MP4 packaging type" (writeMp4PackagingType) to
+   * HVC1 (HVC1). Set "Profile" (H265Settings > codecProfile) to Main10/High
+   * (MAIN10_HIGH). Set "Level" (H265Settings > codecLevel) to 5 (LEVEL_5).<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/Hdr10Metadata">AWS
    * API Reference</a></p>
    */
@@ -57,6 +60,13 @@ namespace Model
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetBluePrimaryX() const{ return m_bluePrimaryX; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
+    inline bool BluePrimaryXHasBeenSet() const { return m_bluePrimaryXHasBeenSet; }
 
     /**
      * HDR Master Display Information must be provided by a color grader, using color
@@ -85,6 +95,13 @@ namespace Model
      * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
+    inline bool BluePrimaryYHasBeenSet() const { return m_bluePrimaryYHasBeenSet; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
     inline void SetBluePrimaryY(int value) { m_bluePrimaryYHasBeenSet = true; m_bluePrimaryY = value; }
 
     /**
@@ -101,6 +118,13 @@ namespace Model
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetGreenPrimaryX() const{ return m_greenPrimaryX; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
+    inline bool GreenPrimaryXHasBeenSet() const { return m_greenPrimaryXHasBeenSet; }
 
     /**
      * HDR Master Display Information must be provided by a color grader, using color
@@ -129,6 +153,13 @@ namespace Model
      * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
+    inline bool GreenPrimaryYHasBeenSet() const { return m_greenPrimaryYHasBeenSet; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
     inline void SetGreenPrimaryY(int value) { m_greenPrimaryYHasBeenSet = true; m_greenPrimaryY = value; }
 
     /**
@@ -144,6 +175,12 @@ namespace Model
      * candelas per square meter.
      */
     inline int GetMaxContentLightLevel() const{ return m_maxContentLightLevel; }
+
+    /**
+     * Maximum light level among all samples in the coded video sequence, in units of
+     * candelas per square meter.
+     */
+    inline bool MaxContentLightLevelHasBeenSet() const { return m_maxContentLightLevelHasBeenSet; }
 
     /**
      * Maximum light level among all samples in the coded video sequence, in units of
@@ -168,6 +205,12 @@ namespace Model
      * Maximum average light level of any frame in the coded video sequence, in units
      * of candelas per square meter.
      */
+    inline bool MaxFrameAverageLightLevelHasBeenSet() const { return m_maxFrameAverageLightLevelHasBeenSet; }
+
+    /**
+     * Maximum average light level of any frame in the coded video sequence, in units
+     * of candelas per square meter.
+     */
     inline void SetMaxFrameAverageLightLevel(int value) { m_maxFrameAverageLightLevelHasBeenSet = true; m_maxFrameAverageLightLevel = value; }
 
     /**
@@ -182,6 +225,12 @@ namespace Model
      * square meter.
      */
     inline int GetMaxLuminance() const{ return m_maxLuminance; }
+
+    /**
+     * Nominal maximum mastering display luminance in units of of 0.0001 candelas per
+     * square meter.
+     */
+    inline bool MaxLuminanceHasBeenSet() const { return m_maxLuminanceHasBeenSet; }
 
     /**
      * Nominal maximum mastering display luminance in units of of 0.0001 candelas per
@@ -206,6 +255,12 @@ namespace Model
      * Nominal minimum mastering display luminance in units of of 0.0001 candelas per
      * square meter
      */
+    inline bool MinLuminanceHasBeenSet() const { return m_minLuminanceHasBeenSet; }
+
+    /**
+     * Nominal minimum mastering display luminance in units of of 0.0001 candelas per
+     * square meter
+     */
     inline void SetMinLuminance(int value) { m_minLuminanceHasBeenSet = true; m_minLuminance = value; }
 
     /**
@@ -221,6 +276,13 @@ namespace Model
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetRedPrimaryX() const{ return m_redPrimaryX; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
+    inline bool RedPrimaryXHasBeenSet() const { return m_redPrimaryXHasBeenSet; }
 
     /**
      * HDR Master Display Information must be provided by a color grader, using color
@@ -249,6 +311,13 @@ namespace Model
      * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
+    inline bool RedPrimaryYHasBeenSet() const { return m_redPrimaryYHasBeenSet; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
     inline void SetRedPrimaryY(int value) { m_redPrimaryYHasBeenSet = true; m_redPrimaryY = value; }
 
     /**
@@ -271,6 +340,13 @@ namespace Model
      * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
+    inline bool WhitePointXHasBeenSet() const { return m_whitePointXHasBeenSet; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
     inline void SetWhitePointX(int value) { m_whitePointXHasBeenSet = true; m_whitePointX = value; }
 
     /**
@@ -287,6 +363,13 @@ namespace Model
      * CIE1931 color coordinate. Note that this setting is not for color correction.
      */
     inline int GetWhitePointY() const{ return m_whitePointY; }
+
+    /**
+     * HDR Master Display Information must be provided by a color grader, using color
+     * grading tools. Range is 0 to 50,000, each increment represents 0.00002 in
+     * CIE1931 color coordinate. Note that this setting is not for color correction.
+     */
+    inline bool WhitePointYHasBeenSet() const { return m_whitePointYHasBeenSet; }
 
     /**
      * HDR Master Display Information must be provided by a color grader, using color

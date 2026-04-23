@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the contact to associate with an address book.</p>
      */
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the contact to associate with an address book.</p>
+     */
     inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the address book with which to associate the contact.</p>
      */
     inline const Aws::String& GetAddressBookArn() const{ return m_addressBookArn; }
+
+    /**
+     * <p>The ARN of the address book with which to associate the contact.</p>
+     */
+    inline bool AddressBookArnHasBeenSet() const { return m_addressBookArnHasBeenSet; }
 
     /**
      * <p>The ARN of the address book with which to associate the contact.</p>

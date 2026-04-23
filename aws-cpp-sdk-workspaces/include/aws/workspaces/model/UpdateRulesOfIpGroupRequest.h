@@ -47,37 +47,42 @@ namespace Model
 
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the group.</p>
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline UpdateRulesOfIpGroupRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline UpdateRulesOfIpGroupRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID of the group.</p>
+     * <p>The identifier of the group.</p>
      */
     inline UpdateRulesOfIpGroupRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 
@@ -86,6 +91,11 @@ namespace Model
      * <p>One or more rules.</p>
      */
     inline const Aws::Vector<IpRuleItem>& GetUserRules() const{ return m_userRules; }
+
+    /**
+     * <p>One or more rules.</p>
+     */
+    inline bool UserRulesHasBeenSet() const { return m_userRulesHasBeenSet; }
 
     /**
      * <p>One or more rules.</p>

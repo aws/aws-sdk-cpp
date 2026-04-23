@@ -54,6 +54,12 @@ namespace Model
      * <p>The unique name of the disk you want to detach from your instance (e.g.,
      * <code>my-disk</code>).</p>
      */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the disk you want to detach from your instance (e.g.,
+     * <code>my-disk</code>).</p>
+     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**

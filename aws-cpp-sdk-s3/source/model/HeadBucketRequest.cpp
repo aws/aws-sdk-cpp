@@ -34,7 +34,7 @@ HeadBucketRequest::HeadBucketRequest() :
 
 Aws::String HeadBucketRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void HeadBucketRequest::AddQueryStringParameters(URI& uri) const

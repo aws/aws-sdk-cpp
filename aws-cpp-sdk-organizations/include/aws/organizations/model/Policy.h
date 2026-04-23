@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A structure that contains additional details about the policy.</p>
      */
+    inline bool PolicySummaryHasBeenSet() const { return m_policySummaryHasBeenSet; }
+
+    /**
+     * <p>A structure that contains additional details about the policy.</p>
+     */
     inline void SetPolicySummary(const PolicySummary& value) { m_policySummaryHasBeenSet = true; m_policySummary = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The text content of the policy.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>The text content of the policy.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>The text content of the policy.</p>

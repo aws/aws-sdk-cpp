@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
      */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
+
+    /**
+     * <p>[EC2-VPC] The allocation ID. This is required for EC2-VPC.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
@@ -89,6 +94,14 @@ namespace Model
      * interface is attached.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
+     * can specify either the instance ID or the network interface ID, but not both.
+     * The operation fails if you specify an instance ID unless exactly one network
+     * interface is attached.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance. This is required for EC2-Classic. For EC2-VPC, you
@@ -147,6 +160,11 @@ namespace Model
     /**
      * <p>The Elastic IP address. This is required for EC2-Classic.</p>
      */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
+
+    /**
+     * <p>The Elastic IP address. This is required for EC2-Classic.</p>
+     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
@@ -195,6 +213,17 @@ namespace Model
      * operation fails if the Elastic IP address is already associated with another
      * resource.</p>
      */
+    inline bool AllowReassociationHasBeenSet() const { return m_allowReassociationHasBeenSet; }
+
+    /**
+     * <p>[EC2-VPC] For a VPC in an EC2-Classic account, specify true to allow an
+     * Elastic IP address that is already associated with an instance or network
+     * interface to be reassociated with the specified instance or network interface.
+     * Otherwise, the operation fails. In a VPC in an EC2-VPC-only account,
+     * reassociation is automatic, therefore you can specify false to ensure the
+     * operation fails if the Elastic IP address is already associated with another
+     * resource.</p>
+     */
     inline void SetAllowReassociation(bool value) { m_allowReassociationHasBeenSet = true; m_allowReassociation = value; }
 
     /**
@@ -223,6 +252,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -239,6 +276,12 @@ namespace Model
      * network interface, you must specify a network interface ID.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
+     * network interface, you must specify a network interface ID.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The ID of the network interface. If the instance has more than one
@@ -283,6 +326,13 @@ namespace Model
      * address is associated with the primary private IP address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>[EC2-VPC] The primary or secondary private IP address to associate with the
+     * Elastic IP address. If no private IP address is specified, the Elastic IP
+     * address is associated with the primary private IP address.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The primary or secondary private IP address to associate with the

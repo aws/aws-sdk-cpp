@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Specifies Amazon S3 targets.</p>
      */
+    inline bool S3TargetsHasBeenSet() const { return m_s3TargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies Amazon S3 targets.</p>
+     */
     inline void SetS3Targets(const Aws::Vector<S3Target>& value) { m_s3TargetsHasBeenSet = true; m_s3Targets = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Specifies JDBC targets.</p>
      */
+    inline bool JdbcTargetsHasBeenSet() const { return m_jdbcTargetsHasBeenSet; }
+
+    /**
+     * <p>Specifies JDBC targets.</p>
+     */
     inline void SetJdbcTargets(const Aws::Vector<JdbcTarget>& value) { m_jdbcTargetsHasBeenSet = true; m_jdbcTargets = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>Specifies DynamoDB targets.</p>
      */
     inline const Aws::Vector<DynamoDBTarget>& GetDynamoDBTargets() const{ return m_dynamoDBTargets; }
+
+    /**
+     * <p>Specifies DynamoDB targets.</p>
+     */
+    inline bool DynamoDBTargetsHasBeenSet() const { return m_dynamoDBTargetsHasBeenSet; }
 
     /**
      * <p>Specifies DynamoDB targets.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the thing that is executing the job.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing that is executing the job.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing that is executing the job.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
      * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job execution. Can be one of: "QUEUED", "IN_PROGRESS",
+     * "FAILED", "SUCCESS", "CANCELED", "REJECTED", or "REMOVED".</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -157,6 +173,12 @@ namespace Model
      * execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>A collection of name/value pairs that describe the status of the job
+     * execution.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>A collection of name/value pairs that describe the status of the job
@@ -235,6 +257,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the job execution was
      * enqueued.</p>
      */
+    inline bool QueuedAtHasBeenSet() const { return m_queuedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution was
+     * enqueued.</p>
+     */
     inline void SetQueuedAt(long long value) { m_queuedAtHasBeenSet = true; m_queuedAt = value; }
 
     /**
@@ -249,6 +277,12 @@ namespace Model
      * started.</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution was
+     * started.</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
 
     /**
      * <p>The time, in milliseconds since the epoch, when the job execution was
@@ -273,6 +307,12 @@ namespace Model
      * <p>The time, in milliseconds since the epoch, when the job execution was last
      * updated. </p>
      */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * updated. </p>
+     */
     inline void SetLastUpdatedAt(long long value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
@@ -292,6 +332,12 @@ namespace Model
      * <p>The estimated number of seconds that remain before the job execution status
      * will be changed to <code>TIMED_OUT</code>.</p>
      */
+    inline bool ApproximateSecondsBeforeTimedOutHasBeenSet() const { return m_approximateSecondsBeforeTimedOutHasBeenSet; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>.</p>
+     */
     inline void SetApproximateSecondsBeforeTimedOut(long long value) { m_approximateSecondsBeforeTimedOutHasBeenSet = true; m_approximateSecondsBeforeTimedOut = value; }
 
     /**
@@ -306,6 +352,12 @@ namespace Model
      * time they are updated by a device.</p>
      */
     inline long long GetVersionNumber() const{ return m_versionNumber; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
 
     /**
      * <p>The version of the job execution. Job execution versions are incremented each
@@ -332,6 +384,13 @@ namespace Model
      * It can be used later in commands that return or update job execution
      * information.</p>
      */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
+
+    /**
+     * <p>A number that identifies a particular job execution on a particular device.
+     * It can be used later in commands that return or update job execution
+     * information.</p>
+     */
     inline void SetExecutionNumber(long long value) { m_executionNumberHasBeenSet = true; m_executionNumber = value; }
 
     /**
@@ -346,6 +405,11 @@ namespace Model
      * <p>The content of the job document.</p>
      */
     inline const Aws::String& GetJobDocument() const{ return m_jobDocument; }
+
+    /**
+     * <p>The content of the job document.</p>
+     */
+    inline bool JobDocumentHasBeenSet() const { return m_jobDocumentHasBeenSet; }
 
     /**
      * <p>The content of the job document.</p>

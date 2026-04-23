@@ -29,7 +29,7 @@ StopThingRegistrationTaskRequest::StopThingRegistrationTaskRequest() :
 
 Aws::String StopThingRegistrationTaskRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -58,6 +58,9 @@ namespace Model
     inline const Destination& GetDestination() const{ return m_destination; }
 
     
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     
@@ -77,6 +80,14 @@ namespace Model
      * sending events.</p>
      */
     inline const Aws::Vector<MessageTag>& GetReplacementTags() const{ return m_replacementTags; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using <code>SendBulkTemplatedEmail</code>. Tags correspond to
+     * characteristics of the email that you define, so that you can publish email
+     * sending events.</p>
+     */
+    inline bool ReplacementTagsHasBeenSet() const { return m_replacementTagsHasBeenSet; }
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -133,6 +144,13 @@ namespace Model
      * correspond to replacement tags in the email template.</p>
      */
     inline const Aws::String& GetReplacementTemplateData() const{ return m_replacementTemplateData; }
+
+    /**
+     * <p>A list of replacement values to apply to the template. This parameter is a
+     * JSON object, typically consisting of key-value pairs in which the keys
+     * correspond to replacement tags in the email template.</p>
+     */
+    inline bool ReplacementTemplateDataHasBeenSet() const { return m_replacementTemplateDataHasBeenSet; }
 
     /**
      * <p>A list of replacement values to apply to the template. This parameter is a

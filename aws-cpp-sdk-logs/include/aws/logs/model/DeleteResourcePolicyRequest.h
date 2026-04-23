@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the policy to be revoked. This parameter is required.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy to be revoked. This parameter is required.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**

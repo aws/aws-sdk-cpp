@@ -139,6 +139,12 @@ DescribeTransformJobResult& DescribeTransformJobResult::operator =(const Aws::Am
 
   }
 
+  if(jsonValue.ValueExists("LabelingJobArn"))
+  {
+    m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
+
+  }
+
 
 
   return *this;

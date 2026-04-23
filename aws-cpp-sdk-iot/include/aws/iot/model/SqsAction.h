@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ARN of the IAM role that grants access.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that grants access.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The URL of the Amazon SQS queue.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>Specifies whether to use Base64 encoding.</p>
      */
     inline bool GetUseBase64() const{ return m_useBase64; }
+
+    /**
+     * <p>Specifies whether to use Base64 encoding.</p>
+     */
+    inline bool UseBase64HasBeenSet() const { return m_useBase64HasBeenSet; }
 
     /**
      * <p>Specifies whether to use Base64 encoding.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The amount of storage used, in bytes.</p>
      */
+    inline bool StorageUtilizedInBytesHasBeenSet() const { return m_storageUtilizedInBytesHasBeenSet; }
+
+    /**
+     * <p>The amount of storage used, in bytes.</p>
+     */
     inline void SetStorageUtilizedInBytes(long long value) { m_storageUtilizedInBytesHasBeenSet = true; m_storageUtilizedInBytes = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The storage for a user.</p>
      */
     inline const StorageRuleType& GetStorageRule() const{ return m_storageRule; }
+
+    /**
+     * <p>The storage for a user.</p>
+     */
+    inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
 
     /**
      * <p>The storage for a user.</p>

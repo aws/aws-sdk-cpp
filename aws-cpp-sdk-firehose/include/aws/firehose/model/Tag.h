@@ -58,6 +58,12 @@ namespace Model
      * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
      * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the tag. Maximum length: 128 characters. Valid
+     * characters: Unicode letters, digits, white space, _ . / = + - % @</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * _ . / = + - % @</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>An optional string, which you can use to describe or define the tag. Maximum
+     * length: 256 characters. Valid characters: Unicode letters, digits, white space,
+     * _ . / = + - % @</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>An optional string, which you can use to describe or define the tag. Maximum

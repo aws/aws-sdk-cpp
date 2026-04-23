@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The parameter name on which you want to attach one or more labels.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The parameter name on which you want to attach one or more labels.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,13 @@ namespace Model
      * labels. If no version is specified, the system attaches the label to the latest
      * version.)</p>
      */
+    inline bool ParameterVersionHasBeenSet() const { return m_parameterVersionHasBeenSet; }
+
+    /**
+     * <p>The specific version of the parameter on which you want to attach one or more
+     * labels. If no version is specified, the system attaches the label to the latest
+     * version.)</p>
+     */
     inline void SetParameterVersion(long long value) { m_parameterVersionHasBeenSet = true; m_parameterVersion = value; }
 
     /**
@@ -107,6 +119,11 @@ namespace Model
      * <p>One or more labels to attach to the specified parameter version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>One or more labels to attach to the specified parameter version.</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>One or more labels to attach to the specified parameter version.</p>

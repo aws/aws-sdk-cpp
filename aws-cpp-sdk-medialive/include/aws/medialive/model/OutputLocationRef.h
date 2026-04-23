@@ -52,6 +52,9 @@ namespace Model
     inline const Aws::String& GetDestinationRefId() const{ return m_destinationRefId; }
 
     
+    inline bool DestinationRefIdHasBeenSet() const { return m_destinationRefIdHasBeenSet; }
+
+    
     inline void SetDestinationRefId(const Aws::String& value) { m_destinationRefIdHasBeenSet = true; m_destinationRefId = value; }
 
     

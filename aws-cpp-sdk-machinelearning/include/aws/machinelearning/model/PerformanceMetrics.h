@@ -63,6 +63,9 @@ namespace Model
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
 
     
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
+
+    
     inline void SetProperties(const Aws::Map<Aws::String, Aws::String>& value) { m_propertiesHasBeenSet = true; m_properties = value; }
 
     

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The VPC peering connection options for the accepter VPC.</p>
      */
+    inline bool AccepterPeeringConnectionOptionsHasBeenSet() const { return m_accepterPeeringConnectionOptionsHasBeenSet; }
+
+    /**
+     * <p>The VPC peering connection options for the accepter VPC.</p>
+     */
     inline void SetAccepterPeeringConnectionOptions(const PeeringConnectionOptionsRequest& value) { m_accepterPeeringConnectionOptionsHasBeenSet = true; m_accepterPeeringConnectionOptions = value; }
 
     /**
@@ -87,6 +92,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -102,6 +115,11 @@ namespace Model
      * <p>The VPC peering connection options for the requester VPC.</p>
      */
     inline const PeeringConnectionOptionsRequest& GetRequesterPeeringConnectionOptions() const{ return m_requesterPeeringConnectionOptions; }
+
+    /**
+     * <p>The VPC peering connection options for the requester VPC.</p>
+     */
+    inline bool RequesterPeeringConnectionOptionsHasBeenSet() const { return m_requesterPeeringConnectionOptionsHasBeenSet; }
 
     /**
      * <p>The VPC peering connection options for the requester VPC.</p>
@@ -128,6 +146,11 @@ namespace Model
      * <p>The ID of the VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of the VPC peering connection.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC peering connection.</p>

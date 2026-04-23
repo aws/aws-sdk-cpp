@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the tables reside. If none is supplied, the
      * AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the tables reside. If none is supplied, the
+     * AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * this name is entirely lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The database in the catalog whose tables to list. For Hive compatibility,
+     * this name is entirely lowercase.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The database in the catalog whose tables to list. For Hive compatibility,
@@ -140,6 +152,12 @@ namespace Model
      * <p>A regular expression pattern. If present, only those tables whose names match
      * the pattern are returned.</p>
      */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
+
+    /**
+     * <p>A regular expression pattern. If present, only those tables whose names match
+     * the pattern are returned.</p>
+     */
     inline void SetExpression(const Aws::String& value) { m_expressionHasBeenSet = true; m_expression = value; }
 
     /**
@@ -181,6 +199,11 @@ namespace Model
     /**
      * <p>A continuation token, included if this is a continuation call.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>A continuation token, included if this is a continuation call.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -213,6 +236,11 @@ namespace Model
      * <p>The maximum number of tables to return in a single response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of tables to return in a single response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of tables to return in a single response.</p>

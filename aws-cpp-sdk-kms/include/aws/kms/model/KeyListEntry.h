@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Unique identifier of the key.</p>
      */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier of the key.</p>
+     */
     inline void SetKeyId(const Aws::String& value) { m_keyIdHasBeenSet = true; m_keyId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>ARN of the key.</p>
      */
     inline const Aws::String& GetKeyArn() const{ return m_keyArn; }
+
+    /**
+     * <p>ARN of the key.</p>
+     */
+    inline bool KeyArnHasBeenSet() const { return m_keyArnHasBeenSet; }
 
     /**
      * <p>ARN of the key.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * Holds the start time for the action.
      */
+    inline bool FixedModeScheduleActionStartSettingsHasBeenSet() const { return m_fixedModeScheduleActionStartSettingsHasBeenSet; }
+
+    /**
+     * Holds the start time for the action.
+     */
     inline void SetFixedModeScheduleActionStartSettings(const FixedModeScheduleActionStartSettings& value) { m_fixedModeScheduleActionStartSettingsHasBeenSet = true; m_fixedModeScheduleActionStartSettings = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * Specifies an action to follow for scheduling this action.
      */
     inline const FollowModeScheduleActionStartSettings& GetFollowModeScheduleActionStartSettings() const{ return m_followModeScheduleActionStartSettings; }
+
+    /**
+     * Specifies an action to follow for scheduling this action.
+     */
+    inline bool FollowModeScheduleActionStartSettingsHasBeenSet() const { return m_followModeScheduleActionStartSettingsHasBeenSet; }
 
     /**
      * Specifies an action to follow for scheduling this action.

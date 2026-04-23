@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The status of the Amazon EC2 security group.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the Amazon EC2 security group.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The name of the Amazon EC2 security group.</p>
      */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon EC2 security group.</p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
+    /**
+     * <p>The AWS account ID of the Amazon EC2 security group owner.</p>
+     */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the Amazon EC2 security group owner.</p>

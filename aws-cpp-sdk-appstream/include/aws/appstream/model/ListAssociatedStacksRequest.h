@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the fleet.</p>
      */
+    inline bool FleetNameHasBeenSet() const { return m_fleetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the fleet.</p>
+     */
     inline void SetFleetName(const Aws::String& value) { m_fleetNameHasBeenSet = true; m_fleetName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * operation. If this value is null, it retrieves the first page.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token to use to retrieve the next page of results for this
+     * operation. If this value is null, it retrieves the first page.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token to use to retrieve the next page of results for this

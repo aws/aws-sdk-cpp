@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the target should be removed from.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window the target should be removed from.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the target definition to remove.</p>
      */
     inline const Aws::String& GetWindowTargetId() const{ return m_windowTargetId; }
+
+    /**
+     * <p>The ID of the target definition to remove.</p>
+     */
+    inline bool WindowTargetIdHasBeenSet() const { return m_windowTargetIdHasBeenSet; }
 
     /**
      * <p>The ID of the target definition to remove.</p>
@@ -122,6 +132,13 @@ namespace Model
      * target from the Maintenance Window.</p>
      */
     inline bool GetSafe() const{ return m_safe; }
+
+    /**
+     * <p>The system checks if the target is being referenced by a task. If the target
+     * is being referenced, the system returns an error and does not deregister the
+     * target from the Maintenance Window.</p>
+     */
+    inline bool SafeHasBeenSet() const { return m_safeHasBeenSet; }
 
     /**
      * <p>The system checks if the target is being referenced by a task. If the target

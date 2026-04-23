@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for VideoSelectorSettings<p><h3>See Also:</h3>   <a
+   * Video Selector Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoSelectorSettings">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,9 @@ namespace Model
     inline const VideoSelectorPid& GetVideoSelectorPid() const{ return m_videoSelectorPid; }
 
     
+    inline bool VideoSelectorPidHasBeenSet() const { return m_videoSelectorPidHasBeenSet; }
+
+    
     inline void SetVideoSelectorPid(const VideoSelectorPid& value) { m_videoSelectorPidHasBeenSet = true; m_videoSelectorPid = value; }
 
     
@@ -66,6 +69,9 @@ namespace Model
 
     
     inline const VideoSelectorProgramId& GetVideoSelectorProgramId() const{ return m_videoSelectorProgramId; }
+
+    
+    inline bool VideoSelectorProgramIdHasBeenSet() const { return m_videoSelectorProgramIdHasBeenSet; }
 
     
     inline void SetVideoSelectorProgramId(const VideoSelectorProgramId& value) { m_videoSelectorProgramIdHasBeenSet = true; m_videoSelectorProgramId = value; }

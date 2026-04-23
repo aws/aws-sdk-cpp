@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the cache parameter group to modify.</p>
      */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group to modify.</p>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * A maximum of 20 parameters may be modified per request.</p>
      */
     inline const Aws::Vector<ParameterNameValue>& GetParameterNameValues() const{ return m_parameterNameValues; }
+
+    /**
+     * <p>An array of parameter names and values for the parameter update. You must
+     * supply at least one parameter name and value; subsequent arguments are optional.
+     * A maximum of 20 parameters may be modified per request.</p>
+     */
+    inline bool ParameterNameValuesHasBeenSet() const { return m_parameterNameValuesHasBeenSet; }
 
     /**
      * <p>An array of parameter names and values for the parameter update. You must

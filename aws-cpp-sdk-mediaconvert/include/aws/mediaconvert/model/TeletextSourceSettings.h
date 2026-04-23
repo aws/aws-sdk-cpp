@@ -60,6 +60,13 @@ namespace Model
      * that will be used for Teletext captions. Do not use this setting if you are
      * passing through teletext from the input source to output.
      */
+    inline bool PageNumberHasBeenSet() const { return m_pageNumberHasBeenSet; }
+
+    /**
+     * Use Page Number (PageNumber) to specify the three-digit hexadecimal page number
+     * that will be used for Teletext captions. Do not use this setting if you are
+     * passing through teletext from the input source to output.
+     */
     inline void SetPageNumber(const Aws::String& value) { m_pageNumberHasBeenSet = true; m_pageNumber = value; }
 
     /**

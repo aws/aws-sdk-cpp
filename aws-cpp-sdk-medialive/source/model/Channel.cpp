@@ -30,6 +30,8 @@ namespace Model
 
 Channel::Channel() : 
     m_arnHasBeenSet(false),
+    m_channelClass(ChannelClass::NOT_SET),
+    m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_egressEndpointsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
@@ -43,12 +45,15 @@ Channel::Channel() :
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 Channel::Channel(JsonView jsonValue) : 
     m_arnHasBeenSet(false),
+    m_channelClass(ChannelClass::NOT_SET),
+    m_channelClassHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_egressEndpointsHasBeenSet(false),
     m_encoderSettingsHasBeenSet(false),
@@ -62,7 +67,8 @@ Channel::Channel(JsonView jsonValue) :
     m_pipelinesRunningCountHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_state(ChannelState::NOT_SET),
-    m_stateHasBeenSet(false)
+    m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -74,6 +80,13 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_arn = jsonValue.GetString("arn");
 
     m_arnHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("channelClass"))
+  {
+    m_channelClass = ChannelClassMapper::GetChannelClassForName(jsonValue.GetString("channelClass"));
+
+    m_channelClassHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("destinations"))
@@ -162,6 +175,16 @@ Channel& Channel::operator =(JsonView jsonValue)
     m_stateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -173,6 +196,11 @@ JsonValue Channel::Jsonize() const
   {
    payload.WithString("arn", m_arn);
 
+  }
+
+  if(m_channelClassHasBeenSet)
+  {
+   payload.WithString("channelClass", ChannelClassMapper::GetNameForChannelClass(m_channelClass));
   }
 
   if(m_destinationsHasBeenSet)
@@ -252,6 +280,17 @@ JsonValue Channel::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", ChannelStateMapper::GetNameForChannelState(m_state));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   return payload;

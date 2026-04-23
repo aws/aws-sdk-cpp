@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the resolver rule that you want to delete.</p>
      */
+    inline bool ResolverRuleIdHasBeenSet() const { return m_resolverRuleIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver rule that you want to delete.</p>
+     */
     inline void SetResolverRuleId(const Aws::String& value) { m_resolverRuleIdHasBeenSet = true; m_resolverRuleId = value; }
 
     /**

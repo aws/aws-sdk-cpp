@@ -51,12 +51,15 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData() :
     m_userDataHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_elasticGpuSpecificationsHasBeenSet(false),
+    m_elasticInferenceAcceleratorsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_creditSpecificationHasBeenSet(false),
     m_cpuOptionsHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false)
+    m_capacityReservationSpecificationHasBeenSet(false),
+    m_hibernationOptionsHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
 }
 
@@ -81,12 +84,15 @@ ResponseLaunchTemplateData::ResponseLaunchTemplateData(const XmlNode& xmlNode) :
     m_userDataHasBeenSet(false),
     m_tagSpecificationsHasBeenSet(false),
     m_elasticGpuSpecificationsHasBeenSet(false),
+    m_elasticInferenceAcceleratorsHasBeenSet(false),
     m_securityGroupIdsHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_instanceMarketOptionsHasBeenSet(false),
     m_creditSpecificationHasBeenSet(false),
     m_cpuOptionsHasBeenSet(false),
-    m_capacityReservationSpecificationHasBeenSet(false)
+    m_capacityReservationSpecificationHasBeenSet(false),
+    m_hibernationOptionsHasBeenSet(false),
+    m_licenseSpecificationsHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -217,6 +223,18 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
 
       m_elasticGpuSpecificationsHasBeenSet = true;
     }
+    XmlNode elasticInferenceAcceleratorsNode = resultNode.FirstChild("elasticInferenceAcceleratorSet");
+    if(!elasticInferenceAcceleratorsNode.IsNull())
+    {
+      XmlNode elasticInferenceAcceleratorsMember = elasticInferenceAcceleratorsNode.FirstChild("item");
+      while(!elasticInferenceAcceleratorsMember.IsNull())
+      {
+        m_elasticInferenceAccelerators.push_back(elasticInferenceAcceleratorsMember);
+        elasticInferenceAcceleratorsMember = elasticInferenceAcceleratorsMember.NextNode("item");
+      }
+
+      m_elasticInferenceAcceleratorsHasBeenSet = true;
+    }
     XmlNode securityGroupIdsNode = resultNode.FirstChild("securityGroupIdSet");
     if(!securityGroupIdsNode.IsNull())
     {
@@ -264,6 +282,24 @@ ResponseLaunchTemplateData& ResponseLaunchTemplateData::operator =(const XmlNode
     {
       m_capacityReservationSpecification = capacityReservationSpecificationNode;
       m_capacityReservationSpecificationHasBeenSet = true;
+    }
+    XmlNode hibernationOptionsNode = resultNode.FirstChild("hibernationOptions");
+    if(!hibernationOptionsNode.IsNull())
+    {
+      m_hibernationOptions = hibernationOptionsNode;
+      m_hibernationOptionsHasBeenSet = true;
+    }
+    XmlNode licenseSpecificationsNode = resultNode.FirstChild("licenseSet");
+    if(!licenseSpecificationsNode.IsNull())
+    {
+      XmlNode licenseSpecificationsMember = licenseSpecificationsNode.FirstChild("item");
+      while(!licenseSpecificationsMember.IsNull())
+      {
+        m_licenseSpecifications.push_back(licenseSpecificationsMember);
+        licenseSpecificationsMember = licenseSpecificationsMember.NextNode("item");
+      }
+
+      m_licenseSpecificationsHasBeenSet = true;
     }
   }
 
@@ -382,6 +418,17 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       }
   }
 
+  if(m_elasticInferenceAcceleratorsHasBeenSet)
+  {
+      unsigned elasticInferenceAcceleratorsIdx = 1;
+      for(auto& item : m_elasticInferenceAccelerators)
+      {
+        Aws::StringStream elasticInferenceAcceleratorsSs;
+        elasticInferenceAcceleratorsSs << location << index << locationValue << ".ElasticInferenceAcceleratorSet." << elasticInferenceAcceleratorsIdx++;
+        item.OutputToStream(oStream, elasticInferenceAcceleratorsSs.str().c_str());
+      }
+  }
+
   if(m_securityGroupIdsHasBeenSet)
   {
       unsigned securityGroupIdsIdx = 1;
@@ -426,6 +473,24 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::StringStream capacityReservationSpecificationLocationAndMemberSs;
       capacityReservationSpecificationLocationAndMemberSs << location << index << locationValue << ".CapacityReservationSpecification";
       m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_hibernationOptionsHasBeenSet)
+  {
+      Aws::StringStream hibernationOptionsLocationAndMemberSs;
+      hibernationOptionsLocationAndMemberSs << location << index << locationValue << ".HibernationOptions";
+      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+      unsigned licenseSpecificationsIdx = 1;
+      for(auto& item : m_licenseSpecifications)
+      {
+        Aws::StringStream licenseSpecificationsSs;
+        licenseSpecificationsSs << location << index << locationValue << ".LicenseSet." << licenseSpecificationsIdx++;
+        item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
+      }
   }
 
 }
@@ -526,6 +591,16 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
         item.OutputToStream(oStream, elasticGpuSpecificationsSs.str().c_str());
       }
   }
+  if(m_elasticInferenceAcceleratorsHasBeenSet)
+  {
+      unsigned elasticInferenceAcceleratorsIdx = 1;
+      for(auto& item : m_elasticInferenceAccelerators)
+      {
+        Aws::StringStream elasticInferenceAcceleratorsSs;
+        elasticInferenceAcceleratorsSs << location <<  ".ElasticInferenceAcceleratorSet." << elasticInferenceAcceleratorsIdx++;
+        item.OutputToStream(oStream, elasticInferenceAcceleratorsSs.str().c_str());
+      }
+  }
   if(m_securityGroupIdsHasBeenSet)
   {
       unsigned securityGroupIdsIdx = 1;
@@ -565,6 +640,22 @@ void ResponseLaunchTemplateData::OutputToStream(Aws::OStream& oStream, const cha
       Aws::String capacityReservationSpecificationLocationAndMember(location);
       capacityReservationSpecificationLocationAndMember += ".CapacityReservationSpecification";
       m_capacityReservationSpecification.OutputToStream(oStream, capacityReservationSpecificationLocationAndMember.c_str());
+  }
+  if(m_hibernationOptionsHasBeenSet)
+  {
+      Aws::String hibernationOptionsLocationAndMember(location);
+      hibernationOptionsLocationAndMember += ".HibernationOptions";
+      m_hibernationOptions.OutputToStream(oStream, hibernationOptionsLocationAndMember.c_str());
+  }
+  if(m_licenseSpecificationsHasBeenSet)
+  {
+      unsigned licenseSpecificationsIdx = 1;
+      for(auto& item : m_licenseSpecifications)
+      {
+        Aws::StringStream licenseSpecificationsSs;
+        licenseSpecificationsSs << location <<  ".LicenseSet." << licenseSpecificationsIdx++;
+        item.OutputToStream(oStream, licenseSpecificationsSs.str().c_str());
+      }
   }
 }
 

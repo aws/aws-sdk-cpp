@@ -57,6 +57,12 @@ namespace Model
      * The configuration set that you want to use when you send email using the
      * Pinpoint Email API.
      */
+    inline bool ConfigurationSetHasBeenSet() const { return m_configurationSetHasBeenSet; }
+
+    /**
+     * The configuration set that you want to use when you send email using the
+     * Pinpoint Email API.
+     */
     inline void SetConfigurationSet(const Aws::String& value) { m_configurationSetHasBeenSet = true; m_configurationSet = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * If the channel is enabled for sending messages.
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * If the channel is enabled for sending messages.
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -110,6 +121,11 @@ namespace Model
      * The email address used to send emails from.
      */
     inline const Aws::String& GetFromAddress() const{ return m_fromAddress; }
+
+    /**
+     * The email address used to send emails from.
+     */
+    inline bool FromAddressHasBeenSet() const { return m_fromAddressHasBeenSet; }
 
     /**
      * The email address used to send emails from.
@@ -150,6 +166,11 @@ namespace Model
     /**
      * The ARN of an identity verified with SES.
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * The ARN of an identity verified with SES.
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -183,6 +204,12 @@ namespace Model
      * ingestion service
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The ARN of an IAM Role used to submit events to Mobile Analytics' event
+     * ingestion service
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The ARN of an IAM Role used to submit events to Mobile Analytics' event

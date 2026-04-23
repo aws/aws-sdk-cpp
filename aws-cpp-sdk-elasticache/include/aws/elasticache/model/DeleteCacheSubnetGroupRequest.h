@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must
      * contain no more than 255 alphanumeric characters or hyphens.</p>
      */
+    inline bool CacheSubnetGroupNameHasBeenSet() const { return m_cacheSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache subnet group to delete.</p> <p>Constraints: Must
+     * contain no more than 255 alphanumeric characters or hyphens.</p>
+     */
     inline void SetCacheSubnetGroupName(const Aws::String& value) { m_cacheSubnetGroupNameHasBeenSet = true; m_cacheSubnetGroupName = value; }
 
     /**

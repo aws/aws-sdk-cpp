@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the log stream.</p>
      */
+    inline bool LogStreamNameHasBeenSet() const { return m_logStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log stream.</p>
+     */
     inline void SetLogStreamName(const Aws::String& value) { m_logStreamNameHasBeenSet = true; m_logStreamName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Indicates whether all the events in this log stream were searched.</p>
      */
     inline bool GetSearchedCompletely() const{ return m_searchedCompletely; }
+
+    /**
+     * <p>Indicates whether all the events in this log stream were searched.</p>
+     */
+    inline bool SearchedCompletelyHasBeenSet() const { return m_searchedCompletelyHasBeenSet; }
 
     /**
      * <p>Indicates whether all the events in this log stream were searched.</p>

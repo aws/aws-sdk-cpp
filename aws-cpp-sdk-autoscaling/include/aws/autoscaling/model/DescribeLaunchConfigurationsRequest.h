@@ -57,6 +57,12 @@ namespace Model
      * <p>The launch configuration names. If you omit this parameter, all launch
      * configurations are described.</p>
      */
+    inline bool LaunchConfigurationNamesHasBeenSet() const { return m_launchConfigurationNamesHasBeenSet; }
+
+    /**
+     * <p>The launch configuration names. If you omit this parameter, all launch
+     * configurations are described.</p>
+     */
     inline void SetLaunchConfigurationNames(const Aws::Vector<Aws::String>& value) { m_launchConfigurationNamesHasBeenSet = true; m_launchConfigurationNames = value; }
 
     /**
@@ -106,6 +112,12 @@ namespace Model
      * <p>The token for the next set of items to return. (You received this token from
      * a previous call.)</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -140,20 +152,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
-     * <p>The maximum number of items to return with this call. The default value is 50
-     * and the maximum value is 100.</p>
+     * <p>The maximum number of items to return with this call. The default value is
+     * <code>50</code> and the maximum value is <code>100</code>.</p>
      */
     inline DescribeLaunchConfigurationsRequest& WithMaxRecords(int value) { SetMaxRecords(value); return *this;}
 

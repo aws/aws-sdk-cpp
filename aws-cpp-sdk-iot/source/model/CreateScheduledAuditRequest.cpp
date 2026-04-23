@@ -29,6 +29,7 @@ CreateScheduledAuditRequest::CreateScheduledAuditRequest() :
     m_dayOfWeek(DayOfWeek::NOT_SET),
     m_dayOfWeekHasBeenSet(false),
     m_targetCheckNamesHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_scheduledAuditNameHasBeenSet(false)
 {
 }
@@ -61,6 +62,17 @@ Aws::String CreateScheduledAuditRequest::SerializePayload() const
      targetCheckNamesJsonList[targetCheckNamesIndex].AsString(m_targetCheckNames[targetCheckNamesIndex]);
    }
    payload.WithArray("targetCheckNames", std::move(targetCheckNamesJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

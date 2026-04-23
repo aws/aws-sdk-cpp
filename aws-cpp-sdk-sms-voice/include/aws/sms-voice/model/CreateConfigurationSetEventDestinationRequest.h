@@ -28,7 +28,7 @@ namespace Model
 {
 
   /**
-   * CreateConfigurationSetEventDestinationRequest<p><h3>See Also:</h3>   <a
+   * Create a new event destination in a configuration set.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/CreateConfigurationSetEventDestinationRequest">AWS
    * API Reference</a></p>
    */
@@ -50,6 +50,11 @@ namespace Model
      * ConfigurationSetName
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * ConfigurationSetName
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
      * ConfigurationSetName
@@ -86,6 +91,9 @@ namespace Model
     inline const EventDestinationDefinition& GetEventDestination() const{ return m_eventDestination; }
 
     
+    inline bool EventDestinationHasBeenSet() const { return m_eventDestinationHasBeenSet; }
+
+    
     inline void SetEventDestination(const EventDestinationDefinition& value) { m_eventDestinationHasBeenSet = true; m_eventDestination = value; }
 
     
@@ -102,6 +110,11 @@ namespace Model
      * A name that identifies the event destination.
      */
     inline const Aws::String& GetEventDestinationName() const{ return m_eventDestinationName; }
+
+    /**
+     * A name that identifies the event destination.
+     */
+    inline bool EventDestinationNameHasBeenSet() const { return m_eventDestinationNameHasBeenSet; }
 
     /**
      * A name that identifies the event destination.

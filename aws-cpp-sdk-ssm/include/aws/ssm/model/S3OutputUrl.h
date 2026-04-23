@@ -58,6 +58,12 @@ namespace Model
      * <p>A URL for an Amazon S3 bucket where you want to store the results of this
      * request.</p>
      */
+    inline bool OutputUrlHasBeenSet() const { return m_outputUrlHasBeenSet; }
+
+    /**
+     * <p>A URL for an Amazon S3 bucket where you want to store the results of this
+     * request.</p>
+     */
     inline void SetOutputUrl(const Aws::String& value) { m_outputUrlHasBeenSet = true; m_outputUrl = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The vault lock policy.</p>
      */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+
+    /**
+     * <p>The vault lock policy.</p>
+     */
     inline void SetPolicy(const Aws::String& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**

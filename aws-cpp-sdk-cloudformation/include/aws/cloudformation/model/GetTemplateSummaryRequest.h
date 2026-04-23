@@ -70,6 +70,17 @@ namespace Model
      * <code>StackSetName</code>, <code>TemplateBody</code>, or
      * <code>TemplateURL</code>.</p>
      */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
+
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. For more information about templates, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or
+     * <code>TemplateURL</code>.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
@@ -139,6 +150,18 @@ namespace Model
      * <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetTemplateURL() const{ return m_templateURL; }
+
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template (max size: 460,800 bytes) that is located in an Amazon S3 bucket. For
+     * more information about templates, see <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * specify only one of the following parameters: <code>StackName</code>,
+     * <code>StackSetName</code>, <code>TemplateBody</code>, or
+     * <code>TemplateURL</code>.</p>
+     */
+    inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
 
     /**
      * <p>Location of file containing the template body. The URL must point to a
@@ -231,6 +254,16 @@ namespace Model
      * parameters: <code>StackName</code>, <code>StackSetName</code>,
      * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
      */
+    inline bool StackNameHasBeenSet() const { return m_stackNameHasBeenSet; }
+
+    /**
+     * <p>The name or the stack ID that is associated with the stack, which are not
+     * always interchangeable. For running stacks, you can specify either the stack's
+     * name or its unique stack ID. For deleted stack, you must specify the unique
+     * stack ID.</p> <p>Conditional: You must specify only one of the following
+     * parameters: <code>StackName</code>, <code>StackSetName</code>,
+     * <code>TemplateBody</code>, or <code>TemplateURL</code>.</p>
+     */
     inline void SetStackName(const Aws::String& value) { m_stackNameHasBeenSet = true; m_stackName = value; }
 
     /**
@@ -291,6 +324,14 @@ namespace Model
      * <code>TemplateURL</code>.</p>
      */
     inline const Aws::String& GetStackSetName() const{ return m_stackSetName; }
+
+    /**
+     * <p>The name or unique ID of the stack set from which the stack was created.</p>
+     * <p>Conditional: You must specify only one of the following parameters:
+     * <code>StackName</code>, <code>StackSetName</code>, <code>TemplateBody</code>, or
+     * <code>TemplateURL</code>.</p>
+     */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
 
     /**
      * <p>The name or unique ID of the stack set from which the stack was created.</p>

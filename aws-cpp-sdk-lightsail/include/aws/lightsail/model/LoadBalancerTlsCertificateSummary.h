@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the SSL/TLS certificate.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the SSL/TLS certificate.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * load balancer.</p>
      */
     inline bool GetIsAttached() const{ return m_isAttached; }
+
+    /**
+     * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail
+     * load balancer.</p>
+     */
+    inline bool IsAttachedHasBeenSet() const { return m_isAttachedHasBeenSet; }
 
     /**
      * <p>When <code>true</code>, the SSL/TLS certificate is attached to the Lightsail

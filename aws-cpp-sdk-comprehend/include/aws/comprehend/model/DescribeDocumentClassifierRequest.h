@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) that identifies the document classifier. The
      * operation returns this identifier in its response.</p>
      */
+    inline bool DocumentClassifierArnHasBeenSet() const { return m_documentClassifierArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the document classifier. The
+     * operation returns this identifier in its response.</p>
+     */
     inline void SetDocumentClassifierArn(const Aws::String& value) { m_documentClassifierArnHasBeenSet = true; m_documentClassifierArn = value; }
 
     /**

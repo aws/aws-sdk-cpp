@@ -59,6 +59,12 @@ namespace Model
      * <p>The date and time of the last provisioned throughput increase for this
      * table.</p>
      */
+    inline bool LastIncreaseDateTimeHasBeenSet() const { return m_lastIncreaseDateTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time of the last provisioned throughput increase for this
+     * table.</p>
+     */
     inline void SetLastIncreaseDateTime(const Aws::Utils::DateTime& value) { m_lastIncreaseDateTimeHasBeenSet = true; m_lastIncreaseDateTime = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * table.</p>
      */
     inline const Aws::Utils::DateTime& GetLastDecreaseDateTime() const{ return m_lastDecreaseDateTime; }
+
+    /**
+     * <p>The date and time of the last provisioned throughput decrease for this
+     * table.</p>
+     */
+    inline bool LastDecreaseDateTimeHasBeenSet() const { return m_lastDecreaseDateTimeHasBeenSet; }
 
     /**
      * <p>The date and time of the last provisioned throughput decrease for this
@@ -125,6 +137,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
      * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
      */
+    inline bool NumberOfDecreasesTodayHasBeenSet() const { return m_numberOfDecreasesTodayHasBeenSet; }
+
+    /**
+     * <p>The number of provisioned throughput decreases for this table during this UTC
+     * calendar day. For current maximums on provisioned throughput decreases, see <a
+     * href="http://docs.aws.amazon.com/amazondynamodb/latest/developerguide/Limits.html">Limits</a>
+     * in the <i>Amazon DynamoDB Developer Guide</i>.</p>
+     */
     inline void SetNumberOfDecreasesToday(long long value) { m_numberOfDecreasesTodayHasBeenSet = true; m_numberOfDecreasesToday = value; }
 
     /**
@@ -152,6 +172,15 @@ namespace Model
      * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
      * <code>ReadCapacityUnits</code> per second.</p>
      */
+    inline bool ReadCapacityUnitsHasBeenSet() const { return m_readCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of strongly consistent reads consumed per second before
+     * DynamoDB returns a <code>ThrottlingException</code>. Eventually consistent reads
+     * require less effort than strongly consistent reads, so a setting of 50
+     * <code>ReadCapacityUnits</code> per second provides 100 eventually consistent
+     * <code>ReadCapacityUnits</code> per second.</p>
+     */
     inline void SetReadCapacityUnits(long long value) { m_readCapacityUnitsHasBeenSet = true; m_readCapacityUnits = value; }
 
     /**
@@ -169,6 +198,12 @@ namespace Model
      * <code>ThrottlingException</code>.</p>
      */
     inline long long GetWriteCapacityUnits() const{ return m_writeCapacityUnits; }
+
+    /**
+     * <p>The maximum number of writes consumed per second before DynamoDB returns a
+     * <code>ThrottlingException</code>.</p>
+     */
+    inline bool WriteCapacityUnitsHasBeenSet() const { return m_writeCapacityUnitsHasBeenSet; }
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a

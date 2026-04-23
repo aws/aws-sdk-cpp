@@ -56,6 +56,11 @@ namespace Model
     /**
      * Sets whether the endpoints create a segment when they are imported.
      */
+    inline bool DefineSegmentHasBeenSet() const { return m_defineSegmentHasBeenSet; }
+
+    /**
+     * Sets whether the endpoints create a segment when they are imported.
+     */
     inline void SetDefineSegment(bool value) { m_defineSegmentHasBeenSet = true; m_defineSegment = value; }
 
     /**
@@ -71,6 +76,14 @@ namespace Model
      * assumed by Amazon Pinpoint.
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
@@ -133,6 +146,13 @@ Valid values:
 Valid values:
      * CSV, JSON
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * The format of the files that contain the endpoint definitions.
+Valid values:
+     * CSV, JSON
+     */
     inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -167,6 +187,12 @@ Valid values:
      * Sets whether the endpoints are registered with Amazon Pinpoint when they are
      * imported.
      */
+    inline bool RegisterEndpointsHasBeenSet() const { return m_registerEndpointsHasBeenSet; }
+
+    /**
+     * Sets whether the endpoints are registered with Amazon Pinpoint when they are
+     * imported.
+     */
     inline void SetRegisterEndpoints(bool value) { m_registerEndpointsHasBeenSet = true; m_registerEndpoints = value; }
 
     /**
@@ -181,6 +207,12 @@ Valid values:
      * to the Amazon S3 location that contains the endpoints to import.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
+     * to the Amazon S3 location that contains the endpoints to import.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
@@ -228,6 +260,16 @@ Amazon Pinpoint imports
      * endpoints from this location and any subfolders it contains.
      */
     inline const Aws::String& GetS3Url() const{ return m_s3Url; }
+
+    /**
+     * The URL of the S3 bucket that contains the segment information to import. The
+     * location can be a folder or a single file. The URL should use the following
+     * format: s3://bucket-name/folder-name/file-name
+
+Amazon Pinpoint imports
+     * endpoints from this location and any subfolders it contains.
+     */
+    inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
 
     /**
      * The URL of the S3 bucket that contains the segment information to import. The
@@ -300,6 +342,12 @@ Amazon Pinpoint imports
      * The ID of the segment to update if the import job is meant to update an existing
      * segment.
      */
+    inline bool SegmentIdHasBeenSet() const { return m_segmentIdHasBeenSet; }
+
+    /**
+     * The ID of the segment to update if the import job is meant to update an existing
+     * segment.
+     */
     inline void SetSegmentId(const Aws::String& value) { m_segmentIdHasBeenSet = true; m_segmentId = value; }
 
     /**
@@ -338,6 +386,12 @@ Amazon Pinpoint imports
      * true.
      */
     inline const Aws::String& GetSegmentName() const{ return m_segmentName; }
+
+    /**
+     * A custom name for the segment created by the import job. Use if DefineSegment is
+     * true.
+     */
+    inline bool SegmentNameHasBeenSet() const { return m_segmentNameHasBeenSet; }
 
     /**
      * A custom name for the segment created by the import job. Use if DefineSegment is

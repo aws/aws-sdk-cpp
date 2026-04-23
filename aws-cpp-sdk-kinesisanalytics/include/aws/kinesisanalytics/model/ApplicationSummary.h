@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>ARN of the application.</p>
      */
+    inline bool ApplicationARNHasBeenSet() const { return m_applicationARNHasBeenSet; }
+
+    /**
+     * <p>ARN of the application.</p>
+     */
     inline void SetApplicationARN(const Aws::String& value) { m_applicationARNHasBeenSet = true; m_applicationARN = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>Status of the application.</p>
      */
     inline const ApplicationStatus& GetApplicationStatus() const{ return m_applicationStatus; }
+
+    /**
+     * <p>Status of the application.</p>
+     */
+    inline bool ApplicationStatusHasBeenSet() const { return m_applicationStatusHasBeenSet; }
 
     /**
      * <p>Status of the application.</p>

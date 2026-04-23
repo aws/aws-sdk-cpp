@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 GetServersRequest::GetServersRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_vmServerAddressListHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,17 @@ Aws::String GetServersRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("maxResults", m_maxResults);
+
+  }
+
+  if(m_vmServerAddressListHasBeenSet)
+  {
+   Array<JsonValue> vmServerAddressListJsonList(m_vmServerAddressList.size());
+   for(unsigned vmServerAddressListIndex = 0; vmServerAddressListIndex < vmServerAddressListJsonList.GetLength(); ++vmServerAddressListIndex)
+   {
+     vmServerAddressListJsonList[vmServerAddressListIndex].AsObject(m_vmServerAddressList[vmServerAddressListIndex].Jsonize());
+   }
+   payload.WithArray("vmServerAddressList", std::move(vmServerAddressListJsonList));
 
   }
 

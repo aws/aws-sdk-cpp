@@ -61,6 +61,13 @@ namespace Model
      * be the name of an existing DB cluster snapshot in the <code>available</code>
      * state.</p>
      */
+    inline bool DBClusterSnapshotIdentifierHasBeenSet() const { return m_dBClusterSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the DB cluster snapshot to delete.</p> <p>Constraints: Must
+     * be the name of an existing DB cluster snapshot in the <code>available</code>
+     * state.</p>
+     */
     inline void SetDBClusterSnapshotIdentifier(const Aws::String& value) { m_dBClusterSnapshotIdentifierHasBeenSet = true; m_dBClusterSnapshotIdentifier = value; }
 
     /**

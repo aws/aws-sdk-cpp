@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the uploaded test spec.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * <code>.yml</code> file extension.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The upload's test spec file name. The name should not contain the '/'
+     * character. The test spec file name must end with the <code>.yaml</code> or
+     * <code>.yml</code> file extension.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The upload's test spec file name. The name should not contain the '/'
@@ -138,6 +150,11 @@ namespace Model
     /**
      * <p>The upload's content type (for example, "application/x-yaml").</p>
      */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
+
+    /**
+     * <p>The upload's content type (for example, "application/x-yaml").</p>
+     */
     inline void SetContentType(const Aws::String& value) { m_contentTypeHasBeenSet = true; m_contentType = value; }
 
     /**
@@ -171,6 +188,12 @@ namespace Model
      * set to false.</p>
      */
     inline bool GetEditContent() const{ return m_editContent; }
+
+    /**
+     * <p>Set to true if the YAML file has changed and needs to be updated; otherwise,
+     * set to false.</p>
+     */
+    inline bool EditContentHasBeenSet() const { return m_editContentHasBeenSet; }
 
     /**
      * <p>Set to true if the YAML file has changed and needs to be updated; otherwise,

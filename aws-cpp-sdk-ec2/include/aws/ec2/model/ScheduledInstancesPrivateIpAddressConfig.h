@@ -60,6 +60,12 @@ namespace Model
      * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
      * secondary IPv4 address.</p>
      */
+    inline bool PrimaryHasBeenSet() const { return m_primaryHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is a primary IPv4 address. Otherwise, this is a
+     * secondary IPv4 address.</p>
+     */
     inline void SetPrimary(bool value) { m_primaryHasBeenSet = true; m_primary = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The IPv4 address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The IPv4 address.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The IPv4 address.</p>

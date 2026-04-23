@@ -34,7 +34,7 @@ DescribeDatastoreRequest::DescribeDatastoreRequest() :
 
 Aws::String DescribeDatastoreRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeDatastoreRequest::AddQueryStringParameters(URI& uri) const

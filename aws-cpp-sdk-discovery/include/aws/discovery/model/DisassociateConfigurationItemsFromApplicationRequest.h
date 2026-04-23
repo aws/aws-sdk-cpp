@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Configuration ID of an application from which each item is disassociated.</p>
      */
+    inline bool ApplicationConfigurationIdHasBeenSet() const { return m_applicationConfigurationIdHasBeenSet; }
+
+    /**
+     * <p>Configuration ID of an application from which each item is disassociated.</p>
+     */
     inline void SetApplicationConfigurationId(const Aws::String& value) { m_applicationConfigurationIdHasBeenSet = true; m_applicationConfigurationId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Configuration ID of each item to be disassociated from an application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationIds() const{ return m_configurationIds; }
+
+    /**
+     * <p>Configuration ID of each item to be disassociated from an application.</p>
+     */
+    inline bool ConfigurationIdsHasBeenSet() const { return m_configurationIdsHasBeenSet; }
 
     /**
      * <p>Configuration ID of each item to be disassociated from an application.</p>

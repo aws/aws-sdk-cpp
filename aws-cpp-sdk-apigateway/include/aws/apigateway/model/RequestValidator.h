@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The identifier of this <a>RequestValidator</a>.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of this <a>RequestValidator</a>.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The name of this <a>RequestValidator</a></p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of this <a>RequestValidator</a></p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of this <a>RequestValidator</a></p>
@@ -137,6 +147,12 @@ namespace Model
      * <p>A Boolean flag to indicate whether to validate a request body according to
      * the configured <a>Model</a> schema.</p>
      */
+    inline bool ValidateRequestBodyHasBeenSet() const { return m_validateRequestBodyHasBeenSet; }
+
+    /**
+     * <p>A Boolean flag to indicate whether to validate a request body according to
+     * the configured <a>Model</a> schema.</p>
+     */
     inline void SetValidateRequestBody(bool value) { m_validateRequestBodyHasBeenSet = true; m_validateRequestBody = value; }
 
     /**
@@ -151,6 +167,12 @@ namespace Model
      * (<code>true</code>) or not (<code>false</code>).</p>
      */
     inline bool GetValidateRequestParameters() const{ return m_validateRequestParameters; }
+
+    /**
+     * <p>A Boolean flag to indicate whether to validate request parameters
+     * (<code>true</code>) or not (<code>false</code>).</p>
+     */
+    inline bool ValidateRequestParametersHasBeenSet() const { return m_validateRequestParametersHasBeenSet; }
 
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters

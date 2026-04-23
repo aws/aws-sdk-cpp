@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The app client ID of the app associated with the user pool.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The app client ID of the app associated with the user pool.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * key of a user pool client and username plus the client ID in the message.</p>
      */
     inline const Aws::String& GetSecretHash() const{ return m_secretHash; }
+
+    /**
+     * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
+     * key of a user pool client and username plus the client ID in the message.</p>
+     */
+    inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
 
     /**
      * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
@@ -139,6 +150,12 @@ namespace Model
      * <p>The user name of the user for whom you want to enter a code to retrieve a
      * forgotten password.</p>
      */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user for whom you want to enter a code to retrieve a
+     * forgotten password.</p>
+     */
     inline void SetUsername(const Aws::String& value) { m_usernameHasBeenSet = true; m_username = value; }
 
     /**
@@ -177,6 +194,12 @@ namespace Model
      * password. For more information, see </p>
      */
     inline const Aws::String& GetConfirmationCode() const{ return m_confirmationCode; }
+
+    /**
+     * <p>The confirmation code sent by a user's request to retrieve a forgotten
+     * password. For more information, see </p>
+     */
+    inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
 
     /**
      * <p>The confirmation code sent by a user's request to retrieve a forgotten
@@ -223,6 +246,11 @@ namespace Model
     /**
      * <p>The password sent by a user's request to retrieve a forgotten password.</p>
      */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+
+    /**
+     * <p>The password sent by a user's request to retrieve a forgotten password.</p>
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
@@ -261,6 +289,12 @@ namespace Model
      * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
      * <code>ConfirmForgotPassword</code> calls.</p>
      */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
+
+    /**
+     * <p>The Amazon Pinpoint analytics metadata for collecting metrics for
+     * <code>ConfirmForgotPassword</code> calls.</p>
+     */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
@@ -288,6 +322,13 @@ namespace Model
      * advanced security.</p>
      */
     inline const UserContextDataType& GetUserContextData() const{ return m_userContextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
 
     /**
      * <p>Contextual data such as the user's device fingerprint, IP address, or

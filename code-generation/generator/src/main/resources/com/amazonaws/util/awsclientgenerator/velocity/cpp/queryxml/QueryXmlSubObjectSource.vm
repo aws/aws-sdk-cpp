@@ -47,7 +47,11 @@ ${typeInfo.className}& ${typeInfo.className}::operator =(const XmlNode& xmlNode)
   return *this;
 }
 
+#if($shape.members.isEmpty())
+void ${typeInfo.className}::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const
+#else
 void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+#end
 {
 #foreach($entry in $shape.members.entrySet())
 #set($memberName = $entry.key)
@@ -183,7 +187,11 @@ void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* lo
 #end
 }
 
+#if($shape.members.isEmpty())
+void ${typeInfo.className}::OutputToStream(Aws::OStream&, const char*) const
+#else
 void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* location) const
+#end
 {
 #foreach($entry in $shape.members.entrySet())
 #set($memberName = $entry.key)

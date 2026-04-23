@@ -63,6 +63,13 @@ namespace Model
      * Redis, this value must be 1. For clusters running Memcached, this value must be
      * between 1 and 20.</p>
      */
+    inline bool NumCacheNodesHasBeenSet() const { return m_numCacheNodesHasBeenSet; }
+
+    /**
+     * <p>The new number of cache nodes for the cluster.</p> <p>For clusters running
+     * Redis, this value must be 1. For clusters running Memcached, this value must be
+     * between 1 and 20.</p>
+     */
     inline void SetNumCacheNodes(int value) { m_numCacheNodesHasBeenSet = true; m_numCacheNodes = value; }
 
     /**
@@ -78,6 +85,12 @@ namespace Model
      * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
      */
     inline const Aws::Vector<Aws::String>& GetCacheNodeIdsToRemove() const{ return m_cacheNodeIdsToRemove; }
+
+    /**
+     * <p>A list of cache node IDs that are being removed (or will be removed) from the
+     * cluster. A node ID is a 4-digit numeric identifier (0001, 0002, etc.).</p>
+     */
+    inline bool CacheNodeIdsToRemoveHasBeenSet() const { return m_cacheNodeIdsToRemoveHasBeenSet; }
 
     /**
      * <p>A list of cache node IDs that are being removed (or will be removed) from the
@@ -130,6 +143,11 @@ namespace Model
     /**
      * <p>The new cache engine version that the cluster runs.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The new cache engine version that the cluster runs.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -162,6 +180,11 @@ namespace Model
      * <p>The cache node type that this cluster or replication group is scaled to.</p>
      */
     inline const Aws::String& GetCacheNodeType() const{ return m_cacheNodeType; }
+
+    /**
+     * <p>The cache node type that this cluster or replication group is scaled to.</p>
+     */
+    inline bool CacheNodeTypeHasBeenSet() const { return m_cacheNodeTypeHasBeenSet; }
 
     /**
      * <p>The cache node type that this cluster or replication group is scaled to.</p>

@@ -36,6 +36,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/MultipartUpload">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API MultipartUpload
   {
   public:
@@ -50,6 +55,11 @@ namespace Model
      * <p>Upload ID that identifies the multipart upload.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>Upload ID that identifies the multipart upload.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>Upload ID that identifies the multipart upload.</p>
@@ -90,6 +100,11 @@ namespace Model
     /**
      * <p>Key of the object for which the multipart upload was initiated.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Key of the object for which the multipart upload was initiated.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -126,6 +141,11 @@ namespace Model
     /**
      * <p>Date and time at which the multipart upload was initiated.</p>
      */
+    inline bool InitiatedHasBeenSet() const { return m_initiatedHasBeenSet; }
+
+    /**
+     * <p>Date and time at which the multipart upload was initiated.</p>
+     */
     inline void SetInitiated(const Aws::Utils::DateTime& value) { m_initiatedHasBeenSet = true; m_initiated = value; }
 
     /**
@@ -152,6 +172,11 @@ namespace Model
     /**
      * <p>The class of storage used to store the object.</p>
      */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
+
+    /**
+     * <p>The class of storage used to store the object.</p>
+     */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
@@ -170,19 +195,34 @@ namespace Model
     inline MultipartUpload& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Owner& GetOwner() const{ return m_owner; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetOwner(const Owner& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetOwner(Owner&& value) { m_ownerHasBeenSet = true; m_owner = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline MultipartUpload& WithOwner(const Owner& value) { SetOwner(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline MultipartUpload& WithOwner(Owner&& value) { SetOwner(std::move(value)); return *this;}
 
 
@@ -190,6 +230,11 @@ namespace Model
      * <p>Identifies who initiated the multipart upload.</p>
      */
     inline const Initiator& GetInitiator() const{ return m_initiator; }
+
+    /**
+     * <p>Identifies who initiated the multipart upload.</p>
+     */
+    inline bool InitiatorHasBeenSet() const { return m_initiatorHasBeenSet; }
 
     /**
      * <p>Identifies who initiated the multipart upload.</p>

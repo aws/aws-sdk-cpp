@@ -47,6 +47,8 @@
 #include <aws/kinesis/model/DeleteStreamRequest.h>
 
 #include <aws/iam/IAMClient.h>
+#include <aws/iam/model/GetRoleRequest.h>
+
 #include <aws/access-management/AccessManagementClient.h>
 #include <aws/cognito-identity/CognitoIdentityClient.h>
 #include <aws/testing/TestingEnvironment.h>
@@ -58,11 +60,13 @@ using namespace Aws::Lambda;
 using namespace Aws::Lambda::Model;
 using namespace Aws::Kinesis;
 using namespace Aws::Kinesis::Model;
+using namespace Aws::IAM;
+using namespace Aws::IAM::Model;
 using namespace Aws::CognitoIdentity;
 
 
 #define TEST_FUNCTION_PREFIX  "IntegrationTest_"
-#define BASE_KINESIS_STREAM_NAME  "AWSNativeSDKIntegrationTest"
+static const char* BASE_KINESIS_STREAM_NAME = "AWSNativeSDKIntegrationTest";
 
 //fill these in before running the test.
 static const char* BASE_SIMPLE_FUNCTION = TEST_FUNCTION_PREFIX "Simple";
@@ -74,7 +78,6 @@ static const char* HANDLED_ERROR_FUNCTION_CODE = RESOURCES_DIR "/handled.zip";
 static const char* ALLOCATION_TAG = "FunctionTest";
 
 static const char* BASE_IAM_ROLE_NAME = "AWSNativeSDKLambdaIntegrationTestRole";
-static const char* IAM_POLICY_ARN = "arn:aws:iam::aws:policy/service-role/AWSLambdaKinesisExecutionRole";
 
 
 namespace {
@@ -92,6 +95,7 @@ public:
     static std::shared_ptr<KinesisClient> m_kinesis_client;
     static std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> m_limiter;
     static std::shared_ptr<Aws::IAM::Model::Role> m_role;
+    static std::shared_ptr<Aws::IAM::IAMClient> m_iamClient;
     static std::shared_ptr<Aws::AccessManagement::AccessManagementClient> m_accessManagementClient;
     static std::map<Aws::String, Aws::String> functionArnMapping;
 
@@ -125,15 +129,10 @@ protected:
         //Create our IAM Role, so that the Lambda tests have the right policies.
         m_role = Aws::MakeShared<Aws::IAM::Model::Role>(ALLOCATION_TAG);
         ClientConfiguration clientConfig;
-        auto iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
+        m_iamClient = Aws::MakeShared<Aws::IAM::IAMClient>(ALLOCATION_TAG, clientConfig);
         auto cognitoClient = Aws::MakeShared<CognitoIdentityClient>(ALLOCATION_TAG);
-        m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, iamClient, cognitoClient);
-        
-        DeleteIAMRole();
-        CreateIAMRole();
-
-        DeleteKinesisStream();
-        CreateKinesisStream();
+        m_accessManagementClient = Aws::MakeShared<Aws::AccessManagement::AccessManagementClient>(ALLOCATION_TAG, m_iamClient, cognitoClient);
+        m_accessManagementClient->GetRole(BASE_IAM_ROLE_NAME, *m_role);
 
         // delete all functions, just in case
         DeleteAllFunctions();
@@ -143,8 +142,6 @@ protected:
     static void TearDownTestCase()
     {
         DeleteAllFunctions();
-        DeleteKinesisStream();
-        DeleteIAMRole();
         // Return the memory claimed for static variables to memory manager before shutting down memory manager.
         // Otherwise there will be double free crash.
         functionArnMapping.clear();
@@ -152,6 +149,7 @@ protected:
         m_client = nullptr;
         m_kinesis_client = nullptr;
         m_role = nullptr;
+        m_iamClient = nullptr;
         m_accessManagementClient = nullptr;
     }
 
@@ -279,109 +277,13 @@ protected:
 
         WaitForFunctionStatus(functionName, ResourceStatusType::READY);
     }
-
-    static void CreateKinesisStream()
-    {
-        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
-
-        CreateStreamRequest createStreamRequest;
-        createStreamRequest.SetStreamName(streamName);
-        createStreamRequest.SetShardCount(1);
-        CreateStreamOutcome createOutcome = m_kinesis_client->CreateStream(createStreamRequest);
-        if(!createOutcome.IsSuccess())
-        {
-            ASSERT_EQ(KinesisErrors::RESOURCE_IN_USE, createOutcome.GetError().GetErrorType());
-        }
-
-        WaitForKinesisStream(streamName, ResourceStatusType::READY);
-
-    }
-
-    static void WaitForKinesisStream(const Aws::String& streamName, ResourceStatusType status)
-    {
-        DescribeStreamRequest describeStreamRequest;
-        describeStreamRequest.SetStreamName(streamName);
-
-        bool done = false;
-        while(!done)
-        {
-            DescribeStreamOutcome describeStreamOutcome = m_kinesis_client->DescribeStream(describeStreamRequest);
-
-            switch(status)
-            {
-            case ResourceStatusType::NOT_FOUND:
-                if(!describeStreamOutcome.IsSuccess())
-                {
-                    return;
-                }
-                break;
-
-            case ResourceStatusType::READY:
-                if(describeStreamOutcome.IsSuccess())
-                {
-                    auto streamStatus = describeStreamOutcome.GetResult().GetStreamDescription().GetStreamStatus();
-                    if(streamStatus == StreamStatus::ACTIVE)
-                    {
-                        return;
-                    }
-                }
-                break;
-            }
-
-            std::this_thread::sleep_for(std::chrono::seconds(1));
-        }
-    }
-
-    static void DeleteKinesisStream()
-    {
-        Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
-
-        DeleteStreamRequest deleteStreamRequest;
-        deleteStreamRequest.SetStreamName(streamName);
-        m_kinesis_client->DeleteStream(deleteStreamRequest);
-
-        WaitForKinesisStream(streamName, ResourceStatusType::NOT_FOUND);
-    }
-
-    static void CreateIAMRole()
-    {
-        //Who can assume this role, and what access conditions exist?
-        char const * trustRelationship = 
-            "{"
-              "\"Version\": \"2012-10-17\","
-              "\"Statement\": ["
-                "{"
-                   "\"Sid\": \"\","
-                   "\"Effect\": \"Allow\","
-                   "\"Principal\": {"
-                     "\"Service\": \"lambda.amazonaws.com\""
-                   "},"
-                   "\"Action\": \"sts:AssumeRole\""
-                "}"
-              "]"
-            "}";
-
-        Aws::String iamRoleName = BuildResourceName(BASE_IAM_ROLE_NAME);
-        const bool roleCreationSuccessful = m_accessManagementClient->CreateRole(iamRoleName, trustRelationship, *m_role);
-        ASSERT_TRUE(roleCreationSuccessful);
-
-        //Apply the policy ARN saying what this role is allowed to do.
-        const bool policyApplied = m_accessManagementClient->AttachPolicyToRole(IAM_POLICY_ARN, iamRoleName);
-        ASSERT_TRUE(policyApplied);
-    }
-
-    static void DeleteIAMRole()
-    {
-        //This will return true even if the IAM role never existed.
-        const bool removedSuccessfully = m_accessManagementClient->DeleteRole(BuildResourceName(BASE_IAM_ROLE_NAME));
-        ASSERT_TRUE(removedSuccessfully);
-    }
 };
 
 std::shared_ptr<LambdaClient> FunctionTest::m_client(nullptr);
 std::shared_ptr<KinesisClient> FunctionTest::m_kinesis_client(nullptr);
 std::shared_ptr<Aws::Utils::RateLimits::RateLimiterInterface> FunctionTest::m_limiter(nullptr);
 std::shared_ptr<Aws::IAM::Model::Role> FunctionTest::m_role(nullptr);
+std::shared_ptr<Aws::IAM::IAMClient> FunctionTest::m_iamClient(nullptr);
 std::shared_ptr< Aws::AccessManagement::AccessManagementClient > FunctionTest::m_accessManagementClient(nullptr);
 std::map<Aws::String, Aws::String> FunctionTest::functionArnMapping;
 
@@ -560,12 +462,12 @@ TEST_F(FunctionTest, TestPermissions)
     EXPECT_NE(std::string::npos, statement.View().GetString("Resource").find(simpleFunctionName));
 
 
-    GetPolicyRequest getPolicyRequest;
+    Aws::Lambda::Model::GetPolicyRequest getPolicyRequest;
     getPolicyRequest.SetFunctionName(simpleFunctionName);
     auto getPolicyOutcome = m_client->GetPolicy(getPolicyRequest);
     //If this fails, stop.
     ASSERT_TRUE(getPolicyOutcome.IsSuccess());
-    GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
+    Aws::Lambda::Model::GetPolicyResult getPolicyResult = getPolicyOutcome.GetResult();
     auto getPolicyStatement = Aws::Utils::Json::JsonValue(getPolicyResult.GetPolicy());
 
     EXPECT_EQ("12345", getPolicyStatement.View().GetArray("Statement").GetItem(0).GetString("Sid"));
@@ -588,7 +490,7 @@ TEST_F(FunctionTest, TestPermissions)
     //Now we should get an empty policy a GetPolicy because we just removed it
     else
     {
-        GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
+        Aws::Lambda::Model::GetPolicyResult getRemovedPolicyResult = getRemovedPolicyOutcome.GetResult();
         auto getNewPolicy = Aws::Utils::Json::JsonValue(getRemovedPolicyResult.GetPolicy());
         EXPECT_EQ(0uL, getNewPolicy.View().GetArray("Statement").GetLength());
     }
@@ -597,11 +499,10 @@ TEST_F(FunctionTest, TestPermissions)
 TEST_F(FunctionTest, TestEventSources) 
 {
     Aws::String simpleFunctionName = BuildResourceName(BASE_SIMPLE_FUNCTION);
-    Aws::String streamName = BuildResourceName(BASE_KINESIS_STREAM_NAME);
 
     //Attempt to get the ARN of the stream we created during the init.
     DescribeStreamRequest describeStreamRequest;
-    describeStreamRequest.SetStreamName(streamName);
+    describeStreamRequest.SetStreamName(BASE_KINESIS_STREAM_NAME);
 
     Aws::String streamARN;
     bool done = false;

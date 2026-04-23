@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the user.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the user.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The login name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The login name of the user.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The login name of the user.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The email address of the user.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address of the user.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The given name of the user.</p>
      */
     inline const Aws::String& GetGivenName() const{ return m_givenName; }
+
+    /**
+     * <p>The given name of the user.</p>
+     */
+    inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
 
     /**
      * <p>The given name of the user.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The surname of the user.</p>
      */
+    inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
+
+    /**
+     * <p>The surname of the user.</p>
+     */
     inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
      * <p>The ID of the organization.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
 
     /**
      * <p>The ID of the organization.</p>
@@ -276,6 +306,11 @@ namespace Model
     /**
      * <p>The ID of the root folder.</p>
      */
+    inline bool RootFolderIdHasBeenSet() const { return m_rootFolderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the root folder.</p>
+     */
     inline void SetRootFolderId(const Aws::String& value) { m_rootFolderIdHasBeenSet = true; m_rootFolderId = value; }
 
     /**
@@ -308,6 +343,11 @@ namespace Model
      * <p>The ID of the recycle bin folder.</p>
      */
     inline const Aws::String& GetRecycleBinFolderId() const{ return m_recycleBinFolderId; }
+
+    /**
+     * <p>The ID of the recycle bin folder.</p>
+     */
+    inline bool RecycleBinFolderIdHasBeenSet() const { return m_recycleBinFolderIdHasBeenSet; }
 
     /**
      * <p>The ID of the recycle bin folder.</p>
@@ -348,6 +388,11 @@ namespace Model
     /**
      * <p>The status of the user.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the user.</p>
+     */
     inline void SetStatus(const UserStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -370,6 +415,11 @@ namespace Model
      * <p>The type of user.</p>
      */
     inline const UserType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of user.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of user.</p>
@@ -400,6 +450,11 @@ namespace Model
     /**
      * <p>The time when the user was created.</p>
      */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
+
+    /**
+     * <p>The time when the user was created.</p>
+     */
     inline void SetCreatedTimestamp(const Aws::Utils::DateTime& value) { m_createdTimestampHasBeenSet = true; m_createdTimestamp = value; }
 
     /**
@@ -426,6 +481,11 @@ namespace Model
     /**
      * <p>The time when the user was modified.</p>
      */
+    inline bool ModifiedTimestampHasBeenSet() const { return m_modifiedTimestampHasBeenSet; }
+
+    /**
+     * <p>The time when the user was modified.</p>
+     */
     inline void SetModifiedTimestamp(const Aws::Utils::DateTime& value) { m_modifiedTimestampHasBeenSet = true; m_modifiedTimestamp = value; }
 
     /**
@@ -448,6 +508,11 @@ namespace Model
      * <p>The time zone ID of the user.</p>
      */
     inline const Aws::String& GetTimeZoneId() const{ return m_timeZoneId; }
+
+    /**
+     * <p>The time zone ID of the user.</p>
+     */
+    inline bool TimeZoneIdHasBeenSet() const { return m_timeZoneIdHasBeenSet; }
 
     /**
      * <p>The time zone ID of the user.</p>
@@ -488,6 +553,11 @@ namespace Model
     /**
      * <p>The locale of the user.</p>
      */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
+
+    /**
+     * <p>The locale of the user.</p>
+     */
     inline void SetLocale(const LocaleType& value) { m_localeHasBeenSet = true; m_locale = value; }
 
     /**
@@ -510,6 +580,11 @@ namespace Model
      * <p>The storage for the user.</p>
      */
     inline const UserStorageMetadata& GetStorage() const{ return m_storage; }
+
+    /**
+     * <p>The storage for the user.</p>
+     */
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
 
     /**
      * <p>The storage for the user.</p>

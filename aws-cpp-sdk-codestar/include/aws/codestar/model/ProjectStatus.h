@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The phase of completion for a project creation or deletion.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The phase of completion for a project creation or deletion.</p>
+     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * failure.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>In the case of a project creation or deletion failure, a reason for the
+     * failure.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>In the case of a project creation or deletion failure, a reason for the

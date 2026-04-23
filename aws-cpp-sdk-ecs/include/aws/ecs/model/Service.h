@@ -22,9 +22,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/ecs/model/NetworkConfiguration.h>
 #include <aws/ecs/model/SchedulingStrategy.h>
+#include <aws/ecs/model/DeploymentController.h>
 #include <aws/ecs/model/PropagateTags.h>
 #include <aws/ecs/model/LoadBalancer.h>
 #include <aws/ecs/model/ServiceRegistry.h>
+#include <aws/ecs/model/TaskSet.h>
 #include <aws/ecs/model/Deployment.h>
 #include <aws/ecs/model/ServiceEvent.h>
 #include <aws/ecs/model/PlacementConstraint.h>
@@ -70,6 +72,16 @@ namespace Model
      * </code>.</p>
      */
     inline const Aws::String& GetServiceArn() const{ return m_serviceArn; }
+
+    /**
+     * <p>The ARN that identifies the service. The ARN contains the
+     * <code>arn:aws:ecs</code> namespace, followed by the Region of the service, the
+     * AWS account ID of the service owner, the <code>service</code> namespace, and
+     * then the service name. For example,
+     * <code>arn:aws:ecs:<i>region</i>:<i>012345678910</i>:service/<i>my-service</i>
+     * </code>.</p>
+     */
+    inline bool ServiceArnHasBeenSet() const { return m_serviceArnHasBeenSet; }
 
     /**
      * <p>The ARN that identifies the service. The ARN contains the
@@ -146,6 +158,14 @@ namespace Model
      * within a cluster, but you can have similarly named services in multiple clusters
      * within a Region or across multiple Regions.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The name of your service. Up to 255 letters (uppercase and lowercase),
+     * numbers, hyphens, and underscores are allowed. Service names must be unique
+     * within a cluster, but you can have similarly named services in multiple clusters
+     * within a Region or across multiple Regions.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
      */
+    inline bool ClusterArnHasBeenSet() const { return m_clusterArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the cluster that hosts the service.</p>
+     */
     inline void SetClusterArn(const Aws::String& value) { m_clusterArnHasBeenSet = true; m_clusterArn = value; }
 
     /**
@@ -233,8 +258,8 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline const Aws::Vector<LoadBalancer>& GetLoadBalancers() const{ return m_loadBalancers; }
@@ -247,8 +272,22 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
+     * instance.</p>
+     */
+    inline bool LoadBalancersHasBeenSet() const { return m_loadBalancersHasBeenSet; }
+
+    /**
+     * <p>A list of Elastic Load Balancing load balancer objects, containing the load
+     * balancer name, the container name (as it appears in a container definition), and
+     * the container port to access from the load balancer.</p> <p>Services with tasks
+     * that use the <code>awsvpc</code> network mode (for example, those with the
+     * Fargate launch type) only support Application Load Balancers and Network Load
+     * Balancers. Classic Load Balancers are not supported. Also, when you create any
+     * target groups for these services, you must choose <code>ip</code> as the target
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline void SetLoadBalancers(const Aws::Vector<LoadBalancer>& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = value; }
@@ -261,8 +300,8 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline void SetLoadBalancers(Aws::Vector<LoadBalancer>&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers = std::move(value); }
@@ -275,8 +314,8 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline Service& WithLoadBalancers(const Aws::Vector<LoadBalancer>& value) { SetLoadBalancers(value); return *this;}
@@ -289,8 +328,8 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline Service& WithLoadBalancers(Aws::Vector<LoadBalancer>&& value) { SetLoadBalancers(std::move(value)); return *this;}
@@ -303,8 +342,8 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline Service& AddLoadBalancers(const LoadBalancer& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(value); return *this; }
@@ -317,45 +356,74 @@ namespace Model
      * Fargate launch type) only support Application Load Balancers and Network Load
      * Balancers. Classic Load Balancers are not supported. Also, when you create any
      * target groups for these services, you must choose <code>ip</code> as the target
-     * type, not <code>instance</code>, because tasks that use the <code>awsvpc</code>
-     * network mode are associated with an elastic network interface, not an Amazon EC2
+     * type, not <code>instance</code>. Tasks that use the <code>awsvpc</code> network
+     * mode are associated with an elastic network interface, not an Amazon EC2
      * instance.</p>
      */
     inline Service& AddLoadBalancers(LoadBalancer&& value) { m_loadBalancersHasBeenSet = true; m_loadBalancers.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline const Aws::Vector<ServiceRegistry>& GetServiceRegistries() const{ return m_serviceRegistries; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
+     */
+    inline bool ServiceRegistriesHasBeenSet() const { return m_serviceRegistriesHasBeenSet; }
+
+    /**
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = value; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline void SetServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(const Aws::Vector<ServiceRegistry>& value) { SetServiceRegistries(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& WithServiceRegistries(Aws::Vector<ServiceRegistry>&& value) { SetServiceRegistries(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(const ServiceRegistry& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(value); return *this; }
 
     /**
-     * <p/>
+     * <p>The details of the service discovery registries to assign to this service.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-discovery.html">Service
+     * Discovery</a>.</p>
      */
     inline Service& AddServiceRegistries(ServiceRegistry&& value) { m_serviceRegistriesHasBeenSet = true; m_serviceRegistries.push_back(std::move(value)); return *this; }
 
@@ -365,6 +433,12 @@ namespace Model
      * <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the service. The valid values are <code>ACTIVE</code>,
+     * <code>DRAINING</code>, or <code>INACTIVE</code>.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the service. The valid values are <code>ACTIVE</code>,
@@ -415,6 +489,13 @@ namespace Model
      * on the service. This value is specified when the service is created with
      * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
      */
+    inline bool DesiredCountHasBeenSet() const { return m_desiredCountHasBeenSet; }
+
+    /**
+     * <p>The desired number of instantiations of the task definition to keep running
+     * on the service. This value is specified when the service is created with
+     * <a>CreateService</a>, and it can be modified with <a>UpdateService</a>.</p>
+     */
     inline void SetDesiredCount(int value) { m_desiredCountHasBeenSet = true; m_desiredCount = value; }
 
     /**
@@ -430,6 +511,12 @@ namespace Model
      * state.</p>
      */
     inline int GetRunningCount() const{ return m_runningCount; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
+     * state.</p>
+     */
+    inline bool RunningCountHasBeenSet() const { return m_runningCountHasBeenSet; }
 
     /**
      * <p>The number of tasks in the cluster that are in the <code>RUNNING</code>
@@ -454,6 +541,12 @@ namespace Model
      * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
      * state.</p>
      */
+    inline bool PendingCountHasBeenSet() const { return m_pendingCountHasBeenSet; }
+
+    /**
+     * <p>The number of tasks in the cluster that are in the <code>PENDING</code>
+     * state.</p>
+     */
     inline void SetPendingCount(int value) { m_pendingCountHasBeenSet = true; m_pendingCount = value; }
 
     /**
@@ -464,89 +557,143 @@ namespace Model
 
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
+     */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
+
+    /**
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(const LaunchType& value) { m_launchTypeHasBeenSet = true; m_launchType = value; }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline void SetLaunchType(LaunchType&& value) { m_launchTypeHasBeenSet = true; m_launchType = std::move(value); }
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Service& WithLaunchType(const LaunchType& value) { SetLaunchType(value); return *this;}
 
     /**
-     * <p>The launch type on which your service is running.</p>
+     * <p>The launch type on which your service is running. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
+     * ECS Launch Types</a> in the <i>Amazon Elastic Container Service Developer
+     * Guide</i>.</p>
      */
     inline Service& WithLaunchType(LaunchType&& value) { SetLaunchType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+
+    /**
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(Aws::String&& value) { m_platformVersionHasBeenSet = true; m_platformVersion = std::move(value); }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline void SetPlatformVersion(const char* value) { m_platformVersionHasBeenSet = true; m_platformVersion.assign(value); }
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline Service& WithPlatformVersion(const Aws::String& value) { SetPlatformVersion(value); return *this;}
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
     inline Service& WithPlatformVersion(Aws::String&& value) { SetPlatformVersion(std::move(value)); return *this;}
 
     /**
-     * <p>The platform version on which your task is running. For more information, see
-     * <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
+     * <p>The platform version on which your tasks in the service are running. A
+     * platform version is only specified for tasks using the Fargate launch type. If
+     * one is not specified, the <code>LATEST</code> platform version is used by
+     * default. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/platform_versions.html">AWS
      * Fargate Platform Versions</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -559,6 +706,13 @@ namespace Model
      * with <a>UpdateService</a>.</p>
      */
     inline const Aws::String& GetTaskDefinition() const{ return m_taskDefinition; }
+
+    /**
+     * <p>The task definition to use for tasks in the service. This value is specified
+     * when the service is created with <a>CreateService</a>, and it can be modified
+     * with <a>UpdateService</a>.</p>
+     */
+    inline bool TaskDefinitionHasBeenSet() const { return m_taskDefinitionHasBeenSet; }
 
     /**
      * <p>The task definition to use for tasks in the service. This value is specified
@@ -613,6 +767,12 @@ namespace Model
      * <p>Optional deployment parameters that control how many tasks run during the
      * deployment and the ordering of stopping and starting tasks.</p>
      */
+    inline bool DeploymentConfigurationHasBeenSet() const { return m_deploymentConfigurationHasBeenSet; }
+
+    /**
+     * <p>Optional deployment parameters that control how many tasks run during the
+     * deployment and the ordering of stopping and starting tasks.</p>
+     */
     inline void SetDeploymentConfiguration(const DeploymentConfiguration& value) { m_deploymentConfigurationHasBeenSet = true; m_deploymentConfiguration = value; }
 
     /**
@@ -635,9 +795,79 @@ namespace Model
 
 
     /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline const Aws::Vector<TaskSet>& GetTaskSets() const{ return m_taskSets; }
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline bool TaskSetsHasBeenSet() const { return m_taskSetsHasBeenSet; }
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline void SetTaskSets(const Aws::Vector<TaskSet>& value) { m_taskSetsHasBeenSet = true; m_taskSets = value; }
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline void SetTaskSets(Aws::Vector<TaskSet>&& value) { m_taskSetsHasBeenSet = true; m_taskSets = std::move(value); }
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline Service& WithTaskSets(const Aws::Vector<TaskSet>& value) { SetTaskSets(value); return *this;}
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline Service& WithTaskSets(Aws::Vector<TaskSet>&& value) { SetTaskSets(std::move(value)); return *this;}
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline Service& AddTaskSets(const TaskSet& value) { m_taskSetsHasBeenSet = true; m_taskSets.push_back(value); return *this; }
+
+    /**
+     * <p>Information about a set of Amazon ECS tasks in either an AWS CodeDeploy or an
+     * <code>EXTERNAL</code> deployment. An Amazon ECS task set includes details such
+     * as the desired number of tasks, how many tasks are running, and whether the task
+     * set serves production traffic.</p>
+     */
+    inline Service& AddTaskSets(TaskSet&& value) { m_taskSetsHasBeenSet = true; m_taskSets.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The current state of deployments for the service.</p>
      */
     inline const Aws::Vector<Deployment>& GetDeployments() const{ return m_deployments; }
+
+    /**
+     * <p>The current state of deployments for the service.</p>
+     */
+    inline bool DeploymentsHasBeenSet() const { return m_deploymentsHasBeenSet; }
 
     /**
      * <p>The current state of deployments for the service.</p>
@@ -676,6 +906,13 @@ namespace Model
      * Balancing load balancer.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The ARN of the IAM role associated with the service that allows the Amazon
+     * ECS container agent to register container instances with an Elastic Load
+     * Balancing load balancer.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The ARN of the IAM role associated with the service that allows the Amazon
@@ -730,6 +967,12 @@ namespace Model
      * <p>The event stream for your service. A maximum of 100 of the latest events are
      * displayed.</p>
      */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>The event stream for your service. A maximum of 100 of the latest events are
+     * displayed.</p>
+     */
     inline void SetEvents(const Aws::Vector<ServiceEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
@@ -771,6 +1014,11 @@ namespace Model
     /**
      * <p>The Unix timestamp for when the service was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp for when the service was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -793,6 +1041,11 @@ namespace Model
      * <p>The placement constraints for the tasks in the service.</p>
      */
     inline const Aws::Vector<PlacementConstraint>& GetPlacementConstraints() const{ return m_placementConstraints; }
+
+    /**
+     * <p>The placement constraints for the tasks in the service.</p>
+     */
+    inline bool PlacementConstraintsHasBeenSet() const { return m_placementConstraintsHasBeenSet; }
 
     /**
      * <p>The placement constraints for the tasks in the service.</p>
@@ -830,6 +1083,12 @@ namespace Model
      * placed.</p>
      */
     inline const Aws::Vector<PlacementStrategy>& GetPlacementStrategy() const{ return m_placementStrategy; }
+
+    /**
+     * <p>The placement strategy that determines how tasks for the service are
+     * placed.</p>
+     */
+    inline bool PlacementStrategyHasBeenSet() const { return m_placementStrategyHasBeenSet; }
 
     /**
      * <p>The placement strategy that determines how tasks for the service are
@@ -880,6 +1139,13 @@ namespace Model
      * own elastic network interface by using the <code>awsvpc</code> networking
      * mode.</p>
      */
+    inline bool NetworkConfigurationHasBeenSet() const { return m_networkConfigurationHasBeenSet; }
+
+    /**
+     * <p>The VPC subnet and security group configuration for tasks that receive their
+     * own elastic network interface by using the <code>awsvpc</code> networking
+     * mode.</p>
+     */
     inline void SetNetworkConfiguration(const NetworkConfiguration& value) { m_networkConfigurationHasBeenSet = true; m_networkConfiguration = value; }
 
     /**
@@ -916,6 +1182,13 @@ namespace Model
      * unhealthy Elastic Load Balancing target health checks after a task has first
      * started.</p>
      */
+    inline bool HealthCheckGracePeriodSecondsHasBeenSet() const { return m_healthCheckGracePeriodSecondsHasBeenSet; }
+
+    /**
+     * <p>The period of time, in seconds, that the Amazon ECS service scheduler ignores
+     * unhealthy Elastic Load Balancing target health checks after a task has first
+     * started.</p>
+     */
     inline void SetHealthCheckGracePeriodSeconds(int value) { m_healthCheckGracePeriodSecondsHasBeenSet = true; m_healthCheckGracePeriodSeconds = value; }
 
     /**
@@ -928,7 +1201,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -944,7 +1217,23 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
+     * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
+     * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
+     * desired number of tasks across your cluster. By default, the service scheduler
+     * spreads tasks across Availability Zones. You can use task placement strategies
+     * and constraints to customize task placement decisions.</p> </li> <li> <p>
+     * <code>DAEMON</code>-The daemon scheduling strategy deploys exactly one task on
+     * each container instance in your cluster. When you are using this strategy, do
+     * not specify a desired number of tasks or any task placement strategies.</p>
+     * <note> <p>Fargate tasks do not support the <code>DAEMON</code> scheduling
+     * strategy.</p> </note> </li> </ul>
+     */
+    inline bool SchedulingStrategyHasBeenSet() const { return m_schedulingStrategyHasBeenSet; }
+
+    /**
+     * <p>The scheduling strategy to use for the service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -960,7 +1249,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -976,7 +1265,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -992,7 +1281,7 @@ namespace Model
 
     /**
      * <p>The scheduling strategy to use for the service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideecs_services.html">Services</a>.</p>
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Services</a>.</p>
      * <p>There are two service scheduler strategies available:</p> <ul> <li> <p>
      * <code>REPLICA</code>-The replica scheduling strategy places and maintains the
      * desired number of tasks across your cluster. By default, the service scheduler
@@ -1008,12 +1297,51 @@ namespace Model
 
 
     /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline const DeploymentController& GetDeploymentController() const{ return m_deploymentController; }
+
+    /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline bool DeploymentControllerHasBeenSet() const { return m_deploymentControllerHasBeenSet; }
+
+    /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline void SetDeploymentController(const DeploymentController& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = value; }
+
+    /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline void SetDeploymentController(DeploymentController&& value) { m_deploymentControllerHasBeenSet = true; m_deploymentController = std::move(value); }
+
+    /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline Service& WithDeploymentController(const DeploymentController& value) { SetDeploymentController(value); return *this;}
+
+    /**
+     * <p>The deployment controller type the service is using.</p>
+     */
+    inline Service& WithDeploymentController(DeploymentController&& value) { SetDeploymentController(std::move(value)); return *this;}
+
+
+    /**
      * <p>The metadata that you apply to the service to help you categorize and
      * organize them. Each tag consists of a key and an optional value, both of which
      * you define. Tag keys can have a maximum character length of 128 characters, and
      * tag values can have a maximum length of 256 characters.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The metadata that you apply to the service to help you categorize and
+     * organize them. Each tag consists of a key and an optional value, both of which
+     * you define. Tag keys can have a maximum character length of 128 characters, and
+     * tag values can have a maximum length of 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The metadata that you apply to the service to help you categorize and
@@ -1072,6 +1400,11 @@ namespace Model
     /**
      * <p>The principal that created the service.</p>
      */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
+
+    /**
+     * <p>The principal that created the service.</p>
+     */
     inline void SetCreatedBy(const Aws::String& value) { m_createdByHasBeenSet = true; m_createdBy = value; }
 
     /**
@@ -1103,7 +1436,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1112,7 +1445,16 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
+     * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
+     * Developer Guide</i>.</p>
+     */
+    inline bool EnableECSManagedTagsHasBeenSet() const { return m_enableECSManagedTagsHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
+     * service. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1121,7 +1463,7 @@ namespace Model
     /**
      * <p>Specifies whether to enable Amazon ECS managed tags for the tasks in the
      * service. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/Using_Tags.html">Tagging
+     * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-using-tags.html">Tagging
      * Your Amazon ECS Resources</a> in the <i>Amazon Elastic Container Service
      * Developer Guide</i>.</p>
      */
@@ -1133,6 +1475,12 @@ namespace Model
      * service to the task. If no value is specified, the tags are not propagated.</p>
      */
     inline const PropagateTags& GetPropagateTags() const{ return m_propagateTags; }
+
+    /**
+     * <p>Specifies whether to propagate the tags from the task definition or the
+     * service to the task. If no value is specified, the tags are not propagated.</p>
+     */
+    inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
 
     /**
      * <p>Specifies whether to propagate the tags from the task definition or the
@@ -1199,6 +1547,9 @@ namespace Model
     DeploymentConfiguration m_deploymentConfiguration;
     bool m_deploymentConfigurationHasBeenSet;
 
+    Aws::Vector<TaskSet> m_taskSets;
+    bool m_taskSetsHasBeenSet;
+
     Aws::Vector<Deployment> m_deployments;
     bool m_deploymentsHasBeenSet;
 
@@ -1225,6 +1576,9 @@ namespace Model
 
     SchedulingStrategy m_schedulingStrategy;
     bool m_schedulingStrategyHasBeenSet;
+
+    DeploymentController m_deploymentController;
+    bool m_deploymentControllerHasBeenSet;
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;

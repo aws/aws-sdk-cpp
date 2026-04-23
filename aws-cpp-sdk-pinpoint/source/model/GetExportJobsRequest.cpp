@@ -34,7 +34,7 @@ GetExportJobsRequest::GetExportJobsRequest() :
 
 Aws::String GetExportJobsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetExportJobsRequest::AddQueryStringParameters(URI& uri) const

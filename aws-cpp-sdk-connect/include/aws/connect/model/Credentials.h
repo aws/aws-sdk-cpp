@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>An access token generated for a federated user to access Amazon Connect</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>An access token generated for a federated user to access Amazon Connect</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>A token generated with an expiration time for the session a user is logged in
      * to Amazon Connect</p>
      */
+    inline bool AccessTokenExpirationHasBeenSet() const { return m_accessTokenExpirationHasBeenSet; }
+
+    /**
+     * <p>A token generated with an expiration time for the session a user is logged in
+     * to Amazon Connect</p>
+     */
     inline void SetAccessTokenExpiration(const Aws::Utils::DateTime& value) { m_accessTokenExpirationHasBeenSet = true; m_accessTokenExpiration = value; }
 
     /**
@@ -120,6 +131,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetRefreshToken() const{ return m_refreshToken; }
+
+    /**
+     * <p>Renews a token generated for a user to access the Amazon Connect
+     * instance.</p>
+     */
+    inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
 
     /**
      * <p>Renews a token generated for a user to access the Amazon Connect
@@ -162,6 +179,11 @@ namespace Model
      * <p>Renews the expiration timer for a generated token.</p>
      */
     inline const Aws::Utils::DateTime& GetRefreshTokenExpiration() const{ return m_refreshTokenExpiration; }
+
+    /**
+     * <p>Renews the expiration timer for a generated token.</p>
+     */
+    inline bool RefreshTokenExpirationHasBeenSet() const { return m_refreshTokenExpirationHasBeenSet; }
 
     /**
      * <p>Renews the expiration timer for a generated token.</p>

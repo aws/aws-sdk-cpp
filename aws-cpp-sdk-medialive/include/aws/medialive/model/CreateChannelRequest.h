@@ -16,11 +16,13 @@
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
 #include <aws/medialive/MediaLiveRequest.h>
+#include <aws/medialive/model/ChannelClass.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/medialive/model/EncoderSettings.h>
 #include <aws/medialive/model/InputSpecification.h>
 #include <aws/medialive/model/LogLevel.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/medialive/model/OutputDestination.h>
 #include <aws/medialive/model/InputAttachment.h>
 #include <utility>
@@ -52,8 +54,48 @@ namespace Model
     Aws::String SerializePayload() const override;
 
 
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline const ChannelClass& GetChannelClass() const{ return m_channelClass; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline bool ChannelClassHasBeenSet() const { return m_channelClassHasBeenSet; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(const ChannelClass& value) { m_channelClassHasBeenSet = true; m_channelClass = value; }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline void SetChannelClass(ChannelClass&& value) { m_channelClassHasBeenSet = true; m_channelClass = std::move(value); }
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline CreateChannelRequest& WithChannelClass(const ChannelClass& value) { SetChannelClass(value); return *this;}
+
+    /**
+     * The class for this channel. STANDARD for a channel with two pipelines or
+     * SINGLE_PIPELINE for a channel with one pipeline.
+     */
+    inline CreateChannelRequest& WithChannelClass(ChannelClass&& value) { SetChannelClass(std::move(value)); return *this;}
+
+
     
     inline const Aws::Vector<OutputDestination>& GetDestinations() const{ return m_destinations; }
+
+    
+    inline bool DestinationsHasBeenSet() const { return m_destinationsHasBeenSet; }
 
     
     inline void SetDestinations(const Aws::Vector<OutputDestination>& value) { m_destinationsHasBeenSet = true; m_destinations = value; }
@@ -78,6 +120,9 @@ namespace Model
     inline const EncoderSettings& GetEncoderSettings() const{ return m_encoderSettings; }
 
     
+    inline bool EncoderSettingsHasBeenSet() const { return m_encoderSettingsHasBeenSet; }
+
+    
     inline void SetEncoderSettings(const EncoderSettings& value) { m_encoderSettingsHasBeenSet = true; m_encoderSettings = value; }
 
     
@@ -94,6 +139,11 @@ namespace Model
      * List of input attachments for channel.
      */
     inline const Aws::Vector<InputAttachment>& GetInputAttachments() const{ return m_inputAttachments; }
+
+    /**
+     * List of input attachments for channel.
+     */
+    inline bool InputAttachmentsHasBeenSet() const { return m_inputAttachmentsHasBeenSet; }
 
     /**
      * List of input attachments for channel.
@@ -134,6 +184,11 @@ namespace Model
     /**
      * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
      */
+    inline bool InputSpecificationHasBeenSet() const { return m_inputSpecificationHasBeenSet; }
+
+    /**
+     * Specification of input for this channel (max. bitrate, resolution, codec, etc.)
+     */
     inline void SetInputSpecification(const InputSpecification& value) { m_inputSpecificationHasBeenSet = true; m_inputSpecification = value; }
 
     /**
@@ -160,6 +215,11 @@ namespace Model
     /**
      * The log level to write to CloudWatch Logs.
      */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
+
+    /**
+     * The log level to write to CloudWatch Logs.
+     */
     inline void SetLogLevel(const LogLevel& value) { m_logLevelHasBeenSet = true; m_logLevel = value; }
 
     /**
@@ -182,6 +242,11 @@ namespace Model
      * Name of channel.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name of channel.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Name of channel.
@@ -221,6 +286,14 @@ creating multiple resources.
 
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * Unique request ID to be specified. This is needed to prevent retries
+     * from
+creating multiple resources.
+
+     */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * Unique request ID to be specified. This is needed to prevent retries
@@ -281,6 +354,12 @@ creating multiple resources.
      * An optional Amazon Resource Name (ARN) of the role to assume when running the
      * Channel.
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * An optional Amazon Resource Name (ARN) of the role to assume when running the
+     * Channel.
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -313,7 +392,76 @@ creating multiple resources.
      */
     inline CreateChannelRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs.
+     */
+    inline CreateChannelRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    ChannelClass m_channelClass;
+    bool m_channelClassHasBeenSet;
 
     Aws::Vector<OutputDestination> m_destinations;
     bool m_destinationsHasBeenSet;
@@ -338,6 +486,9 @@ creating multiple resources.
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

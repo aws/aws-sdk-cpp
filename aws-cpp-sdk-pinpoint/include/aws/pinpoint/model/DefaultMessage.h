@@ -57,6 +57,11 @@ namespace Model
     /**
      * The message body of the notification, the email body or the text message.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The message body of the notification, the email body or the text message.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address

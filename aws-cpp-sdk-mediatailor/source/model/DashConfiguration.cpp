@@ -29,12 +29,14 @@ namespace Model
 {
 
 DashConfiguration::DashConfiguration() : 
-    m_manifestEndpointPrefixHasBeenSet(false)
+    m_manifestEndpointPrefixHasBeenSet(false),
+    m_mpdLocationHasBeenSet(false)
 {
 }
 
 DashConfiguration::DashConfiguration(JsonView jsonValue) : 
-    m_manifestEndpointPrefixHasBeenSet(false)
+    m_manifestEndpointPrefixHasBeenSet(false),
+    m_mpdLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -48,6 +50,13 @@ DashConfiguration& DashConfiguration::operator =(JsonView jsonValue)
     m_manifestEndpointPrefixHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("MpdLocation"))
+  {
+    m_mpdLocation = jsonValue.GetString("MpdLocation");
+
+    m_mpdLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -58,6 +67,12 @@ JsonValue DashConfiguration::Jsonize() const
   if(m_manifestEndpointPrefixHasBeenSet)
   {
    payload.WithString("ManifestEndpointPrefix", m_manifestEndpointPrefix);
+
+  }
+
+  if(m_mpdLocationHasBeenSet)
+  {
+   payload.WithString("MpdLocation", m_mpdLocation);
 
   }
 

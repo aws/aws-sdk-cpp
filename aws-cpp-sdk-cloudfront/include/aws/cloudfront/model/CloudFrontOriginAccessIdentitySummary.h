@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Summary of the information about a CloudFront origin access
    * identity.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CloudFrontOriginAccessIdentitySummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentitySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentitySummary
@@ -53,6 +53,12 @@ namespace Model
      * <code>E74FTE3AJFJ256A</code>.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID for the origin access identity. For example:
+     * <code>E74FTE3AJFJ256A</code>.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID for the origin access identity. For example:
@@ -103,6 +109,13 @@ namespace Model
      * when giving the origin access identity read permission to an object in Amazon
      * S3.</p>
      */
+    inline bool S3CanonicalUserIdHasBeenSet() const { return m_s3CanonicalUserIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 canonical user ID for the origin access identity, which you use
+     * when giving the origin access identity read permission to an object in Amazon
+     * S3.</p>
+     */
     inline void SetS3CanonicalUserId(const Aws::String& value) { m_s3CanonicalUserIdHasBeenSet = true; m_s3CanonicalUserId = value; }
 
     /**
@@ -146,6 +159,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The comment for this origin access identity, as originally specified when
+     * created.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The comment for this origin access identity, as originally specified when

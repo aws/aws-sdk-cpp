@@ -55,6 +55,12 @@ namespace Model
      * <p>An array of key-value pairs containing information about the port
      * mappings.</p>
      */
+    inline bool PortInfoHasBeenSet() const { return m_portInfoHasBeenSet; }
+
+    /**
+     * <p>An array of key-value pairs containing information about the port
+     * mappings.</p>
+     */
     inline void SetPortInfo(const PortInfo& value) { m_portInfoHasBeenSet = true; m_portInfo = value; }
 
     /**
@@ -80,6 +86,11 @@ namespace Model
      * <p>The name of the instance for which you want to open the public ports.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The name of the instance for which you want to open the public ports.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The name of the instance for which you want to open the public ports.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * The app version criteria for the segment.
      */
+    inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
+
+    /**
+     * The app version criteria for the segment.
+     */
     inline void SetAppVersion(const SetDimension& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * The channel criteria for the segment.
      */
     inline const SetDimension& GetChannel() const{ return m_channel; }
+
+    /**
+     * The channel criteria for the segment.
+     */
+    inline bool ChannelHasBeenSet() const { return m_channelHasBeenSet; }
 
     /**
      * The channel criteria for the segment.
@@ -107,6 +117,11 @@ namespace Model
     /**
      * The device type criteria for the segment.
      */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
+
+    /**
+     * The device type criteria for the segment.
+     */
     inline void SetDeviceType(const SetDimension& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
@@ -129,6 +144,11 @@ namespace Model
      * The device make criteria for the segment.
      */
     inline const SetDimension& GetMake() const{ return m_make; }
+
+    /**
+     * The device make criteria for the segment.
+     */
+    inline bool MakeHasBeenSet() const { return m_makeHasBeenSet; }
 
     /**
      * The device make criteria for the segment.
@@ -159,6 +179,11 @@ namespace Model
     /**
      * The device model criteria for the segment.
      */
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
+
+    /**
+     * The device model criteria for the segment.
+     */
     inline void SetModel(const SetDimension& value) { m_modelHasBeenSet = true; m_model = value; }
 
     /**
@@ -181,6 +206,11 @@ namespace Model
      * The device platform criteria for the segment.
      */
     inline const SetDimension& GetPlatform() const{ return m_platform; }
+
+    /**
+     * The device platform criteria for the segment.
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * The device platform criteria for the segment.

@@ -62,6 +62,12 @@ namespace Model
      * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
      * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -105,6 +111,12 @@ namespace Model
      * <p>(Not currently supported) The current pagination position in the paged result
      * set.</p>
      */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * <p>(Not currently supported) The current pagination position in the paged result
+     * set.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
@@ -143,6 +155,12 @@ namespace Model
      * The default value is 25 and the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>(Not currently supported) The maximum number of returned results per page.
+     * The default value is 25 and the maximum value is 500.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>(Not currently supported) The maximum number of returned results per page.

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The EC2 instance type, for example <code>m3.xlarge</code>.</p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -103,6 +108,14 @@ namespace Model
      * values represent performance characteristics such as vCPUs, memory, or I/O. If
      * not specified, the default value is 1.</p>
      */
+    inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units that a provisioned instance of this type provides toward
+     * fulfilling the target capacities defined in <a>InstanceFleetConfig</a>. Capacity
+     * values represent performance characteristics such as vCPUs, memory, or I/O. If
+     * not specified, the default value is 1.</p>
+     */
     inline void SetWeightedCapacity(int value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
@@ -119,6 +132,12 @@ namespace Model
      * <code>InstanceType</code>. Expressed in USD.</p>
      */
     inline const Aws::String& GetBidPrice() const{ return m_bidPrice; }
+
+    /**
+     * <p>The bid price for each EC2 Spot instance type as defined by
+     * <code>InstanceType</code>. Expressed in USD.</p>
+     */
+    inline bool BidPriceHasBeenSet() const { return m_bidPriceHasBeenSet; }
 
     /**
      * <p>The bid price for each EC2 Spot instance type as defined by
@@ -169,6 +188,13 @@ namespace Model
      * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
      * specifies 20%).</p>
      */
+    inline bool BidPriceAsPercentageOfOnDemandPriceHasBeenSet() const { return m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet; }
+
+    /**
+     * <p>The bid price, as a percentage of On-Demand price, for each EC2 Spot instance
+     * as defined by <code>InstanceType</code>. Expressed as a number (for example, 20
+     * specifies 20%).</p>
+     */
     inline void SetBidPriceAsPercentageOfOnDemandPrice(double value) { m_bidPriceAsPercentageOfOnDemandPriceHasBeenSet = true; m_bidPriceAsPercentageOfOnDemandPrice = value; }
 
     /**
@@ -185,6 +211,13 @@ namespace Model
      * bundled with Amazon EMR.</p>
      */
     inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
+    /**
+     * <p>A configuration classification that applies when provisioning cluster
+     * instances, which can include configurations for applications and software
+     * bundled with Amazon EMR.</p>
+     */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
 
     /**
      * <p>A configuration classification that applies when provisioning cluster
@@ -239,6 +272,12 @@ namespace Model
      * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
      * instance as defined by <code>InstanceType</code>.</p>
      */
+    inline bool EbsBlockDevicesHasBeenSet() const { return m_ebsBlockDevicesHasBeenSet; }
+
+    /**
+     * <p>The configuration of Amazon Elastic Block Storage (EBS) attached to each
+     * instance as defined by <code>InstanceType</code>.</p>
+     */
     inline void SetEbsBlockDevices(const Aws::Vector<EbsBlockDevice>& value) { m_ebsBlockDevicesHasBeenSet = true; m_ebsBlockDevices = value; }
 
     /**
@@ -277,6 +316,12 @@ namespace Model
      * is EBS-optimized.</p>
      */
     inline bool GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code>
+     * is EBS-optimized.</p>
+     */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
 
     /**
      * <p>Evaluates to <code>TRUE</code> when the specified <code>InstanceType</code>

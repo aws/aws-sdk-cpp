@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the 'filter' activity.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the 'filter' activity.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * value.</p>
      */
     inline const Aws::String& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
+     * value.</p>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>An expression that looks like a SQL WHERE clause that must return a Boolean
@@ -131,6 +142,11 @@ namespace Model
      * <p>The next activity in the pipeline.</p>
      */
     inline const Aws::String& GetNext() const{ return m_next; }
+
+    /**
+     * <p>The next activity in the pipeline.</p>
+     */
+    inline bool NextHasBeenSet() const { return m_nextHasBeenSet; }
 
     /**
      * <p>The next activity in the pipeline.</p>

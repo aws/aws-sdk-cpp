@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the resource share.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * resource share.</p>
      */
     inline const Aws::Vector<Aws::String>& GetResourceArns() const{ return m_resourceArns; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resources to associate with the
+     * resource share.</p>
+     */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Names (ARN) of the resources to associate with the
@@ -135,6 +146,13 @@ namespace Model
      * Organizations.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrincipals() const{ return m_principals; }
+
+    /**
+     * <p>The principals to associate with the resource share. The possible values are
+     * IDs of AWS accounts, the ARN of an OU or organization from AWS
+     * Organizations.</p>
+     */
+    inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
 
     /**
      * <p>The principals to associate with the resource share. The possible values are
@@ -194,6 +212,11 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -232,6 +255,12 @@ namespace Model
      * <p>Indicates whether principals outside your organization can be associated with
      * a resource share.</p>
      */
+    inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether principals outside your organization can be associated with
+     * a resource share.</p>
+     */
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
 
     /**
@@ -246,6 +275,12 @@ namespace Model
      * idempotency of the request.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique, case-sensitive identifier that you provide to ensure the
+     * idempotency of the request.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique, case-sensitive identifier that you provide to ensure the

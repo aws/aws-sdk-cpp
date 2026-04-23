@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The date when the event occurred.</p>
      */
+    inline bool EventDateHasBeenSet() const { return m_eventDateHasBeenSet; }
+
+    /**
+     * <p>The date when the event occurred.</p>
+     */
     inline void SetEventDate(const Aws::Utils::DateTime& value) { m_eventDateHasBeenSet = true; m_eventDate = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The event message.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The event message.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The event message.</p>
@@ -121,6 +131,11 @@ namespace Model
     /**
      * <p>The application associated with the event.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The application associated with the event.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The release label for the application version associated with this event.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>The release label for the application version associated with this event.</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>The release label for the application version associated with this event.</p>
@@ -193,6 +213,11 @@ namespace Model
     /**
      * <p>The name of the configuration associated with this event.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration associated with this event.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -225,6 +250,11 @@ namespace Model
      * <p>The name of the environment associated with this event.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the environment associated with this event.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the environment associated with this event.</p>
@@ -265,6 +295,11 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the platform.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
@@ -301,6 +336,11 @@ namespace Model
     /**
      * <p>The web service request ID for the activity of this event.</p>
      */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
+
+    /**
+     * <p>The web service request ID for the activity of this event.</p>
+     */
     inline void SetRequestId(const Aws::String& value) { m_requestIdHasBeenSet = true; m_requestId = value; }
 
     /**
@@ -333,6 +373,11 @@ namespace Model
      * <p>The severity level of this event.</p>
      */
     inline const EventSeverity& GetSeverity() const{ return m_severity; }
+
+    /**
+     * <p>The severity level of this event.</p>
+     */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
 
     /**
      * <p>The severity level of this event.</p>

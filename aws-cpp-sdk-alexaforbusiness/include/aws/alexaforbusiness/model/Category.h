@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the skill store category.</p>
      */
+    inline bool CategoryIdHasBeenSet() const { return m_categoryIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the skill store category.</p>
+     */
     inline void SetCategoryId(long long value) { m_categoryIdHasBeenSet = true; m_categoryId = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The name of the skill store category.</p>
      */
     inline const Aws::String& GetCategoryName() const{ return m_categoryName; }
+
+    /**
+     * <p>The name of the skill store category.</p>
+     */
+    inline bool CategoryNameHasBeenSet() const { return m_categoryNameHasBeenSet; }
 
     /**
      * <p>The name of the skill store category.</p>

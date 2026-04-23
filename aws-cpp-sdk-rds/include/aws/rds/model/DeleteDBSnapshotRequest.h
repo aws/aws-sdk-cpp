@@ -59,6 +59,12 @@ namespace Model
      * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
      * existing DB snapshot in the <code>available</code> state.</p>
      */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The DB snapshot identifier.</p> <p>Constraints: Must be the name of an
+     * existing DB snapshot in the <code>available</code> state.</p>
+     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**

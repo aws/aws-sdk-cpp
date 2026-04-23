@@ -57,6 +57,12 @@ namespace Model
      * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
      * system breakout code. Supported values are 0, 3, 7, and 9.
      */
+    inline bool BreakoutCodeHasBeenSet() const { return m_breakoutCodeHasBeenSet; }
+
+    /**
+     * Use Nielsen Configuration (NielsenConfiguration) to set the Nielsen measurement
+     * system breakout code. Supported values are 0, 3, 7, and 9.
+     */
     inline void SetBreakoutCode(int value) { m_breakoutCodeHasBeenSet = true; m_breakoutCode = value; }
 
     /**
@@ -71,6 +77,12 @@ namespace Model
      * assigned to your organization by Neilsen.
      */
     inline const Aws::String& GetDistributorId() const{ return m_distributorId; }
+
+    /**
+     * Use Distributor ID (DistributorID) to specify the distributor ID that is
+     * assigned to your organization by Neilsen.
+     */
+    inline bool DistributorIdHasBeenSet() const { return m_distributorIdHasBeenSet; }
 
     /**
      * Use Distributor ID (DistributorID) to specify the distributor ID that is

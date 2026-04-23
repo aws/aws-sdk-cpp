@@ -29,7 +29,7 @@ GetPresetRequest::GetPresetRequest() :
 
 Aws::String GetPresetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

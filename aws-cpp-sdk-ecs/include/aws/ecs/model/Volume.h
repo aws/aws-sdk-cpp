@@ -40,7 +40,7 @@ namespace Model
    * specify a <code>DockerVolumeConfiguration</code>. For tasks that use a bind
    * mount host volume, specify a <code>host</code> and optional
    * <code>sourcePath</code>. For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguideusing_data_volumes.html">Using
+   * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/using_data_volumes.html">Using
    * Data Volumes in Tasks</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/Volume">AWS API
    * Reference</a></p>
@@ -61,6 +61,14 @@ namespace Model
      * <code>mountPoints</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
+     * hyphens, and underscores are allowed. This name is referenced in the
+     * <code>sourceVolume</code> parameter of container definition
+     * <code>mountPoints</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the volume. Up to 255 letters (uppercase and lowercase), numbers,
@@ -117,7 +125,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -133,7 +141,23 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
+     * persist after the containers associated with it stop running.</p> <p>Windows
+     * containers can mount whole directories on the same drive as
+     * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
+     * different drive, and mount point cannot be across drives. For example, you can
+     * mount <code>C:\my\path:C:\my\path</code> and <code>D:\:D:\</code>, but not
+     * <code>D:\my\path:C:\my\path</code> or <code>D:\:C:\my\path</code>.</p>
+     */
+    inline bool HostHasBeenSet() const { return m_hostHasBeenSet; }
+
+    /**
+     * <p>This parameter is specified when you are using bind mount host volumes. Bind
+     * mount host volumes are supported when you are using either the EC2 or Fargate
+     * launch types. The contents of the <code>host</code> parameter determine whether
+     * your bind mount host volume persists on the host container instance and where it
+     * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -149,7 +173,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -165,7 +189,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -181,7 +205,7 @@ namespace Model
      * launch types. The contents of the <code>host</code> parameter determine whether
      * your bind mount host volume persists on the host container instance and where it
      * is stored. If the <code>host</code> parameter is empty, then the Docker daemon
-     * assigns a host path for your data volume, but the data is not guaranteed to
+     * assigns a host path for your data volume. However, the data is not guaranteed to
      * persist after the containers associated with it stop running.</p> <p>Windows
      * containers can mount whole directories on the same drive as
      * <code>$env:ProgramData</code>. Windows containers cannot mount directories on a
@@ -199,6 +223,14 @@ namespace Model
      * specify a <code>host</code> instead.</p>
      */
     inline const DockerVolumeConfiguration& GetDockerVolumeConfiguration() const{ return m_dockerVolumeConfiguration; }
+
+    /**
+     * <p>This parameter is specified when you are using Docker volumes. Docker volumes
+     * are only supported when you are using the EC2 launch type. Windows containers
+     * only support the use of the <code>local</code> driver. To use bind mounts,
+     * specify a <code>host</code> instead.</p>
+     */
+    inline bool DockerVolumeConfigurationHasBeenSet() const { return m_dockerVolumeConfigurationHasBeenSet; }
 
     /**
      * <p>This parameter is specified when you are using Docker volumes. Docker volumes

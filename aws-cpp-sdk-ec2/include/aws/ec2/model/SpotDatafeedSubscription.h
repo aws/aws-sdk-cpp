@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket where the Spot Instance data feed is located.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The fault codes for the Spot Instance request, if any.</p>
      */
+    inline bool FaultHasBeenSet() const { return m_faultHasBeenSet; }
+
+    /**
+     * <p>The fault codes for the Spot Instance request, if any.</p>
+     */
     inline void SetFault(const SpotInstanceStateFault& value) { m_faultHasBeenSet = true; m_fault = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The AWS account ID of the account.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID of the account.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the account.</p>
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The prefix that is prepended to data feed files.</p>
      */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+
+    /**
+     * <p>The prefix that is prepended to data feed files.</p>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefixHasBeenSet = true; m_prefix = value; }
 
     /**
@@ -189,6 +209,11 @@ namespace Model
      * <p>The state of the Spot Instance data feed subscription.</p>
      */
     inline const DatafeedSubscriptionState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the Spot Instance data feed subscription.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the Spot Instance data feed subscription.</p>

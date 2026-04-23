@@ -57,6 +57,13 @@ namespace Model
      * operation. This iterator can be used to access the stream records in this
      * shard.</p>
      */
+    inline bool ShardIteratorHasBeenSet() const { return m_shardIteratorHasBeenSet; }
+
+    /**
+     * <p>A shard iterator that was retrieved from a previous GetShardIterator
+     * operation. This iterator can be used to access the stream records in this
+     * shard.</p>
+     */
     inline void SetShardIterator(const Aws::String& value) { m_shardIteratorHasBeenSet = true; m_shardIterator = value; }
 
     /**
@@ -100,6 +107,12 @@ namespace Model
      * 1000.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of records to return from the shard. The upper limit is
+     * 1000.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of records to return from the shard. The upper limit is

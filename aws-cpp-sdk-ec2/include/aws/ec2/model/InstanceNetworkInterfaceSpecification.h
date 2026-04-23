@@ -68,6 +68,15 @@ namespace Model
      * You cannot specify more than one network interface in the request. If launching
      * into a default subnet, the default value is <code>true</code>.</p>
      */
+    inline bool AssociatePublicIpAddressHasBeenSet() const { return m_associatePublicIpAddressHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to assign a public IPv4 address to an instance you launch
+     * in a VPC. The public IP address can only be assigned to a network interface for
+     * eth0, and can only be assigned to a new network interface, not an existing one.
+     * You cannot specify more than one network interface in the request. If launching
+     * into a default subnet, the default value is <code>true</code>.</p>
+     */
     inline void SetAssociatePublicIpAddress(bool value) { m_associatePublicIpAddressHasBeenSet = true; m_associatePublicIpAddress = value; }
 
     /**
@@ -92,6 +101,13 @@ namespace Model
      * terminated. You can specify <code>true</code> only if creating a new network
      * interface when launching an instance.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>If set to <code>true</code>, the interface is deleted when the instance is
+     * terminated. You can specify <code>true</code> only if creating a new network
+     * interface when launching an instance.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -107,6 +123,12 @@ namespace Model
      * interface when launching an instance.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the network interface. Applies only if creating a network
+     * interface when launching an instance.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the network interface. Applies only if creating a network
@@ -157,6 +179,13 @@ namespace Model
      * If you are specifying a network interface in a <a>RunInstances</a> request, you
      * must provide the device index.</p>
      */
+    inline bool DeviceIndexHasBeenSet() const { return m_deviceIndexHasBeenSet; }
+
+    /**
+     * <p>The index of the device on the instance for the network interface attachment.
+     * If you are specifying a network interface in a <a>RunInstances</a> request, you
+     * must provide the device index.</p>
+     */
     inline void SetDeviceIndex(int value) { m_deviceIndexHasBeenSet = true; m_deviceIndex = value; }
 
     /**
@@ -172,6 +201,12 @@ namespace Model
      * creating a network interface when launching an instance.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>The IDs of the security groups for the network interface. Applies only if
+     * creating a network interface when launching an instance.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups for the network interface. Applies only if
@@ -232,6 +267,15 @@ namespace Model
      * can specify this option if you've specified a minimum number of instances to
      * launch.</p>
      */
+    inline bool Ipv6AddressCountHasBeenSet() const { return m_ipv6AddressCountHasBeenSet; }
+
+    /**
+     * <p>A number of IPv6 addresses to assign to the network interface. Amazon EC2
+     * chooses the IPv6 addresses from the range of the subnet. You cannot specify this
+     * option and the option to assign specific IPv6 addresses in the same request. You
+     * can specify this option if you've specified a minimum number of instances to
+     * launch.</p>
+     */
     inline void SetIpv6AddressCount(int value) { m_ipv6AddressCountHasBeenSet = true; m_ipv6AddressCount = value; }
 
     /**
@@ -251,6 +295,14 @@ namespace Model
      * number of instances to launch.</p>
      */
     inline const Aws::Vector<InstanceIpv6Address>& GetIpv6Addresses() const{ return m_ipv6Addresses; }
+
+    /**
+     * <p>One or more IPv6 addresses to assign to the network interface. You cannot
+     * specify this option and the option to assign a number of IPv6 addresses in the
+     * same request. You cannot specify this option if you've specified a minimum
+     * number of instances to launch.</p>
+     */
+    inline bool Ipv6AddressesHasBeenSet() const { return m_ipv6AddressesHasBeenSet; }
 
     /**
      * <p>One or more IPv6 addresses to assign to the network interface. You cannot
@@ -309,6 +361,11 @@ namespace Model
     /**
      * <p>The ID of the network interface.</p>
      */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
     inline void SetNetworkInterfaceId(const Aws::String& value) { m_networkInterfaceIdHasBeenSet = true; m_networkInterfaceId = value; }
 
     /**
@@ -343,6 +400,13 @@ namespace Model
      * you're launching more than one instance in a <a>RunInstances</a> request.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IPv4 address of the network interface. Applies only if creating a
+     * network interface when launching an instance. You cannot specify this option if
+     * you're launching more than one instance in a <a>RunInstances</a> request.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IPv4 address of the network interface. Applies only if creating a
@@ -394,6 +458,14 @@ namespace Model
      * request.</p>
      */
     inline const Aws::Vector<PrivateIpAddressSpecification>& GetPrivateIpAddresses() const{ return m_privateIpAddresses; }
+
+    /**
+     * <p>One or more private IPv4 addresses to assign to the network interface. Only
+     * one private IPv4 address can be designated as primary. You cannot specify this
+     * option if you're launching more than one instance in a <a>RunInstances</a>
+     * request.</p>
+     */
+    inline bool PrivateIpAddressesHasBeenSet() const { return m_privateIpAddressesHasBeenSet; }
 
     /**
      * <p>One or more private IPv4 addresses to assign to the network interface. Only
@@ -458,6 +530,14 @@ namespace Model
      * option. You cannot specify this option if you're launching more than one
      * instance in a <a>RunInstances</a> request.</p>
      */
+    inline bool SecondaryPrivateIpAddressCountHasBeenSet() const { return m_secondaryPrivateIpAddressCountHasBeenSet; }
+
+    /**
+     * <p>The number of secondary private IPv4 addresses. You can't specify this option
+     * and specify more than one private IP address using the private IP addresses
+     * option. You cannot specify this option if you're launching more than one
+     * instance in a <a>RunInstances</a> request.</p>
+     */
     inline void SetSecondaryPrivateIpAddressCount(int value) { m_secondaryPrivateIpAddressCountHasBeenSet = true; m_secondaryPrivateIpAddressCount = value; }
 
     /**
@@ -474,6 +554,12 @@ namespace Model
      * creating a network interface when launching an instance.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet associated with the network string. Applies only if
+     * creating a network interface when launching an instance.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet associated with the network string. Applies only if

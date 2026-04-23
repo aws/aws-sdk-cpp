@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The numerical amount of an offering or transaction.</p>
      */
+    inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+
+    /**
+     * <p>The numerical amount of an offering or transaction.</p>
+     */
     inline void SetAmount(double value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * "U.S. dollars."</p>
      */
     inline const CurrencyCode& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency code of a monetary amount. For example, <code>USD</code> means
+     * "U.S. dollars."</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency code of a monetary amount. For example, <code>USD</code> means

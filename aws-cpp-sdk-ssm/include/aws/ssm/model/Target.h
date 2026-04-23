@@ -68,6 +68,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
      * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>User-defined criteria for sending commands that target instances that meet
+     * the criteria. Key can be tag:&lt;Amazon EC2 tag&gt; or InstanceIds. For more
+     * information about how to send commands that target instances using Key,Value
+     * parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html#send-commands-targeting">Targeting
+     * Multiple Instances</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -123,10 +133,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -134,10 +143,19 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
+     * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>User-defined criteria that maps to Key. For example, if you specified
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -145,10 +163,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -156,10 +173,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -167,10 +183,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -178,10 +193,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -189,10 +203,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
@@ -200,10 +213,9 @@ namespace Model
 
     /**
      * <p>User-defined criteria that maps to Key. For example, if you specified
-     * tag:ServerRole, you could specify value:WebServer to execute a command on
-     * instances that include Amazon EC2 tags of ServerRole,WebServer. For more
-     * information about how to send commands that target instances using Key,Value
-     * parameters, see <a
+     * tag:ServerRole, you could specify value:WebServer to run a command on instances
+     * that include Amazon EC2 tags of ServerRole,WebServer. For more information about
+     * how to send commands that target instances using Key,Value parameters, see <a
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/send-commands-multiple.html">Sending
      * Commands to a Fleet</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */

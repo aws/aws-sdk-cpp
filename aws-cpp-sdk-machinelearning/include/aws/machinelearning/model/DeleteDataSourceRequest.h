@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
      */
+    inline bool DataSourceIdHasBeenSet() const { return m_dataSourceIdHasBeenSet; }
+
+    /**
+     * <p>A user-supplied ID that uniquely identifies the <code>DataSource</code>.</p>
+     */
     inline void SetDataSourceId(const Aws::String& value) { m_dataSourceIdHasBeenSet = true; m_dataSourceId = value; }
 
     /**

@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/JSONInput">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API JSONInput
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>The type of JSON. Valid values: Document, Lines.</p>
      */
     inline const JSONType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of JSON. Valid values: Document, Lines.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of JSON. Valid values: Document, Lines.</p>

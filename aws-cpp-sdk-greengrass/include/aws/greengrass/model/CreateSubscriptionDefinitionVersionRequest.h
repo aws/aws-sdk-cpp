@@ -54,6 +54,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * The ID of the subscription definition.
      */
+    inline bool SubscriptionDefinitionIdHasBeenSet() const { return m_subscriptionDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the subscription definition.
+     */
     inline void SetSubscriptionDefinitionId(const Aws::String& value) { m_subscriptionDefinitionIdHasBeenSet = true; m_subscriptionDefinitionId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * A list of subscriptions.
      */
     inline const Aws::Vector<Subscription>& GetSubscriptions() const{ return m_subscriptions; }
+
+    /**
+     * A list of subscriptions.
+     */
+    inline bool SubscriptionsHasBeenSet() const { return m_subscriptionsHasBeenSet; }
 
     /**
      * A list of subscriptions.

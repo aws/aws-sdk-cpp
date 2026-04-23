@@ -45,43 +45,49 @@ namespace Model
 
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline const Aws::String& GetOrganizationId() const{ return m_organizationId; }
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
+     * deleted.</p>
+     */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline void SetOrganizationId(Aws::String&& value) { m_organizationIdHasBeenSet = true; m_organizationId = std::move(value); }
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline void SetOrganizationId(const char* value) { m_organizationIdHasBeenSet = true; m_organizationId.assign(value); }
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline DeleteResourceRequest& WithOrganizationId(const Aws::String& value) { SetOrganizationId(value); return *this;}
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline DeleteResourceRequest& WithOrganizationId(Aws::String&& value) { SetOrganizationId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier associated with the organization for which the resource is
+     * <p>The identifier associated with the organization from which the resource is
      * deleted.</p>
      */
     inline DeleteResourceRequest& WithOrganizationId(const char* value) { SetOrganizationId(value); return *this;}
@@ -91,6 +97,11 @@ namespace Model
      * <p>The identifier of the resource to be deleted.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The identifier of the resource to be deleted.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The identifier of the resource to be deleted.</p>

@@ -29,7 +29,7 @@ DeletePlaybackConfigurationRequest::DeletePlaybackConfigurationRequest() :
 
 Aws::String DeletePlaybackConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

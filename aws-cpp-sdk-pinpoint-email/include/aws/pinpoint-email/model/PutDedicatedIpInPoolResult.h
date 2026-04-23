@@ -32,6 +32,12 @@ namespace PinpointEmail
 {
 namespace Model
 {
+  /**
+   * <p>An HTTP 200 response if the request succeeds, or an error message if the
+   * request fails.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-email-2018-07-26/PutDedicatedIpInPoolResponse">AWS
+   * API Reference</a></p>
+   */
   class AWS_PINPOINTEMAIL_API PutDedicatedIpInPoolResult
   {
   public:

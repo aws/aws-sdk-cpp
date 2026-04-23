@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p> Specify the <code>ARN</code> for which you want to add the tags.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Tag>& GetTagList() const{ return m_tagList; }
+
+    /**
+     * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.
+     * </p>
+     */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
 
     /**
      * <p> List of <code>Tag</code> that need to be added for the Elasticsearch domain.

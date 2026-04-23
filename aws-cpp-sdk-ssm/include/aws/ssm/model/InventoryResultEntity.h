@@ -61,6 +61,13 @@ namespace Model
      * inventory the result will be the managed instance ID. For EC2 instance
      * inventory, the result will be the instance ID. </p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>ID of the inventory result entity. For example, for managed instance
+     * inventory the result will be the managed instance ID. For EC2 instance
+     * inventory, the result will be the instance ID. </p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
      * <p>The data section in the inventory result entity JSON.</p>
      */
     inline const Aws::Map<Aws::String, InventoryResultItem>& GetData() const{ return m_data; }
+
+    /**
+     * <p>The data section in the inventory result entity JSON.</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * <p>The data section in the inventory result entity JSON.</p>

@@ -38,7 +38,7 @@ ListViolationEventsRequest::ListViolationEventsRequest() :
 
 Aws::String ListViolationEventsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListViolationEventsRequest::AddQueryStringParameters(URI& uri) const

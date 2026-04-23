@@ -52,6 +52,12 @@ namespace Model
      * The Amazon Resource Name (ARN) of the resource that you want to list tags for.
      * To get the ARN, send a GET request with the resource name.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the resource that you want to list tags for.
+     * To get the ARN, send a GET request with the resource name.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

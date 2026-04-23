@@ -35,7 +35,7 @@ GetBasePathMappingsRequest::GetBasePathMappingsRequest() :
 
 Aws::String GetBasePathMappingsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBasePathMappingsRequest::AddQueryStringParameters(URI& uri) const

@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p>The Availability Zone in which the Reserved Instance can be used.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone in which the Reserved Instance can be used.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -105,6 +110,11 @@ namespace Model
     /**
      * <p>The duration of the Reserved Instance, in seconds.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the Reserved Instance, in seconds.</p>
+     */
     inline void SetDuration(long long value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The time when the Reserved Instance expires.</p>
      */
     inline const Aws::Utils::DateTime& GetEnd() const{ return m_end; }
+
+    /**
+     * <p>The time when the Reserved Instance expires.</p>
+     */
+    inline bool EndHasBeenSet() const { return m_endHasBeenSet; }
 
     /**
      * <p>The time when the Reserved Instance expires.</p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>The purchase price of the Reserved Instance.</p>
      */
+    inline bool FixedPriceHasBeenSet() const { return m_fixedPriceHasBeenSet; }
+
+    /**
+     * <p>The purchase price of the Reserved Instance.</p>
+     */
     inline void SetFixedPrice(double value) { m_fixedPriceHasBeenSet = true; m_fixedPrice = value; }
 
     /**
@@ -163,6 +183,11 @@ namespace Model
     /**
      * <p>The number of reservations purchased.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of reservations purchased.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -175,6 +200,11 @@ namespace Model
      * <p>The instance type on which the Reserved Instance can be used.</p>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type on which the Reserved Instance can be used.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type on which the Reserved Instance can be used.</p>
@@ -205,6 +235,11 @@ namespace Model
     /**
      * <p>The Reserved Instance product platform description.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The Reserved Instance product platform description.</p>
+     */
     inline void SetProductDescription(const RIProductDescription& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -227,6 +262,11 @@ namespace Model
      * <p>The ID of the Reserved Instance.</p>
      */
     inline const Aws::String& GetReservedInstancesId() const{ return m_reservedInstancesId; }
+
+    /**
+     * <p>The ID of the Reserved Instance.</p>
+     */
+    inline bool ReservedInstancesIdHasBeenSet() const { return m_reservedInstancesIdHasBeenSet; }
 
     /**
      * <p>The ID of the Reserved Instance.</p>
@@ -267,6 +307,11 @@ namespace Model
     /**
      * <p>The date and time the Reserved Instance started.</p>
      */
+    inline bool StartHasBeenSet() const { return m_startHasBeenSet; }
+
+    /**
+     * <p>The date and time the Reserved Instance started.</p>
+     */
     inline void SetStart(const Aws::Utils::DateTime& value) { m_startHasBeenSet = true; m_start = value; }
 
     /**
@@ -289,6 +334,11 @@ namespace Model
      * <p>The state of the Reserved Instance purchase.</p>
      */
     inline const ReservedInstanceState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the Reserved Instance purchase.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the Reserved Instance purchase.</p>
@@ -319,6 +369,11 @@ namespace Model
     /**
      * <p>The usage price of the Reserved Instance, per hour.</p>
      */
+    inline bool UsagePriceHasBeenSet() const { return m_usagePriceHasBeenSet; }
+
+    /**
+     * <p>The usage price of the Reserved Instance, per hour.</p>
+     */
     inline void SetUsagePrice(double value) { m_usagePriceHasBeenSet = true; m_usagePrice = value; }
 
     /**
@@ -333,6 +388,13 @@ namespace Model
      * <code>USD</code>.</p>
      */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency of the Reserved Instance. It's specified using ISO 4217 standard
+     * currency codes. At this time, the only supported currency is
+     * <code>USD</code>.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency of the Reserved Instance. It's specified using ISO 4217 standard
@@ -371,6 +433,11 @@ namespace Model
     /**
      * <p>The tenancy of the instance.</p>
      */
+    inline bool InstanceTenancyHasBeenSet() const { return m_instanceTenancyHasBeenSet; }
+
+    /**
+     * <p>The tenancy of the instance.</p>
+     */
     inline void SetInstanceTenancy(const Tenancy& value) { m_instanceTenancyHasBeenSet = true; m_instanceTenancy = value; }
 
     /**
@@ -393,6 +460,11 @@ namespace Model
      * <p>The offering class of the Reserved Instance.</p>
      */
     inline const OfferingClassType& GetOfferingClass() const{ return m_offeringClass; }
+
+    /**
+     * <p>The offering class of the Reserved Instance.</p>
+     */
+    inline bool OfferingClassHasBeenSet() const { return m_offeringClassHasBeenSet; }
 
     /**
      * <p>The offering class of the Reserved Instance.</p>
@@ -423,6 +495,11 @@ namespace Model
     /**
      * <p>The Reserved Instance offering type.</p>
      */
+    inline bool OfferingTypeHasBeenSet() const { return m_offeringTypeHasBeenSet; }
+
+    /**
+     * <p>The Reserved Instance offering type.</p>
+     */
     inline void SetOfferingType(const OfferingTypeValues& value) { m_offeringTypeHasBeenSet = true; m_offeringType = value; }
 
     /**
@@ -445,6 +522,11 @@ namespace Model
      * <p>The recurring charge tag assigned to the resource.</p>
      */
     inline const Aws::Vector<RecurringCharge>& GetRecurringCharges() const{ return m_recurringCharges; }
+
+    /**
+     * <p>The recurring charge tag assigned to the resource.</p>
+     */
+    inline bool RecurringChargesHasBeenSet() const { return m_recurringChargesHasBeenSet; }
 
     /**
      * <p>The recurring charge tag assigned to the resource.</p>
@@ -485,6 +567,11 @@ namespace Model
     /**
      * <p>The scope of the Reserved Instance.</p>
      */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>The scope of the Reserved Instance.</p>
+     */
     inline void SetScope(const Scope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
@@ -507,6 +594,11 @@ namespace Model
      * <p>Any tags assigned to the resource.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the resource.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * the service.</p>
      */
     inline const Aws::String& GetSession() const{ return m_session; }
+
+    /**
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service.</p>
+     */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
 
     /**
      * <p>The session which should be passed both ways in challenge-response calls to
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>The one time password computed using the secret code returned by </p>
      */
+    inline bool UserCodeHasBeenSet() const { return m_userCodeHasBeenSet; }
+
+    /**
+     * <p>The one time password computed using the secret code returned by </p>
+     */
     inline void SetUserCode(const Aws::String& value) { m_userCodeHasBeenSet = true; m_userCode = value; }
 
     /**
@@ -163,6 +179,11 @@ namespace Model
      * <p>The friendly device name.</p>
      */
     inline const Aws::String& GetFriendlyDeviceName() const{ return m_friendlyDeviceName; }
+
+    /**
+     * <p>The friendly device name.</p>
+     */
+    inline bool FriendlyDeviceNameHasBeenSet() const { return m_friendlyDeviceNameHasBeenSet; }
 
     /**
      * <p>The friendly device name.</p>

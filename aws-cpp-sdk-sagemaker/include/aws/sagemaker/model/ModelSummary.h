@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the model that you want a summary for.</p>
      */
+    inline bool ModelNameHasBeenSet() const { return m_modelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the model that you want a summary for.</p>
+     */
     inline void SetModelName(const Aws::String& value) { m_modelNameHasBeenSet = true; m_modelName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the model.</p>
      */
+    inline bool ModelArnHasBeenSet() const { return m_modelArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the model.</p>
+     */
     inline void SetModelArn(const Aws::String& value) { m_modelArnHasBeenSet = true; m_modelArn = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>A timestamp that indicates when the model was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>A timestamp that indicates when the model was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>A timestamp that indicates when the model was created.</p>

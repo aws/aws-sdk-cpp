@@ -56,6 +56,12 @@ namespace Model
      * <p>The maximum number of training jobs that a hyperparameter tuning job can
      * launch.</p>
      */
+    inline bool MaxNumberOfTrainingJobsHasBeenSet() const { return m_maxNumberOfTrainingJobsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of training jobs that a hyperparameter tuning job can
+     * launch.</p>
+     */
     inline void SetMaxNumberOfTrainingJobs(int value) { m_maxNumberOfTrainingJobsHasBeenSet = true; m_maxNumberOfTrainingJobs = value; }
 
     /**
@@ -70,6 +76,12 @@ namespace Model
      * job can launch.</p>
      */
     inline int GetMaxParallelTrainingJobs() const{ return m_maxParallelTrainingJobs; }
+
+    /**
+     * <p>The maximum number of concurrent training jobs that a hyperparameter tuning
+     * job can launch.</p>
+     */
+    inline bool MaxParallelTrainingJobsHasBeenSet() const { return m_maxParallelTrainingJobsHasBeenSet; }
 
     /**
      * <p>The maximum number of concurrent training jobs that a hyperparameter tuning

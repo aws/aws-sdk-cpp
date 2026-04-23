@@ -64,6 +64,12 @@ namespace Model
      * <p>The launch template to use. You must specify either the launch template ID or
      * launch template name in the request. </p>
      */
+    inline bool LaunchTemplateSpecificationHasBeenSet() const { return m_launchTemplateSpecificationHasBeenSet; }
+
+    /**
+     * <p>The launch template to use. You must specify either the launch template ID or
+     * launch template name in the request. </p>
+     */
     inline void SetLaunchTemplateSpecification(const LaunchTemplateSpecification& value) { m_launchTemplateSpecificationHasBeenSet = true; m_launchTemplateSpecification = value; }
 
     /**
@@ -91,6 +97,13 @@ namespace Model
      * must specify between 2 and 20 overrides.</p>
      */
     inline const Aws::Vector<LaunchTemplateOverrides>& GetOverrides() const{ return m_overrides; }
+
+    /**
+     * <p>Any parameters that you specify override the same parameters in the launch
+     * template. Currently, the only supported override is instance type. </p> <p>You
+     * must specify between 2 and 20 overrides.</p>
+     */
+    inline bool OverridesHasBeenSet() const { return m_overridesHasBeenSet; }
 
     /**
      * <p>Any parameters that you specify override the same parameters in the launch

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the stream.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of tag keys. Each corresponding tag is removed from the stream.</p>

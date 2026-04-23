@@ -28,6 +28,7 @@ namespace Model
     NOT_SET,
     USER,
     SYSTEM,
+    AWS_BACKUP,
     ALL
   };
 

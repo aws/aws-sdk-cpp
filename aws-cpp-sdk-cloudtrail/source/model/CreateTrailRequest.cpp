@@ -35,7 +35,9 @@ CreateTrailRequest::CreateTrailRequest() :
     m_enableLogFileValidationHasBeenSet(false),
     m_cloudWatchLogsLogGroupArnHasBeenSet(false),
     m_cloudWatchLogsRoleArnHasBeenSet(false),
-    m_kmsKeyIdHasBeenSet(false)
+    m_kmsKeyIdHasBeenSet(false),
+    m_isOrganizationTrail(false),
+    m_isOrganizationTrailHasBeenSet(false)
 {
 }
 
@@ -100,6 +102,12 @@ Aws::String CreateTrailRequest::SerializePayload() const
   if(m_kmsKeyIdHasBeenSet)
   {
    payload.WithString("KmsKeyId", m_kmsKeyId);
+
+  }
+
+  if(m_isOrganizationTrailHasBeenSet)
+  {
+   payload.WithBool("IsOrganizationTrail", m_isOrganizationTrail);
 
   }
 

@@ -33,7 +33,7 @@ DeleteResourceShareRequest::DeleteResourceShareRequest() :
 
 Aws::String DeleteResourceShareRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteResourceShareRequest::AddQueryStringParameters(URI& uri) const

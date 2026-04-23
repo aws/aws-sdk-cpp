@@ -40,7 +40,7 @@ namespace Model
   /**
    * <p>A <code>GetMetricData</code> call returns an array of
    * <code>MetricDataResult</code> structures. Each of these structures includes the
-   * data points for that metric, along with the time stamps of those data points and
+   * data points for that metric, along with the timestamps of those data points and
    * other identifying information.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/monitoring-2010-08-01/MetricDataResult">AWS
    * API Reference</a></p>
@@ -60,6 +60,11 @@ namespace Model
      * <p>The short name you specified to represent this metric.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The short name you specified to represent this metric.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The short name you specified to represent this metric.</p>
@@ -100,6 +105,11 @@ namespace Model
     /**
      * <p>The human-readable label associated with the data.</p>
      */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>The human-readable label associated with the data.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**
@@ -129,50 +139,57 @@ namespace Model
 
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline const Aws::Vector<Aws::Utils::DateTime>& GetTimestamps() const{ return m_timestamps; }
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
+     * Timestamps[x] is Values[x].</p>
+     */
+    inline bool TimestampsHasBeenSet() const { return m_timestampsHasBeenSet; }
+
+    /**
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline void SetTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { m_timestampsHasBeenSet = true; m_timestamps = value; }
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline void SetTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { m_timestampsHasBeenSet = true; m_timestamps = std::move(value); }
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline MetricDataResult& WithTimestamps(const Aws::Vector<Aws::Utils::DateTime>& value) { SetTimestamps(value); return *this;}
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline MetricDataResult& WithTimestamps(Aws::Vector<Aws::Utils::DateTime>&& value) { SetTimestamps(std::move(value)); return *this;}
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline MetricDataResult& AddTimestamps(const Aws::Utils::DateTime& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(value); return *this; }
 
     /**
-     * <p>The time stamps for the data points, formatted in Unix timestamp format. The
-     * number of time stamps always matches the number of values and the value for
+     * <p>The timestamps for the data points, formatted in Unix timestamp format. The
+     * number of timestamps always matches the number of values and the value for
      * Timestamps[x] is Values[x].</p>
      */
     inline MetricDataResult& AddTimestamps(Aws::Utils::DateTime&& value) { m_timestampsHasBeenSet = true; m_timestamps.push_back(std::move(value)); return *this; }
@@ -180,42 +197,49 @@ namespace Model
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline const Aws::Vector<double>& GetValues() const{ return m_values; }
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
+     * Values[x] is Timestamps[x].</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline void SetValues(const Aws::Vector<double>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline void SetValues(Aws::Vector<double>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline MetricDataResult& WithValues(const Aws::Vector<double>& value) { SetValues(value); return *this;}
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline MetricDataResult& WithValues(Aws::Vector<double>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
      * <p>The data points for the metric corresponding to <code>Timestamps</code>. The
-     * number of values always matches the number of time stamps and the time stamp for
+     * number of values always matches the number of timestamps and the timestamp for
      * Values[x] is Timestamps[x].</p>
      */
     inline MetricDataResult& AddValues(double value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
@@ -231,6 +255,17 @@ namespace Model
      * Retry your request using <code>NextToken</code>, if present.</p>
      */
     inline const StatusCode& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The status of the returned data. <code>Complete</code> indicates that all
+     * data points in the requested time range were returned. <code>PartialData</code>
+     * means that an incomplete set of data points were returned. You can use the
+     * <code>NextToken</code> value that was returned and repeat your request to get
+     * more data points. <code>NextToken</code> is not returned if you are performing a
+     * math expression. <code>InternalError</code> indicates that an error occurred.
+     * Retry your request using <code>NextToken</code>, if present.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The status of the returned data. <code>Complete</code> indicates that all
@@ -281,6 +316,11 @@ namespace Model
      * <p>A list of messages with additional information about the data returned.</p>
      */
     inline const Aws::Vector<MessageData>& GetMessages() const{ return m_messages; }
+
+    /**
+     * <p>A list of messages with additional information about the data returned.</p>
+     */
+    inline bool MessagesHasBeenSet() const { return m_messagesHasBeenSet; }
 
     /**
      * <p>A list of messages with additional information about the data returned.</p>

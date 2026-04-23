@@ -29,7 +29,7 @@ DeleteVoiceChannelRequest::DeleteVoiceChannelRequest() :
 
 Aws::String DeleteVoiceChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

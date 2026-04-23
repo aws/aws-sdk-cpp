@@ -29,7 +29,7 @@ GetGroupQueryRequest::GetGroupQueryRequest() :
 
 Aws::String GetGroupQueryRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

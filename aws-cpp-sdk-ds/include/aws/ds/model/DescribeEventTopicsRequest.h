@@ -58,6 +58,12 @@ namespace Model
      * <p>The Directory ID for which to get the list of associated SNS topics. If this
      * member is null, associations for all Directory IDs are returned.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The Directory ID for which to get the list of associated SNS topics. If this
+     * member is null, associations for all Directory IDs are returned.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -98,6 +104,14 @@ namespace Model
      * thrown.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTopicNames() const{ return m_topicNames; }
+
+    /**
+     * <p>A list of SNS topic names for which to obtain the information. If this member
+     * is null, all associations for the specified Directory ID are returned.</p> <p>An
+     * empty list results in an <code>InvalidParameterException</code> being
+     * thrown.</p>
+     */
+    inline bool TopicNamesHasBeenSet() const { return m_topicNamesHasBeenSet; }
 
     /**
      * <p>A list of SNS topic names for which to obtain the information. If this member

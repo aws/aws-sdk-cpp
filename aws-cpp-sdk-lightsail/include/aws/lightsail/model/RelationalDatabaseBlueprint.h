@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID for the database blueprint.</p>
      */
+    inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the database blueprint.</p>
+     */
     inline void SetBlueprintId(const Aws::String& value) { m_blueprintIdHasBeenSet = true; m_blueprintId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The database software of the database blueprint (for example,
      * <code>MySQL</code>).</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The database software of the database blueprint (for example,
+     * <code>MySQL</code>).</p>
+     */
     inline void SetEngine(const RelationalDatabaseEngine& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -121,6 +132,12 @@ namespace Model
      * <code>5.7.23</code>).</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The database engine version for the database blueprint (for example,
+     * <code>5.7.23</code>).</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The database engine version for the database blueprint (for example,
@@ -167,6 +184,11 @@ namespace Model
     /**
      * <p>The description of the database engine for the database blueprint.</p>
      */
+    inline bool EngineDescriptionHasBeenSet() const { return m_engineDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the database engine for the database blueprint.</p>
+     */
     inline void SetEngineDescription(const Aws::String& value) { m_engineDescriptionHasBeenSet = true; m_engineDescription = value; }
 
     /**
@@ -200,6 +222,12 @@ namespace Model
      * blueprint.</p>
      */
     inline const Aws::String& GetEngineVersionDescription() const{ return m_engineVersionDescription; }
+
+    /**
+     * <p>The description of the database engine version for the database
+     * blueprint.</p>
+     */
+    inline bool EngineVersionDescriptionHasBeenSet() const { return m_engineVersionDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the database engine version for the database
@@ -243,6 +271,12 @@ namespace Model
      * database blueprint.</p>
      */
     inline bool GetIsEngineDefault() const{ return m_isEngineDefault; }
+
+    /**
+     * <p>A Boolean value indicating whether the engine version is the default for the
+     * database blueprint.</p>
+     */
+    inline bool IsEngineDefaultHasBeenSet() const { return m_isEngineDefaultHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating whether the engine version is the default for the

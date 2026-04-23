@@ -34,7 +34,7 @@ ListDetectorsRequest::ListDetectorsRequest() :
 
 Aws::String ListDetectorsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListDetectorsRequest::AddQueryStringParameters(URI& uri) const

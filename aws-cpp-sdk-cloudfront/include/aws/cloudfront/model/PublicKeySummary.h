@@ -34,8 +34,9 @@ namespace Model
 {
 
   /**
-   * <p> Public key information summary. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/PublicKeySummary">AWS
+   * <p>A complex data type for public key information. </p><p><h3>See Also:</h3>  
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKeySummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKeySummary
@@ -52,6 +53,11 @@ namespace Model
      * <p> ID for public key information summary. </p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p> ID for public key information summary. </p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p> ID for public key information summary. </p>
@@ -92,6 +98,11 @@ namespace Model
     /**
      * <p> Name for public key information summary. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> Name for public key information summary. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
     /**
      * <p> Creation time for public key information summary. </p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p> Creation time for public key information summary. </p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -150,6 +166,11 @@ namespace Model
      * <p> Encoded key for public key information summary. </p>
      */
     inline const Aws::String& GetEncodedKey() const{ return m_encodedKey; }
+
+    /**
+     * <p> Encoded key for public key information summary. </p>
+     */
+    inline bool EncodedKeyHasBeenSet() const { return m_encodedKeyHasBeenSet; }
 
     /**
      * <p> Encoded key for public key information summary. </p>
@@ -186,6 +207,11 @@ namespace Model
      * <p> Comment for public key information summary. </p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p> Comment for public key information summary. </p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p> Comment for public key information summary. </p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A list of names of columns that contain skewed values.</p>
      */
+    inline bool SkewedColumnNamesHasBeenSet() const { return m_skewedColumnNamesHasBeenSet; }
+
+    /**
+     * <p>A list of names of columns that contain skewed values.</p>
+     */
     inline void SetSkewedColumnNames(const Aws::Vector<Aws::String>& value) { m_skewedColumnNamesHasBeenSet = true; m_skewedColumnNames = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>A list of values that appear so frequently as to be considered skewed.</p>
      */
+    inline bool SkewedColumnValuesHasBeenSet() const { return m_skewedColumnValuesHasBeenSet; }
+
+    /**
+     * <p>A list of values that appear so frequently as to be considered skewed.</p>
+     */
     inline void SetSkewedColumnValues(const Aws::Vector<Aws::String>& value) { m_skewedColumnValuesHasBeenSet = true; m_skewedColumnValues = value; }
 
     /**
@@ -136,6 +146,11 @@ namespace Model
      * <p>A mapping of skewed values to the columns that contain them.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSkewedColumnValueLocationMaps() const{ return m_skewedColumnValueLocationMaps; }
+
+    /**
+     * <p>A mapping of skewed values to the columns that contain them.</p>
+     */
+    inline bool SkewedColumnValueLocationMapsHasBeenSet() const { return m_skewedColumnValueLocationMapsHasBeenSet; }
 
     /**
      * <p>A mapping of skewed values to the columns that contain them.</p>

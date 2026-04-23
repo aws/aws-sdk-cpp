@@ -86,42 +86,42 @@ namespace Model
 
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDeploymentGroups() const{ return m_deploymentGroups; }
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline void SetDeploymentGroups(const Aws::Vector<Aws::String>& value) { m_deploymentGroups = value; }
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline void SetDeploymentGroups(Aws::Vector<Aws::String>&& value) { m_deploymentGroups = std::move(value); }
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& WithDeploymentGroups(const Aws::Vector<Aws::String>& value) { SetDeploymentGroups(value); return *this;}
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& WithDeploymentGroups(Aws::Vector<Aws::String>&& value) { SetDeploymentGroups(std::move(value)); return *this;}
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& AddDeploymentGroups(const Aws::String& value) { m_deploymentGroups.push_back(value); return *this; }
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& AddDeploymentGroups(Aws::String&& value) { m_deploymentGroups.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of corresponding deployment group names.</p>
+     * <p>A list of deployment group names.</p>
      */
     inline ListDeploymentGroupsResult& AddDeploymentGroups(const char* value) { m_deploymentGroups.push_back(value); return *this; }
 

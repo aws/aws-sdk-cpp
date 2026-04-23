@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the ElastiCache instances that AWS recommends that you
+   * <p>Details about the Amazon ElastiCache instances that AWS recommends that you
    * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ElastiCacheInstanceDetails">AWS
    * API Reference</a></p>
@@ -52,6 +52,11 @@ namespace Model
      * <p>The instance family of the recommended reservation.</p>
      */
     inline const Aws::String& GetFamily() const{ return m_family; }
+
+    /**
+     * <p>The instance family of the recommended reservation.</p>
+     */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
 
     /**
      * <p>The instance family of the recommended reservation.</p>
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The type of node that AWS recommends.</p>
      */
+    inline bool NodeTypeHasBeenSet() const { return m_nodeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of node that AWS recommends.</p>
+     */
     inline void SetNodeType(const Aws::String& value) { m_nodeTypeHasBeenSet = true; m_nodeType = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The AWS Region of the recommended reservation.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS Region of the recommended reservation.</p>
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The description of the recommended reservation.</p>
      */
+    inline bool ProductDescriptionHasBeenSet() const { return m_productDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the recommended reservation.</p>
+     */
     inline void SetProductDescription(const Aws::String& value) { m_productDescriptionHasBeenSet = true; m_productDescription = value; }
 
     /**
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>Whether the recommendation is for a current generation instance.</p>
      */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current generation instance.</p>
+     */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
@@ -212,6 +237,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

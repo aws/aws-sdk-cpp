@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The list of mappings from a source table to target tables.</p>
      */
+    inline bool MappingHasBeenSet() const { return m_mappingHasBeenSet; }
+
+    /**
+     * <p>The list of mappings from a source table to target tables.</p>
+     */
     inline void SetMapping(const Aws::Vector<MappingEntry>& value) { m_mappingHasBeenSet = true; m_mapping = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The source table.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source table.</p>
+     */
     inline void SetSource(const CatalogEntry& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -114,6 +124,11 @@ namespace Model
      * <p>The target tables.</p>
      */
     inline const Aws::Vector<CatalogEntry>& GetSinks() const{ return m_sinks; }
+
+    /**
+     * <p>The target tables.</p>
+     */
+    inline bool SinksHasBeenSet() const { return m_sinksHasBeenSet; }
 
     /**
      * <p>The target tables.</p>
@@ -154,6 +169,11 @@ namespace Model
     /**
      * <p>Parameters for the mapping.</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Parameters for the mapping.</p>
+     */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -176,6 +196,11 @@ namespace Model
      * <p>The programming language of the code to perform the mapping.</p>
      */
     inline const Language& GetLanguage() const{ return m_language; }
+
+    /**
+     * <p>The programming language of the code to perform the mapping.</p>
+     */
+    inline bool LanguageHasBeenSet() const { return m_languageHasBeenSet; }
 
     /**
      * <p>The programming language of the code to perform the mapping.</p>

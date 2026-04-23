@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Specify whether to enable or disable auto-placement.</p>
      */
+    inline bool AutoPlacementHasBeenSet() const { return m_autoPlacementHasBeenSet; }
+
+    /**
+     * <p>Specify whether to enable or disable auto-placement.</p>
+     */
     inline void SetAutoPlacement(const AutoPlacement& value) { m_autoPlacementHasBeenSet = true; m_autoPlacement = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts to modify.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIds() const{ return m_hostIds; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts to modify.</p>
+     */
+    inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
 
     /**
      * <p>The IDs of the Dedicated Hosts to modify.</p>

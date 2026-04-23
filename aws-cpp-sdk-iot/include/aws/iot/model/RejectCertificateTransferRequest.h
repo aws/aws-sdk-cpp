@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -93,6 +99,11 @@ namespace Model
      * <p>The reason the certificate transfer was rejected.</p>
      */
     inline const Aws::String& GetRejectReason() const{ return m_rejectReason; }
+
+    /**
+     * <p>The reason the certificate transfer was rejected.</p>
+     */
+    inline bool RejectReasonHasBeenSet() const { return m_rejectReasonHasBeenSet; }
 
     /**
      * <p>The reason the certificate transfer was rejected.</p>

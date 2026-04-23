@@ -42,6 +42,7 @@ TableDescription::TableDescription() :
     m_itemCountHasBeenSet(false),
     m_tableArnHasBeenSet(false),
     m_tableIdHasBeenSet(false),
+    m_billingModeSummaryHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
@@ -66,6 +67,7 @@ TableDescription::TableDescription(JsonView jsonValue) :
     m_itemCountHasBeenSet(false),
     m_tableArnHasBeenSet(false),
     m_tableIdHasBeenSet(false),
+    m_billingModeSummaryHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
@@ -153,6 +155,13 @@ TableDescription& TableDescription::operator =(JsonView jsonValue)
     m_tableId = jsonValue.GetString("TableId");
 
     m_tableIdHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("BillingModeSummary"))
+  {
+    m_billingModeSummary = jsonValue.GetObject("BillingModeSummary");
+
+    m_billingModeSummaryHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("LocalSecondaryIndexes"))
@@ -282,6 +291,12 @@ JsonValue TableDescription::Jsonize() const
   if(m_tableIdHasBeenSet)
   {
    payload.WithString("TableId", m_tableId);
+
+  }
+
+  if(m_billingModeSummaryHasBeenSet)
+  {
+   payload.WithObject("BillingModeSummary", m_billingModeSummary.Jsonize());
 
   }
 

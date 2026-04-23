@@ -29,7 +29,7 @@ DeleteLifecyclePolicyRequest::DeleteLifecyclePolicyRequest() :
 
 Aws::String DeleteLifecyclePolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

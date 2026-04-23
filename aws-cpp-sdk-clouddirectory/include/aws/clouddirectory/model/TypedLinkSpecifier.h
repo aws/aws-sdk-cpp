@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>Identifies the typed link facet that is associated with the typed link.</p>
      */
+    inline bool TypedLinkFacetHasBeenSet() const { return m_typedLinkFacetHasBeenSet; }
+
+    /**
+     * <p>Identifies the typed link facet that is associated with the typed link.</p>
+     */
     inline void SetTypedLinkFacet(const TypedLinkSchemaAndFacetName& value) { m_typedLinkFacetHasBeenSet = true; m_typedLinkFacet = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>Identifies the source object that the typed link will attach to.</p>
      */
     inline const ObjectReference& GetSourceObjectReference() const{ return m_sourceObjectReference; }
+
+    /**
+     * <p>Identifies the source object that the typed link will attach to.</p>
+     */
+    inline bool SourceObjectReferenceHasBeenSet() const { return m_sourceObjectReferenceHasBeenSet; }
 
     /**
      * <p>Identifies the source object that the typed link will attach to.</p>
@@ -116,6 +126,11 @@ namespace Model
     /**
      * <p>Identifies the target object that the typed link will attach to.</p>
      */
+    inline bool TargetObjectReferenceHasBeenSet() const { return m_targetObjectReferenceHasBeenSet; }
+
+    /**
+     * <p>Identifies the target object that the typed link will attach to.</p>
+     */
     inline void SetTargetObjectReference(const ObjectReference& value) { m_targetObjectReferenceHasBeenSet = true; m_targetObjectReference = value; }
 
     /**
@@ -138,6 +153,11 @@ namespace Model
      * <p>Identifies the attribute value to update.</p>
      */
     inline const Aws::Vector<AttributeNameAndValue>& GetIdentityAttributeValues() const{ return m_identityAttributeValues; }
+
+    /**
+     * <p>Identifies the attribute value to update.</p>
+     */
+    inline bool IdentityAttributeValuesHasBeenSet() const { return m_identityAttributeValuesHasBeenSet; }
 
     /**
      * <p>Identifies the attribute value to update.</p>

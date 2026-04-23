@@ -36,7 +36,8 @@ Rule::Rule() :
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_managedByHasBeenSet(false)
 {
 }
 
@@ -48,7 +49,8 @@ Rule::Rule(JsonView jsonValue) :
     m_stateHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_scheduleExpressionHasBeenSet(false),
-    m_roleArnHasBeenSet(false)
+    m_roleArnHasBeenSet(false),
+    m_managedByHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -104,6 +106,13 @@ Rule& Rule::operator =(JsonView jsonValue)
     m_roleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ManagedBy"))
+  {
+    m_managedBy = jsonValue.GetString("ManagedBy");
+
+    m_managedByHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue Rule::Jsonize() const
   if(m_roleArnHasBeenSet)
   {
    payload.WithString("RoleArn", m_roleArn);
+
+  }
+
+  if(m_managedByHasBeenSet)
+  {
+   payload.WithString("ManagedBy", m_managedBy);
 
   }
 

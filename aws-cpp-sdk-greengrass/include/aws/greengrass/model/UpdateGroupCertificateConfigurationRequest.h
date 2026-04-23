@@ -50,6 +50,11 @@ namespace Model
     /**
      * The amount of time remaining before the certificate expires, in milliseconds.
      */
+    inline bool CertificateExpiryInMillisecondsHasBeenSet() const { return m_certificateExpiryInMillisecondsHasBeenSet; }
+
+    /**
+     * The amount of time remaining before the certificate expires, in milliseconds.
+     */
     inline void SetCertificateExpiryInMilliseconds(const Aws::String& value) { m_certificateExpiryInMillisecondsHasBeenSet = true; m_certificateExpiryInMilliseconds = value; }
 
     /**
@@ -79,37 +84,42 @@ namespace Model
 
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline UpdateGroupCertificateConfigurationRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

@@ -26,6 +26,7 @@
 #include <aws/storagegateway/model/AddTagsToResourceResult.h>
 #include <aws/storagegateway/model/AddUploadBufferResult.h>
 #include <aws/storagegateway/model/AddWorkingStorageResult.h>
+#include <aws/storagegateway/model/AttachVolumeResult.h>
 #include <aws/storagegateway/model/CancelArchivalResult.h>
 #include <aws/storagegateway/model/CancelRetrievalResult.h>
 #include <aws/storagegateway/model/CreateCachediSCSIVolumeResult.h>
@@ -61,6 +62,7 @@
 #include <aws/storagegateway/model/DescribeUploadBufferResult.h>
 #include <aws/storagegateway/model/DescribeVTLDevicesResult.h>
 #include <aws/storagegateway/model/DescribeWorkingStorageResult.h>
+#include <aws/storagegateway/model/DetachVolumeResult.h>
 #include <aws/storagegateway/model/DisableGatewayResult.h>
 #include <aws/storagegateway/model/JoinDomainResult.h>
 #include <aws/storagegateway/model/ListFileSharesResult.h>
@@ -135,6 +137,7 @@ namespace Model
         class AddTagsToResourceRequest;
         class AddUploadBufferRequest;
         class AddWorkingStorageRequest;
+        class AttachVolumeRequest;
         class CancelArchivalRequest;
         class CancelRetrievalRequest;
         class CreateCachediSCSIVolumeRequest;
@@ -170,6 +173,7 @@ namespace Model
         class DescribeUploadBufferRequest;
         class DescribeVTLDevicesRequest;
         class DescribeWorkingStorageRequest;
+        class DetachVolumeRequest;
         class DisableGatewayRequest;
         class JoinDomainRequest;
         class ListFileSharesRequest;
@@ -205,6 +209,7 @@ namespace Model
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<StorageGatewayErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<AddUploadBufferResult, Aws::Client::AWSError<StorageGatewayErrors>> AddUploadBufferOutcome;
         typedef Aws::Utils::Outcome<AddWorkingStorageResult, Aws::Client::AWSError<StorageGatewayErrors>> AddWorkingStorageOutcome;
+        typedef Aws::Utils::Outcome<AttachVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> AttachVolumeOutcome;
         typedef Aws::Utils::Outcome<CancelArchivalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelArchivalOutcome;
         typedef Aws::Utils::Outcome<CancelRetrievalResult, Aws::Client::AWSError<StorageGatewayErrors>> CancelRetrievalOutcome;
         typedef Aws::Utils::Outcome<CreateCachediSCSIVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> CreateCachediSCSIVolumeOutcome;
@@ -240,6 +245,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeUploadBufferResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeUploadBufferOutcome;
         typedef Aws::Utils::Outcome<DescribeVTLDevicesResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeVTLDevicesOutcome;
         typedef Aws::Utils::Outcome<DescribeWorkingStorageResult, Aws::Client::AWSError<StorageGatewayErrors>> DescribeWorkingStorageOutcome;
+        typedef Aws::Utils::Outcome<DetachVolumeResult, Aws::Client::AWSError<StorageGatewayErrors>> DetachVolumeOutcome;
         typedef Aws::Utils::Outcome<DisableGatewayResult, Aws::Client::AWSError<StorageGatewayErrors>> DisableGatewayOutcome;
         typedef Aws::Utils::Outcome<JoinDomainResult, Aws::Client::AWSError<StorageGatewayErrors>> JoinDomainOutcome;
         typedef Aws::Utils::Outcome<ListFileSharesResult, Aws::Client::AWSError<StorageGatewayErrors>> ListFileSharesOutcome;
@@ -275,6 +281,7 @@ namespace Model
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<AddUploadBufferOutcome> AddUploadBufferOutcomeCallable;
         typedef std::future<AddWorkingStorageOutcome> AddWorkingStorageOutcomeCallable;
+        typedef std::future<AttachVolumeOutcome> AttachVolumeOutcomeCallable;
         typedef std::future<CancelArchivalOutcome> CancelArchivalOutcomeCallable;
         typedef std::future<CancelRetrievalOutcome> CancelRetrievalOutcomeCallable;
         typedef std::future<CreateCachediSCSIVolumeOutcome> CreateCachediSCSIVolumeOutcomeCallable;
@@ -310,6 +317,7 @@ namespace Model
         typedef std::future<DescribeUploadBufferOutcome> DescribeUploadBufferOutcomeCallable;
         typedef std::future<DescribeVTLDevicesOutcome> DescribeVTLDevicesOutcomeCallable;
         typedef std::future<DescribeWorkingStorageOutcome> DescribeWorkingStorageOutcomeCallable;
+        typedef std::future<DetachVolumeOutcome> DetachVolumeOutcomeCallable;
         typedef std::future<DisableGatewayOutcome> DisableGatewayOutcomeCallable;
         typedef std::future<JoinDomainOutcome> JoinDomainOutcomeCallable;
         typedef std::future<ListFileSharesOutcome> ListFileSharesOutcomeCallable;
@@ -348,6 +356,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::AddTagsToResourceRequest&, const Model::AddTagsToResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddTagsToResourceResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AddUploadBufferRequest&, const Model::AddUploadBufferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddUploadBufferResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::AddWorkingStorageRequest&, const Model::AddWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AddWorkingStorageResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::AttachVolumeRequest&, const Model::AttachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AttachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelArchivalRequest&, const Model::CancelArchivalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelArchivalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CancelRetrievalRequest&, const Model::CancelRetrievalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelRetrievalResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::CreateCachediSCSIVolumeRequest&, const Model::CreateCachediSCSIVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateCachediSCSIVolumeResponseReceivedHandler;
@@ -383,6 +392,7 @@ namespace Model
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeUploadBufferRequest&, const Model::DescribeUploadBufferOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeUploadBufferResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeVTLDevicesRequest&, const Model::DescribeVTLDevicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeVTLDevicesResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DescribeWorkingStorageRequest&, const Model::DescribeWorkingStorageOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeWorkingStorageResponseReceivedHandler;
+    typedef std::function<void(const StorageGatewayClient*, const Model::DetachVolumeRequest&, const Model::DetachVolumeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DetachVolumeResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::DisableGatewayRequest&, const Model::DisableGatewayOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisableGatewayResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::JoinDomainRequest&, const Model::JoinDomainOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > JoinDomainResponseReceivedHandler;
     typedef std::function<void(const StorageGatewayClient*, const Model::ListFileSharesRequest&, const Model::ListFileSharesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListFileSharesResponseReceivedHandler;
@@ -421,17 +431,17 @@ namespace Model
    * securely upload data to the AWS cloud for cost effective backup and rapid
    * disaster recovery.</p> <p>Use the following links to get started using the
    * <i>AWS Storage Gateway Service API Reference</i>:</p> <ul> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
+   * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewayHTTPRequestsHeaders">AWS
    * Storage Gateway Required Request Headers</a>: Describes the required headers
    * that you must send with every POST request to AWS Storage Gateway.</p> </li>
    * <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
+   * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#AWSStorageGatewaySigningRequests">Signing
    * Requests</a>: AWS Storage Gateway requires that you authenticate every request
    * you send; this topic describes how sign such a request.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
+   * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/AWSStorageGatewayAPI.html#APIErrorResponses">Error
    * Responses</a>: Provides reference information about AWS Storage Gateway
    * errors.</p> </li> <li> <p> <a
-   * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
+   * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/API_Operations.html">Operations
    * in AWS Storage Gateway</a>: Contains detailed descriptions of all AWS Storage
    * Gateway operations, their request parameters, response elements, possible
    * errors, and examples of requests and responses.</p> </li> <li> <p> <a
@@ -535,7 +545,7 @@ namespace Model
          * <p>Configures one or more gateway local disks as cache for a gateway. This
          * operation is only supported in the cached volume, tape and file gateway type
          * (see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
          * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
@@ -548,7 +558,7 @@ namespace Model
          * <p>Configures one or more gateway local disks as cache for a gateway. This
          * operation is only supported in the cached volume, tape and file gateway type
          * (see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
          * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
@@ -563,7 +573,7 @@ namespace Model
          * <p>Configures one or more gateway local disks as cache for a gateway. This
          * operation is only supported in the cached volume, tape and file gateway type
          * (see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/StorageGatewayConcepts.html">Storage
          * Gateway Concepts</a>).</p> <p>In the request, you specify the gateway Amazon
          * Resource Name (ARN) to which you want to add cache, and one or more disk IDs
          * that you want to configure as cache.</p><p><h3>See Also:</h3>   <a
@@ -580,10 +590,10 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
-         * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
-         * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
+         * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
+         * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
          * API Reference</a></p>
          */
@@ -595,10 +605,10 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
-         * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
-         * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
+         * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
+         * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -612,10 +622,10 @@ namespace Model
          * can categorize resources by purpose, owner, environment, or team. Each tag
          * consists of a key and a value, which you define. You can add tags to the
          * following AWS Storage Gateway resources:</p> <ul> <li> <p>Storage gateways of
-         * all types</p> </li> </ul> <ul> <li> <p>Storage Volumes</p> </li> </ul> <ul> <li>
-         * <p>Virtual Tapes</p> </li> </ul> <p>You can create a maximum of 10 tags for each
-         * resource. Virtual tapes and storage volumes that are recovered to a new gateway
-         * maintain their tags.</p><p><h3>See Also:</h3>   <a
+         * all types</p> </li> <li> <p>Storage volumes</p> </li> <li> <p>Virtual tapes</p>
+         * </li> <li> <p>NFS and SMB file shares</p> </li> </ul> <p>You can create a
+         * maximum of 10 tags for each resource. Virtual tapes and storage volumes that are
+         * recovered to a new gateway maintain their tags.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AddTagsToResource">AWS
          * API Reference</a></p>
          *
@@ -708,6 +718,43 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AddWorkingStorageAsync(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
+         * specified gateway. Detaching and attaching a volume enables you to recover your
+         * data from one gateway to a different gateway without creating a snapshot. It
+         * also makes it easier to move your volumes from an on-premises gateway to a
+         * gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AttachVolumeOutcome AttachVolume(const Model::AttachVolumeRequest& request) const;
+
+        /**
+         * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
+         * specified gateway. Detaching and attaching a volume enables you to recover your
+         * data from one gateway to a different gateway without creating a snapshot. It
+         * also makes it easier to move your volumes from an on-premises gateway to a
+         * gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AttachVolumeOutcomeCallable AttachVolumeCallable(const Model::AttachVolumeRequest& request) const;
+
+        /**
+         * <p>Connects a volume to an iSCSI connection and then attaches the volume to the
+         * specified gateway. Detaching and attaching a volume enables you to recover your
+         * data from one gateway to a different gateway without creating a snapshot. It
+         * also makes it easier to move your volumes from an on-premises gateway to a
+         * gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/AttachVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AttachVolumeAsync(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Cancels archiving of a virtual tape to the virtual tape shelf (VTS) after the
@@ -902,7 +949,7 @@ namespace Model
          * create a file share. Make sure that AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in this AWS
          * Region, activate it. For information about how to activate AWS STS, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -920,7 +967,7 @@ namespace Model
          * create a file share. Make sure that AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in this AWS
          * Region, activate it. For information about how to activate AWS STS, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -940,7 +987,7 @@ namespace Model
          * create a file share. Make sure that AWS STS is activated in the AWS Region you
          * are creating your file gateway in. If AWS STS is not activated in this AWS
          * Region, activate it. For information about how to activate AWS STS, see <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -958,7 +1005,7 @@ namespace Model
          * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
          * take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API
          * enables you to take ad-hoc snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
@@ -969,11 +1016,11 @@ namespace Model
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
+         * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -987,7 +1034,7 @@ namespace Model
          * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
          * take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API
          * enables you to take ad-hoc snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
@@ -998,11 +1045,11 @@ namespace Model
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
+         * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -1018,7 +1065,7 @@ namespace Model
          * Elastic Block Store (EBS) volume in Amazon Elastic Compute Cloud (EC2). You can
          * take snapshots of your gateway volume on a scheduled or ad-hoc basis. This API
          * enables you to take ad-hoc snapshot. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/managing-volumes.html#SchedulingSnapshot">Editing
          * a Snapshot Schedule</a>.</p> <p>In the CreateSnapshot request you identify the
          * volume by providing its Amazon Resource Name (ARN). You must also provide
          * description for the snapshot. When AWS Storage Gateway takes the snapshot of
@@ -1029,11 +1076,11 @@ namespace Model
          * stored and cached volume gateway type.</p> <note> <p>To list or delete a
          * snapshot, you must use the Amazon EC2 API. For more information, see
          * DescribeSnapshots or DeleteSnapshot in the <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_Operations.html">EC2
          * API reference</a>.</p> </note> <important> <p>Volume and snapshot IDs are
          * changing to a longer length ID format. For more information, see the important
          * note on the <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
+         * href="https://docs.aws.amazon.com/storagegateway/latest/APIReference/Welcome.html">Welcome</a>
          * page.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/CreateSnapshot">AWS
          * API Reference</a></p>
@@ -1402,7 +1449,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
@@ -1417,7 +1464,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
@@ -1434,7 +1481,7 @@ namespace Model
          * <p>Deletes a snapshot of a volume.</p> <p>You can take snapshots of your gateway
          * volumes on a scheduled or ad hoc basis. This API action enables you to delete a
          * snapshot schedule for a volume. For more information, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/WorkingWithSnapshots.html">Working
          * with Snapshots</a>. In the <code>DeleteSnapshotSchedule</code> request, you
          * identify the volume by providing its Amazon Resource Name (ARN). This operation
          * is only supported in stored and cached volume gateway types.</p> <note> <p>To
@@ -1517,7 +1564,7 @@ namespace Model
          * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
          * snapshots on the volume you are deleting and check the snapshot status. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
          * to delete.</p><p><h3>See Also:</h3>   <a
@@ -1537,7 +1584,7 @@ namespace Model
          * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
          * snapshots on the volume you are deleting and check the snapshot status. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
          * to delete.</p><p><h3>See Also:</h3>   <a
@@ -1559,7 +1606,7 @@ namespace Model
          * progress. You can use the Amazon Elastic Compute Cloud (Amazon EC2) API to query
          * snapshots on the volume you are deleting and check the snapshot status. For more
          * information, go to <a
-         * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
+         * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/ApiReference-query-DescribeSnapshots.html">DescribeSnapshots</a>
          * in the <i>Amazon Elastic Compute Cloud API Reference</i>.</p> <p>In the request,
          * you must provide the Amazon Resource Name (ARN) of the storage volume you want
          * to delete.</p><p><h3>See Also:</h3>   <a
@@ -2171,6 +2218,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeWorkingStorageAsync(const Model::DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Disconnects a volume from an iSCSI connection and then detaches the volume
+         * from the specified gateway. Detaching and attaching a volume enables you to
+         * recover your data from one gateway to a different gateway without creating a
+         * snapshot. It also makes it easier to move your volumes from an on-premises
+         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DetachVolumeOutcome DetachVolume(const Model::DetachVolumeRequest& request) const;
+
+        /**
+         * <p>Disconnects a volume from an iSCSI connection and then detaches the volume
+         * from the specified gateway. Detaching and attaching a volume enables you to
+         * recover your data from one gateway to a different gateway without creating a
+         * snapshot. It also makes it easier to move your volumes from an on-premises
+         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DetachVolumeOutcomeCallable DetachVolumeCallable(const Model::DetachVolumeRequest& request) const;
+
+        /**
+         * <p>Disconnects a volume from an iSCSI connection and then detaches the volume
+         * from the specified gateway. Detaching and attaching a volume enables you to
+         * recover your data from one gateway to a different gateway without creating a
+         * snapshot. It also makes it easier to move your volumes from an on-premises
+         * gateway to a gateway hosted on an Amazon EC2 instance.</p><p><h3>See Also:</h3> 
+         * <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/DetachVolume">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DetachVolumeAsync(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Disables a tape gateway when the gateway is no longer functioning. For
@@ -3201,9 +3288,9 @@ namespace Model
          * can minimize the chance of any disruption to your applications by increasing
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
          * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
@@ -3221,9 +3308,9 @@ namespace Model
          * can minimize the chance of any disruption to your applications by increasing
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
          * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
@@ -3243,9 +3330,9 @@ namespace Model
          * can minimize the chance of any disruption to your applications by increasing
          * your iSCSI Initiators' timeouts. For more information about increasing iSCSI
          * Initiator timeouts for Windows and Linux, see <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorWindowsClient.html#CustomizeWindowsiSCSISettings">Customizing
          * Your Windows iSCSI Settings</a> and <a
-         * href="http://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
+         * href="https://docs.aws.amazon.com/storagegateway/latest/userguide/ConfiguringiSCSIClientInitiatorRedHatClient.html#CustomizeLinuxiSCSISettings">Customizing
          * Your Linux iSCSI Settings</a>, respectively.</p> </important><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/storagegateway-2013-06-30/UpdateGatewaySoftwareNow">AWS
@@ -3347,7 +3434,7 @@ namespace Model
          * Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -3365,7 +3452,7 @@ namespace Model
          * Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -3385,7 +3472,7 @@ namespace Model
          * Region you are creating your file gateway in. If AWS STS is not activated in
          * this AWS Region, activate it. For information about how to activate AWS STS, see
          * <a
-         * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
+         * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_credentials_temp_enable-regions.html">Activating
          * and Deactivating AWS STS in an AWS Region</a> in the <i>AWS Identity and Access
          * Management User Guide.</i> </p> <p>File gateways don't support creating hard or
          * symbolic links on a file share.</p> </important><p><h3>See Also:</h3>   <a
@@ -3479,16 +3566,17 @@ namespace Model
          */
         virtual void UpdateVTLDeviceTypeAsync(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void ActivateGatewayAsyncHelper(const Model::ActivateGatewayRequest& request, const ActivateGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddCacheAsyncHelper(const Model::AddCacheRequest& request, const AddCacheResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddUploadBufferAsyncHelper(const Model::AddUploadBufferRequest& request, const AddUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddWorkingStorageAsyncHelper(const Model::AddWorkingStorageRequest& request, const AddWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void AttachVolumeAsyncHelper(const Model::AttachVolumeRequest& request, const AttachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelArchivalAsyncHelper(const Model::CancelArchivalRequest& request, const CancelArchivalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelRetrievalAsyncHelper(const Model::CancelRetrievalRequest& request, const CancelRetrievalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateCachediSCSIVolumeAsyncHelper(const Model::CreateCachediSCSIVolumeRequest& request, const CreateCachediSCSIVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3524,6 +3612,7 @@ namespace Model
         void DescribeUploadBufferAsyncHelper(const Model::DescribeUploadBufferRequest& request, const DescribeUploadBufferResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeVTLDevicesAsyncHelper(const Model::DescribeVTLDevicesRequest& request, const DescribeVTLDevicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeWorkingStorageAsyncHelper(const Model::DescribeWorkingStorageRequest& request, const DescribeWorkingStorageResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DetachVolumeAsyncHelper(const Model::DetachVolumeRequest& request, const DetachVolumeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisableGatewayAsyncHelper(const Model::DisableGatewayRequest& request, const DisableGatewayResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void JoinDomainAsyncHelper(const Model::JoinDomainRequest& request, const JoinDomainResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListFileSharesAsyncHelper(const Model::ListFileSharesRequest& request, const ListFileSharesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -3555,6 +3644,7 @@ namespace Model
         void UpdateVTLDeviceTypeAsyncHelper(const Model::UpdateVTLDeviceTypeRequest& request, const UpdateVTLDeviceTypeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

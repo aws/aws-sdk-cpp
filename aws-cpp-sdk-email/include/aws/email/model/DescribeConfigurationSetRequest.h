@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the configuration set to describe.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set to describe.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>A list of configuration set attributes to return.</p>
      */
     inline const Aws::Vector<ConfigurationSetAttribute>& GetConfigurationSetAttributeNames() const{ return m_configurationSetAttributeNames; }
+
+    /**
+     * <p>A list of configuration set attributes to return.</p>
+     */
+    inline bool ConfigurationSetAttributeNamesHasBeenSet() const { return m_configurationSetAttributeNamesHasBeenSet; }
 
     /**
      * <p>A list of configuration set attributes to return.</p>

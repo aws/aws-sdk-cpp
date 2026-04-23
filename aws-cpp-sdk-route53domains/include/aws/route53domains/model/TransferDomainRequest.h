@@ -65,6 +65,14 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to transfer to Amazon Route 53.</p>
+     * <p>Constraints: The domain name can contain only the letters a through z, the
+     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
+     * supported.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -116,6 +124,11 @@ namespace Model
     /**
      * <p>Reserved for future use.</p>
      */
+    inline bool IdnLangCodeHasBeenSet() const { return m_idnLangCodeHasBeenSet; }
+
+    /**
+     * <p>Reserved for future use.</p>
+     */
     inline void SetIdnLangCode(const Aws::String& value) { m_idnLangCodeHasBeenSet = true; m_idnLangCode = value; }
 
     /**
@@ -156,6 +169,13 @@ namespace Model
      * registered for a minimum of one year. The maximum period depends on the
      * top-level domain.</p> <p>Default: 1</p>
      */
+    inline bool DurationInYearsHasBeenSet() const { return m_durationInYearsHasBeenSet; }
+
+    /**
+     * <p>The number of years that you want to register the domain for. Domains are
+     * registered for a minimum of one year. The maximum period depends on the
+     * top-level domain.</p> <p>Default: 1</p>
+     */
     inline void SetDurationInYears(int value) { m_durationInYearsHasBeenSet = true; m_durationInYears = value; }
 
     /**
@@ -170,6 +190,11 @@ namespace Model
      * <p>Contains details for the host and glue IP addresses.</p>
      */
     inline const Aws::Vector<Nameserver>& GetNameservers() const{ return m_nameservers; }
+
+    /**
+     * <p>Contains details for the host and glue IP addresses.</p>
+     */
+    inline bool NameserversHasBeenSet() const { return m_nameserversHasBeenSet; }
 
     /**
      * <p>Contains details for the host and glue IP addresses.</p>
@@ -207,6 +232,12 @@ namespace Model
      * registrar.</p>
      */
     inline const Aws::String& GetAuthCode() const{ return m_authCode; }
+
+    /**
+     * <p>The authorization code for the domain. You get this value from the current
+     * registrar.</p>
+     */
+    inline bool AuthCodeHasBeenSet() const { return m_authCodeHasBeenSet; }
 
     /**
      * <p>The authorization code for the domain. You get this value from the current
@@ -257,6 +288,13 @@ namespace Model
      * (false). Autorenewal only takes effect after the account is charged.</p>
      * <p>Default: true</p>
      */
+    inline bool AutoRenewHasBeenSet() const { return m_autoRenewHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the domain will be automatically renewed (true) or not
+     * (false). Autorenewal only takes effect after the account is charged.</p>
+     * <p>Default: true</p>
+     */
     inline void SetAutoRenew(bool value) { m_autoRenewHasBeenSet = true; m_autoRenew = value; }
 
     /**
@@ -271,6 +309,11 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetAdminContact() const{ return m_adminContact; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline bool AdminContactHasBeenSet() const { return m_adminContactHasBeenSet; }
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -301,6 +344,11 @@ namespace Model
     /**
      * <p>Provides detailed contact information.</p>
      */
+    inline bool RegistrantContactHasBeenSet() const { return m_registrantContactHasBeenSet; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
     inline void SetRegistrantContact(const ContactDetail& value) { m_registrantContactHasBeenSet = true; m_registrantContact = value; }
 
     /**
@@ -323,6 +371,11 @@ namespace Model
      * <p>Provides detailed contact information.</p>
      */
     inline const ContactDetail& GetTechContact() const{ return m_techContact; }
+
+    /**
+     * <p>Provides detailed contact information.</p>
+     */
+    inline bool TechContactHasBeenSet() const { return m_techContactHasBeenSet; }
 
     /**
      * <p>Provides detailed contact information.</p>
@@ -363,6 +416,16 @@ namespace Model
      * <code>false</code>, WHOIS queries return the information that you entered for
      * the admin contact.</p> <p>Default: <code>true</code> </p>
      */
+    inline bool PrivacyProtectAdminContactHasBeenSet() const { return m_privacyProtectAdminContactHasBeenSet; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the admin contact.</p> <p>Default: <code>true</code> </p>
+     */
     inline void SetPrivacyProtectAdminContact(bool value) { m_privacyProtectAdminContactHasBeenSet = true; m_privacyProtectAdminContact = value; }
 
     /**
@@ -394,6 +457,16 @@ namespace Model
      * <code>false</code>, WHOIS queries return the information that you entered for
      * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
      */
+    inline bool PrivacyProtectRegistrantContactHasBeenSet() const { return m_privacyProtectRegistrantContactHasBeenSet; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the registrant contact (domain owner).</p> <p>Default: <code>true</code> </p>
+     */
     inline void SetPrivacyProtectRegistrantContact(bool value) { m_privacyProtectRegistrantContactHasBeenSet = true; m_privacyProtectRegistrantContact = value; }
 
     /**
@@ -416,6 +489,16 @@ namespace Model
      * the technical contact.</p> <p>Default: <code>true</code> </p>
      */
     inline bool GetPrivacyProtectTechContact() const{ return m_privacyProtectTechContact; }
+
+    /**
+     * <p>Whether you want to conceal contact information from WHOIS queries. If you
+     * specify <code>true</code>, WHOIS ("who is") queries return contact information
+     * either for Amazon Registrar (for .com, .net, and .org domains) or for our
+     * registrar associate, Gandi (for all other TLDs). If you specify
+     * <code>false</code>, WHOIS queries return the information that you entered for
+     * the technical contact.</p> <p>Default: <code>true</code> </p>
+     */
+    inline bool PrivacyProtectTechContactHasBeenSet() const { return m_privacyProtectTechContactHasBeenSet; }
 
     /**
      * <p>Whether you want to conceal contact information from WHOIS queries. If you

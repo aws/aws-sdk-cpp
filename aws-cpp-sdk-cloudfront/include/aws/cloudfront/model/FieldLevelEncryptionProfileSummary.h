@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>The field-level encryption profile summary.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionProfileSummary">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionProfileSummary">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionProfileSummary
@@ -53,6 +53,11 @@ namespace Model
      * <p>ID for the field-level encryption profile summary.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>ID for the field-level encryption profile summary.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>ID for the field-level encryption profile summary.</p>
@@ -95,6 +100,12 @@ namespace Model
      * <p>The time when the the field-level encryption profile summary was last
      * updated.</p>
      */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the the field-level encryption profile summary was last
+     * updated.</p>
+     */
     inline void SetLastModifiedTime(const Aws::Utils::DateTime& value) { m_lastModifiedTimeHasBeenSet = true; m_lastModifiedTime = value; }
 
     /**
@@ -120,6 +131,11 @@ namespace Model
      * <p>Name for the field-level encryption profile summary.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Name for the field-level encryption profile summary.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Name for the field-level encryption profile summary.</p>
@@ -164,6 +180,13 @@ namespace Model
      * profile that include the public key ID, provider, and field patterns for
      * specifying which fields to encrypt with this key.</p>
      */
+    inline bool EncryptionEntitiesHasBeenSet() const { return m_encryptionEntitiesHasBeenSet; }
+
+    /**
+     * <p>A complex data type of encryption entities for the field-level encryption
+     * profile that include the public key ID, provider, and field patterns for
+     * specifying which fields to encrypt with this key.</p>
+     */
     inline void SetEncryptionEntities(const EncryptionEntities& value) { m_encryptionEntitiesHasBeenSet = true; m_encryptionEntities = value; }
 
     /**
@@ -192,6 +215,11 @@ namespace Model
      * <p>An optional comment for the field-level encryption profile summary.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>An optional comment for the field-level encryption profile summary.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>An optional comment for the field-level encryption profile summary.</p>

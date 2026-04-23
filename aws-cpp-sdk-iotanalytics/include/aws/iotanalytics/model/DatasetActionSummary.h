@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the action which automatically creates the data set's
      * contents.</p>
      */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the action which automatically creates the data set's
+     * contents.</p>
+     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * created.</p>
      */
     inline const DatasetActionType& GetActionType() const{ return m_actionType; }
+
+    /**
+     * <p>The type of action by which the data set's contents are automatically
+     * created.</p>
+     */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
 
     /**
      * <p>The type of action by which the data set's contents are automatically

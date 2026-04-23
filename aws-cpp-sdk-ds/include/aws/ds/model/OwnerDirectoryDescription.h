@@ -62,6 +62,12 @@ namespace Model
      * <p>Identifier of the AWS Managed Microsoft AD directory in the directory owner
      * account.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the AWS Managed Microsoft AD directory in the directory owner
+     * account.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>Identifier of the directory owner account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the directory owner account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>IP address of the directory’s domain controllers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetDnsIpAddrs() const{ return m_dnsIpAddrs; }
+
+    /**
+     * <p>IP address of the directory’s domain controllers.</p>
+     */
+    inline bool DnsIpAddrsHasBeenSet() const { return m_dnsIpAddrsHasBeenSet; }
 
     /**
      * <p>IP address of the directory’s domain controllers.</p>
@@ -180,6 +196,11 @@ namespace Model
     /**
      * <p>Information about the VPC settings for the directory.</p>
      */
+    inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
+
+    /**
+     * <p>Information about the VPC settings for the directory.</p>
+     */
     inline void SetVpcSettings(const DirectoryVpcSettingsDescription& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
 
     /**
@@ -203,6 +224,12 @@ namespace Model
      * server.</p>
      */
     inline const RadiusSettings& GetRadiusSettings() const{ return m_radiusSettings; }
+
+    /**
+     * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+     * server.</p>
+     */
+    inline bool RadiusSettingsHasBeenSet() const { return m_radiusSettingsHasBeenSet; }
 
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
@@ -233,6 +260,11 @@ namespace Model
      * <p>Information about the status of the RADIUS server.</p>
      */
     inline const RadiusStatus& GetRadiusStatus() const{ return m_radiusStatus; }
+
+    /**
+     * <p>Information about the status of the RADIUS server.</p>
+     */
+    inline bool RadiusStatusHasBeenSet() const { return m_radiusStatusHasBeenSet; }
 
     /**
      * <p>Information about the status of the RADIUS server.</p>

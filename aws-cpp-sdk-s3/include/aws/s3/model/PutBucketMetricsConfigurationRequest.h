@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the bucket for which the metrics configuration is set.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the bucket for which the metrics configuration is set.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID used to identify the metrics configuration.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID used to identify the metrics configuration.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID used to identify the metrics configuration.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Specifies the metrics configuration.</p>
      */
+    inline bool MetricsConfigurationHasBeenSet() const { return m_metricsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies the metrics configuration.</p>
+     */
     inline void SetMetricsConfiguration(const MetricsConfiguration& value) { m_metricsConfigurationHasBeenSet = true; m_metricsConfiguration = value; }
 
     /**
@@ -150,6 +165,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

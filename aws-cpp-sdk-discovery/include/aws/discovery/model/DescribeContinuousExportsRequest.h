@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The unique IDs assigned to the exports.</p>
      */
+    inline bool ExportIdsHasBeenSet() const { return m_exportIdsHasBeenSet; }
+
+    /**
+     * <p>The unique IDs assigned to the exports.</p>
+     */
     inline void SetExportIds(const Aws::Vector<Aws::String>& value) { m_exportIdsHasBeenSet = true; m_exportIds = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>A number between 1 and 100 specifying the maximum number of continuous export
      * descriptions returned.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>A number between 1 and 100 specifying the maximum number of continuous export
+     * descriptions returned.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -109,6 +120,11 @@ namespace Model
      * <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token from the previous call to <code>DescribeExportTasks</code>.</p>

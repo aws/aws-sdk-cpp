@@ -51,6 +51,11 @@ namespace Model
     /**
      * The unique ID of your Amazon Pinpoint application.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * The unique ID of the endpoint.
      */
+    inline bool EndpointIdHasBeenSet() const { return m_endpointIdHasBeenSet; }
+
+    /**
+     * The unique ID of the endpoint.
+     */
     inline void SetEndpointId(const Aws::String& value) { m_endpointIdHasBeenSet = true; m_endpointId = value; }
 
     /**
@@ -117,6 +127,9 @@ namespace Model
 
     
     inline const EndpointRequest& GetEndpointRequest() const{ return m_endpointRequest; }
+
+    
+    inline bool EndpointRequestHasBeenSet() const { return m_endpointRequestHasBeenSet; }
 
     
     inline void SetEndpointRequest(const EndpointRequest& value) { m_endpointRequestHasBeenSet = true; m_endpointRequest = value; }

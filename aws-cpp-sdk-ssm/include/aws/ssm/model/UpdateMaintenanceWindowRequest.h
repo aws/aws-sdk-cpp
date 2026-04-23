@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window to update.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window to update.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the Maintenance Window.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Maintenance Window.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Maintenance Window.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>An optional description for the update request.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>An optional description for the update request.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -160,6 +175,15 @@ namespace Model
      * website.</p>
      */
     inline const Aws::String& GetStartDate() const{ return m_startDate; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
 
     /**
      * <p>The time zone that the scheduled Maintenance Window executions are based on,
@@ -228,6 +252,13 @@ namespace Model
      * Maintenance Window to become inactive. EndDate allows you to set a date and time
      * in the future when the Maintenance Window will no longer run.</p>
      */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
+
+    /**
+     * <p>The date and time, in ISO-8601 Extended format, for when you want the
+     * Maintenance Window to become inactive. EndDate allows you to set a date and time
+     * in the future when the Maintenance Window will no longer run.</p>
+     */
     inline void SetEndDate(const Aws::String& value) { m_endDateHasBeenSet = true; m_endDate = value; }
 
     /**
@@ -276,6 +307,12 @@ namespace Model
      * <p>The schedule of the Maintenance Window in the form of a cron or rate
      * expression.</p>
      */
+    inline bool ScheduleHasBeenSet() const { return m_scheduleHasBeenSet; }
+
+    /**
+     * <p>The schedule of the Maintenance Window in the form of a cron or rate
+     * expression.</p>
+     */
     inline void SetSchedule(const Aws::String& value) { m_scheduleHasBeenSet = true; m_schedule = value; }
 
     /**
@@ -317,6 +354,15 @@ namespace Model
      * website.</p>
      */
     inline const Aws::String& GetScheduleTimezone() const{ return m_scheduleTimezone; }
+
+    /**
+     * <p>The time zone that the scheduled Maintenance Window executions are based on,
+     * in Internet Assigned Numbers Authority (IANA) format. For example:
+     * "America/Los_Angeles", "etc/UTC", or "Asia/Seoul". For more information, see the
+     * <a href="https://www.iana.org/time-zones">Time Zone Database</a> on the IANA
+     * website.</p>
+     */
+    inline bool ScheduleTimezoneHasBeenSet() const { return m_scheduleTimezoneHasBeenSet; }
 
     /**
      * <p>The time zone that the scheduled Maintenance Window executions are based on,
@@ -381,6 +427,11 @@ namespace Model
     /**
      * <p>The duration of the Maintenance Window in hours.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The duration of the Maintenance Window in hours.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -394,6 +445,12 @@ namespace Model
      * Manager stops scheduling new tasks for execution.</p>
      */
     inline int GetCutoff() const{ return m_cutoff; }
+
+    /**
+     * <p>The number of hours before the end of the Maintenance Window that Systems
+     * Manager stops scheduling new tasks for execution.</p>
+     */
+    inline bool CutoffHasBeenSet() const { return m_cutoffHasBeenSet; }
 
     /**
      * <p>The number of hours before the end of the Maintenance Window that Systems
@@ -418,6 +475,12 @@ namespace Model
      * <p>Whether targets must be registered with the Maintenance Window before tasks
      * can be defined for those targets.</p>
      */
+    inline bool AllowUnassociatedTargetsHasBeenSet() const { return m_allowUnassociatedTargetsHasBeenSet; }
+
+    /**
+     * <p>Whether targets must be registered with the Maintenance Window before tasks
+     * can be defined for those targets.</p>
+     */
     inline void SetAllowUnassociatedTargets(bool value) { m_allowUnassociatedTargetsHasBeenSet = true; m_allowUnassociatedTargets = value; }
 
     /**
@@ -431,6 +494,11 @@ namespace Model
      * <p>Whether the Maintenance Window is enabled.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Whether the Maintenance Window is enabled.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Whether the Maintenance Window is enabled.</p>
@@ -449,6 +517,13 @@ namespace Model
      * specified are set to null. </p>
      */
     inline bool GetReplace() const{ return m_replace; }
+
+    /**
+     * <p>If True, then all fields that are required by the CreateMaintenanceWindow
+     * action are also required for this API request. Optional fields that are not
+     * specified are set to null. </p>
+     */
+    inline bool ReplaceHasBeenSet() const { return m_replaceHasBeenSet; }
 
     /**
      * <p>If True, then all fields that are required by the CreateMaintenanceWindow

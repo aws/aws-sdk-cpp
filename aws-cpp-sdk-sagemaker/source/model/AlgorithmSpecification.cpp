@@ -30,6 +30,7 @@ namespace Model
 
 AlgorithmSpecification::AlgorithmSpecification() : 
     m_trainingImageHasBeenSet(false),
+    m_algorithmNameHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false)
@@ -38,6 +39,7 @@ AlgorithmSpecification::AlgorithmSpecification() :
 
 AlgorithmSpecification::AlgorithmSpecification(JsonView jsonValue) : 
     m_trainingImageHasBeenSet(false),
+    m_algorithmNameHasBeenSet(false),
     m_trainingInputMode(TrainingInputMode::NOT_SET),
     m_trainingInputModeHasBeenSet(false),
     m_metricDefinitionsHasBeenSet(false)
@@ -52,6 +54,13 @@ AlgorithmSpecification& AlgorithmSpecification::operator =(JsonView jsonValue)
     m_trainingImage = jsonValue.GetString("TrainingImage");
 
     m_trainingImageHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AlgorithmName"))
+  {
+    m_algorithmName = jsonValue.GetString("AlgorithmName");
+
+    m_algorithmNameHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("TrainingInputMode"))
@@ -81,6 +90,12 @@ JsonValue AlgorithmSpecification::Jsonize() const
   if(m_trainingImageHasBeenSet)
   {
    payload.WithString("TrainingImage", m_trainingImage);
+
+  }
+
+  if(m_algorithmNameHasBeenSet)
+  {
+   payload.WithString("AlgorithmName", m_algorithmName);
 
   }
 

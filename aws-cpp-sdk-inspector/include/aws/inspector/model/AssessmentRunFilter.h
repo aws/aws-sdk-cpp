@@ -64,6 +64,13 @@ namespace Model
      * wildcard that is specified for this data type property must match the value of
      * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data type.</p>
      */
+    inline bool NamePatternHasBeenSet() const { return m_namePatternHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, an explicit value or a string containing a
+     * wildcard that is specified for this data type property must match the value of
+     * the <b>assessmentRunName</b> property of the <a>AssessmentRun</a> data type.</p>
+     */
     inline void SetNamePattern(const Aws::String& value) { m_namePatternHasBeenSet = true; m_namePattern = value; }
 
     /**
@@ -108,6 +115,13 @@ namespace Model
      * <b>assessmentRunState</b> property of the <a>AssessmentRun</a> data type.</p>
      */
     inline const Aws::Vector<AssessmentRunState>& GetStates() const{ return m_states; }
+
+    /**
+     * <p>For a record to match a filter, one of the values specified for this data
+     * type property must be the exact match of the value of the
+     * <b>assessmentRunState</b> property of the <a>AssessmentRun</a> data type.</p>
+     */
+    inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, one of the values specified for this data
@@ -166,6 +180,14 @@ namespace Model
      * maximum values of the <b>durationInSeconds</b> property of the
      * <a>AssessmentRun</a> data type.</p>
      */
+    inline bool DurationRangeHasBeenSet() const { return m_durationRangeHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified minimum and
+     * maximum values of the <b>durationInSeconds</b> property of the
+     * <a>AssessmentRun</a> data type.</p>
+     */
     inline void SetDurationRange(const DurationRange& value) { m_durationRangeHasBeenSet = true; m_durationRange = value; }
 
     /**
@@ -199,6 +221,13 @@ namespace Model
      * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
+     * <b>rulesPackages</b> property of the <a>AssessmentRun</a> data type.</p>
+     */
+    inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, the value that is specified for this data
@@ -264,6 +293,14 @@ namespace Model
      * maximum values of the <b>startTime</b> property of the <a>AssessmentRun</a> data
      * type.</p>
      */
+    inline bool StartTimeRangeHasBeenSet() const { return m_startTimeRangeHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified minimum and
+     * maximum values of the <b>startTime</b> property of the <a>AssessmentRun</a> data
+     * type.</p>
+     */
     inline void SetStartTimeRange(const TimestampRange& value) { m_startTimeRangeHasBeenSet = true; m_startTimeRange = value; }
 
     /**
@@ -305,6 +342,14 @@ namespace Model
      * maximum values of the <b>completedAt</b> property of the <a>AssessmentRun</a>
      * data type.</p>
      */
+    inline bool CompletionTimeRangeHasBeenSet() const { return m_completionTimeRangeHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must inclusively match any value between the specified minimum and
+     * maximum values of the <b>completedAt</b> property of the <a>AssessmentRun</a>
+     * data type.</p>
+     */
     inline void SetCompletionTimeRange(const TimestampRange& value) { m_completionTimeRangeHasBeenSet = true; m_completionTimeRange = value; }
 
     /**
@@ -338,6 +383,13 @@ namespace Model
      * <a>AssessmentRun</a> data type.</p>
      */
     inline const TimestampRange& GetStateChangeTimeRange() const{ return m_stateChangeTimeRange; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must match the <b>stateChangedAt</b> property of the
+     * <a>AssessmentRun</a> data type.</p>
+     */
+    inline bool StateChangeTimeRangeHasBeenSet() const { return m_stateChangeTimeRangeHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, the value that is specified for this data

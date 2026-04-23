@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the AWS Firewall Manager policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Firewall Manager policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The friendly name of the AWS Firewall Manager policy.</p>
      */
     inline const Aws::String& GetPolicyName() const{ return m_policyName; }
+
+    /**
+     * <p>The friendly name of the AWS Firewall Manager policy.</p>
+     */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
 
     /**
      * <p>The friendly name of the AWS Firewall Manager policy.</p>
@@ -132,6 +142,15 @@ namespace Model
      * version, use a <code>GetPolicy</code> request.</p>
      */
     inline const Aws::String& GetPolicyUpdateToken() const{ return m_policyUpdateToken; }
+
+    /**
+     * <p>A unique identifier for each update to the policy. When issuing a
+     * <code>PutPolicy</code> request, the <code>PolicyUpdateToken</code> in the
+     * request must match the <code>PolicyUpdateToken</code> of the current policy
+     * version. To get the <code>PolicyUpdateToken</code> of the current policy
+     * version, use a <code>GetPolicy</code> request.</p>
+     */
+    inline bool PolicyUpdateTokenHasBeenSet() const { return m_policyUpdateTokenHasBeenSet; }
 
     /**
      * <p>A unique identifier for each update to the policy. When issuing a
@@ -198,6 +217,12 @@ namespace Model
      * <p>Details about the security service that is being used to protect the
      * resources.</p>
      */
+    inline bool SecurityServicePolicyDataHasBeenSet() const { return m_securityServicePolicyDataHasBeenSet; }
+
+    /**
+     * <p>Details about the security service that is being used to protect the
+     * resources.</p>
+     */
     inline void SetSecurityServicePolicyData(const SecurityServicePolicyData& value) { m_securityServicePolicyDataHasBeenSet = true; m_securityServicePolicyData = value; }
 
     /**
@@ -220,70 +245,80 @@ namespace Model
 
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline const Aws::String& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
+     * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
+     * <code>AWS::CloudFront::Distribution</code>.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
+     * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(Aws::String&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline void SetResourceType(const char* value) { m_resourceTypeHasBeenSet = true; m_resourceType.assign(value); }
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline Policy& WithResourceType(const Aws::String& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
     inline Policy& WithResourceType(Aws::String&& value) { SetResourceType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of resource to protect with the policy, either an Application Load
-     * Balancer or a CloudFront distribution. This is in the format shown in <a
+     * <p>The type of resource to protect with the policy. This is in the format shown
+     * in <a
      * href="https://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/aws-template-resource-type-ref.html">AWS
-     * Resource Types Reference</a>. Valid values are
+     * Resource Types Reference</a>. For example:
      * <code>AWS::ElasticLoadBalancingV2::LoadBalancer</code> or
      * <code>AWS::CloudFront::Distribution</code>.</p>
      */
@@ -291,9 +326,60 @@ namespace Model
 
 
     /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetResourceTypeList() const{ return m_resourceTypeList; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline bool ResourceTypeListHasBeenSet() const { return m_resourceTypeListHasBeenSet; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline void SetResourceTypeList(const Aws::Vector<Aws::String>& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = value; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline void SetResourceTypeList(Aws::Vector<Aws::String>&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList = std::move(value); }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& WithResourceTypeList(const Aws::Vector<Aws::String>& value) { SetResourceTypeList(value); return *this;}
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& WithResourceTypeList(Aws::Vector<Aws::String>&& value) { SetResourceTypeList(std::move(value)); return *this;}
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(const Aws::String& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(Aws::String&& value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>An array of <code>ResourceType</code>.</p>
+     */
+    inline Policy& AddResourceTypeList(const char* value) { m_resourceTypeListHasBeenSet = true; m_resourceTypeList.push_back(value); return *this; }
+
+
+    /**
      * <p>An array of <code>ResourceTag</code> objects.</p>
      */
     inline const Aws::Vector<ResourceTag>& GetResourceTags() const{ return m_resourceTags; }
+
+    /**
+     * <p>An array of <code>ResourceTag</code> objects.</p>
+     */
+    inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
 
     /**
      * <p>An array of <code>ResourceTag</code> objects.</p>
@@ -340,6 +426,14 @@ namespace Model
      * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
      * resources with the specified tags are associated with the policy.</p>
      */
+    inline bool ExcludeResourceTagsHasBeenSet() const { return m_excludeResourceTagsHasBeenSet; }
+
+    /**
+     * <p>If set to <code>True</code>, resources with the tags that are specified in
+     * the <code>ResourceTag</code> array are not protected by the policy. If set to
+     * <code>False</code>, and the <code>ResourceTag</code> array is not null, only
+     * resources with the specified tags are associated with the policy.</p>
+     */
     inline void SetExcludeResourceTags(bool value) { m_excludeResourceTagsHasBeenSet = true; m_excludeResourceTags = value; }
 
     /**
@@ -359,6 +453,11 @@ namespace Model
     /**
      * <p>Indicates if the policy should be automatically applied to new resources.</p>
      */
+    inline bool RemediationEnabledHasBeenSet() const { return m_remediationEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates if the policy should be automatically applied to new resources.</p>
+     */
     inline void SetRemediationEnabled(bool value) { m_remediationEnabledHasBeenSet = true; m_remediationEnabled = value; }
 
     /**
@@ -369,98 +468,118 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& GetIncludeMap() const{ return m_includeMap; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
+     */
+    inline bool IncludeMapHasBeenSet() const { return m_includeMapHasBeenSet; }
+
+    /**
+     * <p>Specifies the AWS account IDs to include in the policy. If
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline void SetIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { m_includeMapHasBeenSet = true; m_includeMap = value; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline void SetIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { m_includeMapHasBeenSet = true; m_includeMap = std::move(value); }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& WithIncludeMap(const Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>& value) { SetIncludeMap(value); return *this;}
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& WithIncludeMap(Aws::Map<CustomerPolicyScopeIdType, Aws::Vector<Aws::String>>&& value) { SetIncludeMap(std::move(value)); return *this;}
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, value); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, const Aws::Vector<Aws::String>& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), value); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(const CustomerPolicyScopeIdType& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(key, std::move(value)); return *this; }
 
     /**
      * <p>Specifies the AWS account IDs to include in the policy. If
-     * <code>IncludeMap</code> is null, all accounts in the AWS Organization are
-     * included in the policy. If <code>IncludeMap</code> is not null, only values
-     * listed in <code>IncludeMap</code> will be included in the policy.</p> <p>The key
-     * to the map is <code>ACCOUNT</code>. For example, a valid <code>IncludeMap</code>
-     * would be <code>{“ACCOUNT” : [“accountID1”, “accountID2”]}</code>.</p>
+     * <code>IncludeMap</code> is null, all accounts in the organization in AWS
+     * Organizations are included in the policy. If <code>IncludeMap</code> is not
+     * null, only values listed in <code>IncludeMap</code> are included in the
+     * policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For example, a valid
+     * <code>IncludeMap</code> would be <code>{“ACCOUNT” : [“accountID1”,
+     * “accountID2”]}</code>.</p>
      */
     inline Policy& AddIncludeMap(CustomerPolicyScopeIdType&& key, Aws::Vector<Aws::String>&& value) { m_includeMapHasBeenSet = true; m_includeMap.emplace(std::move(key), std::move(value)); return *this; }
 
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -471,7 +590,18 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
+     * account IDs added to the policy. Then the accounts listed in
+     * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
+     * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
+     * example, a valid <code>ExcludeMap</code> would be <code>{“ACCOUNT” :
+     * [“accountID1”, “accountID2”]}</code>.</p>
+     */
+    inline bool ExcludeMapHasBeenSet() const { return m_excludeMapHasBeenSet; }
+
+    /**
+     * <p>Specifies the AWS account IDs to exclude from the policy. The
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -482,7 +612,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -493,7 +623,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -504,7 +634,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -515,7 +645,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -526,7 +656,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -537,7 +667,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -548,7 +678,7 @@ namespace Model
 
     /**
      * <p>Specifies the AWS account IDs to exclude from the policy. The
-     * <code>IncludeMap</code> values are evaluated first, with all of the appropriate
+     * <code>IncludeMap</code> values are evaluated first, with all the appropriate
      * account IDs added to the policy. Then the accounts listed in
      * <code>ExcludeMap</code> are removed, resulting in the final list of accounts to
      * add to the policy.</p> <p>The key to the map is <code>ACCOUNT</code>. For
@@ -573,6 +703,9 @@ namespace Model
 
     Aws::String m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<Aws::String> m_resourceTypeList;
+    bool m_resourceTypeListHasBeenSet;
 
     Aws::Vector<ResourceTag> m_resourceTags;
     bool m_resourceTagsHasBeenSet;

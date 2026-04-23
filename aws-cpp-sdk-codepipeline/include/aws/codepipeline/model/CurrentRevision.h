@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The revision ID of the current version of an artifact.</p>
      */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
+
+    /**
+     * <p>The revision ID of the current version of an artifact.</p>
+     */
     inline void SetRevision(const Aws::String& value) { m_revisionHasBeenSet = true; m_revision = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The change identifier for the current revision.</p>
      */
     inline const Aws::String& GetChangeIdentifier() const{ return m_changeIdentifier; }
+
+    /**
+     * <p>The change identifier for the current revision.</p>
+     */
+    inline bool ChangeIdentifierHasBeenSet() const { return m_changeIdentifierHasBeenSet; }
 
     /**
      * <p>The change identifier for the current revision.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>The date and time when the most recent revision of the artifact was created,
      * in timestamp format.</p>
      */
+    inline bool CreatedHasBeenSet() const { return m_createdHasBeenSet; }
+
+    /**
+     * <p>The date and time when the most recent revision of the artifact was created,
+     * in timestamp format.</p>
+     */
     inline void SetCreated(const Aws::Utils::DateTime& value) { m_createdHasBeenSet = true; m_created = value; }
 
     /**
@@ -156,6 +172,11 @@ namespace Model
      * <p>The summary of the most recent revision of the artifact.</p>
      */
     inline const Aws::String& GetRevisionSummary() const{ return m_revisionSummary; }
+
+    /**
+     * <p>The summary of the most recent revision of the artifact.</p>
+     */
+    inline bool RevisionSummaryHasBeenSet() const { return m_revisionSummaryHasBeenSet; }
 
     /**
      * <p>The summary of the most recent revision of the artifact.</p>

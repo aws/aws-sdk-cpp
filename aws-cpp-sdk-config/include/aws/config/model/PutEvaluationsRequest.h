@@ -61,6 +61,13 @@ namespace Model
      * identifies an AWS resource and indicates whether it complies with the AWS Config
      * rule that invokes the AWS Lambda function.</p>
      */
+    inline bool EvaluationsHasBeenSet() const { return m_evaluationsHasBeenSet; }
+
+    /**
+     * <p>The assessments that the AWS Lambda function performs. Each evaluation
+     * identifies an AWS resource and indicates whether it complies with the AWS Config
+     * rule that invokes the AWS Lambda function.</p>
+     */
     inline void SetEvaluations(const Aws::Vector<Evaluation>& value) { m_evaluationsHasBeenSet = true; m_evaluations = value; }
 
     /**
@@ -109,6 +116,12 @@ namespace Model
      * <p>An encrypted token that associates an evaluation with an AWS Config rule.
      * Identifies the rule and the event that triggered the evaluation.</p>
      */
+    inline bool ResultTokenHasBeenSet() const { return m_resultTokenHasBeenSet; }
+
+    /**
+     * <p>An encrypted token that associates an evaluation with an AWS Config rule.
+     * Identifies the rule and the event that triggered the evaluation.</p>
+     */
     inline void SetResultToken(const Aws::String& value) { m_resultTokenHasBeenSet = true; m_resultToken = value; }
 
     /**
@@ -152,6 +165,17 @@ namespace Model
      * </note>
      */
     inline bool GetTestMode() const{ return m_testMode; }
+
+    /**
+     * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You
+     * can verify whether your AWS Lambda function will deliver evaluation results to
+     * AWS Config. No updates occur to your existing evaluations, and evaluation
+     * results are not sent to AWS Config.</p> <note> <p>When <code>TestMode</code> is
+     * <code>true</code>, <code>PutEvaluations</code> doesn't require a valid value for
+     * the <code>ResultToken</code> parameter, but the value cannot be null.</p>
+     * </note>
+     */
+    inline bool TestModeHasBeenSet() const { return m_testModeHasBeenSet; }
 
     /**
      * <p>Use this parameter to specify a test run for <code>PutEvaluations</code>. You

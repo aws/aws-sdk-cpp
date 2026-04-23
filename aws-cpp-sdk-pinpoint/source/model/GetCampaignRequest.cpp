@@ -30,7 +30,7 @@ GetCampaignRequest::GetCampaignRequest() :
 
 Aws::String GetCampaignRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

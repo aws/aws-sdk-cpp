@@ -160,6 +160,15 @@ UpdateFunctionConfigurationResult& UpdateFunctionConfigurationResult::operator =
 
   }
 
+  if(jsonValue.ValueExists("Layers"))
+  {
+    Array<JsonView> layersJsonList = jsonValue.GetArray("Layers");
+    for(unsigned layersIndex = 0; layersIndex < layersJsonList.GetLength(); ++layersIndex)
+    {
+      m_layers.push_back(layersJsonList[layersIndex].AsObject());
+    }
+  }
+
 
 
   return *this;

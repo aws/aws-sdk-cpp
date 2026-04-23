@@ -50,6 +50,11 @@ namespace Model
     /**
      * The unique ID of the detector of the GuardDuty member account.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The unique ID of the detector of the GuardDuty member account.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**

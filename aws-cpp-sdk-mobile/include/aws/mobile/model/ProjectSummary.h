@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p> Name of the project. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p> Name of the project. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p> Unique project identifier. </p>
      */
     inline const Aws::String& GetProjectId() const{ return m_projectId; }
+
+    /**
+     * <p> Unique project identifier. </p>
+     */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
 
     /**
      * <p> Unique project identifier. </p>

@@ -66,6 +66,11 @@ namespace Model
     /**
      * <p>The Base64-encoded user data for the instance.</p>
      */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
+
+    /**
+     * <p>The Base64-encoded user data for the instance.</p>
+     */
     inline void SetUserData(const Aws::String& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
@@ -100,6 +105,13 @@ namespace Model
      * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
     inline const Aws::Vector<GroupIdentifier>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>One or more security groups. When requesting instances in a VPC, you must
@@ -152,6 +164,11 @@ namespace Model
     /**
      * <p>Deprecated.</p>
      */
+    inline bool AddressingTypeHasBeenSet() const { return m_addressingTypeHasBeenSet; }
+
+    /**
+     * <p>Deprecated.</p>
+     */
     inline void SetAddressingType(const Aws::String& value) { m_addressingTypeHasBeenSet = true; m_addressingType = value; }
 
     /**
@@ -184,6 +201,11 @@ namespace Model
      * <p>One or more block device mapping entries.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>One or more block device mapping entries.</p>
+     */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
      * <p>One or more block device mapping entries.</p>
@@ -232,6 +254,15 @@ namespace Model
      * all instance types. Additional usage charges apply when using an EBS Optimized
      * instance.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instance is optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal EBS I/O performance. This optimization isn't available with
+     * all instance types. Additional usage charges apply when using an EBS Optimized
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -248,6 +279,11 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -274,6 +310,11 @@ namespace Model
      * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -314,6 +355,11 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -336,6 +382,11 @@ namespace Model
      * <p>The ID of the kernel.</p>
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+
+    /**
+     * <p>The ID of the kernel.</p>
+     */
+    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
     /**
      * <p>The ID of the kernel.</p>
@@ -376,6 +427,11 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
@@ -409,6 +465,12 @@ namespace Model
      * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -455,6 +517,11 @@ namespace Model
     /**
      * <p>The placement information for the instance.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The placement information for the instance.</p>
+     */
     inline void SetPlacement(const SpotPlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -477,6 +544,11 @@ namespace Model
      * <p>The ID of the RAM disk.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The ID of the RAM disk.</p>
+     */
+    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -517,6 +589,11 @@ namespace Model
     /**
      * <p>The ID of the subnet in which to launch the instance.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet in which to launch the instance.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -547,6 +624,9 @@ namespace Model
 
     
     inline const RunInstancesMonitoringEnabled& GetMonitoring() const{ return m_monitoring; }
+
+    
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
 
     
     inline void SetMonitoring(const RunInstancesMonitoringEnabled& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }

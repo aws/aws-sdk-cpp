@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * An object that contains information about a event destination that sends data to
-   * Amazon Kinesis Data Firehose.<p><h3>See Also:</h3>   <a
+   * An object that contains information about an event destination that sends data
+   * to Amazon Kinesis Data Firehose.<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/pinpoint-sms-voice-2018-09-05/KinesisFirehoseDestination">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,12 @@ namespace Model
      * Kinesis Data Firehose stream.
      */
     inline const Aws::String& GetDeliveryStreamArn() const{ return m_deliveryStreamArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon
+     * Kinesis Data Firehose stream.
+     */
+    inline bool DeliveryStreamArnHasBeenSet() const { return m_deliveryStreamArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that can write data to an Amazon
@@ -96,6 +102,12 @@ namespace Model
      * that you want to use in the event destination.
      */
     inline const Aws::String& GetIamRoleArn() const{ return m_iamRoleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination
+     * that you want to use in the event destination.
+     */
+    inline bool IamRoleArnHasBeenSet() const { return m_iamRoleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis Data Firehose destination

@@ -55,6 +55,12 @@ namespace Model
      * Specifies the 608 channel number in the ancillary data track from which to
      * extract captions. Unused for passthrough.
      */
+    inline bool SourceAncillaryChannelNumberHasBeenSet() const { return m_sourceAncillaryChannelNumberHasBeenSet; }
+
+    /**
+     * Specifies the 608 channel number in the ancillary data track from which to
+     * extract captions. Unused for passthrough.
+     */
     inline void SetSourceAncillaryChannelNumber(int value) { m_sourceAncillaryChannelNumberHasBeenSet = true; m_sourceAncillaryChannelNumber = value; }
 
     /**

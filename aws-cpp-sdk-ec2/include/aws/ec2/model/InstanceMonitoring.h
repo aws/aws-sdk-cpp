@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The monitoring for the instance.</p>
      */
     inline const Monitoring& GetMonitoring() const{ return m_monitoring; }
+
+    /**
+     * <p>The monitoring for the instance.</p>
+     */
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
 
     /**
      * <p>The monitoring for the instance.</p>

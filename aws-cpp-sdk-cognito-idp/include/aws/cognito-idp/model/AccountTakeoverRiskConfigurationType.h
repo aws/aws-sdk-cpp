@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The notify configuration used to construct email notifications.</p>
      */
+    inline bool NotifyConfigurationHasBeenSet() const { return m_notifyConfigurationHasBeenSet; }
+
+    /**
+     * <p>The notify configuration used to construct email notifications.</p>
+     */
     inline void SetNotifyConfiguration(const NotifyConfigurationType& value) { m_notifyConfigurationHasBeenSet = true; m_notifyConfiguration = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>Account takeover risk configuration actions</p>
      */
     inline const AccountTakeoverActionsType& GetActions() const{ return m_actions; }
+
+    /**
+     * <p>Account takeover risk configuration actions</p>
+     */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
 
     /**
      * <p>Account takeover risk configuration actions</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Identifier (ID) for the directory to which to add the tag.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) for the directory to which to add the tag.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The tags to be assigned to the directory.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the directory.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The tags to be assigned to the directory.</p>

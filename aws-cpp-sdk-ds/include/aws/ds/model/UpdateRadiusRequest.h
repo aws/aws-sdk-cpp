@@ -59,6 +59,12 @@ namespace Model
      * <p>The identifier of the directory for which to update the RADIUS server
      * information.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory for which to update the RADIUS server
+     * information.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * server.</p>
      */
     inline const RadiusSettings& GetRadiusSettings() const{ return m_radiusSettings; }
+
+    /**
+     * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS
+     * server.</p>
+     */
+    inline bool RadiusSettingsHasBeenSet() const { return m_radiusSettingsHasBeenSet; }
 
     /**
      * <p>A <a>RadiusSettings</a> object that contains information about the RADIUS

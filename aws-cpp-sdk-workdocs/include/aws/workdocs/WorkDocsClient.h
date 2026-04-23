@@ -46,6 +46,7 @@
 #include <aws/workdocs/model/GetDocumentVersionResult.h>
 #include <aws/workdocs/model/GetFolderResult.h>
 #include <aws/workdocs/model/GetFolderPathResult.h>
+#include <aws/workdocs/model/GetResourcesResult.h>
 #include <aws/workdocs/model/InitiateDocumentVersionUploadResult.h>
 #include <aws/workdocs/model/UpdateUserResult.h>
 #include <aws/core/NoResult.h>
@@ -122,6 +123,7 @@ namespace Model
         class GetDocumentVersionRequest;
         class GetFolderRequest;
         class GetFolderPathRequest;
+        class GetResourcesRequest;
         class InitiateDocumentVersionUploadRequest;
         class RemoveAllResourcePermissionsRequest;
         class RemoveResourcePermissionRequest;
@@ -163,6 +165,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetDocumentVersionResult, Aws::Client::AWSError<WorkDocsErrors>> GetDocumentVersionOutcome;
         typedef Aws::Utils::Outcome<GetFolderResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderOutcome;
         typedef Aws::Utils::Outcome<GetFolderPathResult, Aws::Client::AWSError<WorkDocsErrors>> GetFolderPathOutcome;
+        typedef Aws::Utils::Outcome<GetResourcesResult, Aws::Client::AWSError<WorkDocsErrors>> GetResourcesOutcome;
         typedef Aws::Utils::Outcome<InitiateDocumentVersionUploadResult, Aws::Client::AWSError<WorkDocsErrors>> InitiateDocumentVersionUploadOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveAllResourcePermissionsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<WorkDocsErrors>> RemoveResourcePermissionOutcome;
@@ -204,6 +207,7 @@ namespace Model
         typedef std::future<GetDocumentVersionOutcome> GetDocumentVersionOutcomeCallable;
         typedef std::future<GetFolderOutcome> GetFolderOutcomeCallable;
         typedef std::future<GetFolderPathOutcome> GetFolderPathOutcomeCallable;
+        typedef std::future<GetResourcesOutcome> GetResourcesOutcomeCallable;
         typedef std::future<InitiateDocumentVersionUploadOutcome> InitiateDocumentVersionUploadOutcomeCallable;
         typedef std::future<RemoveAllResourcePermissionsOutcome> RemoveAllResourcePermissionsOutcomeCallable;
         typedef std::future<RemoveResourcePermissionOutcome> RemoveResourcePermissionOutcomeCallable;
@@ -248,6 +252,7 @@ namespace Model
     typedef std::function<void(const WorkDocsClient*, const Model::GetDocumentVersionRequest&, const Model::GetDocumentVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDocumentVersionResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::GetFolderRequest&, const Model::GetFolderOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFolderResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::GetFolderPathRequest&, const Model::GetFolderPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetFolderPathResponseReceivedHandler;
+    typedef std::function<void(const WorkDocsClient*, const Model::GetResourcesRequest&, const Model::GetResourcesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetResourcesResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::InitiateDocumentVersionUploadRequest&, const Model::InitiateDocumentVersionUploadOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > InitiateDocumentVersionUploadResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::RemoveAllResourcePermissionsRequest&, const Model::RemoveAllResourcePermissionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveAllResourcePermissionsResponseReceivedHandler;
     typedef std::function<void(const WorkDocsClient*, const Model::RemoveResourcePermissionRequest&, const Model::RemoveResourcePermissionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveResourcePermissionResponseReceivedHandler;
@@ -309,7 +314,7 @@ namespace Model
 
         virtual ~WorkDocsClient();
 
-        inline virtual const char* GetServiceClientName() const override { return "workdocs"; }
+        inline virtual const char* GetServiceClientName() const override { return "WorkDocs"; }
 
 
         /**
@@ -518,11 +523,11 @@ namespace Model
         virtual void CreateLabelsAsync(const Model::CreateLabelsRequest& request, const CreateLabelsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint
-         * receives a confirmation message, and must confirm the subscription. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm
-         * the Subscription</a> in the <i>Amazon Simple Notification Service Developer
+         * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
+         * receives a confirmation message, and must confirm the subscription.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
          * API Reference</a></p>
@@ -530,11 +535,11 @@ namespace Model
         virtual Model::CreateNotificationSubscriptionOutcome CreateNotificationSubscription(const Model::CreateNotificationSubscriptionRequest& request) const;
 
         /**
-         * <p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint
-         * receives a confirmation message, and must confirm the subscription. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm
-         * the Subscription</a> in the <i>Amazon Simple Notification Service Developer
+         * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
+         * receives a confirmation message, and must confirm the subscription.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
          * API Reference</a></p>
@@ -544,11 +549,11 @@ namespace Model
         virtual Model::CreateNotificationSubscriptionOutcomeCallable CreateNotificationSubscriptionCallable(const Model::CreateNotificationSubscriptionRequest& request) const;
 
         /**
-         * <p>Configure WorkDocs to use Amazon SNS notifications.</p> <p>The endpoint
-         * receives a confirmation message, and must confirm the subscription. For more
-         * information, see <a
-         * href="http://docs.aws.amazon.com/sns/latest/dg/SendMessageToHttp.html#SendMessageToHttp.confirm">Confirm
-         * the Subscription</a> in the <i>Amazon Simple Notification Service Developer
+         * <p>Configure Amazon WorkDocs to use Amazon SNS notifications. The endpoint
+         * receives a confirmation message, and must confirm the subscription.</p> <p>For
+         * more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/subscribe-notifications.html">Subscribe
+         * to Notifications</a> in the <i>Amazon WorkDocs Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/CreateNotificationSubscription">AWS
          * API Reference</a></p>
@@ -959,14 +964,16 @@ namespace Model
         virtual void DescribeFolderContentsAsync(const Model::DescribeFolderContentsRequest& request, const DescribeFolderContentsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the groups specified by the query. Groups are defined by the
+         * underlying Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
          * API Reference</a></p>
          */
         virtual Model::DescribeGroupsOutcome DescribeGroups(const Model::DescribeGroupsRequest& request) const;
 
         /**
-         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the groups specified by the query. Groups are defined by the
+         * underlying Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
          * API Reference</a></p>
          *
@@ -975,7 +982,8 @@ namespace Model
         virtual Model::DescribeGroupsOutcomeCallable DescribeGroupsCallable(const Model::DescribeGroupsRequest& request) const;
 
         /**
-         * <p>Describes the groups specified by query.</p><p><h3>See Also:</h3>   <a
+         * <p>Describes the groups specified by the query. Groups are defined by the
+         * underlying Active Directory.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeGroups">AWS
          * API Reference</a></p>
          *
@@ -1040,8 +1048,12 @@ namespace Model
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
          * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
          * and folders and <code>RecycleBin</code> is the root of recycled items. This is
-         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
-         * Also:</h3>   <a
+         * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
+         * requires an authentication token. To get an authentication token, register an
+         * application with Amazon WorkDocs. For more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
          * API Reference</a></p>
          */
@@ -1051,8 +1063,12 @@ namespace Model
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
          * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
          * and folders and <code>RecycleBin</code> is the root of recycled items. This is
-         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
-         * Also:</h3>   <a
+         * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
+         * requires an authentication token. To get an authentication token, register an
+         * application with Amazon WorkDocs. For more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
          * API Reference</a></p>
          *
@@ -1064,8 +1080,12 @@ namespace Model
          * <p>Describes the current user's special folders; the <code>RootFolder</code> and
          * the <code>RecycleBin</code>. <code>RootFolder</code> is the root of user's files
          * and folders and <code>RecycleBin</code> is the root of recycled items. This is
-         * not a valid action for SigV4 (administrative API) clients.</p><p><h3>See
-         * Also:</h3>   <a
+         * not a valid action for SigV4 (administrative API) clients.</p> <p>This action
+         * requires an authentication token. To get an authentication token, register an
+         * application with Amazon WorkDocs. For more information, see <a
+         * href="https://docs.aws.amazon.com/workdocs/latest/developerguide/wd-auth-user.html">Authentication
+         * and Access Control for User Applications</a> in the <i>Amazon WorkDocs Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/DescribeRootFolders">AWS
          * API Reference</a></p>
          *
@@ -1294,6 +1314,37 @@ namespace Model
         virtual void GetFolderPathAsync(const Model::GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Retrieves a collection of resources, including folders and documents. The
+         * only <code>CollectionType</code> supported is
+         * <code>SHARED_WITH_ME</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetResourcesOutcome GetResources(const Model::GetResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves a collection of resources, including folders and documents. The
+         * only <code>CollectionType</code> supported is
+         * <code>SHARED_WITH_ME</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetResourcesOutcomeCallable GetResourcesCallable(const Model::GetResourcesRequest& request) const;
+
+        /**
+         * <p>Retrieves a collection of resources, including folders and documents. The
+         * only <code>CollectionType</code> supported is
+         * <code>SHARED_WITH_ME</code>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/workdocs-2016-05-01/GetResources">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetResourcesAsync(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Creates a new document object and version object.</p> <p>The client specifies
          * the parent folder ID and name of the document to upload. The ID is optionally
          * specified when creating a new version of an existing document. This is the first
@@ -1519,10 +1570,10 @@ namespace Model
          */
         virtual void UpdateUserAsync(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AbortDocumentVersionUploadAsyncHelper(const Model::AbortDocumentVersionUploadRequest& request, const AbortDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ActivateUserAsyncHelper(const Model::ActivateUserRequest& request, const ActivateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1557,6 +1608,7 @@ namespace Model
         void GetDocumentVersionAsyncHelper(const Model::GetDocumentVersionRequest& request, const GetDocumentVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFolderAsyncHelper(const Model::GetFolderRequest& request, const GetFolderResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetFolderPathAsyncHelper(const Model::GetFolderPathRequest& request, const GetFolderPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetResourcesAsyncHelper(const Model::GetResourcesRequest& request, const GetResourcesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void InitiateDocumentVersionUploadAsyncHelper(const Model::InitiateDocumentVersionUploadRequest& request, const InitiateDocumentVersionUploadResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveAllResourcePermissionsAsyncHelper(const Model::RemoveAllResourcePermissionsRequest& request, const RemoveAllResourcePermissionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveResourcePermissionAsyncHelper(const Model::RemoveResourcePermissionRequest& request, const RemoveResourcePermissionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1566,6 +1618,7 @@ namespace Model
         void UpdateUserAsyncHelper(const Model::UpdateUserRequest& request, const UpdateUserResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

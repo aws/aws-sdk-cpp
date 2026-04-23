@@ -34,7 +34,9 @@ namespace Model
 {
 
   /**
-   * Information about a bulk deployment.<p><h3>See Also:</h3>   <a
+   * Information about a bulk deployment. You cannot start a new bulk deployment
+   * while another one is still running or in a non-terminal state.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/BulkDeployment">AWS
    * API Reference</a></p>
    */
@@ -51,6 +53,11 @@ namespace Model
      * The ARN of the bulk deployment.
      */
     inline const Aws::String& GetBulkDeploymentArn() const{ return m_bulkDeploymentArn; }
+
+    /**
+     * The ARN of the bulk deployment.
+     */
+    inline bool BulkDeploymentArnHasBeenSet() const { return m_bulkDeploymentArnHasBeenSet; }
 
     /**
      * The ARN of the bulk deployment.
@@ -91,6 +98,11 @@ namespace Model
     /**
      * The ID of the bulk deployment.
      */
+    inline bool BulkDeploymentIdHasBeenSet() const { return m_bulkDeploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the bulk deployment.
+     */
     inline void SetBulkDeploymentId(const Aws::String& value) { m_bulkDeploymentIdHasBeenSet = true; m_bulkDeploymentId = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
      * The time, in ISO format, when the deployment was created.
      */
     inline const Aws::String& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * The time, in ISO format, when the deployment was created.
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * The time, in ISO format, when the deployment was created.

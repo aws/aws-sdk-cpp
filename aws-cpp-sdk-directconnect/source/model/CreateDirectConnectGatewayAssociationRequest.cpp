@@ -24,6 +24,8 @@ using namespace Aws::Utils;
 
 CreateDirectConnectGatewayAssociationRequest::CreateDirectConnectGatewayAssociationRequest() : 
     m_directConnectGatewayIdHasBeenSet(false),
+    m_gatewayIdHasBeenSet(false),
+    m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet(false),
     m_virtualGatewayIdHasBeenSet(false)
 {
 }
@@ -35,6 +37,23 @@ Aws::String CreateDirectConnectGatewayAssociationRequest::SerializePayload() con
   if(m_directConnectGatewayIdHasBeenSet)
   {
    payload.WithString("directConnectGatewayId", m_directConnectGatewayId);
+
+  }
+
+  if(m_gatewayIdHasBeenSet)
+  {
+   payload.WithString("gatewayId", m_gatewayId);
+
+  }
+
+  if(m_addAllowedPrefixesToDirectConnectGatewayHasBeenSet)
+  {
+   Array<JsonValue> addAllowedPrefixesToDirectConnectGatewayJsonList(m_addAllowedPrefixesToDirectConnectGateway.size());
+   for(unsigned addAllowedPrefixesToDirectConnectGatewayIndex = 0; addAllowedPrefixesToDirectConnectGatewayIndex < addAllowedPrefixesToDirectConnectGatewayJsonList.GetLength(); ++addAllowedPrefixesToDirectConnectGatewayIndex)
+   {
+     addAllowedPrefixesToDirectConnectGatewayJsonList[addAllowedPrefixesToDirectConnectGatewayIndex].AsObject(m_addAllowedPrefixesToDirectConnectGateway[addAllowedPrefixesToDirectConnectGatewayIndex].Jsonize());
+   }
+   payload.WithArray("addAllowedPrefixesToDirectConnectGateway", std::move(addAllowedPrefixesToDirectConnectGatewayJsonList));
 
   }
 

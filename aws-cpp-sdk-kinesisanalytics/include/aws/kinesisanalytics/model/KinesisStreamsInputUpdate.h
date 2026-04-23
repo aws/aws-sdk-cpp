@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
      */
+    inline bool ResourceARNUpdateHasBeenSet() const { return m_resourceARNUpdateHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the input Amazon Kinesis stream to read.</p>
+     */
     inline void SetResourceARNUpdate(const Aws::String& value) { m_resourceARNUpdateHasBeenSet = true; m_resourceARNUpdate = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * role.</p>
      */
     inline const Aws::String& GetRoleARNUpdate() const{ return m_roleARNUpdate; }
+
+    /**
+     * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
+     * stream on your behalf. You need to grant the necessary permissions to this
+     * role.</p>
+     */
+    inline bool RoleARNUpdateHasBeenSet() const { return m_roleARNUpdateHasBeenSet; }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the

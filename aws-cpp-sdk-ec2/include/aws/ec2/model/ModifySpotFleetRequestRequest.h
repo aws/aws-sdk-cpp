@@ -63,6 +63,13 @@ namespace Model
      * capacity of the Spot Fleet request is decreased below the current size of the
      * Spot Fleet.</p>
      */
+    inline bool ExcessCapacityTerminationPolicyHasBeenSet() const { return m_excessCapacityTerminationPolicyHasBeenSet; }
+
+    /**
+     * <p>Indicates whether running Spot Instances should be terminated if the target
+     * capacity of the Spot Fleet request is decreased below the current size of the
+     * Spot Fleet.</p>
+     */
     inline void SetExcessCapacityTerminationPolicy(const ExcessCapacityTerminationPolicy& value) { m_excessCapacityTerminationPolicyHasBeenSet = true; m_excessCapacityTerminationPolicy = value; }
 
     /**
@@ -91,6 +98,11 @@ namespace Model
      * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+
+    /**
+     * <p>The ID of the Spot Fleet request.</p>
+     */
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
 
     /**
      * <p>The ID of the Spot Fleet request.</p>
@@ -127,6 +139,11 @@ namespace Model
      * <p>The size of the fleet.</p>
      */
     inline int GetTargetCapacity() const{ return m_targetCapacity; }
+
+    /**
+     * <p>The size of the fleet.</p>
+     */
+    inline bool TargetCapacityHasBeenSet() const { return m_targetCapacityHasBeenSet; }
 
     /**
      * <p>The size of the fleet.</p>

@@ -57,6 +57,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>The ID of the resource.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>The users, groups, or organization being granted permission.</p>
      */
+    inline bool PrincipalsHasBeenSet() const { return m_principalsHasBeenSet; }
+
+    /**
+     * <p>The users, groups, or organization being granted permission.</p>
+     */
     inline void SetPrincipals(const Aws::Vector<SharePrincipal>& value) { m_principalsHasBeenSet = true; m_principals = value; }
 
     /**
@@ -166,6 +182,11 @@ namespace Model
      * <p>The notification options.</p>
      */
     inline const NotificationOptions& GetNotificationOptions() const{ return m_notificationOptions; }
+
+    /**
+     * <p>The notification options.</p>
+     */
+    inline bool NotificationOptionsHasBeenSet() const { return m_notificationOptionsHasBeenSet; }
 
     /**
      * <p>The notification options.</p>

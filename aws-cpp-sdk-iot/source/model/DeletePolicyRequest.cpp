@@ -29,7 +29,7 @@ DeletePolicyRequest::DeletePolicyRequest() :
 
 Aws::String DeletePolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

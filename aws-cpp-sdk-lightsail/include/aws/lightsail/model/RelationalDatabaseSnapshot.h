@@ -19,6 +19,8 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +56,11 @@ namespace Model
      * <p>The name of the database snapshot.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the database snapshot.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the database snapshot.</p>
@@ -94,6 +101,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the database snapshot.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -129,6 +141,14 @@ namespace Model
      * easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code for the database snapshot. Include this code in your email
+     * to support when you have questions about a database snapshot in Lightsail. This
+     * code enables our support team to look up your Lightsail information more
+     * easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code for the database snapshot. Include this code in your email
@@ -187,6 +207,11 @@ namespace Model
     /**
      * <p>The timestamp when the database snapshot was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the database snapshot was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -210,6 +235,12 @@ namespace Model
      * located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The Region name and Availability Zone where the database snapshot is
+     * located.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The Region name and Availability Zone where the database snapshot is
@@ -244,6 +275,11 @@ namespace Model
     /**
      * <p>The Lightsail resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -263,9 +299,79 @@ namespace Model
 
 
     /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline RelationalDatabaseSnapshot& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline RelationalDatabaseSnapshot& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline RelationalDatabaseSnapshot& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline RelationalDatabaseSnapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>The software of the database snapshot (for example, <code>MySQL</code>)</p>
@@ -303,6 +409,12 @@ namespace Model
      * <code>5.7.23</code>).</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The database engine version for the database snapshot (for example,
+     * <code>5.7.23</code>).</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The database engine version for the database snapshot (for example,
@@ -351,6 +463,12 @@ namespace Model
      * <p>The size of the disk in GB (for example, <code>32</code>) for the database
      * snapshot.</p>
      */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in GB (for example, <code>32</code>) for the database
+     * snapshot.</p>
+     */
     inline void SetSizeInGb(int value) { m_sizeInGbHasBeenSet = true; m_sizeInGb = value; }
 
     /**
@@ -364,6 +482,11 @@ namespace Model
      * <p>The state of the database snapshot.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state of the database snapshot.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state of the database snapshot.</p>
@@ -401,6 +524,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetFromRelationalDatabaseName() const{ return m_fromRelationalDatabaseName; }
+
+    /**
+     * <p>The name of the source database from which the database snapshot was
+     * created.</p>
+     */
+    inline bool FromRelationalDatabaseNameHasBeenSet() const { return m_fromRelationalDatabaseNameHasBeenSet; }
 
     /**
      * <p>The name of the source database from which the database snapshot was
@@ -449,6 +578,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the database from which the database
      * snapshot was created.</p>
      */
+    inline bool FromRelationalDatabaseArnHasBeenSet() const { return m_fromRelationalDatabaseArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the database from which the database
+     * snapshot was created.</p>
+     */
     inline void SetFromRelationalDatabaseArn(const Aws::String& value) { m_fromRelationalDatabaseArnHasBeenSet = true; m_fromRelationalDatabaseArn = value; }
 
     /**
@@ -492,6 +627,12 @@ namespace Model
      * <p>The bundle ID of the database from which the database snapshot was
      * created.</p>
      */
+    inline bool FromRelationalDatabaseBundleIdHasBeenSet() const { return m_fromRelationalDatabaseBundleIdHasBeenSet; }
+
+    /**
+     * <p>The bundle ID of the database from which the database snapshot was
+     * created.</p>
+     */
     inline void SetFromRelationalDatabaseBundleId(const Aws::String& value) { m_fromRelationalDatabaseBundleIdHasBeenSet = true; m_fromRelationalDatabaseBundleId = value; }
 
     /**
@@ -530,6 +671,12 @@ namespace Model
      * created. A blueprint describes the major engine version of a database.</p>
      */
     inline const Aws::String& GetFromRelationalDatabaseBlueprintId() const{ return m_fromRelationalDatabaseBlueprintId; }
+
+    /**
+     * <p>The blueprint ID of the database from which the database snapshot was
+     * created. A blueprint describes the major engine version of a database.</p>
+     */
+    inline bool FromRelationalDatabaseBlueprintIdHasBeenSet() const { return m_fromRelationalDatabaseBlueprintIdHasBeenSet; }
 
     /**
      * <p>The blueprint ID of the database from which the database snapshot was
@@ -586,6 +733,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_engine;
     bool m_engineHasBeenSet;

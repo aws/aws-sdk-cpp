@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the database engine.</p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p>The name of the database engine.</p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The version number of the database engine.</p>
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
+
+    /**
+     * <p>The version number of the database engine.</p>
+     */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
 
     /**
      * <p>The version number of the database engine.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The name of the DB parameter group family for the database engine.</p>
      */
+    inline bool DBParameterGroupFamilyHasBeenSet() const { return m_dBParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the DB parameter group family for the database engine.</p>
+     */
     inline void SetDBParameterGroupFamily(const Aws::String& value) { m_dBParameterGroupFamilyHasBeenSet = true; m_dBParameterGroupFamily = value; }
 
     /**
@@ -170,6 +185,11 @@ namespace Model
     /**
      * <p>The description of the database engine.</p>
      */
+    inline bool DBEngineDescriptionHasBeenSet() const { return m_dBEngineDescriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the database engine.</p>
+     */
     inline void SetDBEngineDescription(const Aws::String& value) { m_dBEngineDescriptionHasBeenSet = true; m_dBEngineDescription = value; }
 
     /**
@@ -202,6 +222,11 @@ namespace Model
      * <p>The description of the database engine version.</p>
      */
     inline const Aws::String& GetDBEngineVersionDescription() const{ return m_dBEngineVersionDescription; }
+
+    /**
+     * <p>The description of the database engine version.</p>
+     */
+    inline bool DBEngineVersionDescriptionHasBeenSet() const { return m_dBEngineVersionDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the database engine version.</p>
@@ -246,6 +271,13 @@ namespace Model
      * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
      * specified. </p>
      */
+    inline bool DefaultCharacterSetHasBeenSet() const { return m_defaultCharacterSetHasBeenSet; }
+
+    /**
+     * <p> The default character set for new instances of this engine version, if the
+     * <code>CharacterSetName</code> parameter of the CreateDBInstance API is not
+     * specified. </p>
+     */
     inline void SetDefaultCharacterSet(const CharacterSet& value) { m_defaultCharacterSetHasBeenSet = true; m_defaultCharacterSet = value; }
 
     /**
@@ -276,6 +308,13 @@ namespace Model
      * action. </p>
      */
     inline const Aws::Vector<CharacterSet>& GetSupportedCharacterSets() const{ return m_supportedCharacterSets; }
+
+    /**
+     * <p> A list of the character sets supported by this engine for the
+     * <code>CharacterSetName</code> parameter of the <code>CreateDBInstance</code>
+     * action. </p>
+     */
+    inline bool SupportedCharacterSetsHasBeenSet() const { return m_supportedCharacterSetsHasBeenSet; }
 
     /**
      * <p> A list of the character sets supported by this engine for the
@@ -330,6 +369,12 @@ namespace Model
      * <p>A list of engine versions that this database engine version can be upgraded
      * to.</p>
      */
+    inline bool ValidUpgradeTargetHasBeenSet() const { return m_validUpgradeTargetHasBeenSet; }
+
+    /**
+     * <p>A list of engine versions that this database engine version can be upgraded
+     * to.</p>
+     */
     inline void SetValidUpgradeTarget(const Aws::Vector<UpgradeTarget>& value) { m_validUpgradeTargetHasBeenSet = true; m_validUpgradeTarget = value; }
 
     /**
@@ -369,6 +414,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Timezone>& GetSupportedTimezones() const{ return m_supportedTimezones; }
+
+    /**
+     * <p>A list of the time zones supported by this engine for the
+     * <code>Timezone</code> parameter of the <code>CreateDBInstance</code> action.
+     * </p>
+     */
+    inline bool SupportedTimezonesHasBeenSet() const { return m_supportedTimezonesHasBeenSet; }
 
     /**
      * <p>A list of the time zones supported by this engine for the
@@ -423,6 +475,12 @@ namespace Model
      * <p>The types of logs that the database engine has available for export to
      * CloudWatch Logs.</p>
      */
+    inline bool ExportableLogTypesHasBeenSet() const { return m_exportableLogTypesHasBeenSet; }
+
+    /**
+     * <p>The types of logs that the database engine has available for export to
+     * CloudWatch Logs.</p>
+     */
     inline void SetExportableLogTypes(const Aws::Vector<Aws::String>& value) { m_exportableLogTypesHasBeenSet = true; m_exportableLogTypes = value; }
 
     /**
@@ -472,6 +530,12 @@ namespace Model
      * <p>A value that indicates whether the engine version supports exporting the log
      * types specified by ExportableLogTypes to CloudWatch Logs.</p>
      */
+    inline bool SupportsLogExportsToCloudwatchLogsHasBeenSet() const { return m_supportsLogExportsToCloudwatchLogsHasBeenSet; }
+
+    /**
+     * <p>A value that indicates whether the engine version supports exporting the log
+     * types specified by ExportableLogTypes to CloudWatch Logs.</p>
+     */
     inline void SetSupportsLogExportsToCloudwatchLogs(bool value) { m_supportsLogExportsToCloudwatchLogsHasBeenSet = true; m_supportsLogExportsToCloudwatchLogs = value; }
 
     /**
@@ -485,6 +549,11 @@ namespace Model
      * <p>Indicates whether the database engine version supports read replicas.</p>
      */
     inline bool GetSupportsReadReplica() const{ return m_supportsReadReplica; }
+
+    /**
+     * <p>Indicates whether the database engine version supports read replicas.</p>
+     */
+    inline bool SupportsReadReplicaHasBeenSet() const { return m_supportsReadReplicaHasBeenSet; }
 
     /**
      * <p>Indicates whether the database engine version supports read replicas.</p>

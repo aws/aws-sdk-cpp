@@ -44,6 +44,9 @@ public class S3RestXmlCppClientGenerator  extends RestXmlCppClientGenerator {
         opsThatNeedMd5.add("PutBucketLifecycleConfiguration");
         opsThatNeedMd5.add("PutBucketPolicy");
         opsThatNeedMd5.add("PutBucketTagging");
+        opsThatNeedMd5.add("PutObjectLegalHold");
+        opsThatNeedMd5.add("PutObjectLockConfiguration");
+        opsThatNeedMd5.add("PutObjectRetention");
 
         opsThatDoNotSupportVirtualAddressing.add("CreateBucket");
         opsThatDoNotSupportVirtualAddressing.add("ListBuckets");

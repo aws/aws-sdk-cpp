@@ -57,6 +57,12 @@ namespace Model
      * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
      * in the VPC peering connection record.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet. This value must match the fleet ID referenced
+     * in the VPC peering connection record.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -96,6 +102,13 @@ namespace Model
      * <a>DescribeVpcPeeringConnections</a>.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>Unique identifier for a VPC peering connection. This value is included in the
+     * <a>VpcPeeringConnection</a> object, which can be retrieved by calling
+     * <a>DescribeVpcPeeringConnections</a>.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a VPC peering connection. This value is included in the

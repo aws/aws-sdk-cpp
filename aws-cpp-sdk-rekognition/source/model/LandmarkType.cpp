@@ -55,6 +55,11 @@ namespace Aws
         static const int mouthDown_HASH = HashingUtils::HashString("mouthDown");
         static const int leftPupil_HASH = HashingUtils::HashString("leftPupil");
         static const int rightPupil_HASH = HashingUtils::HashString("rightPupil");
+        static const int upperJawlineLeft_HASH = HashingUtils::HashString("upperJawlineLeft");
+        static const int midJawlineLeft_HASH = HashingUtils::HashString("midJawlineLeft");
+        static const int chinBottom_HASH = HashingUtils::HashString("chinBottom");
+        static const int midJawlineRight_HASH = HashingUtils::HashString("midJawlineRight");
+        static const int upperJawlineRight_HASH = HashingUtils::HashString("upperJawlineRight");
 
 
         LandmarkType GetLandmarkTypeForName(const Aws::String& name)
@@ -160,6 +165,26 @@ namespace Aws
           {
             return LandmarkType::rightPupil;
           }
+          else if (hashCode == upperJawlineLeft_HASH)
+          {
+            return LandmarkType::upperJawlineLeft;
+          }
+          else if (hashCode == midJawlineLeft_HASH)
+          {
+            return LandmarkType::midJawlineLeft;
+          }
+          else if (hashCode == chinBottom_HASH)
+          {
+            return LandmarkType::chinBottom;
+          }
+          else if (hashCode == midJawlineRight_HASH)
+          {
+            return LandmarkType::midJawlineRight;
+          }
+          else if (hashCode == upperJawlineRight_HASH)
+          {
+            return LandmarkType::upperJawlineRight;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -224,6 +249,16 @@ namespace Aws
             return "leftPupil";
           case LandmarkType::rightPupil:
             return "rightPupil";
+          case LandmarkType::upperJawlineLeft:
+            return "upperJawlineLeft";
+          case LandmarkType::midJawlineLeft:
+            return "midJawlineLeft";
+          case LandmarkType::chinBottom:
+            return "chinBottom";
+          case LandmarkType::midJawlineRight:
+            return "midJawlineRight";
+          case LandmarkType::upperJawlineRight:
+            return "upperJawlineRight";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -231,7 +266,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

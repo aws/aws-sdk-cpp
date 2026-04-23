@@ -64,6 +64,14 @@ namespace Model
      * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
      * static route.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool StaticRoutesOnlyHasBeenSet() const { return m_staticRoutesOnlyHasBeenSet; }
+
+    /**
+     * <p>Indicate whether the VPN connection uses static routes only. If you are
+     * creating a VPN connection for a device that does not support BGP, you must
+     * specify <code>true</code>. Use <a>CreateVpnConnectionRoute</a> to create a
+     * static route.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetStaticRoutesOnly(bool value) { m_staticRoutesOnlyHasBeenSet = true; m_staticRoutesOnly = value; }
 
     /**
@@ -79,6 +87,11 @@ namespace Model
      * <p>The tunnel options for the VPN connection.</p>
      */
     inline const Aws::Vector<VpnTunnelOptionsSpecification>& GetTunnelOptions() const{ return m_tunnelOptions; }
+
+    /**
+     * <p>The tunnel options for the VPN connection.</p>
+     */
+    inline bool TunnelOptionsHasBeenSet() const { return m_tunnelOptionsHasBeenSet; }
 
     /**
      * <p>The tunnel options for the VPN connection.</p>

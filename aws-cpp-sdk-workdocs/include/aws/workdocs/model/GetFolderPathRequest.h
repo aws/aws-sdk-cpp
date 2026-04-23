@@ -60,6 +60,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The ID of the folder.</p>
      */
+    inline bool FolderIdHasBeenSet() const { return m_folderIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the folder.</p>
+     */
     inline void SetFolderId(const Aws::String& value) { m_folderIdHasBeenSet = true; m_folderId = value; }
 
     /**
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The maximum number of levels in the hierarchy to return.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of levels in the hierarchy to return.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -150,6 +166,12 @@ namespace Model
      * parent folders.</p>
      */
     inline const Aws::String& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>A comma-separated list of values. Specify "NAME" to include the names of the
+     * parent folders.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>A comma-separated list of values. Specify "NAME" to include the names of the
@@ -192,6 +214,11 @@ namespace Model
      * <p>This value is not supported.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>This value is not supported.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>This value is not supported.</p>

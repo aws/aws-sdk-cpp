@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the lexicon.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the lexicon.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>Provides lexicon metadata.</p>
      */
     inline const LexiconAttributes& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>Provides lexicon metadata.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>Provides lexicon metadata.</p>

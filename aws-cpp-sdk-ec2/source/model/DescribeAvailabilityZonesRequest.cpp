@@ -23,6 +23,7 @@ using namespace Aws::Utils;
 DescribeAvailabilityZonesRequest::DescribeAvailabilityZonesRequest() : 
     m_filtersHasBeenSet(false),
     m_zoneNamesHasBeenSet(false),
+    m_zoneIdsHasBeenSet(false),
     m_dryRun(false),
     m_dryRunHasBeenSet(false)
 {
@@ -50,6 +51,17 @@ Aws::String DescribeAvailabilityZonesRequest::SerializePayload() const
       ss << "ZoneName." << zoneNamesCount << "="
           << StringUtils::URLEncode(item.c_str()) << "&";
       zoneNamesCount++;
+    }
+  }
+
+  if(m_zoneIdsHasBeenSet)
+  {
+    unsigned zoneIdsCount = 1;
+    for(auto& item : m_zoneIds)
+    {
+      ss << "ZoneId." << zoneIdsCount << "="
+          << StringUtils::URLEncode(item.c_str()) << "&";
+      zoneIdsCount++;
     }
   }
 

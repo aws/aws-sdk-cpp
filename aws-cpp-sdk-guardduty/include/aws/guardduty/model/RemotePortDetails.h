@@ -55,6 +55,11 @@ namespace Model
     /**
      * Port number of the remote connection.
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * Port number of the remote connection.
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * Port name of the remote connection.
      */
     inline const Aws::String& GetPortName() const{ return m_portName; }
+
+    /**
+     * Port name of the remote connection.
+     */
+    inline bool PortNameHasBeenSet() const { return m_portNameHasBeenSet; }
 
     /**
      * Port name of the remote connection.

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
+    inline bool EarliestTimeHasBeenSet() const { return m_earliestTimeHasBeenSet; }
+
+    /**
+     * <p>The earliest date and time, in UTC, for the Scheduled Instance to start.</p>
+     */
     inline void SetEarliestTime(const Aws::Utils::DateTime& value) { m_earliestTimeHasBeenSet = true; m_earliestTime = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestTime() const{ return m_latestTime; }
+
+    /**
+     * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>
+     */
+    inline bool LatestTimeHasBeenSet() const { return m_latestTimeHasBeenSet; }
 
     /**
      * <p>The latest date and time, in UTC, for the Scheduled Instance to start.</p>

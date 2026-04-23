@@ -35,6 +35,10 @@ Session::Session() :
     m_fleetNameHasBeenSet(false),
     m_state(SessionState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_connectionState(SessionConnectionState::NOT_SET),
+    m_connectionStateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_maxExpirationTimeHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_networkAccessConfigurationHasBeenSet(false)
@@ -48,6 +52,10 @@ Session::Session(JsonView jsonValue) :
     m_fleetNameHasBeenSet(false),
     m_state(SessionState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_connectionState(SessionConnectionState::NOT_SET),
+    m_connectionStateHasBeenSet(false),
+    m_startTimeHasBeenSet(false),
+    m_maxExpirationTimeHasBeenSet(false),
     m_authenticationType(AuthenticationType::NOT_SET),
     m_authenticationTypeHasBeenSet(false),
     m_networkAccessConfigurationHasBeenSet(false)
@@ -90,6 +98,27 @@ Session& Session::operator =(JsonView jsonValue)
     m_state = SessionStateMapper::GetSessionStateForName(jsonValue.GetString("State"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("ConnectionState"))
+  {
+    m_connectionState = SessionConnectionStateMapper::GetSessionConnectionStateForName(jsonValue.GetString("ConnectionState"));
+
+    m_connectionStateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("StartTime"))
+  {
+    m_startTime = jsonValue.GetDouble("StartTime");
+
+    m_startTimeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("MaxExpirationTime"))
+  {
+    m_maxExpirationTime = jsonValue.GetDouble("MaxExpirationTime");
+
+    m_maxExpirationTimeHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("AuthenticationType"))
@@ -140,6 +169,21 @@ JsonValue Session::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("State", SessionStateMapper::GetNameForSessionState(m_state));
+  }
+
+  if(m_connectionStateHasBeenSet)
+  {
+   payload.WithString("ConnectionState", SessionConnectionStateMapper::GetNameForSessionConnectionState(m_connectionState));
+  }
+
+  if(m_startTimeHasBeenSet)
+  {
+   payload.WithDouble("StartTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if(m_maxExpirationTimeHasBeenSet)
+  {
+   payload.WithDouble("MaxExpirationTime", m_maxExpirationTime.SecondsWithMSPrecision());
   }
 
   if(m_authenticationTypeHasBeenSet)

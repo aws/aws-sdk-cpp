@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Describes application input configuration updates.</p>
      */
+    inline bool InputUpdatesHasBeenSet() const { return m_inputUpdatesHasBeenSet; }
+
+    /**
+     * <p>Describes application input configuration updates.</p>
+     */
     inline void SetInputUpdates(const Aws::Vector<InputUpdate>& value) { m_inputUpdatesHasBeenSet = true; m_inputUpdates = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>Describes application code updates.</p>
      */
     inline const Aws::String& GetApplicationCodeUpdate() const{ return m_applicationCodeUpdate; }
+
+    /**
+     * <p>Describes application code updates.</p>
+     */
+    inline bool ApplicationCodeUpdateHasBeenSet() const { return m_applicationCodeUpdateHasBeenSet; }
 
     /**
      * <p>Describes application code updates.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>Describes application output configuration updates.</p>
      */
+    inline bool OutputUpdatesHasBeenSet() const { return m_outputUpdatesHasBeenSet; }
+
+    /**
+     * <p>Describes application output configuration updates.</p>
+     */
     inline void SetOutputUpdates(const Aws::Vector<OutputUpdate>& value) { m_outputUpdatesHasBeenSet = true; m_outputUpdates = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>Describes application reference data source updates.</p>
      */
+    inline bool ReferenceDataSourceUpdatesHasBeenSet() const { return m_referenceDataSourceUpdatesHasBeenSet; }
+
+    /**
+     * <p>Describes application reference data source updates.</p>
+     */
     inline void SetReferenceDataSourceUpdates(const Aws::Vector<ReferenceDataSourceUpdate>& value) { m_referenceDataSourceUpdatesHasBeenSet = true; m_referenceDataSourceUpdates = value; }
 
     /**
@@ -201,6 +221,11 @@ namespace Model
      * <p>Describes application CloudWatch logging option updates.</p>
      */
     inline const Aws::Vector<CloudWatchLoggingOptionUpdate>& GetCloudWatchLoggingOptionUpdates() const{ return m_cloudWatchLoggingOptionUpdates; }
+
+    /**
+     * <p>Describes application CloudWatch logging option updates.</p>
+     */
+    inline bool CloudWatchLoggingOptionUpdatesHasBeenSet() const { return m_cloudWatchLoggingOptionUpdatesHasBeenSet; }
 
     /**
      * <p>Describes application CloudWatch logging option updates.</p>

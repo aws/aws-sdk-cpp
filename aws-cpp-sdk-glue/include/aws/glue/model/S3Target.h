@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The path to the Amazon S3 target.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path to the Amazon S3 target.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * Tables with a Crawler</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExclusions() const{ return m_exclusions; }
+
+    /**
+     * <p>A list of glob patterns used to exclude from the crawl. For more information,
+     * see <a href="http://docs.aws.amazon.com/glue/latest/dg/add-crawler.html">Catalog
+     * Tables with a Crawler</a>.</p>
+     */
+    inline bool ExclusionsHasBeenSet() const { return m_exclusionsHasBeenSet; }
 
     /**
      * <p>A list of glob patterns used to exclude from the crawl. For more information,

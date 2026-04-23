@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the skill.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the skill.</p>
      */
     inline const Aws::String& GetSkillName() const{ return m_skillName; }
+
+    /**
+     * <p>The name of the skill.</p>
+     */
+    inline bool SkillNameHasBeenSet() const { return m_skillNameHasBeenSet; }
 
     /**
      * <p>The name of the skill.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>Short description about the skill.</p>
      */
+    inline bool ShortDescriptionHasBeenSet() const { return m_shortDescriptionHasBeenSet; }
+
+    /**
+     * <p>Short description about the skill.</p>
+     */
     inline void SetShortDescription(const Aws::String& value) { m_shortDescriptionHasBeenSet = true; m_shortDescription = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>The URL where the skill icon resides.</p>
      */
+    inline bool IconUrlHasBeenSet() const { return m_iconUrlHasBeenSet; }
+
+    /**
+     * <p>The URL where the skill icon resides.</p>
+     */
     inline void SetIconUrl(const Aws::String& value) { m_iconUrlHasBeenSet = true; m_iconUrl = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
      * <p>Sample utterances that interact with the skill.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSampleUtterances() const{ return m_sampleUtterances; }
+
+    /**
+     * <p>Sample utterances that interact with the skill.</p>
+     */
+    inline bool SampleUtterancesHasBeenSet() const { return m_sampleUtterancesHasBeenSet; }
 
     /**
      * <p>Sample utterances that interact with the skill.</p>
@@ -242,6 +267,11 @@ namespace Model
     /**
      * <p>Information about the skill.</p>
      */
+    inline bool SkillDetailsHasBeenSet() const { return m_skillDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the skill.</p>
+     */
     inline void SetSkillDetails(const SkillDetails& value) { m_skillDetailsHasBeenSet = true; m_skillDetails = value; }
 
     /**
@@ -264,6 +294,11 @@ namespace Model
      * <p>Linking support for a skill.</p>
      */
     inline bool GetSupportsLinking() const{ return m_supportsLinking; }
+
+    /**
+     * <p>Linking support for a skill.</p>
+     */
+    inline bool SupportsLinkingHasBeenSet() const { return m_supportsLinkingHasBeenSet; }
 
     /**
      * <p>Linking support for a skill.</p>

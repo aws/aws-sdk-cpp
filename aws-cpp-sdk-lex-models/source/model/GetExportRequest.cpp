@@ -37,7 +37,7 @@ GetExportRequest::GetExportRequest() :
 
 Aws::String GetExportRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetExportRequest::AddQueryStringParameters(URI& uri) const

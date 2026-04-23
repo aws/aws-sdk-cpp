@@ -30,7 +30,7 @@ DeleteCampaignRequest::DeleteCampaignRequest() :
 
 Aws::String DeleteCampaignRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

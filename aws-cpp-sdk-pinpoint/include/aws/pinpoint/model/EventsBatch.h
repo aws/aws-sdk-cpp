@@ -58,6 +58,11 @@ namespace Model
     /**
      * The PublicEndpoint attached to the EndpointId from the request.
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * The PublicEndpoint attached to the EndpointId from the request.
+     */
     inline void SetEndpoint(const PublicEndpoint& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * An object that contains a set of events associated with the endpoint.
      */
     inline const Aws::Map<Aws::String, Event>& GetEvents() const{ return m_events; }
+
+    /**
+     * An object that contains a set of events associated with the endpoint.
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * An object that contains a set of events associated with the endpoint.

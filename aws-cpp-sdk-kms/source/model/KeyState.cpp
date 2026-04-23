@@ -34,6 +34,7 @@ namespace Aws
         static const int Disabled_HASH = HashingUtils::HashString("Disabled");
         static const int PendingDeletion_HASH = HashingUtils::HashString("PendingDeletion");
         static const int PendingImport_HASH = HashingUtils::HashString("PendingImport");
+        static const int Unavailable_HASH = HashingUtils::HashString("Unavailable");
 
 
         KeyState GetKeyStateForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == PendingImport_HASH)
           {
             return KeyState::PendingImport;
+          }
+          else if (hashCode == Unavailable_HASH)
+          {
+            return KeyState::Unavailable;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "PendingDeletion";
           case KeyState::PendingImport:
             return "PendingImport";
+          case KeyState::Unavailable:
+            return "Unavailable";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -84,7 +91,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

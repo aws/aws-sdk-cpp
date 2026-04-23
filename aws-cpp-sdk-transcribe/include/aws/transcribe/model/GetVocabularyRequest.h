@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of the vocabulary to return information about. The name is
      * case-sensitive.</p>
      */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the vocabulary to return information about. The name is
+     * case-sensitive.</p>
+     */
     inline void SetVocabularyName(const Aws::String& value) { m_vocabularyNameHasBeenSet = true; m_vocabularyName = value; }
 
     /**

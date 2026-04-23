@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
      */
+    inline bool RebootWorkspaceRequestsHasBeenSet() const { return m_rebootWorkspaceRequestsHasBeenSet; }
+
+    /**
+     * <p>The WorkSpaces to reboot. You can specify up to 25 WorkSpaces.</p>
+     */
     inline void SetRebootWorkspaceRequests(const Aws::Vector<RebootRequest>& value) { m_rebootWorkspaceRequestsHasBeenSet = true; m_rebootWorkspaceRequests = value; }
 
     /**

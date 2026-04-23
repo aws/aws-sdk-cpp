@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the bot.</p>
      */
+    inline bool BotNameHasBeenSet() const { return m_botNameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot.</p>
+     */
     inline void SetBotName(const Aws::String& value) { m_botNameHasBeenSet = true; m_botName = value; }
 
     /**
@@ -91,6 +96,14 @@ namespace Model
      * request. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A pagination token for fetching the next page of aliases. If the response to
+     * this call is truncated, Amazon Lex returns a pagination token in the response.
+     * To fetch the next page of aliases, specify the pagination token in the next
+     * request. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A pagination token for fetching the next page of aliases. If the response to
@@ -151,6 +164,12 @@ namespace Model
      * <p>The maximum number of aliases to return in the response. The default is 50. .
      * </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of aliases to return in the response. The default is 50. .
+     * </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -166,6 +185,13 @@ namespace Model
      * "abcxyz."</p>
      */
     inline const Aws::String& GetNameContains() const{ return m_nameContains; }
+
+    /**
+     * <p>Substring to match in bot alias names. An alias will be returned if any part
+     * of its name matches the substring. For example, "xyz" matches both "xyzabc" and
+     * "abcxyz."</p>
+     */
+    inline bool NameContainsHasBeenSet() const { return m_nameContainsHasBeenSet; }
 
     /**
      * <p>Substring to match in bot alias names. An alias will be returned if any part

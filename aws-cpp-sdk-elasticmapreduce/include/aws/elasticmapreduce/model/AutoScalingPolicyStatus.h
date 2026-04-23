@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Indicates the status of the automatic scaling policy.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>Indicates the status of the automatic scaling policy.</p>
+     */
     inline void SetState(const AutoScalingPolicyState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The reason for a change in status.</p>
      */
     inline const AutoScalingPolicyStateChangeReason& GetStateChangeReason() const{ return m_stateChangeReason; }
+
+    /**
+     * <p>The reason for a change in status.</p>
+     */
+    inline bool StateChangeReasonHasBeenSet() const { return m_stateChangeReasonHasBeenSet; }
 
     /**
      * <p>The reason for a change in status.</p>

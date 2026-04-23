@@ -60,6 +60,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,12 @@ namespace Model
      * account ID</p>
      */
     inline const Aws::String& GetPeerOwnerId() const{ return m_peerOwnerId; }
+
+    /**
+     * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
+     * account ID</p>
+     */
+    inline bool PeerOwnerIdHasBeenSet() const { return m_peerOwnerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the owner of the accepter VPC.</p> <p>Default: Your AWS
@@ -124,6 +138,12 @@ namespace Model
      * <p>The ID of the VPC with which you are creating the VPC peering connection. You
      * must specify this parameter in the request.</p>
      */
+    inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC with which you are creating the VPC peering connection. You
+     * must specify this parameter in the request.</p>
+     */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
@@ -162,6 +182,12 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the requester VPC. You must specify this parameter in the
+     * request.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the requester VPC. You must specify this parameter in the
@@ -206,6 +232,13 @@ namespace Model
      * region in which you make the request.</p>
      */
     inline const Aws::String& GetPeerRegion() const{ return m_peerRegion; }
+
+    /**
+     * <p>The region code for the accepter VPC, if the accepter VPC is located in a
+     * region other than the region in which you make the request.</p> <p>Default: The
+     * region in which you make the request.</p>
+     */
+    inline bool PeerRegionHasBeenSet() const { return m_peerRegionHasBeenSet; }
 
     /**
      * <p>The region code for the accepter VPC, if the accepter VPC is located in a

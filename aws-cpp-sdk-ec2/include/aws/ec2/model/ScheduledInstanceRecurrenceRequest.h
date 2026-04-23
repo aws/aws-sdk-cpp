@@ -61,6 +61,12 @@ namespace Model
      * <p>The frequency (<code>Daily</code>, <code>Weekly</code>, or
      * <code>Monthly</code>).</p>
      */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
+
+    /**
+     * <p>The frequency (<code>Daily</code>, <code>Weekly</code>, or
+     * <code>Monthly</code>).</p>
+     */
     inline void SetFrequency(const Aws::String& value) { m_frequencyHasBeenSet = true; m_frequency = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * <p>The interval quantity. The interval unit depends on the value of
      * <code>Frequency</code>. For example, every 2 weeks or every 2 months.</p>
      */
+    inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
+
+    /**
+     * <p>The interval quantity. The interval unit depends on the value of
+     * <code>Frequency</code>. For example, every 2 weeks or every 2 months.</p>
+     */
     inline void SetInterval(int value) { m_intervalHasBeenSet = true; m_interval = value; }
 
     /**
@@ -121,6 +133,15 @@ namespace Model
      * day.</p>
      */
     inline const Aws::Vector<int>& GetOccurrenceDays() const{ return m_occurrenceDays; }
+
+    /**
+     * <p>The days. For a monthly schedule, this is one or more days of the month
+     * (1-31). For a weekly schedule, this is one or more days of the week (1-7, where
+     * 1 is Sunday). You can't specify this value with a daily schedule. If the
+     * occurrence is relative to the end of the month, you can specify only a single
+     * day.</p>
+     */
+    inline bool OccurrenceDaysHasBeenSet() const { return m_occurrenceDaysHasBeenSet; }
 
     /**
      * <p>The days. For a monthly schedule, this is one or more days of the month
@@ -178,6 +199,12 @@ namespace Model
      * <p>Indicates whether the occurrence is relative to the end of the specified week
      * or month. You can't specify this value with a daily schedule.</p>
      */
+    inline bool OccurrenceRelativeToEndHasBeenSet() const { return m_occurrenceRelativeToEndHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the occurrence is relative to the end of the specified week
+     * or month. You can't specify this value with a daily schedule.</p>
+     */
     inline void SetOccurrenceRelativeToEnd(bool value) { m_occurrenceRelativeToEndHasBeenSet = true; m_occurrenceRelativeToEnd = value; }
 
     /**
@@ -194,6 +221,14 @@ namespace Model
      * this value with a daily schedule.</p>
      */
     inline const Aws::String& GetOccurrenceUnit() const{ return m_occurrenceUnit; }
+
+    /**
+     * <p>The unit for <code>OccurrenceDays</code> (<code>DayOfWeek</code> or
+     * <code>DayOfMonth</code>). This value is required for a monthly schedule. You
+     * can't specify <code>DayOfWeek</code> with a weekly schedule. You can't specify
+     * this value with a daily schedule.</p>
+     */
+    inline bool OccurrenceUnitHasBeenSet() const { return m_occurrenceUnitHasBeenSet; }
 
     /**
      * <p>The unit for <code>OccurrenceDays</code> (<code>DayOfWeek</code> or

@@ -33,7 +33,7 @@ GetPolicyRequest::GetPolicyRequest() :
 
 Aws::String GetPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetPolicyRequest::AddQueryStringParameters(URI& uri) const

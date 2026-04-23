@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the cluster to which the node belongs.</p>
      */
+    inline bool CacheClusterIdHasBeenSet() const { return m_cacheClusterIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the cluster to which the node belongs.</p>
+     */
     inline void SetCacheClusterId(const Aws::String& value) { m_cacheClusterIdHasBeenSet = true; m_cacheClusterId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * (0001, 0002, etc.).</p>
      */
     inline const Aws::String& GetCacheNodeId() const{ return m_cacheNodeId; }
+
+    /**
+     * <p>The ID of the node within its cluster. A node ID is a numeric identifier
+     * (0001, 0002, etc.).</p>
+     */
+    inline bool CacheNodeIdHasBeenSet() const { return m_cacheNodeIdHasBeenSet; }
 
     /**
      * <p>The ID of the node within its cluster. A node ID is a numeric identifier
@@ -142,6 +153,13 @@ namespace Model
      * operations. The read endpoint is only applicable on Redis (cluster mode
      * disabled) clusters.</p>
      */
+    inline bool ReadEndpointHasBeenSet() const { return m_readEndpointHasBeenSet; }
+
+    /**
+     * <p>The information required for client programs to connect to a node for read
+     * operations. The read endpoint is only applicable on Redis (cluster mode
+     * disabled) clusters.</p>
+     */
     inline void SetReadEndpoint(const Endpoint& value) { m_readEndpointHasBeenSet = true; m_readEndpoint = value; }
 
     /**
@@ -170,6 +188,11 @@ namespace Model
      * <p>The name of the Availability Zone in which the node is located.</p>
      */
     inline const Aws::String& GetPreferredAvailabilityZone() const{ return m_preferredAvailabilityZone; }
+
+    /**
+     * <p>The name of the Availability Zone in which the node is located.</p>
+     */
+    inline bool PreferredAvailabilityZoneHasBeenSet() const { return m_preferredAvailabilityZoneHasBeenSet; }
 
     /**
      * <p>The name of the Availability Zone in which the node is located.</p>
@@ -208,6 +231,13 @@ namespace Model
      * disabled) replication groups.</p>
      */
     inline const Aws::String& GetCurrentRole() const{ return m_currentRole; }
+
+    /**
+     * <p>The role that is currently assigned to the node - <code>primary</code> or
+     * <code>replica</code>. This member is only applicable for Redis (cluster mode
+     * disabled) replication groups.</p>
+     */
+    inline bool CurrentRoleHasBeenSet() const { return m_currentRoleHasBeenSet; }
 
     /**
      * <p>The role that is currently assigned to the node - <code>primary</code> or

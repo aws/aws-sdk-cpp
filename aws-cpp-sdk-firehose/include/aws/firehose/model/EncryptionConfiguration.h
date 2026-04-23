@@ -59,6 +59,12 @@ namespace Model
      * <p>Specifically override existing encryption information to ensure that no
      * encryption is used.</p>
      */
+    inline bool NoEncryptionConfigHasBeenSet() const { return m_noEncryptionConfigHasBeenSet; }
+
+    /**
+     * <p>Specifically override existing encryption information to ensure that no
+     * encryption is used.</p>
+     */
     inline void SetNoEncryptionConfig(const NoEncryptionConfig& value) { m_noEncryptionConfigHasBeenSet = true; m_noEncryptionConfig = value; }
 
     /**
@@ -84,6 +90,11 @@ namespace Model
      * <p>The encryption key.</p>
      */
     inline const KMSEncryptionConfig& GetKMSEncryptionConfig() const{ return m_kMSEncryptionConfig; }
+
+    /**
+     * <p>The encryption key.</p>
+     */
+    inline bool KMSEncryptionConfigHasBeenSet() const { return m_kMSEncryptionConfigHasBeenSet; }
 
     /**
      * <p>The encryption key.</p>

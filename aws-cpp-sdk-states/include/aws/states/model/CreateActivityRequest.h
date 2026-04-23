@@ -17,6 +17,8 @@
 #include <aws/states/SFN_EXPORTS.h>
 #include <aws/states/SFNRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/states/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -47,7 +49,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -61,7 +63,21 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
+     * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
+     * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
+     * </li> <li> <p>wildcard characters <code>? *</code> </p> </li> <li> <p>special
+     * characters <code>" # % \ ^ | ~ ` $ &amp; , ; : /</code> </p> </li> <li>
+     * <p>control characters (<code>U+0000-001F</code>, <code>U+007F-009F</code>)</p>
+     * </li> </ul>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the activity to create. This name must be unique for your AWS
+     * account and region for 90 days. For more information, see <a
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -75,7 +91,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -89,7 +105,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -103,7 +119,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -117,7 +133,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -131,7 +147,7 @@ namespace Model
     /**
      * <p>The name of the activity to create. This name must be unique for your AWS
      * account and region for 90 days. For more information, see <a
-     * href="http://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
+     * href="https://docs.aws.amazon.com/step-functions/latest/dg/limits.html#service-limits-state-machine-executions">
      * Limits Related to State Machine Executions</a> in the <i>AWS Step Functions
      * Developer Guide</i>.</p> <p>A name must <i>not</i> contain:</p> <ul> <li>
      * <p>whitespace</p> </li> <li> <p>brackets <code>&lt; &gt; { } [ ]</code> </p>
@@ -142,10 +158,54 @@ namespace Model
      */
     inline CreateActivityRequest& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline CreateActivityRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline CreateActivityRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline CreateActivityRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The list of tags to add to a resource.</p>
+     */
+    inline CreateActivityRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

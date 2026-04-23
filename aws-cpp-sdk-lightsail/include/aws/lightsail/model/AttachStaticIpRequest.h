@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the static IP.</p>
      */
+    inline bool StaticIpNameHasBeenSet() const { return m_staticIpNameHasBeenSet; }
+
+    /**
+     * <p>The name of the static IP.</p>
+     */
     inline void SetStaticIpName(const Aws::String& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The instance name to which you want to attach the static IP address.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The instance name to which you want to attach the static IP address.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The instance name to which you want to attach the static IP address.</p>

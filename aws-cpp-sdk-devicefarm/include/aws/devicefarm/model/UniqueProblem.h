@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A message about the unique problems' result.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message about the unique problems' result.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Information about the problems.</p>
      */
     inline const Aws::Vector<Problem>& GetProblems() const{ return m_problems; }
+
+    /**
+     * <p>Information about the problems.</p>
+     */
+    inline bool ProblemsHasBeenSet() const { return m_problemsHasBeenSet; }
 
     /**
      * <p>Information about the problems.</p>

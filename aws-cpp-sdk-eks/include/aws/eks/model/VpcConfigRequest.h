@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>An object representing an Amazon EKS cluster VPC configuration
-   * request.</p><p><h3>See Also:</h3>   <a
+   * <p>An object representing the VPC configuration to use for an Amazon EKS
+   * cluster.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/eks-2017-11-01/VpcConfigRequest">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,13 @@ namespace Model
      * between your worker nodes and the Kubernetes control plane.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
+     * cross-account elastic network interfaces in these subnets to allow communication
+     * between your worker nodes and the Kubernetes control plane.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>Specify subnets for your Amazon EKS worker nodes. Amazon EKS creates
@@ -109,58 +116,180 @@ namespace Model
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>Specify one or more security groups for the cross-account elastic network
+     * interfaces that Amazon EKS creates to use to allow communication between your
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline void SetSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = value; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline void SetSecurityGroupIds(Aws::Vector<Aws::String>&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds = std::move(value); }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& WithSecurityGroupIds(const Aws::Vector<Aws::String>& value) { SetSecurityGroupIds(value); return *this;}
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& WithSecurityGroupIds(Aws::Vector<Aws::String>&& value) { SetSecurityGroupIds(std::move(value)); return *this;}
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(const Aws::String& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(Aws::String&& value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Specify one or more security groups for the cross-account elastic network
      * interfaces that Amazon EKS creates to use to allow communication between your
-     * worker nodes and the Kubernetes control plane.</p>
+     * worker nodes and the Kubernetes control plane. If you do not specify a security
+     * group, the default security group for your VPC is used.</p>
      */
     inline VpcConfigRequest& AddSecurityGroupIds(const char* value) { m_securityGroupIdsHasBeenSet = true; m_securityGroupIds.push_back(value); return *this; }
+
+
+    /**
+     * <p>Set this value to <code>false</code> to disable public access for your
+     * cluster's Kubernetes API server endpoint. If you disable public access, your
+     * cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which
+     * enables public access for your Kubernetes API server. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline bool GetEndpointPublicAccess() const{ return m_endpointPublicAccess; }
+
+    /**
+     * <p>Set this value to <code>false</code> to disable public access for your
+     * cluster's Kubernetes API server endpoint. If you disable public access, your
+     * cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which
+     * enables public access for your Kubernetes API server. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline bool EndpointPublicAccessHasBeenSet() const { return m_endpointPublicAccessHasBeenSet; }
+
+    /**
+     * <p>Set this value to <code>false</code> to disable public access for your
+     * cluster's Kubernetes API server endpoint. If you disable public access, your
+     * cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which
+     * enables public access for your Kubernetes API server. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline void SetEndpointPublicAccess(bool value) { m_endpointPublicAccessHasBeenSet = true; m_endpointPublicAccess = value; }
+
+    /**
+     * <p>Set this value to <code>false</code> to disable public access for your
+     * cluster's Kubernetes API server endpoint. If you disable public access, your
+     * cluster's Kubernetes API server can only receive requests from within the
+     * cluster VPC. The default value for this parameter is <code>true</code>, which
+     * enables public access for your Kubernetes API server. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline VpcConfigRequest& WithEndpointPublicAccess(bool value) { SetEndpointPublicAccess(value); return *this;}
+
+
+    /**
+     * <p>Set this value to <code>true</code> to enable private access for your
+     * cluster's Kubernetes API server endpoint. If you enable private access,
+     * Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which
+     * disables private access for your Kubernetes API server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline bool GetEndpointPrivateAccess() const{ return m_endpointPrivateAccess; }
+
+    /**
+     * <p>Set this value to <code>true</code> to enable private access for your
+     * cluster's Kubernetes API server endpoint. If you enable private access,
+     * Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which
+     * disables private access for your Kubernetes API server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline bool EndpointPrivateAccessHasBeenSet() const { return m_endpointPrivateAccessHasBeenSet; }
+
+    /**
+     * <p>Set this value to <code>true</code> to enable private access for your
+     * cluster's Kubernetes API server endpoint. If you enable private access,
+     * Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which
+     * disables private access for your Kubernetes API server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline void SetEndpointPrivateAccess(bool value) { m_endpointPrivateAccessHasBeenSet = true; m_endpointPrivateAccess = value; }
+
+    /**
+     * <p>Set this value to <code>true</code> to enable private access for your
+     * cluster's Kubernetes API server endpoint. If you enable private access,
+     * Kubernetes API requests from within your cluster's VPC will use the private VPC
+     * endpoint. The default value for this parameter is <code>false</code>, which
+     * disables private access for your Kubernetes API server. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/cluster-endpoint.html">Amazon
+     * EKS Cluster Endpoint Access Control</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p>
+     */
+    inline VpcConfigRequest& WithEndpointPrivateAccess(bool value) { SetEndpointPrivateAccess(value); return *this;}
 
   private:
 
@@ -169,6 +298,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_securityGroupIds;
     bool m_securityGroupIdsHasBeenSet;
+
+    bool m_endpointPublicAccess;
+    bool m_endpointPublicAccessHasBeenSet;
+
+    bool m_endpointPrivateAccess;
+    bool m_endpointPrivateAccessHasBeenSet;
   };
 
 } // namespace Model

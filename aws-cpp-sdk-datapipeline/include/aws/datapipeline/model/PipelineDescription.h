@@ -60,6 +60,12 @@ namespace Model
      * <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a
      * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The pipeline identifier that was assigned by AWS Data Pipeline. This is a
+     * string of the form <code>df-297EG78HU43EEXAMPLE</code>.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -101,6 +107,11 @@ namespace Model
     /**
      * <p>The name of the pipeline.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * @accountId, and @pipelineState.</p>
      */
     inline const Aws::Vector<Field>& GetFields() const{ return m_fields; }
+
+    /**
+     * <p>A list of read-only fields that contain metadata about the pipeline: @userId,
+     * @accountId, and @pipelineState.</p>
+     */
+    inline bool FieldsHasBeenSet() const { return m_fieldsHasBeenSet; }
 
     /**
      * <p>A list of read-only fields that contain metadata about the pipeline: @userId,
@@ -180,6 +197,11 @@ namespace Model
     /**
      * <p>Description of the pipeline.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the pipeline.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -216,6 +238,15 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of tags to associated with a pipeline. Tags let you control access to
+     * pipelines. For more information, see <a
+     * href="http://docs.aws.amazon.com/datapipeline/latest/DeveloperGuide/dp-control-access.html">Controlling
+     * User Access to Pipelines</a> in the <i>AWS Data Pipeline Developer
+     * Guide</i>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of tags to associated with a pipeline. Tags let you control access to

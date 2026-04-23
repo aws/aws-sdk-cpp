@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of one IP address.</p>
      */
+    inline bool IpIdHasBeenSet() const { return m_ipIdHasBeenSet; }
+
+    /**
+     * <p>The ID of one IP address.</p>
+     */
     inline void SetIpId(const Aws::String& value) { m_ipIdHasBeenSet = true; m_ipId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of one subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of one subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of one subnet.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>One IP address that the resolver endpoint uses for DNS queries.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>A status code that gives the current status of the request.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A status code that gives the current status of the request.</p>
+     */
     inline void SetStatus(const IpAddressStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -189,6 +209,12 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message that provides additional information about the status of the
+     * request.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A message that provides additional information about the status of the
@@ -237,6 +263,12 @@ namespace Model
      * <p>The date and time that the IP address was created, in Unix time format and
      * Coordinated Universal Time (UTC).</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the IP address was created, in Unix time format and
+     * Coordinated Universal Time (UTC).</p>
+     */
     inline void SetCreationTime(const Aws::String& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -275,6 +307,12 @@ namespace Model
      * and Coordinated Universal Time (UTC).</p>
      */
     inline const Aws::String& GetModificationTime() const{ return m_modificationTime; }
+
+    /**
+     * <p>The date and time that the IP address was last modified, in Unix time format
+     * and Coordinated Universal Time (UTC).</p>
+     */
+    inline bool ModificationTimeHasBeenSet() const { return m_modificationTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the IP address was last modified, in Unix time format

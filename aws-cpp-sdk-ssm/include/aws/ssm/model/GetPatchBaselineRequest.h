@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the patch baseline to retrieve.</p>
      */
+    inline bool BaselineIdHasBeenSet() const { return m_baselineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the patch baseline to retrieve.</p>
+     */
     inline void SetBaselineId(const Aws::String& value) { m_baselineIdHasBeenSet = true; m_baselineId = value; }
 
     /**

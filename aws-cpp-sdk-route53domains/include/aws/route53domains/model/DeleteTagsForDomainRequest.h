@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The domain for which you want to delete one or more tags.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The domain for which you want to delete one or more tags.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>A list of tag keys to delete.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagsToDelete() const{ return m_tagsToDelete; }
+
+    /**
+     * <p>A list of tag keys to delete.</p>
+     */
+    inline bool TagsToDeleteHasBeenSet() const { return m_tagsToDeleteHasBeenSet; }
 
     /**
      * <p>A list of tag keys to delete.</p>

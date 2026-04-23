@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the attachment file.</p>
      */
+    inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the attachment file.</p>
+     */
     inline void SetFileName(const Aws::String& value) { m_fileNameHasBeenSet = true; m_fileName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The content of the attachment file.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The content of the attachment file.</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * <p>The content of the attachment file.</p>

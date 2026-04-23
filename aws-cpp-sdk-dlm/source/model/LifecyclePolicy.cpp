@@ -85,14 +85,14 @@ LifecyclePolicy& LifecyclePolicy::operator =(JsonView jsonValue)
 
   if(jsonValue.ValueExists("DateCreated"))
   {
-    m_dateCreated = jsonValue.GetDouble("DateCreated");
+    m_dateCreated = jsonValue.GetString("DateCreated");
 
     m_dateCreatedHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("DateModified"))
   {
-    m_dateModified = jsonValue.GetDouble("DateModified");
+    m_dateModified = jsonValue.GetString("DateModified");
 
     m_dateModifiedHasBeenSet = true;
   }
@@ -136,12 +136,12 @@ JsonValue LifecyclePolicy::Jsonize() const
 
   if(m_dateCreatedHasBeenSet)
   {
-   payload.WithDouble("DateCreated", m_dateCreated.SecondsWithMSPrecision());
+   payload.WithString("DateCreated", m_dateCreated.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_dateModifiedHasBeenSet)
   {
-   payload.WithDouble("DateModified", m_dateModified.SecondsWithMSPrecision());
+   payload.WithString("DateModified", m_dateModified.ToGmtString(DateFormat::ISO_8601));
   }
 
   if(m_policyDetailsHasBeenSet)

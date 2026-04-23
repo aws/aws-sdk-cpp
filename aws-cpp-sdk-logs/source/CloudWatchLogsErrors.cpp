@@ -34,6 +34,7 @@ static const int INVALID_SEQUENCE_TOKEN_HASH = HashingUtils::HashString("Invalid
 static const int RESOURCE_ALREADY_EXISTS_HASH = HashingUtils::HashString("ResourceAlreadyExistsException");
 static const int INVALID_OPERATION_HASH = HashingUtils::HashString("InvalidOperationException");
 static const int DATA_ALREADY_ACCEPTED_HASH = HashingUtils::HashString("DataAlreadyAcceptedException");
+static const int MALFORMED_QUERY_HASH = HashingUtils::HashString("MalformedQueryException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
 
 
@@ -64,6 +65,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == DATA_ALREADY_ACCEPTED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::DATA_ALREADY_ACCEPTED), false);
+  }
+  else if (hashCode == MALFORMED_QUERY_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(CloudWatchLogsErrors::MALFORMED_QUERY), false);
   }
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A unique identifier for the maintenance window.</p>
      */
+    inline bool DeferMaintenanceIdentifierHasBeenSet() const { return m_deferMaintenanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the maintenance window.</p>
+     */
     inline void SetDeferMaintenanceIdentifier(const Aws::String& value) { m_deferMaintenanceIdentifierHasBeenSet = true; m_deferMaintenanceIdentifier = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p> A timestamp for the beginning of the time period when we defer
      * maintenance.</p>
      */
+    inline bool DeferMaintenanceStartTimeHasBeenSet() const { return m_deferMaintenanceStartTimeHasBeenSet; }
+
+    /**
+     * <p> A timestamp for the beginning of the time period when we defer
+     * maintenance.</p>
+     */
     inline void SetDeferMaintenanceStartTime(const Aws::Utils::DateTime& value) { m_deferMaintenanceStartTimeHasBeenSet = true; m_deferMaintenanceStartTime = value; }
 
     /**
@@ -121,6 +132,11 @@ namespace Model
      * <p> A timestamp for the end of the time period when we defer maintenance.</p>
      */
     inline const Aws::Utils::DateTime& GetDeferMaintenanceEndTime() const{ return m_deferMaintenanceEndTime; }
+
+    /**
+     * <p> A timestamp for the end of the time period when we defer maintenance.</p>
+     */
+    inline bool DeferMaintenanceEndTimeHasBeenSet() const { return m_deferMaintenanceEndTimeHasBeenSet; }
 
     /**
      * <p> A timestamp for the end of the time period when we defer maintenance.</p>

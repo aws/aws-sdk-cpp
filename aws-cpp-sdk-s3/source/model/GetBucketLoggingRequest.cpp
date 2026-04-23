@@ -34,7 +34,7 @@ GetBucketLoggingRequest::GetBucketLoggingRequest() :
 
 Aws::String GetBucketLoggingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketLoggingRequest::AddQueryStringParameters(URI& uri) const

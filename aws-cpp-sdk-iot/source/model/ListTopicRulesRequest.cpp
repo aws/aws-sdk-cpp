@@ -37,7 +37,7 @@ ListTopicRulesRequest::ListTopicRulesRequest() :
 
 Aws::String ListTopicRulesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTopicRulesRequest::AddQueryStringParameters(URI& uri) const

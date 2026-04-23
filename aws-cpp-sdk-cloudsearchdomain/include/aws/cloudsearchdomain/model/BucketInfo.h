@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of the calculated facet values and counts.</p>
      */
+    inline bool BucketsHasBeenSet() const { return m_bucketsHasBeenSet; }
+
+    /**
+     * <p>A list of the calculated facet values and counts.</p>
+     */
     inline void SetBuckets(const Aws::Vector<Bucket>& value) { m_bucketsHasBeenSet = true; m_buckets = value; }
 
     /**

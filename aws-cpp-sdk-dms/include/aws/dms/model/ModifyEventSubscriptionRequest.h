@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the AWS DMS event notification subscription to be modified.</p>
      */
+    inline bool SubscriptionNameHasBeenSet() const { return m_subscriptionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS DMS event notification subscription to be modified.</p>
+     */
     inline void SetSubscriptionName(const Aws::String& value) { m_subscriptionNameHasBeenSet = true; m_subscriptionName = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * subscribe to it.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+
+    /**
+     * <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event
+     * notification. The ARN is created by Amazon SNS when you create a topic and
+     * subscribe to it.</p>
+     */
+    inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
      * <p> The Amazon Resource Name (ARN) of the Amazon SNS topic created for event
@@ -144,6 +156,12 @@ namespace Model
      * <p> The type of AWS DMS resource that generates the events you want to subscribe
      * to. </p> <p>Valid values: replication-instance | migration-task</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p> The type of AWS DMS resource that generates the events you want to subscribe
+     * to. </p> <p>Valid values: replication-instance | migration-task</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -183,6 +201,13 @@ namespace Model
      * categories. </p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategories() const{ return m_eventCategories; }
+
+    /**
+     * <p> A list of event categories for a source type that you want to subscribe to.
+     * Use the <code>DescribeEventCategories</code> action to see a list of event
+     * categories. </p>
+     */
+    inline bool EventCategoriesHasBeenSet() const { return m_eventCategoriesHasBeenSet; }
 
     /**
      * <p> A list of event categories for a source type that you want to subscribe to.
@@ -238,6 +263,11 @@ namespace Model
      * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p> A Boolean value; set to <b>true</b> to activate the subscription. </p>

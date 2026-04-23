@@ -62,6 +62,14 @@ namespace Model
      * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data
      * type.</p>
      */
+    inline bool AssessmentTargetNamePatternHasBeenSet() const { return m_assessmentTargetNamePatternHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, an explicit value or a string that contains a
+     * wildcard that is specified for this data type property must match the value of
+     * the <b>assessmentTargetName</b> property of the <a>AssessmentTarget</a> data
+     * type.</p>
+     */
     inline void SetAssessmentTargetNamePattern(const Aws::String& value) { m_assessmentTargetNamePatternHasBeenSet = true; m_assessmentTargetNamePattern = value; }
 
     /**

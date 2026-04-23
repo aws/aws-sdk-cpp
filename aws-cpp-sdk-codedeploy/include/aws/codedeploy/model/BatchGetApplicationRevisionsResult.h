@@ -87,37 +87,37 @@ namespace Model
 
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>Information about errors that may have occurred during the API call.</p>
+     * <p>Information about errors that might have occurred during the API call.</p>
      */
     inline BatchGetApplicationRevisionsResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}
 

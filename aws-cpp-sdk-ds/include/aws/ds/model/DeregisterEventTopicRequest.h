@@ -58,6 +58,12 @@ namespace Model
      * <p>The Directory ID to remove as a publisher. This directory will no longer send
      * messages to the specified SNS topic.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The Directory ID to remove as a publisher. This directory will no longer send
+     * messages to the specified SNS topic.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * publisher.</p>
      */
     inline const Aws::String& GetTopicName() const{ return m_topicName; }
+
+    /**
+     * <p>The name of the SNS topic from which to remove the directory as a
+     * publisher.</p>
+     */
+    inline bool TopicNameHasBeenSet() const { return m_topicNameHasBeenSet; }
 
     /**
      * <p>The name of the SNS topic from which to remove the directory as a

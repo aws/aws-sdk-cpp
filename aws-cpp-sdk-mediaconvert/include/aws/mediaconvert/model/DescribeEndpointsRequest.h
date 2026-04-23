@@ -56,6 +56,12 @@ namespace Model
      * Optional. Max number of endpoints, up to twenty, that will be returned at one
      * time.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * Optional. Max number of endpoints, up to twenty, that will be returned at one
+     * time.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -65,19 +71,52 @@ namespace Model
     inline DescribeEndpointsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
-    
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
     inline const DescribeEndpointsMode& GetMode() const{ return m_mode; }
 
-    
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
+    inline bool ModeHasBeenSet() const { return m_modeHasBeenSet; }
+
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
     inline void SetMode(const DescribeEndpointsMode& value) { m_modeHasBeenSet = true; m_mode = value; }
 
-    
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
     inline void SetMode(DescribeEndpointsMode&& value) { m_modeHasBeenSet = true; m_mode = std::move(value); }
 
-    
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
     inline DescribeEndpointsRequest& WithMode(const DescribeEndpointsMode& value) { SetMode(value); return *this;}
 
-    
+    /**
+     * Optional field, defaults to DEFAULT. Specify DEFAULT for this operation to
+     * return your endpoints if any exist, or to create an endpoint for you and return
+     * it if one doesn't already exist. Specify GET_ONLY to return your endpoints if
+     * any exist, or an empty list if none exist.
+     */
     inline DescribeEndpointsRequest& WithMode(DescribeEndpointsMode&& value) { SetMode(std::move(value)); return *this;}
 
 
@@ -86,6 +125,12 @@ namespace Model
      * the next batch of endpoints.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of endpoints.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request

@@ -58,6 +58,11 @@ namespace Model
     /**
      * The component that will be subject to logging.
      */
+    inline bool ComponentHasBeenSet() const { return m_componentHasBeenSet; }
+
+    /**
+     * The component that will be subject to logging.
+     */
     inline void SetComponent(const LoggerComponent& value) { m_componentHasBeenSet = true; m_component = value; }
 
     /**
@@ -79,49 +84,56 @@ namespace Model
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline const Aws::String& GetId() const{ return m_id; }
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * A descriptive or arbitrary ID for the logger. This value must be unique within
+     * the logger definition version. Max length is 128 characters with pattern
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(Aws::String&& value) { m_idHasBeenSet = true; m_id = std::move(value); }
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline void SetId(const char* value) { m_idHasBeenSet = true; m_id.assign(value); }
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Logger& WithId(const Aws::String& value) { SetId(value); return *this;}
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Logger& WithId(Aws::String&& value) { SetId(std::move(value)); return *this;}
 
     /**
      * A descriptive or arbitrary ID for the logger. This value must be unique within
      * the logger definition version. Max length is 128 characters with pattern
-     * ''[a&#8209;zA&#8209;Z0&#8209;9:_&#8209;]+''.
+     * ''[a-zA-Z0-9:_-]+''.
      */
     inline Logger& WithId(const char* value) { SetId(value); return *this;}
 
@@ -130,6 +142,11 @@ namespace Model
      * The level of the logs.
      */
     inline const LoggerLevel& GetLevel() const{ return m_level; }
+
+    /**
+     * The level of the logs.
+     */
+    inline bool LevelHasBeenSet() const { return m_levelHasBeenSet; }
 
     /**
      * The level of the logs.
@@ -162,6 +179,12 @@ namespace Model
      * The amount of file space, in KB, to use if the local file system is used for
      * logging purposes.
      */
+    inline bool SpaceHasBeenSet() const { return m_spaceHasBeenSet; }
+
+    /**
+     * The amount of file space, in KB, to use if the local file system is used for
+     * logging purposes.
+     */
     inline void SetSpace(int value) { m_spaceHasBeenSet = true; m_space = value; }
 
     /**
@@ -175,6 +198,11 @@ namespace Model
      * The type of log output which will be used.
      */
     inline const LoggerType& GetType() const{ return m_type; }
+
+    /**
+     * The type of log output which will be used.
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * The type of log output which will be used.

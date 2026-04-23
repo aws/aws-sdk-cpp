@@ -58,6 +58,13 @@ namespace Model
      * to a <code>ListResolverRules</code> request. If you don't specify a value for
      * <code>MaxResults</code>, Resolver returns up to 100 resolver rules.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of resolver rules that you want to return in the response
+     * to a <code>ListResolverRules</code> request. If you don't specify a value for
+     * <code>MaxResults</code>, Resolver returns up to 100 resolver rules.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -76,6 +83,15 @@ namespace Model
      * previous response. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
+     * <p>If you have more than <code>MaxResults</code> resolver rules, you can submit
+     * another <code>ListResolverRules</code> request to get the next group of resolver
+     * rules. In the next request, specify the value of <code>NextToken</code> from the
+     * previous response. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>For the first <code>ListResolverRules</code> request, omit this value.</p>
@@ -140,6 +156,15 @@ namespace Model
      * for <code>Filters</code>, if any, as in the previous request.</p> </note>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>An optional specification to return a subset of resolver rules, such as all
+     * resolver rules that are associated with the same resolver endpoint.</p> <note>
+     * <p>If you submit a second or subsequent <code>ListResolverRules</code> request
+     * and specify the <code>NextToken</code> parameter, you must use the same values
+     * for <code>Filters</code>, if any, as in the previous request.</p> </note>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>An optional specification to return a subset of resolver rules, such as all

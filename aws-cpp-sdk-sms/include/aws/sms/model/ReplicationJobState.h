@@ -30,7 +30,10 @@ namespace Model
     ACTIVE,
     FAILED,
     DELETING,
-    DELETED
+    DELETED,
+    COMPLETED,
+    PAUSED_ON_FAILURE,
+    FAILING
   };
 
 namespace ReplicationJobStateMapper

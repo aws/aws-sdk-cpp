@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/pinpoint/PinpointClient.h>
 #include <aws/pinpoint/PinpointEndpoint.h>
 #include <aws/pinpoint/PinpointErrorMarshaller.h>
@@ -80,12 +83,15 @@
 #include <aws/pinpoint/model/GetSmsChannelRequest.h>
 #include <aws/pinpoint/model/GetUserEndpointsRequest.h>
 #include <aws/pinpoint/model/GetVoiceChannelRequest.h>
+#include <aws/pinpoint/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint/model/PhoneNumberValidateRequest.h>
 #include <aws/pinpoint/model/PutEventStreamRequest.h>
 #include <aws/pinpoint/model/PutEventsRequest.h>
 #include <aws/pinpoint/model/RemoveAttributesRequest.h>
 #include <aws/pinpoint/model/SendMessagesRequest.h>
 #include <aws/pinpoint/model/SendUsersMessagesRequest.h>
+#include <aws/pinpoint/model/TagResourceRequest.h>
+#include <aws/pinpoint/model/UntagResourceRequest.h>
 #include <aws/pinpoint/model/UpdateAdmChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsChannelRequest.h>
 #include <aws/pinpoint/model/UpdateApnsSandboxChannelRequest.h>
@@ -151,25 +157,32 @@ PinpointClient::~PinpointClient()
 
 void PinpointClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << PinpointEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + PinpointEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void PinpointClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 CreateAppOutcome PinpointClient::CreateApp(const CreateAppRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apps";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -203,9 +216,16 @@ void PinpointClient::CreateAppAsyncHelper(const CreateAppRequest& request, const
 
 CreateCampaignOutcome PinpointClient::CreateCampaign(const CreateCampaignRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateCampaign", "Required field: ApplicationId, is not set");
+    return CreateCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -238,9 +258,16 @@ void PinpointClient::CreateCampaignAsyncHelper(const CreateCampaignRequest& requ
 
 CreateExportJobOutcome PinpointClient::CreateExportJob(const CreateExportJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateExportJob", "Required field: ApplicationId, is not set");
+    return CreateExportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -273,9 +300,16 @@ void PinpointClient::CreateExportJobAsyncHelper(const CreateExportJobRequest& re
 
 CreateImportJobOutcome PinpointClient::CreateImportJob(const CreateImportJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateImportJob", "Required field: ApplicationId, is not set");
+    return CreateImportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -308,9 +342,16 @@ void PinpointClient::CreateImportJobAsyncHelper(const CreateImportJobRequest& re
 
 CreateSegmentOutcome PinpointClient::CreateSegment(const CreateSegmentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSegment", "Required field: ApplicationId, is not set");
+    return CreateSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -343,9 +384,16 @@ void PinpointClient::CreateSegmentAsyncHelper(const CreateSegmentRequest& reques
 
 DeleteAdmChannelOutcome PinpointClient::DeleteAdmChannel(const DeleteAdmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteAdmChannel", "Required field: ApplicationId, is not set");
+    return DeleteAdmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -378,9 +426,16 @@ void PinpointClient::DeleteAdmChannelAsyncHelper(const DeleteAdmChannelRequest& 
 
 DeleteApnsChannelOutcome PinpointClient::DeleteApnsChannel(const DeleteApnsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApnsChannel", "Required field: ApplicationId, is not set");
+    return DeleteApnsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -413,9 +468,16 @@ void PinpointClient::DeleteApnsChannelAsyncHelper(const DeleteApnsChannelRequest
 
 DeleteApnsSandboxChannelOutcome PinpointClient::DeleteApnsSandboxChannel(const DeleteApnsSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApnsSandboxChannel", "Required field: ApplicationId, is not set");
+    return DeleteApnsSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -448,9 +510,16 @@ void PinpointClient::DeleteApnsSandboxChannelAsyncHelper(const DeleteApnsSandbox
 
 DeleteApnsVoipChannelOutcome PinpointClient::DeleteApnsVoipChannel(const DeleteApnsVoipChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApnsVoipChannel", "Required field: ApplicationId, is not set");
+    return DeleteApnsVoipChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -483,9 +552,16 @@ void PinpointClient::DeleteApnsVoipChannelAsyncHelper(const DeleteApnsVoipChanne
 
 DeleteApnsVoipSandboxChannelOutcome PinpointClient::DeleteApnsVoipSandboxChannel(const DeleteApnsVoipSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApnsVoipSandboxChannel", "Required field: ApplicationId, is not set");
+    return DeleteApnsVoipSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -518,9 +594,15 @@ void PinpointClient::DeleteApnsVoipSandboxChannelAsyncHelper(const DeleteApnsVoi
 
 DeleteAppOutcome PinpointClient::DeleteApp(const DeleteAppRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteApp", "Required field: ApplicationId, is not set");
+    return DeleteAppOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -553,9 +635,16 @@ void PinpointClient::DeleteAppAsyncHelper(const DeleteAppRequest& request, const
 
 DeleteBaiduChannelOutcome PinpointClient::DeleteBaiduChannel(const DeleteBaiduChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteBaiduChannel", "Required field: ApplicationId, is not set");
+    return DeleteBaiduChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -588,9 +677,22 @@ void PinpointClient::DeleteBaiduChannelAsyncHelper(const DeleteBaiduChannelReque
 
 DeleteCampaignOutcome PinpointClient::DeleteCampaign(const DeleteCampaignRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCampaign", "Required field: ApplicationId, is not set");
+    return DeleteCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCampaign", "Required field: CampaignId, is not set");
+    return DeleteCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -623,9 +725,16 @@ void PinpointClient::DeleteCampaignAsyncHelper(const DeleteCampaignRequest& requ
 
 DeleteEmailChannelOutcome PinpointClient::DeleteEmailChannel(const DeleteEmailChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailChannel", "Required field: ApplicationId, is not set");
+    return DeleteEmailChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -658,9 +767,22 @@ void PinpointClient::DeleteEmailChannelAsyncHelper(const DeleteEmailChannelReque
 
 DeleteEndpointOutcome PinpointClient::DeleteEndpoint(const DeleteEndpointRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEndpoint", "Required field: ApplicationId, is not set");
+    return DeleteEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEndpoint", "Required field: EndpointId, is not set");
+    return DeleteEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/endpoints/";
+  ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -693,9 +815,16 @@ void PinpointClient::DeleteEndpointAsyncHelper(const DeleteEndpointRequest& requ
 
 DeleteEventStreamOutcome PinpointClient::DeleteEventStream(const DeleteEventStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEventStream", "Required field: ApplicationId, is not set");
+    return DeleteEventStreamOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -728,9 +857,16 @@ void PinpointClient::DeleteEventStreamAsyncHelper(const DeleteEventStreamRequest
 
 DeleteGcmChannelOutcome PinpointClient::DeleteGcmChannel(const DeleteGcmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGcmChannel", "Required field: ApplicationId, is not set");
+    return DeleteGcmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -763,9 +899,22 @@ void PinpointClient::DeleteGcmChannelAsyncHelper(const DeleteGcmChannelRequest& 
 
 DeleteSegmentOutcome PinpointClient::DeleteSegment(const DeleteSegmentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSegment", "Required field: ApplicationId, is not set");
+    return DeleteSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSegment", "Required field: SegmentId, is not set");
+    return DeleteSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -798,9 +947,16 @@ void PinpointClient::DeleteSegmentAsyncHelper(const DeleteSegmentRequest& reques
 
 DeleteSmsChannelOutcome PinpointClient::DeleteSmsChannel(const DeleteSmsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSmsChannel", "Required field: ApplicationId, is not set");
+    return DeleteSmsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -833,9 +989,22 @@ void PinpointClient::DeleteSmsChannelAsyncHelper(const DeleteSmsChannelRequest& 
 
 DeleteUserEndpointsOutcome PinpointClient::DeleteUserEndpoints(const DeleteUserEndpointsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserEndpoints", "Required field: ApplicationId, is not set");
+    return DeleteUserEndpointsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteUserEndpoints", "Required field: UserId, is not set");
+    return DeleteUserEndpointsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users/{user-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/users/";
+  ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -868,9 +1037,16 @@ void PinpointClient::DeleteUserEndpointsAsyncHelper(const DeleteUserEndpointsReq
 
 DeleteVoiceChannelOutcome PinpointClient::DeleteVoiceChannel(const DeleteVoiceChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteVoiceChannel", "Required field: ApplicationId, is not set");
+    return DeleteVoiceChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -903,9 +1079,16 @@ void PinpointClient::DeleteVoiceChannelAsyncHelper(const DeleteVoiceChannelReque
 
 GetAdmChannelOutcome PinpointClient::GetAdmChannel(const GetAdmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAdmChannel", "Required field: ApplicationId, is not set");
+    return GetAdmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -938,9 +1121,16 @@ void PinpointClient::GetAdmChannelAsyncHelper(const GetAdmChannelRequest& reques
 
 GetApnsChannelOutcome PinpointClient::GetApnsChannel(const GetApnsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApnsChannel", "Required field: ApplicationId, is not set");
+    return GetApnsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -973,9 +1163,16 @@ void PinpointClient::GetApnsChannelAsyncHelper(const GetApnsChannelRequest& requ
 
 GetApnsSandboxChannelOutcome PinpointClient::GetApnsSandboxChannel(const GetApnsSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApnsSandboxChannel", "Required field: ApplicationId, is not set");
+    return GetApnsSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1008,9 +1205,16 @@ void PinpointClient::GetApnsSandboxChannelAsyncHelper(const GetApnsSandboxChanne
 
 GetApnsVoipChannelOutcome PinpointClient::GetApnsVoipChannel(const GetApnsVoipChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApnsVoipChannel", "Required field: ApplicationId, is not set");
+    return GetApnsVoipChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1043,9 +1247,16 @@ void PinpointClient::GetApnsVoipChannelAsyncHelper(const GetApnsVoipChannelReque
 
 GetApnsVoipSandboxChannelOutcome PinpointClient::GetApnsVoipSandboxChannel(const GetApnsVoipSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApnsVoipSandboxChannel", "Required field: ApplicationId, is not set");
+    return GetApnsVoipSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1078,9 +1289,15 @@ void PinpointClient::GetApnsVoipSandboxChannelAsyncHelper(const GetApnsVoipSandb
 
 GetAppOutcome PinpointClient::GetApp(const GetAppRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApp", "Required field: ApplicationId, is not set");
+    return GetAppOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1113,9 +1330,16 @@ void PinpointClient::GetAppAsyncHelper(const GetAppRequest& request, const GetAp
 
 GetApplicationSettingsOutcome PinpointClient::GetApplicationSettings(const GetApplicationSettingsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetApplicationSettings", "Required field: ApplicationId, is not set");
+    return GetApplicationSettingsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/settings";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1148,8 +1372,8 @@ void PinpointClient::GetApplicationSettingsAsyncHelper(const GetApplicationSetti
 
 GetAppsOutcome PinpointClient::GetApps(const GetAppsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/apps";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1183,9 +1407,16 @@ void PinpointClient::GetAppsAsyncHelper(const GetAppsRequest& request, const Get
 
 GetBaiduChannelOutcome PinpointClient::GetBaiduChannel(const GetBaiduChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBaiduChannel", "Required field: ApplicationId, is not set");
+    return GetBaiduChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1218,9 +1449,22 @@ void PinpointClient::GetBaiduChannelAsyncHelper(const GetBaiduChannelRequest& re
 
 GetCampaignOutcome PinpointClient::GetCampaign(const GetCampaignRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaign", "Required field: ApplicationId, is not set");
+    return GetCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaign", "Required field: CampaignId, is not set");
+    return GetCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1253,9 +1497,23 @@ void PinpointClient::GetCampaignAsyncHelper(const GetCampaignRequest& request, c
 
 GetCampaignActivitiesOutcome PinpointClient::GetCampaignActivities(const GetCampaignActivitiesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignActivities", "Required field: ApplicationId, is not set");
+    return GetCampaignActivitiesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignActivities", "Required field: CampaignId, is not set");
+    return GetCampaignActivitiesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/activities";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
+  ss << "/activities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1288,9 +1546,28 @@ void PinpointClient::GetCampaignActivitiesAsyncHelper(const GetCampaignActivitie
 
 GetCampaignVersionOutcome PinpointClient::GetCampaignVersion(const GetCampaignVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignVersion", "Required field: ApplicationId, is not set");
+    return GetCampaignVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignVersion", "Required field: CampaignId, is not set");
+    return GetCampaignVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignVersion", "Required field: Version, is not set");
+    return GetCampaignVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/versions/";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
+  ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1324,9 +1601,23 @@ void PinpointClient::GetCampaignVersionAsyncHelper(const GetCampaignVersionReque
 
 GetCampaignVersionsOutcome PinpointClient::GetCampaignVersions(const GetCampaignVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignVersions", "Required field: ApplicationId, is not set");
+    return GetCampaignVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaignVersions", "Required field: CampaignId, is not set");
+    return GetCampaignVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}/versions";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
+  ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1359,9 +1650,16 @@ void PinpointClient::GetCampaignVersionsAsyncHelper(const GetCampaignVersionsReq
 
 GetCampaignsOutcome PinpointClient::GetCampaigns(const GetCampaignsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCampaigns", "Required field: ApplicationId, is not set");
+    return GetCampaignsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1394,9 +1692,16 @@ void PinpointClient::GetCampaignsAsyncHelper(const GetCampaignsRequest& request,
 
 GetChannelsOutcome PinpointClient::GetChannels(const GetChannelsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetChannels", "Required field: ApplicationId, is not set");
+    return GetChannelsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1429,9 +1734,16 @@ void PinpointClient::GetChannelsAsyncHelper(const GetChannelsRequest& request, c
 
 GetEmailChannelOutcome PinpointClient::GetEmailChannel(const GetEmailChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEmailChannel", "Required field: ApplicationId, is not set");
+    return GetEmailChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1464,9 +1776,22 @@ void PinpointClient::GetEmailChannelAsyncHelper(const GetEmailChannelRequest& re
 
 GetEndpointOutcome PinpointClient::GetEndpoint(const GetEndpointRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEndpoint", "Required field: ApplicationId, is not set");
+    return GetEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEndpoint", "Required field: EndpointId, is not set");
+    return GetEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/endpoints/";
+  ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1499,9 +1824,16 @@ void PinpointClient::GetEndpointAsyncHelper(const GetEndpointRequest& request, c
 
 GetEventStreamOutcome PinpointClient::GetEventStream(const GetEventStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEventStream", "Required field: ApplicationId, is not set");
+    return GetEventStreamOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1534,9 +1866,22 @@ void PinpointClient::GetEventStreamAsyncHelper(const GetEventStreamRequest& requ
 
 GetExportJobOutcome PinpointClient::GetExportJob(const GetExportJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExportJob", "Required field: ApplicationId, is not set");
+    return GetExportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExportJob", "Required field: JobId, is not set");
+    return GetExportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export/{job-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/export/";
+  ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1569,9 +1914,16 @@ void PinpointClient::GetExportJobAsyncHelper(const GetExportJobRequest& request,
 
 GetExportJobsOutcome PinpointClient::GetExportJobs(const GetExportJobsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetExportJobs", "Required field: ApplicationId, is not set");
+    return GetExportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/export";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1604,9 +1956,16 @@ void PinpointClient::GetExportJobsAsyncHelper(const GetExportJobsRequest& reques
 
 GetGcmChannelOutcome PinpointClient::GetGcmChannel(const GetGcmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGcmChannel", "Required field: ApplicationId, is not set");
+    return GetGcmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1639,9 +1998,22 @@ void PinpointClient::GetGcmChannelAsyncHelper(const GetGcmChannelRequest& reques
 
 GetImportJobOutcome PinpointClient::GetImportJob(const GetImportJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetImportJob", "Required field: ApplicationId, is not set");
+    return GetImportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetImportJob", "Required field: JobId, is not set");
+    return GetImportJobOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import/{job-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/import/";
+  ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1674,9 +2046,16 @@ void PinpointClient::GetImportJobAsyncHelper(const GetImportJobRequest& request,
 
 GetImportJobsOutcome PinpointClient::GetImportJobs(const GetImportJobsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetImportJobs", "Required field: ApplicationId, is not set");
+    return GetImportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/jobs/import";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1709,9 +2088,22 @@ void PinpointClient::GetImportJobsAsyncHelper(const GetImportJobsRequest& reques
 
 GetSegmentOutcome PinpointClient::GetSegment(const GetSegmentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegment", "Required field: ApplicationId, is not set");
+    return GetSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegment", "Required field: SegmentId, is not set");
+    return GetSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1744,9 +2136,23 @@ void PinpointClient::GetSegmentAsyncHelper(const GetSegmentRequest& request, con
 
 GetSegmentExportJobsOutcome PinpointClient::GetSegmentExportJobs(const GetSegmentExportJobsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentExportJobs", "Required field: ApplicationId, is not set");
+    return GetSegmentExportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentExportJobs", "Required field: SegmentId, is not set");
+    return GetSegmentExportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/jobs/export";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
+  ss << "/jobs/export";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1779,9 +2185,23 @@ void PinpointClient::GetSegmentExportJobsAsyncHelper(const GetSegmentExportJobsR
 
 GetSegmentImportJobsOutcome PinpointClient::GetSegmentImportJobs(const GetSegmentImportJobsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentImportJobs", "Required field: ApplicationId, is not set");
+    return GetSegmentImportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentImportJobs", "Required field: SegmentId, is not set");
+    return GetSegmentImportJobsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/jobs/import";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
+  ss << "/jobs/import";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1814,9 +2234,28 @@ void PinpointClient::GetSegmentImportJobsAsyncHelper(const GetSegmentImportJobsR
 
 GetSegmentVersionOutcome PinpointClient::GetSegmentVersion(const GetSegmentVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentVersion", "Required field: ApplicationId, is not set");
+    return GetSegmentVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentVersion", "Required field: SegmentId, is not set");
+    return GetSegmentVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
+  if (!request.VersionHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentVersion", "Required field: Version, is not set");
+    return GetSegmentVersionOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Version]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/versions/";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
+  ss << "/versions/";
   ss << request.GetVersion();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1850,9 +2289,23 @@ void PinpointClient::GetSegmentVersionAsyncHelper(const GetSegmentVersionRequest
 
 GetSegmentVersionsOutcome PinpointClient::GetSegmentVersions(const GetSegmentVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentVersions", "Required field: ApplicationId, is not set");
+    return GetSegmentVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegmentVersions", "Required field: SegmentId, is not set");
+    return GetSegmentVersionsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}/versions";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
+  ss << "/versions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1885,9 +2338,16 @@ void PinpointClient::GetSegmentVersionsAsyncHelper(const GetSegmentVersionsReque
 
 GetSegmentsOutcome PinpointClient::GetSegments(const GetSegmentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSegments", "Required field: ApplicationId, is not set");
+    return GetSegmentsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1920,9 +2380,16 @@ void PinpointClient::GetSegmentsAsyncHelper(const GetSegmentsRequest& request, c
 
 GetSmsChannelOutcome PinpointClient::GetSmsChannel(const GetSmsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSmsChannel", "Required field: ApplicationId, is not set");
+    return GetSmsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1955,9 +2422,22 @@ void PinpointClient::GetSmsChannelAsyncHelper(const GetSmsChannelRequest& reques
 
 GetUserEndpointsOutcome PinpointClient::GetUserEndpoints(const GetUserEndpointsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUserEndpoints", "Required field: ApplicationId, is not set");
+    return GetUserEndpointsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.UserIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetUserEndpoints", "Required field: UserId, is not set");
+    return GetUserEndpointsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [UserId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users/{user-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/users/";
+  ss << request.GetUserId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -1990,9 +2470,16 @@ void PinpointClient::GetUserEndpointsAsyncHelper(const GetUserEndpointsRequest& 
 
 GetVoiceChannelOutcome PinpointClient::GetVoiceChannel(const GetVoiceChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetVoiceChannel", "Required field: ApplicationId, is not set");
+    return GetVoiceChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2023,10 +2510,51 @@ void PinpointClient::GetVoiceChannelAsyncHelper(const GetVoiceChannelRequest& re
   handler(this, request, GetVoiceChannel(request), context);
 }
 
+ListTagsForResourceOutcome PinpointClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable PinpointClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 PhoneNumberValidateOutcome PinpointClient::PhoneNumberValidate(const PhoneNumberValidateRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/phone/number/validate";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -2060,9 +2588,16 @@ void PinpointClient::PhoneNumberValidateAsyncHelper(const PhoneNumberValidateReq
 
 PutEventStreamOutcome PinpointClient::PutEventStream(const PutEventStreamRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEventStream", "Required field: ApplicationId, is not set");
+    return PutEventStreamOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/eventstream";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/eventstream";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2095,9 +2630,16 @@ void PinpointClient::PutEventStreamAsyncHelper(const PutEventStreamRequest& requ
 
 PutEventsOutcome PinpointClient::PutEvents(const PutEventsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEvents", "Required field: ApplicationId, is not set");
+    return PutEventsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/events";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/events";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2130,9 +2672,22 @@ void PinpointClient::PutEventsAsyncHelper(const PutEventsRequest& request, const
 
 RemoveAttributesOutcome PinpointClient::RemoveAttributes(const RemoveAttributesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveAttributes", "Required field: ApplicationId, is not set");
+    return RemoveAttributesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.AttributeTypeHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("RemoveAttributes", "Required field: AttributeType, is not set");
+    return RemoveAttributesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttributeType]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/attributes/{attribute-type}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/attributes/";
+  ss << request.GetAttributeType();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2165,9 +2720,16 @@ void PinpointClient::RemoveAttributesAsyncHelper(const RemoveAttributesRequest& 
 
 SendMessagesOutcome PinpointClient::SendMessages(const SendMessagesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendMessages", "Required field: ApplicationId, is not set");
+    return SendMessagesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/messages";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/messages";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2200,9 +2762,16 @@ void PinpointClient::SendMessagesAsyncHelper(const SendMessagesRequest& request,
 
 SendUsersMessagesOutcome PinpointClient::SendUsersMessages(const SendUsersMessagesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("SendUsersMessages", "Required field: ApplicationId, is not set");
+    return SendUsersMessagesOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/users-messages";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/users-messages";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2233,11 +2802,105 @@ void PinpointClient::SendUsersMessagesAsyncHelper(const SendUsersMessagesRequest
   handler(this, request, SendUsersMessages(request), context);
 }
 
+TagResourceOutcome PinpointClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable PinpointClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome PinpointClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable PinpointClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateAdmChannelOutcome PinpointClient::UpdateAdmChannel(const UpdateAdmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateAdmChannel", "Required field: ApplicationId, is not set");
+    return UpdateAdmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/adm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/adm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2270,9 +2933,16 @@ void PinpointClient::UpdateAdmChannelAsyncHelper(const UpdateAdmChannelRequest& 
 
 UpdateApnsChannelOutcome PinpointClient::UpdateApnsChannel(const UpdateApnsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApnsChannel", "Required field: ApplicationId, is not set");
+    return UpdateApnsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2305,9 +2975,16 @@ void PinpointClient::UpdateApnsChannelAsyncHelper(const UpdateApnsChannelRequest
 
 UpdateApnsSandboxChannelOutcome PinpointClient::UpdateApnsSandboxChannel(const UpdateApnsSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApnsSandboxChannel", "Required field: ApplicationId, is not set");
+    return UpdateApnsSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2340,9 +3017,16 @@ void PinpointClient::UpdateApnsSandboxChannelAsyncHelper(const UpdateApnsSandbox
 
 UpdateApnsVoipChannelOutcome PinpointClient::UpdateApnsVoipChannel(const UpdateApnsVoipChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApnsVoipChannel", "Required field: ApplicationId, is not set");
+    return UpdateApnsVoipChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2375,9 +3059,16 @@ void PinpointClient::UpdateApnsVoipChannelAsyncHelper(const UpdateApnsVoipChanne
 
 UpdateApnsVoipSandboxChannelOutcome PinpointClient::UpdateApnsVoipSandboxChannel(const UpdateApnsVoipSandboxChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApnsVoipSandboxChannel", "Required field: ApplicationId, is not set");
+    return UpdateApnsVoipSandboxChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/apns_voip_sandbox";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/apns_voip_sandbox";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2410,9 +3101,16 @@ void PinpointClient::UpdateApnsVoipSandboxChannelAsyncHelper(const UpdateApnsVoi
 
 UpdateApplicationSettingsOutcome PinpointClient::UpdateApplicationSettings(const UpdateApplicationSettingsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateApplicationSettings", "Required field: ApplicationId, is not set");
+    return UpdateApplicationSettingsOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/settings";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/settings";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2445,9 +3143,16 @@ void PinpointClient::UpdateApplicationSettingsAsyncHelper(const UpdateApplicatio
 
 UpdateBaiduChannelOutcome PinpointClient::UpdateBaiduChannel(const UpdateBaiduChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateBaiduChannel", "Required field: ApplicationId, is not set");
+    return UpdateBaiduChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/baidu";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/baidu";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2480,9 +3185,22 @@ void PinpointClient::UpdateBaiduChannelAsyncHelper(const UpdateBaiduChannelReque
 
 UpdateCampaignOutcome PinpointClient::UpdateCampaign(const UpdateCampaignRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCampaign", "Required field: ApplicationId, is not set");
+    return UpdateCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.CampaignIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCampaign", "Required field: CampaignId, is not set");
+    return UpdateCampaignOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CampaignId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/campaigns/{campaign-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/campaigns/";
+  ss << request.GetCampaignId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2515,9 +3233,16 @@ void PinpointClient::UpdateCampaignAsyncHelper(const UpdateCampaignRequest& requ
 
 UpdateEmailChannelOutcome PinpointClient::UpdateEmailChannel(const UpdateEmailChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEmailChannel", "Required field: ApplicationId, is not set");
+    return UpdateEmailChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/email";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/email";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2550,9 +3275,22 @@ void PinpointClient::UpdateEmailChannelAsyncHelper(const UpdateEmailChannelReque
 
 UpdateEndpointOutcome PinpointClient::UpdateEndpoint(const UpdateEndpointRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEndpoint", "Required field: ApplicationId, is not set");
+    return UpdateEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.EndpointIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEndpoint", "Required field: EndpointId, is not set");
+    return UpdateEndpointOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EndpointId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints/{endpoint-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/endpoints/";
+  ss << request.GetEndpointId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2585,9 +3323,16 @@ void PinpointClient::UpdateEndpointAsyncHelper(const UpdateEndpointRequest& requ
 
 UpdateEndpointsBatchOutcome PinpointClient::UpdateEndpointsBatch(const UpdateEndpointsBatchRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateEndpointsBatch", "Required field: ApplicationId, is not set");
+    return UpdateEndpointsBatchOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/endpoints";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/endpoints";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2620,9 +3365,16 @@ void PinpointClient::UpdateEndpointsBatchAsyncHelper(const UpdateEndpointsBatchR
 
 UpdateGcmChannelOutcome PinpointClient::UpdateGcmChannel(const UpdateGcmChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGcmChannel", "Required field: ApplicationId, is not set");
+    return UpdateGcmChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/gcm";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/gcm";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2655,9 +3407,22 @@ void PinpointClient::UpdateGcmChannelAsyncHelper(const UpdateGcmChannelRequest& 
 
 UpdateSegmentOutcome PinpointClient::UpdateSegment(const UpdateSegmentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSegment", "Required field: ApplicationId, is not set");
+    return UpdateSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
+  if (!request.SegmentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSegment", "Required field: SegmentId, is not set");
+    return UpdateSegmentOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SegmentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/segments/{segment-id}";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/segments/";
+  ss << request.GetSegmentId();
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2690,9 +3455,16 @@ void PinpointClient::UpdateSegmentAsyncHelper(const UpdateSegmentRequest& reques
 
 UpdateSmsChannelOutcome PinpointClient::UpdateSmsChannel(const UpdateSmsChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSmsChannel", "Required field: ApplicationId, is not set");
+    return UpdateSmsChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/sms";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/sms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())
@@ -2725,9 +3497,16 @@ void PinpointClient::UpdateSmsChannelAsyncHelper(const UpdateSmsChannelRequest& 
 
 UpdateVoiceChannelOutcome PinpointClient::UpdateVoiceChannel(const UpdateVoiceChannelRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ApplicationIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateVoiceChannel", "Required field: ApplicationId, is not set");
+    return UpdateVoiceChannelOutcome(Aws::Client::AWSError<PinpointErrors>(PinpointErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ApplicationId]", false));
+  }
   Aws::Http::URI uri = m_uri;
-  ss << "/v1/apps/{application-id}/channels/voice";
+  Aws::StringStream ss;
+  ss << "/v1/apps/";
+  ss << request.GetApplicationId();
+  ss << "/channels/voice";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
   if(outcome.IsSuccess())

@@ -18,6 +18,7 @@
 #include <aws/iot1click-projects/IoT1ClickProjectsRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot1click-projects/model/PlacementTemplate.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -47,6 +48,11 @@ namespace Model
      * <p>The name of the project to create.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project to create.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The name of the project to create.</p>
@@ -83,6 +89,11 @@ namespace Model
      * <p>An optional description for the project.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>An optional description for the project.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>An optional description for the project.</p>
@@ -131,6 +142,15 @@ namespace Model
      * <code>callbackOverrides</code> for the device templates using the
      * <code>UpdateProject</code> API.</p>
      */
+    inline bool PlacementTemplateHasBeenSet() const { return m_placementTemplateHasBeenSet; }
+
+    /**
+     * <p>The schema defining the placement to be created. A placement template defines
+     * placement default attributes and device templates. You cannot add or remove
+     * device templates after the project has been created. However, you can update
+     * <code>callbackOverrides</code> for the device templates using the
+     * <code>UpdateProject</code> API.</p>
+     */
     inline void SetPlacementTemplate(const PlacementTemplate& value) { m_placementTemplateHasBeenSet = true; m_placementTemplate = value; }
 
     /**
@@ -160,6 +180,124 @@ namespace Model
      */
     inline CreateProjectRequest& WithPlacementTemplate(PlacementTemplate&& value) { SetPlacementTemplate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>Optional tags (metadata key/value pairs) to be associated with the project.
+     * For example, <code>{ {"key1": "value1", "key2": "value2"} }</code>. For more
+     * information, see <a
+     * href="https://aws.amazon.com/answers/account-management/aws-tagging-strategies/">AWS
+     * Tagging Strategies</a>.</p>
+     */
+    inline CreateProjectRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_projectName;
@@ -170,6 +308,9 @@ namespace Model
 
     PlacementTemplate m_placementTemplate;
     bool m_placementTemplateHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

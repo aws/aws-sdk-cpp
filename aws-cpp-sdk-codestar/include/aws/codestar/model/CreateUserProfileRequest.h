@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the user in IAM.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * CodeStar. </p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name that will be displayed as the friendly name for the user in AWS
+     * CodeStar. </p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The name that will be displayed as the friendly name for the user in AWS
@@ -133,6 +144,12 @@ namespace Model
      * <p>The email address that will be displayed as part of the user's profile in AWS
      * CodeStar.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address that will be displayed as part of the user's profile in AWS
+     * CodeStar.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
@@ -172,6 +189,13 @@ namespace Model
      * be used along with the user's private key for SSH access.</p>
      */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
+    /**
+     * <p>The SSH public key associated with the user in AWS CodeStar. If a project
+     * owner allows the user remote access to project resources, this public key will
+     * be used along with the user's private key for SSH access.</p>
+     */
+    inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
 
     /**
      * <p>The SSH public key associated with the user in AWS CodeStar. If a project

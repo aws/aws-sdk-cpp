@@ -59,6 +59,12 @@ namespace Model
      * <p>Identifier (ID) of the directory that you want to associate with the log
      * subscription.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) of the directory that you want to associate with the log
+     * subscription.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -132,6 +143,11 @@ namespace Model
      * <p>The date and time that the log subscription was created.</p>
      */
     inline const Aws::Utils::DateTime& GetSubscriptionCreatedDateTime() const{ return m_subscriptionCreatedDateTime; }
+
+    /**
+     * <p>The date and time that the log subscription was created.</p>
+     */
+    inline bool SubscriptionCreatedDateTimeHasBeenSet() const { return m_subscriptionCreatedDateTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the log subscription was created.</p>

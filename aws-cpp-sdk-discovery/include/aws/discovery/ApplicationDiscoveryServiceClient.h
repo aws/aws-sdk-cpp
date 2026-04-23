@@ -22,6 +22,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/discovery/model/AssociateConfigurationItemsToApplicationResult.h>
+#include <aws/discovery/model/BatchDeleteImportDataResult.h>
 #include <aws/discovery/model/CreateApplicationResult.h>
 #include <aws/discovery/model/CreateTagsResult.h>
 #include <aws/discovery/model/DeleteApplicationsResult.h>
@@ -30,6 +31,7 @@
 #include <aws/discovery/model/DescribeConfigurationsResult.h>
 #include <aws/discovery/model/DescribeContinuousExportsResult.h>
 #include <aws/discovery/model/DescribeExportTasksResult.h>
+#include <aws/discovery/model/DescribeImportTasksResult.h>
 #include <aws/discovery/model/DescribeTagsResult.h>
 #include <aws/discovery/model/DisassociateConfigurationItemsFromApplicationResult.h>
 #include <aws/discovery/model/GetDiscoverySummaryResult.h>
@@ -38,6 +40,7 @@
 #include <aws/discovery/model/StartContinuousExportResult.h>
 #include <aws/discovery/model/StartDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/StartExportTaskResult.h>
+#include <aws/discovery/model/StartImportTaskResult.h>
 #include <aws/discovery/model/StopContinuousExportResult.h>
 #include <aws/discovery/model/StopDataCollectionByAgentIdsResult.h>
 #include <aws/discovery/model/UpdateApplicationResult.h>
@@ -82,6 +85,7 @@ namespace ApplicationDiscoveryService
 namespace Model
 {
         class AssociateConfigurationItemsToApplicationRequest;
+        class BatchDeleteImportDataRequest;
         class CreateApplicationRequest;
         class CreateTagsRequest;
         class DeleteApplicationsRequest;
@@ -90,6 +94,7 @@ namespace Model
         class DescribeConfigurationsRequest;
         class DescribeContinuousExportsRequest;
         class DescribeExportTasksRequest;
+        class DescribeImportTasksRequest;
         class DescribeTagsRequest;
         class DisassociateConfigurationItemsFromApplicationRequest;
         class GetDiscoverySummaryRequest;
@@ -98,11 +103,13 @@ namespace Model
         class StartContinuousExportRequest;
         class StartDataCollectionByAgentIdsRequest;
         class StartExportTaskRequest;
+        class StartImportTaskRequest;
         class StopContinuousExportRequest;
         class StopDataCollectionByAgentIdsRequest;
         class UpdateApplicationRequest;
 
         typedef Aws::Utils::Outcome<AssociateConfigurationItemsToApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> AssociateConfigurationItemsToApplicationOutcome;
+        typedef Aws::Utils::Outcome<BatchDeleteImportDataResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> BatchDeleteImportDataOutcome;
         typedef Aws::Utils::Outcome<CreateApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> CreateApplicationOutcome;
         typedef Aws::Utils::Outcome<CreateTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> CreateTagsOutcome;
         typedef Aws::Utils::Outcome<DeleteApplicationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DeleteApplicationsOutcome;
@@ -111,6 +118,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DescribeConfigurationsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeConfigurationsOutcome;
         typedef Aws::Utils::Outcome<DescribeContinuousExportsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeContinuousExportsOutcome;
         typedef Aws::Utils::Outcome<DescribeExportTasksResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeExportTasksOutcome;
+        typedef Aws::Utils::Outcome<DescribeImportTasksResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeImportTasksOutcome;
         typedef Aws::Utils::Outcome<DescribeTagsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DescribeTagsOutcome;
         typedef Aws::Utils::Outcome<DisassociateConfigurationItemsFromApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> DisassociateConfigurationItemsFromApplicationOutcome;
         typedef Aws::Utils::Outcome<GetDiscoverySummaryResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> GetDiscoverySummaryOutcome;
@@ -119,11 +127,13 @@ namespace Model
         typedef Aws::Utils::Outcome<StartContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartContinuousExportOutcome;
         typedef Aws::Utils::Outcome<StartDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartDataCollectionByAgentIdsOutcome;
         typedef Aws::Utils::Outcome<StartExportTaskResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartExportTaskOutcome;
+        typedef Aws::Utils::Outcome<StartImportTaskResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StartImportTaskOutcome;
         typedef Aws::Utils::Outcome<StopContinuousExportResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopContinuousExportOutcome;
         typedef Aws::Utils::Outcome<StopDataCollectionByAgentIdsResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> StopDataCollectionByAgentIdsOutcome;
         typedef Aws::Utils::Outcome<UpdateApplicationResult, Aws::Client::AWSError<ApplicationDiscoveryServiceErrors>> UpdateApplicationOutcome;
 
         typedef std::future<AssociateConfigurationItemsToApplicationOutcome> AssociateConfigurationItemsToApplicationOutcomeCallable;
+        typedef std::future<BatchDeleteImportDataOutcome> BatchDeleteImportDataOutcomeCallable;
         typedef std::future<CreateApplicationOutcome> CreateApplicationOutcomeCallable;
         typedef std::future<CreateTagsOutcome> CreateTagsOutcomeCallable;
         typedef std::future<DeleteApplicationsOutcome> DeleteApplicationsOutcomeCallable;
@@ -132,6 +142,7 @@ namespace Model
         typedef std::future<DescribeConfigurationsOutcome> DescribeConfigurationsOutcomeCallable;
         typedef std::future<DescribeContinuousExportsOutcome> DescribeContinuousExportsOutcomeCallable;
         typedef std::future<DescribeExportTasksOutcome> DescribeExportTasksOutcomeCallable;
+        typedef std::future<DescribeImportTasksOutcome> DescribeImportTasksOutcomeCallable;
         typedef std::future<DescribeTagsOutcome> DescribeTagsOutcomeCallable;
         typedef std::future<DisassociateConfigurationItemsFromApplicationOutcome> DisassociateConfigurationItemsFromApplicationOutcomeCallable;
         typedef std::future<GetDiscoverySummaryOutcome> GetDiscoverySummaryOutcomeCallable;
@@ -140,6 +151,7 @@ namespace Model
         typedef std::future<StartContinuousExportOutcome> StartContinuousExportOutcomeCallable;
         typedef std::future<StartDataCollectionByAgentIdsOutcome> StartDataCollectionByAgentIdsOutcomeCallable;
         typedef std::future<StartExportTaskOutcome> StartExportTaskOutcomeCallable;
+        typedef std::future<StartImportTaskOutcome> StartImportTaskOutcomeCallable;
         typedef std::future<StopContinuousExportOutcome> StopContinuousExportOutcomeCallable;
         typedef std::future<StopDataCollectionByAgentIdsOutcome> StopDataCollectionByAgentIdsOutcomeCallable;
         typedef std::future<UpdateApplicationOutcome> UpdateApplicationOutcomeCallable;
@@ -148,6 +160,7 @@ namespace Model
   class ApplicationDiscoveryServiceClient;
 
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::AssociateConfigurationItemsToApplicationRequest&, const Model::AssociateConfigurationItemsToApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateConfigurationItemsToApplicationResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::BatchDeleteImportDataRequest&, const Model::BatchDeleteImportDataOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > BatchDeleteImportDataResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateApplicationRequest&, const Model::CreateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::CreateTagsRequest&, const Model::CreateTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DeleteApplicationsRequest&, const Model::DeleteApplicationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteApplicationsResponseReceivedHandler;
@@ -156,6 +169,7 @@ namespace Model
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeConfigurationsRequest&, const Model::DescribeConfigurationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeConfigurationsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeContinuousExportsRequest&, const Model::DescribeContinuousExportsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContinuousExportsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeExportTasksRequest&, const Model::DescribeExportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeExportTasksResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeImportTasksRequest&, const Model::DescribeImportTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeImportTasksResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DescribeTagsRequest&, const Model::DescribeTagsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTagsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::DisassociateConfigurationItemsFromApplicationRequest&, const Model::DisassociateConfigurationItemsFromApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateConfigurationItemsFromApplicationResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::GetDiscoverySummaryRequest&, const Model::GetDiscoverySummaryOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetDiscoverySummaryResponseReceivedHandler;
@@ -164,6 +178,7 @@ namespace Model
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartContinuousExportRequest&, const Model::StartContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartContinuousExportResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartDataCollectionByAgentIdsRequest&, const Model::StartDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartDataCollectionByAgentIdsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartExportTaskRequest&, const Model::StartExportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartExportTaskResponseReceivedHandler;
+    typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StartImportTaskRequest&, const Model::StartImportTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StartImportTaskResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopContinuousExportRequest&, const Model::StopContinuousExportOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopContinuousExportResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::StopDataCollectionByAgentIdsRequest&, const Model::StopDataCollectionByAgentIdsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > StopDataCollectionByAgentIdsResponseReceivedHandler;
     typedef std::function<void(const ApplicationDiscoveryServiceClient*, const Model::UpdateApplicationRequest&, const Model::UpdateApplicationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateApplicationResponseReceivedHandler;
@@ -207,17 +222,14 @@ namespace Model
    * sensitive information. All data is handled according to the <a
    * href="http://aws.amazon.com/privacy/">AWS Privacy Policy</a>. You can operate
    * Application Discovery Service offline to inspect collected data before it is
-   * shared with the service.</p> </important> <p>Your AWS account must be granted
-   * access to Application Discovery Service, a process called <i>whitelisting</i>.
-   * This is true for AWS partners and customers alike. To request access, <a
-   * href="http://aws.amazon.com/application-discovery/">sign up for Application
-   * Discovery Service</a>. </p> <p>This API reference provides descriptions, syntax,
-   * and usage examples for each of the actions and data types for Application
-   * Discovery Service. The topic for each action shows the API request parameters
-   * and the response. Alternatively, you can use one of the AWS SDKs to access an
-   * API that is tailored to the programming language or platform that you're using.
-   * For more information, see <a href="http://aws.amazon.com/tools/#SDKs">AWS
-   * SDKs</a>.</p> <p>This guide is intended for use with the <a
+   * shared with the service.</p> </important> <p>This API reference provides
+   * descriptions, syntax, and usage examples for each of the actions and data types
+   * for Application Discovery Service. The topic for each action shows the API
+   * request parameters and the response. Alternatively, you can use one of the AWS
+   * SDKs to access an API that is tailored to the programming language or platform
+   * that you're using. For more information, see <a
+   * href="http://aws.amazon.com/tools/#SDKs">AWS SDKs</a>.</p> <p>This guide is
+   * intended for use with the <a
    * href="http://docs.aws.amazon.com/application-discovery/latest/userguide/">
    * <i>AWS Application Discovery Service User Guide</i> </a>.</p>
    */
@@ -277,6 +289,52 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void AssociateConfigurationItemsToApplicationAsync(const Model::AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Deletes one or more import tasks, each identified by their import ID. Each
+         * import task has a number of records that can identify servers or applications.
+         * </p> <p>AWS Application Discovery Service has built-in matching logic that will
+         * identify when discovered servers match existing entries that you've previously
+         * discovered, the information for the already-existing discovered server is
+         * updated. When you delete an import task that contains records that were used to
+         * match, the information in those matched records that comes from the deleted
+         * records will also be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::BatchDeleteImportDataOutcome BatchDeleteImportData(const Model::BatchDeleteImportDataRequest& request) const;
+
+        /**
+         * <p>Deletes one or more import tasks, each identified by their import ID. Each
+         * import task has a number of records that can identify servers or applications.
+         * </p> <p>AWS Application Discovery Service has built-in matching logic that will
+         * identify when discovered servers match existing entries that you've previously
+         * discovered, the information for the already-existing discovered server is
+         * updated. When you delete an import task that contains records that were used to
+         * match, the information in those matched records that comes from the deleted
+         * records will also be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::BatchDeleteImportDataOutcomeCallable BatchDeleteImportDataCallable(const Model::BatchDeleteImportDataRequest& request) const;
+
+        /**
+         * <p>Deletes one or more import tasks, each identified by their import ID. Each
+         * import task has a number of records that can identify servers or applications.
+         * </p> <p>AWS Application Discovery Service has built-in matching logic that will
+         * identify when discovered servers match existing entries that you've previously
+         * discovered, the information for the already-existing discovered server is
+         * updated. When you delete an import task that contains records that were used to
+         * match, the information in those matched records that comes from the deleted
+         * records will also be deleted.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/BatchDeleteImportData">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void BatchDeleteImportDataAsync(const Model::BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Creates an application with the given name and description.</p><p><h3>See
@@ -433,7 +491,7 @@ namespace Model
         /**
          * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
          * of the supplied IDs must be for the same asset type from one of the
-         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
          * specific to the asset type specified. For example, the output for a
          * <i>server</i> configuration item includes a list of attributes about the server,
@@ -449,7 +507,7 @@ namespace Model
         /**
          * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
          * of the supplied IDs must be for the same asset type from one of the
-         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
          * specific to the asset type specified. For example, the output for a
          * <i>server</i> configuration item includes a list of attributes about the server,
@@ -467,7 +525,7 @@ namespace Model
         /**
          * <p>Retrieves attributes for a list of configuration item IDs.</p> <note> <p>All
          * of the supplied IDs must be for the same asset type from one of the
-         * follwoing:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
+         * following:</p> <ul> <li> <p>server</p> </li> <li> <p>application</p> </li> <li>
          * <p>process</p> </li> <li> <p>connection</p> </li> </ul> <p>Output fields are
          * specific to the asset type specified. For example, the output for a
          * <i>server</i> configuration item includes a list of attributes about the server,
@@ -540,6 +598,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeExportTasksAsync(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Returns an array of import tasks for your account, including status
+         * information, times, IDs, the Amazon S3 Object URL for the import file, and
+         * more.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeImportTasksOutcome DescribeImportTasks(const Model::DescribeImportTasksRequest& request) const;
+
+        /**
+         * <p>Returns an array of import tasks for your account, including status
+         * information, times, IDs, the Amazon S3 Object URL for the import file, and
+         * more.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeImportTasksOutcomeCallable DescribeImportTasksCallable(const Model::DescribeImportTasksRequest& request) const;
+
+        /**
+         * <p>Returns an array of import tasks for your account, including status
+         * information, times, IDs, the Amazon S3 Object URL for the import file, and
+         * more.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/DescribeImportTasks">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeImportTasksAsync(const Model::DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Retrieves a list of configuration items that have tags as specified by the
@@ -811,6 +900,94 @@ namespace Model
         virtual void StartExportTaskAsync(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Starts an import task, which allows you to import details of your on-premises
+         * environment directly into AWS without having to use the Application Discovery
+         * Service (ADS) tools such as the Discovery Connector or Discovery Agent. This
+         * gives you the option to perform migration assessment and planning directly from
+         * your imported data, including the ability to group your devices as applications
+         * and track their migration status.</p> <p>To start an import request, do
+         * this:</p> <ol> <li> <p>Download the specially formatted comma separated value
+         * (CSV) import template, which you can find here: <a
+         * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p>
+         * </li> <li> <p>Fill out the template with your server and application data.</p>
+         * </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of
+         * it's Object URL. Your import file must be in the CSV format.</p> </li> <li>
+         * <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI
+         * or one of the AWS SDKs to import the records from your file.</p> </li> </ol>
+         * <p>For more information, including step-by-step procedures, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
+         * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+         * <note> <p>There are limits to the number of import tasks you can create (and
+         * delete) in an AWS account. For more information, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
+         * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
+         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::StartImportTaskOutcome StartImportTask(const Model::StartImportTaskRequest& request) const;
+
+        /**
+         * <p>Starts an import task, which allows you to import details of your on-premises
+         * environment directly into AWS without having to use the Application Discovery
+         * Service (ADS) tools such as the Discovery Connector or Discovery Agent. This
+         * gives you the option to perform migration assessment and planning directly from
+         * your imported data, including the ability to group your devices as applications
+         * and track their migration status.</p> <p>To start an import request, do
+         * this:</p> <ol> <li> <p>Download the specially formatted comma separated value
+         * (CSV) import template, which you can find here: <a
+         * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p>
+         * </li> <li> <p>Fill out the template with your server and application data.</p>
+         * </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of
+         * it's Object URL. Your import file must be in the CSV format.</p> </li> <li>
+         * <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI
+         * or one of the AWS SDKs to import the records from your file.</p> </li> </ol>
+         * <p>For more information, including step-by-step procedures, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
+         * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+         * <note> <p>There are limits to the number of import tasks you can create (and
+         * delete) in an AWS account. For more information, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
+         * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
+         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::StartImportTaskOutcomeCallable StartImportTaskCallable(const Model::StartImportTaskRequest& request) const;
+
+        /**
+         * <p>Starts an import task, which allows you to import details of your on-premises
+         * environment directly into AWS without having to use the Application Discovery
+         * Service (ADS) tools such as the Discovery Connector or Discovery Agent. This
+         * gives you the option to perform migration assessment and planning directly from
+         * your imported data, including the ability to group your devices as applications
+         * and track their migration status.</p> <p>To start an import request, do
+         * this:</p> <ol> <li> <p>Download the specially formatted comma separated value
+         * (CSV) import template, which you can find here: <a
+         * href="https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv">https://s3-us-west-2.amazonaws.com/templates-7cffcf56-bd96-4b1c-b45b-a5b42f282e46/import_template.csv</a>.</p>
+         * </li> <li> <p>Fill out the template with your server and application data.</p>
+         * </li> <li> <p>Upload your import file to an Amazon S3 bucket, and make a note of
+         * it's Object URL. Your import file must be in the CSV format.</p> </li> <li>
+         * <p>Use the console or the <code>StartImportTask</code> command with the AWS CLI
+         * or one of the AWS SDKs to import the records from your file.</p> </li> </ol>
+         * <p>For more information, including step-by-step procedures, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/discovery-import.html">Migration
+         * Hub Import</a> in the <i>AWS Application Discovery Service User Guide</i>.</p>
+         * <note> <p>There are limits to the number of import tasks you can create (and
+         * delete) in an AWS account. For more information, see <a
+         * href="https://docs.aws.amazon.com/application-discovery/latest/userguide/ads_service_limits.html">AWS
+         * Application Discovery Service Limits</a> in the <i>AWS Application Discovery
+         * Service User Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StartImportTask">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void StartImportTaskAsync(const Model::StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Stop the continuous flow of agent's discovered data into Amazon
          * Athena.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/discovery-2015-11-01/StopContinuousExport">AWS
@@ -891,12 +1068,13 @@ namespace Model
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AssociateConfigurationItemsToApplicationAsyncHelper(const Model::AssociateConfigurationItemsToApplicationRequest& request, const AssociateConfigurationItemsToApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void BatchDeleteImportDataAsyncHelper(const Model::BatchDeleteImportDataRequest& request, const BatchDeleteImportDataResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateApplicationAsyncHelper(const Model::CreateApplicationRequest& request, const CreateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateTagsAsyncHelper(const Model::CreateTagsRequest& request, const CreateTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteApplicationsAsyncHelper(const Model::DeleteApplicationsRequest& request, const DeleteApplicationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -905,6 +1083,7 @@ namespace Model
         void DescribeConfigurationsAsyncHelper(const Model::DescribeConfigurationsRequest& request, const DescribeConfigurationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContinuousExportsAsyncHelper(const Model::DescribeContinuousExportsRequest& request, const DescribeContinuousExportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeExportTasksAsyncHelper(const Model::DescribeExportTasksRequest& request, const DescribeExportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeImportTasksAsyncHelper(const Model::DescribeImportTasksRequest& request, const DescribeImportTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTagsAsyncHelper(const Model::DescribeTagsRequest& request, const DescribeTagsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DisassociateConfigurationItemsFromApplicationAsyncHelper(const Model::DisassociateConfigurationItemsFromApplicationRequest& request, const DisassociateConfigurationItemsFromApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetDiscoverySummaryAsyncHelper(const Model::GetDiscoverySummaryRequest& request, const GetDiscoverySummaryResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -913,11 +1092,13 @@ namespace Model
         void StartContinuousExportAsyncHelper(const Model::StartContinuousExportRequest& request, const StartContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartDataCollectionByAgentIdsAsyncHelper(const Model::StartDataCollectionByAgentIdsRequest& request, const StartDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StartExportTaskAsyncHelper(const Model::StartExportTaskRequest& request, const StartExportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void StartImportTaskAsyncHelper(const Model::StartImportTaskRequest& request, const StartImportTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopContinuousExportAsyncHelper(const Model::StopContinuousExportRequest& request, const StopContinuousExportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void StopDataCollectionByAgentIdsAsyncHelper(const Model::StopDataCollectionByAgentIdsRequest& request, const StopDataCollectionByAgentIdsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

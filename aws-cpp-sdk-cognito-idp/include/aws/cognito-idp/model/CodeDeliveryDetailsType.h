@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The destination for the code delivery details.</p>
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * <p>The destination for the code delivery details.</p>
+     */
     inline void SetDestination(const Aws::String& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The delivery medium (email message or phone number).</p>
      */
+    inline bool DeliveryMediumHasBeenSet() const { return m_deliveryMediumHasBeenSet; }
+
+    /**
+     * <p>The delivery medium (email message or phone number).</p>
+     */
     inline void SetDeliveryMedium(const DeliveryMediumType& value) { m_deliveryMediumHasBeenSet = true; m_deliveryMedium = value; }
 
     /**
@@ -115,6 +125,11 @@ namespace Model
      * <p>The attribute name.</p>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>The attribute name.</p>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>The attribute name.</p>

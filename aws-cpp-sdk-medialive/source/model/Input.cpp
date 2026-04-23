@@ -33,11 +33,16 @@ Input::Input() :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputClass(InputClass::NOT_SET),
+    m_inputClassHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_state(InputState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -48,11 +53,16 @@ Input::Input(JsonView jsonValue) :
     m_attachedChannelsHasBeenSet(false),
     m_destinationsHasBeenSet(false),
     m_idHasBeenSet(false),
+    m_inputClass(InputClass::NOT_SET),
+    m_inputClassHasBeenSet(false),
+    m_mediaConnectFlowsHasBeenSet(false),
     m_nameHasBeenSet(false),
+    m_roleArnHasBeenSet(false),
     m_securityGroupsHasBeenSet(false),
     m_sourcesHasBeenSet(false),
     m_state(InputState::NOT_SET),
     m_stateHasBeenSet(false),
+    m_tagsHasBeenSet(false),
     m_type(InputType::NOT_SET),
     m_typeHasBeenSet(false)
 {
@@ -95,11 +105,35 @@ Input& Input::operator =(JsonView jsonValue)
     m_idHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("inputClass"))
+  {
+    m_inputClass = InputClassMapper::GetInputClassForName(jsonValue.GetString("inputClass"));
+
+    m_inputClassHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaConnectFlows"))
+  {
+    Array<JsonView> mediaConnectFlowsJsonList = jsonValue.GetArray("mediaConnectFlows");
+    for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+    {
+      m_mediaConnectFlows.push_back(mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject());
+    }
+    m_mediaConnectFlowsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("name"))
   {
     m_name = jsonValue.GetString("name");
 
     m_nameHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("roleArn"))
+  {
+    m_roleArn = jsonValue.GetString("roleArn");
+
+    m_roleArnHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("securityGroups"))
@@ -127,6 +161,16 @@ Input& Input::operator =(JsonView jsonValue)
     m_state = InputStateMapper::GetInputStateForName(jsonValue.GetString("state"));
 
     m_stateHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("type"))
@@ -177,9 +221,31 @@ JsonValue Input::Jsonize() const
 
   }
 
+  if(m_inputClassHasBeenSet)
+  {
+   payload.WithString("inputClass", InputClassMapper::GetNameForInputClass(m_inputClass));
+  }
+
+  if(m_mediaConnectFlowsHasBeenSet)
+  {
+   Array<JsonValue> mediaConnectFlowsJsonList(m_mediaConnectFlows.size());
+   for(unsigned mediaConnectFlowsIndex = 0; mediaConnectFlowsIndex < mediaConnectFlowsJsonList.GetLength(); ++mediaConnectFlowsIndex)
+   {
+     mediaConnectFlowsJsonList[mediaConnectFlowsIndex].AsObject(m_mediaConnectFlows[mediaConnectFlowsIndex].Jsonize());
+   }
+   payload.WithArray("mediaConnectFlows", std::move(mediaConnectFlowsJsonList));
+
+  }
+
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_roleArnHasBeenSet)
+  {
+   payload.WithString("roleArn", m_roleArn);
 
   }
 
@@ -208,6 +274,17 @@ JsonValue Input::Jsonize() const
   if(m_stateHasBeenSet)
   {
    payload.WithString("state", InputStateMapper::GetNameForInputState(m_state));
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
+
   }
 
   if(m_typeHasBeenSet)

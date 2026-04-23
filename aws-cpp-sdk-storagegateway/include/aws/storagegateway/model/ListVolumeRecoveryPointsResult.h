@@ -66,25 +66,39 @@ namespace Model
     inline ListVolumeRecoveryPointsResult& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline const Aws::Vector<VolumeRecoveryPointInfo>& GetVolumeRecoveryPointInfos() const{ return m_volumeRecoveryPointInfos; }
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline void SetVolumeRecoveryPointInfos(const Aws::Vector<VolumeRecoveryPointInfo>& value) { m_volumeRecoveryPointInfos = value; }
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline void SetVolumeRecoveryPointInfos(Aws::Vector<VolumeRecoveryPointInfo>&& value) { m_volumeRecoveryPointInfos = std::move(value); }
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline ListVolumeRecoveryPointsResult& WithVolumeRecoveryPointInfos(const Aws::Vector<VolumeRecoveryPointInfo>& value) { SetVolumeRecoveryPointInfos(value); return *this;}
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline ListVolumeRecoveryPointsResult& WithVolumeRecoveryPointInfos(Aws::Vector<VolumeRecoveryPointInfo>&& value) { SetVolumeRecoveryPointInfos(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(const VolumeRecoveryPointInfo& value) { m_volumeRecoveryPointInfos.push_back(value); return *this; }
 
-    
+    /**
+     * <p>An array of <a>VolumeRecoveryPointInfo</a> objects.</p>
+     */
     inline ListVolumeRecoveryPointsResult& AddVolumeRecoveryPointInfos(VolumeRecoveryPointInfo&& value) { m_volumeRecoveryPointInfos.push_back(std::move(value)); return *this; }
 
   private:

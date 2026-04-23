@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation warning.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the object that contains the validation warning.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A description of the validation warning.</p>
      */
     inline const Aws::Vector<Aws::String>& GetWarnings() const{ return m_warnings; }
+
+    /**
+     * <p>A description of the validation warning.</p>
+     */
+    inline bool WarningsHasBeenSet() const { return m_warningsHasBeenSet; }
 
     /**
      * <p>A description of the validation warning.</p>

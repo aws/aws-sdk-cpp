@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The key value used in the request.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key value used in the request.</p>
+     */
     inline void SetKey(const AssociationExecutionTargetsFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The value specified for the key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value specified for the key.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value specified for the key.</p>

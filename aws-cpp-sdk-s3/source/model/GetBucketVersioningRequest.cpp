@@ -34,7 +34,7 @@ GetBucketVersioningRequest::GetBucketVersioningRequest() :
 
 Aws::String GetBucketVersioningRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketVersioningRequest::AddQueryStringParameters(URI& uri) const

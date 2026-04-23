@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for UdpGroupSettings<p><h3>See Also:</h3>   <a
+   * Udp Group Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/UdpGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -58,6 +58,17 @@ namespace Model
      * substituted for the absent input video.
      */
     inline const InputLossActionForUdpOut& GetInputLossAction() const{ return m_inputLossAction; }
+
+    /**
+     * Specifies behavior of last resort when input video is lost, and no more backup
+     * inputs are available. When dropTs is selected the entire transport stream will
+     * stop being emitted.  When dropProgram is selected the program can be dropped
+     * from the transport stream (and replaced with null packets to meet the TS bitrate
+     * requirement).  Or, when emitProgram is chosen the transport stream will continue
+     * to be produced normally with repeat frames, black frames, or slate frames
+     * substituted for the absent input video.
+     */
+    inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
 
     /**
      * Specifies behavior of last resort when input video is lost, and no more backup
@@ -112,6 +123,11 @@ namespace Model
     /**
      * Indicates ID3 frame that has the timecode.
      */
+    inline bool TimedMetadataId3FrameHasBeenSet() const { return m_timedMetadataId3FrameHasBeenSet; }
+
+    /**
+     * Indicates ID3 frame that has the timecode.
+     */
     inline void SetTimedMetadataId3Frame(const UdpTimedMetadataId3Frame& value) { m_timedMetadataId3FrameHasBeenSet = true; m_timedMetadataId3Frame = value; }
 
     /**
@@ -134,6 +150,11 @@ namespace Model
      * Timed Metadata interval in seconds.
      */
     inline int GetTimedMetadataId3Period() const{ return m_timedMetadataId3Period; }
+
+    /**
+     * Timed Metadata interval in seconds.
+     */
+    inline bool TimedMetadataId3PeriodHasBeenSet() const { return m_timedMetadataId3PeriodHasBeenSet; }
 
     /**
      * Timed Metadata interval in seconds.

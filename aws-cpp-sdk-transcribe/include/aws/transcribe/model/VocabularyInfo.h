@@ -37,10 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides information about a custom vocabulary. Note that vocabularies for
-   * en-AU, en-UK, and fr-CA languages that are in preview are not available. In the
-   * console, the vocabulary section will be greyed-out and SDK will return error
-   * message.</p><p><h3>See Also:</h3>   <a
+   * <p>Provides information about a custom vocabulary. </p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transcribe-2017-10-26/VocabularyInfo">AWS
    * API Reference</a></p>
    */
@@ -57,6 +55,11 @@ namespace Model
      * <p>The name of the vocabulary.</p>
      */
     inline const Aws::String& GetVocabularyName() const{ return m_vocabularyName; }
+
+    /**
+     * <p>The name of the vocabulary.</p>
+     */
+    inline bool VocabularyNameHasBeenSet() const { return m_vocabularyNameHasBeenSet; }
 
     /**
      * <p>The name of the vocabulary.</p>
@@ -97,6 +100,11 @@ namespace Model
     /**
      * <p>The language code of the vocabulary entries.</p>
      */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
+
+    /**
+     * <p>The language code of the vocabulary entries.</p>
+     */
     inline void SetLanguageCode(const LanguageCode& value) { m_languageCodeHasBeenSet = true; m_languageCode = value; }
 
     /**
@@ -119,6 +127,11 @@ namespace Model
      * <p>The date and time that the vocabulary was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedTime() const{ return m_lastModifiedTime; }
+
+    /**
+     * <p>The date and time that the vocabulary was last modified.</p>
+     */
+    inline bool LastModifiedTimeHasBeenSet() const { return m_lastModifiedTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the vocabulary was last modified.</p>
@@ -146,6 +159,12 @@ namespace Model
      * you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
      */
     inline const VocabularyState& GetVocabularyState() const{ return m_vocabularyState; }
+
+    /**
+     * <p>The processing state of the vocabulary. If the state is <code>READY</code>
+     * you can use the vocabulary in a <code>StartTranscriptionJob</code> request.</p>
+     */
+    inline bool VocabularyStateHasBeenSet() const { return m_vocabularyStateHasBeenSet; }
 
     /**
      * <p>The processing state of the vocabulary. If the state is <code>READY</code>

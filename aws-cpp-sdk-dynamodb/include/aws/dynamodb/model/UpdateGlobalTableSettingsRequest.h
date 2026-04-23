@@ -17,6 +17,7 @@
 #include <aws/dynamodb/DynamoDB_EXPORTS.h>
 #include <aws/dynamodb/DynamoDBRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/model/BillingMode.h>
 #include <aws/dynamodb/model/AutoScalingSettingsUpdate.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/dynamodb/model/GlobalTableGlobalSecondaryIndexSettingsUpdate.h>
@@ -56,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the global table</p>
      */
+    inline bool GlobalTableNameHasBeenSet() const { return m_globalTableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global table</p>
+     */
     inline void SetGlobalTableName(const Aws::String& value) { m_globalTableNameHasBeenSet = true; m_globalTableName = value; }
 
     /**
@@ -85,10 +91,59 @@ namespace Model
 
 
     /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline const BillingMode& GetGlobalTableBillingMode() const{ return m_globalTableBillingMode; }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline bool GlobalTableBillingModeHasBeenSet() const { return m_globalTableBillingModeHasBeenSet; }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline void SetGlobalTableBillingMode(const BillingMode& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = value; }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline void SetGlobalTableBillingMode(BillingMode&& value) { m_globalTableBillingModeHasBeenSet = true; m_globalTableBillingMode = std::move(value); }
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(const BillingMode& value) { SetGlobalTableBillingMode(value); return *this;}
+
+    /**
+     * <p>The billing mode of the global table. If <code>GlobalTableBillingMode</code>
+     * is not specified, the global table defaults to <code>PROVISIONED</code> capacity
+     * billing mode.</p>
+     */
+    inline UpdateGlobalTableSettingsRequest& WithGlobalTableBillingMode(BillingMode&& value) { SetGlobalTableBillingMode(std::move(value)); return *this;}
+
+
+    /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException.</code> </p>
      */
     inline long long GetGlobalTableProvisionedWriteCapacityUnits() const{ return m_globalTableProvisionedWriteCapacityUnits; }
+
+    /**
+     * <p>The maximum number of writes consumed per second before DynamoDB returns a
+     * <code>ThrottlingException.</code> </p>
+     */
+    inline bool GlobalTableProvisionedWriteCapacityUnitsHasBeenSet() const { return m_globalTableProvisionedWriteCapacityUnitsHasBeenSet; }
 
     /**
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
@@ -108,6 +163,12 @@ namespace Model
      * table.</p>
      */
     inline const AutoScalingSettingsUpdate& GetGlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdate() const{ return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>AutoScaling settings for managing provisioned write capacity for the global
+     * table.</p>
+     */
+    inline bool GlobalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_globalTableProvisionedWriteCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
      * <p>AutoScaling settings for managing provisioned write capacity for the global
@@ -139,6 +200,12 @@ namespace Model
      * will be modified.</p>
      */
     inline const Aws::Vector<GlobalTableGlobalSecondaryIndexSettingsUpdate>& GetGlobalTableGlobalSecondaryIndexSettingsUpdate() const{ return m_globalTableGlobalSecondaryIndexSettingsUpdate; }
+
+    /**
+     * <p>Represents the settings of a global secondary index for a global table that
+     * will be modified.</p>
+     */
+    inline bool GlobalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet() const { return m_globalTableGlobalSecondaryIndexSettingsUpdateHasBeenSet; }
 
     /**
      * <p>Represents the settings of a global secondary index for a global table that
@@ -187,6 +254,12 @@ namespace Model
      * <p>Represents the settings for a global table in a region that will be
      * modified.</p>
      */
+    inline bool ReplicaSettingsUpdateHasBeenSet() const { return m_replicaSettingsUpdateHasBeenSet; }
+
+    /**
+     * <p>Represents the settings for a global table in a region that will be
+     * modified.</p>
+     */
     inline void SetReplicaSettingsUpdate(const Aws::Vector<ReplicaSettingsUpdate>& value) { m_replicaSettingsUpdateHasBeenSet = true; m_replicaSettingsUpdate = value; }
 
     /**
@@ -223,6 +296,9 @@ namespace Model
 
     Aws::String m_globalTableName;
     bool m_globalTableNameHasBeenSet;
+
+    BillingMode m_globalTableBillingMode;
+    bool m_globalTableBillingModeHasBeenSet;
 
     long long m_globalTableProvisionedWriteCapacityUnits;
     bool m_globalTableProvisionedWriteCapacityUnitsHasBeenSet;

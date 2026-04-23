@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the column.</p>
      */
+    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
+
+    /**
+     * <p>The name of the column.</p>
+     */
     inline void SetColumn(const Aws::String& value) { m_columnHasBeenSet = true; m_column = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * or in descending order (<code>==0</code>).</p>
      */
     inline int GetSortOrder() const{ return m_sortOrder; }
+
+    /**
+     * <p>Indicates that the column is sorted in ascending order (<code>== 1</code>),
+     * or in descending order (<code>==0</code>).</p>
+     */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
 
     /**
      * <p>Indicates that the column is sorted in ascending order (<code>== 1</code>),

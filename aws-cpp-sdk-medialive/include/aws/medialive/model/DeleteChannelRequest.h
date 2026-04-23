@@ -53,6 +53,11 @@ namespace Model
     /**
      * Unique ID of the channel.
      */
+    inline bool ChannelIdHasBeenSet() const { return m_channelIdHasBeenSet; }
+
+    /**
+     * Unique ID of the channel.
+     */
     inline void SetChannelId(const Aws::String& value) { m_channelIdHasBeenSet = true; m_channelId = value; }
 
     /**

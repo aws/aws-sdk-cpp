@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The start of the time frame for which to retrieve traces.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time frame for which to retrieve traces.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
      * <p>The end of the time frame for which to retrieve traces.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The end of the time frame for which to retrieve traces.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The end of the time frame for which to retrieve traces.</p>
@@ -105,6 +115,12 @@ namespace Model
      * <p>Set to <code>true</code> to get summaries for only a subset of available
      * traces.</p>
      */
+    inline bool SamplingHasBeenSet() const { return m_samplingHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to get summaries for only a subset of available
+     * traces.</p>
+     */
     inline void SetSampling(bool value) { m_samplingHasBeenSet = true; m_sampling = value; }
 
     /**
@@ -119,6 +135,12 @@ namespace Model
      * requests that meet certain requirements.</p>
      */
     inline const Aws::String& GetFilterExpression() const{ return m_filterExpression; }
+
+    /**
+     * <p>Specify a filter expression to retrieve trace summaries for services or
+     * requests that meet certain requirements.</p>
+     */
+    inline bool FilterExpressionHasBeenSet() const { return m_filterExpressionHasBeenSet; }
 
     /**
      * <p>Specify a filter expression to retrieve trace summaries for services or
@@ -162,6 +184,12 @@ namespace Model
      * next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Specify the pagination token returned by a previous request to retrieve the
+     * next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Specify the pagination token returned by a previous request to retrieve the

@@ -70,6 +70,12 @@ namespace Model
      * <p>Whether the notification is for how much you have spent (<code>ACTUAL</code>)
      * or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>
      */
+    inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
+
+    /**
+     * <p>Whether the notification is for how much you have spent (<code>ACTUAL</code>)
+     * or for how much you're forecasted to spend (<code>FORECASTED</code>).</p>
+     */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
      * <p>The comparison that is used for this notification.</p>
      */
     inline const ComparisonOperator& GetComparisonOperator() const{ return m_comparisonOperator; }
+
+    /**
+     * <p>The comparison that is used for this notification.</p>
+     */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
 
     /**
      * <p>The comparison that is used for this notification.</p>
@@ -127,6 +138,12 @@ namespace Model
      * <p>The threshold that is associated with a notification. Thresholds are always a
      * percentage.</p>
      */
+    inline bool ThresholdHasBeenSet() const { return m_thresholdHasBeenSet; }
+
+    /**
+     * <p>The threshold that is associated with a notification. Thresholds are always a
+     * percentage.</p>
+     */
     inline void SetThreshold(double value) { m_thresholdHasBeenSet = true; m_threshold = value; }
 
     /**
@@ -146,6 +163,17 @@ namespace Model
      * 160 dollars.</p>
      */
     inline const ThresholdType& GetThresholdType() const{ return m_thresholdType; }
+
+    /**
+     * <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code>
+     * thresholds, AWS notifies you when you go over or are forecasted to go over your
+     * total cost threshold. For <code>PERCENTAGE</code> thresholds, AWS notifies you
+     * when you go over or are forecasted to go over a certain percentage of your
+     * forecasted spend. For example, if you have a budget for 200 dollars and you have
+     * a <code>PERCENTAGE</code> threshold of 80%, AWS notifies you when you go over
+     * 160 dollars.</p>
+     */
+    inline bool ThresholdTypeHasBeenSet() const { return m_thresholdTypeHasBeenSet; }
 
     /**
      * <p>The type of threshold for a notification. For <code>ABSOLUTE_VALUE</code>
@@ -197,6 +225,12 @@ namespace Model
      * <code>ALARM</code> state, you have passed the set threshold for the budget.</p>
      */
     inline const NotificationState& GetNotificationState() const{ return m_notificationState; }
+
+    /**
+     * <p>Whether this notification is in alarm. If a budget notification is in the
+     * <code>ALARM</code> state, you have passed the set threshold for the budget.</p>
+     */
+    inline bool NotificationStateHasBeenSet() const { return m_notificationStateHasBeenSet; }
 
     /**
      * <p>Whether this notification is in alarm. If a budget notification is in the

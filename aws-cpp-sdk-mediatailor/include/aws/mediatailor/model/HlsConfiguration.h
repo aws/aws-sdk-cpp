@@ -57,6 +57,12 @@ namespace Model
      * <p>The URL that is used to initiate a playback session for devices that support
      * Apple HLS. The session uses server-side reporting.</p>
      */
+    inline bool ManifestEndpointPrefixHasBeenSet() const { return m_manifestEndpointPrefixHasBeenSet; }
+
+    /**
+     * <p>The URL that is used to initiate a playback session for devices that support
+     * Apple HLS. The session uses server-side reporting.</p>
+     */
     inline void SetManifestEndpointPrefix(const Aws::String& value) { m_manifestEndpointPrefixHasBeenSet = true; m_manifestEndpointPrefix = value; }
 
     /**

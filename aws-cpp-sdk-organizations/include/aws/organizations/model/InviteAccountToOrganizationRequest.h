@@ -71,6 +71,20 @@ namespace Model
      * specify the email address that is associated with the account.</p> <p>
      * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the AWS account that you want to invite to join your
+     * organization. This is a JSON object that contains the following elements: </p>
+     * <p> <code>{ "Type": "ACCOUNT", "Id": "&lt;<i> <b>account id number</b> </i>&gt;"
+     * }</code> </p> <p>If you use the AWS CLI, you can submit this as a single string,
+     * similar to the following example:</p> <p> <code>--target
+     * Id=123456789012,Type=ACCOUNT</code> </p> <p>If you specify <code>"Type":
+     * "ACCOUNT"</code>, then you must provide the AWS account ID number as the
+     * <code>Id</code>. If you specify <code>"Type": "EMAIL"</code>, then you must
+     * specify the email address that is associated with the account.</p> <p>
+     * <code>--target Id=diego@example.com,Type=EMAIL</code> </p>
+     */
     inline void SetTarget(const HandshakeParty& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -121,6 +135,12 @@ namespace Model
      * recipient account owner.</p>
      */
     inline const Aws::String& GetNotes() const{ return m_notes; }
+
+    /**
+     * <p>Additional information that you want to include in the generated email to the
+     * recipient account owner.</p>
+     */
+    inline bool NotesHasBeenSet() const { return m_notesHasBeenSet; }
 
     /**
      * <p>Additional information that you want to include in the generated email to the

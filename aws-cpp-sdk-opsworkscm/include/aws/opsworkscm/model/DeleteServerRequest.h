@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the server to delete.</p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>The ID of the server to delete.</p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**

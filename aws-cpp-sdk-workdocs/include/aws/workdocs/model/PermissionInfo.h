@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The role of the user.</p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The role of the user.</p>
+     */
     inline void SetRole(const RoleType& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The type of permissions.</p>
      */
     inline const RolePermissionType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of permissions.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of permissions.</p>

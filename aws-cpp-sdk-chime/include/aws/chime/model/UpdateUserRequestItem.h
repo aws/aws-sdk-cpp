@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user ID.</p>
      */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+
+    /**
+     * <p>The user ID.</p>
+     */
     inline void SetUserId(const Aws::String& value) { m_userIdHasBeenSet = true; m_userId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The user license type.</p>
      */
     inline const License& GetLicenseType() const{ return m_licenseType; }
+
+    /**
+     * <p>The user license type.</p>
+     */
+    inline bool LicenseTypeHasBeenSet() const { return m_licenseTypeHasBeenSet; }
 
     /**
      * <p>The user license type.</p>

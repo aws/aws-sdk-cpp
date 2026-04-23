@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the instance (a virtual private server) to start.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance (a virtual private server) to start.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**

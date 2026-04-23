@@ -55,6 +55,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * If true, performs a best-effort only core reset.
      */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
+
+    /**
+     * If true, performs a best-effort only core reset.
+     */
     inline void SetForce(bool value) { m_forceHasBeenSet = true; m_force = value; }
 
     /**
@@ -100,37 +110,42 @@ namespace Model
 
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline const Aws::String& GetGroupId() const{ return m_groupId; }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
+     */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(Aws::String&& value) { m_groupIdHasBeenSet = true; m_groupId = std::move(value); }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline void SetGroupId(const char* value) { m_groupIdHasBeenSet = true; m_groupId.assign(value); }
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline ResetDeploymentsRequest& WithGroupId(const Aws::String& value) { SetGroupId(value); return *this;}
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline ResetDeploymentsRequest& WithGroupId(Aws::String&& value) { SetGroupId(std::move(value)); return *this;}
 
     /**
-     * The ID of the AWS Greengrass group.
+     * The ID of the Greengrass group.
      */
     inline ResetDeploymentsRequest& WithGroupId(const char* value) { SetGroupId(value); return *this;}
 

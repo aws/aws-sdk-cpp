@@ -1,0 +1,90 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/core/utils/HashingUtils.h>
+\#include <aws/core/utils/event/EventStreamHandler.h>
+\#include <aws/core/client/AWSError.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShape = $eventMemberEntry.value.shape)
+#if(!$eventShape.members.isEmpty())
+\#include <aws/${metadata.projectName}/model/${eventShape.name}.h>
+#end
+#end
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+    enum class ${operation.name}EventType
+    {
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+        ${eventMemberEntry.key.toUpperCase()},
+#end
+        UNKNOWN
+    };
+
+    class ${typeInfo.exportValue} ${operation.name}Handler : public Aws::Utils::Event::EventStreamHandler
+    {
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShape = $eventMemberEntry.value.shape)
+#if(!${eventShape.members.isEmpty()})
+#if(${eventShape.hasBlobMembers()})
+        typedef std::function<void(${eventShape.name}&)> ${eventShape.name}Callback;
+#else
+        typedef std::function<void(const ${eventShape.name}&)> ${eventShape.name}Callback;
+#end
+#else
+        typedef std::function<void()> ${eventShape.name}Callback;
+#end
+#end
+        typedef std::function<void(const Aws::Client::AWSError<${metadata.classNamePrefix}Errors>& error)> ErrorCallback;
+        
+    public:
+        ${operation.name}Handler();
+        ${operation.name}Handler& operator=(const ${operation.name}Handler& handler)
+        {
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShapeName = $eventMemberEntry.value.shape.name)
+            m_on${eventShapeName} = handler.m_on${eventShapeName};
+#end
+            m_onError = handler.m_onError;
+            return *this;
+        }
+
+
+        virtual void OnEvent() override;
+
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShapeName = $eventMemberEntry.value.shape.name)
+        inline void Set${eventShapeName}Callback(const ${eventShapeName}Callback& callback) { m_on${eventShapeName} = callback; }
+#end
+        inline void SetOnErrorCallback(const ErrorCallback& callback) { m_onError = callback; }
+
+    private:
+        void HandleEventInMessage();
+        void HandleErrorInMessage();
+
+#foreach($eventMemberEntry in $eventStreamShape.members.entrySet())
+#set($eventShapeName = $eventMemberEntry.value.shape.name)
+        ${eventShapeName}Callback m_on${eventShapeName};
+#end
+        ErrorCallback m_onError;
+    };
+
+namespace ${operation.name}EventMapper
+{
+    ${typeInfo.exportValue} ${operation.name}EventType Get${operation.name}EventTypeForName(const Aws::String& name);
+
+    ${typeInfo.exportValue} Aws::String GetNameFor${operation.name}EventType(${operation.name}EventType value);
+} // namespace ${operation.name}EventMapper
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

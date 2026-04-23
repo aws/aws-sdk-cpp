@@ -29,7 +29,7 @@ GetSchemaCreationStatusRequest::GetSchemaCreationStatusRequest() :
 
 Aws::String GetSchemaCreationStatusRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

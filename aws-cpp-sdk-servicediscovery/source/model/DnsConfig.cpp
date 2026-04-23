@@ -29,7 +29,6 @@ namespace Model
 {
 
 DnsConfig::DnsConfig() : 
-    m_namespaceIdHasBeenSet(false),
     m_routingPolicy(RoutingPolicy::NOT_SET),
     m_routingPolicyHasBeenSet(false),
     m_dnsRecordsHasBeenSet(false)
@@ -37,7 +36,6 @@ DnsConfig::DnsConfig() :
 }
 
 DnsConfig::DnsConfig(JsonView jsonValue) : 
-    m_namespaceIdHasBeenSet(false),
     m_routingPolicy(RoutingPolicy::NOT_SET),
     m_routingPolicyHasBeenSet(false),
     m_dnsRecordsHasBeenSet(false)
@@ -47,13 +45,6 @@ DnsConfig::DnsConfig(JsonView jsonValue) :
 
 DnsConfig& DnsConfig::operator =(JsonView jsonValue)
 {
-  if(jsonValue.ValueExists("NamespaceId"))
-  {
-    m_namespaceId = jsonValue.GetString("NamespaceId");
-
-    m_namespaceIdHasBeenSet = true;
-  }
-
   if(jsonValue.ValueExists("RoutingPolicy"))
   {
     m_routingPolicy = RoutingPolicyMapper::GetRoutingPolicyForName(jsonValue.GetString("RoutingPolicy"));
@@ -77,12 +68,6 @@ DnsConfig& DnsConfig::operator =(JsonView jsonValue)
 JsonValue DnsConfig::Jsonize() const
 {
   JsonValue payload;
-
-  if(m_namespaceIdHasBeenSet)
-  {
-   payload.WithString("NamespaceId", m_namespaceId);
-
-  }
 
   if(m_routingPolicyHasBeenSet)
   {

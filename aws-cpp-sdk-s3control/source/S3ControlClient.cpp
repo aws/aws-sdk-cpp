@@ -24,6 +24,9 @@
 #include <aws/core/utils/xml/XmlSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/s3control/S3ControlClient.h>
 #include <aws/s3control/S3ControlEndpoint.h>
 #include <aws/s3control/S3ControlErrorMarshaller.h>
@@ -81,26 +84,50 @@ S3ControlClient::~S3ControlClient()
 
 void S3ControlClient::init(const ClientConfiguration& config)
 {
-    if(config.endpointOverride.empty())
-    {
-        m_baseUri = S3ControlEndpoint::ForRegion(config.region, config.useDualStack);
-    }
-    else
-    {
-        m_baseUri = config.endpointOverride;
-    }
-    m_scheme = SchemeMapper::ToString(config.scheme);
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  m_scheme = m_configScheme;
+  if (config.endpointOverride.empty())
+  {
+      m_baseUri = S3ControlEndpoint::ForRegion(config.region, config.useDualStack);
+  }
+  else
+  {
+      OverrideEndpoint(config.endpointOverride);
+  }
 }
 
+void S3ControlClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0)
+  {
+      m_scheme = "http";
+      m_baseUri = endpoint.substr(7);
+  }
+  else if (endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_scheme = "https";
+      m_baseUri = endpoint.substr(8);
+  }
+  else
+  {
+      m_scheme = m_configScheme;
+      m_baseUri = endpoint;
+  }
+}
 DeletePublicAccessBlockOutcome S3ControlClient::DeletePublicAccessBlock(const DeletePublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeletePublicAccessBlock", "Required field: AccountId, is not set");
+    return DeletePublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return DeletePublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE);
@@ -134,13 +161,18 @@ void S3ControlClient::DeletePublicAccessBlockAsyncHelper(const DeletePublicAcces
 
 GetPublicAccessBlockOutcome S3ControlClient::GetPublicAccessBlock(const GetPublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetPublicAccessBlock", "Required field: AccountId, is not set");
+    return GetPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return GetPublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET);
@@ -174,13 +206,18 @@ void S3ControlClient::GetPublicAccessBlockAsyncHelper(const GetPublicAccessBlock
 
 PutPublicAccessBlockOutcome S3ControlClient::PutPublicAccessBlock(const PutPublicAccessBlockRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.AccountIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutPublicAccessBlock", "Required field: AccountId, is not set");
+    return PutPublicAccessBlockOutcome(Aws::Client::AWSError<S3ControlErrors>(S3ControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AccountId]", false));
+  }
   Aws::String endpointString(ComputeEndpointString(request.GetAccountId()));
   if (endpointString.empty())
   {
       return PutPublicAccessBlockOutcome(AWSError<CoreErrors>(CoreErrors::VALIDATION, "", "Account ID provided is not a valid [RFC 1123 2.1] host domain name label.", false/*retryable*/));
   }
   Aws::Http::URI uri = endpointString;
+  Aws::StringStream ss;
   ss << "/v20180820/configuration/publicAccessBlock";
   uri.SetPath(uri.GetPath() + ss.str());
   XmlOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT);
@@ -227,7 +264,7 @@ Aws::String S3ControlClient::ComputeEndpointString(const Aws::String& accountId)
     }
     else
     {
-        return "";
+        return {};
     }
 }
 

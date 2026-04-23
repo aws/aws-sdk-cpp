@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ID of the resource definition.
      */
+    inline bool ResourceDefinitionIdHasBeenSet() const { return m_resourceDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the resource definition.
+     */
     inline void SetResourceDefinitionId(const Aws::String& value) { m_resourceDefinitionIdHasBeenSet = true; m_resourceDefinitionId = value; }
 
     /**

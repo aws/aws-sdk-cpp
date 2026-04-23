@@ -32,7 +32,8 @@ ContainerDefinition::ContainerDefinition() :
     m_containerHostnameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_modelPackageNameHasBeenSet(false)
 {
 }
 
@@ -40,7 +41,8 @@ ContainerDefinition::ContainerDefinition(JsonView jsonValue) :
     m_containerHostnameHasBeenSet(false),
     m_imageHasBeenSet(false),
     m_modelDataUrlHasBeenSet(false),
-    m_environmentHasBeenSet(false)
+    m_environmentHasBeenSet(false),
+    m_modelPackageNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -78,6 +80,13 @@ ContainerDefinition& ContainerDefinition::operator =(JsonView jsonValue)
     m_environmentHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ModelPackageName"))
+  {
+    m_modelPackageName = jsonValue.GetString("ModelPackageName");
+
+    m_modelPackageNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -111,6 +120,12 @@ JsonValue ContainerDefinition::Jsonize() const
      environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
    }
    payload.WithObject("Environment", std::move(environmentJsonMap));
+
+  }
+
+  if(m_modelPackageNameHasBeenSet)
+  {
+   payload.WithString("ModelPackageName", m_modelPackageName);
 
   }
 

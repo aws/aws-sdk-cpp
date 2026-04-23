@@ -29,7 +29,7 @@ DescribeClusterRequest::DescribeClusterRequest() :
 
 Aws::String DescribeClusterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

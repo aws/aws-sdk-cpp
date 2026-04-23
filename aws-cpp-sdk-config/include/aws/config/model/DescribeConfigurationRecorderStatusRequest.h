@@ -61,6 +61,13 @@ namespace Model
      * action returns the current status of all the configuration recorders associated
      * with the account.</p>
      */
+    inline bool ConfigurationRecorderNamesHasBeenSet() const { return m_configurationRecorderNamesHasBeenSet; }
+
+    /**
+     * <p>The name(s) of the configuration recorder. If the name is not specified, the
+     * action returns the current status of all the configuration recorders associated
+     * with the account.</p>
+     */
     inline void SetConfigurationRecorderNames(const Aws::Vector<Aws::String>& value) { m_configurationRecorderNamesHasBeenSet = true; m_configurationRecorderNames = value; }
 
     /**

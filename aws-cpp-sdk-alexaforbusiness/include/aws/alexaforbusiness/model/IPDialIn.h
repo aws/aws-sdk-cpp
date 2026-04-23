@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IP address.</p>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The IP address.</p>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The protocol, including SIP, SIPS, and H323.</p>
      */
     inline const CommsProtocol& GetCommsProtocol() const{ return m_commsProtocol; }
+
+    /**
+     * <p>The protocol, including SIP, SIPS, and H323.</p>
+     */
+    inline bool CommsProtocolHasBeenSet() const { return m_commsProtocolHasBeenSet; }
 
     /**
      * <p>The protocol, including SIP, SIPS, and H323.</p>

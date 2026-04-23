@@ -122,37 +122,37 @@ namespace Model
 
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targets = value; }
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline void SetTargets(Aws::Vector<Target>&& value) { m_targets = std::move(value); }
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline GetMaintenanceWindowTaskResult& AddTargets(const Target& value) { m_targets.push_back(value); return *this; }
 
     /**
-     * <p>The targets where the task should execute.</p>
+     * <p>The targets where the task should run.</p>
      */
     inline GetMaintenanceWindowTaskResult& AddTargets(Target&& value) { m_targets.push_back(std::move(value)); return *this; }
 
@@ -251,33 +251,33 @@ namespace Model
 
 
     /**
-     * <p>The type of task to execute.</p>
+     * <p>The type of task to run.</p>
      */
     inline const MaintenanceWindowTaskType& GetTaskType() const{ return m_taskType; }
 
     /**
-     * <p>The type of task to execute.</p>
+     * <p>The type of task to run.</p>
      */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskType = value; }
 
     /**
-     * <p>The type of task to execute.</p>
+     * <p>The type of task to run.</p>
      */
     inline void SetTaskType(MaintenanceWindowTaskType&& value) { m_taskType = std::move(value); }
 
     /**
-     * <p>The type of task to execute.</p>
+     * <p>The type of task to run.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskType(const MaintenanceWindowTaskType& value) { SetTaskType(value); return *this;}
 
     /**
-     * <p>The type of task to execute.</p>
+     * <p>The type of task to run.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskType(MaintenanceWindowTaskType&& value) { SetTaskType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -287,7 +287,7 @@ namespace Model
     inline const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -297,7 +297,7 @@ namespace Model
     inline void SetTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters = value; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -307,7 +307,7 @@ namespace Model
     inline void SetTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { m_taskParameters = std::move(value); }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -317,7 +317,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& WithTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -327,7 +327,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& WithTaskParameters(Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -337,7 +337,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -347,7 +347,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, const MaintenanceWindowTaskParameterValueExpression& value) { m_taskParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -357,7 +357,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(const Aws::String& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -367,7 +367,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(Aws::String&& key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -377,7 +377,7 @@ namespace Model
     inline GetMaintenanceWindowTaskResult& AddTaskParameters(const char* key, MaintenanceWindowTaskParameterValueExpression&& value) { m_taskParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p> <note> <p>
+     * <p>The parameters to pass to the task when it runs.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -388,46 +388,46 @@ namespace Model
 
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p>
+     * <p>The parameters to pass to the task when it runs.</p>
      */
     inline const MaintenanceWindowTaskInvocationParameters& GetTaskInvocationParameters() const{ return m_taskInvocationParameters; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p>
+     * <p>The parameters to pass to the task when it runs.</p>
      */
     inline void SetTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { m_taskInvocationParameters = value; }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p>
+     * <p>The parameters to pass to the task when it runs.</p>
      */
     inline void SetTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { m_taskInvocationParameters = std::move(value); }
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p>
+     * <p>The parameters to pass to the task when it runs.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskInvocationParameters(const MaintenanceWindowTaskInvocationParameters& value) { SetTaskInvocationParameters(value); return *this;}
 
     /**
-     * <p>The parameters to pass to the task when it executes.</p>
+     * <p>The parameters to pass to the task when it runs.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithTaskInvocationParameters(MaintenanceWindowTaskInvocationParameters&& value) { SetTaskInvocationParameters(std::move(value)); return *this;}
 
 
     /**
-     * <p>The priority of the task when it executes. The lower the number, the higher
-     * the priority. Tasks that have the same priority are scheduled in parallel.</p>
+     * <p>The priority of the task when it runs. The lower the number, the higher the
+     * priority. Tasks that have the same priority are scheduled in parallel.</p>
      */
     inline int GetPriority() const{ return m_priority; }
 
     /**
-     * <p>The priority of the task when it executes. The lower the number, the higher
-     * the priority. Tasks that have the same priority are scheduled in parallel.</p>
+     * <p>The priority of the task when it runs. The lower the number, the higher the
+     * priority. Tasks that have the same priority are scheduled in parallel.</p>
      */
     inline void SetPriority(int value) { m_priority = value; }
 
     /**
-     * <p>The priority of the task when it executes. The lower the number, the higher
-     * the priority. Tasks that have the same priority are scheduled in parallel.</p>
+     * <p>The priority of the task when it runs. The lower the number, the higher the
+     * priority. Tasks that have the same priority are scheduled in parallel.</p>
      */
     inline GetMaintenanceWindowTaskResult& WithPriority(int value) { SetPriority(value); return *this;}
 

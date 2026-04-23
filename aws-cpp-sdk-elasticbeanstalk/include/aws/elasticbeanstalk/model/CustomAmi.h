@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of virtualization used to create the custom AMI.</p>
      */
+    inline bool VirtualizationTypeHasBeenSet() const { return m_virtualizationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of virtualization used to create the custom AMI.</p>
+     */
     inline void SetVirtualizationType(const Aws::String& value) { m_virtualizationTypeHasBeenSet = true; m_virtualizationType = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>THe ID of the image used to create the custom AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>THe ID of the image used to create the custom AMI.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>THe ID of the image used to create the custom AMI.</p>

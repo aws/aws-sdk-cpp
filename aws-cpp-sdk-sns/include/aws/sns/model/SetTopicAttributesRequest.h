@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the topic to modify.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic to modify.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -97,6 +102,19 @@ namespace Model
      * subscribe to the topic.</p> </li> </ul>
      */
     inline const Aws::String& GetAttributeName() const{ return m_attributeName; }
+
+    /**
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>DisplayName</code> – The display name to use for a topic with SMS
+     * subscriptions.</p> </li> <li> <p> <code>Policy</code> – The policy that defines
+     * who can access your topic. By default, only the topic owner can publish or
+     * subscribe to the topic.</p> </li> </ul>
+     */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
@@ -181,6 +199,11 @@ namespace Model
      * <p>The new value for the attribute.</p>
      */
     inline const Aws::String& GetAttributeValue() const{ return m_attributeValue; }
+
+    /**
+     * <p>The new value for the attribute.</p>
+     */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
 
     /**
      * <p>The new value for the attribute.</p>

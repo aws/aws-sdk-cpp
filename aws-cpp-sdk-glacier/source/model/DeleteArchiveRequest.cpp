@@ -31,7 +31,7 @@ DeleteArchiveRequest::DeleteArchiveRequest() :
 
 Aws::String DeleteArchiveRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

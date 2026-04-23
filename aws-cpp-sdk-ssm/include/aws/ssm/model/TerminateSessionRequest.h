@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the session to terminate.</p>
      */
+    inline bool SessionIdHasBeenSet() const { return m_sessionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the session to terminate.</p>
+     */
     inline void SetSessionId(const Aws::String& value) { m_sessionIdHasBeenSet = true; m_sessionId = value; }
 
     /**

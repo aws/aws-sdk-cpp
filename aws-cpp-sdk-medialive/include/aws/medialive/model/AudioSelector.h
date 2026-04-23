@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioSelector<p><h3>See Also:</h3>   <a
+   * Audio Selector<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioSelector">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,12 @@ namespace Model
      * identify this Selector.  Selector names should be unique per input.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of this AudioSelector. AudioDescriptions will use this name to uniquely
+     * identify this Selector.  Selector names should be unique per input.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of this AudioSelector. AudioDescriptions will use this name to uniquely
@@ -95,6 +101,11 @@ namespace Model
      * The audio selector settings.
      */
     inline const AudioSelectorSettings& GetSelectorSettings() const{ return m_selectorSettings; }
+
+    /**
+     * The audio selector settings.
+     */
+    inline bool SelectorSettingsHasBeenSet() const { return m_selectorSettingsHasBeenSet; }
 
     /**
      * The audio selector settings.

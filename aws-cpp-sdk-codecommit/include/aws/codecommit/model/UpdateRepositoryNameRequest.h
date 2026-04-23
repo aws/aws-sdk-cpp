@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The existing name of the repository.</p>
      */
+    inline bool OldNameHasBeenSet() const { return m_oldNameHasBeenSet; }
+
+    /**
+     * <p>The existing name of the repository.</p>
+     */
     inline void SetOldName(const Aws::String& value) { m_oldNameHasBeenSet = true; m_oldName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The new name for the repository.</p>
      */
     inline const Aws::String& GetNewName() const{ return m_newName; }
+
+    /**
+     * <p>The new name for the repository.</p>
+     */
+    inline bool NewNameHasBeenSet() const { return m_newNameHasBeenSet; }
 
     /**
      * <p>The new name for the repository.</p>

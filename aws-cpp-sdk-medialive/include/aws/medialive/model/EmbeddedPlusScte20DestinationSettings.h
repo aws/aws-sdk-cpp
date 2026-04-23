@@ -32,8 +32,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for EmbeddedPlusScte20DestinationSettings<p><h3>See
-   * Also:</h3>   <a
+   * Embedded Plus Scte20 Destination Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/EmbeddedPlusScte20DestinationSettings">AWS
    * API Reference</a></p>
    */

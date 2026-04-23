@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the command.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the command.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The Amazon S3 location of the command script.</p>
      */
+    inline bool ScriptPathHasBeenSet() const { return m_scriptPathHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location of the command script.</p>
+     */
     inline void SetScriptPath(const Aws::String& value) { m_scriptPathHasBeenSet = true; m_scriptPath = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>Arguments for Amazon EMR to pass to the command for execution.</p>
      */
     inline const Aws::Vector<Aws::String>& GetArgs() const{ return m_args; }
+
+    /**
+     * <p>Arguments for Amazon EMR to pass to the command for execution.</p>
+     */
+    inline bool ArgsHasBeenSet() const { return m_argsHasBeenSet; }
 
     /**
      * <p>Arguments for Amazon EMR to pass to the command for execution.</p>

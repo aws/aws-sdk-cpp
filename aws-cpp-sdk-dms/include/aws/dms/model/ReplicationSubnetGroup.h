@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier of the replication instance subnet group.</p>
      */
+    inline bool ReplicationSubnetGroupIdentifierHasBeenSet() const { return m_replicationSubnetGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the replication instance subnet group.</p>
+     */
     inline void SetReplicationSubnetGroupIdentifier(const Aws::String& value) { m_replicationSubnetGroupIdentifierHasBeenSet = true; m_replicationSubnetGroupIdentifier = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The description of the replication subnet group.</p>
      */
     inline const Aws::String& GetReplicationSubnetGroupDescription() const{ return m_replicationSubnetGroupDescription; }
+
+    /**
+     * <p>The description of the replication subnet group.</p>
+     */
+    inline bool ReplicationSubnetGroupDescriptionHasBeenSet() const { return m_replicationSubnetGroupDescriptionHasBeenSet; }
 
     /**
      * <p>The description of the replication subnet group.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The ID of the VPC.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>The status of the subnet group.</p>
      */
+    inline bool SubnetGroupStatusHasBeenSet() const { return m_subnetGroupStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the subnet group.</p>
+     */
     inline void SetSubnetGroupStatus(const Aws::String& value) { m_subnetGroupStatusHasBeenSet = true; m_subnetGroupStatus = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
      * <p>The subnets that are in the subnet group.</p>
      */
     inline const Aws::Vector<Subnet>& GetSubnets() const{ return m_subnets; }
+
+    /**
+     * <p>The subnets that are in the subnet group.</p>
+     */
+    inline bool SubnetsHasBeenSet() const { return m_subnetsHasBeenSet; }
 
     /**
      * <p>The subnets that are in the subnet group.</p>

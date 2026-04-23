@@ -52,12 +52,11 @@ namespace Model
    * configuration must specify fewer than this limit. To calculate the total number
    * of processes specified in a run-time configuration, add the values of the
    * <code>ConcurrentExecutions</code> parameter for each <code> <a>ServerProcess</a>
-   * </code> object in the run-time configuration.</p> <p>Fleet-related operations
-   * include:</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
-   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
-   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
-   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
-   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * </code> object in the run-time configuration.</p> <ul> <li> <p>
+   * <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
+   * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
+   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
+   * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
    * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -84,6 +83,12 @@ namespace Model
      * processes to run on each instance in a fleet.</p>
      */
     inline const Aws::Vector<ServerProcess>& GetServerProcesses() const{ return m_serverProcesses; }
+
+    /**
+     * <p>Collection of server process configurations that describe which server
+     * processes to run on each instance in a fleet.</p>
+     */
+    inline bool ServerProcessesHasBeenSet() const { return m_serverProcessesHasBeenSet; }
 
     /**
      * <p>Collection of server process configurations that describe which server
@@ -134,6 +139,13 @@ namespace Model
      * on an instance simultaneously. This setting limits the amount of instance
      * resources that can be used for new game activations at any one time.</p>
      */
+    inline bool MaxConcurrentGameSessionActivationsHasBeenSet() const { return m_maxConcurrentGameSessionActivationsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of game sessions with status <code>ACTIVATING</code> to allow
+     * on an instance simultaneously. This setting limits the amount of instance
+     * resources that can be used for new game activations at any one time.</p>
+     */
     inline void SetMaxConcurrentGameSessionActivations(int value) { m_maxConcurrentGameSessionActivationsHasBeenSet = true; m_maxConcurrentGameSessionActivations = value; }
 
     /**
@@ -151,6 +163,14 @@ namespace Model
      * <code>TERMINATED</code>.</p>
      */
     inline int GetGameSessionActivationTimeoutSeconds() const{ return m_gameSessionActivationTimeoutSeconds; }
+
+    /**
+     * <p>Maximum amount of time (in seconds) that a game session can remain in status
+     * <code>ACTIVATING</code>. If the game session is not active before the timeout,
+     * activation is terminated and the game session status is changed to
+     * <code>TERMINATED</code>.</p>
+     */
+    inline bool GameSessionActivationTimeoutSecondsHasBeenSet() const { return m_gameSessionActivationTimeoutSecondsHasBeenSet; }
 
     /**
      * <p>Maximum amount of time (in seconds) that a game session can remain in status

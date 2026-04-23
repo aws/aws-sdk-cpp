@@ -58,6 +58,13 @@ namespace Model
      * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
      * block.</p>
      */
+    inline bool AmazonProvidedIpv6CidrBlockHasBeenSet() const { return m_amazonProvidedIpv6CidrBlockHasBeenSet; }
+
+    /**
+     * <p>Requests an Amazon-provided IPv6 CIDR block with a /56 prefix length for the
+     * VPC. You cannot specify the range of IPv6 addresses, or the size of the CIDR
+     * block.</p>
+     */
     inline void SetAmazonProvidedIpv6CidrBlock(bool value) { m_amazonProvidedIpv6CidrBlockHasBeenSet = true; m_amazonProvidedIpv6CidrBlock = value; }
 
     /**
@@ -72,6 +79,11 @@ namespace Model
      * <p>An IPv4 CIDR block to associate with the VPC.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>An IPv4 CIDR block to associate with the VPC.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
     /**
      * <p>An IPv4 CIDR block to associate with the VPC.</p>
@@ -108,6 +120,11 @@ namespace Model
      * <p>The ID of the VPC.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>The ID of the VPC.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC.</p>

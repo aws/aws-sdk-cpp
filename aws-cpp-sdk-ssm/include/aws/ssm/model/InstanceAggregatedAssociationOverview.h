@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Detailed status information about the aggregated associations.</p>
      */
+    inline bool DetailedStatusHasBeenSet() const { return m_detailedStatusHasBeenSet; }
+
+    /**
+     * <p>Detailed status information about the aggregated associations.</p>
+     */
     inline void SetDetailedStatus(const Aws::String& value) { m_detailedStatusHasBeenSet = true; m_detailedStatus = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The number of associations for the instance(s).</p>
      */
     inline const Aws::Map<Aws::String, int>& GetInstanceAssociationStatusAggregatedCount() const{ return m_instanceAssociationStatusAggregatedCount; }
+
+    /**
+     * <p>The number of associations for the instance(s).</p>
+     */
+    inline bool InstanceAssociationStatusAggregatedCountHasBeenSet() const { return m_instanceAssociationStatusAggregatedCountHasBeenSet; }
 
     /**
      * <p>The number of associations for the instance(s).</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * The time, in Unix epoch format, that the transcoding job finished
      */
+    inline bool FinishTimeHasBeenSet() const { return m_finishTimeHasBeenSet; }
+
+    /**
+     * The time, in Unix epoch format, that the transcoding job finished
+     */
     inline void SetFinishTime(const Aws::Utils::DateTime& value) { m_finishTimeHasBeenSet = true; m_finishTime = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
     /**
      * The time, in Unix epoch format, that transcoding for the job began.
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * The time, in Unix epoch format, that transcoding for the job began.
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * The time, in Unix epoch format, that you submitted the job.
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
+
+    /**
+     * The time, in Unix epoch format, that you submitted the job.
+     */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
 
     /**
      * The time, in Unix epoch format, that you submitted the job.

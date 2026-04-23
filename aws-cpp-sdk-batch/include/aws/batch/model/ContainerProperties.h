@@ -21,6 +21,7 @@
 #include <aws/batch/model/KeyValuePair.h>
 #include <aws/batch/model/MountPoint.h>
 #include <aws/batch/model/Ulimit.h>
+#include <aws/batch/model/ResourceRequirement.h>
 #include <utility>
 
 namespace Aws
@@ -77,6 +78,31 @@ namespace Model
      * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
      */
     inline const Aws::String& GetImage() const{ return m_image; }
+
+    /**
+     * <p>The image used to start a container. This string is passed directly to the
+     * Docker daemon. Images in the Docker Hub registry are available by default. Other
+     * repositories are specified with <code>
+     * <i>repository-url</i>/<i>image</i>:<i>tag</i> </code>. Up to 255 letters
+     * (uppercase and lowercase), numbers, hyphens, underscores, colons, periods,
+     * forward slashes, and number signs are allowed. This parameter maps to
+     * <code>Image</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>IMAGE</code> parameter of <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p> <ul>
+     * <li> <p>Images in Amazon ECR repositories use the full registry and repository
+     * URI (for example,
+     * <code>012345678910.dkr.ecr.&lt;region-name&gt;.amazonaws.com/&lt;repository-name&gt;</code>).
+     * </p> </li> <li> <p>Images in official repositories on Docker Hub use a single
+     * name (for example, <code>ubuntu</code> or <code>mongo</code>).</p> </li> <li>
+     * <p>Images in other repositories on Docker Hub are qualified with an organization
+     * name (for example, <code>amazon/amazon-ecs-agent</code>).</p> </li> <li>
+     * <p>Images in other online repositories are qualified further by a domain name
+     * (for example, <code>quay.io/assemblyline/ubuntu</code>).</p> </li> </ul>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
 
     /**
      * <p>The image used to start a container. This string is passed directly to the
@@ -251,6 +277,18 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
      * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
      */
+    inline bool VcpusHasBeenSet() const { return m_vcpusHasBeenSet; }
+
+    /**
+     * <p>The number of vCPUs reserved for the container. This parameter maps to
+     * <code>CpuShares</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--cpu-shares</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. Each vCPU
+     * is equivalent to 1,024 CPU shares. You must specify at least one vCPU.</p>
+     */
     inline void SetVcpus(int value) { m_vcpusHasBeenSet = true; m_vcpus = value; }
 
     /**
@@ -282,6 +320,23 @@ namespace Model
      * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
      */
     inline int GetMemory() const{ return m_memory; }
+
+    /**
+     * <p>The hard limit (in MiB) of memory to present to the container. If your
+     * container attempts to exceed the memory specified here, the container is killed.
+     * This parameter maps to <code>Memory</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--memory</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. You must
+     * specify at least 4 MiB of memory for a job.</p> <note> <p>If you are trying to
+     * maximize your resource utilization by providing your jobs as much memory as
+     * possible for a particular instance type, see <a
+     * href="http://docs.aws.amazon.com/batch/latest/userguide/memory-management.html">Memory
+     * Management</a> in the <i>AWS Batch User Guide</i>.</p> </note>
+     */
+    inline bool MemoryHasBeenSet() const { return m_memoryHasBeenSet; }
 
     /**
      * <p>The hard limit (in MiB) of memory to present to the container. If your
@@ -330,6 +385,19 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommand() const{ return m_command; }
+
+    /**
+     * <p>The command that is passed to the container. This parameter maps to
+     * <code>Cmd</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>COMMAND</code> parameter to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>. For more
+     * information, see <a
+     * href="https://docs.docker.com/engine/reference/builder/#cmd">https://docs.docker.com/engine/reference/builder/#cmd</a>.</p>
+     */
+    inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
 
     /**
      * <p>The command that is passed to the container. This parameter maps to
@@ -433,6 +501,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
      * for AWS permissions.</p>
      */
+    inline bool JobRoleArnHasBeenSet() const { return m_jobRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that the container can assume
+     * for AWS permissions.</p>
+     */
     inline void SetJobRoleArn(const Aws::String& value) { m_jobRoleArnHasBeenSet = true; m_jobRoleArn = value; }
 
     /**
@@ -470,6 +544,11 @@ namespace Model
      * <p>A list of data volumes used in a job.</p>
      */
     inline const Aws::Vector<Volume>& GetVolumes() const{ return m_volumes; }
+
+    /**
+     * <p>A list of data volumes used in a job.</p>
+     */
+    inline bool VolumesHasBeenSet() const { return m_volumesHasBeenSet; }
 
     /**
      * <p>A list of data volumes used in a job.</p>
@@ -517,6 +596,22 @@ namespace Model
      * </note>
      */
     inline const Aws::Vector<KeyValuePair>& GetEnvironment() const{ return m_environment; }
+
+    /**
+     * <p>The environment variables to pass to a container. This parameter maps to
+     * <code>Env</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--env</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     * <important> <p>We do not recommend using plaintext environment variables for
+     * sensitive information, such as credential data.</p> </important> <note>
+     * <p>Environment variables must not start with <code>AWS_BATCH</code>; this naming
+     * convention is reserved for variables that are set by the AWS Batch service.</p>
+     * </note>
+     */
+    inline bool EnvironmentHasBeenSet() const { return m_environmentHasBeenSet; }
 
     /**
      * <p>The environment variables to pass to a container. This parameter maps to
@@ -635,6 +730,17 @@ namespace Model
      * Remote API</a> and the <code>--volume</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
+    inline bool MountPointsHasBeenSet() const { return m_mountPointsHasBeenSet; }
+
+    /**
+     * <p>The mount points for data volumes in your container. This parameter maps to
+     * <code>Volumes</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--volume</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
     inline void SetMountPoints(const Aws::Vector<MountPoint>& value) { m_mountPointsHasBeenSet = true; m_mountPoints = value; }
 
     /**
@@ -713,6 +819,17 @@ namespace Model
      * Remote API</a> and the <code>--read-only</code> option to <code>docker
      * run</code>.</p>
      */
+    inline bool ReadonlyRootFilesystemHasBeenSet() const { return m_readonlyRootFilesystemHasBeenSet; }
+
+    /**
+     * <p>When this parameter is true, the container is given read-only access to its
+     * root file system. This parameter maps to <code>ReadonlyRootfs</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--read-only</code> option to <code>docker
+     * run</code>.</p>
+     */
     inline void SetReadonlyRootFilesystem(bool value) { m_readonlyRootFilesystemHasBeenSet = true; m_readonlyRootFilesystem = value; }
 
     /**
@@ -749,6 +866,18 @@ namespace Model
      * Remote API</a> and the <code>--privileged</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
+    inline bool PrivilegedHasBeenSet() const { return m_privilegedHasBeenSet; }
+
+    /**
+     * <p>When this parameter is true, the container is given elevated privileges on
+     * the host container instance (similar to the <code>root</code> user). This
+     * parameter maps to <code>Privileged</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--privileged</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
     inline void SetPrivileged(bool value) { m_privilegedHasBeenSet = true; m_privileged = value; }
 
     /**
@@ -774,6 +903,17 @@ namespace Model
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
     inline const Aws::Vector<Ulimit>& GetUlimits() const{ return m_ulimits; }
+
+    /**
+     * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
+     * to <code>Ulimits</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--ulimit</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
+    inline bool UlimitsHasBeenSet() const { return m_ulimitsHasBeenSet; }
 
     /**
      * <p>A list of <code>ulimits</code> to set in the container. This parameter maps
@@ -862,6 +1002,17 @@ namespace Model
      * Remote API</a> and the <code>--user</code> option to <a
      * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
      */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
+
+    /**
+     * <p>The user name to use inside the container. This parameter maps to
+     * <code>User</code> in the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/#create-a-container">Create
+     * a container</a> section of the <a
+     * href="https://docs.docker.com/engine/reference/api/docker_remote_api_v1.23/">Docker
+     * Remote API</a> and the <code>--user</code> option to <a
+     * href="https://docs.docker.com/engine/reference/run/">docker run</a>.</p>
+     */
     inline void SetUser(const Aws::String& value) { m_userHasBeenSet = true; m_user = value; }
 
     /**
@@ -919,6 +1070,112 @@ namespace Model
      */
     inline ContainerProperties& WithUser(const char* value) { SetUser(value); return *this;}
 
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(Aws::String&& value) { m_instanceTypeHasBeenSet = true; m_instanceType = std::move(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline void SetInstanceType(const char* value) { m_instanceTypeHasBeenSet = true; m_instanceType.assign(value); }
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(const Aws::String& value) { SetInstanceType(value); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(Aws::String&& value) { SetInstanceType(std::move(value)); return *this;}
+
+    /**
+     * <p>The instance type to use for a multi-node parallel job. Currently all node
+     * groups in a multi-node parallel job must use the same instance type. This
+     * parameter is not valid for single-node container jobs.</p>
+     */
+    inline ContainerProperties& WithInstanceType(const char* value) { SetInstanceType(value); return *this;}
+
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline const Aws::Vector<ResourceRequirement>& GetResourceRequirements() const{ return m_resourceRequirements; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline bool ResourceRequirementsHasBeenSet() const { return m_resourceRequirementsHasBeenSet; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = value; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline void SetResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements = std::move(value); }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerProperties& WithResourceRequirements(const Aws::Vector<ResourceRequirement>& value) { SetResourceRequirements(value); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerProperties& WithResourceRequirements(Aws::Vector<ResourceRequirement>&& value) { SetResourceRequirements(std::move(value)); return *this;}
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerProperties& AddResourceRequirements(const ResourceRequirement& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(value); return *this; }
+
+    /**
+     * <p>The type and amount of a resource to assign to a container. Currently, the
+     * only supported resource is <code>GPU</code>.</p>
+     */
+    inline ContainerProperties& AddResourceRequirements(ResourceRequirement&& value) { m_resourceRequirementsHasBeenSet = true; m_resourceRequirements.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_image;
@@ -956,6 +1213,12 @@ namespace Model
 
     Aws::String m_user;
     bool m_userHasBeenSet;
+
+    Aws::String m_instanceType;
+    bool m_instanceTypeHasBeenSet;
+
+    Aws::Vector<ResourceRequirement> m_resourceRequirements;
+    bool m_resourceRequirementsHasBeenSet;
   };
 
 } // namespace Model

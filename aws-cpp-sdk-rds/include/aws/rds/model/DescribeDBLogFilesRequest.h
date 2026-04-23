@@ -63,6 +63,13 @@ namespace Model
      * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
      * an existing DBInstance.</p> </li> </ul>
      */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The customer-assigned name of the DB instance that contains the log files you
+     * want to list.</p> <p>Constraints:</p> <ul> <li> <p>Must match the identifier of
+     * an existing DBInstance.</p> </li> </ul>
+     */
     inline void SetDBInstanceIdentifier(const Aws::String& value) { m_dBInstanceIdentifierHasBeenSet = true; m_dBInstanceIdentifier = value; }
 
     /**
@@ -111,6 +118,12 @@ namespace Model
      * <p>Filters the available log files for log file names that contain the specified
      * string.</p>
      */
+    inline bool FilenameContainsHasBeenSet() const { return m_filenameContainsHasBeenSet; }
+
+    /**
+     * <p>Filters the available log files for log file names that contain the specified
+     * string.</p>
+     */
     inline void SetFilenameContains(const Aws::String& value) { m_filenameContainsHasBeenSet = true; m_filenameContains = value; }
 
     /**
@@ -154,6 +167,12 @@ namespace Model
      * <p>Filters the available log files for files written since the specified date,
      * in POSIX timestamp format with milliseconds.</p>
      */
+    inline bool FileLastWrittenHasBeenSet() const { return m_fileLastWrittenHasBeenSet; }
+
+    /**
+     * <p>Filters the available log files for files written since the specified date,
+     * in POSIX timestamp format with milliseconds.</p>
+     */
     inline void SetFileLastWritten(long long value) { m_fileLastWrittenHasBeenSet = true; m_fileLastWritten = value; }
 
     /**
@@ -171,6 +190,11 @@ namespace Model
     /**
      * <p>Filters the available log files for files larger than the specified size.</p>
      */
+    inline bool FileSizeHasBeenSet() const { return m_fileSizeHasBeenSet; }
+
+    /**
+     * <p>Filters the available log files for files larger than the specified size.</p>
+     */
     inline void SetFileSize(long long value) { m_fileSizeHasBeenSet = true; m_fileSize = value; }
 
     /**
@@ -183,6 +207,11 @@ namespace Model
      * <p>This parameter is not currently supported.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>This parameter is not currently supported.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>This parameter is not currently supported.</p>
@@ -227,6 +256,13 @@ namespace Model
      * exist than the specified MaxRecords value, a pagination token called a marker is
      * included in the response so that the remaining results can be retrieved.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified MaxRecords value, a pagination token called a marker is
+     * included in the response so that the remaining results can be retrieved.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -243,6 +279,13 @@ namespace Model
      * MaxRecords.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The pagination token provided in the previous request. If this parameter is
+     * specified the response includes only records beyond the marker, up to
+     * MaxRecords.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The pagination token provided in the previous request. If this parameter is

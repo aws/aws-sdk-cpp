@@ -29,7 +29,7 @@ ListGroupCertificateAuthoritiesRequest::ListGroupCertificateAuthoritiesRequest()
 
 Aws::String ListGroupCertificateAuthoritiesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

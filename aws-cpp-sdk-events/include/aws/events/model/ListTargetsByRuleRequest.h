@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token returned by a previous call to retrieve the next set of
+     * results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token returned by a previous call to retrieve the next set of
@@ -127,6 +138,11 @@ namespace Model
      * <p>The maximum number of results to return.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of results to return.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return.</p>

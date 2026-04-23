@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
      */
+    inline bool PlatformApplicationArnHasBeenSet() const { return m_platformApplicationArnHasBeenSet; }
+
+    /**
+     * <p>PlatformApplicationArn for GetPlatformApplicationAttributesInput.</p>
+     */
     inline void SetPlatformApplicationArn(const Aws::String& value) { m_platformApplicationArnHasBeenSet = true; m_platformApplicationArn = value; }
 
     /**

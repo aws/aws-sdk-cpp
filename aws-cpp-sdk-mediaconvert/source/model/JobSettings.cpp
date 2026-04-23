@@ -32,7 +32,9 @@ JobSettings::JobSettings() :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -44,7 +46,9 @@ JobSettings::JobSettings(JsonView jsonValue) :
     m_adAvailOffset(0),
     m_adAvailOffsetHasBeenSet(false),
     m_availBlankingHasBeenSet(false),
+    m_esamHasBeenSet(false),
     m_inputsHasBeenSet(false),
+    m_motionImageInserterHasBeenSet(false),
     m_nielsenConfigurationHasBeenSet(false),
     m_outputGroupsHasBeenSet(false),
     m_timecodeConfigHasBeenSet(false),
@@ -69,6 +73,13 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
     m_availBlankingHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("esam"))
+  {
+    m_esam = jsonValue.GetObject("esam");
+
+    m_esamHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("inputs"))
   {
     Array<JsonView> inputsJsonList = jsonValue.GetArray("inputs");
@@ -77,6 +88,13 @@ JobSettings& JobSettings::operator =(JsonView jsonValue)
       m_inputs.push_back(inputsJsonList[inputsIndex].AsObject());
     }
     m_inputsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("motionImageInserter"))
+  {
+    m_motionImageInserter = jsonValue.GetObject("motionImageInserter");
+
+    m_motionImageInserterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("nielsenConfiguration"))
@@ -129,6 +147,12 @@ JsonValue JobSettings::Jsonize() const
 
   }
 
+  if(m_esamHasBeenSet)
+  {
+   payload.WithObject("esam", m_esam.Jsonize());
+
+  }
+
   if(m_inputsHasBeenSet)
   {
    Array<JsonValue> inputsJsonList(m_inputs.size());
@@ -137,6 +161,12 @@ JsonValue JobSettings::Jsonize() const
      inputsJsonList[inputsIndex].AsObject(m_inputs[inputsIndex].Jsonize());
    }
    payload.WithArray("inputs", std::move(inputsJsonList));
+
+  }
+
+  if(m_motionImageInserterHasBeenSet)
+  {
+   payload.WithObject("motionImageInserter", m_motionImageInserter.Jsonize());
 
   }
 

@@ -58,6 +58,13 @@ namespace Model
      * between 0 and 100 (inclusive). A higher value indicates a brighter face
      * image.</p>
      */
+    inline bool BrightnessHasBeenSet() const { return m_brightnessHasBeenSet; }
+
+    /**
+     * <p>Value representing brightness of the face. The service returns a value
+     * between 0 and 100 (inclusive). A higher value indicates a brighter face
+     * image.</p>
+     */
     inline void SetBrightness(double value) { m_brightnessHasBeenSet = true; m_brightness = value; }
 
     /**
@@ -73,6 +80,12 @@ namespace Model
      * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
      */
     inline double GetSharpness() const{ return m_sharpness; }
+
+    /**
+     * <p>Value representing sharpness of the face. The service returns a value between
+     * 0 and 100 (inclusive). A higher value indicates a sharper face image.</p>
+     */
+    inline bool SharpnessHasBeenSet() const { return m_sharpnessHasBeenSet; }
 
     /**
      * <p>Value representing sharpness of the face. The service returns a value between

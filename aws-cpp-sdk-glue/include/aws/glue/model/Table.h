@@ -63,6 +63,12 @@ namespace Model
      * <p>Name of the table. For Hive compatibility, this must be entirely
      * lowercase.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the table. For Hive compatibility, this must be entirely
+     * lowercase.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * compatibility, this must be all lowercase.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>Name of the metadata database where the table metadata resides. For Hive
+     * compatibility, this must be all lowercase.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>Name of the metadata database where the table metadata resides. For Hive
@@ -147,6 +159,11 @@ namespace Model
     /**
      * <p>Description of the table.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Description of the table.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -179,6 +196,11 @@ namespace Model
      * <p>Owner of the table.</p>
      */
     inline const Aws::String& GetOwner() const{ return m_owner; }
+
+    /**
+     * <p>Owner of the table.</p>
+     */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
 
     /**
      * <p>Owner of the table.</p>
@@ -219,6 +241,11 @@ namespace Model
     /**
      * <p>Time when the table definition was created in the Data Catalog.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>Time when the table definition was created in the Data Catalog.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -241,6 +268,11 @@ namespace Model
      * <p>Last time the table was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>Last time the table was updated.</p>
+     */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
      * <p>Last time the table was updated.</p>
@@ -268,6 +300,12 @@ namespace Model
      * not be reliable.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessTime() const{ return m_lastAccessTime; }
+
+    /**
+     * <p>Last time the table was accessed. This is usually taken from HDFS, and may
+     * not be reliable.</p>
+     */
+    inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
 
     /**
      * <p>Last time the table was accessed. This is usually taken from HDFS, and may
@@ -302,6 +340,11 @@ namespace Model
     /**
      * <p>Last time column statistics were computed for this table.</p>
      */
+    inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
+
+    /**
+     * <p>Last time column statistics were computed for this table.</p>
+     */
     inline void SetLastAnalyzedTime(const Aws::Utils::DateTime& value) { m_lastAnalyzedTimeHasBeenSet = true; m_lastAnalyzedTime = value; }
 
     /**
@@ -328,6 +371,11 @@ namespace Model
     /**
      * <p>Retention time for this table.</p>
      */
+    inline bool RetentionHasBeenSet() const { return m_retentionHasBeenSet; }
+
+    /**
+     * <p>Retention time for this table.</p>
+     */
     inline void SetRetention(int value) { m_retentionHasBeenSet = true; m_retention = value; }
 
     /**
@@ -341,6 +389,12 @@ namespace Model
      * this table.</p>
      */
     inline const StorageDescriptor& GetStorageDescriptor() const{ return m_storageDescriptor; }
+
+    /**
+     * <p>A storage descriptor containing information about the physical storage of
+     * this table.</p>
+     */
+    inline bool StorageDescriptorHasBeenSet() const { return m_storageDescriptorHasBeenSet; }
 
     /**
      * <p>A storage descriptor containing information about the physical storage of
@@ -369,43 +423,73 @@ namespace Model
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline const Aws::Vector<Column>& GetPartitionKeys() const{ return m_partitionKeys; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
+     */
+    inline bool PartitionKeysHasBeenSet() const { return m_partitionKeysHasBeenSet; }
+
+    /**
+     * <p>A list of columns by which the table is partitioned. Only primitive types are
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(const Aws::Vector<Column>& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = value; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline void SetPartitionKeys(Aws::Vector<Column>&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys = std::move(value); }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& WithPartitionKeys(const Aws::Vector<Column>& value) { SetPartitionKeys(value); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& WithPartitionKeys(Aws::Vector<Column>&& value) { SetPartitionKeys(std::move(value)); return *this;}
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& AddPartitionKeys(const Column& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(value); return *this; }
 
     /**
      * <p>A list of columns by which the table is partitioned. Only primitive types are
-     * supported as partition keys.</p>
+     * supported as partition keys.</p> <p>When creating a table used by Athena, and
+     * you do not specify any <code>partitionKeys</code>, you must at least set the
+     * value of <code>partitionKeys</code> to an empty list. For example:</p> <p>
+     * <code>"PartitionKeys": []</code> </p>
      */
     inline Table& AddPartitionKeys(Column&& value) { m_partitionKeysHasBeenSet = true; m_partitionKeys.push_back(std::move(value)); return *this; }
 
@@ -415,6 +499,12 @@ namespace Model
      * <code>null</code>.</p>
      */
     inline const Aws::String& GetViewOriginalText() const{ return m_viewOriginalText; }
+
+    /**
+     * <p>If the table is a view, the original text of the view; otherwise
+     * <code>null</code>.</p>
+     */
+    inline bool ViewOriginalTextHasBeenSet() const { return m_viewOriginalTextHasBeenSet; }
 
     /**
      * <p>If the table is a view, the original text of the view; otherwise
@@ -463,6 +553,12 @@ namespace Model
      * <p>If the table is a view, the expanded text of the view; otherwise
      * <code>null</code>.</p>
      */
+    inline bool ViewExpandedTextHasBeenSet() const { return m_viewExpandedTextHasBeenSet; }
+
+    /**
+     * <p>If the table is a view, the expanded text of the view; otherwise
+     * <code>null</code>.</p>
+     */
     inline void SetViewExpandedText(const Aws::String& value) { m_viewExpandedTextHasBeenSet = true; m_viewExpandedText = value; }
 
     /**
@@ -506,6 +602,12 @@ namespace Model
      * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
      * <code>VIRTUAL_VIEW</code>, etc.).</p>
      */
+    inline bool TableTypeHasBeenSet() const { return m_tableTypeHasBeenSet; }
+
+    /**
+     * <p>The type of this table (<code>EXTERNAL_TABLE</code>,
+     * <code>VIRTUAL_VIEW</code>, etc.).</p>
+     */
     inline void SetTableType(const Aws::String& value) { m_tableTypeHasBeenSet = true; m_tableType = value; }
 
     /**
@@ -543,6 +645,11 @@ namespace Model
      * <p>These key-value pairs define properties associated with the table.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>These key-value pairs define properties associated with the table.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>These key-value pairs define properties associated with the table.</p>
@@ -604,6 +711,11 @@ namespace Model
      * <p>Person or entity who created the table.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>Person or entity who created the table.</p>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
      * <p>Person or entity who created the table.</p>

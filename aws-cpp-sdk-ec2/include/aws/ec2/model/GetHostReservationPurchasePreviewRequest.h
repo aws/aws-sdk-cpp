@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
      */
+    inline bool HostIdSetHasBeenSet() const { return m_hostIdSetHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts with which the reservation is associated.</p>
+     */
     inline void SetHostIdSet(const Aws::Vector<Aws::String>& value) { m_hostIdSetHasBeenSet = true; m_hostIdSet = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The offering ID of the reservation.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The offering ID of the reservation.</p>
+     */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
      * <p>The offering ID of the reservation.</p>

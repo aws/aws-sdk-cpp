@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the assignment that contains the question with a
      * FileUploadAnswer.</p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the assignment that contains the question with a
+     * FileUploadAnswer.</p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * QuestionForm of the HIT.</p>
      */
     inline const Aws::String& GetQuestionIdentifier() const{ return m_questionIdentifier; }
+
+    /**
+     * <p>The identifier of the question with a FileUploadAnswer, as specified in the
+     * QuestionForm of the HIT.</p>
+     */
+    inline bool QuestionIdentifierHasBeenSet() const { return m_questionIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the question with a FileUploadAnswer, as specified in the

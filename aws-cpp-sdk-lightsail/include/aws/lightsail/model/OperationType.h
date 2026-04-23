@@ -26,6 +26,7 @@ namespace Model
   enum class OperationType
   {
     NOT_SET,
+    DeleteKnownHostKeys,
     DeleteInstance,
     CreateInstance,
     StopInstance,
@@ -59,7 +60,17 @@ namespace Model
     DetachDisk,
     CreateDiskSnapshot,
     DeleteDiskSnapshot,
-    CreateDiskFromSnapshot
+    CreateDiskFromSnapshot,
+    CreateRelationalDatabase,
+    UpdateRelationalDatabase,
+    DeleteRelationalDatabase,
+    CreateRelationalDatabaseFromSnapshot,
+    CreateRelationalDatabaseSnapshot,
+    DeleteRelationalDatabaseSnapshot,
+    UpdateRelationalDatabaseParameters,
+    StartRelationalDatabase,
+    RebootRelationalDatabase,
+    StopRelationalDatabase
   };
 
 namespace OperationTypeMapper

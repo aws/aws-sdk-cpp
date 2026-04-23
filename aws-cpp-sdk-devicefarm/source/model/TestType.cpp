@@ -36,9 +36,13 @@ namespace Aws
         static const int APPIUM_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT");
         static const int APPIUM_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG");
         static const int APPIUM_PYTHON_HASH = HashingUtils::HashString("APPIUM_PYTHON");
+        static const int APPIUM_NODE_HASH = HashingUtils::HashString("APPIUM_NODE");
+        static const int APPIUM_RUBY_HASH = HashingUtils::HashString("APPIUM_RUBY");
         static const int APPIUM_WEB_JAVA_JUNIT_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT");
         static const int APPIUM_WEB_JAVA_TESTNG_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG");
         static const int APPIUM_WEB_PYTHON_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON");
+        static const int APPIUM_WEB_NODE_HASH = HashingUtils::HashString("APPIUM_WEB_NODE");
+        static const int APPIUM_WEB_RUBY_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY");
         static const int CALABASH_HASH = HashingUtils::HashString("CALABASH");
         static const int INSTRUMENTATION_HASH = HashingUtils::HashString("INSTRUMENTATION");
         static const int UIAUTOMATION_HASH = HashingUtils::HashString("UIAUTOMATION");
@@ -76,6 +80,14 @@ namespace Aws
           {
             return TestType::APPIUM_PYTHON;
           }
+          else if (hashCode == APPIUM_NODE_HASH)
+          {
+            return TestType::APPIUM_NODE;
+          }
+          else if (hashCode == APPIUM_RUBY_HASH)
+          {
+            return TestType::APPIUM_RUBY;
+          }
           else if (hashCode == APPIUM_WEB_JAVA_JUNIT_HASH)
           {
             return TestType::APPIUM_WEB_JAVA_JUNIT;
@@ -87,6 +99,14 @@ namespace Aws
           else if (hashCode == APPIUM_WEB_PYTHON_HASH)
           {
             return TestType::APPIUM_WEB_PYTHON;
+          }
+          else if (hashCode == APPIUM_WEB_NODE_HASH)
+          {
+            return TestType::APPIUM_WEB_NODE;
+          }
+          else if (hashCode == APPIUM_WEB_RUBY_HASH)
+          {
+            return TestType::APPIUM_WEB_RUBY;
           }
           else if (hashCode == CALABASH_HASH)
           {
@@ -146,12 +166,20 @@ namespace Aws
             return "APPIUM_JAVA_TESTNG";
           case TestType::APPIUM_PYTHON:
             return "APPIUM_PYTHON";
+          case TestType::APPIUM_NODE:
+            return "APPIUM_NODE";
+          case TestType::APPIUM_RUBY:
+            return "APPIUM_RUBY";
           case TestType::APPIUM_WEB_JAVA_JUNIT:
             return "APPIUM_WEB_JAVA_JUNIT";
           case TestType::APPIUM_WEB_JAVA_TESTNG:
             return "APPIUM_WEB_JAVA_TESTNG";
           case TestType::APPIUM_WEB_PYTHON:
             return "APPIUM_WEB_PYTHON";
+          case TestType::APPIUM_WEB_NODE:
+            return "APPIUM_WEB_NODE";
+          case TestType::APPIUM_WEB_RUBY:
+            return "APPIUM_WEB_RUBY";
           case TestType::CALABASH:
             return "CALABASH";
           case TestType::INSTRUMENTATION:
@@ -175,7 +203,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

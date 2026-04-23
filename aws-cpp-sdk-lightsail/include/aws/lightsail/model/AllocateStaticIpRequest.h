@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the static IP address.</p>
      */
+    inline bool StaticIpNameHasBeenSet() const { return m_staticIpNameHasBeenSet; }
+
+    /**
+     * <p>The name of the static IP address.</p>
+     */
     inline void SetStaticIpName(const Aws::String& value) { m_staticIpNameHasBeenSet = true; m_staticIpName = value; }
 
     /**

@@ -61,6 +61,12 @@ namespace Model
      * <p>The verification status of the identity: "Pending", "Success", "Failed", or
      * "TemporaryFailure".</p>
      */
+    inline bool VerificationStatusHasBeenSet() const { return m_verificationStatusHasBeenSet; }
+
+    /**
+     * <p>The verification status of the identity: "Pending", "Success", "Failed", or
+     * "TemporaryFailure".</p>
+     */
     inline void SetVerificationStatus(const VerificationStatus& value) { m_verificationStatusHasBeenSet = true; m_verificationStatus = value; }
 
     /**
@@ -87,6 +93,12 @@ namespace Model
      * identities.</p>
      */
     inline const Aws::String& GetVerificationToken() const{ return m_verificationToken; }
+
+    /**
+     * <p>The verification token for a domain identity. Null for email address
+     * identities.</p>
+     */
+    inline bool VerificationTokenHasBeenSet() const { return m_verificationTokenHasBeenSet; }
 
     /**
      * <p>The verification token for a domain identity. Null for email address

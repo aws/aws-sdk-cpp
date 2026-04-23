@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The type of notification that AWS sends to a subscriber.</p>
      */
+    inline bool SubscriptionTypeHasBeenSet() const { return m_subscriptionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of notification that AWS sends to a subscriber.</p>
+     */
     inline void SetSubscriptionType(const SubscriptionType& value) { m_subscriptionTypeHasBeenSet = true; m_subscriptionType = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * email.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>The address that AWS sends budget notifications to, either an SNS topic or an
+     * email.</p>
+     */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>The address that AWS sends budget notifications to, either an SNS topic or an

@@ -32,7 +32,9 @@ namespace Aws
 
         static const int EQUALS_HASH = HashingUtils::HashString("EQUALS");
         static const int LESS_THAN_HASH = HashingUtils::HashString("LESS_THAN");
+        static const int LESS_THAN_OR_EQUALS_HASH = HashingUtils::HashString("LESS_THAN_OR_EQUALS");
         static const int GREATER_THAN_HASH = HashingUtils::HashString("GREATER_THAN");
+        static const int GREATER_THAN_OR_EQUALS_HASH = HashingUtils::HashString("GREATER_THAN_OR_EQUALS");
         static const int IN_HASH = HashingUtils::HashString("IN");
         static const int NOT_IN_HASH = HashingUtils::HashString("NOT_IN");
         static const int CONTAINS_HASH = HashingUtils::HashString("CONTAINS");
@@ -49,9 +51,17 @@ namespace Aws
           {
             return RuleOperator::LESS_THAN;
           }
+          else if (hashCode == LESS_THAN_OR_EQUALS_HASH)
+          {
+            return RuleOperator::LESS_THAN_OR_EQUALS;
+          }
           else if (hashCode == GREATER_THAN_HASH)
           {
             return RuleOperator::GREATER_THAN;
+          }
+          else if (hashCode == GREATER_THAN_OR_EQUALS_HASH)
+          {
+            return RuleOperator::GREATER_THAN_OR_EQUALS;
           }
           else if (hashCode == IN_HASH)
           {
@@ -83,8 +93,12 @@ namespace Aws
             return "EQUALS";
           case RuleOperator::LESS_THAN:
             return "LESS_THAN";
+          case RuleOperator::LESS_THAN_OR_EQUALS:
+            return "LESS_THAN_OR_EQUALS";
           case RuleOperator::GREATER_THAN:
             return "GREATER_THAN";
+          case RuleOperator::GREATER_THAN_OR_EQUALS:
+            return "GREATER_THAN_OR_EQUALS";
           case RuleOperator::IN:
             return "IN";
           case RuleOperator::NOT_IN:
@@ -98,7 +112,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

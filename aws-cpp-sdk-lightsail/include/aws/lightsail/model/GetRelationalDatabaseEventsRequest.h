@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the database from which to get events.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database from which to get events.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * <code>60</code> </p> <p>The minimum is 1 and the maximum is 14 days (20160
      * minutes).</p>
      */
+    inline bool DurationInMinutesHasBeenSet() const { return m_durationInMinutesHasBeenSet; }
+
+    /**
+     * <p>The number of minutes in the past from which to retrieve events. For example,
+     * to get all events from the past 2 hours, enter 120.</p> <p>Default:
+     * <code>60</code> </p> <p>The minimum is 1 and the maximum is 14 days (20160
+     * minutes).</p>
+     */
     inline void SetDurationInMinutes(int value) { m_durationInMinutesHasBeenSet = true; m_durationInMinutes = value; }
 
     /**
@@ -110,6 +123,12 @@ namespace Model
      * relational database events request.</p>
      */
     inline const Aws::String& GetPageToken() const{ return m_pageToken; }
+
+    /**
+     * <p>A token used for advancing to a specific page of results from for get
+     * relational database events request.</p>
+     */
+    inline bool PageTokenHasBeenSet() const { return m_pageTokenHasBeenSet; }
 
     /**
      * <p>A token used for advancing to a specific page of results from for get

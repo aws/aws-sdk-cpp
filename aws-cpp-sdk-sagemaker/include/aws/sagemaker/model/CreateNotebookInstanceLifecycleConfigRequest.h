@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle configuration.</p>
      */
+    inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle configuration.</p>
+     */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * shell script must be a base64-encoded string.</p>
      */
     inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnCreate() const{ return m_onCreate; }
+
+    /**
+     * <p>A shell script that runs only once, when you create a notebook instance. The
+     * shell script must be a base64-encoded string.</p>
+     */
+    inline bool OnCreateHasBeenSet() const { return m_onCreateHasBeenSet; }
 
     /**
      * <p>A shell script that runs only once, when you create a notebook instance. The
@@ -131,6 +142,13 @@ namespace Model
      * string.</p>
      */
     inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnStart() const{ return m_onStart; }
+
+    /**
+     * <p>A shell script that runs every time you start a notebook instance, including
+     * when you create the notebook instance. The shell script must be a base64-encoded
+     * string.</p>
+     */
+    inline bool OnStartHasBeenSet() const { return m_onStartHasBeenSet; }
 
     /**
      * <p>A shell script that runs every time you start a notebook instance, including

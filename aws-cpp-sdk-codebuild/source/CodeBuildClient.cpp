@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/codebuild/CodeBuildClient.h>
 #include <aws/codebuild/CodeBuildEndpoint.h>
 #include <aws/codebuild/CodeBuildErrorMarshaller.h>
@@ -33,12 +36,15 @@
 #include <aws/codebuild/model/CreateProjectRequest.h>
 #include <aws/codebuild/model/CreateWebhookRequest.h>
 #include <aws/codebuild/model/DeleteProjectRequest.h>
+#include <aws/codebuild/model/DeleteSourceCredentialsRequest.h>
 #include <aws/codebuild/model/DeleteWebhookRequest.h>
+#include <aws/codebuild/model/ImportSourceCredentialsRequest.h>
 #include <aws/codebuild/model/InvalidateProjectCacheRequest.h>
 #include <aws/codebuild/model/ListBuildsRequest.h>
 #include <aws/codebuild/model/ListBuildsForProjectRequest.h>
 #include <aws/codebuild/model/ListCuratedEnvironmentImagesRequest.h>
 #include <aws/codebuild/model/ListProjectsRequest.h>
+#include <aws/codebuild/model/ListSourceCredentialsRequest.h>
 #include <aws/codebuild/model/StartBuildRequest.h>
 #include <aws/codebuild/model/StopBuildRequest.h>
 #include <aws/codebuild/model/UpdateProjectRequest.h>
@@ -93,25 +99,32 @@ CodeBuildClient::~CodeBuildClient()
 
 void CodeBuildClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << CodeBuildEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + CodeBuildEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void CodeBuildClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 BatchDeleteBuildsOutcome CodeBuildClient::BatchDeleteBuilds(const BatchDeleteBuildsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -145,8 +158,8 @@ void CodeBuildClient::BatchDeleteBuildsAsyncHelper(const BatchDeleteBuildsReques
 
 BatchGetBuildsOutcome CodeBuildClient::BatchGetBuilds(const BatchGetBuildsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -180,8 +193,8 @@ void CodeBuildClient::BatchGetBuildsAsyncHelper(const BatchGetBuildsRequest& req
 
 BatchGetProjectsOutcome CodeBuildClient::BatchGetProjects(const BatchGetProjectsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -215,8 +228,8 @@ void CodeBuildClient::BatchGetProjectsAsyncHelper(const BatchGetProjectsRequest&
 
 CreateProjectOutcome CodeBuildClient::CreateProject(const CreateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -250,8 +263,8 @@ void CodeBuildClient::CreateProjectAsyncHelper(const CreateProjectRequest& reque
 
 CreateWebhookOutcome CodeBuildClient::CreateWebhook(const CreateWebhookRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -285,8 +298,8 @@ void CodeBuildClient::CreateWebhookAsyncHelper(const CreateWebhookRequest& reque
 
 DeleteProjectOutcome CodeBuildClient::DeleteProject(const DeleteProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -318,10 +331,45 @@ void CodeBuildClient::DeleteProjectAsyncHelper(const DeleteProjectRequest& reque
   handler(this, request, DeleteProject(request), context);
 }
 
+DeleteSourceCredentialsOutcome CodeBuildClient::DeleteSourceCredentials(const DeleteSourceCredentialsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteSourceCredentialsOutcome(DeleteSourceCredentialsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteSourceCredentialsOutcome(outcome.GetError());
+  }
+}
+
+DeleteSourceCredentialsOutcomeCallable CodeBuildClient::DeleteSourceCredentialsCallable(const DeleteSourceCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteSourceCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteSourceCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::DeleteSourceCredentialsAsync(const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteSourceCredentialsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::DeleteSourceCredentialsAsyncHelper(const DeleteSourceCredentialsRequest& request, const DeleteSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteSourceCredentials(request), context);
+}
+
 DeleteWebhookOutcome CodeBuildClient::DeleteWebhook(const DeleteWebhookRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -353,10 +401,45 @@ void CodeBuildClient::DeleteWebhookAsyncHelper(const DeleteWebhookRequest& reque
   handler(this, request, DeleteWebhook(request), context);
 }
 
+ImportSourceCredentialsOutcome CodeBuildClient::ImportSourceCredentials(const ImportSourceCredentialsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ImportSourceCredentialsOutcome(ImportSourceCredentialsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ImportSourceCredentialsOutcome(outcome.GetError());
+  }
+}
+
+ImportSourceCredentialsOutcomeCallable CodeBuildClient::ImportSourceCredentialsCallable(const ImportSourceCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ImportSourceCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ImportSourceCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ImportSourceCredentialsAsync(const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ImportSourceCredentialsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ImportSourceCredentialsAsyncHelper(const ImportSourceCredentialsRequest& request, const ImportSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ImportSourceCredentials(request), context);
+}
+
 InvalidateProjectCacheOutcome CodeBuildClient::InvalidateProjectCache(const InvalidateProjectCacheRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -390,8 +473,8 @@ void CodeBuildClient::InvalidateProjectCacheAsyncHelper(const InvalidateProjectC
 
 ListBuildsOutcome CodeBuildClient::ListBuilds(const ListBuildsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -425,8 +508,8 @@ void CodeBuildClient::ListBuildsAsyncHelper(const ListBuildsRequest& request, co
 
 ListBuildsForProjectOutcome CodeBuildClient::ListBuildsForProject(const ListBuildsForProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -460,8 +543,8 @@ void CodeBuildClient::ListBuildsForProjectAsyncHelper(const ListBuildsForProject
 
 ListCuratedEnvironmentImagesOutcome CodeBuildClient::ListCuratedEnvironmentImages(const ListCuratedEnvironmentImagesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -495,8 +578,8 @@ void CodeBuildClient::ListCuratedEnvironmentImagesAsyncHelper(const ListCuratedE
 
 ListProjectsOutcome CodeBuildClient::ListProjects(const ListProjectsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -528,10 +611,45 @@ void CodeBuildClient::ListProjectsAsyncHelper(const ListProjectsRequest& request
   handler(this, request, ListProjects(request), context);
 }
 
+ListSourceCredentialsOutcome CodeBuildClient::ListSourceCredentials(const ListSourceCredentialsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListSourceCredentialsOutcome(ListSourceCredentialsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListSourceCredentialsOutcome(outcome.GetError());
+  }
+}
+
+ListSourceCredentialsOutcomeCallable CodeBuildClient::ListSourceCredentialsCallable(const ListSourceCredentialsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListSourceCredentialsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListSourceCredentials(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void CodeBuildClient::ListSourceCredentialsAsync(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListSourceCredentialsAsyncHelper( request, handler, context ); } );
+}
+
+void CodeBuildClient::ListSourceCredentialsAsyncHelper(const ListSourceCredentialsRequest& request, const ListSourceCredentialsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListSourceCredentials(request), context);
+}
+
 StartBuildOutcome CodeBuildClient::StartBuild(const StartBuildRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -565,8 +683,8 @@ void CodeBuildClient::StartBuildAsyncHelper(const StartBuildRequest& request, co
 
 StopBuildOutcome CodeBuildClient::StopBuild(const StopBuildRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -600,8 +718,8 @@ void CodeBuildClient::StopBuildAsyncHelper(const StopBuildRequest& request, cons
 
 UpdateProjectOutcome CodeBuildClient::UpdateProject(const UpdateProjectRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -635,8 +753,8 @@ void CodeBuildClient::UpdateProjectAsyncHelper(const UpdateProjectRequest& reque
 
 UpdateWebhookOutcome CodeBuildClient::UpdateWebhook(const UpdateWebhookRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

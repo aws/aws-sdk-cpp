@@ -64,6 +64,15 @@ namespace Model
      * name. Two streams in the same AWS account but in two different Regions can also
      * have the same name.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>A name to identify the stream. The stream name is scoped to the AWS account
+     * used by the application that creates the stream. It is also scoped by AWS
+     * Region. That is, two streams in two different AWS accounts can have the same
+     * name. Two streams in the same AWS account but in two different Regions can also
+     * have the same name.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -118,6 +127,13 @@ namespace Model
      * provisioned throughput.</p> <p>DefaultShardLimit;</p>
      */
     inline int GetShardCount() const{ return m_shardCount; }
+
+    /**
+     * <p>The number of shards that the stream will use. The throughput of the stream
+     * is a function of the number of shards; more shards are required for greater
+     * provisioned throughput.</p> <p>DefaultShardLimit;</p>
+     */
+    inline bool ShardCountHasBeenSet() const { return m_shardCountHasBeenSet; }
 
     /**
      * <p>The number of shards that the stream will use. The throughput of the stream

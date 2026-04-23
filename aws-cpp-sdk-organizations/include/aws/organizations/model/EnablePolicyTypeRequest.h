@@ -59,6 +59,14 @@ namespace Model
      * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
      * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
      */
+    inline bool RootIdHasBeenSet() const { return m_rootIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the root in which you want to enable a policy
+     * type. You can get the ID from the <a>ListRoots</a> operation.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a root ID string
+     * requires "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     */
     inline void SetRootId(const Aws::String& value) { m_rootIdHasBeenSet = true; m_rootId = value; }
 
     /**
@@ -106,6 +114,11 @@ namespace Model
      * <p>The policy type that you want to enable.</p>
      */
     inline const PolicyType& GetPolicyType() const{ return m_policyType; }
+
+    /**
+     * <p>The policy type that you want to enable.</p>
+     */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>The policy type that you want to enable.</p>

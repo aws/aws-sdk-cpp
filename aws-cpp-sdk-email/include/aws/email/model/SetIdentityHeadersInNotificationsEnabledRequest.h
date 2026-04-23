@@ -64,6 +64,12 @@ namespace Model
      * <p>The identity for which to enable or disable headers in notifications.
      * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity for which to enable or disable headers in notifications.
+     * Examples: <code>user@example.com</code>, <code>example.com</code>.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -107,6 +113,12 @@ namespace Model
      * <p>The notification type for which to enable or disable headers in
      * notifications. </p>
      */
+    inline bool NotificationTypeHasBeenSet() const { return m_notificationTypeHasBeenSet; }
+
+    /**
+     * <p>The notification type for which to enable or disable headers in
+     * notifications. </p>
+     */
     inline void SetNotificationType(const NotificationType& value) { m_notificationTypeHasBeenSet = true; m_notificationType = value; }
 
     /**
@@ -138,6 +150,17 @@ namespace Model
      * topic.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS
+     * notifications of the specified notification type. A value of <code>true</code>
+     * specifies that Amazon SES will include headers in notifications, and a value of
+     * <code>false</code> specifies that Amazon SES will not include headers in
+     * notifications.</p> <p>This value can only be set when
+     * <code>NotificationType</code> is already set to use a particular Amazon SNS
+     * topic.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Sets whether Amazon SES includes the original email headers in Amazon SNS

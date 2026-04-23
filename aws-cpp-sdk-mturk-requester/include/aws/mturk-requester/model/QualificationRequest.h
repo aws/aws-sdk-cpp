@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID of the Qualification request, a unique identifier generated when the
      * request was submitted. </p>
      */
+    inline bool QualificationRequestIdHasBeenSet() const { return m_qualificationRequestIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Qualification request, a unique identifier generated when the
+     * request was submitted. </p>
+     */
     inline void SetQualificationRequestId(const Aws::String& value) { m_qualificationRequestIdHasBeenSet = true; m_qualificationRequestId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * the CreateQualificationType operation. </p>
      */
     inline const Aws::String& GetQualificationTypeId() const{ return m_qualificationTypeId; }
+
+    /**
+     * <p> The ID of the Qualification type the Worker is requesting, as returned by
+     * the CreateQualificationType operation. </p>
+     */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
 
     /**
      * <p> The ID of the Qualification type the Worker is requesting, as returned by
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p> The ID of the Worker requesting the Qualification.</p>
      */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the Worker requesting the Qualification.</p>
+     */
     inline void SetWorkerId(const Aws::String& value) { m_workerIdHasBeenSet = true; m_workerId = value; }
 
     /**
@@ -178,6 +195,14 @@ namespace Model
      * the Worker requests the Qualification.</p>
      */
     inline const Aws::String& GetTest() const{ return m_test; }
+
+    /**
+     * <p> The contents of the Qualification test that was presented to the Worker, if
+     * the type has a test and the Worker has submitted answers. This value is
+     * identical to the QuestionForm associated with the Qualification type at the time
+     * the Worker requests the Qualification.</p>
+     */
+    inline bool TestHasBeenSet() const { return m_testHasBeenSet; }
 
     /**
      * <p> The contents of the Qualification test that was presented to the Worker, if
@@ -242,6 +267,14 @@ namespace Model
      * submitted answers. If the Worker does not provide any answers, Answer may be
      * empty. </p>
      */
+    inline bool AnswerHasBeenSet() const { return m_answerHasBeenSet; }
+
+    /**
+     * <p> The Worker's answers for the Qualification type's test contained in a
+     * QuestionFormAnswers document, if the type has a test and the Worker has
+     * submitted answers. If the Worker does not provide any answers, Answer may be
+     * empty. </p>
+     */
     inline void SetAnswer(const Aws::String& value) { m_answerHasBeenSet = true; m_answer = value; }
 
     /**
@@ -292,6 +325,14 @@ namespace Model
      * have a test. </p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
+
+    /**
+     * <p>The date and time the Qualification request had a status of Submitted. This
+     * is either the time the Worker submitted answers for a Qualification test, or the
+     * time the Worker requested the Qualification if the Qualification type does not
+     * have a test. </p>
+     */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
 
     /**
      * <p>The date and time the Qualification request had a status of Submitted. This

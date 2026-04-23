@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the to-be-created <a>RequestValidator</a>.</p>
@@ -130,6 +140,13 @@ namespace Model
      * configured model schema for the method (<code>true</code>) or not
      * (<code>false</code>).</p>
      */
+    inline bool ValidateRequestBodyHasBeenSet() const { return m_validateRequestBodyHasBeenSet; }
+
+    /**
+     * <p>A Boolean flag to indicate whether to validate request body according to the
+     * configured model schema for the method (<code>true</code>) or not
+     * (<code>false</code>).</p>
+     */
     inline void SetValidateRequestBody(bool value) { m_validateRequestBodyHasBeenSet = true; m_validateRequestBody = value; }
 
     /**
@@ -145,6 +162,12 @@ namespace Model
      * <code>true</code>, or not <code>false</code>.</p>
      */
     inline bool GetValidateRequestParameters() const{ return m_validateRequestParameters; }
+
+    /**
+     * <p>A Boolean flag to indicate whether to validate request parameters,
+     * <code>true</code>, or not <code>false</code>.</p>
+     */
+    inline bool ValidateRequestParametersHasBeenSet() const { return m_validateRequestParametersHasBeenSet; }
 
     /**
      * <p>A Boolean flag to indicate whether to validate request parameters,

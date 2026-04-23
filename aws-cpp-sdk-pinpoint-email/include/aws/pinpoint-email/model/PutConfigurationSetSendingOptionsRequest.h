@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the configuration set that you want to enable or disable email
      * sending for.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to enable or disable email
+     * sending for.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * <code>false</code>, email sending is disabled for the configuration set.</p>
      */
     inline bool GetSendingEnabled() const{ return m_sendingEnabled; }
+
+    /**
+     * <p>If <code>true</code>, email sending is enabled for the configuration set. If
+     * <code>false</code>, email sending is disabled for the configuration set.</p>
+     */
+    inline bool SendingEnabledHasBeenSet() const { return m_sendingEnabledHasBeenSet; }
 
     /**
      * <p>If <code>true</code>, email sending is enabled for the configuration set. If

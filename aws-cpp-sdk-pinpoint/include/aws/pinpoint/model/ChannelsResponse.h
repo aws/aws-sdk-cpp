@@ -57,6 +57,11 @@ namespace Model
     /**
      * A map of channels, with the ChannelType as the key and the Channel as the value.
      */
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
+
+    /**
+     * A map of channels, with the ChannelType as the key and the Channel as the value.
+     */
     inline void SetChannels(const Aws::Map<Aws::String, ChannelResponse>& value) { m_channelsHasBeenSet = true; m_channels = value; }
 
     /**

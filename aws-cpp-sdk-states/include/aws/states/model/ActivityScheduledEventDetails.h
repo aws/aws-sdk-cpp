@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
      */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the scheduled activity.</p>
+     */
     inline void SetResource(const Aws::String& value) { m_resourceHasBeenSet = true; m_resource = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The JSON data input to the activity task.</p>
      */
     inline const Aws::String& GetInput() const{ return m_input; }
+
+    /**
+     * <p>The JSON data input to the activity task.</p>
+     */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
 
     /**
      * <p>The JSON data input to the activity task.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The maximum allowed duration of the activity task.</p>
      */
+    inline bool TimeoutInSecondsHasBeenSet() const { return m_timeoutInSecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum allowed duration of the activity task.</p>
+     */
     inline void SetTimeoutInSeconds(long long value) { m_timeoutInSecondsHasBeenSet = true; m_timeoutInSeconds = value; }
 
     /**
@@ -141,6 +156,12 @@ namespace Model
      * task.</p>
      */
     inline long long GetHeartbeatInSeconds() const{ return m_heartbeatInSeconds; }
+
+    /**
+     * <p>The maximum allowed duration between two heartbeats for the activity
+     * task.</p>
+     */
+    inline bool HeartbeatInSecondsHasBeenSet() const { return m_heartbeatInSecondsHasBeenSet; }
 
     /**
      * <p>The maximum allowed duration between two heartbeats for the activity

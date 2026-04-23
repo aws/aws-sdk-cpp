@@ -56,6 +56,13 @@ namespace Model
      * in which to put the image. If you do not specify a registry, the default
      * registry is assumed.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the repository
+     * in which to put the image. If you do not specify a registry, the default
+     * registry is assumed.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>The name of the repository in which to put the image.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository in which to put the image.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -134,6 +146,11 @@ namespace Model
      * <p>The image manifest corresponding to the image to be uploaded.</p>
      */
     inline const Aws::String& GetImageManifest() const{ return m_imageManifest; }
+
+    /**
+     * <p>The image manifest corresponding to the image to be uploaded.</p>
+     */
+    inline bool ImageManifestHasBeenSet() const { return m_imageManifestHasBeenSet; }
 
     /**
      * <p>The image manifest corresponding to the image to be uploaded.</p>
@@ -171,6 +188,12 @@ namespace Model
      * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
+
+    /**
+     * <p>The tag to associate with the image. This parameter is required for images
+     * that use the Docker Image Manifest V2 Schema 2 or OCI formats.</p>
+     */
+    inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
 
     /**
      * <p>The tag to associate with the image. This parameter is required for images

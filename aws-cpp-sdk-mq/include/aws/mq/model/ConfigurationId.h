@@ -55,6 +55,11 @@ namespace Model
     /**
      * Required. The unique ID that Amazon MQ generates for the configuration.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * Required. The unique ID that Amazon MQ generates for the configuration.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The revision number of the configuration.
      */
     inline int GetRevision() const{ return m_revision; }
+
+    /**
+     * The revision number of the configuration.
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * The revision number of the configuration.

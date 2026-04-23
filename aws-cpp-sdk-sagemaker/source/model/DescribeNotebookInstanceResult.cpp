@@ -30,7 +30,8 @@ DescribeNotebookInstanceResult::DescribeNotebookInstanceResult() :
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
     m_instanceType(InstanceType::NOT_SET),
     m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_volumeSizeInGB(0)
+    m_volumeSizeInGB(0),
+    m_rootAccess(RootAccess::NOT_SET)
 {
 }
 
@@ -38,7 +39,8 @@ DescribeNotebookInstanceResult::DescribeNotebookInstanceResult(const Aws::Amazon
     m_notebookInstanceStatus(NotebookInstanceStatus::NOT_SET),
     m_instanceType(InstanceType::NOT_SET),
     m_directInternetAccess(DirectInternetAccess::NOT_SET),
-    m_volumeSizeInGB(0)
+    m_volumeSizeInGB(0),
+    m_rootAccess(RootAccess::NOT_SET)
 {
   *this = result;
 }
@@ -142,6 +144,36 @@ DescribeNotebookInstanceResult& DescribeNotebookInstanceResult::operator =(const
   if(jsonValue.ValueExists("VolumeSizeInGB"))
   {
     m_volumeSizeInGB = jsonValue.GetInteger("VolumeSizeInGB");
+
+  }
+
+  if(jsonValue.ValueExists("AcceleratorTypes"))
+  {
+    Array<JsonView> acceleratorTypesJsonList = jsonValue.GetArray("AcceleratorTypes");
+    for(unsigned acceleratorTypesIndex = 0; acceleratorTypesIndex < acceleratorTypesJsonList.GetLength(); ++acceleratorTypesIndex)
+    {
+      m_acceleratorTypes.push_back(NotebookInstanceAcceleratorTypeMapper::GetNotebookInstanceAcceleratorTypeForName(acceleratorTypesJsonList[acceleratorTypesIndex].AsString()));
+    }
+  }
+
+  if(jsonValue.ValueExists("DefaultCodeRepository"))
+  {
+    m_defaultCodeRepository = jsonValue.GetString("DefaultCodeRepository");
+
+  }
+
+  if(jsonValue.ValueExists("AdditionalCodeRepositories"))
+  {
+    Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
+    for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
+    {
+      m_additionalCodeRepositories.push_back(additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString());
+    }
+  }
+
+  if(jsonValue.ValueExists("RootAccess"))
+  {
+    m_rootAccess = RootAccessMapper::GetRootAccessForName(jsonValue.GetString("RootAccess"));
 
   }
 

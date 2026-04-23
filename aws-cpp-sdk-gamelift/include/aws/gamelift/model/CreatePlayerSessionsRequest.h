@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Unique identifier for the game session to add players to.</p>
      */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for the game session to add players to.</p>
+     */
     inline void SetGameSessionId(const Aws::String& value) { m_gameSessionIdHasBeenSet = true; m_gameSessionId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>List of unique identifiers for the players to be added.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPlayerIds() const{ return m_playerIds; }
+
+    /**
+     * <p>List of unique identifiers for the players to be added.</p>
+     */
+    inline bool PlayerIdsHasBeenSet() const { return m_playerIdsHasBeenSet; }
 
     /**
      * <p>List of unique identifiers for the players to be added.</p>
@@ -134,6 +144,15 @@ namespace Model
      * ignored. </p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetPlayerDataMap() const{ return m_playerDataMap; }
+
+    /**
+     * <p>Map of string pairs, each specifying a player ID and a set of
+     * developer-defined information related to the player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game. Player data
+     * strings for player IDs not included in the <code>PlayerIds</code> parameter are
+     * ignored. </p>
+     */
+    inline bool PlayerDataMapHasBeenSet() const { return m_playerDataMapHasBeenSet; }
 
     /**
      * <p>Map of string pairs, each specifying a player ID and a set of

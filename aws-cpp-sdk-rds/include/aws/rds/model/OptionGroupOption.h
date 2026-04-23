@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the option.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the option.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The description of the option.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the option.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the option.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The name of the engine that this option can be applied to.</p>
      */
+    inline bool EngineNameHasBeenSet() const { return m_engineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the engine that this option can be applied to.</p>
+     */
     inline void SetEngineName(const Aws::String& value) { m_engineNameHasBeenSet = true; m_engineName = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>Indicates the major engine version that the option is available for.</p>
      */
     inline const Aws::String& GetMajorEngineVersion() const{ return m_majorEngineVersion; }
+
+    /**
+     * <p>Indicates the major engine version that the option is available for.</p>
+     */
+    inline bool MajorEngineVersionHasBeenSet() const { return m_majorEngineVersionHasBeenSet; }
 
     /**
      * <p>Indicates the major engine version that the option is available for.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The minimum required engine version for the option to be applied.</p>
      */
+    inline bool MinimumRequiredMinorEngineVersionHasBeenSet() const { return m_minimumRequiredMinorEngineVersionHasBeenSet; }
+
+    /**
+     * <p>The minimum required engine version for the option to be applied.</p>
+     */
     inline void SetMinimumRequiredMinorEngineVersion(const Aws::String& value) { m_minimumRequiredMinorEngineVersionHasBeenSet = true; m_minimumRequiredMinorEngineVersion = value; }
 
     /**
@@ -240,6 +265,11 @@ namespace Model
     /**
      * <p>Specifies whether the option requires a port.</p>
      */
+    inline bool PortRequiredHasBeenSet() const { return m_portRequiredHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the option requires a port.</p>
+     */
     inline void SetPortRequired(bool value) { m_portRequiredHasBeenSet = true; m_portRequired = value; }
 
     /**
@@ -256,6 +286,11 @@ namespace Model
     /**
      * <p>If the option requires a port, specifies the default port for the option.</p>
      */
+    inline bool DefaultPortHasBeenSet() const { return m_defaultPortHasBeenSet; }
+
+    /**
+     * <p>If the option requires a port, specifies the default port for the option.</p>
+     */
     inline void SetDefaultPort(int value) { m_defaultPortHasBeenSet = true; m_defaultPort = value; }
 
     /**
@@ -268,6 +303,11 @@ namespace Model
      * <p>The options that are prerequisites for this option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOptionsDependedOn() const{ return m_optionsDependedOn; }
+
+    /**
+     * <p>The options that are prerequisites for this option.</p>
+     */
+    inline bool OptionsDependedOnHasBeenSet() const { return m_optionsDependedOnHasBeenSet; }
 
     /**
      * <p>The options that are prerequisites for this option.</p>
@@ -309,6 +349,11 @@ namespace Model
      * <p>The options that conflict with this option.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOptionsConflictsWith() const{ return m_optionsConflictsWith; }
+
+    /**
+     * <p>The options that conflict with this option.</p>
+     */
+    inline bool OptionsConflictsWithHasBeenSet() const { return m_optionsConflictsWithHasBeenSet; }
 
     /**
      * <p>The options that conflict with this option.</p>
@@ -360,6 +405,14 @@ namespace Model
      * the option group, your can remove the persistent option from the option
      * group.</p>
      */
+    inline bool PersistentHasBeenSet() const { return m_persistentHasBeenSet; }
+
+    /**
+     * <p>Persistent options can't be removed from an option group while DB instances
+     * are associated with the option group. If you disassociate all DB instances from
+     * the option group, your can remove the persistent option from the option
+     * group.</p>
+     */
     inline void SetPersistent(bool value) { m_persistentHasBeenSet = true; m_persistent = value; }
 
     /**
@@ -376,6 +429,12 @@ namespace Model
      * containing a permanent option can't be removed from a DB instance.</p>
      */
     inline bool GetPermanent() const{ return m_permanent; }
+
+    /**
+     * <p>Permanent options can never be removed from an option group. An option group
+     * containing a permanent option can't be removed from a DB instance.</p>
+     */
+    inline bool PermanentHasBeenSet() const { return m_permanentHasBeenSet; }
 
     /**
      * <p>Permanent options can never be removed from an option group. An option group
@@ -404,6 +463,14 @@ namespace Model
      * Upgrade when you first create your DB instance, or by modifying your DB instance
      * later. </p>
      */
+    inline bool RequiresAutoMinorEngineVersionUpgradeHasBeenSet() const { return m_requiresAutoMinorEngineVersionUpgradeHasBeenSet; }
+
+    /**
+     * <p>If true, you must enable the Auto Minor Version Upgrade setting for your DB
+     * instance before you can use this option. You can enable Auto Minor Version
+     * Upgrade when you first create your DB instance, or by modifying your DB instance
+     * later. </p>
+     */
     inline void SetRequiresAutoMinorEngineVersionUpgrade(bool value) { m_requiresAutoMinorEngineVersionUpgradeHasBeenSet = true; m_requiresAutoMinorEngineVersionUpgrade = value; }
 
     /**
@@ -420,6 +487,12 @@ namespace Model
      * </p>
      */
     inline bool GetVpcOnly() const{ return m_vpcOnly; }
+
+    /**
+     * <p>If true, you can only use this option with a DB instance that is in a VPC.
+     * </p>
+     */
+    inline bool VpcOnlyHasBeenSet() const { return m_vpcOnlyHasBeenSet; }
 
     /**
      * <p>If true, you can only use this option with a DB instance that is in a VPC.
@@ -444,6 +517,12 @@ namespace Model
      * <p>If true, you can change the option to an earlier version of the option. This
      * only applies to options that have different versions available. </p>
      */
+    inline bool SupportsOptionVersionDowngradeHasBeenSet() const { return m_supportsOptionVersionDowngradeHasBeenSet; }
+
+    /**
+     * <p>If true, you can change the option to an earlier version of the option. This
+     * only applies to options that have different versions available. </p>
+     */
     inline void SetSupportsOptionVersionDowngrade(bool value) { m_supportsOptionVersionDowngradeHasBeenSet = true; m_supportsOptionVersionDowngrade = value; }
 
     /**
@@ -458,6 +537,12 @@ namespace Model
      * option in an option group.</p>
      */
     inline const Aws::Vector<OptionGroupOptionSetting>& GetOptionGroupOptionSettings() const{ return m_optionGroupOptionSettings; }
+
+    /**
+     * <p>The option settings that are available (and the default value) for each
+     * option in an option group.</p>
+     */
+    inline bool OptionGroupOptionSettingsHasBeenSet() const { return m_optionGroupOptionSettingsHasBeenSet; }
 
     /**
      * <p>The option settings that are available (and the default value) for each
@@ -500,6 +585,11 @@ namespace Model
      * <p>The versions that are available for the option.</p>
      */
     inline const Aws::Vector<OptionVersion>& GetOptionGroupOptionVersions() const{ return m_optionGroupOptionVersions; }
+
+    /**
+     * <p>The versions that are available for the option.</p>
+     */
+    inline bool OptionGroupOptionVersionsHasBeenSet() const { return m_optionGroupOptionVersionsHasBeenSet; }
 
     /**
      * <p>The versions that are available for the option.</p>

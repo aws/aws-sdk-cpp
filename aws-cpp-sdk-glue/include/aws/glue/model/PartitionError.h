@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The values that define the partition.</p>
      */
+    inline bool PartitionValuesHasBeenSet() const { return m_partitionValuesHasBeenSet; }
+
+    /**
+     * <p>The values that define the partition.</p>
+     */
     inline void SetPartitionValues(const Aws::Vector<Aws::String>& value) { m_partitionValuesHasBeenSet = true; m_partitionValues = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>Details about the partition error.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+
+    /**
+     * <p>Details about the partition error.</p>
+     */
+    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
      * <p>Details about the partition error.</p>

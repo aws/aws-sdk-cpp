@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Unique identifier for a player </p>
      */
+    inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a player </p>
+     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Unique identifier for a player session</p>
      */
     inline const Aws::String& GetPlayerSessionId() const{ return m_playerSessionId; }
+
+    /**
+     * <p>Unique identifier for a player session</p>
+     */
+    inline bool PlayerSessionIdHasBeenSet() const { return m_playerSessionIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a player session</p>

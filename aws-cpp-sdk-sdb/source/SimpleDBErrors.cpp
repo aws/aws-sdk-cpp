@@ -29,7 +29,6 @@ namespace SimpleDBErrorMapper
 {
 
 static const int NUMBER_DOMAIN_BYTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainBytesExceeded");
-static const int REQUEST_TIMEOUT_HASH = HashingUtils::HashString("RequestTimeout");
 static const int NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH = HashingUtils::HashString("NumberDomainAttributesExceeded");
 static const int INVALID_NUMBER_PREDICATES_HASH = HashingUtils::HashString("InvalidNumberPredicates");
 static const int ATTRIBUTE_DOES_NOT_EXIST_HASH = HashingUtils::HashString("AttributeDoesNotExist");
@@ -52,10 +51,6 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   if (hashCode == NUMBER_DOMAIN_BYTES_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::NUMBER_DOMAIN_BYTES_EXCEEDED), false);
-  }
-  else if (hashCode == REQUEST_TIMEOUT_HASH)
-  {
-    return AWSError<CoreErrors>(static_cast<CoreErrors>(SimpleDBErrors::REQUEST_TIMEOUT), false);
   }
   else if (hashCode == NUMBER_DOMAIN_ATTRIBUTES_EXCEEDED_HASH)
   {

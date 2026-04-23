@@ -55,6 +55,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool RepIntervalHasBeenSet() const { return m_repIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetRepInterval(int value) { m_repIntervalHasBeenSet = true; m_repInterval = value; }
 
     /**

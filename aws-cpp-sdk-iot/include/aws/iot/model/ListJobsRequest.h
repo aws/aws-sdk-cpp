@@ -60,6 +60,12 @@ namespace Model
      * <p>An optional filter that lets you search for jobs that have the specified
      * status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>An optional filter that lets you search for jobs that have the specified
+     * status.</p>
+     */
     inline void SetStatus(const JobStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -90,6 +96,16 @@ namespace Model
      * originally in the group. </p>
      */
     inline const TargetSelection& GetTargetSelection() const{ return m_targetSelection; }
+
+    /**
+     * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
+     * complete after all those things specified as targets have completed the job
+     * (SNAPSHOT). If continuous, the job may also be run on a thing when a change is
+     * detected in a target. For example, a job will run on a thing when the thing is
+     * added to a target group, even after the job was completed by all things
+     * originally in the group. </p>
+     */
+    inline bool TargetSelectionHasBeenSet() const { return m_targetSelectionHasBeenSet; }
 
     /**
      * <p>Specifies whether the job will continue to run (CONTINUOUS), or will be
@@ -140,6 +156,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return per request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return per request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -152,6 +173,11 @@ namespace Model
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results.</p>
@@ -192,6 +218,11 @@ namespace Model
     /**
      * <p>A filter that limits the returned jobs to those for the specified group.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>A filter that limits the returned jobs to those for the specified group.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -224,6 +255,11 @@ namespace Model
      * <p>A filter that limits the returned jobs to those for the specified group.</p>
      */
     inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+
+    /**
+     * <p>A filter that limits the returned jobs to those for the specified group.</p>
+     */
+    inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
 
     /**
      * <p>A filter that limits the returned jobs to those for the specified group.</p>

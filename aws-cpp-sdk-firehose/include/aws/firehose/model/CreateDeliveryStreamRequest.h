@@ -66,6 +66,14 @@ namespace Model
      * different Regions, you can have multiple delivery streams with the same
      * name.</p>
      */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery stream. This name must be unique per AWS account in
+     * the same AWS Region. If the delivery streams are in different accounts or
+     * different Regions, you can have multiple delivery streams with the same
+     * name.</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
@@ -125,6 +133,15 @@ namespace Model
      * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
      * stream as a source.</p> </li> </ul>
      */
+    inline bool DeliveryStreamTypeHasBeenSet() const { return m_deliveryStreamTypeHasBeenSet; }
+
+    /**
+     * <p>The delivery stream type. This parameter can be one of the following
+     * values:</p> <ul> <li> <p> <code>DirectPut</code>: Provider applications access
+     * the delivery stream directly.</p> </li> <li> <p>
+     * <code>KinesisStreamAsSource</code>: The delivery stream uses a Kinesis data
+     * stream as a source.</p> </li> </ul>
+     */
     inline void SetDeliveryStreamType(const DeliveryStreamType& value) { m_deliveryStreamTypeHasBeenSet = true; m_deliveryStreamType = value; }
 
     /**
@@ -167,6 +184,13 @@ namespace Model
      * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
      * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
      */
+    inline bool KinesisStreamSourceConfigurationHasBeenSet() const { return m_kinesisStreamSourceConfigurationHasBeenSet; }
+
+    /**
+     * <p>When a Kinesis data stream is used as the source for the delivery stream, a
+     * <a>KinesisStreamSourceConfiguration</a> containing the Kinesis data stream
+     * Amazon Resource Name (ARN) and the role ARN for the source stream.</p>
+     */
     inline void SetKinesisStreamSourceConfiguration(const KinesisStreamSourceConfiguration& value) { m_kinesisStreamSourceConfigurationHasBeenSet = true; m_kinesisStreamSourceConfiguration = value; }
 
     /**
@@ -199,6 +223,11 @@ namespace Model
     /**
      * <p>The destination in Amazon S3. You can specify only one destination.</p>
      */
+    inline bool ExtendedS3DestinationConfigurationHasBeenSet() const { return m_extendedS3DestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The destination in Amazon S3. You can specify only one destination.</p>
+     */
     inline void SetExtendedS3DestinationConfiguration(const ExtendedS3DestinationConfiguration& value) { m_extendedS3DestinationConfigurationHasBeenSet = true; m_extendedS3DestinationConfiguration = value; }
 
     /**
@@ -221,6 +250,11 @@ namespace Model
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
      */
     inline const RedshiftDestinationConfiguration& GetRedshiftDestinationConfiguration() const{ return m_redshiftDestinationConfiguration; }
+
+    /**
+     * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
+     */
+    inline bool RedshiftDestinationConfigurationHasBeenSet() const { return m_redshiftDestinationConfigurationHasBeenSet; }
 
     /**
      * <p>The destination in Amazon Redshift. You can specify only one destination.</p>
@@ -251,6 +285,11 @@ namespace Model
     /**
      * <p>The destination in Amazon ES. You can specify only one destination.</p>
      */
+    inline bool ElasticsearchDestinationConfigurationHasBeenSet() const { return m_elasticsearchDestinationConfigurationHasBeenSet; }
+
+    /**
+     * <p>The destination in Amazon ES. You can specify only one destination.</p>
+     */
     inline void SetElasticsearchDestinationConfiguration(const ElasticsearchDestinationConfiguration& value) { m_elasticsearchDestinationConfigurationHasBeenSet = true; m_elasticsearchDestinationConfiguration = value; }
 
     /**
@@ -273,6 +312,11 @@ namespace Model
      * <p>The destination in Splunk. You can specify only one destination.</p>
      */
     inline const SplunkDestinationConfiguration& GetSplunkDestinationConfiguration() const{ return m_splunkDestinationConfiguration; }
+
+    /**
+     * <p>The destination in Splunk. You can specify only one destination.</p>
+     */
+    inline bool SplunkDestinationConfigurationHasBeenSet() const { return m_splunkDestinationConfigurationHasBeenSet; }
 
     /**
      * <p>The destination in Splunk. You can specify only one destination.</p>
@@ -306,6 +350,18 @@ namespace Model
      * <p>You can specify up to 50 tags when creating a delivery stream.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair
+     * that you can define and assign to AWS resources. Tags are metadata. For example,
+     * you can add friendly names and descriptions or other types of information that
+     * can help you distinguish the delivery stream. For more information about tags,
+     * see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html">Using
+     * Cost Allocation Tags</a> in the AWS Billing and Cost Management User Guide.</p>
+     * <p>You can specify up to 50 tags when creating a delivery stream.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A set of tags to assign to the delivery stream. A tag is a key-value pair

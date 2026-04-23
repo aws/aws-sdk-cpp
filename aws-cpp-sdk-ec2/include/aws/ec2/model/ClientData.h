@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A user-defined comment about the disk upload.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>A user-defined comment about the disk upload.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The time that the disk upload ends.</p>
      */
+    inline bool UploadEndHasBeenSet() const { return m_uploadEndHasBeenSet; }
+
+    /**
+     * <p>The time that the disk upload ends.</p>
+     */
     inline void SetUploadEnd(const Aws::Utils::DateTime& value) { m_uploadEndHasBeenSet = true; m_uploadEnd = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
     /**
      * <p>The size of the uploaded disk image, in GiB.</p>
      */
+    inline bool UploadSizeHasBeenSet() const { return m_uploadSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the uploaded disk image, in GiB.</p>
+     */
     inline void SetUploadSize(double value) { m_uploadSizeHasBeenSet = true; m_uploadSize = value; }
 
     /**
@@ -132,6 +147,11 @@ namespace Model
      * <p>The time that the disk upload starts.</p>
      */
     inline const Aws::Utils::DateTime& GetUploadStart() const{ return m_uploadStart; }
+
+    /**
+     * <p>The time that the disk upload starts.</p>
+     */
+    inline bool UploadStartHasBeenSet() const { return m_uploadStartHasBeenSet; }
 
     /**
      * <p>The time that the disk upload starts.</p>

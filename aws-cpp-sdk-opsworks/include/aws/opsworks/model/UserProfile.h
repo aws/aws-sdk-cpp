@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The user's IAM ARN.</p>
      */
+    inline bool IamUserArnHasBeenSet() const { return m_iamUserArnHasBeenSet; }
+
+    /**
+     * <p>The user's IAM ARN.</p>
+     */
     inline void SetIamUserArn(const Aws::String& value) { m_iamUserArnHasBeenSet = true; m_iamUserArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The user's name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The user's name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The user's name.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The user's SSH user name.</p>
      */
+    inline bool SshUsernameHasBeenSet() const { return m_sshUsernameHasBeenSet; }
+
+    /**
+     * <p>The user's SSH user name.</p>
+     */
     inline void SetSshUsername(const Aws::String& value) { m_sshUsernameHasBeenSet = true; m_sshUsername = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * <p>The user's SSH public key.</p>
      */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
+    /**
+     * <p>The user's SSH public key.</p>
+     */
+    inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
 
     /**
      * <p>The user's SSH public key.</p>
@@ -198,6 +218,14 @@ namespace Model
      * User Permissions</a>.</p>
      */
     inline bool GetAllowSelfManagement() const{ return m_allowSelfManagement; }
+
+    /**
+     * <p>Whether users can specify their own SSH public key through the My Settings
+     * page. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/security-settingsshkey.html">Managing
+     * User Permissions</a>.</p>
+     */
+    inline bool AllowSelfManagementHasBeenSet() const { return m_allowSelfManagementHasBeenSet; }
 
     /**
      * <p>Whether users can specify their own SSH public key through the My Settings

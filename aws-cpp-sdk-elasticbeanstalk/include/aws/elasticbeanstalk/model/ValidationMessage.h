@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>A message describing the error or warning.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message describing the error or warning.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -101,6 +106,14 @@ namespace Model
      * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
      * information you should take into account.</p> </li> </ul>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>An indication of the severity of this message:</p> <ul> <li> <p>
+     * <code>error</code>: This message indicates that this is not a valid setting for
+     * an option.</p> </li> <li> <p> <code>warning</code>: This message is providing
+     * information you should take into account.</p> </li> </ul>
+     */
     inline void SetSeverity(const ValidationSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -132,6 +145,11 @@ namespace Model
      * <p>The namespace to which the option belongs.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
+
+    /**
+     * <p>The namespace to which the option belongs.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
 
     /**
      * <p>The namespace to which the option belongs.</p>
@@ -168,6 +186,11 @@ namespace Model
      * <p>The name of the option.</p>
      */
     inline const Aws::String& GetOptionName() const{ return m_optionName; }
+
+    /**
+     * <p>The name of the option.</p>
+     */
+    inline bool OptionNameHasBeenSet() const { return m_optionNameHasBeenSet; }
 
     /**
      * <p>The name of the option.</p>

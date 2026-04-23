@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique identifier of the named query.</p>
      */
+    inline bool NamedQueryIdHasBeenSet() const { return m_namedQueryIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the named query.</p>
+     */
     inline void SetNamedQueryId(const Aws::String& value) { m_namedQueryIdHasBeenSet = true; m_namedQueryId = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * failed, if applicable.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The error code returned when the processing request for the named query
+     * failed, if applicable.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The error code returned when the processing request for the named query
@@ -132,6 +143,12 @@ namespace Model
      * failed, if applicable.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message returned when the processing request for the named query
+     * failed, if applicable.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message returned when the processing request for the named query

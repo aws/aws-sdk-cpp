@@ -31,7 +31,7 @@ CompleteVaultLockRequest::CompleteVaultLockRequest() :
 
 Aws::String CompleteVaultLockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

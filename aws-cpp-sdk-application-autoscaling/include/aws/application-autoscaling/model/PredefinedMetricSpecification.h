@@ -35,8 +35,8 @@ namespace Model
 {
 
   /**
-   * <p>Configures a predefined metric for a target tracking policy.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Represents a predefined metric for a target tracking scaling policy to use
+   * with Application Auto Scaling.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/application-autoscaling-2016-02-06/PredefinedMetricSpecification">AWS
    * API Reference</a></p>
    */
@@ -54,6 +54,12 @@ namespace Model
      * applies only to Spot fleet requests and ECS services.</p>
      */
     inline const MetricType& GetPredefinedMetricType() const{ return m_predefinedMetricType; }
+
+    /**
+     * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
+     * applies only to Spot fleet requests and ECS services.</p>
+     */
+    inline bool PredefinedMetricTypeHasBeenSet() const { return m_predefinedMetricTypeHasBeenSet; }
 
     /**
      * <p>The metric type. The <code>ALBRequestCountPerTarget</code> metric type
@@ -92,6 +98,19 @@ namespace Model
      * portion of the target group ARN.</p> </li> </ul>
      */
     inline const Aws::String& GetResourceLabel() const{ return m_resourceLabel; }
+
+    /**
+     * <p>Identifies the resource associated with the metric type. You can't specify a
+     * resource label unless the metric type is <code>ALBRequestCountPerTarget</code>
+     * and there is a target group attached to the Spot fleet request or ECS
+     * service.</p> <p>The format is
+     * app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;/targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt;,
+     * where:</p> <ul> <li> <p>app/&lt;load-balancer-name&gt;/&lt;load-balancer-id&gt;
+     * is the final portion of the load balancer ARN</p> </li> <li>
+     * <p>targetgroup/&lt;target-group-name&gt;/&lt;target-group-id&gt; is the final
+     * portion of the target group ARN.</p> </li> </ul>
+     */
+    inline bool ResourceLabelHasBeenSet() const { return m_resourceLabelHasBeenSet; }
 
     /**
      * <p>Identifies the resource associated with the metric type. You can't specify a

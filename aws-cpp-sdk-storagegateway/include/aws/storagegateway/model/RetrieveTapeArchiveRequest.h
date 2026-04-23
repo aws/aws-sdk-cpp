@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
      * the virtual tape shelf (VTS).</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape you want to retrieve from
+     * the virtual tape shelf (VTS).</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -97,6 +103,14 @@ namespace Model
      * to only one gateway and the gateway must be a tape gateway.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the
+     * virtual tape to. Use the <a>ListGateways</a> operation to return a list of
+     * gateways for your account and region.</p> <p>You retrieve archived virtual tapes
+     * to only one gateway and the gateway must be a tape gateway.</p>
+     */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the gateway you want to retrieve the

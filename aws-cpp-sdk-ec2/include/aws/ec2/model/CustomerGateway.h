@@ -61,6 +61,12 @@ namespace Model
      * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
      * (ASN).</p>
      */
+    inline bool BgpAsnHasBeenSet() const { return m_bgpAsnHasBeenSet; }
+
+    /**
+     * <p>The customer gateway's Border Gateway Protocol (BGP) Autonomous System Number
+     * (ASN).</p>
+     */
     inline void SetBgpAsn(const Aws::String& value) { m_bgpAsnHasBeenSet = true; m_bgpAsn = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The ID of the customer gateway.</p>
      */
+    inline bool CustomerGatewayIdHasBeenSet() const { return m_customerGatewayIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the customer gateway.</p>
+     */
     inline void SetCustomerGatewayId(const Aws::String& value) { m_customerGatewayIdHasBeenSet = true; m_customerGatewayId = value; }
 
     /**
@@ -135,6 +146,12 @@ namespace Model
      * interface.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The Internet-routable IP address of the customer gateway's outside
+     * interface.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The Internet-routable IP address of the customer gateway's outside
@@ -183,6 +200,12 @@ namespace Model
      * <p>The current state of the customer gateway (<code>pending | available |
      * deleting | deleted</code>).</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The current state of the customer gateway (<code>pending | available |
+     * deleting | deleted</code>).</p>
+     */
     inline void SetState(const Aws::String& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -226,6 +249,12 @@ namespace Model
      * <p>The type of VPN connection the customer gateway supports
      * (<code>ipsec.1</code>).</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of VPN connection the customer gateway supports
+     * (<code>ipsec.1</code>).</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -263,6 +292,11 @@ namespace Model
      * <p>Any tags assigned to the customer gateway.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the customer gateway.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the customer gateway.</p>

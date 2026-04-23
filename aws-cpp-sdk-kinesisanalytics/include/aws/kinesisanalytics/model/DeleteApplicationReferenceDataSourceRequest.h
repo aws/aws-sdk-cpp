@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of an existing application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Name of an existing application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * not the current version, the <code>ConcurrentModificationException</code> is
      * returned.</p>
      */
+    inline bool CurrentApplicationVersionIdHasBeenSet() const { return m_currentApplicationVersionIdHasBeenSet; }
+
+    /**
+     * <p>Version of the application. You can use the <a>DescribeApplication</a>
+     * operation to get the current application version. If the version specified is
+     * not the current version, the <code>ConcurrentModificationException</code> is
+     * returned.</p>
+     */
     inline void SetCurrentApplicationVersionId(long long value) { m_currentApplicationVersionIdHasBeenSet = true; m_currentApplicationVersionId = value; }
 
     /**
@@ -112,6 +125,14 @@ namespace Model
      * get the reference ID. </p>
      */
     inline const Aws::String& GetReferenceId() const{ return m_referenceId; }
+
+    /**
+     * <p>ID of the reference data source. When you add a reference data source to your
+     * application using the <a>AddApplicationReferenceDataSource</a>, Amazon Kinesis
+     * Analytics assigns an ID. You can use the <a>DescribeApplication</a> operation to
+     * get the reference ID. </p>
+     */
+    inline bool ReferenceIdHasBeenSet() const { return m_referenceIdHasBeenSet; }
 
     /**
      * <p>ID of the reference data source. When you add a reference data source to your

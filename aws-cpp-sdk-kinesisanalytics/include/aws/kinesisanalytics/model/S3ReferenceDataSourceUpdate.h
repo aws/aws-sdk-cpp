@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
      */
+    inline bool BucketARNUpdateHasBeenSet() const { return m_bucketARNUpdateHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) of the S3 bucket.</p>
+     */
     inline void SetBucketARNUpdate(const Aws::String& value) { m_bucketARNUpdateHasBeenSet = true; m_bucketARNUpdate = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Object key name.</p>
      */
     inline const Aws::String& GetFileKeyUpdate() const{ return m_fileKeyUpdate; }
+
+    /**
+     * <p>Object key name.</p>
+     */
+    inline bool FileKeyUpdateHasBeenSet() const { return m_fileKeyUpdateHasBeenSet; }
 
     /**
      * <p>Object key name.</p>
@@ -126,6 +136,12 @@ namespace Model
      * Amazon S3 object and populate the in-application.</p>
      */
     inline const Aws::String& GetReferenceRoleARNUpdate() const{ return m_referenceRoleARNUpdate; }
+
+    /**
+     * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the
+     * Amazon S3 object and populate the in-application.</p>
+     */
+    inline bool ReferenceRoleARNUpdateHasBeenSet() const { return m_referenceRoleARNUpdateHasBeenSet; }
 
     /**
      * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to read the

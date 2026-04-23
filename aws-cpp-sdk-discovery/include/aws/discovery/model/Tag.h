@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The type of tag on which to filter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The type of tag on which to filter.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>A value for a tag key on which to filter.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A value for a tag key on which to filter.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A value for a tag key on which to filter.</p>

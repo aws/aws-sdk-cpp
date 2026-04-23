@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ARN of the thing on which the job execution is running.</p>
      */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the thing on which the job execution is running.</p>
+     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Contains a subset of information about a job execution.</p>
      */
     inline const JobExecutionSummary& GetJobExecutionSummary() const{ return m_jobExecutionSummary; }
+
+    /**
+     * <p>Contains a subset of information about a job execution.</p>
+     */
+    inline bool JobExecutionSummaryHasBeenSet() const { return m_jobExecutionSummaryHasBeenSet; }
 
     /**
      * <p>Contains a subset of information about a job execution.</p>

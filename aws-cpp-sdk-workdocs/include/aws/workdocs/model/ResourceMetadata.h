@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of resource.</p>
+     */
     inline void SetType(const ResourceType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The name of the resource.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the resource.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the resource.</p>
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The original name of the resource before a rename operation.</p>
      */
+    inline bool OriginalNameHasBeenSet() const { return m_originalNameHasBeenSet; }
+
+    /**
+     * <p>The original name of the resource before a rename operation.</p>
+     */
     inline void SetOriginalName(const Aws::String& value) { m_originalNameHasBeenSet = true; m_originalName = value; }
 
     /**
@@ -151,6 +166,11 @@ namespace Model
      * <p>The ID of the resource.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The ID of the resource.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The ID of the resource.</p>
@@ -188,6 +208,12 @@ namespace Model
      * action on document version.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The version ID of the resource. This is an optional field and is filled for
+     * action on document version.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The version ID of the resource. This is an optional field and is filled for
@@ -234,6 +260,11 @@ namespace Model
     /**
      * <p>The owner of the resource.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The owner of the resource.</p>
+     */
     inline void SetOwner(const UserMetadata& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -256,6 +287,11 @@ namespace Model
      * <p>The parent ID of the resource before a rename operation.</p>
      */
     inline const Aws::String& GetParentId() const{ return m_parentId; }
+
+    /**
+     * <p>The parent ID of the resource before a rename operation.</p>
+     */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
 
     /**
      * <p>The parent ID of the resource before a rename operation.</p>

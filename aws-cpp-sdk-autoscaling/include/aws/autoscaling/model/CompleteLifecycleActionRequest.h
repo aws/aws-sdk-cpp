@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle hook.</p>
      */
+    inline bool LifecycleHookNameHasBeenSet() const { return m_lifecycleHookNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle hook.</p>
+     */
     inline void SetLifecycleHookName(const Aws::String& value) { m_lifecycleHookNameHasBeenSet = true; m_lifecycleHookName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name of the Auto Scaling group.</p>
      */
     inline const Aws::String& GetAutoScalingGroupName() const{ return m_autoScalingGroupName; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Auto Scaling group.</p>
@@ -124,6 +134,13 @@ namespace Model
      * the notification target you specified when you created the lifecycle hook.</p>
      */
     inline const Aws::String& GetLifecycleActionToken() const{ return m_lifecycleActionToken; }
+
+    /**
+     * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
+     * action associated with an instance. Amazon EC2 Auto Scaling sends this token to
+     * the notification target you specified when you created the lifecycle hook.</p>
+     */
+    inline bool LifecycleActionTokenHasBeenSet() const { return m_lifecycleActionTokenHasBeenSet; }
 
     /**
      * <p>A universally unique identifier (UUID) that identifies a specific lifecycle
@@ -178,6 +195,12 @@ namespace Model
      * <p>The action for the group to take. This parameter can be either
      * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
      */
+    inline bool LifecycleActionResultHasBeenSet() const { return m_lifecycleActionResultHasBeenSet; }
+
+    /**
+     * <p>The action for the group to take. This parameter can be either
+     * <code>CONTINUE</code> or <code>ABANDON</code>.</p>
+     */
     inline void SetLifecycleActionResult(const Aws::String& value) { m_lifecycleActionResultHasBeenSet = true; m_lifecycleActionResult = value; }
 
     /**
@@ -215,6 +238,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>

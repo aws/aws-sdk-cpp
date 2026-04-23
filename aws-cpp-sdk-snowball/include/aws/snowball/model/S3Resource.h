@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
      */
+    inline bool BucketArnHasBeenSet() const { return m_bucketArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of an Amazon S3 bucket.</p>
+     */
     inline void SetBucketArn(const Aws::String& value) { m_bucketArnHasBeenSet = true; m_bucketArn = value; }
 
     /**
@@ -96,6 +101,14 @@ namespace Model
      * <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
      */
     inline const KeyRange& GetKeyRange() const{ return m_keyRange; }
+
+    /**
+     * <p>For export jobs, you can provide an optional <code>KeyRange</code> within a
+     * specific Amazon S3 bucket. The length of the range is defined at job creation,
+     * and has either an inclusive <code>BeginMarker</code>, an inclusive
+     * <code>EndMarker</code>, or both. Ranges are UTF-8 binary sorted.</p>
+     */
+    inline bool KeyRangeHasBeenSet() const { return m_keyRangeHasBeenSet; }
 
     /**
      * <p>For export jobs, you can provide an optional <code>KeyRange</code> within a

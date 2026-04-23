@@ -202,79 +202,79 @@ namespace Model
 
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline const Aws::Vector<PersonMatch>& GetPersons() const{ return m_persons; }
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline void SetPersons(const Aws::Vector<PersonMatch>& value) { m_persons = value; }
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline void SetPersons(Aws::Vector<PersonMatch>&& value) { m_persons = std::move(value); }
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline GetFaceSearchResult& WithPersons(const Aws::Vector<PersonMatch>& value) { SetPersons(value); return *this;}
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline GetFaceSearchResult& WithPersons(Aws::Vector<PersonMatch>&& value) { SetPersons(std::move(value)); return *this;}
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline GetFaceSearchResult& AddPersons(const PersonMatch& value) { m_persons.push_back(value); return *this; }
 
     /**
-     * <p>An array of persons, , in the video whose face(s) match the face(s) in an
-     * Amazon Rekognition collection. It also includes time information for when
-     * persons are matched in the video. You specify the input collection in an initial
-     * call to <code>StartFaceSearch</code>. Each <code>Persons</code> element includes
-     * a time the person was matched, face match details (<code>FaceMatches</code>) for
-     * matching faces in the collection, and person information (<code>Person</code>)
-     * for the matched person. </p>
+     * <p>An array of persons, <a>PersonMatch</a>, in the video whose face(s) match the
+     * face(s) in an Amazon Rekognition collection. It also includes time information
+     * for when persons are matched in the video. You specify the input collection in
+     * an initial call to <code>StartFaceSearch</code>. Each <code>Persons</code>
+     * element includes a time the person was matched, face match details
+     * (<code>FaceMatches</code>) for matching faces in the collection, and person
+     * information (<code>Person</code>) for the matched person. </p>
      */
     inline GetFaceSearchResult& AddPersons(PersonMatch&& value) { m_persons.push_back(std::move(value)); return *this; }
 

@@ -71,6 +71,13 @@ namespace Model
      * specify the IDs of the security groups. When requesting instances in
      * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
      */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
+
+    /**
+     * <p>One or more security groups. When requesting instances in a VPC, you must
+     * specify the IDs of the security groups. When requesting instances in
+     * EC2-Classic, you can specify the names or the IDs of the security groups.</p>
+     */
     inline void SetSecurityGroups(const Aws::Vector<GroupIdentifier>& value) { m_securityGroupsHasBeenSet = true; m_securityGroups = value; }
 
     /**
@@ -117,6 +124,11 @@ namespace Model
     /**
      * <p>Deprecated.</p>
      */
+    inline bool AddressingTypeHasBeenSet() const { return m_addressingTypeHasBeenSet; }
+
+    /**
+     * <p>Deprecated.</p>
+     */
     inline void SetAddressingType(const Aws::String& value) { m_addressingTypeHasBeenSet = true; m_addressingType = value; }
 
     /**
@@ -152,6 +164,14 @@ namespace Model
      * encryption status is used for the volume encryption status.</p>
      */
     inline const Aws::Vector<BlockDeviceMapping>& GetBlockDeviceMappings() const{ return m_blockDeviceMappings; }
+
+    /**
+     * <p>One or more block device mapping entries. You can't specify both a snapshot
+     * ID and an encryption value. This is because only blank volumes can be encrypted
+     * on creation. If a snapshot is the basis for a volume, it is not blank and its
+     * encryption status is used for the volume encryption status.</p>
+     */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
 
     /**
      * <p>One or more block device mapping entries. You can't specify both a snapshot
@@ -218,6 +238,15 @@ namespace Model
      * all instance types. Additional usage charges apply when using an EBS Optimized
      * instance.</p> <p>Default: <code>false</code> </p>
      */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the instances are optimized for EBS I/O. This optimization
+     * provides dedicated throughput to Amazon EBS and an optimized configuration stack
+     * to provide optimal EBS I/O performance. This optimization isn't available with
+     * all instance types. Additional usage charges apply when using an EBS Optimized
+     * instance.</p> <p>Default: <code>false</code> </p>
+     */
     inline void SetEbsOptimized(bool value) { m_ebsOptimizedHasBeenSet = true; m_ebsOptimized = value; }
 
     /**
@@ -234,6 +263,11 @@ namespace Model
      * <p>The IAM instance profile.</p>
      */
     inline const IamInstanceProfileSpecification& GetIamInstanceProfile() const{ return m_iamInstanceProfile; }
+
+    /**
+     * <p>The IAM instance profile.</p>
+     */
+    inline bool IamInstanceProfileHasBeenSet() const { return m_iamInstanceProfileHasBeenSet; }
 
     /**
      * <p>The IAM instance profile.</p>
@@ -260,6 +294,11 @@ namespace Model
      * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -300,6 +339,11 @@ namespace Model
     /**
      * <p>The instance type.</p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>The instance type.</p>
+     */
     inline void SetInstanceType(const InstanceType& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -322,6 +366,11 @@ namespace Model
      * <p>The ID of the kernel.</p>
      */
     inline const Aws::String& GetKernelId() const{ return m_kernelId; }
+
+    /**
+     * <p>The ID of the kernel.</p>
+     */
+    inline bool KernelIdHasBeenSet() const { return m_kernelIdHasBeenSet; }
 
     /**
      * <p>The ID of the kernel.</p>
@@ -362,6 +411,11 @@ namespace Model
     /**
      * <p>The name of the key pair.</p>
      */
+    inline bool KeyNameHasBeenSet() const { return m_keyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the key pair.</p>
+     */
     inline void SetKeyName(const Aws::String& value) { m_keyNameHasBeenSet = true; m_keyName = value; }
 
     /**
@@ -398,6 +452,11 @@ namespace Model
     /**
      * <p>Enable or disable monitoring for the instances.</p>
      */
+    inline bool MonitoringHasBeenSet() const { return m_monitoringHasBeenSet; }
+
+    /**
+     * <p>Enable or disable monitoring for the instances.</p>
+     */
     inline void SetMonitoring(const SpotFleetMonitoring& value) { m_monitoringHasBeenSet = true; m_monitoring = value; }
 
     /**
@@ -421,6 +480,12 @@ namespace Model
      * specify subnet IDs and security group IDs using the network interface.</p>
      */
     inline const Aws::Vector<InstanceNetworkInterfaceSpecification>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>One or more network interfaces. If you specify a network interface, you must
+     * specify subnet IDs and security group IDs using the network interface.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>One or more network interfaces. If you specify a network interface, you must
@@ -467,6 +532,11 @@ namespace Model
     /**
      * <p>The placement information.</p>
      */
+    inline bool PlacementHasBeenSet() const { return m_placementHasBeenSet; }
+
+    /**
+     * <p>The placement information.</p>
+     */
     inline void SetPlacement(const SpotPlacement& value) { m_placementHasBeenSet = true; m_placement = value; }
 
     /**
@@ -489,6 +559,11 @@ namespace Model
      * <p>The ID of the RAM disk.</p>
      */
     inline const Aws::String& GetRamdiskId() const{ return m_ramdiskId; }
+
+    /**
+     * <p>The ID of the RAM disk.</p>
+     */
+    inline bool RamdiskIdHasBeenSet() const { return m_ramdiskIdHasBeenSet; }
 
     /**
      * <p>The ID of the RAM disk.</p>
@@ -528,6 +603,14 @@ namespace Model
      * Spot price by the value of <code>WeightedCapacity</code>.</p>
      */
     inline const Aws::String& GetSpotPrice() const{ return m_spotPrice; }
+
+    /**
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If this value is not specified, the default is the Spot price
+     * specified for the fleet. To determine the Spot price per unit hour, divide the
+     * Spot price by the value of <code>WeightedCapacity</code>.</p>
+     */
+    inline bool SpotPriceHasBeenSet() const { return m_spotPriceHasBeenSet; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
@@ -590,6 +673,13 @@ namespace Model
      * subnets, separate them using commas; for example, "subnet-a61dafcf,
      * subnet-65ea5f08".</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subnet in which to launch the instances. To specify multiple
+     * subnets, separate them using commas; for example, "subnet-a61dafcf,
+     * subnet-65ea5f08".</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -632,6 +722,11 @@ namespace Model
      * <p>The Base64-encoded user data to make available to the instances.</p>
      */
     inline const Aws::String& GetUserData() const{ return m_userData; }
+
+    /**
+     * <p>The Base64-encoded user data to make available to the instances.</p>
+     */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
 
     /**
      * <p>The Base64-encoded user data to make available to the instances.</p>
@@ -682,6 +777,16 @@ namespace Model
      * instances to the next whole number. If this value is not specified, the default
      * is 1.</p>
      */
+    inline bool WeightedCapacityHasBeenSet() const { return m_weightedCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of units provided by the specified instance type. These are the
+     * same units that you chose to set the target capacity in terms (instances or a
+     * performance characteristic such as vCPUs, memory, or I/O).</p> <p>If the target
+     * capacity divided by this value is not a whole number, we round the number of
+     * instances to the next whole number. If this value is not specified, the default
+     * is 1.</p>
+     */
     inline void SetWeightedCapacity(double value) { m_weightedCapacityHasBeenSet = true; m_weightedCapacity = value; }
 
     /**
@@ -699,6 +804,11 @@ namespace Model
      * <p>The tags to apply during creation.</p>
      */
     inline const Aws::Vector<SpotFleetTagSpecification>& GetTagSpecifications() const{ return m_tagSpecifications; }
+
+    /**
+     * <p>The tags to apply during creation.</p>
+     */
+    inline bool TagSpecificationsHasBeenSet() const { return m_tagSpecificationsHasBeenSet; }
 
     /**
      * <p>The tags to apply during creation.</p>

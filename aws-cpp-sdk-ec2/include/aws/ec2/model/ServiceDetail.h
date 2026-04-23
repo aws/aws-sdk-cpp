@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the service.</p>
      */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the service.</p>
+     */
     inline void SetServiceName(const Aws::String& value) { m_serviceNameHasBeenSet = true; m_serviceName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The type of service.</p>
      */
+    inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of service.</p>
+     */
     inline void SetServiceType(const Aws::Vector<ServiceTypeDetail>& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The Availability Zones in which the service is available.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The Availability Zones in which the service is available.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones in which the service is available.</p>
@@ -172,6 +187,11 @@ namespace Model
     /**
      * <p>The AWS account ID of the service owner.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID of the service owner.</p>
+     */
     inline void SetOwner(const Aws::String& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**
@@ -204,6 +224,11 @@ namespace Model
      * <p>The DNS names for the service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBaseEndpointDnsNames() const{ return m_baseEndpointDnsNames; }
+
+    /**
+     * <p>The DNS names for the service.</p>
+     */
+    inline bool BaseEndpointDnsNamesHasBeenSet() const { return m_baseEndpointDnsNamesHasBeenSet; }
 
     /**
      * <p>The DNS names for the service.</p>
@@ -249,6 +274,11 @@ namespace Model
     /**
      * <p>The private DNS name for the service.</p>
      */
+    inline bool PrivateDnsNameHasBeenSet() const { return m_privateDnsNameHasBeenSet; }
+
+    /**
+     * <p>The private DNS name for the service.</p>
+     */
     inline void SetPrivateDnsName(const Aws::String& value) { m_privateDnsNameHasBeenSet = true; m_privateDnsName = value; }
 
     /**
@@ -285,6 +315,11 @@ namespace Model
     /**
      * <p>Indicates whether the service supports endpoint policies.</p>
      */
+    inline bool VpcEndpointPolicySupportedHasBeenSet() const { return m_vpcEndpointPolicySupportedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the service supports endpoint policies.</p>
+     */
     inline void SetVpcEndpointPolicySupported(bool value) { m_vpcEndpointPolicySupportedHasBeenSet = true; m_vpcEndpointPolicySupported = value; }
 
     /**
@@ -298,6 +333,12 @@ namespace Model
      * accepted by the service owner.</p>
      */
     inline bool GetAcceptanceRequired() const{ return m_acceptanceRequired; }
+
+    /**
+     * <p>Indicates whether VPC endpoint connection requests to the service must be
+     * accepted by the service owner.</p>
+     */
+    inline bool AcceptanceRequiredHasBeenSet() const { return m_acceptanceRequiredHasBeenSet; }
 
     /**
      * <p>Indicates whether VPC endpoint connection requests to the service must be

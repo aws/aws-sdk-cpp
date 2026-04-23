@@ -29,7 +29,7 @@ DeleteDedicatedIpPoolRequest::DeleteDedicatedIpPoolRequest() :
 
 Aws::String DeleteDedicatedIpPoolRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteDedicatedIpPoolRequest::GetRequestSpecificHeaders() const

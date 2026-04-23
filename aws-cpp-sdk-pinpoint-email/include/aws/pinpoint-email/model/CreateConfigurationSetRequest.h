@@ -21,6 +21,8 @@
 #include <aws/pinpoint-email/model/DeliveryOptions.h>
 #include <aws/pinpoint-email/model/ReputationOptions.h>
 #include <aws/pinpoint-email/model/SendingOptions.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pinpoint-email/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +57,11 @@ namespace Model
      * <p>The name of the configuration set.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The name of the configuration set.</p>
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
      * <p>The name of the configuration set.</p>
@@ -97,6 +104,12 @@ namespace Model
      * <p>An object that defines the open and click tracking options for emails that
      * you send using the configuration set.</p>
      */
+    inline bool TrackingOptionsHasBeenSet() const { return m_trackingOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines the open and click tracking options for emails that
+     * you send using the configuration set.</p>
+     */
     inline void SetTrackingOptions(const TrackingOptions& value) { m_trackingOptionsHasBeenSet = true; m_trackingOptions = value; }
 
     /**
@@ -123,6 +136,12 @@ namespace Model
      * you send using the configuration set.</p>
      */
     inline const DeliveryOptions& GetDeliveryOptions() const{ return m_deliveryOptions; }
+
+    /**
+     * <p>An object that defines the dedicated IP pool that is used to send emails that
+     * you send using the configuration set.</p>
+     */
+    inline bool DeliveryOptionsHasBeenSet() const { return m_deliveryOptionsHasBeenSet; }
 
     /**
      * <p>An object that defines the dedicated IP pool that is used to send emails that
@@ -159,6 +178,12 @@ namespace Model
      * <p>An object that defines whether or not Amazon Pinpoint collects reputation
      * metrics for the emails that you send that use the configuration set.</p>
      */
+    inline bool ReputationOptionsHasBeenSet() const { return m_reputationOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines whether or not Amazon Pinpoint collects reputation
+     * metrics for the emails that you send that use the configuration set.</p>
+     */
     inline void SetReputationOptions(const ReputationOptions& value) { m_reputationOptionsHasBeenSet = true; m_reputationOptions = value; }
 
     /**
@@ -190,6 +215,12 @@ namespace Model
      * <p>An object that defines whether or not Amazon Pinpoint can send email that you
      * send using the configuration set.</p>
      */
+    inline bool SendingOptionsHasBeenSet() const { return m_sendingOptionsHasBeenSet; }
+
+    /**
+     * <p>An object that defines whether or not Amazon Pinpoint can send email that you
+     * send using the configuration set.</p>
+     */
     inline void SetSendingOptions(const SendingOptions& value) { m_sendingOptionsHasBeenSet = true; m_sendingOptions = value; }
 
     /**
@@ -210,6 +241,55 @@ namespace Model
      */
     inline CreateConfigurationSetRequest& WithSendingOptions(SendingOptions&& value) { SetSendingOptions(std::move(value)); return *this;}
 
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>An object that defines the tags (keys and values) that you want to associate
+     * with the configuration set.</p>
+     */
+    inline CreateConfigurationSetRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_configurationSetName;
@@ -226,6 +306,9 @@ namespace Model
 
     SendingOptions m_sendingOptions;
     bool m_sendingOptionsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

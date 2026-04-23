@@ -32,6 +32,7 @@ namespace Aws
 
         static const int CSV_HASH = HashingUtils::HashString("CSV");
         static const int ORC_HASH = HashingUtils::HashString("ORC");
+        static const int Parquet_HASH = HashingUtils::HashString("Parquet");
 
 
         InventoryFormat GetInventoryFormatForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == ORC_HASH)
           {
             return InventoryFormat::ORC;
+          }
+          else if (hashCode == Parquet_HASH)
+          {
+            return InventoryFormat::Parquet;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "CSV";
           case InventoryFormat::ORC:
             return "ORC";
+          case InventoryFormat::Parquet:
+            return "Parquet";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

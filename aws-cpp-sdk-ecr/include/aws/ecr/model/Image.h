@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The AWS account ID associated with the registry containing the image.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry containing the image.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the repository associated with the image.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+
+    /**
+     * <p>The name of the repository associated with the image.</p>
+     */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
      * <p>The name of the repository associated with the image.</p>
@@ -130,6 +140,12 @@ namespace Model
      * <p>An object containing the image tag and image digest associated with an
      * image.</p>
      */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
+
+    /**
+     * <p>An object containing the image tag and image digest associated with an
+     * image.</p>
+     */
     inline void SetImageId(const ImageIdentifier& value) { m_imageIdHasBeenSet = true; m_imageId = value; }
 
     /**
@@ -155,6 +171,11 @@ namespace Model
      * <p>The image manifest associated with the image.</p>
      */
     inline const Aws::String& GetImageManifest() const{ return m_imageManifest; }
+
+    /**
+     * <p>The image manifest associated with the image.</p>
+     */
+    inline bool ImageManifestHasBeenSet() const { return m_imageManifestHasBeenSet; }
 
     /**
      * <p>The image manifest associated with the image.</p>

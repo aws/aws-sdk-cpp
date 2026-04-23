@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the sampling rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the sampling rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>The percentage of matching requests to instrument, after the reservoir is
      * exhausted.</p>
      */
+    inline bool FixedRateHasBeenSet() const { return m_fixedRateHasBeenSet; }
+
+    /**
+     * <p>The percentage of matching requests to instrument, after the reservoir is
+     * exhausted.</p>
+     */
     inline void SetFixedRate(double value) { m_fixedRateHasBeenSet = true; m_fixedRate = value; }
 
     /**
@@ -114,6 +125,11 @@ namespace Model
     /**
      * <p>The number of requests per second that X-Ray allocated this service.</p>
      */
+    inline bool ReservoirQuotaHasBeenSet() const { return m_reservoirQuotaHasBeenSet; }
+
+    /**
+     * <p>The number of requests per second that X-Ray allocated this service.</p>
+     */
     inline void SetReservoirQuota(int value) { m_reservoirQuotaHasBeenSet = true; m_reservoirQuota = value; }
 
     /**
@@ -126,6 +142,11 @@ namespace Model
      * <p>When the reservoir quota expires.</p>
      */
     inline const Aws::Utils::DateTime& GetReservoirQuotaTTL() const{ return m_reservoirQuotaTTL; }
+
+    /**
+     * <p>When the reservoir quota expires.</p>
+     */
+    inline bool ReservoirQuotaTTLHasBeenSet() const { return m_reservoirQuotaTTLHasBeenSet; }
 
     /**
      * <p>When the reservoir quota expires.</p>
@@ -153,6 +174,12 @@ namespace Model
      * again.</p>
      */
     inline int GetInterval() const{ return m_interval; }
+
+    /**
+     * <p>The number of seconds for the service to wait before getting sampling targets
+     * again.</p>
+     */
+    inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
 
     /**
      * <p>The number of seconds for the service to wait before getting sampling targets

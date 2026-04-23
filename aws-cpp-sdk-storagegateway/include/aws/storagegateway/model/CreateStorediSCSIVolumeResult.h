@@ -100,43 +100,43 @@ namespace Model
 
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline const Aws::String& GetTargetARN() const{ return m_targetARN; }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline void SetTargetARN(const Aws::String& value) { m_targetARN = value; }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline void SetTargetARN(Aws::String&& value) { m_targetARN = std::move(value); }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline void SetTargetARN(const char* value) { m_targetARN.assign(value); }
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline CreateStorediSCSIVolumeResult& WithTargetARN(const Aws::String& value) { SetTargetARN(value); return *this;}
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline CreateStorediSCSIVolumeResult& WithTargetARN(Aws::String&& value) { SetTargetARN(std::move(value)); return *this;}
 
     /**
-     * <p>he Amazon Resource Name (ARN) of the volume target that includes the iSCSI
+     * <p>The Amazon Resource Name (ARN) of the volume target, which includes the iSCSI
      * name that initiators can use to connect to the target.</p>
      */
     inline CreateStorediSCSIVolumeResult& WithTargetARN(const char* value) { SetTargetARN(value); return *this;}

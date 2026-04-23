@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The AWS Batch job ID of the job to terminate.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Batch job ID of the job to terminate.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -84,6 +89,13 @@ namespace Model
      * This message is also recorded in the AWS Batch activity logs. </p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A message to attach to the job that explains the reason for canceling it.
+     * This message is returned by future <a>DescribeJobs</a> operations on the job.
+     * This message is also recorded in the AWS Batch activity logs. </p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A message to attach to the job that explains the reason for canceling it.

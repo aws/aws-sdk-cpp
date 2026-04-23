@@ -50,43 +50,49 @@ namespace Model
 
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
+     * retrieve.</p>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline GetBucketPolicyStatusRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline GetBucketPolicyStatusRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the Amazon S3 bucket whose public-policy status you want to
+     * <p>The name of the Amazon S3 bucket whose policy status you want to
      * retrieve.</p>
      */
     inline GetBucketPolicyStatusRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
@@ -94,6 +100,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

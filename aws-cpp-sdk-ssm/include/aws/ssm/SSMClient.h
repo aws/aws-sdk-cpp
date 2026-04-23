@@ -93,6 +93,7 @@
 #include <aws/ssm/model/GetParametersByPathResult.h>
 #include <aws/ssm/model/GetPatchBaselineResult.h>
 #include <aws/ssm/model/GetPatchBaselineForPatchGroupResult.h>
+#include <aws/ssm/model/GetServiceSettingResult.h>
 #include <aws/ssm/model/LabelParameterVersionResult.h>
 #include <aws/ssm/model/ListAssociationVersionsResult.h>
 #include <aws/ssm/model/ListAssociationsResult.h>
@@ -115,6 +116,7 @@
 #include <aws/ssm/model/RegisterTargetWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RegisterTaskWithMaintenanceWindowResult.h>
 #include <aws/ssm/model/RemoveTagsFromResourceResult.h>
+#include <aws/ssm/model/ResetServiceSettingResult.h>
 #include <aws/ssm/model/ResumeSessionResult.h>
 #include <aws/ssm/model/SendAutomationSignalResult.h>
 #include <aws/ssm/model/SendCommandResult.h>
@@ -132,6 +134,7 @@
 #include <aws/ssm/model/UpdateMaintenanceWindowTaskResult.h>
 #include <aws/ssm/model/UpdateManagedInstanceRoleResult.h>
 #include <aws/ssm/model/UpdatePatchBaselineResult.h>
+#include <aws/ssm/model/UpdateServiceSettingResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -244,6 +247,7 @@ namespace Model
         class GetParametersByPathRequest;
         class GetPatchBaselineRequest;
         class GetPatchBaselineForPatchGroupRequest;
+        class GetServiceSettingRequest;
         class LabelParameterVersionRequest;
         class ListAssociationVersionsRequest;
         class ListAssociationsRequest;
@@ -266,6 +270,7 @@ namespace Model
         class RegisterTargetWithMaintenanceWindowRequest;
         class RegisterTaskWithMaintenanceWindowRequest;
         class RemoveTagsFromResourceRequest;
+        class ResetServiceSettingRequest;
         class ResumeSessionRequest;
         class SendAutomationSignalRequest;
         class SendCommandRequest;
@@ -283,6 +288,7 @@ namespace Model
         class UpdateMaintenanceWindowTaskRequest;
         class UpdateManagedInstanceRoleRequest;
         class UpdatePatchBaselineRequest;
+        class UpdateServiceSettingRequest;
 
         typedef Aws::Utils::Outcome<AddTagsToResourceResult, Aws::Client::AWSError<SSMErrors>> AddTagsToResourceOutcome;
         typedef Aws::Utils::Outcome<CancelCommandResult, Aws::Client::AWSError<SSMErrors>> CancelCommandOutcome;
@@ -356,6 +362,7 @@ namespace Model
         typedef Aws::Utils::Outcome<GetParametersByPathResult, Aws::Client::AWSError<SSMErrors>> GetParametersByPathOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineOutcome;
         typedef Aws::Utils::Outcome<GetPatchBaselineForPatchGroupResult, Aws::Client::AWSError<SSMErrors>> GetPatchBaselineForPatchGroupOutcome;
+        typedef Aws::Utils::Outcome<GetServiceSettingResult, Aws::Client::AWSError<SSMErrors>> GetServiceSettingOutcome;
         typedef Aws::Utils::Outcome<LabelParameterVersionResult, Aws::Client::AWSError<SSMErrors>> LabelParameterVersionOutcome;
         typedef Aws::Utils::Outcome<ListAssociationVersionsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationVersionsOutcome;
         typedef Aws::Utils::Outcome<ListAssociationsResult, Aws::Client::AWSError<SSMErrors>> ListAssociationsOutcome;
@@ -378,6 +385,7 @@ namespace Model
         typedef Aws::Utils::Outcome<RegisterTargetWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTargetWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RegisterTaskWithMaintenanceWindowResult, Aws::Client::AWSError<SSMErrors>> RegisterTaskWithMaintenanceWindowOutcome;
         typedef Aws::Utils::Outcome<RemoveTagsFromResourceResult, Aws::Client::AWSError<SSMErrors>> RemoveTagsFromResourceOutcome;
+        typedef Aws::Utils::Outcome<ResetServiceSettingResult, Aws::Client::AWSError<SSMErrors>> ResetServiceSettingOutcome;
         typedef Aws::Utils::Outcome<ResumeSessionResult, Aws::Client::AWSError<SSMErrors>> ResumeSessionOutcome;
         typedef Aws::Utils::Outcome<SendAutomationSignalResult, Aws::Client::AWSError<SSMErrors>> SendAutomationSignalOutcome;
         typedef Aws::Utils::Outcome<SendCommandResult, Aws::Client::AWSError<SSMErrors>> SendCommandOutcome;
@@ -395,6 +403,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateMaintenanceWindowTaskResult, Aws::Client::AWSError<SSMErrors>> UpdateMaintenanceWindowTaskOutcome;
         typedef Aws::Utils::Outcome<UpdateManagedInstanceRoleResult, Aws::Client::AWSError<SSMErrors>> UpdateManagedInstanceRoleOutcome;
         typedef Aws::Utils::Outcome<UpdatePatchBaselineResult, Aws::Client::AWSError<SSMErrors>> UpdatePatchBaselineOutcome;
+        typedef Aws::Utils::Outcome<UpdateServiceSettingResult, Aws::Client::AWSError<SSMErrors>> UpdateServiceSettingOutcome;
 
         typedef std::future<AddTagsToResourceOutcome> AddTagsToResourceOutcomeCallable;
         typedef std::future<CancelCommandOutcome> CancelCommandOutcomeCallable;
@@ -468,6 +477,7 @@ namespace Model
         typedef std::future<GetParametersByPathOutcome> GetParametersByPathOutcomeCallable;
         typedef std::future<GetPatchBaselineOutcome> GetPatchBaselineOutcomeCallable;
         typedef std::future<GetPatchBaselineForPatchGroupOutcome> GetPatchBaselineForPatchGroupOutcomeCallable;
+        typedef std::future<GetServiceSettingOutcome> GetServiceSettingOutcomeCallable;
         typedef std::future<LabelParameterVersionOutcome> LabelParameterVersionOutcomeCallable;
         typedef std::future<ListAssociationVersionsOutcome> ListAssociationVersionsOutcomeCallable;
         typedef std::future<ListAssociationsOutcome> ListAssociationsOutcomeCallable;
@@ -490,6 +500,7 @@ namespace Model
         typedef std::future<RegisterTargetWithMaintenanceWindowOutcome> RegisterTargetWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RegisterTaskWithMaintenanceWindowOutcome> RegisterTaskWithMaintenanceWindowOutcomeCallable;
         typedef std::future<RemoveTagsFromResourceOutcome> RemoveTagsFromResourceOutcomeCallable;
+        typedef std::future<ResetServiceSettingOutcome> ResetServiceSettingOutcomeCallable;
         typedef std::future<ResumeSessionOutcome> ResumeSessionOutcomeCallable;
         typedef std::future<SendAutomationSignalOutcome> SendAutomationSignalOutcomeCallable;
         typedef std::future<SendCommandOutcome> SendCommandOutcomeCallable;
@@ -507,6 +518,7 @@ namespace Model
         typedef std::future<UpdateMaintenanceWindowTaskOutcome> UpdateMaintenanceWindowTaskOutcomeCallable;
         typedef std::future<UpdateManagedInstanceRoleOutcome> UpdateManagedInstanceRoleOutcomeCallable;
         typedef std::future<UpdatePatchBaselineOutcome> UpdatePatchBaselineOutcomeCallable;
+        typedef std::future<UpdateServiceSettingOutcome> UpdateServiceSettingOutcomeCallable;
 } // namespace Model
 
   class SSMClient;
@@ -583,6 +595,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::GetParametersByPathRequest&, const Model::GetParametersByPathOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetParametersByPathResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineRequest&, const Model::GetPatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::GetPatchBaselineForPatchGroupRequest&, const Model::GetPatchBaselineForPatchGroupOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPatchBaselineForPatchGroupResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::GetServiceSettingRequest&, const Model::GetServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetServiceSettingResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::LabelParameterVersionRequest&, const Model::LabelParameterVersionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > LabelParameterVersionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationVersionsRequest&, const Model::ListAssociationVersionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationVersionsResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ListAssociationsRequest&, const Model::ListAssociationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAssociationsResponseReceivedHandler;
@@ -605,6 +618,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::RegisterTargetWithMaintenanceWindowRequest&, const Model::RegisterTargetWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTargetWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RegisterTaskWithMaintenanceWindowRequest&, const Model::RegisterTaskWithMaintenanceWindowOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskWithMaintenanceWindowResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::RemoveTagsFromResourceRequest&, const Model::RemoveTagsFromResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RemoveTagsFromResourceResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::ResetServiceSettingRequest&, const Model::ResetServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResetServiceSettingResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::ResumeSessionRequest&, const Model::ResumeSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ResumeSessionResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendAutomationSignalRequest&, const Model::SendAutomationSignalOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendAutomationSignalResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::SendCommandRequest&, const Model::SendCommandOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > SendCommandResponseReceivedHandler;
@@ -622,6 +636,7 @@ namespace Model
     typedef std::function<void(const SSMClient*, const Model::UpdateMaintenanceWindowTaskRequest&, const Model::UpdateMaintenanceWindowTaskOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateMaintenanceWindowTaskResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdateManagedInstanceRoleRequest&, const Model::UpdateManagedInstanceRoleOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateManagedInstanceRoleResponseReceivedHandler;
     typedef std::function<void(const SSMClient*, const Model::UpdatePatchBaselineRequest&, const Model::UpdatePatchBaselineOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdatePatchBaselineResponseReceivedHandler;
+    typedef std::function<void(const SSMClient*, const Model::UpdateServiceSettingRequest&, const Model::UpdateServiceSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceSettingResponseReceivedHandler;
 
   /**
    * <fullname>AWS Systems Manager</fullname> <p>AWS Systems Manager is a collection
@@ -858,7 +873,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -871,7 +886,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -886,7 +901,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociation">AWS
          * API Reference</a></p>
@@ -901,7 +916,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -914,7 +929,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -929,7 +944,7 @@ namespace Model
          * instances using instance IDs or tags, SSM Agent running on the instance
          * processes the document and configures the instance as specified.</p> <p>If you
          * associate a document with an instance that already has an associated document,
-         * the system throws the AssociationAlreadyExists exception.</p><p><h3>See
+         * the system returns the AssociationAlreadyExists exception.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateAssociationBatch">AWS
          * API Reference</a></p>
@@ -1039,10 +1054,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
@@ -1057,10 +1071,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
@@ -1077,10 +1090,9 @@ namespace Model
          * <a>ListResourceDataSync</a>.</p> <p>By default, data is not encrypted in Amazon
          * S3. We strongly recommend that you enable encryption in Amazon S3 to ensure
          * secure data storage. We also recommend that you secure access to the Amazon S3
-         * bucket by creating a restrictive bucket policy. To view an example of a
-         * restrictive Amazon S3 bucket policy for Resource Data Sync, see <a
-         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync-create.html">Create
-         * a Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
+         * bucket by creating a restrictive bucket policy. For more information, see <a
+         * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-datasync.html">Configuring
+         * Resource Data Sync for Inventory</a> in the <i>AWS Systems Manager User
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CreateResourceDataSync">AWS
          * API Reference</a></p>
@@ -2003,8 +2015,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          */
@@ -2012,8 +2024,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          *
@@ -2023,8 +2035,8 @@ namespace Model
 
         /**
          * <p>Retrieves the individual task executions (one per target) for a particular
-         * task executed as part of a Maintenance Window execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * task run as part of a Maintenance Window execution.</p><p><h3>See Also:</h3>  
+         * <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTaskInvocations">AWS
          * API Reference</a></p>
          *
@@ -2034,7 +2046,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          */
@@ -2042,7 +2054,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          *
@@ -2052,7 +2064,7 @@ namespace Model
 
         /**
          * <p>For a given Maintenance Window execution, lists the tasks that were
-         * executed.</p><p><h3>See Also:</h3>   <a
+         * run.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/DescribeMaintenanceWindowExecutionTasks">AWS
          * API Reference</a></p>
          *
@@ -2651,16 +2663,16 @@ namespace Model
         virtual void GetMaintenanceWindowAsync(const Model::GetMaintenanceWindowRequest& request, const GetMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::GetMaintenanceWindowExecutionOutcome GetMaintenanceWindowExecution(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -2669,8 +2681,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionOutcomeCallable GetMaintenanceWindowExecutionCallable(const Model::GetMaintenanceWindowExecutionRequest& request) const;
 
         /**
-         * <p>Retrieves details about a specific task executed as part of a Maintenance
-         * Window execution.</p><p><h3>See Also:</h3>   <a
+         * <p>Retrieves details about a specific task run as part of a Maintenance Window
+         * execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecution">AWS
          * API Reference</a></p>
          *
@@ -2679,7 +2691,7 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionAsync(const Model::GetMaintenanceWindowExecutionRequest& request, const GetMaintenanceWindowExecutionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2687,7 +2699,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskOutcome GetMaintenanceWindowExecutionTask(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2697,7 +2709,7 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskOutcomeCallable GetMaintenanceWindowExecutionTaskCallable(const Model::GetMaintenanceWindowExecutionTaskRequest& request) const;
 
         /**
-         * <p>Retrieves the details about a specific task executed as part of a Maintenance
+         * <p>Retrieves the details about a specific task run as part of a Maintenance
          * Window execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTask">AWS
          * API Reference</a></p>
@@ -2707,8 +2719,8 @@ namespace Model
         virtual void GetMaintenanceWindowExecutionTaskAsync(const Model::GetMaintenanceWindowExecutionTaskRequest& request, const GetMaintenanceWindowExecutionTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2716,8 +2728,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcome GetMaintenanceWindowExecutionTaskInvocation(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2727,8 +2739,8 @@ namespace Model
         virtual Model::GetMaintenanceWindowExecutionTaskInvocationOutcomeCallable GetMaintenanceWindowExecutionTaskInvocationCallable(const Model::GetMaintenanceWindowExecutionTaskInvocationRequest& request) const;
 
         /**
-         * <p>Retrieves a task invocation. A task invocation is a specific task executing
-         * on a specific target. Maintenance Windows report status for all invocations.
+         * <p>Retrieves a task invocation. A task invocation is a specific task running on
+         * a specific target. Maintenance Windows report status for all invocations.
          * </p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetMaintenanceWindowExecutionTaskInvocation">AWS
          * API Reference</a></p>
@@ -2961,6 +2973,70 @@ namespace Model
         virtual void GetPatchBaselineForPatchGroupAsync(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Query the current service setting for
+         * the account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::GetServiceSettingOutcome GetServiceSetting(const Model::GetServiceSettingRequest& request) const;
+
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Query the current service setting for
+         * the account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::GetServiceSettingOutcomeCallable GetServiceSettingCallable(const Model::GetServiceSettingRequest& request) const;
+
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. Or use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Query the current service setting for
+         * the account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/GetServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void GetServiceSettingAsync(const Model::GetServiceSettingRequest& request, const GetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>A parameter label is a user-defined alias to help you manage different
          * versions of a parameter. When you modify a parameter, Systems Manager
          * automatically saves a new version and increments the version number by one. A
@@ -3101,10 +3177,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          */
@@ -3113,10 +3188,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3127,10 +3201,9 @@ namespace Model
         /**
          * <p>An invocation is copy of a command sent to a specific instance. A command can
          * apply to one or more instances. A command invocation applies to one instance.
-         * For example, if a user executes SendCommand against three instances, then a
-         * command invocation is created for each requested instance ID.
-         * ListCommandInvocations provide status about command execution.</p><p><h3>See
-         * Also:</h3>   <a
+         * For example, if a user runs SendCommand against three instances, then a command
+         * invocation is created for each requested instance ID. ListCommandInvocations
+         * provide status about command execution.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ListCommandInvocations">AWS
          * API Reference</a></p>
          *
@@ -3742,6 +3815,70 @@ namespace Model
         virtual void RemoveTagsFromResourceAsync(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <p>Reset the service setting for the account to the default value as provisioned
+         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::ResetServiceSettingOutcome ResetServiceSetting(const Model::ResetServiceSettingRequest& request) const;
+
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <p>Reset the service setting for the account to the default value as provisioned
+         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::ResetServiceSettingOutcomeCallable ResetServiceSettingCallable(const Model::ResetServiceSettingRequest& request) const;
+
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Use the
+         * <a>UpdateServiceSetting</a> API action to change the default setting. </p>
+         * <p>Reset the service setting for the account to the default value as provisioned
+         * by the AWS service team. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/ResetServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void ResetServiceSettingAsync(const Model::ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Reconnects a session to an instance after it has been disconnected.
          * Connections can be resumed for disconnected sessions, but not terminated
          * sessions.</p> <note> <p>This command is primarily for use by client machines to
@@ -3807,33 +3944,33 @@ namespace Model
         virtual void SendAutomationSignalAsync(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          */
         virtual Model::SendCommandOutcome SendCommand(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::SendCommandOutcomeCallable SendCommandCallable(const Model::SendCommandRequest& request) const;
 
         /**
-         * <p>Executes commands on one or more managed instances.</p><p><h3>See Also:</h3> 
-         * <a href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS
-         * API Reference</a></p>
+         * <p>Runs commands on one or more managed instances.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/SendCommand">AWS API
+         * Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void SendCommandAsync(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -3841,8 +3978,8 @@ namespace Model
         virtual Model::StartAssociationsOnceOutcome StartAssociationsOnce(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -3852,8 +3989,8 @@ namespace Model
         virtual Model::StartAssociationsOnceOutcomeCallable StartAssociationsOnceCallable(const Model::StartAssociationsOnceRequest& request) const;
 
         /**
-         * <p>Use this API action to execute an association immediately and only one time.
-         * This action can be helpful when troubleshooting associations.</p><p><h3>See
+         * <p>Use this API action to run an association immediately and only one time. This
+         * action can be helpful when troubleshooting associations.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StartAssociationsOnce">AWS
          * API Reference</a></p>
@@ -3937,14 +4074,14 @@ namespace Model
         virtual void StartSessionAsync(const Model::StartSessionRequest& request, const StartSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          */
         virtual Model::StopAutomationExecutionOutcome StopAutomationExecution(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -3953,7 +4090,7 @@ namespace Model
         virtual Model::StopAutomationExecutionOutcomeCallable StopAutomationExecutionCallable(const Model::StopAutomationExecutionRequest& request) const;
 
         /**
-         * <p>Stop an Automation that is currently executing.</p><p><h3>See Also:</h3>   <a
+         * <p>Stop an Automation that is currently running.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/StopAutomationExecution">AWS
          * API Reference</a></p>
          *
@@ -3994,8 +4131,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          */
@@ -4003,8 +4141,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4014,8 +4153,9 @@ namespace Model
 
         /**
          * <p>Updates an association. You can update the association name and version, the
-         * document version, schedule, parameters, and Amazon S3 output.</p><p><h3>See
-         * Also:</h3>   <a
+         * document version, schedule, parameters, and Amazon S3 output.</p> <important>
+         * <p>When you update an association, the association immediately runs against the
+         * specified targets.</p> </important><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateAssociation">AWS
          * API Reference</a></p>
          *
@@ -4289,10 +4429,74 @@ namespace Model
          */
         virtual void UpdatePatchBaselineAsync(const Model::UpdatePatchBaselineRequest& request, const UpdatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Update the service setting for the
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServiceSettingOutcome UpdateServiceSetting(const Model::UpdateServiceSettingRequest& request) const;
 
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Update the service setting for the
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateServiceSettingOutcomeCallable UpdateServiceSettingCallable(const Model::UpdateServiceSettingRequest& request) const;
+
+        /**
+         * <p> <code>ServiceSetting</code> is an account-level setting for an AWS service.
+         * This setting defines how a user interacts with or uses a service or a feature of
+         * a service. For example, if an AWS service charges money to the account based on
+         * feature or service usage, then the AWS service team might create a default
+         * setting of "false". This means the user can't use this feature unless they
+         * change the setting to "true" and intentionally opt in for a paid feature.</p>
+         * <p>Services map a <code>SettingId</code> object to a setting value. AWS services
+         * teams define the default value for a <code>SettingId</code>. You can't create a
+         * new <code>SettingId</code>, but you can overwrite the default value if you have
+         * the <code>ssm:UpdateServiceSetting</code> permission for the setting. Use the
+         * <a>GetServiceSetting</a> API action to view the current value. Or, use the
+         * <a>ResetServiceSetting</a> to change the value back to the original value
+         * defined by the AWS service team.</p> <p>Update the service setting for the
+         * account. </p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/UpdateServiceSetting">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateServiceSettingAsync(const Model::UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AddTagsToResourceAsyncHelper(const Model::AddTagsToResourceRequest& request, const AddTagsToResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelCommandAsyncHelper(const Model::CancelCommandRequest& request, const CancelCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4366,6 +4570,7 @@ namespace Model
         void GetParametersByPathAsyncHelper(const Model::GetParametersByPathRequest& request, const GetParametersByPathResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineAsyncHelper(const Model::GetPatchBaselineRequest& request, const GetPatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPatchBaselineForPatchGroupAsyncHelper(const Model::GetPatchBaselineForPatchGroupRequest& request, const GetPatchBaselineForPatchGroupResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void GetServiceSettingAsyncHelper(const Model::GetServiceSettingRequest& request, const GetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void LabelParameterVersionAsyncHelper(const Model::LabelParameterVersionRequest& request, const LabelParameterVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationVersionsAsyncHelper(const Model::ListAssociationVersionsRequest& request, const ListAssociationVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAssociationsAsyncHelper(const Model::ListAssociationsRequest& request, const ListAssociationsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4388,6 +4593,7 @@ namespace Model
         void RegisterTargetWithMaintenanceWindowAsyncHelper(const Model::RegisterTargetWithMaintenanceWindowRequest& request, const RegisterTargetWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTaskWithMaintenanceWindowAsyncHelper(const Model::RegisterTaskWithMaintenanceWindowRequest& request, const RegisterTaskWithMaintenanceWindowResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RemoveTagsFromResourceAsyncHelper(const Model::RemoveTagsFromResourceRequest& request, const RemoveTagsFromResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void ResetServiceSettingAsyncHelper(const Model::ResetServiceSettingRequest& request, const ResetServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ResumeSessionAsyncHelper(const Model::ResumeSessionRequest& request, const ResumeSessionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendAutomationSignalAsyncHelper(const Model::SendAutomationSignalRequest& request, const SendAutomationSignalResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void SendCommandAsyncHelper(const Model::SendCommandRequest& request, const SendCommandResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -4405,8 +4611,10 @@ namespace Model
         void UpdateMaintenanceWindowTaskAsyncHelper(const Model::UpdateMaintenanceWindowTaskRequest& request, const UpdateMaintenanceWindowTaskResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateManagedInstanceRoleAsyncHelper(const Model::UpdateManagedInstanceRoleRequest& request, const UpdateManagedInstanceRoleResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdatePatchBaselineAsyncHelper(const Model::UpdatePatchBaselineRequest& request, const UpdatePatchBaselineResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateServiceSettingAsyncHelper(const Model::UpdateServiceSettingRequest& request, const UpdateServiceSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

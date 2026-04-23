@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Returns a list of tags for a specific resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>Returns a list of tags for a specific resource type.</p>
+     */
     inline void SetResourceType(const ResourceTypeForTagging& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -75,6 +80,11 @@ namespace Model
      * <p>The resource ID for which you want to see a list of tags.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The resource ID for which you want to see a list of tags.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The resource ID for which you want to see a list of tags.</p>

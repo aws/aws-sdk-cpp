@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The type of the device, such as "button".</p>
      */
+    inline bool DeviceTypeHasBeenSet() const { return m_deviceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the device, such as "button".</p>
+     */
     inline void SetDeviceType(const Aws::String& value) { m_deviceTypeHasBeenSet = true; m_deviceType = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The name of the method applicable to the deviceType.</p>
      */
     inline const Aws::String& GetMethodName() const{ return m_methodName; }
+
+    /**
+     * <p>The name of the method applicable to the deviceType.</p>
+     */
+    inline bool MethodNameHasBeenSet() const { return m_methodNameHasBeenSet; }
 
     /**
      * <p>The name of the method applicable to the deviceType.</p>

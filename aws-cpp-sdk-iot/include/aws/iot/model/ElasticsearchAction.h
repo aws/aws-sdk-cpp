@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IAM role ARN that has access to Elasticsearch.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM role ARN that has access to Elasticsearch.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The endpoint of your Elasticsearch domain.</p>
      */
     inline const Aws::String& GetEndpoint() const{ return m_endpoint; }
+
+    /**
+     * <p>The endpoint of your Elasticsearch domain.</p>
+     */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
 
     /**
      * <p>The endpoint of your Elasticsearch domain.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The Elasticsearch index where you want to store your data.</p>
      */
+    inline bool IndexHasBeenSet() const { return m_indexHasBeenSet; }
+
+    /**
+     * <p>The Elasticsearch index where you want to store your data.</p>
+     */
     inline void SetIndex(const Aws::String& value) { m_indexHasBeenSet = true; m_index = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The type of document you are storing.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of document you are storing.</p>
+     */
     inline void SetType(const Aws::String& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -196,6 +216,11 @@ namespace Model
      * <p>The unique identifier for the document you are storing.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The unique identifier for the document you are storing.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The unique identifier for the document you are storing.</p>

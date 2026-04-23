@@ -58,6 +58,12 @@ namespace Model
      * <p> The close status that must match the close status of an execution for it to
      * meet the criteria of this filter.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The close status that must match the close status of an execution for it to
+     * meet the criteria of this filter.</p>
+     */
     inline void SetStatus(const CloseStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

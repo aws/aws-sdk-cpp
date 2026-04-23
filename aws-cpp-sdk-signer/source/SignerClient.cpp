@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/signer/SignerClient.h>
 #include <aws/signer/SignerEndpoint.h>
 #include <aws/signer/SignerErrorMarshaller.h>
@@ -86,25 +89,37 @@ SignerClient::~SignerClient()
 
 void SignerClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << SignerEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + SignerEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void SignerClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 CancelSigningProfileOutcome SignerClient::CancelSigningProfile(const CancelSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CancelSigningProfile", "Required field: ProfileName, is not set");
+    return CancelSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -139,8 +154,13 @@ void SignerClient::CancelSigningProfileAsyncHelper(const CancelSigningProfileReq
 
 DescribeSigningJobOutcome SignerClient::DescribeSigningJob(const DescribeSigningJobRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.JobIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeSigningJob", "Required field: JobId, is not set");
+    return DescribeSigningJobOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [JobId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs/";
   ss << request.GetJobId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -175,8 +195,13 @@ void SignerClient::DescribeSigningJobAsyncHelper(const DescribeSigningJobRequest
 
 GetSigningPlatformOutcome SignerClient::GetSigningPlatform(const GetSigningPlatformRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PlatformIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSigningPlatform", "Required field: PlatformId, is not set");
+    return GetSigningPlatformOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PlatformId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-platforms/";
   ss << request.GetPlatformId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -211,8 +236,13 @@ void SignerClient::GetSigningPlatformAsyncHelper(const GetSigningPlatformRequest
 
 GetSigningProfileOutcome SignerClient::GetSigningProfile(const GetSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSigningProfile", "Required field: ProfileName, is not set");
+    return GetSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -247,8 +277,8 @@ void SignerClient::GetSigningProfileAsyncHelper(const GetSigningProfileRequest& 
 
 ListSigningJobsOutcome SignerClient::ListSigningJobs(const ListSigningJobsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -282,8 +312,8 @@ void SignerClient::ListSigningJobsAsyncHelper(const ListSigningJobsRequest& requ
 
 ListSigningPlatformsOutcome SignerClient::ListSigningPlatforms(const ListSigningPlatformsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-platforms";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -317,8 +347,8 @@ void SignerClient::ListSigningPlatformsAsyncHelper(const ListSigningPlatformsReq
 
 ListSigningProfilesOutcome SignerClient::ListSigningProfiles(const ListSigningProfilesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -352,8 +382,13 @@ void SignerClient::ListSigningProfilesAsyncHelper(const ListSigningProfilesReque
 
 PutSigningProfileOutcome SignerClient::PutSigningProfile(const PutSigningProfileRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ProfileNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutSigningProfile", "Required field: ProfileName, is not set");
+    return PutSigningProfileOutcome(Aws::Client::AWSError<SignerErrors>(SignerErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ProfileName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-profiles/";
   ss << request.GetProfileName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -388,8 +423,8 @@ void SignerClient::PutSigningProfileAsyncHelper(const PutSigningProfileRequest& 
 
 StartSigningJobOutcome SignerClient::StartSigningJob(const StartSigningJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/signing-jobs";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);

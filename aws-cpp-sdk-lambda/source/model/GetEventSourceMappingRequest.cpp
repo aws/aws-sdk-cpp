@@ -29,7 +29,7 @@ GetEventSourceMappingRequest::GetEventSourceMappingRequest() :
 
 Aws::String GetEventSourceMappingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

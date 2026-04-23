@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the snapshot to restore from.</p>
      */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the snapshot to restore from.</p>
+     */
     inline void SetSnapshotId(const Aws::String& value) { m_snapshotIdHasBeenSet = true; m_snapshotId = value; }
 
     /**

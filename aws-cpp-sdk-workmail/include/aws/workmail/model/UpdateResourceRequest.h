@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier associated with the organization for which the resource is
      * updated.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The identifier associated with the organization for which the resource is
+     * updated.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The identifier of the resource to be updated.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the resource to be updated.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -132,6 +143,11 @@ namespace Model
     /**
      * <p>The name of the resource to be updated.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource to be updated.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -164,6 +180,11 @@ namespace Model
      * <p>The resource's booking options to be updated.</p>
      */
     inline const BookingOptions& GetBookingOptions() const{ return m_bookingOptions; }
+
+    /**
+     * <p>The resource's booking options to be updated.</p>
+     */
+    inline bool BookingOptionsHasBeenSet() const { return m_bookingOptionsHasBeenSet; }
 
     /**
      * <p>The resource's booking options to be updated.</p>

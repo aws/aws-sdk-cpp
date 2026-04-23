@@ -58,6 +58,12 @@ namespace Model
      * <p> If the status is not <code>Enabled</code>, replication for S3 objects
      * encrypted with AWS KMS is disabled.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> If the status is not <code>Enabled</code>, replication for S3 objects
+     * encrypted with AWS KMS is disabled.</p>
+     */
     inline void SetStatus(const SseKmsEncryptedObjectsStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

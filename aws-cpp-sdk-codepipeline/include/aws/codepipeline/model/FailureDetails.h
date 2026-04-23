@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The type of the failure.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of the failure.</p>
+     */
     inline void SetType(const FailureType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The message about the failure.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The message about the failure.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The message about the failure.</p>
@@ -114,6 +124,11 @@ namespace Model
      * <p>The external ID of the run of the action that failed.</p>
      */
     inline const Aws::String& GetExternalExecutionId() const{ return m_externalExecutionId; }
+
+    /**
+     * <p>The external ID of the run of the action that failed.</p>
+     */
+    inline bool ExternalExecutionIdHasBeenSet() const { return m_externalExecutionIdHasBeenSet; }
 
     /**
      * <p>The external ID of the run of the action that failed.</p>

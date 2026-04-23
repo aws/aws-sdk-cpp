@@ -57,6 +57,11 @@ namespace Model
     /**
      * The name of the XML attribute that has been sanitized.
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * The name of the XML attribute that has been sanitized.
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * The name of the XML element that has been sanitized.
      */
+    inline bool ElementNameHasBeenSet() const { return m_elementNameHasBeenSet; }
+
+    /**
+     * The name of the XML element that has been sanitized.
+     */
     inline void SetElementName(const Aws::String& value) { m_elementNameHasBeenSet = true; m_elementName = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * Required. The reason for which the XML elements or attributes were sanitized.
      */
     inline const SanitizationWarningReason& GetReason() const{ return m_reason; }
+
+    /**
+     * Required. The reason for which the XML elements or attributes were sanitized.
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * Required. The reason for which the XML elements or attributes were sanitized.

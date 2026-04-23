@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The token to retrieve the next set of results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return at one time.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -105,6 +115,11 @@ namespace Model
      * <p>The status of the bulk thing provisioning task.</p>
      */
     inline const Status& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the bulk thing provisioning task.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the bulk thing provisioning task.</p>

@@ -37,9 +37,13 @@ namespace Aws
         static const int APPIUM_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_PACKAGE");
         static const int APPIUM_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_PACKAGE");
         static const int APPIUM_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_PACKAGE");
+        static const int APPIUM_NODE_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_NODE_TEST_PACKAGE");
+        static const int APPIUM_RUBY_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_RUBY_TEST_PACKAGE");
         static const int APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE");
         static const int APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE");
         static const int APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_PACKAGE");
+        static const int APPIUM_WEB_NODE_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_NODE_TEST_PACKAGE");
+        static const int APPIUM_WEB_RUBY_TEST_PACKAGE_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY_TEST_PACKAGE");
         static const int CALABASH_TEST_PACKAGE_HASH = HashingUtils::HashString("CALABASH_TEST_PACKAGE");
         static const int INSTRUMENTATION_TEST_PACKAGE_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_PACKAGE");
         static const int UIAUTOMATION_TEST_PACKAGE_HASH = HashingUtils::HashString("UIAUTOMATION_TEST_PACKAGE");
@@ -49,9 +53,13 @@ namespace Aws
         static const int APPIUM_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_JUNIT_TEST_SPEC");
         static const int APPIUM_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_JAVA_TESTNG_TEST_SPEC");
         static const int APPIUM_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_PYTHON_TEST_SPEC");
+        static const int APPIUM_NODE_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_NODE_TEST_SPEC");
+        static const int APPIUM_RUBY_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_RUBY_TEST_SPEC");
         static const int APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_JUNIT_TEST_SPEC");
         static const int APPIUM_WEB_JAVA_TESTNG_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_JAVA_TESTNG_TEST_SPEC");
         static const int APPIUM_WEB_PYTHON_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_PYTHON_TEST_SPEC");
+        static const int APPIUM_WEB_NODE_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_NODE_TEST_SPEC");
+        static const int APPIUM_WEB_RUBY_TEST_SPEC_HASH = HashingUtils::HashString("APPIUM_WEB_RUBY_TEST_SPEC");
         static const int INSTRUMENTATION_TEST_SPEC_HASH = HashingUtils::HashString("INSTRUMENTATION_TEST_SPEC");
         static const int XCTEST_UI_TEST_SPEC_HASH = HashingUtils::HashString("XCTEST_UI_TEST_SPEC");
 
@@ -87,6 +95,14 @@ namespace Aws
           {
             return UploadType::APPIUM_PYTHON_TEST_PACKAGE;
           }
+          else if (hashCode == APPIUM_NODE_TEST_PACKAGE_HASH)
+          {
+            return UploadType::APPIUM_NODE_TEST_PACKAGE;
+          }
+          else if (hashCode == APPIUM_RUBY_TEST_PACKAGE_HASH)
+          {
+            return UploadType::APPIUM_RUBY_TEST_PACKAGE;
+          }
           else if (hashCode == APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE_HASH)
           {
             return UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE;
@@ -98,6 +114,14 @@ namespace Aws
           else if (hashCode == APPIUM_WEB_PYTHON_TEST_PACKAGE_HASH)
           {
             return UploadType::APPIUM_WEB_PYTHON_TEST_PACKAGE;
+          }
+          else if (hashCode == APPIUM_WEB_NODE_TEST_PACKAGE_HASH)
+          {
+            return UploadType::APPIUM_WEB_NODE_TEST_PACKAGE;
+          }
+          else if (hashCode == APPIUM_WEB_RUBY_TEST_PACKAGE_HASH)
+          {
+            return UploadType::APPIUM_WEB_RUBY_TEST_PACKAGE;
           }
           else if (hashCode == CALABASH_TEST_PACKAGE_HASH)
           {
@@ -135,6 +159,14 @@ namespace Aws
           {
             return UploadType::APPIUM_PYTHON_TEST_SPEC;
           }
+          else if (hashCode == APPIUM_NODE_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_NODE_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_RUBY_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_RUBY_TEST_SPEC;
+          }
           else if (hashCode == APPIUM_WEB_JAVA_JUNIT_TEST_SPEC_HASH)
           {
             return UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_SPEC;
@@ -146,6 +178,14 @@ namespace Aws
           else if (hashCode == APPIUM_WEB_PYTHON_TEST_SPEC_HASH)
           {
             return UploadType::APPIUM_WEB_PYTHON_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_WEB_NODE_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_WEB_NODE_TEST_SPEC;
+          }
+          else if (hashCode == APPIUM_WEB_RUBY_TEST_SPEC_HASH)
+          {
+            return UploadType::APPIUM_WEB_RUBY_TEST_SPEC;
           }
           else if (hashCode == INSTRUMENTATION_TEST_SPEC_HASH)
           {
@@ -183,12 +223,20 @@ namespace Aws
             return "APPIUM_JAVA_TESTNG_TEST_PACKAGE";
           case UploadType::APPIUM_PYTHON_TEST_PACKAGE:
             return "APPIUM_PYTHON_TEST_PACKAGE";
+          case UploadType::APPIUM_NODE_TEST_PACKAGE:
+            return "APPIUM_NODE_TEST_PACKAGE";
+          case UploadType::APPIUM_RUBY_TEST_PACKAGE:
+            return "APPIUM_RUBY_TEST_PACKAGE";
           case UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE:
             return "APPIUM_WEB_JAVA_JUNIT_TEST_PACKAGE";
           case UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE:
             return "APPIUM_WEB_JAVA_TESTNG_TEST_PACKAGE";
           case UploadType::APPIUM_WEB_PYTHON_TEST_PACKAGE:
             return "APPIUM_WEB_PYTHON_TEST_PACKAGE";
+          case UploadType::APPIUM_WEB_NODE_TEST_PACKAGE:
+            return "APPIUM_WEB_NODE_TEST_PACKAGE";
+          case UploadType::APPIUM_WEB_RUBY_TEST_PACKAGE:
+            return "APPIUM_WEB_RUBY_TEST_PACKAGE";
           case UploadType::CALABASH_TEST_PACKAGE:
             return "CALABASH_TEST_PACKAGE";
           case UploadType::INSTRUMENTATION_TEST_PACKAGE:
@@ -207,12 +255,20 @@ namespace Aws
             return "APPIUM_JAVA_TESTNG_TEST_SPEC";
           case UploadType::APPIUM_PYTHON_TEST_SPEC:
             return "APPIUM_PYTHON_TEST_SPEC";
+          case UploadType::APPIUM_NODE_TEST_SPEC:
+            return "APPIUM_NODE_TEST_SPEC";
+          case UploadType::APPIUM_RUBY_TEST_SPEC:
+            return "APPIUM_RUBY_TEST_SPEC";
           case UploadType::APPIUM_WEB_JAVA_JUNIT_TEST_SPEC:
             return "APPIUM_WEB_JAVA_JUNIT_TEST_SPEC";
           case UploadType::APPIUM_WEB_JAVA_TESTNG_TEST_SPEC:
             return "APPIUM_WEB_JAVA_TESTNG_TEST_SPEC";
           case UploadType::APPIUM_WEB_PYTHON_TEST_SPEC:
             return "APPIUM_WEB_PYTHON_TEST_SPEC";
+          case UploadType::APPIUM_WEB_NODE_TEST_SPEC:
+            return "APPIUM_WEB_NODE_TEST_SPEC";
+          case UploadType::APPIUM_WEB_RUBY_TEST_SPEC:
+            return "APPIUM_WEB_RUBY_TEST_SPEC";
           case UploadType::INSTRUMENTATION_TEST_SPEC:
             return "INSTRUMENTATION_TEST_SPEC";
           case UploadType::XCTEST_UI_TEST_SPEC:
@@ -224,7 +280,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The topic.</p>
      */
+    inline bool TopicHasBeenSet() const { return m_topicHasBeenSet; }
+
+    /**
+     * <p>The topic.</p>
+     */
     inline void SetTopic(const Aws::String& value) { m_topicHasBeenSet = true; m_topic = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>A token used to retrieve the next value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A token used to retrieve the next value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A token used to retrieve the next value.</p>
@@ -143,6 +158,11 @@ namespace Model
      * <p>Specifies whether the rule is disabled.</p>
      */
     inline bool GetRuleDisabled() const{ return m_ruleDisabled; }
+
+    /**
+     * <p>Specifies whether the rule is disabled.</p>
+     */
+    inline bool RuleDisabledHasBeenSet() const { return m_ruleDisabledHasBeenSet; }
 
     /**
      * <p>Specifies whether the rule is disabled.</p>

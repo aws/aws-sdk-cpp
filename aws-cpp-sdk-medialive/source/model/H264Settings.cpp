@@ -95,6 +95,8 @@ H264Settings::H264Settings() :
     m_softnessHasBeenSet(false),
     m_spatialAq(H264SpatialAq::NOT_SET),
     m_spatialAqHasBeenSet(false),
+    m_subgopLength(H264SubGopLength::NOT_SET),
+    m_subgopLengthHasBeenSet(false),
     m_syntax(H264Syntax::NOT_SET),
     m_syntaxHasBeenSet(false),
     m_temporalAq(H264TemporalAq::NOT_SET),
@@ -171,6 +173,8 @@ H264Settings::H264Settings(JsonView jsonValue) :
     m_softnessHasBeenSet(false),
     m_spatialAq(H264SpatialAq::NOT_SET),
     m_spatialAqHasBeenSet(false),
+    m_subgopLength(H264SubGopLength::NOT_SET),
+    m_subgopLengthHasBeenSet(false),
     m_syntax(H264Syntax::NOT_SET),
     m_syntaxHasBeenSet(false),
     m_temporalAq(H264TemporalAq::NOT_SET),
@@ -414,6 +418,13 @@ H264Settings& H264Settings::operator =(JsonView jsonValue)
     m_spatialAqHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("subgopLength"))
+  {
+    m_subgopLength = H264SubGopLengthMapper::GetH264SubGopLengthForName(jsonValue.GetString("subgopLength"));
+
+    m_subgopLengthHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("syntax"))
   {
     m_syntax = H264SyntaxMapper::GetH264SyntaxForName(jsonValue.GetString("syntax"));
@@ -621,6 +632,11 @@ JsonValue H264Settings::Jsonize() const
   if(m_spatialAqHasBeenSet)
   {
    payload.WithString("spatialAq", H264SpatialAqMapper::GetNameForH264SpatialAq(m_spatialAq));
+  }
+
+  if(m_subgopLengthHasBeenSet)
+  {
+   payload.WithString("subgopLength", H264SubGopLengthMapper::GetNameForH264SubGopLength(m_subgopLength));
   }
 
   if(m_syntaxHasBeenSet)

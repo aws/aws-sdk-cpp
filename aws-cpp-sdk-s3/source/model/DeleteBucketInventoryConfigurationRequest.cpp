@@ -35,7 +35,7 @@ DeleteBucketInventoryConfigurationRequest::DeleteBucketInventoryConfigurationReq
 
 Aws::String DeleteBucketInventoryConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBucketInventoryConfigurationRequest::AddQueryStringParameters(URI& uri) const

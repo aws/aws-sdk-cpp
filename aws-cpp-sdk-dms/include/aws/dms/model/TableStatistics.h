@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The schema name.</p>
      */
+    inline bool SchemaNameHasBeenSet() const { return m_schemaNameHasBeenSet; }
+
+    /**
+     * <p>The schema name.</p>
+     */
     inline void SetSchemaName(const Aws::String& value) { m_schemaNameHasBeenSet = true; m_schemaName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the table.</p>
      */
     inline const Aws::String& GetTableName() const{ return m_tableName; }
+
+    /**
+     * <p>The name of the table.</p>
+     */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
 
     /**
      * <p>The name of the table.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The number of insert actions performed on a table.</p>
      */
+    inline bool InsertsHasBeenSet() const { return m_insertsHasBeenSet; }
+
+    /**
+     * <p>The number of insert actions performed on a table.</p>
+     */
     inline void SetInserts(long long value) { m_insertsHasBeenSet = true; m_inserts = value; }
 
     /**
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The number of delete actions performed on a table.</p>
      */
+    inline bool DeletesHasBeenSet() const { return m_deletesHasBeenSet; }
+
+    /**
+     * <p>The number of delete actions performed on a table.</p>
+     */
     inline void SetDeletes(long long value) { m_deletesHasBeenSet = true; m_deletes = value; }
 
     /**
@@ -156,6 +176,11 @@ namespace Model
      * <p>The number of update actions performed on a table.</p>
      */
     inline long long GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>The number of update actions performed on a table.</p>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>The number of update actions performed on a table.</p>
@@ -178,6 +203,12 @@ namespace Model
      * <p>The Data Definition Language (DDL) used to build and modify the structure of
      * your tables.</p>
      */
+    inline bool DdlsHasBeenSet() const { return m_ddlsHasBeenSet; }
+
+    /**
+     * <p>The Data Definition Language (DDL) used to build and modify the structure of
+     * your tables.</p>
+     */
     inline void SetDdls(long long value) { m_ddlsHasBeenSet = true; m_ddls = value; }
 
     /**
@@ -195,6 +226,11 @@ namespace Model
     /**
      * <p>The number of rows added during the Full Load operation.</p>
      */
+    inline bool FullLoadRowsHasBeenSet() const { return m_fullLoadRowsHasBeenSet; }
+
+    /**
+     * <p>The number of rows added during the Full Load operation.</p>
+     */
     inline void SetFullLoadRows(long long value) { m_fullLoadRowsHasBeenSet = true; m_fullLoadRows = value; }
 
     /**
@@ -208,6 +244,12 @@ namespace Model
      * operation (valid only for DynamoDB as a target migrations).</p>
      */
     inline long long GetFullLoadCondtnlChkFailedRows() const{ return m_fullLoadCondtnlChkFailedRows; }
+
+    /**
+     * <p>The number of rows that failed conditional checks during the Full Load
+     * operation (valid only for DynamoDB as a target migrations).</p>
+     */
+    inline bool FullLoadCondtnlChkFailedRowsHasBeenSet() const { return m_fullLoadCondtnlChkFailedRowsHasBeenSet; }
 
     /**
      * <p>The number of rows that failed conditional checks during the Full Load
@@ -232,6 +274,12 @@ namespace Model
      * <p>The number of rows that failed to load during the Full Load operation (valid
      * only for DynamoDB as a target migrations).</p>
      */
+    inline bool FullLoadErrorRowsHasBeenSet() const { return m_fullLoadErrorRowsHasBeenSet; }
+
+    /**
+     * <p>The number of rows that failed to load during the Full Load operation (valid
+     * only for DynamoDB as a target migrations).</p>
+     */
     inline void SetFullLoadErrorRows(long long value) { m_fullLoadErrorRowsHasBeenSet = true; m_fullLoadErrorRows = value; }
 
     /**
@@ -245,6 +293,11 @@ namespace Model
      * <p>The last time the table was updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdateTime() const{ return m_lastUpdateTime; }
+
+    /**
+     * <p>The last time the table was updated.</p>
+     */
+    inline bool LastUpdateTimeHasBeenSet() const { return m_lastUpdateTimeHasBeenSet; }
 
     /**
      * <p>The last time the table was updated.</p>
@@ -273,6 +326,13 @@ namespace Model
      * Table all | Table updates | Table is being reloaded</p>
      */
     inline const Aws::String& GetTableState() const{ return m_tableState; }
+
+    /**
+     * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
+     * | Before load | Full load | Table completed | Table cancelled | Table error |
+     * Table all | Table updates | Table is being reloaded</p>
+     */
+    inline bool TableStateHasBeenSet() const { return m_tableStateHasBeenSet; }
 
     /**
      * <p>The state of the tables described.</p> <p>Valid states: Table does not exist
@@ -325,6 +385,11 @@ namespace Model
     /**
      * <p>The number of records that have yet to be validated.</p>
      */
+    inline bool ValidationPendingRecordsHasBeenSet() const { return m_validationPendingRecordsHasBeenSet; }
+
+    /**
+     * <p>The number of records that have yet to be validated.</p>
+     */
     inline void SetValidationPendingRecords(long long value) { m_validationPendingRecordsHasBeenSet = true; m_validationPendingRecords = value; }
 
     /**
@@ -341,6 +406,11 @@ namespace Model
     /**
      * <p>The number of records that failed validation.</p>
      */
+    inline bool ValidationFailedRecordsHasBeenSet() const { return m_validationFailedRecordsHasBeenSet; }
+
+    /**
+     * <p>The number of records that failed validation.</p>
+     */
     inline void SetValidationFailedRecords(long long value) { m_validationFailedRecordsHasBeenSet = true; m_validationFailedRecords = value; }
 
     /**
@@ -353,6 +423,11 @@ namespace Model
      * <p>The number of records that could not be validated.</p>
      */
     inline long long GetValidationSuspendedRecords() const{ return m_validationSuspendedRecords; }
+
+    /**
+     * <p>The number of records that could not be validated.</p>
+     */
+    inline bool ValidationSuspendedRecordsHasBeenSet() const { return m_validationSuspendedRecordsHasBeenSet; }
 
     /**
      * <p>The number of records that could not be validated.</p>
@@ -380,6 +455,22 @@ namespace Model
      * validated because of an unexpected error.</p> </li> </ul>
      */
     inline const Aws::String& GetValidationState() const{ return m_validationState; }
+
+    /**
+     * <p>The validation state of the table.</p> <p>The parameter can have the
+     * following values</p> <ul> <li> <p>Not enabled—Validation is not enabled for the
+     * table in the migration task.</p> </li> <li> <p>Pending records—Some records in
+     * the table are waiting for validation.</p> </li> <li> <p>Mismatched records—Some
+     * records in the table do not match between the source and target.</p> </li> <li>
+     * <p>Suspended records—Some records in the table could not be validated.</p> </li>
+     * <li> <p>No primary key—The table could not be validated because it had no
+     * primary key.</p> </li> <li> <p>Table error—The table was not validated because
+     * it was in an error state and some data was not migrated.</p> </li> <li>
+     * <p>Validated—All rows in the table were validated. If the table is updated, the
+     * status can change from Validated.</p> </li> <li> <p>Error—The table could not be
+     * validated because of an unexpected error.</p> </li> </ul>
+     */
+    inline bool ValidationStateHasBeenSet() const { return m_validationStateHasBeenSet; }
 
     /**
      * <p>The validation state of the table.</p> <p>The parameter can have the
@@ -482,6 +573,11 @@ namespace Model
      * <p>Additional details about the state of validation.</p>
      */
     inline const Aws::String& GetValidationStateDetails() const{ return m_validationStateDetails; }
+
+    /**
+     * <p>Additional details about the state of validation.</p>
+     */
+    inline bool ValidationStateDetailsHasBeenSet() const { return m_validationStateDetailsHasBeenSet; }
 
     /**
      * <p>Additional details about the state of validation.</p>

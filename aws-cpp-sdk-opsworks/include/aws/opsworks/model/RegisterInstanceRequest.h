@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the stack that the instance is to be registered with.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the stack that the instance is to be registered with.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The instance's hostname.</p>
      */
     inline const Aws::String& GetHostname() const{ return m_hostname; }
+
+    /**
+     * <p>The instance's hostname.</p>
+     */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
 
     /**
      * <p>The instance's hostname.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The instance's public IP address.</p>
      */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
+
+    /**
+     * <p>The instance's public IP address.</p>
+     */
     inline void SetPublicIp(const Aws::String& value) { m_publicIpHasBeenSet = true; m_publicIp = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
      * <p>The instance's private IP address.</p>
      */
     inline const Aws::String& GetPrivateIp() const{ return m_privateIp; }
+
+    /**
+     * <p>The instance's private IP address.</p>
+     */
+    inline bool PrivateIpHasBeenSet() const { return m_privateIpHasBeenSet; }
 
     /**
      * <p>The instance's private IP address.</p>
@@ -194,6 +214,12 @@ namespace Model
      * between the instance and the service.</p>
      */
     inline const Aws::String& GetRsaPublicKey() const{ return m_rsaPublicKey; }
+
+    /**
+     * <p>The instances public RSA key. This key is used to encrypt communication
+     * between the instance and the service.</p>
+     */
+    inline bool RsaPublicKeyHasBeenSet() const { return m_rsaPublicKeyHasBeenSet; }
 
     /**
      * <p>The instances public RSA key. This key is used to encrypt communication
@@ -240,6 +266,11 @@ namespace Model
     /**
      * <p>The instances public RSA key fingerprint.</p>
      */
+    inline bool RsaPublicKeyFingerprintHasBeenSet() const { return m_rsaPublicKeyFingerprintHasBeenSet; }
+
+    /**
+     * <p>The instances public RSA key fingerprint.</p>
+     */
     inline void SetRsaPublicKeyFingerprint(const Aws::String& value) { m_rsaPublicKeyFingerprintHasBeenSet = true; m_rsaPublicKeyFingerprint = value; }
 
     /**
@@ -272,6 +303,11 @@ namespace Model
      * <p>An InstanceIdentity object that contains the instance's identity.</p>
      */
     inline const InstanceIdentity& GetInstanceIdentity() const{ return m_instanceIdentity; }
+
+    /**
+     * <p>An InstanceIdentity object that contains the instance's identity.</p>
+     */
+    inline bool InstanceIdentityHasBeenSet() const { return m_instanceIdentityHasBeenSet; }
 
     /**
      * <p>An InstanceIdentity object that contains the instance's identity.</p>

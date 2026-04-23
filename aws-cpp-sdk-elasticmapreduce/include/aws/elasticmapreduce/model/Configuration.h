@@ -44,7 +44,7 @@ namespace Model
    * optional nested configurations. A classification refers to an
    * application-specific configuration file. Properties are the settings you want to
    * change in that file. For more information, see <a
-   * href="http://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
+   * href="https://docs.aws.amazon.com/emr/latest/ReleaseGuide/emr-configure-apps.html">Configuring
    * Applications</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/Configuration">AWS
    * API Reference</a></p>
@@ -62,6 +62,11 @@ namespace Model
      * <p>The classification within a configuration.</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
+    /**
+     * <p>The classification within a configuration.</p>
+     */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
      * <p>The classification within a configuration.</p>
@@ -104,6 +109,12 @@ namespace Model
      * <p>A list of additional configurations to apply within a configuration
      * object.</p>
      */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+
+    /**
+     * <p>A list of additional configurations to apply within a configuration
+     * object.</p>
+     */
     inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
 
     /**
@@ -141,6 +152,11 @@ namespace Model
      * <p>A set of properties specified within a configuration classification.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const{ return m_properties; }
+
+    /**
+     * <p>A set of properties specified within a configuration classification.</p>
+     */
+    inline bool PropertiesHasBeenSet() const { return m_propertiesHasBeenSet; }
 
     /**
      * <p>A set of properties specified within a configuration classification.</p>

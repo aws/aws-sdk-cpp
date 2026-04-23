@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for HlsAkamaiSettings<p><h3>See Also:</h3>   <a
+   * Hls Akamai Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsAkamaiSettings">AWS
    * API Reference</a></p>
    */
@@ -58,6 +58,12 @@ namespace Model
      * Number of seconds to wait before retrying connection to the CDN if the
      * connection is lost.
      */
+    inline bool ConnectionRetryIntervalHasBeenSet() const { return m_connectionRetryIntervalHasBeenSet; }
+
+    /**
+     * Number of seconds to wait before retrying connection to the CDN if the
+     * connection is lost.
+     */
     inline void SetConnectionRetryInterval(int value) { m_connectionRetryIntervalHasBeenSet = true; m_connectionRetryInterval = value; }
 
     /**
@@ -75,6 +81,11 @@ namespace Model
     /**
      * Size in seconds of file cache for streaming outputs.
      */
+    inline bool FilecacheDurationHasBeenSet() const { return m_filecacheDurationHasBeenSet; }
+
+    /**
+     * Size in seconds of file cache for streaming outputs.
+     */
     inline void SetFilecacheDuration(int value) { m_filecacheDurationHasBeenSet = true; m_filecacheDuration = value; }
 
     /**
@@ -88,6 +99,12 @@ namespace Model
      * contact Akamai to enable this feature.
      */
     inline const HlsAkamaiHttpTransferMode& GetHttpTransferMode() const{ return m_httpTransferMode; }
+
+    /**
+     * Specify whether or not to use chunked transfer encoding to Akamai. User should
+     * contact Akamai to enable this feature.
+     */
+    inline bool HttpTransferModeHasBeenSet() const { return m_httpTransferModeHasBeenSet; }
 
     /**
      * Specify whether or not to use chunked transfer encoding to Akamai. User should
@@ -124,6 +141,12 @@ namespace Model
      * Number of retry attempts that will be made before the Live Event is put into an
      * error state.
      */
+    inline bool NumRetriesHasBeenSet() const { return m_numRetriesHasBeenSet; }
+
+    /**
+     * Number of retry attempts that will be made before the Live Event is put into an
+     * error state.
+     */
     inline void SetNumRetries(int value) { m_numRetriesHasBeenSet = true; m_numRetries = value; }
 
     /**
@@ -143,6 +166,12 @@ namespace Model
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
+    inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
+
+    /**
+     * If a streaming output fails, number of seconds to wait until a restart is
+     * initiated. A value of 0 means never restart.
+     */
     inline void SetRestartDelay(int value) { m_restartDelayHasBeenSet = true; m_restartDelay = value; }
 
     /**
@@ -156,6 +185,11 @@ namespace Model
      * Salt for authenticated Akamai.
      */
     inline const Aws::String& GetSalt() const{ return m_salt; }
+
+    /**
+     * Salt for authenticated Akamai.
+     */
+    inline bool SaltHasBeenSet() const { return m_saltHasBeenSet; }
 
     /**
      * Salt for authenticated Akamai.
@@ -192,6 +226,11 @@ namespace Model
      * Token parameter for authenticated akamai. If not specified, _gda_ is used.
      */
     inline const Aws::String& GetToken() const{ return m_token; }
+
+    /**
+     * Token parameter for authenticated akamai. If not specified, _gda_ is used.
+     */
+    inline bool TokenHasBeenSet() const { return m_tokenHasBeenSet; }
 
     /**
      * Token parameter for authenticated akamai. If not specified, _gda_ is used.

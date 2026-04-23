@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
      */
+    inline bool StartWorkspaceRequestsHasBeenSet() const { return m_startWorkspaceRequestsHasBeenSet; }
+
+    /**
+     * <p>The WorkSpaces to start. You can specify up to 25 WorkSpaces.</p>
+     */
     inline void SetStartWorkspaceRequests(const Aws::Vector<StartRequest>& value) { m_startWorkspaceRequestsHasBeenSet = true; m_startWorkspaceRequests = value; }
 
     /**

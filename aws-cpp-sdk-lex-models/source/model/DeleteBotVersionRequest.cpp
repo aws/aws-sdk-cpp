@@ -30,7 +30,7 @@ DeleteBotVersionRequest::DeleteBotVersionRequest() :
 
 Aws::String DeleteBotVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

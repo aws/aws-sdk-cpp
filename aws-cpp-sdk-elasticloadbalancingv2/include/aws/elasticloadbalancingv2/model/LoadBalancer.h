@@ -64,6 +64,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
      */
+    inline bool LoadBalancerArnHasBeenSet() const { return m_loadBalancerArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the load balancer.</p>
+     */
     inline void SetLoadBalancerArn(const Aws::String& value) { m_loadBalancerArnHasBeenSet = true; m_loadBalancerArn = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
      * <p>The public DNS name of the load balancer.</p>
      */
     inline const Aws::String& GetDNSName() const{ return m_dNSName; }
+
+    /**
+     * <p>The public DNS name of the load balancer.</p>
+     */
+    inline bool DNSNameHasBeenSet() const { return m_dNSNameHasBeenSet; }
 
     /**
      * <p>The public DNS name of the load balancer.</p>
@@ -133,6 +143,12 @@ namespace Model
      * balancer.</p>
      */
     inline const Aws::String& GetCanonicalHostedZoneId() const{ return m_canonicalHostedZoneId; }
+
+    /**
+     * <p>The ID of the Amazon Route 53 hosted zone associated with the load
+     * balancer.</p>
+     */
+    inline bool CanonicalHostedZoneIdHasBeenSet() const { return m_canonicalHostedZoneIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Route 53 hosted zone associated with the load
@@ -179,6 +195,11 @@ namespace Model
     /**
      * <p>The date and time the load balancer was created.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the load balancer was created.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -201,6 +222,11 @@ namespace Model
      * <p>The name of the load balancer.</p>
      */
     inline const Aws::String& GetLoadBalancerName() const{ return m_loadBalancerName; }
+
+    /**
+     * <p>The name of the load balancer.</p>
+     */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
 
     /**
      * <p>The name of the load balancer.</p>
@@ -244,6 +270,18 @@ namespace Model
      * access to the VPC for the load balancer.</p>
      */
     inline const LoadBalancerSchemeEnum& GetScheme() const{ return m_scheme; }
+
+    /**
+     * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
+     * DNS name of an Internet-facing load balancer is publicly resolvable to the
+     * public IP addresses of the nodes. Therefore, Internet-facing load balancers can
+     * route requests from clients over the internet.</p> <p>The nodes of an internal
+     * load balancer have only private IP addresses. The DNS name of an internal load
+     * balancer is publicly resolvable to the private IP addresses of the nodes.
+     * Therefore, internal load balancers can only route requests from clients with
+     * access to the VPC for the load balancer.</p>
+     */
+    inline bool SchemeHasBeenSet() const { return m_schemeHasBeenSet; }
 
     /**
      * <p>The nodes of an Internet-facing load balancer have public IP addresses. The
@@ -302,6 +340,11 @@ namespace Model
     /**
      * <p>The ID of the VPC for the load balancer.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC for the load balancer.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -338,6 +381,11 @@ namespace Model
     /**
      * <p>The state of the load balancer.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the load balancer.</p>
+     */
     inline void SetState(const LoadBalancerState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -364,6 +412,11 @@ namespace Model
     /**
      * <p>The type of load balancer.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of load balancer.</p>
+     */
     inline void SetType(const LoadBalancerTypeEnum& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -386,6 +439,11 @@ namespace Model
      * <p>The Availability Zones for the load balancer.</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The Availability Zones for the load balancer.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones for the load balancer.</p>
@@ -422,6 +480,11 @@ namespace Model
      * <p>The IDs of the security groups for the load balancer.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroups() const{ return m_securityGroups; }
+
+    /**
+     * <p>The IDs of the security groups for the load balancer.</p>
+     */
+    inline bool SecurityGroupsHasBeenSet() const { return m_securityGroupsHasBeenSet; }
 
     /**
      * <p>The IDs of the security groups for the load balancer.</p>
@@ -465,6 +528,13 @@ namespace Model
      * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
      */
     inline const IpAddressType& GetIpAddressType() const{ return m_ipAddressType; }
+
+    /**
+     * <p>The type of IP addresses used by the subnets for your load balancer. The
+     * possible values are <code>ipv4</code> (for IPv4 addresses) and
+     * <code>dualstack</code> (for IPv4 and IPv6 addresses).</p>
+     */
+    inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
 
     /**
      * <p>The type of IP addresses used by the subnets for your load balancer. The

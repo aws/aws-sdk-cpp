@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Information about the error that occurred. For more information about errors,
    * see <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/errors-overview.html">Error
    * Codes</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/UnsuccessfulItemError">AWS
    * API Reference</a></p>
@@ -56,6 +56,11 @@ namespace Model
      * <p>The error code.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The error code.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>The error code.</p>
@@ -92,6 +97,11 @@ namespace Model
      * <p>The error message accompanying the error code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The error message accompanying the error code.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The error message accompanying the error code.</p>

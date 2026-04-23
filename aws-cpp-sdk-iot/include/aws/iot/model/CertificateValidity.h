@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The certificate is not valid before this date.</p>
      */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
+
+    /**
+     * <p>The certificate is not valid before this date.</p>
+     */
     inline void SetNotBefore(const Aws::Utils::DateTime& value) { m_notBeforeHasBeenSet = true; m_notBefore = value; }
 
     /**
@@ -77,6 +82,11 @@ namespace Model
      * <p>The certificate is not valid after this date.</p>
      */
     inline const Aws::Utils::DateTime& GetNotAfter() const{ return m_notAfter; }
+
+    /**
+     * <p>The certificate is not valid after this date.</p>
+     */
+    inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
 
     /**
      * <p>The certificate is not valid after this date.</p>

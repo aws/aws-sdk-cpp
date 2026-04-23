@@ -14,17 +14,45 @@
   */
 
 #include <aws/core/platform/OSVersionInfo.h>
+#include <aws/core/utils/StringUtils.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 
 #include <iomanip>
 
 #pragma warning(disable: 4996)
 #include <windows.h>
-
+#include <stdio.h>
 namespace Aws
 {
 namespace OSVersionInfo
 {
+
+Aws::String GetSysCommandOutput(const char* command)
+{
+    Aws::String outputStr;
+    FILE* outputStream;
+    const int maxBufferSize = 256;
+    char outputBuffer[maxBufferSize];
+
+    outputStream = _popen(command, "r");
+
+    if (outputStream)
+    {
+        while (!feof(outputStream))
+        {
+            if (fgets(outputBuffer, maxBufferSize, outputStream) != nullptr)
+            {
+                outputStr.append(outputBuffer);
+            }
+        }
+
+        _pclose(outputStream);
+
+        return Aws::Utils::StringUtils::Trim(outputStr.c_str());
+    }
+
+    return {};
+}
 
 Aws::String ComputeOSVersionString() 
 {

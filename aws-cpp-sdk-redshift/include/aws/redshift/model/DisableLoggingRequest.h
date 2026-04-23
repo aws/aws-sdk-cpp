@@ -59,6 +59,12 @@ namespace Model
      * <p>The identifier of the cluster on which logging is to be stopped.</p>
      * <p>Example: <code>examplecluster</code> </p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the cluster on which logging is to be stopped.</p>
+     * <p>Example: <code>examplecluster</code> </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**

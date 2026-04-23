@@ -37,7 +37,7 @@ DescribeResourcePermissionsRequest::DescribeResourcePermissionsRequest() :
 
 Aws::String DescribeResourcePermissionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeResourcePermissionsRequest::GetRequestSpecificHeaders() const

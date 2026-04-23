@@ -28,7 +28,10 @@ UpdateResolverRequest::UpdateResolverRequest() :
     m_fieldNameHasBeenSet(false),
     m_dataSourceNameHasBeenSet(false),
     m_requestMappingTemplateHasBeenSet(false),
-    m_responseMappingTemplateHasBeenSet(false)
+    m_responseMappingTemplateHasBeenSet(false),
+    m_kind(ResolverKind::NOT_SET),
+    m_kindHasBeenSet(false),
+    m_pipelineConfigHasBeenSet(false)
 {
 }
 
@@ -51,6 +54,17 @@ Aws::String UpdateResolverRequest::SerializePayload() const
   if(m_responseMappingTemplateHasBeenSet)
   {
    payload.WithString("responseMappingTemplate", m_responseMappingTemplate);
+
+  }
+
+  if(m_kindHasBeenSet)
+  {
+   payload.WithString("kind", ResolverKindMapper::GetNameForResolverKind(m_kind));
+  }
+
+  if(m_pipelineConfigHasBeenSet)
+  {
+   payload.WithObject("pipelineConfig", m_pipelineConfig.Jsonize());
 
   }
 

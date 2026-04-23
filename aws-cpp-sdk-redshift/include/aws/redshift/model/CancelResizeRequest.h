@@ -56,6 +56,12 @@ namespace Model
      * <p>The unique identifier for the cluster that you want to cancel a resize
      * operation for.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the cluster that you want to cancel a resize
+     * operation for.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**

@@ -195,37 +195,37 @@ namespace Model
 
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline const Aws::String& GetDirectoryType() const{ return m_directoryType; }
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline void SetDirectoryType(const Aws::String& value) { m_directoryType = value; }
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline void SetDirectoryType(Aws::String&& value) { m_directoryType = std::move(value); }
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline void SetDirectoryType(const char* value) { m_directoryType.assign(value); }
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryType(const Aws::String& value) { SetDirectoryType(value); return *this;}
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryType(Aws::String&& value) { SetDirectoryType(std::move(value)); return *this;}
 
     /**
-     * <p>The type of directory associated with the Amazon WorkMail organization.</p>
+     * <p>The type of directory associated with the WorkMail organization.</p>
      */
     inline DescribeOrganizationResult& WithDirectoryType(const char* value) { SetDirectoryType(value); return *this;}
 
@@ -267,74 +267,74 @@ namespace Model
 
 
     /**
-     * <p>The date at which the organization became usable in the Amazon WorkMail
-     * context, in UNIX epoch time format.</p>
+     * <p>The date at which the organization became usable in the WorkMail context, in
+     * UNIX epoch time format.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletedDate() const{ return m_completedDate; }
 
     /**
-     * <p>The date at which the organization became usable in the Amazon WorkMail
-     * context, in UNIX epoch time format.</p>
+     * <p>The date at which the organization became usable in the WorkMail context, in
+     * UNIX epoch time format.</p>
      */
     inline void SetCompletedDate(const Aws::Utils::DateTime& value) { m_completedDate = value; }
 
     /**
-     * <p>The date at which the organization became usable in the Amazon WorkMail
-     * context, in UNIX epoch time format.</p>
+     * <p>The date at which the organization became usable in the WorkMail context, in
+     * UNIX epoch time format.</p>
      */
     inline void SetCompletedDate(Aws::Utils::DateTime&& value) { m_completedDate = std::move(value); }
 
     /**
-     * <p>The date at which the organization became usable in the Amazon WorkMail
-     * context, in UNIX epoch time format.</p>
+     * <p>The date at which the organization became usable in the WorkMail context, in
+     * UNIX epoch time format.</p>
      */
     inline DescribeOrganizationResult& WithCompletedDate(const Aws::Utils::DateTime& value) { SetCompletedDate(value); return *this;}
 
     /**
-     * <p>The date at which the organization became usable in the Amazon WorkMail
-     * context, in UNIX epoch time format.</p>
+     * <p>The date at which the organization became usable in the WorkMail context, in
+     * UNIX epoch time format.</p>
      */
     inline DescribeOrganizationResult& WithCompletedDate(Aws::Utils::DateTime&& value) { SetCompletedDate(std::move(value)); return *this;}
 
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline void SetErrorMessage(const Aws::String& value) { m_errorMessage = value; }
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline void SetErrorMessage(Aws::String&& value) { m_errorMessage = std::move(value); }
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline void SetErrorMessage(const char* value) { m_errorMessage.assign(value); }
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline DescribeOrganizationResult& WithErrorMessage(const Aws::String& value) { SetErrorMessage(value); return *this;}
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline DescribeOrganizationResult& WithErrorMessage(Aws::String&& value) { SetErrorMessage(std::move(value)); return *this;}
 
     /**
-     * <p>The (optional) error message indicating if unexpected behavior was
+     * <p>(Optional) The error message indicating if unexpected behavior was
      * encountered with regards to the organization.</p>
      */
     inline DescribeOrganizationResult& WithErrorMessage(const char* value) { SetErrorMessage(value); return *this;}

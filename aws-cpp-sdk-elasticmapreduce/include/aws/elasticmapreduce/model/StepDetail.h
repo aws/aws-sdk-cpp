@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The step configuration.</p>
      */
+    inline bool StepConfigHasBeenSet() const { return m_stepConfigHasBeenSet; }
+
+    /**
+     * <p>The step configuration.</p>
+     */
     inline void SetStepConfig(const StepConfig& value) { m_stepConfigHasBeenSet = true; m_stepConfig = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The description of the step status.</p>
      */
     inline const StepExecutionStatusDetail& GetExecutionStatusDetail() const{ return m_executionStatusDetail; }
+
+    /**
+     * <p>The description of the step status.</p>
+     */
+    inline bool ExecutionStatusDetailHasBeenSet() const { return m_executionStatusDetailHasBeenSet; }
 
     /**
      * <p>The description of the step status.</p>

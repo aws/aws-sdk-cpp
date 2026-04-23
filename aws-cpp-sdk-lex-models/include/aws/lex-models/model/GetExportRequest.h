@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the bot to export.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot to export.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The version of the bot to export.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the bot to export.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the bot to export.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The type of resource to export. </p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource to export. </p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The format of the exported data.</p>
      */
     inline const ExportType& GetExportType() const{ return m_exportType; }
+
+    /**
+     * <p>The format of the exported data.</p>
+     */
+    inline bool ExportTypeHasBeenSet() const { return m_exportTypeHasBeenSet; }
 
     /**
      * <p>The format of the exported data.</p>

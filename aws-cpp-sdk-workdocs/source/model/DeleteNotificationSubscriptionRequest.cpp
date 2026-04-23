@@ -30,7 +30,7 @@ DeleteNotificationSubscriptionRequest::DeleteNotificationSubscriptionRequest() :
 
 Aws::String DeleteNotificationSubscriptionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

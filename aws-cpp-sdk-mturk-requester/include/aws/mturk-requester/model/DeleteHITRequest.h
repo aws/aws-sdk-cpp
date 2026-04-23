@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the HIT to be deleted.</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the HIT to be deleted.</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**

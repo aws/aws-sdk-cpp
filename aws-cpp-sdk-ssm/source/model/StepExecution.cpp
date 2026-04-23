@@ -53,7 +53,9 @@ StepExecution::StepExecution() :
     m_nextStepHasBeenSet(false),
     m_isCritical(false),
     m_isCriticalHasBeenSet(false),
-    m_validNextStepsHasBeenSet(false)
+    m_validNextStepsHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_targetLocationHasBeenSet(false)
 {
 }
 
@@ -82,7 +84,9 @@ StepExecution::StepExecution(JsonView jsonValue) :
     m_nextStepHasBeenSet(false),
     m_isCritical(false),
     m_isCriticalHasBeenSet(false),
-    m_validNextStepsHasBeenSet(false)
+    m_validNextStepsHasBeenSet(false),
+    m_targetsHasBeenSet(false),
+    m_targetLocationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -255,6 +259,23 @@ StepExecution& StepExecution::operator =(JsonView jsonValue)
     m_validNextStepsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("Targets"))
+  {
+    Array<JsonView> targetsJsonList = jsonValue.GetArray("Targets");
+    for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+    {
+      m_targets.push_back(targetsJsonList[targetsIndex].AsObject());
+    }
+    m_targetsHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("TargetLocation"))
+  {
+    m_targetLocation = jsonValue.GetObject("TargetLocation");
+
+    m_targetLocationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -406,6 +427,23 @@ JsonValue StepExecution::Jsonize() const
      validNextStepsJsonList[validNextStepsIndex].AsString(m_validNextSteps[validNextStepsIndex]);
    }
    payload.WithArray("ValidNextSteps", std::move(validNextStepsJsonList));
+
+  }
+
+  if(m_targetsHasBeenSet)
+  {
+   Array<JsonValue> targetsJsonList(m_targets.size());
+   for(unsigned targetsIndex = 0; targetsIndex < targetsJsonList.GetLength(); ++targetsIndex)
+   {
+     targetsJsonList[targetsIndex].AsObject(m_targets[targetsIndex].Jsonize());
+   }
+   payload.WithArray("Targets", std::move(targetsJsonList));
+
+  }
+
+  if(m_targetLocationHasBeenSet)
+  {
+   payload.WithObject("TargetLocation", m_targetLocation.Jsonize());
 
   }
 

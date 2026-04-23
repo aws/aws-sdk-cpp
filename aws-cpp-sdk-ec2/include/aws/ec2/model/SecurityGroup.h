@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>A description of the security group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the security group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the security group.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the security group.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the security group.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>One or more inbound rules associated with the security group.</p>
      */
+    inline bool IpPermissionsHasBeenSet() const { return m_ipPermissionsHasBeenSet; }
+
+    /**
+     * <p>One or more inbound rules associated with the security group.</p>
+     */
     inline void SetIpPermissions(const Aws::Vector<IpPermission>& value) { m_ipPermissionsHasBeenSet = true; m_ipPermissions = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>The AWS account ID of the owner of the security group.</p>
      */
     inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The AWS account ID of the owner of the security group.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the owner of the security group.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
      * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
      */
     inline const Aws::Vector<IpPermission>& GetIpPermissionsEgress() const{ return m_ipPermissionsEgress; }
+
+    /**
+     * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
+     */
+    inline bool IpPermissionsEgressHasBeenSet() const { return m_ipPermissionsEgressHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] One or more outbound rules associated with the security group.</p>
@@ -276,6 +306,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the security group.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the security group.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -308,6 +343,11 @@ namespace Model
      * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
      */
     inline const Aws::String& GetVpcId() const{ return m_vpcId; }
+
+    /**
+     * <p>[EC2-VPC] The ID of the VPC for the security group.</p>
+     */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] The ID of the VPC for the security group.</p>

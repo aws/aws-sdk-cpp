@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of your database for which to update parameters.</p>
      */
+    inline bool RelationalDatabaseNameHasBeenSet() const { return m_relationalDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of your database for which to update parameters.</p>
+     */
     inline void SetRelationalDatabaseName(const Aws::String& value) { m_relationalDatabaseNameHasBeenSet = true; m_relationalDatabaseName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The database parameters to update.</p>
      */
     inline const Aws::Vector<RelationalDatabaseParameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>The database parameters to update.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>The database parameters to update.</p>

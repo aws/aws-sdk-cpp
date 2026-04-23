@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Represents the access token of the request to verify user attributes.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>Represents the access token of the request to verify user attributes.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The attribute name in the request to verify user attributes.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The attribute name in the request to verify user attributes.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The verification code in the request to verify user attributes.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>The verification code in the request to verify user attributes.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>The verification code in the request to verify user attributes.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the device.</p>
      */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the device.</p>
+     */
     inline void SetDeviceId(const Aws::String& value) { m_deviceIdHasBeenSet = true; m_deviceId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the vendor.</p>
      */
     inline const Aws::String& GetVendorId() const{ return m_vendorId; }
+
+    /**
+     * <p>The ID of the vendor.</p>
+     */
+    inline bool VendorIdHasBeenSet() const { return m_vendorIdHasBeenSet; }
 
     /**
      * <p>The ID of the vendor.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the subsystem.</p>
      */
+    inline bool SubsystemIdHasBeenSet() const { return m_subsystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the subsystem.</p>
+     */
     inline void SetSubsystemId(const Aws::String& value) { m_subsystemIdHasBeenSet = true; m_subsystemId = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The ID of the vendor for the subsystem.</p>
      */
     inline const Aws::String& GetSubsystemVendorId() const{ return m_subsystemVendorId; }
+
+    /**
+     * <p>The ID of the vendor for the subsystem.</p>
+     */
+    inline bool SubsystemVendorIdHasBeenSet() const { return m_subsystemVendorIdHasBeenSet; }
 
     /**
      * <p>The ID of the vendor for the subsystem.</p>

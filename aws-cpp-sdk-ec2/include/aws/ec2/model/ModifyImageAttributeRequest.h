@@ -66,6 +66,13 @@ namespace Model
      * <code>description</code>, <code>launchPermission</code>, and
      * <code>productCodes</code>.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute to modify. The valid values are
+     * <code>description</code>, <code>launchPermission</code>, and
+     * <code>productCodes</code>.</p>
+     */
     inline void SetAttribute(const Aws::String& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -112,6 +119,11 @@ namespace Model
     /**
      * <p>A new description for the AMI.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A new description for the AMI.</p>
+     */
     inline void SetDescription(const AttributeValue& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -134,6 +146,11 @@ namespace Model
      * <p>The ID of the AMI.</p>
      */
     inline const Aws::String& GetImageId() const{ return m_imageId; }
+
+    /**
+     * <p>The ID of the AMI.</p>
+     */
+    inline bool ImageIdHasBeenSet() const { return m_imageIdHasBeenSet; }
 
     /**
      * <p>The ID of the AMI.</p>
@@ -174,6 +191,11 @@ namespace Model
     /**
      * <p>A new launch permission for the AMI.</p>
      */
+    inline bool LaunchPermissionHasBeenSet() const { return m_launchPermissionHasBeenSet; }
+
+    /**
+     * <p>A new launch permission for the AMI.</p>
+     */
     inline void SetLaunchPermission(const LaunchPermissionModifications& value) { m_launchPermissionHasBeenSet = true; m_launchPermission = value; }
 
     /**
@@ -197,6 +219,12 @@ namespace Model
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline const OperationType& GetOperationType() const{ return m_operationType; }
+
+    /**
+     * <p>The operation type. This parameter can be used only when the
+     * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
+     */
+    inline bool OperationTypeHasBeenSet() const { return m_operationTypeHasBeenSet; }
 
     /**
      * <p>The operation type. This parameter can be used only when the
@@ -228,6 +256,12 @@ namespace Model
      * can't be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetProductCodes() const{ return m_productCodes; }
+
+    /**
+     * <p>One or more DevPay product codes. After you add a product code to an AMI, it
+     * can't be removed.</p>
+     */
+    inline bool ProductCodesHasBeenSet() const { return m_productCodesHasBeenSet; }
 
     /**
      * <p>One or more DevPay product codes. After you add a product code to an AMI, it
@@ -282,6 +316,12 @@ namespace Model
      * <p>One or more user groups. This parameter can be used only when the
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
+    inline bool UserGroupsHasBeenSet() const { return m_userGroupsHasBeenSet; }
+
+    /**
+     * <p>One or more user groups. This parameter can be used only when the
+     * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
+     */
     inline void SetUserGroups(const Aws::Vector<Aws::String>& value) { m_userGroupsHasBeenSet = true; m_userGroups = value; }
 
     /**
@@ -326,6 +366,12 @@ namespace Model
      * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserIds() const{ return m_userIds; }
+
+    /**
+     * <p>One or more AWS account IDs. This parameter can be used only when the
+     * <code>Attribute</code> parameter is <code>launchPermission</code>.</p>
+     */
+    inline bool UserIdsHasBeenSet() const { return m_userIdsHasBeenSet; }
 
     /**
      * <p>One or more AWS account IDs. This parameter can be used only when the
@@ -382,6 +428,13 @@ namespace Model
      * when the <code>Attribute</code> parameter is <code>description</code> or
      * <code>productCodes</code>.</p>
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * <p>The value of the attribute being modified. This parameter can be used only
+     * when the <code>Attribute</code> parameter is <code>description</code> or
+     * <code>productCodes</code>.</p>
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -427,6 +480,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

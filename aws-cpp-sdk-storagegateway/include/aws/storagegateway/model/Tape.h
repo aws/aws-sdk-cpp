@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
      */
+    inline bool TapeARNHasBeenSet() const { return m_tapeARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the virtual tape.</p>
+     */
     inline void SetTapeARN(const Aws::String& value) { m_tapeARNHasBeenSet = true; m_tapeARN = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The barcode that identifies a specific virtual tape.</p>
      */
     inline const Aws::String& GetTapeBarcode() const{ return m_tapeBarcode; }
+
+    /**
+     * <p>The barcode that identifies a specific virtual tape.</p>
+     */
+    inline bool TapeBarcodeHasBeenSet() const { return m_tapeBarcodeHasBeenSet; }
 
     /**
      * <p>The barcode that identifies a specific virtual tape.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The date the virtual tape was created.</p>
      */
+    inline bool TapeCreatedDateHasBeenSet() const { return m_tapeCreatedDateHasBeenSet; }
+
+    /**
+     * <p>The date the virtual tape was created.</p>
+     */
     inline void SetTapeCreatedDate(const Aws::Utils::DateTime& value) { m_tapeCreatedDateHasBeenSet = true; m_tapeCreatedDate = value; }
 
     /**
@@ -154,6 +169,11 @@ namespace Model
     /**
      * <p>The size, in bytes, of the virtual tape capacity.</p>
      */
+    inline bool TapeSizeInBytesHasBeenSet() const { return m_tapeSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of the virtual tape capacity.</p>
+     */
     inline void SetTapeSizeInBytes(long long value) { m_tapeSizeInBytesHasBeenSet = true; m_tapeSizeInBytes = value; }
 
     /**
@@ -166,6 +186,11 @@ namespace Model
      * <p>The current state of the virtual tape.</p>
      */
     inline const Aws::String& GetTapeStatus() const{ return m_tapeStatus; }
+
+    /**
+     * <p>The current state of the virtual tape.</p>
+     */
+    inline bool TapeStatusHasBeenSet() const { return m_tapeStatusHasBeenSet; }
 
     /**
      * <p>The current state of the virtual tape.</p>
@@ -203,6 +228,12 @@ namespace Model
      * with.</p>
      */
     inline const Aws::String& GetVTLDevice() const{ return m_vTLDevice; }
+
+    /**
+     * <p>The virtual tape library (VTL) device that the virtual tape is associated
+     * with.</p>
+     */
+    inline bool VTLDeviceHasBeenSet() const { return m_vTLDeviceHasBeenSet; }
 
     /**
      * <p>The virtual tape library (VTL) device that the virtual tape is associated
@@ -253,6 +284,13 @@ namespace Model
      * before archiving is complete.</p> <p>Range: 0 (not started) to 100
      * (complete).</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>For archiving virtual tapes, indicates how much data remains to be uploaded
+     * before archiving is complete.</p> <p>Range: 0 (not started) to 100
+     * (complete).</p>
+     */
     inline void SetProgress(double value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -273,6 +311,12 @@ namespace Model
      * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
      * value is not available for tapes created prior to May 13, 2015.</p> </note>
      */
+    inline bool TapeUsedInBytesHasBeenSet() const { return m_tapeUsedInBytesHasBeenSet; }
+
+    /**
+     * <p>The size, in bytes, of data stored on the virtual tape.</p> <note> <p>This
+     * value is not available for tapes created prior to May 13, 2015.</p> </note>
+     */
     inline void SetTapeUsedInBytes(long long value) { m_tapeUsedInBytesHasBeenSet = true; m_tapeUsedInBytes = value; }
 
     /**
@@ -284,6 +328,9 @@ namespace Model
 
     
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     
     inline void SetKMSKey(const Aws::String& value) { m_kMSKeyHasBeenSet = true; m_kMSKey = value; }
@@ -302,6 +349,79 @@ namespace Model
 
     
     inline Tape& WithKMSKey(const char* value) { SetKMSKey(value); return *this;}
+
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline const Aws::String& GetPoolId() const{ return m_poolId; }
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline bool PoolIdHasBeenSet() const { return m_poolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const Aws::String& value) { m_poolIdHasBeenSet = true; m_poolId = value; }
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(Aws::String&& value) { m_poolIdHasBeenSet = true; m_poolId = std::move(value); }
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline void SetPoolId(const char* value) { m_poolIdHasBeenSet = true; m_poolId.assign(value); }
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline Tape& WithPoolId(const Aws::String& value) { SetPoolId(value); return *this;}
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline Tape& WithPoolId(Aws::String&& value) { SetPoolId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the pool that contains tapes that will be archived. The tapes in
+     * this pool are archived in the S3 storage class that is associated with the pool.
+     * When you use your backup application to eject the tape, the tape is archived
+     * directly into the storage class (Glacier or Deep Archive) that corresponds to
+     * the pool.</p> <p>Valid values: "GLACIER", "DEEP_ARCHIVE"</p>
+     */
+    inline Tape& WithPoolId(const char* value) { SetPoolId(value); return *this;}
 
   private:
 
@@ -331,6 +451,9 @@ namespace Model
 
     Aws::String m_kMSKey;
     bool m_kMSKeyHasBeenSet;
+
+    Aws::String m_poolId;
+    bool m_poolIdHasBeenSet;
   };
 
 } // namespace Model

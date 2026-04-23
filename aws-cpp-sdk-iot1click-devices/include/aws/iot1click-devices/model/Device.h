@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The user specified attributes associated with the device for an event.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The user specified attributes associated with the device for an event.</p>
+     */
     inline void SetAttributes(const Attributes& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
      * <p>The unique identifier of the device.</p>
      */
     inline const Aws::String& GetDeviceId() const{ return m_deviceId; }
+
+    /**
+     * <p>The unique identifier of the device.</p>
+     */
+    inline bool DeviceIdHasBeenSet() const { return m_deviceIdHasBeenSet; }
 
     /**
      * <p>The unique identifier of the device.</p>
@@ -109,6 +119,11 @@ namespace Model
      * <p>The device type, such as "button".</p>
      */
     inline const Aws::String& GetType() const{ return m_type; }
+
+    /**
+     * <p>The device type, such as "button".</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The device type, such as "button".</p>

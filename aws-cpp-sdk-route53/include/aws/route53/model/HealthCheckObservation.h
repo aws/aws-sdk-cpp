@@ -60,6 +60,12 @@ namespace Model
      * <p>The region of the Amazon Route 53 health checker that provided the status in
      * <code>StatusReport</code>.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The region of the Amazon Route 53 health checker that provided the status in
+     * <code>StatusReport</code>.</p>
+     */
     inline void SetRegion(const HealthCheckRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -86,6 +92,12 @@ namespace Model
      * failure reason in <code>StatusReport</code>.</p>
      */
     inline const Aws::String& GetIPAddress() const{ return m_iPAddress; }
+
+    /**
+     * <p>The IP address of the Amazon Route 53 health checker that provided the
+     * failure reason in <code>StatusReport</code>.</p>
+     */
+    inline bool IPAddressHasBeenSet() const { return m_iPAddressHasBeenSet; }
 
     /**
      * <p>The IP address of the Amazon Route 53 health checker that provided the
@@ -129,6 +141,12 @@ namespace Model
      * Amazon Route 53 health checker and the time of the failed health check.</p>
      */
     inline const StatusReport& GetStatusReport() const{ return m_statusReport; }
+
+    /**
+     * <p>A complex type that contains the last failure reason as reported by one
+     * Amazon Route 53 health checker and the time of the failed health check.</p>
+     */
+    inline bool StatusReportHasBeenSet() const { return m_statusReportHasBeenSet; }
 
     /**
      * <p>A complex type that contains the last failure reason as reported by one

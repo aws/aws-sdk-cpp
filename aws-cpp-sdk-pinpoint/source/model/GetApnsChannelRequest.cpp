@@ -29,7 +29,7 @@ GetApnsChannelRequest::GetApnsChannelRequest() :
 
 Aws::String GetApnsChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

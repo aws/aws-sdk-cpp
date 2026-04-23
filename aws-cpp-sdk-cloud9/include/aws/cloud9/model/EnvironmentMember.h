@@ -66,6 +66,15 @@ namespace Model
      * the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write
      * access to the environment.</p> </li> </ul>
      */
+    inline bool PermissionsHasBeenSet() const { return m_permissionsHasBeenSet; }
+
+    /**
+     * <p>The type of environment member permissions associated with this environment
+     * member. Available values include:</p> <ul> <li> <p> <code>owner</code>: Owns the
+     * environment.</p> </li> <li> <p> <code>read-only</code>: Has read-only access to
+     * the environment.</p> </li> <li> <p> <code>read-write</code>: Has read-write
+     * access to the environment.</p> </li> </ul>
+     */
     inline void SetPermissions(const Permissions& value) { m_permissionsHasBeenSet = true; m_permissions = value; }
 
     /**
@@ -101,6 +110,12 @@ namespace Model
      * environment member.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
+     * environment member.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The user ID in AWS Identity and Access Management (AWS IAM) of the
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the environment member.</p>
      */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the environment member.</p>
+     */
     inline void SetUserArn(const Aws::String& value) { m_userArnHasBeenSet = true; m_userArn = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
      * <p>The ID of the environment for the environment member.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
+    /**
+     * <p>The ID of the environment for the environment member.</p>
+     */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
      * <p>The ID of the environment for the environment member.</p>
@@ -216,6 +241,12 @@ namespace Model
      * opened the environment.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccess() const{ return m_lastAccess; }
+
+    /**
+     * <p>The time, expressed in epoch time format, when the environment member last
+     * opened the environment.</p>
+     */
+    inline bool LastAccessHasBeenSet() const { return m_lastAccessHasBeenSet; }
 
     /**
      * <p>The time, expressed in epoch time format, when the environment member last

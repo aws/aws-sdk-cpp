@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of an existing Amazon SageMaker endpoint.</p>
      */
+    inline bool EndpointNameHasBeenSet() const { return m_endpointNameHasBeenSet; }
+
+    /**
+     * <p>The name of an existing Amazon SageMaker endpoint.</p>
+     */
     inline void SetEndpointName(const Aws::String& value) { m_endpointNameHasBeenSet = true; m_endpointName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>An object that provides new capacity and weight values for a variant.</p>
      */
     inline const Aws::Vector<DesiredWeightAndCapacity>& GetDesiredWeightsAndCapacities() const{ return m_desiredWeightsAndCapacities; }
+
+    /**
+     * <p>An object that provides new capacity and weight values for a variant.</p>
+     */
+    inline bool DesiredWeightsAndCapacitiesHasBeenSet() const { return m_desiredWeightsAndCapacitiesHasBeenSet; }
 
     /**
      * <p>An object that provides new capacity and weight values for a variant.</p>

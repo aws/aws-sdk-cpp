@@ -77,6 +77,21 @@ namespace Model
      * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
      * you have access to one-day shipping and two-day shipping.</p> </li> </ul>
      */
+    inline bool ShippingOptionHasBeenSet() const { return m_shippingOptionHasBeenSet; }
+
+    /**
+     * <p>The shipping speed for a particular job. This speed doesn't dictate how soon
+     * you'll get the Snowball from the job's creation date. This speed represents how
+     * quickly it moves to its destination while in transit. Regional shipping speeds
+     * are as follows:</p> <ul> <li> <p>In Australia, you have access to express
+     * shipping. Typically, Snowballs shipped express are delivered in about a day.</p>
+     * </li> <li> <p>In the European Union (EU), you have access to express shipping.
+     * Typically, Snowballs shipped express are delivered in about a day. In addition,
+     * most countries in the EU have access to standard shipping, which typically takes
+     * less than a week, one way.</p> </li> <li> <p>In India, Snowballs are delivered
+     * in one to seven days.</p> </li> <li> <p>In the United States of America (US),
+     * you have access to one-day shipping and two-day shipping.</p> </li> </ul>
+     */
     inline void SetShippingOption(const ShippingOption& value) { m_shippingOptionHasBeenSet = true; m_shippingOption = value; }
 
     /**
@@ -135,6 +150,12 @@ namespace Model
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
      * being returned to AWS for a particular job.</p>
      */
+    inline bool InboundShipmentHasBeenSet() const { return m_inboundShipmentHasBeenSet; }
+
+    /**
+     * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
+     * being returned to AWS for a particular job.</p>
+     */
     inline void SetInboundShipment(const Shipment& value) { m_inboundShipmentHasBeenSet = true; m_inboundShipment = value; }
 
     /**
@@ -161,6 +182,12 @@ namespace Model
      * being delivered to the address that you specified for a particular job.</p>
      */
     inline const Shipment& GetOutboundShipment() const{ return m_outboundShipment; }
+
+    /**
+     * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball
+     * being delivered to the address that you specified for a particular job.</p>
+     */
+    inline bool OutboundShipmentHasBeenSet() const { return m_outboundShipmentHasBeenSet; }
 
     /**
      * <p>The <code>Status</code> and <code>TrackingNumber</code> values for a Snowball

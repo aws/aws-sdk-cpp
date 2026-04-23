@@ -35,7 +35,7 @@ GetSegmentVersionsRequest::GetSegmentVersionsRequest() :
 
 Aws::String GetSegmentVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetSegmentVersionsRequest::AddQueryStringParameters(URI& uri) const

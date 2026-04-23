@@ -61,6 +61,12 @@ namespace Model
      * <p>The cost or usage amount that is associated with a budget forecast, actual
      * spend, or budget threshold.</p>
      */
+    inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+
+    /**
+     * <p>The cost or usage amount that is associated with a budget forecast, actual
+     * spend, or budget threshold.</p>
+     */
     inline void SetAmount(const Aws::String& value) { m_amountHasBeenSet = true; m_amount = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * or budget threshold, such as dollars or GB.</p>
      */
     inline const Aws::String& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit of measurement that is used for the budget forecast, actual spend,
+     * or budget threshold, such as dollars or GB.</p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit of measurement that is used for the budget forecast, actual spend,

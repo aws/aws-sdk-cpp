@@ -60,6 +60,13 @@ namespace Model
      * <code>GeoMatchSetId</code> in a <a>GetGeoMatchSet</a> request to get detailed
      * information about an <a>GeoMatchSet</a>.</p>
      */
+    inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>GeoMatchSetId</code> for an <a>GeoMatchSet</a>. You can use
+     * <code>GeoMatchSetId</code> in a <a>GetGeoMatchSet</a> request to get detailed
+     * information about an <a>GeoMatchSet</a>.</p>
+     */
     inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * the name of an <code>GeoMatchSet</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change
+     * the name of an <code>GeoMatchSet</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>GeoMatchSet</a>. You can't change

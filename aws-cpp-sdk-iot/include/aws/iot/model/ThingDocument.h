@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/iot/model/ThingConnectivity.h>
 #include <utility>
 
 namespace Aws
@@ -53,6 +54,11 @@ namespace Model
      * <p>The thing name.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The thing name.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The thing name.</p>
@@ -93,6 +99,11 @@ namespace Model
     /**
      * <p>The thing ID.</p>
      */
+    inline bool ThingIdHasBeenSet() const { return m_thingIdHasBeenSet; }
+
+    /**
+     * <p>The thing ID.</p>
+     */
     inline void SetThingId(const Aws::String& value) { m_thingIdHasBeenSet = true; m_thingId = value; }
 
     /**
@@ -129,6 +140,11 @@ namespace Model
     /**
      * <p>The thing type name.</p>
      */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
+
+    /**
+     * <p>The thing type name.</p>
+     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
 
     /**
@@ -161,6 +177,11 @@ namespace Model
      * <p>Thing group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetThingGroupNames() const{ return m_thingGroupNames; }
+
+    /**
+     * <p>Thing group names.</p>
+     */
+    inline bool ThingGroupNamesHasBeenSet() const { return m_thingGroupNamesHasBeenSet; }
 
     /**
      * <p>Thing group names.</p>
@@ -202,6 +223,11 @@ namespace Model
      * <p>The attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The attributes.</p>
@@ -267,6 +293,11 @@ namespace Model
     /**
      * <p>The shadow.</p>
      */
+    inline bool ShadowHasBeenSet() const { return m_shadowHasBeenSet; }
+
+    /**
+     * <p>The shadow.</p>
+     */
     inline void SetShadow(const Aws::String& value) { m_shadowHasBeenSet = true; m_shadow = value; }
 
     /**
@@ -294,6 +325,37 @@ namespace Model
      */
     inline ThingDocument& WithShadow(const char* value) { SetShadow(value); return *this;}
 
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline const ThingConnectivity& GetConnectivity() const{ return m_connectivity; }
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline bool ConnectivityHasBeenSet() const { return m_connectivityHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline void SetConnectivity(const ThingConnectivity& value) { m_connectivityHasBeenSet = true; m_connectivity = value; }
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline void SetConnectivity(ThingConnectivity&& value) { m_connectivityHasBeenSet = true; m_connectivity = std::move(value); }
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline ThingDocument& WithConnectivity(const ThingConnectivity& value) { SetConnectivity(value); return *this;}
+
+    /**
+     * <p>Indicates whether the thing is connected to the AWS IoT service.</p>
+     */
+    inline ThingDocument& WithConnectivity(ThingConnectivity&& value) { SetConnectivity(std::move(value)); return *this;}
+
   private:
 
     Aws::String m_thingName;
@@ -313,6 +375,9 @@ namespace Model
 
     Aws::String m_shadow;
     bool m_shadowHasBeenSet;
+
+    ThingConnectivity m_connectivity;
+    bool m_connectivityHasBeenSet;
   };
 
 } // namespace Model

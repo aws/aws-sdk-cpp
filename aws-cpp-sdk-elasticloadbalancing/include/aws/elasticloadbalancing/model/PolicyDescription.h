@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the policy.</p>
      */
+    inline bool PolicyNameHasBeenSet() const { return m_policyNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy.</p>
+     */
     inline void SetPolicyName(const Aws::String& value) { m_policyNameHasBeenSet = true; m_policyName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The name of the policy type.</p>
      */
+    inline bool PolicyTypeNameHasBeenSet() const { return m_policyTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the policy type.</p>
+     */
     inline void SetPolicyTypeName(const Aws::String& value) { m_policyTypeNameHasBeenSet = true; m_policyTypeName = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The policy attributes.</p>
      */
     inline const Aws::Vector<PolicyAttributeDescription>& GetPolicyAttributeDescriptions() const{ return m_policyAttributeDescriptions; }
+
+    /**
+     * <p>The policy attributes.</p>
+     */
+    inline bool PolicyAttributeDescriptionsHasBeenSet() const { return m_policyAttributeDescriptionsHasBeenSet; }
 
     /**
      * <p>The policy attributes.</p>

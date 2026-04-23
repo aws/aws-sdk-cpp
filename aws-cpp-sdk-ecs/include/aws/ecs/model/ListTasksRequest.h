@@ -58,6 +58,13 @@ namespace Model
      * the tasks to list. If you do not specify a cluster, the default cluster is
      * assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
+     * the tasks to list. If you do not specify a cluster, the default cluster is
+     * assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -103,6 +110,14 @@ namespace Model
      * container instance.</p>
      */
     inline const Aws::String& GetContainerInstance() const{ return m_containerInstance; }
+
+    /**
+     * <p>The container instance ID or full ARN of the container instance with which to
+     * filter the <code>ListTasks</code> results. Specifying a
+     * <code>containerInstance</code> limits the results to tasks that belong to that
+     * container instance.</p>
+     */
+    inline bool ContainerInstanceHasBeenSet() const { return m_containerInstanceHasBeenSet; }
 
     /**
      * <p>The container instance ID or full ARN of the container instance with which to
@@ -165,6 +180,13 @@ namespace Model
      * results. Specifying a <code>family</code> limits the results to tasks that
      * belong to that family.</p>
      */
+    inline bool FamilyHasBeenSet() const { return m_familyHasBeenSet; }
+
+    /**
+     * <p>The name of the family with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>family</code> limits the results to tasks that
+     * belong to that family.</p>
+     */
     inline void SetFamily(const Aws::String& value) { m_familyHasBeenSet = true; m_family = value; }
 
     /**
@@ -213,6 +235,17 @@ namespace Model
      * purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>ListTasks</code> request where <code>maxResults</code> was used and the
+     * results exceeded the value of that parameter. Pagination continues from the end
+     * of the previous results that returned the <code>nextToken</code> value.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated
@@ -303,6 +336,18 @@ namespace Model
      * this parameter is not used, then <code>ListTasks</code> returns up to 100
      * results and a <code>nextToken</code> value if applicable.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of task results returned by <code>ListTasks</code> in
+     * paginated output. When this parameter is used, <code>ListTasks</code> only
+     * returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>ListTasks</code> request with the
+     * returned <code>nextToken</code> value. This value can be between 1 and 100. If
+     * this parameter is not used, then <code>ListTasks</code> returns up to 100
+     * results and a <code>nextToken</code> value if applicable.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -324,6 +369,13 @@ namespace Model
      * started with that value.</p>
      */
     inline const Aws::String& GetStartedBy() const{ return m_startedBy; }
+
+    /**
+     * <p>The <code>startedBy</code> value with which to filter the task results.
+     * Specifying a <code>startedBy</code> value limits the results to tasks that were
+     * started with that value.</p>
+     */
+    inline bool StartedByHasBeenSet() const { return m_startedByHasBeenSet; }
 
     /**
      * <p>The <code>startedBy</code> value with which to filter the task results.
@@ -374,6 +426,13 @@ namespace Model
      * belong to that service.</p>
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * <p>The name of the service with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>serviceName</code> limits the results to tasks that
+     * belong to that service.</p>
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * <p>The name of the service with which to filter the <code>ListTasks</code>
@@ -446,6 +505,21 @@ namespace Model
      * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
      * </note>
      */
+    inline bool DesiredStatusHasBeenSet() const { return m_desiredStatusHasBeenSet; }
+
+    /**
+     * <p>The task desired status with which to filter the <code>ListTasks</code>
+     * results. Specifying a <code>desiredStatus</code> of <code>STOPPED</code> limits
+     * the results to tasks that Amazon ECS has set the desired status to
+     * <code>STOPPED</code>. This can be useful for debugging tasks that are not
+     * starting properly or have died or finished. The default status filter is
+     * <code>RUNNING</code>, which shows tasks that Amazon ECS has set the desired
+     * status to <code>RUNNING</code>.</p> <note> <p>Although you can filter results
+     * based on a desired status of <code>PENDING</code>, this does not return any
+     * results. Amazon ECS never sets the desired status of a task to that value (only
+     * a task's <code>lastStatus</code> may have a value of <code>PENDING</code>).</p>
+     * </note>
+     */
     inline void SetDesiredStatus(const DesiredStatus& value) { m_desiredStatusHasBeenSet = true; m_desiredStatus = value; }
 
     /**
@@ -498,6 +572,11 @@ namespace Model
      * <p>The launch type for services to list.</p>
      */
     inline const LaunchType& GetLaunchType() const{ return m_launchType; }
+
+    /**
+     * <p>The launch type for services to list.</p>
+     */
+    inline bool LaunchTypeHasBeenSet() const { return m_launchTypeHasBeenSet; }
 
     /**
      * <p>The launch type for services to list.</p>

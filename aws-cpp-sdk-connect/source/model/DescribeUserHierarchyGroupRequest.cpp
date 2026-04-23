@@ -30,7 +30,7 @@ DescribeUserHierarchyGroupRequest::DescribeUserHierarchyGroupRequest() :
 
 Aws::String DescribeUserHierarchyGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

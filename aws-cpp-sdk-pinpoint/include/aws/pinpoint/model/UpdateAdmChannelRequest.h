@@ -47,6 +47,9 @@ namespace Model
     inline const ADMChannelRequest& GetADMChannelRequest() const{ return m_aDMChannelRequest; }
 
     
+    inline bool ADMChannelRequestHasBeenSet() const { return m_aDMChannelRequestHasBeenSet; }
+
+    
     inline void SetADMChannelRequest(const ADMChannelRequest& value) { m_aDMChannelRequestHasBeenSet = true; m_aDMChannelRequest = value; }
 
     
@@ -63,6 +66,11 @@ namespace Model
      * The unique ID of your Amazon Pinpoint application.
      */
     inline const Aws::String& GetApplicationId() const{ return m_applicationId; }
+
+    /**
+     * The unique ID of your Amazon Pinpoint application.
+     */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
 
     /**
      * The unique ID of your Amazon Pinpoint application.

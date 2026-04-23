@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The descriptive name for the alarm.</p>
      */
+    inline bool AlarmNameHasBeenSet() const { return m_alarmNameHasBeenSet; }
+
+    /**
+     * <p>The descriptive name for the alarm.</p>
+     */
     inline void SetAlarmName(const Aws::String& value) { m_alarmNameHasBeenSet = true; m_alarmName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The time stamp for the alarm history item.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The time stamp for the alarm history item.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
     /**
      * <p>The type of alarm history item.</p>
      */
+    inline bool HistoryItemTypeHasBeenSet() const { return m_historyItemTypeHasBeenSet; }
+
+    /**
+     * <p>The type of alarm history item.</p>
+     */
     inline void SetHistoryItemType(const HistoryItemType& value) { m_historyItemTypeHasBeenSet = true; m_historyItemType = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>A summary of the alarm history, in text format.</p>
      */
     inline const Aws::String& GetHistorySummary() const{ return m_historySummary; }
+
+    /**
+     * <p>A summary of the alarm history, in text format.</p>
+     */
+    inline bool HistorySummaryHasBeenSet() const { return m_historySummaryHasBeenSet; }
 
     /**
      * <p>A summary of the alarm history, in text format.</p>
@@ -179,6 +199,11 @@ namespace Model
      * <p>Data about the alarm, in JSON format.</p>
      */
     inline const Aws::String& GetHistoryData() const{ return m_historyData; }
+
+    /**
+     * <p>Data about the alarm, in JSON format.</p>
+     */
+    inline bool HistoryDataHasBeenSet() const { return m_historyDataHasBeenSet; }
 
     /**
      * <p>Data about the alarm, in JSON format.</p>

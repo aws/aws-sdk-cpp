@@ -58,6 +58,12 @@ namespace Model
      * <p>List of selectors that define the query. An object must satisfy all of the
      * selectors to match the query.</p>
      */
+    inline bool SelectorsHasBeenSet() const { return m_selectorsHasBeenSet; }
+
+    /**
+     * <p>List of selectors that define the query. An object must satisfy all of the
+     * selectors to match the query.</p>
+     */
     inline void SetSelectors(const Aws::Vector<Selector>& value) { m_selectorsHasBeenSet = true; m_selectors = value; }
 
     /**

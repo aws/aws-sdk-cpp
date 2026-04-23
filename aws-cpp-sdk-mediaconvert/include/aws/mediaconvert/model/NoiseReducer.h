@@ -53,51 +53,126 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
     inline const NoiseReducerFilter& GetFilter() const{ return m_filter; }
 
-    
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
     inline void SetFilter(const NoiseReducerFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
-    
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
     inline void SetFilter(NoiseReducerFilter&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
-    
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
     inline NoiseReducer& WithFilter(const NoiseReducerFilter& value) { SetFilter(value); return *this;}
 
-    
+    /**
+     * Use Noise reducer filter (NoiseReducerFilter) to select one of the following
+     * spatial image filtering functions. To use this setting, you must also enable
+     * Noise reducer (NoiseReducer). * Bilateral is an edge preserving noise reduction
+     * filter. * Mean (softest), Gaussian, Lanczos, and Sharpen (sharpest) are
+     * convolution filters. * Conserve is a min/max noise reduction filter. * Spatial
+     * is a frequency-domain filter based on JND principles.
+     */
     inline NoiseReducer& WithFilter(NoiseReducerFilter&& value) { SetFilter(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Settings for a noise reducer filter
+     */
     inline const NoiseReducerFilterSettings& GetFilterSettings() const{ return m_filterSettings; }
 
-    
+    /**
+     * Settings for a noise reducer filter
+     */
+    inline bool FilterSettingsHasBeenSet() const { return m_filterSettingsHasBeenSet; }
+
+    /**
+     * Settings for a noise reducer filter
+     */
     inline void SetFilterSettings(const NoiseReducerFilterSettings& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = value; }
 
-    
+    /**
+     * Settings for a noise reducer filter
+     */
     inline void SetFilterSettings(NoiseReducerFilterSettings&& value) { m_filterSettingsHasBeenSet = true; m_filterSettings = std::move(value); }
 
-    
+    /**
+     * Settings for a noise reducer filter
+     */
     inline NoiseReducer& WithFilterSettings(const NoiseReducerFilterSettings& value) { SetFilterSettings(value); return *this;}
 
-    
+    /**
+     * Settings for a noise reducer filter
+     */
     inline NoiseReducer& WithFilterSettings(NoiseReducerFilterSettings&& value) { SetFilterSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
     inline const NoiseReducerSpatialFilterSettings& GetSpatialFilterSettings() const{ return m_spatialFilterSettings; }
 
-    
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
+    inline bool SpatialFilterSettingsHasBeenSet() const { return m_spatialFilterSettingsHasBeenSet; }
+
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
     inline void SetSpatialFilterSettings(const NoiseReducerSpatialFilterSettings& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = value; }
 
-    
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
     inline void SetSpatialFilterSettings(NoiseReducerSpatialFilterSettings&& value) { m_spatialFilterSettingsHasBeenSet = true; m_spatialFilterSettings = std::move(value); }
 
-    
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
     inline NoiseReducer& WithSpatialFilterSettings(const NoiseReducerSpatialFilterSettings& value) { SetSpatialFilterSettings(value); return *this;}
 
-    
+    /**
+     * Noise reducer filter settings for spatial filter.
+     */
     inline NoiseReducer& WithSpatialFilterSettings(NoiseReducerSpatialFilterSettings&& value) { SetSpatialFilterSettings(std::move(value)); return *this;}
 
   private:

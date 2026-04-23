@@ -57,6 +57,11 @@ namespace Model
     /**
      * The number of channel types in the imported segment.
      */
+    inline bool ChannelCountsHasBeenSet() const { return m_channelCountsHasBeenSet; }
+
+    /**
+     * The number of channel types in the imported segment.
+     */
     inline void SetChannelCounts(const Aws::Map<Aws::String, int>& value) { m_channelCountsHasBeenSet = true; m_channelCounts = value; }
 
     /**
@@ -97,6 +102,14 @@ namespace Model
      * assumed by Amazon Pinpoint.
      */
     inline const Aws::String& GetExternalId() const{ return m_externalId; }
+
+    /**
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
+     */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
 
     /**
      * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
@@ -159,6 +172,13 @@ Valid values: CSV, JSON
      * segment.
 Valid values: CSV, JSON
      */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
+
+    /**
+     * The format of the endpoint files that were imported to create this
+     * segment.
+Valid values: CSV, JSON
+     */
     inline void SetFormat(const Format& value) { m_formatHasBeenSet = true; m_format = value; }
 
     /**
@@ -188,6 +208,12 @@ Valid values: CSV, JSON
      * to the endpoints in Amazon S3.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
+     * to the endpoints in Amazon S3.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of an IAM role that grants Amazon Pinpoint access
@@ -234,6 +260,11 @@ Valid values: CSV, JSON
     /**
      * The URL of the S3 bucket that the segment was imported from.
      */
+    inline bool S3UrlHasBeenSet() const { return m_s3UrlHasBeenSet; }
+
+    /**
+     * The URL of the S3 bucket that the segment was imported from.
+     */
     inline void SetS3Url(const Aws::String& value) { m_s3UrlHasBeenSet = true; m_s3Url = value; }
 
     /**
@@ -266,6 +297,11 @@ Valid values: CSV, JSON
      * The number of endpoints that were successfully imported to create this segment.
      */
     inline int GetSize() const{ return m_size; }
+
+    /**
+     * The number of endpoints that were successfully imported to create this segment.
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * The number of endpoints that were successfully imported to create this segment.

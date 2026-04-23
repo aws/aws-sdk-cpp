@@ -58,6 +58,13 @@ namespace Model
      * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
      * and '.'.
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The name of the domain to create. The name can range between 3 and 255
+     * characters and can contain the following characters: a-z, A-Z, 0-9, '_', '-',
+     * and '.'.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

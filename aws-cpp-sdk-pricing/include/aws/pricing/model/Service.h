@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The code for the AWS service.</p>
      */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>The code for the AWS service.</p>
+     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The attributes that are available for this service.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>The attributes that are available for this service.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>The attributes that are available for this service.</p>

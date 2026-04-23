@@ -60,6 +60,12 @@ namespace Model
      * <p>The default attributes (key/value pairs) to be applied to all placements
      * using this template.</p>
      */
+    inline bool DefaultAttributesHasBeenSet() const { return m_defaultAttributesHasBeenSet; }
+
+    /**
+     * <p>The default attributes (key/value pairs) to be applied to all placements
+     * using this template.</p>
+     */
     inline void SetDefaultAttributes(const Aws::Map<Aws::String, Aws::String>& value) { m_defaultAttributesHasBeenSet = true; m_defaultAttributes = value; }
 
     /**
@@ -128,6 +134,12 @@ namespace Model
      * (<a>PlacementTemplate</a>) template.</p>
      */
     inline const Aws::Map<Aws::String, DeviceTemplate>& GetDeviceTemplates() const{ return m_deviceTemplates; }
+
+    /**
+     * <p>An object specifying the <a>DeviceTemplate</a> for all placements using this
+     * (<a>PlacementTemplate</a>) template.</p>
+     */
+    inline bool DeviceTemplatesHasBeenSet() const { return m_deviceTemplatesHasBeenSet; }
 
     /**
      * <p>An object specifying the <a>DeviceTemplate</a> for all placements using this

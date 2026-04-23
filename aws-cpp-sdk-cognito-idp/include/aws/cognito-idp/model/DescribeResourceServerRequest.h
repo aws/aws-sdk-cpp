@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool that hosts the resource server.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool that hosts the resource server.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The identifier for the resource server</p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+
+    /**
+     * <p>The identifier for the resource server</p>
+     */
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>The identifier for the resource server</p>

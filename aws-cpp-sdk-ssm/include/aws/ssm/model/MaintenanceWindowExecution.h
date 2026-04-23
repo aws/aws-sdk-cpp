@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of the Maintenance Window execution.</p>
      */
     inline const Aws::String& GetWindowExecutionId() const{ return m_windowExecutionId; }
+
+    /**
+     * <p>The ID of the Maintenance Window execution.</p>
+     */
+    inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
 
     /**
      * <p>The ID of the Maintenance Window execution.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The status of the execution.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the execution.</p>
+     */
     inline void SetStatus(const MaintenanceWindowExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -153,6 +168,12 @@ namespace Model
      * values.</p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>The details explaining the Status. Only available for certain status
+     * values.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>The details explaining the Status. Only available for certain status
@@ -199,6 +220,11 @@ namespace Model
     /**
      * <p>The time the execution started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time the execution started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -221,6 +247,11 @@ namespace Model
      * <p>The time the execution finished.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The time the execution finished.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The time the execution finished.</p>

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>[Required] The Id of the usage plan associated with the usage data.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The Id of the usage plan associated with the usage data.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The Id of the API key associated with the resultant usage data.</p>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The Id of the API key associated with the resultant usage data.</p>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The Id of the API key associated with the resultant usage data.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>[Required] The starting date (e.g., 2016-01-01) of the usage data.</p>
+     */
     inline void SetStartDate(const Aws::String& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
      * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
      */
     inline const Aws::String& GetEndDate() const{ return m_endDate; }
+
+    /**
+     * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
+     */
+    inline bool EndDateHasBeenSet() const { return m_endDateHasBeenSet; }
 
     /**
      * <p>[Required] The ending date (e.g., 2016-12-31) of the usage data.</p>
@@ -204,6 +224,11 @@ namespace Model
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
@@ -237,6 +262,12 @@ namespace Model
      * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of returned results per page. The default value is 25 and

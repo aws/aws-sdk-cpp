@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The stack name.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The stack name.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The stack name.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The stack's ARN.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The stack's ARN.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>The number of layers.</p>
      */
+    inline bool LayersCountHasBeenSet() const { return m_layersCountHasBeenSet; }
+
+    /**
+     * <p>The number of layers.</p>
+     */
     inline void SetLayersCount(int value) { m_layersCountHasBeenSet = true; m_layersCount = value; }
 
     /**
@@ -177,6 +197,11 @@ namespace Model
      * <p>The number of apps.</p>
      */
     inline int GetAppsCount() const{ return m_appsCount; }
+
+    /**
+     * <p>The number of apps.</p>
+     */
+    inline bool AppsCountHasBeenSet() const { return m_appsCountHasBeenSet; }
 
     /**
      * <p>The number of apps.</p>
@@ -194,6 +219,12 @@ namespace Model
      * status.</p>
      */
     inline const InstancesCount& GetInstancesCount() const{ return m_instancesCount; }
+
+    /**
+     * <p>An <code>InstancesCount</code> object with the number of instances in each
+     * status.</p>
+     */
+    inline bool InstancesCountHasBeenSet() const { return m_instancesCountHasBeenSet; }
 
     /**
      * <p>An <code>InstancesCount</code> object with the number of instances in each

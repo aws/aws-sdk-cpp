@@ -56,6 +56,11 @@ namespace Model
     /**
      * The time, in milliseconds since the epoch, when the deployment was created.
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * The time, in milliseconds since the epoch, when the deployment was created.
+     */
     inline void SetCreatedAt(const Aws::String& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ARN of the deployment.
      */
     inline const Aws::String& GetDeploymentArn() const{ return m_deploymentArn; }
+
+    /**
+     * The ARN of the deployment.
+     */
+    inline bool DeploymentArnHasBeenSet() const { return m_deploymentArnHasBeenSet; }
 
     /**
      * The ARN of the deployment.
@@ -128,6 +138,11 @@ namespace Model
     /**
      * The ID of the deployment.
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * The ID of the deployment.
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * The type of the deployment.
      */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * The type of the deployment.
+     */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
@@ -186,6 +206,11 @@ namespace Model
      * The ARN of the group for this deployment.
      */
     inline const Aws::String& GetGroupArn() const{ return m_groupArn; }
+
+    /**
+     * The ARN of the group for this deployment.
+     */
+    inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
 
     /**
      * The ARN of the group for this deployment.

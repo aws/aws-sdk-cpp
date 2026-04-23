@@ -33,10 +33,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ModifyInstanceAttribute.</p><p><h3>See Also:</h3>
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ModifyInstanceAttributeRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API ModifyInstanceAttributeRequest : public EC2Request
   {
@@ -63,6 +59,14 @@ namespace Model
      * instance to perform NAT.</p>
      */
     inline const AttributeBooleanValue& GetSourceDestCheck() const{ return m_sourceDestCheck; }
+
+    /**
+     * <p>Specifies whether source/destination checking is enabled. A value of
+     * <code>true</code> means that checking is enabled, and <code>false</code> means
+     * that checking is disabled. This value must be <code>false</code> for a NAT
+     * instance to perform NAT.</p>
+     */
+    inline bool SourceDestCheckHasBeenSet() const { return m_sourceDestCheckHasBeenSet; }
 
     /**
      * <p>Specifies whether source/destination checking is enabled. A value of
@@ -105,6 +109,11 @@ namespace Model
     /**
      * <p>The name of the attribute.</p>
      */
+    inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute.</p>
+     */
     inline void SetAttribute(const InstanceAttributeName& value) { m_attributeHasBeenSet = true; m_attribute = value; }
 
     /**
@@ -130,7 +139,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -143,7 +152,20 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
+     * Compute Cloud User Guide</i>.</p>
+     */
+    inline bool BlockDeviceMappingsHasBeenSet() const { return m_blockDeviceMappingsHasBeenSet; }
+
+    /**
+     * <p>Modifies the <code>DeleteOnTermination</code> attribute for volumes that are
+     * currently attached. The volume must be owned by the caller. If no value is
+     * specified for <code>DeleteOnTermination</code>, the default is <code>true</code>
+     * and the volume is deleted when the instance is terminated.</p> <p>To add
+     * instance store volumes to an Amazon EBS-backed instance, you must add them when
+     * you launch the instance. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -156,7 +178,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -169,7 +191,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -182,7 +204,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -195,7 +217,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -208,7 +230,7 @@ namespace Model
      * and the volume is deleted when the instance is terminated.</p> <p>To add
      * instance store volumes to an Amazon EBS-backed instance, you must add them when
      * you launch the instance. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/block-device-mapping-concepts.html#Using_OverridingAMIBDM">Updating
      * the Block Device Mapping when Launching an Instance</a> in the <i>Amazon Elastic
      * Compute Cloud User Guide</i>.</p>
      */
@@ -221,6 +243,13 @@ namespace Model
      * parameter for Spot Instances.</p>
      */
     inline const AttributeBooleanValue& GetDisableApiTermination() const{ return m_disableApiTermination; }
+
+    /**
+     * <p>If the value is <code>true</code>, you can't terminate the instance using the
+     * Amazon EC2 console, CLI, or API; otherwise, you can. You cannot use this
+     * parameter for Spot Instances.</p>
+     */
+    inline bool DisableApiTerminationHasBeenSet() const { return m_disableApiTerminationHasBeenSet; }
 
     /**
      * <p>If the value is <code>true</code>, you can't terminate the instance using the
@@ -265,6 +294,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -284,6 +321,15 @@ namespace Model
      * using an EBS Optimized instance.</p>
      */
     inline const AttributeBooleanValue& GetEbsOptimized() const{ return m_ebsOptimized; }
+
+    /**
+     * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
+     * optimization provides dedicated throughput to Amazon EBS and an optimized
+     * configuration stack to provide optimal EBS I/O performance. This optimization
+     * isn't available with all instance types. Additional usage charges apply when
+     * using an EBS Optimized instance.</p>
+     */
+    inline bool EbsOptimizedHasBeenSet() const { return m_ebsOptimizedHasBeenSet; }
 
     /**
      * <p>Specifies whether the instance is optimized for Amazon EBS I/O. This
@@ -334,6 +380,13 @@ namespace Model
      * instance.</p> <p>This option is supported only for HVM instances. Specifying
      * this option with a PV instance can make it unreachable.</p>
      */
+    inline bool EnaSupportHasBeenSet() const { return m_enaSupportHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to enable enhanced networking with ENA for the
+     * instance.</p> <p>This option is supported only for HVM instances. Specifying
+     * this option with a PV instance can make it unreachable.</p>
+     */
     inline void SetEnaSupport(const AttributeBooleanValue& value) { m_enaSupportHasBeenSet = true; m_enaSupport = value; }
 
     /**
@@ -364,6 +417,13 @@ namespace Model
      * VPC. You must specify the security group ID, not the security group name.</p>
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
+     * least one security group, even if it's just the default security group for the
+     * VPC. You must specify the security group ID, not the security group name.</p>
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * <p>[EC2-VPC] Changes the security groups of the instance. You must specify at
@@ -423,6 +483,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -461,6 +526,12 @@ namespace Model
      * <p>Specifies whether an instance stops or terminates when you initiate shutdown
      * from the instance (using the operating system command for system shutdown).</p>
      */
+    inline bool InstanceInitiatedShutdownBehaviorHasBeenSet() const { return m_instanceInitiatedShutdownBehaviorHasBeenSet; }
+
+    /**
+     * <p>Specifies whether an instance stops or terminates when you initiate shutdown
+     * from the instance (using the operating system command for system shutdown).</p>
+     */
     inline void SetInstanceInitiatedShutdownBehavior(const AttributeValue& value) { m_instanceInitiatedShutdownBehaviorHasBeenSet = true; m_instanceInitiatedShutdownBehavior = value; }
 
     /**
@@ -485,7 +556,7 @@ namespace Model
     /**
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
@@ -494,7 +565,16 @@ namespace Model
     /**
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * Types</a>. If the instance type is not valid, the error returned is
+     * <code>InvalidInstanceAttributeValue</code>.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p>Changes the instance type to the specified value. For more information, see
+     * <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
@@ -503,7 +583,7 @@ namespace Model
     /**
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
@@ -512,7 +592,7 @@ namespace Model
     /**
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
@@ -521,7 +601,7 @@ namespace Model
     /**
      * <p>Changes the instance type to the specified value. For more information, see
      * <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/instance-types.html">Instance
      * Types</a>. If the instance type is not valid, the error returned is
      * <code>InvalidInstanceAttributeValue</code>.</p>
      */
@@ -531,35 +611,42 @@ namespace Model
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline const AttributeValue& GetKernel() const{ return m_kernel; }
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     */
+    inline bool KernelHasBeenSet() const { return m_kernelHasBeenSet; }
+
+    /**
+     * <p>Changes the instance's kernel to the specified value. We recommend that you
+     * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline void SetKernel(const AttributeValue& value) { m_kernelHasBeenSet = true; m_kernel = value; }
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline void SetKernel(AttributeValue&& value) { m_kernelHasBeenSet = true; m_kernel = std::move(value); }
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithKernel(const AttributeValue& value) { SetKernel(value); return *this;}
 
     /**
      * <p>Changes the instance's kernel to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithKernel(AttributeValue&& value) { SetKernel(std::move(value)); return *this;}
 
@@ -567,35 +654,42 @@ namespace Model
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline const AttributeValue& GetRamdisk() const{ return m_ramdisk; }
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     */
+    inline bool RamdiskHasBeenSet() const { return m_ramdiskHasBeenSet; }
+
+    /**
+     * <p>Changes the instance's RAM disk to the specified value. We recommend that you
+     * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline void SetRamdisk(const AttributeValue& value) { m_ramdiskHasBeenSet = true; m_ramdisk = value; }
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline void SetRamdisk(AttributeValue&& value) { m_ramdiskHasBeenSet = true; m_ramdisk = std::move(value); }
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithRamdisk(const AttributeValue& value) { SetRamdisk(value); return *this;}
 
     /**
      * <p>Changes the instance's RAM disk to the specified value. We recommend that you
      * use PV-GRUB instead of kernels and RAM disks. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/UserProvidedKernels.html">PV-GRUB</a>.</p>
      */
     inline ModifyInstanceAttributeRequest& WithRamdisk(AttributeValue&& value) { SetRamdisk(std::move(value)); return *this;}
 
@@ -608,6 +702,15 @@ namespace Model
      * option with a PV instance can make it unreachable.</p>
      */
     inline const AttributeValue& GetSriovNetSupport() const{ return m_sriovNetSupport; }
+
+    /**
+     * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
+     * Virtual Function interface for the instance.</p> <p>There is no way to disable
+     * enhanced networking with the Intel 82599 Virtual Function interface at this
+     * time.</p> <p>This option is supported only for HVM instances. Specifying this
+     * option with a PV instance can make it unreachable.</p>
+     */
+    inline bool SriovNetSupportHasBeenSet() const { return m_sriovNetSupportHasBeenSet; }
 
     /**
      * <p>Set to <code>simple</code> to enable enhanced networking with the Intel 82599
@@ -658,6 +761,13 @@ namespace Model
      * AWS SDK or command line tool, base64-encoding is performed for you, and you can
      * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
      */
+    inline bool UserDataHasBeenSet() const { return m_userDataHasBeenSet; }
+
+    /**
+     * <p>Changes the instance's user data to the specified value. If you are using an
+     * AWS SDK or command line tool, base64-encoding is performed for you, and you can
+     * load the text from a file. Otherwise, you must provide base64-encoded text.</p>
+     */
     inline void SetUserData(const BlobAttributeValue& value) { m_userDataHasBeenSet = true; m_userData = value; }
 
     /**
@@ -688,6 +798,13 @@ namespace Model
      * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>A new value for the attribute. Use only with the <code>kernel</code>,
+     * <code>ramdisk</code>, <code>userData</code>, <code>disableApiTermination</code>,
+     * or <code>instanceInitiatedShutdownBehavior</code> attribute.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>A new value for the attribute. Use only with the <code>kernel</code>,

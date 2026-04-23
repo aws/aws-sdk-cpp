@@ -32,13 +32,25 @@ namespace Model
 
 RuleCondition::RuleCondition() : 
     m_fieldHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_hostHeaderConfigHasBeenSet(false),
+    m_pathPatternConfigHasBeenSet(false),
+    m_httpHeaderConfigHasBeenSet(false),
+    m_queryStringConfigHasBeenSet(false),
+    m_httpRequestMethodConfigHasBeenSet(false),
+    m_sourceIpConfigHasBeenSet(false)
 {
 }
 
 RuleCondition::RuleCondition(const XmlNode& xmlNode) : 
     m_fieldHasBeenSet(false),
-    m_valuesHasBeenSet(false)
+    m_valuesHasBeenSet(false),
+    m_hostHeaderConfigHasBeenSet(false),
+    m_pathPatternConfigHasBeenSet(false),
+    m_httpHeaderConfigHasBeenSet(false),
+    m_queryStringConfigHasBeenSet(false),
+    m_httpRequestMethodConfigHasBeenSet(false),
+    m_sourceIpConfigHasBeenSet(false)
 {
   *this = xmlNode;
 }
@@ -67,6 +79,42 @@ RuleCondition& RuleCondition::operator =(const XmlNode& xmlNode)
 
       m_valuesHasBeenSet = true;
     }
+    XmlNode hostHeaderConfigNode = resultNode.FirstChild("HostHeaderConfig");
+    if(!hostHeaderConfigNode.IsNull())
+    {
+      m_hostHeaderConfig = hostHeaderConfigNode;
+      m_hostHeaderConfigHasBeenSet = true;
+    }
+    XmlNode pathPatternConfigNode = resultNode.FirstChild("PathPatternConfig");
+    if(!pathPatternConfigNode.IsNull())
+    {
+      m_pathPatternConfig = pathPatternConfigNode;
+      m_pathPatternConfigHasBeenSet = true;
+    }
+    XmlNode httpHeaderConfigNode = resultNode.FirstChild("HttpHeaderConfig");
+    if(!httpHeaderConfigNode.IsNull())
+    {
+      m_httpHeaderConfig = httpHeaderConfigNode;
+      m_httpHeaderConfigHasBeenSet = true;
+    }
+    XmlNode queryStringConfigNode = resultNode.FirstChild("QueryStringConfig");
+    if(!queryStringConfigNode.IsNull())
+    {
+      m_queryStringConfig = queryStringConfigNode;
+      m_queryStringConfigHasBeenSet = true;
+    }
+    XmlNode httpRequestMethodConfigNode = resultNode.FirstChild("HttpRequestMethodConfig");
+    if(!httpRequestMethodConfigNode.IsNull())
+    {
+      m_httpRequestMethodConfig = httpRequestMethodConfigNode;
+      m_httpRequestMethodConfigHasBeenSet = true;
+    }
+    XmlNode sourceIpConfigNode = resultNode.FirstChild("SourceIpConfig");
+    if(!sourceIpConfigNode.IsNull())
+    {
+      m_sourceIpConfig = sourceIpConfigNode;
+      m_sourceIpConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -88,6 +136,48 @@ void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location, 
       }
   }
 
+  if(m_hostHeaderConfigHasBeenSet)
+  {
+      Aws::StringStream hostHeaderConfigLocationAndMemberSs;
+      hostHeaderConfigLocationAndMemberSs << location << index << locationValue << ".HostHeaderConfig";
+      m_hostHeaderConfig.OutputToStream(oStream, hostHeaderConfigLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_pathPatternConfigHasBeenSet)
+  {
+      Aws::StringStream pathPatternConfigLocationAndMemberSs;
+      pathPatternConfigLocationAndMemberSs << location << index << locationValue << ".PathPatternConfig";
+      m_pathPatternConfig.OutputToStream(oStream, pathPatternConfigLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_httpHeaderConfigHasBeenSet)
+  {
+      Aws::StringStream httpHeaderConfigLocationAndMemberSs;
+      httpHeaderConfigLocationAndMemberSs << location << index << locationValue << ".HttpHeaderConfig";
+      m_httpHeaderConfig.OutputToStream(oStream, httpHeaderConfigLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_queryStringConfigHasBeenSet)
+  {
+      Aws::StringStream queryStringConfigLocationAndMemberSs;
+      queryStringConfigLocationAndMemberSs << location << index << locationValue << ".QueryStringConfig";
+      m_queryStringConfig.OutputToStream(oStream, queryStringConfigLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_httpRequestMethodConfigHasBeenSet)
+  {
+      Aws::StringStream httpRequestMethodConfigLocationAndMemberSs;
+      httpRequestMethodConfigLocationAndMemberSs << location << index << locationValue << ".HttpRequestMethodConfig";
+      m_httpRequestMethodConfig.OutputToStream(oStream, httpRequestMethodConfigLocationAndMemberSs.str().c_str());
+  }
+
+  if(m_sourceIpConfigHasBeenSet)
+  {
+      Aws::StringStream sourceIpConfigLocationAndMemberSs;
+      sourceIpConfigLocationAndMemberSs << location << index << locationValue << ".SourceIpConfig";
+      m_sourceIpConfig.OutputToStream(oStream, sourceIpConfigLocationAndMemberSs.str().c_str());
+  }
+
 }
 
 void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location) const
@@ -103,6 +193,42 @@ void RuleCondition::OutputToStream(Aws::OStream& oStream, const char* location) 
       {
         oStream << location << ".Values.member." << valuesIdx++ << "=" << StringUtils::URLEncode(item.c_str()) << "&";
       }
+  }
+  if(m_hostHeaderConfigHasBeenSet)
+  {
+      Aws::String hostHeaderConfigLocationAndMember(location);
+      hostHeaderConfigLocationAndMember += ".HostHeaderConfig";
+      m_hostHeaderConfig.OutputToStream(oStream, hostHeaderConfigLocationAndMember.c_str());
+  }
+  if(m_pathPatternConfigHasBeenSet)
+  {
+      Aws::String pathPatternConfigLocationAndMember(location);
+      pathPatternConfigLocationAndMember += ".PathPatternConfig";
+      m_pathPatternConfig.OutputToStream(oStream, pathPatternConfigLocationAndMember.c_str());
+  }
+  if(m_httpHeaderConfigHasBeenSet)
+  {
+      Aws::String httpHeaderConfigLocationAndMember(location);
+      httpHeaderConfigLocationAndMember += ".HttpHeaderConfig";
+      m_httpHeaderConfig.OutputToStream(oStream, httpHeaderConfigLocationAndMember.c_str());
+  }
+  if(m_queryStringConfigHasBeenSet)
+  {
+      Aws::String queryStringConfigLocationAndMember(location);
+      queryStringConfigLocationAndMember += ".QueryStringConfig";
+      m_queryStringConfig.OutputToStream(oStream, queryStringConfigLocationAndMember.c_str());
+  }
+  if(m_httpRequestMethodConfigHasBeenSet)
+  {
+      Aws::String httpRequestMethodConfigLocationAndMember(location);
+      httpRequestMethodConfigLocationAndMember += ".HttpRequestMethodConfig";
+      m_httpRequestMethodConfig.OutputToStream(oStream, httpRequestMethodConfigLocationAndMember.c_str());
+  }
+  if(m_sourceIpConfigHasBeenSet)
+  {
+      Aws::String sourceIpConfigLocationAndMember(location);
+      sourceIpConfigLocationAndMember += ".SourceIpConfig";
+      m_sourceIpConfig.OutputToStream(oStream, sourceIpConfigLocationAndMember.c_str());
   }
 }
 

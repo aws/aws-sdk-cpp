@@ -58,6 +58,12 @@ namespace Model
      * <p>The string that matches the query string specified in the
      * <code>SuggestRequest</code>. </p>
      */
+    inline bool SuggestionHasBeenSet() const { return m_suggestionHasBeenSet; }
+
+    /**
+     * <p>The string that matches the query string specified in the
+     * <code>SuggestRequest</code>. </p>
+     */
     inline void SetSuggestion(const Aws::String& value) { m_suggestionHasBeenSet = true; m_suggestion = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The relevance score of a suggested match.</p>
      */
+    inline bool ScoreHasBeenSet() const { return m_scoreHasBeenSet; }
+
+    /**
+     * <p>The relevance score of a suggested match.</p>
+     */
     inline void SetScore(long long value) { m_scoreHasBeenSet = true; m_score = value; }
 
     /**
@@ -111,6 +122,11 @@ namespace Model
      * <p>The document ID of the suggested document.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The document ID of the suggested document.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The document ID of the suggested document.</p>

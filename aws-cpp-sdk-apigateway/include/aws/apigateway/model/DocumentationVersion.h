@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The version identifier of the API documentation snapshot.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version identifier of the API documentation snapshot.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -99,6 +104,11 @@ namespace Model
     /**
      * <p>The date when the API documentation snapshot is created.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the API documentation snapshot is created.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -121,6 +131,11 @@ namespace Model
      * <p>The description of the API documentation snapshot.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the API documentation snapshot.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the API documentation snapshot.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * A list of devices in the definition version.
      */
+    inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
+
+    /**
+     * A list of devices in the definition version.
+     */
     inline void SetDevices(const Aws::Vector<Device>& value) { m_devicesHasBeenSet = true; m_devices = value; }
 
     /**

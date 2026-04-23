@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the assessment run whose agents you want to list.</p>
      */
+    inline bool AssessmentRunArnHasBeenSet() const { return m_assessmentRunArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment run whose agents you want to list.</p>
+     */
     inline void SetAssessmentRunArn(const Aws::String& value) { m_assessmentRunArnHasBeenSet = true; m_assessmentRunArn = value; }
 
     /**
@@ -95,6 +100,14 @@ namespace Model
      * attributes must match. When multiple values are specified for a filter
      * attribute, any of the values can match.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>You can use this parameter to specify a subset of data to be included in the
+     * action's response.</p> <p>For a record to match a filter, all specified filter
+     * attributes must match. When multiple values are specified for a filter
+     * attribute, any of the values can match.</p>
+     */
     inline void SetFilter(const AgentFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -130,6 +143,15 @@ namespace Model
      * data.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>You can use this parameter when paginating results. Set the value of this
+     * parameter to null on your first call to the <b>ListAssessmentRunAgents</b>
+     * action. Subsequent calls to the action fill <b>nextToken</b> in the request with
+     * the value of <b>NextToken</b> from the previous response to continue listing
+     * data.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>You can use this parameter when paginating results. Set the value of this
@@ -191,6 +213,12 @@ namespace Model
      * want in the response. The default value is 10. The maximum value is 500.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>You can use this parameter to indicate the maximum number of items that you
+     * want in the response. The default value is 10. The maximum value is 500.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>You can use this parameter to indicate the maximum number of items that you

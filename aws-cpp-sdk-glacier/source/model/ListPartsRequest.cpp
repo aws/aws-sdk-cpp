@@ -36,7 +36,7 @@ ListPartsRequest::ListPartsRequest() :
 
 Aws::String ListPartsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPartsRequest::AddQueryStringParameters(URI& uri) const

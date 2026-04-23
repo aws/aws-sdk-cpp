@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
      */
+    inline bool ExtendedKeyUsageHasBeenSet() const { return m_extendedKeyUsageHasBeenSet; }
+
+    /**
+     * <p>Specify one or more <a>ExtendedKeyUsage</a> extension values.</p>
+     */
     inline void SetExtendedKeyUsage(const Aws::Vector<ExtendedKeyUsageName>& value) { m_extendedKeyUsageHasBeenSet = true; m_extendedKeyUsage = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>Specify one or more <a>KeyUsage</a> extension values.</p>
      */
+    inline bool KeyUsageHasBeenSet() const { return m_keyUsageHasBeenSet; }
+
+    /**
+     * <p>Specify one or more <a>KeyUsage</a> extension values.</p>
+     */
     inline void SetKeyUsage(const Aws::Vector<KeyUsageName>& value) { m_keyUsageHasBeenSet = true; m_keyUsage = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
      */
     inline const Aws::Vector<KeyAlgorithm>& GetKeyTypes() const{ return m_keyTypes; }
+
+    /**
+     * <p>Specify one or more algorithms that can be used to generate key pairs.</p>
+     */
+    inline bool KeyTypesHasBeenSet() const { return m_keyTypesHasBeenSet; }
 
     /**
      * <p>Specify one or more algorithms that can be used to generate key pairs.</p>

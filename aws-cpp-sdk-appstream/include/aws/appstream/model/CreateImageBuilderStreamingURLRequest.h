@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the image builder.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the image builder.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * between 1 and 604800 seconds. The default is 3600 seconds.</p>
      */
     inline long long GetValidity() const{ return m_validity; }
+
+    /**
+     * <p>The time that the streaming URL will be valid, in seconds. Specify a value
+     * between 1 and 604800 seconds. The default is 3600 seconds.</p>
+     */
+    inline bool ValidityHasBeenSet() const { return m_validityHasBeenSet; }
 
     /**
      * <p>The time that the streaming URL will be valid, in seconds. Specify a value

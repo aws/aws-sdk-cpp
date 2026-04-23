@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the user the signing certificate is associated with.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The name of the user the signing certificate is associated with.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The ID for the signing certificate.</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the signing certificate.</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -129,6 +139,11 @@ namespace Model
      * <p>The contents of the signing certificate.</p>
      */
     inline const Aws::String& GetCertificateBody() const{ return m_certificateBody; }
+
+    /**
+     * <p>The contents of the signing certificate.</p>
+     */
+    inline bool CertificateBodyHasBeenSet() const { return m_certificateBodyHasBeenSet; }
 
     /**
      * <p>The contents of the signing certificate.</p>
@@ -171,6 +186,12 @@ namespace Model
      * <p>The status of the signing certificate. <code>Active</code> means that the key
      * is valid for API calls, while <code>Inactive</code> means it is not.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the signing certificate. <code>Active</code> means that the key
+     * is valid for API calls, while <code>Inactive</code> means it is not.</p>
+     */
     inline void SetStatus(const StatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -196,6 +217,11 @@ namespace Model
      * <p>The date when the signing certificate was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetUploadDate() const{ return m_uploadDate; }
+
+    /**
+     * <p>The date when the signing certificate was uploaded.</p>
+     */
+    inline bool UploadDateHasBeenSet() const { return m_uploadDateHasBeenSet; }
 
     /**
      * <p>The date when the signing certificate was uploaded.</p>

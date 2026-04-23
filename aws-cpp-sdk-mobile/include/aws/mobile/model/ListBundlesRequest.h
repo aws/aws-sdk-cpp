@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p> Maximum number of records to list in a single response. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p> Maximum number of records to list in a single response. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -74,6 +79,13 @@ namespace Model
      * in another request to list more bundles. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p> Pagination token. Set to null to start listing bundles from start. If
+     * non-null pagination token is returned in a result, then pass its value in here
+     * in another request to list more bundles. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p> Pagination token. Set to null to start listing bundles from start. If

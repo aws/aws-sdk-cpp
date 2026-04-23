@@ -58,6 +58,12 @@ namespace Model
      * The name of the Cognito stream to receive updates. This stream must be in the
      * developers account and in the same region as the identity pool.
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * The name of the Cognito stream to receive updates. This stream must be in the
+     * developers account and in the same region as the identity pool.
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * on your Cognito stream.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
+     * This role must grant access to Amazon Cognito (cognito-sync) to invoke PutRecord
+     * on your Cognito stream.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The ARN of the role Amazon Cognito can assume in order to publish to the stream.
@@ -148,6 +161,14 @@ namespace Model
      * DISABLED.</p>
      */
     inline const StreamingStatus& GetStreamingStatus() const{ return m_streamingStatus; }
+
+    /**
+     * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of
+     * updates to identity pool is enabled.</p> <p>DISABLED - Streaming of updates to
+     * identity pool is disabled. Bulk publish will also fail if StreamingStatus is
+     * DISABLED.</p>
+     */
+    inline bool StreamingStatusHasBeenSet() const { return m_streamingStatusHasBeenSet; }
 
     /**
      * Status of the Cognito streams. Valid values are: <p>ENABLED - Streaming of

@@ -57,6 +57,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -139,6 +151,11 @@ namespace Model
     /**
      * <p>The ARN of the principal (IAM user, role, or group).</p>
      */
+    inline bool PrincipalARNHasBeenSet() const { return m_principalARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the principal (IAM user, role, or group).</p>
+     */
     inline void SetPrincipalARN(const Aws::String& value) { m_principalARNHasBeenSet = true; m_principalARN = value; }
 
     /**
@@ -171,6 +188,11 @@ namespace Model
      * <p>The principal type. The supported value is <code>IAM</code>.</p>
      */
     inline const PrincipalType& GetPrincipalType() const{ return m_principalType; }
+
+    /**
+     * <p>The principal type. The supported value is <code>IAM</code>.</p>
+     */
+    inline bool PrincipalTypeHasBeenSet() const { return m_principalTypeHasBeenSet; }
 
     /**
      * <p>The principal type. The supported value is <code>IAM</code>.</p>

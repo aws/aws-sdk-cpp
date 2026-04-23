@@ -57,6 +57,13 @@ namespace Model
      * maximum of 25 documents. Each document should contain at least 20 characters and
      * must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
      */
+    inline bool TextListHasBeenSet() const { return m_textListHasBeenSet; }
+
+    /**
+     * <p>A list containing the text of the input documents. The list can contain a
+     * maximum of 25 documents. Each document should contain at least 20 characters and
+     * must contain fewer than 5,000 bytes of UTF-8 encoded characters.</p>
+     */
     inline void SetTextList(const Aws::Vector<Aws::String>& value) { m_textListHasBeenSet = true; m_textList = value; }
 
     /**

@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
      * update.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the VPC endpoint configuration you want to
+     * update.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * configurations more easily.</p>
      */
     inline const Aws::String& GetVpceConfigurationName() const{ return m_vpceConfigurationName; }
+
+    /**
+     * <p>The friendly name you give to your VPC endpoint configuration, to manage your
+     * configurations more easily.</p>
+     */
+    inline bool VpceConfigurationNameHasBeenSet() const { return m_vpceConfigurationNameHasBeenSet; }
 
     /**
      * <p>The friendly name you give to your VPC endpoint configuration, to manage your
@@ -140,6 +152,12 @@ namespace Model
      * <p>The name of the VPC endpoint service running inside your AWS account that you
      * want Device Farm to test.</p>
      */
+    inline bool VpceServiceNameHasBeenSet() const { return m_vpceServiceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the VPC endpoint service running inside your AWS account that you
+     * want Device Farm to test.</p>
+     */
     inline void SetVpceServiceName(const Aws::String& value) { m_vpceServiceNameHasBeenSet = true; m_vpceServiceName = value; }
 
     /**
@@ -183,6 +201,12 @@ namespace Model
      * <p>The DNS (domain) name used to connect to your private service in your Amazon
      * VPC. The DNS name must not already be in use on the Internet.</p>
      */
+    inline bool ServiceDnsNameHasBeenSet() const { return m_serviceDnsNameHasBeenSet; }
+
+    /**
+     * <p>The DNS (domain) name used to connect to your private service in your Amazon
+     * VPC. The DNS name must not already be in use on the Internet.</p>
+     */
     inline void SetServiceDnsName(const Aws::String& value) { m_serviceDnsNameHasBeenSet = true; m_serviceDnsName = value; }
 
     /**
@@ -221,6 +245,12 @@ namespace Model
      * configuration.</p>
      */
     inline const Aws::String& GetVpceConfigurationDescription() const{ return m_vpceConfigurationDescription; }
+
+    /**
+     * <p>An optional description, providing more details about your VPC endpoint
+     * configuration.</p>
+     */
+    inline bool VpceConfigurationDescriptionHasBeenSet() const { return m_vpceConfigurationDescriptionHasBeenSet; }
 
     /**
      * <p>An optional description, providing more details about your VPC endpoint

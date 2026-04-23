@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The first port in the range.</p>
      */
+    inline bool FromPortHasBeenSet() const { return m_fromPortHasBeenSet; }
+
+    /**
+     * <p>The first port in the range.</p>
+     */
     inline void SetFromPort(int value) { m_fromPortHasBeenSet = true; m_fromPort = value; }
 
     /**
@@ -72,6 +77,11 @@ namespace Model
     /**
      * <p>The last port in the range.</p>
      */
+    inline bool ToPortHasBeenSet() const { return m_toPortHasBeenSet; }
+
+    /**
+     * <p>The last port in the range.</p>
+     */
     inline void SetToPort(int value) { m_toPortHasBeenSet = true; m_toPort = value; }
 
     /**
@@ -84,6 +94,11 @@ namespace Model
      * <p>The protocol. </p>
      */
     inline const NetworkProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol. </p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol. </p>

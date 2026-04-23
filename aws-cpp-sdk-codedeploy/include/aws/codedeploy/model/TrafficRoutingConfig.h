@@ -61,6 +61,12 @@ namespace Model
      * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
      * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of traffic shifting (<code>TimeBasedCanary</code> or
+     * <code>TimeBasedLinear</code>) used by a deployment configuration .</p>
+     */
     inline void SetType(const TrafficRoutingType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -88,6 +94,13 @@ namespace Model
      * specified in the deployment's AppSpec file.</p>
      */
     inline const TimeBasedCanary& GetTimeBasedCanary() const{ return m_timeBasedCanary; }
+
+    /**
+     * <p>A configuration that shifts traffic from one version of a Lambda function to
+     * another in two increments. The original and target Lambda function versions are
+     * specified in the deployment's AppSpec file.</p>
+     */
+    inline bool TimeBasedCanaryHasBeenSet() const { return m_timeBasedCanaryHasBeenSet; }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function to
@@ -125,6 +138,14 @@ namespace Model
      * deployment's AppSpec file.</p>
      */
     inline const TimeBasedLinear& GetTimeBasedLinear() const{ return m_timeBasedLinear; }
+
+    /**
+     * <p>A configuration that shifts traffic from one version of a Lambda function to
+     * another in equal increments, with an equal number of minutes between each
+     * increment. The original and target Lambda function versions are specified in the
+     * deployment's AppSpec file.</p>
+     */
+    inline bool TimeBasedLinearHasBeenSet() const { return m_timeBasedLinearHasBeenSet; }
 
     /**
      * <p>A configuration that shifts traffic from one version of a Lambda function to

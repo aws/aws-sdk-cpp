@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ARN of the assessment template that you want to set tags to.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the assessment template that you want to set tags to.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * template.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A collection of key and value pairs that you want to set to the assessment
+     * template.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A collection of key and value pairs that you want to set to the assessment

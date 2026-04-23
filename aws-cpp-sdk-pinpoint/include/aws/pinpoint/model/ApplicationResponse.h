@@ -16,6 +16,7 @@
 #pragma once
 #include <aws/pinpoint/Pinpoint_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -48,9 +49,55 @@ namespace Model
 
 
     /**
+     * The arn for the application.
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * The arn for the application.
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The arn for the application.
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * The arn for the application.
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * The arn for the application.
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * The arn for the application.
+     */
+    inline ApplicationResponse& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * The arn for the application.
+     */
+    inline ApplicationResponse& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * The arn for the application.
+     */
+    inline ApplicationResponse& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * The unique application ID.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * The unique application ID.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * The unique application ID.
@@ -91,6 +138,11 @@ namespace Model
     /**
      * The display name of the application.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The display name of the application.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -118,13 +170,85 @@ namespace Model
      */
     inline ApplicationResponse& WithName(const char* value) { SetName(value); return *this;}
 
+
+    /**
+     * The Tags for the application.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the application.
+     */
+    inline ApplicationResponse& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_id;
     bool m_idHasBeenSet;
 
     Aws::String m_name;
     bool m_nameHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

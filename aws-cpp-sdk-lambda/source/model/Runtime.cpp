@@ -37,11 +37,14 @@ namespace Aws
         static const int java8_HASH = HashingUtils::HashString("java8");
         static const int python2_7_HASH = HashingUtils::HashString("python2.7");
         static const int python3_6_HASH = HashingUtils::HashString("python3.6");
+        static const int python3_7_HASH = HashingUtils::HashString("python3.7");
         static const int dotnetcore1_0_HASH = HashingUtils::HashString("dotnetcore1.0");
         static const int dotnetcore2_0_HASH = HashingUtils::HashString("dotnetcore2.0");
         static const int dotnetcore2_1_HASH = HashingUtils::HashString("dotnetcore2.1");
         static const int nodejs4_3_edge_HASH = HashingUtils::HashString("nodejs4.3-edge");
         static const int go1_x_HASH = HashingUtils::HashString("go1.x");
+        static const int ruby2_5_HASH = HashingUtils::HashString("ruby2.5");
+        static const int provided_HASH = HashingUtils::HashString("provided");
 
 
         Runtime GetRuntimeForName(const Aws::String& name)
@@ -75,6 +78,10 @@ namespace Aws
           {
             return Runtime::python3_6;
           }
+          else if (hashCode == python3_7_HASH)
+          {
+            return Runtime::python3_7;
+          }
           else if (hashCode == dotnetcore1_0_HASH)
           {
             return Runtime::dotnetcore1_0;
@@ -94,6 +101,14 @@ namespace Aws
           else if (hashCode == go1_x_HASH)
           {
             return Runtime::go1_x;
+          }
+          else if (hashCode == ruby2_5_HASH)
+          {
+            return Runtime::ruby2_5;
+          }
+          else if (hashCode == provided_HASH)
+          {
+            return Runtime::provided;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -123,6 +138,8 @@ namespace Aws
             return "python2.7";
           case Runtime::python3_6:
             return "python3.6";
+          case Runtime::python3_7:
+            return "python3.7";
           case Runtime::dotnetcore1_0:
             return "dotnetcore1.0";
           case Runtime::dotnetcore2_0:
@@ -133,6 +150,10 @@ namespace Aws
             return "nodejs4.3-edge";
           case Runtime::go1_x:
             return "go1.x";
+          case Runtime::ruby2_5:
+            return "ruby2.5";
+          case Runtime::provided:
+            return "provided";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -140,7 +161,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

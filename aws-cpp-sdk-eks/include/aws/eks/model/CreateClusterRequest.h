@@ -18,6 +18,7 @@
 #include <aws/eks/EKSRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/eks/model/VpcConfigRequest.h>
+#include <aws/eks/model/Logging.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -48,6 +49,11 @@ namespace Model
      * <p>The unique name to give to your cluster.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The unique name to give to your cluster.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The unique name to give to your cluster.</p>
@@ -90,6 +96,12 @@ namespace Model
      * <p>The desired Kubernetes version for your cluster. If you do not specify a
      * value here, the latest version available in Amazon EKS is used.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The desired Kubernetes version for your cluster. If you do not specify a
+     * value here, the latest version available in Amazon EKS is used.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -127,7 +139,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
@@ -136,7 +148,16 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
+     * Amazon EKS to make calls to other AWS API operations on your behalf. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
@@ -145,7 +166,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(Aws::String&& value) { m_roleArnHasBeenSet = true; m_roleArn = std::move(value); }
@@ -154,7 +175,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline void SetRoleArn(const char* value) { m_roleArnHasBeenSet = true; m_roleArn.assign(value); }
@@ -163,7 +184,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(const Aws::String& value) { SetRoleArn(value); return *this;}
@@ -172,7 +193,7 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(Aws::String&& value) { SetRoleArn(std::move(value)); return *this;}
@@ -181,77 +202,91 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role that provides permissions for
      * Amazon EKS to make calls to other AWS API operations on your behalf. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/service_IAM_role.html">Amazon
      * EKS Service IAM Role</a> in the <i> <i>Amazon EKS User Guide</i> </i>.</p>
      */
     inline CreateClusterRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
     inline const VpcConfigRequest& GetResourcesVpcConfig() const{ return m_resourcesVpcConfig; }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
+     * recommend that you use a dedicated security group for your cluster control
+     * plane.</p>
+     */
+    inline bool ResourcesVpcConfigHasBeenSet() const { return m_resourcesVpcConfigHasBeenSet; }
+
+    /**
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * VPC Considerations</a> and <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
     inline void SetResourcesVpcConfig(const VpcConfigRequest& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = value; }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
     inline void SetResourcesVpcConfig(VpcConfigRequest&& value) { m_resourcesVpcConfigHasBeenSet = true; m_resourcesVpcConfig = std::move(value); }
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
     inline CreateClusterRequest& WithResourcesVpcConfig(const VpcConfigRequest& value) { SetResourcesVpcConfig(value); return *this;}
 
     /**
-     * <p>The VPC subnets and security groups used by the cluster control plane. Amazon
-     * EKS VPC resources have specific requirements to work properly with Kubernetes.
-     * For more information, see <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
+     * <p>The VPC configuration used by the cluster control plane. Amazon EKS VPC
+     * resources have specific requirements to work properly with Kubernetes. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/network_reqs.html">Cluster
      * VPC Considerations</a> and <a
-     * href="http://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/sec-group-reqs.html">Cluster
      * Security Group Considerations</a> in the <i>Amazon EKS User Guide</i>. You must
-     * specify at least two subnets. You may specify up to 5 security groups, but we
+     * specify at least two subnets. You may specify up to five security groups, but we
      * recommend that you use a dedicated security group for your cluster control
      * plane.</p>
      */
@@ -259,44 +294,129 @@ namespace Model
 
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline const Logging& GetLogging() const{ return m_logging; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline bool LoggingHasBeenSet() const { return m_loggingHasBeenSet; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline void SetLogging(const Logging& value) { m_loggingHasBeenSet = true; m_logging = value; }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline void SetLogging(Logging&& value) { m_loggingHasBeenSet = true; m_logging = std::move(value); }
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline CreateClusterRequest& WithLogging(const Logging& value) { SetLogging(value); return *this;}
+
+    /**
+     * <p>Enable or disable exporting the Kubernetes control plane logs for your
+     * cluster to CloudWatch Logs. By default, cluster control plane logs are not
+     * exported to CloudWatch Logs. For more information, see <a
+     * href="https://docs.aws.amazon.com/eks/latest/userguide/control-plane-logs.html">Amazon
+     * EKS Cluster Control Plane Logs</a> in the <i> <i>Amazon EKS User Guide</i>
+     * </i>.</p> <note> <p>CloudWatch Logs ingestion, archive storage, and data
+     * scanning rates apply to exported control plane logs. For more information, see
+     * <a href="http://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch
+     * Pricing</a>.</p> </note>
+     */
+    inline CreateClusterRequest& WithLogging(Logging&& value) { SetLogging(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline const Aws::String& GetClientRequestToken() const{ return m_clientRequestToken; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
+     */
+    inline bool ClientRequestTokenHasBeenSet() const { return m_clientRequestTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const Aws::String& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = value; }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(Aws::String&& value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken = std::move(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline void SetClientRequestToken(const char* value) { m_clientRequestTokenHasBeenSet = true; m_clientRequestToken.assign(value); }
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const Aws::String& value) { SetClientRequestToken(value); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(Aws::String&& value) { SetClientRequestToken(std::move(value)); return *this;}
 
     /**
-     * <p>Unique, case-sensitive identifier you provide to ensure the idempotency of
-     * the request.</p>
+     * <p>Unique, case-sensitive identifier that you provide to ensure the idempotency
+     * of the request.</p>
      */
     inline CreateClusterRequest& WithClientRequestToken(const char* value) { SetClientRequestToken(value); return *this;}
 
@@ -313,6 +433,9 @@ namespace Model
 
     VpcConfigRequest m_resourcesVpcConfig;
     bool m_resourcesVpcConfigHasBeenSet;
+
+    Logging m_logging;
+    bool m_loggingHasBeenSet;
 
     Aws::String m_clientRequestToken;
     bool m_clientRequestTokenHasBeenSet;

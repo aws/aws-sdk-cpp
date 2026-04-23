@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
      */
+    inline bool AwsSignerJobIdHasBeenSet() const { return m_awsSignerJobIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWSSignerJob which was created to sign the file.</p>
+     */
     inline void SetAwsSignerJobId(const Aws::String& value) { m_awsSignerJobIdHasBeenSet = true; m_awsSignerJobId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>Describes the code-signing job.</p>
      */
+    inline bool StartSigningJobParameterHasBeenSet() const { return m_startSigningJobParameterHasBeenSet; }
+
+    /**
+     * <p>Describes the code-signing job.</p>
+     */
     inline void SetStartSigningJobParameter(const StartSigningJobParameter& value) { m_startSigningJobParameterHasBeenSet = true; m_startSigningJobParameter = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>A custom method for code signing a file.</p>
      */
     inline const CustomCodeSigning& GetCustomCodeSigning() const{ return m_customCodeSigning; }
+
+    /**
+     * <p>A custom method for code signing a file.</p>
+     */
+    inline bool CustomCodeSigningHasBeenSet() const { return m_customCodeSigningHasBeenSet; }
 
     /**
      * <p>A custom method for code signing a file.</p>

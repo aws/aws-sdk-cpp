@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use
      * <a>DescribeClusters</a>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the HSM's cluster. To find the cluster ID, use
+     * <a>DescribeClusters</a>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * Availability Zones, use <a>DescribeClusters</a>.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>The Availability Zone where you are creating the HSM. To find the cluster's
+     * Availability Zones, use <a>DescribeClusters</a>.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>The Availability Zone where you are creating the HSM. To find the cluster's
@@ -137,6 +149,14 @@ namespace Model
      * subnet.</p>
      */
     inline const Aws::String& GetIpAddress() const{ return m_ipAddress; }
+
+    /**
+     * <p>The HSM's IP address. If you specify an IP address, use an available address
+     * from the subnet that maps to the Availability Zone where you are creating the
+     * HSM. If you don't specify an IP address, one is chosen for you from that
+     * subnet.</p>
+     */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
 
     /**
      * <p>The HSM's IP address. If you specify an IP address, use an available address

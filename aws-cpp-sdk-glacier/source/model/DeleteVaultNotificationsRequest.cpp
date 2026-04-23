@@ -30,7 +30,7 @@ DeleteVaultNotificationsRequest::DeleteVaultNotificationsRequest() :
 
 Aws::String DeleteVaultNotificationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -56,6 +56,12 @@ namespace Model
      * <p>The identifier of the event source for which events will be returned. If not
      * specified, then all sources are included in the response.</p>
      */
+    inline bool SourceNameHasBeenSet() const { return m_sourceNameHasBeenSet; }
+
+    /**
+     * <p>The identifier of the event source for which events will be returned. If not
+     * specified, then all sources are included in the response.</p>
+     */
     inline void SetSourceName(const Aws::String& value) { m_sourceNameHasBeenSet = true; m_sourceName = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * <p>The event source to retrieve events for. If no value is specified, all events
      * are returned.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The event source to retrieve events for. If no value is specified, all events
+     * are returned.</p>
+     */
     inline void SetSourceType(const SourceType& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -125,6 +137,12 @@ namespace Model
      * 8601 format.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The beginning of the time interval to retrieve events for, specified in ISO
+     * 8601 format.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The beginning of the time interval to retrieve events for, specified in ISO
@@ -161,6 +179,12 @@ namespace Model
      * <p>The end of the time interval for which to retrieve events, specified in ISO
      * 8601 format.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time interval for which to retrieve events, specified in ISO
+     * 8601 format.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -190,6 +214,11 @@ namespace Model
     /**
      * <p>The number of minutes' worth of events to retrieve.</p>
      */
+    inline bool DurationHasBeenSet() const { return m_durationHasBeenSet; }
+
+    /**
+     * <p>The number of minutes' worth of events to retrieve.</p>
+     */
     inline void SetDuration(int value) { m_durationHasBeenSet = true; m_duration = value; }
 
     /**
@@ -205,6 +234,14 @@ namespace Model
      * for <code>MaxResults</code> must be between 20 and 100.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to include in the response. If more results
+     * exist than the specified <code>MaxResults</code> value, a token is included in
+     * the response so that the remaining results can be retrieved.</p> <p>The value
+     * for <code>MaxResults</code> must be between 20 and 100.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to include in the response. If more results
@@ -230,6 +267,14 @@ namespace Model
      * <code>MaxResults</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional token returned from a prior request. Use this token for
+     * pagination of results from this action. If this parameter is specified, the
+     * response includes only results beyond the token, up to the value specified by
+     * <code>MaxResults</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional token returned from a prior request. Use this token for

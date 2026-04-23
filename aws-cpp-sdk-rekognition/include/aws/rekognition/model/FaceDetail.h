@@ -52,16 +52,17 @@ namespace Model
    * <p>A <code>FaceDetail</code> object contains either the default facial
    * attributes or all facial attributes. The default attributes are
    * <code>BoundingBox</code>, <code>Confidence</code>, <code>Landmarks</code>,
-   * <code>Pose</code>, and <code>Quality</code>.</p> <p> is the only Amazon
-   * Rekognition Video stored video operation that can return a
+   * <code>Pose</code>, and <code>Quality</code>.</p> <p> <a>GetFaceDetection</a> is
+   * the only Amazon Rekognition Video stored video operation that can return a
    * <code>FaceDetail</code> object with all attributes. To specify which attributes
-   * to return, use the <code>FaceAttributes</code> input parameter for . The
-   * following Amazon Rekognition Video operations return only the default
-   * attributes. The corresponding Start operations don't have a
-   * <code>FaceAttributes</code> input parameter.</p> <ul> <li>
+   * to return, use the <code>FaceAttributes</code> input parameter for
+   * <a>StartFaceDetection</a>. The following Amazon Rekognition Video operations
+   * return only the default attributes. The corresponding Start operations don't
+   * have a <code>FaceAttributes</code> input parameter.</p> <ul> <li>
    * <p>GetCelebrityRecognition</p> </li> <li> <p>GetPersonTracking</p> </li> <li>
-   * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image and operations
-   * can return all facial attributes. To specify which attributes to return, use the
+   * <p>GetFaceSearch</p> </li> </ul> <p>The Amazon Rekognition Image
+   * <a>DetectFaces</a> and <a>IndexFaces</a> operations can return all facial
+   * attributes. To specify which attributes to return, use the
    * <code>Attributes</code> input parameter for <code>DetectFaces</code>. For
    * <code>IndexFaces</code>, use the <code>DetectAttributes</code> input
    * parameter.</p><p><h3>See Also:</h3>   <a
@@ -81,6 +82,11 @@ namespace Model
      * <p>Bounding box of the face. Default attribute.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+
+    /**
+     * <p>Bounding box of the face. Default attribute.</p>
+     */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
 
     /**
      * <p>Bounding box of the face. Default attribute.</p>
@@ -108,6 +114,12 @@ namespace Model
      * estimated age and High represents the highest estimated age.</p>
      */
     inline const AgeRange& GetAgeRange() const{ return m_ageRange; }
+
+    /**
+     * <p>The estimated age range, in years, for the face. Low represents the lowest
+     * estimated age and High represents the highest estimated age.</p>
+     */
+    inline bool AgeRangeHasBeenSet() const { return m_ageRangeHasBeenSet; }
 
     /**
      * <p>The estimated age range, in years, for the face. Low represents the lowest
@@ -144,6 +156,12 @@ namespace Model
      * <p>Indicates whether or not the face is smiling, and the confidence level in the
      * determination.</p>
      */
+    inline bool SmileHasBeenSet() const { return m_smileHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not the face is smiling, and the confidence level in the
+     * determination.</p>
+     */
     inline void SetSmile(const Smile& value) { m_smileHasBeenSet = true; m_smile = value; }
 
     /**
@@ -170,6 +188,12 @@ namespace Model
      * level in the determination.</p>
      */
     inline const Eyeglasses& GetEyeglasses() const{ return m_eyeglasses; }
+
+    /**
+     * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
+     * level in the determination.</p>
+     */
+    inline bool EyeglassesHasBeenSet() const { return m_eyeglassesHasBeenSet; }
 
     /**
      * <p>Indicates whether or not the face is wearing eye glasses, and the confidence
@@ -206,6 +230,12 @@ namespace Model
      * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
      * level in the determination.</p>
      */
+    inline bool SunglassesHasBeenSet() const { return m_sunglassesHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not the face is wearing sunglasses, and the confidence
+     * level in the determination.</p>
+     */
     inline void SetSunglasses(const Sunglasses& value) { m_sunglassesHasBeenSet = true; m_sunglasses = value; }
 
     /**
@@ -235,6 +265,11 @@ namespace Model
     /**
      * <p>Gender of the face and the confidence level in the determination.</p>
      */
+    inline bool GenderHasBeenSet() const { return m_genderHasBeenSet; }
+
+    /**
+     * <p>Gender of the face and the confidence level in the determination.</p>
+     */
     inline void SetGender(const Gender& value) { m_genderHasBeenSet = true; m_gender = value; }
 
     /**
@@ -258,6 +293,12 @@ namespace Model
      * the determination.</p>
      */
     inline const Beard& GetBeard() const{ return m_beard; }
+
+    /**
+     * <p>Indicates whether or not the face has a beard, and the confidence level in
+     * the determination.</p>
+     */
+    inline bool BeardHasBeenSet() const { return m_beardHasBeenSet; }
 
     /**
      * <p>Indicates whether or not the face has a beard, and the confidence level in
@@ -294,6 +335,12 @@ namespace Model
      * <p>Indicates whether or not the face has a mustache, and the confidence level in
      * the determination.</p>
      */
+    inline bool MustacheHasBeenSet() const { return m_mustacheHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not the face has a mustache, and the confidence level in
+     * the determination.</p>
+     */
     inline void SetMustache(const Mustache& value) { m_mustacheHasBeenSet = true; m_mustache = value; }
 
     /**
@@ -320,6 +367,12 @@ namespace Model
      * level in the determination.</p>
      */
     inline const EyeOpen& GetEyesOpen() const{ return m_eyesOpen; }
+
+    /**
+     * <p>Indicates whether or not the eyes on the face are open, and the confidence
+     * level in the determination.</p>
+     */
+    inline bool EyesOpenHasBeenSet() const { return m_eyesOpenHasBeenSet; }
 
     /**
      * <p>Indicates whether or not the eyes on the face are open, and the confidence
@@ -356,6 +409,12 @@ namespace Model
      * <p>Indicates whether or not the mouth on the face is open, and the confidence
      * level in the determination.</p>
      */
+    inline bool MouthOpenHasBeenSet() const { return m_mouthOpenHasBeenSet; }
+
+    /**
+     * <p>Indicates whether or not the mouth on the face is open, and the confidence
+     * level in the determination.</p>
+     */
     inline void SetMouthOpen(const MouthOpen& value) { m_mouthOpenHasBeenSet = true; m_mouthOpen = value; }
 
     /**
@@ -382,6 +441,12 @@ namespace Model
      * determination. For example, HAPPY, SAD, and ANGRY. </p>
      */
     inline const Aws::Vector<Emotion>& GetEmotions() const{ return m_emotions; }
+
+    /**
+     * <p>The emotions detected on the face, and the confidence level in the
+     * determination. For example, HAPPY, SAD, and ANGRY. </p>
+     */
+    inline bool EmotionsHasBeenSet() const { return m_emotionsHasBeenSet; }
 
     /**
      * <p>The emotions detected on the face, and the confidence level in the
@@ -428,6 +493,11 @@ namespace Model
     /**
      * <p>Indicates the location of landmarks on the face. Default attribute.</p>
      */
+    inline bool LandmarksHasBeenSet() const { return m_landmarksHasBeenSet; }
+
+    /**
+     * <p>Indicates the location of landmarks on the face. Default attribute.</p>
+     */
     inline void SetLandmarks(const Aws::Vector<Landmark>& value) { m_landmarksHasBeenSet = true; m_landmarks = value; }
 
     /**
@@ -466,6 +536,12 @@ namespace Model
      * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
      * Default attribute.</p>
      */
+    inline bool PoseHasBeenSet() const { return m_poseHasBeenSet; }
+
+    /**
+     * <p>Indicates the pose of the face as determined by its pitch, roll, and yaw.
+     * Default attribute.</p>
+     */
     inline void SetPose(const Pose& value) { m_poseHasBeenSet = true; m_pose = value; }
 
     /**
@@ -495,6 +571,11 @@ namespace Model
     /**
      * <p>Identifies image brightness and sharpness. Default attribute.</p>
      */
+    inline bool QualityHasBeenSet() const { return m_qualityHasBeenSet; }
+
+    /**
+     * <p>Identifies image brightness and sharpness. Default attribute.</p>
+     */
     inline void SetQuality(const ImageQuality& value) { m_qualityHasBeenSet = true; m_quality = value; }
 
     /**
@@ -518,6 +599,12 @@ namespace Model
      * object such as a tree). Default attribute.</p>
      */
     inline double GetConfidence() const{ return m_confidence; }
+
+    /**
+     * <p>Confidence level that the bounding box contains a face (and not a different
+     * object such as a tree). Default attribute.</p>
+     */
+    inline bool ConfidenceHasBeenSet() const { return m_confidenceHasBeenSet; }
 
     /**
      * <p>Confidence level that the bounding box contains a face (and not a different

@@ -13,7 +13,8 @@ if(VERSION_STRING)
 
     configure_file(
         "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
-        "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h")
+        "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h"
+        NEWLINE_STYLE LF)
 else()
     message("Not able to compute versioning string, not updating.")
 endif()
@@ -142,7 +143,6 @@ file(GLOB AWS_NATIVE_SDK_COMMON_SRC
     ${HTTP_CLIENT_SOURCE}
     ${CONFIG_SOURCE}
     ${MONITORING_SOURCE}
-    ${UTILS_EVENT_SOURCE}
     ${UTILS_BASE64_SOURCE}
     ${UTILS_CRYPTO_SOURCE}
     ${UTILS_JSON_SOURCE}
@@ -229,6 +229,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CRYPTO_BCRYPT_SOURCE}
     ${AWS_NATIVE_SDK_WINDOWS_SRC}
     ${UTILS_CRYPTO_FACTORY_SOURCE}
+    ${UTILS_EVENT_SOURCE}
     ${UTILS_SOURCE}
     ${NET_SOURCE}
     ${HTTP_SOURCE}
@@ -274,6 +275,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils" FILES ${UTILS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\base64" FILES ${UTILS_BASE64_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\crypto" FILES ${UTILS_CRYPTO_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\event" FILES ${UTILS_EVENT_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\threading" FILES ${UTILS_THREADING_HEADERS})
@@ -318,6 +320,7 @@ if(MSVC)
     source_group("Source Files\\utils\\base64" FILES ${UTILS_BASE64_SOURCE})
     source_group("Source Files\\utils\\crypto" FILES ${UTILS_CRYPTO_SOURCE})
     source_group("Source Files\\utils\\crypto\\factory" FILES ${UTILS_CRYPTO_FACTORY_SOURCE})
+    source_group("Source Files\\utils\\event" FILES ${UTILS_EVENT_SOURCE})
     source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SOURCE})
@@ -413,6 +416,11 @@ if (EXTERNAL_DEPS_INCLUDE_DIRS)
 endif()
 
 target_link_libraries(${PROJECT_NAME} PRIVATE ${PLATFORM_DEP_LIBS} ${CLIENT_LIBS} ${CRYPTO_LIBS} ${AWS_SDK_ADDITIONAL_LIBRARIES})
+
+find_package(aws-c-event-stream REQUIRED)
+
+target_link_libraries(${PROJECT_NAME} PUBLIC AWS::aws-c-event-stream)
+
 
 if(USE_WINDOWS_DLL_SEMANTICS)
     target_compile_definitions(${PROJECT_NAME} PUBLIC "USE_WINDOWS_DLL_SEMANTICS")

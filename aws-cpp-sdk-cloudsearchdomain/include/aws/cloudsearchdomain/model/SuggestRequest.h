@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Specifies the string for which you want to get suggestions.</p>
      */
+    inline bool QueryHasBeenSet() const { return m_queryHasBeenSet; }
+
+    /**
+     * <p>Specifies the string for which you want to get suggestions.</p>
+     */
     inline void SetQuery(const Aws::String& value) { m_queryHasBeenSet = true; m_query = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>Specifies the name of the suggester to use to find suggested matches.</p>
      */
+    inline bool SuggesterHasBeenSet() const { return m_suggesterHasBeenSet; }
+
+    /**
+     * <p>Specifies the name of the suggester to use to find suggested matches.</p>
+     */
     inline void SetSuggester(const Aws::String& value) { m_suggesterHasBeenSet = true; m_suggester = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>Specifies the maximum number of suggestions to return. </p>
      */
     inline long long GetSize() const{ return m_size; }
+
+    /**
+     * <p>Specifies the maximum number of suggestions to return. </p>
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>Specifies the maximum number of suggestions to return. </p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the service that you want to update.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the service that you want to update.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>A complex type that contains the new settings for the service.</p>
      */
     inline const ServiceChange& GetService() const{ return m_service; }
+
+    /**
+     * <p>A complex type that contains the new settings for the service.</p>
+     */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
 
     /**
      * <p>A complex type that contains the new settings for the service.</p>

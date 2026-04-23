@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
+
+    /**
+     * <p>The device key.</p>
+     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The device attributes.</p>
      */
     inline const Aws::Vector<AttributeType>& GetDeviceAttributes() const{ return m_deviceAttributes; }
+
+    /**
+     * <p>The device attributes.</p>
+     */
+    inline bool DeviceAttributesHasBeenSet() const { return m_deviceAttributesHasBeenSet; }
 
     /**
      * <p>The device attributes.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The creation date of the device.</p>
      */
+    inline bool DeviceCreateDateHasBeenSet() const { return m_deviceCreateDateHasBeenSet; }
+
+    /**
+     * <p>The creation date of the device.</p>
+     */
     inline void SetDeviceCreateDate(const Aws::Utils::DateTime& value) { m_deviceCreateDateHasBeenSet = true; m_deviceCreateDate = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
     /**
      * <p>The last modified date of the device.</p>
      */
+    inline bool DeviceLastModifiedDateHasBeenSet() const { return m_deviceLastModifiedDateHasBeenSet; }
+
+    /**
+     * <p>The last modified date of the device.</p>
+     */
     inline void SetDeviceLastModifiedDate(const Aws::Utils::DateTime& value) { m_deviceLastModifiedDateHasBeenSet = true; m_deviceLastModifiedDate = value; }
 
     /**
@@ -178,6 +198,11 @@ namespace Model
      * <p>The date in which the device was last authenticated.</p>
      */
     inline const Aws::Utils::DateTime& GetDeviceLastAuthenticatedDate() const{ return m_deviceLastAuthenticatedDate; }
+
+    /**
+     * <p>The date in which the device was last authenticated.</p>
+     */
+    inline bool DeviceLastAuthenticatedDateHasBeenSet() const { return m_deviceLastAuthenticatedDateHasBeenSet; }
 
     /**
      * <p>The date in which the device was last authenticated.</p>

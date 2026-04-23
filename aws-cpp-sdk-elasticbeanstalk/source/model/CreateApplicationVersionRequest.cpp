@@ -30,7 +30,8 @@ CreateApplicationVersionRequest::CreateApplicationVersionRequest() :
     m_autoCreateApplication(false),
     m_autoCreateApplicationHasBeenSet(false),
     m_process(false),
-    m_processHasBeenSet(false)
+    m_processHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -76,6 +77,16 @@ Aws::String CreateApplicationVersionRequest::SerializePayload() const
   if(m_processHasBeenSet)
   {
     ss << "Process=" << std::boolalpha << m_process << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-12-01";

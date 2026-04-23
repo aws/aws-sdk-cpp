@@ -73,6 +73,16 @@ namespace Model
      * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
      * Developer Guide</a>.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * WorkMail action is called. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -135,6 +145,16 @@ namespace Model
      * WorkMail Administrator Guide</a>.</p>
      */
     inline const Aws::String& GetOrganizationArn() const{ return m_organizationArn; }
+
+    /**
+     * <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail
+     * organization ARN is
+     * <code>arn:aws:workmail:us-west-2:123456789012:organization/m-68755160c4cb4e29a2b2f8fb58f359d7</code>.
+     * For information about Amazon WorkMail organizations, see the <a
+     * href="http://docs.aws.amazon.com/workmail/latest/adminguide/organizations_overview.html">Amazon
+     * WorkMail Administrator Guide</a>.</p>
+     */
+    inline bool OrganizationArnHasBeenSet() const { return m_organizationArnHasBeenSet; }
 
     /**
      * <p>The ARN of the Amazon WorkMail organization. An example of an Amazon WorkMail

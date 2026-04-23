@@ -153,37 +153,65 @@ namespace Model
 
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline const Aws::String& GetFailureReason() const{ return m_failureReason; }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const Aws::String& value) { m_failureReason = value; }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(Aws::String&& value) { m_failureReason = std::move(value); }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline void SetFailureReason(const char* value) { m_failureReason.assign(value); }
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const Aws::String& value) { SetFailureReason(value); return *this;}
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(Aws::String&& value) { SetFailureReason(std::move(value)); return *this;}
 
     /**
-     * <p>If the transform job failed, the reason that it failed.</p>
+     * <p>If the transform job failed, <code>FailureReason</code> describes why it
+     * failed. A transform job creates a log file, which includes error messages, and
+     * stores it as an Amazon S3 object. For more information, see <a
+     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/logging-cloudwatch.html">Log
+     * Amazon SageMaker Events with Amazon CloudWatch</a>.</p>
      */
     inline DescribeTransformJobResult& WithFailureReason(const char* value) { SetFailureReason(value); return *this;}
 
@@ -244,114 +272,136 @@ namespace Model
 
 
     /**
-     * <p>The maximum payload size , in MB used in the transform job.</p>
+     * <p>The maximum payload size, in MB, used in the transform job.</p>
      */
     inline int GetMaxPayloadInMB() const{ return m_maxPayloadInMB; }
 
     /**
-     * <p>The maximum payload size , in MB used in the transform job.</p>
+     * <p>The maximum payload size, in MB, used in the transform job.</p>
      */
     inline void SetMaxPayloadInMB(int value) { m_maxPayloadInMB = value; }
 
     /**
-     * <p>The maximum payload size , in MB used in the transform job.</p>
+     * <p>The maximum payload size, in MB, used in the transform job.</p>
      */
     inline DescribeTransformJobResult& WithMaxPayloadInMB(int value) { SetMaxPayloadInMB(value); return *this;}
 
 
     /**
-     * <p>SingleRecord means only one record was used per a batch.
-     * <code>MultiRecord</code> means batches contained as many records that could
-     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline const BatchStrategy& GetBatchStrategy() const{ return m_batchStrategy; }
 
     /**
-     * <p>SingleRecord means only one record was used per a batch.
-     * <code>MultiRecord</code> means batches contained as many records that could
-     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline void SetBatchStrategy(const BatchStrategy& value) { m_batchStrategy = value; }
 
     /**
-     * <p>SingleRecord means only one record was used per a batch.
-     * <code>MultiRecord</code> means batches contained as many records that could
-     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline void SetBatchStrategy(BatchStrategy&& value) { m_batchStrategy = std::move(value); }
 
     /**
-     * <p>SingleRecord means only one record was used per a batch.
-     * <code>MultiRecord</code> means batches contained as many records that could
-     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(const BatchStrategy& value) { SetBatchStrategy(value); return *this;}
 
     /**
-     * <p>SingleRecord means only one record was used per a batch.
-     * <code>MultiRecord</code> means batches contained as many records that could
-     * possibly fit within the <code>MaxPayloadInMB</code> limit.</p>
+     * <p>Specifies the number of records to include in a mini-batch for an HTTP
+     * inference request. A <i>record</i> <i/> is a single unit of input data that
+     * inference can be made on. For example, a single line in a CSV file is a record.
+     * </p> <p>To enable the batch strategy, you must set <code>SplitType</code> to
+     * <code>Line</code>, <code>RecordIO</code>, or <code>TFRecord</code>.</p>
      */
     inline DescribeTransformJobResult& WithBatchStrategy(BatchStrategy&& value) { SetBatchStrategy(std::move(value)); return *this;}
 
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEnvironment() const{ return m_environment; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline void SetEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { m_environment = value; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline void SetEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { m_environment = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& WithEnvironment(const Aws::Map<Aws::String, Aws::String>& value) { SetEnvironment(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& WithEnvironment(Aws::Map<Aws::String, Aws::String>&& value) { SetEnvironment(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const Aws::String& key, const Aws::String& value) { m_environment.emplace(key, value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, const Aws::String& value) { m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const Aws::String& key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, Aws::String&& value) { m_environment.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const char* key, Aws::String&& value) { m_environment.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(Aws::String&& key, const char* value) { m_environment.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p/>
+     * <p>The environment variables to set in the Docker container. We support up to 16
+     * key and values entries in the map.</p>
      */
     inline DescribeTransformJobResult& AddEnvironment(const char* key, const char* value) { m_environment.emplace(key, value); return *this; }
 
@@ -512,39 +562,82 @@ namespace Model
 
 
     /**
-     * <p>Indicates when the transform job is <code>Completed</code>,
-     * <code>Stopped</code>, or <code>Failed</code>. You are billed for the time
-     * interval between this time and the value of <code>TransformStartTime</code>.</p>
+     * <p>Indicates when the transform job has been completed, or has stopped or
+     * failed. You are billed for the time interval between this time and the value of
+     * <code>TransformStartTime</code>.</p>
      */
     inline const Aws::Utils::DateTime& GetTransformEndTime() const{ return m_transformEndTime; }
 
     /**
-     * <p>Indicates when the transform job is <code>Completed</code>,
-     * <code>Stopped</code>, or <code>Failed</code>. You are billed for the time
-     * interval between this time and the value of <code>TransformStartTime</code>.</p>
+     * <p>Indicates when the transform job has been completed, or has stopped or
+     * failed. You are billed for the time interval between this time and the value of
+     * <code>TransformStartTime</code>.</p>
      */
     inline void SetTransformEndTime(const Aws::Utils::DateTime& value) { m_transformEndTime = value; }
 
     /**
-     * <p>Indicates when the transform job is <code>Completed</code>,
-     * <code>Stopped</code>, or <code>Failed</code>. You are billed for the time
-     * interval between this time and the value of <code>TransformStartTime</code>.</p>
+     * <p>Indicates when the transform job has been completed, or has stopped or
+     * failed. You are billed for the time interval between this time and the value of
+     * <code>TransformStartTime</code>.</p>
      */
     inline void SetTransformEndTime(Aws::Utils::DateTime&& value) { m_transformEndTime = std::move(value); }
 
     /**
-     * <p>Indicates when the transform job is <code>Completed</code>,
-     * <code>Stopped</code>, or <code>Failed</code>. You are billed for the time
-     * interval between this time and the value of <code>TransformStartTime</code>.</p>
+     * <p>Indicates when the transform job has been completed, or has stopped or
+     * failed. You are billed for the time interval between this time and the value of
+     * <code>TransformStartTime</code>.</p>
      */
     inline DescribeTransformJobResult& WithTransformEndTime(const Aws::Utils::DateTime& value) { SetTransformEndTime(value); return *this;}
 
     /**
-     * <p>Indicates when the transform job is <code>Completed</code>,
-     * <code>Stopped</code>, or <code>Failed</code>. You are billed for the time
-     * interval between this time and the value of <code>TransformStartTime</code>.</p>
+     * <p>Indicates when the transform job has been completed, or has stopped or
+     * failed. You are billed for the time interval between this time and the value of
+     * <code>TransformStartTime</code>.</p>
      */
     inline DescribeTransformJobResult& WithTransformEndTime(Aws::Utils::DateTime&& value) { SetTransformEndTime(std::move(value)); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline const Aws::String& GetLabelingJobArn() const{ return m_labelingJobArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const Aws::String& value) { m_labelingJobArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(Aws::String&& value) { m_labelingJobArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline void SetLabelingJobArn(const char* value) { m_labelingJobArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(const Aws::String& value) { SetLabelingJobArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(Aws::String&& value) { SetLabelingJobArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SageMaker Ground Truth labeling
+     * job that created the transform or training job.</p>
+     */
+    inline DescribeTransformJobResult& WithLabelingJobArn(const char* value) { SetLabelingJobArn(value); return *this;}
 
   private:
 
@@ -577,6 +670,8 @@ namespace Model
     Aws::Utils::DateTime m_transformStartTime;
 
     Aws::Utils::DateTime m_transformEndTime;
+
+    Aws::String m_labelingJobArn;
   };
 
 } // namespace Model

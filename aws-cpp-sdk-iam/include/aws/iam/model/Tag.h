@@ -37,7 +37,7 @@ namespace Model
    * <p>A structure that represents user-provided metadata that can be associated
    * with a resource such as an IAM user or role. For more information about tagging,
    * see <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_tags.html">Tagging IAM
    * Identities</a> in the <i>IAM User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/Tag">AWS API
    * Reference</a></p>
@@ -59,6 +59,13 @@ namespace Model
      * choices.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key name that can be used to look up or retrieve the associated value.
+     * For example, <code>Department</code> or <code>Cost Center</code> are common
+     * choices.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key name that can be used to look up or retrieve the associated value.
@@ -115,6 +122,19 @@ namespace Model
      * interpret the value in your code.</p> </note>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value associated with this tag. For example, tags with a key name of
+     * <code>Department</code> could have values such as <code>Human Resources</code>,
+     * <code>Accounting</code>, and <code>Support</code>. Tags with a key name of
+     * <code>Cost Center</code> might have values that consist of the number associated
+     * with the different cost centers in your company. Typically, many resources have
+     * tags with the same key name but with different values.</p> <note> <p>AWS always
+     * interprets the tag <code>Value</code> as a single string. If you need to store
+     * an array, you can store comma-separated values in the string. However, you must
+     * interpret the value in your code.</p> </note>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value associated with this tag. For example, tags with a key name of

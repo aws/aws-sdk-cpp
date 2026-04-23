@@ -34,7 +34,8 @@ ThingDocument::ThingDocument() :
     m_thingTypeNameHasBeenSet(false),
     m_thingGroupNamesHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_shadowHasBeenSet(false)
+    m_shadowHasBeenSet(false),
+    m_connectivityHasBeenSet(false)
 {
 }
 
@@ -44,7 +45,8 @@ ThingDocument::ThingDocument(JsonView jsonValue) :
     m_thingTypeNameHasBeenSet(false),
     m_thingGroupNamesHasBeenSet(false),
     m_attributesHasBeenSet(false),
-    m_shadowHasBeenSet(false)
+    m_shadowHasBeenSet(false),
+    m_connectivityHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -99,6 +101,13 @@ ThingDocument& ThingDocument::operator =(JsonView jsonValue)
     m_shadowHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("connectivity"))
+  {
+    m_connectivity = jsonValue.GetObject("connectivity");
+
+    m_connectivityHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -149,6 +158,12 @@ JsonValue ThingDocument::Jsonize() const
   if(m_shadowHasBeenSet)
   {
    payload.WithString("shadow", m_shadow);
+
+  }
+
+  if(m_connectivityHasBeenSet)
+  {
+   payload.WithObject("connectivity", m_connectivity.Jsonize());
 
   }
 

@@ -54,6 +54,11 @@ namespace Model
     /**
      * Height of rectangle in pixels. Specify only even numbers.
      */
+    inline bool HeightHasBeenSet() const { return m_heightHasBeenSet; }
+
+    /**
+     * Height of rectangle in pixels. Specify only even numbers.
+     */
     inline void SetHeight(int value) { m_heightHasBeenSet = true; m_height = value; }
 
     /**
@@ -66,6 +71,11 @@ namespace Model
      * Width of rectangle in pixels. Specify only even numbers.
      */
     inline int GetWidth() const{ return m_width; }
+
+    /**
+     * Width of rectangle in pixels. Specify only even numbers.
+     */
+    inline bool WidthHasBeenSet() const { return m_widthHasBeenSet; }
 
     /**
      * Width of rectangle in pixels. Specify only even numbers.
@@ -88,6 +98,12 @@ namespace Model
      * The distance, in pixels, between the rectangle and the left edge of the video
      * frame. Specify only even numbers.
      */
+    inline bool XHasBeenSet() const { return m_xHasBeenSet; }
+
+    /**
+     * The distance, in pixels, between the rectangle and the left edge of the video
+     * frame. Specify only even numbers.
+     */
     inline void SetX(int value) { m_xHasBeenSet = true; m_x = value; }
 
     /**
@@ -102,6 +118,12 @@ namespace Model
      * frame. Specify only even numbers.
      */
     inline int GetY() const{ return m_y; }
+
+    /**
+     * The distance, in pixels, between the rectangle and the top edge of the video
+     * frame. Specify only even numbers.
+     */
+    inline bool YHasBeenSet() const { return m_yHasBeenSet; }
 
     /**
      * The distance, in pixels, between the rectangle and the top edge of the video

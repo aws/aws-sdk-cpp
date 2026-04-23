@@ -15,6 +15,7 @@
 
 #pragma once
 #include <aws/medialive/MediaLive_EXPORTS.h>
+#include <aws/medialive/model/FrameCaptureSettings.h>
 #include <aws/medialive/model/H264Settings.h>
 #include <utility>
 
@@ -34,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for VideoCodecSettings<p><h3>See Also:</h3>   <a
+   * Video Codec Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/VideoCodecSettings">AWS
    * API Reference</a></p>
    */
@@ -48,7 +49,29 @@ namespace Model
 
 
     
+    inline const FrameCaptureSettings& GetFrameCaptureSettings() const{ return m_frameCaptureSettings; }
+
+    
+    inline bool FrameCaptureSettingsHasBeenSet() const { return m_frameCaptureSettingsHasBeenSet; }
+
+    
+    inline void SetFrameCaptureSettings(const FrameCaptureSettings& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = value; }
+
+    
+    inline void SetFrameCaptureSettings(FrameCaptureSettings&& value) { m_frameCaptureSettingsHasBeenSet = true; m_frameCaptureSettings = std::move(value); }
+
+    
+    inline VideoCodecSettings& WithFrameCaptureSettings(const FrameCaptureSettings& value) { SetFrameCaptureSettings(value); return *this;}
+
+    
+    inline VideoCodecSettings& WithFrameCaptureSettings(FrameCaptureSettings&& value) { SetFrameCaptureSettings(std::move(value)); return *this;}
+
+
+    
     inline const H264Settings& GetH264Settings() const{ return m_h264Settings; }
+
+    
+    inline bool H264SettingsHasBeenSet() const { return m_h264SettingsHasBeenSet; }
 
     
     inline void SetH264Settings(const H264Settings& value) { m_h264SettingsHasBeenSet = true; m_h264Settings = value; }
@@ -63,6 +86,9 @@ namespace Model
     inline VideoCodecSettings& WithH264Settings(H264Settings&& value) { SetH264Settings(std::move(value)); return *this;}
 
   private:
+
+    FrameCaptureSettings m_frameCaptureSettings;
+    bool m_frameCaptureSettingsHasBeenSet;
 
     H264Settings m_h264Settings;
     bool m_h264SettingsHasBeenSet;

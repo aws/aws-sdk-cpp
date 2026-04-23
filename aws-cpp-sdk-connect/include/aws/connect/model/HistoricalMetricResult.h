@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The <code>Dimensions</code> for the metrics.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>The <code>Dimensions</code> for the metrics.</p>
+     */
     inline void SetDimensions(const Dimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>A list of <code>HistoricalMetricData</code> objects.</p>
      */
     inline const Aws::Vector<HistoricalMetricData>& GetCollections() const{ return m_collections; }
+
+    /**
+     * <p>A list of <code>HistoricalMetricData</code> objects.</p>
+     */
+    inline bool CollectionsHasBeenSet() const { return m_collectionsHasBeenSet; }
 
     /**
      * <p>A list of <code>HistoricalMetricData</code> objects.</p>

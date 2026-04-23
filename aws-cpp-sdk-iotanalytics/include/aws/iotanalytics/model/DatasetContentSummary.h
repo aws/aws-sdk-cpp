@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The version of the data set contents.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the data set contents.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The status of the data set contents.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the data set contents.</p>
+     */
     inline void SetStatus(const DatasetContentStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -119,6 +129,11 @@ namespace Model
     /**
      * <p>The actual time the creation of the data set contents was started.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The actual time the creation of the data set contents was started.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -141,6 +156,11 @@ namespace Model
      * <p>The time the creation of the data set contents was scheduled to start.</p>
      */
     inline const Aws::Utils::DateTime& GetScheduleTime() const{ return m_scheduleTime; }
+
+    /**
+     * <p>The time the creation of the data set contents was scheduled to start.</p>
+     */
+    inline bool ScheduleTimeHasBeenSet() const { return m_scheduleTimeHasBeenSet; }
 
     /**
      * <p>The time the creation of the data set contents was scheduled to start.</p>

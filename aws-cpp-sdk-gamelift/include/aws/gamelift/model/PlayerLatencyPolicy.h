@@ -36,9 +36,9 @@ namespace Model
    * players when placing a game session. When a latency policy is in force, a game
    * session cannot be placed at any destination in a region where a player is
    * reporting latency higher than the cap. Latency policies are only enforced when
-   * the placement request contains player latency information.</p> <p>Queue-related
-   * operations include:</p> <ul> <li> <p> <a>CreateGameSessionQueue</a> </p> </li>
-   * <li> <p> <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
+   * the placement request contains player latency information.</p> <ul> <li> <p>
+   * <a>CreateGameSessionQueue</a> </p> </li> <li> <p>
+   * <a>DescribeGameSessionQueues</a> </p> </li> <li> <p>
    * <a>UpdateGameSessionQueue</a> </p> </li> <li> <p> <a>DeleteGameSessionQueue</a>
    * </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/PlayerLatencyPolicy">AWS
@@ -63,6 +63,12 @@ namespace Model
      * <p>The maximum latency value that is allowed for any player, in milliseconds.
      * All policies must have a value set for this property.</p>
      */
+    inline bool MaximumIndividualPlayerLatencyMillisecondsHasBeenSet() const { return m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet; }
+
+    /**
+     * <p>The maximum latency value that is allowed for any player, in milliseconds.
+     * All policies must have a value set for this property.</p>
+     */
     inline void SetMaximumIndividualPlayerLatencyMilliseconds(int value) { m_maximumIndividualPlayerLatencyMillisecondsHasBeenSet = true; m_maximumIndividualPlayerLatencyMilliseconds = value; }
 
     /**
@@ -78,6 +84,13 @@ namespace Model
      * enforced until the queue times out.</p>
      */
     inline int GetPolicyDurationSeconds() const{ return m_policyDurationSeconds; }
+
+    /**
+     * <p>The length of time, in seconds, that the policy is enforced while placing a
+     * new game session. A null value for this property means that the policy is
+     * enforced until the queue times out.</p>
+     */
+    inline bool PolicyDurationSecondsHasBeenSet() const { return m_policyDurationSecondsHasBeenSet; }
 
     /**
      * <p>The length of time, in seconds, that the policy is enforced while placing a

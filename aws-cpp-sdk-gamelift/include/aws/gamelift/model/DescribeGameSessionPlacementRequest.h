@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Unique identifier for a game session placement to retrieve.</p>
      */
+    inline bool PlacementIdHasBeenSet() const { return m_placementIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a game session placement to retrieve.</p>
+     */
     inline void SetPlacementId(const Aws::String& value) { m_placementIdHasBeenSet = true; m_placementId = value; }
 
     /**

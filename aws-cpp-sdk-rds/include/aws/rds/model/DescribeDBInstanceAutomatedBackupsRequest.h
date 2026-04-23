@@ -62,6 +62,12 @@ namespace Model
      * <p>The resource ID of the DB instance that is the source of the automated
      * backup. This parameter isn't case-sensitive. </p>
      */
+    inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource ID of the DB instance that is the source of the automated
+     * backup. This parameter isn't case-sensitive. </p>
+     */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**
@@ -102,6 +108,14 @@ namespace Model
      * isn't case-sensitive. </p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p>(Optional) The user-supplied instance identifier. If this parameter is
+     * specified, it must match the identifier of an existing DB instance. It returns
+     * information from the specific DB instance' automated backup. This parameter
+     * isn't case-sensitive. </p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>(Optional) The user-supplied instance identifier. If this parameter is
@@ -169,6 +183,24 @@ namespace Model
      * default. The status for each resource is specified in the response.</p>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A filter that specifies which resources to return based on status.</p>
+     * <p>Supported filters are the following:</p> <ul> <li> <p> <code>status</code>
+     * </p> <ul> <li> <p> <code>active</code> - automated backups for current
+     * instances</p> </li> <li> <p> <code>retained</code> - automated backups for
+     * deleted instances</p> </li> <li> <p> <code>creating</code> - automated backups
+     * that are waiting for the first automated snapshot to be available</p> </li>
+     * </ul> </li> <li> <p> <code>db-instance-id</code> - Accepts DB instance
+     * identifiers and Amazon Resource Names (ARNs) for DB instances. The results list
+     * includes only information about the DB instance automated backupss identified by
+     * these ARNs.</p> </li> <li> <p> <code>dbi-resource-id</code> - Accepts DB
+     * instance resource identifiers and DB Amazon Resource Names (ARNs) for DB
+     * instances. The results list includes only information about the DB instance
+     * resources identified by these ARNs.</p> </li> </ul> <p>Returns all resources by
+     * default. The status for each resource is specified in the response.</p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies which resources to return based on status.</p>
@@ -293,6 +325,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -310,6 +350,13 @@ namespace Model
      * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The pagination token provided in the previous request. If this parameter is
+     * specified the response includes only records beyond the marker, up to
+     * <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The pagination token provided in the previous request. If this parameter is

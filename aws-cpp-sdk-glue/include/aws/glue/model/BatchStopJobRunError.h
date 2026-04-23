@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the job definition used in the job run in question.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition used in the job run in question.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The JobRunId of the job run in question.</p>
      */
+    inline bool JobRunIdHasBeenSet() const { return m_jobRunIdHasBeenSet; }
+
+    /**
+     * <p>The JobRunId of the job run in question.</p>
+     */
     inline void SetJobRunId(const Aws::String& value) { m_jobRunIdHasBeenSet = true; m_jobRunId = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>Specifies details about the error that was encountered.</p>
      */
     inline const ErrorDetail& GetErrorDetail() const{ return m_errorDetail; }
+
+    /**
+     * <p>Specifies details about the error that was encountered.</p>
+     */
+    inline bool ErrorDetailHasBeenSet() const { return m_errorDetailHasBeenSet; }
 
     /**
      * <p>Specifies details about the error that was encountered.</p>

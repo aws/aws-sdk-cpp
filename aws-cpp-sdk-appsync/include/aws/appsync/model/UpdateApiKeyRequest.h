@@ -43,37 +43,42 @@ namespace Model
 
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline const Aws::String& GetApiId() const{ return m_apiId; }
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
+     */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The ID for the GraphQL API.</p>
      */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline void SetApiId(Aws::String&& value) { m_apiIdHasBeenSet = true; m_apiId = std::move(value); }
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline void SetApiId(const char* value) { m_apiIdHasBeenSet = true; m_apiId.assign(value); }
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline UpdateApiKeyRequest& WithApiId(const Aws::String& value) { SetApiId(value); return *this;}
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline UpdateApiKeyRequest& WithApiId(Aws::String&& value) { SetApiId(std::move(value)); return *this;}
 
     /**
-     * <p>The ID for the GraphQL API</p>
+     * <p>The ID for the GraphQL API.</p>
      */
     inline UpdateApiKeyRequest& WithApiId(const char* value) { SetApiId(value); return *this;}
 
@@ -82,6 +87,11 @@ namespace Model
      * <p>The API key ID.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>The API key ID.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>The API key ID.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>A description of the purpose of the API key.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the purpose of the API key.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -155,6 +170,12 @@ namespace Model
      * represented as seconds since the epoch. For more information, see .</p>
      */
     inline long long GetExpires() const{ return m_expires; }
+
+    /**
+     * <p>The time from update time after which the API key expires. The date is
+     * represented as seconds since the epoch. For more information, see .</p>
+     */
+    inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
      * <p>The time from update time after which the API key expires. The date is

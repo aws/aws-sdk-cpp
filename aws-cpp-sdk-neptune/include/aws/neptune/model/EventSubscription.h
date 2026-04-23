@@ -61,6 +61,12 @@ namespace Model
      * <p>The AWS customer account associated with the event notification
      * subscription.</p>
      */
+    inline bool CustomerAwsIdHasBeenSet() const { return m_customerAwsIdHasBeenSet; }
+
+    /**
+     * <p>The AWS customer account associated with the event notification
+     * subscription.</p>
+     */
     inline void SetCustomerAwsId(const Aws::String& value) { m_customerAwsIdHasBeenSet = true; m_customerAwsId = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>The event notification subscription Id.</p>
      */
+    inline bool CustSubscriptionIdHasBeenSet() const { return m_custSubscriptionIdHasBeenSet; }
+
+    /**
+     * <p>The event notification subscription Id.</p>
+     */
     inline void SetCustSubscriptionId(const Aws::String& value) { m_custSubscriptionIdHasBeenSet = true; m_custSubscriptionId = value; }
 
     /**
@@ -134,6 +145,11 @@ namespace Model
      * <p>The topic ARN of the event notification subscription.</p>
      */
     inline const Aws::String& GetSnsTopicArn() const{ return m_snsTopicArn; }
+
+    /**
+     * <p>The topic ARN of the event notification subscription.</p>
+     */
+    inline bool SnsTopicArnHasBeenSet() const { return m_snsTopicArnHasBeenSet; }
 
     /**
      * <p>The topic ARN of the event notification subscription.</p>
@@ -175,6 +191,16 @@ namespace Model
      * was created.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the event notification subscription.</p> <p>Constraints:</p>
+     * <p>Can be one of the following: creating | modifying | deleting | active |
+     * no-permission | topic-not-exist</p> <p>The status "no-permission" indicates that
+     * Neptune no longer has permission to post to the SNS topic. The status
+     * "topic-not-exist" indicates that the topic was deleted after the subscription
+     * was created.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the event notification subscription.</p> <p>Constraints:</p>
@@ -245,6 +271,11 @@ namespace Model
     /**
      * <p>The time the event notification subscription was created.</p>
      */
+    inline bool SubscriptionCreationTimeHasBeenSet() const { return m_subscriptionCreationTimeHasBeenSet; }
+
+    /**
+     * <p>The time the event notification subscription was created.</p>
+     */
     inline void SetSubscriptionCreationTime(const Aws::String& value) { m_subscriptionCreationTimeHasBeenSet = true; m_subscriptionCreationTime = value; }
 
     /**
@@ -281,6 +312,11 @@ namespace Model
     /**
      * <p>The source type for the event notification subscription.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source type for the event notification subscription.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -313,6 +349,11 @@ namespace Model
      * <p>A list of source IDs for the event notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSourceIdsList() const{ return m_sourceIdsList; }
+
+    /**
+     * <p>A list of source IDs for the event notification subscription.</p>
+     */
+    inline bool SourceIdsListHasBeenSet() const { return m_sourceIdsListHasBeenSet; }
 
     /**
      * <p>A list of source IDs for the event notification subscription.</p>
@@ -354,6 +395,11 @@ namespace Model
      * <p>A list of event categories for the event notification subscription.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEventCategoriesList() const{ return m_eventCategoriesList; }
+
+    /**
+     * <p>A list of event categories for the event notification subscription.</p>
+     */
+    inline bool EventCategoriesListHasBeenSet() const { return m_eventCategoriesListHasBeenSet; }
 
     /**
      * <p>A list of event categories for the event notification subscription.</p>
@@ -401,6 +447,12 @@ namespace Model
      * <p>A Boolean value indicating if the subscription is enabled. True indicates the
      * subscription is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating if the subscription is enabled. True indicates the
+     * subscription is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -414,6 +466,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
      */
     inline const Aws::String& GetEventSubscriptionArn() const{ return m_eventSubscriptionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the event subscription.</p>
+     */
+    inline bool EventSubscriptionArnHasBeenSet() const { return m_eventSubscriptionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the event subscription.</p>

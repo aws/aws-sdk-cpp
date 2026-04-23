@@ -32,7 +32,7 @@ DeleteTrafficPolicyRequest::DeleteTrafficPolicyRequest() :
 
 Aws::String DeleteTrafficPolicyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -20,6 +20,7 @@
 #include <aws/elasticbeanstalk/model/S3Location.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticbeanstalk/model/ConfigurationOptionSetting.h>
+#include <aws/elasticbeanstalk/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -60,6 +61,11 @@ namespace Model
     /**
      * <p>The name of your custom platform.</p>
      */
+    inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
+
+    /**
+     * <p>The name of your custom platform.</p>
+     */
     inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>The number, such as 1.0.2, for the new platform version.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The number, such as 1.0.2, for the new platform version.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The number, such as 1.0.2, for the new platform version.</p>
@@ -132,6 +143,11 @@ namespace Model
     /**
      * <p>The location of the platform definition archive in Amazon S3.</p>
      */
+    inline bool PlatformDefinitionBundleHasBeenSet() const { return m_platformDefinitionBundleHasBeenSet; }
+
+    /**
+     * <p>The location of the platform definition archive in Amazon S3.</p>
+     */
     inline void SetPlatformDefinitionBundle(const S3Location& value) { m_platformDefinitionBundleHasBeenSet = true; m_platformDefinitionBundle = value; }
 
     /**
@@ -154,6 +170,11 @@ namespace Model
      * <p>The name of the builder environment.</p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the builder environment.</p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the builder environment.</p>
@@ -194,6 +215,11 @@ namespace Model
     /**
      * <p>The configuration option settings to apply to the builder environment.</p>
      */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
+
+    /**
+     * <p>The configuration option settings to apply to the builder environment.</p>
+     */
     inline void SetOptionSettings(const Aws::Vector<ConfigurationOptionSetting>& value) { m_optionSettingsHasBeenSet = true; m_optionSettings = value; }
 
     /**
@@ -221,6 +247,63 @@ namespace Model
      */
     inline CreatePlatformVersionRequest& AddOptionSettings(ConfigurationOptionSetting&& value) { m_optionSettingsHasBeenSet = true; m_optionSettings.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline CreatePlatformVersionRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline CreatePlatformVersionRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline CreatePlatformVersionRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Specifies the tags applied to the new platform version.</p> <p>Elastic
+     * Beanstalk applies these tags only to the platform version. Environments that you
+     * create using the platform version don't inherit the tags.</p>
+     */
+    inline CreatePlatformVersionRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_platformName;
@@ -237,6 +320,9 @@ namespace Model
 
     Aws::Vector<ConfigurationOptionSetting> m_optionSettings;
     bool m_optionSettingsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

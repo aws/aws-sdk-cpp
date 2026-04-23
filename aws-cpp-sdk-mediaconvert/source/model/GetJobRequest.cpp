@@ -29,7 +29,7 @@ GetJobRequest::GetJobRequest() :
 
 Aws::String GetJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

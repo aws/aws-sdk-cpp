@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
      */
+    inline bool S3LocationHasBeenSet() const { return m_s3LocationHasBeenSet; }
+
+    /**
+     * <p>An Amazon S3 bucket where you want to store the results of this request.</p>
+     */
     inline void SetS3Location(const S3OutputLocation& value) { m_s3LocationHasBeenSet = true; m_s3Location = value; }
 
     /**

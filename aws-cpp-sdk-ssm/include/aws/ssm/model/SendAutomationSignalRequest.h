@@ -57,6 +57,12 @@ namespace Model
      * <p>The unique identifier for an existing Automation execution that you want to
      * send the signal to.</p>
      */
+    inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for an existing Automation execution that you want to
+     * send the signal to.</p>
+     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * <p>The type of signal. Valid signal types include the following: Approve and
      * Reject </p>
      */
+    inline bool SignalTypeHasBeenSet() const { return m_signalTypeHasBeenSet; }
+
+    /**
+     * <p>The type of signal. Valid signal types include the following: Approve and
+     * Reject </p>
+     */
     inline void SetSignalType(const SignalType& value) { m_signalTypeHasBeenSet = true; m_signalType = value; }
 
     /**
@@ -126,6 +138,12 @@ namespace Model
      * used in the request. </p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>The data sent with the signal. The data schema depends on the type of signal
+     * used in the request. </p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
      * <p>The data sent with the signal. The data schema depends on the type of signal

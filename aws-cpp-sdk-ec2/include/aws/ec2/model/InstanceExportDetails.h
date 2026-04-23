@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the resource being exported.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resource being exported.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The target virtualization environment.</p>
      */
     inline const ExportEnvironment& GetTargetEnvironment() const{ return m_targetEnvironment; }
+
+    /**
+     * <p>The target virtualization environment.</p>
+     */
+    inline bool TargetEnvironmentHasBeenSet() const { return m_targetEnvironmentHasBeenSet; }
 
     /**
      * <p>The target virtualization environment.</p>

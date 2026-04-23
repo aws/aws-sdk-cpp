@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain you want to describe.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The suggesters you want to describe.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSuggesterNames() const{ return m_suggesterNames; }
+
+    /**
+     * <p>The suggesters you want to describe.</p>
+     */
+    inline bool SuggesterNamesHasBeenSet() const { return m_suggesterNamesHasBeenSet; }
 
     /**
      * <p>The suggesters you want to describe.</p>
@@ -137,6 +147,12 @@ namespace Model
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
      */
     inline bool GetDeployed() const{ return m_deployed; }
+
+    /**
+     * <p>Whether to display the deployed configuration (<code>true</code>) or include
+     * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+     */
+    inline bool DeployedHasBeenSet() const { return m_deployedHasBeenSet; }
 
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include

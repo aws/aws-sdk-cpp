@@ -56,6 +56,12 @@ namespace Model
      * <p>A unique identifier for the cluster whose snapshot schedule you want to
      * modify. </p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the cluster whose snapshot schedule you want to
+     * modify. </p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -90,44 +96,50 @@ namespace Model
 
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline const Aws::String& GetScheduleIdentifier() const{ return m_scheduleIdentifier; }
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
+     */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline void SetScheduleIdentifier(Aws::String&& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = std::move(value); }
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline void SetScheduleIdentifier(const char* value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier.assign(value); }
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline ModifyClusterSnapshotScheduleRequest& WithScheduleIdentifier(const Aws::String& value) { SetScheduleIdentifier(value); return *this;}
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline ModifyClusterSnapshotScheduleRequest& WithScheduleIdentifier(Aws::String&& value) { SetScheduleIdentifier(std::move(value)); return *this;}
 
     /**
-     * <p>A unique alphanumeric identifier for the schedule you want to associate with
-     * the cluster.</p>
+     * <p>A unique alphanumeric identifier for the schedule that you want to associate
+     * with the cluster.</p>
      */
     inline ModifyClusterSnapshotScheduleRequest& WithScheduleIdentifier(const char* value) { SetScheduleIdentifier(value); return *this;}
 
@@ -137,6 +149,12 @@ namespace Model
      * and the schedule.</p>
      */
     inline bool GetDisassociateSchedule() const{ return m_disassociateSchedule; }
+
+    /**
+     * <p>A boolean to indicate whether to remove the assoiciation between the cluster
+     * and the schedule.</p>
+     */
+    inline bool DisassociateScheduleHasBeenSet() const { return m_disassociateScheduleHasBeenSet; }
 
     /**
      * <p>A boolean to indicate whether to remove the assoiciation between the cluster

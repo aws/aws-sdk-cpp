@@ -52,31 +52,37 @@ namespace Model
 
 
     /**
-     * <p>Describes the location of the channel data, meaning the S3 location of the
+     * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
     inline const TransformDataSource& GetDataSource() const{ return m_dataSource; }
 
     /**
-     * <p>Describes the location of the channel data, meaning the S3 location of the
+     * <p>Describes the location of the channel data, which is, the S3 location of the
+     * input data that the model can consume.</p>
+     */
+    inline bool DataSourceHasBeenSet() const { return m_dataSourceHasBeenSet; }
+
+    /**
+     * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
     inline void SetDataSource(const TransformDataSource& value) { m_dataSourceHasBeenSet = true; m_dataSource = value; }
 
     /**
-     * <p>Describes the location of the channel data, meaning the S3 location of the
+     * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
     inline void SetDataSource(TransformDataSource&& value) { m_dataSourceHasBeenSet = true; m_dataSource = std::move(value); }
 
     /**
-     * <p>Describes the location of the channel data, meaning the S3 location of the
+     * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
     inline TransformInput& WithDataSource(const TransformDataSource& value) { SetDataSource(value); return *this;}
 
     /**
-     * <p>Describes the location of the channel data, meaning the S3 location of the
+     * <p>Describes the location of the channel data, which is, the S3 location of the
      * input data that the model can consume.</p>
      */
     inline TransformInput& WithDataSource(TransformDataSource&& value) { SetDataSource(std::move(value)); return *this;}
@@ -88,6 +94,13 @@ namespace Model
      * transform job.</p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The multipurpose internet mail extension (MIME) type of the data. Amazon
+     * SageMaker uses the MIME type with each http call to transfer data to the
+     * transform job.</p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The multipurpose internet mail extension (MIME) type of the data. Amazon
@@ -133,123 +146,225 @@ namespace Model
 
 
     /**
-     * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type. Amazon SageMaker automatically
-     * decompresses the data for the transform job accordingly. The default value is
-     * <code>None</code>.</p>
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
      */
     inline const CompressionType& GetCompressionType() const{ return m_compressionType; }
 
     /**
-     * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type. Amazon SageMaker automatically
-     * decompresses the data for the transform job accordingly. The default value is
-     * <code>None</code>.</p>
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
+     */
+    inline bool CompressionTypeHasBeenSet() const { return m_compressionTypeHasBeenSet; }
+
+    /**
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
      */
     inline void SetCompressionType(const CompressionType& value) { m_compressionTypeHasBeenSet = true; m_compressionType = value; }
 
     /**
-     * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type. Amazon SageMaker automatically
-     * decompresses the data for the transform job accordingly. The default value is
-     * <code>None</code>.</p>
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
      */
     inline void SetCompressionType(CompressionType&& value) { m_compressionTypeHasBeenSet = true; m_compressionType = std::move(value); }
 
     /**
-     * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type. Amazon SageMaker automatically
-     * decompresses the data for the transform job accordingly. The default value is
-     * <code>None</code>.</p>
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
      */
     inline TransformInput& WithCompressionType(const CompressionType& value) { SetCompressionType(value); return *this;}
 
     /**
-     * <p>Compressing data helps save on storage space. If your transform data is
-     * compressed, specify the compression type. Amazon SageMaker automatically
-     * decompresses the data for the transform job accordingly. The default value is
-     * <code>None</code>.</p>
+     * <p>If your transform data is compressed, specify the compression type. Amazon
+     * SageMaker automatically decompresses the data for the transform job accordingly.
+     * The default value is <code>None</code>.</p>
      */
     inline TransformInput& WithCompressionType(CompressionType&& value) { SetCompressionType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The method to use to split the transform job's data into smaller batches. The
-     * default value is <code>None</code>. If you don't want to split the data, specify
-     * <code>None</code>. If you want to split records on a newline character boundary,
-     * specify <code>Line</code>. To split records according to the RecordIO format,
-     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
-     * of records per batch in each request up to the MaxPayloadInMB limit. For more
-     * information, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
-     * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
-     * format, see <a
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p> </note>
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
      */
     inline const SplitType& GetSplitType() const{ return m_splitType; }
 
     /**
-     * <p>The method to use to split the transform job's data into smaller batches. The
-     * default value is <code>None</code>. If you don't want to split the data, specify
-     * <code>None</code>. If you want to split records on a newline character boundary,
-     * specify <code>Line</code>. To split records according to the RecordIO format,
-     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
-     * of records per batch in each request up to the MaxPayloadInMB limit. For more
-     * information, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
-     * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
-     * format, see <a
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p> </note>
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
+     */
+    inline bool SplitTypeHasBeenSet() const { return m_splitTypeHasBeenSet; }
+
+    /**
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
+     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
      */
     inline void SetSplitType(const SplitType& value) { m_splitTypeHasBeenSet = true; m_splitType = value; }
 
     /**
-     * <p>The method to use to split the transform job's data into smaller batches. The
-     * default value is <code>None</code>. If you don't want to split the data, specify
-     * <code>None</code>. If you want to split records on a newline character boundary,
-     * specify <code>Line</code>. To split records according to the RecordIO format,
-     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
-     * of records per batch in each request up to the MaxPayloadInMB limit. For more
-     * information, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
-     * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
-     * format, see <a
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p> </note>
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
      */
     inline void SetSplitType(SplitType&& value) { m_splitTypeHasBeenSet = true; m_splitType = std::move(value); }
 
     /**
-     * <p>The method to use to split the transform job's data into smaller batches. The
-     * default value is <code>None</code>. If you don't want to split the data, specify
-     * <code>None</code>. If you want to split records on a newline character boundary,
-     * specify <code>Line</code>. To split records according to the RecordIO format,
-     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
-     * of records per batch in each request up to the MaxPayloadInMB limit. For more
-     * information, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
-     * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
-     * format, see <a
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p> </note>
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
      */
     inline TransformInput& WithSplitType(const SplitType& value) { SetSplitType(value); return *this;}
 
     /**
-     * <p>The method to use to split the transform job's data into smaller batches. The
-     * default value is <code>None</code>. If you don't want to split the data, specify
-     * <code>None</code>. If you want to split records on a newline character boundary,
-     * specify <code>Line</code>. To split records according to the RecordIO format,
-     * specify <code>RecordIO</code>.</p> <p>Amazon SageMaker will send maximum number
-     * of records per batch in each request up to the MaxPayloadInMB limit. For more
-     * information, see <a
-     * href="http://mxnet.io/architecture/note_data_loading.html#data-format">RecordIO
-     * data format</a>.</p> <note> <p>For information about the <code>RecordIO</code>
-     * format, see <a
+     * <p>The method to use to split the transform job's data files into smaller
+     * batches. Splitting is necessary when the total size of each object is too large
+     * to fit in a single request. You can also use data splitting to improve
+     * performance by processing multiple concurrent mini-batches. The default value
+     * for <code>SplitType</code> is <code>None</code>, which indicates that input data
+     * files are not split, and request payloads contain the entire contents of an
+     * input object. Set the value of this parameter to <code>Line</code> to split
+     * records on a newline character boundary. <code>SplitType</code> also supports a
+     * number of record-oriented binary data formats.</p> <p>When splitting is enabled,
+     * the size of a mini-batch depends on the values of the <code>BatchStrategy</code>
+     * and <code>MaxPayloadInMB</code> parameters. When the value of
+     * <code>BatchStrategy</code> is <code>MultiRecord</code>, Amazon SageMaker sends
+     * the maximum number of records in each request, up to the
+     * <code>MaxPayloadInMB</code> limit. If the value of <code>BatchStrategy</code> is
+     * <code>SingleRecord</code>, Amazon SageMaker sends individual records in each
+     * request.</p> <note> <p>Some data formats represent a record as a binary payload
+     * wrapped with extra padding bytes. When splitting is applied to a binary data
+     * format, padding is removed if the value of <code>BatchStrategy</code> is set to
+     * <code>SingleRecord</code>. Padding is not removed if the value of
+     * <code>BatchStrategy</code> is set to <code>MultiRecord</code>.</p> <p>For more
+     * information about the RecordIO, see <a
      * href="http://mxnet.io/architecture/note_data_loading.html#data-format">Data
-     * Format</a>.</p> </note>
+     * Format</a> in the MXNet documentation. For more information about the TFRecord,
+     * see <a
+     * href="https://www.tensorflow.org/guide/datasets#consuming_tfrecord_data">Consuming
+     * TFRecord data</a> in the TensorFlow documentation.</p> </note>
      */
     inline TransformInput& WithSplitType(SplitType&& value) { SetSplitType(std::move(value)); return *this;}
 

@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Names (ARN) of the resources.</p>
      */
+    inline bool ResourceArnsHasBeenSet() const { return m_resourceArnsHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Names (ARN) of the resources.</p>
+     */
     inline void SetResourceArns(const Aws::Vector<Aws::String>& value) { m_resourceArnsHasBeenSet = true; m_resourceArns = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The principal.</p>
      */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
+
+    /**
+     * <p>The principal.</p>
+     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next page of results.</p>
@@ -162,6 +177,13 @@ namespace Model
      * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return with a single call. To retrieve the

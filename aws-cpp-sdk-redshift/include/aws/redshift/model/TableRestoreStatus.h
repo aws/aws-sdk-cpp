@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The unique identifier for the table restore request.</p>
      */
+    inline bool TableRestoreRequestIdHasBeenSet() const { return m_tableRestoreRequestIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the table restore request.</p>
+     */
     inline void SetTableRestoreRequestId(const Aws::String& value) { m_tableRestoreRequestIdHasBeenSet = true; m_tableRestoreRequestId = value; }
 
     /**
@@ -100,6 +105,13 @@ namespace Model
      * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
      * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A value that describes the current state of the table restore request.</p>
+     * <p>Valid Values: <code>SUCCEEDED</code>, <code>FAILED</code>,
+     * <code>CANCELED</code>, <code>PENDING</code>, <code>IN_PROGRESS</code> </p>
+     */
     inline void SetStatus(const TableRestoreStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -130,6 +142,13 @@ namespace Model
      * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>A description of the status of the table restore request. Status values
+     * include <code>SUCCEEDED</code>, <code>FAILED</code>, <code>CANCELED</code>,
+     * <code>PENDING</code>, <code>IN_PROGRESS</code>.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>A description of the status of the table restore request. Status values
@@ -184,6 +203,12 @@ namespace Model
      * <p>The time that the table restore request was made, in Universal Coordinated
      * Time (UTC).</p>
      */
+    inline bool RequestTimeHasBeenSet() const { return m_requestTimeHasBeenSet; }
+
+    /**
+     * <p>The time that the table restore request was made, in Universal Coordinated
+     * Time (UTC).</p>
+     */
     inline void SetRequestTime(const Aws::Utils::DateTime& value) { m_requestTimeHasBeenSet = true; m_requestTime = value; }
 
     /**
@@ -213,6 +238,11 @@ namespace Model
     /**
      * <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
      */
+    inline bool ProgressInMegaBytesHasBeenSet() const { return m_progressInMegaBytesHasBeenSet; }
+
+    /**
+     * <p>The amount of data restored to the new table so far, in megabytes (MB).</p>
+     */
     inline void SetProgressInMegaBytes(long long value) { m_progressInMegaBytesHasBeenSet = true; m_progressInMegaBytes = value; }
 
     /**
@@ -225,6 +255,11 @@ namespace Model
      * <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
      */
     inline long long GetTotalDataInMegaBytes() const{ return m_totalDataInMegaBytes; }
+
+    /**
+     * <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
+     */
+    inline bool TotalDataInMegaBytesHasBeenSet() const { return m_totalDataInMegaBytesHasBeenSet; }
 
     /**
      * <p>The total amount of data to restore to the new table, in megabytes (MB).</p>
@@ -242,6 +277,12 @@ namespace Model
      * restored to.</p>
      */
     inline const Aws::String& GetClusterIdentifier() const{ return m_clusterIdentifier; }
+
+    /**
+     * <p>The identifier of the Amazon Redshift cluster that the table is being
+     * restored to.</p>
+     */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
 
     /**
      * <p>The identifier of the Amazon Redshift cluster that the table is being
@@ -288,6 +329,11 @@ namespace Model
     /**
      * <p>The identifier of the snapshot that the table is being restored from.</p>
      */
+    inline bool SnapshotIdentifierHasBeenSet() const { return m_snapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier of the snapshot that the table is being restored from.</p>
+     */
     inline void SetSnapshotIdentifier(const Aws::String& value) { m_snapshotIdentifierHasBeenSet = true; m_snapshotIdentifier = value; }
 
     /**
@@ -320,6 +366,11 @@ namespace Model
      * <p>The name of the source database that contains the table being restored.</p>
      */
     inline const Aws::String& GetSourceDatabaseName() const{ return m_sourceDatabaseName; }
+
+    /**
+     * <p>The name of the source database that contains the table being restored.</p>
+     */
+    inline bool SourceDatabaseNameHasBeenSet() const { return m_sourceDatabaseNameHasBeenSet; }
 
     /**
      * <p>The name of the source database that contains the table being restored.</p>
@@ -360,6 +411,11 @@ namespace Model
     /**
      * <p>The name of the source schema that contains the table being restored.</p>
      */
+    inline bool SourceSchemaNameHasBeenSet() const { return m_sourceSchemaNameHasBeenSet; }
+
+    /**
+     * <p>The name of the source schema that contains the table being restored.</p>
+     */
     inline void SetSourceSchemaName(const Aws::String& value) { m_sourceSchemaNameHasBeenSet = true; m_sourceSchemaName = value; }
 
     /**
@@ -392,6 +448,11 @@ namespace Model
      * <p>The name of the source table being restored.</p>
      */
     inline const Aws::String& GetSourceTableName() const{ return m_sourceTableName; }
+
+    /**
+     * <p>The name of the source table being restored.</p>
+     */
+    inline bool SourceTableNameHasBeenSet() const { return m_sourceTableNameHasBeenSet; }
 
     /**
      * <p>The name of the source table being restored.</p>
@@ -432,6 +493,11 @@ namespace Model
     /**
      * <p>The name of the database to restore the table to.</p>
      */
+    inline bool TargetDatabaseNameHasBeenSet() const { return m_targetDatabaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database to restore the table to.</p>
+     */
     inline void SetTargetDatabaseName(const Aws::String& value) { m_targetDatabaseNameHasBeenSet = true; m_targetDatabaseName = value; }
 
     /**
@@ -468,6 +534,11 @@ namespace Model
     /**
      * <p>The name of the schema to restore the table to.</p>
      */
+    inline bool TargetSchemaNameHasBeenSet() const { return m_targetSchemaNameHasBeenSet; }
+
+    /**
+     * <p>The name of the schema to restore the table to.</p>
+     */
     inline void SetTargetSchemaName(const Aws::String& value) { m_targetSchemaNameHasBeenSet = true; m_targetSchemaName = value; }
 
     /**
@@ -500,6 +571,11 @@ namespace Model
      * <p>The name of the table to create as a result of the table restore request.</p>
      */
     inline const Aws::String& GetNewTableName() const{ return m_newTableName; }
+
+    /**
+     * <p>The name of the table to create as a result of the table restore request.</p>
+     */
+    inline bool NewTableNameHasBeenSet() const { return m_newTableNameHasBeenSet; }
 
     /**
      * <p>The name of the table to create as a result of the table restore request.</p>

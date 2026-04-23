@@ -64,6 +64,15 @@ namespace Model
      * returns all of the configurations that are associated with the current AWS
      * account.</p>
      */
+    inline bool HostedZoneIdHasBeenSet() const { return m_hostedZoneIdHasBeenSet; }
+
+    /**
+     * <p>(Optional) If you want to list the query logging configuration that is
+     * associated with a hosted zone, specify the ID in <code>HostedZoneId</code>. </p>
+     * <p>If you don't specify a hosted zone ID, <code>ListQueryLoggingConfigs</code>
+     * returns all of the configurations that are associated with the current AWS
+     * account.</p>
+     */
     inline void SetHostedZoneId(const Aws::String& value) { m_hostedZoneIdHasBeenSet = true; m_hostedZoneId = value; }
 
     /**
@@ -122,6 +131,17 @@ namespace Model
      * request.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
+     * query logging configurations, use <code>NextToken</code> to get the second and
+     * subsequent pages of results.</p> <p>For the first
+     * <code>ListQueryLoggingConfigs</code> request, omit this value.</p> <p>For the
+     * second and subsequent requests, get the value of <code>NextToken</code> from the
+     * previous response and specify that value for <code>NextToken</code> in the
+     * request.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>(Optional) If the current AWS account has more than <code>MaxResults</code>
@@ -199,6 +219,16 @@ namespace Model
      * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
      */
     inline const Aws::String& GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>(Optional) The maximum number of query logging configurations that you want
+     * Amazon Route 53 to return in response to the current request. If the current AWS
+     * account has more than <code>MaxResults</code> configurations, use the value of
+     * <a>ListQueryLoggingConfigsResponse$NextToken</a> in the response to get the next
+     * page of results.</p> <p>If you don't specify a value for
+     * <code>MaxResults</code>, Route 53 returns up to 100 configurations.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>(Optional) The maximum number of query logging configurations that you want

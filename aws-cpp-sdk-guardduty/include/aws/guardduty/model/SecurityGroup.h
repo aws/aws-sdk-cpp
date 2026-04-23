@@ -55,6 +55,11 @@ namespace Model
     /**
      * EC2 instance's security group ID.
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * EC2 instance's security group ID.
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * EC2 instance's security group name.
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * EC2 instance's security group name.
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * EC2 instance's security group name.

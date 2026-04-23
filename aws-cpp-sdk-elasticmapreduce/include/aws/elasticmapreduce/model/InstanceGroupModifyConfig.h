@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/elasticmapreduce/model/ShrinkPolicy.h>
+#include <aws/elasticmapreduce/model/Configuration.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Modify an instance group size.</p><p><h3>See Also:</h3>   <a
+   * <p>Modify the size or configurations of an instance group.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/elasticmapreduce-2009-03-31/InstanceGroupModifyConfig">AWS
    * API Reference</a></p>
    */
@@ -53,6 +55,11 @@ namespace Model
      * <p>Unique ID of the instance group to expand or shrink.</p>
      */
     inline const Aws::String& GetInstanceGroupId() const{ return m_instanceGroupId; }
+
+    /**
+     * <p>Unique ID of the instance group to expand or shrink.</p>
+     */
+    inline bool InstanceGroupIdHasBeenSet() const { return m_instanceGroupIdHasBeenSet; }
 
     /**
      * <p>Unique ID of the instance group to expand or shrink.</p>
@@ -93,6 +100,11 @@ namespace Model
     /**
      * <p>Target size for the instance group.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>Target size for the instance group.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -106,6 +118,12 @@ namespace Model
      * instance group will not return to its original requested size.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEC2InstanceIdsToTerminate() const{ return m_eC2InstanceIdsToTerminate; }
+
+    /**
+     * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
+     * instance group will not return to its original requested size.</p>
+     */
+    inline bool EC2InstanceIdsToTerminateHasBeenSet() const { return m_eC2InstanceIdsToTerminateHasBeenSet; }
 
     /**
      * <p>The EC2 InstanceIds to terminate. After you terminate the instances, the
@@ -158,6 +176,11 @@ namespace Model
     /**
      * <p>Policy for customizing shrink operations.</p>
      */
+    inline bool ShrinkPolicyHasBeenSet() const { return m_shrinkPolicyHasBeenSet; }
+
+    /**
+     * <p>Policy for customizing shrink operations.</p>
+     */
     inline void SetShrinkPolicy(const ShrinkPolicy& value) { m_shrinkPolicyHasBeenSet = true; m_shrinkPolicy = value; }
 
     /**
@@ -175,6 +198,47 @@ namespace Model
      */
     inline InstanceGroupModifyConfig& WithShrinkPolicy(ShrinkPolicy&& value) { SetShrinkPolicy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline const Aws::Vector<Configuration>& GetConfigurations() const{ return m_configurations; }
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline bool ConfigurationsHasBeenSet() const { return m_configurationsHasBeenSet; }
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline void SetConfigurations(const Aws::Vector<Configuration>& value) { m_configurationsHasBeenSet = true; m_configurations = value; }
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline void SetConfigurations(Aws::Vector<Configuration>&& value) { m_configurationsHasBeenSet = true; m_configurations = std::move(value); }
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline InstanceGroupModifyConfig& WithConfigurations(const Aws::Vector<Configuration>& value) { SetConfigurations(value); return *this;}
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline InstanceGroupModifyConfig& WithConfigurations(Aws::Vector<Configuration>&& value) { SetConfigurations(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline InstanceGroupModifyConfig& AddConfigurations(const Configuration& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(value); return *this; }
+
+    /**
+     * <p>A list of new or modified configurations to apply for an instance group.</p>
+     */
+    inline InstanceGroupModifyConfig& AddConfigurations(Configuration&& value) { m_configurationsHasBeenSet = true; m_configurations.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_instanceGroupId;
@@ -188,6 +252,9 @@ namespace Model
 
     ShrinkPolicy m_shrinkPolicy;
     bool m_shrinkPolicyHasBeenSet;
+
+    Aws::Vector<Configuration> m_configurations;
+    bool m_configurationsHasBeenSet;
   };
 
 } // namespace Model

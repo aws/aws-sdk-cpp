@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier of the directory for which the schema extension will be
      * applied to.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory for which the schema extension will be
+     * applied to.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p>If true, creates a snapshot of the directory before applying the schema
      * extension.</p>
      */
+    inline bool CreateSnapshotBeforeSchemaExtensionHasBeenSet() const { return m_createSnapshotBeforeSchemaExtensionHasBeenSet; }
+
+    /**
+     * <p>If true, creates a snapshot of the directory before applying the schema
+     * extension.</p>
+     */
     inline void SetCreateSnapshotBeforeSchemaExtension(bool value) { m_createSnapshotBeforeSchemaExtensionHasBeenSet = true; m_createSnapshotBeforeSchemaExtension = value; }
 
     /**
@@ -113,6 +125,14 @@ namespace Model
      * 1MB.</p>
      */
     inline const Aws::String& GetLdifContent() const{ return m_ldifContent; }
+
+    /**
+     * <p>The LDIF file represented as a string. To construct the LdifContent string,
+     * precede each line as it would be formatted in an ldif file with \n. See the
+     * example request below for more details. The file size can be no larger than
+     * 1MB.</p>
+     */
+    inline bool LdifContentHasBeenSet() const { return m_ldifContentHasBeenSet; }
 
     /**
      * <p>The LDIF file represented as a string. To construct the LdifContent string,
@@ -167,6 +187,11 @@ namespace Model
      * <p>A description of the schema extension.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the schema extension.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the schema extension.</p>

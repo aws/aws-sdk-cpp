@@ -54,6 +54,11 @@ namespace Model
     /**
      * A client token used to correlate requests and responses.
      */
+    inline bool AmznClientTokenHasBeenSet() const { return m_amznClientTokenHasBeenSet; }
+
+    /**
+     * A client token used to correlate requests and responses.
+     */
     inline void SetAmznClientToken(const Aws::String& value) { m_amznClientTokenHasBeenSet = true; m_amznClientToken = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * The ID of the device definition.
      */
+    inline bool DeviceDefinitionIdHasBeenSet() const { return m_deviceDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the device definition.
+     */
     inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
 
     /**
@@ -122,6 +132,11 @@ namespace Model
      * A list of devices in the definition version.
      */
     inline const Aws::Vector<Device>& GetDevices() const{ return m_devices; }
+
+    /**
+     * A list of devices in the definition version.
+     */
+    inline bool DevicesHasBeenSet() const { return m_devicesHasBeenSet; }
 
     /**
      * A list of devices in the definition version.

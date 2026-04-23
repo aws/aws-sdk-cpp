@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ID of the pipeline.</p>
      */
+    inline bool PipelineIdHasBeenSet() const { return m_pipelineIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the pipeline.</p>
+     */
     inline void SetPipelineId(const Aws::String& value) { m_pipelineIdHasBeenSet = true; m_pipelineId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The ID of the object.</p>
      */
+    inline bool ObjectIdHasBeenSet() const { return m_objectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the object.</p>
+     */
     inline void SetObjectId(const Aws::String& value) { m_objectIdHasBeenSet = true; m_objectId = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The expression to evaluate.</p>
      */
     inline const Aws::String& GetExpression() const{ return m_expression; }
+
+    /**
+     * <p>The expression to evaluate.</p>
+     */
+    inline bool ExpressionHasBeenSet() const { return m_expressionHasBeenSet; }
 
     /**
      * <p>The expression to evaluate.</p>

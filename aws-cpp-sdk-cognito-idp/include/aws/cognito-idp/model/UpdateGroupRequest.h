@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The user pool ID for the user pool.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID for the user pool.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID for the user pool.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>A string containing the new description of the group.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A string containing the new description of the group.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -158,6 +173,13 @@ namespace Model
      * token.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The new role ARN for the group. This is used for setting the
+     * <code>cognito:roles</code> and <code>cognito:preferred_role</code> claims in the
+     * token.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The new role ARN for the group. This is used for setting the
@@ -207,6 +229,12 @@ namespace Model
      * parameter, see .</p>
      */
     inline int GetPrecedence() const{ return m_precedence; }
+
+    /**
+     * <p>The new precedence value for the group. For more information about this
+     * parameter, see .</p>
+     */
+    inline bool PrecedenceHasBeenSet() const { return m_precedenceHasBeenSet; }
 
     /**
      * <p>The new precedence value for the group. For more information about this

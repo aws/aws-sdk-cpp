@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique ID for this security group.</p>
      */
+    inline bool SecurityGroupIdentifierHasBeenSet() const { return m_securityGroupIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique ID for this security group.</p>
+     */
     inline void SetSecurityGroupIdentifier(const Aws::String& value) { m_securityGroupIdentifierHasBeenSet = true; m_securityGroupIdentifier = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The status of this security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of this security group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of this security group.</p>

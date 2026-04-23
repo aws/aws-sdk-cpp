@@ -54,6 +54,12 @@ namespace Model
      * <p>The configurationId in ADS that uniquely identifies the grouped
      * application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The configurationId in ADS that uniquely identifies the grouped
+     * application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**

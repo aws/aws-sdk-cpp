@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the active violation.</p>
      */
+    inline bool ViolationIdHasBeenSet() const { return m_violationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the active violation.</p>
+     */
     inline void SetViolationId(const Aws::String& value) { m_violationIdHasBeenSet = true; m_violationId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the thing responsible for the active violation.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing responsible for the active violation.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing responsible for the active violation.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The security profile whose behavior is in violation.</p>
      */
+    inline bool SecurityProfileNameHasBeenSet() const { return m_securityProfileNameHasBeenSet; }
+
+    /**
+     * <p>The security profile whose behavior is in violation.</p>
+     */
     inline void SetSecurityProfileName(const Aws::String& value) { m_securityProfileNameHasBeenSet = true; m_securityProfileName = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The behavior which is being violated.</p>
      */
+    inline bool BehaviorHasBeenSet() const { return m_behaviorHasBeenSet; }
+
+    /**
+     * <p>The behavior which is being violated.</p>
+     */
     inline void SetBehavior(const Behavior& value) { m_behaviorHasBeenSet = true; m_behavior = value; }
 
     /**
@@ -190,6 +210,12 @@ namespace Model
      * violation.</p>
      */
     inline const MetricValue& GetLastViolationValue() const{ return m_lastViolationValue; }
+
+    /**
+     * <p>The value of the metric (the measurement) which caused the most recent
+     * violation.</p>
+     */
+    inline bool LastViolationValueHasBeenSet() const { return m_lastViolationValueHasBeenSet; }
 
     /**
      * <p>The value of the metric (the measurement) which caused the most recent
@@ -224,6 +250,11 @@ namespace Model
     /**
      * <p>The time the most recent violation occurred.</p>
      */
+    inline bool LastViolationTimeHasBeenSet() const { return m_lastViolationTimeHasBeenSet; }
+
+    /**
+     * <p>The time the most recent violation occurred.</p>
+     */
     inline void SetLastViolationTime(const Aws::Utils::DateTime& value) { m_lastViolationTimeHasBeenSet = true; m_lastViolationTime = value; }
 
     /**
@@ -246,6 +277,11 @@ namespace Model
      * <p>The time the violation started.</p>
      */
     inline const Aws::Utils::DateTime& GetViolationStartTime() const{ return m_violationStartTime; }
+
+    /**
+     * <p>The time the violation started.</p>
+     */
+    inline bool ViolationStartTimeHasBeenSet() const { return m_violationStartTimeHasBeenSet; }
 
     /**
      * <p>The time the violation started.</p>

@@ -19,6 +19,7 @@
 #include <aws/core/utils/Array.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/mediastore-data/model/StorageClass.h>
+#include <aws/mediastore-data/model/UploadAvailability.h>
 #include <utility>
 
 namespace Aws
@@ -45,6 +46,8 @@ namespace Model
 
     bool SignBody() const override { return false; }
 
+    bool IsChunked() const override { return true; }
+
 
     /**
      * <p>The path (including the file name) where the object is stored in the
@@ -68,6 +71,29 @@ namespace Model
      * omit an extension. </p>
      */
     inline const Aws::String& GetPath() const{ return m_path; }
+
+    /**
+     * <p>The path (including the file name) where the object is stored in the
+     * container. Format: &lt;folder name&gt;/&lt;folder name&gt;/&lt;file name&gt;</p>
+     * <p>For example, to upload the file <code>mlaw.avi</code> to the folder path
+     * <code>premium\canada</code> in the container <code>movies</code>, enter the path
+     * <code>premium/canada/mlaw.avi</code>.</p> <p>Do not include the container name
+     * in this path.</p> <p>If the path includes any folders that don't exist yet, the
+     * service creates them. For example, suppose you have an existing
+     * <code>premium/usa</code> subfolder. If you specify <code>premium/canada</code>,
+     * the service creates a <code>canada</code> subfolder in the <code>premium</code>
+     * folder. You then have two subfolders, <code>usa</code> and <code>canada</code>,
+     * in the <code>premium</code> folder. </p> <p>There is no correlation between the
+     * path to the source and the path (folders) in the container in AWS Elemental
+     * MediaStore.</p> <p>For more information about folders and how they exist in a
+     * container, see the <a
+     * href="http://docs.aws.amazon.com/mediastore/latest/ug/">AWS Elemental MediaStore
+     * User Guide</a>.</p> <p>The file name is the name that is assigned to the file
+     * that you upload. The file can have the same name inside and outside of AWS
+     * Elemental MediaStore, or it can have the same name. The file name can include or
+     * omit an extension. </p>
+     */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
 
     /**
      * <p>The path (including the file name) where the object is stored in the
@@ -224,6 +250,15 @@ namespace Model
      * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
      * <p>Headers with a custom user-defined value are also accepted.</p>
      */
+    inline bool CacheControlHasBeenSet() const { return m_cacheControlHasBeenSet; }
+
+    /**
+     * <p>An optional <code>CacheControl</code> header that allows the caller to
+     * control the object's cache behavior. Headers can be passed in as specified in
+     * the HTTP at <a
+     * href="https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9">https://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.9</a>.</p>
+     * <p>Headers with a custom user-defined value are also accepted.</p>
+     */
     inline void SetCacheControl(const Aws::String& value) { m_cacheControlHasBeenSet = true; m_cacheControl = value; }
 
     /**
@@ -284,6 +319,13 @@ namespace Model
      * high-performance temporal storage class, and objects are persisted into durable
      * storage shortly after being received.</p>
      */
+    inline bool StorageClassHasBeenSet() const { return m_storageClassHasBeenSet; }
+
+    /**
+     * <p>Indicates the storage class of a <code>Put</code> request. Defaults to
+     * high-performance temporal storage class, and objects are persisted into durable
+     * storage shortly after being received.</p>
+     */
     inline void SetStorageClass(const StorageClass& value) { m_storageClassHasBeenSet = true; m_storageClass = value; }
 
     /**
@@ -307,6 +349,62 @@ namespace Model
      */
     inline PutObjectRequest& WithStorageClass(StorageClass&& value) { SetStorageClass(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline const UploadAvailability& GetUploadAvailability() const{ return m_uploadAvailability; }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline void SetUploadAvailability(const UploadAvailability& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = value; }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline void SetUploadAvailability(UploadAvailability&& value) { m_uploadAvailabilityHasBeenSet = true; m_uploadAvailability = std::move(value); }
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline PutObjectRequest& WithUploadAvailability(const UploadAvailability& value) { SetUploadAvailability(value); return *this;}
+
+    /**
+     * <p>Indicates the availability of an object while it is still uploading. If the
+     * value is set to <code>streaming</code>, the object is available for downloading
+     * after some initial buffering but before the object is uploaded completely. If
+     * the value is set to <code>standard</code>, the object is available for
+     * downloading only when it is uploaded completely. The default value for this
+     * header is <code>standard</code>.</p> <p>To use this header, you must also set
+     * the HTTP <code>Transfer-Encoding</code> header to <code>chunked</code>.</p>
+     */
+    inline PutObjectRequest& WithUploadAvailability(UploadAvailability&& value) { SetUploadAvailability(std::move(value)); return *this;}
+
   private:
 
 
@@ -318,6 +416,9 @@ namespace Model
 
     StorageClass m_storageClass;
     bool m_storageClassHasBeenSet;
+
+    UploadAvailability m_uploadAvailability;
+    bool m_uploadAvailabilityHasBeenSet;
   };
 
 } // namespace Model

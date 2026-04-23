@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the DP parameter group.</p>
      */
+    inline bool DBParameterGroupNameHasBeenSet() const { return m_dBParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the DP parameter group.</p>
+     */
     inline void SetDBParameterGroupName(const Aws::String& value) { m_dBParameterGroupNameHasBeenSet = true; m_dBParameterGroupName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The status of parameter updates.</p>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+
+    /**
+     * <p>The status of parameter updates.</p>
+     */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
 
     /**
      * <p>The status of parameter updates.</p>

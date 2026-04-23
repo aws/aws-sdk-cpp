@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -76,6 +84,11 @@ namespace Model
      * <p>The ID of the notification.</p>
      */
     inline const Aws::String& GetConnectionNotificationId() const{ return m_connectionNotificationId; }
+
+    /**
+     * <p>The ID of the notification.</p>
+     */
+    inline bool ConnectionNotificationIdHasBeenSet() const { return m_connectionNotificationIdHasBeenSet; }
 
     /**
      * <p>The ID of the notification.</p>
@@ -116,6 +129,11 @@ namespace Model
     /**
      * <p>The ARN for the SNS topic for the notification.</p>
      */
+    inline bool ConnectionNotificationArnHasBeenSet() const { return m_connectionNotificationArnHasBeenSet; }
+
+    /**
+     * <p>The ARN for the SNS topic for the notification.</p>
+     */
     inline void SetConnectionNotificationArn(const Aws::String& value) { m_connectionNotificationArnHasBeenSet = true; m_connectionNotificationArn = value; }
 
     /**
@@ -149,6 +167,12 @@ namespace Model
      * <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionEvents() const{ return m_connectionEvents; }
+
+    /**
+     * <p>One or more events for the endpoint. Valid values are <code>Accept</code>,
+     * <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
+     */
+    inline bool ConnectionEventsHasBeenSet() const { return m_connectionEventsHasBeenSet; }
 
     /**
      * <p>One or more events for the endpoint. Valid values are <code>Accept</code>,

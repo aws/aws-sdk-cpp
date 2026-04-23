@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The instance ID.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>Specifies whether to force an instance to stop.</p>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>Specifies whether to force an instance to stop.</p>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>Specifies whether to force an instance to stop.</p>

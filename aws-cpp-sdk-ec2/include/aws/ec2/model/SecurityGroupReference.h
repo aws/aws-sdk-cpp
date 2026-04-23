@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of your security group.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of your security group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The ID of the VPC with the referencing security group.</p>
      */
+    inline bool ReferencingVpcIdHasBeenSet() const { return m_referencingVpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC with the referencing security group.</p>
+     */
     inline void SetReferencingVpcId(const Aws::String& value) { m_referencingVpcIdHasBeenSet = true; m_referencingVpcId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The ID of the VPC peering connection.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of the VPC peering connection.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC peering connection.</p>

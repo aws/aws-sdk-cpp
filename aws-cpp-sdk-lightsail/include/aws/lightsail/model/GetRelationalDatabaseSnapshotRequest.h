@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the database snapshot for which to get information.</p>
      */
+    inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database snapshot for which to get information.</p>
+     */
     inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
 
     /**

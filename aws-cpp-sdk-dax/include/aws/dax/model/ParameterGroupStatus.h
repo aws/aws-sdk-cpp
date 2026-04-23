@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the parameter group.</p>
      */
+    inline bool ParameterGroupNameHasBeenSet() const { return m_parameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter group.</p>
+     */
     inline void SetParameterGroupName(const Aws::String& value) { m_parameterGroupNameHasBeenSet = true; m_parameterGroupName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The status of parameter updates. </p>
      */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
+
+    /**
+     * <p>The status of parameter updates. </p>
+     */
     inline void SetParameterApplyStatus(const Aws::String& value) { m_parameterApplyStatusHasBeenSet = true; m_parameterApplyStatus = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The node IDs of one or more nodes to be rebooted.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNodeIdsToReboot() const{ return m_nodeIdsToReboot; }
+
+    /**
+     * <p>The node IDs of one or more nodes to be rebooted.</p>
+     */
+    inline bool NodeIdsToRebootHasBeenSet() const { return m_nodeIdsToRebootHasBeenSet; }
 
     /**
      * <p>The node IDs of one or more nodes to be rebooted.</p>

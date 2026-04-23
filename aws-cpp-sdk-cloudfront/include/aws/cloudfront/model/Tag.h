@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p> A complex type that contains <code>Tag</code> key and <code>Tag</code>
    * value.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Tag">AWS API
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Tag">AWS API
    * Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Tag
@@ -55,6 +55,14 @@ namespace Model
      * . : / = + @</code>.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
+     * be between 1 and 128 characters. Valid characters include <code>a-z</code>,
+     * <code>A-Z</code>, <code>0-9</code>, space, and the special characters <code>_ -
+     * . : / = + @</code>.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p> A string that contains <code>Tag</code> key.</p> <p>The string length should
@@ -112,6 +120,14 @@ namespace Model
      * characters <code>_ - . : / = + @</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string
+     * length should be between 0 and 256 characters. Valid characters include
+     * <code>a-z</code>, <code>A-Z</code>, <code>0-9</code>, space, and the special
+     * characters <code>_ - . : / = + @</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p> A string that contains an optional <code>Tag</code> value.</p> <p>The string

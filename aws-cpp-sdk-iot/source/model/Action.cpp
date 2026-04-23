@@ -43,6 +43,7 @@ Action::Action() :
     m_elasticsearchHasBeenSet(false),
     m_salesforceHasBeenSet(false),
     m_iotAnalyticsHasBeenSet(false),
+    m_iotEventsHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false)
 {
 }
@@ -62,6 +63,7 @@ Action::Action(JsonView jsonValue) :
     m_elasticsearchHasBeenSet(false),
     m_salesforceHasBeenSet(false),
     m_iotAnalyticsHasBeenSet(false),
+    m_iotEventsHasBeenSet(false),
     m_stepFunctionsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -167,6 +169,13 @@ Action& Action::operator =(JsonView jsonValue)
     m_iotAnalyticsHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("iotEvents"))
+  {
+    m_iotEvents = jsonValue.GetObject("iotEvents");
+
+    m_iotEventsHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("stepFunctions"))
   {
     m_stepFunctions = jsonValue.GetObject("stepFunctions");
@@ -262,6 +271,12 @@ JsonValue Action::Jsonize() const
   if(m_iotAnalyticsHasBeenSet)
   {
    payload.WithObject("iotAnalytics", m_iotAnalytics.Jsonize());
+
+  }
+
+  if(m_iotEventsHasBeenSet)
+  {
+   payload.WithObject("iotEvents", m_iotEvents.Jsonize());
 
   }
 

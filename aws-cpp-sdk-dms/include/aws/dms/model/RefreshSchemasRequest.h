@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
     inline const Aws::String& GetReplicationInstanceArn() const{ return m_replicationInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>

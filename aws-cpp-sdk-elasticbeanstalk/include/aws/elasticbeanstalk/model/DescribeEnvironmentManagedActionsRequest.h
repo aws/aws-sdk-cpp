@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the target environment.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The environment ID of the target environment.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>To show only actions with a particular status, specify a status.</p>
      */
     inline const ActionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>To show only actions with a particular status, specify a status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>To show only actions with a particular status, specify a status.</p>

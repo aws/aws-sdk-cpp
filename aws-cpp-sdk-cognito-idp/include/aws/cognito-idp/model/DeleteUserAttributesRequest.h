@@ -61,6 +61,13 @@ namespace Model
      * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
      * prefix to the attribute name.</p>
      */
+    inline bool UserAttributeNamesHasBeenSet() const { return m_userAttributeNamesHasBeenSet; }
+
+    /**
+     * <p>An array of strings representing the user attribute names you wish to
+     * delete.</p> <p>For custom attributes, you must prepend the <code>custom:</code>
+     * prefix to the attribute name.</p>
+     */
     inline void SetUserAttributeNames(const Aws::Vector<Aws::String>& value) { m_userAttributeNamesHasBeenSet = true; m_userAttributeNames = value; }
 
     /**
@@ -110,6 +117,11 @@ namespace Model
      * <p>The access token used in the request to delete user attributes.</p>
      */
     inline const Aws::String& GetAccessToken() const{ return m_accessToken; }
+
+    /**
+     * <p>The access token used in the request to delete user attributes.</p>
+     */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
 
     /**
      * <p>The access token used in the request to delete user attributes.</p>

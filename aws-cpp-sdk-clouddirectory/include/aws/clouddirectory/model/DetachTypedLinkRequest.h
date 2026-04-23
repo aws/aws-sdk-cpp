@@ -55,6 +55,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
      * typed link.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the directory where you want to detach the
+     * typed link.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>Used to accept a typed link specifier as input.</p>
      */
     inline const TypedLinkSpecifier& GetTypedLinkSpecifier() const{ return m_typedLinkSpecifier; }
+
+    /**
+     * <p>Used to accept a typed link specifier as input.</p>
+     */
+    inline bool TypedLinkSpecifierHasBeenSet() const { return m_typedLinkSpecifierHasBeenSet; }
 
     /**
      * <p>Used to accept a typed link specifier as input.</p>

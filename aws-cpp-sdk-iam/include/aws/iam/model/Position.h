@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The line containing the specified position in the document.</p>
      */
+    inline bool LineHasBeenSet() const { return m_lineHasBeenSet; }
+
+    /**
+     * <p>The line containing the specified position in the document.</p>
+     */
     inline void SetLine(int value) { m_lineHasBeenSet = true; m_line = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>The column in the line containing the specified position in the document.</p>
      */
     inline int GetColumn() const{ return m_column; }
+
+    /**
+     * <p>The column in the line containing the specified position in the document.</p>
+     */
+    inline bool ColumnHasBeenSet() const { return m_columnHasBeenSet; }
 
     /**
      * <p>The column in the line containing the specified position in the document.</p>

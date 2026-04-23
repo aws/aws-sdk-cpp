@@ -31,6 +31,8 @@ namespace Aws
       {
 
         static const int VSPHERE_HASH = HashingUtils::HashString("VSPHERE");
+        static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
+        static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
 
 
         VmManagerType GetVmManagerTypeForName(const Aws::String& name)
@@ -39,6 +41,14 @@ namespace Aws
           if (hashCode == VSPHERE_HASH)
           {
             return VmManagerType::VSPHERE;
+          }
+          else if (hashCode == SCVMM_HASH)
+          {
+            return VmManagerType::SCVMM;
+          }
+          else if (hashCode == HYPERV_MANAGER_HASH)
+          {
+            return VmManagerType::HYPERV_MANAGER;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +66,10 @@ namespace Aws
           {
           case VmManagerType::VSPHERE:
             return "VSPHERE";
+          case VmManagerType::SCVMM:
+            return "SCVMM";
+          case VmManagerType::HYPERV_MANAGER:
+            return "HYPERV-MANAGER";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -63,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

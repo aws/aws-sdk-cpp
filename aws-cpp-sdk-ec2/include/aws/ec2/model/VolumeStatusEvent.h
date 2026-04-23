@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A description of the event.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the event.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The ID of this event.</p>
      */
     inline const Aws::String& GetEventId() const{ return m_eventId; }
+
+    /**
+     * <p>The ID of this event.</p>
+     */
+    inline bool EventIdHasBeenSet() const { return m_eventIdHasBeenSet; }
 
     /**
      * <p>The ID of this event.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The type of this event.</p>
      */
+    inline bool EventTypeHasBeenSet() const { return m_eventTypeHasBeenSet; }
+
+    /**
+     * <p>The type of this event.</p>
+     */
     inline void SetEventType(const Aws::String& value) { m_eventTypeHasBeenSet = true; m_eventType = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The latest end time of the event.</p>
      */
+    inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
+
+    /**
+     * <p>The latest end time of the event.</p>
+     */
     inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
@@ -188,6 +208,11 @@ namespace Model
      * <p>The earliest start time of the event.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+
+    /**
+     * <p>The earliest start time of the event.</p>
+     */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
 
     /**
      * <p>The earliest start time of the event.</p>

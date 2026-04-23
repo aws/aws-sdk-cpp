@@ -40,6 +40,7 @@ InputTemplate::InputTemplate() :
     m_filterEnableHasBeenSet(false),
     m_filterStrength(0),
     m_filterStrengthHasBeenSet(false),
+    m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -63,6 +64,7 @@ InputTemplate::InputTemplate(JsonView jsonValue) :
     m_filterEnableHasBeenSet(false),
     m_filterStrength(0),
     m_filterStrengthHasBeenSet(false),
+    m_imageInserterHasBeenSet(false),
     m_inputClippingsHasBeenSet(false),
     m_programNumber(0),
     m_programNumberHasBeenSet(false),
@@ -133,6 +135,13 @@ InputTemplate& InputTemplate::operator =(JsonView jsonValue)
     m_filterStrength = jsonValue.GetInteger("filterStrength");
 
     m_filterStrengthHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("imageInserter"))
+  {
+    m_imageInserter = jsonValue.GetObject("imageInserter");
+
+    m_imageInserterHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("inputClippings"))
@@ -231,6 +240,12 @@ JsonValue InputTemplate::Jsonize() const
   if(m_filterStrengthHasBeenSet)
   {
    payload.WithInteger("filterStrength", m_filterStrength);
+
+  }
+
+  if(m_imageInserterHasBeenSet)
+  {
+   payload.WithObject("imageInserter", m_imageInserter.Jsonize());
 
   }
 

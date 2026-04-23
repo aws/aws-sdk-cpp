@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
      */
+    inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name(ARN) of the replication task to be stopped.</p>
+     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**

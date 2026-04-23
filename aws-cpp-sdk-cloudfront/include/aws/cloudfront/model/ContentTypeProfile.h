@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>A field-level encryption content type profile. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ContentTypeProfile">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ContentTypeProfile">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ContentTypeProfile
@@ -52,6 +52,11 @@ namespace Model
      * <p>The format for a field-level encryption content type-profile mapping. </p>
      */
     inline const Format& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format for a field-level encryption content type-profile mapping. </p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format for a field-level encryption content type-profile mapping. </p>
@@ -79,6 +84,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetProfileId() const{ return m_profileId; }
+
+    /**
+     * <p>The profile ID for a field-level encryption content type-profile mapping.
+     * </p>
+     */
+    inline bool ProfileIdHasBeenSet() const { return m_profileIdHasBeenSet; }
 
     /**
      * <p>The profile ID for a field-level encryption content type-profile mapping.
@@ -122,6 +133,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetContentType() const{ return m_contentType; }
+
+    /**
+     * <p>The content type for a field-level encryption content type-profile mapping.
+     * </p>
+     */
+    inline bool ContentTypeHasBeenSet() const { return m_contentTypeHasBeenSet; }
 
     /**
      * <p>The content type for a field-level encryption content type-profile mapping.

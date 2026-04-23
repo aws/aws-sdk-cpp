@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>First name of contact.</p>
      */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>First name of contact.</p>
+     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>Last name of contact.</p>
      */
     inline const Aws::String& GetLastName() const{ return m_lastName; }
+
+    /**
+     * <p>Last name of contact.</p>
+     */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
 
     /**
      * <p>Last name of contact.</p>
@@ -137,6 +147,14 @@ namespace Model
      * enter an organization name, and you can't enable privacy protection for the
      * contact.</p>
      */
+    inline bool ContactTypeHasBeenSet() const { return m_contactTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the contact is a person, company, association, or public
+     * organization. If you choose an option other than <code>PERSON</code>, you must
+     * enter an organization name, and you can't enable privacy protection for the
+     * contact.</p>
+     */
     inline void SetContactType(const ContactType& value) { m_contactTypeHasBeenSet = true; m_contactType = value; }
 
     /**
@@ -169,6 +187,12 @@ namespace Model
      * <code>PERSON</code>.</p>
      */
     inline const Aws::String& GetOrganizationName() const{ return m_organizationName; }
+
+    /**
+     * <p>Name of the organization for contact types other than
+     * <code>PERSON</code>.</p>
+     */
+    inline bool OrganizationNameHasBeenSet() const { return m_organizationNameHasBeenSet; }
 
     /**
      * <p>Name of the organization for contact types other than
@@ -215,6 +239,11 @@ namespace Model
     /**
      * <p>First line of the contact's address.</p>
      */
+    inline bool AddressLine1HasBeenSet() const { return m_addressLine1HasBeenSet; }
+
+    /**
+     * <p>First line of the contact's address.</p>
+     */
     inline void SetAddressLine1(const Aws::String& value) { m_addressLine1HasBeenSet = true; m_addressLine1 = value; }
 
     /**
@@ -247,6 +276,11 @@ namespace Model
      * <p>Second line of contact's address, if any.</p>
      */
     inline const Aws::String& GetAddressLine2() const{ return m_addressLine2; }
+
+    /**
+     * <p>Second line of contact's address, if any.</p>
+     */
+    inline bool AddressLine2HasBeenSet() const { return m_addressLine2HasBeenSet; }
 
     /**
      * <p>Second line of contact's address, if any.</p>
@@ -287,6 +321,11 @@ namespace Model
     /**
      * <p>The city of the contact's address.</p>
      */
+    inline bool CityHasBeenSet() const { return m_cityHasBeenSet; }
+
+    /**
+     * <p>The city of the contact's address.</p>
+     */
     inline void SetCity(const Aws::String& value) { m_cityHasBeenSet = true; m_city = value; }
 
     /**
@@ -319,6 +358,11 @@ namespace Model
      * <p>The state or province of the contact's city.</p>
      */
     inline const Aws::String& GetState() const{ return m_state; }
+
+    /**
+     * <p>The state or province of the contact's city.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The state or province of the contact's city.</p>
@@ -359,6 +403,11 @@ namespace Model
     /**
      * <p>Code for the country of the contact's address.</p>
      */
+    inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+
+    /**
+     * <p>Code for the country of the contact's address.</p>
+     */
     inline void SetCountryCode(const CountryCode& value) { m_countryCodeHasBeenSet = true; m_countryCode = value; }
 
     /**
@@ -381,6 +430,11 @@ namespace Model
      * <p>The zip or postal code of the contact's address.</p>
      */
     inline const Aws::String& GetZipCode() const{ return m_zipCode; }
+
+    /**
+     * <p>The zip or postal code of the contact's address.</p>
+     */
+    inline bool ZipCodeHasBeenSet() const { return m_zipCodeHasBeenSet; }
 
     /**
      * <p>The zip or postal code of the contact's address.</p>
@@ -420,6 +474,14 @@ namespace Model
      * <code>"+1.1234567890"</code>.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number of the contact.</p> <p>Constraints: Phone number must be
+     * specified in the format "+[country dialing code].[number including any area
+     * code&gt;]". For example, a US phone number might appear as
+     * <code>"+1.1234567890"</code>.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * <p>The phone number of the contact.</p> <p>Constraints: Phone number must be
@@ -478,6 +540,11 @@ namespace Model
     /**
      * <p>Email address of the contact.</p>
      */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
+
+    /**
+     * <p>Email address of the contact.</p>
+     */
     inline void SetEmail(const Aws::String& value) { m_emailHasBeenSet = true; m_email = value; }
 
     /**
@@ -512,6 +579,13 @@ namespace Model
      * example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
      */
     inline const Aws::String& GetFax() const{ return m_fax; }
+
+    /**
+     * <p>Fax number of the contact.</p> <p>Constraints: Phone number must be specified
+     * in the format "+[country dialing code].[number including any area code]". For
+     * example, a US phone number might appear as <code>"+1.1234567890"</code>.</p>
+     */
+    inline bool FaxHasBeenSet() const { return m_faxHasBeenSet; }
 
     /**
      * <p>Fax number of the contact.</p> <p>Constraints: Phone number must be specified
@@ -561,6 +635,12 @@ namespace Model
      * domains.</p>
      */
     inline const Aws::Vector<ExtraParam>& GetExtraParams() const{ return m_extraParams; }
+
+    /**
+     * <p>A list of name-value pairs for parameters required by certain top-level
+     * domains.</p>
+     */
+    inline bool ExtraParamsHasBeenSet() const { return m_extraParamsHasBeenSet; }
 
     /**
      * <p>A list of name-value pairs for parameters required by certain top-level

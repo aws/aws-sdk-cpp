@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the filter. </p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The name of the filter. </p>
+     */
     inline void SetKey(const InstanceInformationFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The filter values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValueSet() const{ return m_valueSet; }
+
+    /**
+     * <p>The filter values.</p>
+     */
+    inline bool ValueSetHasBeenSet() const { return m_valueSetHasBeenSet; }
 
     /**
      * <p>The filter values.</p>

@@ -61,6 +61,12 @@ namespace Model
      * <p>The parameters required for creating a replica on an existing global
      * table.</p>
      */
+    inline bool CreateHasBeenSet() const { return m_createHasBeenSet; }
+
+    /**
+     * <p>The parameters required for creating a replica on an existing global
+     * table.</p>
+     */
     inline void SetCreate(const CreateReplicaAction& value) { m_createHasBeenSet = true; m_create = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The name of the existing replica to be removed.</p>
      */
     inline const DeleteReplicaAction& GetDelete() const{ return m_delete; }
+
+    /**
+     * <p>The name of the existing replica to be removed.</p>
+     */
+    inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
 
     /**
      * <p>The name of the existing replica to be removed.</p>

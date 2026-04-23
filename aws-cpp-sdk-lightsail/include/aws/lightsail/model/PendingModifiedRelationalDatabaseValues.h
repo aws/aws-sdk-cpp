@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The password for the master user of the database.</p>
      */
+    inline bool MasterUserPasswordHasBeenSet() const { return m_masterUserPasswordHasBeenSet; }
+
+    /**
+     * <p>The password for the master user of the database.</p>
+     */
     inline void SetMasterUserPassword(const Aws::String& value) { m_masterUserPasswordHasBeenSet = true; m_masterUserPassword = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The database engine version.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>The database engine version.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>A Boolean value indicating whether automated backup retention is enabled.</p>
      */
     inline bool GetBackupRetentionEnabled() const{ return m_backupRetentionEnabled; }
+
+    /**
+     * <p>A Boolean value indicating whether automated backup retention is enabled.</p>
+     */
+    inline bool BackupRetentionEnabledHasBeenSet() const { return m_backupRetentionEnabledHasBeenSet; }
 
     /**
      * <p>A Boolean value indicating whether automated backup retention is enabled.</p>

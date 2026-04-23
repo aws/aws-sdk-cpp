@@ -29,7 +29,7 @@ GetImportRequest::GetImportRequest() :
 
 Aws::String GetImportRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

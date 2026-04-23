@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Delete">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Delete
   {
   public:
@@ -43,25 +48,44 @@ namespace Model
     void AddToNode(Aws::Utils::Xml::XmlNode& parentNode) const;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<ObjectIdentifier>& GetObjects() const{ return m_objects; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool ObjectsHasBeenSet() const { return m_objectsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetObjects(const Aws::Vector<ObjectIdentifier>& value) { m_objectsHasBeenSet = true; m_objects = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetObjects(Aws::Vector<ObjectIdentifier>&& value) { m_objectsHasBeenSet = true; m_objects = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline Delete& WithObjects(const Aws::Vector<ObjectIdentifier>& value) { SetObjects(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Delete& WithObjects(Aws::Vector<ObjectIdentifier>&& value) { SetObjects(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline Delete& AddObjects(const ObjectIdentifier& value) { m_objectsHasBeenSet = true; m_objects.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline Delete& AddObjects(ObjectIdentifier&& value) { m_objectsHasBeenSet = true; m_objects.push_back(std::move(value)); return *this; }
 
 
@@ -70,6 +94,12 @@ namespace Model
      * must set its value to true.</p>
      */
     inline bool GetQuiet() const{ return m_quiet; }
+
+    /**
+     * <p>Element to enable quiet mode for the request. When you add this element, you
+     * must set its value to true.</p>
+     */
+    inline bool QuietHasBeenSet() const { return m_quietHasBeenSet; }
 
     /**
      * <p>Element to enable quiet mode for the request. When you add this element, you

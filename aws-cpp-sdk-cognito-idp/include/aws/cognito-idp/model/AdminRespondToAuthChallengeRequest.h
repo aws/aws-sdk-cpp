@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the Amazon Cognito user pool.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Amazon Cognito user pool.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The app client ID.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The app client ID.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>The challenge name. For more information, see .</p>
      */
     inline const ChallengeNameType& GetChallengeName() const{ return m_challengeName; }
+
+    /**
+     * <p>The challenge name. For more information, see .</p>
+     */
+    inline bool ChallengeNameHasBeenSet() const { return m_challengeNameHasBeenSet; }
 
     /**
      * <p>The challenge name. For more information, see .</p>
@@ -171,6 +186,28 @@ namespace Model
      * alias in your call to <code>AdminInitiateAuth</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetChallengeResponses() const{ return m_challengeResponses; }
+
+    /**
+     * <p>The challenge responses. These are inputs corresponding to the value of
+     * <code>ChallengeName</code>, for example:</p> <ul> <li> <p> <code>SMS_MFA</code>:
+     * <code>SMS_MFA_CODE</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if
+     * app client is configured with client secret).</p> </li> <li> <p>
+     * <code>PASSWORD_VERIFIER</code>: <code>PASSWORD_CLAIM_SIGNATURE</code>,
+     * <code>PASSWORD_CLAIM_SECRET_BLOCK</code>, <code>TIMESTAMP</code>,
+     * <code>USERNAME</code>, <code>SECRET_HASH</code> (if app client is configured
+     * with client secret).</p> </li> <li> <p> <code>ADMIN_NO_SRP_AUTH</code>:
+     * <code>PASSWORD</code>, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> <li> <p>
+     * <code>NEW_PASSWORD_REQUIRED</code>: <code>NEW_PASSWORD</code>, any other
+     * required attributes, <code>USERNAME</code>, <code>SECRET_HASH</code> (if app
+     * client is configured with client secret). </p> </li> </ul> <p>The value of the
+     * <code>USERNAME</code> attribute must be the user's actual username, not an alias
+     * (such as email address or phone number). To make this easier, the
+     * <code>AdminInitiateAuth</code> response includes the actual username value in
+     * the <code>USERNAMEUSER_ID_FOR_SRP</code> attribute, even if you specified an
+     * alias in your call to <code>AdminInitiateAuth</code>.</p>
+     */
+    inline bool ChallengeResponsesHasBeenSet() const { return m_challengeResponsesHasBeenSet; }
 
     /**
      * <p>The challenge responses. These are inputs corresponding to the value of
@@ -431,6 +468,15 @@ namespace Model
      * return a session with other challenge parameters. This session should be passed
      * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
      */
+    inline bool SessionHasBeenSet() const { return m_sessionHasBeenSet; }
+
+    /**
+     * <p>The session which should be passed both ways in challenge-response calls to
+     * the service. If <code>InitiateAuth</code> or <code>RespondToAuthChallenge</code>
+     * API call determines that the caller needs to go through another challenge, they
+     * return a session with other challenge parameters. This session should be passed
+     * as it is to the next <code>RespondToAuthChallenge</code> API call.</p>
+     */
     inline void SetSession(const Aws::String& value) { m_sessionHasBeenSet = true; m_session = value; }
 
     /**
@@ -489,6 +535,12 @@ namespace Model
      * <p>The analytics metadata for collecting Amazon Pinpoint metrics for
      * <code>AdminRespondToAuthChallenge</code> calls.</p>
      */
+    inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
+
+    /**
+     * <p>The analytics metadata for collecting Amazon Pinpoint metrics for
+     * <code>AdminRespondToAuthChallenge</code> calls.</p>
+     */
     inline void SetAnalyticsMetadata(const AnalyticsMetadataType& value) { m_analyticsMetadataHasBeenSet = true; m_analyticsMetadata = value; }
 
     /**
@@ -516,6 +568,13 @@ namespace Model
      * advanced security.</p>
      */
     inline const ContextDataType& GetContextData() const{ return m_contextData; }
+
+    /**
+     * <p>Contextual data such as the user's device fingerprint, IP address, or
+     * location used for evaluating the risk of an unexpected event by Amazon Cognito
+     * advanced security.</p>
+     */
+    inline bool ContextDataHasBeenSet() const { return m_contextDataHasBeenSet; }
 
     /**
      * <p>Contextual data such as the user's device fingerprint, IP address, or

@@ -203,50 +203,43 @@ namespace Model
 
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline const Aws::String& GetHomePageUrl() const{ return m_homePageUrl; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrl = value; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(Aws::String&& value) { m_homePageUrl = std::move(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const char* value) { m_homePageUrl.assign(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationResult& WithHomePageUrl(const Aws::String& value) { SetHomePageUrl(value); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationResult& WithHomePageUrl(Aws::String&& value) { SetHomePageUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline CreateApplicationResult& WithHomePageUrl(const char* value) { SetHomePageUrl(value); return *this;}

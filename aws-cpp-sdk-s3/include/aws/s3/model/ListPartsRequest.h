@@ -52,47 +52,85 @@ namespace Model
     Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetKey() const{ return m_key; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(Aws::String&& value) { m_keyHasBeenSet = true; m_key = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetKey(const char* value) { m_keyHasBeenSet = true; m_key.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithKey(const Aws::String& value) { SetKey(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithKey(Aws::String&& value) { SetKey(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListPartsRequest& WithKey(const char* value) { SetKey(value); return *this;}
 
 
@@ -100,6 +138,11 @@ namespace Model
      * <p>Sets the maximum number of parts to return.</p>
      */
     inline int GetMaxParts() const{ return m_maxParts; }
+
+    /**
+     * <p>Sets the maximum number of parts to return.</p>
+     */
+    inline bool MaxPartsHasBeenSet() const { return m_maxPartsHasBeenSet; }
 
     /**
      * <p>Sets the maximum number of parts to return.</p>
@@ -122,6 +165,12 @@ namespace Model
      * <p>Specifies the part after which listing should begin. Only parts with higher
      * part numbers will be listed.</p>
      */
+    inline bool PartNumberMarkerHasBeenSet() const { return m_partNumberMarkerHasBeenSet; }
+
+    /**
+     * <p>Specifies the part after which listing should begin. Only parts with higher
+     * part numbers will be listed.</p>
+     */
     inline void SetPartNumberMarker(int value) { m_partNumberMarkerHasBeenSet = true; m_partNumberMarker = value; }
 
     /**
@@ -135,6 +184,11 @@ namespace Model
      * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
      */
     inline const Aws::String& GetUploadId() const{ return m_uploadId; }
+
+    /**
+     * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
+     */
+    inline bool UploadIdHasBeenSet() const { return m_uploadIdHasBeenSet; }
 
     /**
      * <p>Upload ID identifying the multipart upload whose parts are being listed.</p>
@@ -171,6 +225,9 @@ namespace Model
     inline const RequestPayer& GetRequestPayer() const{ return m_requestPayer; }
 
     
+    inline bool RequestPayerHasBeenSet() const { return m_requestPayerHasBeenSet; }
+
+    
     inline void SetRequestPayer(const RequestPayer& value) { m_requestPayerHasBeenSet = true; m_requestPayer = value; }
 
     
@@ -185,6 +242,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

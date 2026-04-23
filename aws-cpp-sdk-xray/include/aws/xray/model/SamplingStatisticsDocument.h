@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the sampling rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the sampling rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>A unique identifier for the service in hexadecimal.</p>
      */
     inline const Aws::String& GetClientID() const{ return m_clientID; }
+
+    /**
+     * <p>A unique identifier for the service in hexadecimal.</p>
+     */
+    inline bool ClientIDHasBeenSet() const { return m_clientIDHasBeenSet; }
 
     /**
      * <p>A unique identifier for the service in hexadecimal.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The current time.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>The current time.</p>
+     */
     inline void SetTimestamp(const Aws::Utils::DateTime& value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The number of requests that matched the rule.</p>
      */
+    inline bool RequestCountHasBeenSet() const { return m_requestCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests that matched the rule.</p>
+     */
     inline void SetRequestCount(int value) { m_requestCountHasBeenSet = true; m_requestCount = value; }
 
     /**
@@ -173,6 +193,11 @@ namespace Model
     /**
      * <p>The number of requests recorded.</p>
      */
+    inline bool SampledCountHasBeenSet() const { return m_sampledCountHasBeenSet; }
+
+    /**
+     * <p>The number of requests recorded.</p>
+     */
     inline void SetSampledCount(int value) { m_sampledCountHasBeenSet = true; m_sampledCount = value; }
 
     /**
@@ -185,6 +210,11 @@ namespace Model
      * <p>The number of requests recorded with borrowed reservoir quota.</p>
      */
     inline int GetBorrowCount() const{ return m_borrowCount; }
+
+    /**
+     * <p>The number of requests recorded with borrowed reservoir quota.</p>
+     */
+    inline bool BorrowCountHasBeenSet() const { return m_borrowCountHasBeenSet; }
 
     /**
      * <p>The number of requests recorded with borrowed reservoir quota.</p>

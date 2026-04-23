@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The current state of the Spot Fleet request.</p>
      */
+    inline bool CurrentSpotFleetRequestStateHasBeenSet() const { return m_currentSpotFleetRequestStateHasBeenSet; }
+
+    /**
+     * <p>The current state of the Spot Fleet request.</p>
+     */
     inline void SetCurrentSpotFleetRequestState(const BatchState& value) { m_currentSpotFleetRequestStateHasBeenSet = true; m_currentSpotFleetRequestState = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>The previous state of the Spot Fleet request.</p>
      */
+    inline bool PreviousSpotFleetRequestStateHasBeenSet() const { return m_previousSpotFleetRequestStateHasBeenSet; }
+
+    /**
+     * <p>The previous state of the Spot Fleet request.</p>
+     */
     inline void SetPreviousSpotFleetRequestState(const BatchState& value) { m_previousSpotFleetRequestStateHasBeenSet = true; m_previousSpotFleetRequestState = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+
+    /**
+     * <p>The ID of the Spot Fleet request.</p>
+     */
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
 
     /**
      * <p>The ID of the Spot Fleet request.</p>

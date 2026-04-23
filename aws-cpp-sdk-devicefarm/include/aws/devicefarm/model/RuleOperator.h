@@ -28,7 +28,9 @@ namespace Model
     NOT_SET,
     EQUALS,
     LESS_THAN,
+    LESS_THAN_OR_EQUALS,
     GREATER_THAN,
+    GREATER_THAN_OR_EQUALS,
     IN,
     NOT_IN,
     CONTAINS

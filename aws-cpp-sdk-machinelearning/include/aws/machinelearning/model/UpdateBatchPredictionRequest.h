@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
      */
+    inline bool BatchPredictionIdHasBeenSet() const { return m_batchPredictionIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>BatchPrediction</code> during creation.</p>
+     */
     inline void SetBatchPredictionId(const Aws::String& value) { m_batchPredictionIdHasBeenSet = true; m_batchPredictionId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * <code>BatchPrediction</code>.</p>
      */
     inline const Aws::String& GetBatchPredictionName() const{ return m_batchPredictionName; }
+
+    /**
+     * <p>A new user-supplied name or description of the
+     * <code>BatchPrediction</code>.</p>
+     */
+    inline bool BatchPredictionNameHasBeenSet() const { return m_batchPredictionNameHasBeenSet; }
 
     /**
      * <p>A new user-supplied name or description of the

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * Auto Scaling group.</p>
      */
     inline bool GetShouldDecrementDesiredCapacity() const{ return m_shouldDecrementDesiredCapacity; }
+
+    /**
+     * <p>Indicates whether terminating the instance also decrements the size of the
+     * Auto Scaling group.</p>
+     */
+    inline bool ShouldDecrementDesiredCapacityHasBeenSet() const { return m_shouldDecrementDesiredCapacityHasBeenSet; }
 
     /**
      * <p>Indicates whether terminating the instance also decrements the size of the

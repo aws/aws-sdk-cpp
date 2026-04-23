@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the resource from which to remove tags.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource from which to remove tags.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The keys of the tags to be removed.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
+
+    /**
+     * <p>The keys of the tags to be removed.</p>
+     */
+    inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
 
     /**
      * <p>The keys of the tags to be removed.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the server with which to associate the node. </p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>The name of the server with which to associate the node. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The name of the node. </p>
      */
     inline const Aws::String& GetNodeName() const{ return m_nodeName; }
+
+    /**
+     * <p>The name of the node. </p>
+     */
+    inline bool NodeNameHasBeenSet() const { return m_nodeNameHasBeenSet; }
 
     /**
      * <p>The name of the node. </p>
@@ -131,6 +141,20 @@ namespace Model
      * that is created by the node. </p> </li> </ul>
      */
     inline const Aws::Vector<EngineAttribute>& GetEngineAttributes() const{ return m_engineAttributes; }
+
+    /**
+     * <p>Engine attributes used for associating the node. </p> <p class="title">
+     * <b>Attributes accepted in a AssociateNode request for Chef</b> </p> <ul> <li>
+     * <p> <code>CHEF_ORGANIZATION</code>: The Chef organization with which the node is
+     * associated. By default only one organization named <code>default</code> can
+     * exist. </p> </li> <li> <p> <code>CHEF_NODE_PUBLIC_KEY</code>: A PEM-formatted
+     * public key. This key is required for the <code>chef-client</code> agent to
+     * access the Chef API. </p> </li> </ul> <p class="title"> <b>Attributes accepted
+     * in a AssociateNode request for Puppet</b> </p> <ul> <li> <p>
+     * <code>PUPPET_NODE_CSR</code>: A PEM-formatted certificate-signing request (CSR)
+     * that is created by the node. </p> </li> </ul>
+     */
+    inline bool EngineAttributesHasBeenSet() const { return m_engineAttributesHasBeenSet; }
 
     /**
      * <p>Engine attributes used for associating the node. </p> <p class="title">

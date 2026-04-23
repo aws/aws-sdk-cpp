@@ -38,7 +38,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Ac3Settings<p><h3>See Also:</h3>   <a
+   * Ac3 Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Ac3Settings">AWS
    * API Reference</a></p>
    */
@@ -59,6 +59,11 @@ namespace Model
     /**
      * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
      */
+    inline bool BitrateHasBeenSet() const { return m_bitrateHasBeenSet; }
+
+    /**
+     * Average bitrate in bits/second. Valid bitrates depend on the coding mode.
+     */
     inline void SetBitrate(double value) { m_bitrateHasBeenSet = true; m_bitrate = value; }
 
     /**
@@ -72,6 +77,12 @@ namespace Model
      * A/52-2012 for background on these values.
      */
     inline const Ac3BitstreamMode& GetBitstreamMode() const{ return m_bitstreamMode; }
+
+    /**
+     * Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC
+     * A/52-2012 for background on these values.
+     */
+    inline bool BitstreamModeHasBeenSet() const { return m_bitstreamModeHasBeenSet; }
 
     /**
      * Specifies the bitstream mode (bsmod) for the emitted AC-3 stream. See ATSC
@@ -106,6 +117,11 @@ namespace Model
     /**
      * Dolby Digital coding mode. Determines number of channels.
      */
+    inline bool CodingModeHasBeenSet() const { return m_codingModeHasBeenSet; }
+
+    /**
+     * Dolby Digital coding mode. Determines number of channels.
+     */
     inline void SetCodingMode(const Ac3CodingMode& value) { m_codingModeHasBeenSet = true; m_codingMode = value; }
 
     /**
@@ -134,6 +150,12 @@ namespace Model
      * Sets the dialnorm for the output. If excluded and input audio is Dolby Digital,
      * dialnorm will be passed through.
      */
+    inline bool DialnormHasBeenSet() const { return m_dialnormHasBeenSet; }
+
+    /**
+     * Sets the dialnorm for the output. If excluded and input audio is Dolby Digital,
+     * dialnorm will be passed through.
+     */
     inline void SetDialnorm(int value) { m_dialnormHasBeenSet = true; m_dialnorm = value; }
 
     /**
@@ -148,6 +170,12 @@ namespace Model
      * bitstream as defined in the Dolby Digital specification.
      */
     inline const Ac3DrcProfile& GetDrcProfile() const{ return m_drcProfile; }
+
+    /**
+     * If set to filmStandard, adds dynamic range compression signaling to the output
+     * bitstream as defined in the Dolby Digital specification.
+     */
+    inline bool DrcProfileHasBeenSet() const { return m_drcProfileHasBeenSet; }
 
     /**
      * If set to filmStandard, adds dynamic range compression signaling to the output
@@ -184,6 +212,12 @@ namespace Model
      * When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to
      * encoding. Only valid in codingMode32Lfe mode.
      */
+    inline bool LfeFilterHasBeenSet() const { return m_lfeFilterHasBeenSet; }
+
+    /**
+     * When set to enabled, applies a 120Hz lowpass filter to the LFE channel prior to
+     * encoding. Only valid in codingMode32Lfe mode.
+     */
     inline void SetLfeFilter(const Ac3LfeFilter& value) { m_lfeFilterHasBeenSet = true; m_lfeFilter = value; }
 
     /**
@@ -211,6 +245,13 @@ namespace Model
      * of these streams, then the static metadata settings will be used.
      */
     inline const Ac3MetadataControl& GetMetadataControl() const{ return m_metadataControl; }
+
+    /**
+     * When set to "followInput", encoder metadata will be sourced from the DD, DD+, or
+     * DolbyE decoder that supplied this audio data. If audio was not supplied from one
+     * of these streams, then the static metadata settings will be used.
+     */
+    inline bool MetadataControlHasBeenSet() const { return m_metadataControlHasBeenSet; }
 
     /**
      * When set to "followInput", encoder metadata will be sourced from the DD, DD+, or

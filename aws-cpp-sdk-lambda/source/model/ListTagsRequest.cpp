@@ -29,7 +29,7 @@ ListTagsRequest::ListTagsRequest() :
 
 Aws::String ListTagsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

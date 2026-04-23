@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of AWS resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of AWS resource.</p>
+     */
     inline void SetResourceType(const Aws::String& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * maximum of 100 for each.</p>
      */
     inline const ComplianceSummary& GetComplianceSummary() const{ return m_complianceSummary; }
+
+    /**
+     * <p>The number of AWS resources that are compliant or noncompliant, up to a
+     * maximum of 100 for each.</p>
+     */
+    inline bool ComplianceSummaryHasBeenSet() const { return m_complianceSummaryHasBeenSet; }
 
     /**
      * <p>The number of AWS resources that are compliant or noncompliant, up to a

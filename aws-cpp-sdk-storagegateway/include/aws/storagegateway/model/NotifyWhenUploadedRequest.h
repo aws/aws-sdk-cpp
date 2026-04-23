@@ -48,6 +48,9 @@ namespace Model
     inline const Aws::String& GetFileShareARN() const{ return m_fileShareARN; }
 
     
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
+
+    
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>String that contains the alias.</p>
      */
+    inline bool AliasNameHasBeenSet() const { return m_aliasNameHasBeenSet; }
+
+    /**
+     * <p>String that contains the alias.</p>
+     */
     inline void SetAliasName(const Aws::String& value) { m_aliasNameHasBeenSet = true; m_aliasName = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>String that contains the key ARN.</p>
      */
+    inline bool AliasArnHasBeenSet() const { return m_aliasArnHasBeenSet; }
+
+    /**
+     * <p>String that contains the key ARN.</p>
+     */
     inline void SetAliasArn(const Aws::String& value) { m_aliasArnHasBeenSet = true; m_aliasArn = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>String that contains the key identifier referred to by the alias.</p>
      */
     inline const Aws::String& GetTargetKeyId() const{ return m_targetKeyId; }
+
+    /**
+     * <p>String that contains the key identifier referred to by the alias.</p>
+     */
+    inline bool TargetKeyIdHasBeenSet() const { return m_targetKeyIdHasBeenSet; }
 
     /**
      * <p>String that contains the key identifier referred to by the alias.</p>

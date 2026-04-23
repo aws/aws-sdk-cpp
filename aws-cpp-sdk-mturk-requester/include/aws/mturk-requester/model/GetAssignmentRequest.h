@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Assignment to be retrieved.</p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Assignment to be retrieved.</p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**

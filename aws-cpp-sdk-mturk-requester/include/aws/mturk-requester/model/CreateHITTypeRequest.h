@@ -58,6 +58,13 @@ namespace Model
      * after which the assignment is considered Approved automatically unless the
      * Requester explicitly rejects it. </p>
      */
+    inline bool AutoApprovalDelayInSecondsHasBeenSet() const { return m_autoApprovalDelayInSecondsHasBeenSet; }
+
+    /**
+     * <p> The number of seconds after an assignment for the HIT has been submitted,
+     * after which the assignment is considered Approved automatically unless the
+     * Requester explicitly rejects it. </p>
+     */
     inline void SetAutoApprovalDelayInSeconds(long long value) { m_autoApprovalDelayInSecondsHasBeenSet = true; m_autoApprovalDelayInSeconds = value; }
 
     /**
@@ -84,6 +91,15 @@ namespace Model
      * (that is, its lifetime has not elapsed), the assignment becomes available for
      * other users to find and accept. </p>
      */
+    inline bool AssignmentDurationInSecondsHasBeenSet() const { return m_assignmentDurationInSecondsHasBeenSet; }
+
+    /**
+     * <p> The amount of time, in seconds, that a Worker has to complete the HIT after
+     * accepting it. If a Worker does not complete the assignment within the specified
+     * duration, the assignment is considered abandoned. If the HIT is still active
+     * (that is, its lifetime has not elapsed), the assignment becomes available for
+     * other users to find and accept. </p>
+     */
     inline void SetAssignmentDurationInSeconds(long long value) { m_assignmentDurationInSecondsHasBeenSet = true; m_assignmentDurationInSeconds = value; }
 
     /**
@@ -101,6 +117,12 @@ namespace Model
      * completing the HIT. </p>
      */
     inline const Aws::String& GetReward() const{ return m_reward; }
+
+    /**
+     * <p> The amount of money the Requester will pay a Worker for successfully
+     * completing the HIT. </p>
+     */
+    inline bool RewardHasBeenSet() const { return m_rewardHasBeenSet; }
 
     /**
      * <p> The amount of money the Requester will pay a Worker for successfully
@@ -145,6 +167,13 @@ namespace Model
      * appears in search results, and everywhere the HIT is mentioned. </p>
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * <p> The title of the HIT. A title should be short and descriptive about the kind
+     * of task the HIT contains. On the Amazon Mechanical Turk web site, the HIT title
+     * appears in search results, and everywhere the HIT is mentioned. </p>
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * <p> The title of the HIT. A title should be short and descriptive about the kind
@@ -199,6 +228,12 @@ namespace Model
      * <p> One or more words or phrases that describe the HIT, separated by commas.
      * These words are used in searches to find HITs. </p>
      */
+    inline bool KeywordsHasBeenSet() const { return m_keywordsHasBeenSet; }
+
+    /**
+     * <p> One or more words or phrases that describe the HIT, separated by commas.
+     * These words are used in searches to find HITs. </p>
+     */
     inline void SetKeywords(const Aws::String& value) { m_keywordsHasBeenSet = true; m_keywords = value; }
 
     /**
@@ -240,6 +275,15 @@ namespace Model
      * user enough information to evaluate the HIT before accepting it. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p> A general description of the HIT. A description includes detailed
+     * information about the kind of task the HIT contains. On the Amazon Mechanical
+     * Turk web site, the HIT description appears in the expanded view of search
+     * results, and in the HIT and assignment screens. A good description gives the
+     * user enough information to evaluate the HIT before accepting it. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p> A general description of the HIT. A description includes detailed
@@ -304,6 +348,15 @@ namespace Model
      * each <code>QualificationRequirement</code> structure. </p>
      */
     inline const Aws::Vector<QualificationRequirement>& GetQualificationRequirements() const{ return m_qualificationRequirements; }
+
+    /**
+     * <p> Conditions that a Worker's Qualifications must meet in order to accept the
+     * HIT. A HIT can have between zero and ten Qualification requirements. All
+     * requirements must be met in order for a Worker to accept the HIT. Additionally,
+     * other actions can be restricted using the <code>ActionsGuarded</code> field on
+     * each <code>QualificationRequirement</code> structure. </p>
+     */
+    inline bool QualificationRequirementsHasBeenSet() const { return m_qualificationRequirementsHasBeenSet; }
 
     /**
      * <p> Conditions that a Worker's Qualifications must meet in order to accept the

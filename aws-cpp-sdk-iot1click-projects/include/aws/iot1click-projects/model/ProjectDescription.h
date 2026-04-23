@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/iot1click-projects/model/PlacementTemplate.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -51,9 +52,55 @@ namespace Model
 
 
     /**
+     * <p>The ARN of the project.</p>
+     */
+    inline const Aws::String& GetArn() const{ return m_arn; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(Aws::String&& value) { m_arnHasBeenSet = true; m_arn = std::move(value); }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline void SetArn(const char* value) { m_arnHasBeenSet = true; m_arn.assign(value); }
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectDescription& WithArn(const Aws::String& value) { SetArn(value); return *this;}
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectDescription& WithArn(Aws::String&& value) { SetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The ARN of the project.</p>
+     */
+    inline ProjectDescription& WithArn(const char* value) { SetArn(value); return *this;}
+
+
+    /**
      * <p>The name of the project for which to obtain information from.</p>
      */
     inline const Aws::String& GetProjectName() const{ return m_projectName; }
+
+    /**
+     * <p>The name of the project for which to obtain information from.</p>
+     */
+    inline bool ProjectNameHasBeenSet() const { return m_projectNameHasBeenSet; }
 
     /**
      * <p>The name of the project for which to obtain information from.</p>
@@ -90,6 +137,11 @@ namespace Model
      * <p>The description of the project.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the project.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the project.</p>
@@ -132,6 +184,12 @@ namespace Model
      * <p>The date when the project was originally created, in UNIX epoch time
      * format.</p>
      */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
+
+    /**
+     * <p>The date when the project was originally created, in UNIX epoch time
+     * format.</p>
+     */
     inline void SetCreatedDate(const Aws::Utils::DateTime& value) { m_createdDateHasBeenSet = true; m_createdDate = value; }
 
     /**
@@ -159,6 +217,13 @@ namespace Model
      * <code>updatedDate</code> are the same.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedDate() const{ return m_updatedDate; }
+
+    /**
+     * <p>The date when the project was last updated, in UNIX epoch time format. If the
+     * project was not updated, then <code>createdDate</code> and
+     * <code>updatedDate</code> are the same.</p>
+     */
+    inline bool UpdatedDateHasBeenSet() const { return m_updatedDateHasBeenSet; }
 
     /**
      * <p>The date when the project was last updated, in UNIX epoch time format. If the
@@ -197,6 +262,11 @@ namespace Model
     /**
      * <p>An object describing the project's placement specifications.</p>
      */
+    inline bool PlacementTemplateHasBeenSet() const { return m_placementTemplateHasBeenSet; }
+
+    /**
+     * <p>An object describing the project's placement specifications.</p>
+     */
     inline void SetPlacementTemplate(const PlacementTemplate& value) { m_placementTemplateHasBeenSet = true; m_placementTemplate = value; }
 
     /**
@@ -214,7 +284,76 @@ namespace Model
      */
     inline ProjectDescription& WithPlacementTemplate(PlacementTemplate&& value) { SetPlacementTemplate(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The tags (metadata key/value pairs) associated with the project.</p>
+     */
+    inline ProjectDescription& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
+
+    Aws::String m_arn;
+    bool m_arnHasBeenSet;
 
     Aws::String m_projectName;
     bool m_projectNameHasBeenSet;
@@ -230,6 +369,9 @@ namespace Model
 
     PlacementTemplate m_placementTemplate;
     bool m_placementTemplateHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -77,6 +77,11 @@ namespace Model
     /**
      * <p>The input provided to the new workflow execution.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The input provided to the new workflow execution.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -117,6 +122,19 @@ namespace Model
      * is returned.</p> </note>
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
+
+    /**
+     * <p>If set, specifies the total duration for this workflow execution. This
+     * overrides the <code>defaultExecutionStartToCloseTimeout</code> specified when
+     * registering the workflow type.</p> <p>The duration is specified in seconds, an
+     * integer greater than or equal to <code>0</code>. You can use <code>NONE</code>
+     * to specify unlimited duration.</p> <note> <p>An execution start-to-close timeout
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this field. If neither this field is set nor a default
+     * execution start-to-close timeout was specified at registration time then a fault
+     * is returned.</p> </note>
+     */
+    inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>If set, specifies the total duration for this workflow execution. This
@@ -207,6 +225,12 @@ namespace Model
      * <p>The task list to use for the decisions of the new (continued) workflow
      * execution.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -239,6 +263,18 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p> The task priority that, if set, specifies the priority for the decision
+     * tasks for this workflow execution. This overrides the defaultTaskPriority
+     * specified when registering the workflow type. Valid values are integers that
+     * range from Java's <code>Integer.MIN_VALUE</code> (-2147483648) to
+     * <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers indicate higher
+     * priority.</p> <p>For more information about setting task priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p> The task priority that, if set, specifies the priority for the decision
@@ -326,6 +362,20 @@ namespace Model
      * registration time then a fault is returned.</p> </note>
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
+
+    /**
+     * <p>Specifies the maximum duration of decision tasks for the new workflow
+     * execution. This parameter overrides the
+     * <code>defaultTaskStartToCloseTimout</code> specified when registering the
+     * workflow type using <a>RegisterWorkflowType</a>.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p> <note> <p>A task
+     * start-to-close timeout for the new workflow execution must be specified either
+     * as a default for the workflow type or through this parameter. If neither this
+     * parameter is set nor a default task start-to-close timeout was specified at
+     * registration time then a fault is returned.</p> </note>
+     */
+    inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>Specifies the maximum duration of decision tasks for the new workflow
@@ -450,6 +500,26 @@ namespace Model
      * default child policy was specified at registration time then a fault is
      * returned.</p> </note>
      */
+    inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
+
+    /**
+     * <p>If set, specifies the policy to use for the child workflow executions of the
+     * new execution if it is terminated by calling the
+     * <a>TerminateWorkflowExecution</a> action explicitly or due to an expired
+     * timeout. This policy overrides the default child policy specified when
+     * registering the workflow type using <a>RegisterWorkflowType</a>.</p> <p>The
+     * supported child policies are:</p> <ul> <li> <p> <code>TERMINATE</code> – The
+     * child executions are terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code>
+     * – A request to cancel is attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
+     * the decider to take appropriate actions when it receives an execution history
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul> <note> <p>A child policy
+     * for this workflow execution must be specified either as a default for the
+     * workflow type or through this parameter. If neither this parameter is set nor a
+     * default child policy was specified at registration time then a fault is
+     * returned.</p> </note>
+     */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
     /**
@@ -527,6 +597,14 @@ namespace Model
      * calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a>
      * and specifying a <a>TagFilter</a>.</p>
      */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    /**
+     * <p>The list of tags to associate with the new workflow execution. A maximum of 5
+     * tags can be specified. You can list workflow executions with a specific tag by
+     * calling <a>ListOpenWorkflowExecutions</a> or <a>ListClosedWorkflowExecutions</a>
+     * and specifying a <a>TagFilter</a>.</p>
+     */
     inline void SetTagList(const Aws::Vector<Aws::String>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
 
     /**
@@ -586,6 +664,11 @@ namespace Model
     /**
      * <p>The version of the workflow to start.</p>
      */
+    inline bool WorkflowTypeVersionHasBeenSet() const { return m_workflowTypeVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the workflow to start.</p>
+     */
     inline void SetWorkflowTypeVersion(const Aws::String& value) { m_workflowTypeVersionHasBeenSet = true; m_workflowTypeVersion = value; }
 
     /**
@@ -618,6 +701,11 @@ namespace Model
      * <p>The IAM role to attach to the new (continued) execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
+
+    /**
+     * <p>The IAM role to attach to the new (continued) execution.</p>
+     */
+    inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
 
     /**
      * <p>The IAM role to attach to the new (continued) execution.</p>

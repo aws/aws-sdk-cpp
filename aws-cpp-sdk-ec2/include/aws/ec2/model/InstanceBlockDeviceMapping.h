@@ -60,6 +60,12 @@ namespace Model
      * <p>The device name (for example, <code>/dev/sdh</code> or
      * <code>xvdh</code>).</p>
      */
+    inline bool DeviceNameHasBeenSet() const { return m_deviceNameHasBeenSet; }
+
+    /**
+     * <p>The device name (for example, <code>/dev/sdh</code> or
+     * <code>xvdh</code>).</p>
+     */
     inline void SetDeviceName(const Aws::String& value) { m_deviceNameHasBeenSet = true; m_deviceName = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * launched.</p>
      */
     inline const EbsInstanceBlockDevice& GetEbs() const{ return m_ebs; }
+
+    /**
+     * <p>Parameters used to automatically set up EBS volumes when the instance is
+     * launched.</p>
+     */
+    inline bool EbsHasBeenSet() const { return m_ebsHasBeenSet; }
 
     /**
      * <p>Parameters used to automatically set up EBS volumes when the instance is

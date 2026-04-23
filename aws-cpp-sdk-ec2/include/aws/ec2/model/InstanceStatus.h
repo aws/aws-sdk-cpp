@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Availability Zone of the instance.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone of the instance.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>Any scheduled events associated with the instance.</p>
      */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p>Any scheduled events associated with the instance.</p>
+     */
     inline void SetEvents(const Aws::Vector<InstanceStatusEvent>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
     /**
@@ -129,6 +139,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -171,6 +186,12 @@ namespace Model
      * <p>The intended state of the instance. <a>DescribeInstanceStatus</a> requires
      * that an instance be in the <code>running</code> state.</p>
      */
+    inline bool InstanceStateHasBeenSet() const { return m_instanceStateHasBeenSet; }
+
+    /**
+     * <p>The intended state of the instance. <a>DescribeInstanceStatus</a> requires
+     * that an instance be in the <code>running</code> state.</p>
+     */
     inline void SetInstanceState(const InstanceState& value) { m_instanceStateHasBeenSet = true; m_instanceState = value; }
 
     /**
@@ -197,6 +218,12 @@ namespace Model
      * instance, such as impaired reachability.</p>
      */
     inline const InstanceStatusSummary& GetInstanceStatus() const{ return m_instanceStatus; }
+
+    /**
+     * <p>Reports impaired functionality that stems from issues internal to the
+     * instance, such as impaired reachability.</p>
+     */
+    inline bool InstanceStatusHasBeenSet() const { return m_instanceStatusHasBeenSet; }
 
     /**
      * <p>Reports impaired functionality that stems from issues internal to the
@@ -229,6 +256,13 @@ namespace Model
      * problems.</p>
      */
     inline const InstanceStatusSummary& GetSystemStatus() const{ return m_systemStatus; }
+
+    /**
+     * <p>Reports impaired functionality that stems from issues related to the systems
+     * that support an instance, such as hardware failures and network connectivity
+     * problems.</p>
+     */
+    inline bool SystemStatusHasBeenSet() const { return m_systemStatusHasBeenSet; }
 
     /**
      * <p>Reports impaired functionality that stems from issues related to the systems

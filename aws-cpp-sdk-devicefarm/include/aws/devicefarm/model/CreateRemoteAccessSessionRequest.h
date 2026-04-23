@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
      * remote access session.</p>
      */
+    inline bool ProjectArnHasBeenSet() const { return m_projectArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the project for which you want to create a
+     * remote access session.</p>
+     */
     inline void SetProjectArn(const Aws::String& value) { m_projectArnHasBeenSet = true; m_projectArn = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * remote access session.</p>
      */
     inline const Aws::String& GetDeviceArn() const{ return m_deviceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device for which you want to create a
+     * remote access session.</p>
+     */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the device for which you want to create a
@@ -146,6 +158,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
      * create a remote access session.</p>
      */
+    inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the device instance for which you want to
+     * create a remote access session.</p>
+     */
     inline void SetInstanceArn(const Aws::String& value) { m_instanceArnHasBeenSet = true; m_instanceArn = value; }
 
     /**
@@ -185,6 +203,13 @@ namespace Model
      * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
      */
     inline const Aws::String& GetSshPublicKey() const{ return m_sshPublicKey; }
+
+    /**
+     * <p>The public key of the <code>ssh</code> key pair you want to use for
+     * connecting to remote devices in your remote debugging session. This is only
+     * required if <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool SshPublicKeyHasBeenSet() const { return m_sshPublicKeyHasBeenSet; }
 
     /**
      * <p>The public key of the <code>ssh</code> key pair you want to use for
@@ -239,6 +264,12 @@ namespace Model
      * <p>Set to <code>true</code> if you want to access devices remotely for debugging
      * in your remote access session.</p>
      */
+    inline bool RemoteDebugEnabledHasBeenSet() const { return m_remoteDebugEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> if you want to access devices remotely for debugging
+     * in your remote access session.</p>
+     */
     inline void SetRemoteDebugEnabled(bool value) { m_remoteDebugEnabledHasBeenSet = true; m_remoteDebugEnabled = value; }
 
     /**
@@ -258,6 +289,12 @@ namespace Model
      * <p>Set to <code>true</code> to enable remote recording for the remote access
      * session.</p>
      */
+    inline bool RemoteRecordEnabledHasBeenSet() const { return m_remoteRecordEnabledHasBeenSet; }
+
+    /**
+     * <p>Set to <code>true</code> to enable remote recording for the remote access
+     * session.</p>
+     */
     inline void SetRemoteRecordEnabled(bool value) { m_remoteRecordEnabledHasBeenSet = true; m_remoteRecordEnabled = value; }
 
     /**
@@ -272,6 +309,12 @@ namespace Model
      * access session.</p>
      */
     inline const Aws::String& GetRemoteRecordAppArn() const{ return m_remoteRecordAppArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
+     * access session.</p>
+     */
+    inline bool RemoteRecordAppArnHasBeenSet() const { return m_remoteRecordAppArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) for the app to be recorded in the remote
@@ -318,6 +361,11 @@ namespace Model
     /**
      * <p>The name of the remote access session that you wish to create.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the remote access session that you wish to create.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -353,6 +401,14 @@ namespace Model
      * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
+
+    /**
+     * <p>Unique identifier for the client. If you want access to multiple devices on
+     * the same client, you should pass the same <code>clientId</code> value in each
+     * call to <code>CreateRemoteAccessSession</code>. This is required only if
+     * <code>remoteDebugEnabled</code> is set to <code>true</code>.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for the client. If you want access to multiple devices on
@@ -411,6 +467,11 @@ namespace Model
     /**
      * <p>The configuration information for the remote access session request.</p>
      */
+    inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+
+    /**
+     * <p>The configuration information for the remote access session request.</p>
+     */
     inline void SetConfiguration(const CreateRemoteAccessSessionConfiguration& value) { m_configurationHasBeenSet = true; m_configuration = value; }
 
     /**
@@ -441,6 +502,19 @@ namespace Model
      * screen in this mode.</p> </li> </ul>
      */
     inline const InteractionMode& GetInteractionMode() const{ return m_interactionMode; }
+
+    /**
+     * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
+     * <li> <p>INTERACTIVE: You can interact with the iOS device by viewing, touching,
+     * and rotating the screen. You <b>cannot</b> run XCUITest framework-based tests in
+     * this mode.</p> </li> <li> <p>NO_VIDEO: You are connected to the device but
+     * cannot interact with it or view the screen. This mode has the fastest test
+     * execution speed. You <b>can</b> run XCUITest framework-based tests in this
+     * mode.</p> </li> <li> <p>VIDEO_ONLY: You can view the screen but cannot touch or
+     * rotate it. You <b>can</b> run XCUITest framework-based tests and watch the
+     * screen in this mode.</p> </li> </ul>
+     */
+    inline bool InteractionModeHasBeenSet() const { return m_interactionModeHasBeenSet; }
 
     /**
      * <p>The interaction mode of the remote access session. Valid values are:</p> <ul>
@@ -503,6 +577,15 @@ namespace Model
      * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
      */
     inline bool GetSkipAppResign() const{ return m_skipAppResign; }
+
+    /**
+     * <p>When set to <code>true</code>, for private devices, Device Farm will not sign
+     * your app again. For public devices, Device Farm always signs your apps again and
+     * this parameter has no effect.</p> <p>For more information about how Device Farm
+     * re-signs your app(s), see <a href="https://aws.amazon.com/device-farm/faq/">Do
+     * you modify my app?</a> in the <i>AWS Device Farm FAQs</i>.</p>
+     */
+    inline bool SkipAppResignHasBeenSet() const { return m_skipAppResignHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, for private devices, Device Farm will not sign

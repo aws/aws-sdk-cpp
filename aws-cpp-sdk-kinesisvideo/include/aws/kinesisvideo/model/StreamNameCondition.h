@@ -64,6 +64,13 @@ namespace Model
      * <code>BEGINS_WITH</code> operator, which finds streams whose names start with a
      * given prefix.</p>
      */
+    inline bool ComparisonOperatorHasBeenSet() const { return m_comparisonOperatorHasBeenSet; }
+
+    /**
+     * <p>A comparison operator. Currently, you can specify only the
+     * <code>BEGINS_WITH</code> operator, which finds streams whose names start with a
+     * given prefix.</p>
+     */
     inline void SetComparisonOperator(const ComparisonOperator& value) { m_comparisonOperatorHasBeenSet = true; m_comparisonOperator = value; }
 
     /**
@@ -92,6 +99,11 @@ namespace Model
      * <p>A value to compare.</p>
      */
     inline const Aws::String& GetComparisonValue() const{ return m_comparisonValue; }
+
+    /**
+     * <p>A value to compare.</p>
+     */
+    inline bool ComparisonValueHasBeenSet() const { return m_comparisonValueHasBeenSet; }
 
     /**
      * <p>A value to compare.</p>

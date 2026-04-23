@@ -62,6 +62,12 @@ namespace Model
      * <p>A description for the conversion task or the resource being exported. The
      * maximum length is 255 bytes.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the conversion task or the resource being exported. The
+     * maximum length is 255 bytes.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The format and location for an instance export task.</p>
      */
+    inline bool ExportToS3TaskHasBeenSet() const { return m_exportToS3TaskHasBeenSet; }
+
+    /**
+     * <p>The format and location for an instance export task.</p>
+     */
     inline void SetExportToS3Task(const ExportToS3TaskSpecification& value) { m_exportToS3TaskHasBeenSet = true; m_exportToS3Task = value; }
 
     /**
@@ -125,6 +136,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -161,6 +177,11 @@ namespace Model
      * <p>The target virtualization environment.</p>
      */
     inline const ExportEnvironment& GetTargetEnvironment() const{ return m_targetEnvironment; }
+
+    /**
+     * <p>The target virtualization environment.</p>
+     */
+    inline bool TargetEnvironmentHasBeenSet() const { return m_targetEnvironmentHasBeenSet; }
 
     /**
      * <p>The target virtualization environment.</p>

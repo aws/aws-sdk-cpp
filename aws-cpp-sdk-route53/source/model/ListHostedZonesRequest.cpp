@@ -35,7 +35,7 @@ ListHostedZonesRequest::ListHostedZonesRequest() :
 
 Aws::String ListHostedZonesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListHostedZonesRequest::AddQueryStringParameters(URI& uri) const

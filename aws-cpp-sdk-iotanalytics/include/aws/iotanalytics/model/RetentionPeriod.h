@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>If true, message data is kept indefinitely.</p>
      */
+    inline bool UnlimitedHasBeenSet() const { return m_unlimitedHasBeenSet; }
+
+    /**
+     * <p>If true, message data is kept indefinitely.</p>
+     */
     inline void SetUnlimited(bool value) { m_unlimitedHasBeenSet = true; m_unlimited = value; }
 
     /**
@@ -66,6 +71,12 @@ namespace Model
      * be false.</p>
      */
     inline int GetNumberOfDays() const{ return m_numberOfDays; }
+
+    /**
+     * <p>The number of days that message data is kept. The "unlimited" parameter must
+     * be false.</p>
+     */
+    inline bool NumberOfDaysHasBeenSet() const { return m_numberOfDaysHasBeenSet; }
 
     /**
      * <p>The number of days that message data is kept. The "unlimited" parameter must

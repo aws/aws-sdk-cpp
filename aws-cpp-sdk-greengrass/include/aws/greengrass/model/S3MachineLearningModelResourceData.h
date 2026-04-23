@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * Attributes that define an S3 machine learning resource.<p><h3>See Also:</h3>  
-   * <a
+   * Attributes that define an Amazon S3 machine learning resource.<p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/greengrass-2017-06-07/S3MachineLearningModelResourceData">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * The absolute local path of the resource inside the Lambda environment.
      */
     inline const Aws::String& GetDestinationPath() const{ return m_destinationPath; }
+
+    /**
+     * The absolute local path of the resource inside the Lambda environment.
+     */
+    inline bool DestinationPathHasBeenSet() const { return m_destinationPathHasBeenSet; }
 
     /**
      * The absolute local path of the resource inside the Lambda environment.
@@ -89,6 +94,12 @@ namespace Model
      * or .zip format.
      */
     inline const Aws::String& GetS3Uri() const{ return m_s3Uri; }
+
+    /**
+     * The URI of the source model in an S3 bucket. The model package must be in tar.gz
+     * or .zip format.
+     */
+    inline bool S3UriHasBeenSet() const { return m_s3UriHasBeenSet; }
 
     /**
      * The URI of the source model in an S3 bucket. The model package must be in tar.gz

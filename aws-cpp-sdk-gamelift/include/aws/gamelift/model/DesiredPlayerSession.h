@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Unique identifier for a player to associate with the player session.</p>
      */
+    inline bool PlayerIdHasBeenSet() const { return m_playerIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a player to associate with the player session.</p>
+     */
     inline void SetPlayerId(const Aws::String& value) { m_playerIdHasBeenSet = true; m_playerId = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * use this data, so it can be formatted as needed for use in the game.</p>
      */
     inline const Aws::String& GetPlayerData() const{ return m_playerData; }
+
+    /**
+     * <p>Developer-defined information related to a player. Amazon GameLift does not
+     * use this data, so it can be formatted as needed for use in the game.</p>
+     */
+    inline bool PlayerDataHasBeenSet() const { return m_playerDataHasBeenSet; }
 
     /**
      * <p>Developer-defined information related to a player. Amazon GameLift does not

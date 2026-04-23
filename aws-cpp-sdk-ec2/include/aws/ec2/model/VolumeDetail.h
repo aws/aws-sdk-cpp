@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The size of the volume, in GiB.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the volume, in GiB.</p>
+     */
     inline void SetSize(long long value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**

@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A complex data type that includes the field patterns to match for field-level
    * encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldPatterns">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldPatterns">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldPatterns
@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The number of field-level encryption field patterns.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of field-level encryption field patterns.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * <p>An array of the field-level encryption field patterns.</p>
      */
     inline const Aws::Vector<Aws::String>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of the field-level encryption field patterns.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>An array of the field-level encryption field patterns.</p>

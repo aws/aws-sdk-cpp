@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ARN of the backup. </p>
      */
+    inline bool BackupArnHasBeenSet() const { return m_backupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the backup. </p>
+     */
     inline void SetBackupArn(const Aws::String& value) { m_backupArnHasBeenSet = true; m_backupArn = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
+
+    /**
+     * <p> The generated ID of the backup. Example:
+     * <code>myServerName-yyyyMMddHHmmssSSS</code> </p>
+     */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
 
     /**
      * <p> The generated ID of the backup. Example:
@@ -140,6 +151,12 @@ namespace Model
      * <p> The backup type. Valid values are <code>automated</code> or
      * <code>manual</code>. </p>
      */
+    inline bool BackupTypeHasBeenSet() const { return m_backupTypeHasBeenSet; }
+
+    /**
+     * <p> The backup type. Valid values are <code>automated</code> or
+     * <code>manual</code>. </p>
+     */
     inline void SetBackupType(const BackupType& value) { m_backupTypeHasBeenSet = true; m_backupType = value; }
 
     /**
@@ -171,6 +188,12 @@ namespace Model
      * <p> The time stamp when the backup was created in the database. Example:
      * <code>2016-07-29T13:38:47.520Z</code> </p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p> The time stamp when the backup was created in the database. Example:
+     * <code>2016-07-29T13:38:47.520Z</code> </p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -197,6 +220,12 @@ namespace Model
      * automated backups. </p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p> A user-provided description for a manual backup. This field is empty for
+     * automated backups. </p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p> A user-provided description for a manual backup. This field is empty for
@@ -245,6 +274,12 @@ namespace Model
      * <p> The engine type that is obtained from the server when the backup is created.
      * </p>
      */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
+
+    /**
+     * <p> The engine type that is obtained from the server when the backup is created.
+     * </p>
+     */
     inline void SetEngine(const Aws::String& value) { m_engineHasBeenSet = true; m_engine = value; }
 
     /**
@@ -283,6 +318,12 @@ namespace Model
      * created. </p>
      */
     inline const Aws::String& GetEngineModel() const{ return m_engineModel; }
+
+    /**
+     * <p> The engine model that is obtained from the server when the backup is
+     * created. </p>
+     */
+    inline bool EngineModelHasBeenSet() const { return m_engineModelHasBeenSet; }
 
     /**
      * <p> The engine model that is obtained from the server when the backup is
@@ -331,6 +372,12 @@ namespace Model
      * <p> The engine version that is obtained from the server when the backup is
      * created. </p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p> The engine version that is obtained from the server when the backup is
+     * created. </p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -370,6 +417,13 @@ namespace Model
      * the InstanceProfileArn again if you restore a backup. </p>
      */
     inline const Aws::String& GetInstanceProfileArn() const{ return m_instanceProfileArn; }
+
+    /**
+     * <p> The EC2 instance profile ARN that is obtained from the server when the
+     * backup is created. Because this value is stored, you are not required to provide
+     * the InstanceProfileArn again if you restore a backup. </p>
+     */
+    inline bool InstanceProfileArnHasBeenSet() const { return m_instanceProfileArnHasBeenSet; }
 
     /**
      * <p> The EC2 instance profile ARN that is obtained from the server when the
@@ -424,6 +478,12 @@ namespace Model
      * <p> The instance type that is obtained from the server when the backup is
      * created. </p>
      */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
+
+    /**
+     * <p> The instance type that is obtained from the server when the backup is
+     * created. </p>
+     */
     inline void SetInstanceType(const Aws::String& value) { m_instanceTypeHasBeenSet = true; m_instanceType = value; }
 
     /**
@@ -462,6 +522,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetKeyPair() const{ return m_keyPair; }
+
+    /**
+     * <p> The key pair that is obtained from the server when the backup is created.
+     * </p>
+     */
+    inline bool KeyPairHasBeenSet() const { return m_keyPairHasBeenSet; }
 
     /**
      * <p> The key pair that is obtained from the server when the backup is created.
@@ -510,6 +576,12 @@ namespace Model
      * <p> The preferred backup period that is obtained from the server when the backup
      * is created. </p>
      */
+    inline bool PreferredBackupWindowHasBeenSet() const { return m_preferredBackupWindowHasBeenSet; }
+
+    /**
+     * <p> The preferred backup period that is obtained from the server when the backup
+     * is created. </p>
+     */
     inline void SetPreferredBackupWindow(const Aws::String& value) { m_preferredBackupWindowHasBeenSet = true; m_preferredBackupWindow = value; }
 
     /**
@@ -548,6 +620,12 @@ namespace Model
      * backup is created. </p>
      */
     inline const Aws::String& GetPreferredMaintenanceWindow() const{ return m_preferredMaintenanceWindow; }
+
+    /**
+     * <p> The preferred maintenance period that is obtained from the server when the
+     * backup is created. </p>
+     */
+    inline bool PreferredMaintenanceWindowHasBeenSet() const { return m_preferredMaintenanceWindowHasBeenSet; }
 
     /**
      * <p> The preferred maintenance period that is obtained from the server when the
@@ -594,6 +672,11 @@ namespace Model
     /**
      * <p> The Amazon S3 URL of the backup's log file. </p>
      */
+    inline bool S3LogUrlHasBeenSet() const { return m_s3LogUrlHasBeenSet; }
+
+    /**
+     * <p> The Amazon S3 URL of the backup's log file. </p>
+     */
     inline void SetS3LogUrl(const Aws::String& value) { m_s3LogUrlHasBeenSet = true; m_s3LogUrl = value; }
 
     /**
@@ -627,6 +710,12 @@ namespace Model
      * created. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p> The security group IDs that are obtained from the server when the backup is
+     * created. </p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p> The security group IDs that are obtained from the server when the backup is
@@ -679,6 +768,11 @@ namespace Model
     /**
      * <p> The name of the server from which the backup was made. </p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p> The name of the server from which the backup was made. </p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -712,6 +806,12 @@ namespace Model
      * created. </p>
      */
     inline const Aws::String& GetServiceRoleArn() const{ return m_serviceRoleArn; }
+
+    /**
+     * <p> The service role ARN that is obtained from the server when the backup is
+     * created. </p>
+     */
+    inline bool ServiceRoleArnHasBeenSet() const { return m_serviceRoleArnHasBeenSet; }
 
     /**
      * <p> The service role ARN that is obtained from the server when the backup is
@@ -758,6 +858,11 @@ namespace Model
     /**
      * <p>The status of a backup while in progress. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of a backup while in progress. </p>
+     */
     inline void SetStatus(const BackupStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -780,6 +885,11 @@ namespace Model
      * <p> An informational message about backup status. </p>
      */
     inline const Aws::String& GetStatusDescription() const{ return m_statusDescription; }
+
+    /**
+     * <p> An informational message about backup status. </p>
+     */
+    inline bool StatusDescriptionHasBeenSet() const { return m_statusDescriptionHasBeenSet; }
 
     /**
      * <p> An informational message about backup status. </p>
@@ -817,6 +927,12 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p> The subnet IDs that are obtained from the server when the backup is created.
+     * </p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p> The subnet IDs that are obtained from the server when the backup is created.
@@ -871,6 +987,12 @@ namespace Model
      * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
      * server when the backup is created. </p>
      */
+    inline bool ToolsVersionHasBeenSet() const { return m_toolsVersionHasBeenSet; }
+
+    /**
+     * <p> The version of AWS OpsWorks CM-specific tools that is obtained from the
+     * server when the backup is created. </p>
+     */
     inline void SetToolsVersion(const Aws::String& value) { m_toolsVersionHasBeenSet = true; m_toolsVersion = value; }
 
     /**
@@ -909,6 +1031,12 @@ namespace Model
      * for automated backups. </p>
      */
     inline const Aws::String& GetUserArn() const{ return m_userArn; }
+
+    /**
+     * <p> The IAM user ARN of the requester for manual backups. This field is empty
+     * for automated backups. </p>
+     */
+    inline bool UserArnHasBeenSet() const { return m_userArnHasBeenSet; }
 
     /**
      * <p> The IAM user ARN of the requester for manual backups. This field is empty

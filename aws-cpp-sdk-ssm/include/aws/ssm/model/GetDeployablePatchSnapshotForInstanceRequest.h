@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the instance for which the appropriate patch snapshot should be
      * retrieved.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance for which the appropriate patch snapshot should be
+     * retrieved.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -91,6 +97,11 @@ namespace Model
      * <p>The user-defined snapshot ID.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The user-defined snapshot ID.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The user-defined snapshot ID.</p>

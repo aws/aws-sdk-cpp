@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The HTTP status code of the common error.</p>
      */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
+
+    /**
+     * <p>The HTTP status code of the common error.</p>
+     */
     inline void SetStatusCode(int value) { m_statusCodeHasBeenSet = true; m_statusCode = value; }
 
     /**
@@ -72,6 +77,14 @@ namespace Model
      * that you want to tag.</p>
      */
     inline const ErrorCode& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The code of the common error. Valid values include
+     * <code>InternalServiceException</code>, <code>InvalidParameterException</code>,
+     * and any valid error code returned by the AWS service that hosts the resource
+     * that you want to tag.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The code of the common error. Valid values include
@@ -110,6 +123,11 @@ namespace Model
      * <p>The message of the common error.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The message of the common error.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The message of the common error.</p>

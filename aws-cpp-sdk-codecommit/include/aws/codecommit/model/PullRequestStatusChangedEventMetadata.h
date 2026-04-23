@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The changed status of the pull request.</p>
      */
+    inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
+
+    /**
+     * <p>The changed status of the pull request.</p>
+     */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
 
     /**

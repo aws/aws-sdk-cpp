@@ -32,7 +32,7 @@ GetCompatibleElasticsearchVersionsRequest::GetCompatibleElasticsearchVersionsReq
 
 Aws::String GetCompatibleElasticsearchVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetCompatibleElasticsearchVersionsRequest::AddQueryStringParameters(URI& uri) const

@@ -64,6 +64,14 @@ namespace Model
      * do not specify either, AWS Elastic Beanstalk returns
      * <code>MissingRequiredParameter</code> error. </p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the environment to retrieve AWS resource usage data.</p> <p>
+     * Condition: You must specify either this or an EnvironmentName, or both. If you
+     * do not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error. </p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -114,6 +122,14 @@ namespace Model
      * <code>MissingRequiredParameter</code> error. </p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p>The name of the environment to retrieve AWS resource usage data.</p> <p>
+     * Condition: You must specify either this or an EnvironmentId, or both. If you do
+     * not specify either, AWS Elastic Beanstalk returns
+     * <code>MissingRequiredParameter</code> error. </p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p>The name of the environment to retrieve AWS resource usage data.</p> <p>

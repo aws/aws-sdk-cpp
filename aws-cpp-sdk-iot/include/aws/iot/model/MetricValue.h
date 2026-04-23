@@ -59,6 +59,12 @@ namespace Model
      * <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to
      * specify that numeric value to be compared with the <code>metric</code>.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>If the <code>comparisonOperator</code> calls for a numeric value, use this to
+     * specify that numeric value to be compared with the <code>metric</code>.</p>
+     */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -73,6 +79,12 @@ namespace Model
      * specify that set to be compared with the <code>metric</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCidrs() const{ return m_cidrs; }
+
+    /**
+     * <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to
+     * specify that set to be compared with the <code>metric</code>.</p>
+     */
+    inline bool CidrsHasBeenSet() const { return m_cidrsHasBeenSet; }
 
     /**
      * <p>If the <code>comparisonOperator</code> calls for a set of CIDRs, use this to
@@ -122,6 +134,12 @@ namespace Model
      * specify that set to be compared with the <code>metric</code>.</p>
      */
     inline const Aws::Vector<int>& GetPorts() const{ return m_ports; }
+
+    /**
+     * <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to
+     * specify that set to be compared with the <code>metric</code>.</p>
+     */
+    inline bool PortsHasBeenSet() const { return m_portsHasBeenSet; }
 
     /**
      * <p>If the <code>comparisonOperator</code> calls for a set of ports, use this to

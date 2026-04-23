@@ -57,6 +57,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool PortfolioIdHasBeenSet() const { return m_portfolioIdHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetPortfolioId(const Aws::String& value) { m_portfolioIdHasBeenSet = true; m_portfolioId = value; }
 
     /**
@@ -142,6 +154,18 @@ namespace Model
      * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
      */
     inline const PortfolioShareType& GetPortfolioShareType() const{ return m_portfolioShareType; }
+
+    /**
+     * <p>The type of shared portfolios to reject. The default is to reject imported
+     * portfolios.</p> <ul> <li> <p> <code>AWS_ORGANIZATIONS</code> - Reject portfolios
+     * shared by the master account of your organization.</p> </li> <li> <p>
+     * <code>IMPORTED</code> - Reject imported portfolios.</p> </li> <li> <p>
+     * <code>AWS_SERVICECATALOG</code> - Not supported. (Throws
+     * ResourceNotFoundException.)</p> </li> </ul> <p>For example, <code>aws
+     * servicecatalog reject-portfolio-share --portfolio-id "port-2qwzkwxt3y5fk"
+     * --portfolio-share-type AWS_ORGANIZATIONS</code> </p>
+     */
+    inline bool PortfolioShareTypeHasBeenSet() const { return m_portfolioShareTypeHasBeenSet; }
 
     /**
      * <p>The type of shared portfolios to reject. The default is to reject imported

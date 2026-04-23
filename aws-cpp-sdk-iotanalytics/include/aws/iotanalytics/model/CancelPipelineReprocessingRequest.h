@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of pipeline for which data reprocessing is canceled.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of pipeline for which data reprocessing is canceled.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -83,6 +88,12 @@ namespace Model
      * "StartPipelineReprocessing").</p>
      */
     inline const Aws::String& GetReprocessingId() const{ return m_reprocessingId; }
+
+    /**
+     * <p>The ID of the reprocessing task (returned by
+     * "StartPipelineReprocessing").</p>
+     */
+    inline bool ReprocessingIdHasBeenSet() const { return m_reprocessingIdHasBeenSet; }
 
     /**
      * <p>The ID of the reprocessing task (returned by

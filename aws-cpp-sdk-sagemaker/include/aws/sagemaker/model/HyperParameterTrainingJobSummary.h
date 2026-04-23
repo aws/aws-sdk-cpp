@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the training job.</p>
      */
+    inline bool TrainingJobNameHasBeenSet() const { return m_trainingJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the training job.</p>
+     */
     inline void SetTrainingJobName(const Aws::String& value) { m_trainingJobNameHasBeenSet = true; m_trainingJobName = value; }
 
     /**
@@ -97,6 +102,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the training job.</p>
      */
+    inline bool TrainingJobArnHasBeenSet() const { return m_trainingJobArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the training job.</p>
+     */
     inline void SetTrainingJobArn(const Aws::String& value) { m_trainingJobArnHasBeenSet = true; m_trainingJobArn = value; }
 
     /**
@@ -125,25 +135,44 @@ namespace Model
     inline HyperParameterTrainingJobSummary& WithTrainingJobArn(const char* value) { SetTrainingJobArn(value); return *this;}
 
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline const Aws::String& GetTuningJobName() const{ return m_tuningJobName; }
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
+    inline bool TuningJobNameHasBeenSet() const { return m_tuningJobNameHasBeenSet; }
+
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline void SetTuningJobName(const Aws::String& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = value; }
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline void SetTuningJobName(Aws::String&& value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName = std::move(value); }
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline void SetTuningJobName(const char* value) { m_tuningJobNameHasBeenSet = true; m_tuningJobName.assign(value); }
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(const Aws::String& value) { SetTuningJobName(value); return *this;}
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(Aws::String&& value) { SetTuningJobName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The HyperParameter tuning job that launched the training job.</p>
+     */
     inline HyperParameterTrainingJobSummary& WithTuningJobName(const char* value) { SetTuningJobName(value); return *this;}
 
 
@@ -151,6 +180,11 @@ namespace Model
      * <p>The date and time that the training job was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The date and time that the training job was created.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the training job was created.</p>
@@ -181,6 +215,11 @@ namespace Model
     /**
      * <p>The date and time that the training job started.</p>
      */
+    inline bool TrainingStartTimeHasBeenSet() const { return m_trainingStartTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the training job started.</p>
+     */
     inline void SetTrainingStartTime(const Aws::Utils::DateTime& value) { m_trainingStartTimeHasBeenSet = true; m_trainingStartTime = value; }
 
     /**
@@ -200,27 +239,56 @@ namespace Model
 
 
     /**
-     * <p>The date and time that the training job ended.</p>
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline const Aws::Utils::DateTime& GetTrainingEndTime() const{ return m_trainingEndTime; }
 
     /**
-     * <p>The date and time that the training job ended.</p>
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
+     */
+    inline bool TrainingEndTimeHasBeenSet() const { return m_trainingEndTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(const Aws::Utils::DateTime& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = value; }
 
     /**
-     * <p>The date and time that the training job ended.</p>
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline void SetTrainingEndTime(Aws::Utils::DateTime&& value) { m_trainingEndTimeHasBeenSet = true; m_trainingEndTime = std::move(value); }
 
     /**
-     * <p>The date and time that the training job ended.</p>
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline HyperParameterTrainingJobSummary& WithTrainingEndTime(const Aws::Utils::DateTime& value) { SetTrainingEndTime(value); return *this;}
 
     /**
-     * <p>The date and time that the training job ended.</p>
+     * <p>Specifies the time when the training job ends on training instances. You are
+     * billed for the time interval between the value of <code>TrainingStartTime</code>
+     * and this time. For successful jobs and stopped jobs, this is the time after
+     * model artifacts are uploaded. For failed jobs, this is the time when Amazon
+     * SageMaker detects a job failure.</p>
      */
     inline HyperParameterTrainingJobSummary& WithTrainingEndTime(Aws::Utils::DateTime&& value) { SetTrainingEndTime(std::move(value)); return *this;}
 
@@ -229,6 +297,11 @@ namespace Model
      * <p>The status of the training job.</p>
      */
     inline const TrainingJobStatus& GetTrainingJobStatus() const{ return m_trainingJobStatus; }
+
+    /**
+     * <p>The status of the training job.</p>
+     */
+    inline bool TrainingJobStatusHasBeenSet() const { return m_trainingJobStatusHasBeenSet; }
 
     /**
      * <p>The status of the training job.</p>
@@ -255,6 +328,11 @@ namespace Model
      * <p>A list of the hyperparameters for which you specified ranges to search.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTunedHyperParameters() const{ return m_tunedHyperParameters; }
+
+    /**
+     * <p>A list of the hyperparameters for which you specified ranges to search.</p>
+     */
+    inline bool TunedHyperParametersHasBeenSet() const { return m_tunedHyperParametersHasBeenSet; }
 
     /**
      * <p>A list of the hyperparameters for which you specified ranges to search.</p>
@@ -320,6 +398,11 @@ namespace Model
     /**
      * <p>The reason that the training job failed. </p>
      */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>The reason that the training job failed. </p>
+     */
     inline void SetFailureReason(const Aws::String& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
 
     /**
@@ -354,6 +437,13 @@ namespace Model
      * job.</p>
      */
     inline const FinalHyperParameterTuningJobObjectiveMetric& GetFinalHyperParameterTuningJobObjectiveMetric() const{ return m_finalHyperParameterTuningJobObjectiveMetric; }
+
+    /**
+     * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
+     * the value of the objective metric of the tuning job that launched this training
+     * job.</p>
+     */
+    inline bool FinalHyperParameterTuningJobObjectiveMetricHasBeenSet() const { return m_finalHyperParameterTuningJobObjectiveMetricHasBeenSet; }
 
     /**
      * <p>The <a>FinalHyperParameterTuningJobObjectiveMetric</a> object that specifies
@@ -395,6 +485,18 @@ namespace Model
      * training job failed or did not emit an objective metric.</p> </li> </ul>
      */
     inline const ObjectiveStatus& GetObjectiveStatus() const{ return m_objectiveStatus; }
+
+    /**
+     * <p>The status of the objective metric for the training job:</p> <ul> <li>
+     * <p>Succeeded: The final objective metric for the training job was evaluated by
+     * the hyperparameter tuning job and used in the hyperparameter tuning process.</p>
+     * </li> </ul> <ul> <li> <p>Pending: The training job is in progress and evaluation
+     * of its final objective metric is pending.</p> </li> </ul> <ul> <li> <p>Failed:
+     * The final objective metric for the training job was not evaluated, and was not
+     * used in the hyperparameter tuning process. This typically occurs when the
+     * training job failed or did not emit an objective metric.</p> </li> </ul>
+     */
+    inline bool ObjectiveStatusHasBeenSet() const { return m_objectiveStatusHasBeenSet; }
 
     /**
      * <p>The status of the objective metric for the training job:</p> <ul> <li>

@@ -39,8 +39,7 @@ namespace Model
    * an Amazon GameLift fleet and another VPC on an account you have access to. This
    * authorization must exist and be valid for the peering connection to be
    * established. Authorizations are valid for 24 hours after they are issued.</p>
-   * <p>VPC peering connection operations include:</p> <ul> <li> <p>
-   * <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
+   * <ul> <li> <p> <a>CreateVpcPeeringAuthorization</a> </p> </li> <li> <p>
    * <a>DescribeVpcPeeringAuthorizations</a> </p> </li> <li> <p>
    * <a>DeleteVpcPeeringAuthorization</a> </p> </li> <li> <p>
    * <a>CreateVpcPeeringConnection</a> </p> </li> <li> <p>
@@ -64,6 +63,13 @@ namespace Model
      * account settings.</p>
      */
     inline const Aws::String& GetGameLiftAwsAccountId() const{ return m_gameLiftAwsAccountId; }
+
+    /**
+     * <p>Unique identifier for the AWS account that you use to manage your Amazon
+     * GameLift fleet. You can find your Account ID in the AWS Management Console under
+     * account settings.</p>
+     */
+    inline bool GameLiftAwsAccountIdHasBeenSet() const { return m_gameLiftAwsAccountIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for the AWS account that you use to manage your Amazon
@@ -116,6 +122,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool PeerVpcAwsAccountIdHasBeenSet() const { return m_peerVpcAwsAccountIdHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetPeerVpcAwsAccountId(const Aws::String& value) { m_peerVpcAwsAccountIdHasBeenSet = true; m_peerVpcAwsAccountId = value; }
 
     /**
@@ -147,56 +158,80 @@ namespace Model
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline const Aws::String& GetPeerVpcId() const{ return m_peerVpcId; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
+     */
+    inline bool PeerVpcIdHasBeenSet() const { return m_peerVpcIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
+     * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const Aws::String& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = value; }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(Aws::String&& value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId = std::move(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline void SetPeerVpcId(const char* value) { m_peerVpcIdHasBeenSet = true; m_peerVpcId.assign(value); }
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcId(const Aws::String& value) { SetPeerVpcId(value); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcId(Aws::String&& value) { SetPeerVpcId(std::move(value)); return *this;}
 
     /**
      * <p>Unique identifier for a VPC with resources to be accessed by your Amazon
      * GameLift fleet. The VPC must be in the same region where your fleet is deployed.
-     * To get VPC information, including IDs, use the Virtual Private Cloud service
-     * tools, including the VPC Dashboard in the AWS Management Console.</p>
+     * Look up a VPC ID using the <a href="https://console.aws.amazon.com/vpc/">VPC
+     * Dashboard</a> in the AWS Management Console. Learn more about VPC peering in <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/vpc-peering.html">VPC
+     * Peering with Amazon GameLift Fleets</a>.</p>
      */
     inline VpcPeeringAuthorization& WithPeerVpcId(const char* value) { SetPeerVpcId(value); return *this;}
 
@@ -206,6 +241,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time stamp indicating when this authorization was issued. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this authorization was issued. Format is a number
@@ -238,6 +279,13 @@ namespace Model
      * example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationTime() const{ return m_expirationTime; }
+
+    /**
+     * <p>Time stamp indicating when this authorization expires (24 hours after
+     * issuance). Format is a number expressed in Unix time as milliseconds (for
+     * example "1469498468.057").</p>
+     */
+    inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this authorization expires (24 hours after

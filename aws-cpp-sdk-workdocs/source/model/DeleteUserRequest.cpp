@@ -31,7 +31,7 @@ DeleteUserRequest::DeleteUserRequest() :
 
 Aws::String DeleteUserRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DeleteUserRequest::GetRequestSpecificHeaders() const

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Server-side encryption algorithm to use for the default encryption.</p>
      */
+    inline bool SSEAlgorithmHasBeenSet() const { return m_sSEAlgorithmHasBeenSet; }
+
+    /**
+     * <p>Server-side encryption algorithm to use for the default encryption.</p>
+     */
     inline void SetSSEAlgorithm(const ServerSideEncryption& value) { m_sSEAlgorithmHasBeenSet = true; m_sSEAlgorithm = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * allowed if SSEAlgorithm is aws:kms.</p>
      */
     inline const Aws::String& GetKMSMasterKeyID() const{ return m_kMSMasterKeyID; }
+
+    /**
+     * <p>KMS master key ID to use for the default encryption. This parameter is
+     * allowed if SSEAlgorithm is aws:kms.</p>
+     */
+    inline bool KMSMasterKeyIDHasBeenSet() const { return m_kMSMasterKeyIDHasBeenSet; }
 
     /**
      * <p>KMS master key ID to use for the default encryption. This parameter is

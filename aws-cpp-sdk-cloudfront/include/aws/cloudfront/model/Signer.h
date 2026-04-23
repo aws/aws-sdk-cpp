@@ -37,7 +37,7 @@ namespace Model
    * <p>A complex type that lists the AWS accounts that were included in the
    * <code>TrustedSigners</code> complex type, as well as their active CloudFront key
    * pair IDs, if any. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/Signer">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/Signer">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API Signer
@@ -57,6 +57,14 @@ namespace Model
      * </li> <li> <p>An AWS account number.</p> </li> </ul>
      */
     inline const Aws::String& GetAwsAccountNumber() const{ return m_awsAccountNumber; }
+
+    /**
+     * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
+     * type for this RTMP distribution. Valid values include:</p> <ul> <li> <p>
+     * <code>self</code>, which is the AWS account used to create the distribution.</p>
+     * </li> <li> <p>An AWS account number.</p> </li> </ul>
+     */
+    inline bool AwsAccountNumberHasBeenSet() const { return m_awsAccountNumberHasBeenSet; }
 
     /**
      * <p>An AWS account that is included in the <code>TrustedSigners</code> complex
@@ -112,6 +120,12 @@ namespace Model
      * associated with <code>AwsAccountNumber</code>.</p>
      */
     inline const KeyPairIds& GetKeyPairIds() const{ return m_keyPairIds; }
+
+    /**
+     * <p>A complex type that lists the active CloudFront key pairs, if any, that are
+     * associated with <code>AwsAccountNumber</code>.</p>
+     */
+    inline bool KeyPairIdsHasBeenSet() const { return m_keyPairIdsHasBeenSet; }
 
     /**
      * <p>A complex type that lists the active CloudFront key pairs, if any, that are

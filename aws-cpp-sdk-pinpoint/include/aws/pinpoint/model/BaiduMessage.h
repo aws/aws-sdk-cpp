@@ -70,6 +70,17 @@ namespace Model
      * the user's device launches and opens a web page at the URL you specify. Possible
      * values include: OPEN_APP | DEEP_LINK | URL
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * The action that occurs if the user taps a push notification delivered by the
+     * campaign: OPEN_APP - Your app launches, or it becomes the foreground app if it
+     * has been sent to the background. This is the default action. DEEP_LINK - Uses
+     * deep linking features in iOS and Android to open your app and display a
+     * designated user interface within the app. URL - The default mobile browser on
+     * the user's device launches and opens a web page at the URL you specify. Possible
+     * values include: OPEN_APP | DEEP_LINK | URL
+     */
     inline void SetAction(const Action& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -114,6 +125,11 @@ namespace Model
     /**
      * The message body of the notification.
      */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
+
+    /**
+     * The message body of the notification.
+     */
     inline void SetBody(const Aws::String& value) { m_bodyHasBeenSet = true; m_body = value; }
 
     /**
@@ -147,6 +163,12 @@ namespace Model
      * notifications' data.pinpoint.jsonBody' object
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetData() const{ return m_data; }
+
+    /**
+     * The data payload used for a silent push. This payload is added to the
+     * notifications' data.pinpoint.jsonBody' object
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * The data payload used for a silent push. This payload is added to the
@@ -223,6 +245,11 @@ namespace Model
     /**
      * The icon image name of the asset saved in your application.
      */
+    inline bool IconReferenceHasBeenSet() const { return m_iconReferenceHasBeenSet; }
+
+    /**
+     * The icon image name of the asset saved in your application.
+     */
     inline void SetIconReference(const Aws::String& value) { m_iconReferenceHasBeenSet = true; m_iconReference = value; }
 
     /**
@@ -256,6 +283,12 @@ namespace Model
      * content view.
      */
     inline const Aws::String& GetImageIconUrl() const{ return m_imageIconUrl; }
+
+    /**
+     * The URL that points to an image used as the large icon to the notification
+     * content view.
+     */
+    inline bool ImageIconUrlHasBeenSet() const { return m_imageIconUrlHasBeenSet; }
 
     /**
      * The URL that points to an image used as the large icon to the notification
@@ -302,6 +335,11 @@ namespace Model
     /**
      * The URL that points to an image used in the push notification.
      */
+    inline bool ImageUrlHasBeenSet() const { return m_imageUrlHasBeenSet; }
+
+    /**
+     * The URL that points to an image used in the push notification.
+     */
     inline void SetImageUrl(const Aws::String& value) { m_imageUrlHasBeenSet = true; m_imageUrl = value; }
 
     /**
@@ -335,6 +373,12 @@ namespace Model
      * the message.
      */
     inline const Aws::String& GetRawContent() const{ return m_rawContent; }
+
+    /**
+     * The Raw JSON formatted string to be used as the payload. This value overrides
+     * the message.
+     */
+    inline bool RawContentHasBeenSet() const { return m_rawContentHasBeenSet; }
 
     /**
      * The Raw JSON formatted string to be used as the payload. This value overrides
@@ -383,6 +427,12 @@ namespace Model
      * Indicates if the message should display on the users device. Silent pushes can
      * be used for Remote Configuration and Phone Home use cases.
      */
+    inline bool SilentPushHasBeenSet() const { return m_silentPushHasBeenSet; }
+
+    /**
+     * Indicates if the message should display on the users device. Silent pushes can
+     * be used for Remote Configuration and Phone Home use cases.
+     */
     inline void SetSilentPush(bool value) { m_silentPushHasBeenSet = true; m_silentPush = value; }
 
     /**
@@ -398,6 +448,13 @@ namespace Model
      * view
      */
     inline const Aws::String& GetSmallImageIconUrl() const{ return m_smallImageIconUrl; }
+
+    /**
+     * The URL that points to an image used as the small icon for the notification
+     * which will be used to represent the notification in the status bar and content
+     * view
+     */
+    inline bool SmallImageIconUrlHasBeenSet() const { return m_smallImageIconUrlHasBeenSet; }
 
     /**
      * The URL that points to an image used as the small icon for the notification
@@ -454,6 +511,13 @@ namespace Model
      * default, or the filename of a sound resource bundled in the app. Android sound
      * files must reside in /res/raw/
      */
+    inline bool SoundHasBeenSet() const { return m_soundHasBeenSet; }
+
+    /**
+     * Indicates a sound to play when the device receives the notification. Supports
+     * default, or the filename of a sound resource bundled in the app. Android sound
+     * files must reside in /res/raw/
+     */
     inline void SetSound(const Aws::String& value) { m_soundHasBeenSet = true; m_sound = value; }
 
     /**
@@ -497,6 +561,12 @@ namespace Model
      * substitutions.
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetSubstitutions() const{ return m_substitutions; }
+
+    /**
+     * Default message substitutions. Can be overridden by individual address
+     * substitutions.
+     */
+    inline bool SubstitutionsHasBeenSet() const { return m_substitutionsHasBeenSet; }
 
     /**
      * Default message substitutions. Can be overridden by individual address
@@ -571,6 +641,13 @@ namespace Model
      * Baidu storage if the device is offline. The and the default value and the
      * maximum time to live supported is 7 days (604800 seconds)
      */
+    inline bool TimeToLiveHasBeenSet() const { return m_timeToLiveHasBeenSet; }
+
+    /**
+     * This parameter specifies how long (in seconds) the message should be kept in
+     * Baidu storage if the device is offline. The and the default value and the
+     * maximum time to live supported is 7 days (604800 seconds)
+     */
     inline void SetTimeToLive(int value) { m_timeToLiveHasBeenSet = true; m_timeToLive = value; }
 
     /**
@@ -585,6 +662,11 @@ namespace Model
      * The message title that displays above the message on the user's device.
      */
     inline const Aws::String& GetTitle() const{ return m_title; }
+
+    /**
+     * The message title that displays above the message on the user's device.
+     */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
 
     /**
      * The message title that displays above the message on the user's device.
@@ -622,6 +704,12 @@ namespace Model
      * URL.
      */
     inline const Aws::String& GetUrl() const{ return m_url; }
+
+    /**
+     * The URL to open in the user's mobile browser. Used if the value for Action is
+     * URL.
+     */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
 
     /**
      * The URL to open in the user's mobile browser. Used if the value for Action is

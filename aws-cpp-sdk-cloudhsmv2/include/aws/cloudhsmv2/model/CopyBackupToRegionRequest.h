@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
      */
+    inline bool DestinationRegionHasBeenSet() const { return m_destinationRegionHasBeenSet; }
+
+    /**
+     * <p>The AWS region that will contain your copied CloudHSM cluster backup.</p>
+     */
     inline void SetDestinationRegion(const Aws::String& value) { m_destinationRegionHasBeenSet = true; m_destinationRegion = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the backup that will be copied to the destination region. </p>
      */
     inline const Aws::String& GetBackupId() const{ return m_backupId; }
+
+    /**
+     * <p>The ID of the backup that will be copied to the destination region. </p>
+     */
+    inline bool BackupIdHasBeenSet() const { return m_backupIdHasBeenSet; }
 
     /**
      * <p>The ID of the backup that will be copied to the destination region. </p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The latitude.</p>
      */
+    inline bool LatitudeHasBeenSet() const { return m_latitudeHasBeenSet; }
+
+    /**
+     * <p>The latitude.</p>
+     */
     inline void SetLatitude(double value) { m_latitudeHasBeenSet = true; m_latitude = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The longitude.</p>
      */
     inline double GetLongitude() const{ return m_longitude; }
+
+    /**
+     * <p>The longitude.</p>
+     */
+    inline bool LongitudeHasBeenSet() const { return m_longitudeHasBeenSet; }
 
     /**
      * <p>The longitude.</p>

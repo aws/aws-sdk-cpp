@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the target environment.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the target environment.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The environment ID of the target environment.</p>
      */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
+
+    /**
+     * <p>The environment ID of the target environment.</p>
+     */
     inline void SetEnvironmentId(const Aws::String& value) { m_environmentIdHasBeenSet = true; m_environmentId = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The action ID of the scheduled managed action to execute.</p>
      */
     inline const Aws::String& GetActionId() const{ return m_actionId; }
+
+    /**
+     * <p>The action ID of the scheduled managed action to execute.</p>
+     */
+    inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
 
     /**
      * <p>The action ID of the scheduled managed action to execute.</p>

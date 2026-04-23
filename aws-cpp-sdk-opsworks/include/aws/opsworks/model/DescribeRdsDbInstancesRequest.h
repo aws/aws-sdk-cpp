@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the stack with which the instances are registered. The operation
      * returns descriptions of all registered Amazon RDS instances.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the stack with which the instances are registered. The operation
+     * returns descriptions of all registered Amazon RDS instances.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -92,6 +98,11 @@ namespace Model
      * <p>An array containing the ARNs of the instances to be described.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRdsDbInstanceArns() const{ return m_rdsDbInstanceArns; }
+
+    /**
+     * <p>An array containing the ARNs of the instances to be described.</p>
+     */
+    inline bool RdsDbInstanceArnsHasBeenSet() const { return m_rdsDbInstanceArnsHasBeenSet; }
 
     /**
      * <p>An array containing the ARNs of the instances to be described.</p>

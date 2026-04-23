@@ -61,6 +61,12 @@ namespace Model
      * <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or
      * <b>UNHEALTHY</b>.</p>
      */
+    inline bool AgentHealthsHasBeenSet() const { return m_agentHealthsHasBeenSet; }
+
+    /**
+     * <p>The current health state of the agent. Values can be set to <b>HEALTHY</b> or
+     * <b>UNHEALTHY</b>.</p>
+     */
     inline void SetAgentHealths(const Aws::Vector<AgentHealth>& value) { m_agentHealthsHasBeenSet = true; m_agentHealths = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * <b>UNKNOWN</b>. </p>
      */
     inline const Aws::Vector<AgentHealthCode>& GetAgentHealthCodes() const{ return m_agentHealthCodes; }
+
+    /**
+     * <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>,
+     * <b>RUNNING</b>, <b>SHUTDOWN</b>, <b>UNHEALTHY</b>, <b>THROTTLED</b>, and
+     * <b>UNKNOWN</b>. </p>
+     */
+    inline bool AgentHealthCodesHasBeenSet() const { return m_agentHealthCodesHasBeenSet; }
 
     /**
      * <p>The detailed health state of the agent. Values can be set to <b>IDLE</b>,

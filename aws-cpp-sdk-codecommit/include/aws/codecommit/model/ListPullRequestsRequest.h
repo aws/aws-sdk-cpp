@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the repository for which you want to list pull requests.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository for which you want to list pull requests.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -87,6 +92,13 @@ namespace Model
      * user.</p>
      */
     inline const Aws::String& GetAuthorArn() const{ return m_authorArn; }
+
+    /**
+     * <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull
+     * request. If used, this filters the results to pull requests created by that
+     * user.</p>
+     */
+    inline bool AuthorArnHasBeenSet() const { return m_authorArnHasBeenSet; }
 
     /**
      * <p>Optional. The Amazon Resource Name (ARN) of the user who created the pull
@@ -141,6 +153,12 @@ namespace Model
      * <p>Optional. The status of the pull request. If used, this refines the results
      * to the pull requests that match the specified status.</p>
      */
+    inline bool PullRequestStatusHasBeenSet() const { return m_pullRequestStatusHasBeenSet; }
+
+    /**
+     * <p>Optional. The status of the pull request. If used, this refines the results
+     * to the pull requests that match the specified status.</p>
+     */
     inline void SetPullRequestStatus(const PullRequestStatusEnum& value) { m_pullRequestStatusHasBeenSet = true; m_pullRequestStatus = value; }
 
     /**
@@ -167,6 +185,12 @@ namespace Model
      * of the results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An enumeration token that when provided in a request, returns the next batch
+     * of the results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An enumeration token that when provided in a request, returns the next batch
@@ -209,6 +233,11 @@ namespace Model
      * <p>A non-negative integer used to limit the number of returned results.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>A non-negative integer used to limit the number of returned results.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>A non-negative integer used to limit the number of returned results.</p>

@@ -26,7 +26,8 @@ CreateConfigurationRequest::CreateConfigurationRequest() :
     m_engineType(EngineType::NOT_SET),
     m_engineTypeHasBeenSet(false),
     m_engineVersionHasBeenSet(false),
-    m_nameHasBeenSet(false)
+    m_nameHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -48,6 +49,17 @@ Aws::String CreateConfigurationRequest::SerializePayload() const
   if(m_nameHasBeenSet)
   {
    payload.WithString("name", m_name);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

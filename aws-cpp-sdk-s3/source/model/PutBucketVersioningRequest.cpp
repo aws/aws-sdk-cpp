@@ -48,7 +48,7 @@ Aws::String PutBucketVersioningRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutBucketVersioningRequest::AddQueryStringParameters(URI& uri) const

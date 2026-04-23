@@ -55,6 +55,12 @@ namespace Model
      * <p>The ID of the catalog in which the partion is to be created. Currently, this
      * should be the AWS account ID.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the catalog in which the partion is to be created. Currently, this
+     * should be the AWS account ID.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>The name of the metadata database in which the partition is to be
+     * created.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>The name of the metadata database in which the partition is to be
@@ -139,6 +151,11 @@ namespace Model
     /**
      * <p>The name of the metadata table in which the partition is to be created.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the metadata table in which the partition is to be created.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -172,6 +189,12 @@ namespace Model
      * created.</p>
      */
     inline const PartitionInput& GetPartitionInput() const{ return m_partitionInput; }
+
+    /**
+     * <p>A <code>PartitionInput</code> structure defining the partition to be
+     * created.</p>
+     */
+    inline bool PartitionInputHasBeenSet() const { return m_partitionInputHasBeenSet; }
 
     /**
      * <p>A <code>PartitionInput</code> structure defining the partition to be

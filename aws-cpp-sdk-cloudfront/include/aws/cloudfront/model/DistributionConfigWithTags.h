@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A distribution Configuration and a list of tags to be associated with the
    * distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/DistributionConfigWithTags">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/DistributionConfigWithTags">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API DistributionConfigWithTags
@@ -53,6 +53,11 @@ namespace Model
      * <p>A distribution configuration.</p>
      */
     inline const DistributionConfig& GetDistributionConfig() const{ return m_distributionConfig; }
+
+    /**
+     * <p>A distribution configuration.</p>
+     */
+    inline bool DistributionConfigHasBeenSet() const { return m_distributionConfigHasBeenSet; }
 
     /**
      * <p>A distribution configuration.</p>
@@ -79,6 +84,11 @@ namespace Model
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the traffic policy for which you want to create a new version.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the traffic policy for which you want to create a new version.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
+    /**
+     * <p>The definition of this version of the traffic policy, in JSON format. You
+     * specified the JSON in the <code>CreateTrafficPolicyVersion</code> request. For
+     * more information about the JSON format, see <a>CreateTrafficPolicy</a>.</p>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The definition of this version of the traffic policy, in JSON format. You
@@ -137,6 +149,12 @@ namespace Model
      * request, if any.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>
+     * request, if any.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The comment that you specified in the <code>CreateTrafficPolicyVersion</code>

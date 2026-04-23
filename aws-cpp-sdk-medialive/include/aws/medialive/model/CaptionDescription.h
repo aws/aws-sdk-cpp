@@ -59,6 +59,12 @@ namespace Model
      * Specifies which input caption selector to use as a caption source when
      * generating output captions. This field should match a captionSelector name.
      */
+    inline bool CaptionSelectorNameHasBeenSet() const { return m_captionSelectorNameHasBeenSet; }
+
+    /**
+     * Specifies which input caption selector to use as a caption source when
+     * generating output captions. This field should match a captionSelector name.
+     */
     inline void SetCaptionSelectorName(const Aws::String& value) { m_captionSelectorNameHasBeenSet = true; m_captionSelectorName = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * Additional settings for captions destination that depend on the destination
      * type.
      */
+    inline bool DestinationSettingsHasBeenSet() const { return m_destinationSettingsHasBeenSet; }
+
+    /**
+     * Additional settings for captions destination that depend on the destination
+     * type.
+     */
     inline void SetDestinationSettings(const CaptionDestinationSettings& value) { m_destinationSettingsHasBeenSet = true; m_destinationSettings = value; }
 
     /**
@@ -127,6 +139,11 @@ namespace Model
      * ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * ISO 639-2 three-digit code: http://www.loc.gov/standards/iso639-2/
@@ -164,6 +181,12 @@ namespace Model
      * English, or Spanish).
      */
     inline const Aws::String& GetLanguageDescription() const{ return m_languageDescription; }
+
+    /**
+     * Human readable information to indicate captions available for players (eg.
+     * English, or Spanish).
+     */
+    inline bool LanguageDescriptionHasBeenSet() const { return m_languageDescriptionHasBeenSet; }
 
     /**
      * Human readable information to indicate captions available for players (eg.
@@ -207,6 +230,12 @@ namespace Model
      * an output.  Names must be unique within an event.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * Name of the caption description.  Used to associate a caption description with
+     * an output.  Names must be unique within an event.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * Name of the caption description.  Used to associate a caption description with

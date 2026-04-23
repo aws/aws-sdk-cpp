@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Filters the list of action types to those created by a specified entity.</p>
      */
+    inline bool ActionOwnerFilterHasBeenSet() const { return m_actionOwnerFilterHasBeenSet; }
+
+    /**
+     * <p>Filters the list of action types to those created by a specified entity.</p>
+     */
     inline void SetActionOwnerFilter(const ActionOwner& value) { m_actionOwnerFilterHasBeenSet = true; m_actionOwnerFilter = value; }
 
     /**
@@ -80,6 +85,12 @@ namespace Model
      * which can be used to return the next set of action types in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An identifier that was returned from the previous list action types call,
+     * which can be used to return the next set of action types in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An identifier that was returned from the previous list action types call,

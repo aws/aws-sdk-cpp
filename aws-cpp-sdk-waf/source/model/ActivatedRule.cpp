@@ -35,7 +35,8 @@ ActivatedRule::ActivatedRule() :
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
     m_type(WafRuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_excludedRulesHasBeenSet(false)
 {
 }
 
@@ -46,7 +47,8 @@ ActivatedRule::ActivatedRule(JsonView jsonValue) :
     m_actionHasBeenSet(false),
     m_overrideActionHasBeenSet(false),
     m_type(WafRuleType::NOT_SET),
-    m_typeHasBeenSet(false)
+    m_typeHasBeenSet(false),
+    m_excludedRulesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -88,6 +90,16 @@ ActivatedRule& ActivatedRule::operator =(JsonView jsonValue)
     m_typeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ExcludedRules"))
+  {
+    Array<JsonView> excludedRulesJsonList = jsonValue.GetArray("ExcludedRules");
+    for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
+    {
+      m_excludedRules.push_back(excludedRulesJsonList[excludedRulesIndex].AsObject());
+    }
+    m_excludedRulesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -122,6 +134,17 @@ JsonValue ActivatedRule::Jsonize() const
   if(m_typeHasBeenSet)
   {
    payload.WithString("Type", WafRuleTypeMapper::GetNameForWafRuleType(m_type));
+  }
+
+  if(m_excludedRulesHasBeenSet)
+  {
+   Array<JsonValue> excludedRulesJsonList(m_excludedRules.size());
+   for(unsigned excludedRulesIndex = 0; excludedRulesIndex < excludedRulesJsonList.GetLength(); ++excludedRulesIndex)
+   {
+     excludedRulesJsonList[excludedRulesIndex].AsObject(m_excludedRules[excludedRulesIndex].Jsonize());
+   }
+   payload.WithArray("ExcludedRules", std::move(excludedRulesJsonList));
+
   }
 
   return payload;

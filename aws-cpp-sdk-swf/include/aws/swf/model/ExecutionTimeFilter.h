@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the oldest start or close date and time to return.</p>
      */
+    inline bool OldestDateHasBeenSet() const { return m_oldestDateHasBeenSet; }
+
+    /**
+     * <p>Specifies the oldest start or close date and time to return.</p>
+     */
     inline void SetOldestDate(const Aws::Utils::DateTime& value) { m_oldestDateHasBeenSet = true; m_oldestDate = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>Specifies the latest start or close date and time to return.</p>
      */
     inline const Aws::Utils::DateTime& GetLatestDate() const{ return m_latestDate; }
+
+    /**
+     * <p>Specifies the latest start or close date and time to return.</p>
+     */
+    inline bool LatestDateHasBeenSet() const { return m_latestDateHasBeenSet; }
 
     /**
      * <p>Specifies the latest start or close date and time to return.</p>

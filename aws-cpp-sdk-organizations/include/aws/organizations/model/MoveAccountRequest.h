@@ -56,6 +56,13 @@ namespace Model
      * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
      * string requires exactly 12 digits.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the account that you want to move.</p> <p>The
+     * <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for an account ID
+     * string requires exactly 12 digits.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -106,6 +113,19 @@ namespace Model
      * digits.</p> </li> </ul>
      */
     inline const Aws::String& GetSourceParentId() const{ return m_sourceParentId; }
+
+    /**
+     * <p>The unique identifier (ID) of the root or organizational unit that you want
+     * to move the account from.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string
+     * requires one of the following:</p> <ul> <li> <p>Root: a string that begins with
+     * "r-" followed by from 4 to 32 lower-case letters or digits.</p> </li> <li>
+     * <p>Organizational unit (OU): a string that begins with "ou-" followed by from 4
+     * to 32 lower-case letters or digits (the ID of the root that the OU is in)
+     * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
+     * digits.</p> </li> </ul>
+     */
+    inline bool SourceParentIdHasBeenSet() const { return m_sourceParentIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want
@@ -198,6 +218,19 @@ namespace Model
      * digits.</p> </li> </ul>
      */
     inline const Aws::String& GetDestinationParentId() const{ return m_destinationParentId; }
+
+    /**
+     * <p>The unique identifier (ID) of the root or organizational unit that you want
+     * to move the account to.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string
+     * requires one of the following:</p> <ul> <li> <p>Root: a string that begins with
+     * "r-" followed by from 4 to 32 lower-case letters or digits.</p> </li> <li>
+     * <p>Organizational unit (OU): a string that begins with "ou-" followed by from 4
+     * to 32 lower-case letters or digits (the ID of the root that the OU is in)
+     * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
+     * digits.</p> </li> </ul>
+     */
+    inline bool DestinationParentIdHasBeenSet() const { return m_destinationParentIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the root or organizational unit that you want

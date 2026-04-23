@@ -29,7 +29,7 @@ GetSmsChannelRequest::GetSmsChannelRequest() :
 
 Aws::String GetSmsChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

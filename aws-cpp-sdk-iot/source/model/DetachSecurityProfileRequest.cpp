@@ -33,7 +33,7 @@ DetachSecurityProfileRequest::DetachSecurityProfileRequest() :
 
 Aws::String DetachSecurityProfileRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DetachSecurityProfileRequest::AddQueryStringParameters(URI& uri) const

@@ -59,6 +59,11 @@ namespace Model
     /**
      * A pagination token for obtaining the next page of results.
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * A pagination token for obtaining the next page of results.
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * The maximum number of results to be returned.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * The maximum number of results to be returned.
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * The maximum number of results to be returned.

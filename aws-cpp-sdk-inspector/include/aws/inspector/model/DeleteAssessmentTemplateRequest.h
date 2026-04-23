@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN that specifies the assessment template that you want to delete.</p>
      */
+    inline bool AssessmentTemplateArnHasBeenSet() const { return m_assessmentTemplateArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment template that you want to delete.</p>
+     */
     inline void SetAssessmentTemplateArn(const Aws::String& value) { m_assessmentTemplateArnHasBeenSet = true; m_assessmentTemplateArn = value; }
 
     /**

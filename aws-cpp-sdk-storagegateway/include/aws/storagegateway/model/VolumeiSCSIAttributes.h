@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the volume target.</p>
      */
+    inline bool TargetARNHasBeenSet() const { return m_targetARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the volume target.</p>
+     */
     inline void SetTargetARN(const Aws::String& value) { m_targetARNHasBeenSet = true; m_targetARN = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The network interface identifier.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The network interface identifier.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The network interface identifier.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The port used to communicate with iSCSI targets.</p>
      */
+    inline bool NetworkInterfacePortHasBeenSet() const { return m_networkInterfacePortHasBeenSet; }
+
+    /**
+     * <p>The port used to communicate with iSCSI targets.</p>
+     */
     inline void SetNetworkInterfacePort(int value) { m_networkInterfacePortHasBeenSet = true; m_networkInterfacePort = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
     /**
      * <p>The logical disk number.</p>
      */
+    inline bool LunNumberHasBeenSet() const { return m_lunNumberHasBeenSet; }
+
+    /**
+     * <p>The logical disk number.</p>
+     */
     inline void SetLunNumber(int value) { m_lunNumberHasBeenSet = true; m_lunNumber = value; }
 
     /**
@@ -155,6 +175,11 @@ namespace Model
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
      */
     inline bool GetChapEnabled() const{ return m_chapEnabled; }
+
+    /**
+     * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>
+     */
+    inline bool ChapEnabledHasBeenSet() const { return m_chapEnabledHasBeenSet; }
 
     /**
      * <p>Indicates whether mutual CHAP is enabled for the iSCSI target.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Returns a typed link specifier as output.</p>
      */
+    inline bool TypedLinkSpecifiersHasBeenSet() const { return m_typedLinkSpecifiersHasBeenSet; }
+
+    /**
+     * <p>Returns a typed link specifier as output.</p>
+     */
     inline void SetTypedLinkSpecifiers(const Aws::Vector<TypedLinkSpecifier>& value) { m_typedLinkSpecifiersHasBeenSet = true; m_typedLinkSpecifiers = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

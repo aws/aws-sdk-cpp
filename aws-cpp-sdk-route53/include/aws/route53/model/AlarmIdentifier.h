@@ -68,6 +68,16 @@ namespace Model
      * CloudWatch</a> in the <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon
      * Web Services General Reference</i>.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>For the CloudWatch alarm that you want Route 53 health checkers to use to
+     * determine whether this health check is healthy, the region that the alarm was
+     * created in.</p> <p>For the current list of CloudWatch regions, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/rande.html#cw_region">Amazon
+     * CloudWatch</a> in the <i>AWS Regions and Endpoints</i> chapter of the <i>Amazon
+     * Web Services General Reference</i>.</p>
+     */
     inline void SetRegion(const CloudWatchRegion& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -113,6 +123,19 @@ namespace Model
      * statistics aren't supported.</p> </li> </ul> </note>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the CloudWatch alarm that you want Amazon Route 53 health
+     * checkers to use to determine whether this health check is healthy.</p> <note>
+     * <p>Route 53 supports CloudWatch alarms with the following features:</p> <ul>
+     * <li> <p>Standard-resolution metrics. High-resolution metrics aren't supported.
+     * For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/DeveloperGuide/publishingMetrics.html#high-resolution-metrics">High-Resolution
+     * Metrics</a> in the <i>Amazon CloudWatch User Guide</i>.</p> </li> <li>
+     * <p>Statistics: Average, Minimum, Maximum, Sum, and SampleCount. Extended
+     * statistics aren't supported.</p> </li> </ul> </note>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the CloudWatch alarm that you want Amazon Route 53 health

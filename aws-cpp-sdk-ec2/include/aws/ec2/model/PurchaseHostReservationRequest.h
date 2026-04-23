@@ -51,7 +51,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -60,7 +60,16 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
+     * Guide</i>.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+
+    /**
+     * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
+     * request. For more information, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -69,7 +78,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -78,7 +87,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -87,7 +96,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -96,7 +105,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -105,7 +114,7 @@ namespace Model
     /**
      * <p>Unique, case-sensitive identifier you provide to ensure idempotency of the
      * request. For more information, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How
      * to Ensure Idempotency</a> in the <i>Amazon Elastic Compute Cloud User
      * Guide</i>.</p>
      */
@@ -118,6 +127,13 @@ namespace Model
      * specified. At this time, the only supported currency is <code>USD</code>.</p>
      */
     inline const CurrencyCodeValues& GetCurrencyCode() const{ return m_currencyCode; }
+
+    /**
+     * <p>The currency in which the <code>totalUpfrontPrice</code>,
+     * <code>LimitPrice</code>, and <code>totalHourlyPrice</code> amounts are
+     * specified. At this time, the only supported currency is <code>USD</code>.</p>
+     */
+    inline bool CurrencyCodeHasBeenSet() const { return m_currencyCodeHasBeenSet; }
 
     /**
      * <p>The currency in which the <code>totalUpfrontPrice</code>,
@@ -153,6 +169,12 @@ namespace Model
      * associated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostIdSet() const{ return m_hostIdSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts with which the reservation will be
+     * associated.</p>
+     */
+    inline bool HostIdSetHasBeenSet() const { return m_hostIdSetHasBeenSet; }
 
     /**
      * <p>The IDs of the Dedicated Hosts with which the reservation will be
@@ -207,6 +229,17 @@ namespace Model
      * 100.00.</p>
      */
     inline const Aws::String& GetLimitPrice() const{ return m_limitPrice; }
+
+    /**
+     * <p>The specified limit is checked against the total upfront cost of the
+     * reservation (calculated as the offering's upfront cost multiplied by the host
+     * count). If the total upfront cost is greater than the specified price limit, the
+     * request fails. This is used to ensure that the purchase does not exceed the
+     * expected upfront cost of the purchase. At this time, the only supported currency
+     * is <code>USD</code>. For example, to indicate a limit price of USD 100, specify
+     * 100.00.</p>
+     */
+    inline bool LimitPriceHasBeenSet() const { return m_limitPriceHasBeenSet; }
 
     /**
      * <p>The specified limit is checked against the total upfront cost of the
@@ -279,6 +312,11 @@ namespace Model
      * <p>The ID of the offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The ID of the offering.</p>
+     */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
      * <p>The ID of the offering.</p>

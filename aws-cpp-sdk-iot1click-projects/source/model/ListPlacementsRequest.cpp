@@ -35,7 +35,7 @@ ListPlacementsRequest::ListPlacementsRequest() :
 
 Aws::String ListPlacementsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPlacementsRequest::AddQueryStringParameters(URI& uri) const

@@ -36,8 +36,9 @@ namespace Model
 {
 
   /**
-   * <p>A face that detected, but didn't index. Use the <code>Reasons</code> response
-   * attribute to determine why a face wasn't indexed.</p><p><h3>See Also:</h3>   <a
+   * <p>A face that <a>IndexFaces</a> detected, but didn't index. Use the
+   * <code>Reasons</code> response attribute to determine why a face wasn't
+   * indexed.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/UnindexedFace">AWS
    * API Reference</a></p>
    */
@@ -62,6 +63,19 @@ namespace Model
      * bounding box around the face is too small.</p> </li> </ul>
      */
     inline const Aws::Vector<Reason>& GetReasons() const{ return m_reasons; }
+
+    /**
+     * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
+     * <p>EXTREME_POSE - The face is at a pose that can't be detected. For example, the
+     * head is turned too far away from the camera.</p> </li> <li> <p>EXCEEDS_MAX_FACES
+     * - The number of faces detected is already higher than that specified by the
+     * <code>MaxFaces</code> input parameter for <code>IndexFaces</code>.</p> </li>
+     * <li> <p>LOW_BRIGHTNESS - The image is too dark.</p> </li> <li> <p>LOW_SHARPNESS
+     * - The image is too blurry.</p> </li> <li> <p>LOW_CONFIDENCE - The face was
+     * detected with a low confidence.</p> </li> <li> <p>SMALL_BOUNDING_BOX - The
+     * bounding box around the face is too small.</p> </li> </ul>
+     */
+    inline bool ReasonsHasBeenSet() const { return m_reasonsHasBeenSet; }
 
     /**
      * <p>An array of reasons that specify why a face wasn't indexed. </p> <ul> <li>
@@ -147,6 +161,12 @@ namespace Model
      * <code>IndexFaces</code>detected, but didn't index. </p>
      */
     inline const FaceDetail& GetFaceDetail() const{ return m_faceDetail; }
+
+    /**
+     * <p>The structure that contains attributes of a face that
+     * <code>IndexFaces</code>detected, but didn't index. </p>
+     */
+    inline bool FaceDetailHasBeenSet() const { return m_faceDetailHasBeenSet; }
 
     /**
      * <p>The structure that contains attributes of a face that

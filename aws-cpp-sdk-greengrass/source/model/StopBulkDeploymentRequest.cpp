@@ -29,7 +29,7 @@ StopBulkDeploymentRequest::StopBulkDeploymentRequest() :
 
 Aws::String StopBulkDeploymentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

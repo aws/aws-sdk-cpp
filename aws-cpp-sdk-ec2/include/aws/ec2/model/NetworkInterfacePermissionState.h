@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The state of the permission.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the permission.</p>
+     */
     inline void SetState(const NetworkInterfacePermissionStateCode& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>A status message, if applicable.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A status message, if applicable.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A status message, if applicable.</p>

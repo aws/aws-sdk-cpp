@@ -55,6 +55,12 @@ namespace Model
      * <p>The unique identifier (ID) of the web ACL for which to list the associated
      * resources.</p>
      */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the web ACL for which to list the associated
+     * resources.</p>
+     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
@@ -89,31 +95,37 @@ namespace Model
 
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline const ResourceType& GetResourceType() const{ return m_resourceType; }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
+     * API Gateway.</p>
+     */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline void SetResourceType(ResourceType&& value) { m_resourceTypeHasBeenSet = true; m_resourceType = std::move(value); }
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(const ResourceType& value) { SetResourceType(value); return *this;}
 
     /**
-     * <p>The type of resource to list, either and application load balancer or Amazon
+     * <p>The type of resource to list, either an application load balancer or Amazon
      * API Gateway.</p>
      */
     inline ListResourcesForWebACLRequest& WithResourceType(ResourceType&& value) { SetResourceType(std::move(value)); return *this;}

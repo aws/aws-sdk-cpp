@@ -87,6 +87,25 @@ namespace Model
      * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
      * artifacts are being uploaded to the output location.</p> </li> </ul>
      */
+    inline bool PhaseTypeHasBeenSet() const { return m_phaseTypeHasBeenSet; }
+
+    /**
+     * <p>The name of the build phase. Valid values include:</p> <ul> <li> <p>
+     * <code>BUILD</code>: Core build activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>COMPLETED</code>: The build has been
+     * completed.</p> </li> <li> <p> <code>DOWNLOAD_SOURCE</code>: Source code is being
+     * downloaded in this build phase.</p> </li> <li> <p> <code>FINALIZING</code>: The
+     * build process is completing in this build phase.</p> </li> <li> <p>
+     * <code>INSTALL</code>: Installation activities typically occur in this build
+     * phase.</p> </li> <li> <p> <code>POST_BUILD</code>: Post-build activities
+     * typically occur in this build phase.</p> </li> <li> <p> <code>PRE_BUILD</code>:
+     * Pre-build activities typically occur in this build phase.</p> </li> <li> <p>
+     * <code>PROVISIONING</code>: The build environment is being set up.</p> </li> <li>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>SUBMITTED</code>: The build has been
+     * submitted.</p> </li> <li> <p> <code>UPLOAD_ARTIFACTS</code>: Build output
+     * artifacts are being uploaded to the output location.</p> </li> </ul>
+     */
     inline void SetPhaseType(const BuildPhaseType& value) { m_phaseTypeHasBeenSet = true; m_phaseType = value; }
 
     /**
@@ -171,6 +190,19 @@ namespace Model
      * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
      * out.</p> </li> </ul>
      */
+    inline bool PhaseStatusHasBeenSet() const { return m_phaseStatusHasBeenSet; }
+
+    /**
+     * <p>The current status of the build phase. Valid values include:</p> <ul> <li>
+     * <p> <code>FAILED</code>: The build phase failed.</p> </li> <li> <p>
+     * <code>FAULT</code>: The build phase faulted.</p> </li> <li> <p>
+     * <code>IN_PROGRESS</code>: The build phase is still in progress.</p> </li> <li>
+     * <p> <code>QUEUED</code>: The build has been submitted and is queued behind other
+     * submitted builds.</p> </li> <li> <p> <code>STOPPED</code>: The build phase
+     * stopped.</p> </li> <li> <p> <code>SUCCEEDED</code>: The build phase
+     * succeeded.</p> </li> <li> <p> <code>TIMED_OUT</code>: The build phase timed
+     * out.</p> </li> </ul>
+     */
     inline void SetPhaseStatus(const StatusType& value) { m_phaseStatusHasBeenSet = true; m_phaseStatus = value; }
 
     /**
@@ -221,6 +253,11 @@ namespace Model
     /**
      * <p>When the build phase started, expressed in Unix time format.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>When the build phase started, expressed in Unix time format.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -243,6 +280,11 @@ namespace Model
      * <p>When the build phase ended, expressed in Unix time format.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>When the build phase ended, expressed in Unix time format.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>When the build phase ended, expressed in Unix time format.</p>
@@ -275,6 +317,12 @@ namespace Model
      * <p>How long, in seconds, between the starting and ending times of the build's
      * phase.</p>
      */
+    inline bool DurationInSecondsHasBeenSet() const { return m_durationInSecondsHasBeenSet; }
+
+    /**
+     * <p>How long, in seconds, between the starting and ending times of the build's
+     * phase.</p>
+     */
     inline void SetDurationInSeconds(long long value) { m_durationInSecondsHasBeenSet = true; m_durationInSeconds = value; }
 
     /**
@@ -289,6 +337,12 @@ namespace Model
      * failed build.</p>
      */
     inline const Aws::Vector<PhaseContext>& GetContexts() const{ return m_contexts; }
+
+    /**
+     * <p>Additional information about a build phase, especially to help troubleshoot a
+     * failed build.</p>
+     */
+    inline bool ContextsHasBeenSet() const { return m_contextsHasBeenSet; }
 
     /**
      * <p>Additional information about a build phase, especially to help troubleshoot a

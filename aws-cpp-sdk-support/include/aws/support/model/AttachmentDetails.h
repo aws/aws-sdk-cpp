@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the attachment.</p>
      */
+    inline bool AttachmentIdHasBeenSet() const { return m_attachmentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the attachment.</p>
+     */
     inline void SetAttachmentId(const Aws::String& value) { m_attachmentIdHasBeenSet = true; m_attachmentId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The file name of the attachment.</p>
      */
     inline const Aws::String& GetFileName() const{ return m_fileName; }
+
+    /**
+     * <p>The file name of the attachment.</p>
+     */
+    inline bool FileNameHasBeenSet() const { return m_fileNameHasBeenSet; }
 
     /**
      * <p>The file name of the attachment.</p>

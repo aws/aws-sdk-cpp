@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
      * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
      */
+    inline bool VpcLinkIdHasBeenSet() const { return m_vpcLinkIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The identifier of the <a>VpcLink</a>. It is used in an
+     * <a>Integration</a> to reference this <a>VpcLink</a>.</p>
+     */
     inline void SetVpcLinkId(const Aws::String& value) { m_vpcLinkIdHasBeenSet = true; m_vpcLinkId = value; }
 
     /**

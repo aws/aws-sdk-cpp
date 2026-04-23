@@ -52,6 +52,12 @@ namespace Model
      * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
      * </p>
      */
+    inline bool ComputeEnvironmentHasBeenSet() const { return m_computeEnvironmentHasBeenSet; }
+
+    /**
+     * <p>The name or Amazon Resource Name (ARN) of the compute environment to delete.
+     * </p>
+     */
     inline void SetComputeEnvironment(const Aws::String& value) { m_computeEnvironmentHasBeenSet = true; m_computeEnvironment = value; }
 
     /**

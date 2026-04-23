@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -88,6 +93,12 @@ namespace Model
      * identifier.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>[Required] Specifies a put integration response request's resource
+     * identifier.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>[Required] Specifies a put integration response request's resource
@@ -134,6 +145,11 @@ namespace Model
     /**
      * <p>[Required] Specifies a put integration response request's HTTP method.</p>
      */
+    inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+
+    /**
+     * <p>[Required] Specifies a put integration response request's HTTP method.</p>
+     */
     inline void SetHttpMethod(const Aws::String& value) { m_httpMethodHasBeenSet = true; m_httpMethod = value; }
 
     /**
@@ -167,6 +183,12 @@ namespace Model
      * response to an existing <a>MethodResponse</a>.</p>
      */
     inline const Aws::String& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>[Required] Specifies the status code that is used to map the integration
+     * response to an existing <a>MethodResponse</a>.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>[Required] Specifies the status code that is used to map the integration
@@ -209,6 +231,11 @@ namespace Model
      * <p>Specifies the selection pattern of a put integration response.</p>
      */
     inline const Aws::String& GetSelectionPattern() const{ return m_selectionPattern; }
+
+    /**
+     * <p>Specifies the selection pattern of a put integration response.</p>
+     */
+    inline bool SelectionPatternHasBeenSet() const { return m_selectionPatternHasBeenSet; }
 
     /**
      * <p>Specifies the selection pattern of a put integration response.</p>
@@ -256,6 +283,22 @@ namespace Model
      * prefix.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetResponseParameters() const{ return m_responseParameters; }
+
+    /**
+     * <p>A key-value map specifying response parameters that are passed to the method
+     * response from the back end. The key is a method response header parameter name
+     * and the mapped value is an integration response header value, a static value
+     * enclosed within a pair of single quotes, or a JSON expression from the
+     * integration response body. The mapping key must match the pattern of
+     * <code>method.response.header.{name}</code>, where <code>name</code> is a valid
+     * and unique header name. The mapped non-static value must match the pattern of
+     * <code>integration.response.header.{name}</code> or
+     * <code>integration.response.body.{JSON-expression}</code>, where
+     * <code>name</code> must be a valid and unique response header name and
+     * <code>JSON-expression</code> a valid JSON expression without the <code>$</code>
+     * prefix.</p>
+     */
+    inline bool ResponseParametersHasBeenSet() const { return m_responseParametersHasBeenSet; }
 
     /**
      * <p>A key-value map specifying response parameters that are passed to the method
@@ -442,6 +485,11 @@ namespace Model
     /**
      * <p>Specifies a put integration response's templates.</p>
      */
+    inline bool ResponseTemplatesHasBeenSet() const { return m_responseTemplatesHasBeenSet; }
+
+    /**
+     * <p>Specifies a put integration response's templates.</p>
+     */
     inline void SetResponseTemplates(const Aws::Map<Aws::String, Aws::String>& value) { m_responseTemplatesHasBeenSet = true; m_responseTemplates = value; }
 
     /**
@@ -506,6 +554,18 @@ namespace Model
      * integration response to the method response without modification.</p>
      */
     inline const ContentHandlingStrategy& GetContentHandling() const{ return m_contentHandling; }
+
+    /**
+     * <p>Specifies how to handle response payload content type conversions. Supported
+     * values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with
+     * the following behaviors:</p> <ul> <li><p><code>CONVERT_TO_BINARY</code>:
+     * Converts a response payload from a Base64-encoded string to the corresponding
+     * binary blob.</p></li> <li><p><code>CONVERT_TO_TEXT</code>: Converts a response
+     * payload from a binary blob to a Base64-encoded string.</p></li> </ul> <p>If this
+     * property is not defined, the response payload will be passed through from the
+     * integration response to the method response without modification.</p>
+     */
+    inline bool ContentHandlingHasBeenSet() const { return m_contentHandlingHasBeenSet; }
 
     /**
      * <p>Specifies how to handle response payload content type conversions. Supported

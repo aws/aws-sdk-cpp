@@ -42,7 +42,7 @@ namespace Model
    * pick the second choice for your Amazon S3 Origin, you may need to forward
    * Access-Control-Request-Method, Access-Control-Request-Headers, and Origin
    * headers for the responses to be cached correctly. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CachedMethods">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CachedMethods">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CachedMethods
@@ -69,6 +69,14 @@ namespace Model
      * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
      * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of HTTP methods for which you want CloudFront to cache responses.
+     * Valid values are <code>2</code> (for caching responses to <code>GET</code> and
+     * <code>HEAD</code> requests) and <code>3</code> (for caching responses to
+     * <code>GET</code>, <code>HEAD</code>, and <code>OPTIONS</code> requests).</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -85,6 +93,12 @@ namespace Model
      * cache responses to.</p>
      */
     inline const Aws::Vector<Method>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains the HTTP methods that you want CloudFront to
+     * cache responses to.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains the HTTP methods that you want CloudFront to

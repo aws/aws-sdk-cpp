@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the <a>ApiKey</a>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the <a>ApiKey</a>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The description of the <a>ApiKey</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the <a>ApiKey</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the <a>ApiKey</a>.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the <a>ApiKey</a> can be used by callers.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -145,6 +160,12 @@ namespace Model
      * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
      * identifier is distinct from the created API key value.</p>
      */
+    inline bool GenerateDistinctIdHasBeenSet() const { return m_generateDistinctIdHasBeenSet; }
+
+    /**
+     * <p>Specifies whether (<code>true</code>) or not (<code>false</code>) the key
+     * identifier is distinct from the created API key value.</p>
+     */
     inline void SetGenerateDistinctId(bool value) { m_generateDistinctIdHasBeenSet = true; m_generateDistinctId = value; }
 
     /**
@@ -158,6 +179,11 @@ namespace Model
      * <p>Specifies a value of the API key.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Specifies a value of the API key.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>Specifies a value of the API key.</p>
@@ -195,6 +221,12 @@ namespace Model
      * key.</p>
      */
     inline const Aws::Vector<StageKey>& GetStageKeys() const{ return m_stageKeys; }
+
+    /**
+     * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
+     * key.</p>
+     */
+    inline bool StageKeysHasBeenSet() const { return m_stageKeysHasBeenSet; }
 
     /**
      * <p>DEPRECATED FOR USAGE PLANS - Specifies stages associated with the API
@@ -238,6 +270,12 @@ namespace Model
      * Marketplace.</p>
      */
     inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    /**
+     * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS
+     * Marketplace.</p>
+     */
+    inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
 
     /**
      * <p>An AWS Marketplace customer identifier , when integrating with the AWS SaaS

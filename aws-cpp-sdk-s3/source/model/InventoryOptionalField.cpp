@@ -37,6 +37,9 @@ namespace Aws
         static const int IsMultipartUploaded_HASH = HashingUtils::HashString("IsMultipartUploaded");
         static const int ReplicationStatus_HASH = HashingUtils::HashString("ReplicationStatus");
         static const int EncryptionStatus_HASH = HashingUtils::HashString("EncryptionStatus");
+        static const int ObjectLockRetainUntilDate_HASH = HashingUtils::HashString("ObjectLockRetainUntilDate");
+        static const int ObjectLockMode_HASH = HashingUtils::HashString("ObjectLockMode");
+        static const int ObjectLockLegalHoldStatus_HASH = HashingUtils::HashString("ObjectLockLegalHoldStatus");
 
 
         InventoryOptionalField GetInventoryOptionalFieldForName(const Aws::String& name)
@@ -70,6 +73,18 @@ namespace Aws
           {
             return InventoryOptionalField::EncryptionStatus;
           }
+          else if (hashCode == ObjectLockRetainUntilDate_HASH)
+          {
+            return InventoryOptionalField::ObjectLockRetainUntilDate;
+          }
+          else if (hashCode == ObjectLockMode_HASH)
+          {
+            return InventoryOptionalField::ObjectLockMode;
+          }
+          else if (hashCode == ObjectLockLegalHoldStatus_HASH)
+          {
+            return InventoryOptionalField::ObjectLockLegalHoldStatus;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -98,6 +113,12 @@ namespace Aws
             return "ReplicationStatus";
           case InventoryOptionalField::EncryptionStatus:
             return "EncryptionStatus";
+          case InventoryOptionalField::ObjectLockRetainUntilDate:
+            return "ObjectLockRetainUntilDate";
+          case InventoryOptionalField::ObjectLockMode:
+            return "ObjectLockMode";
+          case InventoryOptionalField::ObjectLockLegalHoldStatus:
+            return "ObjectLockLegalHoldStatus";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -105,7 +126,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

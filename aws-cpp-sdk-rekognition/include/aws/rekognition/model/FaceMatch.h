@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Confidence in the match of this face with the input face.</p>
      */
+    inline bool SimilarityHasBeenSet() const { return m_similarityHasBeenSet; }
+
+    /**
+     * <p>Confidence in the match of this face with the input face.</p>
+     */
     inline void SetSimilarity(double value) { m_similarityHasBeenSet = true; m_similarity = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * the source image, and external image ID that you assigned.</p>
      */
     inline const Face& GetFace() const{ return m_face; }
+
+    /**
+     * <p>Describes the face properties such as the bounding box, face ID, image ID of
+     * the source image, and external image ID that you assigned.</p>
+     */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
 
     /**
      * <p>Describes the face properties such as the bounding box, face ID, image ID of

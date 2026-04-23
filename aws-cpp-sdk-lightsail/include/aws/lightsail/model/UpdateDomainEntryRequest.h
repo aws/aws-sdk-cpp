@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain recordset to update.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain recordset to update.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * entry.</p>
      */
     inline const DomainEntry& GetDomainEntry() const{ return m_domainEntry; }
+
+    /**
+     * <p>An array of key-value pairs containing information about the domain
+     * entry.</p>
+     */
+    inline bool DomainEntryHasBeenSet() const { return m_domainEntryHasBeenSet; }
 
     /**
      * <p>An array of key-value pairs containing information about the domain

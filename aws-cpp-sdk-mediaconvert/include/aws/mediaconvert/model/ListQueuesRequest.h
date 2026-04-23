@@ -50,19 +50,46 @@ namespace Model
     void AddQueryStringParameters(Aws::Http::URI& uri) const override;
 
 
-    
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
     inline const QueueListBy& GetListBy() const{ return m_listBy; }
 
-    
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
+    inline bool ListByHasBeenSet() const { return m_listByHasBeenSet; }
+
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
     inline void SetListBy(const QueueListBy& value) { m_listByHasBeenSet = true; m_listBy = value; }
 
-    
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
     inline void SetListBy(QueueListBy&& value) { m_listByHasBeenSet = true; m_listBy = std::move(value); }
 
-    
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
     inline ListQueuesRequest& WithListBy(const QueueListBy& value) { SetListBy(value); return *this;}
 
-    
+    /**
+     * Optional. When you request a list of queues, you can choose to list them
+     * alphabetically by NAME or chronologically by CREATION_DATE. If you don't
+     * specify, the service will list them by creation date.
+     */
     inline ListQueuesRequest& WithListBy(QueueListBy&& value) { SetListBy(std::move(value)); return *this;}
 
 
@@ -70,6 +97,11 @@ namespace Model
      * Optional. Number of queues, up to twenty, that will be returned at one time.
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * Optional. Number of queues, up to twenty, that will be returned at one time.
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * Optional. Number of queues, up to twenty, that will be returned at one time.
@@ -87,6 +119,12 @@ namespace Model
      * the next batch of queues.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Use this string, provided with the response to a previous request, to request
+     * the next batch of queues.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Use this string, provided with the response to a previous request, to request
@@ -125,19 +163,40 @@ namespace Model
     inline ListQueuesRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline const Order& GetOrder() const{ return m_order; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(const Order& value) { m_orderHasBeenSet = true; m_order = value; }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline void SetOrder(Order&& value) { m_orderHasBeenSet = true; m_order = std::move(value); }
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListQueuesRequest& WithOrder(const Order& value) { SetOrder(value); return *this;}
 
-    
+    /**
+     * When you request lists of resources, you can optionally specify whether they are
+     * sorted in ASCENDING or DESCENDING order. Default varies by resource.
+     */
     inline ListQueuesRequest& WithOrder(Order&& value) { SetOrder(std::move(value)); return *this;}
 
   private:

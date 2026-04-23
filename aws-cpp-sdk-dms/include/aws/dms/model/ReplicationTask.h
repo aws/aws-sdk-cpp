@@ -66,6 +66,15 @@ namespace Model
      * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
      * </li> </ul>
      */
+    inline bool ReplicationTaskIdentifierHasBeenSet() const { return m_replicationTaskIdentifierHasBeenSet; }
+
+    /**
+     * <p>The user-assigned replication task identifier or name.</p>
+     * <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 255 alphanumeric
+     * characters or hyphens.</p> </li> <li> <p>First character must be a letter.</p>
+     * </li> <li> <p>Cannot end with a hyphen or contain two consecutive hyphens.</p>
+     * </li> </ul>
+     */
     inline void SetReplicationTaskIdentifier(const Aws::String& value) { m_replicationTaskIdentifierHasBeenSet = true; m_replicationTaskIdentifier = value; }
 
     /**
@@ -124,6 +133,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
+    inline bool SourceEndpointArnHasBeenSet() const { return m_sourceEndpointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
     inline void SetSourceEndpointArn(const Aws::String& value) { m_sourceEndpointArnHasBeenSet = true; m_sourceEndpointArn = value; }
 
     /**
@@ -162,6 +177,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::String& GetTargetEndpointArn() const{ return m_targetEndpointArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
+    inline bool TargetEndpointArnHasBeenSet() const { return m_targetEndpointArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
@@ -208,6 +229,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
@@ -244,6 +270,11 @@ namespace Model
     /**
      * <p>The type of migration.</p>
      */
+    inline bool MigrationTypeHasBeenSet() const { return m_migrationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of migration.</p>
+     */
     inline void SetMigrationType(const MigrationTypeValue& value) { m_migrationTypeHasBeenSet = true; m_migrationType = value; }
 
     /**
@@ -266,6 +297,11 @@ namespace Model
      * <p>Table mappings specified in the task.</p>
      */
     inline const Aws::String& GetTableMappings() const{ return m_tableMappings; }
+
+    /**
+     * <p>Table mappings specified in the task.</p>
+     */
+    inline bool TableMappingsHasBeenSet() const { return m_tableMappingsHasBeenSet; }
 
     /**
      * <p>Table mappings specified in the task.</p>
@@ -306,6 +342,11 @@ namespace Model
     /**
      * <p>The settings for the replication task.</p>
      */
+    inline bool ReplicationTaskSettingsHasBeenSet() const { return m_replicationTaskSettingsHasBeenSet; }
+
+    /**
+     * <p>The settings for the replication task.</p>
+     */
     inline void SetReplicationTaskSettings(const Aws::String& value) { m_replicationTaskSettingsHasBeenSet = true; m_replicationTaskSettings = value; }
 
     /**
@@ -338,6 +379,11 @@ namespace Model
      * <p>The status of the replication task.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the replication task.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the replication task.</p>
@@ -378,6 +424,11 @@ namespace Model
     /**
      * <p>The last error (failure) message generated for the replication instance.</p>
      */
+    inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
+
+    /**
+     * <p>The last error (failure) message generated for the replication instance.</p>
+     */
     inline void SetLastFailureMessage(const Aws::String& value) { m_lastFailureMessageHasBeenSet = true; m_lastFailureMessage = value; }
 
     /**
@@ -410,6 +461,11 @@ namespace Model
      * <p>The reason the replication task was stopped.</p>
      */
     inline const Aws::String& GetStopReason() const{ return m_stopReason; }
+
+    /**
+     * <p>The reason the replication task was stopped.</p>
+     */
+    inline bool StopReasonHasBeenSet() const { return m_stopReasonHasBeenSet; }
 
     /**
      * <p>The reason the replication task was stopped.</p>
@@ -450,6 +506,11 @@ namespace Model
     /**
      * <p>The date the replication task was created.</p>
      */
+    inline bool ReplicationTaskCreationDateHasBeenSet() const { return m_replicationTaskCreationDateHasBeenSet; }
+
+    /**
+     * <p>The date the replication task was created.</p>
+     */
     inline void SetReplicationTaskCreationDate(const Aws::Utils::DateTime& value) { m_replicationTaskCreationDateHasBeenSet = true; m_replicationTaskCreationDate = value; }
 
     /**
@@ -472,6 +533,11 @@ namespace Model
      * <p>The date the replication task is scheduled to start.</p>
      */
     inline const Aws::Utils::DateTime& GetReplicationTaskStartDate() const{ return m_replicationTaskStartDate; }
+
+    /**
+     * <p>The date the replication task is scheduled to start.</p>
+     */
+    inline bool ReplicationTaskStartDateHasBeenSet() const { return m_replicationTaskStartDateHasBeenSet; }
 
     /**
      * <p>The date the replication task is scheduled to start.</p>
@@ -505,6 +571,18 @@ namespace Model
      * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
      */
     inline const Aws::String& GetCdcStartPosition() const{ return m_cdcStartPosition; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to start. Use
+     * either CdcStartPosition or CdcStartTime to specify when you want a CDC operation
+     * to start. Specifying both values results in an error.</p> <p> The value can be
+     * in date, checkpoint, or LSN/SCN format.</p> <p>Date Example:
+     * --cdc-start-position “2018-03-08T12:12:12”</p> <p>Checkpoint Example:
+     * --cdc-start-position
+     * "checkpoint:V1#27#mysql-bin-changelog.157832:1975:-1:2002:677883278264080:mysql-bin-changelog.157832:1876#0#0#*#0#93"</p>
+     * <p>LSN Example: --cdc-start-position “mysql-bin-changelog.000024:373”</p>
+     */
+    inline bool CdcStartPositionHasBeenSet() const { return m_cdcStartPositionHasBeenSet; }
 
     /**
      * <p>Indicates when you want a change data capture (CDC) operation to start. Use
@@ -593,6 +671,14 @@ namespace Model
      * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
      * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
      */
+    inline bool CdcStopPositionHasBeenSet() const { return m_cdcStopPositionHasBeenSet; }
+
+    /**
+     * <p>Indicates when you want a change data capture (CDC) operation to stop. The
+     * value can be either server time or commit time.</p> <p>Server time example:
+     * --cdc-stop-position “server_time:3018-02-09T12:12:12”</p> <p>Commit time
+     * example: --cdc-stop-position “commit_time: 3018-02-09T12:12:12 “</p>
+     */
     inline void SetCdcStopPosition(const Aws::String& value) { m_cdcStopPositionHasBeenSet = true; m_cdcStopPosition = value; }
 
     /**
@@ -648,6 +734,13 @@ namespace Model
      * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
      * parameter to start a CDC operation that begins at that checkpoint.</p>
      */
+    inline bool RecoveryCheckpointHasBeenSet() const { return m_recoveryCheckpointHasBeenSet; }
+
+    /**
+     * <p>Indicates the last checkpoint that occurred during a change data capture
+     * (CDC) operation. You can provide this value to the <code>CdcStartPosition</code>
+     * parameter to start a CDC operation that begins at that checkpoint.</p>
+     */
     inline void SetRecoveryCheckpoint(const Aws::String& value) { m_recoveryCheckpointHasBeenSet = true; m_recoveryCheckpoint = value; }
 
     /**
@@ -694,6 +787,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication task.</p>
      */
+    inline bool ReplicationTaskArnHasBeenSet() const { return m_replicationTaskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication task.</p>
+     */
     inline void SetReplicationTaskArn(const Aws::String& value) { m_replicationTaskArnHasBeenSet = true; m_replicationTaskArn = value; }
 
     /**
@@ -727,6 +825,12 @@ namespace Model
      * errors.</p>
      */
     inline const ReplicationTaskStats& GetReplicationTaskStats() const{ return m_replicationTaskStats; }
+
+    /**
+     * <p>The statistics for the task, including elapsed time, tables loaded, and table
+     * errors.</p>
+     */
+    inline bool ReplicationTaskStatsHasBeenSet() const { return m_replicationTaskStatsHasBeenSet; }
 
     /**
      * <p>The statistics for the task, including elapsed time, tables loaded, and table

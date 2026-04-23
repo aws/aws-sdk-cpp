@@ -37,7 +37,8 @@ namespace CostandUsageReportService
 namespace Model
 {
   /**
-   * Response of DescribeReportDefinitions<p><h3>See Also:</h3>   <a
+   * <p>If the action is successful, the service sends back an HTTP 200
+   * response.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitionsResponse">AWS
    * API Reference</a></p>
    */
@@ -49,25 +50,39 @@ namespace Model
     DescribeReportDefinitionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline const Aws::Vector<ReportDefinition>& GetReportDefinitions() const{ return m_reportDefinitions; }
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline void SetReportDefinitions(const Aws::Vector<ReportDefinition>& value) { m_reportDefinitions = value; }
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline void SetReportDefinitions(Aws::Vector<ReportDefinition>&& value) { m_reportDefinitions = std::move(value); }
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(const Aws::Vector<ReportDefinition>& value) { SetReportDefinitions(value); return *this;}
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline DescribeReportDefinitionsResult& WithReportDefinitions(Aws::Vector<ReportDefinition>&& value) { SetReportDefinitions(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(const ReportDefinition& value) { m_reportDefinitions.push_back(value); return *this; }
 
-    
+    /**
+     * <p>A list of AWS Cost and Usage reports owned by the account.</p>
+     */
     inline DescribeReportDefinitionsResult& AddReportDefinitions(ReportDefinition&& value) { m_reportDefinitions.push_back(std::move(value)); return *this; }
 
 

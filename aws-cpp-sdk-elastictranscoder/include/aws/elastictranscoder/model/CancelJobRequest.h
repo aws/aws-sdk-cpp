@@ -57,6 +57,13 @@ namespace Model
      * the jobs (including their <code>jobId</code>) that have a status of
      * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the job that you want to cancel.</p> <p>To get a list of
+     * the jobs (including their <code>jobId</code>) that have a status of
+     * <code>Submitted</code>, use the <a>ListJobsByStatus</a> API action.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

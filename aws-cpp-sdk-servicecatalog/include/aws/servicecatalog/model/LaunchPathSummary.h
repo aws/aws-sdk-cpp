@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The identifier of the product path.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the product path.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The constraints on the portfolio-product relationship.</p>
      */
     inline const Aws::Vector<ConstraintSummary>& GetConstraintSummaries() const{ return m_constraintSummaries; }
+
+    /**
+     * <p>The constraints on the portfolio-product relationship.</p>
+     */
+    inline bool ConstraintSummariesHasBeenSet() const { return m_constraintSummariesHasBeenSet; }
 
     /**
      * <p>The constraints on the portfolio-product relationship.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The tags associated with this product path.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags associated with this product path.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The name of the portfolio to which the user was assigned.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the portfolio to which the user was assigned.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the portfolio to which the user was assigned.</p>

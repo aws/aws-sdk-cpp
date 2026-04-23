@@ -66,6 +66,14 @@ namespace Model
      * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
      * duration.</p>
      */
+    inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum duration allowed for decision tasks for this workflow
+     * execution.</p> <p>The duration is specified in seconds, an integer greater than
+     * or equal to <code>0</code>. You can use <code>NONE</code> to specify unlimited
+     * duration.</p>
+     */
     inline void SetTaskStartToCloseTimeout(const Aws::String& value) { m_taskStartToCloseTimeoutHasBeenSet = true; m_taskStartToCloseTimeout = value; }
 
     /**
@@ -121,6 +129,13 @@ namespace Model
      * specified in seconds, an integer greater than or equal to <code>0</code>. You
      * can use <code>NONE</code> to specify unlimited duration.</p>
      */
+    inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
+
+    /**
+     * <p>The total duration for this workflow execution.</p> <p>The duration is
+     * specified in seconds, an integer greater than or equal to <code>0</code>. You
+     * can use <code>NONE</code> to specify unlimited duration.</p>
+     */
     inline void SetExecutionStartToCloseTimeout(const Aws::String& value) { m_executionStartToCloseTimeoutHasBeenSet = true; m_executionStartToCloseTimeout = value; }
 
     /**
@@ -169,6 +184,12 @@ namespace Model
      * <p>The task list used for the decision tasks generated for this workflow
      * execution.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The task list used for the decision tasks generated for this workflow
+     * execution.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -200,6 +221,17 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p>The priority assigned to decision tasks for this workflow execution. Valid
+     * values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
+     * indicate higher priority.</p> <p>For more information about setting task
+     * priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p>The priority assigned to decision tasks for this workflow execution. Valid
@@ -294,6 +326,20 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
+    inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
+
+    /**
+     * <p>The policy to use for the child workflow executions if this workflow
+     * execution is terminated, by calling the <a>TerminateWorkflowExecution</a> action
+     * explicitly or due to an expired timeout.</p> <p>The supported child policies
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
+     * the decider to take appropriate actions when it receives an execution history
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
+     */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
     /**
@@ -343,6 +389,11 @@ namespace Model
      * <p>The IAM role attached to the child workflow execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
+
+    /**
+     * <p>The IAM role attached to the child workflow execution.</p>
+     */
+    inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
 
     /**
      * <p>The IAM role attached to the child workflow execution.</p>

@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the resource that is using the resource that you are trying to
      * delete.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource that is using the resource that you are trying to
+     * delete.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * delete.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version of the resource that is using the resource that you are trying to
+     * delete.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version of the resource that is using the resource that you are trying to

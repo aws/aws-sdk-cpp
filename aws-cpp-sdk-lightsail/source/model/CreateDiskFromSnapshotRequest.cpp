@@ -27,7 +27,8 @@ CreateDiskFromSnapshotRequest::CreateDiskFromSnapshotRequest() :
     m_diskSnapshotNameHasBeenSet(false),
     m_availabilityZoneHasBeenSet(false),
     m_sizeInGb(0),
-    m_sizeInGbHasBeenSet(false)
+    m_sizeInGbHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,6 +57,17 @@ Aws::String CreateDiskFromSnapshotRequest::SerializePayload() const
   if(m_sizeInGbHasBeenSet)
   {
    payload.WithInteger("sizeInGb", m_sizeInGb);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

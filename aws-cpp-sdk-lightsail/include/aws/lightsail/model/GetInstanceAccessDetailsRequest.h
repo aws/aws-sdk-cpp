@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the instance to access.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance to access.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * <code>ssh</code>.</p>
      */
     inline const InstanceAccessProtocol& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol to use to connect to your instance. Defaults to
+     * <code>ssh</code>.</p>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol to use to connect to your instance. Defaults to

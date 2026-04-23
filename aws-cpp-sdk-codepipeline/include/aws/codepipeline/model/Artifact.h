@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The artifact's name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The artifact's name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * commit ID (GitHub) or a revision ID (Amazon S3).</p>
      */
     inline const Aws::String& GetRevision() const{ return m_revision; }
+
+    /**
+     * <p>The artifact's revision ID. Depending on the type of object, this could be a
+     * commit ID (GitHub) or a revision ID (Amazon S3).</p>
+     */
+    inline bool RevisionHasBeenSet() const { return m_revisionHasBeenSet; }
 
     /**
      * <p>The artifact's revision ID. Depending on the type of object, this could be a
@@ -132,6 +143,11 @@ namespace Model
      * <p>The location of an artifact.</p>
      */
     inline const ArtifactLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The location of an artifact.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The location of an artifact.</p>

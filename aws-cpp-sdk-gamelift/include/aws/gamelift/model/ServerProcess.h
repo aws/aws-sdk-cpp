@@ -74,6 +74,18 @@ namespace Model
      * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
      * </p>
      */
+    inline bool LaunchPathHasBeenSet() const { return m_launchPathHasBeenSet; }
+
+    /**
+     * <p>Location of the server executable in a game build. All game builds are
+     * installed on instances at the root : for Windows instances <code>C:\game</code>,
+     * and for Linux instances <code>/local/game</code>. A Windows game build with an
+     * executable file located at <code>MyGame\latest\server.exe</code> must have a
+     * launch path of "<code>C:\game\MyGame\latest\server.exe</code>". A Linux game
+     * build with an executable file located at <code>MyGame/latest/server.exe</code>
+     * must have a launch path of "<code>/local/game/MyGame/latest/server.exe</code>".
+     * </p>
+     */
     inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
@@ -145,6 +157,11 @@ namespace Model
     /**
      * <p>Optional list of parameters to pass to the server executable on launch.</p>
      */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>Optional list of parameters to pass to the server executable on launch.</p>
+     */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
@@ -178,6 +195,12 @@ namespace Model
      * instance.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
+
+    /**
+     * <p>Number of server processes using this configuration to run concurrently on an
+     * instance.</p>
+     */
+    inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
 
     /**
      * <p>Number of server processes using this configuration to run concurrently on an

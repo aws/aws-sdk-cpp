@@ -28,6 +28,8 @@ CreateTableRequest::CreateTableRequest() :
     m_keySchemaHasBeenSet(false),
     m_localSecondaryIndexesHasBeenSet(false),
     m_globalSecondaryIndexesHasBeenSet(false),
+    m_billingMode(BillingMode::NOT_SET),
+    m_billingModeHasBeenSet(false),
     m_provisionedThroughputHasBeenSet(false),
     m_streamSpecificationHasBeenSet(false),
     m_sSESpecificationHasBeenSet(false)
@@ -86,6 +88,11 @@ Aws::String CreateTableRequest::SerializePayload() const
    }
    payload.WithArray("GlobalSecondaryIndexes", std::move(globalSecondaryIndexesJsonList));
 
+  }
+
+  if(m_billingModeHasBeenSet)
+  {
+   payload.WithString("BillingMode", BillingModeMapper::GetNameForBillingMode(m_billingMode));
   }
 
   if(m_provisionedThroughputHasBeenSet)

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the cache security group to revoke ingress from.</p>
      */
+    inline bool CacheSecurityGroupNameHasBeenSet() const { return m_cacheSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache security group to revoke ingress from.</p>
+     */
     inline void SetCacheSecurityGroupName(const Aws::String& value) { m_cacheSecurityGroupNameHasBeenSet = true; m_cacheSecurityGroupName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the Amazon EC2 security group to revoke access from.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupName() const{ return m_eC2SecurityGroupName; }
+
+    /**
+     * <p>The name of the Amazon EC2 security group to revoke access from.</p>
+     */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
 
     /**
      * <p>The name of the Amazon EC2 security group to revoke access from.</p>
@@ -128,6 +138,13 @@ namespace Model
      * account number for this parameter.</p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
+    /**
+     * <p>The AWS account number of the Amazon EC2 security group owner. Note that this
+     * is not the same thing as an AWS access key ID - you must provide a valid AWS
+     * account number for this parameter.</p>
+     */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p>The AWS account number of the Amazon EC2 security group owner. Note that this

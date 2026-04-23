@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/RequestPaymentConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API RequestPaymentConfiguration
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>Specifies who pays for the download and request fees.</p>
      */
     inline const Payer& GetPayer() const{ return m_payer; }
+
+    /**
+     * <p>Specifies who pays for the download and request fees.</p>
+     */
+    inline bool PayerHasBeenSet() const { return m_payerHasBeenSet; }
 
     /**
      * <p>Specifies who pays for the download and request fees.</p>

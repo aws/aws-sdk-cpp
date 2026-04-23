@@ -58,6 +58,12 @@ namespace Model
      * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
      * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
      */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+
+    /**
+     * <p>An array of rules. You can specify up to 25 rules per identity provider.</p>
+     * <p>Rules are evaluated in order. The first one to match specifies the role.</p>
+     */
     inline void SetRules(const Aws::Vector<MappingRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**

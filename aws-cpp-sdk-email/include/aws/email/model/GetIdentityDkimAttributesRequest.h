@@ -66,6 +66,12 @@ namespace Model
      * <p>A list of one or more verified identities - email addresses, domains, or
      * both.</p>
      */
+    inline bool IdentitiesHasBeenSet() const { return m_identitiesHasBeenSet; }
+
+    /**
+     * <p>A list of one or more verified identities - email addresses, domains, or
+     * both.</p>
+     */
     inline void SetIdentities(const Aws::Vector<Aws::String>& value) { m_identitiesHasBeenSet = true; m_identities = value; }
 
     /**

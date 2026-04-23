@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The agent version.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The agent version.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The configuration manager.</p>
      */
     inline const StackConfigurationManager& GetConfigurationManager() const{ return m_configurationManager; }
+
+    /**
+     * <p>The configuration manager.</p>
+     */
+    inline bool ConfigurationManagerHasBeenSet() const { return m_configurationManagerHasBeenSet; }
 
     /**
      * <p>The configuration manager.</p>

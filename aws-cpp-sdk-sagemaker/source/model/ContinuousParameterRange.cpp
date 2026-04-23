@@ -31,14 +31,18 @@ namespace Model
 ContinuousParameterRange::ContinuousParameterRange() : 
     m_nameHasBeenSet(false),
     m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+    m_maxValueHasBeenSet(false),
+    m_scalingType(HyperParameterScalingType::NOT_SET),
+    m_scalingTypeHasBeenSet(false)
 {
 }
 
 ContinuousParameterRange::ContinuousParameterRange(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
     m_minValueHasBeenSet(false),
-    m_maxValueHasBeenSet(false)
+    m_maxValueHasBeenSet(false),
+    m_scalingType(HyperParameterScalingType::NOT_SET),
+    m_scalingTypeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -66,6 +70,13 @@ ContinuousParameterRange& ContinuousParameterRange::operator =(JsonView jsonValu
     m_maxValueHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("ScalingType"))
+  {
+    m_scalingType = HyperParameterScalingTypeMapper::GetHyperParameterScalingTypeForName(jsonValue.GetString("ScalingType"));
+
+    m_scalingTypeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -89,6 +100,11 @@ JsonValue ContinuousParameterRange::Jsonize() const
   {
    payload.WithString("MaxValue", m_maxValue);
 
+  }
+
+  if(m_scalingTypeHasBeenSet)
+  {
+   payload.WithString("ScalingType", HyperParameterScalingTypeMapper::GetNameForHyperParameterScalingType(m_scalingType));
   }
 
   return payload;

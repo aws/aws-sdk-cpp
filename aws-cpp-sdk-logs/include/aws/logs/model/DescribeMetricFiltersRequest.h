@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The prefix to match.</p>
      */
     inline const Aws::String& GetFilterNamePrefix() const{ return m_filterNamePrefix; }
+
+    /**
+     * <p>The prefix to match.</p>
+     */
+    inline bool FilterNamePrefixHasBeenSet() const { return m_filterNamePrefixHasBeenSet; }
 
     /**
      * <p>The prefix to match.</p>
@@ -121,6 +131,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of items to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of items to return. (You received this token from
@@ -169,6 +185,12 @@ namespace Model
      * <p>The maximum number of items returned. If you don't specify a value, the
      * default is up to 50 items.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items returned. If you don't specify a value, the
+     * default is up to 50 items.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -184,6 +206,13 @@ namespace Model
      * <code>metricNamespace</code> parameter.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>Filters results to include only those with the specified metric name. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricNamespace</code> parameter.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>Filters results to include only those with the specified metric name. If you
@@ -234,6 +263,13 @@ namespace Model
      * <code>metricName</code> parameter.</p>
      */
     inline const Aws::String& GetMetricNamespace() const{ return m_metricNamespace; }
+
+    /**
+     * <p>Filters results to include only those in the specified namespace. If you
+     * include this parameter in your request, you must also include the
+     * <code>metricName</code> parameter.</p>
+     */
+    inline bool MetricNamespaceHasBeenSet() const { return m_metricNamespaceHasBeenSet; }
 
     /**
      * <p>Filters results to include only those in the specified namespace. If you

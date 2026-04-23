@@ -58,6 +58,12 @@ namespace Model
      * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
      * want to list.
      */
+    inline bool DetectorIdHasBeenSet() const { return m_detectorIdHasBeenSet; }
+
+    /**
+     * The detectorID that specifies the GuardDuty service whose ThreatIntelSets you
+     * want to list.
+     */
     inline void SetDetectorId(const Aws::String& value) { m_detectorIdHasBeenSet = true; m_detectorId = value; }
 
     /**
@@ -101,6 +107,12 @@ namespace Model
      * You can use this parameter to indicate the maximum number of items that you want
      * in the response. The default value is 7. The maximum value is 7.
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * You can use this parameter to indicate the maximum number of items that you want
+     * in the response. The default value is 7. The maximum value is 7.
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -114,6 +126,11 @@ namespace Model
      * Pagination token to start retrieving threat intel sets from.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * Pagination token to start retrieving threat intel sets from.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * Pagination token to start retrieving threat intel sets from.

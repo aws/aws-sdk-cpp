@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     USER,
-    SYSTEM
+    SYSTEM,
+    AWS_BACKUP
   };
 
 namespace BackupTypeMapper

@@ -29,7 +29,7 @@ DeleteObjectRequest::DeleteObjectRequest() :
 
 Aws::String DeleteObjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

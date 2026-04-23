@@ -54,6 +54,12 @@ namespace Model
      * <p>The ARN that specifies the assessment template whose tags you want to
      * list.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN that specifies the assessment template whose tags you want to
+     * list.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**

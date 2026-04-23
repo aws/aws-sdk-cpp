@@ -243,8 +243,8 @@ namespace Aws
              */
             bool AdjustClockSkew(HttpResponseOutcome& outcome, const char* signerName) const;
             void AddHeadersToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const Http::HeaderValueCollection& headerValues) const;
-            void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest,
-                                         const std::shared_ptr<Aws::IOStream>& body, bool needsContentMd5 = false) const;
+            void AddContentBodyToRequest(const std::shared_ptr<Aws::Http::HttpRequest>& httpRequest, const std::shared_ptr<Aws::IOStream>& body,
+                                         bool needsContentMd5 = false, bool isChunked = false) const;
             void AddCommonHeaders(Aws::Http::HttpRequest& httpRequest) const;
             void InitializeGlobalStatics();
             std::shared_ptr<Aws::Http::HttpRequest> ConvertToRequestForPresigning(const Aws::AmazonWebServiceRequest& request, Aws::Http::URI& uri,
@@ -367,6 +367,22 @@ namespace Aws
                 Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
                 const char* signerName = Aws::Auth::SIGV4_SIGNER,
                 const char* requesetName = nullptr) const;
+
+            /**
+            * This is used for event stream response.
+            */
+            XmlOutcome MakeRequestWithEventStream(const Aws::Http::URI& uri,
+                const Aws::AmazonWebServiceRequest& request,
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* singerName = Aws::Auth::SIGV4_SIGNER) const;
+
+            /**
+            * This is used for event stream response.
+            */
+            XmlOutcome MakeRequestWithEventStream(const Aws::Http::URI& uri,
+                Http::HttpMethod method = Http::HttpMethod::HTTP_POST,
+                const char* signerName = Aws::Auth::SIGV4_SIGNER,
+                const char* requestName = nullptr) const;
         };
 
     } // namespace Client

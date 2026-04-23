@@ -35,8 +35,11 @@ namespace Model
 
   /**
    * <p>Provides authorization for Amazon to bring a specific IP address range to a
-   * specific AWS account using bring your own IP addresses (BYOIP).</p><p><h3>See
-   * Also:</h3>   <a
+   * specific AWS account using bring your own IP addresses (BYOIP). For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-byoip.html#prepare-for-byoip">Prepare
+   * to Bring Your Address Range to Your AWS Account</a> in the <i>Amazon Elastic
+   * Compute Cloud User Guide</i>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CidrAuthorizationContext">AWS
    * API Reference</a></p>
    */
@@ -55,6 +58,11 @@ namespace Model
      * <p>The plain-text authorization message for the prefix and account.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The plain-text authorization message for the prefix and account.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The plain-text authorization message for the prefix and account.</p>
@@ -91,6 +99,11 @@ namespace Model
      * <p>The signed authorization message for the prefix and account.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
+    /**
+     * <p>The signed authorization message for the prefix and account.</p>
+     */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
 
     /**
      * <p>The signed authorization message for the prefix and account.</p>

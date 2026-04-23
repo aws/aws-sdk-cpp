@@ -30,7 +30,7 @@ GetGroupVersionRequest::GetGroupVersionRequest() :
 
 Aws::String GetGroupVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

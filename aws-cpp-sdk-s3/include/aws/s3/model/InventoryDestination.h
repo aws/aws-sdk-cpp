@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryDestination">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API InventoryDestination
   {
   public:
@@ -47,6 +52,12 @@ namespace Model
      * (optional) where inventory results are published.</p>
      */
     inline const InventoryS3BucketDestination& GetS3BucketDestination() const{ return m_s3BucketDestination; }
+
+    /**
+     * <p>Contains the bucket name, file format, bucket owner (optional), and prefix
+     * (optional) where inventory results are published.</p>
+     */
+    inline bool S3BucketDestinationHasBeenSet() const { return m_s3BucketDestinationHasBeenSet; }
 
     /**
      * <p>Contains the bucket name, file format, bucket owner (optional), and prefix

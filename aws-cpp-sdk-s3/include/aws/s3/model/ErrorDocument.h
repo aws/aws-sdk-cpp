@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/ErrorDocument">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API ErrorDocument
   {
   public:
@@ -46,6 +51,11 @@ namespace Model
      * <p>The object key name to use when a 4XX class error occurs.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The object key name to use when a 4XX class error occurs.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The object key name to use when a 4XX class error occurs.</p>

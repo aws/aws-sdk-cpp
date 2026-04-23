@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the replication group (console: cluster) whose automatic failover
      * is being tested by this operation.</p>
      */
+    inline bool ReplicationGroupIdHasBeenSet() const { return m_replicationGroupIdHasBeenSet; }
+
+    /**
+     * <p>The name of the replication group (console: cluster) whose automatic failover
+     * is being tested by this operation.</p>
+     */
     inline void SetReplicationGroupId(const Aws::String& value) { m_replicationGroupIdHasBeenSet = true; m_replicationGroupId = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * failover on up to 5 node groups in any rolling 24-hour period.</p>
      */
     inline const Aws::String& GetNodeGroupId() const{ return m_nodeGroupId; }
+
+    /**
+     * <p>The name of the node group (called shard in the console) in this replication
+     * group on which automatic failover is to be tested. You may test automatic
+     * failover on up to 5 node groups in any rolling 24-hour period.</p>
+     */
+    inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
 
     /**
      * <p>The name of the node group (called shard in the console) in this replication

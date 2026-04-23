@@ -54,6 +54,12 @@ namespace Model
      * <p>The token for the portfolio share operation. This token is returned either by
      * CreatePortfolioShare or by DeletePortfolioShare.</p>
      */
+    inline bool PortfolioShareTokenHasBeenSet() const { return m_portfolioShareTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the portfolio share operation. This token is returned either by
+     * CreatePortfolioShare or by DeletePortfolioShare.</p>
+     */
     inline void SetPortfolioShareToken(const Aws::String& value) { m_portfolioShareTokenHasBeenSet = true; m_portfolioShareToken = value; }
 
     /**

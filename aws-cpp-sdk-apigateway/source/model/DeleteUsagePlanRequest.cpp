@@ -29,7 +29,7 @@ DeleteUsagePlanRequest::DeleteUsagePlanRequest() :
 
 Aws::String DeleteUsagePlanRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -34,7 +34,7 @@ ListElasticsearchVersionsRequest::ListElasticsearchVersionsRequest() :
 
 Aws::String ListElasticsearchVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListElasticsearchVersionsRequest::AddQueryStringParameters(URI& uri) const

@@ -57,6 +57,13 @@ namespace Model
      * returns descriptions of the RAID arrays associated with the specified instance.
      * </p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID. If you use this parameter, <code>DescribeRaidArrays</code>
+     * returns descriptions of the RAID arrays associated with the specified instance.
+     * </p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -103,6 +110,11 @@ namespace Model
     /**
      * <p>The stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -137,6 +149,13 @@ namespace Model
      * Otherwise, it returns a description of every array.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRaidArrayIds() const{ return m_raidArrayIds; }
+
+    /**
+     * <p>An array of RAID array IDs. If you use this parameter,
+     * <code>DescribeRaidArrays</code> returns descriptions of the specified arrays.
+     * Otherwise, it returns a description of every array.</p>
+     */
+    inline bool RaidArrayIdsHasBeenSet() const { return m_raidArrayIdsHasBeenSet; }
 
     /**
      * <p>An array of RAID array IDs. If you use this parameter,

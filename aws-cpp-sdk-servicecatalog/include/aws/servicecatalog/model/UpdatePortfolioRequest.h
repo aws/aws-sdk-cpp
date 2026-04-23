@@ -58,6 +58,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The portfolio identifier.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The portfolio identifier.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -136,6 +148,11 @@ namespace Model
      * <p>The name to use for display purposes.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name to use for display purposes.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The name to use for display purposes.</p>
@@ -176,6 +193,11 @@ namespace Model
     /**
      * <p>The updated description of the portfolio.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The updated description of the portfolio.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -208,6 +230,11 @@ namespace Model
      * <p>The updated name of the portfolio provider.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The updated name of the portfolio provider.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
      * <p>The updated name of the portfolio provider.</p>
@@ -248,6 +275,11 @@ namespace Model
     /**
      * <p>The tags to add.</p>
      */
+    inline bool AddTagsHasBeenSet() const { return m_addTagsHasBeenSet; }
+
+    /**
+     * <p>The tags to add.</p>
+     */
     inline void SetAddTags(const Aws::Vector<Tag>& value) { m_addTagsHasBeenSet = true; m_addTags = value; }
 
     /**
@@ -280,6 +312,11 @@ namespace Model
      * <p>The tags to remove.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRemoveTags() const{ return m_removeTags; }
+
+    /**
+     * <p>The tags to remove.</p>
+     */
+    inline bool RemoveTagsHasBeenSet() const { return m_removeTagsHasBeenSet; }
 
     /**
      * <p>The tags to remove.</p>

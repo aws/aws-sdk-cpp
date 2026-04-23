@@ -55,6 +55,12 @@ namespace Model
      * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
      * both objects reside. For more information, see <a>arns</a>.</p>
      */
+    inline bool DirectoryArnHasBeenSet() const { return m_directoryArnHasBeenSet; }
+
+    /**
+     * <p>Amazon Resource Name (ARN) that is associated with the <a>Directory</a> where
+     * both objects reside. For more information, see <a>arns</a>.</p>
+     */
     inline void SetDirectoryArn(const Aws::String& value) { m_directoryArnHasBeenSet = true; m_directoryArn = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The parent object reference.</p>
      */
+    inline bool ParentReferenceHasBeenSet() const { return m_parentReferenceHasBeenSet; }
+
+    /**
+     * <p>The parent object reference.</p>
+     */
     inline void SetParentReference(const ObjectReference& value) { m_parentReferenceHasBeenSet = true; m_parentReference = value; }
 
     /**
@@ -122,6 +133,11 @@ namespace Model
     /**
      * <p>The child object reference to be attached to the object.</p>
      */
+    inline bool ChildReferenceHasBeenSet() const { return m_childReferenceHasBeenSet; }
+
+    /**
+     * <p>The child object reference to be attached to the object.</p>
+     */
     inline void SetChildReference(const ObjectReference& value) { m_childReferenceHasBeenSet = true; m_childReference = value; }
 
     /**
@@ -144,6 +160,11 @@ namespace Model
      * <p>The link name with which the child object is attached to the parent.</p>
      */
     inline const Aws::String& GetLinkName() const{ return m_linkName; }
+
+    /**
+     * <p>The link name with which the child object is attached to the parent.</p>
+     */
+    inline bool LinkNameHasBeenSet() const { return m_linkNameHasBeenSet; }
 
     /**
      * <p>The link name with which the child object is attached to the parent.</p>

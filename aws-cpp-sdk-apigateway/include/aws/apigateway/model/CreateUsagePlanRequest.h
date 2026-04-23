@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>[Required] The name of the usage plan.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>[Required] The name of the usage plan.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The description of the usage plan.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the usage plan.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the usage plan.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The associated API stages of the usage plan.</p>
      */
+    inline bool ApiStagesHasBeenSet() const { return m_apiStagesHasBeenSet; }
+
+    /**
+     * <p>The associated API stages of the usage plan.</p>
+     */
     inline void SetApiStages(const Aws::Vector<ApiStage>& value) { m_apiStagesHasBeenSet = true; m_apiStages = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p>The throttling limits of the usage plan.</p>
      */
+    inline bool ThrottleHasBeenSet() const { return m_throttleHasBeenSet; }
+
+    /**
+     * <p>The throttling limits of the usage plan.</p>
+     */
     inline void SetThrottle(const ThrottleSettings& value) { m_throttleHasBeenSet = true; m_throttle = value; }
 
     /**
@@ -189,6 +209,11 @@ namespace Model
      * <p>The quota of the usage plan.</p>
      */
     inline const QuotaSettings& GetQuota() const{ return m_quota; }
+
+    /**
+     * <p>The quota of the usage plan.</p>
+     */
+    inline bool QuotaHasBeenSet() const { return m_quotaHasBeenSet; }
 
     /**
      * <p>The quota of the usage plan.</p>

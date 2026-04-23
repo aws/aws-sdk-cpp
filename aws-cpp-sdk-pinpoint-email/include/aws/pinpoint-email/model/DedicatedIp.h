@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>An IP address that is reserved for use by your Amazon Pinpoint account.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**
@@ -93,6 +98,15 @@ namespace Model
      * and the IP address is ready to use.</p> </li> </ul>
      */
     inline const WarmupStatus& GetWarmupStatus() const{ return m_warmupStatus; }
+
+    /**
+     * <p>The warm-up status of a dedicated IP address. The status can have one of the
+     * following values:</p> <ul> <li> <p> <code>IN_PROGRESS</code> – The IP address
+     * isn't ready to use because the dedicated IP warm-up process is ongoing.</p>
+     * </li> <li> <p> <code>DONE</code> – The dedicated IP warm-up process is complete,
+     * and the IP address is ready to use.</p> </li> </ul>
+     */
+    inline bool WarmupStatusHasBeenSet() const { return m_warmupStatusHasBeenSet; }
 
     /**
      * <p>The warm-up status of a dedicated IP address. The status can have one of the
@@ -143,6 +157,13 @@ namespace Model
      * equals 1, the address has completed the warm-up process and is ready for
      * use.</p>
      */
+    inline bool WarmupPercentageHasBeenSet() const { return m_warmupPercentageHasBeenSet; }
+
+    /**
+     * <p>Indicates how complete the dedicated IP warm-up process is. When this value
+     * equals 1, the address has completed the warm-up process and is ready for
+     * use.</p>
+     */
     inline void SetWarmupPercentage(int value) { m_warmupPercentageHasBeenSet = true; m_warmupPercentage = value; }
 
     /**
@@ -157,6 +178,11 @@ namespace Model
      * <p>The name of the dedicated IP pool that the IP address is associated with.</p>
      */
     inline const Aws::String& GetPoolName() const{ return m_poolName; }
+
+    /**
+     * <p>The name of the dedicated IP pool that the IP address is associated with.</p>
+     */
+    inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
 
     /**
      * <p>The name of the dedicated IP pool that the IP address is associated with.</p>

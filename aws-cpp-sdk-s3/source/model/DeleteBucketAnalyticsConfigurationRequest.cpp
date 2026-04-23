@@ -35,7 +35,7 @@ DeleteBucketAnalyticsConfigurationRequest::DeleteBucketAnalyticsConfigurationReq
 
 Aws::String DeleteBucketAnalyticsConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteBucketAnalyticsConfigurationRequest::AddQueryStringParameters(URI& uri) const

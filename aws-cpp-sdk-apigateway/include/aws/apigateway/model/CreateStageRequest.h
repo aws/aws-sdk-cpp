@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>[Required] The name for the <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>[Required] The name for the <a>Stage</a> resource.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>[Required] The name for the <a>Stage</a> resource.</p>
@@ -126,6 +136,12 @@ namespace Model
      * <a>Stage</a> resource.</p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
+
+    /**
+     * <p>[Required] The identifier of the <a>Deployment</a> resource for the
+     * <a>Stage</a> resource.</p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
 
     /**
      * <p>[Required] The identifier of the <a>Deployment</a> resource for the
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The description of the <a>Stage</a> resource.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the <a>Stage</a> resource.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -208,6 +229,11 @@ namespace Model
     /**
      * <p>Whether cache clustering is enabled for the stage.</p>
      */
+    inline bool CacheClusterEnabledHasBeenSet() const { return m_cacheClusterEnabledHasBeenSet; }
+
+    /**
+     * <p>Whether cache clustering is enabled for the stage.</p>
+     */
     inline void SetCacheClusterEnabled(bool value) { m_cacheClusterEnabledHasBeenSet = true; m_cacheClusterEnabled = value; }
 
     /**
@@ -220,6 +246,11 @@ namespace Model
      * <p>The stage's cache cluster size.</p>
      */
     inline const CacheClusterSize& GetCacheClusterSize() const{ return m_cacheClusterSize; }
+
+    /**
+     * <p>The stage's cache cluster size.</p>
+     */
+    inline bool CacheClusterSizeHasBeenSet() const { return m_cacheClusterSizeHasBeenSet; }
 
     /**
      * <p>The stage's cache cluster size.</p>
@@ -248,6 +279,13 @@ namespace Model
      * must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetVariables() const{ return m_variables; }
+
+    /**
+     * <p>A map that defines the stage variables for the new <a>Stage</a> resource.
+     * Variable names can have alphanumeric and underscore characters, and the values
+     * must match <code>[A-Za-z0-9-._~:/?#&amp;=,]+</code>.</p>
+     */
+    inline bool VariablesHasBeenSet() const { return m_variablesHasBeenSet; }
 
     /**
      * <p>A map that defines the stage variables for the new <a>Stage</a> resource.
@@ -335,6 +373,11 @@ namespace Model
     /**
      * <p>The version of the associated API documentation.</p>
      */
+    inline bool DocumentationVersionHasBeenSet() const { return m_documentationVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the associated API documentation.</p>
+     */
     inline void SetDocumentationVersion(const Aws::String& value) { m_documentationVersionHasBeenSet = true; m_documentationVersion = value; }
 
     /**
@@ -371,6 +414,11 @@ namespace Model
     /**
      * <p>The canary deployment settings of this stage.</p>
      */
+    inline bool CanarySettingsHasBeenSet() const { return m_canarySettingsHasBeenSet; }
+
+    /**
+     * <p>The canary deployment settings of this stage.</p>
+     */
     inline void SetCanarySettings(const CanarySettings& value) { m_canarySettingsHasBeenSet = true; m_canarySettings = value; }
 
     /**
@@ -399,6 +447,12 @@ namespace Model
      * <p>Specifies whether active tracing with X-ray is enabled for the
      * <a>Stage</a>.</p>
      */
+    inline bool TracingEnabledHasBeenSet() const { return m_tracingEnabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether active tracing with X-ray is enabled for the
+     * <a>Stage</a>.</p>
+     */
     inline void SetTracingEnabled(bool value) { m_tracingEnabledHasBeenSet = true; m_tracingEnabled = value; }
 
     /**
@@ -414,6 +468,13 @@ namespace Model
      * The tag value can be up to 256 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The
+     * tag key can be up to 128 characters and must not start with <code>aws:</code>.
+     * The tag value can be up to 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The key-value map of strings. The valid character set is [a-zA-Z+-=._:/]. The

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>For single string values. Maximum string length is 100 characters.</p>
      */
+    inline bool SHasBeenSet() const { return m_sHasBeenSet; }
+
+    /**
+     * <p>For single string values. Maximum string length is 100 characters.</p>
+     */
     inline void SetS(const Aws::String& value) { m_sHasBeenSet = true; m_s = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>For number values, expressed as double.</p>
      */
+    inline bool NHasBeenSet() const { return m_nHasBeenSet; }
+
+    /**
+     * <p>For number values, expressed as double.</p>
+     */
     inline void SetN(double value) { m_nHasBeenSet = true; m_n = value; }
 
     /**
@@ -110,6 +120,13 @@ namespace Model
      * value after the first of a repeated value are ignored.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSL() const{ return m_sL; }
+
+    /**
+     * <p>For a list of up to 10 strings. Maximum length for each string is 100
+     * characters. Duplicate values are not recognized; all occurrences of the repeated
+     * value after the first of a repeated value are ignored.</p>
+     */
+    inline bool SLHasBeenSet() const { return m_sLHasBeenSet; }
 
     /**
      * <p>For a list of up to 10 strings. Maximum length for each string is 100
@@ -166,6 +183,12 @@ namespace Model
      * value is 100 characters. </p>
      */
     inline const Aws::Map<Aws::String, double>& GetSDM() const{ return m_sDM; }
+
+    /**
+     * <p>For a map of up to 10 data type:value pairs. Maximum length for each string
+     * value is 100 characters. </p>
+     */
+    inline bool SDMHasBeenSet() const { return m_sDMHasBeenSet; }
 
     /**
      * <p>For a map of up to 10 data type:value pairs. Maximum length for each string

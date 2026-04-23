@@ -55,6 +55,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         ShapeMember responseMetadataMember = new ShapeMember();
         responseMetadataMember.setShape(shape);
         responseMetadataMember.setRequired(true);
+        responseMetadataMember.setValidationNeeded(true);
 
         for(Shape resultShape : serviceModel.getShapes().values()) {
             if(resultShape.isResult()) {
@@ -93,7 +94,7 @@ public class QueryCppClientGenerator extends CppClientGenerator {
         Shape shape = shapeEntry.getValue();
 
         //we only want to handle results and internal structures. We don't want requests or enums.
-        if (shape.isRequest() || shape.isEnum()) {
+        if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
             return super.generateModelHeaderFile(serviceModel, shapeEntry);
         }
 

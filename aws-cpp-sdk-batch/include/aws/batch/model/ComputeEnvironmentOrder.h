@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The order of the compute environment.</p>
      */
+    inline bool OrderHasBeenSet() const { return m_orderHasBeenSet; }
+
+    /**
+     * <p>The order of the compute environment.</p>
+     */
     inline void SetOrder(int value) { m_orderHasBeenSet = true; m_order = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
      */
     inline const Aws::String& GetComputeEnvironment() const{ return m_computeEnvironment; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the compute environment.</p>
+     */
+    inline bool ComputeEnvironmentHasBeenSet() const { return m_computeEnvironmentHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the compute environment.</p>

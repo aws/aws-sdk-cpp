@@ -31,7 +31,8 @@ CreateTriggerRequest::CreateTriggerRequest() :
     m_actionsHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_startOnCreation(false),
-    m_startOnCreationHasBeenSet(false)
+    m_startOnCreationHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -82,6 +83,17 @@ Aws::String CreateTriggerRequest::SerializePayload() const
   if(m_startOnCreationHasBeenSet)
   {
    payload.WithBool("StartOnCreation", m_startOnCreation);
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

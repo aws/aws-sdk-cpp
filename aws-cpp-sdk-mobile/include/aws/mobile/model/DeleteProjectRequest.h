@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p> Unique project identifier. </p>
      */
+    inline bool ProjectIdHasBeenSet() const { return m_projectIdHasBeenSet; }
+
+    /**
+     * <p> Unique project identifier. </p>
+     */
     inline void SetProjectId(const Aws::String& value) { m_projectIdHasBeenSet = true; m_projectId = value; }
 
     /**

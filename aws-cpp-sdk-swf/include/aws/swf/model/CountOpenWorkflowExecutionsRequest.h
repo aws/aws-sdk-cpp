@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow executions to count.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow executions to count.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>Specifies the start time criteria that workflow executions must meet in order
      * to be counted.</p>
      */
+    inline bool StartTimeFilterHasBeenSet() const { return m_startTimeFilterHasBeenSet; }
+
+    /**
+     * <p>Specifies the start time criteria that workflow executions must meet in order
+     * to be counted.</p>
+     */
     inline void SetStartTimeFilter(const ExecutionTimeFilter& value) { m_startTimeFilterHasBeenSet = true; m_startTimeFilter = value; }
 
     /**
@@ -122,6 +133,14 @@ namespace Model
      * </note>
      */
     inline const WorkflowTypeFilter& GetTypeFilter() const{ return m_typeFilter; }
+
+    /**
+     * <p>Specifies the type of the workflow executions to be counted.</p> <note> <p>
+     * <code>executionFilter</code>, <code>typeFilter</code> and <code>tagFilter</code>
+     * are mutually exclusive. You can specify at most one of these in a request.</p>
+     * </note>
+     */
+    inline bool TypeFilterHasBeenSet() const { return m_typeFilterHasBeenSet; }
 
     /**
      * <p>Specifies the type of the workflow executions to be counted.</p> <note> <p>
@@ -170,6 +189,14 @@ namespace Model
      * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
      * of these in a request.</p> </note>
      */
+    inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
+
+    /**
+     * <p>If specified, only executions that have a tag that matches the filter are
+     * counted.</p> <note> <p> <code>executionFilter</code>, <code>typeFilter</code>
+     * and <code>tagFilter</code> are mutually exclusive. You can specify at most one
+     * of these in a request.</p> </note>
+     */
     inline void SetTagFilter(const TagFilter& value) { m_tagFilterHasBeenSet = true; m_tagFilter = value; }
 
     /**
@@ -204,6 +231,14 @@ namespace Model
      * can specify at most one of these in a request.</p> </note>
      */
     inline const WorkflowExecutionFilter& GetExecutionFilter() const{ return m_executionFilter; }
+
+    /**
+     * <p>If specified, only workflow executions matching the <code>WorkflowId</code>
+     * in the filter are counted.</p> <note> <p> <code>executionFilter</code>,
+     * <code>typeFilter</code> and <code>tagFilter</code> are mutually exclusive. You
+     * can specify at most one of these in a request.</p> </note>
+     */
+    inline bool ExecutionFilterHasBeenSet() const { return m_executionFilterHasBeenSet; }
 
     /**
      * <p>If specified, only workflow executions matching the <code>WorkflowId</code>

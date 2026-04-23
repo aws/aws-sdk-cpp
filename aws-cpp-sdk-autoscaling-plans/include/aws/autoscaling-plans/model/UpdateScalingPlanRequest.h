@@ -16,8 +16,8 @@
 #pragma once
 #include <aws/autoscaling-plans/AutoScalingPlans_EXPORTS.h>
 #include <aws/autoscaling-plans/AutoScalingPlansRequest.h>
-#include <aws/autoscaling-plans/model/ApplicationSource.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/autoscaling-plans/model/ApplicationSource.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/autoscaling-plans/model/ScalingInstruction.h>
 #include <utility>
@@ -48,35 +48,14 @@ namespace Model
 
 
     /**
-     * <p>A CloudFormation stack or set of tags.</p>
+     * <p>The name of the scaling plan.</p>
      */
-    inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
-
-    /**
-     * <p>A CloudFormation stack or set of tags.</p>
-     */
-    inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
-
-    /**
-     * <p>A CloudFormation stack or set of tags.</p>
-     */
-    inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
-
-    /**
-     * <p>A CloudFormation stack or set of tags.</p>
-     */
-    inline UpdateScalingPlanRequest& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
-
-    /**
-     * <p>A CloudFormation stack or set of tags.</p>
-     */
-    inline UpdateScalingPlanRequest& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
-
+    inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
 
     /**
      * <p>The name of the scaling plan.</p>
      */
-    inline const Aws::String& GetScalingPlanName() const{ return m_scalingPlanName; }
+    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
 
     /**
      * <p>The name of the scaling plan.</p>
@@ -110,9 +89,66 @@ namespace Model
 
 
     /**
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline UpdateScalingPlanRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
+
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline const ApplicationSource& GetApplicationSource() const{ return m_applicationSource; }
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline bool ApplicationSourceHasBeenSet() const { return m_applicationSourceHasBeenSet; }
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline void SetApplicationSource(const ApplicationSource& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = value; }
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline void SetApplicationSource(ApplicationSource&& value) { m_applicationSourceHasBeenSet = true; m_applicationSource = std::move(value); }
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline UpdateScalingPlanRequest& WithApplicationSource(const ApplicationSource& value) { SetApplicationSource(value); return *this;}
+
+    /**
+     * <p>A CloudFormation stack or set of tags.</p>
+     */
+    inline UpdateScalingPlanRequest& WithApplicationSource(ApplicationSource&& value) { SetApplicationSource(std::move(value)); return *this;}
+
+
+    /**
      * <p>The scaling instructions.</p>
      */
     inline const Aws::Vector<ScalingInstruction>& GetScalingInstructions() const{ return m_scalingInstructions; }
+
+    /**
+     * <p>The scaling instructions.</p>
+     */
+    inline bool ScalingInstructionsHasBeenSet() const { return m_scalingInstructionsHasBeenSet; }
 
     /**
      * <p>The scaling instructions.</p>
@@ -144,35 +180,19 @@ namespace Model
      */
     inline UpdateScalingPlanRequest& AddScalingInstructions(ScalingInstruction&& value) { m_scalingInstructionsHasBeenSet = true; m_scalingInstructions.push_back(std::move(value)); return *this; }
 
-
-    /**
-     * <p>The version number.</p>
-     */
-    inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
-
-    /**
-     * <p>The version number.</p>
-     */
-    inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
-
-    /**
-     * <p>The version number.</p>
-     */
-    inline UpdateScalingPlanRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
-
   private:
-
-    ApplicationSource m_applicationSource;
-    bool m_applicationSourceHasBeenSet;
 
     Aws::String m_scalingPlanName;
     bool m_scalingPlanNameHasBeenSet;
 
-    Aws::Vector<ScalingInstruction> m_scalingInstructions;
-    bool m_scalingInstructionsHasBeenSet;
-
     long long m_scalingPlanVersion;
     bool m_scalingPlanVersionHasBeenSet;
+
+    ApplicationSource m_applicationSource;
+    bool m_applicationSourceHasBeenSet;
+
+    Aws::Vector<ScalingInstruction> m_scalingInstructions;
+    bool m_scalingInstructionsHasBeenSet;
   };
 
 } // namespace Model

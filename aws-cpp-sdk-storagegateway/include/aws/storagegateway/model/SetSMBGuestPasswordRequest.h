@@ -57,6 +57,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the file gateway the SMB file share is
      * associated with.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file gateway the SMB file share is
+     * associated with.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The password that you want to set for your SMB Server.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password that you want to set for your SMB Server.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password that you want to set for your SMB Server.</p>

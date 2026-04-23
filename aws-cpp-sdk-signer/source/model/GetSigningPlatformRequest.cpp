@@ -29,7 +29,7 @@ GetSigningPlatformRequest::GetSigningPlatformRequest() :
 
 Aws::String GetSigningPlatformRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

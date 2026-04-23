@@ -31,7 +31,7 @@ DeletePublicAccessBlockRequest::DeletePublicAccessBlockRequest() :
 
 Aws::String DeletePublicAccessBlockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the Data Catalog where the partitions in question reside. If none
      * is supplied, the AWS account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Data Catalog where the partitions in question reside. If none
+     * is supplied, the AWS account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
     /**
      * <p>The name of the catalog database where the partitions reside.</p>
      */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
+
+    /**
+     * <p>The name of the catalog database where the partitions reside.</p>
+     */
     inline void SetDatabaseName(const Aws::String& value) { m_databaseNameHasBeenSet = true; m_databaseName = value; }
 
     /**
@@ -133,6 +144,11 @@ namespace Model
     /**
      * <p>The name of the partitions' table.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>The name of the partitions' table.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -165,6 +181,11 @@ namespace Model
      * <p>A list of partition values identifying the partitions to retrieve.</p>
      */
     inline const Aws::Vector<PartitionValueList>& GetPartitionsToGet() const{ return m_partitionsToGet; }
+
+    /**
+     * <p>A list of partition values identifying the partitions to retrieve.</p>
+     */
+    inline bool PartitionsToGetHasBeenSet() const { return m_partitionsToGetHasBeenSet; }
 
     /**
      * <p>A list of partition values identifying the partitions to retrieve.</p>

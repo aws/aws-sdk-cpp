@@ -29,7 +29,7 @@ GetCognitoEventsRequest::GetCognitoEventsRequest() :
 
 Aws::String GetCognitoEventsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

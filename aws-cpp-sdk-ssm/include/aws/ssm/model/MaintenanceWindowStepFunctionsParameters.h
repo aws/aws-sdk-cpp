@@ -71,6 +71,11 @@ namespace Model
     /**
      * <p>The inputs for the STEP_FUNCTION task.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The inputs for the STEP_FUNCTION task.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -103,6 +108,11 @@ namespace Model
      * <p>The name of the STEP_FUNCTION task.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the STEP_FUNCTION task.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the STEP_FUNCTION task.</p>

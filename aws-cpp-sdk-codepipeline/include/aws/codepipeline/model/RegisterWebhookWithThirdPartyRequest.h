@@ -54,6 +54,12 @@ namespace Model
      * <p>The name of an existing webhook created with PutWebhook to register with a
      * supported third party. </p>
      */
+    inline bool WebhookNameHasBeenSet() const { return m_webhookNameHasBeenSet; }
+
+    /**
+     * <p>The name of an existing webhook created with PutWebhook to register with a
+     * supported third party. </p>
+     */
     inline void SetWebhookName(const Aws::String& value) { m_webhookNameHasBeenSet = true; m_webhookName = value; }
 
     /**

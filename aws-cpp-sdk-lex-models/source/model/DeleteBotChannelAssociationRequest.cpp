@@ -31,7 +31,7 @@ DeleteBotChannelAssociationRequest::DeleteBotChannelAssociationRequest() :
 
 Aws::String DeleteBotChannelAssociationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

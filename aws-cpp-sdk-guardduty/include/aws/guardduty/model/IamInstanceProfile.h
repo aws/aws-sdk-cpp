@@ -55,6 +55,11 @@ namespace Model
     /**
      * AWS EC2 instance profile ARN.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * AWS EC2 instance profile ARN.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * AWS EC2 instance profile ID.
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * AWS EC2 instance profile ID.
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * AWS EC2 instance profile ID.

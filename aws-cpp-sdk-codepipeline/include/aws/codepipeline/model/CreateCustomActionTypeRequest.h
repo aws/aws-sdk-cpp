@@ -67,6 +67,14 @@ namespace Model
      * they are not currently functional. These values are reserved for future use.</p>
      * </note>
      */
+    inline bool CategoryHasBeenSet() const { return m_categoryHasBeenSet; }
+
+    /**
+     * <p>The category of the custom action, such as a build action or a test
+     * action.</p> <note> <p>Although Source and Approval are listed as valid values,
+     * they are not currently functional. These values are reserved for future use.</p>
+     * </note>
+     */
     inline void SetCategory(const ActionCategory& value) { m_categoryHasBeenSet = true; m_category = value; }
 
     /**
@@ -99,6 +107,12 @@ namespace Model
      * CodeDeploy.</p>
      */
     inline const Aws::String& GetProvider() const{ return m_provider; }
+
+    /**
+     * <p>The provider of the service used in the custom action, such as AWS
+     * CodeDeploy.</p>
+     */
+    inline bool ProviderHasBeenSet() const { return m_providerHasBeenSet; }
 
     /**
      * <p>The provider of the service used in the custom action, such as AWS
@@ -145,6 +159,11 @@ namespace Model
     /**
      * <p>The version identifier of the custom action.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version identifier of the custom action.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -181,6 +200,11 @@ namespace Model
     /**
      * <p>Returns information about the settings for an action type.</p>
      */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
+
+    /**
+     * <p>Returns information about the settings for an action type.</p>
+     */
     inline void SetSettings(const ActionTypeSettings& value) { m_settingsHasBeenSet = true; m_settings = value; }
 
     /**
@@ -205,7 +229,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline const Aws::Vector<ActionConfigurationProperty>& GetConfigurationProperties() const{ return m_configurationProperties; }
@@ -216,7 +240,18 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * a Custom Action for a Pipeline</a>.</p> </note>
+     */
+    inline bool ConfigurationPropertiesHasBeenSet() const { return m_configurationPropertiesHasBeenSet; }
+
+    /**
+     * <p>The configuration properties for the custom action.</p> <note> <p>You can
+     * refer to a name in the configuration properties of the custom action within the
+     * URL templates by following the format of {Config:name}, as long as the
+     * configuration property is both required and not secret. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = value; }
@@ -227,7 +262,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline void SetConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties = std::move(value); }
@@ -238,7 +273,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(const Aws::Vector<ActionConfigurationProperty>& value) { SetConfigurationProperties(value); return *this;}
@@ -249,7 +284,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& WithConfigurationProperties(Aws::Vector<ActionConfigurationProperty>&& value) { SetConfigurationProperties(std::move(value)); return *this;}
@@ -260,7 +295,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(const ActionConfigurationProperty& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(value); return *this; }
@@ -271,7 +306,7 @@ namespace Model
      * URL templates by following the format of {Config:name}, as long as the
      * configuration property is both required and not secret. For more information,
      * see <a
-     * href="http://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
+     * href="https://docs.aws.amazon.com/codepipeline/latest/userguide/how-to-create-custom-action.html">Create
      * a Custom Action for a Pipeline</a>.</p> </note>
      */
     inline CreateCustomActionTypeRequest& AddConfigurationProperties(ActionConfigurationProperty&& value) { m_configurationPropertiesHasBeenSet = true; m_configurationProperties.push_back(std::move(value)); return *this; }
@@ -281,6 +316,11 @@ namespace Model
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
      */
     inline const ArtifactDetails& GetInputArtifactDetails() const{ return m_inputArtifactDetails; }
+
+    /**
+     * <p>The details of the input artifact for the action, such as its commit ID.</p>
+     */
+    inline bool InputArtifactDetailsHasBeenSet() const { return m_inputArtifactDetailsHasBeenSet; }
 
     /**
      * <p>The details of the input artifact for the action, such as its commit ID.</p>
@@ -307,6 +347,11 @@ namespace Model
      * <p>The details of the output artifact of the action, such as its commit ID.</p>
      */
     inline const ArtifactDetails& GetOutputArtifactDetails() const{ return m_outputArtifactDetails; }
+
+    /**
+     * <p>The details of the output artifact of the action, such as its commit ID.</p>
+     */
+    inline bool OutputArtifactDetailsHasBeenSet() const { return m_outputArtifactDetailsHasBeenSet; }
 
     /**
      * <p>The details of the output artifact of the action, such as its commit ID.</p>

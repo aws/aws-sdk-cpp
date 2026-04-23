@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/iot/model/StreamFile.h>
+#include <aws/iot/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -48,6 +49,11 @@ namespace Model
      * <p>The stream ID.</p>
      */
     inline const Aws::String& GetStreamId() const{ return m_streamId; }
+
+    /**
+     * <p>The stream ID.</p>
+     */
+    inline bool StreamIdHasBeenSet() const { return m_streamIdHasBeenSet; }
 
     /**
      * <p>The stream ID.</p>
@@ -88,6 +94,11 @@ namespace Model
     /**
      * <p>A description of the stream.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the stream.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -120,6 +131,11 @@ namespace Model
      * <p>The files to stream.</p>
      */
     inline const Aws::Vector<StreamFile>& GetFiles() const{ return m_files; }
+
+    /**
+     * <p>The files to stream.</p>
+     */
+    inline bool FilesHasBeenSet() const { return m_filesHasBeenSet; }
 
     /**
      * <p>The files to stream.</p>
@@ -162,6 +178,12 @@ namespace Model
      * <p>An IAM role that allows the IoT service principal assumes to access your S3
      * files.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>An IAM role that allows the IoT service principal assumes to access your S3
+     * files.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -194,6 +216,47 @@ namespace Model
      */
     inline CreateStreamRequest& WithRoleArn(const char* value) { SetRoleArn(value); return *this;}
 
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline CreateStreamRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline CreateStreamRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline CreateStreamRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Metadata which can be used to manage streams.</p>
+     */
+    inline CreateStreamRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_streamId;
@@ -207,6 +270,9 @@ namespace Model
 
     Aws::String m_roleArn;
     bool m_roleArnHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

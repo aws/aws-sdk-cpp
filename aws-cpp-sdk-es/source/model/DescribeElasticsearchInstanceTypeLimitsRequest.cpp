@@ -35,7 +35,7 @@ DescribeElasticsearchInstanceTypeLimitsRequest::DescribeElasticsearchInstanceTyp
 
 Aws::String DescribeElasticsearchInstanceTypeLimitsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeElasticsearchInstanceTypeLimitsRequest::AddQueryStringParameters(URI& uri) const

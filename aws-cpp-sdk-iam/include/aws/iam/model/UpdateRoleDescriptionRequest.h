@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the role that you want to modify.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the role that you want to modify.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The new description that you want to apply to the specified role.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The new description that you want to apply to the specified role.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The new description that you want to apply to the specified role.</p>

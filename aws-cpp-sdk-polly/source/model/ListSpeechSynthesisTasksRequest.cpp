@@ -36,7 +36,7 @@ ListSpeechSynthesisTasksRequest::ListSpeechSynthesisTasksRequest() :
 
 Aws::String ListSpeechSynthesisTasksRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListSpeechSynthesisTasksRequest::AddQueryStringParameters(URI& uri) const

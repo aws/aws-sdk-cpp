@@ -28,7 +28,7 @@ GetLoggingOptionsRequest::GetLoggingOptionsRequest()
 
 Aws::String GetLoggingOptionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

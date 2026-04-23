@@ -62,6 +62,12 @@ namespace Model
      * <p>The content of the email, composed of a subject line, an HTML part, and a
      * text-only part.</p>
      */
+    inline bool TemplateHasBeenSet() const { return m_templateHasBeenSet; }
+
+    /**
+     * <p>The content of the email, composed of a subject line, an HTML part, and a
+     * text-only part.</p>
+     */
     inline void SetTemplate(const Template& value) { m_templateHasBeenSet = true; m_template = value; }
 
     /**

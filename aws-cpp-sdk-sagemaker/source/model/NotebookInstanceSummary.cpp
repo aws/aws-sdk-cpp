@@ -38,7 +38,9 @@ NotebookInstanceSummary::NotebookInstanceSummary() :
     m_instanceTypeHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false)
+    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
+    m_defaultCodeRepositoryHasBeenSet(false),
+    m_additionalCodeRepositoriesHasBeenSet(false)
 {
 }
 
@@ -52,7 +54,9 @@ NotebookInstanceSummary::NotebookInstanceSummary(JsonView jsonValue) :
     m_instanceTypeHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastModifiedTimeHasBeenSet(false),
-    m_notebookInstanceLifecycleConfigNameHasBeenSet(false)
+    m_notebookInstanceLifecycleConfigNameHasBeenSet(false),
+    m_defaultCodeRepositoryHasBeenSet(false),
+    m_additionalCodeRepositoriesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -115,6 +119,23 @@ NotebookInstanceSummary& NotebookInstanceSummary::operator =(JsonView jsonValue)
     m_notebookInstanceLifecycleConfigNameHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultCodeRepository"))
+  {
+    m_defaultCodeRepository = jsonValue.GetString("DefaultCodeRepository");
+
+    m_defaultCodeRepositoryHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("AdditionalCodeRepositories"))
+  {
+    Array<JsonView> additionalCodeRepositoriesJsonList = jsonValue.GetArray("AdditionalCodeRepositories");
+    for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
+    {
+      m_additionalCodeRepositories.push_back(additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString());
+    }
+    m_additionalCodeRepositoriesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -163,6 +184,23 @@ JsonValue NotebookInstanceSummary::Jsonize() const
   if(m_notebookInstanceLifecycleConfigNameHasBeenSet)
   {
    payload.WithString("NotebookInstanceLifecycleConfigName", m_notebookInstanceLifecycleConfigName);
+
+  }
+
+  if(m_defaultCodeRepositoryHasBeenSet)
+  {
+   payload.WithString("DefaultCodeRepository", m_defaultCodeRepository);
+
+  }
+
+  if(m_additionalCodeRepositoriesHasBeenSet)
+  {
+   Array<JsonValue> additionalCodeRepositoriesJsonList(m_additionalCodeRepositories.size());
+   for(unsigned additionalCodeRepositoriesIndex = 0; additionalCodeRepositoriesIndex < additionalCodeRepositoriesJsonList.GetLength(); ++additionalCodeRepositoriesIndex)
+   {
+     additionalCodeRepositoriesJsonList[additionalCodeRepositoriesIndex].AsString(m_additionalCodeRepositories[additionalCodeRepositoriesIndex]);
+   }
+   payload.WithArray("AdditionalCodeRepositories", std::move(additionalCodeRepositoriesJsonList));
 
   }
 

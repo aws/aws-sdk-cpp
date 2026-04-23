@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/CopyPartResult">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API CopyPartResult
   {
   public:
@@ -47,6 +52,11 @@ namespace Model
      * <p>Entity tag of the object.</p>
      */
     inline const Aws::String& GetETag() const{ return m_eTag; }
+
+    /**
+     * <p>Entity tag of the object.</p>
+     */
+    inline bool ETagHasBeenSet() const { return m_eTagHasBeenSet; }
 
     /**
      * <p>Entity tag of the object.</p>
@@ -83,6 +93,11 @@ namespace Model
      * <p>Date and time at which the object was uploaded.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModified() const{ return m_lastModified; }
+
+    /**
+     * <p>Date and time at which the object was uploaded.</p>
+     */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
 
     /**
      * <p>Date and time at which the object was uploaded.</p>

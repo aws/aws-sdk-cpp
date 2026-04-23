@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The description of the snapshot.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the snapshot.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The size of the disk in the snapshot, in GiB.</p>
      */
+    inline bool DiskImageSizeHasBeenSet() const { return m_diskImageSizeHasBeenSet; }
+
+    /**
+     * <p>The size of the disk in the snapshot, in GiB.</p>
+     */
     inline void SetDiskImageSize(double value) { m_diskImageSizeHasBeenSet = true; m_diskImageSize = value; }
 
     /**
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>Indicates whether the snapshot is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the snapshot is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -122,6 +137,11 @@ namespace Model
      * <p>The format of the disk image from which the snapshot is created.</p>
      */
     inline const Aws::String& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The format of the disk image from which the snapshot is created.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The format of the disk image from which the snapshot is created.</p>
@@ -159,6 +179,12 @@ namespace Model
      * key (CMK) that was used to create the encrypted snapshot.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
+     * key (CMK) that was used to create the encrypted snapshot.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The identifier for the AWS Key Management Service (AWS KMS) customer master
@@ -205,6 +231,11 @@ namespace Model
     /**
      * <p>The percentage of completion for the import snapshot task.</p>
      */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
+
+    /**
+     * <p>The percentage of completion for the import snapshot task.</p>
+     */
     inline void SetProgress(const Aws::String& value) { m_progressHasBeenSet = true; m_progress = value; }
 
     /**
@@ -237,6 +268,11 @@ namespace Model
      * <p>The snapshot ID of the disk being imported.</p>
      */
     inline const Aws::String& GetSnapshotId() const{ return m_snapshotId; }
+
+    /**
+     * <p>The snapshot ID of the disk being imported.</p>
+     */
+    inline bool SnapshotIdHasBeenSet() const { return m_snapshotIdHasBeenSet; }
 
     /**
      * <p>The snapshot ID of the disk being imported.</p>
@@ -277,6 +313,11 @@ namespace Model
     /**
      * <p>A brief status for the import snapshot task.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>A brief status for the import snapshot task.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -309,6 +350,11 @@ namespace Model
      * <p>A detailed status message for the import snapshot task.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A detailed status message for the import snapshot task.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A detailed status message for the import snapshot task.</p>
@@ -349,6 +395,11 @@ namespace Model
     /**
      * <p>The URL of the disk image from which the snapshot is created.</p>
      */
+    inline bool UrlHasBeenSet() const { return m_urlHasBeenSet; }
+
+    /**
+     * <p>The URL of the disk image from which the snapshot is created.</p>
+     */
     inline void SetUrl(const Aws::String& value) { m_urlHasBeenSet = true; m_url = value; }
 
     /**
@@ -381,6 +432,11 @@ namespace Model
      * <p>The S3 bucket for the disk image.</p>
      */
     inline const UserBucketDetails& GetUserBucket() const{ return m_userBucket; }
+
+    /**
+     * <p>The S3 bucket for the disk image.</p>
+     */
+    inline bool UserBucketHasBeenSet() const { return m_userBucketHasBeenSet; }
 
     /**
      * <p>The S3 bucket for the disk image.</p>

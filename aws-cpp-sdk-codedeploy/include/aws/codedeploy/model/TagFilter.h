@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The on-premises instance tag filter key.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The on-premises instance tag filter key.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The on-premises instance tag filter value.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The on-premises instance tag filter value.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The on-premises instance tag filter value.</p>
@@ -127,6 +137,13 @@ namespace Model
      * Key and value.</p> </li> </ul>
      */
     inline const TagFilterType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key
+     * only.</p> </li> <li> <p>VALUE_ONLY: Value only.</p> </li> <li> <p>KEY_AND_VALUE:
+     * Key and value.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The on-premises instance tag filter type:</p> <ul> <li> <p>KEY_ONLY: Key

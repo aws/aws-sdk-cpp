@@ -58,6 +58,12 @@ namespace Model
      * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
      * stream.</p>
      */
+    inline bool KinesisStreamSourceDescriptionHasBeenSet() const { return m_kinesisStreamSourceDescriptionHasBeenSet; }
+
+    /**
+     * <p>The <a>KinesisStreamSourceDescription</a> value for the source Kinesis data
+     * stream.</p>
+     */
     inline void SetKinesisStreamSourceDescription(const KinesisStreamSourceDescription& value) { m_kinesisStreamSourceDescriptionHasBeenSet = true; m_kinesisStreamSourceDescription = value; }
 
     /**

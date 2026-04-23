@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name associated with the parameter.</p>
      */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
+
+    /**
+     * <p>The name associated with the parameter.</p>
+     */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The default value associated with the parameter.</p>
      */
     inline const Aws::String& GetDefaultValue() const{ return m_defaultValue; }
+
+    /**
+     * <p>The default value associated with the parameter.</p>
+     */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
 
     /**
      * <p>The default value associated with the parameter.</p>
@@ -131,6 +141,12 @@ namespace Model
      * <p>Flag indicating whether the parameter should be displayed as plain text in
      * logs and UIs.</p>
      */
+    inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
+
+    /**
+     * <p>Flag indicating whether the parameter should be displayed as plain text in
+     * logs and UIs.</p>
+     */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
@@ -144,6 +160,11 @@ namespace Model
      * <p>User defined description associated with the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>User defined description associated with the parameter.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>User defined description associated with the parameter.</p>

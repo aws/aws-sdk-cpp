@@ -65,6 +65,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS credentials. For more information,
+     * see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -120,6 +128,13 @@ namespace Model
      * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
      */
+    inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the S3 bucket. For more information, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
@@ -168,6 +183,17 @@ namespace Model
      * Guide</i>.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
+     * Amazon S3 files. You can specify an extra prefix to be added in front of the
+     * time format prefix. If the prefix ends with a slash, it appears as a folder in
+     * the S3 bucket. For more information, see <a
+     * href="http://docs.aws.amazon.com/firehose/latest/dev/basic-deliver.html#s3-object-name">Amazon
+     * S3 Object Name Format</a> in the <i>Amazon Kinesis Data Firehose Developer
+     * Guide</i>.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The "YYYY/MM/DD/HH" time format prefix is automatically used for delivered
@@ -237,10 +263,73 @@ namespace Model
 
 
     /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline const Aws::String& GetErrorOutputPrefix() const{ return m_errorOutputPrefix; }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline bool ErrorOutputPrefixHasBeenSet() const { return m_errorOutputPrefixHasBeenSet; }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(const Aws::String& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = value; }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(Aws::String&& value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix = std::move(value); }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline void SetErrorOutputPrefix(const char* value) { m_errorOutputPrefixHasBeenSet = true; m_errorOutputPrefix.assign(value); }
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(const Aws::String& value) { SetErrorOutputPrefix(value); return *this;}
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(Aws::String&& value) { SetErrorOutputPrefix(std::move(value)); return *this;}
+
+    /**
+     * <p>A prefix that Kinesis Data Firehose evaluates and adds to failed records
+     * before writing them to S3. This prefix appears immediately following the bucket
+     * name.</p>
+     */
+    inline S3DestinationDescription& WithErrorOutputPrefix(const char* value) { SetErrorOutputPrefix(value); return *this;}
+
+
+    /**
      * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
      * object default values are used.</p>
      */
     inline const BufferingHints& GetBufferingHints() const{ return m_bufferingHints; }
+
+    /**
+     * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
+     * object default values are used.</p>
+     */
+    inline bool BufferingHintsHasBeenSet() const { return m_bufferingHintsHasBeenSet; }
 
     /**
      * <p>The buffering option. If no value is specified, <code>BufferingHints</code>
@@ -277,6 +366,12 @@ namespace Model
      * <p>The compression format. If no value is specified, the default is
      * <code>UNCOMPRESSED</code>.</p>
      */
+    inline bool CompressionFormatHasBeenSet() const { return m_compressionFormatHasBeenSet; }
+
+    /**
+     * <p>The compression format. If no value is specified, the default is
+     * <code>UNCOMPRESSED</code>.</p>
+     */
     inline void SetCompressionFormat(const CompressionFormat& value) { m_compressionFormatHasBeenSet = true; m_compressionFormat = value; }
 
     /**
@@ -303,6 +398,12 @@ namespace Model
      * encryption.</p>
      */
     inline const EncryptionConfiguration& GetEncryptionConfiguration() const{ return m_encryptionConfiguration; }
+
+    /**
+     * <p>The encryption configuration. If no value is specified, the default is no
+     * encryption.</p>
+     */
+    inline bool EncryptionConfigurationHasBeenSet() const { return m_encryptionConfigurationHasBeenSet; }
 
     /**
      * <p>The encryption configuration. If no value is specified, the default is no
@@ -337,6 +438,11 @@ namespace Model
     /**
      * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
      */
+    inline bool CloudWatchLoggingOptionsHasBeenSet() const { return m_cloudWatchLoggingOptionsHasBeenSet; }
+
+    /**
+     * <p>The Amazon CloudWatch logging options for your delivery stream.</p>
+     */
     inline void SetCloudWatchLoggingOptions(const CloudWatchLoggingOptions& value) { m_cloudWatchLoggingOptionsHasBeenSet = true; m_cloudWatchLoggingOptions = value; }
 
     /**
@@ -364,6 +470,9 @@ namespace Model
 
     Aws::String m_prefix;
     bool m_prefixHasBeenSet;
+
+    Aws::String m_errorOutputPrefix;
+    bool m_errorOutputPrefixHasBeenSet;
 
     BufferingHints m_bufferingHints;
     bool m_bufferingHintsHasBeenSet;

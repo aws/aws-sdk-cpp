@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The authorizer name.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The authorizer ARN.</p>
      */
     inline const Aws::String& GetAuthorizerArn() const{ return m_authorizerArn; }
+
+    /**
+     * <p>The authorizer ARN.</p>
+     */
+    inline bool AuthorizerArnHasBeenSet() const { return m_authorizerArnHasBeenSet; }
 
     /**
      * <p>The authorizer ARN.</p>

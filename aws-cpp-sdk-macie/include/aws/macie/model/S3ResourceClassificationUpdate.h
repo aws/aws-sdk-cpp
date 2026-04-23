@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the S3 bucket whose classification types you want to update.</p>
      */
+    inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+
+    /**
+     * <p>The name of the S3 bucket whose classification types you want to update.</p>
+     */
     inline void SetBucketName(const Aws::String& value) { m_bucketNameHasBeenSet = true; m_bucketName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * update.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix of the S3 bucket whose classification types you want to
+     * update.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix of the S3 bucket whose classification types you want to
@@ -134,6 +145,12 @@ namespace Model
      * with Amazon Macie. </p>
      */
     inline const ClassificationTypeUpdate& GetClassificationTypeUpdate() const{ return m_classificationTypeUpdate; }
+
+    /**
+     * <p>The classification type that you want to update for the resource associated
+     * with Amazon Macie. </p>
+     */
+    inline bool ClassificationTypeUpdateHasBeenSet() const { return m_classificationTypeUpdateHasBeenSet; }
 
     /**
      * <p>The classification type that you want to update for the resource associated

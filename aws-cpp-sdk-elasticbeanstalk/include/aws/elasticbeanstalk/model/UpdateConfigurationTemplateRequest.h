@@ -67,6 +67,14 @@ namespace Model
      * <code>UpdateConfigurationTemplate</code> returns an
      * <code>InvalidParameterValue</code> error. </p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application associated with the configuration template to
+     * update.</p> <p> If no application is found with this name,
+     * <code>UpdateConfigurationTemplate</code> returns an
+     * <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -122,6 +130,13 @@ namespace Model
      * template is found with this name, <code>UpdateConfigurationTemplate</code>
      * returns an <code>InvalidParameterValue</code> error. </p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration template to update.</p> <p> If no configuration
+     * template is found with this name, <code>UpdateConfigurationTemplate</code>
+     * returns an <code>InvalidParameterValue</code> error. </p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>A new description for the configuration.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A new description for the configuration.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -201,6 +221,12 @@ namespace Model
      * option value.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
+    /**
+     * <p>A list of configuration option settings to update with the new specified
+     * option value.</p>
+     */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
 
     /**
      * <p>A list of configuration option settings to update with the new specified
@@ -245,6 +271,13 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<OptionSpecification>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+
+    /**
+     * <p>A list of configuration options to remove from the configuration set.</p> <p>
+     * Constraint: You can remove only <code>UserDefined</code> configuration options.
+     * </p>
+     */
+    inline bool OptionsToRemoveHasBeenSet() const { return m_optionsToRemoveHasBeenSet; }
 
     /**
      * <p>A list of configuration options to remove from the configuration set.</p> <p>

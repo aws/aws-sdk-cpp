@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the resolver endpoint that you want to update.</p>
      */
+    inline bool ResolverEndpointIdHasBeenSet() const { return m_resolverEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver endpoint that you want to update.</p>
+     */
     inline void SetResolverEndpointId(const Aws::String& value) { m_resolverEndpointIdHasBeenSet = true; m_resolverEndpointId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the resolver endpoint that you want to update.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the resolver endpoint that you want to update.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the resolver endpoint that you want to update.</p>

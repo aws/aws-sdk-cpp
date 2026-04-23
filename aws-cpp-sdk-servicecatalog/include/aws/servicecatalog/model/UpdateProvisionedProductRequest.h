@@ -20,6 +20,7 @@
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/servicecatalog/model/UpdateProvisioningPreferences.h>
 #include <aws/servicecatalog/model/UpdateProvisioningParameter.h>
+#include <aws/servicecatalog/model/Tag.h>
 #include <utility>
 #include <aws/core/utils/UUID.h>
 
@@ -54,6 +55,13 @@ namespace Model
      * Chinese</p> </li> </ul>
      */
     inline const Aws::String& GetAcceptLanguage() const{ return m_acceptLanguage; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
 
     /**
      * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
@@ -108,6 +116,12 @@ namespace Model
      * <p>The updated name of the provisioned product. You cannot specify both
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
+    inline bool ProvisionedProductNameHasBeenSet() const { return m_provisionedProductNameHasBeenSet; }
+
+    /**
+     * <p>The updated name of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+     */
     inline void SetProvisionedProductName(const Aws::String& value) { m_provisionedProductNameHasBeenSet = true; m_provisionedProductName = value; }
 
     /**
@@ -146,6 +160,12 @@ namespace Model
      * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
      */
     inline const Aws::String& GetProvisionedProductId() const{ return m_provisionedProductId; }
+
+    /**
+     * <p>The identifier of the provisioned product. You cannot specify both
+     * <code>ProvisionedProductName</code> and <code>ProvisionedProductId</code>.</p>
+     */
+    inline bool ProvisionedProductIdHasBeenSet() const { return m_provisionedProductIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioned product. You cannot specify both
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The identifier of the product.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the product.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -261,6 +291,12 @@ namespace Model
      * path, and required if the product has more than one path.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
+
+    /**
+     * <p>The new path identifier. This value is optional if the product has a default
+     * path, and required if the product has more than one path.</p>
+     */
+    inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
 
     /**
      * <p>The new path identifier. This value is optional if the product has a default
@@ -307,6 +343,11 @@ namespace Model
     /**
      * <p>The new parameters.</p>
      */
+    inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
+
+    /**
+     * <p>The new parameters.</p>
+     */
     inline void SetProvisioningParameters(const Aws::Vector<UpdateProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
 
     /**
@@ -345,6 +386,12 @@ namespace Model
      * <p>An object that contains information about the provisioning preferences for a
      * stack set.</p>
      */
+    inline bool ProvisioningPreferencesHasBeenSet() const { return m_provisioningPreferencesHasBeenSet; }
+
+    /**
+     * <p>An object that contains information about the provisioning preferences for a
+     * stack set.</p>
+     */
     inline void SetProvisioningPreferences(const UpdateProvisioningPreferences& value) { m_provisioningPreferencesHasBeenSet = true; m_provisioningPreferences = value; }
 
     /**
@@ -367,10 +414,73 @@ namespace Model
 
 
     /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>One or more tags. Requires the product to have <code>RESOURCE_UPDATE</code>
+     * constraint with <code>TagUpdatesOnProvisionedProduct</code> set to
+     * <code>ALLOWED</code> to allow tag updates.</p>
+     */
+    inline UpdateProvisionedProductRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The idempotency token that uniquely identifies the provisioning update
      * request.</p>
      */
     inline const Aws::String& GetUpdateToken() const{ return m_updateToken; }
+
+    /**
+     * <p>The idempotency token that uniquely identifies the provisioning update
+     * request.</p>
+     */
+    inline bool UpdateTokenHasBeenSet() const { return m_updateTokenHasBeenSet; }
 
     /**
      * <p>The idempotency token that uniquely identifies the provisioning update
@@ -433,6 +543,9 @@ namespace Model
 
     UpdateProvisioningPreferences m_provisioningPreferences;
     bool m_provisioningPreferencesHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_updateToken;
     bool m_updateTokenHasBeenSet;

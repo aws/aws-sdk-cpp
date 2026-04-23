@@ -37,7 +37,7 @@ GetBuiltinIntentsRequest::GetBuiltinIntentsRequest() :
 
 Aws::String GetBuiltinIntentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBuiltinIntentsRequest::AddQueryStringParameters(URI& uri) const

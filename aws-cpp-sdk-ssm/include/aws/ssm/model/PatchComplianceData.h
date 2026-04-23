@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The title of the patch.</p>
      */
+    inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+
+    /**
+     * <p>The title of the patch.</p>
+     */
     inline void SetTitle(const Aws::String& value) { m_titleHasBeenSet = true; m_title = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The operating system-specific ID of the patch.</p>
      */
     inline const Aws::String& GetKBId() const{ return m_kBId; }
+
+    /**
+     * <p>The operating system-specific ID of the patch.</p>
+     */
+    inline bool KBIdHasBeenSet() const { return m_kBIdHasBeenSet; }
 
     /**
      * <p>The operating system-specific ID of the patch.</p>
@@ -127,6 +137,12 @@ namespace Model
      * CriticalUpdates).</p>
      */
     inline const Aws::String& GetClassification() const{ return m_classification; }
+
+    /**
+     * <p>The classification of the patch (for example, SecurityUpdates, Updates,
+     * CriticalUpdates).</p>
+     */
+    inline bool ClassificationHasBeenSet() const { return m_classificationHasBeenSet; }
 
     /**
      * <p>The classification of the patch (for example, SecurityUpdates, Updates,
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>The severity of the patch (for example, Critical, Important, Moderate).</p>
+     */
     inline void SetSeverity(const Aws::String& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -215,6 +236,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
      * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the patch on the instance, such as INSTALLED or FAILED.</p>
+     * <p>For descriptions of each patch state, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-compliance-about.html#sysman-compliance-monitor-patch">About
+     * Patch Compliance</a> in the <i>AWS Systems Manager User Guide</i>.</p>
+     */
     inline void SetState(const PatchComplianceDataState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -247,6 +276,12 @@ namespace Model
      * operating systems provide this level of information.</p>
      */
     inline const Aws::Utils::DateTime& GetInstalledTime() const{ return m_installedTime; }
+
+    /**
+     * <p>The date/time the patch was installed on the instance. Note that not all
+     * operating systems provide this level of information.</p>
+     */
+    inline bool InstalledTimeHasBeenSet() const { return m_installedTimeHasBeenSet; }
 
     /**
      * <p>The date/time the patch was installed on the instance. Note that not all

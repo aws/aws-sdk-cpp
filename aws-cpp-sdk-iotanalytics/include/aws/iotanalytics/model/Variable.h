@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the variable.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the variable.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The value of the variable as a string.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
+    /**
+     * <p>The value of the variable as a string.</p>
+     */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
 
     /**
      * <p>The value of the variable as a string.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The value of the variable as a double (numeric).</p>
      */
+    inline bool DoubleValueHasBeenSet() const { return m_doubleValueHasBeenSet; }
+
+    /**
+     * <p>The value of the variable as a double (numeric).</p>
+     */
     inline void SetDoubleValue(double value) { m_doubleValueHasBeenSet = true; m_doubleValue = value; }
 
     /**
@@ -145,6 +160,12 @@ namespace Model
      * version.</p>
      */
     inline const DatasetContentVersionValue& GetDatasetContentVersionValue() const{ return m_datasetContentVersionValue; }
+
+    /**
+     * <p>The value of the variable as a structure that specifies a data set content
+     * version.</p>
+     */
+    inline bool DatasetContentVersionValueHasBeenSet() const { return m_datasetContentVersionValueHasBeenSet; }
 
     /**
      * <p>The value of the variable as a structure that specifies a data set content
@@ -176,6 +197,12 @@ namespace Model
      * URI.</p>
      */
     inline const OutputFileUriValue& GetOutputFileUriValue() const{ return m_outputFileUriValue; }
+
+    /**
+     * <p>The value of the variable as a structure that specifies an output file
+     * URI.</p>
+     */
+    inline bool OutputFileUriValueHasBeenSet() const { return m_outputFileUriValueHasBeenSet; }
 
     /**
      * <p>The value of the variable as a structure that specifies an output file

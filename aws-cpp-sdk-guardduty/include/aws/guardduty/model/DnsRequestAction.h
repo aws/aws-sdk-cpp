@@ -56,6 +56,11 @@ namespace Model
     /**
      * Domain information for the DNS request.
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * Domain information for the DNS request.
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**

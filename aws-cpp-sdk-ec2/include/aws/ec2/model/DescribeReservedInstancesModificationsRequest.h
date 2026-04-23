@@ -106,6 +106,34 @@ namespace Model
      * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
      * when the modification request was last updated.</p> </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>client-token</code> - The
+     * idempotency token for the modification request.</p> </li> <li> <p>
+     * <code>create-date</code> - The time when the modification request was
+     * created.</p> </li> <li> <p> <code>effective-date</code> - The time when the
+     * modification becomes effective.</p> </li> <li> <p>
+     * <code>modification-result.reserved-instances-id</code> - The ID for the Reserved
+     * Instances created as part of the modification request. This ID is only available
+     * when the status of the modification is <code>fulfilled</code>.</p> </li> <li>
+     * <p> <code>modification-result.target-configuration.availability-zone</code> -
+     * The Availability Zone for the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-count </code> - The
+     * number of new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.instance-type</code> - The
+     * instance type of the new Reserved Instances.</p> </li> <li> <p>
+     * <code>modification-result.target-configuration.platform</code> - The network
+     * platform of the new Reserved Instances (<code>EC2-Classic</code> |
+     * <code>EC2-VPC</code>).</p> </li> <li> <p> <code>reserved-instances-id</code> -
+     * The ID of the Reserved Instances modified.</p> </li> <li> <p>
+     * <code>reserved-instances-modification-id</code> - The ID of the modification
+     * request.</p> </li> <li> <p> <code>status</code> - The status of the Reserved
+     * Instances modification request (<code>processing</code> | <code>fulfilled</code>
+     * | <code>failed</code>).</p> </li> <li> <p> <code>status-message</code> - The
+     * reason for the status.</p> </li> <li> <p> <code>update-date</code> - The time
+     * when the modification request was last updated.</p> </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -257,6 +285,11 @@ namespace Model
     /**
      * <p>IDs for the submitted modification request.</p>
      */
+    inline bool ReservedInstancesModificationIdsHasBeenSet() const { return m_reservedInstancesModificationIdsHasBeenSet; }
+
+    /**
+     * <p>IDs for the submitted modification request.</p>
+     */
     inline void SetReservedInstancesModificationIds(const Aws::Vector<Aws::String>& value) { m_reservedInstancesModificationIdsHasBeenSet = true; m_reservedInstancesModificationIds = value; }
 
     /**
@@ -294,6 +327,11 @@ namespace Model
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>

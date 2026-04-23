@@ -29,7 +29,7 @@ DeleteProjectRequest::DeleteProjectRequest() :
 
 Aws::String DeleteProjectRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

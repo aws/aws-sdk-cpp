@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The average.</p>
      */
+    inline bool AverageHasBeenSet() const { return m_averageHasBeenSet; }
+
+    /**
+     * <p>The average.</p>
+     */
     inline void SetAverage(double value) { m_averageHasBeenSet = true; m_average = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The maximum.</p>
      */
     inline double GetMaximum() const{ return m_maximum; }
+
+    /**
+     * <p>The maximum.</p>
+     */
+    inline bool MaximumHasBeenSet() const { return m_maximumHasBeenSet; }
 
     /**
      * <p>The maximum.</p>
@@ -88,6 +98,11 @@ namespace Model
     /**
      * <p>The minimum.</p>
      */
+    inline bool MinimumHasBeenSet() const { return m_minimumHasBeenSet; }
+
+    /**
+     * <p>The minimum.</p>
+     */
     inline void SetMinimum(double value) { m_minimumHasBeenSet = true; m_minimum = value; }
 
     /**
@@ -100,6 +115,11 @@ namespace Model
      * <p>The sample count.</p>
      */
     inline double GetSampleCount() const{ return m_sampleCount; }
+
+    /**
+     * <p>The sample count.</p>
+     */
+    inline bool SampleCountHasBeenSet() const { return m_sampleCountHasBeenSet; }
 
     /**
      * <p>The sample count.</p>
@@ -120,6 +140,11 @@ namespace Model
     /**
      * <p>The sum.</p>
      */
+    inline bool SumHasBeenSet() const { return m_sumHasBeenSet; }
+
+    /**
+     * <p>The sum.</p>
+     */
     inline void SetSum(double value) { m_sumHasBeenSet = true; m_sum = value; }
 
     /**
@@ -132,6 +157,11 @@ namespace Model
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
      */
     inline const Aws::Utils::DateTime& GetTimestamp() const{ return m_timestamp; }
+
+    /**
+     * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
+     */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
 
     /**
      * <p>The timestamp (e.g., <code>1479816991.349</code>).</p>
@@ -158,6 +188,11 @@ namespace Model
      * <p>The unit. </p>
      */
     inline const MetricUnit& GetUnit() const{ return m_unit; }
+
+    /**
+     * <p>The unit. </p>
+     */
+    inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
 
     /**
      * <p>The unit. </p>

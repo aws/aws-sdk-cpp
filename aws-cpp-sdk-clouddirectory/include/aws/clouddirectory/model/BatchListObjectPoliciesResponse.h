@@ -59,6 +59,12 @@ namespace Model
      * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
      * object.</p>
      */
+    inline bool AttachedPolicyIdsHasBeenSet() const { return m_attachedPolicyIdsHasBeenSet; }
+
+    /**
+     * <p>A list of policy <code>ObjectIdentifiers</code>, that are attached to the
+     * object.</p>
+     */
     inline void SetAttachedPolicyIds(const Aws::Vector<Aws::String>& value) { m_attachedPolicyIdsHasBeenSet = true; m_attachedPolicyIds = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
      * <p>The pagination token.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The pagination token.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The pagination token.</p>

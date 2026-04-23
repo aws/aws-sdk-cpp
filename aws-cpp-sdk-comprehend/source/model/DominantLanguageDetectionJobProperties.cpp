@@ -38,7 +38,8 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties()
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
 }
 
@@ -52,7 +53,8 @@ DominantLanguageDetectionJobProperties::DominantLanguageDetectionJobProperties(J
     m_endTimeHasBeenSet(false),
     m_inputDataConfigHasBeenSet(false),
     m_outputDataConfigHasBeenSet(false),
-    m_dataAccessRoleArnHasBeenSet(false)
+    m_dataAccessRoleArnHasBeenSet(false),
+    m_volumeKmsKeyIdHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -122,6 +124,13 @@ DominantLanguageDetectionJobProperties& DominantLanguageDetectionJobProperties::
     m_dataAccessRoleArnHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("VolumeKmsKeyId"))
+  {
+    m_volumeKmsKeyId = jsonValue.GetString("VolumeKmsKeyId");
+
+    m_volumeKmsKeyIdHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -177,6 +186,12 @@ JsonValue DominantLanguageDetectionJobProperties::Jsonize() const
   if(m_dataAccessRoleArnHasBeenSet)
   {
    payload.WithString("DataAccessRoleArn", m_dataAccessRoleArn);
+
+  }
+
+  if(m_volumeKmsKeyIdHasBeenSet)
+  {
+   payload.WithString("VolumeKmsKeyId", m_volumeKmsKeyId);
 
   }
 

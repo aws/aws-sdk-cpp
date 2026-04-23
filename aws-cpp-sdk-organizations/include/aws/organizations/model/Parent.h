@@ -71,6 +71,18 @@ namespace Model
      * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
      * digits.</p> </li> </ul>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the parent entity.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for a parent ID string
+     * requires one of the following:</p> <ul> <li> <p>Root: a string that begins with
+     * "r-" followed by from 4 to 32 lower-case letters or digits.</p> </li> <li>
+     * <p>Organizational unit (OU): a string that begins with "ou-" followed by from 4
+     * to 32 lower-case letters or digits (the ID of the root that the OU is in)
+     * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
+     * digits.</p> </li> </ul>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -138,6 +150,11 @@ namespace Model
      * <p>The type of the parent entity.</p>
      */
     inline const ParentType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of the parent entity.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of the parent entity.</p>

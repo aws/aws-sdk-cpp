@@ -56,6 +56,11 @@ namespace Model
     /**
      * Brightness level.
      */
+    inline bool BrightnessHasBeenSet() const { return m_brightnessHasBeenSet; }
+
+    /**
+     * Brightness level.
+     */
     inline void SetBrightness(int value) { m_brightnessHasBeenSet = true; m_brightness = value; }
 
     /**
@@ -64,19 +69,58 @@ namespace Model
     inline ColorCorrector& WithBrightness(int value) { SetBrightness(value); return *this;}
 
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline const ColorSpaceConversion& GetColorSpaceConversion() const{ return m_colorSpaceConversion; }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
+    inline bool ColorSpaceConversionHasBeenSet() const { return m_colorSpaceConversionHasBeenSet; }
+
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline void SetColorSpaceConversion(const ColorSpaceConversion& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = value; }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline void SetColorSpaceConversion(ColorSpaceConversion&& value) { m_colorSpaceConversionHasBeenSet = true; m_colorSpaceConversion = std::move(value); }
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline ColorCorrector& WithColorSpaceConversion(const ColorSpaceConversion& value) { SetColorSpaceConversion(value); return *this;}
 
-    
+    /**
+     * Determines if colorspace conversion will be performed. If set to _None_, no
+     * conversion will be performed. If _Force 601_ or _Force 709_ are selected,
+     * conversion will be performed for inputs with differing colorspaces. An input's
+     * colorspace can be specified explicitly in the "Video
+     * Selector":#inputs-video_selector if necessary.
+     */
     inline ColorCorrector& WithColorSpaceConversion(ColorSpaceConversion&& value) { SetColorSpaceConversion(std::move(value)); return *this;}
 
 
@@ -84,6 +128,11 @@ namespace Model
      * Contrast level.
      */
     inline int GetContrast() const{ return m_contrast; }
+
+    /**
+     * Contrast level.
+     */
+    inline bool ContrastHasBeenSet() const { return m_contrastHasBeenSet; }
 
     /**
      * Contrast level.
@@ -96,19 +145,40 @@ namespace Model
     inline ColorCorrector& WithContrast(int value) { SetContrast(value); return *this;}
 
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline const Hdr10Metadata& GetHdr10Metadata() const{ return m_hdr10Metadata; }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
+    inline bool Hdr10MetadataHasBeenSet() const { return m_hdr10MetadataHasBeenSet; }
+
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline void SetHdr10Metadata(const Hdr10Metadata& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = value; }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline void SetHdr10Metadata(Hdr10Metadata&& value) { m_hdr10MetadataHasBeenSet = true; m_hdr10Metadata = std::move(value); }
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline ColorCorrector& WithHdr10Metadata(const Hdr10Metadata& value) { SetHdr10Metadata(value); return *this;}
 
-    
+    /**
+     * Use the HDR master display (Hdr10Metadata) settings to correct HDR metadata or
+     * to provide missing metadata. Note that these settings are not color correction.
+     */
     inline ColorCorrector& WithHdr10Metadata(Hdr10Metadata&& value) { SetHdr10Metadata(std::move(value)); return *this;}
 
 
@@ -116,6 +186,11 @@ namespace Model
      * Hue in degrees.
      */
     inline int GetHue() const{ return m_hue; }
+
+    /**
+     * Hue in degrees.
+     */
+    inline bool HueHasBeenSet() const { return m_hueHasBeenSet; }
 
     /**
      * Hue in degrees.
@@ -132,6 +207,11 @@ namespace Model
      * Saturation level.
      */
     inline int GetSaturation() const{ return m_saturation; }
+
+    /**
+     * Saturation level.
+     */
+    inline bool SaturationHasBeenSet() const { return m_saturationHasBeenSet; }
 
     /**
      * Saturation level.

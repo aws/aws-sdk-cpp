@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the stream for which to start encrypting records.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream for which to start encrypting records.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
+     */
+    inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
      * <p>The encryption type to use. The only valid value is <code>KMS</code>.</p>
@@ -122,6 +132,22 @@ namespace Model
      * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
      */
     inline const Aws::String& GetKeyId() const{ return m_keyId; }
+
+    /**
+     * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This
+     * value can be a globally unique identifier, a fully specified Amazon Resource
+     * Name (ARN) to either an alias or a key, or an alias name prefixed by
+     * "alias/".You can also use a master key owned by Kinesis Data Streams by
+     * specifying the alias <code>aws/kinesis</code>.</p> <ul> <li> <p>Key ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:key/12345678-1234-1234-1234-123456789012</code>
+     * </p> </li> <li> <p>Alias ARN example:
+     * <code>arn:aws:kms:us-east-1:123456789012:alias/MyAliasName</code> </p> </li>
+     * <li> <p>Globally unique key ID example:
+     * <code>12345678-1234-1234-1234-123456789012</code> </p> </li> <li> <p>Alias name
+     * example: <code>alias/MyAliasName</code> </p> </li> <li> <p>Master key owned by
+     * Kinesis Data Streams: <code>alias/aws/kinesis</code> </p> </li> </ul>
+     */
+    inline bool KeyIdHasBeenSet() const { return m_keyIdHasBeenSet; }
 
     /**
      * <p>The GUID for the customer-managed AWS KMS key to use for encryption. This

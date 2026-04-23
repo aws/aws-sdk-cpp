@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A reference to the index object.</p>
      */
+    inline bool IndexReferenceHasBeenSet() const { return m_indexReferenceHasBeenSet; }
+
+    /**
+     * <p>A reference to the index object.</p>
+     */
     inline void SetIndexReference(const ObjectReference& value) { m_indexReferenceHasBeenSet = true; m_indexReference = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>A reference to the object being detached from the index.</p>
      */
     inline const ObjectReference& GetTargetReference() const{ return m_targetReference; }
+
+    /**
+     * <p>A reference to the object being detached from the index.</p>
+     */
+    inline bool TargetReferenceHasBeenSet() const { return m_targetReferenceHasBeenSet; }
 
     /**
      * <p>A reference to the object being detached from the index.</p>

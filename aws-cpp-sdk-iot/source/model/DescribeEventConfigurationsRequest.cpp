@@ -28,7 +28,7 @@ DescribeEventConfigurationsRequest::DescribeEventConfigurationsRequest()
 
 Aws::String DescribeEventConfigurationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

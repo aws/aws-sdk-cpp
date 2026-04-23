@@ -30,7 +30,11 @@ DescribeActivitiesRequest::DescribeActivitiesRequest() :
     m_startTimeHasBeenSet(false),
     m_endTimeHasBeenSet(false),
     m_organizationIdHasBeenSet(false),
+    m_activityTypesHasBeenSet(false),
+    m_resourceIdHasBeenSet(false),
     m_userIdHasBeenSet(false),
+    m_includeIndirectActivities(false),
+    m_includeIndirectActivitiesHasBeenSet(false),
     m_limit(0),
     m_limitHasBeenSet(false),
     m_markerHasBeenSet(false)
@@ -39,7 +43,7 @@ DescribeActivitiesRequest::DescribeActivitiesRequest() :
 
 Aws::String DescribeActivitiesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection DescribeActivitiesRequest::GetRequestSpecificHeaders() const
@@ -81,10 +85,31 @@ void DescribeActivitiesRequest::AddQueryStringParameters(URI& uri) const
       ss.str("");
     }
 
+    if(m_activityTypesHasBeenSet)
+    {
+      ss << m_activityTypes;
+      uri.AddQueryStringParameter("activityTypes", ss.str());
+      ss.str("");
+    }
+
+    if(m_resourceIdHasBeenSet)
+    {
+      ss << m_resourceId;
+      uri.AddQueryStringParameter("resourceId", ss.str());
+      ss.str("");
+    }
+
     if(m_userIdHasBeenSet)
     {
       ss << m_userId;
       uri.AddQueryStringParameter("userId", ss.str());
+      ss.str("");
+    }
+
+    if(m_includeIndirectActivitiesHasBeenSet)
+    {
+      ss << m_includeIndirectActivities;
+      uri.AddQueryStringParameter("includeIndirectActivities", ss.str());
       ss.str("");
     }
 

@@ -49,49 +49,56 @@ namespace Model
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline const Aws::String& GetEndpointConfigName() const{ return m_endpointConfigName; }
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * request. </p>
+     */
+    inline bool EndpointConfigNameHasBeenSet() const { return m_endpointConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the endpoint configuration. You specify this name in a <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline void SetEndpointConfigName(const Aws::String& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = value; }
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline void SetEndpointConfigName(Aws::String&& value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName = std::move(value); }
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline void SetEndpointConfigName(const char* value) { m_endpointConfigNameHasBeenSet = true; m_endpointConfigName.assign(value); }
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline CreateEndpointConfigRequest& WithEndpointConfigName(const Aws::String& value) { SetEndpointConfigName(value); return *this;}
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline CreateEndpointConfigRequest& WithEndpointConfigName(Aws::String&& value) { SetEndpointConfigName(std::move(value)); return *this;}
 
     /**
      * <p>The name of the endpoint configuration. You specify this name in a <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/API_CreateEndpoint.html">CreateEndpoint</a>
      * request. </p>
      */
     inline CreateEndpointConfigRequest& WithEndpointConfigName(const char* value) { SetEndpointConfigName(value); return *this;}
@@ -102,6 +109,12 @@ namespace Model
      * you want to host at this endpoint.</p>
      */
     inline const Aws::Vector<ProductionVariant>& GetProductionVariants() const{ return m_productionVariants; }
+
+    /**
+     * <p>An array of <code>ProductionVariant</code> objects, one for each model that
+     * you want to host at this endpoint.</p>
+     */
+    inline bool ProductionVariantsHasBeenSet() const { return m_productionVariantsHasBeenSet; }
 
     /**
      * <p>An array of <code>ProductionVariant</code> objects, one for each model that
@@ -142,7 +155,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -150,7 +163,15 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
+     * Guide</i>. </p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>An array of key-value pairs. For more information, see <a
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -158,7 +179,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -166,7 +187,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -174,7 +195,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -182,7 +203,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -190,7 +211,7 @@ namespace Model
 
     /**
      * <p>An array of key-value pairs. For more information, see <a
-     * href="http://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
+     * href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/cost-alloc-tags.html#allocation-what">Using
      * Cost Allocation Tags</a> in the <i>AWS Billing and Cost Management User
      * Guide</i>. </p>
      */
@@ -203,6 +224,13 @@ namespace Model
      * compute instance that hosts the endpoint.</p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that
+     * Amazon SageMaker uses to encrypt data on the storage volume attached to the ML
+     * compute instance that hosts the endpoint.</p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of a AWS Key Management Service key that

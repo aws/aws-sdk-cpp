@@ -29,7 +29,7 @@ namespace Client
 
 static const char* CLIENT_CONFIGURATION_ALLOCATION_TAG = "ClientConfiguration";
 
-static Aws::String ComputeUserAgentString()
+AWS_CORE_API Aws::String ComputeUserAgentString()
 {
   Aws::StringStream ss;
   ss << "aws-sdk-cpp/" << Version::GetVersionString() << " " <<  Aws::OSVersionInfo::ComputeOSVersionString()
@@ -58,7 +58,9 @@ ClientConfiguration::ClientConfiguration() :
     httpLibOverride(Aws::Http::TransferLibType::DEFAULT_CLIENT),
     followRedirects(true),
     disableExpectHeader(false),
-    enableClockSkewAdjustment(true)
+    enableClockSkewAdjustment(true),
+    enableHostPrefixInjection(true),
+    enableEndpointDiscovery(false)
 {
 }
 

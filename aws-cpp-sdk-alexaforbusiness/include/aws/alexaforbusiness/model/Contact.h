@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of the contact.</p>
      */
+    inline bool ContactArnHasBeenSet() const { return m_contactArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the contact.</p>
+     */
     inline void SetContactArn(const Aws::String& value) { m_contactArnHasBeenSet = true; m_contactArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The name of the contact to display on the console.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>The name of the contact to display on the console.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>The name of the contact to display on the console.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The first name of the contact, used to call the contact on the device.</p>
      */
+    inline bool FirstNameHasBeenSet() const { return m_firstNameHasBeenSet; }
+
+    /**
+     * <p>The first name of the contact, used to call the contact on the device.</p>
+     */
     inline void SetFirstName(const Aws::String& value) { m_firstNameHasBeenSet = true; m_firstName = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p>The last name of the contact, used to call the contact on the device.</p>
      */
+    inline bool LastNameHasBeenSet() const { return m_lastNameHasBeenSet; }
+
+    /**
+     * <p>The last name of the contact, used to call the contact on the device.</p>
+     */
     inline void SetLastName(const Aws::String& value) { m_lastNameHasBeenSet = true; m_lastName = value; }
 
     /**
@@ -195,6 +215,11 @@ namespace Model
      * <p>The phone number of the contact.</p>
      */
     inline const Aws::String& GetPhoneNumber() const{ return m_phoneNumber; }
+
+    /**
+     * <p>The phone number of the contact.</p>
+     */
+    inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
 
     /**
      * <p>The phone number of the contact.</p>

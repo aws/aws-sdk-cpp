@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/Grantee">AWS API
+   * Reference</a></p>
+   */
   class AWS_S3_API Grantee
   {
   public:
@@ -47,6 +52,11 @@ namespace Model
      * <p>Screen name of the grantee.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
+
+    /**
+     * <p>Screen name of the grantee.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
 
     /**
      * <p>Screen name of the grantee.</p>
@@ -87,6 +97,11 @@ namespace Model
     /**
      * <p>Email address of the grantee.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>Email address of the grantee.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
@@ -119,6 +134,11 @@ namespace Model
      * <p>The canonical user ID of the grantee.</p>
      */
     inline const Aws::String& GetID() const{ return m_iD; }
+
+    /**
+     * <p>The canonical user ID of the grantee.</p>
+     */
+    inline bool IDHasBeenSet() const { return m_iDHasBeenSet; }
 
     /**
      * <p>The canonical user ID of the grantee.</p>
@@ -159,6 +179,11 @@ namespace Model
     /**
      * <p>Type of grantee</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Type of grantee</p>
+     */
     inline void SetType(const Type& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -181,6 +206,11 @@ namespace Model
      * <p>URI of the grantee group.</p>
      */
     inline const Aws::String& GetURI() const{ return m_uRI; }
+
+    /**
+     * <p>URI of the grantee group.</p>
+     */
+    inline bool URIHasBeenSet() const { return m_uRIHasBeenSet; }
 
     /**
      * <p>URI of the grantee group.</p>

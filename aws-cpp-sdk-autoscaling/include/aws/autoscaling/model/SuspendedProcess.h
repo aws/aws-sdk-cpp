@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the suspended process.</p>
      */
+    inline bool ProcessNameHasBeenSet() const { return m_processNameHasBeenSet; }
+
+    /**
+     * <p>The name of the suspended process.</p>
+     */
     inline void SetProcessName(const Aws::String& value) { m_processNameHasBeenSet = true; m_processName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The reason that the process was suspended.</p>
      */
     inline const Aws::String& GetSuspensionReason() const{ return m_suspensionReason; }
+
+    /**
+     * <p>The reason that the process was suspended.</p>
+     */
+    inline bool SuspensionReasonHasBeenSet() const { return m_suspensionReasonHasBeenSet; }
 
     /**
      * <p>The reason that the process was suspended.</p>

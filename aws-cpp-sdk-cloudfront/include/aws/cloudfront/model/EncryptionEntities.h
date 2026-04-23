@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Complex data type for field-level encryption profiles that includes all of
    * the encryption entities. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/EncryptionEntities">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/EncryptionEntities">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API EncryptionEntities
@@ -59,6 +59,12 @@ namespace Model
      * <p>Number of field pattern items in a field-level encryption content
      * type-profile mapping. </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>Number of field pattern items in a field-level encryption content
+     * type-profile mapping. </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -73,6 +79,12 @@ namespace Model
      * mapping. </p>
      */
     inline const Aws::Vector<EncryptionEntity>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of field patterns in a field-level encryption content type-profile
+     * mapping. </p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>An array of field patterns in a field-level encryption content type-profile

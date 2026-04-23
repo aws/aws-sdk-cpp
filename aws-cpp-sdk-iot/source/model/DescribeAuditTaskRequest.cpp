@@ -29,7 +29,7 @@ DescribeAuditTaskRequest::DescribeAuditTaskRequest() :
 
 Aws::String DescribeAuditTaskRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

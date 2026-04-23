@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A list of event type codes.</p>
      */
+    inline bool EventTypeCodesHasBeenSet() const { return m_eventTypeCodesHasBeenSet; }
+
+    /**
+     * <p>A list of event type codes.</p>
+     */
     inline void SetEventTypeCodes(const Aws::Vector<Aws::String>& value) { m_eventTypeCodesHasBeenSet = true; m_eventTypeCodes = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <code>RDS</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetServices() const{ return m_services; }
+
+    /**
+     * <p>The AWS services associated with the event. For example, <code>EC2</code>,
+     * <code>RDS</code>.</p>
+     */
+    inline bool ServicesHasBeenSet() const { return m_servicesHasBeenSet; }
 
     /**
      * <p>The AWS services associated with the event. For example, <code>EC2</code>,
@@ -145,6 +156,12 @@ namespace Model
      * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
      */
     inline const Aws::Vector<EventTypeCategory>& GetEventTypeCategories() const{ return m_eventTypeCategories; }
+
+    /**
+     * <p>A list of event type category codes (<code>issue</code>,
+     * <code>scheduledChange</code>, or <code>accountNotification</code>).</p>
+     */
+    inline bool EventTypeCategoriesHasBeenSet() const { return m_eventTypeCategoriesHasBeenSet; }
 
     /**
      * <p>A list of event type category codes (<code>issue</code>,

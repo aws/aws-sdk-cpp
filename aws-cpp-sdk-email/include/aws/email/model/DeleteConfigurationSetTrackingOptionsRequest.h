@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the configuration set from which you want to delete the tracking
      * options.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set from which you want to delete the tracking
+     * options.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**

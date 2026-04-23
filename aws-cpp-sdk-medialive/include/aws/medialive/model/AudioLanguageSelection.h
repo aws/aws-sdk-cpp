@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for AudioLanguageSelection<p><h3>See Also:</h3>   <a
+   * Audio Language Selection<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/AudioLanguageSelection">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * Selects a specific three-letter language code from within an audio source.
      */
     inline const Aws::String& GetLanguageCode() const{ return m_languageCode; }
+
+    /**
+     * Selects a specific three-letter language code from within an audio source.
+     */
+    inline bool LanguageCodeHasBeenSet() const { return m_languageCodeHasBeenSet; }
 
     /**
      * Selects a specific three-letter language code from within an audio source.
@@ -93,6 +98,16 @@ namespace Model
      * if it can't find one with the same language.
      */
     inline const AudioLanguageSelectionPolicy& GetLanguageSelectionPolicy() const{ return m_languageSelectionPolicy; }
+
+    /**
+     * When set to "strict", the transport stream demux strictly identifies audio
+     * streams by their language descriptor. If a PMT update occurs such that an audio
+     * stream matching the initially selected language is no longer present then mute
+     * will be encoded until the language returns. If "loose", then on a PMT update the
+     * demux will choose another audio stream in the program with the same stream type
+     * if it can't find one with the same language.
+     */
+    inline bool LanguageSelectionPolicyHasBeenSet() const { return m_languageSelectionPolicyHasBeenSet; }
 
     /**
      * When set to "strict", the transport stream demux strictly identifies audio

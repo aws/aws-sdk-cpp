@@ -37,7 +37,7 @@ ListTrafficPolicyInstancesByHostedZoneRequest::ListTrafficPolicyInstancesByHoste
 
 Aws::String ListTrafficPolicyInstancesByHostedZoneRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListTrafficPolicyInstancesByHostedZoneRequest::AddQueryStringParameters(URI& uri) const

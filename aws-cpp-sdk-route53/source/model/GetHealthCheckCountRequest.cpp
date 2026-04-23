@@ -29,7 +29,7 @@ GetHealthCheckCountRequest::GetHealthCheckCountRequest()
 
 Aws::String GetHealthCheckCountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

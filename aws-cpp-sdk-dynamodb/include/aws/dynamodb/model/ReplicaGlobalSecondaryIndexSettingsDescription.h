@@ -60,6 +60,12 @@ namespace Model
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -102,6 +108,16 @@ namespace Model
      * index is ready for use.</p> </li> </ul>
      */
     inline const IndexStatus& GetIndexStatus() const{ return m_indexStatus; }
+
+    /**
+     * <p> The current status of the global secondary index:</p> <ul> <li> <p>
+     * <code>CREATING</code> - The global secondary index is being created.</p> </li>
+     * <li> <p> <code>UPDATING</code> - The global secondary index is being
+     * updated.</p> </li> <li> <p> <code>DELETING</code> - The global secondary index
+     * is being deleted.</p> </li> <li> <p> <code>ACTIVE</code> - The global secondary
+     * index is ready for use.</p> </li> </ul>
+     */
+    inline bool IndexStatusHasBeenSet() const { return m_indexStatusHasBeenSet; }
 
     /**
      * <p> The current status of the global secondary index:</p> <ul> <li> <p>
@@ -154,6 +170,12 @@ namespace Model
      * <p>The maximum number of strongly consistent reads consumed per second before
      * DynamoDB returns a <code>ThrottlingException</code>.</p>
      */
+    inline bool ProvisionedReadCapacityUnitsHasBeenSet() const { return m_provisionedReadCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of strongly consistent reads consumed per second before
+     * DynamoDB returns a <code>ThrottlingException</code>.</p>
+     */
     inline void SetProvisionedReadCapacityUnits(long long value) { m_provisionedReadCapacityUnitsHasBeenSet = true; m_provisionedReadCapacityUnits = value; }
 
     /**
@@ -168,6 +190,12 @@ namespace Model
      * units.</p>
      */
     inline const AutoScalingSettingsDescription& GetProvisionedReadCapacityAutoScalingSettings() const{ return m_provisionedReadCapacityAutoScalingSettings; }
+
+    /**
+     * <p>Autoscaling settings for a global secondary index replica's read capacity
+     * units.</p>
+     */
+    inline bool ProvisionedReadCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedReadCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
      * <p>Autoscaling settings for a global secondary index replica's read capacity
@@ -204,6 +232,12 @@ namespace Model
      * <p>The maximum number of writes consumed per second before DynamoDB returns a
      * <code>ThrottlingException</code>.</p>
      */
+    inline bool ProvisionedWriteCapacityUnitsHasBeenSet() const { return m_provisionedWriteCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of writes consumed per second before DynamoDB returns a
+     * <code>ThrottlingException</code>.</p>
+     */
     inline void SetProvisionedWriteCapacityUnits(long long value) { m_provisionedWriteCapacityUnitsHasBeenSet = true; m_provisionedWriteCapacityUnits = value; }
 
     /**
@@ -218,6 +252,12 @@ namespace Model
      * units.</p>
      */
     inline const AutoScalingSettingsDescription& GetProvisionedWriteCapacityAutoScalingSettings() const{ return m_provisionedWriteCapacityAutoScalingSettings; }
+
+    /**
+     * <p>AutoScaling settings for a global secondary index replica's write capacity
+     * units.</p>
+     */
+    inline bool ProvisionedWriteCapacityAutoScalingSettingsHasBeenSet() const { return m_provisionedWriteCapacityAutoScalingSettingsHasBeenSet; }
 
     /**
      * <p>AutoScaling settings for a global secondary index replica's write capacity

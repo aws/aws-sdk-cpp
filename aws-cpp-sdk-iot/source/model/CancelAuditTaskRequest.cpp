@@ -29,7 +29,7 @@ CancelAuditTaskRequest::CancelAuditTaskRequest() :
 
 Aws::String CancelAuditTaskRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

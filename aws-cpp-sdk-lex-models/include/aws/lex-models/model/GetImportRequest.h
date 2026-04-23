@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The identifier of the import job information to return.</p>
      */
+    inline bool ImportIdHasBeenSet() const { return m_importIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the import job information to return.</p>
+     */
     inline void SetImportId(const Aws::String& value) { m_importIdHasBeenSet = true; m_importId = value; }
 
     /**

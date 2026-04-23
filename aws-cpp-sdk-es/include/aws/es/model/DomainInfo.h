@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p> Specifies the <code>DomainName</code>.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p> Specifies the <code>DomainName</code>.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**

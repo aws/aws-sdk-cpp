@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the repository in which to test the triggers.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository in which to test the triggers.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The list of triggers to test.</p>
      */
     inline const Aws::Vector<RepositoryTrigger>& GetTriggers() const{ return m_triggers; }
+
+    /**
+     * <p>The list of triggers to test.</p>
+     */
+    inline bool TriggersHasBeenSet() const { return m_triggersHasBeenSet; }
 
     /**
      * <p>The list of triggers to test.</p>

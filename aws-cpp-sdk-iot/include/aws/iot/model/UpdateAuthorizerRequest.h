@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The authorizer name.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the authorizer's Lambda function.</p>
      */
     inline const Aws::String& GetAuthorizerFunctionArn() const{ return m_authorizerFunctionArn; }
+
+    /**
+     * <p>The ARN of the authorizer's Lambda function.</p>
+     */
+    inline bool AuthorizerFunctionArnHasBeenSet() const { return m_authorizerFunctionArnHasBeenSet; }
 
     /**
      * <p>The ARN of the authorizer's Lambda function.</p>
@@ -124,6 +134,11 @@ namespace Model
     /**
      * <p>The key used to extract the token from the HTTP headers. </p>
      */
+    inline bool TokenKeyNameHasBeenSet() const { return m_tokenKeyNameHasBeenSet; }
+
+    /**
+     * <p>The key used to extract the token from the HTTP headers. </p>
+     */
     inline void SetTokenKeyName(const Aws::String& value) { m_tokenKeyNameHasBeenSet = true; m_tokenKeyName = value; }
 
     /**
@@ -156,6 +171,11 @@ namespace Model
      * <p>The public keys used to verify the token signature.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTokenSigningPublicKeys() const{ return m_tokenSigningPublicKeys; }
+
+    /**
+     * <p>The public keys used to verify the token signature.</p>
+     */
+    inline bool TokenSigningPublicKeysHasBeenSet() const { return m_tokenSigningPublicKeysHasBeenSet; }
 
     /**
      * <p>The public keys used to verify the token signature.</p>
@@ -217,6 +237,11 @@ namespace Model
      * <p>The status of the update authorizer request.</p>
      */
     inline const AuthorizerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the update authorizer request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the update authorizer request.</p>

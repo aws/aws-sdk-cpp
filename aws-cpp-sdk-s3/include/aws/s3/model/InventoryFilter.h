@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/InventoryFilter">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API InventoryFilter
   {
   public:
@@ -47,6 +52,12 @@ namespace Model
      * results.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix that an object must have to be included in the inventory
+     * results.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix that an object must have to be included in the inventory

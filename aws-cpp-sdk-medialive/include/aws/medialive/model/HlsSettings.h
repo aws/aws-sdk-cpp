@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for HlsSettings<p><h3>See Also:</h3>   <a
+   * Hls Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/HlsSettings">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,9 @@ namespace Model
     inline const AudioOnlyHlsSettings& GetAudioOnlyHlsSettings() const{ return m_audioOnlyHlsSettings; }
 
     
+    inline bool AudioOnlyHlsSettingsHasBeenSet() const { return m_audioOnlyHlsSettingsHasBeenSet; }
+
+    
     inline void SetAudioOnlyHlsSettings(const AudioOnlyHlsSettings& value) { m_audioOnlyHlsSettingsHasBeenSet = true; m_audioOnlyHlsSettings = value; }
 
     
@@ -66,6 +69,9 @@ namespace Model
 
     
     inline const StandardHlsSettings& GetStandardHlsSettings() const{ return m_standardHlsSettings; }
+
+    
+    inline bool StandardHlsSettingsHasBeenSet() const { return m_standardHlsSettingsHasBeenSet; }
 
     
     inline void SetStandardHlsSettings(const StandardHlsSettings& value) { m_standardHlsSettingsHasBeenSet = true; m_standardHlsSettings = value; }

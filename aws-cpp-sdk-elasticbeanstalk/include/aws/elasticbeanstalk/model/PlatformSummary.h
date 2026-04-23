@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the platform.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The AWS account ID of the person who created the platform.</p>
      */
     inline const Aws::String& GetPlatformOwner() const{ return m_platformOwner; }
+
+    /**
+     * <p>The AWS account ID of the person who created the platform.</p>
+     */
+    inline bool PlatformOwnerHasBeenSet() const { return m_platformOwnerHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -133,6 +143,12 @@ namespace Model
      * <p>The status of the platform. You can create an environment from the platform
      * once it is ready.</p>
      */
+    inline bool PlatformStatusHasBeenSet() const { return m_platformStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the platform. You can create an environment from the platform
+     * once it is ready.</p>
+     */
     inline void SetPlatformStatus(const PlatformStatus& value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
 
     /**
@@ -158,6 +174,11 @@ namespace Model
      * <p>The category of platform.</p>
      */
     inline const Aws::String& GetPlatformCategory() const{ return m_platformCategory; }
+
+    /**
+     * <p>The category of platform.</p>
+     */
+    inline bool PlatformCategoryHasBeenSet() const { return m_platformCategoryHasBeenSet; }
 
     /**
      * <p>The category of platform.</p>
@@ -198,6 +219,11 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
+    inline bool OperatingSystemNameHasBeenSet() const { return m_operatingSystemNameHasBeenSet; }
+
+    /**
+     * <p>The operating system used by the platform.</p>
+     */
     inline void SetOperatingSystemName(const Aws::String& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
 
     /**
@@ -234,6 +260,11 @@ namespace Model
     /**
      * <p>The version of the operating system used by the platform.</p>
      */
+    inline bool OperatingSystemVersionHasBeenSet() const { return m_operatingSystemVersionHasBeenSet; }
+
+    /**
+     * <p>The version of the operating system used by the platform.</p>
+     */
     inline void SetOperatingSystemVersion(const Aws::String& value) { m_operatingSystemVersionHasBeenSet = true; m_operatingSystemVersion = value; }
 
     /**
@@ -266,6 +297,11 @@ namespace Model
      * <p>The tiers in which the platform runs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedTierList() const{ return m_supportedTierList; }
+
+    /**
+     * <p>The tiers in which the platform runs.</p>
+     */
+    inline bool SupportedTierListHasBeenSet() const { return m_supportedTierListHasBeenSet; }
 
     /**
      * <p>The tiers in which the platform runs.</p>
@@ -307,6 +343,11 @@ namespace Model
      * <p>The additions associated with the platform.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedAddonList() const{ return m_supportedAddonList; }
+
+    /**
+     * <p>The additions associated with the platform.</p>
+     */
+    inline bool SupportedAddonListHasBeenSet() const { return m_supportedAddonListHasBeenSet; }
 
     /**
      * <p>The additions associated with the platform.</p>

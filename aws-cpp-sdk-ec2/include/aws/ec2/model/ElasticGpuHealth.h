@@ -34,7 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Describes the status of an Elastic GPU.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes the status of an Elastic Graphics accelerator.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ElasticGpuHealth">AWS
    * API Reference</a></p>
    */
@@ -53,6 +54,11 @@ namespace Model
      * <p>The health status.</p>
      */
     inline const ElasticGpuStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The health status.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The health status.</p>

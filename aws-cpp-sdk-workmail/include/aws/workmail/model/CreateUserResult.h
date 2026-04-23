@@ -43,37 +43,37 @@ namespace Model
 
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline void SetUserId(const Aws::String& value) { m_userId = value; }
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline void SetUserId(Aws::String&& value) { m_userId = std::move(value); }
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline void SetUserId(const char* value) { m_userId.assign(value); }
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline CreateUserResult& WithUserId(const Aws::String& value) { SetUserId(value); return *this;}
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline CreateUserResult& WithUserId(Aws::String&& value) { SetUserId(std::move(value)); return *this;}
 
     /**
-     * <p>The information regarding the newly created user.</p>
+     * <p>The identifier for the new user.</p>
      */
     inline CreateUserResult& WithUserId(const char* value) { SetUserId(value); return *this;}
 

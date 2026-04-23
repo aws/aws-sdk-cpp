@@ -60,6 +60,9 @@ namespace Model
     inline const Aws::String& GetAnalysisSchemeName() const{ return m_analysisSchemeName; }
 
     
+    inline bool AnalysisSchemeNameHasBeenSet() const { return m_analysisSchemeNameHasBeenSet; }
+
+    
     inline void SetAnalysisSchemeName(const Aws::String& value) { m_analysisSchemeNameHasBeenSet = true; m_analysisSchemeName = value; }
 
     
@@ -82,6 +85,9 @@ namespace Model
     inline const AnalysisSchemeLanguage& GetAnalysisSchemeLanguage() const{ return m_analysisSchemeLanguage; }
 
     
+    inline bool AnalysisSchemeLanguageHasBeenSet() const { return m_analysisSchemeLanguageHasBeenSet; }
+
+    
     inline void SetAnalysisSchemeLanguage(const AnalysisSchemeLanguage& value) { m_analysisSchemeLanguageHasBeenSet = true; m_analysisSchemeLanguage = value; }
 
     
@@ -96,6 +102,9 @@ namespace Model
 
     
     inline const AnalysisOptions& GetAnalysisOptions() const{ return m_analysisOptions; }
+
+    
+    inline bool AnalysisOptionsHasBeenSet() const { return m_analysisOptionsHasBeenSet; }
 
     
     inline void SetAnalysisOptions(const AnalysisOptions& value) { m_analysisOptionsHasBeenSet = true; m_analysisOptions = value; }

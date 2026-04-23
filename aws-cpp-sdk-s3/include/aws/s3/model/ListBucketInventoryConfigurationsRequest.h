@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the bucket containing the inventory configurations to
      * retrieve.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The name of the bucket containing the inventory configurations to
+     * retrieve.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -99,6 +105,14 @@ namespace Model
      * Amazon S3 understands.</p>
      */
     inline const Aws::String& GetContinuationToken() const{ return m_continuationToken; }
+
+    /**
+     * <p>The marker used to continue an inventory configuration listing that has been
+     * truncated. Use the NextContinuationToken from a previously truncated list
+     * response to continue the listing. The continuation token is an opaque value that
+     * Amazon S3 understands.</p>
+     */
+    inline bool ContinuationTokenHasBeenSet() const { return m_continuationTokenHasBeenSet; }
 
     /**
      * <p>The marker used to continue an inventory configuration listing that has been
@@ -151,6 +165,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

@@ -50,7 +50,7 @@ public class JsonCppClientGenerator extends CppClientGenerator {
 
         Shape shape = shapeEntry.getValue();
         //we only want to override json related stuff.
-        if (shape.isRequest() || shape.isEnum()) {
+        if (shape.isRequest() || shape.isEnum() || shape.hasEventPayloadMembers() && shape.hasBlobMembers()) {
             return super.generateModelHeaderFile(serviceModel, shapeEntry);
         }
 

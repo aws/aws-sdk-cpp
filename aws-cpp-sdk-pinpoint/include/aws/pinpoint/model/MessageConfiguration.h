@@ -59,6 +59,12 @@ namespace Model
      * The message that the campaign delivers to ADM channels. Overrides the default
      * message.
      */
+    inline bool ADMMessageHasBeenSet() const { return m_aDMMessageHasBeenSet; }
+
+    /**
+     * The message that the campaign delivers to ADM channels. Overrides the default
+     * message.
+     */
     inline void SetADMMessage(const Message& value) { m_aDMMessageHasBeenSet = true; m_aDMMessage = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * message.
      */
     inline const Message& GetAPNSMessage() const{ return m_aPNSMessage; }
+
+    /**
+     * The message that the campaign delivers to APNS channels. Overrides the default
+     * message.
+     */
+    inline bool APNSMessageHasBeenSet() const { return m_aPNSMessageHasBeenSet; }
 
     /**
      * The message that the campaign delivers to APNS channels. Overrides the default
@@ -121,6 +133,12 @@ namespace Model
      * The message that the campaign delivers to Baidu channels. Overrides the default
      * message.
      */
+    inline bool BaiduMessageHasBeenSet() const { return m_baiduMessageHasBeenSet; }
+
+    /**
+     * The message that the campaign delivers to Baidu channels. Overrides the default
+     * message.
+     */
     inline void SetBaiduMessage(const Message& value) { m_baiduMessageHasBeenSet = true; m_baiduMessage = value; }
 
     /**
@@ -150,6 +168,11 @@ namespace Model
     /**
      * The default message for all channels.
      */
+    inline bool DefaultMessageHasBeenSet() const { return m_defaultMessageHasBeenSet; }
+
+    /**
+     * The default message for all channels.
+     */
     inline void SetDefaultMessage(const Message& value) { m_defaultMessageHasBeenSet = true; m_defaultMessage = value; }
 
     /**
@@ -172,6 +195,11 @@ namespace Model
      * The email message configuration.
      */
     inline const CampaignEmailMessage& GetEmailMessage() const{ return m_emailMessage; }
+
+    /**
+     * The email message configuration.
+     */
+    inline bool EmailMessageHasBeenSet() const { return m_emailMessageHasBeenSet; }
 
     /**
      * The email message configuration.
@@ -204,6 +232,12 @@ namespace Model
      * The message that the campaign delivers to GCM channels. Overrides the default
      * message.
      */
+    inline bool GCMMessageHasBeenSet() const { return m_gCMMessageHasBeenSet; }
+
+    /**
+     * The message that the campaign delivers to GCM channels. Overrides the default
+     * message.
+     */
     inline void SetGCMMessage(const Message& value) { m_gCMMessageHasBeenSet = true; m_gCMMessage = value; }
 
     /**
@@ -229,6 +263,11 @@ namespace Model
      * The SMS message configuration.
      */
     inline const CampaignSmsMessage& GetSMSMessage() const{ return m_sMSMessage; }
+
+    /**
+     * The SMS message configuration.
+     */
+    inline bool SMSMessageHasBeenSet() const { return m_sMSMessageHasBeenSet; }
 
     /**
      * The SMS message configuration.

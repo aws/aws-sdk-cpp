@@ -47,6 +47,8 @@
 #include <aws/dynamodb/model/RestoreTableFromBackupResult.h>
 #include <aws/dynamodb/model/RestoreTableToPointInTimeResult.h>
 #include <aws/dynamodb/model/ScanResult.h>
+#include <aws/dynamodb/model/TransactGetItemsResult.h>
+#include <aws/dynamodb/model/TransactWriteItemsResult.h>
 #include <aws/dynamodb/model/UpdateContinuousBackupsResult.h>
 #include <aws/dynamodb/model/UpdateGlobalTableResult.h>
 #include <aws/dynamodb/model/UpdateGlobalTableSettingsResult.h>
@@ -56,6 +58,7 @@
 #include <aws/core/NoResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
+#include <aws/core/utils/ConcurrentCache.h>
 #include <future>
 #include <functional>
 
@@ -121,6 +124,8 @@ namespace Model
         class RestoreTableToPointInTimeRequest;
         class ScanRequest;
         class TagResourceRequest;
+        class TransactGetItemsRequest;
+        class TransactWriteItemsRequest;
         class UntagResourceRequest;
         class UpdateContinuousBackupsRequest;
         class UpdateGlobalTableRequest;
@@ -156,6 +161,8 @@ namespace Model
         typedef Aws::Utils::Outcome<RestoreTableToPointInTimeResult, Aws::Client::AWSError<DynamoDBErrors>> RestoreTableToPointInTimeOutcome;
         typedef Aws::Utils::Outcome<ScanResult, Aws::Client::AWSError<DynamoDBErrors>> ScanOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> TagResourceOutcome;
+        typedef Aws::Utils::Outcome<TransactGetItemsResult, Aws::Client::AWSError<DynamoDBErrors>> TransactGetItemsOutcome;
+        typedef Aws::Utils::Outcome<TransactWriteItemsResult, Aws::Client::AWSError<DynamoDBErrors>> TransactWriteItemsOutcome;
         typedef Aws::Utils::Outcome<Aws::NoResult, Aws::Client::AWSError<DynamoDBErrors>> UntagResourceOutcome;
         typedef Aws::Utils::Outcome<UpdateContinuousBackupsResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateContinuousBackupsOutcome;
         typedef Aws::Utils::Outcome<UpdateGlobalTableResult, Aws::Client::AWSError<DynamoDBErrors>> UpdateGlobalTableOutcome;
@@ -191,6 +198,8 @@ namespace Model
         typedef std::future<RestoreTableToPointInTimeOutcome> RestoreTableToPointInTimeOutcomeCallable;
         typedef std::future<ScanOutcome> ScanOutcomeCallable;
         typedef std::future<TagResourceOutcome> TagResourceOutcomeCallable;
+        typedef std::future<TransactGetItemsOutcome> TransactGetItemsOutcomeCallable;
+        typedef std::future<TransactWriteItemsOutcome> TransactWriteItemsOutcomeCallable;
         typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
         typedef std::future<UpdateContinuousBackupsOutcome> UpdateContinuousBackupsOutcomeCallable;
         typedef std::future<UpdateGlobalTableOutcome> UpdateGlobalTableOutcomeCallable;
@@ -229,6 +238,8 @@ namespace Model
     typedef std::function<void(const DynamoDBClient*, const Model::RestoreTableToPointInTimeRequest&, const Model::RestoreTableToPointInTimeOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RestoreTableToPointInTimeResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::ScanRequest&, const Model::ScanOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ScanResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::TagResourceRequest&, const Model::TagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TagResourceResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::TransactGetItemsRequest&, const Model::TransactGetItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransactGetItemsResponseReceivedHandler;
+    typedef std::function<void(const DynamoDBClient*, const Model::TransactWriteItemsRequest&, const Model::TransactWriteItemsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > TransactWriteItemsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UntagResourceRequest&, const Model::UntagResourceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UntagResourceResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateContinuousBackupsRequest&, const Model::UpdateContinuousBackupsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContinuousBackupsResponseReceivedHandler;
     typedef std::function<void(const DynamoDBClient*, const Model::UpdateGlobalTableRequest&, const Model::UpdateGlobalTableOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateGlobalTableResponseReceivedHandler;
@@ -1108,19 +1119,25 @@ namespace Model
         virtual void DescribeContinuousBackupsAsync(const Model::DescribeContinuousBackupsRequest& request, const DescribeContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * 
+         * <p>Returns the regional endpoint information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
+         * API Reference</a></p>
          */
         virtual Model::DescribeEndpointsOutcome DescribeEndpoints(const Model::DescribeEndpointsRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the regional endpoint information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
+         * API Reference</a></p>
          *
          * returns a future to the operation so that it can be executed in parallel to other requests.
          */
         virtual Model::DescribeEndpointsOutcomeCallable DescribeEndpointsCallable(const Model::DescribeEndpointsRequest& request) const;
 
         /**
-         * 
+         * <p>Returns the regional endpoint information.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/DescribeEndpoints">AWS
+         * API Reference</a></p>
          *
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
@@ -2166,6 +2183,200 @@ namespace Model
         virtual void TagResourceAsync(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p> <code>TransactGetItems</code> is a synchronous operation that atomically
+         * retrieves multiple items from one or more tables (but not from indexes) in a
+         * single account and region. A <code>TransactGetItems</code> call can contain up
+         * to 10 <code>TransactGetItem</code> objects, each of which contains a
+         * <code>Get</code> structure that specifies an item to retrieve from a table in
+         * the account and region. A call to <code>TransactGetItems</code> cannot retrieve
+         * items from tables in more than one AWS account or region.</p> <p>DynamoDB
+         * rejects the entire <code>TransactGetItems</code> request if any of the following
+         * is true:</p> <ul> <li> <p>A conflicting operation is in the process of updating
+         * an item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
+         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
+         * such as an invalid data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TransactGetItemsOutcome TransactGetItems(const Model::TransactGetItemsRequest& request) const;
+
+        /**
+         * <p> <code>TransactGetItems</code> is a synchronous operation that atomically
+         * retrieves multiple items from one or more tables (but not from indexes) in a
+         * single account and region. A <code>TransactGetItems</code> call can contain up
+         * to 10 <code>TransactGetItem</code> objects, each of which contains a
+         * <code>Get</code> structure that specifies an item to retrieve from a table in
+         * the account and region. A call to <code>TransactGetItems</code> cannot retrieve
+         * items from tables in more than one AWS account or region.</p> <p>DynamoDB
+         * rejects the entire <code>TransactGetItems</code> request if any of the following
+         * is true:</p> <ul> <li> <p>A conflicting operation is in the process of updating
+         * an item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
+         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
+         * such as an invalid data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TransactGetItemsOutcomeCallable TransactGetItemsCallable(const Model::TransactGetItemsRequest& request) const;
+
+        /**
+         * <p> <code>TransactGetItems</code> is a synchronous operation that atomically
+         * retrieves multiple items from one or more tables (but not from indexes) in a
+         * single account and region. A <code>TransactGetItems</code> call can contain up
+         * to 10 <code>TransactGetItem</code> objects, each of which contains a
+         * <code>Get</code> structure that specifies an item to retrieve from a table in
+         * the account and region. A call to <code>TransactGetItems</code> cannot retrieve
+         * items from tables in more than one AWS account or region.</p> <p>DynamoDB
+         * rejects the entire <code>TransactGetItems</code> request if any of the following
+         * is true:</p> <ul> <li> <p>A conflicting operation is in the process of updating
+         * an item to be read.</p> </li> <li> <p>There is insufficient provisioned capacity
+         * for the transaction to be completed.</p> </li> <li> <p>There is a user error,
+         * such as an invalid data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactGetItems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TransactGetItemsAsync(const Model::TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
+         * up to 10 action requests. These actions can target items in different tables,
+         * but not in different AWS accounts or regions, and no two actions can target the
+         * same item. For example, you cannot both <code>ConditionCheck</code> and
+         * <code>Update</code> the same item.</p> <p>The actions are completed atomically
+         * so that either all of them succeed, or all of them fail. They are defined by the
+         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
+         * <code>PutItem</code> operation to write a new item. This structure specifies the
+         * primary key of the item to be written, the name of the table to write it in, an
+         * optional condition expression that must be satisfied for the write to succeed, a
+         * list of the item's attributes, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> <li> <p>
+         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
+         * update an existing item. This structure specifies the primary key of the item to
+         * be updated, the name of the table where it resides, an optional condition
+         * expression that must be satisfied for the update to succeed, an expression that
+         * defines one or more attributes to be updated, and a field indicating whether or
+         * not to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code>
+         * operation to delete an existing item. This structure specifies the primary key
+         * of the item to be deleted, the name of the table where it resides, an optional
+         * condition expression that must be satisfied for the deletion to succeed, and a
+         * field indicating whether or not to retrieve the item's attributes if the
+         * condition is not met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;  
+         * Applies a condition to an item that is not being modified by the transaction.
+         * This structure specifies the primary key of the item to be checked, the name of
+         * the table where it resides, a condition expression that must be satisfied for
+         * the transaction to succeed, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB
+         * rejects the entire <code>TransactWriteItems</code> request if any of the
+         * following is true:</p> <ul> <li> <p>A condition in one of the condition
+         * expressions is not met.</p> </li> <li> <p>A conflicting operation is in the
+         * process of updating the same item.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li> <p>An
+         * item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI)
+         * becomes too large, or a similar validation error occurs because of changes made
+         * by the transaction.</p> </li> <li> <p>There is a user error, such as an invalid
+         * data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::TransactWriteItemsOutcome TransactWriteItems(const Model::TransactWriteItemsRequest& request) const;
+
+        /**
+         * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
+         * up to 10 action requests. These actions can target items in different tables,
+         * but not in different AWS accounts or regions, and no two actions can target the
+         * same item. For example, you cannot both <code>ConditionCheck</code> and
+         * <code>Update</code> the same item.</p> <p>The actions are completed atomically
+         * so that either all of them succeed, or all of them fail. They are defined by the
+         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
+         * <code>PutItem</code> operation to write a new item. This structure specifies the
+         * primary key of the item to be written, the name of the table to write it in, an
+         * optional condition expression that must be satisfied for the write to succeed, a
+         * list of the item's attributes, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> <li> <p>
+         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
+         * update an existing item. This structure specifies the primary key of the item to
+         * be updated, the name of the table where it resides, an optional condition
+         * expression that must be satisfied for the update to succeed, an expression that
+         * defines one or more attributes to be updated, and a field indicating whether or
+         * not to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code>
+         * operation to delete an existing item. This structure specifies the primary key
+         * of the item to be deleted, the name of the table where it resides, an optional
+         * condition expression that must be satisfied for the deletion to succeed, and a
+         * field indicating whether or not to retrieve the item's attributes if the
+         * condition is not met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;  
+         * Applies a condition to an item that is not being modified by the transaction.
+         * This structure specifies the primary key of the item to be checked, the name of
+         * the table where it resides, a condition expression that must be satisfied for
+         * the transaction to succeed, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB
+         * rejects the entire <code>TransactWriteItems</code> request if any of the
+         * following is true:</p> <ul> <li> <p>A condition in one of the condition
+         * expressions is not met.</p> </li> <li> <p>A conflicting operation is in the
+         * process of updating the same item.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li> <p>An
+         * item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI)
+         * becomes too large, or a similar validation error occurs because of changes made
+         * by the transaction.</p> </li> <li> <p>There is a user error, such as an invalid
+         * data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::TransactWriteItemsOutcomeCallable TransactWriteItemsCallable(const Model::TransactWriteItemsRequest& request) const;
+
+        /**
+         * <p> <code>TransactWriteItems</code> is a synchronous write operation that groups
+         * up to 10 action requests. These actions can target items in different tables,
+         * but not in different AWS accounts or regions, and no two actions can target the
+         * same item. For example, you cannot both <code>ConditionCheck</code> and
+         * <code>Update</code> the same item.</p> <p>The actions are completed atomically
+         * so that either all of them succeed, or all of them fail. They are defined by the
+         * following objects:</p> <ul> <li> <p> <code>Put</code>  &#x97;   Initiates a
+         * <code>PutItem</code> operation to write a new item. This structure specifies the
+         * primary key of the item to be written, the name of the table to write it in, an
+         * optional condition expression that must be satisfied for the write to succeed, a
+         * list of the item's attributes, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> <li> <p>
+         * <code>Update</code>  &#x97;   Initiates an <code>UpdateItem</code> operation to
+         * update an existing item. This structure specifies the primary key of the item to
+         * be updated, the name of the table where it resides, an optional condition
+         * expression that must be satisfied for the update to succeed, an expression that
+         * defines one or more attributes to be updated, and a field indicating whether or
+         * not to retrieve the item's attributes if the condition is not met.</p> </li>
+         * <li> <p> <code>Delete</code>  &#x97;   Initiates a <code>DeleteItem</code>
+         * operation to delete an existing item. This structure specifies the primary key
+         * of the item to be deleted, the name of the table where it resides, an optional
+         * condition expression that must be satisfied for the deletion to succeed, and a
+         * field indicating whether or not to retrieve the item's attributes if the
+         * condition is not met.</p> </li> <li> <p> <code>ConditionCheck</code>  &#x97;  
+         * Applies a condition to an item that is not being modified by the transaction.
+         * This structure specifies the primary key of the item to be checked, the name of
+         * the table where it resides, a condition expression that must be satisfied for
+         * the transaction to succeed, and a field indicating whether or not to retrieve
+         * the item's attributes if the condition is not met.</p> </li> </ul> <p>DynamoDB
+         * rejects the entire <code>TransactWriteItems</code> request if any of the
+         * following is true:</p> <ul> <li> <p>A condition in one of the condition
+         * expressions is not met.</p> </li> <li> <p>A conflicting operation is in the
+         * process of updating the same item.</p> </li> <li> <p>There is insufficient
+         * provisioned capacity for the transaction to be completed.</p> </li> <li> <p>An
+         * item size becomes too large (bigger than 400 KB), a Local Secondary Index (LSI)
+         * becomes too large, or a similar validation error occurs because of changes made
+         * by the transaction.</p> </li> <li> <p>There is a user error, such as an invalid
+         * data format.</p> </li> </ul><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/TransactWriteItems">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void TransactWriteItemsAsync(const Model::TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Removes the association of tags from an Amazon DynamoDB resource. You can
          * call UntagResource up to 5 times per second, per account. </p> <p>For an
          * overview on tagging DynamoDB resources, see <a
@@ -2541,10 +2752,10 @@ namespace Model
          */
         virtual void UpdateTimeToLiveAsync(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void BatchGetItemAsyncHelper(const Model::BatchGetItemRequest& request, const BatchGetItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void BatchWriteItemAsyncHelper(const Model::BatchWriteItemRequest& request, const BatchWriteItemResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2573,6 +2784,8 @@ namespace Model
         void RestoreTableToPointInTimeAsyncHelper(const Model::RestoreTableToPointInTimeRequest& request, const RestoreTableToPointInTimeResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ScanAsyncHelper(const Model::ScanRequest& request, const ScanResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void TagResourceAsyncHelper(const Model::TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TransactGetItemsAsyncHelper(const Model::TransactGetItemsRequest& request, const TransactGetItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void TransactWriteItemsAsyncHelper(const Model::TransactWriteItemsRequest& request, const TransactWriteItemsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UntagResourceAsyncHelper(const Model::UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContinuousBackupsAsyncHelper(const Model::UpdateContinuousBackupsRequest& request, const UpdateContinuousBackupsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateGlobalTableAsyncHelper(const Model::UpdateGlobalTableRequest& request, const UpdateGlobalTableResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2582,6 +2795,9 @@ namespace Model
         void UpdateTimeToLiveAsyncHelper(const Model::UpdateTimeToLiveRequest& request, const UpdateTimeToLiveResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+      bool m_enableEndpointDiscovery;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

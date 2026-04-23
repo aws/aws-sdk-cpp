@@ -29,7 +29,7 @@ DescribeChannelRequest::DescribeChannelRequest() :
 
 Aws::String DescribeChannelRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

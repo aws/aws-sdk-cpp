@@ -62,6 +62,14 @@ namespace Model
      * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
      * stamp. </p>
      */
+    inline bool CreatorRequestIdHasBeenSet() const { return m_creatorRequestIdHasBeenSet; }
+
+    /**
+     * <p>A unique string that identifies the request and that allows failed requests
+     * to be retried without the risk of executing the operation twice.
+     * <code>CreatorRequestId</code> can be any unique string, for example, a date/time
+     * stamp. </p>
+     */
     inline void SetCreatorRequestId(const Aws::String& value) { m_creatorRequestIdHasBeenSet = true; m_creatorRequestId = value; }
 
     /**
@@ -115,6 +123,12 @@ namespace Model
      * <p>A friendly name that lets you easily find a configuration in the Resolver
      * dashboard in the Route 53 console.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>A friendly name that lets you easily find a configuration in the Resolver
+     * dashboard in the Route 53 console.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -155,6 +169,14 @@ namespace Model
      * resolver endpoints).</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>The ID of one or more security groups that you want to use to control access
+     * to this VPC. The security group that you specify must include one or more
+     * inbound rules (for inbound resolver endpoints) or outbound rules (for outbound
+     * resolver endpoints).</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>The ID of one or more security groups that you want to use to control access
@@ -229,6 +251,15 @@ namespace Model
      * queries from the DNS service for a VPC to your network or another VPC</p> </li>
      * </ul>
      */
+    inline bool DirectionHasBeenSet() const { return m_directionHasBeenSet; }
+
+    /**
+     * <p>Specify the applicable value:</p> <ul> <li> <p> <code>INBOUND</code>:
+     * Resolver forwards DNS queries to the DNS service for a VPC from your network or
+     * another VPC</p> </li> <li> <p> <code>OUTBOUND</code>: Resolver forwards DNS
+     * queries from the DNS service for a VPC to your network or another VPC</p> </li>
+     * </ul>
+     */
     inline void SetDirection(const ResolverEndpointDirection& value) { m_directionHasBeenSet = true; m_direction = value; }
 
     /**
@@ -265,6 +296,13 @@ namespace Model
      * the way from your network to your VPCs (for inbound resolver endpoints). </p>
      */
     inline const Aws::Vector<IpAddressRequest>& GetIpAddresses() const{ return m_ipAddresses; }
+
+    /**
+     * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
+     * through on the way from your VPCs to your network (for outbound endpoints) or on
+     * the way from your network to your VPCs (for inbound resolver endpoints). </p>
+     */
+    inline bool IpAddressesHasBeenSet() const { return m_ipAddressesHasBeenSet; }
 
     /**
      * <p>The subnets and IP addresses in your VPC that you want DNS queries to pass
@@ -314,6 +352,12 @@ namespace Model
      * endpoint.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of the tag keys and values that you want to associate with the
+     * endpoint.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A list of the tag keys and values that you want to associate with the

@@ -59,6 +59,12 @@ namespace Model
      * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
      * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
      */
+    inline bool VolumeSpecificationHasBeenSet() const { return m_volumeSpecificationHasBeenSet; }
+
+    /**
+     * <p>EBS volume specifications such as volume type, IOPS, and size (GiB) that will
+     * be requested for the EBS volume attached to an EC2 instance in the cluster.</p>
+     */
     inline void SetVolumeSpecification(const VolumeSpecification& value) { m_volumeSpecificationHasBeenSet = true; m_volumeSpecification = value; }
 
     /**
@@ -85,6 +91,12 @@ namespace Model
      * associated with every instance in the instance group</p>
      */
     inline int GetVolumesPerInstance() const{ return m_volumesPerInstance; }
+
+    /**
+     * <p>Number of EBS volumes with a specific volume configuration that will be
+     * associated with every instance in the instance group</p>
+     */
+    inline bool VolumesPerInstanceHasBeenSet() const { return m_volumesPerInstanceHasBeenSet; }
 
     /**
      * <p>Number of EBS volumes with a specific volume configuration that will be

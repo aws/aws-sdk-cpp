@@ -31,7 +31,7 @@ GetBotChannelAssociationRequest::GetBotChannelAssociationRequest() :
 
 Aws::String GetBotChannelAssociationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

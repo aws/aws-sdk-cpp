@@ -32,6 +32,7 @@ namespace Aws
 
         static const int up_HASH = HashingUtils::HashString("up");
         static const int down_HASH = HashingUtils::HashString("down");
+        static const int unknown_HASH = HashingUtils::HashString("unknown");
 
 
         BGPStatus GetBGPStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == down_HASH)
           {
             return BGPStatus::down;
+          }
+          else if (hashCode == unknown_HASH)
+          {
+            return BGPStatus::unknown;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "up";
           case BGPStatus::down:
             return "down";
+          case BGPStatus::unknown:
+            return "unknown";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

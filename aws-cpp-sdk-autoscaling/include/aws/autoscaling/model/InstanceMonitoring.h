@@ -58,6 +58,12 @@ namespace Model
      * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
      * monitoring is enabled.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, detailed monitoring is enabled. Otherwise, basic
+     * monitoring is enabled.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

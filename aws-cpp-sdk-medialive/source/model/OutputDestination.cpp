@@ -30,12 +30,14 @@ namespace Model
 
 OutputDestination::OutputDestination() : 
     m_idHasBeenSet(false),
+    m_mediaPackageSettingsHasBeenSet(false),
     m_settingsHasBeenSet(false)
 {
 }
 
 OutputDestination::OutputDestination(JsonView jsonValue) : 
     m_idHasBeenSet(false),
+    m_mediaPackageSettingsHasBeenSet(false),
     m_settingsHasBeenSet(false)
 {
   *this = jsonValue;
@@ -48,6 +50,16 @@ OutputDestination& OutputDestination::operator =(JsonView jsonValue)
     m_id = jsonValue.GetString("id");
 
     m_idHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("mediaPackageSettings"))
+  {
+    Array<JsonView> mediaPackageSettingsJsonList = jsonValue.GetArray("mediaPackageSettings");
+    for(unsigned mediaPackageSettingsIndex = 0; mediaPackageSettingsIndex < mediaPackageSettingsJsonList.GetLength(); ++mediaPackageSettingsIndex)
+    {
+      m_mediaPackageSettings.push_back(mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject());
+    }
+    m_mediaPackageSettingsHasBeenSet = true;
   }
 
   if(jsonValue.ValueExists("settings"))
@@ -70,6 +82,17 @@ JsonValue OutputDestination::Jsonize() const
   if(m_idHasBeenSet)
   {
    payload.WithString("id", m_id);
+
+  }
+
+  if(m_mediaPackageSettingsHasBeenSet)
+  {
+   Array<JsonValue> mediaPackageSettingsJsonList(m_mediaPackageSettings.size());
+   for(unsigned mediaPackageSettingsIndex = 0; mediaPackageSettingsIndex < mediaPackageSettingsJsonList.GetLength(); ++mediaPackageSettingsIndex)
+   {
+     mediaPackageSettingsJsonList[mediaPackageSettingsIndex].AsObject(m_mediaPackageSettings[mediaPackageSettingsIndex].Jsonize());
+   }
+   payload.WithArray("mediaPackageSettings", std::move(mediaPackageSettingsJsonList));
 
   }
 

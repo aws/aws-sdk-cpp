@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The API ID.</p>
      */
+    inline bool ApiIdHasBeenSet() const { return m_apiIdHasBeenSet; }
+
+    /**
+     * <p>The API ID.</p>
+     */
     inline void SetApiId(const Aws::String& value) { m_apiIdHasBeenSet = true; m_apiId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The schema definition, in GraphQL schema language format.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetDefinition() const{ return m_definition; }
+
+    /**
+     * <p>The schema definition, in GraphQL schema language format.</p>
+     */
+    inline bool DefinitionHasBeenSet() const { return m_definitionHasBeenSet; }
 
     /**
      * <p>The schema definition, in GraphQL schema language format.</p>

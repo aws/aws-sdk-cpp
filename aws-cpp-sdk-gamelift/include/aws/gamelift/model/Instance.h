@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Unique identifier for a fleet that the instance is in.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet that the instance is in.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>Unique identifier for an instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>Unique identifier for an instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for an instance.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>IP address assigned to the instance.</p>
      */
+    inline bool IpAddressHasBeenSet() const { return m_ipAddressHasBeenSet; }
+
+    /**
+     * <p>IP address assigned to the instance.</p>
+     */
     inline void SetIpAddress(const Aws::String& value) { m_ipAddressHasBeenSet = true; m_ipAddress = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>Operating system that is running on this instance. </p>
      */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
+
+    /**
+     * <p>Operating system that is running on this instance. </p>
+     */
     inline void SetOperatingSystem(const OperatingSystem& value) { m_operatingSystemHasBeenSet = true; m_operatingSystem = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
      */
     inline const EC2InstanceType& GetType() const{ return m_type; }
+
+    /**
+     * <p>EC2 instance type that defines the computing resources of this instance. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>EC2 instance type that defines the computing resources of this instance. </p>
@@ -226,6 +251,20 @@ namespace Model
      * problem.</p> </li> </ul>
      */
     inline const InstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Current status of the instance. Possible statuses include the following:</p>
+     * <ul> <li> <p> <b>PENDING</b> -- The instance is in the process of being created
+     * and launching server processes as defined in the fleet's run-time configuration.
+     * </p> </li> <li> <p> <b>ACTIVE</b> -- The instance has been successfully created
+     * and at least one server process has successfully launched and reported back to
+     * Amazon GameLift that it is ready to host a game session. The instance is now
+     * considered ready to host game sessions. </p> </li> <li> <p> <b>TERMINATING</b>
+     * -- The instance is in the process of shutting down. This may happen to reduce
+     * capacity during a scaling down event or to recycle resources in the event of a
+     * problem.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Current status of the instance. Possible statuses include the following:</p>
@@ -289,6 +328,12 @@ namespace Model
      * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
      */
     inline const Aws::Utils::DateTime& GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>Time stamp indicating when this data object was created. Format is a number
+     * expressed in Unix time as milliseconds (for example "1469498468.057").</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>Time stamp indicating when this data object was created. Format is a number

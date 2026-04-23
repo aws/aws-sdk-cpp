@@ -30,7 +30,7 @@ CreateVaultRequest::CreateVaultRequest() :
 
 Aws::String CreateVaultRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

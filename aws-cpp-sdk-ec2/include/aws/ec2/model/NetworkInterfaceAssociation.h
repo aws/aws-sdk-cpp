@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The allocation ID.</p>
      */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
+
+    /**
+     * <p>The allocation ID.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The association ID.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The association ID.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The association ID.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ID of the Elastic IP address owner.</p>
      */
+    inline bool IpOwnerIdHasBeenSet() const { return m_ipOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Elastic IP address owner.</p>
+     */
     inline void SetIpOwnerId(const Aws::String& value) { m_ipOwnerIdHasBeenSet = true; m_ipOwnerId = value; }
 
     /**
@@ -166,6 +181,11 @@ namespace Model
     /**
      * <p>The public DNS name.</p>
      */
+    inline bool PublicDnsNameHasBeenSet() const { return m_publicDnsNameHasBeenSet; }
+
+    /**
+     * <p>The public DNS name.</p>
+     */
     inline void SetPublicDnsName(const Aws::String& value) { m_publicDnsNameHasBeenSet = true; m_publicDnsName = value; }
 
     /**
@@ -198,6 +218,11 @@ namespace Model
      * <p>The address of the Elastic IP address bound to the network interface.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The address of the Elastic IP address bound to the network interface.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The address of the Elastic IP address bound to the network interface.</p>

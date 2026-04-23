@@ -60,6 +60,12 @@ namespace Model
      * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
      * retrieved. You can include both IDs and ARNs in a request.</p>
      */
+    inline bool QueuesHasBeenSet() const { return m_queuesHasBeenSet; }
+
+    /**
+     * <p>A list of up to 100 queue IDs or queue ARNs to use to filter the metrics
+     * retrieved. You can include both IDs and ARNs in a request.</p>
+     */
     inline void SetQueues(const Aws::Vector<Aws::String>& value) { m_queuesHasBeenSet = true; m_queues = value; }
 
     /**
@@ -104,6 +110,12 @@ namespace Model
      * supported.</p>
      */
     inline const Aws::Vector<Channel>& GetChannels() const{ return m_channels; }
+
+    /**
+     * <p>The Channel to use as a filter for the metrics returned. Only VOICE is
+     * supported.</p>
+     */
+    inline bool ChannelsHasBeenSet() const { return m_channelsHasBeenSet; }
 
     /**
      * <p>The Channel to use as a filter for the metrics returned. Only VOICE is

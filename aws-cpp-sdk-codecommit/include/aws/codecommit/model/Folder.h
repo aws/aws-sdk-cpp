@@ -58,6 +58,12 @@ namespace Model
      * <p>The full SHA-1 pointer of the tree information for the commit that contains
      * the folder.</p>
      */
+    inline bool TreeIdHasBeenSet() const { return m_treeIdHasBeenSet; }
+
+    /**
+     * <p>The full SHA-1 pointer of the tree information for the commit that contains
+     * the folder.</p>
+     */
     inline void SetTreeId(const Aws::String& value) { m_treeIdHasBeenSet = true; m_treeId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * <p>The fully-qualified path of the folder in the repository.</p>
      */
+    inline bool AbsolutePathHasBeenSet() const { return m_absolutePathHasBeenSet; }
+
+    /**
+     * <p>The fully-qualified path of the folder in the repository.</p>
+     */
     inline void SetAbsolutePath(const Aws::String& value) { m_absolutePathHasBeenSet = true; m_absolutePath = value; }
 
     /**
@@ -132,6 +143,12 @@ namespace Model
      * originated.</p>
      */
     inline const Aws::String& GetRelativePath() const{ return m_relativePath; }
+
+    /**
+     * <p>The relative path of the specified folder from the folder where the query
+     * originated.</p>
+     */
+    inline bool RelativePathHasBeenSet() const { return m_relativePathHasBeenSet; }
 
     /**
      * <p>The relative path of the specified folder from the folder where the query

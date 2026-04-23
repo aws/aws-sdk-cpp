@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Status of the last crawl.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>Status of the last crawl.</p>
+     */
     inline void SetStatus(const LastCrawlStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -80,6 +85,11 @@ namespace Model
      * <p>If an error occurred, the error information about the last crawl.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>If an error occurred, the error information about the last crawl.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>If an error occurred, the error information about the last crawl.</p>
@@ -120,6 +130,11 @@ namespace Model
     /**
      * <p>The log group for the last crawl.</p>
      */
+    inline bool LogGroupHasBeenSet() const { return m_logGroupHasBeenSet; }
+
+    /**
+     * <p>The log group for the last crawl.</p>
+     */
     inline void SetLogGroup(const Aws::String& value) { m_logGroupHasBeenSet = true; m_logGroup = value; }
 
     /**
@@ -152,6 +167,11 @@ namespace Model
      * <p>The log stream for the last crawl.</p>
      */
     inline const Aws::String& GetLogStream() const{ return m_logStream; }
+
+    /**
+     * <p>The log stream for the last crawl.</p>
+     */
+    inline bool LogStreamHasBeenSet() const { return m_logStreamHasBeenSet; }
 
     /**
      * <p>The log stream for the last crawl.</p>
@@ -192,6 +212,11 @@ namespace Model
     /**
      * <p>The prefix for a message about this crawl.</p>
      */
+    inline bool MessagePrefixHasBeenSet() const { return m_messagePrefixHasBeenSet; }
+
+    /**
+     * <p>The prefix for a message about this crawl.</p>
+     */
     inline void SetMessagePrefix(const Aws::String& value) { m_messagePrefixHasBeenSet = true; m_messagePrefix = value; }
 
     /**
@@ -224,6 +249,11 @@ namespace Model
      * <p>The time at which the crawl started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>The time at which the crawl started.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>The time at which the crawl started.</p>

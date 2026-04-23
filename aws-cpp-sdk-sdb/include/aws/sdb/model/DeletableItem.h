@@ -50,6 +50,9 @@ namespace Model
     inline const Aws::String& GetName() const{ return m_name; }
 
     
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     
@@ -70,6 +73,9 @@ namespace Model
 
     
     inline const Aws::Vector<Attribute>& GetAttributes() const{ return m_attributes; }
+
+    
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }

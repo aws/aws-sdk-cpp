@@ -59,6 +59,13 @@ namespace Model
      * are using the AWS CLI, the parameter name is
      * <code>StreamProcessorInput</code>.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>Kinesis video stream stream that provides the source streaming video. If you
+     * are using the AWS CLI, the parameter name is
+     * <code>StreamProcessorInput</code>.</p>
+     */
     inline void SetInput(const StreamProcessorInput& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -95,6 +102,13 @@ namespace Model
      * analysis results. If you are using the AWS CLI, the parameter name is
      * <code>StreamProcessorOutput</code>.</p>
      */
+    inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
+
+    /**
+     * <p>Kinesis data stream stream to which Amazon Rekognition Video puts the
+     * analysis results. If you are using the AWS CLI, the parameter name is
+     * <code>StreamProcessorOutput</code>.</p>
+     */
     inline void SetOutput(const StreamProcessorOutput& value) { m_outputHasBeenSet = true; m_output = value; }
 
     /**
@@ -122,56 +136,64 @@ namespace Model
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>An identifier you assign to the stream processor. You can use
+     * <code>Name</code> to manage the stream processor. For example, you can get the
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
      * <p>An identifier you assign to the stream processor. You can use
      * <code>Name</code> to manage the stream processor. For example, you can get the
-     * current status of the stream processor by calling . <code>Name</code> is
-     * idempotent. </p>
+     * current status of the stream processor by calling
+     * <a>DescribeStreamProcessor</a>. <code>Name</code> is idempotent. </p>
      */
     inline CreateStreamProcessorRequest& WithName(const char* value) { SetName(value); return *this;}
 
@@ -182,6 +204,13 @@ namespace Model
      * detect.</p>
      */
     inline const StreamProcessorSettings& GetSettings() const{ return m_settings; }
+
+    /**
+     * <p>Face recognition input parameters to be used by the stream processor.
+     * Includes the collection to use for face recognition and the face attributes to
+     * detect.</p>
+     */
+    inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }
 
     /**
      * <p>Face recognition input parameters to be used by the stream processor.
@@ -216,6 +245,11 @@ namespace Model
      * <p>ARN of the IAM role that allows access to the stream processor.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>ARN of the IAM role that allows access to the stream processor.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>ARN of the IAM role that allows access to the stream processor.</p>

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The total number of entities.</p>
      */
+    inline bool TotalHasBeenSet() const { return m_totalHasBeenSet; }
+
+    /**
+     * <p>The total number of entities.</p>
+     */
     inline void SetTotal(int value) { m_totalHasBeenSet = true; m_total = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>The number of passed entities.</p>
      */
     inline int GetPassed() const{ return m_passed; }
+
+    /**
+     * <p>The number of passed entities.</p>
+     */
+    inline bool PassedHasBeenSet() const { return m_passedHasBeenSet; }
 
     /**
      * <p>The number of passed entities.</p>
@@ -85,6 +95,11 @@ namespace Model
     /**
      * <p>The number of failed entities.</p>
      */
+    inline bool FailedHasBeenSet() const { return m_failedHasBeenSet; }
+
+    /**
+     * <p>The number of failed entities.</p>
+     */
     inline void SetFailed(int value) { m_failedHasBeenSet = true; m_failed = value; }
 
     /**
@@ -97,6 +112,11 @@ namespace Model
      * <p>The number of warned entities.</p>
      */
     inline int GetWarned() const{ return m_warned; }
+
+    /**
+     * <p>The number of warned entities.</p>
+     */
+    inline bool WarnedHasBeenSet() const { return m_warnedHasBeenSet; }
 
     /**
      * <p>The number of warned entities.</p>
@@ -117,6 +137,11 @@ namespace Model
     /**
      * <p>The number of errored entities.</p>
      */
+    inline bool ErroredHasBeenSet() const { return m_erroredHasBeenSet; }
+
+    /**
+     * <p>The number of errored entities.</p>
+     */
     inline void SetErrored(int value) { m_erroredHasBeenSet = true; m_errored = value; }
 
     /**
@@ -133,6 +158,11 @@ namespace Model
     /**
      * <p>The number of stopped entities.</p>
      */
+    inline bool StoppedHasBeenSet() const { return m_stoppedHasBeenSet; }
+
+    /**
+     * <p>The number of stopped entities.</p>
+     */
     inline void SetStopped(int value) { m_stoppedHasBeenSet = true; m_stopped = value; }
 
     /**
@@ -145,6 +175,11 @@ namespace Model
      * <p>The number of skipped entities.</p>
      */
     inline int GetSkipped() const{ return m_skipped; }
+
+    /**
+     * <p>The number of skipped entities.</p>
+     */
+    inline bool SkippedHasBeenSet() const { return m_skippedHasBeenSet; }
 
     /**
      * <p>The number of skipped entities.</p>

@@ -26,7 +26,10 @@ namespace Model
   enum class ConnectorCapability
   {
     NOT_SET,
-    VSPHERE
+    VSPHERE,
+    SCVMM,
+    HYPERV_MANAGER,
+    SNAPSHOT_BATCHING
   };
 
 namespace ConnectorCapabilityMapper

@@ -61,6 +61,12 @@ namespace Model
      * <p>The source type, such as cluster or cluster-snapshot, that the returned
      * categories belong to.</p>
      */
+    inline bool SourceTypeHasBeenSet() const { return m_sourceTypeHasBeenSet; }
+
+    /**
+     * <p>The source type, such as cluster or cluster-snapshot, that the returned
+     * categories belong to.</p>
+     */
     inline void SetSourceType(const Aws::String& value) { m_sourceTypeHasBeenSet = true; m_sourceType = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>The events in the event category.</p>
      */
     inline const Aws::Vector<EventInfoMap>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The events in the event category.</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The events in the event category.</p>

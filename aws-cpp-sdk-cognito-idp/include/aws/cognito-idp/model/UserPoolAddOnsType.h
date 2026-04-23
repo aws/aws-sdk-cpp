@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The advanced security mode.</p>
      */
+    inline bool AdvancedSecurityModeHasBeenSet() const { return m_advancedSecurityModeHasBeenSet; }
+
+    /**
+     * <p>The advanced security mode.</p>
+     */
     inline void SetAdvancedSecurityMode(const AdvancedSecurityModeType& value) { m_advancedSecurityModeHasBeenSet = true; m_advancedSecurityMode = value; }
 
     /**

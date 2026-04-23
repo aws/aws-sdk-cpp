@@ -42,19 +42,34 @@ namespace Model
     GetPresetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you
+     * want MediaConvert to apply to the output during the conversion process.
+     */
     inline const Preset& GetPreset() const{ return m_preset; }
 
-    
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you
+     * want MediaConvert to apply to the output during the conversion process.
+     */
     inline void SetPreset(const Preset& value) { m_preset = value; }
 
-    
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you
+     * want MediaConvert to apply to the output during the conversion process.
+     */
     inline void SetPreset(Preset&& value) { m_preset = std::move(value); }
 
-    
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you
+     * want MediaConvert to apply to the output during the conversion process.
+     */
     inline GetPresetResult& WithPreset(const Preset& value) { SetPreset(value); return *this;}
 
-    
+    /**
+     * A preset is a collection of preconfigured media conversion settings that you
+     * want MediaConvert to apply to the output during the conversion process.
+     */
     inline GetPresetResult& WithPreset(Preset&& value) { SetPreset(std::move(value)); return *this;}
 
   private:

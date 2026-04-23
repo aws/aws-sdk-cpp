@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The value of the attribute.</p>
      */
+    inline bool AttributeValueHasBeenSet() const { return m_attributeValueHasBeenSet; }
+
+    /**
+     * <p>The value of the attribute.</p>
+     */
     inline void SetAttributeValue(const Aws::String& value) { m_attributeValueHasBeenSet = true; m_attributeValue = value; }
 
     /**

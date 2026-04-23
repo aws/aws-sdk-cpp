@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The type of resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource (for example, <code>sg-xxxxxx</code>).</p>
@@ -121,6 +131,11 @@ namespace Model
     /**
      * <p>The custom name of the resource (if available).</p>
      */
+    inline bool ResourceNameHasBeenSet() const { return m_resourceNameHasBeenSet; }
+
+    /**
+     * <p>The custom name of the resource (if available).</p>
+     */
     inline void SetResourceName(const Aws::String& value) { m_resourceNameHasBeenSet = true; m_resourceName = value; }
 
     /**
@@ -153,6 +168,11 @@ namespace Model
      * <p>The time that the resource was deleted.</p>
      */
     inline const Aws::Utils::DateTime& GetResourceDeletionTime() const{ return m_resourceDeletionTime; }
+
+    /**
+     * <p>The time that the resource was deleted.</p>
+     */
+    inline bool ResourceDeletionTimeHasBeenSet() const { return m_resourceDeletionTimeHasBeenSet; }
 
     /**
      * <p>The time that the resource was deleted.</p>

@@ -58,6 +58,12 @@ namespace Model
      * <p>Time, in milliseconds from the start of the video, that the face was
      * detected.</p>
      */
+    inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+
+    /**
+     * <p>Time, in milliseconds from the start of the video, that the face was
+     * detected.</p>
+     */
     inline void SetTimestamp(long long value) { m_timestampHasBeenSet = true; m_timestamp = value; }
 
     /**
@@ -71,6 +77,11 @@ namespace Model
      * <p>The face properties for the detected face.</p>
      */
     inline const FaceDetail& GetFace() const{ return m_face; }
+
+    /**
+     * <p>The face properties for the detected face.</p>
+     */
+    inline bool FaceHasBeenSet() const { return m_faceHasBeenSet; }
 
     /**
      * <p>The face properties for the detected face.</p>

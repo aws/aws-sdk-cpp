@@ -56,6 +56,13 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
+    inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to delete.
+     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+     * <a>ListIPSets</a>.</p>
+     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

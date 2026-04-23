@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for Scte20SourceSettings<p><h3>See Also:</h3>   <a
+   * Scte20 Source Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/Scte20SourceSettings">AWS
    * API Reference</a></p>
    */
@@ -53,6 +53,13 @@ namespace Model
      * the source content will be discarded.
      */
     inline const Scte20Convert608To708& GetConvert608To708() const{ return m_convert608To708; }
+
+    /**
+     * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
+     * fields of the 708 wrapper as well as translated into 708. 708 data present in
+     * the source content will be discarded.
+     */
+    inline bool Convert608To708HasBeenSet() const { return m_convert608To708HasBeenSet; }
 
     /**
      * If upconvert, 608 data is both passed through via the "608 compatibility bytes"
@@ -88,6 +95,12 @@ namespace Model
      * extract captions. Unused for passthrough.
      */
     inline int GetSource608ChannelNumber() const{ return m_source608ChannelNumber; }
+
+    /**
+     * Specifies the 608/708 channel number within the video track from which to
+     * extract captions. Unused for passthrough.
+     */
+    inline bool Source608ChannelNumberHasBeenSet() const { return m_source608ChannelNumberHasBeenSet; }
 
     /**
      * Specifies the 608/708 channel number within the video track from which to

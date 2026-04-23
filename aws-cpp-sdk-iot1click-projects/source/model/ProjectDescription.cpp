@@ -29,26 +29,37 @@ namespace Model
 {
 
 ProjectDescription::ProjectDescription() : 
+    m_arnHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_updatedDateHasBeenSet(false),
-    m_placementTemplateHasBeenSet(false)
+    m_placementTemplateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
 ProjectDescription::ProjectDescription(JsonView jsonValue) : 
+    m_arnHasBeenSet(false),
     m_projectNameHasBeenSet(false),
     m_descriptionHasBeenSet(false),
     m_createdDateHasBeenSet(false),
     m_updatedDateHasBeenSet(false),
-    m_placementTemplateHasBeenSet(false)
+    m_placementTemplateHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
   *this = jsonValue;
 }
 
 ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
 {
+  if(jsonValue.ValueExists("arn"))
+  {
+    m_arn = jsonValue.GetString("arn");
+
+    m_arnHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("projectName"))
   {
     m_projectName = jsonValue.GetString("projectName");
@@ -84,12 +95,28 @@ ProjectDescription& ProjectDescription::operator =(JsonView jsonValue)
     m_placementTemplateHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("tags"))
+  {
+    Aws::Map<Aws::String, JsonView> tagsJsonMap = jsonValue.GetObject("tags").GetAllObjects();
+    for(auto& tagsItem : tagsJsonMap)
+    {
+      m_tags[tagsItem.first] = tagsItem.second.AsString();
+    }
+    m_tagsHasBeenSet = true;
+  }
+
   return *this;
 }
 
 JsonValue ProjectDescription::Jsonize() const
 {
   JsonValue payload;
+
+  if(m_arnHasBeenSet)
+  {
+   payload.WithString("arn", m_arn);
+
+  }
 
   if(m_projectNameHasBeenSet)
   {
@@ -116,6 +143,17 @@ JsonValue ProjectDescription::Jsonize() const
   if(m_placementTemplateHasBeenSet)
   {
    payload.WithObject("placementTemplate", m_placementTemplate.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("tags", std::move(tagsJsonMap));
 
   }
 

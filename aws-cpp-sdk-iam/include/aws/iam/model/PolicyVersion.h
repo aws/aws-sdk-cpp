@@ -40,7 +40,7 @@ namespace Model
    * <a>GetPolicyVersion</a>, <a>ListPolicyVersions</a>, and
    * <a>GetAccountAuthorizationDetails</a> operations. </p> <p>For more information
    * about managed policies, refer to <a
-   * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
+   * href="https://docs.aws.amazon.com/IAM/latest/UserGuide/policies-managed-vs-inline.html">Managed
    * Policies and Inline Policies</a> in the <i>Using IAM</i> guide. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iam-2010-05-08/PolicyVersion">AWS
@@ -70,6 +70,20 @@ namespace Model
      * and SDKs provide similar functionality.</p>
      */
     inline const Aws::String& GetDocument() const{ return m_document; }
+
+    /**
+     * <p>The policy document.</p> <p>The policy document is returned in the response
+     * to the <a>GetPolicyVersion</a> and <a>GetAccountAuthorizationDetails</a>
+     * operations. It is not returned in the response to the <a>CreatePolicyVersion</a>
+     * or <a>ListPolicyVersions</a> operations. </p> <p>The policy document returned in
+     * this structure is URL-encoded compliant with <a
+     * href="https://tools.ietf.org/html/rfc3986">RFC 3986</a>. You can use a URL
+     * decoding method to convert the policy back to plain JSON text. For example, if
+     * you use Java, you can use the <code>decode</code> method of the
+     * <code>java.net.URLDecoder</code> utility class in the Java SDK. Other languages
+     * and SDKs provide similar functionality.</p>
+     */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
 
     /**
      * <p>The policy document.</p> <p>The policy document is returned in the response
@@ -168,6 +182,13 @@ namespace Model
      * always begin with <code>v</code> (always lowercase). When a policy is created,
      * the first policy version is <code>v1</code>. </p>
      */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the policy version.</p> <p>Policy version identifiers
+     * always begin with <code>v</code> (always lowercase). When a policy is created,
+     * the first policy version is <code>v1</code>. </p>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
@@ -216,6 +237,12 @@ namespace Model
      * <p>Specifies whether the policy version is set as the policy's default
      * version.</p>
      */
+    inline bool IsDefaultVersionHasBeenSet() const { return m_isDefaultVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the policy version is set as the policy's default
+     * version.</p>
+     */
     inline void SetIsDefaultVersion(bool value) { m_isDefaultVersionHasBeenSet = true; m_isDefaultVersion = value; }
 
     /**
@@ -230,6 +257,12 @@ namespace Model
      * date-time format</a>, when the policy version was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreateDate() const{ return m_createDate; }
+
+    /**
+     * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601
+     * date-time format</a>, when the policy version was created.</p>
+     */
+    inline bool CreateDateHasBeenSet() const { return m_createDateHasBeenSet; }
 
     /**
      * <p>The date and time, in <a href="http://www.iso.org/iso/iso8601">ISO 8601

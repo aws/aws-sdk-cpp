@@ -28,13 +28,17 @@ using namespace Aws;
 
 DescribeTrainingJobResult::DescribeTrainingJobResult() : 
     m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_secondaryStatus(SecondaryStatus::NOT_SET)
+    m_secondaryStatus(SecondaryStatus::NOT_SET),
+    m_enableNetworkIsolation(false),
+    m_enableInterContainerTrafficEncryption(false)
 {
 }
 
 DescribeTrainingJobResult::DescribeTrainingJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_trainingJobStatus(TrainingJobStatus::NOT_SET),
-    m_secondaryStatus(SecondaryStatus::NOT_SET)
+    m_secondaryStatus(SecondaryStatus::NOT_SET),
+    m_enableNetworkIsolation(false),
+    m_enableInterContainerTrafficEncryption(false)
 {
   *this = result;
 }
@@ -57,6 +61,12 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
   if(jsonValue.ValueExists("TuningJobArn"))
   {
     m_tuningJobArn = jsonValue.GetString("TuningJobArn");
+
+  }
+
+  if(jsonValue.ValueExists("LabelingJobArn"))
+  {
+    m_labelingJobArn = jsonValue.GetString("LabelingJobArn");
 
   }
 
@@ -178,6 +188,18 @@ DescribeTrainingJobResult& DescribeTrainingJobResult::operator =(const Aws::Amaz
     {
       m_finalMetricDataList.push_back(finalMetricDataListJsonList[finalMetricDataListIndex].AsObject());
     }
+  }
+
+  if(jsonValue.ValueExists("EnableNetworkIsolation"))
+  {
+    m_enableNetworkIsolation = jsonValue.GetBool("EnableNetworkIsolation");
+
+  }
+
+  if(jsonValue.ValueExists("EnableInterContainerTrafficEncryption"))
+  {
+    m_enableInterContainerTrafficEncryption = jsonValue.GetBool("EnableInterContainerTrafficEncryption");
+
   }
 
 

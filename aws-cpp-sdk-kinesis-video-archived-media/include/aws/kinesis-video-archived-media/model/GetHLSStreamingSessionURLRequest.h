@@ -19,7 +19,9 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/kinesis-video-archived-media/model/PlaybackMode.h>
 #include <aws/kinesis-video-archived-media/model/HLSFragmentSelector.h>
+#include <aws/kinesis-video-archived-media/model/ContainerFormat.h>
 #include <aws/kinesis-video-archived-media/model/DiscontinuityMode.h>
+#include <aws/kinesis-video-archived-media/model/DisplayFragmentTimestamp.h>
 #include <utility>
 
 namespace Aws
@@ -51,6 +53,13 @@ namespace Model
      * <code>StreamARN</code>.</p>
      */
     inline const Aws::String& GetStreamName() const{ return m_streamName; }
+
+    /**
+     * <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
+     * <p>You must specify either the <code>StreamName</code> or the
+     * <code>StreamARN</code>.</p>
+     */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
 
     /**
      * <p>The name of the stream for which to retrieve the HLS master playlist URL.</p>
@@ -101,6 +110,13 @@ namespace Model
      * or the <code>StreamARN</code>.</p>
      */
     inline const Aws::String& GetStreamARN() const{ return m_streamARN; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS
+     * master playlist URL.</p> <p>You must specify either the <code>StreamName</code>
+     * or the <code>StreamARN</code>.</p>
+     */
+    inline bool StreamARNHasBeenSet() const { return m_streamARNHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the stream for which to retrieve the HLS
@@ -169,11 +185,11 @@ namespace Model
      * choosing the position in the playback window to display.</p> </li> </ul> <p>In
      * both playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start time stamp, the fragment that has the larger fragment number (that
-     * is, the newer fragment) is included in the HLS media playlist. The other
-     * fragments are not included. Fragments that have different time stamps but have
-     * overlapping durations are still included in the HLS media playlist. This can
-     * lead to unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline const PlaybackMode& GetPlaybackMode() const{ return m_playbackMode; }
@@ -202,11 +218,44 @@ namespace Model
      * choosing the position in the playback window to display.</p> </li> </ul> <p>In
      * both playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start time stamp, the fragment that has the larger fragment number (that
-     * is, the newer fragment) is included in the HLS media playlist. The other
-     * fragments are not included. Fragments that have different time stamps but have
-     * overlapping durations are still included in the HLS media playlist. This can
-     * lead to unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
+     * <code>LIVE</code>.</p>
+     */
+    inline bool PlaybackModeHasBeenSet() const { return m_playbackModeHasBeenSet; }
+
+    /**
+     * <p>Whether to retrieve live or archived, on-demand data.</p> <p>Features of the
+     * two types of session include the following:</p> <ul> <li> <p> <b>
+     * <code>LIVE</code> </b>: For sessions of this type, the HLS media playlist is
+     * continually updated with the latest fragments as they become available. We
+     * recommend that the media player retrieve a new playlist on a one-second
+     * interval. When this type of session is played in a media player, the user
+     * interface typically displays a "live" notification, with no scrubber control for
+     * choosing the position in the playback window to display.</p> <note> <p>In
+     * <code>LIVE</code> mode, the newest available fragments are included in an HLS
+     * media playlist, even if there is a gap between fragments (that is, if a fragment
+     * is missing). A gap like this might cause a media player to halt or cause a jump
+     * in playback. In this mode, fragments are not added to the HLS media playlist if
+     * they are older than the newest fragment in the playlist. If the missing fragment
+     * becomes available after a subsequent fragment is added to the playlist, the
+     * older fragment is not added, and the gap is not filled.</p> </note> </li> <li>
+     * <p> <b> <code>ON_DEMAND</code> </b>: For sessions of this type, the HLS media
+     * playlist contains all the fragments for the session, up to the number that is
+     * specified in <code>MaxMediaPlaylistFragmentResults</code>. The playlist must be
+     * retrieved only once for each session. When this type of session is played in a
+     * media player, the user interface typically displays a scrubber control for
+     * choosing the position in the playback window to display.</p> </li> </ul> <p>In
+     * both playback modes, if <code>FragmentSelectorType</code> is
+     * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(const PlaybackMode& value) { m_playbackModeHasBeenSet = true; m_playbackMode = value; }
@@ -235,11 +284,11 @@ namespace Model
      * choosing the position in the playback window to display.</p> </li> </ul> <p>In
      * both playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start time stamp, the fragment that has the larger fragment number (that
-     * is, the newer fragment) is included in the HLS media playlist. The other
-     * fragments are not included. Fragments that have different time stamps but have
-     * overlapping durations are still included in the HLS media playlist. This can
-     * lead to unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline void SetPlaybackMode(PlaybackMode&& value) { m_playbackModeHasBeenSet = true; m_playbackMode = std::move(value); }
@@ -268,11 +317,11 @@ namespace Model
      * choosing the position in the playback window to display.</p> </li> </ul> <p>In
      * both playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start time stamp, the fragment that has the larger fragment number (that
-     * is, the newer fragment) is included in the HLS media playlist. The other
-     * fragments are not included. Fragments that have different time stamps but have
-     * overlapping durations are still included in the HLS media playlist. This can
-     * lead to unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(const PlaybackMode& value) { SetPlaybackMode(value); return *this;}
@@ -301,19 +350,19 @@ namespace Model
      * choosing the position in the playback window to display.</p> </li> </ul> <p>In
      * both playback modes, if <code>FragmentSelectorType</code> is
      * <code>PRODUCER_TIMESTAMP</code>, and if there are multiple fragments with the
-     * same start time stamp, the fragment that has the larger fragment number (that
-     * is, the newer fragment) is included in the HLS media playlist. The other
-     * fragments are not included. Fragments that have different time stamps but have
-     * overlapping durations are still included in the HLS media playlist. This can
-     * lead to unexpected behavior in the media player.</p> <p>The default is
+     * same start timestamp, the fragment that has the larger fragment number (that is,
+     * the newer fragment) is included in the HLS media playlist. The other fragments
+     * are not included. Fragments that have different timestamps but have overlapping
+     * durations are still included in the HLS media playlist. This can lead to
+     * unexpected behavior in the media player.</p> <p>The default is
      * <code>LIVE</code>.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithPlaybackMode(PlaybackMode&& value) { SetPlaybackMode(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time range of the requested fragment, and the source of the time
-     * stamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
      * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
      * <code>FragmentSelectorType</code> can be set, but the
@@ -324,8 +373,20 @@ namespace Model
     inline const HLSFragmentSelector& GetHLSFragmentSelector() const{ return m_hLSFragmentSelector; }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the time
-     * stamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
+     * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
+     * <code>FragmentSelectorType</code> can be set, but the
+     * <code>TimestampRange</code> should not be set. If <code>PlaybackMode</code> is
+     * <code>ON_DEMAND</code>, both <code>FragmentSelectorType</code> and
+     * <code>TimestampRange</code> must be set.</p>
+     */
+    inline bool HLSFragmentSelectorHasBeenSet() const { return m_hLSFragmentSelectorHasBeenSet; }
+
+    /**
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
      * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
      * <code>FragmentSelectorType</code> can be set, but the
@@ -336,8 +397,8 @@ namespace Model
     inline void SetHLSFragmentSelector(const HLSFragmentSelector& value) { m_hLSFragmentSelectorHasBeenSet = true; m_hLSFragmentSelector = value; }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the time
-     * stamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
      * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
      * <code>FragmentSelectorType</code> can be set, but the
@@ -348,8 +409,8 @@ namespace Model
     inline void SetHLSFragmentSelector(HLSFragmentSelector&& value) { m_hLSFragmentSelectorHasBeenSet = true; m_hLSFragmentSelector = std::move(value); }
 
     /**
-     * <p>The time range of the requested fragment, and the source of the time
-     * stamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
      * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
      * <code>FragmentSelectorType</code> can be set, but the
@@ -360,8 +421,8 @@ namespace Model
     inline GetHLSStreamingSessionURLRequest& WithHLSFragmentSelector(const HLSFragmentSelector& value) { SetHLSFragmentSelector(value); return *this;}
 
     /**
-     * <p>The time range of the requested fragment, and the source of the time
-     * stamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
+     * <p>The time range of the requested fragment, and the source of the
+     * timestamps.</p> <p>This parameter is required if <code>PlaybackMode</code> is
      * <code>ON_DEMAND</code>. This parameter is optional if <code>PlaybackMode</code>
      * is <code>LIVE</code>. If <code>PlaybackMode</code> is <code>LIVE</code>, the
      * <code>FragmentSelectorType</code> can be set, but the
@@ -373,21 +434,100 @@ namespace Model
 
 
     /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline const ContainerFormat& GetContainerFormat() const{ return m_containerFormat; }
+
+    /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
+
+    /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
+
+    /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline void SetContainerFormat(ContainerFormat&& value) { m_containerFormatHasBeenSet = true; m_containerFormat = std::move(value); }
+
+    /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline GetHLSStreamingSessionURLRequest& WithContainerFormat(const ContainerFormat& value) { SetContainerFormat(value); return *this;}
+
+    /**
+     * <p>Specifies which format should be used for packaging the media. Specifying the
+     * <code>FRAGMENTED_MP4</code> container format packages the media into MP4
+     * fragments (fMP4 or CMAF). This is the recommended packaging because there is
+     * minimal packaging overhead. The other container format option is
+     * <code>MPEG_TS</code>. HLS has supported MPEG TS chunks since it was released and
+     * is sometimes the only supported packaging on older HLS players. MPEG TS
+     * typically has a 5-25 percent packaging overhead. This means MPEG TS typically
+     * requires 5-25 percent more bandwidth and cost than fMP4.</p> <p>The default is
+     * <code>FRAGMENTED_MP4</code>.</p>
+     */
+    inline GetHLSStreamingSessionURLRequest& WithContainerFormat(ContainerFormat&& value) { SetContainerFormat(std::move(value)); return *this;}
+
+
+    /**
      * <p>Specifies when flags marking discontinuities between fragments will be added
      * to the media playlists. The default is <code>ALWAYS</code> when
      * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
-     * players typically build a timeline of media content to play, based on the time
-     * stamps of each fragment. This means that if there is any overlap between
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
      * fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
      * fragments in some places, and overwrites frames in other places. When there are
      * discontinuity flags between fragments, the media player is expected to reset the
      * timeline, resulting in the fragment being played immediately after the previous
      * fragment. We recommend that you always have discontinuity flags between
-     * fragments if the fragment time stamps are not accurate or if fragments might be
+     * fragments if the fragment timestamps are not accurate or if fragments might be
      * missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.</p>
+     * player timeline to accurately map to the producer timestamps.</p>
      */
     inline const DiscontinuityMode& GetDiscontinuityMode() const{ return m_discontinuityMode; }
 
@@ -396,17 +536,36 @@ namespace Model
      * to the media playlists. The default is <code>ALWAYS</code> when
      * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
-     * players typically build a timeline of media content to play, based on the time
-     * stamps of each fragment. This means that if there is any overlap between
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
      * fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
      * fragments in some places, and overwrites frames in other places. When there are
      * discontinuity flags between fragments, the media player is expected to reset the
      * timeline, resulting in the fragment being played immediately after the previous
      * fragment. We recommend that you always have discontinuity flags between
-     * fragments if the fragment time stamps are not accurate or if fragments might be
+     * fragments if the fragment timestamps are not accurate or if fragments might be
      * missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.</p>
+     * player timeline to accurately map to the producer timestamps.</p>
+     */
+    inline bool DiscontinuityModeHasBeenSet() const { return m_discontinuityModeHasBeenSet; }
+
+    /**
+     * <p>Specifies when flags marking discontinuities between fragments will be added
+     * to the media playlists. The default is <code>ALWAYS</code> when
+     * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
+     * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
+     * fragments (as is typical if <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
+     * fragments in some places, and overwrites frames in other places. When there are
+     * discontinuity flags between fragments, the media player is expected to reset the
+     * timeline, resulting in the fragment being played immediately after the previous
+     * fragment. We recommend that you always have discontinuity flags between
+     * fragments if the fragment timestamps are not accurate or if fragments might be
+     * missing. You should not place discontinuity flags between fragments for the
+     * player timeline to accurately map to the producer timestamps.</p>
      */
     inline void SetDiscontinuityMode(const DiscontinuityMode& value) { m_discontinuityModeHasBeenSet = true; m_discontinuityMode = value; }
 
@@ -415,17 +574,17 @@ namespace Model
      * to the media playlists. The default is <code>ALWAYS</code> when
      * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
-     * players typically build a timeline of media content to play, based on the time
-     * stamps of each fragment. This means that if there is any overlap between
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
      * fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
      * fragments in some places, and overwrites frames in other places. When there are
      * discontinuity flags between fragments, the media player is expected to reset the
      * timeline, resulting in the fragment being played immediately after the previous
      * fragment. We recommend that you always have discontinuity flags between
-     * fragments if the fragment time stamps are not accurate or if fragments might be
+     * fragments if the fragment timestamps are not accurate or if fragments might be
      * missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.</p>
+     * player timeline to accurately map to the producer timestamps.</p>
      */
     inline void SetDiscontinuityMode(DiscontinuityMode&& value) { m_discontinuityModeHasBeenSet = true; m_discontinuityMode = std::move(value); }
 
@@ -434,17 +593,17 @@ namespace Model
      * to the media playlists. The default is <code>ALWAYS</code> when
      * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
-     * players typically build a timeline of media content to play, based on the time
-     * stamps of each fragment. This means that if there is any overlap between
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
      * fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
      * fragments in some places, and overwrites frames in other places. When there are
      * discontinuity flags between fragments, the media player is expected to reset the
      * timeline, resulting in the fragment being played immediately after the previous
      * fragment. We recommend that you always have discontinuity flags between
-     * fragments if the fragment time stamps are not accurate or if fragments might be
+     * fragments if the fragment timestamps are not accurate or if fragments might be
      * missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.</p>
+     * player timeline to accurately map to the producer timestamps.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithDiscontinuityMode(const DiscontinuityMode& value) { SetDiscontinuityMode(value); return *this;}
 
@@ -453,19 +612,116 @@ namespace Model
      * to the media playlists. The default is <code>ALWAYS</code> when
      * <a>HLSFragmentSelector</a> is <code>SERVER_TIMESTAMP</code>, and
      * <code>NEVER</code> when it is <code>PRODUCER_TIMESTAMP</code>.</p> <p>Media
-     * players typically build a timeline of media content to play, based on the time
-     * stamps of each fragment. This means that if there is any overlap between
+     * players typically build a timeline of media content to play, based on the
+     * timestamps of each fragment. This means that if there is any overlap between
      * fragments (as is typical if <a>HLSFragmentSelector</a> is
      * <code>SERVER_TIMESTAMP</code>), the media player timeline has small gaps between
      * fragments in some places, and overwrites frames in other places. When there are
      * discontinuity flags between fragments, the media player is expected to reset the
      * timeline, resulting in the fragment being played immediately after the previous
      * fragment. We recommend that you always have discontinuity flags between
-     * fragments if the fragment time stamps are not accurate or if fragments might be
+     * fragments if the fragment timestamps are not accurate or if fragments might be
      * missing. You should not place discontinuity flags between fragments for the
-     * player timeline to accurately map to the producer time stamps.</p>
+     * player timeline to accurately map to the producer timestamps.</p>
      */
     inline GetHLSStreamingSessionURLRequest& WithDiscontinuityMode(DiscontinuityMode&& value) { SetDiscontinuityMode(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline const DisplayFragmentTimestamp& GetDisplayFragmentTimestamp() const{ return m_displayFragmentTimestamp; }
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline bool DisplayFragmentTimestampHasBeenSet() const { return m_displayFragmentTimestampHasBeenSet; }
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline void SetDisplayFragmentTimestamp(const DisplayFragmentTimestamp& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = value; }
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline void SetDisplayFragmentTimestamp(DisplayFragmentTimestamp&& value) { m_displayFragmentTimestampHasBeenSet = true; m_displayFragmentTimestamp = std::move(value); }
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline GetHLSStreamingSessionURLRequest& WithDisplayFragmentTimestamp(const DisplayFragmentTimestamp& value) { SetDisplayFragmentTimestamp(value); return *this;}
+
+    /**
+     * <p>Specifies when the fragment start timestamps should be included in the HLS
+     * media playlist. Typically, media players report the playhead position as a time
+     * relative to the start of the first fragment in the playback session. However,
+     * when the start timestamps are included in the HLS media playlist, some media
+     * players might report the current playhead as an absolute time based on the
+     * fragment timestamps. This can be useful for creating a playback experience that
+     * shows viewers the wall-clock time of the media.</p> <p>The default is
+     * <code>NEVER</code>. When <a>HLSFragmentSelector</a> is
+     * <code>SERVER_TIMESTAMP</code>, the timestamps will be the server start
+     * timestamps. Similarly, when <a>HLSFragmentSelector</a> is
+     * <code>PRODUCER_TIMESTAMP</code>, the timestamps will be the producer start
+     * timestamps. </p>
+     */
+    inline GetHLSStreamingSessionURLRequest& WithDisplayFragmentTimestamp(DisplayFragmentTimestamp&& value) { SetDisplayFragmentTimestamp(std::move(value)); return *this;}
 
 
     /**
@@ -477,6 +733,16 @@ namespace Model
      * default is 300 (5 minutes).</p>
      */
     inline int GetExpires() const{ return m_expires; }
+
+    /**
+     * <p>The time in seconds until the requested session expires. This value can be
+     * between 300 (5 minutes) and 43200 (12 hours).</p> <p>When a session expires, no
+     * new calls to <code>GetHLSMasterPlaylist</code>,
+     * <code>GetHLSMediaPlaylist</code>, <code>GetMP4InitFragment</code>, or
+     * <code>GetMP4MediaFragment</code> can be made for that session.</p> <p>The
+     * default is 300 (5 minutes).</p>
+     */
+    inline bool ExpiresHasBeenSet() const { return m_expiresHasBeenSet; }
 
     /**
      * <p>The time in seconds until the requested session expires. This value can be
@@ -535,6 +801,25 @@ namespace Model
      * 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second
      * fragments.</p>
      */
+    inline bool MaxMediaPlaylistFragmentResultsHasBeenSet() const { return m_maxMediaPlaylistFragmentResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of fragments that are returned in the HLS media
+     * playlists.</p> <p>When the <code>PlaybackMode</code> is <code>LIVE</code>, the
+     * most recent fragments are returned up to this value. When the
+     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>, the oldest fragments are
+     * returned, up to this maximum number.</p> <p>When there are a higher number of
+     * fragments available in a live HLS media playlist, video players often buffer
+     * content before starting playback. Increasing the buffer size increases the
+     * playback latency, but it decreases the likelihood that rebuffering will occur
+     * during playback. We recommend that a live HLS media playlist have a minimum of 3
+     * fragments and a maximum of 10 fragments.</p> <p>The default is 5 fragments if
+     * <code>PlaybackMode</code> is <code>LIVE</code>, and 1,000 if
+     * <code>PlaybackMode</code> is <code>ON_DEMAND</code>. </p> <p>The maximum value
+     * of 1,000 fragments corresponds to more than 16 minutes of video on streams with
+     * 1-second fragments, and more than 2 1/2 hours of video on streams with 10-second
+     * fragments.</p>
+     */
     inline void SetMaxMediaPlaylistFragmentResults(long long value) { m_maxMediaPlaylistFragmentResultsHasBeenSet = true; m_maxMediaPlaylistFragmentResults = value; }
 
     /**
@@ -570,8 +855,14 @@ namespace Model
     HLSFragmentSelector m_hLSFragmentSelector;
     bool m_hLSFragmentSelectorHasBeenSet;
 
+    ContainerFormat m_containerFormat;
+    bool m_containerFormatHasBeenSet;
+
     DiscontinuityMode m_discontinuityMode;
     bool m_discontinuityModeHasBeenSet;
+
+    DisplayFragmentTimestamp m_displayFragmentTimestamp;
+    bool m_displayFragmentTimestampHasBeenSet;
 
     int m_expires;
     bool m_expiresHasBeenSet;

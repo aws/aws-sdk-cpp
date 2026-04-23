@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the Resource Data Sync.</p>
      */
+    inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Resource Data Sync.</p>
+     */
     inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>Configuration information for the target Amazon S3 bucket.</p>
      */
+    inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
+
+    /**
+     * <p>Configuration information for the target Amazon S3 bucket.</p>
+     */
     inline void SetS3Destination(const ResourceDataSyncS3Destination& value) { m_s3DestinationHasBeenSet = true; m_s3Destination = value; }
 
     /**
@@ -117,6 +127,11 @@ namespace Model
      * <p>The last time the configuration attempted to sync (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetLastSyncTime() const{ return m_lastSyncTime; }
+
+    /**
+     * <p>The last time the configuration attempted to sync (UTC).</p>
+     */
+    inline bool LastSyncTimeHasBeenSet() const { return m_lastSyncTimeHasBeenSet; }
 
     /**
      * <p>The last time the configuration attempted to sync (UTC).</p>
@@ -144,6 +159,12 @@ namespace Model
      * <code>SUCCESSFUL</code> (UTC).</p>
      */
     inline const Aws::Utils::DateTime& GetLastSuccessfulSyncTime() const{ return m_lastSuccessfulSyncTime; }
+
+    /**
+     * <p>The last time the sync operations returned a status of
+     * <code>SUCCESSFUL</code> (UTC).</p>
+     */
+    inline bool LastSuccessfulSyncTimeHasBeenSet() const { return m_lastSuccessfulSyncTimeHasBeenSet; }
 
     /**
      * <p>The last time the sync operations returned a status of
@@ -178,6 +199,11 @@ namespace Model
     /**
      * <p>The status reported by the last sync.</p>
      */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
+
+    /**
+     * <p>The status reported by the last sync.</p>
+     */
     inline void SetLastStatus(const LastResourceDataSyncStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
@@ -204,6 +230,11 @@ namespace Model
     /**
      * <p>The date and time the configuration was created (UTC).</p>
      */
+    inline bool SyncCreatedTimeHasBeenSet() const { return m_syncCreatedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time the configuration was created (UTC).</p>
+     */
     inline void SetSyncCreatedTime(const Aws::Utils::DateTime& value) { m_syncCreatedTimeHasBeenSet = true; m_syncCreatedTime = value; }
 
     /**
@@ -226,6 +257,11 @@ namespace Model
      * <p>The status message details reported by the last sync.</p>
      */
     inline const Aws::String& GetLastSyncStatusMessage() const{ return m_lastSyncStatusMessage; }
+
+    /**
+     * <p>The status message details reported by the last sync.</p>
+     */
+    inline bool LastSyncStatusMessageHasBeenSet() const { return m_lastSyncStatusMessageHasBeenSet; }
 
     /**
      * <p>The status message details reported by the last sync.</p>

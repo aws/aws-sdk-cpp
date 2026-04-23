@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The type of the non-compliant resource.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the non-compliant resource.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
     /**
      * <p>Information identifying the non-compliant resource.</p>
      */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Information identifying the non-compliant resource.</p>
+     */
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>Additional information about the non-compliant resource.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAdditionalInfo() const{ return m_additionalInfo; }
+
+    /**
+     * <p>Additional information about the non-compliant resource.</p>
+     */
+    inline bool AdditionalInfoHasBeenSet() const { return m_additionalInfoHasBeenSet; }
 
     /**
      * <p>Additional information about the non-compliant resource.</p>

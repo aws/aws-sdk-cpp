@@ -29,7 +29,7 @@ GetSubscriptionDefinitionRequest::GetSubscriptionDefinitionRequest() :
 
 Aws::String GetSubscriptionDefinitionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

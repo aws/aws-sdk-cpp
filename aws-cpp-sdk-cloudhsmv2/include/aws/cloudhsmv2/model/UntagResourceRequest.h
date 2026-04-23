@@ -55,6 +55,12 @@ namespace Model
      * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
      * find the cluster ID, use <a>DescribeClusters</a>.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The cluster identifier (ID) for the cluster whose tags you are removing. To
+     * find the cluster ID, use <a>DescribeClusters</a>.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -93,6 +99,12 @@ namespace Model
      * only the tag keys, not the tag values.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeyList() const{ return m_tagKeyList; }
+
+    /**
+     * <p>A list of one or more tag keys for the tags that you are removing. Specify
+     * only the tag keys, not the tag values.</p>
+     */
+    inline bool TagKeyListHasBeenSet() const { return m_tagKeyListHasBeenSet; }
 
     /**
      * <p>A list of one or more tag keys for the tags that you are removing. Specify

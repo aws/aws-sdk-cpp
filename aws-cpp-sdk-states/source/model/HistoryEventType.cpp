@@ -38,6 +38,14 @@ namespace Aws
         static const int ActivityTimedOut_HASH = HashingUtils::HashString("ActivityTimedOut");
         static const int ChoiceStateEntered_HASH = HashingUtils::HashString("ChoiceStateEntered");
         static const int ChoiceStateExited_HASH = HashingUtils::HashString("ChoiceStateExited");
+        static const int TaskFailed_HASH = HashingUtils::HashString("TaskFailed");
+        static const int TaskScheduled_HASH = HashingUtils::HashString("TaskScheduled");
+        static const int TaskStartFailed_HASH = HashingUtils::HashString("TaskStartFailed");
+        static const int TaskStarted_HASH = HashingUtils::HashString("TaskStarted");
+        static const int TaskSubmitFailed_HASH = HashingUtils::HashString("TaskSubmitFailed");
+        static const int TaskSubmitted_HASH = HashingUtils::HashString("TaskSubmitted");
+        static const int TaskSucceeded_HASH = HashingUtils::HashString("TaskSucceeded");
+        static const int TaskTimedOut_HASH = HashingUtils::HashString("TaskTimedOut");
         static const int ExecutionFailed_HASH = HashingUtils::HashString("ExecutionFailed");
         static const int ExecutionStarted_HASH = HashingUtils::HashString("ExecutionStarted");
         static const int ExecutionSucceeded_HASH = HashingUtils::HashString("ExecutionSucceeded");
@@ -103,6 +111,38 @@ namespace Aws
           else if (hashCode == ChoiceStateExited_HASH)
           {
             return HistoryEventType::ChoiceStateExited;
+          }
+          else if (hashCode == TaskFailed_HASH)
+          {
+            return HistoryEventType::TaskFailed;
+          }
+          else if (hashCode == TaskScheduled_HASH)
+          {
+            return HistoryEventType::TaskScheduled;
+          }
+          else if (hashCode == TaskStartFailed_HASH)
+          {
+            return HistoryEventType::TaskStartFailed;
+          }
+          else if (hashCode == TaskStarted_HASH)
+          {
+            return HistoryEventType::TaskStarted;
+          }
+          else if (hashCode == TaskSubmitFailed_HASH)
+          {
+            return HistoryEventType::TaskSubmitFailed;
+          }
+          else if (hashCode == TaskSubmitted_HASH)
+          {
+            return HistoryEventType::TaskSubmitted;
+          }
+          else if (hashCode == TaskSucceeded_HASH)
+          {
+            return HistoryEventType::TaskSucceeded;
+          }
+          else if (hashCode == TaskTimedOut_HASH)
+          {
+            return HistoryEventType::TaskTimedOut;
           }
           else if (hashCode == ExecutionFailed_HASH)
           {
@@ -250,6 +290,22 @@ namespace Aws
             return "ChoiceStateEntered";
           case HistoryEventType::ChoiceStateExited:
             return "ChoiceStateExited";
+          case HistoryEventType::TaskFailed:
+            return "TaskFailed";
+          case HistoryEventType::TaskScheduled:
+            return "TaskScheduled";
+          case HistoryEventType::TaskStartFailed:
+            return "TaskStartFailed";
+          case HistoryEventType::TaskStarted:
+            return "TaskStarted";
+          case HistoryEventType::TaskSubmitFailed:
+            return "TaskSubmitFailed";
+          case HistoryEventType::TaskSubmitted:
+            return "TaskSubmitted";
+          case HistoryEventType::TaskSucceeded:
+            return "TaskSucceeded";
+          case HistoryEventType::TaskTimedOut:
+            return "TaskTimedOut";
           case HistoryEventType::ExecutionFailed:
             return "ExecutionFailed";
           case HistoryEventType::ExecutionStarted:
@@ -315,7 +371,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

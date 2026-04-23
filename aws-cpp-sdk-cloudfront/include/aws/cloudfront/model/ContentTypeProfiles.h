@@ -35,7 +35,7 @@ namespace Model
 
   /**
    * <p>Field-level encryption content type-profile. </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ContentTypeProfiles">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ContentTypeProfiles">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ContentTypeProfiles
@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of field-level encryption content type-profile mappings. </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of field-level encryption content type-profile mappings. </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>Items in a field-level encryption content type-profile mapping. </p>
      */
     inline const Aws::Vector<ContentTypeProfile>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>Items in a field-level encryption content type-profile mapping. </p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>Items in a field-level encryption content type-profile mapping. </p>

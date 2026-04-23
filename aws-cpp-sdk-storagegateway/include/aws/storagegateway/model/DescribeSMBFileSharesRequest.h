@@ -58,6 +58,12 @@ namespace Model
      * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
      * described. </p>
      */
+    inline bool FileShareARNListHasBeenSet() const { return m_fileShareARNListHasBeenSet; }
+
+    /**
+     * <p>An array containing the Amazon Resource Name (ARN) of each file share to be
+     * described. </p>
+     */
     inline void SetFileShareARNList(const Aws::Vector<Aws::String>& value) { m_fileShareARNListHasBeenSet = true; m_fileShareARNList = value; }
 
     /**

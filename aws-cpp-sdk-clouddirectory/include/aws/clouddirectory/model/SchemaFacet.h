@@ -61,6 +61,14 @@ namespace Model
      * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
      * Schema Upgrade</a> for a description of when to provide minor versions.</p>
      */
+    inline bool SchemaArnHasBeenSet() const { return m_schemaArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the schema that contains the facet with no minor component. See
+     * <a>arns</a> and <a
+     * href="https://docs.aws.amazon.com/clouddirectory/latest/developerguide/schemas_inplaceschemaupgrade.html">In-Place
+     * Schema Upgrade</a> for a description of when to provide minor versions.</p>
+     */
     inline void SetSchemaArn(const Aws::String& value) { m_schemaArnHasBeenSet = true; m_schemaArn = value; }
 
     /**
@@ -108,6 +116,11 @@ namespace Model
      * <p>The name of the facet.</p>
      */
     inline const Aws::String& GetFacetName() const{ return m_facetName; }
+
+    /**
+     * <p>The name of the facet.</p>
+     */
+    inline bool FacetNameHasBeenSet() const { return m_facetNameHasBeenSet; }
 
     /**
      * <p>The name of the facet.</p>

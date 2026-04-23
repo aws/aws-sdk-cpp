@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Indicates whether this is the main route table.</p>
      */
+    inline bool MainHasBeenSet() const { return m_mainHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is the main route table.</p>
+     */
     inline void SetMain(bool value) { m_mainHasBeenSet = true; m_main = value; }
 
     /**
@@ -70,6 +75,11 @@ namespace Model
      * <p>The ID of the association between a route table and a subnet.</p>
      */
     inline const Aws::String& GetRouteTableAssociationId() const{ return m_routeTableAssociationId; }
+
+    /**
+     * <p>The ID of the association between a route table and a subnet.</p>
+     */
+    inline bool RouteTableAssociationIdHasBeenSet() const { return m_routeTableAssociationIdHasBeenSet; }
 
     /**
      * <p>The ID of the association between a route table and a subnet.</p>
@@ -110,6 +120,11 @@ namespace Model
     /**
      * <p>The ID of the route table.</p>
      */
+    inline bool RouteTableIdHasBeenSet() const { return m_routeTableIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the route table.</p>
+     */
     inline void SetRouteTableId(const Aws::String& value) { m_routeTableIdHasBeenSet = true; m_routeTableId = value; }
 
     /**
@@ -143,6 +158,12 @@ namespace Model
      * association.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet. A subnet ID is not returned for an implicit
+     * association.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet. A subnet ID is not returned for an implicit

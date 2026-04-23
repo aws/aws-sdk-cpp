@@ -51,7 +51,7 @@ namespace Model
 
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -59,7 +59,7 @@ namespace Model
     inline const Aws::Vector<Aws::String>& GetPolicyNames() const{ return m_policyNames; }
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -67,7 +67,7 @@ namespace Model
     inline void SetPolicyNames(const Aws::Vector<Aws::String>& value) { m_policyNames = value; }
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -75,7 +75,7 @@ namespace Model
     inline void SetPolicyNames(Aws::Vector<Aws::String>&& value) { m_policyNames = std::move(value); }
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -83,7 +83,7 @@ namespace Model
     inline ListGroupPoliciesResult& WithPolicyNames(const Aws::Vector<Aws::String>& value) { SetPolicyNames(value); return *this;}
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -91,7 +91,7 @@ namespace Model
     inline ListGroupPoliciesResult& WithPolicyNames(Aws::Vector<Aws::String>&& value) { SetPolicyNames(std::move(value)); return *this;}
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -99,7 +99,7 @@ namespace Model
     inline ListGroupPoliciesResult& AddPolicyNames(const Aws::String& value) { m_policyNames.push_back(value); return *this; }
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -107,7 +107,7 @@ namespace Model
     inline ListGroupPoliciesResult& AddPolicyNames(Aws::String&& value) { m_policyNames.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>A list of policy names.</p> <p>This parameter allows (per its <a
+     * <p>A list of policy names.</p> <p>This parameter allows (through its <a
      * href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of characters
      * consisting of upper and lowercase alphanumeric characters with no spaces. You
      * can also include any of the following characters: _+=,.@-</p>
@@ -121,7 +121,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
@@ -132,7 +132,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline void SetIsTruncated(bool value) { m_isTruncated = value; }
@@ -143,7 +143,7 @@ namespace Model
      * <code>Marker</code> request parameter to retrieve more items. Note that IAM
      * might return fewer than the <code>MaxItems</code> number of results even when
      * there are more results available. We recommend that you check
-     * <code>IsTruncated</code> after every call to ensure that you receive all of your
+     * <code>IsTruncated</code> after every call to ensure that you receive all your
      * results.</p>
      */
     inline ListGroupPoliciesResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}

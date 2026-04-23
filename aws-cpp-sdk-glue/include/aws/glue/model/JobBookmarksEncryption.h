@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The encryption mode to use for Job bookmarks data.</p>
      */
+    inline bool JobBookmarksEncryptionModeHasBeenSet() const { return m_jobBookmarksEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>The encryption mode to use for Job bookmarks data.</p>
+     */
     inline void SetJobBookmarksEncryptionMode(const JobBookmarksEncryptionMode& value) { m_jobBookmarksEncryptionModeHasBeenSet = true; m_jobBookmarksEncryptionMode = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     */
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
      * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>

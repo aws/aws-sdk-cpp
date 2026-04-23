@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The ARN of the platform.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the platform.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>The AWS account ID of the person who created the platform.</p>
      */
     inline const Aws::String& GetPlatformOwner() const{ return m_platformOwner; }
+
+    /**
+     * <p>The AWS account ID of the person who created the platform.</p>
+     */
+    inline bool PlatformOwnerHasBeenSet() const { return m_platformOwnerHasBeenSet; }
 
     /**
      * <p>The AWS account ID of the person who created the platform.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The name of the platform.</p>
      */
+    inline bool PlatformNameHasBeenSet() const { return m_platformNameHasBeenSet; }
+
+    /**
+     * <p>The name of the platform.</p>
+     */
     inline void SetPlatformName(const Aws::String& value) { m_platformNameHasBeenSet = true; m_platformName = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
      * <p>The version of the platform.</p>
      */
     inline const Aws::String& GetPlatformVersion() const{ return m_platformVersion; }
+
+    /**
+     * <p>The version of the platform.</p>
+     */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
 
     /**
      * <p>The version of the platform.</p>
@@ -207,6 +227,11 @@ namespace Model
     /**
      * <p>The name of the solution stack used by the platform.</p>
      */
+    inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the solution stack used by the platform.</p>
+     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
@@ -243,6 +268,11 @@ namespace Model
     /**
      * <p>The status of the platform.</p>
      */
+    inline bool PlatformStatusHasBeenSet() const { return m_platformStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the platform.</p>
+     */
     inline void SetPlatformStatus(const PlatformStatus& value) { m_platformStatusHasBeenSet = true; m_platformStatus = value; }
 
     /**
@@ -265,6 +295,11 @@ namespace Model
      * <p>The date when the platform was created.</p>
      */
     inline const Aws::Utils::DateTime& GetDateCreated() const{ return m_dateCreated; }
+
+    /**
+     * <p>The date when the platform was created.</p>
+     */
+    inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
 
     /**
      * <p>The date when the platform was created.</p>
@@ -295,6 +330,11 @@ namespace Model
     /**
      * <p>The date when the platform was last updated.</p>
      */
+    inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
+
+    /**
+     * <p>The date when the platform was last updated.</p>
+     */
     inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
 
     /**
@@ -317,6 +357,11 @@ namespace Model
      * <p>The category of the platform.</p>
      */
     inline const Aws::String& GetPlatformCategory() const{ return m_platformCategory; }
+
+    /**
+     * <p>The category of the platform.</p>
+     */
+    inline bool PlatformCategoryHasBeenSet() const { return m_platformCategoryHasBeenSet; }
 
     /**
      * <p>The category of the platform.</p>
@@ -357,6 +402,11 @@ namespace Model
     /**
      * <p>The description of the platform.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the platform.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -389,6 +439,11 @@ namespace Model
      * <p>Information about the maintainer of the platform.</p>
      */
     inline const Aws::String& GetMaintainer() const{ return m_maintainer; }
+
+    /**
+     * <p>Information about the maintainer of the platform.</p>
+     */
+    inline bool MaintainerHasBeenSet() const { return m_maintainerHasBeenSet; }
 
     /**
      * <p>Information about the maintainer of the platform.</p>
@@ -429,6 +484,11 @@ namespace Model
     /**
      * <p>The operating system used by the platform.</p>
      */
+    inline bool OperatingSystemNameHasBeenSet() const { return m_operatingSystemNameHasBeenSet; }
+
+    /**
+     * <p>The operating system used by the platform.</p>
+     */
     inline void SetOperatingSystemName(const Aws::String& value) { m_operatingSystemNameHasBeenSet = true; m_operatingSystemName = value; }
 
     /**
@@ -461,6 +521,11 @@ namespace Model
      * <p>The version of the operating system used by the platform.</p>
      */
     inline const Aws::String& GetOperatingSystemVersion() const{ return m_operatingSystemVersion; }
+
+    /**
+     * <p>The version of the operating system used by the platform.</p>
+     */
+    inline bool OperatingSystemVersionHasBeenSet() const { return m_operatingSystemVersionHasBeenSet; }
 
     /**
      * <p>The version of the operating system used by the platform.</p>
@@ -501,6 +566,11 @@ namespace Model
     /**
      * <p>The programming languages supported by the platform.</p>
      */
+    inline bool ProgrammingLanguagesHasBeenSet() const { return m_programmingLanguagesHasBeenSet; }
+
+    /**
+     * <p>The programming languages supported by the platform.</p>
+     */
     inline void SetProgrammingLanguages(const Aws::Vector<PlatformProgrammingLanguage>& value) { m_programmingLanguagesHasBeenSet = true; m_programmingLanguages = value; }
 
     /**
@@ -533,6 +603,11 @@ namespace Model
      * <p>The frameworks supported by the platform.</p>
      */
     inline const Aws::Vector<PlatformFramework>& GetFrameworks() const{ return m_frameworks; }
+
+    /**
+     * <p>The frameworks supported by the platform.</p>
+     */
+    inline bool FrameworksHasBeenSet() const { return m_frameworksHasBeenSet; }
 
     /**
      * <p>The frameworks supported by the platform.</p>
@@ -573,6 +648,11 @@ namespace Model
     /**
      * <p>The custom AMIs supported by the platform.</p>
      */
+    inline bool CustomAmiListHasBeenSet() const { return m_customAmiListHasBeenSet; }
+
+    /**
+     * <p>The custom AMIs supported by the platform.</p>
+     */
     inline void SetCustomAmiList(const Aws::Vector<CustomAmi>& value) { m_customAmiListHasBeenSet = true; m_customAmiList = value; }
 
     /**
@@ -605,6 +685,11 @@ namespace Model
      * <p>The tiers supported by the platform.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedTierList() const{ return m_supportedTierList; }
+
+    /**
+     * <p>The tiers supported by the platform.</p>
+     */
+    inline bool SupportedTierListHasBeenSet() const { return m_supportedTierListHasBeenSet; }
 
     /**
      * <p>The tiers supported by the platform.</p>
@@ -646,6 +731,11 @@ namespace Model
      * <p>The additions supported by the platform.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSupportedAddonList() const{ return m_supportedAddonList; }
+
+    /**
+     * <p>The additions supported by the platform.</p>
+     */
+    inline bool SupportedAddonListHasBeenSet() const { return m_supportedAddonListHasBeenSet; }
 
     /**
      * <p>The additions supported by the platform.</p>

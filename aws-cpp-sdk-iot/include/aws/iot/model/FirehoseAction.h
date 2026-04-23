@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The IAM role that grants access to the Amazon Kinesis Firehose stream.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The delivery stream name.</p>
      */
     inline const Aws::String& GetDeliveryStreamName() const{ return m_deliveryStreamName; }
+
+    /**
+     * <p>The delivery stream name.</p>
+     */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
 
     /**
      * <p>The delivery stream name.</p>
@@ -126,6 +136,13 @@ namespace Model
      * newline), ',' (comma).</p>
      */
     inline const Aws::String& GetSeparator() const{ return m_separator; }
+
+    /**
+     * <p>A character separator that will be used to separate records written to the
+     * Firehose stream. Valid values are: '\n' (newline), '\t' (tab), '\r\n' (Windows
+     * newline), ',' (comma).</p>
+     */
+    inline bool SeparatorHasBeenSet() const { return m_separatorHasBeenSet; }
 
     /**
      * <p>A character separator that will be used to separate records written to the

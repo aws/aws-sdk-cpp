@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>Information about the resource attribute to be modified.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>Information about the resource attribute to be modified.</p>
+     */
     inline void SetTarget(const ResourceTargetDefinition& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -82,6 +87,13 @@ namespace Model
      * new value will be determined when the plan is updated.</p>
      */
     inline const EvaluationType& GetEvaluation() const{ return m_evaluation; }
+
+    /**
+     * <p>For static evaluations, the value of the resource attribute will change and
+     * the new value is known. For dynamic evaluations, the value might change, and any
+     * new value will be determined when the plan is updated.</p>
+     */
+    inline bool EvaluationHasBeenSet() const { return m_evaluationHasBeenSet; }
 
     /**
      * <p>For static evaluations, the value of the resource attribute will change and
@@ -116,6 +128,11 @@ namespace Model
      * <p>The ID of the entity that caused the change.</p>
      */
     inline const Aws::String& GetCausingEntity() const{ return m_causingEntity; }
+
+    /**
+     * <p>The ID of the entity that caused the change.</p>
+     */
+    inline bool CausingEntityHasBeenSet() const { return m_causingEntityHasBeenSet; }
 
     /**
      * <p>The ID of the entity that caused the change.</p>

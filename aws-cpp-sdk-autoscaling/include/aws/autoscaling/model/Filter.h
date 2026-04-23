@@ -62,6 +62,13 @@ namespace Model
      * <code>"auto-scaling-group"</code>, <code>"key"</code>, <code>"value"</code>, and
      * <code>"propagate-at-launch"</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the filter. The valid values are:
+     * <code>"auto-scaling-group"</code>, <code>"key"</code>, <code>"value"</code>, and
+     * <code>"propagate-at-launch"</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>The value of the filter.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value of the filter.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value of the filter.</p>

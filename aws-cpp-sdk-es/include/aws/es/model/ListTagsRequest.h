@@ -63,6 +63,12 @@ namespace Model
      * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
      * are attached that you want to view.</p>
      */
+    inline bool ARNHasBeenSet() const { return m_aRNHasBeenSet; }
+
+    /**
+     * <p> Specify the <code>ARN</code> for the Elasticsearch domain to which the tags
+     * are attached that you want to view.</p>
+     */
     inline void SetARN(const Aws::String& value) { m_aRNHasBeenSet = true; m_aRN = value; }
 
     /**

@@ -27,6 +27,7 @@ CreateClusterRequest::CreateClusterRequest() :
     m_versionHasBeenSet(false),
     m_roleArnHasBeenSet(false),
     m_resourcesVpcConfigHasBeenSet(false),
+    m_loggingHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
     m_clientRequestTokenHasBeenSet(true)
 {
@@ -57,6 +58,12 @@ Aws::String CreateClusterRequest::SerializePayload() const
   if(m_resourcesVpcConfigHasBeenSet)
   {
    payload.WithObject("resourcesVpcConfig", m_resourcesVpcConfig.Jsonize());
+
+  }
+
+  if(m_loggingHasBeenSet)
+  {
+   payload.WithObject("logging", m_logging.Jsonize());
 
   }
 

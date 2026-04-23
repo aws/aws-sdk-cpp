@@ -56,6 +56,13 @@ namespace Model
      * <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
      * <code>ListPolicies</code>.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the policy that you want to get the details for.
+     * <code>PolicyId</code> is returned by <code>PutPolicy</code> and by
+     * <code>ListPolicies</code>.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -99,6 +106,12 @@ namespace Model
      * for.</p>
      */
     inline const Aws::String& GetMemberAccount() const{ return m_memberAccount; }
+
+    /**
+     * <p>The AWS account that owns the resources that you want to get the details
+     * for.</p>
+     */
+    inline bool MemberAccountHasBeenSet() const { return m_memberAccountHasBeenSet; }
 
     /**
      * <p>The AWS account that owns the resources that you want to get the details

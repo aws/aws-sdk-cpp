@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
      */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The ICMP code. A value of -1 means all codes for the specified ICMP type.</p>
+     */
     inline void SetCode(int value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The ICMP type. A value of -1 means all types.</p>
      */
     inline int GetType() const{ return m_type; }
+
+    /**
+     * <p>The ICMP type. A value of -1 means all types.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The ICMP type. A value of -1 means all types.</p>

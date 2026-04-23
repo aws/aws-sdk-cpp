@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>(Optional) The invocations for a specific command ID.</p>
      */
+    inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
+
+    /**
+     * <p>(Optional) The invocations for a specific command ID.</p>
+     */
     inline void SetCommandId(const Aws::String& value) { m_commandIdHasBeenSet = true; m_commandId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>(Optional) The command execution details for a specific instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>(Optional) The command execution details for a specific instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>(Optional) The command execution details for a specific instance ID.</p>
@@ -130,6 +140,13 @@ namespace Model
      * returns a token that you can specify in a subsequent call to get the next set of
      * results.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>(Optional) The maximum number of items to return for this call. The call also
+     * returns a token that you can specify in a subsequent call to get the next set of
+     * results.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -145,6 +162,12 @@ namespace Model
      * token from a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>(Optional) The token for the next set of items to return. (You received this
+     * token from a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>(Optional) The token for the next set of items to return. (You received this
@@ -193,6 +216,12 @@ namespace Model
      * <p>(Optional) One or more filters. Use a filter to return a more specific list
      * of results.</p>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>(Optional) One or more filters. Use a filter to return a more specific list
+     * of results.</p>
+     */
     inline void SetFilters(const Aws::Vector<CommandFilter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -231,6 +260,12 @@ namespace Model
      * command output. By default this is set to False. </p>
      */
     inline bool GetDetails() const{ return m_details; }
+
+    /**
+     * <p>(Optional) If set this returns the response of the command executions and any
+     * command output. By default this is set to False. </p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>(Optional) If set this returns the response of the command executions and any

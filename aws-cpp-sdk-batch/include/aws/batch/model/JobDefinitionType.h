@@ -26,7 +26,8 @@ namespace Model
   enum class JobDefinitionType
   {
     NOT_SET,
-    container
+    container,
+    multinode
   };
 
 namespace JobDefinitionTypeMapper

@@ -54,6 +54,12 @@ namespace Model
      * <p>The 39-character job ID for the job that you want to cancel, for example
      * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The 39-character job ID for the job that you want to cancel, for example
+     * <code>JID123e4567-e89b-12d3-a456-426655440000</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**

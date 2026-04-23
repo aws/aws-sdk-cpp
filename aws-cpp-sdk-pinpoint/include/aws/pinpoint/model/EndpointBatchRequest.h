@@ -56,6 +56,11 @@ namespace Model
     /**
      * List of items to update. Maximum 100 items
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * List of items to update. Maximum 100 items
+     */
     inline void SetItem(const Aws::Vector<EndpointBatchItem>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**

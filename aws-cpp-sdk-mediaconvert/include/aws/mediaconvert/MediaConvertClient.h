@@ -21,6 +21,7 @@
 #include <aws/core/client/AWSClient.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/AssociateCertificateResult.h>
 #include <aws/mediaconvert/model/CancelJobResult.h>
 #include <aws/mediaconvert/model/CreateJobResult.h>
 #include <aws/mediaconvert/model/CreateJobTemplateResult.h>
@@ -30,6 +31,7 @@
 #include <aws/mediaconvert/model/DeletePresetResult.h>
 #include <aws/mediaconvert/model/DeleteQueueResult.h>
 #include <aws/mediaconvert/model/DescribeEndpointsResult.h>
+#include <aws/mediaconvert/model/DisassociateCertificateResult.h>
 #include <aws/mediaconvert/model/GetJobResult.h>
 #include <aws/mediaconvert/model/GetJobTemplateResult.h>
 #include <aws/mediaconvert/model/GetPresetResult.h>
@@ -84,6 +86,7 @@ namespace MediaConvert
 
 namespace Model
 {
+        class AssociateCertificateRequest;
         class CancelJobRequest;
         class CreateJobRequest;
         class CreateJobTemplateRequest;
@@ -93,6 +96,7 @@ namespace Model
         class DeletePresetRequest;
         class DeleteQueueRequest;
         class DescribeEndpointsRequest;
+        class DisassociateCertificateRequest;
         class GetJobRequest;
         class GetJobTemplateRequest;
         class GetPresetRequest;
@@ -108,6 +112,7 @@ namespace Model
         class UpdatePresetRequest;
         class UpdateQueueRequest;
 
+        typedef Aws::Utils::Outcome<AssociateCertificateResult, Aws::Client::AWSError<MediaConvertErrors>> AssociateCertificateOutcome;
         typedef Aws::Utils::Outcome<CancelJobResult, Aws::Client::AWSError<MediaConvertErrors>> CancelJobOutcome;
         typedef Aws::Utils::Outcome<CreateJobResult, Aws::Client::AWSError<MediaConvertErrors>> CreateJobOutcome;
         typedef Aws::Utils::Outcome<CreateJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> CreateJobTemplateOutcome;
@@ -117,6 +122,7 @@ namespace Model
         typedef Aws::Utils::Outcome<DeletePresetResult, Aws::Client::AWSError<MediaConvertErrors>> DeletePresetOutcome;
         typedef Aws::Utils::Outcome<DeleteQueueResult, Aws::Client::AWSError<MediaConvertErrors>> DeleteQueueOutcome;
         typedef Aws::Utils::Outcome<DescribeEndpointsResult, Aws::Client::AWSError<MediaConvertErrors>> DescribeEndpointsOutcome;
+        typedef Aws::Utils::Outcome<DisassociateCertificateResult, Aws::Client::AWSError<MediaConvertErrors>> DisassociateCertificateOutcome;
         typedef Aws::Utils::Outcome<GetJobResult, Aws::Client::AWSError<MediaConvertErrors>> GetJobOutcome;
         typedef Aws::Utils::Outcome<GetJobTemplateResult, Aws::Client::AWSError<MediaConvertErrors>> GetJobTemplateOutcome;
         typedef Aws::Utils::Outcome<GetPresetResult, Aws::Client::AWSError<MediaConvertErrors>> GetPresetOutcome;
@@ -132,6 +138,7 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdatePresetResult, Aws::Client::AWSError<MediaConvertErrors>> UpdatePresetOutcome;
         typedef Aws::Utils::Outcome<UpdateQueueResult, Aws::Client::AWSError<MediaConvertErrors>> UpdateQueueOutcome;
 
+        typedef std::future<AssociateCertificateOutcome> AssociateCertificateOutcomeCallable;
         typedef std::future<CancelJobOutcome> CancelJobOutcomeCallable;
         typedef std::future<CreateJobOutcome> CreateJobOutcomeCallable;
         typedef std::future<CreateJobTemplateOutcome> CreateJobTemplateOutcomeCallable;
@@ -141,6 +148,7 @@ namespace Model
         typedef std::future<DeletePresetOutcome> DeletePresetOutcomeCallable;
         typedef std::future<DeleteQueueOutcome> DeleteQueueOutcomeCallable;
         typedef std::future<DescribeEndpointsOutcome> DescribeEndpointsOutcomeCallable;
+        typedef std::future<DisassociateCertificateOutcome> DisassociateCertificateOutcomeCallable;
         typedef std::future<GetJobOutcome> GetJobOutcomeCallable;
         typedef std::future<GetJobTemplateOutcome> GetJobTemplateOutcomeCallable;
         typedef std::future<GetPresetOutcome> GetPresetOutcomeCallable;
@@ -159,6 +167,7 @@ namespace Model
 
   class MediaConvertClient;
 
+    typedef std::function<void(const MediaConvertClient*, const Model::AssociateCertificateRequest&, const Model::AssociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > AssociateCertificateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CancelJobRequest&, const Model::CancelJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CancelJobResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CreateJobRequest&, const Model::CreateJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::CreateJobTemplateRequest&, const Model::CreateJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateJobTemplateResponseReceivedHandler;
@@ -168,6 +177,7 @@ namespace Model
     typedef std::function<void(const MediaConvertClient*, const Model::DeletePresetRequest&, const Model::DeletePresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeletePresetResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DeleteQueueRequest&, const Model::DeleteQueueOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteQueueResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::DescribeEndpointsRequest&, const Model::DescribeEndpointsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeEndpointsResponseReceivedHandler;
+    typedef std::function<void(const MediaConvertClient*, const Model::DisassociateCertificateRequest&, const Model::DisassociateCertificateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DisassociateCertificateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobRequest&, const Model::GetJobOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetJobTemplateRequest&, const Model::GetJobTemplateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetJobTemplateResponseReceivedHandler;
     typedef std::function<void(const MediaConvertClient*, const Model::GetPresetRequest&, const Model::GetPresetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > GetPresetResponseReceivedHandler;
@@ -216,16 +226,44 @@ namespace Model
 
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
+         * Elemental MediaConvert.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::AssociateCertificateOutcome AssociateCertificate(const Model::AssociateCertificateRequest& request) const;
+
+        /**
+         * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
+         * Elemental MediaConvert.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::AssociateCertificateOutcomeCallable AssociateCertificateCallable(const Model::AssociateCertificateRequest& request) const;
+
+        /**
+         * Associates an AWS Certificate Manager (ACM) Amazon Resource Name (ARN) with AWS
+         * Elemental MediaConvert.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/AssociateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void AssociateCertificateAsync(const Model::AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          */
         virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          *
@@ -234,8 +272,8 @@ namespace Model
         virtual Model::CancelJobOutcomeCallable CancelJobCallable(const Model::CancelJobRequest& request) const;
 
         /**
-         * Permanently remove a job from a queue. Once you have canceled a job, you can't
-         * start it again. You can't delete a running job.<p><h3>See Also:</h3>   <a
+         * Permanently cancel a job. Once you have canceled a job, you can't start it
+         * again.<p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CancelJob">AWS
          * API Reference</a></p>
          *
@@ -343,9 +381,9 @@ namespace Model
         virtual void CreatePresetAsync(const Model::CreatePresetRequest& request, const CreatePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>
@@ -353,9 +391,9 @@ namespace Model
         virtual Model::CreateQueueOutcome CreateQueue(const Model::CreateQueueRequest& request) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>
@@ -365,9 +403,9 @@ namespace Model
         virtual Model::CreateQueueOutcomeCallable CreateQueueCallable(const Model::CreateQueueRequest& request) const;
 
         /**
-         * Create a new transcoding queue. For information about job templates see the User
-         * Guide at
-         * http://docs.aws.amazon.com/mediaconvert/latest/ug/what-is.html<p><h3>See
+         * Create a new transcoding queue. For information about queues, see Working With
+         * Queues in the User Guide at
+         * https://docs.aws.amazon.com/mediaconvert/latest/ug/working-with-queues.html<p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/CreateQueue">AWS
          * API Reference</a></p>
@@ -478,6 +516,37 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeEndpointsAsync(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * Removes an association between the Amazon Resource Name (ARN) of an AWS
+         * Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert
+         * resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DisassociateCertificateOutcome DisassociateCertificate(const Model::DisassociateCertificateRequest& request) const;
+
+        /**
+         * Removes an association between the Amazon Resource Name (ARN) of an AWS
+         * Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert
+         * resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DisassociateCertificateOutcomeCallable DisassociateCertificateCallable(const Model::DisassociateCertificateRequest& request) const;
+
+        /**
+         * Removes an association between the Amazon Resource Name (ARN) of an AWS
+         * Certificate Manager (ACM) certificate and an AWS Elemental MediaConvert
+         * resource.<p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/mediaconvert-2017-08-29/DisassociateCertificate">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DisassociateCertificateAsync(const Model::DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * Retrieve the JSON for a specific completed transcoding job.<p><h3>See Also:</h3>
@@ -886,11 +955,12 @@ namespace Model
          */
         virtual void UpdateQueueAsync(const Model::UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
+        void AssociateCertificateAsyncHelper(const Model::AssociateCertificateRequest& request, const AssociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CancelJobAsyncHelper(const Model::CancelJobRequest& request, const CancelJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobAsyncHelper(const Model::CreateJobRequest& request, const CreateJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateJobTemplateAsyncHelper(const Model::CreateJobTemplateRequest& request, const CreateJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -900,6 +970,7 @@ namespace Model
         void DeletePresetAsyncHelper(const Model::DeletePresetRequest& request, const DeletePresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteQueueAsyncHelper(const Model::DeleteQueueRequest& request, const DeleteQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeEndpointsAsyncHelper(const Model::DescribeEndpointsRequest& request, const DescribeEndpointsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DisassociateCertificateAsyncHelper(const Model::DisassociateCertificateRequest& request, const DisassociateCertificateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobAsyncHelper(const Model::GetJobRequest& request, const GetJobResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetJobTemplateAsyncHelper(const Model::GetJobTemplateRequest& request, const GetJobTemplateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void GetPresetAsyncHelper(const Model::GetPresetRequest& request, const GetPresetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -916,6 +987,7 @@ namespace Model
         void UpdateQueueAsyncHelper(const Model::UpdateQueueRequest& request, const UpdateQueueResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

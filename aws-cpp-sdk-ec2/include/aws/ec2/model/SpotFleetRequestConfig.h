@@ -71,6 +71,16 @@ namespace Model
      * size of the fleet is decreased, the status is <code>pending_termination</code>
      * while Spot Instances are terminating.</p>
      */
+    inline bool ActivityStatusHasBeenSet() const { return m_activityStatusHasBeenSet; }
+
+    /**
+     * <p>The progress of the Spot Fleet request. If there is an error, the status is
+     * <code>error</code>. After all requests are placed, the status is
+     * <code>pending_fulfillment</code>. If the size of the fleet is equal to or
+     * greater than its target capacity, the status is <code>fulfilled</code>. If the
+     * size of the fleet is decreased, the status is <code>pending_termination</code>
+     * while Spot Instances are terminating.</p>
+     */
     inline void SetActivityStatus(const ActivityStatus& value) { m_activityStatusHasBeenSet = true; m_activityStatus = value; }
 
     /**
@@ -112,6 +122,11 @@ namespace Model
     /**
      * <p>The creation date and time of the request.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The creation date and time of the request.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -138,6 +153,11 @@ namespace Model
     /**
      * <p>The configuration of the Spot Fleet request.</p>
      */
+    inline bool SpotFleetRequestConfigHasBeenSet() const { return m_spotFleetRequestConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration of the Spot Fleet request.</p>
+     */
     inline void SetSpotFleetRequestConfig(const SpotFleetRequestConfigData& value) { m_spotFleetRequestConfigHasBeenSet = true; m_spotFleetRequestConfig = value; }
 
     /**
@@ -160,6 +180,11 @@ namespace Model
      * <p>The ID of the Spot Fleet request.</p>
      */
     inline const Aws::String& GetSpotFleetRequestId() const{ return m_spotFleetRequestId; }
+
+    /**
+     * <p>The ID of the Spot Fleet request.</p>
+     */
+    inline bool SpotFleetRequestIdHasBeenSet() const { return m_spotFleetRequestIdHasBeenSet; }
 
     /**
      * <p>The ID of the Spot Fleet request.</p>
@@ -196,6 +221,11 @@ namespace Model
      * <p>The state of the Spot Fleet request.</p>
      */
     inline const BatchState& GetSpotFleetRequestState() const{ return m_spotFleetRequestState; }
+
+    /**
+     * <p>The state of the Spot Fleet request.</p>
+     */
+    inline bool SpotFleetRequestStateHasBeenSet() const { return m_spotFleetRequestStateHasBeenSet; }
 
     /**
      * <p>The state of the Spot Fleet request.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * The current configuration of the broker.
      */
+    inline bool CurrentHasBeenSet() const { return m_currentHasBeenSet; }
+
+    /**
+     * The current configuration of the broker.
+     */
     inline void SetCurrent(const ConfigurationId& value) { m_currentHasBeenSet = true; m_current = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * The history of configurations applied to the broker.
      */
     inline const Aws::Vector<ConfigurationId>& GetHistory() const{ return m_history; }
+
+    /**
+     * The history of configurations applied to the broker.
+     */
+    inline bool HistoryHasBeenSet() const { return m_historyHasBeenSet; }
 
     /**
      * The history of configurations applied to the broker.
@@ -114,6 +124,11 @@ namespace Model
      * The pending configuration of the broker.
      */
     inline const ConfigurationId& GetPending() const{ return m_pending; }
+
+    /**
+     * The pending configuration of the broker.
+     */
+    inline bool PendingHasBeenSet() const { return m_pendingHasBeenSet; }
 
     /**
      * The pending configuration of the broker.

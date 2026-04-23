@@ -37,7 +37,7 @@ namespace Model
   /**
    * <p>A complex data type of public keys you add to CloudFront to use with features
    * like field-level encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/PublicKey">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/PublicKey">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API PublicKey
@@ -54,6 +54,11 @@ namespace Model
      * <p>A unique ID assigned to a public key you've added to CloudFront.</p>
      */
     inline const Aws::String& GetId() const{ return m_id; }
+
+    /**
+     * <p>A unique ID assigned to a public key you've added to CloudFront.</p>
+     */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
 
     /**
      * <p>A unique ID assigned to a public key you've added to CloudFront.</p>
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>A time you added a public key to CloudFront.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>A time you added a public key to CloudFront.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -117,6 +127,12 @@ namespace Model
      * features like field-level encryption.</p>
      */
     inline const PublicKeyConfig& GetPublicKeyConfig() const{ return m_publicKeyConfig; }
+
+    /**
+     * <p>A complex data type for a public key you add to CloudFront to use with
+     * features like field-level encryption.</p>
+     */
+    inline bool PublicKeyConfigHasBeenSet() const { return m_publicKeyConfigHasBeenSet; }
 
     /**
      * <p>A complex data type for a public key you add to CloudFront to use with

@@ -39,7 +39,8 @@ CreateFleetRequest::CreateFleetRequest() :
     m_displayNameHasBeenSet(false),
     m_enableDefaultInternetAccess(false),
     m_enableDefaultInternetAccessHasBeenSet(false),
-    m_domainJoinInfoHasBeenSet(false)
+    m_domainJoinInfoHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -121,6 +122,17 @@ Aws::String CreateFleetRequest::SerializePayload() const
   if(m_domainJoinInfoHasBeenSet)
   {
    payload.WithObject("DomainJoinInfo", m_domainJoinInfo.Jsonize());
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   JsonValue tagsJsonMap;
+   for(auto& tagsItem : m_tags)
+   {
+     tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+   }
+   payload.WithObject("Tags", std::move(tagsJsonMap));
 
   }
 

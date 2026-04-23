@@ -60,6 +60,13 @@ namespace Model
      * specify has to be a dedicated IP address that's assocaited with your Amazon
      * Pinpoint account.</p>
      */
+    inline bool IpHasBeenSet() const { return m_ipHasBeenSet; }
+
+    /**
+     * <p>The IP address that you want to obtain more information about. The value you
+     * specify has to be a dedicated IP address that's assocaited with your Amazon
+     * Pinpoint account.</p>
+     */
     inline void SetIp(const Aws::String& value) { m_ipHasBeenSet = true; m_ip = value; }
 
     /**

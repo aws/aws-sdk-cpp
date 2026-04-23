@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The path on the container at which to mount the host volume.</p>
      */
+    inline bool ContainerPathHasBeenSet() const { return m_containerPathHasBeenSet; }
+
+    /**
+     * <p>The path on the container at which to mount the host volume.</p>
+     */
     inline void SetContainerPath(const Aws::String& value) { m_containerPathHasBeenSet = true; m_containerPath = value; }
 
     /**
@@ -96,6 +101,13 @@ namespace Model
      * volume; otherwise, the container can write to the volume. The default value is
      * <code>false</code>.</p>
      */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+
+    /**
+     * <p>If this value is <code>true</code>, the container has read-only access to the
+     * volume; otherwise, the container can write to the volume. The default value is
+     * <code>false</code>.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
@@ -110,6 +122,11 @@ namespace Model
      * <p>The name of the volume to mount.</p>
      */
     inline const Aws::String& GetSourceVolume() const{ return m_sourceVolume; }
+
+    /**
+     * <p>The name of the volume to mount.</p>
+     */
+    inline bool SourceVolumeHasBeenSet() const { return m_sourceVolumeHasBeenSet; }
 
     /**
      * <p>The name of the volume to mount.</p>

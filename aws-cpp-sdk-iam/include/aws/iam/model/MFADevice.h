@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The user with whom the MFA device is associated.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The user with whom the MFA device is associated.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * devices, the serial number is the device ARN.</p>
      */
     inline const Aws::String& GetSerialNumber() const{ return m_serialNumber; }
+
+    /**
+     * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
+     * devices, the serial number is the device ARN.</p>
+     */
+    inline bool SerialNumberHasBeenSet() const { return m_serialNumberHasBeenSet; }
 
     /**
      * <p>The serial number that uniquely identifies the MFA device. For virtual MFA
@@ -135,6 +146,11 @@ namespace Model
      * <p>The date when the MFA device was enabled for the user.</p>
      */
     inline const Aws::Utils::DateTime& GetEnableDate() const{ return m_enableDate; }
+
+    /**
+     * <p>The date when the MFA device was enabled for the user.</p>
+     */
+    inline bool EnableDateHasBeenSet() const { return m_enableDateHasBeenSet; }
 
     /**
      * <p>The date when the MFA device was enabled for the user.</p>

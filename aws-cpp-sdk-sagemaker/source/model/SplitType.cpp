@@ -33,6 +33,7 @@ namespace Aws
         static const int None_HASH = HashingUtils::HashString("None");
         static const int Line_HASH = HashingUtils::HashString("Line");
         static const int RecordIO_HASH = HashingUtils::HashString("RecordIO");
+        static const int TFRecord_HASH = HashingUtils::HashString("TFRecord");
 
 
         SplitType GetSplitTypeForName(const Aws::String& name)
@@ -49,6 +50,10 @@ namespace Aws
           else if (hashCode == RecordIO_HASH)
           {
             return SplitType::RecordIO;
+          }
+          else if (hashCode == TFRecord_HASH)
+          {
+            return SplitType::TFRecord;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -70,6 +75,8 @@ namespace Aws
             return "Line";
           case SplitType::RecordIO:
             return "RecordIO";
+          case SplitType::TFRecord:
+            return "TFRecord";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -77,7 +84,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

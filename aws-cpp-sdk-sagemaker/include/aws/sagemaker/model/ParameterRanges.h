@@ -67,6 +67,12 @@ namespace Model
      * <p>The array of <a>IntegerParameterRange</a> objects that specify ranges of
      * integer hyperparameters that a hyperparameter tuning job searches.</p>
      */
+    inline bool IntegerParameterRangesHasBeenSet() const { return m_integerParameterRangesHasBeenSet; }
+
+    /**
+     * <p>The array of <a>IntegerParameterRange</a> objects that specify ranges of
+     * integer hyperparameters that a hyperparameter tuning job searches.</p>
+     */
     inline void SetIntegerParameterRanges(const Aws::Vector<IntegerParameterRange>& value) { m_integerParameterRangesHasBeenSet = true; m_integerParameterRanges = value; }
 
     /**
@@ -110,6 +116,12 @@ namespace Model
      * <p>The array of <a>ContinuousParameterRange</a> objects that specify ranges of
      * continuous hyperparameters that a hyperparameter tuning job searches.</p>
      */
+    inline bool ContinuousParameterRangesHasBeenSet() const { return m_continuousParameterRangesHasBeenSet; }
+
+    /**
+     * <p>The array of <a>ContinuousParameterRange</a> objects that specify ranges of
+     * continuous hyperparameters that a hyperparameter tuning job searches.</p>
+     */
     inline void SetContinuousParameterRanges(const Aws::Vector<ContinuousParameterRange>& value) { m_continuousParameterRangesHasBeenSet = true; m_continuousParameterRanges = value; }
 
     /**
@@ -148,6 +160,12 @@ namespace Model
      * categorical hyperparameters that a hyperparameter tuning job searches.</p>
      */
     inline const Aws::Vector<CategoricalParameterRange>& GetCategoricalParameterRanges() const{ return m_categoricalParameterRanges; }
+
+    /**
+     * <p>The array of <a>CategoricalParameterRange</a> objects that specify ranges of
+     * categorical hyperparameters that a hyperparameter tuning job searches.</p>
+     */
+    inline bool CategoricalParameterRangesHasBeenSet() const { return m_categoricalParameterRangesHasBeenSet; }
 
     /**
      * <p>The array of <a>CategoricalParameterRange</a> objects that specify ranges of

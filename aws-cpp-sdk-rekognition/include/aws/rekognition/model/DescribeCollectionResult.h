@@ -45,19 +45,19 @@ namespace Model
 
     /**
      * <p>The number of faces that are indexed into the collection. To index faces into
-     * a collection, use .</p>
+     * a collection, use <a>IndexFaces</a>.</p>
      */
     inline long long GetFaceCount() const{ return m_faceCount; }
 
     /**
      * <p>The number of faces that are indexed into the collection. To index faces into
-     * a collection, use .</p>
+     * a collection, use <a>IndexFaces</a>.</p>
      */
     inline void SetFaceCount(long long value) { m_faceCount = value; }
 
     /**
      * <p>The number of faces that are indexed into the collection. To index faces into
-     * a collection, use .</p>
+     * a collection, use <a>IndexFaces</a>.</p>
      */
     inline DescribeCollectionResult& WithFaceCount(long long value) { SetFaceCount(value); return *this;}
 

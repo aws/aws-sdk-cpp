@@ -28,10 +28,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for CreatePlacementGroup.</p><p><h3>See Also:</h3>  
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/CreatePlacementGroupRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API CreatePlacementGroupRequest : public EC2Request
   {
@@ -65,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -78,43 +82,49 @@ namespace Model
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>A name for the placement group. Must be unique within the scope of your
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
 
     /**
      * <p>A name for the placement group. Must be unique within the scope of your
-     * account for the region.</p> <p>Constraints: Up to 255 ASCII characters</p>
+     * account for the Region.</p> <p>Constraints: Up to 255 ASCII characters</p>
      */
     inline CreatePlacementGroupRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
 
@@ -123,6 +133,11 @@ namespace Model
      * <p>The placement strategy.</p>
      */
     inline const PlacementStrategy& GetStrategy() const{ return m_strategy; }
+
+    /**
+     * <p>The placement strategy.</p>
+     */
+    inline bool StrategyHasBeenSet() const { return m_strategyHasBeenSet; }
 
     /**
      * <p>The placement strategy.</p>
@@ -144,6 +159,31 @@ namespace Model
      */
     inline CreatePlacementGroupRequest& WithStrategy(PlacementStrategy&& value) { SetStrategy(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline int GetPartitionCount() const{ return m_partitionCount; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline bool PartitionCountHasBeenSet() const { return m_partitionCountHasBeenSet; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline void SetPartitionCount(int value) { m_partitionCountHasBeenSet = true; m_partitionCount = value; }
+
+    /**
+     * <p>The number of partitions. Valid only when <b>Strategy</b> is set to
+     * <code>partition</code>.</p>
+     */
+    inline CreatePlacementGroupRequest& WithPartitionCount(int value) { SetPartitionCount(value); return *this;}
+
   private:
 
     bool m_dryRun;
@@ -154,6 +194,9 @@ namespace Model
 
     PlacementStrategy m_strategy;
     bool m_strategyHasBeenSet;
+
+    int m_partitionCount;
+    bool m_partitionCountHasBeenSet;
   };
 
 } // namespace Model

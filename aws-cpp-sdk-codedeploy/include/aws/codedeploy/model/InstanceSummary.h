@@ -53,37 +53,42 @@ namespace Model
 
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline const Aws::String& GetDeploymentId() const{ return m_deploymentId; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
+     */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(Aws::String&& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = std::move(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline void SetDeploymentId(const char* value) { m_deploymentIdHasBeenSet = true; m_deploymentId.assign(value); }
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(const Aws::String& value) { SetDeploymentId(value); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(Aws::String&& value) { SetDeploymentId(std::move(value)); return *this;}
 
     /**
-     * <p>The deployment ID.</p>
+     * <p> The unique ID of a deployment. </p>
      */
     inline InstanceSummary& WithDeploymentId(const char* value) { SetDeploymentId(value); return *this;}
 
@@ -92,6 +97,11 @@ namespace Model
      * <p>The instance ID.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The instance ID.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The instance ID.</p>
@@ -144,6 +154,17 @@ namespace Model
      * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
      * deployment status is unknown for this instance.</p> </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The deployment status for this instance:</p> <ul> <li> <p>Pending: The
+     * deployment is pending for this instance.</p> </li> <li> <p>In Progress: The
+     * deployment is in progress for this instance.</p> </li> <li> <p>Succeeded: The
+     * deployment has succeeded for this instance.</p> </li> <li> <p>Failed: The
+     * deployment has failed for this instance.</p> </li> <li> <p>Skipped: The
+     * deployment has been skipped for this instance.</p> </li> <li> <p>Unknown: The
+     * deployment status is unknown for this instance.</p> </li> </ul>
+     */
     inline void SetStatus(const InstanceStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -181,27 +202,38 @@ namespace Model
 
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
+     */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>A timestamp indicating when the instance information was last updated.</p>
+     * <p>A timestamp that indicaties when the instance information was last
+     * updated.</p>
      */
     inline InstanceSummary& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
 
@@ -210,6 +242,11 @@ namespace Model
      * <p>A list of lifecycle events for this instance.</p>
      */
     inline const Aws::Vector<LifecycleEvent>& GetLifecycleEvents() const{ return m_lifecycleEvents; }
+
+    /**
+     * <p>A list of lifecycle events for this instance.</p>
+     */
+    inline bool LifecycleEventsHasBeenSet() const { return m_lifecycleEventsHasBeenSet; }
 
     /**
      * <p>A list of lifecycle events for this instance.</p>
@@ -249,6 +286,14 @@ namespace Model
      * environment.</p> </li> </ul>
      */
     inline const InstanceType& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>Information about which environment an instance belongs to in a blue/green
+     * deployment.</p> <ul> <li> <p>BLUE: The instance is part of the original
+     * environment.</p> </li> <li> <p>GREEN: The instance is part of the replacement
+     * environment.</p> </li> </ul>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>Information about which environment an instance belongs to in a blue/green

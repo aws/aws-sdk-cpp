@@ -34,8 +34,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about the root volume for a WorkSpace bundle.</p><p><h3>See
-   * Also:</h3>   <a
+   * <p>Describes the root volume for a WorkSpace bundle.</p><p><h3>See Also:</h3>  
+   * <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/RootStorage">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * <p>The size of the root volume.</p>
      */
     inline const Aws::String& GetCapacity() const{ return m_capacity; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
+    inline bool CapacityHasBeenSet() const { return m_capacityHasBeenSet; }
 
     /**
      * <p>The size of the root volume.</p>

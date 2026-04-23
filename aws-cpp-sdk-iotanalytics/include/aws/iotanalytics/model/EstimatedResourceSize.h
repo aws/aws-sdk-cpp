@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The estimated size of the resource in bytes.</p>
      */
+    inline bool EstimatedSizeInBytesHasBeenSet() const { return m_estimatedSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>The estimated size of the resource in bytes.</p>
+     */
     inline void SetEstimatedSizeInBytes(double value) { m_estimatedSizeInBytesHasBeenSet = true; m_estimatedSizeInBytes = value; }
 
     /**
@@ -67,6 +72,11 @@ namespace Model
      * <p>The time when the estimate of the size of the resource was made.</p>
      */
     inline const Aws::Utils::DateTime& GetEstimatedOn() const{ return m_estimatedOn; }
+
+    /**
+     * <p>The time when the estimate of the size of the resource was made.</p>
+     */
+    inline bool EstimatedOnHasBeenSet() const { return m_estimatedOnHasBeenSet; }
 
     /**
      * <p>The time when the estimate of the size of the resource was made.</p>

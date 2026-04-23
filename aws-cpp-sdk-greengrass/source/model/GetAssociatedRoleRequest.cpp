@@ -29,7 +29,7 @@ GetAssociatedRoleRequest::GetAssociatedRoleRequest() :
 
 Aws::String GetAssociatedRoleRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

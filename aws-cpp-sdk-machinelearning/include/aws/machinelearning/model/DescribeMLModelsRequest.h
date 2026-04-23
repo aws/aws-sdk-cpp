@@ -88,6 +88,28 @@ namespace Model
      * either a file or an Amazon Simple Storage Service (Amazon S3) bucket or
      * directory.</li> </ul>
      */
+    inline bool FilterVariableHasBeenSet() const { return m_filterVariableHasBeenSet; }
+
+    /**
+     * <p>Use one of the following variables to filter a list of
+     * <code>MLModel</code>:</p> <ul> <li> <code>CreatedAt</code> - Sets the search
+     * criteria to <code>MLModel</code> creation date.</li> <li> <code>Status</code> -
+     * Sets the search criteria to <code>MLModel</code> status.</li> <li>
+     * <code>Name</code> - Sets the search criteria to the contents of
+     * <code>MLModel</code><b> </b> <code>Name</code>.</li> <li> <code>IAMUser</code> -
+     * Sets the search criteria to the user account that invoked the
+     * <code>MLModel</code> creation.</li> <li> <code>TrainingDataSourceId</code> -
+     * Sets the search criteria to the <code>DataSource</code> used to train one or
+     * more <code>MLModel</code>.</li> <li> <code>RealtimeEndpointStatus</code> - Sets
+     * the search criteria to the <code>MLModel</code> real-time endpoint status.</li>
+     * <li> <code>MLModelType</code> - Sets the search criteria to <code>MLModel</code>
+     * type: binary, regression, or multi-class.</li> <li> <code>Algorithm</code> -
+     * Sets the search criteria to the algorithm that the <code>MLModel</code>
+     * uses.</li> <li> <code>TrainingDataURI</code> - Sets the search criteria to the
+     * data file(s) used in training a <code>MLModel</code>. The URL can identify
+     * either a file or an Amazon Simple Storage Service (Amazon S3) bucket or
+     * directory.</li> </ul>
+     */
     inline void SetFilterVariable(const MLModelFilterVariable& value) { m_filterVariableHasBeenSet = true; m_filterVariable = value; }
 
     /**
@@ -169,6 +191,13 @@ namespace Model
      * <code>FilterVariable</code> values that exactly match the value specified with
      * <code>EQ</code>.</p>
      */
+    inline bool EQHasBeenSet() const { return m_eQHasBeenSet; }
+
+    /**
+     * <p>The equal to operator. The <code>MLModel</code> results will have
+     * <code>FilterVariable</code> values that exactly match the value specified with
+     * <code>EQ</code>.</p>
+     */
     inline void SetEQ(const Aws::String& value) { m_eQHasBeenSet = true; m_eQ = value; }
 
     /**
@@ -213,6 +242,13 @@ namespace Model
      * with <code>GT</code>.</p>
      */
     inline const Aws::String& GetGT() const{ return m_gT; }
+
+    /**
+     * <p>The greater than operator. The <code>MLModel</code> results will have
+     * <code>FilterVariable</code> values that are greater than the value specified
+     * with <code>GT</code>.</p>
+     */
+    inline bool GTHasBeenSet() const { return m_gTHasBeenSet; }
 
     /**
      * <p>The greater than operator. The <code>MLModel</code> results will have
@@ -269,6 +305,13 @@ namespace Model
      * <code>FilterVariable</code> values that are less than the value specified with
      * <code>LT</code>.</p>
      */
+    inline bool LTHasBeenSet() const { return m_lTHasBeenSet; }
+
+    /**
+     * <p>The less than operator. The <code>MLModel</code> results will have
+     * <code>FilterVariable</code> values that are less than the value specified with
+     * <code>LT</code>.</p>
+     */
     inline void SetLT(const Aws::String& value) { m_lTHasBeenSet = true; m_lT = value; }
 
     /**
@@ -313,6 +356,13 @@ namespace Model
      * value specified with <code>GE</code>. </p>
      */
     inline const Aws::String& GetGE() const{ return m_gE; }
+
+    /**
+     * <p>The greater than or equal to operator. The <code>MLModel</code> results will
+     * have <code>FilterVariable</code> values that are greater than or equal to the
+     * value specified with <code>GE</code>. </p>
+     */
+    inline bool GEHasBeenSet() const { return m_gEHasBeenSet; }
 
     /**
      * <p>The greater than or equal to operator. The <code>MLModel</code> results will
@@ -369,6 +419,13 @@ namespace Model
      * have <code>FilterVariable</code> values that are less than or equal to the value
      * specified with <code>LE</code>.</p>
      */
+    inline bool LEHasBeenSet() const { return m_lEHasBeenSet; }
+
+    /**
+     * <p>The less than or equal to operator. The <code>MLModel</code> results will
+     * have <code>FilterVariable</code> values that are less than or equal to the value
+     * specified with <code>LE</code>.</p>
+     */
     inline void SetLE(const Aws::String& value) { m_lEHasBeenSet = true; m_lE = value; }
 
     /**
@@ -413,6 +470,13 @@ namespace Model
      * <code>NE</code>.</p>
      */
     inline const Aws::String& GetNE() const{ return m_nE; }
+
+    /**
+     * <p>The not equal to operator. The <code>MLModel</code> results will have
+     * <code>FilterVariable</code> values not equal to the value specified with
+     * <code>NE</code>.</p>
+     */
+    inline bool NEHasBeenSet() const { return m_nEHasBeenSet; }
 
     /**
      * <p>The not equal to operator. The <code>MLModel</code> results will have
@@ -468,6 +532,18 @@ namespace Model
      * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>A string that is found at the beginning of a variable, such as
+     * <code>Name</code> or <code>Id</code>.</p> <p>For example, an
+     * <code>MLModel</code> could have the <code>Name</code>
+     * <code>2014-09-09-HolidayGiftMailer</code>. To search for this
+     * <code>MLModel</code>, select <code>Name</code> for the
+     * <code>FilterVariable</code> and any of the following strings for the
+     * <code>Prefix</code>: </p> <ul> <li><p>2014-09</p></li>
+     * <li><p>2014-09-09</p></li> <li><p>2014-09-09-Holiday</p></li> </ul>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>A string that is found at the beginning of a variable, such as
@@ -558,6 +634,15 @@ namespace Model
      * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
      * <code>FilterVariable</code>.</p>
      */
+    inline bool SortOrderHasBeenSet() const { return m_sortOrderHasBeenSet; }
+
+    /**
+     * <p>A two-value parameter that determines the sequence of the resulting list of
+     * <code>MLModel</code>.</p> <ul> <li> <code>asc</code> - Arranges the list in
+     * ascending order (A-Z, 0-9).</li> <li> <code>dsc</code> - Arranges the list in
+     * descending order (Z-A, 9-0).</li> </ul> <p>Results are sorted by
+     * <code>FilterVariable</code>.</p>
+     */
     inline void SetSortOrder(const SortOrder& value) { m_sortOrderHasBeenSet = true; m_sortOrder = value; }
 
     /**
@@ -596,6 +681,11 @@ namespace Model
     /**
      * <p>The ID of the page in the paginated results.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The ID of the page in the paginated results.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -630,6 +720,13 @@ namespace Model
      * is <code>100</code>.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The number of pages of information to include in the result. The range of
+     * acceptable values is <code>1</code> through <code>100</code>. The default value
+     * is <code>100</code>.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The number of pages of information to include in the result. The range of

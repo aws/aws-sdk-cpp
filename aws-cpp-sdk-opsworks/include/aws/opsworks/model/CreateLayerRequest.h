@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The layer stack ID.</p>
      */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
+
+    /**
+     * <p>The layer stack ID.</p>
+     */
     inline void SetStackId(const Aws::String& value) { m_stackIdHasBeenSet = true; m_stackId = value; }
 
     /**
@@ -100,6 +105,13 @@ namespace Model
      * type. It can have any number of custom layers. Built-in layers are not available
      * in Chef 12 stacks.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The layer type. A stack cannot have more than one built-in layer of the same
+     * type. It can have any number of custom layers. Built-in layers are not available
+     * in Chef 12 stacks.</p>
+     */
     inline void SetType(const LayerType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -128,6 +140,11 @@ namespace Model
      * <p>The layer name, which is used by the console.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The layer name, which is used by the console.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The layer name, which is used by the console.</p>
@@ -171,6 +188,18 @@ namespace Model
      * Reference</a>.</p>
      */
     inline const Aws::String& GetShortname() const{ return m_shortname; }
+
+    /**
+     * <p>For custom layers only, use this parameter to specify the layer's short name,
+     * which is used internally by AWS OpsWorks Stacks and by Chef recipes. The short
+     * name is also used as the name for the directory where your app files are
+     * installed. It can have a maximum of 200 characters, which are limited to the
+     * alphanumeric characters, '-', '_', and '.'.</p> <p>The built-in layers' short
+     * names are defined by AWS OpsWorks Stacks. For more information, see the <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/layers.html">Layer
+     * Reference</a>.</p>
+     */
+    inline bool ShortnameHasBeenSet() const { return m_shortnameHasBeenSet; }
 
     /**
      * <p>For custom layers only, use this parameter to specify the layer's short name,
@@ -257,6 +286,13 @@ namespace Model
      * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
      * attribute to the cluster's ARN.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>One or more user-defined key-value pairs to be added to the stack
+     * attributes.</p> <p>To create a cluster layer, set the <code>EcsClusterArn</code>
+     * attribute to the cluster's ARN.</p>
+     */
     inline void SetAttributes(const Aws::Map<LayerAttributesKeys, Aws::String>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -333,6 +369,12 @@ namespace Model
      * <p>Specifies CloudWatch Logs configuration options for the layer. For more
      * information, see <a>CloudWatchLogsLogStream</a>.</p>
      */
+    inline bool CloudWatchLogsConfigurationHasBeenSet() const { return m_cloudWatchLogsConfigurationHasBeenSet; }
+
+    /**
+     * <p>Specifies CloudWatch Logs configuration options for the layer. For more
+     * information, see <a>CloudWatchLogsLogStream</a>.</p>
+     */
     inline void SetCloudWatchLogsConfiguration(const CloudWatchLogsConfiguration& value) { m_cloudWatchLogsConfigurationHasBeenSet = true; m_cloudWatchLogsConfiguration = value; }
 
     /**
@@ -361,6 +403,14 @@ namespace Model
      * Identifiers</a>.</p>
      */
     inline const Aws::String& GetCustomInstanceProfileArn() const{ return m_customInstanceProfileArn; }
+
+    /**
+     * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
+     * information about IAM ARNs, see <a
+     * href="http://docs.aws.amazon.com/IAM/latest/UserGuide/Using_Identifiers.html">Using
+     * Identifiers</a>.</p>
+     */
+    inline bool CustomInstanceProfileArnHasBeenSet() const { return m_customInstanceProfileArnHasBeenSet; }
 
     /**
      * <p>The ARN of an IAM profile to be used for the layer's EC2 instances. For more
@@ -420,6 +470,16 @@ namespace Model
      * CLI. </p>
      */
     inline const Aws::String& GetCustomJson() const{ return m_customJson; }
+
+    /**
+     * <p>A JSON-formatted string containing custom stack configuration and deployment
+     * attributes to be installed on the layer's instances. For more information, see
+     * <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workingcookbook-json-override.html">
+     * Using Custom JSON</a>. This feature is supported as of version 1.7.42 of the AWS
+     * CLI. </p>
+     */
+    inline bool CustomJsonHasBeenSet() const { return m_customJsonHasBeenSet; }
 
     /**
      * <p>A JSON-formatted string containing custom stack configuration and deployment
@@ -490,6 +550,11 @@ namespace Model
     /**
      * <p>An array containing the layer custom security group IDs.</p>
      */
+    inline bool CustomSecurityGroupIdsHasBeenSet() const { return m_customSecurityGroupIdsHasBeenSet; }
+
+    /**
+     * <p>An array containing the layer custom security group IDs.</p>
+     */
     inline void SetCustomSecurityGroupIds(const Aws::Vector<Aws::String>& value) { m_customSecurityGroupIdsHasBeenSet = true; m_customSecurityGroupIds = value; }
 
     /**
@@ -528,6 +593,12 @@ namespace Model
      * packages.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPackages() const{ return m_packages; }
+
+    /**
+     * <p>An array of <code>Package</code> objects that describes the layer
+     * packages.</p>
+     */
+    inline bool PackagesHasBeenSet() const { return m_packagesHasBeenSet; }
 
     /**
      * <p>An array of <code>Package</code> objects that describes the layer
@@ -582,6 +653,12 @@ namespace Model
      * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
      * EBS volumes.</p>
      */
+    inline bool VolumeConfigurationsHasBeenSet() const { return m_volumeConfigurationsHasBeenSet; }
+
+    /**
+     * <p>A <code>VolumeConfigurations</code> object that describes the layer's Amazon
+     * EBS volumes.</p>
+     */
     inline void SetVolumeConfigurations(const Aws::Vector<VolumeConfiguration>& value) { m_volumeConfigurationsHasBeenSet = true; m_volumeConfigurations = value; }
 
     /**
@@ -623,6 +700,11 @@ namespace Model
     /**
      * <p>Whether to disable auto healing for the layer.</p>
      */
+    inline bool EnableAutoHealingHasBeenSet() const { return m_enableAutoHealingHasBeenSet; }
+
+    /**
+     * <p>Whether to disable auto healing for the layer.</p>
+     */
     inline void SetEnableAutoHealing(bool value) { m_enableAutoHealingHasBeenSet = true; m_enableAutoHealing = value; }
 
     /**
@@ -639,6 +721,15 @@ namespace Model
      * to Edit a Layer</a>.</p>
      */
     inline bool GetAutoAssignElasticIps() const{ return m_autoAssignElasticIps; }
+
+    /**
+     * <p>Whether to automatically assign an <a
+     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/elastic-ip-addresses-eip.html">Elastic
+     * IP address</a> to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.</p>
+     */
+    inline bool AutoAssignElasticIpsHasBeenSet() const { return m_autoAssignElasticIpsHasBeenSet; }
 
     /**
      * <p>Whether to automatically assign an <a
@@ -673,6 +764,14 @@ namespace Model
      * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
      * to Edit a Layer</a>.</p>
      */
+    inline bool AutoAssignPublicIpsHasBeenSet() const { return m_autoAssignPublicIpsHasBeenSet; }
+
+    /**
+     * <p>For stacks that are running in a VPC, whether to automatically assign a
+     * public IP address to the layer's instances. For more information, see <a
+     * href="http://docs.aws.amazon.com/opsworks/latest/userguide/workinglayers-basics-edit.html">How
+     * to Edit a Layer</a>.</p>
+     */
     inline void SetAutoAssignPublicIps(bool value) { m_autoAssignPublicIpsHasBeenSet = true; m_autoAssignPublicIps = value; }
 
     /**
@@ -689,6 +788,12 @@ namespace Model
      * recipes.</p>
      */
     inline const Recipes& GetCustomRecipes() const{ return m_customRecipes; }
+
+    /**
+     * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
+     * recipes.</p>
+     */
+    inline bool CustomRecipesHasBeenSet() const { return m_customRecipesHasBeenSet; }
 
     /**
      * <p>A <code>LayerCustomRecipes</code> object that specifies the layer custom
@@ -739,6 +844,19 @@ namespace Model
      * updates, we strongly recommend using the default value of <code>true</code>.</p>
      * </note>
      */
+    inline bool InstallUpdatesOnBootHasBeenSet() const { return m_installUpdatesOnBootHasBeenSet; }
+
+    /**
+     * <p>Whether to install operating system and package updates when the instance
+     * boots. The default value is <code>true</code>. To control when updates are
+     * installed, set this value to <code>false</code>. You must then update your
+     * instances manually by using <a>CreateDeployment</a> to run the
+     * <code>update_dependencies</code> stack command or by manually running
+     * <code>yum</code> (Amazon Linux) or <code>apt-get</code> (Ubuntu) on the
+     * instances. </p> <note> <p>To ensure that your instances have the latest security
+     * updates, we strongly recommend using the default value of <code>true</code>.</p>
+     * </note>
+     */
     inline void SetInstallUpdatesOnBoot(bool value) { m_installUpdatesOnBootHasBeenSet = true; m_installUpdatesOnBoot = value; }
 
     /**
@@ -763,6 +881,11 @@ namespace Model
     /**
      * <p>Whether to use Amazon EBS-optimized instances.</p>
      */
+    inline bool UseEbsOptimizedInstancesHasBeenSet() const { return m_useEbsOptimizedInstancesHasBeenSet; }
+
+    /**
+     * <p>Whether to use Amazon EBS-optimized instances.</p>
+     */
     inline void SetUseEbsOptimizedInstances(bool value) { m_useEbsOptimizedInstancesHasBeenSet = true; m_useEbsOptimizedInstances = value; }
 
     /**
@@ -777,6 +900,13 @@ namespace Model
      * disable Elastic Load Balancer connection draining.</p>
      */
     inline const LifecycleEventConfiguration& GetLifecycleEventConfiguration() const{ return m_lifecycleEventConfiguration; }
+
+    /**
+     * <p>A <code>LifeCycleEventConfiguration</code> object that you can use to
+     * configure the Shutdown event to specify an execution timeout and enable or
+     * disable Elastic Load Balancer connection draining.</p>
+     */
+    inline bool LifecycleEventConfigurationHasBeenSet() const { return m_lifecycleEventConfigurationHasBeenSet; }
 
     /**
      * <p>A <code>LifeCycleEventConfiguration</code> object that you can use to

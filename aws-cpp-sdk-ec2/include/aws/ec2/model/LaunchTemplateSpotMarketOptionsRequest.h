@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The maximum hourly price you're willing to pay for the Spot Instances.</p>
      */
+    inline bool MaxPriceHasBeenSet() const { return m_maxPriceHasBeenSet; }
+
+    /**
+     * <p>The maximum hourly price you're willing to pay for the Spot Instances.</p>
+     */
     inline void SetMaxPrice(const Aws::String& value) { m_maxPriceHasBeenSet = true; m_maxPrice = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The Spot Instance request type.</p>
      */
+    inline bool SpotInstanceTypeHasBeenSet() const { return m_spotInstanceTypeHasBeenSet; }
+
+    /**
+     * <p>The Spot Instance request type.</p>
+     */
     inline void SetSpotInstanceType(const SpotInstanceType& value) { m_spotInstanceTypeHasBeenSet = true; m_spotInstanceType = value; }
 
     /**
@@ -126,6 +136,13 @@ namespace Model
      * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
      * 360).</p>
      */
+    inline bool BlockDurationMinutesHasBeenSet() const { return m_blockDurationMinutesHasBeenSet; }
+
+    /**
+     * <p>The required duration for the Spot Instances (also known as Spot blocks), in
+     * minutes. This value must be a multiple of 60 (60, 120, 180, 240, 300, or
+     * 360).</p>
+     */
     inline void SetBlockDurationMinutes(int value) { m_blockDurationMinutesHasBeenSet = true; m_blockDurationMinutes = value; }
 
     /**
@@ -144,6 +161,15 @@ namespace Model
      * date.</p>
      */
     inline const Aws::Utils::DateTime& GetValidUntil() const{ return m_validUntil; }
+
+    /**
+     * <p>The end date of the request. For a one-time request, the request remains
+     * active until all instances launch, the request is canceled, or this date is
+     * reached. If the request is persistent, it remains active until it is canceled or
+     * this date and time is reached. The default end date is 7 days from the current
+     * date.</p>
+     */
+    inline bool ValidUntilHasBeenSet() const { return m_validUntilHasBeenSet; }
 
     /**
      * <p>The end date of the request. For a one-time request, the request remains
@@ -187,6 +213,12 @@ namespace Model
      * <code>terminate</code>.</p>
      */
     inline const InstanceInterruptionBehavior& GetInstanceInterruptionBehavior() const{ return m_instanceInterruptionBehavior; }
+
+    /**
+     * <p>The behavior when a Spot Instance is interrupted. The default is
+     * <code>terminate</code>.</p>
+     */
+    inline bool InstanceInterruptionBehaviorHasBeenSet() const { return m_instanceInterruptionBehaviorHasBeenSet; }
 
     /**
      * <p>The behavior when a Spot Instance is interrupted. The default is

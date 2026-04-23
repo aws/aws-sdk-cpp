@@ -46,7 +46,7 @@ Aws::String PutBucketLifecycleConfigurationRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 void PutBucketLifecycleConfigurationRequest::AddQueryStringParameters(URI& uri) const

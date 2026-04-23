@@ -29,7 +29,7 @@ ListPolicyVersionsRequest::ListPolicyVersionsRequest() :
 
 Aws::String ListPolicyVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

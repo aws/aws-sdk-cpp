@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique ID of the query execution.</p>
      */
+    inline bool QueryExecutionIdHasBeenSet() const { return m_queryExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the query execution.</p>
+     */
     inline void SetQueryExecutionId(const Aws::String& value) { m_queryExecutionIdHasBeenSet = true; m_queryExecutionId = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * truncated.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token that specifies where to start pagination if a previous request was
+     * truncated.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token that specifies where to start pagination if a previous request was
@@ -127,6 +138,11 @@ namespace Model
      * <p>The maximum number of results (rows) to return in this request.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results (rows) to return in this request.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results (rows) to return in this request.</p>

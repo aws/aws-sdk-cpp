@@ -23,11 +23,11 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 UpdateScalingPlanRequest::UpdateScalingPlanRequest() : 
-    m_applicationSourceHasBeenSet(false),
     m_scalingPlanNameHasBeenSet(false),
-    m_scalingInstructionsHasBeenSet(false),
     m_scalingPlanVersion(0),
-    m_scalingPlanVersionHasBeenSet(false)
+    m_scalingPlanVersionHasBeenSet(false),
+    m_applicationSourceHasBeenSet(false),
+    m_scalingInstructionsHasBeenSet(false)
 {
 }
 
@@ -35,15 +35,21 @@ Aws::String UpdateScalingPlanRequest::SerializePayload() const
 {
   JsonValue payload;
 
-  if(m_applicationSourceHasBeenSet)
-  {
-   payload.WithObject("ApplicationSource", m_applicationSource.Jsonize());
-
-  }
-
   if(m_scalingPlanNameHasBeenSet)
   {
    payload.WithString("ScalingPlanName", m_scalingPlanName);
+
+  }
+
+  if(m_scalingPlanVersionHasBeenSet)
+  {
+   payload.WithInt64("ScalingPlanVersion", m_scalingPlanVersion);
+
+  }
+
+  if(m_applicationSourceHasBeenSet)
+  {
+   payload.WithObject("ApplicationSource", m_applicationSource.Jsonize());
 
   }
 
@@ -55,12 +61,6 @@ Aws::String UpdateScalingPlanRequest::SerializePayload() const
      scalingInstructionsJsonList[scalingInstructionsIndex].AsObject(m_scalingInstructions[scalingInstructionsIndex].Jsonize());
    }
    payload.WithArray("ScalingInstructions", std::move(scalingInstructionsJsonList));
-
-  }
-
-  if(m_scalingPlanVersionHasBeenSet)
-  {
-   payload.WithInt64("ScalingPlanVersion", m_scalingPlanVersion);
 
   }
 

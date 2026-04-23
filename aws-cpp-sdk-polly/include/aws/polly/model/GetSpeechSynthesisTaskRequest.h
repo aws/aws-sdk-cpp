@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Polly generated identifier for a speech synthesis task.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**

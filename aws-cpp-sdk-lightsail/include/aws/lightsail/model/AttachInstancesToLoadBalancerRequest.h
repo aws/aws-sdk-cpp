@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the load balancer.</p>
      */
+    inline bool LoadBalancerNameHasBeenSet() const { return m_loadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the load balancer.</p>
+     */
     inline void SetLoadBalancerName(const Aws::String& value) { m_loadBalancerNameHasBeenSet = true; m_loadBalancerName = value; }
 
     /**
@@ -89,6 +94,15 @@ namespace Model
      * limit of Lightsail instances you can create in your account (20).</p>
      */
     inline const Aws::Vector<Aws::String>& GetInstanceNames() const{ return m_instanceNames; }
+
+    /**
+     * <p>An array of strings representing the instance name(s) you want to attach to
+     * your load balancer.</p> <p>An instance must be <code>running</code> before you
+     * can attach it to your load balancer.</p> <p>There are no additional limits on
+     * the number of instances you can attach to your load balancer, aside from the
+     * limit of Lightsail instances you can create in your account (20).</p>
+     */
+    inline bool InstanceNamesHasBeenSet() const { return m_instanceNamesHasBeenSet; }
 
     /**
      * <p>An array of strings representing the instance name(s) you want to attach to

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance profile.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * <p>When set to <code>true</code>, Device Farm will remove app packages after a
      * test run. The default value is <code>false</code> for private devices.</p>
      */
+    inline bool PackageCleanupHasBeenSet() const { return m_packageCleanupHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, Device Farm will remove app packages after a
+     * test run. The default value is <code>false</code> for private devices.</p>
+     */
     inline void SetPackageCleanup(bool value) { m_packageCleanupHasBeenSet = true; m_packageCleanup = value; }
 
     /**
@@ -110,6 +121,14 @@ namespace Model
      * <code>true</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetExcludeAppPackagesFromCleanup() const{ return m_excludeAppPackagesFromCleanup; }
+
+    /**
+     * <p>An array of strings specifying the list of app packages that should not be
+     * cleaned up from the device after a test run is over.</p> <p>The list of packages
+     * is only considered if you set <code>packageCleanup</code> to
+     * <code>true</code>.</p>
+     */
+    inline bool ExcludeAppPackagesFromCleanupHasBeenSet() const { return m_excludeAppPackagesFromCleanupHasBeenSet; }
 
     /**
      * <p>An array of strings specifying the list of app packages that should not be
@@ -178,6 +197,12 @@ namespace Model
      * <p>When set to <code>true</code>, Device Farm will reboot the instance after a
      * test run. The default value is <code>true</code>.</p>
      */
+    inline bool RebootAfterUseHasBeenSet() const { return m_rebootAfterUseHasBeenSet; }
+
+    /**
+     * <p>When set to <code>true</code>, Device Farm will reboot the instance after a
+     * test run. The default value is <code>true</code>.</p>
+     */
     inline void SetRebootAfterUse(bool value) { m_rebootAfterUseHasBeenSet = true; m_rebootAfterUse = value; }
 
     /**
@@ -191,6 +216,11 @@ namespace Model
      * <p>The name of the instance profile.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the instance profile.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the instance profile.</p>
@@ -227,6 +257,11 @@ namespace Model
      * <p>The description of the instance profile.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the instance profile.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the instance profile.</p>

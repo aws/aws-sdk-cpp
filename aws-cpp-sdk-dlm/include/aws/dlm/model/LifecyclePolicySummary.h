@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the lifecycle policy.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the lifecycle policy.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The description of the lifecycle policy.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the lifecycle policy.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -124,6 +134,11 @@ namespace Model
      * <p>The activation state of the lifecycle policy.</p>
      */
     inline const GettablePolicyStateValues& GetState() const{ return m_state; }
+
+    /**
+     * <p>The activation state of the lifecycle policy.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The activation state of the lifecycle policy.</p>

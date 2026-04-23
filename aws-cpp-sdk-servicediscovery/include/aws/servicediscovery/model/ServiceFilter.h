@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specify <code>NAMESPACE_ID</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Specify <code>NAMESPACE_ID</code>.</p>
+     */
     inline void SetName(const ServiceFilterName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * <code>Condition</code> to filter the list of services.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The values that are applicable to the value that you specify for
+     * <code>Condition</code> to filter the list of services.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The values that are applicable to the value that you specify for
@@ -138,6 +149,19 @@ namespace Model
      * </ul>
      */
     inline const FilterCondition& GetCondition() const{ return m_condition; }
+
+    /**
+     * <p>The operator that you want to use to determine whether a service is returned
+     * by <code>ListServices</code>. Valid values for <code>Condition</code> include
+     * the following:</p> <ul> <li> <p> <code>EQ</code>: When you specify
+     * <code>EQ</code>, specify one namespace ID for <code>Values</code>.
+     * <code>EQ</code> is the default condition and can be omitted.</p> </li> <li> <p>
+     * <code>IN</code>: When you specify <code>IN</code>, specify a list of the IDs for
+     * the namespaces that you want <code>ListServices</code> to return a list of
+     * services for.</p> </li> <li> <p> <code>BETWEEN</code>: Not applicable.</p> </li>
+     * </ul>
+     */
+    inline bool ConditionHasBeenSet() const { return m_conditionHasBeenSet; }
 
     /**
      * <p>The operator that you want to use to determine whether a service is returned

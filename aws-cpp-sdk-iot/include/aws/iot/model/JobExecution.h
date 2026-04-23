@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The unique identifier you assigned to the job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier you assigned to the job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -97,6 +102,12 @@ namespace Model
      * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
      * TIMED_OUT, CANCELED, or REJECTED).</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the job execution (IN_PROGRESS, QUEUED, FAILED, SUCCEEDED,
+     * TIMED_OUT, CANCELED, or REJECTED).</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -128,6 +139,12 @@ namespace Model
      * <p>Will be <code>true</code> if the job execution was canceled with the optional
      * <code>force</code> parameter set to <code>true</code>.</p>
      */
+    inline bool ForceCanceledHasBeenSet() const { return m_forceCanceledHasBeenSet; }
+
+    /**
+     * <p>Will be <code>true</code> if the job execution was canceled with the optional
+     * <code>force</code> parameter set to <code>true</code>.</p>
+     */
     inline void SetForceCanceled(bool value) { m_forceCanceledHasBeenSet = true; m_forceCanceled = value; }
 
     /**
@@ -142,6 +159,12 @@ namespace Model
      * execution.</p>
      */
     inline const JobExecutionStatusDetails& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>A collection of name/value pairs that describe the status of the job
+     * execution.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>A collection of name/value pairs that describe the status of the job
@@ -176,6 +199,11 @@ namespace Model
     /**
      * <p>The ARN of the thing on which the job execution is running.</p>
      */
+    inline bool ThingArnHasBeenSet() const { return m_thingArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the thing on which the job execution is running.</p>
+     */
     inline void SetThingArn(const Aws::String& value) { m_thingArnHasBeenSet = true; m_thingArn = value; }
 
     /**
@@ -205,93 +233,99 @@ namespace Model
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * queued.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
     inline const Aws::Utils::DateTime& GetQueuedAt() const{ return m_queuedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * queued.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
+     */
+    inline bool QueuedAtHasBeenSet() const { return m_queuedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
     inline void SetQueuedAt(const Aws::Utils::DateTime& value) { m_queuedAtHasBeenSet = true; m_queuedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * queued.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
     inline void SetQueuedAt(Aws::Utils::DateTime&& value) { m_queuedAtHasBeenSet = true; m_queuedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * queued.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
     inline JobExecution& WithQueuedAt(const Aws::Utils::DateTime& value) { SetQueuedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was
-     * queued.</p>
+     * <p>The time, in seconds since the epoch, when the job execution was queued.</p>
      */
     inline JobExecution& WithQueuedAt(Aws::Utils::DateTime&& value) { SetQueuedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline const Aws::Utils::DateTime& GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline void SetStartedAt(const Aws::Utils::DateTime& value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline void SetStartedAt(Aws::Utils::DateTime&& value) { m_startedAtHasBeenSet = true; m_startedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline JobExecution& WithStartedAt(const Aws::Utils::DateTime& value) { SetStartedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution
-     * started.</p>
+     * <p>The time, in seconds since the epoch, when the job execution started.</p>
      */
     inline JobExecution& WithStartedAt(Aws::Utils::DateTime&& value) { SetStartedAt(std::move(value)); return *this;}
 
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedAt() const{ return m_lastUpdatedAt; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
+     * updated.</p>
+     */
+    inline bool LastUpdatedAtHasBeenSet() const { return m_lastUpdatedAtHasBeenSet; }
+
+    /**
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline void SetLastUpdatedAt(const Aws::Utils::DateTime& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = value; }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline void SetLastUpdatedAt(Aws::Utils::DateTime&& value) { m_lastUpdatedAtHasBeenSet = true; m_lastUpdatedAt = std::move(value); }
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline JobExecution& WithLastUpdatedAt(const Aws::Utils::DateTime& value) { SetLastUpdatedAt(value); return *this;}
 
     /**
-     * <p>The time, in milliseconds since the epoch, when the job execution was last
+     * <p>The time, in seconds since the epoch, when the job execution was last
      * updated.</p>
      */
     inline JobExecution& WithLastUpdatedAt(Aws::Utils::DateTime&& value) { SetLastUpdatedAt(std::move(value)); return *this;}
@@ -303,6 +337,13 @@ namespace Model
      * which return or update job execution information. </p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>A string (consisting of the digits "0" through "9") which identifies this
+     * particular job execution on this particular device. It can be used in commands
+     * which return or update job execution information. </p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>A string (consisting of the digits "0" through "9") which identifies this
@@ -329,6 +370,12 @@ namespace Model
      * <p>The version of the job execution. Job execution versions are incremented each
      * time they are updated by a device.</p>
      */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+
+    /**
+     * <p>The version of the job execution. Job execution versions are incremented each
+     * time they are updated by a device.</p>
+     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
@@ -340,19 +387,37 @@ namespace Model
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline long long GetApproximateSecondsBeforeTimedOut() const{ return m_approximateSecondsBeforeTimedOut; }
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
+     */
+    inline bool ApproximateSecondsBeforeTimedOutHasBeenSet() const { return m_approximateSecondsBeforeTimedOutHasBeenSet; }
+
+    /**
+     * <p>The estimated number of seconds that remain before the job execution status
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline void SetApproximateSecondsBeforeTimedOut(long long value) { m_approximateSecondsBeforeTimedOutHasBeenSet = true; m_approximateSecondsBeforeTimedOut = value; }
 
     /**
      * <p>The estimated number of seconds that remain before the job execution status
-     * will be changed to <code>TIMED_OUT</code>.</p>
+     * will be changed to <code>TIMED_OUT</code>. The timeout interval can be anywhere
+     * between 1 minute and 7 days (1 to 10080 minutes). The actual job execution
+     * timeout can occur up to 60 seconds later than the estimated duration. This value
+     * will not be included if the job execution has reached a terminal status.</p>
      */
     inline JobExecution& WithApproximateSecondsBeforeTimedOut(long long value) { SetApproximateSecondsBeforeTimedOut(value); return *this;}
 

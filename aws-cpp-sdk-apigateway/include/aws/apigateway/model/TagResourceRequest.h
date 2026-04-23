@@ -56,6 +56,12 @@ namespace Model
      * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
      * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
      */
+    inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
+
+    /**
+     * <p>[Required] The ARN of a resource that can be tagged. The resource ARN must be
+     * URL-encoded. At present, <a>Stage</a> is the only taggable resource.</p>
+     */
     inline void SetResourceArn(const Aws::String& value) { m_resourceArnHasBeenSet = true; m_resourceArn = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * <code>aws:</code>. The tag value can be up to 256 characters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>[Required] The key-value map of strings. The valid character set is
+     * [a-zA-Z+-=._:/]. The tag key can be up to 128 characters and must not start with
+     * <code>aws:</code>. The tag value can be up to 256 characters.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>[Required] The key-value map of strings. The valid character set is

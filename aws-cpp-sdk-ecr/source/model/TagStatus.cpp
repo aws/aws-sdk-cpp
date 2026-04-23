@@ -32,6 +32,7 @@ namespace Aws
 
         static const int TAGGED_HASH = HashingUtils::HashString("TAGGED");
         static const int UNTAGGED_HASH = HashingUtils::HashString("UNTAGGED");
+        static const int ANY_HASH = HashingUtils::HashString("ANY");
 
 
         TagStatus GetTagStatusForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == UNTAGGED_HASH)
           {
             return TagStatus::UNTAGGED;
+          }
+          else if (hashCode == ANY_HASH)
+          {
+            return TagStatus::ANY;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "TAGGED";
           case TagStatus::UNTAGGED:
             return "UNTAGGED";
+          case TagStatus::ANY:
+            return "ANY";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

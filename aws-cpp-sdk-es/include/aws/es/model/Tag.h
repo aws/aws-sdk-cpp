@@ -57,6 +57,12 @@ namespace Model
      * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
      * unique for the Elasticsearch domain to which they are attached.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>Specifies the <code>TagKey</code>, the name of the tag. Tag keys must be
+     * unique for the Elasticsearch domain to which they are attached.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -97,6 +103,14 @@ namespace Model
      * Trinity</code> and <code>cost-center : Trinity</code></p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding
+     * tag key. Tag values can be null and do not have to be unique in a tag set. For
+     * example, you can have a key value pair in a tag set of <code>project :
+     * Trinity</code> and <code>cost-center : Trinity</code></p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>Specifies the <code>TagValue</code>, the value assigned to the corresponding

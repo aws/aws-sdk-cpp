@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the variant to update.</p>
      */
+    inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the variant to update.</p>
+     */
     inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The variant's weight.</p>
      */
+    inline bool DesiredWeightHasBeenSet() const { return m_desiredWeightHasBeenSet; }
+
+    /**
+     * <p>The variant's weight.</p>
+     */
     inline void SetDesiredWeight(double value) { m_desiredWeightHasBeenSet = true; m_desiredWeight = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The variant's capacity.</p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
+
+    /**
+     * <p>The variant's capacity.</p>
+     */
+    inline bool DesiredInstanceCountHasBeenSet() const { return m_desiredInstanceCountHasBeenSet; }
 
     /**
      * <p>The variant's capacity.</p>

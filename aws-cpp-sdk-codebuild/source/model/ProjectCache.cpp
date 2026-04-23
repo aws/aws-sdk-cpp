@@ -31,14 +31,16 @@ namespace Model
 ProjectCache::ProjectCache() : 
     m_type(CacheType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_modesHasBeenSet(false)
 {
 }
 
 ProjectCache::ProjectCache(JsonView jsonValue) : 
     m_type(CacheType::NOT_SET),
     m_typeHasBeenSet(false),
-    m_locationHasBeenSet(false)
+    m_locationHasBeenSet(false),
+    m_modesHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -59,6 +61,16 @@ ProjectCache& ProjectCache::operator =(JsonView jsonValue)
     m_locationHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("modes"))
+  {
+    Array<JsonView> modesJsonList = jsonValue.GetArray("modes");
+    for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
+    {
+      m_modes.push_back(CacheModeMapper::GetCacheModeForName(modesJsonList[modesIndex].AsString()));
+    }
+    m_modesHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -74,6 +86,17 @@ JsonValue ProjectCache::Jsonize() const
   if(m_locationHasBeenSet)
   {
    payload.WithString("location", m_location);
+
+  }
+
+  if(m_modesHasBeenSet)
+  {
+   Array<JsonValue> modesJsonList(m_modes.size());
+   for(unsigned modesIndex = 0; modesIndex < modesJsonList.GetLength(); ++modesIndex)
+   {
+     modesJsonList[modesIndex].AsString(CacheModeMapper::GetNameForCacheMode(m_modes[modesIndex]));
+   }
+   payload.WithArray("modes", std::move(modesJsonList));
 
   }
 

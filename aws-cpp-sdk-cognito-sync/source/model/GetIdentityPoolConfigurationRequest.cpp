@@ -29,7 +29,7 @@ GetIdentityPoolConfigurationRequest::GetIdentityPoolConfigurationRequest() :
 
 Aws::String GetIdentityPoolConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

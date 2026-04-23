@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>The network details of the fleet instance for the streaming
+   * <p>Describes the network details of the fleet instance for the streaming
    * session.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/appstream-2016-12-01/NetworkAccessConfiguration">AWS
    * API Reference</a></p>
@@ -53,6 +53,12 @@ namespace Model
      * instances in your VPC.</p>
      */
     inline const Aws::String& GetEniPrivateIpAddress() const{ return m_eniPrivateIpAddress; }
+
+    /**
+     * <p>The private IP address of the elastic network interface that is attached to
+     * instances in your VPC.</p>
+     */
+    inline bool EniPrivateIpAddressHasBeenSet() const { return m_eniPrivateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IP address of the elastic network interface that is attached to
@@ -97,6 +103,13 @@ namespace Model
      * identifier.</p>
      */
     inline const Aws::String& GetEniId() const{ return m_eniId; }
+
+    /**
+     * <p>The resource identifier of the elastic network interface that is attached to
+     * instances in your VPC. All network interfaces have the eni-xxxxxxxx resource
+     * identifier.</p>
+     */
+    inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
 
     /**
      * <p>The resource identifier of the elastic network interface that is attached to

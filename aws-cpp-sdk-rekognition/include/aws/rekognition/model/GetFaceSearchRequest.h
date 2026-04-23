@@ -55,6 +55,12 @@ namespace Model
      * <p>The job identifer for the search request. You get the job identifier from an
      * initial call to <code>StartFaceSearch</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The job identifer for the search request. You get the job identifier from an
+     * initial call to <code>StartFaceSearch</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
      * results is returned. The default value is 1000.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +130,14 @@ namespace Model
      * results. </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the previous response was incomplete (because there is more search results
+     * to retrieve), Amazon Rekognition Video returns a pagination token in the
+     * response. You can use this pagination token to retrieve the next set of search
+     * results. </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the previous response was incomplete (because there is more search results
@@ -173,6 +194,13 @@ namespace Model
      * by recognized faces. </p>
      */
     inline const FaceSearchSortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to
+     * group faces by the time that they are recognized. Use <code>INDEX</code> to sort
+     * by recognized faces. </p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>Sort to use for grouping faces in the response. Use <code>TIMESTAMP</code> to

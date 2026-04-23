@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The schema version of this data type.</p>
      */
+    inline bool SchemaVersionHasBeenSet() const { return m_schemaVersionHasBeenSet; }
+
+    /**
+     * <p>The schema version of this data type.</p>
+     */
     inline void SetSchemaVersion(int value) { m_schemaVersionHasBeenSet = true; m_schemaVersion = value; }
 
     /**
@@ -72,6 +77,12 @@ namespace Model
      * is generated.</p>
      */
     inline const Aws::String& GetAgentId() const{ return m_agentId; }
+
+    /**
+     * <p>The ID of the agent that is installed on the EC2 instance where the finding
+     * is generated.</p>
+     */
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
 
     /**
      * <p>The ID of the agent that is installed on the EC2 instance where the finding
@@ -120,6 +131,12 @@ namespace Model
      * <p>The Auto Scaling group of the EC2 instance where the finding is
      * generated.</p>
      */
+    inline bool AutoScalingGroupHasBeenSet() const { return m_autoScalingGroupHasBeenSet; }
+
+    /**
+     * <p>The Auto Scaling group of the EC2 instance where the finding is
+     * generated.</p>
+     */
     inline void SetAutoScalingGroup(const Aws::String& value) { m_autoScalingGroupHasBeenSet = true; m_autoScalingGroup = value; }
 
     /**
@@ -158,6 +175,12 @@ namespace Model
      * instance where the finding is generated.</p>
      */
     inline const Aws::String& GetAmiId() const{ return m_amiId; }
+
+    /**
+     * <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2
+     * instance where the finding is generated.</p>
+     */
+    inline bool AmiIdHasBeenSet() const { return m_amiIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Machine Image (AMI) that is installed on the EC2
@@ -204,6 +227,11 @@ namespace Model
     /**
      * <p>The hostname of the EC2 instance where the finding is generated.</p>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The hostname of the EC2 instance where the finding is generated.</p>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
@@ -237,6 +265,12 @@ namespace Model
      * generated.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIpv4Addresses() const{ return m_ipv4Addresses; }
+
+    /**
+     * <p>The list of IP v4 addresses of the EC2 instance where the finding is
+     * generated.</p>
+     */
+    inline bool Ipv4AddressesHasBeenSet() const { return m_ipv4AddressesHasBeenSet; }
 
     /**
      * <p>The list of IP v4 addresses of the EC2 instance where the finding is
@@ -289,6 +323,11 @@ namespace Model
     /**
      * <p>The tags related to the EC2 instance where the finding is generated.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags related to the EC2 instance where the finding is generated.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -322,6 +361,12 @@ namespace Model
      * the finding is generated.</p>
      */
     inline const Aws::Vector<NetworkInterface>& GetNetworkInterfaces() const{ return m_networkInterfaces; }
+
+    /**
+     * <p>An array of the network interfaces interacting with the EC2 instance where
+     * the finding is generated.</p>
+     */
+    inline bool NetworkInterfacesHasBeenSet() const { return m_networkInterfacesHasBeenSet; }
 
     /**
      * <p>An array of the network interfaces interacting with the EC2 instance where

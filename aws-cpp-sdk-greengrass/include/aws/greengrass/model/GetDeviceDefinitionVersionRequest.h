@@ -56,6 +56,11 @@ namespace Model
     /**
      * The ID of the device definition.
      */
+    inline bool DeviceDefinitionIdHasBeenSet() const { return m_deviceDefinitionIdHasBeenSet; }
+
+    /**
+     * The ID of the device definition.
+     */
     inline void SetDeviceDefinitionId(const Aws::String& value) { m_deviceDefinitionIdHasBeenSet = true; m_deviceDefinitionId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * The ID of the device definition version.
      */
     inline const Aws::String& GetDeviceDefinitionVersionId() const{ return m_deviceDefinitionVersionId; }
+
+    /**
+     * The ID of the device definition version.
+     */
+    inline bool DeviceDefinitionVersionIdHasBeenSet() const { return m_deviceDefinitionVersionIdHasBeenSet; }
 
     /**
      * The ID of the device definition version.
@@ -125,6 +135,12 @@ namespace Model
      * results.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * The token for the next set of results, or ''null'' if there are no additional
+     * results.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * The token for the next set of results, or ''null'' if there are no additional

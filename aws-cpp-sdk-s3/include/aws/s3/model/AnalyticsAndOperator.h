@@ -34,6 +34,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsAndOperator">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AnalyticsAndOperator
   {
   public:
@@ -48,6 +53,11 @@ namespace Model
      * <p>The prefix to use when evaluating an AND predicate.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix to use when evaluating an AND predicate.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix to use when evaluating an AND predicate.</p>
@@ -84,6 +94,11 @@ namespace Model
      * <p>The list of tags to use when evaluating an AND predicate.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The list of tags to use when evaluating an AND predicate.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>The list of tags to use when evaluating an AND predicate.</p>

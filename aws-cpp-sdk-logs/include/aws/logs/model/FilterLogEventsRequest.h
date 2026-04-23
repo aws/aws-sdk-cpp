@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the log group to search.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group to search.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -84,72 +89,72 @@ namespace Model
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetLogStreamNames() const{ return m_logStreamNames; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
+     */
+    inline bool LogStreamNamesHasBeenSet() const { return m_logStreamNamesHasBeenSet; }
+
+    /**
+     * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
+     * you specify a value for both <code>logStreamNamePrefix</code> and
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline void SetLogStreamNames(const Aws::Vector<Aws::String>& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = value; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline void SetLogStreamNames(Aws::Vector<Aws::String>&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames = std::move(value); }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& WithLogStreamNames(const Aws::Vector<Aws::String>& value) { SetLogStreamNames(value); return *this;}
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& WithLogStreamNames(Aws::Vector<Aws::String>&& value) { SetLogStreamNames(std::move(value)); return *this;}
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(const Aws::String& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(Aws::String&& value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(std::move(value)); return *this; }
 
     /**
      * <p>Filters the results to only logs from the log streams in this list.</p> <p>If
      * you specify a value for both <code>logStreamNamePrefix</code> and
-     * <code>logStreamNames</code>, but the value for <code>logStreamNamePrefix</code>
-     * does not match any log stream names specified in <code>logStreamNames</code>,
-     * the action returns an <code>InvalidParameterException</code> error.</p>
+     * <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
      */
     inline FilterLogEventsRequest& AddLogStreamNames(const char* value) { m_logStreamNamesHasBeenSet = true; m_logStreamNames.push_back(value); return *this; }
 
@@ -163,6 +168,16 @@ namespace Model
      * <code>InvalidParameterException</code> error.</p>
      */
     inline const Aws::String& GetLogStreamNamePrefix() const{ return m_logStreamNamePrefix; }
+
+    /**
+     * <p>Filters the results to include only events from log streams that have names
+     * starting with this prefix.</p> <p>If you specify a value for both
+     * <code>logStreamNamePrefix</code> and <code>logStreamNames</code>, but the value
+     * for <code>logStreamNamePrefix</code> does not match any log stream names
+     * specified in <code>logStreamNames</code>, the action returns an
+     * <code>InvalidParameterException</code> error.</p>
+     */
+    inline bool LogStreamNamePrefixHasBeenSet() const { return m_logStreamNamePrefixHasBeenSet; }
 
     /**
      * <p>Filters the results to include only events from log streams that have names
@@ -227,21 +242,28 @@ namespace Model
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline long long GetStartTime() const{ return m_startTime; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
+     * returned.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The start of the time range, expressed as the number of milliseconds after
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline void SetStartTime(long long value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
      * <p>The start of the time range, expressed as the number of milliseconds after
-     * Jan 1, 1970 00:00:00 UTC. Events with a time stamp before this time are not
+     * Jan 1, 1970 00:00:00 UTC. Events with a timestamp before this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithStartTime(long long value) { SetStartTime(value); return *this;}
@@ -249,21 +271,28 @@ namespace Model
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline long long GetEndTime() const{ return m_endTime; }
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
+     * returned.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The end of the time range, expressed as the number of milliseconds after Jan
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline void SetEndTime(long long value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
      * <p>The end of the time range, expressed as the number of milliseconds after Jan
-     * 1, 1970 00:00:00 UTC. Events with a time stamp later than this time are not
+     * 1, 1970 00:00:00 UTC. Events with a timestamp later than this time are not
      * returned.</p>
      */
     inline FilterLogEventsRequest& WithEndTime(long long value) { SetEndTime(value); return *this;}
@@ -271,49 +300,56 @@ namespace Model
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
+     */
+    inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
+
+    /**
+     * <p>The filter pattern to use. For more information, see <a
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(Aws::String&& value) { m_filterPatternHasBeenSet = true; m_filterPattern = std::move(value); }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline void SetFilterPattern(const char* value) { m_filterPatternHasBeenSet = true; m_filterPattern.assign(value); }
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(const Aws::String& value) { SetFilterPattern(value); return *this;}
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(Aws::String&& value) { SetFilterPattern(std::move(value)); return *this;}
 
     /**
      * <p>The filter pattern to use. For more information, see <a
-     * href="http://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
+     * href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/logs/FilterAndPatternSyntax.html">Filter
      * and Pattern Syntax</a>.</p> <p>If not provided, all the events are matched.</p>
      */
     inline FilterLogEventsRequest& WithFilterPattern(const char* value) { SetFilterPattern(value); return *this;}
@@ -324,6 +360,12 @@ namespace Model
      * a previous call.)</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of events to return. (You received this token from
+     * a previous call.)</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of events to return. (You received this token from
@@ -370,6 +412,11 @@ namespace Model
     /**
      * <p>The maximum number of events to return. The default is 10,000 events.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of events to return. The default is 10,000 events.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -386,6 +433,15 @@ namespace Model
      * on. The default is false.</p>
      */
     inline bool GetInterleaved() const{ return m_interleaved; }
+
+    /**
+     * <p>If the value is true, the operation makes a best effort to provide responses
+     * that contain events from multiple log streams within the log group, interleaved
+     * in a single response. If the value is false, all the matched log events in the
+     * first log stream are searched first, then those in the next log stream, and so
+     * on. The default is false.</p>
+     */
+    inline bool InterleavedHasBeenSet() const { return m_interleavedHasBeenSet; }
 
     /**
      * <p>If the value is true, the operation makes a best effort to provide responses

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the activation that you want to delete.</p>
      */
+    inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the activation that you want to delete.</p>
+     */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**

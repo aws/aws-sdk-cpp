@@ -57,6 +57,12 @@ namespace Model
      * <p>The key (name) of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space,
      * ".:/=+\-@"</p> <p>Constraints: Each key can be 1-128 characters long.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key (name) of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space,
+     * ".:/=+\-@"</p> <p>Constraints: Each key can be 1-128 characters long.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * <p>Constraints: Each value can be 0-256 characters long.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>
+     * <p>Constraints: Each value can be 0-256 characters long.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of a tag.</p> <p>Valid values: A-Z, a-z, 0-9, space, ".:/=+\-@"</p>

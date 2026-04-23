@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>The configuration for a field-level encryption content type-profile mapping.
    * </p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ContentTypeProfileConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ContentTypeProfileConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ContentTypeProfileConfig
@@ -64,6 +64,15 @@ namespace Model
      * unknown. If false (the default), an error is returned when the content type is
      * unknown. </p>
      */
+    inline bool ForwardWhenContentTypeIsUnknownHasBeenSet() const { return m_forwardWhenContentTypeIsUnknownHasBeenSet; }
+
+    /**
+     * <p>The setting in a field-level encryption content type-profile mapping that
+     * specifies what to do when an unknown content type is provided for the profile.
+     * If true, content is forwarded without being encrypted when the content type is
+     * unknown. If false (the default), an error is returned when the content type is
+     * unknown. </p>
+     */
     inline void SetForwardWhenContentTypeIsUnknown(bool value) { m_forwardWhenContentTypeIsUnknownHasBeenSet = true; m_forwardWhenContentTypeIsUnknown = value; }
 
     /**
@@ -80,6 +89,11 @@ namespace Model
      * <p>The configuration for a field-level encryption content type-profile. </p>
      */
     inline const ContentTypeProfiles& GetContentTypeProfiles() const{ return m_contentTypeProfiles; }
+
+    /**
+     * <p>The configuration for a field-level encryption content type-profile. </p>
+     */
+    inline bool ContentTypeProfilesHasBeenSet() const { return m_contentTypeProfilesHasBeenSet; }
 
     /**
      * <p>The configuration for a field-level encryption content type-profile. </p>

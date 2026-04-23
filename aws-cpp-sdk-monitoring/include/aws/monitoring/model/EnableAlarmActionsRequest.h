@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The names of the alarms.</p>
      */
+    inline bool AlarmNamesHasBeenSet() const { return m_alarmNamesHasBeenSet; }
+
+    /**
+     * <p>The names of the alarms.</p>
+     */
     inline void SetAlarmNames(const Aws::Vector<Aws::String>& value) { m_alarmNamesHasBeenSet = true; m_alarmNames = value; }
 
     /**

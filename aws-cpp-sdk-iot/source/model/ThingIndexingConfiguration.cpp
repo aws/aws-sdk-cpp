@@ -30,13 +30,17 @@ namespace Model
 
 ThingIndexingConfiguration::ThingIndexingConfiguration() : 
     m_thingIndexingMode(ThingIndexingMode::NOT_SET),
-    m_thingIndexingModeHasBeenSet(false)
+    m_thingIndexingModeHasBeenSet(false),
+    m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
+    m_thingConnectivityIndexingModeHasBeenSet(false)
 {
 }
 
 ThingIndexingConfiguration::ThingIndexingConfiguration(JsonView jsonValue) : 
     m_thingIndexingMode(ThingIndexingMode::NOT_SET),
-    m_thingIndexingModeHasBeenSet(false)
+    m_thingIndexingModeHasBeenSet(false),
+    m_thingConnectivityIndexingMode(ThingConnectivityIndexingMode::NOT_SET),
+    m_thingConnectivityIndexingModeHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -50,6 +54,13 @@ ThingIndexingConfiguration& ThingIndexingConfiguration::operator =(JsonView json
     m_thingIndexingModeHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("thingConnectivityIndexingMode"))
+  {
+    m_thingConnectivityIndexingMode = ThingConnectivityIndexingModeMapper::GetThingConnectivityIndexingModeForName(jsonValue.GetString("thingConnectivityIndexingMode"));
+
+    m_thingConnectivityIndexingModeHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -60,6 +71,11 @@ JsonValue ThingIndexingConfiguration::Jsonize() const
   if(m_thingIndexingModeHasBeenSet)
   {
    payload.WithString("thingIndexingMode", ThingIndexingModeMapper::GetNameForThingIndexingMode(m_thingIndexingMode));
+  }
+
+  if(m_thingConnectivityIndexingModeHasBeenSet)
+  {
+   payload.WithString("thingConnectivityIndexingMode", ThingConnectivityIndexingModeMapper::GetNameForThingConnectivityIndexingMode(m_thingConnectivityIndexingMode));
   }
 
   return payload;

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the security Group from which to revoke the ingress rule.</p>
      */
+    inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the security Group from which to revoke the ingress rule.</p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
      */
     inline const Aws::String& GetCIDRIP() const{ return m_cIDRIP; }
+
+    /**
+     * <p>The IP range for which to revoke access. This range must be a valid Classless
+     * Inter-Domain Routing (CIDR) block of IP addresses. If <code>CIDRIP</code> is
+     * specified, <code>EC2SecurityGroupName</code> and
+     * <code>EC2SecurityGroupOwnerId</code> cannot be provided. </p>
+     */
+    inline bool CIDRIPHasBeenSet() const { return m_cIDRIPHasBeenSet; }
 
     /**
      * <p>The IP range for which to revoke access. This range must be a valid Classless
@@ -156,6 +169,14 @@ namespace Model
      * <code>EC2SecurityGroupOwnerId</code> must also be provided and
      * <code>CIDRIP</code> cannot be provided. </p>
      */
+    inline bool EC2SecurityGroupNameHasBeenSet() const { return m_eC2SecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the EC2 Security Group whose access is to be revoked. If
+     * <code>EC2SecurityGroupName</code> is specified,
+     * <code>EC2SecurityGroupOwnerId</code> must also be provided and
+     * <code>CIDRIP</code> cannot be provided. </p>
+     */
     inline void SetEC2SecurityGroupName(const Aws::String& value) { m_eC2SecurityGroupNameHasBeenSet = true; m_eC2SecurityGroupName = value; }
 
     /**
@@ -207,6 +228,15 @@ namespace Model
      * cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
      */
     inline const Aws::String& GetEC2SecurityGroupOwnerId() const{ return m_eC2SecurityGroupOwnerId; }
+
+    /**
+     * <p>The AWS account number of the owner of the security group specified in the
+     * <code>EC2SecurityGroupName</code> parameter. The AWS access key ID is not an
+     * acceptable value. If <code>EC2SecurityGroupOwnerId</code> is specified,
+     * <code>EC2SecurityGroupName</code> must also be provided. and <code>CIDRIP</code>
+     * cannot be provided. </p> <p>Example: <code>111122223333</code> </p>
+     */
+    inline bool EC2SecurityGroupOwnerIdHasBeenSet() const { return m_eC2SecurityGroupOwnerIdHasBeenSet; }
 
     /**
      * <p>The AWS account number of the owner of the security group specified in the

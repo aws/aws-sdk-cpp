@@ -29,7 +29,8 @@ namespace Model
     Command,
     Policy,
     Automation,
-    Session
+    Session,
+    Package
   };
 
 namespace DocumentTypeMapper

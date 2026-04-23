@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the disk (e.g., <code>my-disk</code>).</p>
      */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
+
+    /**
+     * <p>The name of the disk (e.g., <code>my-disk</code>).</p>
+     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The cost of the recurring charge.</p>
      */
+    inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
+
+    /**
+     * <p>The cost of the recurring charge.</p>
+     */
     inline void SetCost(const MonetaryAmount& value) { m_costHasBeenSet = true; m_cost = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The frequency in which charges will recur.</p>
      */
     inline const RecurringChargeFrequency& GetFrequency() const{ return m_frequency; }
+
+    /**
+     * <p>The frequency in which charges will recur.</p>
+     */
+    inline bool FrequencyHasBeenSet() const { return m_frequencyHasBeenSet; }
 
     /**
      * <p>The frequency in which charges will recur.</p>

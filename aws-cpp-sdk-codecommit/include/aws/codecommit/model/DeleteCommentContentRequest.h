@@ -54,6 +54,12 @@ namespace Model
      * <p>The unique, system-generated ID of the comment. To get this ID, use
      * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
      */
+    inline bool CommentIdHasBeenSet() const { return m_commentIdHasBeenSet; }
+
+    /**
+     * <p>The unique, system-generated ID of the comment. To get this ID, use
+     * <a>GetCommentsForComparedCommit</a> or <a>GetCommentsForPullRequest</a>.</p>
+     */
     inline void SetCommentId(const Aws::String& value) { m_commentIdHasBeenSet = true; m_commentId = value; }
 
     /**

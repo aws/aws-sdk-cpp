@@ -57,6 +57,11 @@ namespace Model
     /**
      * An object that defines the dimensions for the event filter.
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * An object that defines the dimensions for the event filter.
+     */
     inline void SetDimensions(const EventDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -86,6 +91,18 @@ ENDPOINT - Send the campaign when an endpoint event occurs. See
      * the Event resource for more information.
      */
     inline const FilterType& GetFilterType() const{ return m_filterType; }
+
+    /**
+     * The type of event that causes the campaign to be sent. Possible values:
+
+SYSTEM
+     * - Send the campaign when a system event occurs. See the System resource for more
+     * information.
+
+ENDPOINT - Send the campaign when an endpoint event occurs. See
+     * the Event resource for more information.
+     */
+    inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
 
     /**
      * The type of event that causes the campaign to be sent. Possible values:

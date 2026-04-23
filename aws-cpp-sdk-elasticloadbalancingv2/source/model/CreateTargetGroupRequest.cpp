@@ -30,6 +30,8 @@ CreateTargetGroupRequest::CreateTargetGroupRequest() :
     m_healthCheckProtocol(ProtocolEnum::NOT_SET),
     m_healthCheckProtocolHasBeenSet(false),
     m_healthCheckPortHasBeenSet(false),
+    m_healthCheckEnabled(false),
+    m_healthCheckEnabledHasBeenSet(false),
     m_healthCheckPathHasBeenSet(false),
     m_healthCheckIntervalSeconds(0),
     m_healthCheckIntervalSecondsHasBeenSet(false),
@@ -77,6 +79,11 @@ Aws::String CreateTargetGroupRequest::SerializePayload() const
   if(m_healthCheckPortHasBeenSet)
   {
     ss << "HealthCheckPort=" << StringUtils::URLEncode(m_healthCheckPort.c_str()) << "&";
+  }
+
+  if(m_healthCheckEnabledHasBeenSet)
+  {
+    ss << "HealthCheckEnabled=" << std::boolalpha << m_healthCheckEnabled << "&";
   }
 
   if(m_healthCheckPathHasBeenSet)

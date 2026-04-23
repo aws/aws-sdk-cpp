@@ -58,6 +58,12 @@ namespace Model
      * <p>The ID you wish to assign to the message. Each "messageId" must be unique
      * within each batch sent.</p>
      */
+    inline bool MessageIdHasBeenSet() const { return m_messageIdHasBeenSet; }
+
+    /**
+     * <p>The ID you wish to assign to the message. Each "messageId" must be unique
+     * within each batch sent.</p>
+     */
     inline void SetMessageId(const Aws::String& value) { m_messageIdHasBeenSet = true; m_messageId = value; }
 
     /**
@@ -97,6 +103,13 @@ namespace Model
      * pipeline activity).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>The payload of the message. This may be a JSON string or a Base64-encoded
+     * string representing binary data (in which case you must decode it by means of a
+     * pipeline activity).</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
      * <p>The payload of the message. This may be a JSON string or a Base64-encoded

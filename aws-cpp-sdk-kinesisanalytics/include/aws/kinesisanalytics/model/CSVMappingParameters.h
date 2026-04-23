@@ -37,8 +37,8 @@ namespace Model
    * <p>Provides additional mapping information when the record format uses
    * delimiters, such as CSV. For example, the following sample records use CSV
    * format, where the records use the <i>'\n'</i> as the row delimiter and a comma
-   * (",") as the column delimiter: </p> <p> <code>"name1", "address1" </code> </p>
-   * <p> <code>"name2, "address2"</code> </p><p><h3>See Also:</h3>   <a
+   * (",") as the column delimiter: </p> <p> <code>"name1", "address1"</code> </p>
+   * <p> <code>"name2", "address2"</code> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/CSVMappingParameters">AWS
    * API Reference</a></p>
    */
@@ -56,6 +56,12 @@ namespace Model
      * delimiter.</p>
      */
     inline const Aws::String& GetRecordRowDelimiter() const{ return m_recordRowDelimiter; }
+
+    /**
+     * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
+     * delimiter.</p>
+     */
+    inline bool RecordRowDelimiterHasBeenSet() const { return m_recordRowDelimiterHasBeenSet; }
 
     /**
      * <p>Row delimiter. For example, in a CSV format, <i>'\n'</i> is the typical row
@@ -99,6 +105,12 @@ namespace Model
      * column delimiter.</p>
      */
     inline const Aws::String& GetRecordColumnDelimiter() const{ return m_recordColumnDelimiter; }
+
+    /**
+     * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical
+     * column delimiter.</p>
+     */
+    inline bool RecordColumnDelimiterHasBeenSet() const { return m_recordColumnDelimiterHasBeenSet; }
 
     /**
      * <p>Column delimiter. For example, in a CSV format, a comma (",") is the typical

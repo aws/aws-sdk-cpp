@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>A streaming distribution Configuration and a list of tags to be associated
    * with the streaming distribution.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/StreamingDistributionConfigWithTags">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/StreamingDistributionConfigWithTags">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API StreamingDistributionConfigWithTags
@@ -53,6 +53,11 @@ namespace Model
      * <p>A streaming distribution Configuration.</p>
      */
     inline const StreamingDistributionConfig& GetStreamingDistributionConfig() const{ return m_streamingDistributionConfig; }
+
+    /**
+     * <p>A streaming distribution Configuration.</p>
+     */
+    inline bool StreamingDistributionConfigHasBeenSet() const { return m_streamingDistributionConfigHasBeenSet; }
 
     /**
      * <p>A streaming distribution Configuration.</p>
@@ -79,6 +84,11 @@ namespace Model
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
      */
     inline const Tags& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>A complex type that contains zero or more <code>Tag</code> elements.</p>

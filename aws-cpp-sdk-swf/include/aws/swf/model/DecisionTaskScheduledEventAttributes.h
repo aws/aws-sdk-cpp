@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the task list in which the decision task was scheduled.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The name of the task list in which the decision task was scheduled.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -85,6 +90,17 @@ namespace Model
      * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p> A task priority that, if set, specifies the priority for this decision task.
+     * Valid values are integers that range from Java's <code>Integer.MIN_VALUE</code>
+     * (-2147483648) to <code>Integer.MAX_VALUE</code> (2147483647). Higher numbers
+     * indicate higher priority.</p> <p>For more information about setting task
+     * priority, see <a
+     * href="http://docs.aws.amazon.com/amazonswf/latest/developerguide/programming-priority.html">Setting
+     * Task Priority</a> in the <i>Amazon SWF Developer Guide</i>.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p> A task priority that, if set, specifies the priority for this decision task.
@@ -160,6 +176,14 @@ namespace Model
      * <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+
+    /**
+     * <p>The maximum duration for this decision task. The task is considered timed out
+     * if it doesn't completed within this duration.</p> <p>The duration is specified
+     * in seconds, an integer greater than or equal to <code>0</code>. You can use
+     * <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration for this decision task. The task is considered timed out

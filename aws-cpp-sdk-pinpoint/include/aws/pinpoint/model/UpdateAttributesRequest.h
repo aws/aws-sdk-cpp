@@ -56,6 +56,11 @@ namespace Model
     /**
      * The GLOB wildcard for removing the attributes in the application
      */
+    inline bool BlacklistHasBeenSet() const { return m_blacklistHasBeenSet; }
+
+    /**
+     * The GLOB wildcard for removing the attributes in the application
+     */
     inline void SetBlacklist(const Aws::Vector<Aws::String>& value) { m_blacklistHasBeenSet = true; m_blacklist = value; }
 
     /**

@@ -52,6 +52,12 @@ namespace Model
      * <p>The name of the sampling rule. Specify a rule by either name or ARN, but not
      * both.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the sampling rule. Specify a rule by either name or ARN, but not
+     * both.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * both.</p>
      */
     inline const Aws::String& GetRuleARN() const{ return m_ruleARN; }
+
+    /**
+     * <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not
+     * both.</p>
+     */
+    inline bool RuleARNHasBeenSet() const { return m_ruleARNHasBeenSet; }
 
     /**
      * <p>The ARN of the sampling rule. Specify a rule by either name or ARN, but not

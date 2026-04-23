@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Availability Zone where the resulting volume will reside.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone where the resulting volume will reside.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The number of bytes converted so far.</p>
      */
+    inline bool BytesConvertedHasBeenSet() const { return m_bytesConvertedHasBeenSet; }
+
+    /**
+     * <p>The number of bytes converted so far.</p>
+     */
     inline void SetBytesConverted(long long value) { m_bytesConvertedHasBeenSet = true; m_bytesConverted = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The description you provided when starting the import volume task.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description you provided when starting the import volume task.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description you provided when starting the import volume task.</p>
@@ -147,6 +162,11 @@ namespace Model
     /**
      * <p>The image.</p>
      */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The image.</p>
+     */
     inline void SetImage(const DiskImageDescription& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
@@ -169,6 +189,11 @@ namespace Model
      * <p>The volume.</p>
      */
     inline const DiskImageVolumeDescription& GetVolume() const{ return m_volume; }
+
+    /**
+     * <p>The volume.</p>
+     */
+    inline bool VolumeHasBeenSet() const { return m_volumeHasBeenSet; }
 
     /**
      * <p>The volume.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The number of instances that can still be launched onto the Dedicated
      * Host.</p>
      */
+    inline bool AvailableCapacityHasBeenSet() const { return m_availableCapacityHasBeenSet; }
+
+    /**
+     * <p>The number of instances that can still be launched onto the Dedicated
+     * Host.</p>
+     */
     inline void SetAvailableCapacity(int value) { m_availableCapacityHasBeenSet = true; m_availableCapacity = value; }
 
     /**
@@ -73,6 +79,11 @@ namespace Model
      * <p>The instance type size supported by the Dedicated Host.</p>
      */
     inline const Aws::String& GetInstanceType() const{ return m_instanceType; }
+
+    /**
+     * <p>The instance type size supported by the Dedicated Host.</p>
+     */
+    inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }
 
     /**
      * <p>The instance type size supported by the Dedicated Host.</p>
@@ -110,6 +121,12 @@ namespace Model
      * Host.</p>
      */
     inline int GetTotalCapacity() const{ return m_totalCapacity; }
+
+    /**
+     * <p>The total number of instances that can be launched onto the Dedicated
+     * Host.</p>
+     */
+    inline bool TotalCapacityHasBeenSet() const { return m_totalCapacityHasBeenSet; }
 
     /**
      * <p>The total number of instances that can be launched onto the Dedicated

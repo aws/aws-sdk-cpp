@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier (ID) of the cluster that contains the HSM that you are
      * deleting.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the cluster that contains the HSM that you are
+     * deleting.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The identifier (ID) of the HSM that you are deleting.</p>
      */
+    inline bool HsmIdHasBeenSet() const { return m_hsmIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the HSM that you are deleting.</p>
+     */
     inline void SetHsmId(const Aws::String& value) { m_hsmIdHasBeenSet = true; m_hsmId = value; }
 
     /**
@@ -128,6 +139,12 @@ namespace Model
      * you are deleting.</p>
      */
     inline const Aws::String& GetEniId() const{ return m_eniId; }
+
+    /**
+     * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
+     * you are deleting.</p>
+     */
+    inline bool EniIdHasBeenSet() const { return m_eniIdHasBeenSet; }
 
     /**
      * <p>The identifier (ID) of the elastic network interface (ENI) of the HSM that
@@ -171,6 +188,12 @@ namespace Model
      * deleting.</p>
      */
     inline const Aws::String& GetEniIp() const{ return m_eniIp; }
+
+    /**
+     * <p>The IP address of the elastic network interface (ENI) of the HSM that you are
+     * deleting.</p>
+     */
+    inline bool EniIpHasBeenSet() const { return m_eniIpHasBeenSet; }
 
     /**
      * <p>The IP address of the elastic network interface (ENI) of the HSM that you are

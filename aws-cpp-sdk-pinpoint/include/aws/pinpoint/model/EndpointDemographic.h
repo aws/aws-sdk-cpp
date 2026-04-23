@@ -55,6 +55,11 @@ namespace Model
     /**
      * The version of the application associated with the endpoint.
      */
+    inline bool AppVersionHasBeenSet() const { return m_appVersionHasBeenSet; }
+
+    /**
+     * The version of the application associated with the endpoint.
+     */
     inline void SetAppVersion(const Aws::String& value) { m_appVersionHasBeenSet = true; m_appVersion = value; }
 
     /**
@@ -89,6 +94,13 @@ namespace Model
 
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
+     * followed by an underscore, followed by an ISO 3166-1 alpha-2 value.
+
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * The endpoint locale in the following format: The ISO 639-1 alpha-2 code,
@@ -141,6 +153,11 @@ namespace Model
     /**
      * The manufacturer of the endpoint device, such as Apple or Samsung.
      */
+    inline bool MakeHasBeenSet() const { return m_makeHasBeenSet; }
+
+    /**
+     * The manufacturer of the endpoint device, such as Apple or Samsung.
+     */
     inline void SetMake(const Aws::String& value) { m_makeHasBeenSet = true; m_make = value; }
 
     /**
@@ -173,6 +190,11 @@ namespace Model
      * The model name or number of the endpoint device, such as iPhone.
      */
     inline const Aws::String& GetModel() const{ return m_model; }
+
+    /**
+     * The model name or number of the endpoint device, such as iPhone.
+     */
+    inline bool ModelHasBeenSet() const { return m_modelHasBeenSet; }
 
     /**
      * The model name or number of the endpoint device, such as iPhone.
@@ -213,6 +235,11 @@ namespace Model
     /**
      * The model version of the endpoint device.
      */
+    inline bool ModelVersionHasBeenSet() const { return m_modelVersionHasBeenSet; }
+
+    /**
+     * The model version of the endpoint device.
+     */
     inline void SetModelVersion(const Aws::String& value) { m_modelVersionHasBeenSet = true; m_modelVersion = value; }
 
     /**
@@ -245,6 +272,11 @@ namespace Model
      * The platform of the endpoint device, such as iOS or Android.
      */
     inline const Aws::String& GetPlatform() const{ return m_platform; }
+
+    /**
+     * The platform of the endpoint device, such as iOS or Android.
+     */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
 
     /**
      * The platform of the endpoint device, such as iOS or Android.
@@ -285,6 +317,11 @@ namespace Model
     /**
      * The platform version of the endpoint device.
      */
+    inline bool PlatformVersionHasBeenSet() const { return m_platformVersionHasBeenSet; }
+
+    /**
+     * The platform version of the endpoint device.
+     */
     inline void SetPlatformVersion(const Aws::String& value) { m_platformVersionHasBeenSet = true; m_platformVersion = value; }
 
     /**
@@ -318,6 +355,12 @@ namespace Model
      * Americas/Los_Angeles.
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * The timezone of the endpoint. Specified as a tz database value, such as
+     * Americas/Los_Angeles.
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * The timezone of the endpoint. Specified as a tz database value, such as

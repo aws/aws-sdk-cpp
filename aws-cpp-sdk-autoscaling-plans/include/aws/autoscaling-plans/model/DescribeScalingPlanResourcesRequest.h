@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the scaling plan.</p>
      */
+    inline bool ScalingPlanNameHasBeenSet() const { return m_scalingPlanNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scaling plan.</p>
+     */
     inline void SetScalingPlanName(const Aws::String& value) { m_scalingPlanNameHasBeenSet = true; m_scalingPlanName = value; }
 
     /**
@@ -81,35 +86,46 @@ namespace Model
 
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline long long GetScalingPlanVersion() const{ return m_scalingPlanVersion; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
+     */
+    inline bool ScalingPlanVersionHasBeenSet() const { return m_scalingPlanVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the scaling plan.</p>
      */
     inline void SetScalingPlanVersion(long long value) { m_scalingPlanVersionHasBeenSet = true; m_scalingPlanVersion = value; }
 
     /**
-     * <p>The version of the scaling plan.</p>
+     * <p>The version number of the scaling plan.</p>
      */
     inline DescribeScalingPlanResourcesRequest& WithScalingPlanVersion(long long value) { SetScalingPlanVersion(value); return *this;}
 
 
     /**
-     * <p>The maximum number of scalable resources to return. This value can be between
+     * <p>The maximum number of scalable resources to return. The value must be between
      * 1 and 50. The default value is 50.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of scalable resources to return. This value can be between
+     * <p>The maximum number of scalable resources to return. The value must be between
+     * 1 and 50. The default value is 50.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of scalable resources to return. The value must be between
      * 1 and 50. The default value is 50.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of scalable resources to return. This value can be between
+     * <p>The maximum number of scalable resources to return. The value must be between
      * 1 and 50. The default value is 50.</p>
      */
     inline DescribeScalingPlanResourcesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
@@ -119,6 +135,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>

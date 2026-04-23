@@ -54,6 +54,11 @@ namespace Model
     /**
      * The unique ID that Amazon MQ generates for the broker.
      */
+    inline bool BrokerIdHasBeenSet() const { return m_brokerIdHasBeenSet; }
+
+    /**
+     * The unique ID that Amazon MQ generates for the broker.
+     */
     inline void SetBrokerId(const Aws::String& value) { m_brokerIdHasBeenSet = true; m_brokerId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
     /**
      * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
      */
+    inline bool ConsoleAccessHasBeenSet() const { return m_consoleAccessHasBeenSet; }
+
+    /**
+     * Enables access to the the ActiveMQ Web Console for the ActiveMQ user.
+     */
     inline void SetConsoleAccess(bool value) { m_consoleAccessHasBeenSet = true; m_consoleAccess = value; }
 
     /**
@@ -104,6 +114,13 @@ namespace Model
      * tildes (- . _ ~). This value must be 2-100 characters long.
      */
     inline const Aws::Vector<Aws::String>& GetGroups() const{ return m_groups; }
+
+    /**
+     * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
+     * can contain only alphanumeric characters, dashes, periods, underscores, and
+     * tildes (- . _ ~). This value must be 2-100 characters long.
+     */
+    inline bool GroupsHasBeenSet() const { return m_groupsHasBeenSet; }
 
     /**
      * The list of groups (20 maximum) to which the ActiveMQ user belongs. This value
@@ -165,6 +182,12 @@ namespace Model
      * Required. The password of the user. This value must be at least 12 characters
      * long, must contain at least 4 unique characters, and must not contain commas.
      */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+
+    /**
+     * Required. The password of the user. This value must be at least 12 characters
+     * long, must contain at least 4 unique characters, and must not contain commas.
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
@@ -204,6 +227,13 @@ namespace Model
      * be 2-100 characters long.
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * The username of the ActiveMQ user. This value can contain only alphanumeric
+     * characters, dashes, periods, underscores, and tildes (- . _ ~). This value must
+     * be 2-100 characters long.
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * The username of the ActiveMQ user. This value can contain only alphanumeric

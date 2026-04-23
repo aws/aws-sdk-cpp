@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The ID of the cluster to which the instance group belongs.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the cluster to which the instance group belongs.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Instance groups to change.</p>
      */
     inline const Aws::Vector<InstanceGroupModifyConfig>& GetInstanceGroups() const{ return m_instanceGroups; }
+
+    /**
+     * <p>Instance groups to change.</p>
+     */
+    inline bool InstanceGroupsHasBeenSet() const { return m_instanceGroupsHasBeenSet; }
 
     /**
      * <p>Instance groups to change.</p>

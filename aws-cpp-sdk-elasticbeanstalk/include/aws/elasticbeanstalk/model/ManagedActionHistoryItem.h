@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>A unique identifier for the managed action.</p>
      */
+    inline bool ActionIdHasBeenSet() const { return m_actionIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for the managed action.</p>
+     */
     inline void SetActionId(const Aws::String& value) { m_actionIdHasBeenSet = true; m_actionId = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>The type of the managed action.</p>
      */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the managed action.</p>
+     */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>A description of the managed action.</p>
      */
     inline const Aws::String& GetActionDescription() const{ return m_actionDescription; }
+
+    /**
+     * <p>A description of the managed action.</p>
+     */
+    inline bool ActionDescriptionHasBeenSet() const { return m_actionDescriptionHasBeenSet; }
 
     /**
      * <p>A description of the managed action.</p>
@@ -160,6 +175,11 @@ namespace Model
     /**
      * <p>If the action failed, the type of failure.</p>
      */
+    inline bool FailureTypeHasBeenSet() const { return m_failureTypeHasBeenSet; }
+
+    /**
+     * <p>If the action failed, the type of failure.</p>
+     */
     inline void SetFailureType(const FailureType& value) { m_failureTypeHasBeenSet = true; m_failureType = value; }
 
     /**
@@ -186,6 +206,11 @@ namespace Model
     /**
      * <p>The status of the action.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the action.</p>
+     */
     inline void SetStatus(const ActionHistoryStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -208,6 +233,11 @@ namespace Model
      * <p>If the action failed, a description of the failure.</p>
      */
     inline const Aws::String& GetFailureDescription() const{ return m_failureDescription; }
+
+    /**
+     * <p>If the action failed, a description of the failure.</p>
+     */
+    inline bool FailureDescriptionHasBeenSet() const { return m_failureDescriptionHasBeenSet; }
 
     /**
      * <p>If the action failed, a description of the failure.</p>
@@ -248,6 +278,11 @@ namespace Model
     /**
      * <p>The date and time that the action started executing.</p>
      */
+    inline bool ExecutedTimeHasBeenSet() const { return m_executedTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the action started executing.</p>
+     */
     inline void SetExecutedTime(const Aws::Utils::DateTime& value) { m_executedTimeHasBeenSet = true; m_executedTime = value; }
 
     /**
@@ -270,6 +305,11 @@ namespace Model
      * <p>The date and time that the action finished executing.</p>
      */
     inline const Aws::Utils::DateTime& GetFinishedTime() const{ return m_finishedTime; }
+
+    /**
+     * <p>The date and time that the action finished executing.</p>
+     */
+    inline bool FinishedTimeHasBeenSet() const { return m_finishedTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the action finished executing.</p>

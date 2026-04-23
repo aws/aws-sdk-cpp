@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     INVALID_OPTION,
-    ILLEGAL_COMBINATION
+    ILLEGAL_COMBINATION,
+    ILLEGAL_ARGUMENT
   };
 
 namespace ParameterExceptionReasonMapper

@@ -55,6 +55,12 @@ namespace Model
      * <p>The identifier for the content moderation job. Use <code>JobId</code> to
      * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the content moderation job. Use <code>JobId</code> to
+     * identify the job in a subsequent call to <code>GetContentModeration</code>.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -100,6 +106,13 @@ namespace Model
      * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
      * results is returned. The default value is 1000.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>Maximum number of results to return per paginated call. The largest value you
+     * can specify is 1000. If you specify a value greater than 1000, a maximum of 1000
+     * results is returned. The default value is 1000.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -117,6 +130,14 @@ namespace Model
      * labels.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the previous response was incomplete (because there is more data to
+     * retrieve), Amazon Rekognition returns a pagination token in the response. You
+     * can use this pagination token to retrieve the next set of content moderation
+     * labels.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the previous response was incomplete (because there is more data to
@@ -175,6 +196,15 @@ namespace Model
      * confidence. The default sort is by <code>TIMESTAMP</code>.</p>
      */
     inline const ContentModerationSortBy& GetSortBy() const{ return m_sortBy; }
+
+    /**
+     * <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.
+     * Use <code>TIMESTAMP</code> to sort array elements by the time labels are
+     * detected. Use <code>NAME</code> to alphabetically group elements for a label
+     * together. Within each label group, the array element are sorted by detection
+     * confidence. The default sort is by <code>TIMESTAMP</code>.</p>
+     */
+    inline bool SortByHasBeenSet() const { return m_sortByHasBeenSet; }
 
     /**
      * <p>Sort to use for elements in the <code>ModerationLabelDetections</code> array.

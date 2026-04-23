@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The group for which the policies will be listed.</p>
      */
+    inline bool TargetHasBeenSet() const { return m_targetHasBeenSet; }
+
+    /**
+     * <p>The group for which the policies will be listed.</p>
+     */
     inline void SetTarget(const Aws::String& value) { m_targetHasBeenSet = true; m_target = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>When true, recursively list attached policies.</p>
      */
+    inline bool RecursiveHasBeenSet() const { return m_recursiveHasBeenSet; }
+
+    /**
+     * <p>When true, recursively list attached policies.</p>
+     */
     inline void SetRecursive(bool value) { m_recursiveHasBeenSet = true; m_recursive = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The token to retrieve the next set of results.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>The token to retrieve the next set of results.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next set of results.</p>
@@ -140,6 +155,11 @@ namespace Model
      * <p>The maximum number of results to be returned per request.</p>
      */
     inline int GetPageSize() const{ return m_pageSize; }
+
+    /**
+     * <p>The maximum number of results to be returned per request.</p>
+     */
+    inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of results to be returned per request.</p>

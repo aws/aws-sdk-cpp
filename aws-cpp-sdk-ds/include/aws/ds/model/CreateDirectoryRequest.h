@@ -19,6 +19,8 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/ds/model/DirectorySize.h>
 #include <aws/ds/model/DirectoryVpcSettings.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ds/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +57,12 @@ namespace Model
      * <code>corp.example.com</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The fully qualified name for the directory, such as
+     * <code>corp.example.com</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The fully qualified name for the directory, such as
@@ -101,6 +109,11 @@ namespace Model
     /**
      * <p>The short name of the directory, such as <code>CORP</code>.</p>
      */
+    inline bool ShortNameHasBeenSet() const { return m_shortNameHasBeenSet; }
+
+    /**
+     * <p>The short name of the directory, such as <code>CORP</code>.</p>
+     */
     inline void SetShortName(const Aws::String& value) { m_shortNameHasBeenSet = true; m_shortName = value; }
 
     /**
@@ -135,6 +148,13 @@ namespace Model
      * <code>Administrator</code> and this password.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password for the directory administrator. The directory creation process
+     * creates a directory administrator account with the user name
+     * <code>Administrator</code> and this password.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password for the directory administrator. The directory creation process
@@ -187,6 +207,11 @@ namespace Model
     /**
      * <p>A textual description for the directory.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A textual description for the directory.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -223,6 +248,11 @@ namespace Model
     /**
      * <p>The size of the directory.</p>
      */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
+
+    /**
+     * <p>The size of the directory.</p>
+     */
     inline void SetSize(const DirectorySize& value) { m_sizeHasBeenSet = true; m_size = value; }
 
     /**
@@ -251,6 +281,12 @@ namespace Model
      * <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
      * the operation.</p>
      */
+    inline bool VpcSettingsHasBeenSet() const { return m_vpcSettingsHasBeenSet; }
+
+    /**
+     * <p>A <a>DirectoryVpcSettings</a> object that contains additional information for
+     * the operation.</p>
+     */
     inline void SetVpcSettings(const DirectoryVpcSettings& value) { m_vpcSettingsHasBeenSet = true; m_vpcSettings = value; }
 
     /**
@@ -271,6 +307,47 @@ namespace Model
      */
     inline CreateDirectoryRequest& WithVpcSettings(DirectoryVpcSettings&& value) { SetVpcSettings(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline CreateDirectoryRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline CreateDirectoryRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline CreateDirectoryRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tags to be assigned to the Simple AD directory.</p>
+     */
+    inline CreateDirectoryRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
   private:
 
     Aws::String m_name;
@@ -290,6 +367,9 @@ namespace Model
 
     DirectoryVpcSettings m_vpcSettings;
     bool m_vpcSettingsHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

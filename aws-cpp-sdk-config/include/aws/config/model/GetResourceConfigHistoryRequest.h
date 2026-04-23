@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The resource type.</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type.</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The ID of the resource (for example., <code>sg-xxxxxx</code>).</p>
@@ -123,6 +133,12 @@ namespace Model
      * <p>The time stamp that indicates a later time. If not specified, current time is
      * taken.</p>
      */
+    inline bool LaterTimeHasBeenSet() const { return m_laterTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp that indicates a later time. If not specified, current time is
+     * taken.</p>
+     */
     inline void SetLaterTime(const Aws::Utils::DateTime& value) { m_laterTimeHasBeenSet = true; m_laterTime = value; }
 
     /**
@@ -150,6 +166,13 @@ namespace Model
      * first configuration item was recorded.</p>
      */
     inline const Aws::Utils::DateTime& GetEarlierTime() const{ return m_earlierTime; }
+
+    /**
+     * <p>The time stamp that indicates an earlier time. If not specified, the action
+     * returns paginated results that contain configuration items that start when the
+     * first configuration item was recorded.</p>
+     */
+    inline bool EarlierTimeHasBeenSet() const { return m_earlierTimeHasBeenSet; }
 
     /**
      * <p>The time stamp that indicates an earlier time. If not specified, the action
@@ -190,6 +213,12 @@ namespace Model
      * <p>The chronological order for configuration items listed. By default, the
      * results are listed in reverse chronological order.</p>
      */
+    inline bool ChronologicalOrderHasBeenSet() const { return m_chronologicalOrderHasBeenSet; }
+
+    /**
+     * <p>The chronological order for configuration items listed. By default, the
+     * results are listed in reverse chronological order.</p>
+     */
     inline void SetChronologicalOrder(const ChronologicalOrder& value) { m_chronologicalOrderHasBeenSet = true; m_chronologicalOrder = value; }
 
     /**
@@ -223,6 +252,13 @@ namespace Model
      * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
      * Config uses the default.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of configuration items returned on each page. The default
+     * is 10. You cannot specify a number greater than 100. If you specify 0, AWS
+     * Config uses the default.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -238,6 +274,12 @@ namespace Model
      * get the next page of results in a paginated response.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> string returned on a previous page that you use to

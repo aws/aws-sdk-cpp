@@ -66,6 +66,12 @@ namespace Model
      * <p>The name of the maintenance track. Possible values are <code>current</code>
      * and <code>trailing</code>.</p>
      */
+    inline bool MaintenanceTrackNameHasBeenSet() const { return m_maintenanceTrackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the maintenance track. Possible values are <code>current</code>
+     * and <code>trailing</code>.</p>
+     */
     inline void SetMaintenanceTrackName(const Aws::String& value) { m_maintenanceTrackNameHasBeenSet = true; m_maintenanceTrackName = value; }
 
     /**
@@ -107,6 +113,11 @@ namespace Model
     /**
      * <p>The version number for the cluster release.</p>
      */
+    inline bool DatabaseVersionHasBeenSet() const { return m_databaseVersionHasBeenSet; }
+
+    /**
+     * <p>The version number for the cluster release.</p>
+     */
     inline void SetDatabaseVersion(const Aws::String& value) { m_databaseVersionHasBeenSet = true; m_databaseVersion = value; }
 
     /**
@@ -140,6 +151,12 @@ namespace Model
      * </p>
      */
     inline const Aws::Vector<UpdateTarget>& GetUpdateTargets() const{ return m_updateTargets; }
+
+    /**
+     * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.
+     * </p>
+     */
+    inline bool UpdateTargetsHasBeenSet() const { return m_updateTargetsHasBeenSet; }
 
     /**
      * <p>An array of <a>UpdateTarget</a> objects to update with the maintenance track.

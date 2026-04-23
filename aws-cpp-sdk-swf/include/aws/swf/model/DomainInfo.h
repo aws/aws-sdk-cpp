@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the domain. This name is unique within the account.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain. This name is unique within the account.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -102,6 +107,16 @@ namespace Model
      * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
      * executions in this domain. </p> </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the domain:</p> <ul> <li> <p> <code>REGISTERED</code> – The
+     * domain is properly registered and available. You can use this domain for
+     * registering types and creating new workflow executions. </p> </li> <li> <p>
+     * <code>DEPRECATED</code> – The domain was deprecated using
+     * <a>DeprecateDomain</a>, but is still in use. You should not create new workflow
+     * executions in this domain. </p> </li> </ul>
+     */
     inline void SetStatus(const RegistrationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -139,6 +154,11 @@ namespace Model
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the domain provided through <a>RegisterDomain</a>.</p>

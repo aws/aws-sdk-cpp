@@ -57,6 +57,13 @@ namespace Model
      * An error is returned when this threshold is reached. The maximum value you can
      * specify is controlled by a service limit.</p>
      */
+    inline bool MaxConcurrentRunsHasBeenSet() const { return m_maxConcurrentRunsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of concurrent runs allowed for the job. The default is 1.
+     * An error is returned when this threshold is reached. The maximum value you can
+     * specify is controlled by a service limit.</p>
+     */
     inline void SetMaxConcurrentRuns(int value) { m_maxConcurrentRunsHasBeenSet = true; m_maxConcurrentRuns = value; }
 
     /**

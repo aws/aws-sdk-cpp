@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Value for a Number annotation.</p>
      */
+    inline bool NumberValueHasBeenSet() const { return m_numberValueHasBeenSet; }
+
+    /**
+     * <p>Value for a Number annotation.</p>
+     */
     inline void SetNumberValue(double value) { m_numberValueHasBeenSet = true; m_numberValue = value; }
 
     /**
@@ -72,6 +77,11 @@ namespace Model
     /**
      * <p>Value for a Boolean annotation.</p>
      */
+    inline bool BooleanValueHasBeenSet() const { return m_booleanValueHasBeenSet; }
+
+    /**
+     * <p>Value for a Boolean annotation.</p>
+     */
     inline void SetBooleanValue(bool value) { m_booleanValueHasBeenSet = true; m_booleanValue = value; }
 
     /**
@@ -84,6 +94,11 @@ namespace Model
      * <p>Value for a String annotation.</p>
      */
     inline const Aws::String& GetStringValue() const{ return m_stringValue; }
+
+    /**
+     * <p>Value for a String annotation.</p>
+     */
+    inline bool StringValueHasBeenSet() const { return m_stringValueHasBeenSet; }
 
     /**
      * <p>Value for a String annotation.</p>

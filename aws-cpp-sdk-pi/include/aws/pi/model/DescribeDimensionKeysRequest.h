@@ -58,6 +58,12 @@ namespace Model
      * <p>The AWS service for which Performance Insights will return metrics. The only
      * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
      */
+    inline bool ServiceTypeHasBeenSet() const { return m_serviceTypeHasBeenSet; }
+
+    /**
+     * <p>The AWS service for which Performance Insights will return metrics. The only
+     * valid value for <i>ServiceType</i> is: <code>RDS</code> </p>
+     */
     inline void SetServiceType(const ServiceType& value) { m_serviceTypeHasBeenSet = true; m_serviceType = value; }
 
     /**
@@ -86,6 +92,14 @@ namespace Model
      * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
      */
     inline const Aws::String& GetIdentifier() const{ return m_identifier; }
+
+    /**
+     * <p>An immutable, AWS Region-unique identifier for a data source. Performance
+     * Insights gathers metrics from this data source.</p> <p>To use an Amazon RDS
+     * instance as a data source, you specify its <code>DbiResourceId</code> value -
+     * for example: <code>db-FAIHNTYBKTGAUSUZQYPDS2GW4A</code> </p>
+     */
+    inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
 
     /**
      * <p>An immutable, AWS Region-unique identifier for a data source. Performance
@@ -154,6 +168,16 @@ namespace Model
      * <code>StartTime</code> must be earlier than the value for
      * <code>EndTime</code>.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time specifying the beginning of the requested time series data.
+     * You can't specify a <code>StartTime</code> that's earlier than 7 days ago. The
+     * value specified is <i>inclusive</i> - data points equal to or greater than
+     * <code>StartTime</code> will be returned.</p> <p>The value for
+     * <code>StartTime</code> must be earlier than the value for
+     * <code>EndTime</code>.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -201,6 +225,14 @@ namespace Model
      * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
      * must be later than the value for <code>StartTime</code>.</p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time specifying the end of the requested time series data. The
+     * value specified is <i>exclusive</i> - data points less than (but not equal to)
+     * <code>EndTime</code> will be returned.</p> <p>The value for <code>EndTime</code>
+     * must be later than the value for <code>StartTime</code>.</p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -236,6 +268,15 @@ namespace Model
      * active sessions for the database engine.</p> </li> </ul>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
+
+    /**
+     * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
+     * for <code>Metric</code> are:</p> <ul> <li> <p> <code>db.load.avg</code> - a
+     * scaled representation of the number of active sessions for the database
+     * engine.</p> </li> <li> <p> <code>db.sampledload.avg</code> - the raw number of
+     * active sessions for the database engine.</p> </li> </ul>
+     */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
      * <p>The name of a Performance Insights metric to be measured.</p> <p>Valid values
@@ -316,6 +357,19 @@ namespace Model
      * value for you, with a goal of returning roughly 100-200 data points in the
      * response.</p>
      */
+    inline bool PeriodInSecondsHasBeenSet() const { return m_periodInSecondsHasBeenSet; }
+
+    /**
+     * <p>The granularity, in seconds, of the data points returned from Performance
+     * Insights. A period can be as short as one second, or as long as one day (86400
+     * seconds). Valid values are:</p> <ul> <li> <p> <code>1</code> (one second)</p>
+     * </li> <li> <p> <code>60</code> (one minute)</p> </li> <li> <p> <code>300</code>
+     * (five minutes)</p> </li> <li> <p> <code>3600</code> (one hour)</p> </li> <li>
+     * <p> <code>86400</code> (twenty-four hours)</p> </li> </ul> <p>If you don't
+     * specify <code>PeriodInSeconds</code>, then Performance Insights will choose a
+     * value for you, with a goal of returning roughly 100-200 data points in the
+     * response.</p>
+     */
     inline void SetPeriodInSeconds(int value) { m_periodInSecondsHasBeenSet = true; m_periodInSeconds = value; }
 
     /**
@@ -340,6 +394,15 @@ namespace Model
      * return a limited number of values for a dimension.</p>
      */
     inline const DimensionGroup& GetGroupBy() const{ return m_groupBy; }
+
+    /**
+     * <p>A specification for how to aggregate the data points from a query result. You
+     * must specify a valid dimension group. Performance Insights will return all of
+     * the dimensions within that group, unless you provide the names of specific
+     * dimensions within that group. You can also request that Performance Insights
+     * return a limited number of values for a dimension.</p>
+     */
+    inline bool GroupByHasBeenSet() const { return m_groupByHasBeenSet; }
 
     /**
      * <p>A specification for how to aggregate the data points from a query result. You
@@ -388,6 +451,12 @@ namespace Model
      * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
      * dimension to further subdivide the partition keys in the response.</p>
      */
+    inline bool PartitionByHasBeenSet() const { return m_partitionByHasBeenSet; }
+
+    /**
+     * <p>For each dimension specified in <code>GroupBy</code>, specify a secondary
+     * dimension to further subdivide the partition keys in the response.</p>
+     */
     inline void SetPartitionBy(const DimensionGroup& value) { m_partitionByHasBeenSet = true; m_partitionBy = value; }
 
     /**
@@ -416,6 +485,14 @@ namespace Model
      * single filter for any other dimension in this dimension group.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetFilter() const{ return m_filter; }
+
+    /**
+     * <p>One or more filters to apply in the request. Restrictions:</p> <ul> <li>
+     * <p>Any number of filters by the same dimension, as specified in the
+     * <code>GroupBy</code> or <code>Partition</code> parameters.</p> </li> <li> <p>A
+     * single filter for any other dimension in this dimension group.</p> </li> </ul>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     /**
      * <p>One or more filters to apply in the request. Restrictions:</p> <ul> <li>
@@ -518,6 +595,13 @@ namespace Model
      * than the specified <code>MaxRecords</code> value, a pagination token is included
      * in the response so that the remaining results can be retrieved. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return in the response. If more items exist
+     * than the specified <code>MaxRecords</code> value, a pagination token is included
+     * in the response so that the remaining results can be retrieved. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -534,6 +618,13 @@ namespace Model
      * to the value specified by <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>An optional pagination token provided by a previous request. If this
+     * parameter is specified, the response includes only records beyond the token, up
+     * to the value specified by <code>MaxRecords</code>.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous request. If this

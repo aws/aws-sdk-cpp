@@ -30,7 +30,8 @@ namespace Model
     AMAZON_DYNAMODB,
     AMAZON_ELASTICSEARCH,
     NONE,
-    HTTP
+    HTTP,
+    RELATIONAL_DATABASE
   };
 
 namespace DataSourceTypeMapper

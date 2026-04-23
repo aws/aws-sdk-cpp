@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The percent complete for the full load migration task.</p>
      */
+    inline bool FullLoadProgressPercentHasBeenSet() const { return m_fullLoadProgressPercentHasBeenSet; }
+
+    /**
+     * <p>The percent complete for the full load migration task.</p>
+     */
     inline void SetFullLoadProgressPercent(int value) { m_fullLoadProgressPercentHasBeenSet = true; m_fullLoadProgressPercent = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * <p>The elapsed time of the task, in milliseconds.</p>
      */
     inline long long GetElapsedTimeMillis() const{ return m_elapsedTimeMillis; }
+
+    /**
+     * <p>The elapsed time of the task, in milliseconds.</p>
+     */
+    inline bool ElapsedTimeMillisHasBeenSet() const { return m_elapsedTimeMillisHasBeenSet; }
 
     /**
      * <p>The elapsed time of the task, in milliseconds.</p>
@@ -85,6 +95,11 @@ namespace Model
     /**
      * <p>The number of tables loaded for this task.</p>
      */
+    inline bool TablesLoadedHasBeenSet() const { return m_tablesLoadedHasBeenSet; }
+
+    /**
+     * <p>The number of tables loaded for this task.</p>
+     */
     inline void SetTablesLoaded(int value) { m_tablesLoadedHasBeenSet = true; m_tablesLoaded = value; }
 
     /**
@@ -97,6 +112,11 @@ namespace Model
      * <p>The number of tables currently loading for this task.</p>
      */
     inline int GetTablesLoading() const{ return m_tablesLoading; }
+
+    /**
+     * <p>The number of tables currently loading for this task.</p>
+     */
+    inline bool TablesLoadingHasBeenSet() const { return m_tablesLoadingHasBeenSet; }
 
     /**
      * <p>The number of tables currently loading for this task.</p>
@@ -117,6 +137,11 @@ namespace Model
     /**
      * <p>The number of tables queued for this task.</p>
      */
+    inline bool TablesQueuedHasBeenSet() const { return m_tablesQueuedHasBeenSet; }
+
+    /**
+     * <p>The number of tables queued for this task.</p>
+     */
     inline void SetTablesQueued(int value) { m_tablesQueuedHasBeenSet = true; m_tablesQueued = value; }
 
     /**
@@ -129,6 +154,11 @@ namespace Model
      * <p>The number of errors that have occurred during this task.</p>
      */
     inline int GetTablesErrored() const{ return m_tablesErrored; }
+
+    /**
+     * <p>The number of errors that have occurred during this task.</p>
+     */
+    inline bool TablesErroredHasBeenSet() const { return m_tablesErroredHasBeenSet; }
 
     /**
      * <p>The number of errors that have occurred during this task.</p>

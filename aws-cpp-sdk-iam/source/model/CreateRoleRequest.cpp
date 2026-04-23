@@ -25,10 +25,10 @@ CreateRoleRequest::CreateRoleRequest() :
     m_roleNameHasBeenSet(false),
     m_assumeRolePolicyDocumentHasBeenSet(false),
     m_descriptionHasBeenSet(false),
-    m_tagsHasBeenSet(false),
     m_maxSessionDuration(0),
     m_maxSessionDurationHasBeenSet(false),
-    m_permissionsBoundaryHasBeenSet(false)
+    m_permissionsBoundaryHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -56,16 +56,6 @@ Aws::String CreateRoleRequest::SerializePayload() const
     ss << "Description=" << StringUtils::URLEncode(m_description.c_str()) << "&";
   }
 
-  if(m_tagsHasBeenSet)
-  {
-    unsigned tagsCount = 1;
-    for(auto& item : m_tags)
-    {
-      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
-      tagsCount++;
-    }
-  }
-
   if(m_maxSessionDurationHasBeenSet)
   {
     ss << "MaxSessionDuration=" << m_maxSessionDuration << "&";
@@ -74,6 +64,16 @@ Aws::String CreateRoleRequest::SerializePayload() const
   if(m_permissionsBoundaryHasBeenSet)
   {
     ss << "PermissionsBoundary=" << StringUtils::URLEncode(m_permissionsBoundary.c_str()) << "&";
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+    unsigned tagsCount = 1;
+    for(auto& item : m_tags)
+    {
+      item.OutputToStream(ss, "Tags.member.", tagsCount, "");
+      tagsCount++;
+    }
   }
 
   ss << "Version=2010-05-08";

@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the account that you want to grant
      * permissions to.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the account that you want to grant
+     * permissions to.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * permissions that you want to grant to another AWS account.</p>
      */
     inline const Aws::String& GetResolverRulePolicy() const{ return m_resolverRulePolicy; }
+
+    /**
+     * <p>An AWS Identity and Access Management policy statement that lists the
+     * permissions that you want to grant to another AWS account.</p>
+     */
+    inline bool ResolverRulePolicyHasBeenSet() const { return m_resolverRulePolicyHasBeenSet; }
 
     /**
      * <p>An AWS Identity and Access Management policy statement that lists the

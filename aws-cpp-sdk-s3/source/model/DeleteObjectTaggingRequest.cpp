@@ -36,7 +36,7 @@ DeleteObjectTaggingRequest::DeleteObjectTaggingRequest() :
 
 Aws::String DeleteObjectTaggingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteObjectTaggingRequest::AddQueryStringParameters(URI& uri) const

@@ -56,6 +56,13 @@ namespace Model
      * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
      * Chinese</p> </li> </ul>
      */
+    inline bool AcceptLanguageHasBeenSet() const { return m_acceptLanguageHasBeenSet; }
+
+    /**
+     * <p>The language code.</p> <ul> <li> <p> <code>en</code> - English (default)</p>
+     * </li> <li> <p> <code>jp</code> - Japanese</p> </li> <li> <p> <code>zh</code> -
+     * Chinese</p> </li> </ul>
+     */
     inline void SetAcceptLanguage(const Aws::String& value) { m_acceptLanguageHasBeenSet = true; m_acceptLanguage = value; }
 
     /**
@@ -102,6 +109,11 @@ namespace Model
     /**
      * <p>The plan identifier.</p>
      */
+    inline bool PlanIdHasBeenSet() const { return m_planIdHasBeenSet; }
+
+    /**
+     * <p>The plan identifier.</p>
+     */
     inline void SetPlanId(const Aws::String& value) { m_planIdHasBeenSet = true; m_planId = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * product even if it cannot delete the underlying resources.</p>
      */
     inline bool GetIgnoreErrors() const{ return m_ignoreErrors; }
+
+    /**
+     * <p>If set to true, AWS Service Catalog stops managing the specified provisioned
+     * product even if it cannot delete the underlying resources.</p>
+     */
+    inline bool IgnoreErrorsHasBeenSet() const { return m_ignoreErrorsHasBeenSet; }
 
     /**
      * <p>If set to true, AWS Service Catalog stops managing the specified provisioned

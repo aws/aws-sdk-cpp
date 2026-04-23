@@ -54,6 +54,9 @@ namespace Model
     inline const Aws::String& GetCloudWatchLogsLogGroupArn() const{ return m_cloudWatchLogsLogGroupArn; }
 
     
+    inline bool CloudWatchLogsLogGroupArnHasBeenSet() const { return m_cloudWatchLogsLogGroupArnHasBeenSet; }
+
+    
     inline void SetCloudWatchLogsLogGroupArn(const Aws::String& value) { m_cloudWatchLogsLogGroupArnHasBeenSet = true; m_cloudWatchLogsLogGroupArn = value; }
 
     
@@ -76,6 +79,11 @@ namespace Model
      * <p> Specifies whether given log publishing option is enabled or not.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p> Specifies whether given log publishing option is enabled or not.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p> Specifies whether given log publishing option is enabled or not.</p>

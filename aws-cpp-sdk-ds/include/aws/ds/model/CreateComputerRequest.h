@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the directory in which to create the computer account.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory in which to create the computer account.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of the computer account.</p>
      */
     inline const Aws::String& GetComputerName() const{ return m_computerName; }
+
+    /**
+     * <p>The name of the computer account.</p>
+     */
+    inline bool ComputerNameHasBeenSet() const { return m_computerNameHasBeenSet; }
 
     /**
      * <p>The name of the computer account.</p>
@@ -127,6 +137,12 @@ namespace Model
      * should generate a random, strong password to use for this parameter.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>A one-time password that is used to join the computer to the directory. You
+     * should generate a random, strong password to use for this parameter.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>A one-time password that is used to join the computer to the directory. You
@@ -175,6 +191,12 @@ namespace Model
      * <p>The fully-qualified distinguished name of the organizational unit to place
      * the computer account in.</p>
      */
+    inline bool OrganizationalUnitDistinguishedNameHasBeenSet() const { return m_organizationalUnitDistinguishedNameHasBeenSet; }
+
+    /**
+     * <p>The fully-qualified distinguished name of the organizational unit to place
+     * the computer account in.</p>
+     */
     inline void SetOrganizationalUnitDistinguishedName(const Aws::String& value) { m_organizationalUnitDistinguishedNameHasBeenSet = true; m_organizationalUnitDistinguishedName = value; }
 
     /**
@@ -213,6 +235,12 @@ namespace Model
      * apply to the computer account.</p>
      */
     inline const Aws::Vector<Attribute>& GetComputerAttributes() const{ return m_computerAttributes; }
+
+    /**
+     * <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to
+     * apply to the computer account.</p>
+     */
+    inline bool ComputerAttributesHasBeenSet() const { return m_computerAttributesHasBeenSet; }
 
     /**
      * <p>An array of <a>Attribute</a> objects that contain any LDAP attributes to

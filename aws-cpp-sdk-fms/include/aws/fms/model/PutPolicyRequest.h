@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The details of the AWS Firewall Manager policy to be created.</p>
      */
+    inline bool PolicyHasBeenSet() const { return m_policyHasBeenSet; }
+
+    /**
+     * <p>The details of the AWS Firewall Manager policy to be created.</p>
+     */
     inline void SetPolicy(const Policy& value) { m_policyHasBeenSet = true; m_policy = value; }
 
     /**

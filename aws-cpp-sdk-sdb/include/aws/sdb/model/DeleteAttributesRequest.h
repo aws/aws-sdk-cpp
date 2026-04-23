@@ -57,6 +57,11 @@ namespace Model
     /**
      * The name of the domain in which to perform the operation.
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * The name of the domain in which to perform the operation.
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * individual objects that contain one or more value-attribute pairs.
      */
     inline const Aws::String& GetItemName() const{ return m_itemName; }
+
+    /**
+     * The name of the item. Similar to rows on a spreadsheet, items represent
+     * individual objects that contain one or more value-attribute pairs.
+     */
+    inline bool ItemNameHasBeenSet() const { return m_itemNameHasBeenSet; }
 
     /**
      * The name of the item. Similar to rows on a spreadsheet, items represent
@@ -138,6 +149,12 @@ namespace Model
      * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
      * categories of data that can be assigned to items.
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * A list of Attributes. Similar to columns on a spreadsheet, attributes represent
+     * categories of data that can be assigned to items.
+     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -177,6 +194,13 @@ namespace Model
      * order for this request to be processed and the attributes to be deleted.
      */
     inline const UpdateCondition& GetExpected() const{ return m_expected; }
+
+    /**
+     * The update condition which, if specified, determines whether the specified
+     * attributes will be deleted or not. The update condition must be satisfied in
+     * order for this request to be processed and the attributes to be deleted.
+     */
+    inline bool ExpectedHasBeenSet() const { return m_expectedHasBeenSet; }
 
     /**
      * The update condition which, if specified, determines whether the specified

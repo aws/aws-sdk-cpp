@@ -65,6 +65,14 @@ namespace Model
      * <code>SqlInjectionMatchSetUpdate</code> from a
      * <code>SqlInjectionMatchSet</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specify <code>INSERT</code> to add a <a>SqlInjectionMatchSetUpdate</a> to a
+     * <a>SqlInjectionMatchSet</a>. Use <code>DELETE</code> to remove a
+     * <code>SqlInjectionMatchSetUpdate</code> from a
+     * <code>SqlInjectionMatchSet</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -98,6 +106,13 @@ namespace Model
      * name of the header.</p>
      */
     inline const SqlInjectionMatchTuple& GetSqlInjectionMatchTuple() const{ return m_sqlInjectionMatchTuple; }
+
+    /**
+     * <p>Specifies the part of a web request that you want AWS WAF to inspect for
+     * snippets of malicious SQL code and, if you want AWS WAF to inspect a header, the
+     * name of the header.</p>
+     */
+    inline bool SqlInjectionMatchTupleHasBeenSet() const { return m_sqlInjectionMatchTupleHasBeenSet; }
 
     /**
      * <p>Specifies the part of a web request that you want AWS WAF to inspect for

@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>The Cognito Identity Pool to use when configuring Cognito Events</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The events to configure</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetEvents() const{ return m_events; }
+
+    /**
+     * <p>The events to configure</p>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
 
     /**
      * <p>The events to configure</p>

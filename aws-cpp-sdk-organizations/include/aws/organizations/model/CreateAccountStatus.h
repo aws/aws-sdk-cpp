@@ -67,6 +67,15 @@ namespace Model
      * for an create account request ID string requires "car-" followed by from 8 to 32
      * lower-case letters or digits.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) that references this request. You get this value
+     * from the response of the initial <a>CreateAccount</a> request to create the
+     * account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a>
+     * for an create account request ID string requires "car-" followed by from 8 to 32
+     * lower-case letters or digits.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -123,6 +132,11 @@ namespace Model
     /**
      * <p>The account name given to the account when it was created.</p>
      */
+    inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
+
+    /**
+     * <p>The account name given to the account when it was created.</p>
+     */
     inline void SetAccountName(const Aws::String& value) { m_accountNameHasBeenSet = true; m_accountName = value; }
 
     /**
@@ -159,6 +173,11 @@ namespace Model
     /**
      * <p>The status of the request.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The status of the request.</p>
+     */
     inline void SetState(const CreateAccountState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -181,6 +200,11 @@ namespace Model
      * <p>The date and time that the request was made for the account creation.</p>
      */
     inline const Aws::Utils::DateTime& GetRequestedTimestamp() const{ return m_requestedTimestamp; }
+
+    /**
+     * <p>The date and time that the request was made for the account creation.</p>
+     */
+    inline bool RequestedTimestampHasBeenSet() const { return m_requestedTimestampHasBeenSet; }
 
     /**
      * <p>The date and time that the request was made for the account creation.</p>
@@ -211,6 +235,11 @@ namespace Model
     /**
      * <p>The date and time that the account was created and the request completed.</p>
      */
+    inline bool CompletedTimestampHasBeenSet() const { return m_completedTimestampHasBeenSet; }
+
+    /**
+     * <p>The date and time that the account was created and the request completed.</p>
+     */
     inline void SetCompletedTimestamp(const Aws::Utils::DateTime& value) { m_completedTimestampHasBeenSet = true; m_completedTimestamp = value; }
 
     /**
@@ -235,6 +264,13 @@ namespace Model
      * pattern</a> for an account ID string requires exactly 12 digits.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>If the account was created successfully, the unique identifier (ID) of the
+     * new account.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for an account ID string requires exactly 12 digits.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>If the account was created successfully, the unique identifier (ID) of the
@@ -293,6 +329,21 @@ namespace Model
      * </li> </ul>
      */
     inline const CreateAccountFailureReason& GetFailureReason() const{ return m_failureReason; }
+
+    /**
+     * <p>If the request failed, a description of the reason for the failure.</p> <ul>
+     * <li> <p>ACCOUNT_LIMIT_EXCEEDED: The account could not be created because you
+     * have reached the limit on the number of accounts in your organization.</p> </li>
+     * <li> <p>EMAIL_ALREADY_EXISTS: The account could not be created because another
+     * AWS account with that email address already exists.</p> </li> <li>
+     * <p>INVALID_ADDRESS: The account could not be created because the address you
+     * provided is not valid.</p> </li> <li> <p>INVALID_EMAIL: The account could not be
+     * created because the email address you provided is not valid.</p> </li> <li>
+     * <p>INTERNAL_FAILURE: The account could not be created because of an internal
+     * failure. Try again later. If the problem persists, contact Customer Support.</p>
+     * </li> </ul>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
 
     /**
      * <p>If the request failed, a description of the reason for the failure.</p> <ul>

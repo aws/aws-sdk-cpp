@@ -29,7 +29,7 @@ GetOTAUpdateRequest::GetOTAUpdateRequest() :
 
 Aws::String GetOTAUpdateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

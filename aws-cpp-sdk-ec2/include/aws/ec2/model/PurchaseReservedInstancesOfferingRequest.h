@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The number of Reserved Instances to purchase.</p>
      */
+    inline bool InstanceCountHasBeenSet() const { return m_instanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of Reserved Instances to purchase.</p>
+     */
     inline void SetInstanceCount(int value) { m_instanceCountHasBeenSet = true; m_instanceCount = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * <p>The ID of the Reserved Instance offering to purchase.</p>
      */
     inline const Aws::String& GetReservedInstancesOfferingId() const{ return m_reservedInstancesOfferingId; }
+
+    /**
+     * <p>The ID of the Reserved Instance offering to purchase.</p>
+     */
+    inline bool ReservedInstancesOfferingIdHasBeenSet() const { return m_reservedInstancesOfferingIdHasBeenSet; }
 
     /**
      * <p>The ID of the Reserved Instance offering to purchase.</p>
@@ -117,6 +127,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -134,6 +152,13 @@ namespace Model
      * prices.</p>
      */
     inline const ReservedInstanceLimitPrice& GetLimitPrice() const{ return m_limitPrice; }
+
+    /**
+     * <p>Specified for Reserved Instance Marketplace offerings to limit the total
+     * order and ensure that the Reserved Instances are not purchased at unexpected
+     * prices.</p>
+     */
+    inline bool LimitPriceHasBeenSet() const { return m_limitPriceHasBeenSet; }
 
     /**
      * <p>Specified for Reserved Instance Marketplace offerings to limit the total

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the document for which you are the owner.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the document for which you are the owner.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * <i>Share</i>.</p>
      */
     inline const DocumentPermissionType& GetPermissionType() const{ return m_permissionType; }
+
+    /**
+     * <p>The permission type for the document. The permission type can be
+     * <i>Share</i>.</p>
+     */
+    inline bool PermissionTypeHasBeenSet() const { return m_permissionTypeHasBeenSet; }
 
     /**
      * <p>The permission type for the document. The permission type can be

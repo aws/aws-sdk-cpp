@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the intent.</p>
      */
+    inline bool IntentNameHasBeenSet() const { return m_intentNameHasBeenSet; }
+
+    /**
+     * <p>The name of the intent.</p>
+     */
     inline void SetIntentName(const Aws::String& value) { m_intentNameHasBeenSet = true; m_intentName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The version of the intent.</p>
      */
     inline const Aws::String& GetIntentVersion() const{ return m_intentVersion; }
+
+    /**
+     * <p>The version of the intent.</p>
+     */
+    inline bool IntentVersionHasBeenSet() const { return m_intentVersionHasBeenSet; }
 
     /**
      * <p>The version of the intent.</p>

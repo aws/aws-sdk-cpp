@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationArnHasBeenSet() const { return m_applicationArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationArn(const Aws::String& value) { m_applicationArnHasBeenSet = true; m_applicationArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The name of the application.</p>
      */
     inline const Aws::String& GetApplicationName() const{ return m_applicationName; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
 
     /**
      * <p>The name of the application.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>User-defined description of the application.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>User-defined description of the application.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -168,6 +183,11 @@ namespace Model
     /**
      * <p>The date when the application was created.</p>
      */
+    inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
+
+    /**
+     * <p>The date when the application was created.</p>
+     */
     inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
@@ -194,6 +214,11 @@ namespace Model
     /**
      * <p>The date when the application was last modified.</p>
      */
+    inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
+
+    /**
+     * <p>The date when the application was last modified.</p>
+     */
     inline void SetDateUpdated(const Aws::Utils::DateTime& value) { m_dateUpdatedHasBeenSet = true; m_dateUpdated = value; }
 
     /**
@@ -216,6 +241,11 @@ namespace Model
      * <p>The names of the versions for this application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+
+    /**
+     * <p>The names of the versions for this application.</p>
+     */
+    inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
      * <p>The names of the versions for this application.</p>
@@ -258,6 +288,12 @@ namespace Model
      * application.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConfigurationTemplates() const{ return m_configurationTemplates; }
+
+    /**
+     * <p>The names of the configuration templates associated with this
+     * application.</p>
+     */
+    inline bool ConfigurationTemplatesHasBeenSet() const { return m_configurationTemplatesHasBeenSet; }
 
     /**
      * <p>The names of the configuration templates associated with this
@@ -306,6 +342,11 @@ namespace Model
      * <p>The lifecycle settings for the application.</p>
      */
     inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
+
+    /**
+     * <p>The lifecycle settings for the application.</p>
+     */
+    inline bool ResourceLifecycleConfigHasBeenSet() const { return m_resourceLifecycleConfigHasBeenSet; }
 
     /**
      * <p>The lifecycle settings for the application.</p>

@@ -36,7 +36,7 @@ ListActiveViolationsRequest::ListActiveViolationsRequest() :
 
 Aws::String ListActiveViolationsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListActiveViolationsRequest::AddQueryStringParameters(URI& uri) const

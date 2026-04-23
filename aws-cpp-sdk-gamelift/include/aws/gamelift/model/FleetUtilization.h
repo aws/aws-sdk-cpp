@@ -35,11 +35,11 @@ namespace Model
 
   /**
    * <p>Current status of fleet utilization, including the number of game and player
-   * sessions being hosted.</p> <p>Fleet-related operations include:</p> <ul> <li>
-   * <p> <a>CreateFleet</a> </p> </li> <li> <p> <a>ListFleets</a> </p> </li> <li> <p>
-   * <a>DeleteFleet</a> </p> </li> <li> <p>Describe fleets:</p> <ul> <li> <p>
-   * <a>DescribeFleetAttributes</a> </p> </li> <li> <p> <a>DescribeFleetCapacity</a>
-   * </p> </li> <li> <p> <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
+   * sessions being hosted.</p> <ul> <li> <p> <a>CreateFleet</a> </p> </li> <li> <p>
+   * <a>ListFleets</a> </p> </li> <li> <p> <a>DeleteFleet</a> </p> </li> <li>
+   * <p>Describe fleets:</p> <ul> <li> <p> <a>DescribeFleetAttributes</a> </p> </li>
+   * <li> <p> <a>DescribeFleetCapacity</a> </p> </li> <li> <p>
+   * <a>DescribeFleetPortSettings</a> </p> </li> <li> <p>
    * <a>DescribeFleetUtilization</a> </p> </li> <li> <p>
    * <a>DescribeRuntimeConfiguration</a> </p> </li> <li> <p>
    * <a>DescribeEC2InstanceLimits</a> </p> </li> <li> <p> <a>DescribeFleetEvents</a>
@@ -65,6 +65,11 @@ namespace Model
      * <p>Unique identifier for a fleet.</p>
      */
     inline const Aws::String& GetFleetId() const{ return m_fleetId; }
+
+    /**
+     * <p>Unique identifier for a fleet.</p>
+     */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a fleet.</p>
@@ -107,6 +112,12 @@ namespace Model
      * <p>Number of server processes in an <code>ACTIVE</code> status currently running
      * across all instances in the fleet</p>
      */
+    inline bool ActiveServerProcessCountHasBeenSet() const { return m_activeServerProcessCountHasBeenSet; }
+
+    /**
+     * <p>Number of server processes in an <code>ACTIVE</code> status currently running
+     * across all instances in the fleet</p>
+     */
     inline void SetActiveServerProcessCount(int value) { m_activeServerProcessCountHasBeenSet = true; m_activeServerProcessCount = value; }
 
     /**
@@ -121,6 +132,12 @@ namespace Model
      * fleet.</p>
      */
     inline int GetActiveGameSessionCount() const{ return m_activeGameSessionCount; }
+
+    /**
+     * <p>Number of active game sessions currently being hosted on all instances in the
+     * fleet.</p>
+     */
+    inline bool ActiveGameSessionCountHasBeenSet() const { return m_activeGameSessionCountHasBeenSet; }
 
     /**
      * <p>Number of active game sessions currently being hosted on all instances in the
@@ -145,6 +162,12 @@ namespace Model
      * <p>Number of active player sessions currently being hosted on all instances in
      * the fleet.</p>
      */
+    inline bool CurrentPlayerSessionCountHasBeenSet() const { return m_currentPlayerSessionCountHasBeenSet; }
+
+    /**
+     * <p>Number of active player sessions currently being hosted on all instances in
+     * the fleet.</p>
+     */
     inline void SetCurrentPlayerSessionCount(int value) { m_currentPlayerSessionCountHasBeenSet = true; m_currentPlayerSessionCount = value; }
 
     /**
@@ -159,6 +182,12 @@ namespace Model
      * all instances in the fleet.</p>
      */
     inline int GetMaximumPlayerSessionCount() const{ return m_maximumPlayerSessionCount; }
+
+    /**
+     * <p>Maximum players allowed across all game sessions currently being hosted on
+     * all instances in the fleet.</p>
+     */
+    inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
 
     /**
      * <p>Maximum players allowed across all game sessions currently being hosted on

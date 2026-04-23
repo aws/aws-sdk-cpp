@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Redshift cluster that the table is being restored to.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The Amazon Redshift cluster that the table is being restored to.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * table restore requests.</p>
      */
     inline const Aws::String& GetTableRestoreRequestId() const{ return m_tableRestoreRequestId; }
+
+    /**
+     * <p>The identifier of the table restore request to return status for. If you
+     * don't specify a <code>TableRestoreRequestId</code> value, then
+     * <code>DescribeTableRestoreStatus</code> returns the status of all in-progress
+     * table restore requests.</p>
+     */
+    inline bool TableRestoreRequestIdHasBeenSet() const { return m_tableRestoreRequestIdHasBeenSet; }
 
     /**
      * <p>The identifier of the table restore request to return status for. If you
@@ -156,6 +169,14 @@ namespace Model
      * called a marker is included in the response so that the remaining results can be
      * retrieved.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -174,6 +195,14 @@ namespace Model
      * by the <code>MaxRecords</code> parameter.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional pagination token provided by a previous
+     * <code>DescribeTableRestoreStatus</code> request. If this parameter is specified,
+     * the response includes only records beyond the marker, up to the value specified
+     * by the <code>MaxRecords</code> parameter.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional pagination token provided by a previous

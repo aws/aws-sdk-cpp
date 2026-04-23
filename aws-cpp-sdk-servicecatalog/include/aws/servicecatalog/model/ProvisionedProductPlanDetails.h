@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The UTC time stamp of the creation time.</p>
      */
+    inline bool CreatedTimeHasBeenSet() const { return m_createdTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC time stamp of the creation time.</p>
+     */
     inline void SetCreatedTime(const Aws::Utils::DateTime& value) { m_createdTimeHasBeenSet = true; m_createdTime = value; }
 
     /**
@@ -85,6 +90,13 @@ namespace Model
      * paths for a product, use <a>ListLaunchPaths</a>.</p>
      */
     inline const Aws::String& GetPathId() const{ return m_pathId; }
+
+    /**
+     * <p>The path identifier of the product. This value is optional if the product has
+     * a default path, and required if the product has more than one path. To list the
+     * paths for a product, use <a>ListLaunchPaths</a>.</p>
+     */
+    inline bool PathIdHasBeenSet() const { return m_pathIdHasBeenSet; }
 
     /**
      * <p>The path identifier of the product. This value is optional if the product has
@@ -137,6 +149,11 @@ namespace Model
     /**
      * <p>The product identifier.</p>
      */
+    inline bool ProductIdHasBeenSet() const { return m_productIdHasBeenSet; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
     inline void SetProductId(const Aws::String& value) { m_productIdHasBeenSet = true; m_productId = value; }
 
     /**
@@ -169,6 +186,11 @@ namespace Model
      * <p>The name of the plan.</p>
      */
     inline const Aws::String& GetPlanName() const{ return m_planName; }
+
+    /**
+     * <p>The name of the plan.</p>
+     */
+    inline bool PlanNameHasBeenSet() const { return m_planNameHasBeenSet; }
 
     /**
      * <p>The name of the plan.</p>
@@ -209,6 +231,11 @@ namespace Model
     /**
      * <p>The plan identifier.</p>
      */
+    inline bool PlanIdHasBeenSet() const { return m_planIdHasBeenSet; }
+
+    /**
+     * <p>The plan identifier.</p>
+     */
     inline void SetPlanId(const Aws::String& value) { m_planIdHasBeenSet = true; m_planId = value; }
 
     /**
@@ -241,6 +268,11 @@ namespace Model
      * <p>The product identifier.</p>
      */
     inline const Aws::String& GetProvisionProductId() const{ return m_provisionProductId; }
+
+    /**
+     * <p>The product identifier.</p>
+     */
+    inline bool ProvisionProductIdHasBeenSet() const { return m_provisionProductIdHasBeenSet; }
 
     /**
      * <p>The product identifier.</p>
@@ -281,6 +313,11 @@ namespace Model
     /**
      * <p>The user-friendly name of the provisioned product.</p>
      */
+    inline bool ProvisionProductNameHasBeenSet() const { return m_provisionProductNameHasBeenSet; }
+
+    /**
+     * <p>The user-friendly name of the provisioned product.</p>
+     */
     inline void SetProvisionProductName(const Aws::String& value) { m_provisionProductNameHasBeenSet = true; m_provisionProductName = value; }
 
     /**
@@ -317,6 +354,11 @@ namespace Model
     /**
      * <p>The plan type.</p>
      */
+    inline bool PlanTypeHasBeenSet() const { return m_planTypeHasBeenSet; }
+
+    /**
+     * <p>The plan type.</p>
+     */
     inline void SetPlanType(const ProvisionedProductPlanType& value) { m_planTypeHasBeenSet = true; m_planType = value; }
 
     /**
@@ -339,6 +381,11 @@ namespace Model
      * <p>The identifier of the provisioning artifact.</p>
      */
     inline const Aws::String& GetProvisioningArtifactId() const{ return m_provisioningArtifactId; }
+
+    /**
+     * <p>The identifier of the provisioning artifact.</p>
+     */
+    inline bool ProvisioningArtifactIdHasBeenSet() const { return m_provisioningArtifactIdHasBeenSet; }
 
     /**
      * <p>The identifier of the provisioning artifact.</p>
@@ -379,6 +426,11 @@ namespace Model
     /**
      * <p>The status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status.</p>
+     */
     inline void SetStatus(const ProvisionedProductPlanStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -401,6 +453,11 @@ namespace Model
      * <p>The time when the plan was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetUpdatedTime() const{ return m_updatedTime; }
+
+    /**
+     * <p>The time when the plan was last updated.</p>
+     */
+    inline bool UpdatedTimeHasBeenSet() const { return m_updatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the plan was last updated.</p>
@@ -428,6 +485,12 @@ namespace Model
      * stack-related events.</p>
      */
     inline const Aws::Vector<Aws::String>& GetNotificationArns() const{ return m_notificationArns; }
+
+    /**
+     * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
+     * stack-related events.</p>
+     */
+    inline bool NotificationArnsHasBeenSet() const { return m_notificationArnsHasBeenSet; }
 
     /**
      * <p>Passed to CloudFormation. The SNS topic ARNs to which to publish
@@ -482,6 +545,12 @@ namespace Model
      * <p>Parameters specified by the administrator that are required for provisioning
      * the product.</p>
      */
+    inline bool ProvisioningParametersHasBeenSet() const { return m_provisioningParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters specified by the administrator that are required for provisioning
+     * the product.</p>
+     */
     inline void SetProvisioningParameters(const Aws::Vector<UpdateProvisioningParameter>& value) { m_provisioningParametersHasBeenSet = true; m_provisioningParameters = value; }
 
     /**
@@ -523,6 +592,11 @@ namespace Model
     /**
      * <p>One or more tags.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>One or more tags.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -555,6 +629,11 @@ namespace Model
      * <p>The status message.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The status message.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The status message.</p>

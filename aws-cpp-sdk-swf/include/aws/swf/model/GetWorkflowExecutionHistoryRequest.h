@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the domain containing the workflow execution.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The name of the domain containing the workflow execution.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
     /**
      * <p>Specifies the workflow execution for which to return the history.</p>
      */
+    inline bool ExecutionHasBeenSet() const { return m_executionHasBeenSet; }
+
+    /**
+     * <p>Specifies the workflow execution for which to return the history.</p>
+     */
     inline void SetExecution(const WorkflowExecution& value) { m_executionHasBeenSet = true; m_execution = value; }
 
     /**
@@ -115,6 +125,15 @@ namespace Model
      * determines how many results can be returned in a single call.</p>
      */
     inline const Aws::String& GetNextPageToken() const{ return m_nextPageToken; }
+
+    /**
+     * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+     * more results available. To retrieve the next page of results, make the call
+     * again using the returned token in <code>nextPageToken</code>. Keep all other
+     * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+     * determines how many results can be returned in a single call.</p>
+     */
+    inline bool NextPageTokenHasBeenSet() const { return m_nextPageTokenHasBeenSet; }
 
     /**
      * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
@@ -189,6 +208,16 @@ namespace Model
      * limit only; the actual number of results returned per call may be fewer than the
      * specified maximum.</p>
      */
+    inline bool MaximumPageSizeHasBeenSet() const { return m_maximumPageSizeHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results that are returned per call.
+     * <code>nextPageToken</code> can be used to obtain futher pages of results. The
+     * default is 1000, which is the maximum allowed page size. You can, however,
+     * specify a page size <i>smaller</i> than the maximum.</p> <p>This is an upper
+     * limit only; the actual number of results returned per call may be fewer than the
+     * specified maximum.</p>
+     */
     inline void SetMaximumPageSize(int value) { m_maximumPageSizeHasBeenSet = true; m_maximumPageSize = value; }
 
     /**
@@ -208,6 +237,13 @@ namespace Model
      * <code>eventTimeStamp</code> of the events.</p>
      */
     inline bool GetReverseOrder() const{ return m_reverseOrder; }
+
+    /**
+     * <p>When set to <code>true</code>, returns the events in reverse order. By
+     * default the results are returned in ascending order of the
+     * <code>eventTimeStamp</code> of the events.</p>
+     */
+    inline bool ReverseOrderHasBeenSet() const { return m_reverseOrderHasBeenSet; }
 
     /**
      * <p>When set to <code>true</code>, returns the events in reverse order. By

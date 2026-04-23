@@ -62,6 +62,13 @@ namespace Model
      * following: StepName, Action, StepExecutionId, StepExecutionStatus,
      * StartTimeBefore, StartTimeAfter.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>One or more keys to limit the results. Valid filter keys include the
+     * following: StepName, Action, StepExecutionId, StepExecutionStatus,
+     * StartTimeBefore, StartTimeAfter.</p>
+     */
     inline void SetKey(const StepExecutionFilterKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -90,6 +97,11 @@ namespace Model
      * <p>The values of the filter key.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The values of the filter key.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The values of the filter key.</p>

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of a resource group.</p>
      */
+    inline bool GroupArnHasBeenSet() const { return m_groupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a resource group.</p>
+     */
     inline void SetGroupArn(const Aws::String& value) { m_groupArnHasBeenSet = true; m_groupArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The name of a resource group.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of a resource group.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The description of the resource group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the resource group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the resource group.</p>

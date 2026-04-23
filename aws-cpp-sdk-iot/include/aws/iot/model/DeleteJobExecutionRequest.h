@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The ID of the job whose execution on a particular device will be deleted.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the job whose execution on a particular device will be deleted.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the thing whose job execution will be deleted.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing whose job execution will be deleted.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing whose job execution will be deleted.</p>
@@ -134,6 +144,14 @@ namespace Model
      * that once a job execution is deleted, the <code>executionNumber</code> may be
      * reused by IoT, so be sure you get and use the correct value here.</p>
      */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
+
+    /**
+     * <p>The ID of the job execution to be deleted. The <code>executionNumber</code>
+     * refers to the execution of a particular job on a particular device.</p> <p>Note
+     * that once a job execution is deleted, the <code>executionNumber</code> may be
+     * reused by IoT, so be sure you get and use the correct value here.</p>
+     */
     inline void SetExecutionNumber(long long value) { m_executionNumberHasBeenSet = true; m_executionNumber = value; }
 
     /**
@@ -155,6 +173,17 @@ namespace Model
      * able to recover to a valid state.</p> </note>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".
+     * Otherwise, you can only delete a job execution which is in a terminal state
+     * ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception
+     * will occur. The default is false.</p> <note> <p>Deleting a job execution which
+     * is "IN_PROGRESS", will cause the device to be unable to access job information
+     * or update the job execution status. Use caution and ensure that the device is
+     * able to recover to a valid state.</p> </note>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS".

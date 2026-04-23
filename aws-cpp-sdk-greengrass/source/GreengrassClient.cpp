@@ -24,11 +24,16 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/greengrass/GreengrassClient.h>
 #include <aws/greengrass/GreengrassEndpoint.h>
 #include <aws/greengrass/GreengrassErrorMarshaller.h>
 #include <aws/greengrass/model/AssociateRoleToGroupRequest.h>
 #include <aws/greengrass/model/AssociateServiceRoleToAccountRequest.h>
+#include <aws/greengrass/model/CreateConnectorDefinitionRequest.h>
+#include <aws/greengrass/model/CreateConnectorDefinitionVersionRequest.h>
 #include <aws/greengrass/model/CreateCoreDefinitionRequest.h>
 #include <aws/greengrass/model/CreateCoreDefinitionVersionRequest.h>
 #include <aws/greengrass/model/CreateDeploymentRequest.h>
@@ -46,6 +51,8 @@
 #include <aws/greengrass/model/CreateSoftwareUpdateJobRequest.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionRequest.h>
 #include <aws/greengrass/model/CreateSubscriptionDefinitionVersionRequest.h>
+#include <aws/greengrass/model/TagResourceRequest.h>
+#include <aws/greengrass/model/DeleteConnectorDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteCoreDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteDeviceDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteFunctionDefinitionRequest.h>
@@ -53,11 +60,14 @@
 #include <aws/greengrass/model/DeleteLoggerDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteResourceDefinitionRequest.h>
 #include <aws/greengrass/model/DeleteSubscriptionDefinitionRequest.h>
+#include <aws/greengrass/model/UntagResourceRequest.h>
 #include <aws/greengrass/model/DisassociateRoleFromGroupRequest.h>
 #include <aws/greengrass/model/DisassociateServiceRoleFromAccountRequest.h>
 #include <aws/greengrass/model/GetAssociatedRoleRequest.h>
 #include <aws/greengrass/model/GetBulkDeploymentStatusRequest.h>
 #include <aws/greengrass/model/GetConnectivityInfoRequest.h>
+#include <aws/greengrass/model/GetConnectorDefinitionRequest.h>
+#include <aws/greengrass/model/GetConnectorDefinitionVersionRequest.h>
 #include <aws/greengrass/model/GetCoreDefinitionRequest.h>
 #include <aws/greengrass/model/GetCoreDefinitionVersionRequest.h>
 #include <aws/greengrass/model/GetDeploymentStatusRequest.h>
@@ -78,6 +88,8 @@
 #include <aws/greengrass/model/GetSubscriptionDefinitionVersionRequest.h>
 #include <aws/greengrass/model/ListBulkDeploymentDetailedReportsRequest.h>
 #include <aws/greengrass/model/ListBulkDeploymentsRequest.h>
+#include <aws/greengrass/model/ListConnectorDefinitionVersionsRequest.h>
+#include <aws/greengrass/model/ListConnectorDefinitionsRequest.h>
 #include <aws/greengrass/model/ListCoreDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListCoreDefinitionsRequest.h>
 #include <aws/greengrass/model/ListDeploymentsRequest.h>
@@ -94,10 +106,12 @@
 #include <aws/greengrass/model/ListResourceDefinitionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionVersionsRequest.h>
 #include <aws/greengrass/model/ListSubscriptionDefinitionsRequest.h>
+#include <aws/greengrass/model/ListTagsForResourceRequest.h>
 #include <aws/greengrass/model/ResetDeploymentsRequest.h>
 #include <aws/greengrass/model/StartBulkDeploymentRequest.h>
 #include <aws/greengrass/model/StopBulkDeploymentRequest.h>
 #include <aws/greengrass/model/UpdateConnectivityInfoRequest.h>
+#include <aws/greengrass/model/UpdateConnectorDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateCoreDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateDeviceDefinitionRequest.h>
 #include <aws/greengrass/model/UpdateFunctionDefinitionRequest.h>
@@ -156,25 +170,37 @@ GreengrassClient::~GreengrassClient()
 
 void GreengrassClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << GreengrassEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + GreengrassEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void GreengrassClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 AssociateRoleToGroupOutcome GreengrassClient::AssociateRoleToGroup(const AssociateRoleToGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("AssociateRoleToGroup", "Required field: GroupId, is not set");
+    return AssociateRoleToGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -210,8 +236,8 @@ void GreengrassClient::AssociateRoleToGroupAsyncHelper(const AssociateRoleToGrou
 
 AssociateServiceRoleToAccountOutcome GreengrassClient::AssociateServiceRoleToAccount(const AssociateServiceRoleToAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -243,10 +269,87 @@ void GreengrassClient::AssociateServiceRoleToAccountAsyncHelper(const AssociateS
   handler(this, request, AssociateServiceRoleToAccount(request), context);
 }
 
+CreateConnectorDefinitionOutcome GreengrassClient::CreateConnectorDefinition(const CreateConnectorDefinitionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateConnectorDefinitionOutcome(CreateConnectorDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConnectorDefinitionOutcome(outcome.GetError());
+  }
+}
+
+CreateConnectorDefinitionOutcomeCallable GreengrassClient::CreateConnectorDefinitionCallable(const CreateConnectorDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectorDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnectorDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::CreateConnectorDefinitionAsync(const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::CreateConnectorDefinitionAsyncHelper(const CreateConnectorDefinitionRequest& request, const CreateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnectorDefinition(request), context);
+}
+
+CreateConnectorDefinitionVersionOutcome GreengrassClient::CreateConnectorDefinitionVersion(const CreateConnectorDefinitionVersionRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConnectorDefinitionVersion", "Required field: ConnectorDefinitionId, is not set");
+    return CreateConnectorDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateConnectorDefinitionVersionOutcome(CreateConnectorDefinitionVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateConnectorDefinitionVersionOutcome(outcome.GetError());
+  }
+}
+
+CreateConnectorDefinitionVersionOutcomeCallable GreengrassClient::CreateConnectorDefinitionVersionCallable(const CreateConnectorDefinitionVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateConnectorDefinitionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateConnectorDefinitionVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::CreateConnectorDefinitionVersionAsync(const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateConnectorDefinitionVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::CreateConnectorDefinitionVersionAsyncHelper(const CreateConnectorDefinitionVersionRequest& request, const CreateConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateConnectorDefinitionVersion(request), context);
+}
+
 CreateCoreDefinitionOutcome GreengrassClient::CreateCoreDefinition(const CreateCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -280,8 +383,13 @@ void GreengrassClient::CreateCoreDefinitionAsyncHelper(const CreateCoreDefinitio
 
 CreateCoreDefinitionVersionOutcome GreengrassClient::CreateCoreDefinitionVersion(const CreateCoreDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateCoreDefinitionVersion", "Required field: CoreDefinitionId, is not set");
+    return CreateCoreDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
@@ -317,8 +425,13 @@ void GreengrassClient::CreateCoreDefinitionVersionAsyncHelper(const CreateCoreDe
 
 CreateDeploymentOutcome GreengrassClient::CreateDeployment(const CreateDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDeployment", "Required field: GroupId, is not set");
+    return CreateDeploymentOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments";
@@ -354,8 +467,8 @@ void GreengrassClient::CreateDeploymentAsyncHelper(const CreateDeploymentRequest
 
 CreateDeviceDefinitionOutcome GreengrassClient::CreateDeviceDefinition(const CreateDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -389,8 +502,13 @@ void GreengrassClient::CreateDeviceDefinitionAsyncHelper(const CreateDeviceDefin
 
 CreateDeviceDefinitionVersionOutcome GreengrassClient::CreateDeviceDefinitionVersion(const CreateDeviceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateDeviceDefinitionVersion", "Required field: DeviceDefinitionId, is not set");
+    return CreateDeviceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
@@ -426,8 +544,8 @@ void GreengrassClient::CreateDeviceDefinitionVersionAsyncHelper(const CreateDevi
 
 CreateFunctionDefinitionOutcome GreengrassClient::CreateFunctionDefinition(const CreateFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -461,8 +579,13 @@ void GreengrassClient::CreateFunctionDefinitionAsyncHelper(const CreateFunctionD
 
 CreateFunctionDefinitionVersionOutcome GreengrassClient::CreateFunctionDefinitionVersion(const CreateFunctionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateFunctionDefinitionVersion", "Required field: FunctionDefinitionId, is not set");
+    return CreateFunctionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
@@ -498,8 +621,8 @@ void GreengrassClient::CreateFunctionDefinitionVersionAsyncHelper(const CreateFu
 
 CreateGroupOutcome GreengrassClient::CreateGroup(const CreateGroupRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -533,8 +656,13 @@ void GreengrassClient::CreateGroupAsyncHelper(const CreateGroupRequest& request,
 
 CreateGroupCertificateAuthorityOutcome GreengrassClient::CreateGroupCertificateAuthority(const CreateGroupCertificateAuthorityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupCertificateAuthority", "Required field: GroupId, is not set");
+    return CreateGroupCertificateAuthorityOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
@@ -570,8 +698,13 @@ void GreengrassClient::CreateGroupCertificateAuthorityAsyncHelper(const CreateGr
 
 CreateGroupVersionOutcome GreengrassClient::CreateGroupVersion(const CreateGroupVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateGroupVersion", "Required field: GroupId, is not set");
+    return CreateGroupVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions";
@@ -607,8 +740,8 @@ void GreengrassClient::CreateGroupVersionAsyncHelper(const CreateGroupVersionReq
 
 CreateLoggerDefinitionOutcome GreengrassClient::CreateLoggerDefinition(const CreateLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -642,8 +775,13 @@ void GreengrassClient::CreateLoggerDefinitionAsyncHelper(const CreateLoggerDefin
 
 CreateLoggerDefinitionVersionOutcome GreengrassClient::CreateLoggerDefinitionVersion(const CreateLoggerDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateLoggerDefinitionVersion", "Required field: LoggerDefinitionId, is not set");
+    return CreateLoggerDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
@@ -679,8 +817,8 @@ void GreengrassClient::CreateLoggerDefinitionVersionAsyncHelper(const CreateLogg
 
 CreateResourceDefinitionOutcome GreengrassClient::CreateResourceDefinition(const CreateResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -714,8 +852,13 @@ void GreengrassClient::CreateResourceDefinitionAsyncHelper(const CreateResourceD
 
 CreateResourceDefinitionVersionOutcome GreengrassClient::CreateResourceDefinitionVersion(const CreateResourceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateResourceDefinitionVersion", "Required field: ResourceDefinitionId, is not set");
+    return CreateResourceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
@@ -751,8 +894,8 @@ void GreengrassClient::CreateResourceDefinitionVersionAsyncHelper(const CreateRe
 
 CreateSoftwareUpdateJobOutcome GreengrassClient::CreateSoftwareUpdateJob(const CreateSoftwareUpdateJobRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/updates";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -786,8 +929,8 @@ void GreengrassClient::CreateSoftwareUpdateJobAsyncHelper(const CreateSoftwareUp
 
 CreateSubscriptionDefinitionOutcome GreengrassClient::CreateSubscriptionDefinition(const CreateSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -821,8 +964,13 @@ void GreengrassClient::CreateSubscriptionDefinitionAsyncHelper(const CreateSubsc
 
 CreateSubscriptionDefinitionVersionOutcome GreengrassClient::CreateSubscriptionDefinitionVersion(const CreateSubscriptionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateSubscriptionDefinitionVersion", "Required field: SubscriptionDefinitionId, is not set");
+    return CreateSubscriptionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
@@ -856,10 +1004,97 @@ void GreengrassClient::CreateSubscriptionDefinitionVersionAsyncHelper(const Crea
   handler(this, request, CreateSubscriptionDefinitionVersion(request), context);
 }
 
+TagResourceOutcome GreengrassClient::TagResource(const TagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("TagResource", "Required field: ResourceArn, is not set");
+    return TagResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable GreengrassClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+DeleteConnectorDefinitionOutcome GreengrassClient::DeleteConnectorDefinition(const DeleteConnectorDefinitionRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConnectorDefinition", "Required field: ConnectorDefinitionId, is not set");
+    return DeleteConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DeleteConnectorDefinitionOutcome(DeleteConnectorDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DeleteConnectorDefinitionOutcome(outcome.GetError());
+  }
+}
+
+DeleteConnectorDefinitionOutcomeCallable GreengrassClient::DeleteConnectorDefinitionCallable(const DeleteConnectorDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DeleteConnectorDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DeleteConnectorDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::DeleteConnectorDefinitionAsync(const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DeleteConnectorDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::DeleteConnectorDefinitionAsyncHelper(const DeleteConnectorDefinitionRequest& request, const DeleteConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DeleteConnectorDefinition(request), context);
+}
+
 DeleteCoreDefinitionOutcome GreengrassClient::DeleteCoreDefinition(const DeleteCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteCoreDefinition", "Required field: CoreDefinitionId, is not set");
+    return DeleteCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -894,8 +1129,13 @@ void GreengrassClient::DeleteCoreDefinitionAsyncHelper(const DeleteCoreDefinitio
 
 DeleteDeviceDefinitionOutcome GreengrassClient::DeleteDeviceDefinition(const DeleteDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDeviceDefinition", "Required field: DeviceDefinitionId, is not set");
+    return DeleteDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -930,8 +1170,13 @@ void GreengrassClient::DeleteDeviceDefinitionAsyncHelper(const DeleteDeviceDefin
 
 DeleteFunctionDefinitionOutcome GreengrassClient::DeleteFunctionDefinition(const DeleteFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFunctionDefinition", "Required field: FunctionDefinitionId, is not set");
+    return DeleteFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -966,8 +1211,13 @@ void GreengrassClient::DeleteFunctionDefinitionAsyncHelper(const DeleteFunctionD
 
 DeleteGroupOutcome GreengrassClient::DeleteGroup(const DeleteGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteGroup", "Required field: GroupId, is not set");
+    return DeleteGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1002,8 +1252,13 @@ void GreengrassClient::DeleteGroupAsyncHelper(const DeleteGroupRequest& request,
 
 DeleteLoggerDefinitionOutcome GreengrassClient::DeleteLoggerDefinition(const DeleteLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteLoggerDefinition", "Required field: LoggerDefinitionId, is not set");
+    return DeleteLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1038,8 +1293,13 @@ void GreengrassClient::DeleteLoggerDefinitionAsyncHelper(const DeleteLoggerDefin
 
 DeleteResourceDefinitionOutcome GreengrassClient::DeleteResourceDefinition(const DeleteResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteResourceDefinition", "Required field: ResourceDefinitionId, is not set");
+    return DeleteResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1074,8 +1334,13 @@ void GreengrassClient::DeleteResourceDefinitionAsyncHelper(const DeleteResourceD
 
 DeleteSubscriptionDefinitionOutcome GreengrassClient::DeleteSubscriptionDefinition(const DeleteSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteSubscriptionDefinition", "Required field: SubscriptionDefinitionId, is not set");
+    return DeleteSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1108,10 +1373,61 @@ void GreengrassClient::DeleteSubscriptionDefinitionAsyncHelper(const DeleteSubsc
   handler(this, request, DeleteSubscriptionDefinition(request), context);
 }
 
+UntagResourceOutcome GreengrassClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(NoResult());
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable GreengrassClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 DisassociateRoleFromGroupOutcome GreengrassClient::DisassociateRoleFromGroup(const DisassociateRoleFromGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DisassociateRoleFromGroup", "Required field: GroupId, is not set");
+    return DisassociateRoleFromGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -1147,8 +1463,8 @@ void GreengrassClient::DisassociateRoleFromGroupAsyncHelper(const DisassociateRo
 
 DisassociateServiceRoleFromAccountOutcome GreengrassClient::DisassociateServiceRoleFromAccount(const DisassociateServiceRoleFromAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
@@ -1182,8 +1498,13 @@ void GreengrassClient::DisassociateServiceRoleFromAccountAsyncHelper(const Disas
 
 GetAssociatedRoleOutcome GreengrassClient::GetAssociatedRole(const GetAssociatedRoleRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetAssociatedRole", "Required field: GroupId, is not set");
+    return GetAssociatedRoleOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/role";
@@ -1219,8 +1540,13 @@ void GreengrassClient::GetAssociatedRoleAsyncHelper(const GetAssociatedRoleReque
 
 GetBulkDeploymentStatusOutcome GreengrassClient::GetBulkDeploymentStatus(const GetBulkDeploymentStatusRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.BulkDeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetBulkDeploymentStatus", "Required field: BulkDeploymentId, is not set");
+    return GetBulkDeploymentStatusOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/status";
@@ -1256,8 +1582,13 @@ void GreengrassClient::GetBulkDeploymentStatusAsyncHelper(const GetBulkDeploymen
 
 GetConnectivityInfoOutcome GreengrassClient::GetConnectivityInfo(const GetConnectivityInfoRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectivityInfo", "Required field: ThingName, is not set");
+    return GetConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/things/";
   ss << request.GetThingName();
   ss << "/connectivityInfo";
@@ -1291,10 +1622,104 @@ void GreengrassClient::GetConnectivityInfoAsyncHelper(const GetConnectivityInfoR
   handler(this, request, GetConnectivityInfo(request), context);
 }
 
+GetConnectorDefinitionOutcome GreengrassClient::GetConnectorDefinition(const GetConnectorDefinitionRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectorDefinition", "Required field: ConnectorDefinitionId, is not set");
+    return GetConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetConnectorDefinitionOutcome(GetConnectorDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetConnectorDefinitionOutcome(outcome.GetError());
+  }
+}
+
+GetConnectorDefinitionOutcomeCallable GreengrassClient::GetConnectorDefinitionCallable(const GetConnectorDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectorDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectorDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetConnectorDefinitionAsync(const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectorDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetConnectorDefinitionAsyncHelper(const GetConnectorDefinitionRequest& request, const GetConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnectorDefinition(request), context);
+}
+
+GetConnectorDefinitionVersionOutcome GreengrassClient::GetConnectorDefinitionVersion(const GetConnectorDefinitionVersionRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectorDefinitionVersion", "Required field: ConnectorDefinitionId, is not set");
+    return GetConnectorDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  if (!request.ConnectorDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConnectorDefinitionVersion", "Required field: ConnectorDefinitionVersionId, is not set");
+    return GetConnectorDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionVersionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  ss << "/versions/";
+  ss << request.GetConnectorDefinitionVersionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetConnectorDefinitionVersionOutcome(GetConnectorDefinitionVersionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetConnectorDefinitionVersionOutcome(outcome.GetError());
+  }
+}
+
+GetConnectorDefinitionVersionOutcomeCallable GreengrassClient::GetConnectorDefinitionVersionCallable(const GetConnectorDefinitionVersionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetConnectorDefinitionVersionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetConnectorDefinitionVersion(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::GetConnectorDefinitionVersionAsync(const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetConnectorDefinitionVersionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::GetConnectorDefinitionVersionAsyncHelper(const GetConnectorDefinitionVersionRequest& request, const GetConnectorDefinitionVersionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetConnectorDefinitionVersion(request), context);
+}
+
 GetCoreDefinitionOutcome GreengrassClient::GetCoreDefinition(const GetCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoreDefinition", "Required field: CoreDefinitionId, is not set");
+    return GetCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1329,8 +1754,18 @@ void GreengrassClient::GetCoreDefinitionAsyncHelper(const GetCoreDefinitionReque
 
 GetCoreDefinitionVersionOutcome GreengrassClient::GetCoreDefinitionVersion(const GetCoreDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoreDefinitionVersion", "Required field: CoreDefinitionId, is not set");
+    return GetCoreDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
+  if (!request.CoreDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetCoreDefinitionVersion", "Required field: CoreDefinitionVersionId, is not set");
+    return GetCoreDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions/";
@@ -1367,8 +1802,18 @@ void GreengrassClient::GetCoreDefinitionVersionAsyncHelper(const GetCoreDefiniti
 
 GetDeploymentStatusOutcome GreengrassClient::GetDeploymentStatus(const GetDeploymentStatusRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeploymentStatus", "Required field: DeploymentId, is not set");
+    return GetDeploymentStatusOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeploymentId]", false));
+  }
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeploymentStatus", "Required field: GroupId, is not set");
+    return GetDeploymentStatusOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments/";
@@ -1406,8 +1851,13 @@ void GreengrassClient::GetDeploymentStatusAsyncHelper(const GetDeploymentStatusR
 
 GetDeviceDefinitionOutcome GreengrassClient::GetDeviceDefinition(const GetDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeviceDefinition", "Required field: DeviceDefinitionId, is not set");
+    return GetDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1442,8 +1892,18 @@ void GreengrassClient::GetDeviceDefinitionAsyncHelper(const GetDeviceDefinitionR
 
 GetDeviceDefinitionVersionOutcome GreengrassClient::GetDeviceDefinitionVersion(const GetDeviceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeviceDefinitionVersion", "Required field: DeviceDefinitionId, is not set");
+    return GetDeviceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
+  if (!request.DeviceDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeviceDefinitionVersion", "Required field: DeviceDefinitionVersionId, is not set");
+    return GetDeviceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions/";
@@ -1480,8 +1940,13 @@ void GreengrassClient::GetDeviceDefinitionVersionAsyncHelper(const GetDeviceDefi
 
 GetFunctionDefinitionOutcome GreengrassClient::GetFunctionDefinition(const GetFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionDefinition", "Required field: FunctionDefinitionId, is not set");
+    return GetFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1516,8 +1981,18 @@ void GreengrassClient::GetFunctionDefinitionAsyncHelper(const GetFunctionDefinit
 
 GetFunctionDefinitionVersionOutcome GreengrassClient::GetFunctionDefinitionVersion(const GetFunctionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionDefinitionVersion", "Required field: FunctionDefinitionId, is not set");
+    return GetFunctionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
+  if (!request.FunctionDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetFunctionDefinitionVersion", "Required field: FunctionDefinitionVersionId, is not set");
+    return GetFunctionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions/";
@@ -1554,8 +2029,13 @@ void GreengrassClient::GetFunctionDefinitionVersionAsyncHelper(const GetFunction
 
 GetGroupOutcome GreengrassClient::GetGroup(const GetGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroup", "Required field: GroupId, is not set");
+    return GetGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1590,8 +2070,18 @@ void GreengrassClient::GetGroupAsyncHelper(const GetGroupRequest& request, const
 
 GetGroupCertificateAuthorityOutcome GreengrassClient::GetGroupCertificateAuthority(const GetGroupCertificateAuthorityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CertificateAuthorityIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroupCertificateAuthority", "Required field: CertificateAuthorityId, is not set");
+    return GetGroupCertificateAuthorityOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CertificateAuthorityId]", false));
+  }
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroupCertificateAuthority", "Required field: GroupId, is not set");
+    return GetGroupCertificateAuthorityOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/";
@@ -1628,8 +2118,13 @@ void GreengrassClient::GetGroupCertificateAuthorityAsyncHelper(const GetGroupCer
 
 GetGroupCertificateConfigurationOutcome GreengrassClient::GetGroupCertificateConfiguration(const GetGroupCertificateConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroupCertificateConfiguration", "Required field: GroupId, is not set");
+    return GetGroupCertificateConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
@@ -1665,8 +2160,18 @@ void GreengrassClient::GetGroupCertificateConfigurationAsyncHelper(const GetGrou
 
 GetGroupVersionOutcome GreengrassClient::GetGroupVersion(const GetGroupVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroupVersion", "Required field: GroupId, is not set");
+    return GetGroupVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
+  if (!request.GroupVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetGroupVersion", "Required field: GroupVersionId, is not set");
+    return GetGroupVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions/";
@@ -1703,8 +2208,13 @@ void GreengrassClient::GetGroupVersionAsyncHelper(const GetGroupVersionRequest& 
 
 GetLoggerDefinitionOutcome GreengrassClient::GetLoggerDefinition(const GetLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLoggerDefinition", "Required field: LoggerDefinitionId, is not set");
+    return GetLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1739,8 +2249,18 @@ void GreengrassClient::GetLoggerDefinitionAsyncHelper(const GetLoggerDefinitionR
 
 GetLoggerDefinitionVersionOutcome GreengrassClient::GetLoggerDefinitionVersion(const GetLoggerDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLoggerDefinitionVersion", "Required field: LoggerDefinitionId, is not set");
+    return GetLoggerDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
+  if (!request.LoggerDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetLoggerDefinitionVersion", "Required field: LoggerDefinitionVersionId, is not set");
+    return GetLoggerDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions/";
@@ -1777,8 +2297,13 @@ void GreengrassClient::GetLoggerDefinitionVersionAsyncHelper(const GetLoggerDefi
 
 GetResourceDefinitionOutcome GreengrassClient::GetResourceDefinition(const GetResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceDefinition", "Required field: ResourceDefinitionId, is not set");
+    return GetResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1813,8 +2338,18 @@ void GreengrassClient::GetResourceDefinitionAsyncHelper(const GetResourceDefinit
 
 GetResourceDefinitionVersionOutcome GreengrassClient::GetResourceDefinitionVersion(const GetResourceDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceDefinitionVersion", "Required field: ResourceDefinitionId, is not set");
+    return GetResourceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
+  if (!request.ResourceDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetResourceDefinitionVersion", "Required field: ResourceDefinitionVersionId, is not set");
+    return GetResourceDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions/";
@@ -1851,8 +2386,8 @@ void GreengrassClient::GetResourceDefinitionVersionAsyncHelper(const GetResource
 
 GetServiceRoleForAccountOutcome GreengrassClient::GetServiceRoleForAccount(const GetServiceRoleForAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/servicerole";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -1886,8 +2421,13 @@ void GreengrassClient::GetServiceRoleForAccountAsyncHelper(const GetServiceRoleF
 
 GetSubscriptionDefinitionOutcome GreengrassClient::GetSubscriptionDefinition(const GetSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSubscriptionDefinition", "Required field: SubscriptionDefinitionId, is not set");
+    return GetSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -1922,8 +2462,18 @@ void GreengrassClient::GetSubscriptionDefinitionAsyncHelper(const GetSubscriptio
 
 GetSubscriptionDefinitionVersionOutcome GreengrassClient::GetSubscriptionDefinitionVersion(const GetSubscriptionDefinitionVersionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSubscriptionDefinitionVersion", "Required field: SubscriptionDefinitionId, is not set");
+    return GetSubscriptionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
+  if (!request.SubscriptionDefinitionVersionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetSubscriptionDefinitionVersion", "Required field: SubscriptionDefinitionVersionId, is not set");
+    return GetSubscriptionDefinitionVersionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionVersionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions/";
@@ -1960,8 +2510,13 @@ void GreengrassClient::GetSubscriptionDefinitionVersionAsyncHelper(const GetSubs
 
 ListBulkDeploymentDetailedReportsOutcome GreengrassClient::ListBulkDeploymentDetailedReports(const ListBulkDeploymentDetailedReportsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.BulkDeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListBulkDeploymentDetailedReports", "Required field: BulkDeploymentId, is not set");
+    return ListBulkDeploymentDetailedReportsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/detailed-reports";
@@ -1997,8 +2552,8 @@ void GreengrassClient::ListBulkDeploymentDetailedReportsAsyncHelper(const ListBu
 
 ListBulkDeploymentsOutcome GreengrassClient::ListBulkDeployments(const ListBulkDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2030,10 +2585,92 @@ void GreengrassClient::ListBulkDeploymentsAsyncHelper(const ListBulkDeploymentsR
   handler(this, request, ListBulkDeployments(request), context);
 }
 
+ListConnectorDefinitionVersionsOutcome GreengrassClient::ListConnectorDefinitionVersions(const ListConnectorDefinitionVersionsRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListConnectorDefinitionVersions", "Required field: ConnectorDefinitionId, is not set");
+    return ListConnectorDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  ss << "/versions";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListConnectorDefinitionVersionsOutcome(ListConnectorDefinitionVersionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListConnectorDefinitionVersionsOutcome(outcome.GetError());
+  }
+}
+
+ListConnectorDefinitionVersionsOutcomeCallable GreengrassClient::ListConnectorDefinitionVersionsCallable(const ListConnectorDefinitionVersionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectorDefinitionVersionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectorDefinitionVersions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListConnectorDefinitionVersionsAsync(const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorDefinitionVersionsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListConnectorDefinitionVersionsAsyncHelper(const ListConnectorDefinitionVersionsRequest& request, const ListConnectorDefinitionVersionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnectorDefinitionVersions(request), context);
+}
+
+ListConnectorDefinitionsOutcome GreengrassClient::ListConnectorDefinitions(const ListConnectorDefinitionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListConnectorDefinitionsOutcome(ListConnectorDefinitionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListConnectorDefinitionsOutcome(outcome.GetError());
+  }
+}
+
+ListConnectorDefinitionsOutcomeCallable GreengrassClient::ListConnectorDefinitionsCallable(const ListConnectorDefinitionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListConnectorDefinitionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListConnectorDefinitions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListConnectorDefinitionsAsync(const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListConnectorDefinitionsAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListConnectorDefinitionsAsyncHelper(const ListConnectorDefinitionsRequest& request, const ListConnectorDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListConnectorDefinitions(request), context);
+}
+
 ListCoreDefinitionVersionsOutcome GreengrassClient::ListCoreDefinitionVersions(const ListCoreDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListCoreDefinitionVersions", "Required field: CoreDefinitionId, is not set");
+    return ListCoreDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   ss << "/versions";
@@ -2069,8 +2706,8 @@ void GreengrassClient::ListCoreDefinitionVersionsAsyncHelper(const ListCoreDefin
 
 ListCoreDefinitionsOutcome GreengrassClient::ListCoreDefinitions(const ListCoreDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2104,8 +2741,13 @@ void GreengrassClient::ListCoreDefinitionsAsyncHelper(const ListCoreDefinitionsR
 
 ListDeploymentsOutcome GreengrassClient::ListDeployments(const ListDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDeployments", "Required field: GroupId, is not set");
+    return ListDeploymentsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments";
@@ -2141,8 +2783,13 @@ void GreengrassClient::ListDeploymentsAsyncHelper(const ListDeploymentsRequest& 
 
 ListDeviceDefinitionVersionsOutcome GreengrassClient::ListDeviceDefinitionVersions(const ListDeviceDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListDeviceDefinitionVersions", "Required field: DeviceDefinitionId, is not set");
+    return ListDeviceDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   ss << "/versions";
@@ -2178,8 +2825,8 @@ void GreengrassClient::ListDeviceDefinitionVersionsAsyncHelper(const ListDeviceD
 
 ListDeviceDefinitionsOutcome GreengrassClient::ListDeviceDefinitions(const ListDeviceDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2213,8 +2860,13 @@ void GreengrassClient::ListDeviceDefinitionsAsyncHelper(const ListDeviceDefiniti
 
 ListFunctionDefinitionVersionsOutcome GreengrassClient::ListFunctionDefinitionVersions(const ListFunctionDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListFunctionDefinitionVersions", "Required field: FunctionDefinitionId, is not set");
+    return ListFunctionDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   ss << "/versions";
@@ -2250,8 +2902,8 @@ void GreengrassClient::ListFunctionDefinitionVersionsAsyncHelper(const ListFunct
 
 ListFunctionDefinitionsOutcome GreengrassClient::ListFunctionDefinitions(const ListFunctionDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2285,8 +2937,13 @@ void GreengrassClient::ListFunctionDefinitionsAsyncHelper(const ListFunctionDefi
 
 ListGroupCertificateAuthoritiesOutcome GreengrassClient::ListGroupCertificateAuthorities(const ListGroupCertificateAuthoritiesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupCertificateAuthorities", "Required field: GroupId, is not set");
+    return ListGroupCertificateAuthoritiesOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities";
@@ -2322,8 +2979,13 @@ void GreengrassClient::ListGroupCertificateAuthoritiesAsyncHelper(const ListGrou
 
 ListGroupVersionsOutcome GreengrassClient::ListGroupVersions(const ListGroupVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListGroupVersions", "Required field: GroupId, is not set");
+    return ListGroupVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/versions";
@@ -2359,8 +3021,8 @@ void GreengrassClient::ListGroupVersionsAsyncHelper(const ListGroupVersionsReque
 
 ListGroupsOutcome GreengrassClient::ListGroups(const ListGroupsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2394,8 +3056,13 @@ void GreengrassClient::ListGroupsAsyncHelper(const ListGroupsRequest& request, c
 
 ListLoggerDefinitionVersionsOutcome GreengrassClient::ListLoggerDefinitionVersions(const ListLoggerDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListLoggerDefinitionVersions", "Required field: LoggerDefinitionId, is not set");
+    return ListLoggerDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   ss << "/versions";
@@ -2431,8 +3098,8 @@ void GreengrassClient::ListLoggerDefinitionVersionsAsyncHelper(const ListLoggerD
 
 ListLoggerDefinitionsOutcome GreengrassClient::ListLoggerDefinitions(const ListLoggerDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2466,8 +3133,13 @@ void GreengrassClient::ListLoggerDefinitionsAsyncHelper(const ListLoggerDefiniti
 
 ListResourceDefinitionVersionsOutcome GreengrassClient::ListResourceDefinitionVersions(const ListResourceDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListResourceDefinitionVersions", "Required field: ResourceDefinitionId, is not set");
+    return ListResourceDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   ss << "/versions";
@@ -2503,8 +3175,8 @@ void GreengrassClient::ListResourceDefinitionVersionsAsyncHelper(const ListResou
 
 ListResourceDefinitionsOutcome GreengrassClient::ListResourceDefinitions(const ListResourceDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2538,8 +3210,13 @@ void GreengrassClient::ListResourceDefinitionsAsyncHelper(const ListResourceDefi
 
 ListSubscriptionDefinitionVersionsOutcome GreengrassClient::ListSubscriptionDefinitionVersions(const ListSubscriptionDefinitionVersionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListSubscriptionDefinitionVersions", "Required field: SubscriptionDefinitionId, is not set");
+    return ListSubscriptionDefinitionVersionsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   ss << "/versions";
@@ -2575,8 +3252,8 @@ void GreengrassClient::ListSubscriptionDefinitionVersionsAsyncHelper(const ListS
 
 ListSubscriptionDefinitionsOutcome GreengrassClient::ListSubscriptionDefinitions(const ListSubscriptionDefinitionsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -2608,10 +3285,56 @@ void GreengrassClient::ListSubscriptionDefinitionsAsyncHelper(const ListSubscrip
   handler(this, request, ListSubscriptionDefinitions(request), context);
 }
 
+ListTagsForResourceOutcome GreengrassClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ListTagsForResource", "Required field: ResourceArn, is not set");
+    return ListTagsForResourceOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/tags/";
+  ss << request.GetResourceArn();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable GreengrassClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 ResetDeploymentsOutcome GreengrassClient::ResetDeployments(const ResetDeploymentsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ResetDeployments", "Required field: GroupId, is not set");
+    return ResetDeploymentsOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/deployments/$reset";
@@ -2647,8 +3370,8 @@ void GreengrassClient::ResetDeploymentsAsyncHelper(const ResetDeploymentsRequest
 
 StartBulkDeploymentOutcome GreengrassClient::StartBulkDeployment(const StartBulkDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -2682,8 +3405,13 @@ void GreengrassClient::StartBulkDeploymentAsyncHelper(const StartBulkDeploymentR
 
 StopBulkDeploymentOutcome GreengrassClient::StopBulkDeployment(const StopBulkDeploymentRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.BulkDeploymentIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("StopBulkDeployment", "Required field: BulkDeploymentId, is not set");
+    return StopBulkDeploymentOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BulkDeploymentId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/bulk/deployments/";
   ss << request.GetBulkDeploymentId();
   ss << "/$stop";
@@ -2719,8 +3447,13 @@ void GreengrassClient::StopBulkDeploymentAsyncHelper(const StopBulkDeploymentReq
 
 UpdateConnectivityInfoOutcome GreengrassClient::UpdateConnectivityInfo(const UpdateConnectivityInfoRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ThingNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectivityInfo", "Required field: ThingName, is not set");
+    return UpdateConnectivityInfoOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ThingName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/things/";
   ss << request.GetThingName();
   ss << "/connectivityInfo";
@@ -2754,10 +3487,56 @@ void GreengrassClient::UpdateConnectivityInfoAsyncHelper(const UpdateConnectivit
   handler(this, request, UpdateConnectivityInfo(request), context);
 }
 
+UpdateConnectorDefinitionOutcome GreengrassClient::UpdateConnectorDefinition(const UpdateConnectorDefinitionRequest& request) const
+{
+  if (!request.ConnectorDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConnectorDefinition", "Required field: ConnectorDefinitionId, is not set");
+    return UpdateConnectorDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConnectorDefinitionId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/greengrass/definition/connectors/";
+  ss << request.GetConnectorDefinitionId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UpdateConnectorDefinitionOutcome(UpdateConnectorDefinitionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UpdateConnectorDefinitionOutcome(outcome.GetError());
+  }
+}
+
+UpdateConnectorDefinitionOutcomeCallable GreengrassClient::UpdateConnectorDefinitionCallable(const UpdateConnectorDefinitionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UpdateConnectorDefinitionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UpdateConnectorDefinition(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void GreengrassClient::UpdateConnectorDefinitionAsync(const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UpdateConnectorDefinitionAsyncHelper( request, handler, context ); } );
+}
+
+void GreengrassClient::UpdateConnectorDefinitionAsyncHelper(const UpdateConnectorDefinitionRequest& request, const UpdateConnectorDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UpdateConnectorDefinition(request), context);
+}
+
 UpdateCoreDefinitionOutcome GreengrassClient::UpdateCoreDefinition(const UpdateCoreDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.CoreDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateCoreDefinition", "Required field: CoreDefinitionId, is not set");
+    return UpdateCoreDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [CoreDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/cores/";
   ss << request.GetCoreDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2792,8 +3571,13 @@ void GreengrassClient::UpdateCoreDefinitionAsyncHelper(const UpdateCoreDefinitio
 
 UpdateDeviceDefinitionOutcome GreengrassClient::UpdateDeviceDefinition(const UpdateDeviceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.DeviceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateDeviceDefinition", "Required field: DeviceDefinitionId, is not set");
+    return UpdateDeviceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [DeviceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/devices/";
   ss << request.GetDeviceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2828,8 +3612,13 @@ void GreengrassClient::UpdateDeviceDefinitionAsyncHelper(const UpdateDeviceDefin
 
 UpdateFunctionDefinitionOutcome GreengrassClient::UpdateFunctionDefinition(const UpdateFunctionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FunctionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFunctionDefinition", "Required field: FunctionDefinitionId, is not set");
+    return UpdateFunctionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FunctionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/functions/";
   ss << request.GetFunctionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2864,8 +3653,13 @@ void GreengrassClient::UpdateFunctionDefinitionAsyncHelper(const UpdateFunctionD
 
 UpdateGroupOutcome GreengrassClient::UpdateGroup(const UpdateGroupRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGroup", "Required field: GroupId, is not set");
+    return UpdateGroupOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2900,8 +3694,13 @@ void GreengrassClient::UpdateGroupAsyncHelper(const UpdateGroupRequest& request,
 
 UpdateGroupCertificateConfigurationOutcome GreengrassClient::UpdateGroupCertificateConfiguration(const UpdateGroupCertificateConfigurationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.GroupIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateGroupCertificateConfiguration", "Required field: GroupId, is not set");
+    return UpdateGroupCertificateConfigurationOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GroupId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/groups/";
   ss << request.GetGroupId();
   ss << "/certificateauthorities/configuration/expiry";
@@ -2937,8 +3736,13 @@ void GreengrassClient::UpdateGroupCertificateConfigurationAsyncHelper(const Upda
 
 UpdateLoggerDefinitionOutcome GreengrassClient::UpdateLoggerDefinition(const UpdateLoggerDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.LoggerDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateLoggerDefinition", "Required field: LoggerDefinitionId, is not set");
+    return UpdateLoggerDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [LoggerDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/loggers/";
   ss << request.GetLoggerDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -2973,8 +3777,13 @@ void GreengrassClient::UpdateLoggerDefinitionAsyncHelper(const UpdateLoggerDefin
 
 UpdateResourceDefinitionOutcome GreengrassClient::UpdateResourceDefinition(const UpdateResourceDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ResourceDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateResourceDefinition", "Required field: ResourceDefinitionId, is not set");
+    return UpdateResourceDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/resources/";
   ss << request.GetResourceDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -3009,8 +3818,13 @@ void GreengrassClient::UpdateResourceDefinitionAsyncHelper(const UpdateResourceD
 
 UpdateSubscriptionDefinitionOutcome GreengrassClient::UpdateSubscriptionDefinition(const UpdateSubscriptionDefinitionRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.SubscriptionDefinitionIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateSubscriptionDefinition", "Required field: SubscriptionDefinitionId, is not set");
+    return UpdateSubscriptionDefinitionOutcome(Aws::Client::AWSError<GreengrassErrors>(GreengrassErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [SubscriptionDefinitionId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/greengrass/definition/subscriptions/";
   ss << request.GetSubscriptionDefinitionId();
   uri.SetPath(uri.GetPath() + ss.str());

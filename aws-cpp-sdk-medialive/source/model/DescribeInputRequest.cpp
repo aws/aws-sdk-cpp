@@ -29,7 +29,7 @@ DescribeInputRequest::DescribeInputRequest() :
 
 Aws::String DescribeInputRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

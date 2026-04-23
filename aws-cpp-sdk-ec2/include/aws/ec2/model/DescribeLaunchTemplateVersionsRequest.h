@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -78,6 +86,12 @@ namespace Model
      * or launch template name in the request.</p>
      */
     inline const Aws::String& GetLaunchTemplateId() const{ return m_launchTemplateId; }
+
+    /**
+     * <p>The ID of the launch template. You must specify either the launch template ID
+     * or launch template name in the request.</p>
+     */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
 
     /**
      * <p>The ID of the launch template. You must specify either the launch template ID
@@ -126,6 +140,12 @@ namespace Model
      * <p>The name of the launch template. You must specify either the launch template
      * ID or launch template name in the request.</p>
      */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
+
+    /**
+     * <p>The name of the launch template. You must specify either the launch template
+     * ID or launch template name in the request.</p>
+     */
     inline void SetLaunchTemplateName(const Aws::String& value) { m_launchTemplateNameHasBeenSet = true; m_launchTemplateName = value; }
 
     /**
@@ -163,6 +183,11 @@ namespace Model
      * <p>One or more versions of the launch template.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersions() const{ return m_versions; }
+
+    /**
+     * <p>One or more versions of the launch template.</p>
+     */
+    inline bool VersionsHasBeenSet() const { return m_versionsHasBeenSet; }
 
     /**
      * <p>One or more versions of the launch template.</p>
@@ -208,6 +233,11 @@ namespace Model
     /**
      * <p>The version number after which to describe launch template versions.</p>
      */
+    inline bool MinVersionHasBeenSet() const { return m_minVersionHasBeenSet; }
+
+    /**
+     * <p>The version number after which to describe launch template versions.</p>
+     */
     inline void SetMinVersion(const Aws::String& value) { m_minVersionHasBeenSet = true; m_minVersion = value; }
 
     /**
@@ -244,6 +274,11 @@ namespace Model
     /**
      * <p>The version number up to which to describe launch template versions.</p>
      */
+    inline bool MaxVersionHasBeenSet() const { return m_maxVersionHasBeenSet; }
+
+    /**
+     * <p>The version number up to which to describe launch template versions.</p>
+     */
     inline void SetMaxVersion(const Aws::String& value) { m_maxVersionHasBeenSet = true; m_maxVersion = value; }
 
     /**
@@ -276,6 +311,11 @@ namespace Model
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request the next page of results.</p>
@@ -320,6 +360,13 @@ namespace Model
      * remaining results, make another call with the returned <code>NextToken</code>
      * value. This value can be between 1 and 200.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned <code>NextToken</code>
+     * value. This value can be between 1 and 200.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -344,6 +391,21 @@ namespace Model
      * <code>ram-disk-id</code> - The RAM disk ID.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The time
+     * the launch template version was created.</p> </li> <li> <p>
+     * <code>ebs-optimized</code> - A boolean that indicates whether the instance is
+     * optimized for Amazon EBS I/O.</p> </li> <li> <p>
+     * <code>iam-instance-profile</code> - The ARN of the IAM instance profile.</p>
+     * </li> <li> <p> <code>image-id</code> - The ID of the AMI.</p> </li> <li> <p>
+     * <code>instance-type</code> - The instance type.</p> </li> <li> <p>
+     * <code>is-default-version</code> - A boolean that indicates whether the launch
+     * template version is the default version.</p> </li> <li> <p>
+     * <code>kernel-id</code> - The kernel ID.</p> </li> <li> <p>
+     * <code>ram-disk-id</code> - The RAM disk ID.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>create-time</code> - The time

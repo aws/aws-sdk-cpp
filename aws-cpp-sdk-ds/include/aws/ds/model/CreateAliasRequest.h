@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The identifier of the directory for which to create the alias.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the directory for which to create the alias.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -90,6 +95,13 @@ namespace Model
      * the alias already exists.</p>
      */
     inline const Aws::String& GetAlias() const{ return m_alias; }
+
+    /**
+     * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in
+     * AWS. This operation throws an <code>EntityAlreadyExistsException</code> error if
+     * the alias already exists.</p>
+     */
+    inline bool AliasHasBeenSet() const { return m_aliasHasBeenSet; }
 
     /**
      * <p>The requested alias.</p> <p>The alias must be unique amongst all aliases in

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The failed S3 resources.</p>
      */
+    inline bool FailedItemHasBeenSet() const { return m_failedItemHasBeenSet; }
+
+    /**
+     * <p>The failed S3 resources.</p>
+     */
     inline void SetFailedItem(const S3Resource& value) { m_failedItemHasBeenSet = true; m_failedItem = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The status code of a failed item.</p>
      */
     inline const Aws::String& GetErrorCode() const{ return m_errorCode; }
+
+    /**
+     * <p>The status code of a failed item.</p>
+     */
+    inline bool ErrorCodeHasBeenSet() const { return m_errorCodeHasBeenSet; }
 
     /**
      * <p>The status code of a failed item.</p>
@@ -114,6 +124,11 @@ namespace Model
      * <p>The error message of a failed item.</p>
      */
     inline const Aws::String& GetErrorMessage() const{ return m_errorMessage; }
+
+    /**
+     * <p>The error message of a failed item.</p>
+     */
+    inline bool ErrorMessageHasBeenSet() const { return m_errorMessageHasBeenSet; }
 
     /**
      * <p>The error message of a failed item.</p>

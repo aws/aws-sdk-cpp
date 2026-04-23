@@ -45,7 +45,7 @@ namespace Model
    * longer than 5 minutes, it fails and the notebook instance is not created or
    * started.</p> <p>For information about notebook instance lifestyle
    * configurations, see <a
-   * href="http://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
+   * href="https://docs.aws.amazon.com/sagemaker/latest/dg/notebook-lifecycle-config.html">Step
    * 2.1: (Optional) Customize a Notebook Instance</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/sagemaker-2017-07-24/NotebookInstanceLifecycleHook">AWS
    * API Reference</a></p>
@@ -64,6 +64,12 @@ namespace Model
      * lifecycle configuration.</p>
      */
     inline const Aws::String& GetContent() const{ return m_content; }
+
+    /**
+     * <p>A base64-encoded string that contains a shell script for a notebook instance
+     * lifecycle configuration.</p>
+     */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
 
     /**
      * <p>A base64-encoded string that contains a shell script for a notebook instance

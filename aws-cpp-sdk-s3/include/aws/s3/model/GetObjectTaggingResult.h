@@ -44,47 +44,75 @@ namespace Model
     GetObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Tag>& GetTagSet() const{ return m_tagSet; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTagSet(const Aws::Vector<Tag>& value) { m_tagSet = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetTagSet(Aws::Vector<Tag>&& value) { m_tagSet = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& WithTagSet(const Aws::Vector<Tag>& value) { SetTagSet(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& WithTagSet(Aws::Vector<Tag>&& value) { SetTagSet(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& AddTagSet(const Tag& value) { m_tagSet.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline GetObjectTaggingResult& AddTagSet(Tag&& value) { m_tagSet.push_back(std::move(value)); return *this; }
 
   private:

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the organization.</p>
      */
+    inline bool OrganizationIdHasBeenSet() const { return m_organizationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the organization.</p>
+     */
     inline void SetOrganizationId(const Aws::String& value) { m_organizationIdHasBeenSet = true; m_organizationId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The login name of the user.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The login name of the user.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The login name of the user.</p>
@@ -125,6 +135,11 @@ namespace Model
     /**
      * <p>The email address of the user.</p>
      */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address of the user.</p>
+     */
     inline void SetEmailAddress(const Aws::String& value) { m_emailAddressHasBeenSet = true; m_emailAddress = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
      * <p>The given name of the user.</p>
      */
     inline const Aws::String& GetGivenName() const{ return m_givenName; }
+
+    /**
+     * <p>The given name of the user.</p>
+     */
+    inline bool GivenNameHasBeenSet() const { return m_givenNameHasBeenSet; }
 
     /**
      * <p>The given name of the user.</p>
@@ -197,6 +217,11 @@ namespace Model
     /**
      * <p>The surname of the user.</p>
      */
+    inline bool SurnameHasBeenSet() const { return m_surnameHasBeenSet; }
+
+    /**
+     * <p>The surname of the user.</p>
+     */
     inline void SetSurname(const Aws::String& value) { m_surnameHasBeenSet = true; m_surname = value; }
 
     /**
@@ -229,6 +254,11 @@ namespace Model
      * <p>The password of the user.</p>
      */
     inline const Aws::String& GetPassword() const{ return m_password; }
+
+    /**
+     * <p>The password of the user.</p>
+     */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
 
     /**
      * <p>The password of the user.</p>
@@ -269,6 +299,11 @@ namespace Model
     /**
      * <p>The time zone ID of the user.</p>
      */
+    inline bool TimeZoneIdHasBeenSet() const { return m_timeZoneIdHasBeenSet; }
+
+    /**
+     * <p>The time zone ID of the user.</p>
+     */
     inline void SetTimeZoneId(const Aws::String& value) { m_timeZoneIdHasBeenSet = true; m_timeZoneId = value; }
 
     /**
@@ -305,6 +340,11 @@ namespace Model
     /**
      * <p>The amount of storage for the user.</p>
      */
+    inline bool StorageRuleHasBeenSet() const { return m_storageRuleHasBeenSet; }
+
+    /**
+     * <p>The amount of storage for the user.</p>
+     */
     inline void SetStorageRule(const StorageRuleType& value) { m_storageRuleHasBeenSet = true; m_storageRule = value; }
 
     /**
@@ -328,6 +368,12 @@ namespace Model
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
     inline const Aws::String& GetAuthenticationToken() const{ return m_authenticationToken; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
 
     /**
      * <p>Amazon WorkDocs authentication token. Do not set this field when using

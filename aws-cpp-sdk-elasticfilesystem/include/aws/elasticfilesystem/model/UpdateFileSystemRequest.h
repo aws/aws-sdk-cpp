@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ID of the file system that you want to update.</p>
      */
+    inline bool FileSystemIdHasBeenSet() const { return m_fileSystemIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the file system that you want to update.</p>
+     */
     inline void SetFileSystemId(const Aws::String& value) { m_fileSystemIdHasBeenSet = true; m_fileSystemId = value; }
 
     /**
@@ -91,6 +96,13 @@ namespace Model
      * you're not updating your throughput mode, you don't need to provide this value
      * in your request.</p>
      */
+    inline bool ThroughputModeHasBeenSet() const { return m_throughputModeHasBeenSet; }
+
+    /**
+     * <p>(Optional) The throughput mode that you want your file system to use. If
+     * you're not updating your throughput mode, you don't need to provide this value
+     * in your request.</p>
+     */
     inline void SetThroughputMode(const ThroughputMode& value) { m_throughputModeHasBeenSet = true; m_throughputMode = value; }
 
     /**
@@ -121,6 +133,13 @@ namespace Model
      * for your file system, you don't need to provide this value in your request.</p>
      */
     inline double GetProvisionedThroughputInMibps() const{ return m_provisionedThroughputInMibps; }
+
+    /**
+     * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for
+     * your file system. If you're not updating the amount of provisioned throughput
+     * for your file system, you don't need to provide this value in your request.</p>
+     */
+    inline bool ProvisionedThroughputInMibpsHasBeenSet() const { return m_provisionedThroughputInMibpsHasBeenSet; }
 
     /**
      * <p>(Optional) The amount of throughput, in MiB/s, that you want to provision for

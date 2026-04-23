@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The IDs of the Trusted Advisor checks.</p>
      */
+    inline bool CheckIdsHasBeenSet() const { return m_checkIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Trusted Advisor checks.</p>
+     */
     inline void SetCheckIds(const Aws::Vector<Aws::String>& value) { m_checkIdsHasBeenSet = true; m_checkIds = value; }
 
     /**

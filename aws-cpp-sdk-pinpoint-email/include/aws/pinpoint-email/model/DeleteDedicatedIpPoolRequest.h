@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the dedicated IP pool that you want to delete.</p>
      */
+    inline bool PoolNameHasBeenSet() const { return m_poolNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dedicated IP pool that you want to delete.</p>
+     */
     inline void SetPoolName(const Aws::String& value) { m_poolNameHasBeenSet = true; m_poolName = value; }
 
     /**

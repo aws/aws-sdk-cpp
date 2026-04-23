@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>ARN of the backup from which the table was restored.</p>
      */
+    inline bool SourceBackupArnHasBeenSet() const { return m_sourceBackupArnHasBeenSet; }
+
+    /**
+     * <p>ARN of the backup from which the table was restored.</p>
+     */
     inline void SetSourceBackupArn(const Aws::String& value) { m_sourceBackupArnHasBeenSet = true; m_sourceBackupArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>ARN of the source table of the backup that is being restored.</p>
      */
     inline const Aws::String& GetSourceTableArn() const{ return m_sourceTableArn; }
+
+    /**
+     * <p>ARN of the source table of the backup that is being restored.</p>
+     */
+    inline bool SourceTableArnHasBeenSet() const { return m_sourceTableArnHasBeenSet; }
 
     /**
      * <p>ARN of the source table of the backup that is being restored.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>Point in time or source backup time.</p>
      */
+    inline bool RestoreDateTimeHasBeenSet() const { return m_restoreDateTimeHasBeenSet; }
+
+    /**
+     * <p>Point in time or source backup time.</p>
+     */
     inline void SetRestoreDateTime(const Aws::Utils::DateTime& value) { m_restoreDateTimeHasBeenSet = true; m_restoreDateTime = value; }
 
     /**
@@ -150,6 +165,11 @@ namespace Model
      * <p>Indicates if a restore is in progress or not.</p>
      */
     inline bool GetRestoreInProgress() const{ return m_restoreInProgress; }
+
+    /**
+     * <p>Indicates if a restore is in progress or not.</p>
+     */
+    inline bool RestoreInProgressHasBeenSet() const { return m_restoreInProgressHasBeenSet; }
 
     /**
      * <p>Indicates if a restore is in progress or not.</p>

@@ -48,23 +48,30 @@ namespace Model
 
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
-     * resource to the Lambda process privileges. Thus the Lambda process will have the
-     * file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group
+     * owner of the resource to the Lambda process privileges. Thus the Lambda process
+     * will have the file access permissions of the added Linux group.
      */
     inline bool GetAutoAddGroupOwner() const{ return m_autoAddGroupOwner; }
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
-     * resource to the Lambda process privileges. Thus the Lambda process will have the
-     * file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group
+     * owner of the resource to the Lambda process privileges. Thus the Lambda process
+     * will have the file access permissions of the added Linux group.
+     */
+    inline bool AutoAddGroupOwnerHasBeenSet() const { return m_autoAddGroupOwnerHasBeenSet; }
+
+    /**
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group
+     * owner of the resource to the Lambda process privileges. Thus the Lambda process
+     * will have the file access permissions of the added Linux group.
      */
     inline void SetAutoAddGroupOwner(bool value) { m_autoAddGroupOwnerHasBeenSet = true; m_autoAddGroupOwner = value; }
 
     /**
-     * If true, GreenGrass automatically adds the specified Linux OS group owner of the
-     * resource to the Lambda process privileges. Thus the Lambda process will have the
-     * file access permissions of the added Linux group.
+     * If true, AWS IoT Greengrass automatically adds the specified Linux OS group
+     * owner of the resource to the Lambda process privileges. Thus the Lambda process
+     * will have the file access permissions of the added Linux group.
      */
     inline GroupOwnerSetting& WithAutoAddGroupOwner(bool value) { SetAutoAddGroupOwner(value); return *this;}
 
@@ -74,6 +81,12 @@ namespace Model
      * process. This field is optional.
      */
     inline const Aws::String& GetGroupOwner() const{ return m_groupOwner; }
+
+    /**
+     * The name of the Linux OS group whose privileges will be added to the Lambda
+     * process. This field is optional.
+     */
+    inline bool GroupOwnerHasBeenSet() const { return m_groupOwnerHasBeenSet; }
 
     /**
      * The name of the Linux OS group whose privileges will be added to the Lambda

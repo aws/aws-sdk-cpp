@@ -52,99 +52,231 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
     inline const CmafGroupSettings& GetCmafGroupSettings() const{ return m_cmafGroupSettings; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
+    inline bool CmafGroupSettingsHasBeenSet() const { return m_cmafGroupSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
     inline void SetCmafGroupSettings(const CmafGroupSettings& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = value; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
     inline void SetCmafGroupSettings(CmafGroupSettings&& value) { m_cmafGroupSettingsHasBeenSet = true; m_cmafGroupSettings = std::move(value); }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
     inline OutputGroupSettings& WithCmafGroupSettings(const CmafGroupSettings& value) { SetCmafGroupSettings(value); return *this;}
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * CMAF_GROUP_SETTINGS. Each output in a CMAF Output Group may only contain a
+     * single video, audio, or caption output.
+     */
     inline OutputGroupSettings& WithCmafGroupSettings(CmafGroupSettings&& value) { SetCmafGroupSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
     inline const DashIsoGroupSettings& GetDashIsoGroupSettings() const{ return m_dashIsoGroupSettings; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
+    inline bool DashIsoGroupSettingsHasBeenSet() const { return m_dashIsoGroupSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
     inline void SetDashIsoGroupSettings(const DashIsoGroupSettings& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = value; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
     inline void SetDashIsoGroupSettings(DashIsoGroupSettings&& value) { m_dashIsoGroupSettingsHasBeenSet = true; m_dashIsoGroupSettings = std::move(value); }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithDashIsoGroupSettings(const DashIsoGroupSettings& value) { SetDashIsoGroupSettings(value); return *this;}
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * DASH_ISO_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithDashIsoGroupSettings(DashIsoGroupSettings&& value) { SetDashIsoGroupSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
     inline const FileGroupSettings& GetFileGroupSettings() const{ return m_fileGroupSettings; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
+    inline bool FileGroupSettingsHasBeenSet() const { return m_fileGroupSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
     inline void SetFileGroupSettings(const FileGroupSettings& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = value; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
     inline void SetFileGroupSettings(FileGroupSettings&& value) { m_fileGroupSettingsHasBeenSet = true; m_fileGroupSettings = std::move(value); }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithFileGroupSettings(const FileGroupSettings& value) { SetFileGroupSettings(value); return *this;}
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * FILE_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithFileGroupSettings(FileGroupSettings&& value) { SetFileGroupSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
     inline const HlsGroupSettings& GetHlsGroupSettings() const{ return m_hlsGroupSettings; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
+    inline bool HlsGroupSettingsHasBeenSet() const { return m_hlsGroupSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
     inline void SetHlsGroupSettings(const HlsGroupSettings& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = value; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
     inline void SetHlsGroupSettings(HlsGroupSettings&& value) { m_hlsGroupSettingsHasBeenSet = true; m_hlsGroupSettings = std::move(value); }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithHlsGroupSettings(const HlsGroupSettings& value) { SetHlsGroupSettings(value); return *this;}
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * HLS_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithHlsGroupSettings(HlsGroupSettings&& value) { SetHlsGroupSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
     inline const MsSmoothGroupSettings& GetMsSmoothGroupSettings() const{ return m_msSmoothGroupSettings; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
+    inline bool MsSmoothGroupSettingsHasBeenSet() const { return m_msSmoothGroupSettingsHasBeenSet; }
+
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
     inline void SetMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = value; }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
     inline void SetMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { m_msSmoothGroupSettingsHasBeenSet = true; m_msSmoothGroupSettings = std::move(value); }
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithMsSmoothGroupSettings(const MsSmoothGroupSettings& value) { SetMsSmoothGroupSettings(value); return *this;}
 
-    
+    /**
+     * Required when you set (Type) under (OutputGroups)>(OutputGroupSettings) to
+     * MS_SMOOTH_GROUP_SETTINGS.
+     */
     inline OutputGroupSettings& WithMsSmoothGroupSettings(MsSmoothGroupSettings&& value) { SetMsSmoothGroupSettings(std::move(value)); return *this;}
 
 
-    
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
     inline const OutputGroupType& GetType() const{ return m_type; }
 
-    
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
     inline void SetType(const OutputGroupType& value) { m_typeHasBeenSet = true; m_type = value; }
 
-    
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
     inline void SetType(OutputGroupType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
 
-    
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
     inline OutputGroupSettings& WithType(const OutputGroupType& value) { SetType(value); return *this;}
 
-    
+    /**
+     * Type of output group (File group, Apple HLS, DASH ISO, Microsoft Smooth
+     * Streaming, CMAF)
+     */
     inline OutputGroupSettings& WithType(OutputGroupType&& value) { SetType(std::move(value)); return *this;}
 
   private:

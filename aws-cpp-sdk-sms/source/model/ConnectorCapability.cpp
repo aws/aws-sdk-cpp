@@ -31,6 +31,9 @@ namespace Aws
       {
 
         static const int VSPHERE_HASH = HashingUtils::HashString("VSPHERE");
+        static const int SCVMM_HASH = HashingUtils::HashString("SCVMM");
+        static const int HYPERV_MANAGER_HASH = HashingUtils::HashString("HYPERV-MANAGER");
+        static const int SNAPSHOT_BATCHING_HASH = HashingUtils::HashString("SNAPSHOT_BATCHING");
 
 
         ConnectorCapability GetConnectorCapabilityForName(const Aws::String& name)
@@ -39,6 +42,18 @@ namespace Aws
           if (hashCode == VSPHERE_HASH)
           {
             return ConnectorCapability::VSPHERE;
+          }
+          else if (hashCode == SCVMM_HASH)
+          {
+            return ConnectorCapability::SCVMM;
+          }
+          else if (hashCode == HYPERV_MANAGER_HASH)
+          {
+            return ConnectorCapability::HYPERV_MANAGER;
+          }
+          else if (hashCode == SNAPSHOT_BATCHING_HASH)
+          {
+            return ConnectorCapability::SNAPSHOT_BATCHING;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +71,12 @@ namespace Aws
           {
           case ConnectorCapability::VSPHERE:
             return "VSPHERE";
+          case ConnectorCapability::SCVMM:
+            return "SCVMM";
+          case ConnectorCapability::HYPERV_MANAGER:
+            return "HYPERV-MANAGER";
+          case ConnectorCapability::SNAPSHOT_BATCHING:
+            return "SNAPSHOT_BATCHING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -63,7 +84,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

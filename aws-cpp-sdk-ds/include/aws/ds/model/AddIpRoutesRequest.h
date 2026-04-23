@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>Identifier (ID) of the directory to which to add the address block.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier (ID) of the directory to which to add the address block.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -87,6 +92,12 @@ namespace Model
      * the IP address block of the DNS server used for your on-premises domain.</p>
      */
     inline const Aws::Vector<IpRoute>& GetIpRoutes() const{ return m_ipRoutes; }
+
+    /**
+     * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
+     * the IP address block of the DNS server used for your on-premises domain.</p>
+     */
+    inline bool IpRoutesHasBeenSet() const { return m_ipRoutesHasBeenSet; }
 
     /**
      * <p>IP address blocks, using CIDR format, of the traffic to route. This is often
@@ -153,6 +164,35 @@ namespace Model
      * publicly.</p>
      */
     inline bool GetUpdateSecurityGroupForDirectoryControllers() const{ return m_updateSecurityGroupForDirectoryControllers; }
+
+    /**
+     * <p>If set to true, updates the inbound and outbound rules of the security group
+     * that has the description: "AWS created security group for <i>directory ID</i>
+     * directory controllers." Following are the new rules: </p> <p>Inbound:</p> <ul>
+     * <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 88, Source: 0.0.0.0/0</p>
+     * </li> <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 123, Source:
+     * 0.0.0.0/0</p> </li> <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range: 138,
+     * Source: 0.0.0.0/0</p> </li> <li> <p>Type: Custom UDP Rule, Protocol: UDP, Range:
+     * 389, Source: 0.0.0.0/0</p> </li> <li> <p>Type: Custom UDP Rule, Protocol: UDP,
+     * Range: 464, Source: 0.0.0.0/0</p> </li> <li> <p>Type: Custom UDP Rule, Protocol:
+     * UDP, Range: 445, Source: 0.0.0.0/0</p> </li> <li> <p>Type: Custom TCP Rule,
+     * Protocol: TCP, Range: 88, Source: 0.0.0.0/0</p> </li> <li> <p>Type: Custom TCP
+     * Rule, Protocol: TCP, Range: 135, Source: 0.0.0.0/0</p> </li> <li> <p>Type:
+     * Custom TCP Rule, Protocol: TCP, Range: 445, Source: 0.0.0.0/0</p> </li> <li>
+     * <p>Type: Custom TCP Rule, Protocol: TCP, Range: 464, Source: 0.0.0.0/0</p> </li>
+     * <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 636, Source: 0.0.0.0/0</p>
+     * </li> <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range: 1024-65535, Source:
+     * 0.0.0.0/0</p> </li> <li> <p>Type: Custom TCP Rule, Protocol: TCP, Range:
+     * 3268-33269, Source: 0.0.0.0/0</p> </li> <li> <p>Type: DNS (UDP), Protocol: UDP,
+     * Range: 53, Source: 0.0.0.0/0</p> </li> <li> <p>Type: DNS (TCP), Protocol: TCP,
+     * Range: 53, Source: 0.0.0.0/0</p> </li> <li> <p>Type: LDAP, Protocol: TCP, Range:
+     * 389, Source: 0.0.0.0/0</p> </li> <li> <p>Type: All ICMP, Protocol: All, Range:
+     * N/A, Source: 0.0.0.0/0</p> </li> </ul> <p/> <p>Outbound:</p> <ul> <li> <p>Type:
+     * All traffic, Protocol: All, Range: All, Destination: 0.0.0.0/0</p> </li> </ul>
+     * <p>These security rules impact an internal network interface that is not exposed
+     * publicly.</p>
+     */
+    inline bool UpdateSecurityGroupForDirectoryControllersHasBeenSet() const { return m_updateSecurityGroupForDirectoryControllersHasBeenSet; }
 
     /**
      * <p>If set to true, updates the inbound and outbound rules of the security group

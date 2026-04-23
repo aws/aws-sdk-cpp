@@ -35,7 +35,7 @@ namespace Model
   /**
    * <p>Configuration for query argument-profile mapping for field-level
    * encryption.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/QueryArgProfileConfig">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/QueryArgProfileConfig">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API QueryArgProfileConfig
@@ -60,6 +60,13 @@ namespace Model
      * profile specified by the field-level encryption query argument, fle-profile, is
      * unknown.</p>
      */
+    inline bool ForwardWhenQueryArgProfileIsUnknownHasBeenSet() const { return m_forwardWhenQueryArgProfileIsUnknownHasBeenSet; }
+
+    /**
+     * <p>Flag to set if you want a request to be forwarded to the origin even if the
+     * profile specified by the field-level encryption query argument, fle-profile, is
+     * unknown.</p>
+     */
     inline void SetForwardWhenQueryArgProfileIsUnknown(bool value) { m_forwardWhenQueryArgProfileIsUnknownHasBeenSet = true; m_forwardWhenQueryArgProfileIsUnknown = value; }
 
     /**
@@ -75,6 +82,12 @@ namespace Model
      * encryption.</p>
      */
     inline const QueryArgProfiles& GetQueryArgProfiles() const{ return m_queryArgProfiles; }
+
+    /**
+     * <p>Profiles specified for query argument-profile mapping for field-level
+     * encryption.</p>
+     */
+    inline bool QueryArgProfilesHasBeenSet() const { return m_queryArgProfilesHasBeenSet; }
 
     /**
      * <p>Profiles specified for query argument-profile mapping for field-level

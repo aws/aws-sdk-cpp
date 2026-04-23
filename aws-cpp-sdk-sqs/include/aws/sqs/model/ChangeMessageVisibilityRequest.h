@@ -56,6 +56,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
      * <p>Queue URLs and names are case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue whose message's visibility is changed.</p>
+     * <p>Queue URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -95,6 +101,13 @@ namespace Model
      * action.</p>
      */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
+
+    /**
+     * <p>The receipt handle associated with the message whose visibility timeout is
+     * changed. This parameter is returned by the <code> <a>ReceiveMessage</a> </code>
+     * action.</p>
+     */
+    inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
 
     /**
      * <p>The receipt handle associated with the message whose visibility timeout is
@@ -144,6 +157,12 @@ namespace Model
      * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
      */
     inline int GetVisibilityTimeout() const{ return m_visibilityTimeout; }
+
+    /**
+     * <p>The new value for the message's visibility timeout (in seconds). Values
+     * values: <code>0</code> to <code>43200</code>. Maximum: 12 hours.</p>
+     */
+    inline bool VisibilityTimeoutHasBeenSet() const { return m_visibilityTimeoutHasBeenSet; }
 
     /**
      * <p>The new value for the message's visibility timeout (in seconds). Values

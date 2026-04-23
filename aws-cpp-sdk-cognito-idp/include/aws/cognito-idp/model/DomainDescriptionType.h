@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The AWS account ID for the user pool owner.</p>
      */
     inline const Aws::String& GetAWSAccountId() const{ return m_aWSAccountId; }
+
+    /**
+     * <p>The AWS account ID for the user pool owner.</p>
+     */
+    inline bool AWSAccountIdHasBeenSet() const { return m_aWSAccountIdHasBeenSet; }
 
     /**
      * <p>The AWS account ID for the user pool owner.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The domain string.</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>The domain string.</p>
+     */
     inline void SetDomain(const Aws::String& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The S3 bucket where the static files for this domain are stored.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>The S3 bucket where the static files for this domain are stored.</p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The S3 bucket where the static files for this domain are stored.</p>
@@ -201,6 +221,11 @@ namespace Model
     /**
      * <p>The ARN of the CloudFront distribution.</p>
      */
+    inline bool CloudFrontDistributionHasBeenSet() const { return m_cloudFrontDistributionHasBeenSet; }
+
+    /**
+     * <p>The ARN of the CloudFront distribution.</p>
+     */
     inline void SetCloudFrontDistribution(const Aws::String& value) { m_cloudFrontDistributionHasBeenSet = true; m_cloudFrontDistribution = value; }
 
     /**
@@ -233,6 +258,11 @@ namespace Model
      * <p>The app version.</p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The app version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The app version.</p>
@@ -273,6 +303,11 @@ namespace Model
     /**
      * <p>The domain status.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The domain status.</p>
+     */
     inline void SetStatus(const DomainStatusType& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -291,19 +326,40 @@ namespace Model
     inline DomainDescriptionType& WithStatus(DomainStatusType&& value) { SetStatus(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
     inline const CustomDomainConfigType& GetCustomDomainConfig() const{ return m_customDomainConfig; }
 
-    
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
+    inline bool CustomDomainConfigHasBeenSet() const { return m_customDomainConfigHasBeenSet; }
+
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
     inline void SetCustomDomainConfig(const CustomDomainConfigType& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = value; }
 
-    
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
     inline void SetCustomDomainConfig(CustomDomainConfigType&& value) { m_customDomainConfigHasBeenSet = true; m_customDomainConfig = std::move(value); }
 
-    
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
     inline DomainDescriptionType& WithCustomDomainConfig(const CustomDomainConfigType& value) { SetCustomDomainConfig(value); return *this;}
 
-    
+    /**
+     * <p>The configuration for a custom domain that hosts the sign-up and sign-in
+     * webpages for your application.</p>
+     */
     inline DomainDescriptionType& WithCustomDomainConfig(CustomDomainConfigType&& value) { SetCustomDomainConfig(std::move(value)); return *this;}
 
   private:

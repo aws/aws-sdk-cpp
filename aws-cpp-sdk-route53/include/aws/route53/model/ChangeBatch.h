@@ -59,6 +59,12 @@ namespace Model
      * <p> <i>Optional:</i> Any comments you want to include about a change batch
      * request.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p> <i>Optional:</i> Any comments you want to include about a change batch
+     * request.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>Information about the changes to make to the record sets.</p>
      */
     inline const Aws::Vector<Change>& GetChanges() const{ return m_changes; }
+
+    /**
+     * <p>Information about the changes to make to the record sets.</p>
+     */
+    inline bool ChangesHasBeenSet() const { return m_changesHasBeenSet; }
 
     /**
      * <p>Information about the changes to make to the record sets.</p>

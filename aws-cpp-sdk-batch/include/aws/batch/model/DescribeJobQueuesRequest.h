@@ -53,6 +53,12 @@ namespace Model
      * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
      * entries.</p>
      */
+    inline bool JobQueuesHasBeenSet() const { return m_jobQueuesHasBeenSet; }
+
+    /**
+     * <p>A list of up to 100 queue names or full queue Amazon Resource Name (ARN)
+     * entries.</p>
+     */
     inline void SetJobQueues(const Aws::Vector<Aws::String>& value) { m_jobQueuesHasBeenSet = true; m_jobQueues = value; }
 
     /**
@@ -114,6 +120,18 @@ namespace Model
      * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
      * up to 100 results and a <code>nextToken</code> value if applicable.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results returned by <code>DescribeJobQueues</code> in
+     * paginated output. When this parameter is used, <code>DescribeJobQueues</code>
+     * only returns <code>maxResults</code> results in a single page along with a
+     * <code>nextToken</code> response element. The remaining results of the initial
+     * request can be seen by sending another <code>DescribeJobQueues</code> request
+     * with the returned <code>nextToken</code> value. This value can be between 1 and
+     * 100. If this parameter is not used, then <code>DescribeJobQueues</code> returns
+     * up to 100 results and a <code>nextToken</code> value if applicable.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -140,6 +158,18 @@ namespace Model
      * purposes.</p> </note>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The <code>nextToken</code> value returned from a previous paginated
+     * <code>DescribeJobQueues</code> request where <code>maxResults</code> was used
+     * and the results exceeded the value of that parameter. Pagination continues from
+     * the end of the previous results that returned the <code>nextToken</code> value.
+     * This value is <code>null</code> when there are no more results to return.</p>
+     * <note> <p>This token should be treated as an opaque identifier that is only used
+     * to retrieve the next items in a list and not for other programmatic
+     * purposes.</p> </note>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The <code>nextToken</code> value returned from a previous paginated

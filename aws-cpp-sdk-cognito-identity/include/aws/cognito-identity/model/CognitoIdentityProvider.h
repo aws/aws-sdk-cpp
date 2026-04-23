@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>A provider representing an Amazon Cognito Identity User Pool and its client
+   * <p>A provider representing an Amazon Cognito user pool and its client
    * ID.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-identity-2014-06-30/CognitoIdentityProvider">AWS
    * API Reference</a></p>
@@ -49,99 +49,136 @@ namespace Model
 
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
+     * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
+
+    /**
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(const Aws::String& value) { m_providerNameHasBeenSet = true; m_providerName = value; }
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(Aws::String&& value) { m_providerNameHasBeenSet = true; m_providerName = std::move(value); }
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline void SetProviderName(const char* value) { m_providerNameHasBeenSet = true; m_providerName.assign(value); }
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(const Aws::String& value) { SetProviderName(value); return *this;}
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(Aws::String&& value) { SetProviderName(std::move(value)); return *this;}
 
     /**
-     * <p>The provider name for an Amazon Cognito Identity User Pool. For example,
+     * <p>The provider name for an Amazon Cognito user pool. For example,
      * <code>cognito-idp.us-east-1.amazonaws.com/us-east-1_123456789</code>.</p>
      */
     inline CognitoIdentityProvider& WithProviderName(const char* value) { SetProviderName(value); return *this;}
 
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline const Aws::String& GetClientId() const{ return m_clientId; }
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
+     */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline void SetClientId(Aws::String&& value) { m_clientIdHasBeenSet = true; m_clientId = std::move(value); }
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline void SetClientId(const char* value) { m_clientIdHasBeenSet = true; m_clientId.assign(value); }
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(const Aws::String& value) { SetClientId(value); return *this;}
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(Aws::String&& value) { SetClientId(std::move(value)); return *this;}
 
     /**
-     * <p>The client ID for the Amazon Cognito Identity User Pool.</p>
+     * <p>The client ID for the Amazon Cognito user pool.</p>
      */
     inline CognitoIdentityProvider& WithClientId(const char* value) { SetClientId(value); return *this;}
 
 
     /**
      * <p>TRUE if server-side token validation is enabled for the identity provider’s
-     * token.</p>
+     * token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an
+     * identity pool, that identity pool will check with the integrated user pools to
+     * make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If
+     * the user is signed out or deleted, the identity pool will return a 400 Not
+     * Authorized error.</p>
      */
     inline bool GetServerSideTokenCheck() const{ return m_serverSideTokenCheck; }
 
     /**
      * <p>TRUE if server-side token validation is enabled for the identity provider’s
-     * token.</p>
+     * token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an
+     * identity pool, that identity pool will check with the integrated user pools to
+     * make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If
+     * the user is signed out or deleted, the identity pool will return a 400 Not
+     * Authorized error.</p>
+     */
+    inline bool ServerSideTokenCheckHasBeenSet() const { return m_serverSideTokenCheckHasBeenSet; }
+
+    /**
+     * <p>TRUE if server-side token validation is enabled for the identity provider’s
+     * token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an
+     * identity pool, that identity pool will check with the integrated user pools to
+     * make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If
+     * the user is signed out or deleted, the identity pool will return a 400 Not
+     * Authorized error.</p>
      */
     inline void SetServerSideTokenCheck(bool value) { m_serverSideTokenCheckHasBeenSet = true; m_serverSideTokenCheck = value; }
 
     /**
      * <p>TRUE if server-side token validation is enabled for the identity provider’s
-     * token.</p>
+     * token.</p> <p>Once you set <code>ServerSideTokenCheck</code> to TRUE for an
+     * identity pool, that identity pool will check with the integrated user pools to
+     * make sure that the user has not been globally signed out or deleted before the
+     * identity pool provides an OIDC token or AWS credentials for the user.</p> <p>If
+     * the user is signed out or deleted, the identity pool will return a 400 Not
+     * Authorized error.</p>
      */
     inline CognitoIdentityProvider& WithServerSideTokenCheck(bool value) { SetServerSideTokenCheck(value); return *this;}
 

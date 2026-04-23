@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the catalog to migrate. Currently, this should be the AWS account
      * ID.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the catalog to migrate. Currently, this should be the AWS account
+     * ID.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**

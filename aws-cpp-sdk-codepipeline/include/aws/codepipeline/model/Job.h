@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique system-generated ID of the job.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique system-generated ID of the job.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>Additional data about a job.</p>
      */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
+
+    /**
+     * <p>Additional data about a job.</p>
+     */
     inline void SetData(const JobData& value) { m_dataHasBeenSet = true; m_data = value; }
 
     /**
@@ -116,6 +126,13 @@ namespace Model
      * <a>AcknowledgeJob</a> request.</p>
      */
     inline const Aws::String& GetNonce() const{ return m_nonce; }
+
+    /**
+     * <p>A system-generated random number that AWS CodePipeline uses to ensure that
+     * the job is being worked on by only one job worker. Use this number in an
+     * <a>AcknowledgeJob</a> request.</p>
+     */
+    inline bool NonceHasBeenSet() const { return m_nonceHasBeenSet; }
 
     /**
      * <p>A system-generated random number that AWS CodePipeline uses to ensure that
@@ -164,6 +181,11 @@ namespace Model
      * <p>The ID of the AWS account to use when performing the job.</p>
      */
     inline const Aws::String& GetAccountId() const{ return m_accountId; }
+
+    /**
+     * <p>The ID of the AWS account to use when performing the job.</p>
+     */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account to use when performing the job.</p>

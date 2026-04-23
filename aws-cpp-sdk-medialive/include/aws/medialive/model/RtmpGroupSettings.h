@@ -18,6 +18,7 @@
 #include <aws/medialive/model/AuthenticationScheme.h>
 #include <aws/medialive/model/RtmpCacheFullBehavior.h>
 #include <aws/medialive/model/RtmpCaptionData.h>
+#include <aws/medialive/model/InputLossActionForRtmpOut.h>
 #include <utility>
 
 namespace Aws
@@ -36,7 +37,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for RtmpGroupSettings<p><h3>See Also:</h3>   <a
+   * Rtmp Group Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/RtmpGroupSettings">AWS
    * API Reference</a></p>
    */
@@ -53,6 +54,11 @@ namespace Model
      * Authentication scheme to use when connecting with CDN
      */
     inline const AuthenticationScheme& GetAuthenticationScheme() const{ return m_authenticationScheme; }
+
+    /**
+     * Authentication scheme to use when connecting with CDN
+     */
+    inline bool AuthenticationSchemeHasBeenSet() const { return m_authenticationSchemeHasBeenSet; }
 
     /**
      * Authentication scheme to use when connecting with CDN
@@ -85,6 +91,17 @@ namespace Model
      * minutes to allow the origin server to begin accepting data again.
      */
     inline const RtmpCacheFullBehavior& GetCacheFullBehavior() const{ return m_cacheFullBehavior; }
+
+    /**
+     * Controls behavior when content cache fills up. If remote origin server stalls
+     * the RTMP connection and does not accept content fast enough the 'Media Cache'
+     * will fill up. When the cache reaches the duration specified by cacheLength the
+     * cache will stop accepting new content. If set to disconnectImmediately, the RTMP
+     * output will force a disconnect. Clear the media cache, and reconnect after
+     * restartDelay seconds. If set to waitForServer, the RTMP output will wait up to 5
+     * minutes to allow the origin server to begin accepting data again.
+     */
+    inline bool CacheFullBehaviorHasBeenSet() const { return m_cacheFullBehaviorHasBeenSet; }
 
     /**
      * Controls behavior when content cache fills up. If remote origin server stalls
@@ -139,6 +156,11 @@ namespace Model
     /**
      * Cache length, in seconds, is used to calculate buffer size.
      */
+    inline bool CacheLengthHasBeenSet() const { return m_cacheLengthHasBeenSet; }
+
+    /**
+     * Cache length, in seconds, is used to calculate buffer size.
+     */
     inline void SetCacheLength(int value) { m_cacheLengthHasBeenSet = true; m_cacheLength = value; }
 
     /**
@@ -155,6 +177,15 @@ namespace Model
      * 608 from field 1 video will be passed.
      */
     inline const RtmpCaptionData& GetCaptionData() const{ return m_captionData; }
+
+    /**
+     * Controls the types of data that passes to onCaptionInfo outputs.  If set to
+     * 'all' then 608 and 708 carried DTVCC data will be passed.  If set to
+     * 'field1AndField2608' then DTVCC data will be stripped out, but 608 data from
+     * both fields will be passed. If set to 'field1608' then only the data carried in
+     * 608 from field 1 video will be passed.
+     */
+    inline bool CaptionDataHasBeenSet() const { return m_captionDataHasBeenSet; }
 
     /**
      * Controls the types of data that passes to onCaptionInfo outputs.  If set to
@@ -194,10 +225,77 @@ namespace Model
 
 
     /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline const InputLossActionForRtmpOut& GetInputLossAction() const{ return m_inputLossAction; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline bool InputLossActionHasBeenSet() const { return m_inputLossActionHasBeenSet; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline void SetInputLossAction(const InputLossActionForRtmpOut& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = value; }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline void SetInputLossAction(InputLossActionForRtmpOut&& value) { m_inputLossActionHasBeenSet = true; m_inputLossAction = std::move(value); }
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline RtmpGroupSettings& WithInputLossAction(const InputLossActionForRtmpOut& value) { SetInputLossAction(value); return *this;}
+
+    /**
+     * Controls the behavior of this RTMP group if input becomes unavailable.
+
+-
+     * emitOutput: Emit a slate until input returns.
+- pauseOutput: Stop transmitting
+     * data until input returns. This does not close the underlying RTMP connection.
+     */
+    inline RtmpGroupSettings& WithInputLossAction(InputLossActionForRtmpOut&& value) { SetInputLossAction(std::move(value)); return *this;}
+
+
+    /**
      * If a streaming output fails, number of seconds to wait until a restart is
      * initiated. A value of 0 means never restart.
      */
     inline int GetRestartDelay() const{ return m_restartDelay; }
+
+    /**
+     * If a streaming output fails, number of seconds to wait until a restart is
+     * initiated. A value of 0 means never restart.
+     */
+    inline bool RestartDelayHasBeenSet() const { return m_restartDelayHasBeenSet; }
 
     /**
      * If a streaming output fails, number of seconds to wait until a restart is
@@ -224,6 +322,9 @@ namespace Model
 
     RtmpCaptionData m_captionData;
     bool m_captionDataHasBeenSet;
+
+    InputLossActionForRtmpOut m_inputLossAction;
+    bool m_inputLossActionHasBeenSet;
 
     int m_restartDelay;
     bool m_restartDelayHasBeenSet;

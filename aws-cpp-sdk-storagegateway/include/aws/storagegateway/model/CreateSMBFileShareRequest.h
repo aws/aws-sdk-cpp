@@ -19,6 +19,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/storagegateway/model/ObjectACL.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/storagegateway/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -54,6 +55,12 @@ namespace Model
      * idempotent file share creation.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>A unique string value that you supply that is used by file gateway to ensure
+     * idempotent file share creation.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>A unique string value that you supply that is used by file gateway to ensure
@@ -102,6 +109,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
      * create a file share.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the file gateway on which you want to
+     * create a file share.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -145,6 +158,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional.</p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -160,6 +179,13 @@ namespace Model
      * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
@@ -214,6 +240,12 @@ namespace Model
      * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
      * gateway assumes when it accesses the underlying storage. </p>
      */
+    inline bool RoleHasBeenSet() const { return m_roleHasBeenSet; }
+
+    /**
+     * <p>The ARN of the AWS Identity and Access Management (IAM) role that a file
+     * gateway assumes when it accesses the underlying storage. </p>
+     */
     inline void SetRole(const Aws::String& value) { m_roleHasBeenSet = true; m_role = value; }
 
     /**
@@ -255,6 +287,11 @@ namespace Model
     /**
      * <p>The ARN of the backed storage used for storing file data. </p>
      */
+    inline bool LocationARNHasBeenSet() const { return m_locationARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the backed storage used for storing file data. </p>
+     */
     inline void SetLocationARN(const Aws::String& value) { m_locationARNHasBeenSet = true; m_locationARN = value; }
 
     /**
@@ -290,6 +327,14 @@ namespace Model
      * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
+
+    /**
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     */
+    inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
@@ -352,6 +397,13 @@ namespace Model
      * bucket that a file gateway puts objects into. The default value is
      * "private".</p>
      */
+    inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the S3
+     * bucket that a file gateway puts objects into. The default value is
+     * "private".</p>
+     */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
@@ -386,6 +438,12 @@ namespace Model
      * <p>A value that sets the write status of a file share. This value is true if the
      * write status is read-only, and otherwise false.</p>
      */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+
+    /**
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
@@ -401,6 +459,13 @@ namespace Model
      * otherwise to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
+
+    /**
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
+     */
+    inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
@@ -429,6 +494,13 @@ namespace Model
      * Amazon S3 bucket that a file gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
+    inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
+     */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
@@ -446,6 +518,14 @@ namespace Model
      * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidUserList() const{ return m_validUserList; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline bool ValidUserListHasBeenSet() const { return m_validUserListHasBeenSet; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
@@ -518,6 +598,14 @@ namespace Model
      * example <code>@group1</code>. Can only be set if Authentication is set to
      * <code>ActiveDirectory</code>.</p>
      */
+    inline bool InvalidUserListHasBeenSet() const { return m_invalidUserListHasBeenSet; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
     inline void SetInvalidUserList(const Aws::Vector<Aws::String>& value) { m_invalidUserListHasBeenSet = true; m_invalidUserList = value; }
 
     /**
@@ -581,6 +669,13 @@ namespace Model
      * <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>.
      * The default is <code>ActiveDirectory</code>.</p>
      */
+    inline bool AuthenticationHasBeenSet() const { return m_authenticationHasBeenSet; }
+
+    /**
+     * <p>The authentication method that users use to access the file share.</p>
+     * <p>Valid values are <code>ActiveDirectory</code> or <code>GuestAccess</code>.
+     * The default is <code>ActiveDirectory</code>.</p>
+     */
     inline void SetAuthentication(const Aws::String& value) { m_authenticationHasBeenSet = true; m_authentication = value; }
 
     /**
@@ -617,6 +712,79 @@ namespace Model
      * The default is <code>ActiveDirectory</code>.</p>
      */
     inline CreateSMBFileShareRequest& WithAuthentication(const char* value) { SetAuthentication(value); return *this;}
+
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateSMBFileShareRequest& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateSMBFileShareRequest& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateSMBFileShareRequest& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>A list of up to 10 tags that can be assigned to the NFS file share. Each tag
+     * is a key-value pair.</p> <note> <p>Valid characters for key and value are
+     * letters, spaces, and numbers representable in UTF-8 format, and the following
+     * special characters: + - = . _ : / @. The maximum length of a tag's key is 128
+     * characters, and the maximum length for a tag's value is 256.</p> </note>
+     */
+    inline CreateSMBFileShareRequest& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -661,6 +829,9 @@ namespace Model
 
     Aws::String m_authentication;
     bool m_authenticationHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

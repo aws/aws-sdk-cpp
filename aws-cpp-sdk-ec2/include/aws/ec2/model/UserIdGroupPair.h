@@ -62,6 +62,13 @@ namespace Model
      * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
      * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description for the security group rule that references this user ID group
+     * pair.</p> <p>Constraints: Up to 255 characters in length. Allowed characters are
+     * a-z, A-Z, 0-9, spaces, and ._-:/()#,@[]+=;{}!$*</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -108,6 +115,11 @@ namespace Model
     /**
      * <p>The ID of the security group.</p>
      */
+    inline bool GroupIdHasBeenSet() const { return m_groupIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the security group.</p>
+     */
     inline void SetGroupId(const Aws::String& value) { m_groupIdHasBeenSet = true; m_groupId = value; }
 
     /**
@@ -144,6 +156,15 @@ namespace Model
      * group is deleted.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
+
+    /**
+     * <p>The name of the security group. In a request, use this parameter for a
+     * security group in EC2-Classic or a default VPC only. For a security group in a
+     * nondefault VPC, use the security group ID. </p> <p>For a referenced security
+     * group in another VPC, this value is not returned if the referenced security
+     * group is deleted.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
 
     /**
      * <p>The name of the security group. In a request, use this parameter for a
@@ -208,6 +229,11 @@ namespace Model
     /**
      * <p>The status of a VPC peering connection, if applicable.</p>
      */
+    inline bool PeeringStatusHasBeenSet() const { return m_peeringStatusHasBeenSet; }
+
+    /**
+     * <p>The status of a VPC peering connection, if applicable.</p>
+     */
     inline void SetPeeringStatus(const Aws::String& value) { m_peeringStatusHasBeenSet = true; m_peeringStatus = value; }
 
     /**
@@ -244,6 +270,15 @@ namespace Model
      * reference a security group in another AWS account.</p>
      */
     inline const Aws::String& GetUserId() const{ return m_userId; }
+
+    /**
+     * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
+     * VPC, the account ID of the referenced security group is returned in the
+     * response. If the referenced security group is deleted, this value is not
+     * returned.</p> <p>[EC2-Classic] Required when adding or removing rules that
+     * reference a security group in another AWS account.</p>
+     */
+    inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
 
     /**
      * <p>The ID of an AWS account.</p> <p>For a referenced security group in another
@@ -308,6 +343,11 @@ namespace Model
     /**
      * <p>The ID of the VPC for the referenced security group, if applicable.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC for the referenced security group, if applicable.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -340,6 +380,11 @@ namespace Model
      * <p>The ID of the VPC peering connection, if applicable.</p>
      */
     inline const Aws::String& GetVpcPeeringConnectionId() const{ return m_vpcPeeringConnectionId; }
+
+    /**
+     * <p>The ID of the VPC peering connection, if applicable.</p>
+     */
+    inline bool VpcPeeringConnectionIdHasBeenSet() const { return m_vpcPeeringConnectionIdHasBeenSet; }
 
     /**
      * <p>The ID of the VPC peering connection, if applicable.</p>

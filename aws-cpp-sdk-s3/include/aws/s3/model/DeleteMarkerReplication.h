@@ -60,6 +60,13 @@ namespace Model
      * implementation, Amazon S3 doesn't replicate the delete markers. The status must
      * be <code>Disabled</code>. </p> </note>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the delete marker replication.</p> <note> <p> In the current
+     * implementation, Amazon S3 doesn't replicate the delete markers. The status must
+     * be <code>Disabled</code>. </p> </note>
+     */
     inline void SetStatus(const DeleteMarkerReplicationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**

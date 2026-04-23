@@ -60,6 +60,13 @@ namespace Model
      * alphanumeric string formatted as shown in this example:
      * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
      */
+    inline bool CaseIdHasBeenSet() const { return m_caseIdHasBeenSet; }
+
+    /**
+     * <p>The AWS Support case ID requested or returned in the call. The case ID is an
+     * alphanumeric string formatted as shown in this example:
+     * case-<i>12345678910-2013-c4c1d2bf33c5cf47</i> </p>
+     */
     inline void SetCaseId(const Aws::String& value) { m_caseIdHasBeenSet = true; m_caseId = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
     /**
      * <p>The body of an email communication to add to the support case.</p>
      */
+    inline bool CommunicationBodyHasBeenSet() const { return m_communicationBodyHasBeenSet; }
+
+    /**
+     * <p>The body of an email communication to add to the support case.</p>
+     */
     inline void SetCommunicationBody(const Aws::String& value) { m_communicationBodyHasBeenSet = true; m_communicationBody = value; }
 
     /**
@@ -139,6 +151,12 @@ namespace Model
      * case.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCcEmailAddresses() const{ return m_ccEmailAddresses; }
+
+    /**
+     * <p>The email addresses in the CC line of an email to be added to the support
+     * case.</p>
+     */
+    inline bool CcEmailAddressesHasBeenSet() const { return m_ccEmailAddressesHasBeenSet; }
 
     /**
      * <p>The email addresses in the CC line of an email to be added to the support
@@ -188,6 +206,12 @@ namespace Model
      * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
      */
     inline const Aws::String& GetAttachmentSetId() const{ return m_attachmentSetId; }
+
+    /**
+     * <p>The ID of a set of one or more attachments for the communication to add to
+     * the case. Create the set by calling <a>AddAttachmentsToSet</a> </p>
+     */
+    inline bool AttachmentSetIdHasBeenSet() const { return m_attachmentSetIdHasBeenSet; }
 
     /**
      * <p>The ID of a set of one or more attachments for the communication to add to

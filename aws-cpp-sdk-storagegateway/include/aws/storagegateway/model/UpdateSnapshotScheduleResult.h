@@ -49,37 +49,44 @@ namespace Model
 
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline const Aws::String& GetVolumeARN() const{ return m_volumeARN; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline void SetVolumeARN(const Aws::String& value) { m_volumeARN = value; }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline void SetVolumeARN(Aws::String&& value) { m_volumeARN = std::move(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline void SetVolumeARN(const char* value) { m_volumeARN.assign(value); }
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(const Aws::String& value) { SetVolumeARN(value); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(Aws::String&& value) { SetVolumeARN(std::move(value)); return *this;}
 
     /**
-     * <p/>
+     * <p>The Amazon Resource Name (ARN) of the volume. Use the <a>ListVolumes</a>
+     * operation to return a list of gateway volumes.</p>
      */
     inline UpdateSnapshotScheduleResult& WithVolumeARN(const char* value) { SetVolumeARN(value); return *this;}
 

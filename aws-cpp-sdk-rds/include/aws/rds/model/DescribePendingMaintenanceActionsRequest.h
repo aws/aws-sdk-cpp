@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ARN of a resource to return pending maintenance actions for.</p>
      */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>The ARN of a resource to return pending maintenance actions for.</p>
+     */
     inline void SetResourceIdentifier(const Aws::String& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
@@ -98,6 +103,18 @@ namespace Model
      * for the DB instances identified by these ARNs.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>A filter that specifies one or more resources to return pending maintenance
+     * actions for.</p> <p>Supported filters:</p> <ul> <li> <p>
+     * <code>db-cluster-id</code> - Accepts DB cluster identifiers and DB cluster
+     * Amazon Resource Names (ARNs). The results list will only include pending
+     * maintenance actions for the DB clusters identified by these ARNs.</p> </li> <li>
+     * <p> <code>db-instance-id</code> - Accepts DB instance identifiers and DB
+     * instance ARNs. The results list will only include pending maintenance actions
+     * for the DB instances identified by these ARNs.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>A filter that specifies one or more resources to return pending maintenance
@@ -186,6 +203,14 @@ namespace Model
      * specified, the response includes only records beyond the marker, up to a number
      * of records specified by <code>MaxRecords</code>. </p>
      */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
+
+    /**
+     * <p> An optional pagination token provided by a previous
+     * <code>DescribePendingMaintenanceActions</code> request. If this parameter is
+     * specified, the response includes only records beyond the marker, up to a number
+     * of records specified by <code>MaxRecords</code>. </p>
+     */
     inline void SetMarker(const Aws::String& value) { m_markerHasBeenSet = true; m_marker = value; }
 
     /**
@@ -236,6 +261,14 @@ namespace Model
      * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p> The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a pagination token
+     * called a marker is included in the response so that the remaining results can be
+     * retrieved. </p> <p>Default: 100</p> <p>Constraints: Minimum 20, maximum 100.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p> The maximum number of records to include in the response. If more records

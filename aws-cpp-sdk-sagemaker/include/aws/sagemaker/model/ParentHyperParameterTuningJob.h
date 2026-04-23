@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the hyperparameter tuning job to be used as a starting point for
      * a new hyperparameter tuning job.</p>
      */
+    inline bool HyperParameterTuningJobNameHasBeenSet() const { return m_hyperParameterTuningJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the hyperparameter tuning job to be used as a starting point for
+     * a new hyperparameter tuning job.</p>
+     */
     inline void SetHyperParameterTuningJobName(const Aws::String& value) { m_hyperParameterTuningJobNameHasBeenSet = true; m_hyperParameterTuningJobName = value; }
 
     /**

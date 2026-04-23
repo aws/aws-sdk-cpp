@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon S3 bucket where the toolchain template file provided with the
      * project request is stored.</p>
      */
+    inline bool S3HasBeenSet() const { return m_s3HasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket where the toolchain template file provided with the
+     * project request is stored.</p>
+     */
     inline void SetS3(const S3Location& value) { m_s3HasBeenSet = true; m_s3 = value; }
 
     /**

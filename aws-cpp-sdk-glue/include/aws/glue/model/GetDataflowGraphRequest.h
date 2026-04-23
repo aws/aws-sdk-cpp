@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The Python script to transform.</p>
      */
+    inline bool PythonScriptHasBeenSet() const { return m_pythonScriptHasBeenSet; }
+
+    /**
+     * <p>The Python script to transform.</p>
+     */
     inline void SetPythonScript(const Aws::String& value) { m_pythonScriptHasBeenSet = true; m_pythonScript = value; }
 
     /**

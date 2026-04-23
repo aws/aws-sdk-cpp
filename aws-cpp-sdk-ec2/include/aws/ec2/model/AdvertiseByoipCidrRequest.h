@@ -47,37 +47,58 @@ namespace Model
   public:
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline const Aws::String& GetCidr() const{ return m_cidr; }
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
+     */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline void SetCidr(Aws::String&& value) { m_cidrHasBeenSet = true; m_cidr = std::move(value); }
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline void SetCidr(const char* value) { m_cidrHasBeenSet = true; m_cidr.assign(value); }
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(const Aws::String& value) { SetCidr(value); return *this;}
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(Aws::String&& value) { SetCidr(std::move(value)); return *this;}
 
     /**
-     * <p>The IPv4 address range, in CIDR notation.</p>
+     * <p>The IPv4 address range, in CIDR notation. This must be the exact range that
+     * you provisioned. You can't advertise only a portion of the provisioned
+     * range.</p>
      */
     inline AdvertiseByoipCidrRequest& WithCidr(const char* value) { SetCidr(value); return *this;}
 
@@ -89,6 +110,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

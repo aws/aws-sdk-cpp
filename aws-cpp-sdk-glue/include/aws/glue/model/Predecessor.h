@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the job definition used by the predecessor job run.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the job definition used by the predecessor job run.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The job-run ID of the predecessor job run.</p>
      */
     inline const Aws::String& GetRunId() const{ return m_runId; }
+
+    /**
+     * <p>The job-run ID of the predecessor job run.</p>
+     */
+    inline bool RunIdHasBeenSet() const { return m_runIdHasBeenSet; }
 
     /**
      * <p>The job-run ID of the predecessor job run.</p>

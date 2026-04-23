@@ -65,6 +65,13 @@ namespace Model
      * Automatic scaling activity will not cause an instance group to grow above or
      * below these limits.</p>
      */
+    inline bool ConstraintsHasBeenSet() const { return m_constraintsHasBeenSet; }
+
+    /**
+     * <p>The upper and lower EC2 instance limits for an automatic scaling policy.
+     * Automatic scaling activity will not cause an instance group to grow above or
+     * below these limits.</p>
+     */
     inline void SetConstraints(const ScalingConstraints& value) { m_constraintsHasBeenSet = true; m_constraints = value; }
 
     /**
@@ -94,6 +101,12 @@ namespace Model
      * policy.</p>
      */
     inline const Aws::Vector<ScalingRule>& GetRules() const{ return m_rules; }
+
+    /**
+     * <p>The scale-in and scale-out rules that comprise the automatic scaling
+     * policy.</p>
+     */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
 
     /**
      * <p>The scale-in and scale-out rules that comprise the automatic scaling

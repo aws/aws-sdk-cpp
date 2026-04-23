@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The rule payload.</p>
      */
     inline const TopicRulePayload& GetTopicRulePayload() const{ return m_topicRulePayload; }
+
+    /**
+     * <p>The rule payload.</p>
+     */
+    inline bool TopicRulePayloadHasBeenSet() const { return m_topicRulePayloadHasBeenSet; }
 
     /**
      * <p>The rule payload.</p>

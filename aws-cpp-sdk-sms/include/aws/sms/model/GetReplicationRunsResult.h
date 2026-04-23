@@ -45,63 +45,108 @@ namespace Model
     GetReplicationRunsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * <p>Information about the replication job.</p>
+     */
     inline const ReplicationJob& GetReplicationJob() const{ return m_replicationJob; }
 
-    
+    /**
+     * <p>Information about the replication job.</p>
+     */
     inline void SetReplicationJob(const ReplicationJob& value) { m_replicationJob = value; }
 
-    
+    /**
+     * <p>Information about the replication job.</p>
+     */
     inline void SetReplicationJob(ReplicationJob&& value) { m_replicationJob = std::move(value); }
 
-    
+    /**
+     * <p>Information about the replication job.</p>
+     */
     inline GetReplicationRunsResult& WithReplicationJob(const ReplicationJob& value) { SetReplicationJob(value); return *this;}
 
-    
+    /**
+     * <p>Information about the replication job.</p>
+     */
     inline GetReplicationRunsResult& WithReplicationJob(ReplicationJob&& value) { SetReplicationJob(std::move(value)); return *this;}
 
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline const Aws::Vector<ReplicationRun>& GetReplicationRunList() const{ return m_replicationRunList; }
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline void SetReplicationRunList(const Aws::Vector<ReplicationRun>& value) { m_replicationRunList = value; }
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline void SetReplicationRunList(Aws::Vector<ReplicationRun>&& value) { m_replicationRunList = std::move(value); }
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline GetReplicationRunsResult& WithReplicationRunList(const Aws::Vector<ReplicationRun>& value) { SetReplicationRunList(value); return *this;}
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline GetReplicationRunsResult& WithReplicationRunList(Aws::Vector<ReplicationRun>&& value) { SetReplicationRunList(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline GetReplicationRunsResult& AddReplicationRunList(const ReplicationRun& value) { m_replicationRunList.push_back(value); return *this; }
 
-    
+    /**
+     * <p>Information about the replication runs.</p>
+     */
     inline GetReplicationRunsResult& AddReplicationRunList(ReplicationRun&& value) { m_replicationRunList.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline GetReplicationRunsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline GetReplicationRunsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
-    
+    /**
+     * <p>The token required to retrieve the next set of results. This value is null
+     * when there are no more results to return.</p>
+     */
     inline GetReplicationRunsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
   private:

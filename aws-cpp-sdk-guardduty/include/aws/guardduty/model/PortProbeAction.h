@@ -57,6 +57,11 @@ namespace Model
     /**
      * Port probe blocked information.
      */
+    inline bool BlockedHasBeenSet() const { return m_blockedHasBeenSet; }
+
+    /**
+     * Port probe blocked information.
+     */
     inline void SetBlocked(bool value) { m_blockedHasBeenSet = true; m_blocked = value; }
 
     /**
@@ -69,6 +74,11 @@ namespace Model
      * A list of port probe details objects.
      */
     inline const Aws::Vector<PortProbeDetail>& GetPortProbeDetails() const{ return m_portProbeDetails; }
+
+    /**
+     * A list of port probe details objects.
+     */
+    inline bool PortProbeDetailsHasBeenSet() const { return m_portProbeDetailsHasBeenSet; }
 
     /**
      * A list of port probe details objects.

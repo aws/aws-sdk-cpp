@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the cluster security group.</p>
      */
+    inline bool ClusterSecurityGroupNameHasBeenSet() const { return m_clusterSecurityGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster security group.</p>
+     */
     inline void SetClusterSecurityGroupName(const Aws::String& value) { m_clusterSecurityGroupNameHasBeenSet = true; m_clusterSecurityGroupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The status of the cluster security group.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the cluster security group.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the cluster security group.</p>

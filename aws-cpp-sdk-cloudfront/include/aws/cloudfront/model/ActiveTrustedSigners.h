@@ -47,7 +47,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/PrivateContent.html">Serving
    * Private Content through CloudFront</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/ActiveTrustedSigners">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/ActiveTrustedSigners">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API ActiveTrustedSigners
@@ -67,6 +67,14 @@ namespace Model
      * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
+     * <code>TrustedSigners</code> complex type for this RTMP distribution have active
+     * CloudFront key pairs. If not, <code>Enabled</code> is <code>false</code>.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Enabled is <code>true</code> if any of the AWS accounts listed in the
@@ -97,6 +105,13 @@ namespace Model
      * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
      * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer specified in the <code>TrustedSigners</code> complex type.</p>
+     * <p>For more information, see <a>ActiveTrustedSigners</a>.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -113,6 +128,13 @@ namespace Model
      * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
      */
     inline const Aws::Vector<Signer>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains one <code>Signer</code> complex type for each
+     * trusted signer that is specified in the <code>TrustedSigners</code> complex
+     * type.</p> <p>For more information, see <a>ActiveTrustedSigners</a>. </p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one <code>Signer</code> complex type for each

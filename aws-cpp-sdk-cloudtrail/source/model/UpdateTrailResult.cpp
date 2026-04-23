@@ -29,14 +29,16 @@ using namespace Aws;
 UpdateTrailResult::UpdateTrailResult() : 
     m_includeGlobalServiceEvents(false),
     m_isMultiRegionTrail(false),
-    m_logFileValidationEnabled(false)
+    m_logFileValidationEnabled(false),
+    m_isOrganizationTrail(false)
 {
 }
 
 UpdateTrailResult::UpdateTrailResult(const Aws::AmazonWebServiceResult<JsonValue>& result) : 
     m_includeGlobalServiceEvents(false),
     m_isMultiRegionTrail(false),
-    m_logFileValidationEnabled(false)
+    m_logFileValidationEnabled(false),
+    m_isOrganizationTrail(false)
 {
   *this = result;
 }
@@ -107,6 +109,12 @@ UpdateTrailResult& UpdateTrailResult::operator =(const Aws::AmazonWebServiceResu
   if(jsonValue.ValueExists("KmsKeyId"))
   {
     m_kmsKeyId = jsonValue.GetString("KmsKeyId");
+
+  }
+
+  if(jsonValue.ValueExists("IsOrganizationTrail"))
+  {
+    m_isOrganizationTrail = jsonValue.GetBool("IsOrganizationTrail");
 
   }
 

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a WorkSpace modification.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a WorkSpace modification.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/ModificationState">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,11 @@ namespace Model
      * <p>The resource.</p>
      */
     inline const ModificationResourceEnum& GetResource() const{ return m_resource; }
+
+    /**
+     * <p>The resource.</p>
+     */
+    inline bool ResourceHasBeenSet() const { return m_resourceHasBeenSet; }
 
     /**
      * <p>The resource.</p>
@@ -78,6 +83,11 @@ namespace Model
      * <p>The modification state.</p>
      */
     inline const ModificationStateEnum& GetState() const{ return m_state; }
+
+    /**
+     * <p>The modification state.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The modification state.</p>

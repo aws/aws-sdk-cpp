@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the rule.</p>
      */
+    inline bool RuleHasBeenSet() const { return m_ruleHasBeenSet; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
     inline void SetRule(const Aws::String& value) { m_ruleHasBeenSet = true; m_rule = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The targets to update or add to the rule.</p>
      */
     inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets to update or add to the rule.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
 
     /**
      * <p>The targets to update or add to the rule.</p>

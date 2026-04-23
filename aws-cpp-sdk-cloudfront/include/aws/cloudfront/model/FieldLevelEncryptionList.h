@@ -36,7 +36,7 @@ namespace Model
 
   /**
    * <p>List of field-level encrpytion configurations.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/FieldLevelEncryptionList">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/FieldLevelEncryptionList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API FieldLevelEncryptionList
@@ -55,6 +55,13 @@ namespace Model
      * continue listing your configurations where you left off.</p>
      */
     inline const Aws::String& GetNextMarker() const{ return m_nextMarker; }
+
+    /**
+     * <p>If there are more elements to be listed, this element is present and contains
+     * the value that you can use for the <code>Marker</code> request parameter to
+     * continue listing your configurations where you left off.</p>
+     */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
 
     /**
      * <p>If there are more elements to be listed, this element is present and contains
@@ -107,6 +114,11 @@ namespace Model
     /**
      * <p>The maximum number of elements you want in the response body. </p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of elements you want in the response body. </p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -123,6 +135,11 @@ namespace Model
     /**
      * <p>The number of field-level encryption items.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of field-level encryption items.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -135,6 +152,11 @@ namespace Model
      * <p>An array of field-level encryption items.</p>
      */
     inline const Aws::Vector<FieldLevelEncryptionSummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>An array of field-level encryption items.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>An array of field-level encryption items.</p>

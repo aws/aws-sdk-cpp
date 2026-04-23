@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
      */
+    inline bool AssessmentTargetArnsHasBeenSet() const { return m_assessmentTargetArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs that specifies the assessment targets that you want to describe.</p>
+     */
     inline void SetAssessmentTargetArns(const Aws::Vector<Aws::String>& value) { m_assessmentTargetArnsHasBeenSet = true; m_assessmentTargetArns = value; }
 
     /**

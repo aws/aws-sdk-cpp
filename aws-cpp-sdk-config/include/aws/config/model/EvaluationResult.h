@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Uniquely identifies the evaluation result.</p>
      */
+    inline bool EvaluationResultIdentifierHasBeenSet() const { return m_evaluationResultIdentifierHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the evaluation result.</p>
+     */
     inline void SetEvaluationResultIdentifier(const EvaluationResultIdentifier& value) { m_evaluationResultIdentifierHasBeenSet = true; m_evaluationResultIdentifier = value; }
 
     /**
@@ -87,6 +92,16 @@ namespace Model
      * type.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>Indicates whether the AWS resource complies with the AWS Config rule that
+     * evaluated it.</p> <p>For the <code>EvaluationResult</code> data type, AWS Config
+     * supports only the <code>COMPLIANT</code>, <code>NON_COMPLIANT</code>, and
+     * <code>NOT_APPLICABLE</code> values. AWS Config does not support the
+     * <code>INSUFFICIENT_DATA</code> value for the <code>EvaluationResult</code> data
+     * type.</p>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>Indicates whether the AWS resource complies with the AWS Config rule that
@@ -137,6 +152,11 @@ namespace Model
     /**
      * <p>The time when AWS Config recorded the evaluation result.</p>
      */
+    inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
+
+    /**
+     * <p>The time when AWS Config recorded the evaluation result.</p>
+     */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
@@ -159,6 +179,11 @@ namespace Model
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
+
+    /**
+     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     */
+    inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
@@ -186,6 +211,12 @@ namespace Model
      * compliance.</p>
      */
     inline const Aws::String& GetAnnotation() const{ return m_annotation; }
+
+    /**
+     * <p>Supplementary information about how the evaluation determined the
+     * compliance.</p>
+     */
+    inline bool AnnotationHasBeenSet() const { return m_annotationHasBeenSet; }
 
     /**
      * <p>Supplementary information about how the evaluation determined the
@@ -230,6 +261,13 @@ namespace Model
      * triggered the evaluation.</p>
      */
     inline const Aws::String& GetResultToken() const{ return m_resultToken; }
+
+    /**
+     * <p>An encrypted token that associates an evaluation with an AWS Config rule. The
+     * token identifies the rule, the AWS resource being evaluated, and the event that
+     * triggered the evaluation.</p>
+     */
+    inline bool ResultTokenHasBeenSet() const { return m_resultTokenHasBeenSet; }
 
     /**
      * <p>An encrypted token that associates an evaluation with an AWS Config rule. The

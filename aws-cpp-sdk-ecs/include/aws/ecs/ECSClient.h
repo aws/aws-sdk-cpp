@@ -23,16 +23,19 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/ecs/model/CreateClusterResult.h>
 #include <aws/ecs/model/CreateServiceResult.h>
+#include <aws/ecs/model/CreateTaskSetResult.h>
 #include <aws/ecs/model/DeleteAccountSettingResult.h>
 #include <aws/ecs/model/DeleteAttributesResult.h>
 #include <aws/ecs/model/DeleteClusterResult.h>
 #include <aws/ecs/model/DeleteServiceResult.h>
+#include <aws/ecs/model/DeleteTaskSetResult.h>
 #include <aws/ecs/model/DeregisterContainerInstanceResult.h>
 #include <aws/ecs/model/DeregisterTaskDefinitionResult.h>
 #include <aws/ecs/model/DescribeClustersResult.h>
 #include <aws/ecs/model/DescribeContainerInstancesResult.h>
 #include <aws/ecs/model/DescribeServicesResult.h>
 #include <aws/ecs/model/DescribeTaskDefinitionResult.h>
+#include <aws/ecs/model/DescribeTaskSetsResult.h>
 #include <aws/ecs/model/DescribeTasksResult.h>
 #include <aws/ecs/model/DiscoverPollEndpointResult.h>
 #include <aws/ecs/model/ListAccountSettingsResult.h>
@@ -45,6 +48,7 @@
 #include <aws/ecs/model/ListTaskDefinitionsResult.h>
 #include <aws/ecs/model/ListTasksResult.h>
 #include <aws/ecs/model/PutAccountSettingResult.h>
+#include <aws/ecs/model/PutAccountSettingDefaultResult.h>
 #include <aws/ecs/model/PutAttributesResult.h>
 #include <aws/ecs/model/RegisterContainerInstanceResult.h>
 #include <aws/ecs/model/RegisterTaskDefinitionResult.h>
@@ -58,6 +62,8 @@
 #include <aws/ecs/model/UpdateContainerAgentResult.h>
 #include <aws/ecs/model/UpdateContainerInstancesStateResult.h>
 #include <aws/ecs/model/UpdateServiceResult.h>
+#include <aws/ecs/model/UpdateServicePrimaryTaskSetResult.h>
+#include <aws/ecs/model/UpdateTaskSetResult.h>
 #include <aws/core/client/AsyncCallerContext.h>
 #include <aws/core/http/HttpTypes.h>
 #include <future>
@@ -100,16 +106,19 @@ namespace Model
 {
         class CreateClusterRequest;
         class CreateServiceRequest;
+        class CreateTaskSetRequest;
         class DeleteAccountSettingRequest;
         class DeleteAttributesRequest;
         class DeleteClusterRequest;
         class DeleteServiceRequest;
+        class DeleteTaskSetRequest;
         class DeregisterContainerInstanceRequest;
         class DeregisterTaskDefinitionRequest;
         class DescribeClustersRequest;
         class DescribeContainerInstancesRequest;
         class DescribeServicesRequest;
         class DescribeTaskDefinitionRequest;
+        class DescribeTaskSetsRequest;
         class DescribeTasksRequest;
         class DiscoverPollEndpointRequest;
         class ListAccountSettingsRequest;
@@ -122,6 +131,7 @@ namespace Model
         class ListTaskDefinitionsRequest;
         class ListTasksRequest;
         class PutAccountSettingRequest;
+        class PutAccountSettingDefaultRequest;
         class PutAttributesRequest;
         class RegisterContainerInstanceRequest;
         class RegisterTaskDefinitionRequest;
@@ -135,19 +145,24 @@ namespace Model
         class UpdateContainerAgentRequest;
         class UpdateContainerInstancesStateRequest;
         class UpdateServiceRequest;
+        class UpdateServicePrimaryTaskSetRequest;
+        class UpdateTaskSetRequest;
 
         typedef Aws::Utils::Outcome<CreateClusterResult, Aws::Client::AWSError<ECSErrors>> CreateClusterOutcome;
         typedef Aws::Utils::Outcome<CreateServiceResult, Aws::Client::AWSError<ECSErrors>> CreateServiceOutcome;
+        typedef Aws::Utils::Outcome<CreateTaskSetResult, Aws::Client::AWSError<ECSErrors>> CreateTaskSetOutcome;
         typedef Aws::Utils::Outcome<DeleteAccountSettingResult, Aws::Client::AWSError<ECSErrors>> DeleteAccountSettingOutcome;
         typedef Aws::Utils::Outcome<DeleteAttributesResult, Aws::Client::AWSError<ECSErrors>> DeleteAttributesOutcome;
         typedef Aws::Utils::Outcome<DeleteClusterResult, Aws::Client::AWSError<ECSErrors>> DeleteClusterOutcome;
         typedef Aws::Utils::Outcome<DeleteServiceResult, Aws::Client::AWSError<ECSErrors>> DeleteServiceOutcome;
+        typedef Aws::Utils::Outcome<DeleteTaskSetResult, Aws::Client::AWSError<ECSErrors>> DeleteTaskSetOutcome;
         typedef Aws::Utils::Outcome<DeregisterContainerInstanceResult, Aws::Client::AWSError<ECSErrors>> DeregisterContainerInstanceOutcome;
         typedef Aws::Utils::Outcome<DeregisterTaskDefinitionResult, Aws::Client::AWSError<ECSErrors>> DeregisterTaskDefinitionOutcome;
         typedef Aws::Utils::Outcome<DescribeClustersResult, Aws::Client::AWSError<ECSErrors>> DescribeClustersOutcome;
         typedef Aws::Utils::Outcome<DescribeContainerInstancesResult, Aws::Client::AWSError<ECSErrors>> DescribeContainerInstancesOutcome;
         typedef Aws::Utils::Outcome<DescribeServicesResult, Aws::Client::AWSError<ECSErrors>> DescribeServicesOutcome;
         typedef Aws::Utils::Outcome<DescribeTaskDefinitionResult, Aws::Client::AWSError<ECSErrors>> DescribeTaskDefinitionOutcome;
+        typedef Aws::Utils::Outcome<DescribeTaskSetsResult, Aws::Client::AWSError<ECSErrors>> DescribeTaskSetsOutcome;
         typedef Aws::Utils::Outcome<DescribeTasksResult, Aws::Client::AWSError<ECSErrors>> DescribeTasksOutcome;
         typedef Aws::Utils::Outcome<DiscoverPollEndpointResult, Aws::Client::AWSError<ECSErrors>> DiscoverPollEndpointOutcome;
         typedef Aws::Utils::Outcome<ListAccountSettingsResult, Aws::Client::AWSError<ECSErrors>> ListAccountSettingsOutcome;
@@ -160,6 +175,7 @@ namespace Model
         typedef Aws::Utils::Outcome<ListTaskDefinitionsResult, Aws::Client::AWSError<ECSErrors>> ListTaskDefinitionsOutcome;
         typedef Aws::Utils::Outcome<ListTasksResult, Aws::Client::AWSError<ECSErrors>> ListTasksOutcome;
         typedef Aws::Utils::Outcome<PutAccountSettingResult, Aws::Client::AWSError<ECSErrors>> PutAccountSettingOutcome;
+        typedef Aws::Utils::Outcome<PutAccountSettingDefaultResult, Aws::Client::AWSError<ECSErrors>> PutAccountSettingDefaultOutcome;
         typedef Aws::Utils::Outcome<PutAttributesResult, Aws::Client::AWSError<ECSErrors>> PutAttributesOutcome;
         typedef Aws::Utils::Outcome<RegisterContainerInstanceResult, Aws::Client::AWSError<ECSErrors>> RegisterContainerInstanceOutcome;
         typedef Aws::Utils::Outcome<RegisterTaskDefinitionResult, Aws::Client::AWSError<ECSErrors>> RegisterTaskDefinitionOutcome;
@@ -173,19 +189,24 @@ namespace Model
         typedef Aws::Utils::Outcome<UpdateContainerAgentResult, Aws::Client::AWSError<ECSErrors>> UpdateContainerAgentOutcome;
         typedef Aws::Utils::Outcome<UpdateContainerInstancesStateResult, Aws::Client::AWSError<ECSErrors>> UpdateContainerInstancesStateOutcome;
         typedef Aws::Utils::Outcome<UpdateServiceResult, Aws::Client::AWSError<ECSErrors>> UpdateServiceOutcome;
+        typedef Aws::Utils::Outcome<UpdateServicePrimaryTaskSetResult, Aws::Client::AWSError<ECSErrors>> UpdateServicePrimaryTaskSetOutcome;
+        typedef Aws::Utils::Outcome<UpdateTaskSetResult, Aws::Client::AWSError<ECSErrors>> UpdateTaskSetOutcome;
 
         typedef std::future<CreateClusterOutcome> CreateClusterOutcomeCallable;
         typedef std::future<CreateServiceOutcome> CreateServiceOutcomeCallable;
+        typedef std::future<CreateTaskSetOutcome> CreateTaskSetOutcomeCallable;
         typedef std::future<DeleteAccountSettingOutcome> DeleteAccountSettingOutcomeCallable;
         typedef std::future<DeleteAttributesOutcome> DeleteAttributesOutcomeCallable;
         typedef std::future<DeleteClusterOutcome> DeleteClusterOutcomeCallable;
         typedef std::future<DeleteServiceOutcome> DeleteServiceOutcomeCallable;
+        typedef std::future<DeleteTaskSetOutcome> DeleteTaskSetOutcomeCallable;
         typedef std::future<DeregisterContainerInstanceOutcome> DeregisterContainerInstanceOutcomeCallable;
         typedef std::future<DeregisterTaskDefinitionOutcome> DeregisterTaskDefinitionOutcomeCallable;
         typedef std::future<DescribeClustersOutcome> DescribeClustersOutcomeCallable;
         typedef std::future<DescribeContainerInstancesOutcome> DescribeContainerInstancesOutcomeCallable;
         typedef std::future<DescribeServicesOutcome> DescribeServicesOutcomeCallable;
         typedef std::future<DescribeTaskDefinitionOutcome> DescribeTaskDefinitionOutcomeCallable;
+        typedef std::future<DescribeTaskSetsOutcome> DescribeTaskSetsOutcomeCallable;
         typedef std::future<DescribeTasksOutcome> DescribeTasksOutcomeCallable;
         typedef std::future<DiscoverPollEndpointOutcome> DiscoverPollEndpointOutcomeCallable;
         typedef std::future<ListAccountSettingsOutcome> ListAccountSettingsOutcomeCallable;
@@ -198,6 +219,7 @@ namespace Model
         typedef std::future<ListTaskDefinitionsOutcome> ListTaskDefinitionsOutcomeCallable;
         typedef std::future<ListTasksOutcome> ListTasksOutcomeCallable;
         typedef std::future<PutAccountSettingOutcome> PutAccountSettingOutcomeCallable;
+        typedef std::future<PutAccountSettingDefaultOutcome> PutAccountSettingDefaultOutcomeCallable;
         typedef std::future<PutAttributesOutcome> PutAttributesOutcomeCallable;
         typedef std::future<RegisterContainerInstanceOutcome> RegisterContainerInstanceOutcomeCallable;
         typedef std::future<RegisterTaskDefinitionOutcome> RegisterTaskDefinitionOutcomeCallable;
@@ -211,22 +233,27 @@ namespace Model
         typedef std::future<UpdateContainerAgentOutcome> UpdateContainerAgentOutcomeCallable;
         typedef std::future<UpdateContainerInstancesStateOutcome> UpdateContainerInstancesStateOutcomeCallable;
         typedef std::future<UpdateServiceOutcome> UpdateServiceOutcomeCallable;
+        typedef std::future<UpdateServicePrimaryTaskSetOutcome> UpdateServicePrimaryTaskSetOutcomeCallable;
+        typedef std::future<UpdateTaskSetOutcome> UpdateTaskSetOutcomeCallable;
 } // namespace Model
 
   class ECSClient;
 
     typedef std::function<void(const ECSClient*, const Model::CreateClusterRequest&, const Model::CreateClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateClusterResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::CreateServiceRequest&, const Model::CreateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateServiceResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::CreateTaskSetRequest&, const Model::CreateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > CreateTaskSetResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteAccountSettingRequest&, const Model::DeleteAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAccountSettingResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteAttributesRequest&, const Model::DeleteAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteClusterRequest&, const Model::DeleteClusterOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteClusterResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeleteServiceRequest&, const Model::DeleteServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteServiceResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DeleteTaskSetRequest&, const Model::DeleteTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeleteTaskSetResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeregisterContainerInstanceRequest&, const Model::DeregisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterContainerInstanceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DeregisterTaskDefinitionRequest&, const Model::DeregisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DeregisterTaskDefinitionResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeClustersRequest&, const Model::DescribeClustersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeClustersResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeContainerInstancesRequest&, const Model::DescribeContainerInstancesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeContainerInstancesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeServicesRequest&, const Model::DescribeServicesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeServicesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeTaskDefinitionRequest&, const Model::DescribeTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskDefinitionResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::DescribeTaskSetsRequest&, const Model::DescribeTaskSetsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTaskSetsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DescribeTasksRequest&, const Model::DescribeTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DescribeTasksResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::DiscoverPollEndpointRequest&, const Model::DiscoverPollEndpointOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > DiscoverPollEndpointResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListAccountSettingsRequest&, const Model::ListAccountSettingsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListAccountSettingsResponseReceivedHandler;
@@ -239,6 +266,7 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::ListTaskDefinitionsRequest&, const Model::ListTaskDefinitionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTaskDefinitionsResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::ListTasksRequest&, const Model::ListTasksOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > ListTasksResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::PutAccountSettingRequest&, const Model::PutAccountSettingOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::PutAccountSettingDefaultRequest&, const Model::PutAccountSettingDefaultOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAccountSettingDefaultResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::PutAttributesRequest&, const Model::PutAttributesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > PutAttributesResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::RegisterContainerInstanceRequest&, const Model::RegisterContainerInstanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterContainerInstanceResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::RegisterTaskDefinitionRequest&, const Model::RegisterTaskDefinitionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > RegisterTaskDefinitionResponseReceivedHandler;
@@ -252,15 +280,18 @@ namespace Model
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerAgentRequest&, const Model::UpdateContainerAgentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerAgentResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateContainerInstancesStateRequest&, const Model::UpdateContainerInstancesStateOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateContainerInstancesStateResponseReceivedHandler;
     typedef std::function<void(const ECSClient*, const Model::UpdateServiceRequest&, const Model::UpdateServiceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServiceResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::UpdateServicePrimaryTaskSetRequest&, const Model::UpdateServicePrimaryTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateServicePrimaryTaskSetResponseReceivedHandler;
+    typedef std::function<void(const ECSClient*, const Model::UpdateTaskSetRequest&, const Model::UpdateTaskSetOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&) > UpdateTaskSetResponseReceivedHandler;
 
   /**
-   * <p>Amazon Elastic Container Service (Amazon ECS) is a highly scalable, fast,
-   * container management service that makes it easy to run, stop, and manage Docker
-   * containers on a cluster. You can host your cluster on a serverless
-   * infrastructure that is managed by Amazon ECS by launching your services or tasks
-   * using the Fargate launch type. For more control, you can host your tasks on a
-   * cluster of Amazon Elastic Compute Cloud (Amazon EC2) instances that you manage
-   * by using the EC2 launch type. For more information about launch types, see <a
+   * <fullname>Amazon Elastic Container Service</fullname> <p>Amazon Elastic
+   * Container Service (Amazon ECS) is a highly scalable, fast, container management
+   * service that makes it easy to run, stop, and manage Docker containers on a
+   * cluster. You can host your cluster on a serverless infrastructure that is
+   * managed by Amazon ECS by launching your services or tasks using the Fargate
+   * launch type. For more control, you can host your tasks on a cluster of Amazon
+   * Elastic Compute Cloud (Amazon EC2) instances that you manage by using the EC2
+   * launch type. For more information about launch types, see <a
    * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/launch_types.html">Amazon
    * ECS Launch Types</a>.</p> <p>Amazon ECS lets you launch and stop container-based
    * applications with simple API calls, allows you to get the state of your cluster
@@ -360,51 +391,84 @@ namespace Model
 
         /**
          * <p>Runs and maintains a desired number of tasks from a specified task
-         * definition. If the number of tasks running in a service drops below
+         * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the
          * specified cluster. To update an existing service, see <a>UpdateService</a>.</p>
          * <p>In addition to maintaining the desired count of tasks in your service, you
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
-         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
+         * Guide</i>.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and the container instance that they're hosted on
+         * is reported as healthy by the load balancer.</p> <p>There are two service
+         * scheduler strategies available:</p> <ul> <li> <p> <code>REPLICA</code> - The
+         * replica scheduling strategy places and maintains the desired number of tasks
+         * across your cluster. By default, the service scheduler spreads tasks across
+         * Availability Zones. You can use task placement strategies and constraints to
+         * customize task placement decisions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
+         * strategy deploys exactly one task on each active container instance that meets
+         * all of the task placement constraints that you specify in your cluster. When
+         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * placement strategy, or use Service Auto Scaling policies. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> </ul> <p>You can optionally specify a deployment
+         * configuration for your service. The deployment is triggered by changing
+         * properties, such as the task definition or the desired count of a service, with
+         * an <a>UpdateService</a> operation. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 100%. The default value for a daemon
+         * service for <code>minimumHealthyPercent</code> is 0%.</p> <p>If a service is
+         * using the <code>ECS</code> deployment controller, the minimum healthy percent
+         * represents a lower limit on the number of tasks in a service that must remain in
+         * the <code>RUNNING</code> state during a deployment, as a percentage of the
+         * desired number of tasks (rounded up to the nearest integer), and while any
+         * container instances are in the <code>DRAINING</code> state if the service
+         * contains tasks using the EC2 launch type. This parameter enables you to deploy
+         * without using additional cluster capacity. For example, if your service has a
+         * desired number of four tasks and a minimum healthy percent of 50%, the scheduler
+         * might stop two existing tasks to free up cluster capacity before starting two
+         * new tasks. Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and they're reported as healthy by the load
+         * balancer. The default value for minimum healthy percent is 100%.</p> <p>If a
+         * service is using the <code>ECS</code> deployment controller, the <b>maximum
+         * percent</b> parameter represents an upper limit on the number of tasks in a
+         * service that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
+         * state during a deployment, as a percentage of the desired number of tasks
+         * (rounded down to the nearest integer), and while any container instances are in
+         * the <code>DRAINING</code> state if the service contains tasks using the EC2
+         * launch type. This parameter enables you to define the deployment batch size. For
+         * example, if your service has a desired number of four tasks and a maximum
+         * percent value of 200%, the scheduler may start four new tasks before stopping
+         * the four older tasks (provided that the cluster resources required to do this
+         * are available). The default value for maximum percent is 200%.</p> <p>If a
+         * service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+         * deployment controller types and tasks that use the EC2 launch type, the
+         * <b>minimum healthy percent</b> and <b>maximum percent</b> values are used only
+         * to define the lower and upper limit on the number of the tasks in the service
+         * that remain in the <code>RUNNING</code> state while the container instances are
+         * in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+         * launch type, the minimum healthy percent and maximum percent values aren't used,
+         * although they're currently visible when describing your service.</p> <p>When
+         * creating a service that uses the <code>EXTERNAL</code> deployment controller,
+         * you can specify only parameters that aren't controlled at the task set level.
+         * The only required parameter is the service name. You control your services using
+         * the <a>CreateTaskSet</a> operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
+         * task placement in your cluster using the following logic:</p> <ul> <li>
+         * <p>Determine which of the container instances in your cluster can support your
+         * service's task definition (for example, they have the required CPU, memory,
          * ports, and container instance attributes).</p> </li> <li> <p>By default, the
          * service scheduler attempts to balance tasks across Availability Zones in this
          * manner (although you can choose a different placement strategy) with the
@@ -424,51 +488,84 @@ namespace Model
 
         /**
          * <p>Runs and maintains a desired number of tasks from a specified task
-         * definition. If the number of tasks running in a service drops below
+         * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the
          * specified cluster. To update an existing service, see <a>UpdateService</a>.</p>
          * <p>In addition to maintaining the desired count of tasks in your service, you
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
-         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
+         * Guide</i>.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and the container instance that they're hosted on
+         * is reported as healthy by the load balancer.</p> <p>There are two service
+         * scheduler strategies available:</p> <ul> <li> <p> <code>REPLICA</code> - The
+         * replica scheduling strategy places and maintains the desired number of tasks
+         * across your cluster. By default, the service scheduler spreads tasks across
+         * Availability Zones. You can use task placement strategies and constraints to
+         * customize task placement decisions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
+         * strategy deploys exactly one task on each active container instance that meets
+         * all of the task placement constraints that you specify in your cluster. When
+         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * placement strategy, or use Service Auto Scaling policies. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> </ul> <p>You can optionally specify a deployment
+         * configuration for your service. The deployment is triggered by changing
+         * properties, such as the task definition or the desired count of a service, with
+         * an <a>UpdateService</a> operation. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 100%. The default value for a daemon
+         * service for <code>minimumHealthyPercent</code> is 0%.</p> <p>If a service is
+         * using the <code>ECS</code> deployment controller, the minimum healthy percent
+         * represents a lower limit on the number of tasks in a service that must remain in
+         * the <code>RUNNING</code> state during a deployment, as a percentage of the
+         * desired number of tasks (rounded up to the nearest integer), and while any
+         * container instances are in the <code>DRAINING</code> state if the service
+         * contains tasks using the EC2 launch type. This parameter enables you to deploy
+         * without using additional cluster capacity. For example, if your service has a
+         * desired number of four tasks and a minimum healthy percent of 50%, the scheduler
+         * might stop two existing tasks to free up cluster capacity before starting two
+         * new tasks. Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and they're reported as healthy by the load
+         * balancer. The default value for minimum healthy percent is 100%.</p> <p>If a
+         * service is using the <code>ECS</code> deployment controller, the <b>maximum
+         * percent</b> parameter represents an upper limit on the number of tasks in a
+         * service that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
+         * state during a deployment, as a percentage of the desired number of tasks
+         * (rounded down to the nearest integer), and while any container instances are in
+         * the <code>DRAINING</code> state if the service contains tasks using the EC2
+         * launch type. This parameter enables you to define the deployment batch size. For
+         * example, if your service has a desired number of four tasks and a maximum
+         * percent value of 200%, the scheduler may start four new tasks before stopping
+         * the four older tasks (provided that the cluster resources required to do this
+         * are available). The default value for maximum percent is 200%.</p> <p>If a
+         * service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+         * deployment controller types and tasks that use the EC2 launch type, the
+         * <b>minimum healthy percent</b> and <b>maximum percent</b> values are used only
+         * to define the lower and upper limit on the number of the tasks in the service
+         * that remain in the <code>RUNNING</code> state while the container instances are
+         * in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+         * launch type, the minimum healthy percent and maximum percent values aren't used,
+         * although they're currently visible when describing your service.</p> <p>When
+         * creating a service that uses the <code>EXTERNAL</code> deployment controller,
+         * you can specify only parameters that aren't controlled at the task set level.
+         * The only required parameter is the service name. You control your services using
+         * the <a>CreateTaskSet</a> operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
+         * task placement in your cluster using the following logic:</p> <ul> <li>
+         * <p>Determine which of the container instances in your cluster can support your
+         * service's task definition (for example, they have the required CPU, memory,
          * ports, and container instance attributes).</p> </li> <li> <p>By default, the
          * service scheduler attempts to balance tasks across Availability Zones in this
          * manner (although you can choose a different placement strategy) with the
@@ -490,51 +587,84 @@ namespace Model
 
         /**
          * <p>Runs and maintains a desired number of tasks from a specified task
-         * definition. If the number of tasks running in a service drops below
+         * definition. If the number of tasks running in a service drops below the
          * <code>desiredCount</code>, Amazon ECS spawns another copy of the task in the
          * specified cluster. To update an existing service, see <a>UpdateService</a>.</p>
          * <p>In addition to maintaining the desired count of tasks in your service, you
          * can optionally run your service behind a load balancer. The load balancer
          * distributes traffic across the tasks that are associated with the service. For
          * more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/service-load-balancing.html">Service
          * Load Balancing</a> in the <i>Amazon Elastic Container Service Developer
-         * Guide</i>.</p> <p>You can optionally specify a deployment configuration for your
-         * service. During a deployment, the service scheduler uses the
-         * <code>minimumHealthyPercent</code> and <code>maximumPercent</code> parameters to
-         * determine the deployment strategy. The deployment is triggered by changing the
-         * task definition or the desired count of a service with an <a>UpdateService</a>
-         * operation.</p> <p>The <code>minimumHealthyPercent</code> represents a lower
-         * limit on the number of your service's tasks that must remain in the
-         * <code>RUNNING</code> state during a deployment, as a percentage of the
-         * <code>desiredCount</code> (rounded up to the nearest integer). This parameter
-         * enables you to deploy without using additional cluster capacity. For example, if
-         * your service has a <code>desiredCount</code> of four tasks and a
-         * <code>minimumHealthyPercent</code> of 50%, the scheduler can stop two existing
-         * tasks to free up cluster capacity before starting two new tasks. Tasks for
-         * services that <i>do not</i> use a load balancer are considered healthy if they
-         * are in the <code>RUNNING</code> state. Tasks for services that <i>do</i> use a
-         * load balancer are considered healthy if they are in the <code>RUNNING</code>
-         * state and the container instance they are hosted on is reported as healthy by
-         * the load balancer. The default value for a replica service for
-         * <code>minimumHealthyPercent</code> is 50% in the console and 100% for the AWS
-         * CLI, the AWS SDKs, and the APIs. The default value for a daemon service for
-         * <code>minimumHealthyPercent</code> is 0% for the AWS CLI, the AWS SDKs, and the
-         * APIs and 50% for the console.</p> <p>The <code>maximumPercent</code> parameter
-         * represents an upper limit on the number of your service's tasks that are allowed
-         * in the <code>RUNNING</code> or <code>PENDING</code> state during a deployment,
-         * as a percentage of the <code>desiredCount</code> (rounded down to the nearest
-         * integer). This parameter enables you to define the deployment batch size. For
-         * example, if your replica service has a <code>desiredCount</code> of four tasks
-         * and a <code>maximumPercent</code> value of 200%, the scheduler can start four
-         * new tasks before stopping the four older tasks (provided that the cluster
-         * resources required to do this are available). The default value for a replica
-         * service for <code>maximumPercent</code> is 200%. If you are using a daemon
-         * service type, the <code>maximumPercent</code> should remain at 100%, which is
-         * the default value.</p> <p>When the service scheduler launches new tasks, it
-         * determines task placement in your cluster using the following logic:</p> <ul>
-         * <li> <p>Determine which of the container instances in your cluster can support
-         * your service's task definition (for example, they have the required CPU, memory,
+         * Guide</i>.</p> <p>Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and the container instance that they're hosted on
+         * is reported as healthy by the load balancer.</p> <p>There are two service
+         * scheduler strategies available:</p> <ul> <li> <p> <code>REPLICA</code> - The
+         * replica scheduling strategy places and maintains the desired number of tasks
+         * across your cluster. By default, the service scheduler spreads tasks across
+         * Availability Zones. You can use task placement strategies and constraints to
+         * customize task placement decisions. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> <li> <p> <code>DAEMON</code> - The daemon scheduling
+         * strategy deploys exactly one task on each active container instance that meets
+         * all of the task placement constraints that you specify in your cluster. When
+         * using this strategy, you don't need to specify a desired number of tasks, a task
+         * placement strategy, or use Service Auto Scaling policies. For more information,
+         * see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs_services.html">Service
+         * Scheduler Concepts</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> </li> </ul> <p>You can optionally specify a deployment
+         * configuration for your service. The deployment is triggered by changing
+         * properties, such as the task definition or the desired count of a service, with
+         * an <a>UpdateService</a> operation. The default value for a replica service for
+         * <code>minimumHealthyPercent</code> is 100%. The default value for a daemon
+         * service for <code>minimumHealthyPercent</code> is 0%.</p> <p>If a service is
+         * using the <code>ECS</code> deployment controller, the minimum healthy percent
+         * represents a lower limit on the number of tasks in a service that must remain in
+         * the <code>RUNNING</code> state during a deployment, as a percentage of the
+         * desired number of tasks (rounded up to the nearest integer), and while any
+         * container instances are in the <code>DRAINING</code> state if the service
+         * contains tasks using the EC2 launch type. This parameter enables you to deploy
+         * without using additional cluster capacity. For example, if your service has a
+         * desired number of four tasks and a minimum healthy percent of 50%, the scheduler
+         * might stop two existing tasks to free up cluster capacity before starting two
+         * new tasks. Tasks for services that <i>do not</i> use a load balancer are
+         * considered healthy if they're in the <code>RUNNING</code> state. Tasks for
+         * services that <i>do</i> use a load balancer are considered healthy if they're in
+         * the <code>RUNNING</code> state and they're reported as healthy by the load
+         * balancer. The default value for minimum healthy percent is 100%.</p> <p>If a
+         * service is using the <code>ECS</code> deployment controller, the <b>maximum
+         * percent</b> parameter represents an upper limit on the number of tasks in a
+         * service that are allowed in the <code>RUNNING</code> or <code>PENDING</code>
+         * state during a deployment, as a percentage of the desired number of tasks
+         * (rounded down to the nearest integer), and while any container instances are in
+         * the <code>DRAINING</code> state if the service contains tasks using the EC2
+         * launch type. This parameter enables you to define the deployment batch size. For
+         * example, if your service has a desired number of four tasks and a maximum
+         * percent value of 200%, the scheduler may start four new tasks before stopping
+         * the four older tasks (provided that the cluster resources required to do this
+         * are available). The default value for maximum percent is 200%.</p> <p>If a
+         * service is using either the <code>CODE_DEPLOY</code> or <code>EXTERNAL</code>
+         * deployment controller types and tasks that use the EC2 launch type, the
+         * <b>minimum healthy percent</b> and <b>maximum percent</b> values are used only
+         * to define the lower and upper limit on the number of the tasks in the service
+         * that remain in the <code>RUNNING</code> state while the container instances are
+         * in the <code>DRAINING</code> state. If the tasks in the service use the Fargate
+         * launch type, the minimum healthy percent and maximum percent values aren't used,
+         * although they're currently visible when describing your service.</p> <p>When
+         * creating a service that uses the <code>EXTERNAL</code> deployment controller,
+         * you can specify only parameters that aren't controlled at the task set level.
+         * The only required parameter is the service name. You control your services using
+         * the <a>CreateTaskSet</a> operation. For more information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p> <p>When the service scheduler launches new tasks, it determines
+         * task placement in your cluster using the following logic:</p> <ul> <li>
+         * <p>Determine which of the container instances in your cluster can support your
+         * service's task definition (for example, they have the required CPU, memory,
          * ports, and container instance attributes).</p> </li> <li> <p>By default, the
          * service scheduler attempts to balance tasks across Availability Zones in this
          * manner (although you can choose a different placement strategy) with the
@@ -553,6 +683,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void CreateServiceAsync(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Create a task set in the specified cluster and service. This is used when a
+         * service uses the <code>EXTERNAL</code> deployment controller type. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::CreateTaskSetOutcome CreateTaskSet(const Model::CreateTaskSetRequest& request) const;
+
+        /**
+         * <p>Create a task set in the specified cluster and service. This is used when a
+         * service uses the <code>EXTERNAL</code> deployment controller type. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::CreateTaskSetOutcomeCallable CreateTaskSetCallable(const Model::CreateTaskSetRequest& request) const;
+
+        /**
+         * <p>Create a task set in the specified cluster and service. This is used when a
+         * service uses the <code>EXTERNAL</code> deployment controller type. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void CreateTaskSetAsync(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
@@ -727,6 +897,46 @@ namespace Model
         virtual void DeleteServiceAsync(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Deletes a specified task set within a service. This is used when a service
+         * uses the <code>EXTERNAL</code> deployment controller type. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DeleteTaskSetOutcome DeleteTaskSet(const Model::DeleteTaskSetRequest& request) const;
+
+        /**
+         * <p>Deletes a specified task set within a service. This is used when a service
+         * uses the <code>EXTERNAL</code> deployment controller type. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DeleteTaskSetOutcomeCallable DeleteTaskSetCallable(const Model::DeleteTaskSetRequest& request) const;
+
+        /**
+         * <p>Deletes a specified task set within a service. This is used when a service
+         * uses the <code>EXTERNAL</code> deployment controller type. For more information,
+         * see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DeleteTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DeleteTaskSetAsync(const Model::DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Deregisters an Amazon ECS container instance from the specified cluster. This
          * instance is no longer available to run tasks.</p> <p>If you intend to use the
          * container instance for some other purpose after deregistration, you should stop
@@ -792,9 +1002,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -813,9 +1023,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -836,9 +1046,9 @@ namespace Model
          * <code>INACTIVE</code> task definition can still scale up or down by modifying
          * the service's desired count.</p> <p>You cannot use an <code>INACTIVE</code> task
          * definition to run new tasks or create new services, and you cannot update an
-         * existing service to reference an <code>INACTIVE</code> task definition (although
+         * existing service to reference an <code>INACTIVE</code> task definition. However,
          * there may be up to a 10-minute window following deregistration where these
-         * restrictions have not yet taken effect).</p> <note> <p>At this time,
+         * restrictions have not yet taken effect.</p> <note> <p>At this time,
          * <code>INACTIVE</code> task definitions remain discoverable in your account
          * indefinitely. However, this behavior is subject to change in the future, so you
          * should not rely on <code>INACTIVE</code> task definitions persisting beyond the
@@ -974,6 +1184,46 @@ namespace Model
          * Queues the request into a thread executor and triggers associated callback when operation has finished.
          */
         virtual void DescribeTaskDefinitionAsync(const Model::DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Describes the task sets in the specified cluster and service. This is used
+         * when a service uses the <code>EXTERNAL</code> deployment controller type. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::DescribeTaskSetsOutcome DescribeTaskSets(const Model::DescribeTaskSetsRequest& request) const;
+
+        /**
+         * <p>Describes the task sets in the specified cluster and service. This is used
+         * when a service uses the <code>EXTERNAL</code> deployment controller type. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::DescribeTaskSetsOutcomeCallable DescribeTaskSetsCallable(const Model::DescribeTaskSetsRequest& request) const;
+
+        /**
+         * <p>Describes the task sets in the specified cluster and service. This is used
+         * when a service uses the <code>EXTERNAL</code> deployment controller type. For
+         * more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/DescribeTaskSets">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void DescribeTaskSetsAsync(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
          * <p>Describes a specified task or tasks.</p><p><h3>See Also:</h3>   <a
@@ -1135,7 +1385,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1148,7 +1398,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1163,7 +1413,7 @@ namespace Model
          * the results of a <code>ListContainerInstances</code> operation with cluster
          * query language statements inside the <code>filter</code> parameter. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/cluster-query-language.html">Cluster
          * Query Language</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/ListContainerInstances">AWS
@@ -1344,22 +1594,36 @@ namespace Model
         virtual void ListTasksAsync(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          */
         virtual Model::PutAccountSettingOutcome PutAccountSetting(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -1368,11 +1632,18 @@ namespace Model
         virtual Model::PutAccountSettingOutcomeCallable PutAccountSettingCallable(const Model::PutAccountSettingRequest& request) const;
 
         /**
-         * <p>Modifies the ARN and resource ID format of a resource for a specified IAM
-         * user, IAM role, or the root user for an account. You can specify whether the new
-         * ARN and resource ID format are enabled for new resources that are created.
-         * Enabling this setting is required to use new Amazon ECS features such as
-         * resource tagging.</p><p><h3>See Also:</h3>   <a
+         * <p>Modifies the ARN and resource ID format of a resource type for a specified
+         * IAM user, IAM role, or the root user for an account. If the account setting for
+         * the root user is changed, it sets the default setting for all of the IAM users
+         * and roles for which no individual account setting has been set. The opt-in and
+         * opt-out account setting can be set for each Amazon ECS resource separately. The
+         * ARN and resource ID format of a resource will be defined by the opt-in status of
+         * the IAM user or role that created the resource. Enabling this setting is
+         * required to use new Amazon ECS features such as resource tagging. For more
+         * information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-resource-ids.html">Amazon
+         * Resource Names (ARNs) and IDs</a> in the <i>Amazon Elastic Container Service
+         * Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSetting">AWS
          * API Reference</a></p>
          *
@@ -1381,11 +1652,45 @@ namespace Model
         virtual void PutAccountSettingAsync(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::PutAccountSettingDefaultOutcome PutAccountSettingDefault(const Model::PutAccountSettingDefaultRequest& request) const;
+
+        /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::PutAccountSettingDefaultOutcomeCallable PutAccountSettingDefaultCallable(const Model::PutAccountSettingDefaultRequest& request) const;
+
+        /**
+         * <p>Modifies the ARN and resource ID format of a resource type for all IAM users
+         * on an account for which no individual account setting has been set. Enabling
+         * this setting is required to use new Amazon ECS features such as resource
+         * tagging.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAccountSettingDefault">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void PutAccountSettingDefaultAsync(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
          * <p>Create or update an attribute on an Amazon ECS resource. If the attribute
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1398,7 +1703,7 @@ namespace Model
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1413,7 +1718,7 @@ namespace Model
          * does not exist, it is created. If the attribute exists, its value is replaced
          * with the specified value. To delete an attribute, use <a>DeleteAttributes</a>.
          * For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-placement-constraints.html#attributes">Attributes</a>
          * in the <i>Amazon Elastic Container Service Developer Guide</i>.</p><p><h3>See
          * Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/PutAttributes">AWS
@@ -1462,14 +1767,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1492,14 +1797,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1524,14 +1829,14 @@ namespace Model
          * <code>containerDefinitions</code>. Optionally, you can add data volumes to your
          * containers with the <code>volumes</code> parameter. For more information about
          * task definition parameters and defaults, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task_defintions.html">Amazon
          * ECS Task Definitions</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify an IAM role for your task with the
          * <code>taskRoleArn</code> parameter. When you specify an IAM role for a task, its
          * containers can then use the latest versions of the AWS CLI or SDKs to make API
          * requests to the AWS services that are specified in the IAM policy associated
          * with the role. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/task-iam-roles.html">IAM
          * Roles for Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p> <p>You can specify a Docker networking mode for the containers in
          * your task definition with the <code>networkMode</code> parameter. The available
@@ -1556,7 +1861,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1585,7 +1890,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1616,7 +1921,7 @@ namespace Model
          * Amazon ECS to place tasks for you, or you can customize how Amazon ECS places
          * tasks using placement constraints and placement strategies. For more
          * information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer Guide</i>.</p>
          * <p>Alternatively, you can use <a>StartTask</a> to use your own scheduler or
          * place tasks manually on specific container instances.</p> <p>The Amazon ECS API
@@ -1646,7 +1951,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1658,7 +1963,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1672,7 +1977,7 @@ namespace Model
          * <p>Starts a new task from the specified task definition on the specified
          * container instance or instances.</p> <p>Alternatively, you can use
          * <a>RunTask</a> to place tasks for you. For more information, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/scheduling_tasks.html">Scheduling
          * Tasks</a> in the <i>Amazon Elastic Container Service Developer
          * Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StartTask">AWS API
@@ -1686,14 +1991,14 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1705,14 +2010,14 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1726,14 +2031,14 @@ namespace Model
          * <p>Stops a running task. Any tags associated with the task will be deleted.</p>
          * <p>When <a>StopTask</a> is called on a task, the equivalent of <code>docker
          * stop</code> is issued to the containers running in the task. This results in a
-         * <code>SIGTERM</code> and a default 30-second timeout, after which
-         * <code>SIGKILL</code> is sent and the containers are forcibly stopped. If the
-         * container handles the <code>SIGTERM</code> gracefully and exits within 30
-         * seconds from receiving it, no <code>SIGKILL</code> is sent.</p> <note> <p>The
-         * default 30-second timeout can be configured on the Amazon ECS container agent
-         * with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more information,
-         * see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
+         * <code>SIGTERM</code> value and a default 30-second timeout, after which the
+         * <code>SIGKILL</code> value is sent and the containers are forcibly stopped. If
+         * the container handles the <code>SIGTERM</code> value gracefully and exits within
+         * 30 seconds from receiving it, no <code>SIGKILL</code> value is sent.</p> <note>
+         * <p>The default 30-second timeout can be configured on the Amazon ECS container
+         * agent with the <code>ECS_CONTAINER_STOP_TIMEOUT</code> variable. For more
+         * information, see <a
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-config.html">Amazon
          * ECS Container Agent Configuration</a> in the <i>Amazon Elastic Container Service
          * Developer Guide</i>.</p> </note><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/StopTask">AWS API
@@ -1873,7 +2178,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -1890,7 +2195,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -1909,7 +2214,7 @@ namespace Model
          * <code>UpdateContainerAgent</code> requires the Amazon ECS-optimized AMI or
          * Amazon Linux with the <code>ecs-init</code> service installed and running. For
          * help updating the Amazon ECS container agent on other operating systems, see <a
-         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
+         * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/ecs-agent-update.html#manually_update_agent">Manually
          * Updating the Amazon ECS Container Agent</a> in the <i>Amazon Elastic Container
          * Service Developer Guide</i>.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateContainerAgent">AWS
@@ -1946,9 +2251,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -1989,9 +2294,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -2034,9 +2339,9 @@ namespace Model
          * balancer.</p> </li> <li> <p>The <code>maximumPercent</code> parameter represents
          * an upper limit on the number of running tasks during task replacement, which
          * enables you to define the replacement batch size. For example, if
-         * <code>desiredCount</code> of four tasks, a maximum of 200% starts four new tasks
-         * before stopping the four tasks to be drained (provided that the cluster
-         * resources required to do this are available). If the maximum is 100%, then
+         * <code>desiredCount</code> is four tasks, a maximum of 200% starts four new tasks
+         * before stopping the four tasks to be drained, provided that the cluster
+         * resources required to do this are available. If the maximum is 100%, then
          * replacement tasks can't start until the draining tasks have stopped.</p> </li>
          * </ul> <p>Any <code>PENDING</code> or <code>RUNNING</code> tasks that do not
          * belong to a service are not affected. You must wait for them to finish or stop
@@ -2053,16 +2358,29 @@ namespace Model
         virtual void UpdateContainerInstancesStateAsync(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
+         * external deployment controller, you can update only the desired count and health
+         * check grace period using this API. If the launch type, load balancer, network
+         * configuration, platform version, or task definition need to be updated, you
+         * should create a new task set. For more information, see
+         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
+         * instantiations of a task definition in a service by specifying the cluster that
+         * the service is running in and a new <code>desiredCount</code> parameter.</p>
+         * <p>If you have updated the Docker image of your application, you can create a
+         * new task definition with that image and deploy it to your service. The service
+         * scheduler uses the minimum healthy percent and maximum percent parameters (in
+         * the service's deployment configuration) to determine the deployment
+         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
+         * is in the existing task definition for your service (for example,
          * <code>my_image:latest</code>), you do not need to create a new revision of your
          * task definition. You can update the service using the
          * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
@@ -2121,16 +2439,29 @@ namespace Model
         virtual Model::UpdateServiceOutcome UpdateService(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
+         * external deployment controller, you can update only the desired count and health
+         * check grace period using this API. If the launch type, load balancer, network
+         * configuration, platform version, or task definition need to be updated, you
+         * should create a new task set. For more information, see
+         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
+         * instantiations of a task definition in a service by specifying the cluster that
+         * the service is running in and a new <code>desiredCount</code> parameter.</p>
+         * <p>If you have updated the Docker image of your application, you can create a
+         * new task definition with that image and deploy it to your service. The service
+         * scheduler uses the minimum healthy percent and maximum percent parameters (in
+         * the service's deployment configuration) to determine the deployment
+         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
+         * is in the existing task definition for your service (for example,
          * <code>my_image:latest</code>), you do not need to create a new revision of your
          * task definition. You can update the service using the
          * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
@@ -2191,16 +2522,29 @@ namespace Model
         virtual Model::UpdateServiceOutcomeCallable UpdateServiceCallable(const Model::UpdateServiceRequest& request) const;
 
         /**
-         * <p>Modifies the desired count, deployment configuration, network configuration,
-         * or task definition used in a service.</p> <p>You can add to or subtract from the
-         * number of instantiations of a task definition in a service by specifying the
-         * cluster that the service is running in and a new <code>desiredCount</code>
-         * parameter.</p> <p>If you have updated the Docker image of your application, you
-         * can create a new task definition with that image and deploy it to your service.
-         * The service scheduler uses the minimum healthy percent and maximum percent
-         * parameters (in the service's deployment configuration) to determine the
-         * deployment strategy.</p> <note> <p>If your updated Docker image uses the same
-         * tag as what is in the existing task definition for your service (for example,
+         * <p>Modifies the parameters of a service.</p> <p>For services using the rolling
+         * update (<code>ECS</code>) deployment controller, the desired count, deployment
+         * configuration, network configuration, or task definition used can be
+         * updated.</p> <p>For services using the blue/green (<code>CODE_DEPLOY</code>)
+         * deployment controller, only the desired count, deployment configuration, and
+         * health check grace period can be updated using this API. If the network
+         * configuration, platform version, or task definition need to be updated, a new
+         * AWS CodeDeploy deployment should be created. For more information, see <a
+         * href="https://docs.aws.amazon.com/codedeploy/latest/APIReference/API_CreateDeployment.html">CreateDeployment</a>
+         * in the <i>AWS CodeDeploy API Reference</i>.</p> <p>For services using an
+         * external deployment controller, you can update only the desired count and health
+         * check grace period using this API. If the launch type, load balancer, network
+         * configuration, platform version, or task definition need to be updated, you
+         * should create a new task set. For more information, see
+         * <a>CreateTaskSet</a>.</p> <p>You can add to or subtract from the number of
+         * instantiations of a task definition in a service by specifying the cluster that
+         * the service is running in and a new <code>desiredCount</code> parameter.</p>
+         * <p>If you have updated the Docker image of your application, you can create a
+         * new task definition with that image and deploy it to your service. The service
+         * scheduler uses the minimum healthy percent and maximum percent parameters (in
+         * the service's deployment configuration) to determine the deployment
+         * strategy.</p> <note> <p>If your updated Docker image uses the same tag as what
+         * is in the existing task definition for your service (for example,
          * <code>my_image:latest</code>), you do not need to create a new revision of your
          * task definition. You can update the service using the
          * <code>forceNewDeployment</code> option. The new tasks launched by the deployment
@@ -2260,23 +2604,106 @@ namespace Model
          */
         virtual void UpdateServiceAsync(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
+        /**
+         * <p>Modifies which task set in a service is the primary task set. Any parameters
+         * that are updated on the primary task set in a service will transition to the
+         * service. This is used when a service uses the <code>EXTERNAL</code> deployment
+         * controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateServicePrimaryTaskSetOutcome UpdateServicePrimaryTaskSet(const Model::UpdateServicePrimaryTaskSetRequest& request) const;
 
+        /**
+         * <p>Modifies which task set in a service is the primary task set. Any parameters
+         * that are updated on the primary task set in a service will transition to the
+         * service. This is used when a service uses the <code>EXTERNAL</code> deployment
+         * controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateServicePrimaryTaskSetOutcomeCallable UpdateServicePrimaryTaskSetCallable(const Model::UpdateServicePrimaryTaskSetRequest& request) const;
+
+        /**
+         * <p>Modifies which task set in a service is the primary task set. Any parameters
+         * that are updated on the primary task set in a service will transition to the
+         * service. This is used when a service uses the <code>EXTERNAL</code> deployment
+         * controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServicePrimaryTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateServicePrimaryTaskSetAsync(const Model::UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+        /**
+         * <p>Modifies a task set. This is used when a service uses the
+         * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
+         * API Reference</a></p>
+         */
+        virtual Model::UpdateTaskSetOutcome UpdateTaskSet(const Model::UpdateTaskSetRequest& request) const;
+
+        /**
+         * <p>Modifies a task set. This is used when a service uses the
+         * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * returns a future to the operation so that it can be executed in parallel to other requests.
+         */
+        virtual Model::UpdateTaskSetOutcomeCallable UpdateTaskSetCallable(const Model::UpdateTaskSetRequest& request) const;
+
+        /**
+         * <p>Modifies a task set. This is used when a service uses the
+         * <code>EXTERNAL</code> deployment controller type. For more information, see <a
+         * href="http://docs.aws.amazon.com/AmazonECS/latest/developerguide/deployment-types.html">Amazon
+         * ECS Deployment Types</a> in the <i>Amazon Elastic Container Service Developer
+         * Guide</i>.</p><p><h3>See Also:</h3>   <a
+         * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateTaskSet">AWS
+         * API Reference</a></p>
+         *
+         * Queues the request into a thread executor and triggers associated callback when operation has finished.
+         */
+        virtual void UpdateTaskSetAsync(const Model::UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
+
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void CreateClusterAsyncHelper(const Model::CreateClusterRequest& request, const CreateClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void CreateServiceAsyncHelper(const Model::CreateServiceRequest& request, const CreateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void CreateTaskSetAsyncHelper(const Model::CreateTaskSetRequest& request, const CreateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAccountSettingAsyncHelper(const Model::DeleteAccountSettingRequest& request, const DeleteAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteAttributesAsyncHelper(const Model::DeleteAttributesRequest& request, const DeleteAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteClusterAsyncHelper(const Model::DeleteClusterRequest& request, const DeleteClusterResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeleteServiceAsyncHelper(const Model::DeleteServiceRequest& request, const DeleteServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DeleteTaskSetAsyncHelper(const Model::DeleteTaskSetRequest& request, const DeleteTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterContainerInstanceAsyncHelper(const Model::DeregisterContainerInstanceRequest& request, const DeregisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DeregisterTaskDefinitionAsyncHelper(const Model::DeregisterTaskDefinitionRequest& request, const DeregisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeClustersAsyncHelper(const Model::DescribeClustersRequest& request, const DescribeClustersResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeContainerInstancesAsyncHelper(const Model::DescribeContainerInstancesRequest& request, const DescribeContainerInstancesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeServicesAsyncHelper(const Model::DescribeServicesRequest& request, const DescribeServicesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTaskDefinitionAsyncHelper(const Model::DescribeTaskDefinitionRequest& request, const DescribeTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void DescribeTaskSetsAsyncHelper(const Model::DescribeTaskSetsRequest& request, const DescribeTaskSetsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DescribeTasksAsyncHelper(const Model::DescribeTasksRequest& request, const DescribeTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void DiscoverPollEndpointAsyncHelper(const Model::DiscoverPollEndpointRequest& request, const DiscoverPollEndpointResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListAccountSettingsAsyncHelper(const Model::ListAccountSettingsRequest& request, const ListAccountSettingsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2289,6 +2716,7 @@ namespace Model
         void ListTaskDefinitionsAsyncHelper(const Model::ListTaskDefinitionsRequest& request, const ListTaskDefinitionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void ListTasksAsyncHelper(const Model::ListTasksRequest& request, const ListTasksResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAccountSettingAsyncHelper(const Model::PutAccountSettingRequest& request, const PutAccountSettingResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void PutAccountSettingDefaultAsyncHelper(const Model::PutAccountSettingDefaultRequest& request, const PutAccountSettingDefaultResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void PutAttributesAsyncHelper(const Model::PutAttributesRequest& request, const PutAttributesResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterContainerInstanceAsyncHelper(const Model::RegisterContainerInstanceRequest& request, const RegisterContainerInstanceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void RegisterTaskDefinitionAsyncHelper(const Model::RegisterTaskDefinitionRequest& request, const RegisterTaskDefinitionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2302,8 +2730,11 @@ namespace Model
         void UpdateContainerAgentAsyncHelper(const Model::UpdateContainerAgentRequest& request, const UpdateContainerAgentResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateContainerInstancesStateAsyncHelper(const Model::UpdateContainerInstancesStateRequest& request, const UpdateContainerInstancesStateResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void UpdateServiceAsyncHelper(const Model::UpdateServiceRequest& request, const UpdateServiceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateServicePrimaryTaskSetAsyncHelper(const Model::UpdateServicePrimaryTaskSetRequest& request, const UpdateServicePrimaryTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
+        void UpdateTaskSetAsyncHelper(const Model::UpdateTaskSetRequest& request, const UpdateTaskSetResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

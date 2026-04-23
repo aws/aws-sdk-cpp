@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the slot type. The name is case sensitive. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the slot type. The name is case sensitive. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

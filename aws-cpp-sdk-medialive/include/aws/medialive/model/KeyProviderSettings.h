@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for KeyProviderSettings<p><h3>See Also:</h3>   <a
+   * Key Provider Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/KeyProviderSettings">AWS
    * API Reference</a></p>
    */
@@ -49,6 +49,9 @@ namespace Model
 
     
     inline const StaticKeySettings& GetStaticKeySettings() const{ return m_staticKeySettings; }
+
+    
+    inline bool StaticKeySettingsHasBeenSet() const { return m_staticKeySettingsHasBeenSet; }
 
     
     inline void SetStaticKeySettings(const StaticKeySettings& value) { m_staticKeySettingsHasBeenSet = true; m_staticKeySettings = value; }

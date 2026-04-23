@@ -58,6 +58,13 @@ namespace Model
      * update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
      * by <a>ListGeoMatchSets</a>.</p>
      */
+    inline bool GeoMatchSetIdHasBeenSet() const { return m_geoMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>GeoMatchSetId</code> of the <a>GeoMatchSet</a> that you want to
+     * update. <code>GeoMatchSetId</code> is returned by <a>CreateGeoMatchSet</a> and
+     * by <a>ListGeoMatchSets</a>.</p>
+     */
     inline void SetGeoMatchSetId(const Aws::String& value) { m_geoMatchSetIdHasBeenSet = true; m_geoMatchSetId = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**
@@ -143,6 +155,18 @@ namespace Model
      * <code>GeoMatchSetUpdate</code> objects in your request.</p> </li> </ul>
      */
     inline const Aws::Vector<GeoMatchSetUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert
+     * into or delete from an <a>GeoMatchSet</a>. For more information, see the
+     * applicable data types:</p> <ul> <li> <p> <a>GeoMatchSetUpdate</a>: Contains
+     * <code>Action</code> and <code>GeoMatchConstraint</code> </p> </li> <li> <p>
+     * <a>GeoMatchConstraint</a>: Contains <code>Type</code> and <code>Value</code>
+     * </p> <p>You can have only one <code>Type</code> and <code>Value</code> per
+     * <code>GeoMatchConstraint</code>. To add multiple countries, include multiple
+     * <code>GeoMatchSetUpdate</code> objects in your request.</p> </li> </ul>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>GeoMatchSetUpdate</code> objects that you want to insert

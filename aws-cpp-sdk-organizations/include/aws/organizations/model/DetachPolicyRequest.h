@@ -60,6 +60,15 @@ namespace Model
      * ID string requires "p-" followed by from 8 to 128 lower-case letters or
      * digits.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the policy you want to detach. You can get the
+     * ID from the <a>ListPolicies</a> or <a>ListPoliciesForTarget</a> operations.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a policy
+     * ID string requires "p-" followed by from 8 to 128 lower-case letters or
+     * digits.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -122,6 +131,21 @@ namespace Model
      * digits.</p> </li> </ul>
      */
     inline const Aws::String& GetTargetId() const{ return m_targetId; }
+
+    /**
+     * <p>The unique identifier (ID) of the root, OU, or account from which you want to
+     * detach the policy. You can get the ID from the <a>ListRoots</a>,
+     * <a>ListOrganizationalUnitsForParent</a>, or <a>ListAccounts</a> operations.</p>
+     * <p>The <a href="http://wikipedia.org/wiki/regex">regex pattern</a> for a target
+     * ID string requires one of the following:</p> <ul> <li> <p>Root: a string that
+     * begins with "r-" followed by from 4 to 32 lower-case letters or digits.</p>
+     * </li> <li> <p>Account: a string that consists of exactly 12 digits.</p> </li>
+     * <li> <p>Organizational unit (OU): a string that begins with "ou-" followed by
+     * from 4 to 32 lower-case letters or digits (the ID of the root that the OU is in)
+     * followed by a second "-" dash and from 8 to 32 additional lower-case letters or
+     * digits.</p> </li> </ul>
+     */
+    inline bool TargetIdHasBeenSet() const { return m_targetIdHasBeenSet; }
 
     /**
      * <p>The unique identifier (ID) of the root, OU, or account from which you want to

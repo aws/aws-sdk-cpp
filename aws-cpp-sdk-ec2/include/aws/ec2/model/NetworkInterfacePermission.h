@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the network interface permission.</p>
      */
+    inline bool NetworkInterfacePermissionIdHasBeenSet() const { return m_networkInterfacePermissionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the network interface permission.</p>
+     */
     inline void SetNetworkInterfacePermissionId(const Aws::String& value) { m_networkInterfacePermissionIdHasBeenSet = true; m_networkInterfacePermissionId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The AWS account ID.</p>
      */
+    inline bool AwsAccountIdHasBeenSet() const { return m_awsAccountIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID.</p>
+     */
     inline void SetAwsAccountId(const Aws::String& value) { m_awsAccountIdHasBeenSet = true; m_awsAccountId = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
      * <p>The AWS service.</p>
      */
     inline const Aws::String& GetAwsService() const{ return m_awsService; }
+
+    /**
+     * <p>The AWS service.</p>
+     */
+    inline bool AwsServiceHasBeenSet() const { return m_awsServiceHasBeenSet; }
 
     /**
      * <p>The AWS service.</p>
@@ -203,6 +223,11 @@ namespace Model
     /**
      * <p>The type of permission.</p>
      */
+    inline bool PermissionHasBeenSet() const { return m_permissionHasBeenSet; }
+
+    /**
+     * <p>The type of permission.</p>
+     */
     inline void SetPermission(const InterfacePermissionType& value) { m_permissionHasBeenSet = true; m_permission = value; }
 
     /**
@@ -225,6 +250,11 @@ namespace Model
      * <p>Information about the state of the permission.</p>
      */
     inline const NetworkInterfacePermissionState& GetPermissionState() const{ return m_permissionState; }
+
+    /**
+     * <p>Information about the state of the permission.</p>
+     */
+    inline bool PermissionStateHasBeenSet() const { return m_permissionStateHasBeenSet; }
 
     /**
      * <p>Information about the state of the permission.</p>

@@ -60,6 +60,13 @@ namespace Model
      * profiles. Set to <code>False</code> if users can sign themselves up via an
      * app.</p>
      */
+    inline bool AllowAdminCreateUserOnlyHasBeenSet() const { return m_allowAdminCreateUserOnlyHasBeenSet; }
+
+    /**
+     * <p>Set to <code>True</code> if only the administrator is allowed to create user
+     * profiles. Set to <code>False</code> if users can sign themselves up via an
+     * app.</p>
+     */
     inline void SetAllowAdminCreateUserOnly(bool value) { m_allowAdminCreateUserOnlyHasBeenSet = true; m_allowAdminCreateUserOnly = value; }
 
     /**
@@ -78,6 +85,15 @@ namespace Model
      * 7.</p>
      */
     inline int GetUnusedAccountValidityDays() const{ return m_unusedAccountValidityDays; }
+
+    /**
+     * <p>The user account expiration limit, in days, after which the account is no
+     * longer usable. To reset the account after that time limit, you must call
+     * <code>AdminCreateUser</code> again, specifying <code>"RESEND"</code> for the
+     * <code>MessageAction</code> parameter. The default value for this parameter is
+     * 7.</p>
+     */
+    inline bool UnusedAccountValidityDaysHasBeenSet() const { return m_unusedAccountValidityDaysHasBeenSet; }
 
     /**
      * <p>The user account expiration limit, in days, after which the account is no
@@ -105,6 +121,14 @@ namespace Model
      * User Invitation Messages</a>.</p>
      */
     inline const MessageTemplateType& GetInviteMessageTemplate() const{ return m_inviteMessageTemplate; }
+
+    /**
+     * <p>The message template to be used for the welcome message to new users.</p>
+     * <p>See also <a
+     * href="http://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pool-settings-message-customizations.html#cognito-user-pool-settings-user-invitation-message-customization">Customizing
+     * User Invitation Messages</a>.</p>
+     */
+    inline bool InviteMessageTemplateHasBeenSet() const { return m_inviteMessageTemplateHasBeenSet; }
 
     /**
      * <p>The message template to be used for the welcome message to new users.</p>

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ID of the request.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID of the request.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The current state of the request. <code>PENDING</code> indicates that this
      * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of the request. <code>PENDING</code> indicates that this
+     * request has not yet been applied to all Amazon Route 53 DNS servers.</p>
+     */
     inline void SetStatus(const ChangeStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -125,6 +136,15 @@ namespace Model
      * UTC.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmittedAt() const{ return m_submittedAt; }
+
+    /**
+     * <p>The date and time that the change request was submitted in <a
+     * href="https://en.wikipedia.org/wiki/ISO_8601">ISO 8601 format</a> and
+     * Coordinated Universal Time (UTC). For example, the value
+     * <code>2017-03-27T17:48:16.751Z</code> represents March 27, 2017 at 17:48:16.751
+     * UTC.</p>
+     */
+    inline bool SubmittedAtHasBeenSet() const { return m_submittedAtHasBeenSet; }
 
     /**
      * <p>The date and time that the change request was submitted in <a
@@ -169,6 +189,13 @@ namespace Model
      * <a>GetChange</a> action to get detailed information about the change.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>A complex type that describes change information about changes made to your
+     * hosted zone.</p> <p>This element contains an ID that you use when performing a
+     * <a>GetChange</a> action to get detailed information about the change.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>A complex type that describes change information about changes made to your

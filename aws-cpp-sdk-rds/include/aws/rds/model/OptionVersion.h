@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The version of the option.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>The version of the option.</p>
+     */
     inline void SetVersion(const Aws::String& value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * false.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
+
+    /**
+     * <p>True if the version is the default version of the option, and otherwise
+     * false.</p>
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
 
     /**
      * <p>True if the version is the default version of the option, and otherwise

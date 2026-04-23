@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The execution ID of the Automation to stop.</p>
      */
+    inline bool AutomationExecutionIdHasBeenSet() const { return m_automationExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The execution ID of the Automation to stop.</p>
+     */
     inline void SetAutomationExecutionId(const Aws::String& value) { m_automationExecutionIdHasBeenSet = true; m_automationExecutionId = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * Complete. The default type is Cancel.</p>
      */
     inline const StopType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The stop request type. Valid types include the following: Cancel and
+     * Complete. The default type is Cancel.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The stop request type. Valid types include the following: Cancel and

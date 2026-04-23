@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The total number of compliance items that are not compliant.</p>
      */
+    inline bool NonCompliantCountHasBeenSet() const { return m_nonCompliantCountHasBeenSet; }
+
+    /**
+     * <p>The total number of compliance items that are not compliant.</p>
+     */
     inline void SetNonCompliantCount(int value) { m_nonCompliantCountHasBeenSet = true; m_nonCompliantCount = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>A summary of the non-compliance severity by compliance type</p>
      */
     inline const SeveritySummary& GetSeveritySummary() const{ return m_severitySummary; }
+
+    /**
+     * <p>A summary of the non-compliance severity by compliance type</p>
+     */
+    inline bool SeveritySummaryHasBeenSet() const { return m_severitySummaryHasBeenSet; }
 
     /**
      * <p>A summary of the non-compliance severity by compliance type</p>

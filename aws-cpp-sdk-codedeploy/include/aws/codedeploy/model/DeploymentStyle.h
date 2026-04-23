@@ -60,6 +60,12 @@ namespace Model
      * <p>Indicates whether to run an in-place deployment or a blue/green
      * deployment.</p>
      */
+    inline bool DeploymentTypeHasBeenSet() const { return m_deploymentTypeHasBeenSet; }
+
+    /**
+     * <p>Indicates whether to run an in-place deployment or a blue/green
+     * deployment.</p>
+     */
     inline void SetDeploymentType(const DeploymentType& value) { m_deploymentTypeHasBeenSet = true; m_deploymentType = value; }
 
     /**
@@ -85,6 +91,11 @@ namespace Model
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
      */
     inline const DeploymentOption& GetDeploymentOption() const{ return m_deploymentOption; }
+
+    /**
+     * <p>Indicates whether to route deployment traffic behind a load balancer.</p>
+     */
+    inline bool DeploymentOptionHasBeenSet() const { return m_deploymentOptionHasBeenSet; }
 
     /**
      * <p>Indicates whether to route deployment traffic behind a load balancer.</p>

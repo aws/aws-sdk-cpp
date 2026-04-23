@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The label for the client.</p>
      */
+    inline bool LabelHasBeenSet() const { return m_labelHasBeenSet; }
+
+    /**
+     * <p>The label for the client.</p>
+     */
     inline void SetLabel(const Aws::String& value) { m_labelHasBeenSet = true; m_label = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * HSMs used by this client.</p>
      */
     inline const Aws::String& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the
+     * HSMs used by this client.</p>
+     */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
      * <p>The contents of a Base64-Encoded X.509 v3 certificate to be installed on the

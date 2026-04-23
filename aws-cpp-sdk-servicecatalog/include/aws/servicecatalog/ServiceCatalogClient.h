@@ -1757,9 +1757,9 @@ namespace Model
          * allow Service Catalog to receive updates on your organization in order to sync
          * your shares with the current structure. This API can only be called by the
          * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
-         * your shares can be in sync with any changes in your AWS
-         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
+         * your shares can be in sync with any changes in your AWS Organizations
+         * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          */
@@ -1770,9 +1770,9 @@ namespace Model
          * allow Service Catalog to receive updates on your organization in order to sync
          * your shares with the current structure. This API can only be called by the
          * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
-         * your shares can be in sync with any changes in your AWS
-         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
+         * your shares can be in sync with any changes in your AWS Organizations
+         * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -1785,9 +1785,9 @@ namespace Model
          * allow Service Catalog to receive updates on your organization in order to sync
          * your shares with the current structure. This API can only be called by the
          * master account in the organization.</p> <p>By calling this API Service Catalog
-         * will use FAS credentials to call organizations:EnableAWSServiceAccess so that
-         * your shares can be in sync with any changes in your AWS
-         * Organizations.</p><p><h3>See Also:</h3>   <a
+         * will make a call to organizations:EnableAWSServiceAccess on your behalf so that
+         * your shares can be in sync with any changes in your AWS Organizations
+         * structure.</p><p><h3>See Also:</h3>   <a
          * href="http://docs.aws.amazon.com/goto/WebAPI/servicecatalog-2015-12-10/EnableAWSOrganizationsAccess">AWS
          * API Reference</a></p>
          *
@@ -2758,10 +2758,10 @@ namespace Model
          */
         virtual void UpdateTagOptionAsync(const Model::UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AcceptPortfolioShareAsyncHelper(const Model::AcceptPortfolioShareRequest& request, const AcceptPortfolioShareResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AssociatePrincipalWithPortfolioAsyncHelper(const Model::AssociatePrincipalWithPortfolioRequest& request, const AssociatePrincipalWithPortfolioResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -2842,6 +2842,7 @@ namespace Model
         void UpdateTagOptionAsyncHelper(const Model::UpdateTagOptionRequest& request, const UpdateTagOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

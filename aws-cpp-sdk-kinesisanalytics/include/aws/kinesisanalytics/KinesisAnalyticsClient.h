@@ -319,18 +319,18 @@ namespace Model
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
-         * Amazon Lambda function), you add the relevant configuration to your application
+         * AWS Lambda function), you add the relevant configuration to your application
          * using this operation. You can configure one or more outputs for your
          * application. Each output configuration maps an in-application stream and an
          * external destination.</p> <p> You can use one of the output configurations to
          * deliver data from your in-application error stream to an external destination so
-         * that you can analyze the errors. For conceptual information, see <a
+         * that you can analyze the errors. For more information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
-         * Application Output (Destination)</a>. </p> <p> Note that any configuration
-         * update, including adding a streaming source using this operation, results in a
-         * new version of the application. You can use the <a>DescribeApplication</a>
-         * operation to find the current application version.</p> <p>For the limits on the
-         * number of application inputs and outputs you can configure, see <a
+         * Application Output (Destination)</a>. </p> <p> Any configuration update,
+         * including adding a streaming source using this operation, results in a new
+         * version of the application. You can use the <a>DescribeApplication</a> operation
+         * to find the current application version.</p> <p>For the limits on the number of
+         * application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
          * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
@@ -345,18 +345,18 @@ namespace Model
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
-         * Amazon Lambda function), you add the relevant configuration to your application
+         * AWS Lambda function), you add the relevant configuration to your application
          * using this operation. You can configure one or more outputs for your
          * application. Each output configuration maps an in-application stream and an
          * external destination.</p> <p> You can use one of the output configurations to
          * deliver data from your in-application error stream to an external destination so
-         * that you can analyze the errors. For conceptual information, see <a
+         * that you can analyze the errors. For more information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
-         * Application Output (Destination)</a>. </p> <p> Note that any configuration
-         * update, including adding a streaming source using this operation, results in a
-         * new version of the application. You can use the <a>DescribeApplication</a>
-         * operation to find the current application version.</p> <p>For the limits on the
-         * number of application inputs and outputs you can configure, see <a
+         * Application Output (Destination)</a>. </p> <p> Any configuration update,
+         * including adding a streaming source using this operation, results in a new
+         * version of the application. You can use the <a>DescribeApplication</a> operation
+         * to find the current application version.</p> <p>For the limits on the number of
+         * application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
          * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
@@ -373,18 +373,18 @@ namespace Model
          * application.</p> <p>If you want Amazon Kinesis Analytics to deliver data from an
          * in-application stream within your application to an external destination (such
          * as an Amazon Kinesis stream, an Amazon Kinesis Firehose delivery stream, or an
-         * Amazon Lambda function), you add the relevant configuration to your application
+         * AWS Lambda function), you add the relevant configuration to your application
          * using this operation. You can configure one or more outputs for your
          * application. Each output configuration maps an in-application stream and an
          * external destination.</p> <p> You can use one of the output configurations to
          * deliver data from your in-application error stream to an external destination so
-         * that you can analyze the errors. For conceptual information, see <a
+         * that you can analyze the errors. For more information, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/how-it-works-output.html">Understanding
-         * Application Output (Destination)</a>. </p> <p> Note that any configuration
-         * update, including adding a streaming source using this operation, results in a
-         * new version of the application. You can use the <a>DescribeApplication</a>
-         * operation to find the current application version.</p> <p>For the limits on the
-         * number of application inputs and outputs you can configure, see <a
+         * Application Output (Destination)</a>. </p> <p> Any configuration update,
+         * including adding a streaming source using this operation, results in a new
+         * version of the application. You can use the <a>DescribeApplication</a> operation
+         * to find the current application version.</p> <p>For the limits on the number of
+         * application inputs and outputs you can configure, see <a
          * href="http://docs.aws.amazon.com/kinesisanalytics/latest/dev/limits.html">Limits</a>.</p>
          * <p>This operation requires permissions to perform the
          * <code>kinesisanalytics:AddApplicationOutput</code> action.</p><p><h3>See
@@ -1033,10 +1033,10 @@ namespace Model
          */
         virtual void UpdateApplicationAsync(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const;
 
-
+      
+      void OverrideEndpoint(const Aws::String& endpoint);
     private:
       void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
         /**Async helpers**/
         void AddApplicationCloudWatchLoggingOptionAsyncHelper(const Model::AddApplicationCloudWatchLoggingOptionRequest& request, const AddApplicationCloudWatchLoggingOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
         void AddApplicationInputAsyncHelper(const Model::AddApplicationInputRequest& request, const AddApplicationInputResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
@@ -1057,6 +1057,7 @@ namespace Model
         void UpdateApplicationAsyncHelper(const Model::UpdateApplicationRequest& request, const UpdateApplicationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const;
 
       Aws::String m_uri;
+      Aws::String m_configScheme;
       std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
   };
 

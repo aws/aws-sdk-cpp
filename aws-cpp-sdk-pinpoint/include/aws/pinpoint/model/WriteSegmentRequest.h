@@ -18,6 +18,7 @@
 #include <aws/pinpoint/model/SegmentDimensions.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/pinpoint/model/SegmentGroupList.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -57,6 +58,11 @@ namespace Model
     /**
      * The segment dimensions attributes.
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * The segment dimensions attributes.
+     */
     inline void SetDimensions(const SegmentDimensions& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -79,6 +85,11 @@ namespace Model
      * The name of segment
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of segment
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of segment
@@ -125,6 +136,14 @@ namespace Model
      * segment group. Your request can include either a SegmentGroups object or a
      * Dimensions object, but not both.
      */
+    inline bool SegmentGroupsHasBeenSet() const { return m_segmentGroupsHasBeenSet; }
+
+    /**
+     * A segment group, which consists of zero or more source segments, plus dimensions
+     * that are applied to those source segments. Your request can only include one
+     * segment group. Your request can include either a SegmentGroups object or a
+     * Dimensions object, but not both.
+     */
     inline void SetSegmentGroups(const SegmentGroupList& value) { m_segmentGroupsHasBeenSet = true; m_segmentGroups = value; }
 
     /**
@@ -151,6 +170,72 @@ namespace Model
      */
     inline WriteSegmentRequest& WithSegmentGroups(SegmentGroupList&& value) { SetSegmentGroups(std::move(value)); return *this;}
 
+
+    /**
+     * The Tags for the segments.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(const Aws::String& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(Aws::String&& key, const Aws::String& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(const Aws::String& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(Aws::String&& key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(const char* key, Aws::String&& value) { m_tagsHasBeenSet = true; m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(Aws::String&& key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The Tags for the segments.
+     */
+    inline WriteSegmentRequest& AddTags(const char* key, const char* value) { m_tagsHasBeenSet = true; m_tags.emplace(key, value); return *this; }
+
   private:
 
     SegmentDimensions m_dimensions;
@@ -161,6 +246,9 @@ namespace Model
 
     SegmentGroupList m_segmentGroups;
     bool m_segmentGroupsHasBeenSet;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

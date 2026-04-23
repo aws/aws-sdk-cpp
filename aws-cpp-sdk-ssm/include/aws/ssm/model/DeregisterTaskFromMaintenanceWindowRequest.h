@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window the task should be removed from.</p>
      */
+    inline bool WindowIdHasBeenSet() const { return m_windowIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window the task should be removed from.</p>
+     */
     inline void SetWindowId(const Aws::String& value) { m_windowIdHasBeenSet = true; m_windowId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the task to remove from the Maintenance Window.</p>
      */
     inline const Aws::String& GetWindowTaskId() const{ return m_windowTaskId; }
+
+    /**
+     * <p>The ID of the task to remove from the Maintenance Window.</p>
+     */
+    inline bool WindowTaskIdHasBeenSet() const { return m_windowTaskIdHasBeenSet; }
 
     /**
      * <p>The ID of the task to remove from the Maintenance Window.</p>

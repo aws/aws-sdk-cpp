@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
      */
+    inline bool StopWorkspaceRequestsHasBeenSet() const { return m_stopWorkspaceRequestsHasBeenSet; }
+
+    /**
+     * <p>The WorkSpaces to stop. You can specify up to 25 WorkSpaces.</p>
+     */
     inline void SetStopWorkspaceRequests(const Aws::Vector<StopRequest>& value) { m_stopWorkspaceRequestsHasBeenSet = true; m_stopWorkspaceRequests = value; }
 
     /**

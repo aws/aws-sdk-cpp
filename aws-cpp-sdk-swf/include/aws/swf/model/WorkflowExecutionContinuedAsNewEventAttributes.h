@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The input provided to the new workflow execution.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The input provided to the new workflow execution.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -104,6 +109,15 @@ namespace Model
      * diagnosing problems by tracing back the chain of events leading up to this
      * event.</p>
      */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>ContinueAsNewWorkflowExecution</code>
+     * decision that started this execution. This information can be useful for
+     * diagnosing problems by tracing back the chain of events leading up to this
+     * event.</p>
+     */
     inline void SetDecisionTaskCompletedEventId(long long value) { m_decisionTaskCompletedEventIdHasBeenSet = true; m_decisionTaskCompletedEventId = value; }
 
     /**
@@ -120,6 +134,11 @@ namespace Model
      * <p>The <code>runId</code> of the new workflow execution.</p>
      */
     inline const Aws::String& GetNewExecutionRunId() const{ return m_newExecutionRunId; }
+
+    /**
+     * <p>The <code>runId</code> of the new workflow execution.</p>
+     */
+    inline bool NewExecutionRunIdHasBeenSet() const { return m_newExecutionRunIdHasBeenSet; }
 
     /**
      * <p>The <code>runId</code> of the new workflow execution.</p>
@@ -158,6 +177,13 @@ namespace Model
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetExecutionStartToCloseTimeout() const{ return m_executionStartToCloseTimeout; }
+
+    /**
+     * <p>The total duration allowed for the new workflow execution.</p> <p>The
+     * duration is specified in seconds, an integer greater than or equal to
+     * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool ExecutionStartToCloseTimeoutHasBeenSet() const { return m_executionStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The total duration allowed for the new workflow execution.</p> <p>The
@@ -212,6 +238,12 @@ namespace Model
      * <p>The task list to use for the decisions of the new (continued) workflow
      * execution.</p>
      */
+    inline bool TaskListHasBeenSet() const { return m_taskListHasBeenSet; }
+
+    /**
+     * <p>The task list to use for the decisions of the new (continued) workflow
+     * execution.</p>
+     */
     inline void SetTaskList(const TaskList& value) { m_taskListHasBeenSet = true; m_taskList = value; }
 
     /**
@@ -238,6 +270,12 @@ namespace Model
      * workflow execution.</p>
      */
     inline const Aws::String& GetTaskPriority() const{ return m_taskPriority; }
+
+    /**
+     * <p>The priority of the task to use for the decisions of the new (continued)
+     * workflow execution.</p>
+     */
+    inline bool TaskPriorityHasBeenSet() const { return m_taskPriorityHasBeenSet; }
 
     /**
      * <p>The priority of the task to use for the decisions of the new (continued)
@@ -282,6 +320,13 @@ namespace Model
      * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
      */
     inline const Aws::String& GetTaskStartToCloseTimeout() const{ return m_taskStartToCloseTimeout; }
+
+    /**
+     * <p>The maximum duration of decision tasks for the new workflow execution.</p>
+     * <p>The duration is specified in seconds, an integer greater than or equal to
+     * <code>0</code>. You can use <code>NONE</code> to specify unlimited duration.</p>
+     */
+    inline bool TaskStartToCloseTimeoutHasBeenSet() const { return m_taskStartToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum duration of decision tasks for the new workflow execution.</p>
@@ -352,6 +397,20 @@ namespace Model
      * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
      * The child executions continue to run.</p> </li> </ul>
      */
+    inline bool ChildPolicyHasBeenSet() const { return m_childPolicyHasBeenSet; }
+
+    /**
+     * <p>The policy to use for the child workflow executions of the new execution if
+     * it is terminated by calling the <a>TerminateWorkflowExecution</a> action
+     * explicitly or due to an expired timeout.</p> <p>The supported child policies
+     * are:</p> <ul> <li> <p> <code>TERMINATE</code> – The child executions are
+     * terminated.</p> </li> <li> <p> <code>REQUEST_CANCEL</code> – A request to cancel
+     * is attempted for each child execution by recording a
+     * <code>WorkflowExecutionCancelRequested</code> event in its history. It is up to
+     * the decider to take appropriate actions when it receives an execution history
+     * with this event.</p> </li> <li> <p> <code>ABANDON</code> – No action is taken.
+     * The child executions continue to run.</p> </li> </ul>
+     */
     inline void SetChildPolicy(const ChildPolicy& value) { m_childPolicyHasBeenSet = true; m_childPolicy = value; }
 
     /**
@@ -405,6 +464,11 @@ namespace Model
     /**
      * <p>The list of tags associated with the new workflow execution.</p>
      */
+    inline bool TagListHasBeenSet() const { return m_tagListHasBeenSet; }
+
+    /**
+     * <p>The list of tags associated with the new workflow execution.</p>
+     */
     inline void SetTagList(const Aws::Vector<Aws::String>& value) { m_tagListHasBeenSet = true; m_tagList = value; }
 
     /**
@@ -446,6 +510,11 @@ namespace Model
     /**
      * <p>The workflow type of this execution.</p>
      */
+    inline bool WorkflowTypeHasBeenSet() const { return m_workflowTypeHasBeenSet; }
+
+    /**
+     * <p>The workflow type of this execution.</p>
+     */
     inline void SetWorkflowType(const WorkflowType& value) { m_workflowTypeHasBeenSet = true; m_workflowType = value; }
 
     /**
@@ -468,6 +537,11 @@ namespace Model
      * <p>The IAM role to attach to the new (continued) workflow execution.</p>
      */
     inline const Aws::String& GetLambdaRole() const{ return m_lambdaRole; }
+
+    /**
+     * <p>The IAM role to attach to the new (continued) workflow execution.</p>
+     */
+    inline bool LambdaRoleHasBeenSet() const { return m_lambdaRoleHasBeenSet; }
 
     /**
      * <p>The IAM role to attach to the new (continued) workflow execution.</p>

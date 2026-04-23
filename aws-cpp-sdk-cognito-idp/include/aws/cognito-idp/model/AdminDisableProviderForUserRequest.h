@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The user pool ID for the user pool.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID for the user pool.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>The user to be disabled.</p>
      */
     inline const ProviderUserIdentifierType& GetUser() const{ return m_user; }
+
+    /**
+     * <p>The user to be disabled.</p>
+     */
+    inline bool UserHasBeenSet() const { return m_userHasBeenSet; }
 
     /**
      * <p>The user to be disabled.</p>

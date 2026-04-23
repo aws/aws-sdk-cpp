@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
@@ -78,6 +81,12 @@ namespace Model
      * can invoke when it detects events of the specified type.</p>
      */
     inline const Aws::String& GetLambdaFunctionArn() const{ return m_lambdaFunctionArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
+     * can invoke when it detects events of the specified type.</p>
+     */
+    inline bool LambdaFunctionArnHasBeenSet() const { return m_lambdaFunctionArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Lambda cloud function that Amazon S3
@@ -116,30 +125,52 @@ namespace Model
     inline LambdaFunctionConfiguration& WithLambdaFunctionArn(const char* value) { SetLambdaFunctionArn(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline LambdaFunctionConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
     
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }

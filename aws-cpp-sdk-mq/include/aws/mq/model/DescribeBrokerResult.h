@@ -24,6 +24,7 @@
 #include <aws/mq/model/EngineType.h>
 #include <aws/mq/model/LogsSummary.h>
 #include <aws/mq/model/WeeklyStartTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/mq/model/BrokerInstance.h>
 #include <aws/mq/model/UserSummary.h>
 #include <utility>
@@ -375,44 +376,44 @@ namespace Model
 
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetEngineVersion() const{ return m_engineVersion; }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersion = value; }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(Aws::String&& value) { m_engineVersion = std::move(value); }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetEngineVersion(const char* value) { m_engineVersion.assign(value); }
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithEngineVersion(const Aws::String& value) { SetEngineVersion(value); return *this;}
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithEngineVersion(Aws::String&& value) { SetEngineVersion(std::move(value)); return *this;}
 
     /**
-     * The version of the broker engine. Note: Currently, Amazon MQ supports only
-     * 5.15.6 and 5.15.0.
+     * The version of the broker engine. For a list of supported engine versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithEngineVersion(const char* value) { SetEngineVersion(value); return *this;}
 
@@ -511,37 +512,51 @@ namespace Model
 
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline const Aws::String& GetPendingEngineVersion() const{ return m_pendingEngineVersion; }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetPendingEngineVersion(const Aws::String& value) { m_pendingEngineVersion = value; }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetPendingEngineVersion(Aws::String&& value) { m_pendingEngineVersion = std::move(value); }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline void SetPendingEngineVersion(const char* value) { m_pendingEngineVersion.assign(value); }
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithPendingEngineVersion(const Aws::String& value) { SetPendingEngineVersion(value); return *this;}
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithPendingEngineVersion(Aws::String&& value) { SetPendingEngineVersion(std::move(value)); return *this;}
 
     /**
-     * The version of the broker engine to upgrade to.
+     * The version of the broker engine to upgrade to. For a list of supported engine
+     * versions, see
+     * https://docs.aws.amazon.com/amazon-mq/latest/developer-guide/broker-engine.html
      */
     inline DescribeBrokerResult& WithPendingEngineVersion(const char* value) { SetPendingEngineVersion(value); return *this;}
 
@@ -680,6 +695,67 @@ namespace Model
 
 
     /**
+     * The list of all tags associated with this broker.
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * The list of all tags associated with this broker.
+     */
+    inline DescribeBrokerResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * The list of all ActiveMQ usernames for the specified broker.
      */
     inline const Aws::Vector<UserSummary>& GetUsers() const{ return m_users; }
@@ -751,6 +827,8 @@ namespace Model
     Aws::Vector<Aws::String> m_securityGroups;
 
     Aws::Vector<Aws::String> m_subnetIds;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     Aws::Vector<UserSummary> m_users;
   };

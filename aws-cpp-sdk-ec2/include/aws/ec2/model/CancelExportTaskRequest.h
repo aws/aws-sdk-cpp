@@ -59,6 +59,12 @@ namespace Model
      * <p>The ID of the export task. This is the ID returned by
      * <code>CreateInstanceExportTask</code>.</p>
      */
+    inline bool ExportTaskIdHasBeenSet() const { return m_exportTaskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the export task. This is the ID returned by
+     * <code>CreateInstanceExportTask</code>.</p>
+     */
     inline void SetExportTaskId(const Aws::String& value) { m_exportTaskIdHasBeenSet = true; m_exportTaskId = value; }
 
     /**

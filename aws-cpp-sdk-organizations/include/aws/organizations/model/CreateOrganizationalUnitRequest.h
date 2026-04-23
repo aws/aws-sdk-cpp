@@ -66,6 +66,18 @@ namespace Model
      * of the root that the OU is in) followed by a second "-" dash and from 8 to 32
      * additional lower-case letters or digits.</p> </li> </ul>
      */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) of the parent root or OU in which you want to
+     * create the new OU.</p> <p>The <a href="http://wikipedia.org/wiki/regex">regex
+     * pattern</a> for a parent ID string requires one of the following:</p> <ul> <li>
+     * <p>Root: a string that begins with "r-" followed by from 4 to 32 lower-case
+     * letters or digits.</p> </li> <li> <p>Organizational unit (OU): a string that
+     * begins with "ou-" followed by from 4 to 32 lower-case letters or digits (the ID
+     * of the root that the OU is in) followed by a second "-" dash and from 8 to 32
+     * additional lower-case letters or digits.</p> </li> </ul>
+     */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
@@ -133,6 +145,11 @@ namespace Model
      * <p>The friendly name to assign to the new OU.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The friendly name to assign to the new OU.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The friendly name to assign to the new OU.</p>

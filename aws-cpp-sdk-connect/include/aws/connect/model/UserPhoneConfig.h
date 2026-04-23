@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
      */
+    inline bool PhoneTypeHasBeenSet() const { return m_phoneTypeHasBeenSet; }
+
+    /**
+     * <p>The phone type selected for the user, either Soft phone or Desk phone.</p>
+     */
     inline void SetPhoneType(const PhoneType& value) { m_phoneTypeHasBeenSet = true; m_phoneType = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
     /**
      * <p>The Auto accept setting for the user, Yes or No.</p>
      */
+    inline bool AutoAcceptHasBeenSet() const { return m_autoAcceptHasBeenSet; }
+
+    /**
+     * <p>The Auto accept setting for the user, Yes or No.</p>
+     */
     inline void SetAutoAccept(bool value) { m_autoAcceptHasBeenSet = true; m_autoAccept = value; }
 
     /**
@@ -99,6 +109,11 @@ namespace Model
     /**
      * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
      */
+    inline bool AfterContactWorkTimeLimitHasBeenSet() const { return m_afterContactWorkTimeLimitHasBeenSet; }
+
+    /**
+     * <p>The After Call Work (ACW) timeout setting, in seconds, for the user.</p>
+     */
     inline void SetAfterContactWorkTimeLimit(int value) { m_afterContactWorkTimeLimitHasBeenSet = true; m_afterContactWorkTimeLimit = value; }
 
     /**
@@ -111,6 +126,11 @@ namespace Model
      * <p>The phone number for the user's desk phone.</p>
      */
     inline const Aws::String& GetDeskPhoneNumber() const{ return m_deskPhoneNumber; }
+
+    /**
+     * <p>The phone number for the user's desk phone.</p>
+     */
+    inline bool DeskPhoneNumberHasBeenSet() const { return m_deskPhoneNumberHasBeenSet; }
 
     /**
      * <p>The phone number for the user's desk phone.</p>

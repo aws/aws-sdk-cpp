@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The log target.</p>
      */
+    inline bool LogTargetHasBeenSet() const { return m_logTargetHasBeenSet; }
+
+    /**
+     * <p>The log target.</p>
+     */
     inline void SetLogTarget(const LogTarget& value) { m_logTargetHasBeenSet = true; m_logTarget = value; }
 
     /**
@@ -73,6 +78,11 @@ namespace Model
      * <p>The log level.</p>
      */
     inline const LogLevel& GetLogLevel() const{ return m_logLevel; }
+
+    /**
+     * <p>The log level.</p>
+     */
+    inline bool LogLevelHasBeenSet() const { return m_logLevelHasBeenSet; }
 
     /**
      * <p>The log level.</p>

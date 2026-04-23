@@ -24,26 +24,36 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/pinpoint-email/PinpointEmailClient.h>
 #include <aws/pinpoint-email/PinpointEmailEndpoint.h>
 #include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>
 #include <aws/pinpoint-email/model/CreateConfigurationSetRequest.h>
 #include <aws/pinpoint-email/model/CreateConfigurationSetEventDestinationRequest.h>
 #include <aws/pinpoint-email/model/CreateDedicatedIpPoolRequest.h>
+#include <aws/pinpoint-email/model/CreateDeliverabilityTestReportRequest.h>
 #include <aws/pinpoint-email/model/CreateEmailIdentityRequest.h>
 #include <aws/pinpoint-email/model/DeleteConfigurationSetRequest.h>
 #include <aws/pinpoint-email/model/DeleteConfigurationSetEventDestinationRequest.h>
 #include <aws/pinpoint-email/model/DeleteDedicatedIpPoolRequest.h>
 #include <aws/pinpoint-email/model/DeleteEmailIdentityRequest.h>
 #include <aws/pinpoint-email/model/GetAccountRequest.h>
+#include <aws/pinpoint-email/model/GetBlacklistReportsRequest.h>
 #include <aws/pinpoint-email/model/GetConfigurationSetRequest.h>
 #include <aws/pinpoint-email/model/GetConfigurationSetEventDestinationsRequest.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpRequest.h>
 #include <aws/pinpoint-email/model/GetDedicatedIpsRequest.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsRequest.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityTestReportRequest.h>
+#include <aws/pinpoint-email/model/GetDomainStatisticsReportRequest.h>
 #include <aws/pinpoint-email/model/GetEmailIdentityRequest.h>
 #include <aws/pinpoint-email/model/ListConfigurationSetsRequest.h>
 #include <aws/pinpoint-email/model/ListDedicatedIpPoolsRequest.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsRequest.h>
 #include <aws/pinpoint-email/model/ListEmailIdentitiesRequest.h>
+#include <aws/pinpoint-email/model/ListTagsForResourceRequest.h>
 #include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
 #include <aws/pinpoint-email/model/PutAccountSendingAttributesRequest.h>
 #include <aws/pinpoint-email/model/PutConfigurationSetDeliveryOptionsRequest.h>
@@ -52,10 +62,13 @@
 #include <aws/pinpoint-email/model/PutConfigurationSetTrackingOptionsRequest.h>
 #include <aws/pinpoint-email/model/PutDedicatedIpInPoolRequest.h>
 #include <aws/pinpoint-email/model/PutDedicatedIpWarmupAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionRequest.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityDkimAttributesRequest.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityFeedbackAttributesRequest.h>
 #include <aws/pinpoint-email/model/PutEmailIdentityMailFromAttributesRequest.h>
 #include <aws/pinpoint-email/model/SendEmailRequest.h>
+#include <aws/pinpoint-email/model/TagResourceRequest.h>
+#include <aws/pinpoint-email/model/UntagResourceRequest.h>
 #include <aws/pinpoint-email/model/UpdateConfigurationSetEventDestinationRequest.h>
 
 using namespace Aws;
@@ -107,25 +120,32 @@ PinpointEmailClient::~PinpointEmailClient()
 
 void PinpointEmailClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << PinpointEmailEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + PinpointEmailEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void PinpointEmailClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 CreateConfigurationSetOutcome PinpointEmailClient::CreateConfigurationSet(const CreateConfigurationSetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -159,8 +179,13 @@ void PinpointEmailClient::CreateConfigurationSetAsyncHelper(const CreateConfigur
 
 CreateConfigurationSetEventDestinationOutcome PinpointEmailClient::CreateConfigurationSetEventDestination(const CreateConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return CreateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
@@ -196,8 +221,8 @@ void PinpointEmailClient::CreateConfigurationSetEventDestinationAsyncHelper(cons
 
 CreateDedicatedIpPoolOutcome PinpointEmailClient::CreateDedicatedIpPool(const CreateDedicatedIpPoolRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -229,10 +254,45 @@ void PinpointEmailClient::CreateDedicatedIpPoolAsyncHelper(const CreateDedicated
   handler(this, request, CreateDedicatedIpPool(request), context);
 }
 
+CreateDeliverabilityTestReportOutcome PinpointEmailClient::CreateDeliverabilityTestReport(const CreateDeliverabilityTestReportRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/test";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return CreateDeliverabilityTestReportOutcome(CreateDeliverabilityTestReportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return CreateDeliverabilityTestReportOutcome(outcome.GetError());
+  }
+}
+
+CreateDeliverabilityTestReportOutcomeCallable PinpointEmailClient::CreateDeliverabilityTestReportCallable(const CreateDeliverabilityTestReportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< CreateDeliverabilityTestReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->CreateDeliverabilityTestReport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::CreateDeliverabilityTestReportAsync(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->CreateDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::CreateDeliverabilityTestReportAsyncHelper(const CreateDeliverabilityTestReportRequest& request, const CreateDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, CreateDeliverabilityTestReport(request), context);
+}
+
 CreateEmailIdentityOutcome PinpointEmailClient::CreateEmailIdentity(const CreateEmailIdentityRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -266,8 +326,13 @@ void PinpointEmailClient::CreateEmailIdentityAsyncHelper(const CreateEmailIdenti
 
 DeleteConfigurationSetOutcome PinpointEmailClient::DeleteConfigurationSet(const DeleteConfigurationSetRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSet", "Required field: ConfigurationSetName, is not set");
+    return DeleteConfigurationSetOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -302,8 +367,18 @@ void PinpointEmailClient::DeleteConfigurationSetAsyncHelper(const DeleteConfigur
 
 DeleteConfigurationSetEventDestinationOutcome PinpointEmailClient::DeleteConfigurationSetEventDestination(const DeleteConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  if (!request.EventDestinationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationSetEventDestination", "Required field: EventDestinationName, is not set");
+    return DeleteConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations/";
@@ -340,8 +415,13 @@ void PinpointEmailClient::DeleteConfigurationSetEventDestinationAsyncHelper(cons
 
 DeleteDedicatedIpPoolOutcome PinpointEmailClient::DeleteDedicatedIpPool(const DeleteDedicatedIpPoolRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.PoolNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteDedicatedIpPool", "Required field: PoolName, is not set");
+    return DeleteDedicatedIpPoolOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PoolName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ip-pools/";
   ss << request.GetPoolName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -376,8 +456,13 @@ void PinpointEmailClient::DeleteDedicatedIpPoolAsyncHelper(const DeleteDedicated
 
 DeleteEmailIdentityOutcome PinpointEmailClient::DeleteEmailIdentity(const DeleteEmailIdentityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteEmailIdentity", "Required field: EmailIdentity, is not set");
+    return DeleteEmailIdentityOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -412,8 +497,8 @@ void PinpointEmailClient::DeleteEmailIdentityAsyncHelper(const DeleteEmailIdenti
 
 GetAccountOutcome PinpointEmailClient::GetAccount(const GetAccountRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/account";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -445,10 +530,50 @@ void PinpointEmailClient::GetAccountAsyncHelper(const GetAccountRequest& request
   handler(this, request, GetAccount(request), context);
 }
 
+GetBlacklistReportsOutcome PinpointEmailClient::GetBlacklistReports(const GetBlacklistReportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/blacklist-report";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetBlacklistReportsOutcome(GetBlacklistReportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetBlacklistReportsOutcome(outcome.GetError());
+  }
+}
+
+GetBlacklistReportsOutcomeCallable PinpointEmailClient::GetBlacklistReportsCallable(const GetBlacklistReportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetBlacklistReportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetBlacklistReports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::GetBlacklistReportsAsync(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetBlacklistReportsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::GetBlacklistReportsAsyncHelper(const GetBlacklistReportsRequest& request, const GetBlacklistReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetBlacklistReports(request), context);
+}
+
 GetConfigurationSetOutcome PinpointEmailClient::GetConfigurationSet(const GetConfigurationSetRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfigurationSet", "Required field: ConfigurationSetName, is not set");
+    return GetConfigurationSetOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -483,8 +608,13 @@ void PinpointEmailClient::GetConfigurationSetAsyncHelper(const GetConfigurationS
 
 GetConfigurationSetEventDestinationsOutcome PinpointEmailClient::GetConfigurationSetEventDestinations(const GetConfigurationSetEventDestinationsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetConfigurationSetEventDestinations", "Required field: ConfigurationSetName, is not set");
+    return GetConfigurationSetEventDestinationsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations";
@@ -520,8 +650,13 @@ void PinpointEmailClient::GetConfigurationSetEventDestinationsAsyncHelper(const 
 
 GetDedicatedIpOutcome PinpointEmailClient::GetDedicatedIp(const GetDedicatedIpRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.IpHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDedicatedIp", "Required field: Ip, is not set");
+    return GetDedicatedIpOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ips/";
   ss << request.GetIp();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -556,8 +691,8 @@ void PinpointEmailClient::GetDedicatedIpAsyncHelper(const GetDedicatedIpRequest&
 
 GetDedicatedIpsOutcome PinpointEmailClient::GetDedicatedIps(const GetDedicatedIpsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ips";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -589,10 +724,132 @@ void PinpointEmailClient::GetDedicatedIpsAsyncHelper(const GetDedicatedIpsReques
   handler(this, request, GetDedicatedIps(request), context);
 }
 
+GetDeliverabilityDashboardOptionsOutcome PinpointEmailClient::GetDeliverabilityDashboardOptions(const GetDeliverabilityDashboardOptionsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDeliverabilityDashboardOptionsOutcome(GetDeliverabilityDashboardOptionsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDeliverabilityDashboardOptionsOutcome(outcome.GetError());
+  }
+}
+
+GetDeliverabilityDashboardOptionsOutcomeCallable PinpointEmailClient::GetDeliverabilityDashboardOptionsCallable(const GetDeliverabilityDashboardOptionsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDeliverabilityDashboardOptionsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeliverabilityDashboardOptions(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::GetDeliverabilityDashboardOptionsAsync(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityDashboardOptionsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::GetDeliverabilityDashboardOptionsAsyncHelper(const GetDeliverabilityDashboardOptionsRequest& request, const GetDeliverabilityDashboardOptionsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDeliverabilityDashboardOptions(request), context);
+}
+
+GetDeliverabilityTestReportOutcome PinpointEmailClient::GetDeliverabilityTestReport(const GetDeliverabilityTestReportRequest& request) const
+{
+  if (!request.ReportIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDeliverabilityTestReport", "Required field: ReportId, is not set");
+    return GetDeliverabilityTestReportOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ReportId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/test-reports/";
+  ss << request.GetReportId();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDeliverabilityTestReportOutcome(GetDeliverabilityTestReportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDeliverabilityTestReportOutcome(outcome.GetError());
+  }
+}
+
+GetDeliverabilityTestReportOutcomeCallable PinpointEmailClient::GetDeliverabilityTestReportCallable(const GetDeliverabilityTestReportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDeliverabilityTestReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDeliverabilityTestReport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::GetDeliverabilityTestReportAsync(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDeliverabilityTestReportAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::GetDeliverabilityTestReportAsyncHelper(const GetDeliverabilityTestReportRequest& request, const GetDeliverabilityTestReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDeliverabilityTestReport(request), context);
+}
+
+GetDomainStatisticsReportOutcome PinpointEmailClient::GetDomainStatisticsReport(const GetDomainStatisticsReportRequest& request) const
+{
+  if (!request.DomainHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetDomainStatisticsReport", "Required field: Domain, is not set");
+    return GetDomainStatisticsReportOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Domain]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/statistics-report/";
+  ss << request.GetDomain();
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return GetDomainStatisticsReportOutcome(GetDomainStatisticsReportResult(outcome.GetResult()));
+  }
+  else
+  {
+    return GetDomainStatisticsReportOutcome(outcome.GetError());
+  }
+}
+
+GetDomainStatisticsReportOutcomeCallable PinpointEmailClient::GetDomainStatisticsReportCallable(const GetDomainStatisticsReportRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< GetDomainStatisticsReportOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->GetDomainStatisticsReport(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::GetDomainStatisticsReportAsync(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->GetDomainStatisticsReportAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::GetDomainStatisticsReportAsyncHelper(const GetDomainStatisticsReportRequest& request, const GetDomainStatisticsReportResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, GetDomainStatisticsReport(request), context);
+}
+
 GetEmailIdentityOutcome PinpointEmailClient::GetEmailIdentity(const GetEmailIdentityRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("GetEmailIdentity", "Required field: EmailIdentity, is not set");
+    return GetEmailIdentityOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -627,8 +884,8 @@ void PinpointEmailClient::GetEmailIdentityAsyncHelper(const GetEmailIdentityRequ
 
 ListConfigurationSetsOutcome PinpointEmailClient::ListConfigurationSets(const ListConfigurationSetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -662,8 +919,8 @@ void PinpointEmailClient::ListConfigurationSetsAsyncHelper(const ListConfigurati
 
 ListDedicatedIpPoolsOutcome PinpointEmailClient::ListDedicatedIpPools(const ListDedicatedIpPoolsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ip-pools";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -695,10 +952,45 @@ void PinpointEmailClient::ListDedicatedIpPoolsAsyncHelper(const ListDedicatedIpP
   handler(this, request, ListDedicatedIpPools(request), context);
 }
 
+ListDeliverabilityTestReportsOutcome PinpointEmailClient::ListDeliverabilityTestReports(const ListDeliverabilityTestReportsRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard/test-reports";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListDeliverabilityTestReportsOutcome(ListDeliverabilityTestReportsResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListDeliverabilityTestReportsOutcome(outcome.GetError());
+  }
+}
+
+ListDeliverabilityTestReportsOutcomeCallable PinpointEmailClient::ListDeliverabilityTestReportsCallable(const ListDeliverabilityTestReportsRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListDeliverabilityTestReportsOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListDeliverabilityTestReports(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::ListDeliverabilityTestReportsAsync(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListDeliverabilityTestReportsAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::ListDeliverabilityTestReportsAsyncHelper(const ListDeliverabilityTestReportsRequest& request, const ListDeliverabilityTestReportsResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListDeliverabilityTestReports(request), context);
+}
+
 ListEmailIdentitiesOutcome PinpointEmailClient::ListEmailIdentities(const ListEmailIdentitiesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -730,10 +1022,45 @@ void PinpointEmailClient::ListEmailIdentitiesAsyncHelper(const ListEmailIdentiti
   handler(this, request, ListEmailIdentities(request), context);
 }
 
+ListTagsForResourceOutcome PinpointEmailClient::ListTagsForResource(const ListTagsForResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return ListTagsForResourceOutcome(ListTagsForResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return ListTagsForResourceOutcome(outcome.GetError());
+  }
+}
+
+ListTagsForResourceOutcomeCallable PinpointEmailClient::ListTagsForResourceCallable(const ListTagsForResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ListTagsForResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->ListTagsForResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::ListTagsForResourceAsync(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->ListTagsForResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::ListTagsForResourceAsyncHelper(const ListTagsForResourceRequest& request, const ListTagsForResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, ListTagsForResource(request), context);
+}
+
 PutAccountDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutAccountDedicatedIpWarmupAttributes(const PutAccountDedicatedIpWarmupAttributesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/account/dedicated-ips/warmup";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -767,8 +1094,8 @@ void PinpointEmailClient::PutAccountDedicatedIpWarmupAttributesAsyncHelper(const
 
 PutAccountSendingAttributesOutcome PinpointEmailClient::PutAccountSendingAttributes(const PutAccountSendingAttributesRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/account/sending";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
@@ -802,8 +1129,13 @@ void PinpointEmailClient::PutAccountSendingAttributesAsyncHelper(const PutAccoun
 
 PutConfigurationSetDeliveryOptionsOutcome PinpointEmailClient::PutConfigurationSetDeliveryOptions(const PutConfigurationSetDeliveryOptionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetDeliveryOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetDeliveryOptionsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/delivery-options";
@@ -839,8 +1171,13 @@ void PinpointEmailClient::PutConfigurationSetDeliveryOptionsAsyncHelper(const Pu
 
 PutConfigurationSetReputationOptionsOutcome PinpointEmailClient::PutConfigurationSetReputationOptions(const PutConfigurationSetReputationOptionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetReputationOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetReputationOptionsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/reputation-options";
@@ -876,8 +1213,13 @@ void PinpointEmailClient::PutConfigurationSetReputationOptionsAsyncHelper(const 
 
 PutConfigurationSetSendingOptionsOutcome PinpointEmailClient::PutConfigurationSetSendingOptions(const PutConfigurationSetSendingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetSendingOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetSendingOptionsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/sending";
@@ -913,8 +1255,13 @@ void PinpointEmailClient::PutConfigurationSetSendingOptionsAsyncHelper(const Put
 
 PutConfigurationSetTrackingOptionsOutcome PinpointEmailClient::PutConfigurationSetTrackingOptions(const PutConfigurationSetTrackingOptionsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutConfigurationSetTrackingOptions", "Required field: ConfigurationSetName, is not set");
+    return PutConfigurationSetTrackingOptionsOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/tracking-options";
@@ -950,8 +1297,13 @@ void PinpointEmailClient::PutConfigurationSetTrackingOptionsAsyncHelper(const Pu
 
 PutDedicatedIpInPoolOutcome PinpointEmailClient::PutDedicatedIpInPool(const PutDedicatedIpInPoolRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.IpHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutDedicatedIpInPool", "Required field: Ip, is not set");
+    return PutDedicatedIpInPoolOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ips/";
   ss << request.GetIp();
   ss << "/pool";
@@ -987,8 +1339,13 @@ void PinpointEmailClient::PutDedicatedIpInPoolAsyncHelper(const PutDedicatedIpIn
 
 PutDedicatedIpWarmupAttributesOutcome PinpointEmailClient::PutDedicatedIpWarmupAttributes(const PutDedicatedIpWarmupAttributesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.IpHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutDedicatedIpWarmupAttributes", "Required field: Ip, is not set");
+    return PutDedicatedIpWarmupAttributesOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [Ip]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/dedicated-ips/";
   ss << request.GetIp();
   ss << "/warmup";
@@ -1022,10 +1379,50 @@ void PinpointEmailClient::PutDedicatedIpWarmupAttributesAsyncHelper(const PutDed
   handler(this, request, PutDedicatedIpWarmupAttributes(request), context);
 }
 
+PutDeliverabilityDashboardOptionOutcome PinpointEmailClient::PutDeliverabilityDashboardOption(const PutDeliverabilityDashboardOptionRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/deliverability-dashboard";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutDeliverabilityDashboardOptionOutcome(PutDeliverabilityDashboardOptionResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutDeliverabilityDashboardOptionOutcome(outcome.GetError());
+  }
+}
+
+PutDeliverabilityDashboardOptionOutcomeCallable PinpointEmailClient::PutDeliverabilityDashboardOptionCallable(const PutDeliverabilityDashboardOptionRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutDeliverabilityDashboardOptionOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutDeliverabilityDashboardOption(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::PutDeliverabilityDashboardOptionAsync(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutDeliverabilityDashboardOptionAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::PutDeliverabilityDashboardOptionAsyncHelper(const PutDeliverabilityDashboardOptionRequest& request, const PutDeliverabilityDashboardOptionResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutDeliverabilityDashboardOption(request), context);
+}
+
 PutEmailIdentityDkimAttributesOutcome PinpointEmailClient::PutEmailIdentityDkimAttributes(const PutEmailIdentityDkimAttributesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEmailIdentityDkimAttributes", "Required field: EmailIdentity, is not set");
+    return PutEmailIdentityDkimAttributesOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   ss << "/dkim";
@@ -1061,8 +1458,13 @@ void PinpointEmailClient::PutEmailIdentityDkimAttributesAsyncHelper(const PutEma
 
 PutEmailIdentityFeedbackAttributesOutcome PinpointEmailClient::PutEmailIdentityFeedbackAttributes(const PutEmailIdentityFeedbackAttributesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEmailIdentityFeedbackAttributes", "Required field: EmailIdentity, is not set");
+    return PutEmailIdentityFeedbackAttributesOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   ss << "/feedback";
@@ -1098,8 +1500,13 @@ void PinpointEmailClient::PutEmailIdentityFeedbackAttributesAsyncHelper(const Pu
 
 PutEmailIdentityMailFromAttributesOutcome PinpointEmailClient::PutEmailIdentityMailFromAttributes(const PutEmailIdentityMailFromAttributesRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.EmailIdentityHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutEmailIdentityMailFromAttributes", "Required field: EmailIdentity, is not set");
+    return PutEmailIdentityMailFromAttributesOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EmailIdentity]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/identities/";
   ss << request.GetEmailIdentity();
   ss << "/mail-from";
@@ -1135,8 +1542,8 @@ void PinpointEmailClient::PutEmailIdentityMailFromAttributesAsyncHelper(const Pu
 
 SendEmailOutcome PinpointEmailClient::SendEmail(const SendEmailRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/outbound-emails";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -1168,10 +1575,100 @@ void PinpointEmailClient::SendEmailAsyncHelper(const SendEmailRequest& request, 
   handler(this, request, SendEmail(request), context);
 }
 
+TagResourceOutcome PinpointEmailClient::TagResource(const TagResourceRequest& request) const
+{
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return TagResourceOutcome(TagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return TagResourceOutcome(outcome.GetError());
+  }
+}
+
+TagResourceOutcomeCallable PinpointEmailClient::TagResourceCallable(const TagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< TagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->TagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::TagResourceAsync(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->TagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::TagResourceAsyncHelper(const TagResourceRequest& request, const TagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, TagResource(request), context);
+}
+
+UntagResourceOutcome PinpointEmailClient::UntagResource(const UntagResourceRequest& request) const
+{
+  if (!request.ResourceArnHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: ResourceArn, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ResourceArn]", false));
+  }
+  if (!request.TagKeysHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UntagResource", "Required field: TagKeys, is not set");
+    return UntagResourceOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [TagKeys]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/v1/email/tags";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_DELETE, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return UntagResourceOutcome(UntagResourceResult(outcome.GetResult()));
+  }
+  else
+  {
+    return UntagResourceOutcome(outcome.GetError());
+  }
+}
+
+UntagResourceOutcomeCallable PinpointEmailClient::UntagResourceCallable(const UntagResourceRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< UntagResourceOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->UntagResource(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void PinpointEmailClient::UntagResourceAsync(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->UntagResourceAsyncHelper( request, handler, context ); } );
+}
+
+void PinpointEmailClient::UntagResourceAsyncHelper(const UntagResourceRequest& request, const UntagResourceResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, UntagResource(request), context);
+}
+
 UpdateConfigurationSetEventDestinationOutcome PinpointEmailClient::UpdateConfigurationSetEventDestination(const UpdateConfigurationSetEventDestinationRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.ConfigurationSetNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfigurationSetEventDestination", "Required field: ConfigurationSetName, is not set");
+    return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [ConfigurationSetName]", false));
+  }
+  if (!request.EventDestinationNameHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateConfigurationSetEventDestination", "Required field: EventDestinationName, is not set");
+    return UpdateConfigurationSetEventDestinationOutcome(Aws::Client::AWSError<PinpointEmailErrors>(PinpointEmailErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [EventDestinationName]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/v1/email/configuration-sets/";
   ss << request.GetConfigurationSetName();
   ss << "/event-destinations/";

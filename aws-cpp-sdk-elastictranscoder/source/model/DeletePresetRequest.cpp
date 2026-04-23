@@ -29,7 +29,7 @@ DeletePresetRequest::DeletePresetRequest() :
 
 Aws::String DeletePresetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the stage.</p>
      */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stage.</p>
+     */
     inline void SetStageName(const Aws::String& value) { m_stageNameHasBeenSet = true; m_stageName = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>The state of the inbound transition, which is either enabled or disabled.</p>
      */
+    inline bool InboundTransitionStateHasBeenSet() const { return m_inboundTransitionStateHasBeenSet; }
+
+    /**
+     * <p>The state of the inbound transition, which is either enabled or disabled.</p>
+     */
     inline void SetInboundTransitionState(const TransitionState& value) { m_inboundTransitionStateHasBeenSet = true; m_inboundTransitionState = value; }
 
     /**
@@ -118,6 +128,11 @@ namespace Model
      * <p>The state of the stage.</p>
      */
     inline const Aws::Vector<ActionState>& GetActionStates() const{ return m_actionStates; }
+
+    /**
+     * <p>The state of the stage.</p>
+     */
+    inline bool ActionStatesHasBeenSet() const { return m_actionStatesHasBeenSet; }
 
     /**
      * <p>The state of the stage.</p>
@@ -155,6 +170,12 @@ namespace Model
      * status.</p>
      */
     inline const StageExecution& GetLatestExecution() const{ return m_latestExecution; }
+
+    /**
+     * <p>Information about the latest execution in the stage, including its ID and
+     * status.</p>
+     */
+    inline bool LatestExecutionHasBeenSet() const { return m_latestExecutionHasBeenSet; }
 
     /**
      * <p>Information about the latest execution in the stage, including its ID and

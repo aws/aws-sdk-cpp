@@ -28,7 +28,7 @@ GetEncryptionConfigRequest::GetEncryptionConfigRequest()
 
 Aws::String GetEncryptionConfigRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

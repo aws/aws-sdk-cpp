@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The identifier of the object that contains the validation error.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The identifier of the object that contains the validation error.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A description of the validation error.</p>
      */
     inline const Aws::Vector<Aws::String>& GetErrors() const{ return m_errors; }
+
+    /**
+     * <p>A description of the validation error.</p>
+     */
+    inline bool ErrorsHasBeenSet() const { return m_errorsHasBeenSet; }
 
     /**
      * <p>A description of the validation error.</p>

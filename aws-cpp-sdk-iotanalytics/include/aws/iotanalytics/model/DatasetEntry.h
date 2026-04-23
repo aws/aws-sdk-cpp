@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the data set item.</p>
      */
+    inline bool EntryNameHasBeenSet() const { return m_entryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the data set item.</p>
+     */
     inline void SetEntryName(const Aws::String& value) { m_entryNameHasBeenSet = true; m_entryName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The pre-signed URI of the data set item.</p>
      */
     inline const Aws::String& GetDataURI() const{ return m_dataURI; }
+
+    /**
+     * <p>The pre-signed URI of the data set item.</p>
+     */
+    inline bool DataURIHasBeenSet() const { return m_dataURIHasBeenSet; }
 
     /**
      * <p>The pre-signed URI of the data set item.</p>

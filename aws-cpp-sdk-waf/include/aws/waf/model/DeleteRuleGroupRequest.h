@@ -56,6 +56,13 @@ namespace Model
      * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
      * <a>ListRuleGroups</a>.</p>
      */
+    inline bool RuleGroupIdHasBeenSet() const { return m_ruleGroupIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleGroupId</code> of the <a>RuleGroup</a> that you want to delete.
+     * <code>RuleGroupId</code> is returned by <a>CreateRuleGroup</a> and by
+     * <a>ListRuleGroups</a>.</p>
+     */
     inline void SetRuleGroupId(const Aws::String& value) { m_ruleGroupIdHasBeenSet = true; m_ruleGroupId = value; }
 
     /**
@@ -98,6 +105,11 @@ namespace Model
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
     inline const Aws::String& GetChangeToken() const{ return m_changeToken; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
 
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>

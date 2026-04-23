@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The key of the attribute that the attribute range covers.</p>
      */
+    inline bool AttributeKeyHasBeenSet() const { return m_attributeKeyHasBeenSet; }
+
+    /**
+     * <p>The key of the attribute that the attribute range covers.</p>
+     */
     inline void SetAttributeKey(const AttributeKey& value) { m_attributeKeyHasBeenSet = true; m_attributeKey = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The range of attribute values being selected.</p>
      */
     inline const TypedAttributeValueRange& GetRange() const{ return m_range; }
+
+    /**
+     * <p>The range of attribute values being selected.</p>
+     */
+    inline bool RangeHasBeenSet() const { return m_rangeHasBeenSet; }
 
     /**
      * <p>The range of attribute values being selected.</p>

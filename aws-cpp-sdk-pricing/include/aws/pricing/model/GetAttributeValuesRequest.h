@@ -56,6 +56,13 @@ namespace Model
      * example, if you want the retrieve an EC2 attribute, use
      * <code>AmazonEC2</code>.</p>
      */
+    inline bool ServiceCodeHasBeenSet() const { return m_serviceCodeHasBeenSet; }
+
+    /**
+     * <p>The service code for the service whose attributes you want to retrieve. For
+     * example, if you want the retrieve an EC2 attribute, use
+     * <code>AmazonEC2</code>.</p>
+     */
     inline void SetServiceCode(const Aws::String& value) { m_serviceCodeHasBeenSet = true; m_serviceCode = value; }
 
     /**
@@ -104,6 +111,12 @@ namespace Model
      * <p>The name of the attribute that you want to retrieve the values for, such as
      * <code>volumeType</code>.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the attribute that you want to retrieve the values for, such as
+     * <code>volumeType</code>.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -147,6 +160,12 @@ namespace Model
      * <p>The pagination token that indicates the next set of results that you want to
      * retrieve.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The pagination token that indicates the next set of results that you want to
+     * retrieve.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -184,6 +203,11 @@ namespace Model
      * <p>The maximum number of results to return in response.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return in response.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return in response.</p>

@@ -36,6 +36,7 @@ static const int RESOURCE_IN_USE_HASH = HashingUtils::HashString("ResourceInUseE
 static const int INVALID_ARN_HASH = HashingUtils::HashString("InvalidArnException");
 static const int INVALID_STATE_HASH = HashingUtils::HashString("InvalidStateException");
 static const int LIMIT_EXCEEDED_HASH = HashingUtils::HashString("LimitExceededException");
+static const int INVALID_ARGS_HASH = HashingUtils::HashString("InvalidArgsException");
 
 
 AWSError<CoreErrors> GetErrorForName(const char* errorName)
@@ -73,6 +74,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == LIMIT_EXCEEDED_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::LIMIT_EXCEEDED), false);
+  }
+  else if (hashCode == INVALID_ARGS_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(ACMErrors::INVALID_ARGS), false);
   }
   return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
 }

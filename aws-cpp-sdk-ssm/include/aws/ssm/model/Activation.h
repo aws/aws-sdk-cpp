@@ -17,6 +17,8 @@
 #include <aws/ssm/SSM_EXPORTS.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +61,11 @@ namespace Model
     /**
      * <p>The ID created by Systems Manager when you submitted the activation.</p>
      */
+    inline bool ActivationIdHasBeenSet() const { return m_activationIdHasBeenSet; }
+
+    /**
+     * <p>The ID created by Systems Manager when you submitted the activation.</p>
+     */
     inline void SetActivationId(const Aws::String& value) { m_activationIdHasBeenSet = true; m_activationId = value; }
 
     /**
@@ -91,6 +98,11 @@ namespace Model
      * <p>A user defined description of the activation.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A user defined description of the activation.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A user defined description of the activation.</p>
@@ -131,6 +143,11 @@ namespace Model
     /**
      * <p>A name for the managed instance when it is created.</p>
      */
+    inline bool DefaultInstanceNameHasBeenSet() const { return m_defaultInstanceNameHasBeenSet; }
+
+    /**
+     * <p>A name for the managed instance when it is created.</p>
+     */
     inline void SetDefaultInstanceName(const Aws::String& value) { m_defaultInstanceNameHasBeenSet = true; m_defaultInstanceName = value; }
 
     /**
@@ -164,6 +181,12 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetIamRole() const{ return m_iamRole; }
+
+    /**
+     * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
+     * instance.</p>
+     */
+    inline bool IamRoleHasBeenSet() const { return m_iamRoleHasBeenSet; }
 
     /**
      * <p>The Amazon Identity and Access Management (IAM) role to assign to the managed
@@ -212,6 +235,12 @@ namespace Model
      * <p>The maximum number of managed instances that can be registered using this
      * activation.</p>
      */
+    inline bool RegistrationLimitHasBeenSet() const { return m_registrationLimitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of managed instances that can be registered using this
+     * activation.</p>
+     */
     inline void SetRegistrationLimit(int value) { m_registrationLimitHasBeenSet = true; m_registrationLimit = value; }
 
     /**
@@ -229,6 +258,11 @@ namespace Model
     /**
      * <p>The number of managed instances already registered with this activation.</p>
      */
+    inline bool RegistrationsCountHasBeenSet() const { return m_registrationsCountHasBeenSet; }
+
+    /**
+     * <p>The number of managed instances already registered with this activation.</p>
+     */
     inline void SetRegistrationsCount(int value) { m_registrationsCountHasBeenSet = true; m_registrationsCount = value; }
 
     /**
@@ -242,6 +276,12 @@ namespace Model
      * instances.</p>
      */
     inline const Aws::Utils::DateTime& GetExpirationDate() const{ return m_expirationDate; }
+
+    /**
+     * <p>The date when this activation can no longer be used to register managed
+     * instances.</p>
+     */
+    inline bool ExpirationDateHasBeenSet() const { return m_expirationDateHasBeenSet; }
 
     /**
      * <p>The date when this activation can no longer be used to register managed
@@ -276,6 +316,11 @@ namespace Model
     /**
      * <p>Whether or not the activation is expired.</p>
      */
+    inline bool ExpiredHasBeenSet() const { return m_expiredHasBeenSet; }
+
+    /**
+     * <p>Whether or not the activation is expired.</p>
+     */
     inline void SetExpired(bool value) { m_expiredHasBeenSet = true; m_expired = value; }
 
     /**
@@ -288,6 +333,11 @@ namespace Model
      * <p>The date the activation was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedDate() const{ return m_createdDate; }
+
+    /**
+     * <p>The date the activation was created.</p>
+     */
+    inline bool CreatedDateHasBeenSet() const { return m_createdDateHasBeenSet; }
 
     /**
      * <p>The date the activation was created.</p>
@@ -308,6 +358,47 @@ namespace Model
      * <p>The date the activation was created.</p>
      */
     inline Activation& WithCreatedDate(Aws::Utils::DateTime&& value) { SetCreatedDate(std::move(value)); return *this;}
+
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>Tags assigned to the activation.</p>
+     */
+    inline Activation& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
   private:
 
@@ -337,6 +428,9 @@ namespace Model
 
     Aws::Utils::DateTime m_createdDate;
     bool m_createdDateHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
   };
 
 } // namespace Model

@@ -58,6 +58,12 @@ namespace Model
      * A custom message associated with the registration of an endpoint when issuing a
      * response.
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * A custom message associated with the registration of an endpoint when issuing a
+     * response.
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -96,6 +102,12 @@ namespace Model
      * response.
      */
     inline int GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * The status code associated with the merging of an endpoint when issuing a
+     * response.
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * The status code associated with the merging of an endpoint when issuing a

@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Filters the connection definitions returned by the
-   * <code>GetConnections</code> API.</p><p><h3>See Also:</h3>   <a
+   * <p>Filters the connection definitions that are returned by the
+   * <code>GetConnections</code> API operation.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/glue-2017-03-31/GetConnectionsFilter">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,12 @@ namespace Model
      * definition for that connection definition to be returned.</p>
      */
     inline const Aws::Vector<Aws::String>& GetMatchCriteria() const{ return m_matchCriteria; }
+
+    /**
+     * <p>A criteria string that must match the criteria recorded in the connection
+     * definition for that connection definition to be returned.</p>
+     */
+    inline bool MatchCriteriaHasBeenSet() const { return m_matchCriteriaHasBeenSet; }
 
     /**
      * <p>A criteria string that must match the criteria recorded in the connection
@@ -104,6 +110,12 @@ namespace Model
      * not supported.</p>
      */
     inline const ConnectionType& GetConnectionType() const{ return m_connectionType; }
+
+    /**
+     * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is
+     * not supported.</p>
+     */
+    inline bool ConnectionTypeHasBeenSet() const { return m_connectionTypeHasBeenSet; }
 
     /**
      * <p>The type of connections to return. Currently, only JDBC is supported; SFTP is

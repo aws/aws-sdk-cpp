@@ -30,7 +30,7 @@ DescribePlacementRequest::DescribePlacementRequest() :
 
 Aws::String DescribePlacementRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

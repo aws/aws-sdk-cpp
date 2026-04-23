@@ -68,6 +68,17 @@ namespace Model
      * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
      * and by <a>ListRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>Rule</code>. You use <code>RuleId</code> to
+     * get more information about a <code>Rule</code> (see <a>GetRule</a>), update a
+     * <code>Rule</code> (see <a>UpdateRule</a>), insert a <code>Rule</code> into a
+     * <code>WebACL</code> or delete one from a <code>WebACL</code> (see
+     * <a>UpdateWebACL</a>), or delete a <code>Rule</code> from AWS WAF (see
+     * <a>DeleteRule</a>).</p> <p> <code>RuleId</code> is returned by <a>CreateRule</a>
+     * and by <a>ListRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
@@ -131,6 +142,12 @@ namespace Model
      * of a <code>Rule</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>Rule</a>. You can't change the name
+     * of a <code>Rule</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>Rule</a>. You can't change the name

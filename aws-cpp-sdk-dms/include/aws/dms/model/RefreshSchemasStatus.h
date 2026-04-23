@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
      * endpoint.</p>
      */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) string that uniquely identifies the
+     * endpoint.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
      */
+    inline bool ReplicationInstanceArnHasBeenSet() const { return m_replicationInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the replication instance.</p>
+     */
     inline void SetReplicationInstanceArn(const Aws::String& value) { m_replicationInstanceArnHasBeenSet = true; m_replicationInstanceArn = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
     /**
      * <p>The status of the schema.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the schema.</p>
+     */
     inline void SetStatus(const RefreshSchemasStatusTypeValue& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -162,6 +178,11 @@ namespace Model
     /**
      * <p>The date the schema was last refreshed.</p>
      */
+    inline bool LastRefreshDateHasBeenSet() const { return m_lastRefreshDateHasBeenSet; }
+
+    /**
+     * <p>The date the schema was last refreshed.</p>
+     */
     inline void SetLastRefreshDate(const Aws::Utils::DateTime& value) { m_lastRefreshDateHasBeenSet = true; m_lastRefreshDate = value; }
 
     /**
@@ -184,6 +205,11 @@ namespace Model
      * <p>The last failure message for the schema.</p>
      */
     inline const Aws::String& GetLastFailureMessage() const{ return m_lastFailureMessage; }
+
+    /**
+     * <p>The last failure message for the schema.</p>
+     */
+    inline bool LastFailureMessageHasBeenSet() const { return m_lastFailureMessageHasBeenSet; }
 
     /**
      * <p>The last failure message for the schema.</p>

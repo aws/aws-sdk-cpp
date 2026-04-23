@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the application.</p>
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the application.</p>
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
      */
     inline const Aws::String& GetAuthor() const{ return m_author; }
+
+    /**
+     * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
+     * length=127.</p><p>Pattern "^[a-z0-9](([a-z0-9]|-(?!-))*[a-z0-9])?$";</p>
+     */
+    inline bool AuthorHasBeenSet() const { return m_authorHasBeenSet; }
 
     /**
      * <p>The name of the author publishing the app.</p><p>Minimum length=1. Maximum
@@ -132,6 +143,12 @@ namespace Model
      * <p>The description of the application.</p><p>Minimum length=1. Maximum
      * length=256</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>The description of the application.</p><p>Minimum length=1. Maximum
+     * length=256</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -166,50 +183,49 @@ namespace Model
 
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline const Aws::String& GetHomePageUrl() const{ return m_homePageUrl; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
+     * of your GitHub repository for the application.</p>
+     */
+    inline bool HomePageUrlHasBeenSet() const { return m_homePageUrlHasBeenSet; }
+
+    /**
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const Aws::String& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = value; }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(Aws::String&& value) { m_homePageUrlHasBeenSet = true; m_homePageUrl = std::move(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline void SetHomePageUrl(const char* value) { m_homePageUrlHasBeenSet = true; m_homePageUrl.assign(value); }
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline UpdateApplicationRequest& WithHomePageUrl(const Aws::String& value) { SetHomePageUrl(value); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline UpdateApplicationRequest& WithHomePageUrl(Aws::String&& value) { SetHomePageUrl(std::move(value)); return *this;}
 
     /**
-     * <p>A URL with more information about the application, for example
- the location
+     * <p>A URL with more information about the application, for example the location
      * of your GitHub repository for the application.</p>
      */
     inline UpdateApplicationRequest& WithHomePageUrl(const char* value) { SetHomePageUrl(value); return *this;}
@@ -221,6 +237,13 @@ namespace Model
      * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
      */
     inline const Aws::Vector<Aws::String>& GetLabels() const{ return m_labels; }
+
+    /**
+     * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
+     * length=1. Maximum length=127. Maximum number of labels: 10</p><p>Pattern:
+     * "^[a-zA-Z0-9+\\-_:\\/@]+$";</p>
+     */
+    inline bool LabelsHasBeenSet() const { return m_labelsHasBeenSet; }
 
     /**
      * <p>Labels to improve discovery of apps in search results.</p><p>Minimum
@@ -282,6 +305,12 @@ namespace Model
      * <p>A text readme file in Markdown language that contains a more detailed
      * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
+    inline bool ReadmeBodyHasBeenSet() const { return m_readmeBodyHasBeenSet; }
+
+    /**
+     * <p>A text readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
+     */
     inline void SetReadmeBody(const Aws::String& value) { m_readmeBodyHasBeenSet = true; m_readmeBody = value; }
 
     /**
@@ -320,6 +349,12 @@ namespace Model
      * description of the application and how it works.</p><p>Maximum size 5 MB</p>
      */
     inline const Aws::String& GetReadmeUrl() const{ return m_readmeUrl; }
+
+    /**
+     * <p>A link to the readme file in Markdown language that contains a more detailed
+     * description of the application and how it works.</p><p>Maximum size 5 MB</p>
+     */
+    inline bool ReadmeUrlHasBeenSet() const { return m_readmeUrlHasBeenSet; }
 
     /**
      * <p>A link to the readme file in Markdown language that contains a more detailed

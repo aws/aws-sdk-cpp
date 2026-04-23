@@ -62,6 +62,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * include only those associated with this application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * include only those associated with this application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -100,6 +106,12 @@ namespace Model
      * those associated with this application version.</p>
      */
     inline const Aws::String& GetVersionLabel() const{ return m_versionLabel; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this application version.</p>
+     */
+    inline bool VersionLabelHasBeenSet() const { return m_versionLabelHasBeenSet; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -148,6 +160,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that are associated with this environment configuration.</p>
      */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that are associated with this environment configuration.</p>
+     */
     inline void SetTemplateName(const Aws::String& value) { m_templateNameHasBeenSet = true; m_templateName = value; }
 
     /**
@@ -186,6 +204,12 @@ namespace Model
      * those associated with this environment.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
+     */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -234,6 +258,12 @@ namespace Model
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those associated with this environment.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those associated with this environment.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -275,6 +305,11 @@ namespace Model
     /**
      * <p>The ARN of the version of the custom platform.</p>
      */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the version of the custom platform.</p>
+     */
     inline void SetPlatformArn(const Aws::String& value) { m_platformArnHasBeenSet = true; m_platformArn = value; }
 
     /**
@@ -308,6 +343,12 @@ namespace Model
      * only those associated with this request ID.</p>
      */
     inline const Aws::String& GetRequestId() const{ return m_requestId; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the described events to include
+     * only those associated with this request ID.</p>
+     */
+    inline bool RequestIdHasBeenSet() const { return m_requestIdHasBeenSet; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the described events to include
@@ -356,6 +397,12 @@ namespace Model
      * <p>If specified, limits the events returned from this call to include only those
      * with the specified severity or higher.</p>
      */
+    inline bool SeverityHasBeenSet() const { return m_severityHasBeenSet; }
+
+    /**
+     * <p>If specified, limits the events returned from this call to include only those
+     * with the specified severity or higher.</p>
+     */
     inline void SetSeverity(const EventSeverity& value) { m_severityHasBeenSet = true; m_severity = value; }
 
     /**
@@ -382,6 +429,12 @@ namespace Model
      * those that occur on or after this time.</p>
      */
     inline const Aws::Utils::DateTime& GetStartTime() const{ return m_startTime; }
+
+    /**
+     * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur on or after this time.</p>
+     */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
 
     /**
      * <p>If specified, AWS Elastic Beanstalk restricts the returned descriptions to
@@ -418,6 +471,12 @@ namespace Model
      * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
      * those that occur up to, but not including, the <code>EndTime</code>. </p>
      */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
+
+    /**
+     * <p> If specified, AWS Elastic Beanstalk restricts the returned descriptions to
+     * those that occur up to, but not including, the <code>EndTime</code>. </p>
+     */
     inline void SetEndTime(const Aws::Utils::DateTime& value) { m_endTimeHasBeenSet = true; m_endTime = value; }
 
     /**
@@ -449,6 +508,12 @@ namespace Model
      * <p>Specifies the maximum number of events that can be returned, beginning with
      * the most recent event.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>Specifies the maximum number of events that can be returned, beginning with
+     * the most recent event.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -463,6 +528,12 @@ namespace Model
      * results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination token. If specified, the events return the next batch of
+     * results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination token. If specified, the events return the next batch of

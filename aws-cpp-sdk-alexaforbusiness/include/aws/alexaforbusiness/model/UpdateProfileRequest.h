@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The ARN of the room profile to update. Required.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room profile to update. Required.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The updated name for the room profile.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The updated name for the room profile.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
      * <p>The updated name for the room profile.</p>
@@ -129,6 +139,12 @@ namespace Model
      * <p>Sets the profile as default if selected. If this is missing, no update is
      * done to the default status.</p>
      */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Sets the profile as default if selected. If this is missing, no update is
+     * done to the default status.</p>
+     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
@@ -142,6 +158,11 @@ namespace Model
      * <p>The updated timezone for the room profile.</p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The updated timezone for the room profile.</p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The updated timezone for the room profile.</p>
@@ -182,6 +203,11 @@ namespace Model
     /**
      * <p>The updated address for the room profile.</p>
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * <p>The updated address for the room profile.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -218,6 +244,11 @@ namespace Model
     /**
      * <p>The updated distance unit for the room profile.</p>
      */
+    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
+
+    /**
+     * <p>The updated distance unit for the room profile.</p>
+     */
     inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
 
     /**
@@ -240,6 +271,11 @@ namespace Model
      * <p>The updated temperature unit for the room profile.</p>
      */
     inline const TemperatureUnit& GetTemperatureUnit() const{ return m_temperatureUnit; }
+
+    /**
+     * <p>The updated temperature unit for the room profile.</p>
+     */
+    inline bool TemperatureUnitHasBeenSet() const { return m_temperatureUnitHasBeenSet; }
 
     /**
      * <p>The updated temperature unit for the room profile.</p>
@@ -270,6 +306,11 @@ namespace Model
     /**
      * <p>The updated wake word for the room profile.</p>
      */
+    inline bool WakeWordHasBeenSet() const { return m_wakeWordHasBeenSet; }
+
+    /**
+     * <p>The updated wake word for the room profile.</p>
+     */
     inline void SetWakeWord(const WakeWord& value) { m_wakeWordHasBeenSet = true; m_wakeWord = value; }
 
     /**
@@ -296,6 +337,11 @@ namespace Model
     /**
      * <p>Whether the setup mode of the profile is enabled.</p>
      */
+    inline bool SetupModeDisabledHasBeenSet() const { return m_setupModeDisabledHasBeenSet; }
+
+    /**
+     * <p>Whether the setup mode of the profile is enabled.</p>
+     */
     inline void SetSetupModeDisabled(bool value) { m_setupModeDisabledHasBeenSet = true; m_setupModeDisabled = value; }
 
     /**
@@ -312,6 +358,11 @@ namespace Model
     /**
      * <p>The updated maximum volume limit for the room profile.</p>
      */
+    inline bool MaxVolumeLimitHasBeenSet() const { return m_maxVolumeLimitHasBeenSet; }
+
+    /**
+     * <p>The updated maximum volume limit for the room profile.</p>
+     */
     inline void SetMaxVolumeLimit(int value) { m_maxVolumeLimitHasBeenSet = true; m_maxVolumeLimit = value; }
 
     /**
@@ -324,6 +375,11 @@ namespace Model
      * <p>Whether the PSTN setting of the room profile is enabled.</p>
      */
     inline bool GetPSTNEnabled() const{ return m_pSTNEnabled; }
+
+    /**
+     * <p>Whether the PSTN setting of the room profile is enabled.</p>
+     */
+    inline bool PSTNEnabledHasBeenSet() const { return m_pSTNEnabledHasBeenSet; }
 
     /**
      * <p>Whether the PSTN setting of the room profile is enabled.</p>

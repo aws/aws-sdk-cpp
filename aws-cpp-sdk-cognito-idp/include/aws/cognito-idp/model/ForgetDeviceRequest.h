@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The access token for the forgotten device request.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token for the forgotten device request.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The device key.</p>
      */
     inline const Aws::String& GetDeviceKey() const{ return m_deviceKey; }
+
+    /**
+     * <p>The device key.</p>
+     */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
 
     /**
      * <p>The device key.</p>

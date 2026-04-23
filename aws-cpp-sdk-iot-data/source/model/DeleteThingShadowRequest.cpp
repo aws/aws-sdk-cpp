@@ -29,7 +29,7 @@ DeleteThingShadowRequest::DeleteThingShadowRequest() :
 
 Aws::String DeleteThingShadowRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the subscription filter.</p>
      */
+    inline bool FilterNameHasBeenSet() const { return m_filterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the subscription filter.</p>
+     */
     inline void SetFilterName(const Aws::String& value) { m_filterNameHasBeenSet = true; m_filterName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The name of the log group.</p>
      */
+    inline bool LogGroupNameHasBeenSet() const { return m_logGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the log group.</p>
+     */
     inline void SetLogGroupName(const Aws::String& value) { m_logGroupNameHasBeenSet = true; m_logGroupName = value; }
 
     /**
@@ -124,6 +134,9 @@ namespace Model
     inline const Aws::String& GetFilterPattern() const{ return m_filterPattern; }
 
     
+    inline bool FilterPatternHasBeenSet() const { return m_filterPatternHasBeenSet; }
+
+    
     inline void SetFilterPattern(const Aws::String& value) { m_filterPatternHasBeenSet = true; m_filterPattern = value; }
 
     
@@ -146,6 +159,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
      */
     inline const Aws::String& GetDestinationArn() const{ return m_destinationArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the destination.</p>
+     */
+    inline bool DestinationArnHasBeenSet() const { return m_destinationArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the destination.</p>
@@ -186,6 +204,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -218,6 +241,9 @@ namespace Model
     inline const Distribution& GetDistribution() const{ return m_distribution; }
 
     
+    inline bool DistributionHasBeenSet() const { return m_distributionHasBeenSet; }
+
+    
     inline void SetDistribution(const Distribution& value) { m_distributionHasBeenSet = true; m_distribution = value; }
 
     
@@ -235,6 +261,12 @@ namespace Model
      * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
      */
     inline long long GetCreationTime() const{ return m_creationTime; }
+
+    /**
+     * <p>The creation time of the subscription filter, expressed as the number of
+     * milliseconds after Jan 1, 1970 00:00:00 UTC.</p>
+     */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
 
     /**
      * <p>The creation time of the subscription filter, expressed as the number of

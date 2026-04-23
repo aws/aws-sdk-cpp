@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the webhook you want to deregister.</p>
      */
+    inline bool WebhookNameHasBeenSet() const { return m_webhookNameHasBeenSet; }
+
+    /**
+     * <p>The name of the webhook you want to deregister.</p>
+     */
     inline void SetWebhookName(const Aws::String& value) { m_webhookNameHasBeenSet = true; m_webhookName = value; }
 
     /**

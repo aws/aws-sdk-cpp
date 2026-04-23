@@ -60,6 +60,14 @@ namespace Model
      * <code>PaginationToken</code>, use that string for this value to request an
      * additional page of data.</p>
      */
+    inline bool PaginationTokenHasBeenSet() const { return m_paginationTokenHasBeenSet; }
+
+    /**
+     * <p>A string that indicates that additional data is available. Leave this value
+     * empty for your initial request. If the response includes a
+     * <code>PaginationToken</code>, use that string for this value to request an
+     * additional page of data.</p>
+     */
     inline void SetPaginationToken(const Aws::String& value) { m_paginationTokenHasBeenSet = true; m_paginationToken = value; }
 
     /**
@@ -113,6 +121,17 @@ namespace Model
      * more of the specified filters.</p>
      */
     inline const Aws::Vector<TagFilter>& GetTagFilters() const{ return m_tagFilters; }
+
+    /**
+     * <p>A list of tags (keys and values). A request can include up to 50 keys, and
+     * each key can include up to 20 values.</p> <p>If you specify multiple filters
+     * connected by an AND operator in a single request, the response returns only
+     * those resources that are associated with every specified filter.</p> <p>If you
+     * specify multiple filters connected by an OR operator in a single request, the
+     * response returns all resources that are associated with at least one or possibly
+     * more of the specified filters.</p>
+     */
+    inline bool TagFiltersHasBeenSet() const { return m_tagFiltersHasBeenSet; }
 
     /**
      * <p>A list of tags (keys and values). A request can include up to 50 keys, and
@@ -193,6 +212,13 @@ namespace Model
      * paginated output. You can set ResourcesPerPage to a minimum of 1 item and the
      * maximum of 50 items. </p>
      */
+    inline bool ResourcesPerPageHasBeenSet() const { return m_resourcesPerPageHasBeenSet; }
+
+    /**
+     * <p>A limit that restricts the number of resources returned by GetResources in
+     * paginated output. You can set ResourcesPerPage to a minimum of 1 item and the
+     * maximum of 50 items. </p>
+     */
     inline void SetResourcesPerPage(int value) { m_resourcesPerPageHasBeenSet = true; m_resourcesPerPage = value; }
 
     /**
@@ -221,6 +247,25 @@ namespace Model
      * items.</p>
      */
     inline int GetTagsPerPage() const{ return m_tagsPerPage; }
+
+    /**
+     * <p>A limit that restricts the number of tags (key and value pairs) returned by
+     * GetResources in paginated output. A resource with no tags is counted as having
+     * one tag (one key and value pair).</p> <p> <code>GetResources</code> does not
+     * split a resource and its associated tags across pages. If the specified
+     * <code>TagsPerPage</code> would cause such a break, a
+     * <code>PaginationToken</code> is returned in place of the affected resource and
+     * its tags. Use that token in another request to get the remaining data. For
+     * example, if you specify a <code>TagsPerPage</code> of <code>100</code> and the
+     * account has 22 resources with 10 tags each (meaning that each resource has 10
+     * key and value pairs), the output will consist of 3 pages, with the first page
+     * displaying the first 10 resources, each with its 10 tags, the second page
+     * displaying the next 10 resources each with its 10 tags, and the third page
+     * displaying the remaining 2 resources, each with its 10 tags.</p> <p/> <p>You can
+     * set <code>TagsPerPage</code> to a minimum of 100 items and the maximum of 500
+     * items.</p>
+     */
+    inline bool TagsPerPageHasBeenSet() const { return m_tagsPerPageHasBeenSet; }
 
     /**
      * <p>A limit that restricts the number of tags (key and value pairs) returned by
@@ -278,6 +323,24 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetResourceTypeFilters() const{ return m_resourceTypeFilters; }
+
+    /**
+     * <p>The constraints on the resources that you want returned. The format of each
+     * resource type is <code>service[:resourceType]</code>. For example, specifying a
+     * resource type of <code>ec2</code> returns all tagged Amazon EC2 resources (which
+     * includes tagged EC2 instances). Specifying a resource type of
+     * <code>ec2:instance</code> returns only EC2 instances. </p> <p>The string for
+     * each service name and resource type is the same as that embedded in a resource's
+     * Amazon Resource Name (ARN). Consult the <i>AWS General Reference</i> for the
+     * following:</p> <ul> <li> <p>For a list of service name strings, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#genref-aws-service-namespaces">AWS
+     * Service Namespaces</a>.</p> </li> <li> <p>For resource type strings, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html#arns-syntax">Example
+     * ARNs</a>.</p> </li> <li> <p>For more information about ARNs, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a>.</p> </li> </ul>
+     */
+    inline bool ResourceTypeFiltersHasBeenSet() const { return m_resourceTypeFiltersHasBeenSet; }
 
     /**
      * <p>The constraints on the resources that you want returned. The format of each

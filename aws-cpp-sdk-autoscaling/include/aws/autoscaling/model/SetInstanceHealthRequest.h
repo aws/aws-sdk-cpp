@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -89,6 +94,14 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetHealthStatus() const{ return m_healthStatus; }
+
+    /**
+     * <p>The health status of the instance. Set to <code>Healthy</code> to have the
+     * instance remain in service. Set to <code>Unhealthy</code> to have the instance
+     * be out of service. Amazon EC2 Auto Scaling terminates and replaces the unhealthy
+     * instance.</p>
+     */
+    inline bool HealthStatusHasBeenSet() const { return m_healthStatusHasBeenSet; }
 
     /**
      * <p>The health status of the instance. Set to <code>Healthy</code> to have the
@@ -148,6 +161,16 @@ namespace Model
      * <a>CreateAutoScalingGroup</a>.</p>
      */
     inline bool GetShouldRespectGracePeriod() const{ return m_shouldRespectGracePeriod; }
+
+    /**
+     * <p>If the Auto Scaling group of the specified instance has a
+     * <code>HealthCheckGracePeriod</code> specified for the group, by default, this
+     * call respects the grace period. Set this to <code>False</code>, to have the call
+     * not respect the grace period associated with the group.</p> <p>For more
+     * information about the health check grace period, see
+     * <a>CreateAutoScalingGroup</a>.</p>
+     */
+    inline bool ShouldRespectGracePeriodHasBeenSet() const { return m_shouldRespectGracePeriodHasBeenSet; }
 
     /**
      * <p>If the Auto Scaling group of the specified instance has a

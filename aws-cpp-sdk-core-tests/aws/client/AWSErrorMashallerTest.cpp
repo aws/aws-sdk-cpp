@@ -582,6 +582,19 @@ TEST(AWSErrorMashallerTest, TestErrorsWithoutPrefixParse)
     ASSERT_EQ(message, error.GetMessage());
     ASSERT_TRUE(error.ShouldRetry());
 
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestThrottledException", message));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottledException", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
+    error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "RequestThrottled", message));
+    ASSERT_EQ(CoreErrors::THROTTLING, error.GetErrorType());
+    ASSERT_EQ("RequestThrottled", error.GetExceptionName());
+    ASSERT_EQ(message, error.GetMessage());
+    ASSERT_TRUE(error.ShouldRetry());
+
+
     error = awsErrorMarshaller.Marshall(*BuildHttpResponse(exceptionPrefix + "IDon'tExist", "JunkMessage"));
     ASSERT_EQ(CoreErrors::UNKNOWN, error.GetErrorType());
     ASSERT_EQ(exceptionPrefix + "IDon'tExist", error.GetExceptionName());

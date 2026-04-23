@@ -43,7 +43,7 @@ namespace Model
    * default, your entire list of origin access identities is returned in one single
    * page. If the list is long, you can paginate it using the <code>MaxItems</code>
    * and <code>Marker</code> parameters.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CloudFrontOriginAccessIdentityList">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CloudFrontOriginAccessIdentityList">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CloudFrontOriginAccessIdentityList
@@ -64,6 +64,15 @@ namespace Model
      * (which is also the ID of the last identity on that page). </p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>Use this when paginating results to indicate where to begin in your list of
+     * origin access identities. The results include identities in the list that occur
+     * after the marker. To get the next page of results, set the <code>Marker</code>
+     * to the value of the <code>NextMarker</code> from the current page's response
+     * (which is also the ID of the last identity on that page). </p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>Use this when paginating results to indicate where to begin in your list of
@@ -132,6 +141,13 @@ namespace Model
      * contains the value you can use for the <code>Marker</code> request parameter to
      * continue listing your origin access identities where they left off. </p>
      */
+    inline bool NextMarkerHasBeenSet() const { return m_nextMarkerHasBeenSet; }
+
+    /**
+     * <p>If <code>IsTruncated</code> is <code>true</code>, this element is present and
+     * contains the value you can use for the <code>Marker</code> request parameter to
+     * continue listing your origin access identities where they left off. </p>
+     */
     inline void SetNextMarker(const Aws::String& value) { m_nextMarkerHasBeenSet = true; m_nextMarker = value; }
 
     /**
@@ -180,6 +196,12 @@ namespace Model
      * <p>The maximum number of origin access identities you want in the response body.
      * </p>
      */
+    inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of origin access identities you want in the response body.
+     * </p>
+     */
     inline void SetMaxItems(int value) { m_maxItemsHasBeenSet = true; m_maxItems = value; }
 
     /**
@@ -196,6 +218,14 @@ namespace Model
      * in the list.</p>
      */
     inline bool GetIsTruncated() const{ return m_isTruncated; }
+
+    /**
+     * <p>A flag that indicates whether more origin access identities remain to be
+     * listed. If your results were truncated, you can make a follow-up pagination
+     * request using the <code>Marker</code> request parameter to retrieve more items
+     * in the list.</p>
+     */
+    inline bool IsTruncatedHasBeenSet() const { return m_isTruncatedHasBeenSet; }
 
     /**
      * <p>A flag that indicates whether more origin access identities remain to be
@@ -224,6 +254,12 @@ namespace Model
      * <p>The number of CloudFront origin access identities that were created by the
      * current AWS account. </p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of CloudFront origin access identities that were created by the
+     * current AWS account. </p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -239,6 +275,13 @@ namespace Model
      * access identity that was created by the current AWS account.</p>
      */
     inline const Aws::Vector<CloudFrontOriginAccessIdentitySummary>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains one
+     * <code>CloudFrontOriginAccessIdentitySummary</code> element for each origin
+     * access identity that was created by the current AWS account.</p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains one

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A list of connections used by the job.</p>
      */
+    inline bool ConnectionsHasBeenSet() const { return m_connectionsHasBeenSet; }
+
+    /**
+     * <p>A list of connections used by the job.</p>
+     */
     inline void SetConnections(const Aws::Vector<Aws::String>& value) { m_connectionsHasBeenSet = true; m_connections = value; }
 
     /**

@@ -34,7 +34,7 @@ GetBucketCorsRequest::GetBucketCorsRequest() :
 
 Aws::String GetBucketCorsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBucketCorsRequest::AddQueryStringParameters(URI& uri) const

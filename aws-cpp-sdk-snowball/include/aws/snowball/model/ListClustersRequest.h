@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The number of <code>ClusterListEntry</code> objects to return.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The number of <code>ClusterListEntry</code> objects to return.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -66,6 +71,13 @@ namespace Model
      * <code>NextToken</code> as the starting point for your returned list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
+     * of <code>ClusterListEntry</code> objects, you have the option of specifying
+     * <code>NextToken</code> as the starting point for your returned list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list

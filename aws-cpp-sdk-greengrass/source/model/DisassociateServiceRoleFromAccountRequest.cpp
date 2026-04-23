@@ -28,7 +28,7 @@ DisassociateServiceRoleFromAccountRequest::DisassociateServiceRoleFromAccountReq
 
 Aws::String DisassociateServiceRoleFromAccountRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

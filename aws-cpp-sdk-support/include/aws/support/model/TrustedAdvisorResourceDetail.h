@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The status code for the resource identified in the Trusted Advisor check.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status code for the resource identified in the Trusted Advisor check.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The AWS region in which the identified resource is located.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS region in which the identified resource is located.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The unique identifier for the identified resource.</p>
      */
     inline const Aws::String& GetResourceId() const{ return m_resourceId; }
+
+    /**
+     * <p>The unique identifier for the identified resource.</p>
+     */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
 
     /**
      * <p>The unique identifier for the identified resource.</p>
@@ -167,6 +182,12 @@ namespace Model
      * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
      * was marked as suppressed by the user.</p>
      */
+    inline bool IsSuppressedHasBeenSet() const { return m_isSuppressedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the AWS resource was ignored by Trusted Advisor because it
+     * was marked as suppressed by the user.</p>
+     */
     inline void SetIsSuppressed(bool value) { m_isSuppressedHasBeenSet = true; m_isSuppressed = value; }
 
     /**
@@ -185,6 +206,16 @@ namespace Model
      * summary data. </p>
      */
     inline const Aws::Vector<Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Additional information about the identified resource. The exact metadata and
+     * its order can be obtained by inspecting the
+     * <a>TrustedAdvisorCheckDescription</a> object returned by the call to
+     * <a>DescribeTrustedAdvisorChecks</a>. <b>Metadata</b> contains all the data that
+     * is shown in the Excel download, even in those cases where the UI shows just
+     * summary data. </p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>Additional information about the identified resource. The exact metadata and

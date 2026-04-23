@@ -58,6 +58,13 @@ namespace Model
      * <code>RuleId</code> is returned by <code>CreateRule</code> and by
      * <a>ListRules</a>.</p>
      */
+    inline bool RuleIdHasBeenSet() const { return m_ruleIdHasBeenSet; }
+
+    /**
+     * <p>The <code>RuleId</code> of the <code>Rule</code> that you want to update.
+     * <code>RuleId</code> is returned by <code>CreateRule</code> and by
+     * <a>ListRules</a>.</p>
+     */
     inline void SetRuleId(const Aws::String& value) { m_ruleIdHasBeenSet = true; m_ruleId = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**
@@ -142,6 +154,17 @@ namespace Model
      * </li> </ul>
      */
     inline const Aws::Vector<RuleUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or
+     * delete from a <a>Rule</a>. For more information, see the applicable data
+     * types:</p> <ul> <li> <p> <a>RuleUpdate</a>: Contains <code>Action</code> and
+     * <code>Predicate</code> </p> </li> <li> <p> <a>Predicate</a>: Contains
+     * <code>DataId</code>, <code>Negated</code>, and <code>Type</code> </p> </li> <li>
+     * <p> <a>FieldToMatch</a>: Contains <code>Data</code> and <code>Type</code> </p>
+     * </li> </ul>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>RuleUpdate</code> objects that you want to insert into or

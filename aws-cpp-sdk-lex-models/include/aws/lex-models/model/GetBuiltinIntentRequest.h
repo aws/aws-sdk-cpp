@@ -56,6 +56,14 @@ namespace Model
      * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
      * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
      */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for a built-in intent. To find the signature for an
+     * intent, see <a
+     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard
+     * Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+     */
     inline void SetSignature(const Aws::String& value) { m_signatureHasBeenSet = true; m_signature = value; }
 
     /**

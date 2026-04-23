@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the thing.</p>
      */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing.</p>
+     */
     inline void SetThingName(const Aws::String& value) { m_thingNameHasBeenSet = true; m_thingName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The principal, such as a certificate or other credential.</p>
      */
     inline const Aws::String& GetPrincipal() const{ return m_principal; }
+
+    /**
+     * <p>The principal, such as a certificate or other credential.</p>
+     */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
 
     /**
      * <p>The principal, such as a certificate or other credential.</p>

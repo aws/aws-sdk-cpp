@@ -36,7 +36,7 @@ ListPoliciesRequest::ListPoliciesRequest() :
 
 Aws::String ListPoliciesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListPoliciesRequest::AddQueryStringParameters(URI& uri) const

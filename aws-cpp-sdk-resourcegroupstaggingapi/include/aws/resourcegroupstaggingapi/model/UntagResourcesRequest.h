@@ -63,6 +63,16 @@ namespace Model
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
+    inline bool ResourceARNListHasBeenSet() const { return m_resourceARNListHasBeenSet; }
+
+    /**
+     * <p>A list of ARNs. An ARN (Amazon Resource Name) uniquely identifies a resource.
+     * You can specify a minimum of 1 and a maximum of 20 ARNs (resources) to untag. An
+     * ARN can be set to a maximum of 1600 characters. For more information, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
     inline void SetResourceARNList(const Aws::Vector<Aws::String>& value) { m_resourceARNListHasBeenSet = true; m_resourceARNList = value; }
 
     /**
@@ -131,6 +141,12 @@ namespace Model
      * resources.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>A list of the tag keys that you want to remove from the specified
+     * resources.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>A list of the tag keys that you want to remove from the specified

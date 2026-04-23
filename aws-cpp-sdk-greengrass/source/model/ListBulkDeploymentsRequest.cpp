@@ -33,7 +33,7 @@ ListBulkDeploymentsRequest::ListBulkDeploymentsRequest() :
 
 Aws::String ListBulkDeploymentsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBulkDeploymentsRequest::AddQueryStringParameters(URI& uri) const

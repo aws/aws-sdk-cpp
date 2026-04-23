@@ -58,6 +58,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the remote access session about which you
      * want to get session information.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the remote access session about which you
+     * want to get session information.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

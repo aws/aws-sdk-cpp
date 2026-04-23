@@ -42,25 +42,39 @@ namespace Model
     PutObjectTaggingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const Aws::String& value) { m_versionId = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(Aws::String&& value) { m_versionId = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetVersionId(const char* value) { m_versionId.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline PutObjectTaggingResult& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutObjectTaggingResult& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline PutObjectTaggingResult& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 
   private:

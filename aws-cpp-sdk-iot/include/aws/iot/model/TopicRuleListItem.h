@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The rule ARN.</p>
      */
+    inline bool RuleArnHasBeenSet() const { return m_ruleArnHasBeenSet; }
+
+    /**
+     * <p>The rule ARN.</p>
+     */
     inline void SetRuleArn(const Aws::String& value) { m_ruleArnHasBeenSet = true; m_ruleArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the rule.</p>
      */
     inline const Aws::String& GetRuleName() const{ return m_ruleName; }
+
+    /**
+     * <p>The name of the rule.</p>
+     */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
 
     /**
      * <p>The name of the rule.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The pattern for the topic names that apply.</p>
      */
+    inline bool TopicPatternHasBeenSet() const { return m_topicPatternHasBeenSet; }
+
+    /**
+     * <p>The pattern for the topic names that apply.</p>
+     */
     inline void SetTopicPattern(const Aws::String& value) { m_topicPatternHasBeenSet = true; m_topicPattern = value; }
 
     /**
@@ -164,6 +179,11 @@ namespace Model
     /**
      * <p>The date and time the rule was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date and time the rule was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -186,6 +206,11 @@ namespace Model
      * <p>Specifies whether the rule is disabled.</p>
      */
     inline bool GetRuleDisabled() const{ return m_ruleDisabled; }
+
+    /**
+     * <p>Specifies whether the rule is disabled.</p>
+     */
+    inline bool RuleDisabledHasBeenSet() const { return m_ruleDisabledHasBeenSet; }
 
     /**
      * <p>Specifies whether the rule is disabled.</p>

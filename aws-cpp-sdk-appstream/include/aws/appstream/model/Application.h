@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -86,37 +91,42 @@ namespace Model
 
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline const Aws::String& GetDisplayName() const{ return m_displayName; }
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
+     */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The application name to display.</p>
      */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline void SetDisplayName(Aws::String&& value) { m_displayNameHasBeenSet = true; m_displayName = std::move(value); }
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline void SetDisplayName(const char* value) { m_displayNameHasBeenSet = true; m_displayName.assign(value); }
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline Application& WithDisplayName(const Aws::String& value) { SetDisplayName(value); return *this;}
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline Application& WithDisplayName(Aws::String&& value) { SetDisplayName(std::move(value)); return *this;}
 
     /**
-     * <p>The application name for display.</p>
+     * <p>The application name to display.</p>
      */
     inline Application& WithDisplayName(const char* value) { SetDisplayName(value); return *this;}
 
@@ -125,6 +135,11 @@ namespace Model
      * <p>The URL for the application icon. This URL might be time-limited.</p>
      */
     inline const Aws::String& GetIconURL() const{ return m_iconURL; }
+
+    /**
+     * <p>The URL for the application icon. This URL might be time-limited.</p>
+     */
+    inline bool IconURLHasBeenSet() const { return m_iconURLHasBeenSet; }
 
     /**
      * <p>The URL for the application icon. This URL might be time-limited.</p>
@@ -165,6 +180,11 @@ namespace Model
     /**
      * <p>The path to the application executable in the instance.</p>
      */
+    inline bool LaunchPathHasBeenSet() const { return m_launchPathHasBeenSet; }
+
+    /**
+     * <p>The path to the application executable in the instance.</p>
+     */
     inline void SetLaunchPath(const Aws::String& value) { m_launchPathHasBeenSet = true; m_launchPath = value; }
 
     /**
@@ -197,6 +217,11 @@ namespace Model
      * <p>The arguments that are passed to the application at launch.</p>
      */
     inline const Aws::String& GetLaunchParameters() const{ return m_launchParameters; }
+
+    /**
+     * <p>The arguments that are passed to the application at launch.</p>
+     */
+    inline bool LaunchParametersHasBeenSet() const { return m_launchParametersHasBeenSet; }
 
     /**
      * <p>The arguments that are passed to the application at launch.</p>
@@ -239,6 +264,12 @@ namespace Model
      * <p>If there is a problem, the application can be disabled after image
      * creation.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>If there is a problem, the application can be disabled after image
+     * creation.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -252,6 +283,11 @@ namespace Model
      * <p>Additional attributes that describe the application.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetMetadata() const{ return m_metadata; }
+
+    /**
+     * <p>Additional attributes that describe the application.</p>
+     */
+    inline bool MetadataHasBeenSet() const { return m_metadataHasBeenSet; }
 
     /**
      * <p>Additional attributes that describe the application.</p>

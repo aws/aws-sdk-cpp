@@ -76,6 +76,21 @@ namespace Model
      * resources assigned a tag with a specific key, regardless of the tag value.</p>
      * </li> </ul>
      */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>is-classic-link-enabled</code> -
+     * Whether the VPC is enabled for ClassicLink (<code>true</code> |
+     * <code>false</code>).</p> </li> <li> <p> <code>tag</code>:&lt;key&gt; - The
+     * key/value combination of a tag assigned to the resource. Use the tag key in the
+     * filter name and the tag value as the filter value. For example, to find all
+     * resources that have a tag with the key <code>Owner</code> and the value
+     * <code>TeamA</code>, specify <code>tag:Owner</code> for the filter name and
+     * <code>TeamA</code> for the filter value.</p> </li> <li> <p> <code>tag-key</code>
+     * - The key of a tag assigned to the resource. Use this filter to find all
+     * resources assigned a tag with a specific key, regardless of the tag value.</p>
+     * </li> </ul>
+     */
     inline void SetFilters(const Aws::Vector<Filter>& value) { m_filtersHasBeenSet = true; m_filters = value; }
 
     /**
@@ -168,6 +183,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -183,6 +206,11 @@ namespace Model
      * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpcIds() const{ return m_vpcIds; }
+
+    /**
+     * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>
+     */
+    inline bool VpcIdsHasBeenSet() const { return m_vpcIdsHasBeenSet; }
 
     /**
      * <p>One or more VPCs for which you want to describe the ClassicLink status.</p>

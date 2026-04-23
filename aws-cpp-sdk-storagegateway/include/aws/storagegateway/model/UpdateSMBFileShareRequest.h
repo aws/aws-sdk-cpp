@@ -59,6 +59,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the SMB file share that you want to
      * update.</p>
      */
+    inline bool FileShareARNHasBeenSet() const { return m_fileShareARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the SMB file share that you want to
+     * update.</p>
+     */
     inline void SetFileShareARN(const Aws::String& value) { m_fileShareARNHasBeenSet = true; m_fileShareARN = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
      * false to use a key managed by Amazon S3. Optional.</p>
      */
+    inline bool KMSEncryptedHasBeenSet() const { return m_kMSEncryptedHasBeenSet; }
+
+    /**
+     * <p>True to use Amazon S3 server side encryption with your own AWS KMS key, or
+     * false to use a key managed by Amazon S3. Optional.</p>
+     */
     inline void SetKMSEncrypted(bool value) { m_kMSEncryptedHasBeenSet = true; m_kMSEncrypted = value; }
 
     /**
@@ -117,6 +129,13 @@ namespace Model
      * Optional.</p>
      */
     inline const Aws::String& GetKMSKey() const{ return m_kMSKey; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
+     * side encryption. This value can only be set when KMSEncrypted is true.
+     * Optional.</p>
+     */
+    inline bool KMSKeyHasBeenSet() const { return m_kMSKeyHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the AWS KMS key used for Amazon S3 server
@@ -168,6 +187,14 @@ namespace Model
      * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
      */
     inline const Aws::String& GetDefaultStorageClass() const{ return m_defaultStorageClass; }
+
+    /**
+     * <p>The default storage class for objects put into an Amazon S3 bucket by the
+     * file gateway. Possible values are <code>S3_STANDARD</code>,
+     * <code>S3_STANDARD_IA</code>, or <code>S3_ONEZONE_IA</code>. If this field is not
+     * populated, the default value <code>S3_STANDARD</code> is used. Optional.</p>
+     */
+    inline bool DefaultStorageClassHasBeenSet() const { return m_defaultStorageClassHasBeenSet; }
 
     /**
      * <p>The default storage class for objects put into an Amazon S3 bucket by the
@@ -230,6 +257,13 @@ namespace Model
      * bucket that a file gateway puts objects into. The default value is
      * "private".</p>
      */
+    inline bool ObjectACLHasBeenSet() const { return m_objectACLHasBeenSet; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the S3
+     * bucket that a file gateway puts objects into. The default value is
+     * "private".</p>
+     */
     inline void SetObjectACL(const ObjectACL& value) { m_objectACLHasBeenSet = true; m_objectACL = value; }
 
     /**
@@ -264,6 +298,12 @@ namespace Model
      * <p>A value that sets the write status of a file share. This value is true if the
      * write status is read-only, and otherwise false.</p>
      */
+    inline bool ReadOnlyHasBeenSet() const { return m_readOnlyHasBeenSet; }
+
+    /**
+     * <p>A value that sets the write status of a file share. This value is true if the
+     * write status is read-only, and otherwise false.</p>
+     */
     inline void SetReadOnly(bool value) { m_readOnlyHasBeenSet = true; m_readOnly = value; }
 
     /**
@@ -279,6 +319,13 @@ namespace Model
      * otherwise to false. The default value is true.</p>
      */
     inline bool GetGuessMIMETypeEnabled() const{ return m_guessMIMETypeEnabled; }
+
+    /**
+     * <p>A value that enables guessing of the MIME type for uploaded objects based on
+     * file extensions. Set this value to true to enable MIME type guessing, and
+     * otherwise to false. The default value is true.</p>
+     */
+    inline bool GuessMIMETypeEnabledHasBeenSet() const { return m_guessMIMETypeEnabledHasBeenSet; }
 
     /**
      * <p>A value that enables guessing of the MIME type for uploaded objects based on
@@ -307,6 +354,13 @@ namespace Model
      * Amazon S3 bucket that a file gateway puts objects into. The default value is
      * <code>private</code>.</p>
      */
+    inline bool RequesterPaysHasBeenSet() const { return m_requesterPaysHasBeenSet; }
+
+    /**
+     * <p>A value that sets the access control list permission for objects in the
+     * Amazon S3 bucket that a file gateway puts objects into. The default value is
+     * <code>private</code>.</p>
+     */
     inline void SetRequesterPays(bool value) { m_requesterPaysHasBeenSet = true; m_requesterPays = value; }
 
     /**
@@ -324,6 +378,14 @@ namespace Model
      * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValidUserList() const{ return m_validUserList; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that are allowed to access
+     * the file share. A group must be prefixed with the @ character. For example
+     * <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline bool ValidUserListHasBeenSet() const { return m_validUserListHasBeenSet; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are allowed to access
@@ -389,6 +451,14 @@ namespace Model
      * <code>ActiveDirectory</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetInvalidUserList() const{ return m_invalidUserList; }
+
+    /**
+     * <p>A list of users or groups in the Active Directory that are not allowed to
+     * access the file share. A group must be prefixed with the @ character. For
+     * example <code>@group1</code>. Can only be set if Authentication is set to
+     * <code>ActiveDirectory</code>.</p>
+     */
+    inline bool InvalidUserListHasBeenSet() const { return m_invalidUserListHasBeenSet; }
 
     /**
      * <p>A list of users or groups in the Active Directory that are not allowed to

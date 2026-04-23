@@ -37,7 +37,7 @@ GetDocumentVersionRequest::GetDocumentVersionRequest() :
 
 Aws::String GetDocumentVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetDocumentVersionRequest::GetRequestSpecificHeaders() const

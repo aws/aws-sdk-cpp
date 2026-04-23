@@ -62,6 +62,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -79,6 +87,13 @@ namespace Model
      * prefix list.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
+     * a prefix list.</p> </li> <li> <p> <code>prefix-list-name</code>: The name of a
+     * prefix list.</p> </li> </ul>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>One or more filters.</p> <ul> <li> <p> <code>prefix-list-id</code>: The ID of
@@ -124,69 +139,71 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of items to return for this request. The request returns a
-     * token that you can specify in a subsequent call to get the next set of
-     * results.</p> <p>Constraint: If the value specified is greater than 1000, we
-     * return only 1000 items.</p>
+     * <p>The maximum number of results to return with a single call. To retrieve the
+     * remaining results, make another call with the returned <code>nextToken</code>
+     * value.</p>
      */
     inline DescribePrefixListsRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextTokenHasBeenSet = true; m_nextToken = std::move(value); }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextTokenHasBeenSet = true; m_nextToken.assign(value); }
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribePrefixListsRequest& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribePrefixListsRequest& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>The token for the next set of items to return. (You received this token from
-     * a prior call.)</p>
+     * <p>The token for the next page of results.</p>
      */
     inline DescribePrefixListsRequest& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 
@@ -195,6 +212,11 @@ namespace Model
      * <p>One or more prefix list IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPrefixListIds() const{ return m_prefixListIds; }
+
+    /**
+     * <p>One or more prefix list IDs.</p>
+     */
+    inline bool PrefixListIdsHasBeenSet() const { return m_prefixListIdsHasBeenSet; }
 
     /**
      * <p>One or more prefix list IDs.</p>

@@ -62,6 +62,12 @@ namespace Model
      * <p>The ID of the certificate. (The last part of the certificate ARN contains the
      * certificate ID.)</p>
      */
+    inline bool CertificateIdHasBeenSet() const { return m_certificateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the certificate. (The last part of the certificate ARN contains the
+     * certificate ID.)</p>
+     */
     inline void SetCertificateId(const Aws::String& value) { m_certificateIdHasBeenSet = true; m_certificateId = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
      * <p>Specifies whether the certificate is active.</p>
      */
     inline bool GetSetAsActive() const{ return m_setAsActive; }
+
+    /**
+     * <p>Specifies whether the certificate is active.</p>
+     */
+    inline bool SetAsActiveHasBeenSet() const { return m_setAsActiveHasBeenSet; }
 
     /**
      * <p>Specifies whether the certificate is active.</p>

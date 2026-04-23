@@ -32,7 +32,8 @@ namespace Model
     ParentExecutionId,
     CurrentAction,
     StartTimeBefore,
-    StartTimeAfter
+    StartTimeAfter,
+    AutomationType
   };
 
 namespace AutomationExecutionFilterKeyMapper

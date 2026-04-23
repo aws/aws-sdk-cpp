@@ -29,7 +29,7 @@ DescribeReservationRequest::DescribeReservationRequest() :
 
 Aws::String DescribeReservationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

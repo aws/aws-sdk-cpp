@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Name of the job in question.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>Name of the job in question.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>Version of the job.</p>
      */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
+
+    /**
+     * <p>Version of the job.</p>
+     */
     inline void SetVersion(int value) { m_versionHasBeenSet = true; m_version = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The run ID number.</p>
      */
     inline int GetRun() const{ return m_run; }
+
+    /**
+     * <p>The run ID number.</p>
+     */
+    inline bool RunHasBeenSet() const { return m_runHasBeenSet; }
 
     /**
      * <p>The run ID number.</p>
@@ -124,6 +139,11 @@ namespace Model
     /**
      * <p>The attempt ID number.</p>
      */
+    inline bool AttemptHasBeenSet() const { return m_attemptHasBeenSet; }
+
+    /**
+     * <p>The attempt ID number.</p>
+     */
     inline void SetAttempt(int value) { m_attemptHasBeenSet = true; m_attempt = value; }
 
     /**
@@ -136,6 +156,11 @@ namespace Model
      * <p>The bookmark itself.</p>
      */
     inline const Aws::String& GetJobBookmark() const{ return m_jobBookmark; }
+
+    /**
+     * <p>The bookmark itself.</p>
+     */
+    inline bool JobBookmarkHasBeenSet() const { return m_jobBookmarkHasBeenSet; }
 
     /**
      * <p>The bookmark itself.</p>

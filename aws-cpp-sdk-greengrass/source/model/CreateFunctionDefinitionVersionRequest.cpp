@@ -25,6 +25,7 @@ using namespace Aws::Utils;
 
 CreateFunctionDefinitionVersionRequest::CreateFunctionDefinitionVersionRequest() : 
     m_amznClientTokenHasBeenSet(false),
+    m_defaultConfigHasBeenSet(false),
     m_functionDefinitionIdHasBeenSet(false),
     m_functionsHasBeenSet(false)
 {
@@ -33,6 +34,12 @@ CreateFunctionDefinitionVersionRequest::CreateFunctionDefinitionVersionRequest()
 Aws::String CreateFunctionDefinitionVersionRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_defaultConfigHasBeenSet)
+  {
+   payload.WithObject("DefaultConfig", m_defaultConfig.Jsonize());
+
+  }
 
   if(m_functionsHasBeenSet)
   {

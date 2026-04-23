@@ -62,6 +62,13 @@ namespace Model
      * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
      * <code>redis3.2</code> | <code>redis4.0</code> </p>
      */
+    inline bool CacheParameterGroupFamilyHasBeenSet() const { return m_cacheParameterGroupFamilyHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group family.</p> <p>Valid values are:
+     * <code>memcached1.4</code> | <code>redis2.6</code> | <code>redis2.8</code> |
+     * <code>redis3.2</code> | <code>redis4.0</code> </p>
+     */
     inline void SetCacheParameterGroupFamily(const Aws::String& value) { m_cacheParameterGroupFamilyHasBeenSet = true; m_cacheParameterGroupFamily = value; }
 
     /**
@@ -114,6 +121,14 @@ namespace Model
      * the response so that the remaining results can be retrieved.</p> <p>Default:
      * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of records to include in the response. If more records
+     * exist than the specified <code>MaxRecords</code> value, a marker is included in
+     * the response so that the remaining results can be retrieved.</p> <p>Default:
+     * 100</p> <p>Constraints: minimum 20; maximum 100.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -132,6 +147,14 @@ namespace Model
      * <code>MaxRecords</code>.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>An optional marker returned from a prior request. Use this marker for
+     * pagination of results from this operation. If this parameter is specified, the
+     * response includes only records beyond the marker, up to the value specified by
+     * <code>MaxRecords</code>.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>An optional marker returned from a prior request. Use this marker for

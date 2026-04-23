@@ -36,7 +36,7 @@ ListCACertificatesRequest::ListCACertificatesRequest() :
 
 Aws::String ListCACertificatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListCACertificatesRequest::AddQueryStringParameters(URI& uri) const

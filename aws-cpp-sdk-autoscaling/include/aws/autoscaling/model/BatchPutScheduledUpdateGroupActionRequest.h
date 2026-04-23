@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
      */
     inline const Aws::Vector<ScheduledUpdateGroupActionRequest>& GetScheduledUpdateGroupActions() const{ return m_scheduledUpdateGroupActions; }
+
+    /**
+     * <p>One or more scheduled actions. The maximum number allowed is 50. </p>
+     */
+    inline bool ScheduledUpdateGroupActionsHasBeenSet() const { return m_scheduledUpdateGroupActionsHasBeenSet; }
 
     /**
      * <p>One or more scheduled actions. The maximum number allowed is 50. </p>

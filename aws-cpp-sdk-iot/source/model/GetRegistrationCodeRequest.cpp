@@ -28,7 +28,7 @@ GetRegistrationCodeRequest::GetRegistrationCodeRequest()
 
 Aws::String GetRegistrationCodeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

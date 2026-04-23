@@ -13,6 +13,9 @@
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderModelIncludes.vm")
 \#include <aws/core/client/AsyncCallerContext.h>
 \#include <aws/core/http/HttpTypes.h>
+#if($metadata.hasEndpointDiscoveryTrait)
+\#include <aws/core/utils/ConcurrentCache.h>
+#end
 \#include <future>
 \#include <functional>
 
@@ -89,13 +92,24 @@ namespace Aws
     #end
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
 
+        void OverrideEndpoint(const Aws::String& endpoint);
     private:
-    void init(const Aws::Client::ClientConfiguration& clientConfiguration);
-
+        void init(const Aws::Client::ClientConfiguration& clientConfiguration);
     #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderAsyncHelpers.vm")
 
-    Aws::String m_uri;
-    std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
+#if($metadata.hasEndpointTrait)
+        Aws::String m_baseUri;
+        Aws::String m_scheme;
+        bool m_enableHostPrefixInjection;
+#else
+        Aws::String m_uri;
+#end      
+#if($metadata.hasEndpointDiscoveryTrait)
+        mutable Aws::Utils::ConcurrentCache<Aws::String, Aws::String> m_endpointsCache;
+        bool m_enableEndpointDiscovery;
+#end
+        Aws::String m_configScheme;
+        std::shared_ptr<Aws::Utils::Threading::Executor> m_executor;
     };
 
     } // namespace ${metadata.namespace}

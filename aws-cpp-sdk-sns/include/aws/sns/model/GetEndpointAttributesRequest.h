@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>EndpointArn for GetEndpointAttributes input.</p>
      */
+    inline bool EndpointArnHasBeenSet() const { return m_endpointArnHasBeenSet; }
+
+    /**
+     * <p>EndpointArn for GetEndpointAttributes input.</p>
+     */
     inline void SetEndpointArn(const Aws::String& value) { m_endpointArnHasBeenSet = true; m_endpointArn = value; }
 
     /**

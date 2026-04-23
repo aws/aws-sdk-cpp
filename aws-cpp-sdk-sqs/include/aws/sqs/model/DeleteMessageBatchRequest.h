@@ -61,6 +61,12 @@ namespace Model
      * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
      * URLs and names are case-sensitive.</p>
      */
+    inline bool QueueUrlHasBeenSet() const { return m_queueUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the Amazon SQS queue from which messages are deleted.</p> <p>Queue
+     * URLs and names are case-sensitive.</p>
+     */
     inline void SetQueueUrl(const Aws::String& value) { m_queueUrlHasBeenSet = true; m_queueUrl = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
      * <p>A list of receipt handles for the messages to be deleted.</p>
      */
     inline const Aws::Vector<DeleteMessageBatchRequestEntry>& GetEntries() const{ return m_entries; }
+
+    /**
+     * <p>A list of receipt handles for the messages to be deleted.</p>
+     */
+    inline bool EntriesHasBeenSet() const { return m_entriesHasBeenSet; }
 
     /**
      * <p>A list of receipt handles for the messages to be deleted.</p>

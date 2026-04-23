@@ -56,10 +56,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -68,10 +68,22 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
+     * instance, then the Auto Scaling groups launches the remaining capacity using the
+     * second priority instance type, and so on. </p>
+     */
+    inline bool OnDemandAllocationStrategyHasBeenSet() const { return m_onDemandAllocationStrategyHasBeenSet; }
+
+    /**
+     * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
+     * <p>The only valid value is <code>prioritized</code>, which is also the default
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -80,10 +92,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -92,10 +104,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -104,10 +116,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -116,10 +128,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -128,10 +140,10 @@ namespace Model
     /**
      * <p>Indicates how to allocate instance types to fulfill On-Demand capacity. </p>
      * <p>The only valid value is <code>prioritized</code>, which is also the default
-     * value. This strategy uses the order of instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a> to define the launch priority of each instance
-     * type. The first instance type in the array is prioritized higher than the last.
-     * If all your On-Demand capacity cannot be fulfilled using your highest priority
+     * value. This strategy uses the order of instance type overrides for the
+     * <a>LaunchTemplate</a> to define the launch priority of each instance type. The
+     * first instance type in the array is prioritized higher than the last. If all
+     * your On-Demand capacity cannot be fulfilled using your highest priority
      * instance, then the Auto Scaling groups launches the remaining capacity using the
      * second priority instance type, and so on. </p>
      */
@@ -141,55 +153,77 @@ namespace Model
     /**
      * <p>The minimum amount of the Auto Scaling group's capacity that must be
      * fulfilled by On-Demand Instances. This base portion is provisioned first as your
-     * group scales.</p> <p>The default value is 0. If you leave this parameter set to
-     * 0, On-Demand Instances are launched as a percentage of the Auto Scaling group's
-     * desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b>
-     * setting.</p>
+     * group scales.</p> <p>The default value is <code>0</code>. If you leave this
+     * parameter set to <code>0</code>, On-Demand Instances are launched as a
+     * percentage of the Auto Scaling group's desired capacity, per the
+     * <code>OnDemandPercentageAboveBaseCapacity</code> setting.</p>
      */
     inline int GetOnDemandBaseCapacity() const{ return m_onDemandBaseCapacity; }
 
     /**
      * <p>The minimum amount of the Auto Scaling group's capacity that must be
      * fulfilled by On-Demand Instances. This base portion is provisioned first as your
-     * group scales.</p> <p>The default value is 0. If you leave this parameter set to
-     * 0, On-Demand Instances are launched as a percentage of the Auto Scaling group's
-     * desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b>
-     * setting.</p>
+     * group scales.</p> <p>The default value is <code>0</code>. If you leave this
+     * parameter set to <code>0</code>, On-Demand Instances are launched as a
+     * percentage of the Auto Scaling group's desired capacity, per the
+     * <code>OnDemandPercentageAboveBaseCapacity</code> setting.</p>
+     */
+    inline bool OnDemandBaseCapacityHasBeenSet() const { return m_onDemandBaseCapacityHasBeenSet; }
+
+    /**
+     * <p>The minimum amount of the Auto Scaling group's capacity that must be
+     * fulfilled by On-Demand Instances. This base portion is provisioned first as your
+     * group scales.</p> <p>The default value is <code>0</code>. If you leave this
+     * parameter set to <code>0</code>, On-Demand Instances are launched as a
+     * percentage of the Auto Scaling group's desired capacity, per the
+     * <code>OnDemandPercentageAboveBaseCapacity</code> setting.</p>
      */
     inline void SetOnDemandBaseCapacity(int value) { m_onDemandBaseCapacityHasBeenSet = true; m_onDemandBaseCapacity = value; }
 
     /**
      * <p>The minimum amount of the Auto Scaling group's capacity that must be
      * fulfilled by On-Demand Instances. This base portion is provisioned first as your
-     * group scales.</p> <p>The default value is 0. If you leave this parameter set to
-     * 0, On-Demand Instances are launched as a percentage of the Auto Scaling group's
-     * desired capacity, per the <b>OnDemandPercentageAboveBaseCapacity</b>
-     * setting.</p>
+     * group scales.</p> <p>The default value is <code>0</code>. If you leave this
+     * parameter set to <code>0</code>, On-Demand Instances are launched as a
+     * percentage of the Auto Scaling group's desired capacity, per the
+     * <code>OnDemandPercentageAboveBaseCapacity</code> setting.</p>
      */
     inline InstancesDistribution& WithOnDemandBaseCapacity(int value) { SetOnDemandBaseCapacity(value); return *this;}
 
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <b>OnDemandBaseCapacity</b>. </p> <p>The range is
-     * 0–100. The default value is 100. If you leave this parameter set to 100, the
-     * percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
+     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
+     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
+     * Spot Instances. </p>
      */
     inline int GetOnDemandPercentageAboveBaseCapacity() const{ return m_onDemandPercentageAboveBaseCapacity; }
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <b>OnDemandBaseCapacity</b>. </p> <p>The range is
-     * 0–100. The default value is 100. If you leave this parameter set to 100, the
-     * percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
+     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
+     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
+     * Spot Instances. </p>
+     */
+    inline bool OnDemandPercentageAboveBaseCapacityHasBeenSet() const { return m_onDemandPercentageAboveBaseCapacityHasBeenSet; }
+
+    /**
+     * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
+     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
+     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
+     * Spot Instances. </p>
      */
     inline void SetOnDemandPercentageAboveBaseCapacity(int value) { m_onDemandPercentageAboveBaseCapacityHasBeenSet = true; m_onDemandPercentageAboveBaseCapacity = value; }
 
     /**
      * <p>Controls the percentages of On-Demand Instances and Spot Instances for your
-     * additional capacity beyond <b>OnDemandBaseCapacity</b>. </p> <p>The range is
-     * 0–100. The default value is 100. If you leave this parameter set to 100, the
-     * percentages are 100% for On-Demand Instances and 0% for Spot Instances. </p>
+     * additional capacity beyond <code>OnDemandBaseCapacity</code>.</p> <p>The range
+     * is 0–100. The default value is <code>100</code>. If you leave this parameter set
+     * to <code>100</code>, the percentages are 100% for On-Demand Instances and 0% for
+     * Spot Instances. </p>
      */
     inline InstancesDistribution& WithOnDemandPercentageAboveBaseCapacity(int value) { SetOnDemandPercentageAboveBaseCapacity(value); return *this;}
 
@@ -201,6 +235,14 @@ namespace Model
      * Spot capacity across the number of Spot pools that you specify. </p>
      */
     inline const Aws::String& GetSpotAllocationStrategy() const{ return m_spotAllocationStrategy; }
+
+    /**
+     * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
+     * valid value is <code>lowest-price</code>, which is also the default value. The
+     * Auto Scaling group selects the cheapest Spot pools and evenly allocates your
+     * Spot capacity across the number of Spot pools that you specify. </p>
+     */
+    inline bool SpotAllocationStrategyHasBeenSet() const { return m_spotAllocationStrategyHasBeenSet; }
 
     /**
      * <p>Indicates how to allocate Spot capacity across Spot pools.</p> <p>The only
@@ -253,75 +295,94 @@ namespace Model
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2.
-     * </p>
+     * pools are determined from the different instance types in the Overrides array of
+     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
      */
     inline int GetSpotInstancePools() const{ return m_spotInstancePools; }
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2.
-     * </p>
+     * pools are determined from the different instance types in the Overrides array of
+     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
+     */
+    inline bool SpotInstancePoolsHasBeenSet() const { return m_spotInstancePoolsHasBeenSet; }
+
+    /**
+     * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
+     * pools are determined from the different instance types in the Overrides array of
+     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
      */
     inline void SetSpotInstancePools(int value) { m_spotInstancePoolsHasBeenSet = true; m_spotInstancePools = value; }
 
     /**
      * <p>The number of Spot pools to use to allocate your Spot capacity. The Spot
-     * pools are determined from the different instance types in the <b>Overrides</b>
-     * array of <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2.
-     * </p>
+     * pools are determined from the different instance types in the Overrides array of
+     * <a>LaunchTemplate</a>. </p> <p>The range is 1–20 and the default is 2. </p>
      */
     inline InstancesDistribution& WithSpotInstancePools(int value) { SetSpotInstancePools(value); return *this;}
 
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline const Aws::String& GetSpotMaxPrice() const{ return m_spotMaxPrice; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
+     */
+    inline bool SpotMaxPriceHasBeenSet() const { return m_spotMaxPriceHasBeenSet; }
+
+    /**
+     * <p>The maximum price per unit hour that you are willing to pay for a Spot
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(const Aws::String& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = value; }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(Aws::String&& value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice = std::move(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline void SetSpotMaxPrice(const char* value) { m_spotMaxPriceHasBeenSet = true; m_spotMaxPrice.assign(value); }
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const Aws::String& value) { SetSpotMaxPrice(value); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(Aws::String&& value) { SetSpotMaxPrice(std::move(value)); return *this;}
 
     /**
      * <p>The maximum price per unit hour that you are willing to pay for a Spot
-     * Instance. If you leave this value blank (which is the default), the maximum Spot
-     * price is set at the On-Demand price. </p>
+     * Instance. If you leave the value of this parameter blank (which is the default),
+     * the maximum Spot price is set at the On-Demand price.</p> <p>To remove a value
+     * that you previously set, include the parameter but leave the value blank.</p>
      */
     inline InstancesDistribution& WithSpotMaxPrice(const char* value) { SetSpotMaxPrice(value); return *this;}
 

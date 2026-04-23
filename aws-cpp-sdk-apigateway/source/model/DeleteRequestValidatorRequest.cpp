@@ -30,7 +30,7 @@ DeleteRequestValidatorRequest::DeleteRequestValidatorRequest() :
 
 Aws::String DeleteRequestValidatorRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

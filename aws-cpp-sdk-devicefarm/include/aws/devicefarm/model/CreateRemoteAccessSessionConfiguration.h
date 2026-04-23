@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The billing method for the remote access session.</p>
      */
+    inline bool BillingMethodHasBeenSet() const { return m_billingMethodHasBeenSet; }
+
+    /**
+     * <p>The billing method for the remote access session.</p>
+     */
     inline void SetBillingMethod(const BillingMethod& value) { m_billingMethodHasBeenSet = true; m_billingMethod = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * configuration.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVpceConfigurationArns() const{ return m_vpceConfigurationArns; }
+
+    /**
+     * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint
+     * configuration.</p>
+     */
+    inline bool VpceConfigurationArnsHasBeenSet() const { return m_vpceConfigurationArnsHasBeenSet; }
 
     /**
      * <p>An array of Amazon Resource Names (ARNs) included in the VPC endpoint

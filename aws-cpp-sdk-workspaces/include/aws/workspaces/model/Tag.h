@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a tag.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a tag.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/Tag">AWS API
    * Reference</a></p>
    */
@@ -51,6 +51,11 @@ namespace Model
      * <p>The key of the tag.</p>
      */
     inline const Aws::String& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key of the tag.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key of the tag.</p>
@@ -87,6 +92,11 @@ namespace Model
      * <p>The value of the tag.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the tag.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the tag.</p>

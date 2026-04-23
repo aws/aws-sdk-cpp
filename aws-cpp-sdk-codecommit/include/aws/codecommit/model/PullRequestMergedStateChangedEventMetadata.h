@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the repository where the pull request was created.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where the pull request was created.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The name of the branch that the pull request will be merged into.</p>
      */
+    inline bool DestinationReferenceHasBeenSet() const { return m_destinationReferenceHasBeenSet; }
+
+    /**
+     * <p>The name of the branch that the pull request will be merged into.</p>
+     */
     inline void SetDestinationReference(const Aws::String& value) { m_destinationReferenceHasBeenSet = true; m_destinationReference = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>Information about the merge state change event.</p>
      */
     inline const MergeMetadata& GetMergeMetadata() const{ return m_mergeMetadata; }
+
+    /**
+     * <p>Information about the merge state change event.</p>
+     */
+    inline bool MergeMetadataHasBeenSet() const { return m_mergeMetadataHasBeenSet; }
 
     /**
      * <p>Information about the merge state change event.</p>

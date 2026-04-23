@@ -15,6 +15,7 @@
 #include <aws/core/Version.h>
 #include <aws/core/utils/logging/LogMacros.h>
 #include <aws/core/Aws.h>
+#include <aws/core/client/CoreErrors.h>
 #include <aws/core/utils/logging/AWSLogging.h>
 #include <aws/core/utils/logging/DefaultLogSystem.h>
 #include <aws/core/Globals.h>
@@ -34,7 +35,7 @@ namespace Aws
             Aws::Utils::Memory::InitializeAWSMemorySystem(*options.memoryManagementOptions.memoryManager);
         }
 #endif // USE_AWS_MEMORY_MANAGEMENT
-
+        Aws::Client::CoreErrorsMapper::InitCoreErrorsMapper();
         if(options.loggingOptions.logLevel != Aws::Utils::Logging::LogLevel::Off)
         {
             if(options.loggingOptions.logger_create_fn)
@@ -122,6 +123,8 @@ namespace Aws
         {
             Aws::Utils::Logging::ShutdownAWSLogging();
         }
+        
+        Aws::Client::CoreErrorsMapper::CleanupCoreErrorsMapper();
 
 #ifdef USE_AWS_MEMORY_MANAGEMENT
         if(options.memoryManagementOptions.memoryManager)

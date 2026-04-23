@@ -58,6 +58,12 @@ namespace Model
      * User-specified name for the attachment. This is required if the user wants to
      * use this input in an input switch action.
      */
+    inline bool InputAttachmentNameHasBeenSet() const { return m_inputAttachmentNameHasBeenSet; }
+
+    /**
+     * User-specified name for the attachment. This is required if the user wants to
+     * use this input in an input switch action.
+     */
     inline void SetInputAttachmentName(const Aws::String& value) { m_inputAttachmentNameHasBeenSet = true; m_inputAttachmentName = value; }
 
     /**
@@ -99,6 +105,11 @@ namespace Model
     /**
      * The ID of the input
      */
+    inline bool InputIdHasBeenSet() const { return m_inputIdHasBeenSet; }
+
+    /**
+     * The ID of the input
+     */
     inline void SetInputId(const Aws::String& value) { m_inputIdHasBeenSet = true; m_inputId = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
      * Settings of an input (caption selector, etc.)
      */
     inline const InputSettings& GetInputSettings() const{ return m_inputSettings; }
+
+    /**
+     * Settings of an input (caption selector, etc.)
+     */
+    inline bool InputSettingsHasBeenSet() const { return m_inputSettingsHasBeenSet; }
 
     /**
      * Settings of an input (caption selector, etc.)

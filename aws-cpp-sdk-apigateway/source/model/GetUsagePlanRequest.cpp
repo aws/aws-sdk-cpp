@@ -29,7 +29,7 @@ GetUsagePlanRequest::GetUsagePlanRequest() :
 
 Aws::String GetUsagePlanRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

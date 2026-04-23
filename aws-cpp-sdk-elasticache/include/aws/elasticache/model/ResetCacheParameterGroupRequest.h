@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the cache parameter group to reset.</p>
      */
+    inline bool CacheParameterGroupNameHasBeenSet() const { return m_cacheParameterGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cache parameter group to reset.</p>
+     */
     inline void SetCacheParameterGroupName(const Aws::String& value) { m_cacheParameterGroupNameHasBeenSet = true; m_cacheParameterGroupName = value; }
 
     /**
@@ -102,6 +107,14 @@ namespace Model
      * <code>ParameterNameValues</code> are reset to their default values.</p> <p>Valid
      * values: <code>true</code> | <code>false</code> </p>
      */
+    inline bool ResetAllParametersHasBeenSet() const { return m_resetAllParametersHasBeenSet; }
+
+    /**
+     * <p>If <code>true</code>, all parameters in the cache parameter group are reset
+     * to their default values. If <code>false</code>, only the parameters listed by
+     * <code>ParameterNameValues</code> are reset to their default values.</p> <p>Valid
+     * values: <code>true</code> | <code>false</code> </p>
+     */
     inline void SetResetAllParameters(bool value) { m_resetAllParametersHasBeenSet = true; m_resetAllParameters = value; }
 
     /**
@@ -121,6 +134,15 @@ namespace Model
      * reset.</p>
      */
     inline const Aws::Vector<ParameterNameValue>& GetParameterNameValues() const{ return m_parameterNameValues; }
+
+    /**
+     * <p>An array of parameter names to reset to their default values. If
+     * <code>ResetAllParameters</code> is <code>true</code>, do not use
+     * <code>ParameterNameValues</code>. If <code>ResetAllParameters</code> is
+     * <code>false</code>, you must specify the name of at least one parameter to
+     * reset.</p>
+     */
+    inline bool ParameterNameValuesHasBeenSet() const { return m_parameterNameValuesHasBeenSet; }
 
     /**
      * <p>An array of parameter names to reset to their default values. If

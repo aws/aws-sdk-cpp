@@ -19,9 +19,11 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/InstanceHardware.h>
 #include <aws/lightsail/model/InstanceNetworking.h>
 #include <aws/lightsail/model/InstanceState.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -59,6 +61,12 @@ namespace Model
      * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name the user gave the instance (e.g.,
+     * <code>Amazon_Linux-1GB-Ohio-1</code>).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name the user gave the instance (e.g.,
@@ -107,6 +115,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
      * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the instance (e.g.,
+     * <code>arn:aws:lightsail:us-east-2:123456789101:Instance/244ad76f-8aad-4741-809f-12345EXAMPLE</code>).</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -146,6 +160,13 @@ namespace Model
      * our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about an instance or another resource in Lightsail. This code enables
+     * our support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -200,6 +221,12 @@ namespace Model
      * <p>The timestamp when the instance was created (e.g.,
      * <code>1479734909.17</code>).</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The timestamp when the instance was created (e.g.,
+     * <code>1479734909.17</code>).</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -225,6 +252,11 @@ namespace Model
      * <p>The region name and Availability Zone where the instance is located.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The region name and Availability Zone where the instance is located.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The region name and Availability Zone where the instance is located.</p>
@@ -255,6 +287,11 @@ namespace Model
     /**
      * <p>The type of resource (usually <code>Instance</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The type of resource (usually <code>Instance</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -274,9 +311,79 @@ namespace Model
 
 
     /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline Instance& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline Instance& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline Instance& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline Instance& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
      */
     inline const Aws::String& GetBlueprintId() const{ return m_blueprintId; }
+
+    /**
+     * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
+     */
+    inline bool BlueprintIdHasBeenSet() const { return m_blueprintIdHasBeenSet; }
 
     /**
      * <p>The blueprint ID (e.g., <code>os_amlinux_2016_03</code>).</p>
@@ -317,6 +424,11 @@ namespace Model
     /**
      * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
      */
+    inline bool BlueprintNameHasBeenSet() const { return m_blueprintNameHasBeenSet; }
+
+    /**
+     * <p>The friendly name of the blueprint (e.g., <code>Amazon Linux</code>).</p>
+     */
     inline void SetBlueprintName(const Aws::String& value) { m_blueprintNameHasBeenSet = true; m_blueprintName = value; }
 
     /**
@@ -349,6 +461,11 @@ namespace Model
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
      */
     inline const Aws::String& GetBundleId() const{ return m_bundleId; }
+
+    /**
+     * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
+     */
+    inline bool BundleIdHasBeenSet() const { return m_bundleIdHasBeenSet; }
 
     /**
      * <p>The bundle for the instance (e.g., <code>micro_1_0</code>).</p>
@@ -391,6 +508,12 @@ namespace Model
      * <p>A Boolean value indicating whether this instance has a static IP assigned to
      * it.</p>
      */
+    inline bool IsStaticIpHasBeenSet() const { return m_isStaticIpHasBeenSet; }
+
+    /**
+     * <p>A Boolean value indicating whether this instance has a static IP assigned to
+     * it.</p>
+     */
     inline void SetIsStaticIp(bool value) { m_isStaticIpHasBeenSet = true; m_isStaticIp = value; }
 
     /**
@@ -404,6 +527,11 @@ namespace Model
      * <p>The private IP address of the instance.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IP address of the instance.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IP address of the instance.</p>
@@ -444,6 +572,11 @@ namespace Model
     /**
      * <p>The public IP address of the instance.</p>
      */
+    inline bool PublicIpAddressHasBeenSet() const { return m_publicIpAddressHasBeenSet; }
+
+    /**
+     * <p>The public IP address of the instance.</p>
+     */
     inline void SetPublicIpAddress(const Aws::String& value) { m_publicIpAddressHasBeenSet = true; m_publicIpAddress = value; }
 
     /**
@@ -476,6 +609,11 @@ namespace Model
      * <p>The IPv6 address of the instance.</p>
      */
     inline const Aws::String& GetIpv6Address() const{ return m_ipv6Address; }
+
+    /**
+     * <p>The IPv6 address of the instance.</p>
+     */
+    inline bool Ipv6AddressHasBeenSet() const { return m_ipv6AddressHasBeenSet; }
 
     /**
      * <p>The IPv6 address of the instance.</p>
@@ -516,6 +654,11 @@ namespace Model
     /**
      * <p>The size of the vCPU and the amount of RAM for the instance.</p>
      */
+    inline bool HardwareHasBeenSet() const { return m_hardwareHasBeenSet; }
+
+    /**
+     * <p>The size of the vCPU and the amount of RAM for the instance.</p>
+     */
     inline void SetHardware(const InstanceHardware& value) { m_hardwareHasBeenSet = true; m_hardware = value; }
 
     /**
@@ -539,6 +682,12 @@ namespace Model
      * instance.</p>
      */
     inline const InstanceNetworking& GetNetworking() const{ return m_networking; }
+
+    /**
+     * <p>Information about the public ports and monthly data transfer rates for the
+     * instance.</p>
+     */
+    inline bool NetworkingHasBeenSet() const { return m_networkingHasBeenSet; }
 
     /**
      * <p>Information about the public ports and monthly data transfer rates for the
@@ -575,6 +724,12 @@ namespace Model
      * <p>The status code and the state (e.g., <code>running</code>) for the
      * instance.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The status code and the state (e.g., <code>running</code>) for the
+     * instance.</p>
+     */
     inline void SetState(const InstanceState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -601,6 +756,12 @@ namespace Model
      * <code>ec2-user</code>).</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name for connecting to the instance (e.g.,
+     * <code>ec2-user</code>).</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name for connecting to the instance (e.g.,
@@ -644,6 +805,12 @@ namespace Model
      * <code>LightsailDefaultKeyPair</code>).</p>
      */
     inline const Aws::String& GetSshKeyName() const{ return m_sshKeyName; }
+
+    /**
+     * <p>The name of the SSH key being used to connect to the instance (e.g.,
+     * <code>LightsailDefaultKeyPair</code>).</p>
+     */
+    inline bool SshKeyNameHasBeenSet() const { return m_sshKeyNameHasBeenSet; }
 
     /**
      * <p>The name of the SSH key being used to connect to the instance (e.g.,
@@ -700,6 +867,9 @@ namespace Model
 
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
+
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
 
     Aws::String m_blueprintId;
     bool m_blueprintIdHasBeenSet;

@@ -39,7 +39,7 @@ ListJobTemplatesRequest::ListJobTemplatesRequest() :
 
 Aws::String ListJobTemplatesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListJobTemplatesRequest::AddQueryStringParameters(URI& uri) const

@@ -69,6 +69,14 @@ namespace Model
      * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
      * <li> <p>Contain less than 64 characters.</p> </li> </ul>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set. The name must:</p> <ul> <li> <p>This value
+     * can only contain ASCII letters (a-z, A-Z), numbers (0-9), underscores (_), or
+     * dashes (-).</p> </li> <li> <p>Start and end with a letter or number.</p> </li>
+     * <li> <p>Contain less than 64 characters.</p> </li> </ul>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -116,6 +124,11 @@ namespace Model
      * <p>The date and time the receipt rule set was created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedTimestamp() const{ return m_createdTimestamp; }
+
+    /**
+     * <p>The date and time the receipt rule set was created.</p>
+     */
+    inline bool CreatedTimestampHasBeenSet() const { return m_createdTimestampHasBeenSet; }
 
     /**
      * <p>The date and time the receipt rule set was created.</p>

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the marker.</p>
      */
+    inline bool MarkerNameHasBeenSet() const { return m_markerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the marker.</p>
+     */
     inline void SetMarkerName(const Aws::String& value) { m_markerNameHasBeenSet = true; m_markerName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The details of the marker.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p>The details of the marker.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p>The details of the marker.</p>
@@ -127,6 +137,14 @@ namespace Model
      * tracing back the chain of events leading up to this event.</p>
      */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+
+    /**
+     * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the
+     * decision task that resulted in the <code>RecordMarker</code> decision that
+     * requested this marker. This information can be useful for diagnosing problems by
+     * tracing back the chain of events leading up to this event.</p>
+     */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>DecisionTaskCompleted</code> event corresponding to the

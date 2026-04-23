@@ -60,6 +60,12 @@ namespace Model
      * <p>Represents a message whose visibility timeout has been changed
      * successfully.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Represents a message whose visibility timeout has been changed
+     * successfully.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**

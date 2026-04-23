@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The stack that contains the exported output name and value.</p>
      */
+    inline bool ExportingStackIdHasBeenSet() const { return m_exportingStackIdHasBeenSet; }
+
+    /**
+     * <p>The stack that contains the exported output name and value.</p>
+     */
     inline void SetExportingStackId(const Aws::String& value) { m_exportingStackIdHasBeenSet = true; m_exportingStackId = value; }
 
     /**
@@ -93,6 +98,14 @@ namespace Model
      * stack's <code>Outputs</code> section.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of exported output value. Use this name and the
+     * <code>Fn::ImportValue</code> function to import the associated value into other
+     * stacks. The name is defined in the <code>Export</code> field in the associated
+     * stack's <code>Outputs</code> section.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of exported output value. Use this name and the
@@ -149,6 +162,13 @@ namespace Model
      * <code>Outputs</code> section.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the exported output, such as a resource physical ID. This value
+     * is defined in the <code>Export</code> field in the associated stack's
+     * <code>Outputs</code> section.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the exported output, such as a resource physical ID. This value

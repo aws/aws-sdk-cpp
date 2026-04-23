@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Names of the parameters for which you want to query information.</p>
      */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+
+    /**
+     * <p>Names of the parameters for which you want to query information.</p>
+     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**
@@ -92,6 +97,13 @@ namespace Model
      * types.</p>
      */
     inline bool GetWithDecryption() const{ return m_withDecryption; }
+
+    /**
+     * <p>Return decrypted secure string value. Return decrypted values for secure
+     * string parameters. This flag is ignored for String and StringList parameter
+     * types.</p>
+     */
+    inline bool WithDecryptionHasBeenSet() const { return m_withDecryptionHasBeenSet; }
 
     /**
      * <p>Return decrypted secure string value. Return decrypted values for secure

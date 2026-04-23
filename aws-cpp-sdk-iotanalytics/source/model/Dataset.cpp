@@ -33,11 +33,13 @@ Dataset::Dataset() :
     m_arnHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
 }
 
@@ -46,11 +48,13 @@ Dataset::Dataset(JsonView jsonValue) :
     m_arnHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_status(DatasetStatus::NOT_SET),
     m_statusHasBeenSet(false),
     m_creationTimeHasBeenSet(false),
     m_lastUpdateTimeHasBeenSet(false),
-    m_retentionPeriodHasBeenSet(false)
+    m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -91,6 +95,16 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_triggersHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("contentDeliveryRules"))
+  {
+    Array<JsonView> contentDeliveryRulesJsonList = jsonValue.GetArray("contentDeliveryRules");
+    for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+    {
+      m_contentDeliveryRules.push_back(contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject());
+    }
+    m_contentDeliveryRulesHasBeenSet = true;
+  }
+
   if(jsonValue.ValueExists("status"))
   {
     m_status = DatasetStatusMapper::GetDatasetStatusForName(jsonValue.GetString("status"));
@@ -117,6 +131,13 @@ Dataset& Dataset::operator =(JsonView jsonValue)
     m_retentionPeriod = jsonValue.GetObject("retentionPeriod");
 
     m_retentionPeriodHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("versioningConfiguration"))
+  {
+    m_versioningConfiguration = jsonValue.GetObject("versioningConfiguration");
+
+    m_versioningConfigurationHasBeenSet = true;
   }
 
   return *this;
@@ -160,6 +181,17 @@ JsonValue Dataset::Jsonize() const
 
   }
 
+  if(m_contentDeliveryRulesHasBeenSet)
+  {
+   Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
+   for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+   {
+     contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject(m_contentDeliveryRules[contentDeliveryRulesIndex].Jsonize());
+   }
+   payload.WithArray("contentDeliveryRules", std::move(contentDeliveryRulesJsonList));
+
+  }
+
   if(m_statusHasBeenSet)
   {
    payload.WithString("status", DatasetStatusMapper::GetNameForDatasetStatus(m_status));
@@ -178,6 +210,12 @@ JsonValue Dataset::Jsonize() const
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_versioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
 
   }
 

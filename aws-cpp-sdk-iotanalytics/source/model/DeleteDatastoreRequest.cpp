@@ -29,7 +29,7 @@ DeleteDatastoreRequest::DeleteDatastoreRequest() :
 
 Aws::String DeleteDatastoreRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

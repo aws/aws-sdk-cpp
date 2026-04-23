@@ -61,6 +61,12 @@ namespace Model
      * <p>The container format used to combine disk images with metadata (such as OVF).
      * If absent, only the disk image is exported.</p>
      */
+    inline bool ContainerFormatHasBeenSet() const { return m_containerFormatHasBeenSet; }
+
+    /**
+     * <p>The container format used to combine disk images with metadata (such as OVF).
+     * If absent, only the disk image is exported.</p>
+     */
     inline void SetContainerFormat(const ContainerFormat& value) { m_containerFormatHasBeenSet = true; m_containerFormat = value; }
 
     /**
@@ -90,6 +96,11 @@ namespace Model
     /**
      * <p>The format for the exported image.</p>
      */
+    inline bool DiskImageFormatHasBeenSet() const { return m_diskImageFormatHasBeenSet; }
+
+    /**
+     * <p>The format for the exported image.</p>
+     */
     inline void SetDiskImageFormat(const DiskImageFormat& value) { m_diskImageFormatHasBeenSet = true; m_diskImageFormat = value; }
 
     /**
@@ -114,6 +125,13 @@ namespace Model
      * <code>vm-import-export@amazon.com</code>.</p>
      */
     inline const Aws::String& GetS3Bucket() const{ return m_s3Bucket; }
+
+    /**
+     * <p>The S3 bucket for the destination image. The destination bucket must exist
+     * and grant WRITE and READ_ACP permissions to the AWS account
+     * <code>vm-import-export@amazon.com</code>.</p>
+     */
+    inline bool S3BucketHasBeenSet() const { return m_s3BucketHasBeenSet; }
 
     /**
      * <p>The S3 bucket for the destination image. The destination bucket must exist
@@ -163,6 +181,12 @@ namespace Model
      * s3prefix + exportTaskId + '.' + diskImageFormat.</p>
      */
     inline const Aws::String& GetS3Prefix() const{ return m_s3Prefix; }
+
+    /**
+     * <p>The image is written to a single object in the S3 bucket at the S3 key
+     * s3prefix + exportTaskId + '.' + diskImageFormat.</p>
+     */
+    inline bool S3PrefixHasBeenSet() const { return m_s3PrefixHasBeenSet; }
 
     /**
      * <p>The image is written to a single object in the S3 bucket at the S3 key

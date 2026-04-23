@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of a key attribute.</p>
      */
+    inline bool AttributeNameHasBeenSet() const { return m_attributeNameHasBeenSet; }
+
+    /**
+     * <p>The name of a key attribute.</p>
+     */
     inline void SetAttributeName(const Aws::String& value) { m_attributeNameHasBeenSet = true; m_attributeName = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * itself.</p>
      */
     inline const KeyType& GetKeyType() const{ return m_keyType; }
+
+    /**
+     * <p>The attribute data, consisting of the data type and the attribute value
+     * itself.</p>
+     */
+    inline bool KeyTypeHasBeenSet() const { return m_keyTypeHasBeenSet; }
 
     /**
      * <p>The attribute data, consisting of the data type and the attribute value

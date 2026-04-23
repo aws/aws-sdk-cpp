@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name or unique ID of the stack set whose description you want.</p>
      */
+    inline bool StackSetNameHasBeenSet() const { return m_stackSetNameHasBeenSet; }
+
+    /**
+     * <p>The name or unique ID of the stack set whose description you want.</p>
+     */
     inline void SetStackSetName(const Aws::String& value) { m_stackSetNameHasBeenSet = true; m_stackSetName = value; }
 
     /**

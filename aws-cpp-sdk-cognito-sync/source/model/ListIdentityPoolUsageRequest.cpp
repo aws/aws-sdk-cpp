@@ -34,7 +34,7 @@ ListIdentityPoolUsageRequest::ListIdentityPoolUsageRequest() :
 
 Aws::String ListIdentityPoolUsageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListIdentityPoolUsageRequest::AddQueryStringParameters(URI& uri) const

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The unique ID of the Lambda task.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The unique ID of the Lambda task.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the Lambda function.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the Lambda function.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the Lambda function.</p>
@@ -125,6 +135,12 @@ namespace Model
      * tasks. This data isn't sent to the Lambda task.</p>
      */
     inline const Aws::String& GetControl() const{ return m_control; }
+
+    /**
+     * <p>Data attached to the event that the decider can use in subsequent workflow
+     * tasks. This data isn't sent to the Lambda task.</p>
+     */
+    inline bool ControlHasBeenSet() const { return m_controlHasBeenSet; }
 
     /**
      * <p>Data attached to the event that the decider can use in subsequent workflow
@@ -171,6 +187,11 @@ namespace Model
     /**
      * <p>The input provided to the Lambda task.</p>
      */
+    inline bool InputHasBeenSet() const { return m_inputHasBeenSet; }
+
+    /**
+     * <p>The input provided to the Lambda task.</p>
+     */
     inline void SetInput(const Aws::String& value) { m_inputHasBeenSet = true; m_input = value; }
 
     /**
@@ -203,6 +224,11 @@ namespace Model
      * <p>The maximum amount of time a worker can take to process the Lambda task.</p>
      */
     inline const Aws::String& GetStartToCloseTimeout() const{ return m_startToCloseTimeout; }
+
+    /**
+     * <p>The maximum amount of time a worker can take to process the Lambda task.</p>
+     */
+    inline bool StartToCloseTimeoutHasBeenSet() const { return m_startToCloseTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum amount of time a worker can take to process the Lambda task.</p>
@@ -242,6 +268,14 @@ namespace Model
      * this event.</p>
      */
     inline long long GetDecisionTaskCompletedEventId() const{ return m_decisionTaskCompletedEventId; }
+
+    /**
+     * <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the
+     * decision that resulted in scheduling this activity task. To help diagnose
+     * issues, use this information to trace back the chain of events leading up to
+     * this event.</p>
+     */
+    inline bool DecisionTaskCompletedEventIdHasBeenSet() const { return m_decisionTaskCompletedEventIdHasBeenSet; }
 
     /**
      * <p>The ID of the <code>LambdaFunctionCompleted</code> event corresponding to the

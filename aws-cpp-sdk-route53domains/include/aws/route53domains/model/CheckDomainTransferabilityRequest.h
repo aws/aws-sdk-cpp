@@ -62,6 +62,14 @@ namespace Model
      * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
      * supported.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain that you want to transfer to Amazon Route 53.</p>
+     * <p>Constraints: The domain name can contain only the letters a through z, the
+     * numbers 0 through 9, and hyphen (-). Internationalized Domain Names are not
+     * supported.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -111,6 +119,13 @@ namespace Model
      * for the domain.</p>
      */
     inline const Aws::String& GetAuthCode() const{ return m_authCode; }
+
+    /**
+     * <p>If the registrar for the top-level domain (TLD) requires an authorization
+     * code to transfer the domain, the code that you got from the current registrar
+     * for the domain.</p>
+     */
+    inline bool AuthCodeHasBeenSet() const { return m_authCodeHasBeenSet; }
 
     /**
      * <p>If the registrar for the top-level domain (TLD) requires an authorization

@@ -34,7 +34,7 @@ ListCoreDefinitionVersionsRequest::ListCoreDefinitionVersionsRequest() :
 
 Aws::String ListCoreDefinitionVersionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListCoreDefinitionVersionsRequest::AddQueryStringParameters(URI& uri) const

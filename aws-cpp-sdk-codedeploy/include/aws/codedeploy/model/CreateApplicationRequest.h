@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the application. This name must be unique with the applicable IAM
      * user or AWS account.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application. This name must be unique with the applicable IAM
+     * user or AWS account.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <code>Server</code>).</p>
      */
     inline const ComputePlatform& GetComputePlatform() const{ return m_computePlatform; }
+
+    /**
+     * <p> The destination platform type for the deployment (<code>Lambda</code> or
+     * <code>Server</code>).</p>
+     */
+    inline bool ComputePlatformHasBeenSet() const { return m_computePlatformHasBeenSet; }
 
     /**
      * <p> The destination platform type for the deployment (<code>Lambda</code> or

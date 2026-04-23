@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for ArchiveContainerSettings<p><h3>See Also:</h3>   <a
+   * Archive Container Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/ArchiveContainerSettings">AWS
    * API Reference</a></p>
    */
@@ -49,6 +49,9 @@ namespace Model
 
     
     inline const M2tsSettings& GetM2tsSettings() const{ return m_m2tsSettings; }
+
+    
+    inline bool M2tsSettingsHasBeenSet() const { return m_m2tsSettingsHasBeenSet; }
 
     
     inline void SetM2tsSettings(const M2tsSettings& value) { m_m2tsSettingsHasBeenSet = true; m_m2tsSettings = value; }

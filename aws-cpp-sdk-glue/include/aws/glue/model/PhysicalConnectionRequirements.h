@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The subnet ID used by the connection.</p>
      */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
+
+    /**
+     * <p>The subnet ID used by the connection.</p>
+     */
     inline void SetSubnetId(const Aws::String& value) { m_subnetIdHasBeenSet = true; m_subnetId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The security group ID list used by the connection.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIdList() const{ return m_securityGroupIdList; }
+
+    /**
+     * <p>The security group ID list used by the connection.</p>
+     */
+    inline bool SecurityGroupIdListHasBeenSet() const { return m_securityGroupIdListHasBeenSet; }
 
     /**
      * <p>The security group ID list used by the connection.</p>
@@ -127,51 +137,58 @@ namespace Model
 
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline void SetAvailabilityZone(Aws::String&& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = std::move(value); }
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline void SetAvailabilityZone(const char* value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone.assign(value); }
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline PhysicalConnectionRequirements& WithAvailabilityZone(const Aws::String& value) { SetAvailabilityZone(value); return *this;}
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline PhysicalConnectionRequirements& WithAvailabilityZone(Aws::String&& value) { SetAvailabilityZone(std::move(value)); return *this;}
 
     /**
-     * <p>The connection's availability zone. This field is redundant, since the
-     * specified subnet implies the availability zone to be used. The field must be
-     * populated now, but will be deprecated in the future.</p>
+     * <p>The connection's Availability Zone. This field is redundant because the
+     * specified subnet implies the Availability Zone to be used. Currently the field
+     * must be populated, but it will be deprecated in the future.</p>
      */
     inline PhysicalConnectionRequirements& WithAvailabilityZone(const char* value) { SetAvailabilityZone(value); return *this;}
 

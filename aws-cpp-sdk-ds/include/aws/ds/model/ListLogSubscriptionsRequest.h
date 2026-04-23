@@ -60,6 +60,15 @@ namespace Model
      * subscriptions for the AWS account or the directory, an empty list will be
      * returned.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>If a <i>DirectoryID</i> is provided, lists only the log subscription
+     * associated with that directory. If no <i>DirectoryId</i> is provided, lists all
+     * log subscriptions associated with your AWS account. If there are no log
+     * subscriptions for the AWS account or the directory, an empty list will be
+     * returned.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -116,6 +125,11 @@ namespace Model
     /**
      * <p>The token for the next set of items to return.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The token for the next set of items to return.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -148,6 +162,11 @@ namespace Model
      * <p>The maximum number of items returned.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of items returned.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of items returned.</p>

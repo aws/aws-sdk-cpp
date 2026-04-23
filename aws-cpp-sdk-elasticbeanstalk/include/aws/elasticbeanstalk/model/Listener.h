@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The protocol that is used by the Listener.</p>
      */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
+
+    /**
+     * <p>The protocol that is used by the Listener.</p>
+     */
     inline void SetProtocol(const Aws::String& value) { m_protocolHasBeenSet = true; m_protocol = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The port that is used by the Listener.</p>
      */
     inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port that is used by the Listener.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port that is used by the Listener.</p>

@@ -62,6 +62,13 @@ namespace Model
      * the result.</p> <note> <p>The <code>Id</code>s of a batch request need to be
      * unique within a request</p> </note>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>An identifier for this particular receipt handle. This is used to communicate
+     * the result.</p> <note> <p>The <code>Id</code>s of a batch request need to be
+     * unique within a request</p> </note>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
      * <p>A receipt handle.</p>
      */
     inline const Aws::String& GetReceiptHandle() const{ return m_receiptHandle; }
+
+    /**
+     * <p>A receipt handle.</p>
+     */
+    inline bool ReceiptHandleHasBeenSet() const { return m_receiptHandleHasBeenSet; }
 
     /**
      * <p>A receipt handle.</p>

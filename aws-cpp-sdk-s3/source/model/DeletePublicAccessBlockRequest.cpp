@@ -34,7 +34,7 @@ DeletePublicAccessBlockRequest::DeletePublicAccessBlockRequest() :
 
 Aws::String DeletePublicAccessBlockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeletePublicAccessBlockRequest::AddQueryStringParameters(URI& uri) const

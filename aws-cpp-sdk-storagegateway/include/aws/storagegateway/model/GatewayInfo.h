@@ -59,6 +59,13 @@ namespace Model
      * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
      * for other operations.</p>
      */
+    inline bool GatewayIdHasBeenSet() const { return m_gatewayIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier assigned to your gateway during activation. This ID
+     * becomes part of the gateway Amazon Resource Name (ARN), which you use as input
+     * for other operations.</p>
+     */
     inline void SetGatewayId(const Aws::String& value) { m_gatewayIdHasBeenSet = true; m_gatewayId = value; }
 
     /**
@@ -107,6 +114,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
      * operation to return a list of gateways for your account and region.</p>
      */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the <a>ListGateways</a>
+     * operation to return a list of gateways for your account and region.</p>
+     */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
@@ -148,6 +161,11 @@ namespace Model
     /**
      * <p>The type of the gateway.</p>
      */
+    inline bool GatewayTypeHasBeenSet() const { return m_gatewayTypeHasBeenSet; }
+
+    /**
+     * <p>The type of the gateway.</p>
+     */
     inline void SetGatewayType(const Aws::String& value) { m_gatewayTypeHasBeenSet = true; m_gatewayType = value; }
 
     /**
@@ -184,6 +202,11 @@ namespace Model
     /**
      * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
      */
+    inline bool GatewayOperationalStateHasBeenSet() const { return m_gatewayOperationalStateHasBeenSet; }
+
+    /**
+     * <p>The state of the gateway.</p> <p>Valid Values: DISABLED or ACTIVE</p>
+     */
     inline void SetGatewayOperationalState(const Aws::String& value) { m_gatewayOperationalStateHasBeenSet = true; m_gatewayOperationalState = value; }
 
     /**
@@ -216,6 +239,11 @@ namespace Model
      * <p>The name of the gateway.</p>
      */
     inline const Aws::String& GetGatewayName() const{ return m_gatewayName; }
+
+    /**
+     * <p>The name of the gateway.</p>
+     */
+    inline bool GatewayNameHasBeenSet() const { return m_gatewayNameHasBeenSet; }
 
     /**
      * <p>The name of the gateway.</p>

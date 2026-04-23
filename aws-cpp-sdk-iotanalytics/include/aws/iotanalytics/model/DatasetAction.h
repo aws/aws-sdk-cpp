@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>A "DatasetAction" object specifying the query that creates the data set
-   * content.</p><p><h3>See Also:</h3>   <a
+   * <p>A "DatasetAction" object that specifies how data set contents are
+   * automatically created.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iotanalytics-2017-11-27/DatasetAction">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::String& GetActionName() const{ return m_actionName; }
+
+    /**
+     * <p>The name of the data set action by which data set contents are automatically
+     * created.</p>
+     */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
 
     /**
      * <p>The name of the data set action by which data set contents are automatically
@@ -94,32 +100,38 @@ namespace Model
 
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline const SqlQueryDatasetAction& GetQueryAction() const{ return m_queryAction; }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
+     */
+    inline bool QueryActionHasBeenSet() const { return m_queryActionHasBeenSet; }
+
+    /**
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline void SetQueryAction(const SqlQueryDatasetAction& value) { m_queryActionHasBeenSet = true; m_queryAction = value; }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline void SetQueryAction(SqlQueryDatasetAction&& value) { m_queryActionHasBeenSet = true; m_queryAction = std::move(value); }
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline DatasetAction& WithQueryAction(const SqlQueryDatasetAction& value) { SetQueryAction(value); return *this;}
 
     /**
-     * <p>An "SqlQueryDatasetAction" object that contains the SQL query to modify the
-     * message.</p>
+     * <p>An "SqlQueryDatasetAction" object that uses an SQL query to automatically
+     * create data set contents.</p>
      */
     inline DatasetAction& WithQueryAction(SqlQueryDatasetAction&& value) { SetQueryAction(std::move(value)); return *this;}
 
@@ -130,6 +142,13 @@ namespace Model
      * container along with any needed support libraries.</p>
      */
     inline const ContainerDatasetAction& GetContainerAction() const{ return m_containerAction; }
+
+    /**
+     * <p>Information which allows the system to run a containerized application in
+     * order to create the data set contents. The application must be in a Docker
+     * container along with any needed support libraries.</p>
+     */
+    inline bool ContainerActionHasBeenSet() const { return m_containerActionHasBeenSet; }
 
     /**
      * <p>Information which allows the system to run a containerized application in

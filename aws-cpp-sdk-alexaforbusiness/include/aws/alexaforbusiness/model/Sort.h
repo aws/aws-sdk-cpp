@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The sort key of a sort object.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The sort key of a sort object.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The sort value of a sort object.</p>
      */
     inline const SortValue& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The sort value of a sort object.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The sort value of a sort object.</p>

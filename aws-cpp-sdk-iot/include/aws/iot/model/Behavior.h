@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name you have given to the behavior.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name you have given to the behavior.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>What is measured by the behavior.</p>
      */
     inline const Aws::String& GetMetric() const{ return m_metric; }
+
+    /**
+     * <p>What is measured by the behavior.</p>
+     */
+    inline bool MetricHasBeenSet() const { return m_metricHasBeenSet; }
 
     /**
      * <p>What is measured by the behavior.</p>
@@ -125,6 +135,12 @@ namespace Model
      * <code>metric</code>.</p>
      */
     inline const BehaviorCriteria& GetCriteria() const{ return m_criteria; }
+
+    /**
+     * <p>The criteria that determine if a device is behaving normally in regard to the
+     * <code>metric</code>.</p>
+     */
+    inline bool CriteriaHasBeenSet() const { return m_criteriaHasBeenSet; }
 
     /**
      * <p>The criteria that determine if a device is behaving normally in regard to the

@@ -61,6 +61,13 @@ namespace Model
      * <code>ActionType</code>, you cannot also specify
      * <code>ParentHandshakeId</code>.</p>
      */
+    inline bool ActionTypeHasBeenSet() const { return m_actionTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the type of handshake action.</p> <p>If you specify
+     * <code>ActionType</code>, you cannot also specify
+     * <code>ParentHandshakeId</code>.</p>
+     */
     inline void SetActionType(const ActionType& value) { m_actionTypeHasBeenSet = true; m_actionType = value; }
 
     /**
@@ -93,6 +100,15 @@ namespace Model
      * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
      */
     inline const Aws::String& GetParentHandshakeId() const{ return m_parentHandshakeId; }
+
+    /**
+     * <p>Specifies the parent handshake. Only used for handshake types that are a
+     * child of another type.</p> <p>If you specify <code>ParentHandshakeId</code>, you
+     * cannot also specify <code>ActionType</code>.</p> <p>The <a
+     * href="http://wikipedia.org/wiki/regex">regex pattern</a> for handshake ID string
+     * requires "h-" followed by from 8 to 32 lower-case letters or digits.</p>
+     */
+    inline bool ParentHandshakeIdHasBeenSet() const { return m_parentHandshakeIdHasBeenSet; }
 
     /**
      * <p>Specifies the parent handshake. Only used for handshake types that are a

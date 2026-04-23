@@ -50,6 +50,7 @@ enum class AlexaForBusinessErrors
   INVALID_SIGNATURE = 21,
   SIGNATURE_DOES_NOT_MATCH = 22,
   INVALID_ACCESS_KEY_ID = 23,
+  REQUEST_TIMEOUT = 24,
   NETWORK_CONNECTION = 99,
   
   UNKNOWN = 100,
@@ -65,6 +66,7 @@ enum class AlexaForBusinessErrors
   NAME_IN_USE,
   NOT_FOUND,
   RESOURCE_IN_USE,
+  SKILL_NOT_LINKED,
   UNAUTHORIZED
 };
 namespace AlexaForBusinessErrorMapper

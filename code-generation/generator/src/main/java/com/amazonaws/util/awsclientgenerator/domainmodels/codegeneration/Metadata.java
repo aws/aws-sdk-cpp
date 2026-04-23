@@ -39,4 +39,11 @@ public class Metadata {
     private Map<String, String> additionalHeaders;
     private boolean standalone;
     private String serviceId;
+
+    // For Host Prefix Injection
+    private boolean hasEndpointTrait;
+
+    // For Cellular Request Routing
+    private boolean hasEndpointDiscoveryTrait;
+    private String endpointOperationName;
 }

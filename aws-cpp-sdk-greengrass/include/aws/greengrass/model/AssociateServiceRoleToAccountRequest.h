@@ -50,6 +50,11 @@ namespace Model
     /**
      * The ARN of the service role you wish to associate with your account.
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * The ARN of the service role you wish to associate with your account.
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**

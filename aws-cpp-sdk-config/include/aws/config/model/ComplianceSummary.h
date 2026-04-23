@@ -59,6 +59,12 @@ namespace Model
      * <p>The number of AWS Config rules or AWS resources that are compliant, up to a
      * maximum of 25 for rules and 100 for resources.</p>
      */
+    inline bool CompliantResourceCountHasBeenSet() const { return m_compliantResourceCountHasBeenSet; }
+
+    /**
+     * <p>The number of AWS Config rules or AWS resources that are compliant, up to a
+     * maximum of 25 for rules and 100 for resources.</p>
+     */
     inline void SetCompliantResourceCount(const ComplianceContributorCount& value) { m_compliantResourceCountHasBeenSet = true; m_compliantResourceCount = value; }
 
     /**
@@ -90,6 +96,12 @@ namespace Model
      * <p>The number of AWS Config rules or AWS resources that are noncompliant, up to
      * a maximum of 25 for rules and 100 for resources.</p>
      */
+    inline bool NonCompliantResourceCountHasBeenSet() const { return m_nonCompliantResourceCountHasBeenSet; }
+
+    /**
+     * <p>The number of AWS Config rules or AWS resources that are noncompliant, up to
+     * a maximum of 25 for rules and 100 for resources.</p>
+     */
     inline void SetNonCompliantResourceCount(const ComplianceContributorCount& value) { m_nonCompliantResourceCountHasBeenSet = true; m_nonCompliantResourceCount = value; }
 
     /**
@@ -115,6 +127,11 @@ namespace Model
      * <p>The time that AWS Config created the compliance summary.</p>
      */
     inline const Aws::Utils::DateTime& GetComplianceSummaryTimestamp() const{ return m_complianceSummaryTimestamp; }
+
+    /**
+     * <p>The time that AWS Config created the compliance summary.</p>
+     */
+    inline bool ComplianceSummaryTimestampHasBeenSet() const { return m_complianceSummaryTimestampHasBeenSet; }
 
     /**
      * <p>The time that AWS Config created the compliance summary.</p>

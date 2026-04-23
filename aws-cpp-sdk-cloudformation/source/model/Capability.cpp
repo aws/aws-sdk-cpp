@@ -32,6 +32,7 @@ namespace Aws
 
         static const int CAPABILITY_IAM_HASH = HashingUtils::HashString("CAPABILITY_IAM");
         static const int CAPABILITY_NAMED_IAM_HASH = HashingUtils::HashString("CAPABILITY_NAMED_IAM");
+        static const int CAPABILITY_AUTO_EXPAND_HASH = HashingUtils::HashString("CAPABILITY_AUTO_EXPAND");
 
 
         Capability GetCapabilityForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == CAPABILITY_NAMED_IAM_HASH)
           {
             return Capability::CAPABILITY_NAMED_IAM;
+          }
+          else if (hashCode == CAPABILITY_AUTO_EXPAND_HASH)
+          {
+            return Capability::CAPABILITY_AUTO_EXPAND;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "CAPABILITY_IAM";
           case Capability::CAPABILITY_NAMED_IAM:
             return "CAPABILITY_NAMED_IAM";
+          case Capability::CAPABILITY_AUTO_EXPAND:
+            return "CAPABILITY_AUTO_EXPAND";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

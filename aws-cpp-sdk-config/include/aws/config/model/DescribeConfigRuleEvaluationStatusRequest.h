@@ -60,6 +60,13 @@ namespace Model
      * information. If you do not specify any names, AWS Config returns status
      * information for all AWS managed Config rules that you use.</p>
      */
+    inline bool ConfigRuleNamesHasBeenSet() const { return m_configRuleNamesHasBeenSet; }
+
+    /**
+     * <p>The name of the AWS managed Config rules for which you want status
+     * information. If you do not specify any names, AWS Config returns status
+     * information for all AWS managed Config rules that you use.</p>
+     */
     inline void SetConfigRuleNames(const Aws::Vector<Aws::String>& value) { m_configRuleNamesHasBeenSet = true; m_configRuleNames = value; }
 
     /**
@@ -115,6 +122,12 @@ namespace Model
      * <p>The <code>nextToken</code> string returned on a previous page that you use to
      * get the next page of results in a paginated response.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The <code>nextToken</code> string returned on a previous page that you use to
+     * get the next page of results in a paginated response.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -157,6 +170,16 @@ namespace Model
      * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The number of rule evaluation results that you want returned.</p> <p>This
+     * parameter is required if the rule limit for your account is more than the
+     * default of 50 rules.</p> <p>For information about requesting a rule limit
+     * increase, see <a
+     * href="http://docs.aws.amazon.com/general/latest/gr/aws_service_limits.html#limits_config">AWS
+     * Config Limits</a> in the <i>AWS General Reference Guide</i>.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The number of rule evaluation results that you want returned.</p> <p>This

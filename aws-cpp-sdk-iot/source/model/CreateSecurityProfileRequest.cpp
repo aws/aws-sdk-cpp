@@ -26,7 +26,9 @@ CreateSecurityProfileRequest::CreateSecurityProfileRequest() :
     m_securityProfileNameHasBeenSet(false),
     m_securityProfileDescriptionHasBeenSet(false),
     m_behaviorsHasBeenSet(false),
-    m_alertTargetsHasBeenSet(false)
+    m_alertTargetsHasBeenSet(false),
+    m_additionalMetricsToRetainHasBeenSet(false),
+    m_tagsHasBeenSet(false)
 {
 }
 
@@ -59,6 +61,28 @@ Aws::String CreateSecurityProfileRequest::SerializePayload() const
      alertTargetsJsonMap.WithObject(AlertTargetTypeMapper::GetNameForAlertTargetType(alertTargetsItem.first), alertTargetsItem.second.Jsonize());
    }
    payload.WithObject("alertTargets", std::move(alertTargetsJsonMap));
+
+  }
+
+  if(m_additionalMetricsToRetainHasBeenSet)
+  {
+   Array<JsonValue> additionalMetricsToRetainJsonList(m_additionalMetricsToRetain.size());
+   for(unsigned additionalMetricsToRetainIndex = 0; additionalMetricsToRetainIndex < additionalMetricsToRetainJsonList.GetLength(); ++additionalMetricsToRetainIndex)
+   {
+     additionalMetricsToRetainJsonList[additionalMetricsToRetainIndex].AsString(m_additionalMetricsToRetain[additionalMetricsToRetainIndex]);
+   }
+   payload.WithArray("additionalMetricsToRetain", std::move(additionalMetricsToRetainJsonList));
+
+  }
+
+  if(m_tagsHasBeenSet)
+  {
+   Array<JsonValue> tagsJsonList(m_tags.size());
+   for(unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex)
+   {
+     tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+   }
+   payload.WithArray("tags", std::move(tagsJsonList));
 
   }
 

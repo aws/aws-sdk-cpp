@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The five most recent communications associated with the case.</p>
      */
+    inline bool CommunicationsHasBeenSet() const { return m_communicationsHasBeenSet; }
+
+    /**
+     * <p>The five most recent communications associated with the case.</p>
+     */
     inline void SetCommunications(const Aws::Vector<Communication>& value) { m_communicationsHasBeenSet = true; m_communications = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>A resumption point for pagination.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>A resumption point for pagination.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>A resumption point for pagination.</p>

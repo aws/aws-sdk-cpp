@@ -32,6 +32,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/StorageClassAnalysis">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API StorageClassAnalysis
   {
   public:
@@ -47,6 +52,12 @@ namespace Model
      * should be exported.</p>
      */
     inline const StorageClassAnalysisDataExport& GetDataExport() const{ return m_dataExport; }
+
+    /**
+     * <p>A container used to describe how data related to the storage class analysis
+     * should be exported.</p>
+     */
+    inline bool DataExportHasBeenSet() const { return m_dataExportHasBeenSet; }
 
     /**
      * <p>A container used to describe how data related to the storage class analysis

@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the RuleSet that is being stopped.</p>
      */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
+
+    /**
+     * <p>The name of the RuleSet that is being stopped.</p>
+     */
     inline void SetScope(const StopScope& value) { m_scopeHasBeenSet = true; m_scope = value; }
 
     /**
@@ -90,6 +95,16 @@ namespace Model
      * Developer Guide</a>.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the
+     * stop action is taken. An example of an Amazon SNS topic ARN is
+     * <code>arn:aws:sns:us-west-2:123456789012:MyTopic</code>. For more information
+     * about Amazon SNS topics, see the <a
+     * href="http://docs.aws.amazon.com/sns/latest/dg/CreateTopic.html">Amazon SNS
+     * Developer Guide</a>.</p>
+     */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to notify when the

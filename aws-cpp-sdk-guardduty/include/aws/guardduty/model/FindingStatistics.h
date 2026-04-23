@@ -56,6 +56,11 @@ namespace Model
     /**
      * Represents a map of severity to count statistic for a set of findings
      */
+    inline bool CountBySeverityHasBeenSet() const { return m_countBySeverityHasBeenSet; }
+
+    /**
+     * Represents a map of severity to count statistic for a set of findings
+     */
     inline void SetCountBySeverity(const Aws::Map<Aws::String, int>& value) { m_countBySeverityHasBeenSet = true; m_countBySeverity = value; }
 
     /**

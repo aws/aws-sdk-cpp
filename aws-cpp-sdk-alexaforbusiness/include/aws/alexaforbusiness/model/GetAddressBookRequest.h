@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the address book for which to request details.</p>
      */
+    inline bool AddressBookArnHasBeenSet() const { return m_addressBookArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the address book for which to request details.</p>
+     */
     inline void SetAddressBookArn(const Aws::String& value) { m_addressBookArnHasBeenSet = true; m_addressBookArn = value; }
 
     /**

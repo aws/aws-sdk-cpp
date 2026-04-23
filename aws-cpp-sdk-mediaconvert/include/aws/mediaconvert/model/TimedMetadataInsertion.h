@@ -59,6 +59,11 @@ namespace Model
     /**
      * Id3Insertions contains the array of Id3Insertion instances.
      */
+    inline bool Id3InsertionsHasBeenSet() const { return m_id3InsertionsHasBeenSet; }
+
+    /**
+     * Id3Insertions contains the array of Id3Insertion instances.
+     */
     inline void SetId3Insertions(const Aws::Vector<Id3Insertion>& value) { m_id3InsertionsHasBeenSet = true; m_id3Insertions = value; }
 
     /**

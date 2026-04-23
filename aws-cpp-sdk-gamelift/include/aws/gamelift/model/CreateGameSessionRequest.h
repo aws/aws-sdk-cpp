@@ -59,6 +59,12 @@ namespace Model
      * <p>Unique identifier for a fleet to create a game session in. Each request must
      * reference either a fleet ID or alias ID, but not both.</p>
      */
+    inline bool FleetIdHasBeenSet() const { return m_fleetIdHasBeenSet; }
+
+    /**
+     * <p>Unique identifier for a fleet to create a game session in. Each request must
+     * reference either a fleet ID or alias ID, but not both.</p>
+     */
     inline void SetFleetId(const Aws::String& value) { m_fleetIdHasBeenSet = true; m_fleetId = value; }
 
     /**
@@ -98,6 +104,13 @@ namespace Model
      * both.</p>
      */
     inline const Aws::String& GetAliasId() const{ return m_aliasId; }
+
+    /**
+     * <p>Unique identifier for an alias associated with the fleet to create a game
+     * session in. Each request must reference either a fleet ID or alias ID, but not
+     * both.</p>
+     */
+    inline bool AliasIdHasBeenSet() const { return m_aliasIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for an alias associated with the fleet to create a game
@@ -152,6 +165,12 @@ namespace Model
      * <p>Maximum number of players that can be connected simultaneously to the game
      * session.</p>
      */
+    inline bool MaximumPlayerSessionCountHasBeenSet() const { return m_maximumPlayerSessionCountHasBeenSet; }
+
+    /**
+     * <p>Maximum number of players that can be connected simultaneously to the game
+     * session.</p>
+     */
     inline void SetMaximumPlayerSessionCount(int value) { m_maximumPlayerSessionCountHasBeenSet = true; m_maximumPlayerSessionCount = value; }
 
     /**
@@ -166,6 +185,12 @@ namespace Model
      * not need to be unique.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>Descriptive label that is associated with a game session. Session names do
+     * not need to be unique.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>Descriptive label that is associated with a game session. Session names do
@@ -208,7 +233,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline const Aws::Vector<GameProperty>& GetGameProperties() const{ return m_gameProperties; }
@@ -217,7 +242,16 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline bool GamePropertiesHasBeenSet() const { return m_gamePropertiesHasBeenSet; }
+
+    /**
+     * <p>Set of custom properties for a game session, formatted as key:value pairs.
+     * These properties are passed to a game server process in the <a>GameSession</a>
+     * object with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline void SetGameProperties(const Aws::Vector<GameProperty>& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = value; }
@@ -226,7 +260,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline void SetGameProperties(Aws::Vector<GameProperty>&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties = std::move(value); }
@@ -235,7 +269,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(const Aws::Vector<GameProperty>& value) { SetGameProperties(value); return *this;}
@@ -244,7 +278,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameProperties(Aws::Vector<GameProperty>&& value) { SetGameProperties(std::move(value)); return *this;}
@@ -253,7 +287,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(const GameProperty& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(value); return *this; }
@@ -262,7 +296,7 @@ namespace Model
      * <p>Set of custom properties for a game session, formatted as key:value pairs.
      * These properties are passed to a game server process in the <a>GameSession</a>
      * object with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& AddGameProperties(GameProperty&& value) { m_gamePropertiesHasBeenSet = true; m_gameProperties.push_back(std::move(value)); return *this; }
@@ -274,6 +308,13 @@ namespace Model
      * number of concurrent active game sessions one player can have.</p>
      */
     inline const Aws::String& GetCreatorId() const{ return m_creatorId; }
+
+    /**
+     * <p>Unique identifier for a player or entity creating the game session. This ID
+     * is used to enforce a resource protection policy (if one exists) that limits the
+     * number of concurrent active game sessions one player can have.</p>
+     */
+    inline bool CreatorIdHasBeenSet() const { return m_creatorIdHasBeenSet; }
 
     /**
      * <p>Unique identifier for a player or entity creating the game session. This ID
@@ -328,6 +369,17 @@ namespace Model
      * ID string or idempotency token&gt;</code>.) </p>
      */
     inline const Aws::String& GetGameSessionId() const{ return m_gameSessionId; }
+
+    /**
+     * <p> <i>This parameter is no longer preferred. Please use
+     * <code>IdempotencyToken</code> instead.</i> Custom string that uniquely
+     * identifies a request for a new game session. Maximum token length is 48
+     * characters. If provided, this string is included in the new game session's ID.
+     * (A game session ARN has the following format:
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
+     * ID string or idempotency token&gt;</code>.) </p>
+     */
+    inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
 
     /**
      * <p> <i>This parameter is no longer preferred. Please use
@@ -416,6 +468,17 @@ namespace Model
      * 30 days after a game session has ended; game session objects are retained for
      * this time period and then deleted.</p>
      */
+    inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }
+
+    /**
+     * <p>Custom string that uniquely identifies a request for a new game session.
+     * Maximum token length is 48 characters. If provided, this string is included in
+     * the new game session's ID. (A game session ARN has the following format:
+     * <code>arn:aws:gamelift:&lt;region&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
+     * ID string or idempotency token&gt;</code>.) Idempotency tokens remain in use for
+     * 30 days after a game session has ended; game session objects are retained for
+     * this time period and then deleted.</p>
+     */
     inline void SetIdempotencyToken(const Aws::String& value) { m_idempotencyTokenHasBeenSet = true; m_idempotencyToken = value; }
 
     /**
@@ -478,7 +541,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline const Aws::String& GetGameSessionData() const{ return m_gameSessionData; }
@@ -487,7 +550,16 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * a Game Session</a>).</p>
+     */
+    inline bool GameSessionDataHasBeenSet() const { return m_gameSessionDataHasBeenSet; }
+
+    /**
+     * <p>Set of custom game session properties, formatted as a single string value.
+     * This data is passed to a game server process in the <a>GameSession</a> object
+     * with a request to start a new game session (see <a
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const Aws::String& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = value; }
@@ -496,7 +568,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(Aws::String&& value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData = std::move(value); }
@@ -505,7 +577,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline void SetGameSessionData(const char* value) { m_gameSessionDataHasBeenSet = true; m_gameSessionData.assign(value); }
@@ -514,7 +586,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(const Aws::String& value) { SetGameSessionData(value); return *this;}
@@ -523,7 +595,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(Aws::String&& value) { SetGameSessionData(std::move(value)); return *this;}
@@ -532,7 +604,7 @@ namespace Model
      * <p>Set of custom game session properties, formatted as a single string value.
      * This data is passed to a game server process in the <a>GameSession</a> object
      * with a request to start a new game session (see <a
-     * href="http://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
+     * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/gamelift-sdk-server-api.html#gamelift-sdk-server-startsession">Start
      * a Game Session</a>).</p>
      */
     inline CreateGameSessionRequest& WithGameSessionData(const char* value) { SetGameSessionData(value); return *this;}

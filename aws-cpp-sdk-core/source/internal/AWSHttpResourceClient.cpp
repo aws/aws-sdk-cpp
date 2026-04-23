@@ -40,6 +40,14 @@ static const char* EC2_METADATA_CLIENT_LOG_TAG = "EC2MetadataClient";
 static const char* ECS_CREDENTIALS_CLIENT_LOG_TAG = "ECSCredentialsClient";
 
 
+namespace Aws
+{
+    namespace Client
+    {
+        Aws::String ComputeUserAgentString();
+    }
+}
+
 static ClientConfiguration MakeDefaultHttpResourceClientConfiguration(const char *logtag)
 {
     ClientConfiguration res;
@@ -103,6 +111,8 @@ Aws::String AWSHttpResourceClient::GetResource(const char* endpoint, const char*
     {
         std::shared_ptr<HttpRequest> request(CreateHttpRequest(ss.str(), HttpMethod::HTTP_GET,
                     Aws::Utils::Stream::DefaultResponseStreamFactoryMethod));
+
+        request->SetUserAgent(ComputeUserAgentString());
 
         if (authToken)
         {
@@ -171,7 +181,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
             "Getting default credentials for ec2 instance");
     Aws::String credentialsString = GetResource(EC2_SECURITY_CREDENTIALS_RESOURCE);
 
-    if (credentialsString.empty()) return "";
+    if (credentialsString.empty()) return {};
     
     Aws::String trimmedCredentialsString = StringUtils::Trim(credentialsString.c_str());
     Aws::Vector<Aws::String> securityCredentials = StringUtils::Split(trimmedCredentialsString, '\n');
@@ -184,7 +194,7 @@ Aws::String EC2MetadataClient::GetDefaultCredentials() const
     {
         AWS_LOGSTREAM_WARN(m_logtag.c_str(), 
                 "Initial call to ec2Metadataservice to get credentials failed");
-        return "";
+        return {};
     }
 
     Aws::StringStream ss;
@@ -203,7 +213,7 @@ Aws::String EC2MetadataClient::GetCurrentRegion() const
     {
         AWS_LOGSTREAM_INFO(m_logtag.c_str() ,
                 "Unable to pull region from instance metadata service ");
-        return "";
+        return {};
     }
     
     Aws::String trimmedAZString = StringUtils::Trim(azString.c_str());

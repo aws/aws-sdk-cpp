@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The name of the solution stack this configuration set uses.</p>
      */
+    inline bool SolutionStackNameHasBeenSet() const { return m_solutionStackNameHasBeenSet; }
+
+    /**
+     * <p>The name of the solution stack this configuration set uses.</p>
+     */
     inline void SetSolutionStackName(const Aws::String& value) { m_solutionStackNameHasBeenSet = true; m_solutionStackName = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
      * <p>The ARN of the platform.</p>
      */
     inline const Aws::String& GetPlatformArn() const{ return m_platformArn; }
+
+    /**
+     * <p>The ARN of the platform.</p>
+     */
+    inline bool PlatformArnHasBeenSet() const { return m_platformArnHasBeenSet; }
 
     /**
      * <p>The ARN of the platform.</p>
@@ -134,6 +144,11 @@ namespace Model
     /**
      * <p>The name of the application associated with this configuration set.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application associated with this configuration set.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -167,6 +182,12 @@ namespace Model
      * configuration set. </p>
      */
     inline const Aws::String& GetTemplateName() const{ return m_templateName; }
+
+    /**
+     * <p> If not <code>null</code>, the name of the configuration template for this
+     * configuration set. </p>
+     */
+    inline bool TemplateNameHasBeenSet() const { return m_templateNameHasBeenSet; }
 
     /**
      * <p> If not <code>null</code>, the name of the configuration template for this
@@ -213,6 +234,11 @@ namespace Model
     /**
      * <p>Describes this configuration set.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>Describes this configuration set.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -246,6 +272,12 @@ namespace Model
      * set. </p>
      */
     inline const Aws::String& GetEnvironmentName() const{ return m_environmentName; }
+
+    /**
+     * <p> If not <code>null</code>, the name of the environment for this configuration
+     * set. </p>
+     */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
 
     /**
      * <p> If not <code>null</code>, the name of the environment for this configuration
@@ -308,6 +340,19 @@ namespace Model
      * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
      * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
      */
+    inline bool DeploymentStatusHasBeenSet() const { return m_deploymentStatusHasBeenSet; }
+
+    /**
+     * <p> If this configuration set is associated with an environment, the
+     * <code>DeploymentStatus</code> parameter indicates the deployment status of this
+     * configuration set: </p> <ul> <li> <p> <code>null</code>: This configuration is
+     * not associated with a running environment.</p> </li> <li> <p>
+     * <code>pending</code>: This is a draft configuration that is not deployed to the
+     * associated environment but is in the process of deploying.</p> </li> <li> <p>
+     * <code>deployed</code>: This is the configuration that is currently deployed to
+     * the associated running environment.</p> </li> <li> <p> <code>failed</code>: This
+     * is a draft configuration that failed to successfully deploy.</p> </li> </ul>
+     */
     inline void SetDeploymentStatus(const ConfigurationDeploymentStatus& value) { m_deploymentStatusHasBeenSet = true; m_deploymentStatus = value; }
 
     /**
@@ -358,6 +403,11 @@ namespace Model
     /**
      * <p>The date (in UTC time) when this configuration set was created.</p>
      */
+    inline bool DateCreatedHasBeenSet() const { return m_dateCreatedHasBeenSet; }
+
+    /**
+     * <p>The date (in UTC time) when this configuration set was created.</p>
+     */
     inline void SetDateCreated(const Aws::Utils::DateTime& value) { m_dateCreatedHasBeenSet = true; m_dateCreated = value; }
 
     /**
@@ -380,6 +430,11 @@ namespace Model
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
      */
     inline const Aws::Utils::DateTime& GetDateUpdated() const{ return m_dateUpdated; }
+
+    /**
+     * <p>The date (in UTC time) when this configuration set was last modified.</p>
+     */
+    inline bool DateUpdatedHasBeenSet() const { return m_dateUpdatedHasBeenSet; }
 
     /**
      * <p>The date (in UTC time) when this configuration set was last modified.</p>
@@ -407,6 +462,12 @@ namespace Model
      * set.</p>
      */
     inline const Aws::Vector<ConfigurationOptionSetting>& GetOptionSettings() const{ return m_optionSettings; }
+
+    /**
+     * <p>A list of the configuration options and their values in this configuration
+     * set.</p>
+     */
+    inline bool OptionSettingsHasBeenSet() const { return m_optionSettingsHasBeenSet; }
 
     /**
      * <p>A list of the configuration options and their values in this configuration
@@ -447,6 +508,9 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }

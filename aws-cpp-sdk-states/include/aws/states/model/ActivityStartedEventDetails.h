@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the worker that the task is assigned to. These names are provided
      * by the workers when calling <a>GetActivityTask</a>.</p>
      */
+    inline bool WorkerNameHasBeenSet() const { return m_workerNameHasBeenSet; }
+
+    /**
+     * <p>The name of the worker that the task is assigned to. These names are provided
+     * by the workers when calling <a>GetActivityTask</a>.</p>
+     */
     inline void SetWorkerName(const Aws::String& value) { m_workerNameHasBeenSet = true; m_workerName = value; }
 
     /**

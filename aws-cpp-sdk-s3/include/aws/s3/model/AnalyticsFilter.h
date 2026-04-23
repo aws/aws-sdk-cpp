@@ -34,6 +34,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsFilter">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AnalyticsFilter
   {
   public:
@@ -48,6 +53,11 @@ namespace Model
      * <p>The prefix to use when evaluating an analytics filter.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix to use when evaluating an analytics filter.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix to use when evaluating an analytics filter.</p>
@@ -88,6 +98,11 @@ namespace Model
     /**
      * <p>The tag to use when evaluating an analytics filter.</p>
      */
+    inline bool TagHasBeenSet() const { return m_tagHasBeenSet; }
+
+    /**
+     * <p>The tag to use when evaluating an analytics filter.</p>
+     */
     inline void SetTag(const Tag& value) { m_tagHasBeenSet = true; m_tag = value; }
 
     /**
@@ -111,6 +126,12 @@ namespace Model
      * analytics filter. The operator must have at least two predicates.</p>
      */
     inline const AnalyticsAndOperator& GetAnd() const{ return m_and; }
+
+    /**
+     * <p>A conjunction (logical AND) of predicates, which is used in evaluating an
+     * analytics filter. The operator must have at least two predicates.</p>
+     */
+    inline bool AndHasBeenSet() const { return m_andHasBeenSet; }
 
     /**
      * <p>A conjunction (logical AND) of predicates, which is used in evaluating an

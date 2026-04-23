@@ -31,7 +31,7 @@ GetCampaignVersionRequest::GetCampaignVersionRequest() :
 
 Aws::String GetCampaignVersionRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

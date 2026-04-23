@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the global secondary index. The name must be unique among all
      * other indexes on this table.</p>
      */
+    inline bool IndexNameHasBeenSet() const { return m_indexNameHasBeenSet; }
+
+    /**
+     * <p>The name of the global secondary index. The name must be unique among all
+     * other indexes on this table.</p>
+     */
     inline void SetIndexName(const Aws::String& value) { m_indexNameHasBeenSet = true; m_indexName = value; }
 
     /**
@@ -102,6 +108,12 @@ namespace Model
      * <p>The maximum number of strongly consistent reads consumed per second before
      * DynamoDB returns a <code>ThrottlingException</code>.</p>
      */
+    inline bool ProvisionedReadCapacityUnitsHasBeenSet() const { return m_provisionedReadCapacityUnitsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of strongly consistent reads consumed per second before
+     * DynamoDB returns a <code>ThrottlingException</code>.</p>
+     */
     inline void SetProvisionedReadCapacityUnits(long long value) { m_provisionedReadCapacityUnitsHasBeenSet = true; m_provisionedReadCapacityUnits = value; }
 
     /**
@@ -116,6 +128,12 @@ namespace Model
      * capacity units.</p>
      */
     inline const AutoScalingSettingsUpdate& GetProvisionedReadCapacityAutoScalingSettingsUpdate() const{ return m_provisionedReadCapacityAutoScalingSettingsUpdate; }
+
+    /**
+     * <p>Autoscaling settings for managing a global secondary index replica's read
+     * capacity units.</p>
+     */
+    inline bool ProvisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet() const { return m_provisionedReadCapacityAutoScalingSettingsUpdateHasBeenSet; }
 
     /**
      * <p>Autoscaling settings for managing a global secondary index replica's read

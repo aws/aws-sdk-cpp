@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The resource type (for example, <code>"AWS::EC2::Instance"</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The number of resources.</p>
      */
     inline long long GetCount() const{ return m_count; }
+
+    /**
+     * <p>The number of resources.</p>
+     */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
 
     /**
      * <p>The number of resources.</p>

@@ -43,7 +43,7 @@ Aws::String PutPublicAccessBlockRequest::SerializePayload() const
     return payloadDoc.ConvertToString();
   }
 
-  return "";
+  return {};
 }
 
 

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The system-generated ID of the pull request.</p>
      */
+    inline bool PullRequestIdHasBeenSet() const { return m_pullRequestIdHasBeenSet; }
+
+    /**
+     * <p>The system-generated ID of the pull request.</p>
+     */
     inline void SetPullRequestId(const Aws::String& value) { m_pullRequestIdHasBeenSet = true; m_pullRequestId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the repository that contains the pull request.</p>
      */
     inline const Aws::String& GetRepositoryName() const{ return m_repositoryName; }
+
+    /**
+     * <p>The name of the repository that contains the pull request.</p>
+     */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
 
     /**
      * <p>The name of the repository that contains the pull request.</p>
@@ -130,6 +140,14 @@ namespace Model
      * destination branch.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+
+    /**
+     * <p>The full commit ID of the commit that was the tip of the destination branch
+     * when the pull request was created. This commit will be superceded by the after
+     * commit in the source branch when and if you merge the source branch into the
+     * destination branch.</p>
+     */
+    inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>The full commit ID of the commit that was the tip of the destination branch
@@ -190,6 +208,12 @@ namespace Model
      * <p>he full commit ID of the commit that was the tip of the source branch at the
      * time the comment was made. </p>
      */
+    inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
+
+    /**
+     * <p>he full commit ID of the commit that was the tip of the source branch at the
+     * time the comment was made. </p>
+     */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
@@ -233,6 +257,12 @@ namespace Model
      * <p>The full blob ID of the file on which you want to comment on the destination
      * commit.</p>
      */
+    inline bool BeforeBlobIdHasBeenSet() const { return m_beforeBlobIdHasBeenSet; }
+
+    /**
+     * <p>The full blob ID of the file on which you want to comment on the destination
+     * commit.</p>
+     */
     inline void SetBeforeBlobId(const Aws::String& value) { m_beforeBlobIdHasBeenSet = true; m_beforeBlobId = value; }
 
     /**
@@ -271,6 +301,12 @@ namespace Model
      * commit.</p>
      */
     inline const Aws::String& GetAfterBlobId() const{ return m_afterBlobId; }
+
+    /**
+     * <p>The full blob ID of the file on which you want to comment on the source
+     * commit.</p>
+     */
+    inline bool AfterBlobIdHasBeenSet() const { return m_afterBlobIdHasBeenSet; }
 
     /**
      * <p>The full blob ID of the file on which you want to comment on the source
@@ -321,6 +357,13 @@ namespace Model
      * file name, line number, and whether the version of the file where the comment
      * was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).</p>
      */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
+
+    /**
+     * <p>Location information about the comment on the pull request, including the
+     * file name, line number, and whether the version of the file where the comment
+     * was made is 'BEFORE' (destination branch) or 'AFTER' (source branch).</p>
+     */
     inline void SetLocation(const Location& value) { m_locationHasBeenSet = true; m_location = value; }
 
     /**
@@ -350,6 +393,12 @@ namespace Model
      * comment on the pull request.</p>
      */
     inline const Aws::Vector<Comment>& GetComments() const{ return m_comments; }
+
+    /**
+     * <p>An array of comment objects. Each comment object contains information about a
+     * comment on the pull request.</p>
+     */
+    inline bool CommentsHasBeenSet() const { return m_commentsHasBeenSet; }
 
     /**
      * <p>An array of comment objects. Each comment object contains information about a

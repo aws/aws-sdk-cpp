@@ -444,7 +444,7 @@ Aws::String AWSAuthV4Signer::GenerateSignature(const Aws::String& stringToSign, 
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hmac (sha256) final string");
         AWS_LOGSTREAM_DEBUG(v4LogTag, "The final string is: \"" << stringToSign << "\"");
-        return "";
+        return {};
     }
 
     //now we finally sign our request string with our hex encoded derived hash.
@@ -476,7 +476,7 @@ Aws::String AWSAuthV4Signer::ComputePayloadHash(Aws::Http::HttpRequest& request)
     if (!hashResult.IsSuccess())
     {
         AWS_LOGSTREAM_ERROR(v4LogTag, "Unable to hash (sha256) request body");
-        return "";
+        return {};
     }
 
     auto sha256Digest = hashResult.GetResult();

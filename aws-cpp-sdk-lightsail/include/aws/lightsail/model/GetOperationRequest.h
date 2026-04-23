@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>A GUID used to identify the operation.</p>
      */
+    inline bool OperationIdHasBeenSet() const { return m_operationIdHasBeenSet; }
+
+    /**
+     * <p>A GUID used to identify the operation.</p>
+     */
     inline void SetOperationId(const Aws::String& value) { m_operationIdHasBeenSet = true; m_operationId = value; }
 
     /**

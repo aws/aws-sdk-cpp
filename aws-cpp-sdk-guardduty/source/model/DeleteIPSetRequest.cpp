@@ -30,7 +30,7 @@ DeleteIPSetRequest::DeleteIPSetRequest() :
 
 Aws::String DeleteIPSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the application to which the specified source bundles belong.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application to which the specified source bundles belong.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -91,7 +96,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline const Aws::String& GetGroupName() const{ return m_groupName; }
@@ -100,7 +105,16 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * Manifest (env.yaml)</a> for details.</p>
+     */
+    inline bool GroupNameHasBeenSet() const { return m_groupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the group to which the target environments belong. Specify a
+     * group name only if the environment name defined in each target environment's
+     * manifest ends with a + (plus) character. See <a
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const Aws::String& value) { m_groupNameHasBeenSet = true; m_groupName = value; }
@@ -109,7 +123,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(Aws::String&& value) { m_groupNameHasBeenSet = true; m_groupName = std::move(value); }
@@ -118,7 +132,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline void SetGroupName(const char* value) { m_groupNameHasBeenSet = true; m_groupName.assign(value); }
@@ -127,7 +141,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline ComposeEnvironmentsRequest& WithGroupName(const Aws::String& value) { SetGroupName(value); return *this;}
@@ -136,7 +150,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline ComposeEnvironmentsRequest& WithGroupName(Aws::String&& value) { SetGroupName(std::move(value)); return *this;}
@@ -145,7 +159,7 @@ namespace Model
      * <p>The name of the group to which the target environments belong. Specify a
      * group name only if the environment name defined in each target environment's
      * manifest ends with a + (plus) character. See <a
-     * href="http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
+     * href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment
      * Manifest (env.yaml)</a> for details.</p>
      */
     inline ComposeEnvironmentsRequest& WithGroupName(const char* value) { SetGroupName(value); return *this;}
@@ -159,6 +173,15 @@ namespace Model
      * create.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersionLabels() const{ return m_versionLabels; }
+
+    /**
+     * <p>A list of version labels, specifying one or more application source bundles
+     * that belong to the target application. Each source bundle must include an
+     * environment manifest that specifies the name of the environment and the name of
+     * the solution stack to use, and optionally can specify environment links to
+     * create.</p>
+     */
+    inline bool VersionLabelsHasBeenSet() const { return m_versionLabelsHasBeenSet; }
 
     /**
      * <p>A list of version labels, specifying one or more application source bundles

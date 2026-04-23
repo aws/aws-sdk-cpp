@@ -65,25 +65,39 @@ namespace Model
     inline ListObjectsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetMarker() const{ return m_marker; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMarker(const Aws::String& value) { m_marker = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMarker(Aws::String&& value) { m_marker = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMarker(const char* value) { m_marker.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithMarker(const Aws::String& value) { SetMarker(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithMarker(Aws::String&& value) { SetMarker(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithMarker(const char* value) { SetMarker(value); return *this;}
 
 
@@ -165,123 +179,199 @@ namespace Model
     inline ListObjectsResult& WithNextMarker(const char* value) { SetNextMarker(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Object>& GetContents() const{ return m_contents; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContents(const Aws::Vector<Object>& value) { m_contents = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetContents(Aws::Vector<Object>&& value) { m_contents = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithContents(const Aws::Vector<Object>& value) { SetContents(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithContents(Aws::Vector<Object>&& value) { SetContents(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& AddContents(const Object& value) { m_contents.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& AddContents(Object&& value) { m_contents.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetName() const{ return m_name; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const Aws::String& value) { m_name = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(Aws::String&& value) { m_name = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetName(const char* value) { m_name.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithName(const Aws::String& value) { SetName(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithName(const char* value) { SetName(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const Aws::String& value) { m_prefix = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(Aws::String&& value) { m_prefix = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetPrefix(const char* value) { m_prefix.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithPrefix(const Aws::String& value) { SetPrefix(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithPrefix(Aws::String&& value) { SetPrefix(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline int GetMaxKeys() const{ return m_maxKeys; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetMaxKeys(int value) { m_maxKeys = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithMaxKeys(int value) { SetMaxKeys(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListObjectsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
 

@@ -60,6 +60,12 @@ namespace Model
      * <p>Specify an application name to show only application versions for that
      * application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>Specify an application name to show only application versions for that
+     * application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>Specify a version label to show a specific application version.</p>
      */
     inline const Aws::Vector<Aws::String>& GetVersionLabels() const{ return m_versionLabels; }
+
+    /**
+     * <p>Specify a version label to show a specific application version.</p>
+     */
+    inline bool VersionLabelsHasBeenSet() const { return m_versionLabelsHasBeenSet; }
 
     /**
      * <p>Specify a version label to show a specific application version.</p>
@@ -146,6 +157,13 @@ namespace Model
      * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
      * available application versions are retrieved in a single response.</p>
      */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
+
+    /**
+     * <p>For a paginated request. Specify a maximum number of application versions to
+     * include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all
+     * available application versions are retrieved in a single response.</p>
+     */
     inline void SetMaxRecords(int value) { m_maxRecordsHasBeenSet = true; m_maxRecords = value; }
 
     /**
@@ -163,6 +181,14 @@ namespace Model
      * is specified, the first page is retrieved.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>For a paginated request. Specify a token from a previous response page to
+     * retrieve the next response page. All other parameter values must be identical to
+     * the ones specified in the initial request.</p> <p>If no <code>NextToken</code>
+     * is specified, the first page is retrieved.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>For a paginated request. Specify a token from a previous response page to

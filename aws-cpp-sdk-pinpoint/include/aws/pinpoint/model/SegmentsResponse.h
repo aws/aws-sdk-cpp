@@ -57,6 +57,11 @@ namespace Model
     /**
      * The list of segments.
      */
+    inline bool ItemHasBeenSet() const { return m_itemHasBeenSet; }
+
+    /**
+     * The list of segments.
+     */
     inline void SetItem(const Aws::Vector<SegmentResponse>& value) { m_itemHasBeenSet = true; m_item = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * additional pages exist.
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * An identifier used to retrieve the next page of results. The token is null if no
+     * additional pages exist.
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * An identifier used to retrieve the next page of results. The token is null if no

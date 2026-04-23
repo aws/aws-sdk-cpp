@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
      */
+    inline bool AutoEnableIOHasBeenSet() const { return m_autoEnableIOHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the volume should be auto-enabled for I/O operations.</p>
+     */
     inline void SetAutoEnableIO(const AttributeBooleanValue& value) { m_autoEnableIOHasBeenSet = true; m_autoEnableIO = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The ID of the volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
      * <p>The ID of the volume.</p>
@@ -120,6 +130,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

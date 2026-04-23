@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
      */
+    inline bool ContinentCodeHasBeenSet() const { return m_continentCodeHasBeenSet; }
+
+    /**
+     * <p>The continent code (e.g., <code>NA</code>, meaning North America).</p>
+     */
     inline void SetContinentCode(const Aws::String& value) { m_continentCodeHasBeenSet = true; m_continentCode = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * serve users in the eastern United States and eastern Canada</code>).</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the AWS Region (e.g., <code>This region is recommended to
+     * serve users in the eastern United States and eastern Canada</code>).</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the AWS Region (e.g., <code>This region is recommended to
@@ -137,6 +148,11 @@ namespace Model
     /**
      * <p>The display name (e.g., <code>Ohio</code>).</p>
      */
+    inline bool DisplayNameHasBeenSet() const { return m_displayNameHasBeenSet; }
+
+    /**
+     * <p>The display name (e.g., <code>Ohio</code>).</p>
+     */
     inline void SetDisplayName(const Aws::String& value) { m_displayNameHasBeenSet = true; m_displayName = value; }
 
     /**
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The region name (e.g., <code>us-east-2</code>).</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The region name (e.g., <code>us-east-2</code>).</p>
+     */
     inline void SetName(const RegionName& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -196,6 +217,12 @@ namespace Model
      * (case-sensitive).</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>The Availability Zones. Follows the format <code>us-east-2a</code>
+     * (case-sensitive).</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones. Follows the format <code>us-east-2a</code>
@@ -239,6 +266,12 @@ namespace Model
      * <code>us-east-2a</code> (case-sensitive).</p>
      */
     inline const Aws::Vector<AvailabilityZone>& GetRelationalDatabaseAvailabilityZones() const{ return m_relationalDatabaseAvailabilityZones; }
+
+    /**
+     * <p>The Availability Zones for databases. Follows the format
+     * <code>us-east-2a</code> (case-sensitive).</p>
+     */
+    inline bool RelationalDatabaseAvailabilityZonesHasBeenSet() const { return m_relationalDatabaseAvailabilityZonesHasBeenSet; }
 
     /**
      * <p>The Availability Zones for databases. Follows the format

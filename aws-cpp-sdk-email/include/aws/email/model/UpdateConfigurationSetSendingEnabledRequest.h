@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the configuration set that you want to update.</p>
      */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration set that you want to update.</p>
+     */
     inline void SetConfigurationSetName(const Aws::String& value) { m_configurationSetNameHasBeenSet = true; m_configurationSetName = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * set. </p>
      */
     inline bool GetEnabled() const{ return m_enabled; }
+
+    /**
+     * <p>Describes whether email sending is enabled or disabled for the configuration
+     * set. </p>
+     */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
 
     /**
      * <p>Describes whether email sending is enabled or disabled for the configuration

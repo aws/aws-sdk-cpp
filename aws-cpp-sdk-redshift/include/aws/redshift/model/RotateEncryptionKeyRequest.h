@@ -61,6 +61,13 @@ namespace Model
      * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
      * encryption enabled.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the cluster that you want to rotate the encryption
+     * keys for.</p> <p>Constraints: Must be the name of valid cluster that has
+     * encryption enabled.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**

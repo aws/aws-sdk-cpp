@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The override value for the owner of the replica object.</p>
      */
+    inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+
+    /**
+     * <p>The override value for the owner of the replica object.</p>
+     */
     inline void SetOwner(const OwnerOverride& value) { m_ownerHasBeenSet = true; m_owner = value; }
 
     /**

@@ -50,50 +50,59 @@ namespace Model
 
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline const Aws::String& GetBucket() const{ return m_bucket; }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
+     */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(Aws::String&& value) { m_bucketHasBeenSet = true; m_bucket = std::move(value); }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline void SetBucket(const char* value) { m_bucketHasBeenSet = true; m_bucket.assign(value); }
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(const Aws::String& value) { SetBucket(value); return *this;}
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(Aws::String&& value) { SetBucket(std::move(value)); return *this;}
 
     /**
-     * <p> The Amazon S3 bucket whose Public Access Block configuration you want to
-     * delete. </p>
+     * <p>The Amazon S3 bucket whose <code>PublicAccessBlock</code> configuration you
+     * want to delete. </p>
      */
     inline DeletePublicAccessBlockRequest& WithBucket(const char* value) { SetBucket(value); return *this;}
 
 
     
     inline const Aws::Map<Aws::String, Aws::String>& GetCustomizedAccessLogTag() const{ return m_customizedAccessLogTag; }
+
+    
+    inline bool CustomizedAccessLogTagHasBeenSet() const { return m_customizedAccessLogTagHasBeenSet; }
 
     
     inline void SetCustomizedAccessLogTag(const Aws::Map<Aws::String, Aws::String>& value) { m_customizedAccessLogTagHasBeenSet = true; m_customizedAccessLogTag = value; }

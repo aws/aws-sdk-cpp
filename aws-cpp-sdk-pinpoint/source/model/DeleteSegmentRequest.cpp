@@ -30,7 +30,7 @@ DeleteSegmentRequest::DeleteSegmentRequest() :
 
 Aws::String DeleteSegmentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

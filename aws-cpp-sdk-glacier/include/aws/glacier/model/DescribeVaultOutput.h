@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the vault.</p>
      */
+    inline bool VaultARNHasBeenSet() const { return m_vaultARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the vault.</p>
+     */
     inline void SetVaultARN(const Aws::String& value) { m_vaultARNHasBeenSet = true; m_vaultARN = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the vault.</p>
      */
     inline const Aws::String& GetVaultName() const{ return m_vaultName; }
+
+    /**
+     * <p>The name of the vault.</p>
+     */
+    inline bool VaultNameHasBeenSet() const { return m_vaultNameHasBeenSet; }
 
     /**
      * <p>The name of the vault.</p>
@@ -126,6 +136,13 @@ namespace Model
      * <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
+     * value should be a string in the ISO 8601 date format, for example
+     * <code>2012-03-20T17:03:43.221Z</code>.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The Universal Coordinated Time (UTC) date when the vault was created. This
@@ -182,6 +199,13 @@ namespace Model
      * last vault inventory. This value should be a string in the ISO 8601 date format,
      * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
      */
+    inline bool LastInventoryDateHasBeenSet() const { return m_lastInventoryDateHasBeenSet; }
+
+    /**
+     * <p>The Universal Coordinated Time (UTC) date when Amazon Glacier completed the
+     * last vault inventory. This value should be a string in the ISO 8601 date format,
+     * for example <code>2012-03-20T17:03:43.221Z</code>.</p>
+     */
     inline void SetLastInventoryDate(const Aws::String& value) { m_lastInventoryDateHasBeenSet = true; m_lastInventoryDate = value; }
 
     /**
@@ -232,6 +256,13 @@ namespace Model
      * will return <code>null</code> if an inventory has not yet run on the vault, for
      * example if you just created the vault.</p>
      */
+    inline bool NumberOfArchivesHasBeenSet() const { return m_numberOfArchivesHasBeenSet; }
+
+    /**
+     * <p>The number of archives in the vault as of the last inventory date. This field
+     * will return <code>null</code> if an inventory has not yet run on the vault, for
+     * example if you just created the vault.</p>
+     */
     inline void SetNumberOfArchives(long long value) { m_numberOfArchivesHasBeenSet = true; m_numberOfArchives = value; }
 
     /**
@@ -248,6 +279,13 @@ namespace Model
      * for example if you just created the vault.</p>
      */
     inline long long GetSizeInBytes() const{ return m_sizeInBytes; }
+
+    /**
+     * <p>Total size, in bytes, of the archives in the vault as of the last inventory
+     * date. This field will return null if an inventory has not yet run on the vault,
+     * for example if you just created the vault.</p>
+     */
+    inline bool SizeInBytesHasBeenSet() const { return m_sizeInBytesHasBeenSet; }
 
     /**
      * <p>Total size, in bytes, of the archives in the vault as of the last inventory

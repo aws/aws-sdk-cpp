@@ -174,7 +174,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline const ConnectionState& GetConnectionState() const{ return m_connectionState; }
 
@@ -193,7 +194,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline void SetConnectionState(const ConnectionState& value) { m_connectionState = value; }
 
@@ -212,7 +214,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline void SetConnectionState(ConnectionState&& value) { m_connectionState = std::move(value); }
 
@@ -231,7 +234,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline AssociateConnectionWithLagResult& WithConnectionState(const ConnectionState& value) { SetConnectionState(value); return *this;}
 
@@ -250,7 +254,8 @@ namespace Model
      * is being deleted.</p> </li> <li> <p> <code>deleted</code>: The connection has
      * been deleted.</p> </li> <li> <p> <code>rejected</code>: A hosted connection in
      * the <code>ordering</code> state enters the <code>rejected</code> state if it is
-     * deleted by the customer.</p> </li> </ul>
+     * deleted by the customer.</p> </li> <li> <p> <code>unknown</code>: The state of
+     * the connection is not available.</p> </li> </ul>
      */
     inline AssociateConnectionWithLagResult& WithConnectionState(ConnectionState&& value) { SetConnectionState(std::move(value)); return *this;}
 

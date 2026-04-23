@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The event number.</p>
      */
+    inline bool EventNumberHasBeenSet() const { return m_eventNumberHasBeenSet; }
+
+    /**
+     * <p>The event number.</p>
+     */
     inline void SetEventNumber(long long value) { m_eventNumberHasBeenSet = true; m_eventNumber = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The raw event data.</p>
      */
     inline const Aws::String& GetEventMessage() const{ return m_eventMessage; }
+
+    /**
+     * <p>The raw event data.</p>
+     */
+    inline bool EventMessageHasBeenSet() const { return m_eventMessageHasBeenSet; }
 
     /**
      * <p>The raw event data.</p>
@@ -104,6 +114,11 @@ namespace Model
      * <p>The values extracted from the event data by the filter.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetExtractedValues() const{ return m_extractedValues; }
+
+    /**
+     * <p>The values extracted from the event data by the filter.</p>
+     */
+    inline bool ExtractedValuesHasBeenSet() const { return m_extractedValuesHasBeenSet; }
 
     /**
      * <p>The values extracted from the event data by the filter.</p>

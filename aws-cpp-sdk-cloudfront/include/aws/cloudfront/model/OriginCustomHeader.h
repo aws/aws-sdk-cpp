@@ -36,7 +36,7 @@ namespace Model
    * <p>A complex type that contains <code>HeaderName</code> and
    * <code>HeaderValue</code> elements, if any, for this distribution. </p><p><h3>See
    * Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/OriginCustomHeader">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/OriginCustomHeader">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API OriginCustomHeader
@@ -57,6 +57,15 @@ namespace Model
      * Amazon CloudFront Developer Guide</i>.</p>
      */
     inline const Aws::String& GetHeaderName() const{ return m_headerName; }
+
+    /**
+     * <p>The name of a header that you want CloudFront to forward to your origin. For
+     * more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/forward-custom-headers.html">Forwarding
+     * Custom Headers to Your Origin (Web Distributions Only)</a> in the <i>Amazon
+     * Amazon CloudFront Developer Guide</i>.</p>
+     */
+    inline bool HeaderNameHasBeenSet() const { return m_headerNameHasBeenSet; }
 
     /**
      * <p>The name of a header that you want CloudFront to forward to your origin. For
@@ -118,6 +127,12 @@ namespace Model
      * field.</p>
      */
     inline const Aws::String& GetHeaderValue() const{ return m_headerValue; }
+
+    /**
+     * <p>The value for the header that you specified in the <code>HeaderName</code>
+     * field.</p>
+     */
+    inline bool HeaderValueHasBeenSet() const { return m_headerValueHasBeenSet; }
 
     /**
      * <p>The value for the header that you specified in the <code>HeaderName</code>

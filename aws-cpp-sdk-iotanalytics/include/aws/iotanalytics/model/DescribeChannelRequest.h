@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the channel whose information is retrieved.</p>
      */
+    inline bool ChannelNameHasBeenSet() const { return m_channelNameHasBeenSet; }
+
+    /**
+     * <p>The name of the channel whose information is retrieved.</p>
+     */
     inline void SetChannelName(const Aws::String& value) { m_channelNameHasBeenSet = true; m_channelName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * the response.</p>
      */
     inline bool GetIncludeStatistics() const{ return m_includeStatistics; }
+
+    /**
+     * <p>If true, additional statistical information about the channel is included in
+     * the response.</p>
+     */
+    inline bool IncludeStatisticsHasBeenSet() const { return m_includeStatisticsHasBeenSet; }
 
     /**
      * <p>If true, additional statistical information about the channel is included in

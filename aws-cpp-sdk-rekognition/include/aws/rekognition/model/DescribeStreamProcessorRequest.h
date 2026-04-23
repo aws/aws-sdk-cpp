@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Name of the stream processor for which you want information.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>Name of the stream processor for which you want information.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

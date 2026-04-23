@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the mitigation taken for this attack.</p>
      */
+    inline bool MitigationNameHasBeenSet() const { return m_mitigationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the mitigation taken for this attack.</p>
+     */
     inline void SetMitigationName(const Aws::String& value) { m_mitigationNameHasBeenSet = true; m_mitigationName = value; }
 
     /**

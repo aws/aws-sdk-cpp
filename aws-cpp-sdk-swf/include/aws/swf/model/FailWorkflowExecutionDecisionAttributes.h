@@ -69,6 +69,11 @@ namespace Model
     /**
      * <p>A descriptive reason for the failure that may help in diagnostics.</p>
      */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
+
+    /**
+     * <p>A descriptive reason for the failure that may help in diagnostics.</p>
+     */
     inline void SetReason(const Aws::String& value) { m_reasonHasBeenSet = true; m_reason = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
      * <p> Details of the failure.</p>
      */
     inline const Aws::String& GetDetails() const{ return m_details; }
+
+    /**
+     * <p> Details of the failure.</p>
+     */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     /**
      * <p> Details of the failure.</p>

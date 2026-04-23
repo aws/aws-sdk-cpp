@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The error code of the failure.</p>
      */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
+
+    /**
+     * <p>The error code of the failure.</p>
+     */
     inline void SetError(const Aws::String& value) { m_errorHasBeenSet = true; m_error = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>A more detailed explanation of the cause of the failure.</p>
      */
     inline const Aws::String& GetCause() const{ return m_cause; }
+
+    /**
+     * <p>A more detailed explanation of the cause of the failure.</p>
+     */
+    inline bool CauseHasBeenSet() const { return m_causeHasBeenSet; }
 
     /**
      * <p>A more detailed explanation of the cause of the failure.</p>

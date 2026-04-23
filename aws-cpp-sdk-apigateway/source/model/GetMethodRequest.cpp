@@ -31,7 +31,7 @@ GetMethodRequest::GetMethodRequest() :
 
 Aws::String GetMethodRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

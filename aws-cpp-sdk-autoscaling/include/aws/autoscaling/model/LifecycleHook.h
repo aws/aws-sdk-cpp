@@ -36,9 +36,7 @@ namespace Model
   /**
    * <p>Describes a lifecycle hook, which tells Amazon EC2 Auto Scaling that you want
    * to perform an action whenever it launches instances or whenever it terminates
-   * instances.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html">Lifecycle
-   * Hooks</a> in the <i>Amazon EC2 Auto Scaling User Guide</i>.</p><p><h3>See
+   * instances. Used in response to <a>DescribeLifecycleHooks</a>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/autoscaling-2011-01-01/LifecycleHook">AWS
    * API Reference</a></p>
@@ -58,6 +56,11 @@ namespace Model
      * <p>The name of the lifecycle hook.</p>
      */
     inline const Aws::String& GetLifecycleHookName() const{ return m_lifecycleHookName; }
+
+    /**
+     * <p>The name of the lifecycle hook.</p>
+     */
+    inline bool LifecycleHookNameHasBeenSet() const { return m_lifecycleHookNameHasBeenSet; }
 
     /**
      * <p>The name of the lifecycle hook.</p>
@@ -98,6 +101,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group for the lifecycle hook.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -133,6 +141,14 @@ namespace Model
      * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
      */
     inline const Aws::String& GetLifecycleTransition() const{ return m_lifecycleTransition; }
+
+    /**
+     * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
+     * following are possible values:</p> <ul> <li>
+     * <p>autoscaling:EC2_INSTANCE_LAUNCHING</p> </li> <li>
+     * <p>autoscaling:EC2_INSTANCE_TERMINATING</p> </li> </ul>
+     */
+    inline bool LifecycleTransitionHasBeenSet() const { return m_lifecycleTransitionHasBeenSet; }
 
     /**
      * <p>The state of the EC2 instance to which to attach the lifecycle hook. The
@@ -195,6 +211,13 @@ namespace Model
      * when an instance is in the transition state for the lifecycle hook. The
      * notification target can be either an SQS queue or an SNS topic.</p>
      */
+    inline bool NotificationTargetARNHasBeenSet() const { return m_notificationTargetARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the target that Amazon EC2 Auto Scaling sends notifications to
+     * when an instance is in the transition state for the lifecycle hook. The
+     * notification target can be either an SQS queue or an SNS topic.</p>
+     */
     inline void SetNotificationTargetARN(const Aws::String& value) { m_notificationTargetARNHasBeenSet = true; m_notificationTargetARN = value; }
 
     /**
@@ -243,6 +266,12 @@ namespace Model
      * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
      * specified notification target.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The ARN of the IAM role that allows the Auto Scaling group to publish to the
+     * specified notification target.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -277,44 +306,50 @@ namespace Model
 
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline const Aws::String& GetNotificationMetadata() const{ return m_notificationMetadata; }
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
+     */
+    inline bool NotificationMetadataHasBeenSet() const { return m_notificationMetadataHasBeenSet; }
+
+    /**
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(const Aws::String& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = value; }
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(Aws::String&& value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata = std::move(value); }
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline void SetNotificationMetadata(const char* value) { m_notificationMetadataHasBeenSet = true; m_notificationMetadata.assign(value); }
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(const Aws::String& value) { SetNotificationMetadata(value); return *this;}
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(Aws::String&& value) { SetNotificationMetadata(std::move(value)); return *this;}
 
     /**
-     * <p>Additional information that you want to include any time Amazon EC2 Auto
-     * Scaling sends a message to the notification target.</p>
+     * <p>Additional information that is included any time Amazon EC2 Auto Scaling
+     * sends a message to the notification target.</p>
      */
     inline LifecycleHook& WithNotificationMetadata(const char* value) { SetNotificationMetadata(value); return *this;}
 
@@ -322,24 +357,28 @@ namespace Model
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
      * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * action that you specified in the <code>DefaultResult</code> parameter.</p>
      */
     inline int GetHeartbeatTimeout() const{ return m_heartbeatTimeout; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
      * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * action that you specified in the <code>DefaultResult</code> parameter.</p>
+     */
+    inline bool HeartbeatTimeoutHasBeenSet() const { return m_heartbeatTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
+     * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
+     * action that you specified in the <code>DefaultResult</code> parameter.</p>
      */
     inline void SetHeartbeatTimeout(int value) { m_heartbeatTimeoutHasBeenSet = true; m_heartbeatTimeout = value; }
 
     /**
      * <p>The maximum time, in seconds, that can elapse before the lifecycle hook times
      * out. If the lifecycle hook times out, Amazon EC2 Auto Scaling performs the
-     * default action. You can prevent the lifecycle hook from timing out by calling
-     * <a>RecordLifecycleActionHeartbeat</a>.</p>
+     * action that you specified in the <code>DefaultResult</code> parameter.</p>
      */
     inline LifecycleHook& WithHeartbeatTimeout(int value) { SetHeartbeatTimeout(value); return *this;}
 
@@ -351,6 +390,14 @@ namespace Model
      * is smaller.</p>
      */
     inline int GetGlobalTimeout() const{ return m_globalTimeout; }
+
+    /**
+     * <p>The maximum time, in seconds, that an instance can remain in a
+     * <code>Pending:Wait</code> or <code>Terminating:Wait</code> state. The maximum is
+     * 172800 seconds (48 hours) or 100 times <code>HeartbeatTimeout</code>, whichever
+     * is smaller.</p>
+     */
+    inline bool GlobalTimeoutHasBeenSet() const { return m_globalTimeoutHasBeenSet; }
 
     /**
      * <p>The maximum time, in seconds, that an instance can remain in a
@@ -371,57 +418,57 @@ namespace Model
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline const Aws::String& GetDefaultResult() const{ return m_defaultResult; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
+     */
+    inline bool DefaultResultHasBeenSet() const { return m_defaultResultHasBeenSet; }
+
+    /**
+     * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const Aws::String& value) { m_defaultResultHasBeenSet = true; m_defaultResult = value; }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(Aws::String&& value) { m_defaultResultHasBeenSet = true; m_defaultResult = std::move(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline void SetDefaultResult(const char* value) { m_defaultResultHasBeenSet = true; m_defaultResult.assign(value); }
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHook& WithDefaultResult(const Aws::String& value) { SetDefaultResult(value); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHook& WithDefaultResult(Aws::String&& value) { SetDefaultResult(std::move(value)); return *this;}
 
     /**
      * <p>Defines the action the Auto Scaling group should take when the lifecycle hook
-     * timeout elapses or if an unexpected failure occurs. The valid values are
-     * <code>CONTINUE</code> and <code>ABANDON</code>. The default value is
-     * <code>CONTINUE</code>.</p>
+     * timeout elapses or if an unexpected failure occurs. The possible values are
+     * <code>CONTINUE</code> and <code>ABANDON</code>.</p>
      */
     inline LifecycleHook& WithDefaultResult(const char* value) { SetDefaultResult(value); return *this;}
 

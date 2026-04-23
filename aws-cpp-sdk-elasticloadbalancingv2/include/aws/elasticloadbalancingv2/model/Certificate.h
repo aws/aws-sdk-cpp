@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificate.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -86,17 +91,26 @@ namespace Model
 
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline bool GetIsDefault() const{ return m_isDefault; }
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
+     */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
-     * <p>Indicates whether the certificate is the default certificate.</p>
+     * <p>Indicates whether the certificate is the default certificate. Do not set
+     * <code>IsDefault</code> when specifying a certificate as an input parameter.</p>
      */
     inline Certificate& WithIsDefault(bool value) { SetIsDefault(value); return *this;}
 

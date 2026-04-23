@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The thing group name.</p>
      */
+    inline bool ThingGroupNameHasBeenSet() const { return m_thingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The thing group name.</p>
+     */
     inline void SetThingGroupName(const Aws::String& value) { m_thingGroupNameHasBeenSet = true; m_thingGroupName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The thing group ID.</p>
      */
     inline const Aws::String& GetThingGroupId() const{ return m_thingGroupId; }
+
+    /**
+     * <p>The thing group ID.</p>
+     */
+    inline bool ThingGroupIdHasBeenSet() const { return m_thingGroupIdHasBeenSet; }
 
     /**
      * <p>The thing group ID.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The thing group description.</p>
      */
+    inline bool ThingGroupDescriptionHasBeenSet() const { return m_thingGroupDescriptionHasBeenSet; }
+
+    /**
+     * <p>The thing group description.</p>
+     */
     inline void SetThingGroupDescription(const Aws::String& value) { m_thingGroupDescriptionHasBeenSet = true; m_thingGroupDescription = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The thing group attributes.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>The thing group attributes.</p>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>The thing group attributes.</p>
@@ -222,6 +242,11 @@ namespace Model
      * <p>Parent group names.</p>
      */
     inline const Aws::Vector<Aws::String>& GetParentGroupNames() const{ return m_parentGroupNames; }
+
+    /**
+     * <p>Parent group names.</p>
+     */
+    inline bool ParentGroupNamesHasBeenSet() const { return m_parentGroupNamesHasBeenSet; }
 
     /**
      * <p>Parent group names.</p>

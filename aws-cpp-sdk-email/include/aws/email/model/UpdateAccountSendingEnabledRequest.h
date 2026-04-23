@@ -58,6 +58,12 @@ namespace Model
      * <p>Describes whether email sending is enabled or disabled for your Amazon SES
      * account in the current AWS Region.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Describes whether email sending is enabled or disabled for your Amazon SES
+     * account in the current AWS Region.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

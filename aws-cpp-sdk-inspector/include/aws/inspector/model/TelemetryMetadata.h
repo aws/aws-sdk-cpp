@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A specific type of behavioral data that is collected by the agent.</p>
      */
+    inline bool MessageTypeHasBeenSet() const { return m_messageTypeHasBeenSet; }
+
+    /**
+     * <p>A specific type of behavioral data that is collected by the agent.</p>
+     */
     inline void SetMessageType(const Aws::String& value) { m_messageTypeHasBeenSet = true; m_messageType = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * <p>The count of messages that the agent sends to the Amazon Inspector
      * service.</p>
      */
+    inline bool CountHasBeenSet() const { return m_countHasBeenSet; }
+
+    /**
+     * <p>The count of messages that the agent sends to the Amazon Inspector
+     * service.</p>
+     */
     inline void SetCount(long long value) { m_countHasBeenSet = true; m_count = value; }
 
     /**
@@ -109,6 +120,12 @@ namespace Model
      * service.</p>
      */
     inline long long GetDataSize() const{ return m_dataSize; }
+
+    /**
+     * <p>The data size of messages that the agent sends to the Amazon Inspector
+     * service.</p>
+     */
+    inline bool DataSizeHasBeenSet() const { return m_dataSizeHasBeenSet; }
 
     /**
      * <p>The data size of messages that the agent sends to the Amazon Inspector

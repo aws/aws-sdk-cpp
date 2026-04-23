@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of the topic you want to subscribe to.</p>
      */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the topic you want to subscribe to.</p>
+     */
     inline void SetTopicArn(const Aws::String& value) { m_topicArnHasBeenSet = true; m_topicArn = value; }
 
     /**
@@ -100,6 +105,21 @@ namespace Model
      * function.</p> </li> </ul>
      */
     inline const Aws::String& GetProtocol() const{ return m_protocol; }
+
+    /**
+     * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
+     * <code>http</code> – delivery of JSON-encoded message via HTTP POST</p> </li>
+     * <li> <p> <code>https</code> – delivery of JSON-encoded message via HTTPS
+     * POST</p> </li> <li> <p> <code>email</code> – delivery of message via SMTP</p>
+     * </li> <li> <p> <code>email-json</code> – delivery of JSON-encoded message via
+     * SMTP</p> </li> <li> <p> <code>sms</code> – delivery of message via SMS</p> </li>
+     * <li> <p> <code>sqs</code> – delivery of JSON-encoded message to an Amazon SQS
+     * queue</p> </li> <li> <p> <code>application</code> – delivery of JSON-encoded
+     * message to an EndpointArn for a mobile app and device.</p> </li> <li> <p>
+     * <code>lambda</code> – delivery of JSON-encoded message to an AWS Lambda
+     * function.</p> </li> </ul>
+     */
+    inline bool ProtocolHasBeenSet() const { return m_protocolHasBeenSet; }
 
     /**
      * <p>The protocol you want to use. Supported protocols include:</p> <ul> <li> <p>
@@ -222,6 +242,22 @@ namespace Model
      * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
      * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
      */
+    inline bool EndpointHasBeenSet() const { return m_endpointHasBeenSet; }
+
+    /**
+     * <p>The endpoint that you want to receive notifications. Endpoints vary by
+     * protocol:</p> <ul> <li> <p>For the <code>http</code> protocol, the endpoint is
+     * an URL beginning with "http://"</p> </li> <li> <p>For the <code>https</code>
+     * protocol, the endpoint is a URL beginning with "https://"</p> </li> <li> <p>For
+     * the <code>email</code> protocol, the endpoint is an email address</p> </li> <li>
+     * <p>For the <code>email-json</code> protocol, the endpoint is an email
+     * address</p> </li> <li> <p>For the <code>sms</code> protocol, the endpoint is a
+     * phone number of an SMS-enabled device</p> </li> <li> <p>For the <code>sqs</code>
+     * protocol, the endpoint is the ARN of an Amazon SQS queue</p> </li> <li> <p>For
+     * the <code>application</code> protocol, the endpoint is the EndpointArn of a
+     * mobile app and device.</p> </li> <li> <p>For the <code>lambda</code> protocol,
+     * the endpoint is the ARN of an AWS Lambda function.</p> </li> </ul>
+     */
     inline void SetEndpoint(const Aws::String& value) { m_endpointHasBeenSet = true; m_endpoint = value; }
 
     /**
@@ -319,6 +355,21 @@ namespace Model
      * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAttributes() const{ return m_attributes; }
+
+    /**
+     * <p>A map of attributes with their corresponding values.</p> <p>The following
+     * lists the names, descriptions, and values of the special request parameters that
+     * the <code>SetTopicAttributes</code> action uses:</p> <ul> <li> <p>
+     * <code>DeliveryPolicy</code> – The policy that defines how Amazon SNS retries
+     * failed deliveries to HTTP/S endpoints.</p> </li> <li> <p>
+     * <code>FilterPolicy</code> – The simple JSON object that lets your subscriber
+     * receive only a subset of messages, rather than receiving every message published
+     * to the topic.</p> </li> <li> <p> <code>RawMessageDelivery</code> – When set to
+     * <code>true</code>, enables raw message delivery to Amazon SQS or HTTP/S
+     * endpoints. This eliminates the need for the endpoints to process JSON
+     * formatting, which is otherwise created for Amazon SNS metadata.</p> </li> </ul>
+     */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
 
     /**
      * <p>A map of attributes with their corresponding values.</p> <p>The following
@@ -498,6 +549,19 @@ namespace Model
      * confirmed.</p> <p>The default value is <code>false</code>.</p>
      */
     inline bool GetReturnSubscriptionArn() const{ return m_returnSubscriptionArn; }
+
+    /**
+     * <p>Sets whether the response from the <code>Subscribe</code> request includes
+     * the subscription ARN, even if the subscription is not yet confirmed.</p> <p>If
+     * you set this parameter to <code>false</code>, the response includes the ARN for
+     * confirmed subscriptions, but it includes an ARN value of "pending subscription"
+     * for subscriptions that are not yet confirmed. A subscription becomes confirmed
+     * when the subscriber calls the <code>ConfirmSubscription</code> action with a
+     * confirmation token.</p> <p>If you set this parameter to <code>true</code>, the
+     * response includes the ARN in all cases, even if the subscription is not yet
+     * confirmed.</p> <p>The default value is <code>false</code>.</p>
+     */
+    inline bool ReturnSubscriptionArnHasBeenSet() const { return m_returnSubscriptionArnHasBeenSet; }
 
     /**
      * <p>Sets whether the response from the <code>Subscribe</code> request includes

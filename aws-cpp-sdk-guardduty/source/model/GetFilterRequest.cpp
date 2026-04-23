@@ -30,7 +30,7 @@ GetFilterRequest::GetFilterRequest() :
 
 Aws::String GetFilterRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

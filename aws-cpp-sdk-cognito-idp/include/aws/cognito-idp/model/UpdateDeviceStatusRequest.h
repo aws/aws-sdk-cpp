@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
+
+    /**
+     * <p>The device key.</p>
+     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
 
     /**
@@ -125,6 +135,11 @@ namespace Model
      * <p>The status of whether a device is remembered.</p>
      */
     inline const DeviceRememberedStatusType& GetDeviceRememberedStatus() const{ return m_deviceRememberedStatus; }
+
+    /**
+     * <p>The status of whether a device is remembered.</p>
+     */
+    inline bool DeviceRememberedStatusHasBeenSet() const { return m_deviceRememberedStatusHasBeenSet; }
 
     /**
      * <p>The status of whether a device is remembered.</p>

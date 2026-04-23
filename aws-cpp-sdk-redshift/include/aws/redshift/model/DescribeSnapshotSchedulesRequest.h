@@ -57,6 +57,12 @@ namespace Model
      * <p>The unique identifier for the cluster whose snapshot schedules you want to
      * view.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the cluster whose snapshot schedules you want to
+     * view.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**
@@ -98,6 +104,11 @@ namespace Model
     /**
      * <p>A unique identifier for a snapshot schedule.</p>
      */
+    inline bool ScheduleIdentifierHasBeenSet() const { return m_scheduleIdentifierHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a snapshot schedule.</p>
+     */
     inline void SetScheduleIdentifier(const Aws::String& value) { m_scheduleIdentifierHasBeenSet = true; m_scheduleIdentifier = value; }
 
     /**
@@ -130,6 +141,11 @@ namespace Model
      * <p>The key value for a snapshot schedule tag.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagKeys() const{ return m_tagKeys; }
+
+    /**
+     * <p>The key value for a snapshot schedule tag.</p>
+     */
+    inline bool TagKeysHasBeenSet() const { return m_tagKeysHasBeenSet; }
 
     /**
      * <p>The key value for a snapshot schedule tag.</p>
@@ -171,6 +187,11 @@ namespace Model
      * <p>The value corresponding to the key of the snapshot schedule tag.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTagValues() const{ return m_tagValues; }
+
+    /**
+     * <p>The value corresponding to the key of the snapshot schedule tag.</p>
+     */
+    inline bool TagValuesHasBeenSet() const { return m_tagValuesHasBeenSet; }
 
     /**
      * <p>The value corresponding to the key of the snapshot schedule tag.</p>
@@ -217,6 +238,16 @@ namespace Model
      * the request.</p>
      */
     inline const Aws::String& GetMarker() const{ return m_marker; }
+
+    /**
+     * <p>A value that indicates the starting point for the next set of response
+     * records in a subsequent request. If a value is returned in a response, you can
+     * retrieve the next set of records by providing this returned marker value in the
+     * <code>marker</code> parameter and retrying the command. If the
+     * <code>marker</code> field is empty, all response records have been retrieved for
+     * the request.</p>
+     */
+    inline bool MarkerHasBeenSet() const { return m_markerHasBeenSet; }
 
     /**
      * <p>A value that indicates the starting point for the next set of response
@@ -287,6 +318,15 @@ namespace Model
      * <code>marker</code> value.</p>
      */
     inline int GetMaxRecords() const{ return m_maxRecords; }
+
+    /**
+     * <p>The maximum number or response records to return in each call. If the number
+     * of remaining response records exceeds the specified <code>MaxRecords</code>
+     * value, a value is returned in a <code>marker</code> field of the response. You
+     * can retrieve the next set of records by retrying the command with the returned
+     * <code>marker</code> value.</p>
+     */
+    inline bool MaxRecordsHasBeenSet() const { return m_maxRecordsHasBeenSet; }
 
     /**
      * <p>The maximum number or response records to return in each call. If the number

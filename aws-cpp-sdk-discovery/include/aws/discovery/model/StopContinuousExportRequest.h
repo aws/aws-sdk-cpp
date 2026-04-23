@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique ID assigned to this export.</p>
      */
+    inline bool ExportIdHasBeenSet() const { return m_exportIdHasBeenSet; }
+
+    /**
+     * <p>The unique ID assigned to this export.</p>
+     */
     inline void SetExportId(const Aws::String& value) { m_exportIdHasBeenSet = true; m_exportId = value; }
 
     /**

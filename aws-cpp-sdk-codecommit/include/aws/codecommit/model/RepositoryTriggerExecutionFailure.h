@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the trigger that did not run.</p>
      */
+    inline bool TriggerHasBeenSet() const { return m_triggerHasBeenSet; }
+
+    /**
+     * <p>The name of the trigger that did not run.</p>
+     */
     inline void SetTrigger(const Aws::String& value) { m_triggerHasBeenSet = true; m_trigger = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>Additional message information about the trigger that did not run.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+
+    /**
+     * <p>Additional message information about the trigger that did not run.</p>
+     */
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
 
     /**
      * <p>Additional message information about the trigger that did not run.</p>

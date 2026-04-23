@@ -64,6 +64,15 @@ namespace Model
      * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
      * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
      */
+    inline bool WebACLIdHasBeenSet() const { return m_webACLIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>WebACL</code>. You use <code>WebACLId</code>
+     * to get information about a <code>WebACL</code> (see <a>GetWebACL</a>), update a
+     * <code>WebACL</code> (see <a>UpdateWebACL</a>), and delete a <code>WebACL</code>
+     * from AWS WAF (see <a>DeleteWebACL</a>).</p> <p> <code>WebACLId</code> is
+     * returned by <a>CreateWebACL</a> and by <a>ListWebACLs</a>.</p>
+     */
     inline void SetWebACLId(const Aws::String& value) { m_webACLIdHasBeenSet = true; m_webACLId = value; }
 
     /**
@@ -117,6 +126,12 @@ namespace Model
      * name of a <code>WebACL</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>WebACL</a>. You can't change the
+     * name of a <code>WebACL</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>WebACL</a>. You can't change the

@@ -30,7 +30,7 @@ GetThreatIntelSetRequest::GetThreatIntelSetRequest() :
 
 Aws::String GetThreatIntelSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

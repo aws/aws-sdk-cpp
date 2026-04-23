@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
+    inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
@@ -103,6 +108,25 @@ namespace Model
      * change will be applied after the cluster reboots.</p> </li> </ul>
      */
     inline const Aws::String& GetParameterApplyStatus() const{ return m_parameterApplyStatus; }
+
+    /**
+     * <p>The status of the parameter that indicates whether the parameter is in sync
+     * with the database, waiting for a cluster reboot, or encountered an error when
+     * being applied.</p> <p>The following are possible statuses and descriptions.</p>
+     * <ul> <li> <p> <code>in-sync</code>: The parameter value is in sync with the
+     * database.</p> </li> <li> <p> <code>pending-reboot</code>: The parameter value
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>applying</code>: The parameter value is being applied to the database.</p>
+     * </li> <li> <p> <code>invalid-parameter</code>: Cannot apply the parameter value
+     * because it has an invalid value or syntax.</p> </li> <li> <p>
+     * <code>apply-deferred</code>: The parameter contains static property changes. The
+     * changes are deferred until the cluster reboots.</p> </li> <li> <p>
+     * <code>apply-error</code>: Cannot connect to the cluster. The parameter change
+     * will be applied after the cluster reboots.</p> </li> <li> <p>
+     * <code>unknown-error</code>: Cannot apply the parameter change right now. The
+     * change will be applied after the cluster reboots.</p> </li> </ul>
+     */
+    inline bool ParameterApplyStatusHasBeenSet() const { return m_parameterApplyStatusHasBeenSet; }
 
     /**
      * <p>The status of the parameter that indicates whether the parameter is in sync
@@ -224,6 +248,12 @@ namespace Model
      * database.</p>
      */
     inline const Aws::String& GetParameterApplyErrorDescription() const{ return m_parameterApplyErrorDescription; }
+
+    /**
+     * <p>The error that prevented the parameter from being applied to the
+     * database.</p>
+     */
+    inline bool ParameterApplyErrorDescriptionHasBeenSet() const { return m_parameterApplyErrorDescriptionHasBeenSet; }
 
     /**
      * <p>The error that prevented the parameter from being applied to the

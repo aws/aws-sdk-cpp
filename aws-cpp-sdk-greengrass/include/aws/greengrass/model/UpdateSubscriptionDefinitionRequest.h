@@ -50,6 +50,11 @@ namespace Model
     /**
      * The name of the definition.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the definition.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * The ID of the subscription definition.
      */
     inline const Aws::String& GetSubscriptionDefinitionId() const{ return m_subscriptionDefinitionId; }
+
+    /**
+     * The ID of the subscription definition.
+     */
+    inline bool SubscriptionDefinitionIdHasBeenSet() const { return m_subscriptionDefinitionIdHasBeenSet; }
 
     /**
      * The ID of the subscription definition.

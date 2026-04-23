@@ -32,6 +32,7 @@ namespace Aws
 
         static const int Server_HASH = HashingUtils::HashString("Server");
         static const int Lambda_HASH = HashingUtils::HashString("Lambda");
+        static const int ECS_HASH = HashingUtils::HashString("ECS");
 
 
         ComputePlatform GetComputePlatformForName(const Aws::String& name)
@@ -44,6 +45,10 @@ namespace Aws
           else if (hashCode == Lambda_HASH)
           {
             return ComputePlatform::Lambda;
+          }
+          else if (hashCode == ECS_HASH)
+          {
+            return ComputePlatform::ECS;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -63,6 +68,8 @@ namespace Aws
             return "Server";
           case ComputePlatform::Lambda:
             return "Lambda";
+          case ComputePlatform::ECS:
+            return "ECS";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -70,7 +77,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

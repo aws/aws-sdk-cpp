@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The encryption configuration for S3 data.</p>
      */
+    inline bool S3EncryptionHasBeenSet() const { return m_s3EncryptionHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for S3 data.</p>
+     */
     inline void SetS3Encryption(const Aws::Vector<S3Encryption>& value) { m_s3EncryptionHasBeenSet = true; m_s3Encryption = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The encryption configuration for CloudWatch.</p>
      */
+    inline bool CloudWatchEncryptionHasBeenSet() const { return m_cloudWatchEncryptionHasBeenSet; }
+
+    /**
+     * <p>The encryption configuration for CloudWatch.</p>
+     */
     inline void SetCloudWatchEncryption(const CloudWatchEncryption& value) { m_cloudWatchEncryptionHasBeenSet = true; m_cloudWatchEncryption = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The encryption configuration for Job Bookmarks.</p>
      */
     inline const JobBookmarksEncryption& GetJobBookmarksEncryption() const{ return m_jobBookmarksEncryption; }
+
+    /**
+     * <p>The encryption configuration for Job Bookmarks.</p>
+     */
+    inline bool JobBookmarksEncryptionHasBeenSet() const { return m_jobBookmarksEncryptionHasBeenSet; }
 
     /**
      * <p>The encryption configuration for Job Bookmarks.</p>

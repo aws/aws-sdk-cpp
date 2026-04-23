@@ -27,7 +27,8 @@ namespace Model
 {
 
   /**
-   * Request of DescribeReportDefinitions<p><h3>See Also:</h3>   <a
+   * <p>Requests a list of AWS Cost and Usage reports owned by the
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/cur-2017-01-06/DescribeReportDefinitionsRequest">AWS
    * API Reference</a></p>
    */
@@ -51,6 +52,9 @@ namespace Model
     inline int GetMaxResults() const{ return m_maxResults; }
 
     
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     
@@ -59,6 +63,9 @@ namespace Model
 
     
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }

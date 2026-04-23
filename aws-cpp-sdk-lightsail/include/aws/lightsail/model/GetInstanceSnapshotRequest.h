@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the snapshot for which you are requesting information.</p>
      */
+    inline bool InstanceSnapshotNameHasBeenSet() const { return m_instanceSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the snapshot for which you are requesting information.</p>
+     */
     inline void SetInstanceSnapshotName(const Aws::String& value) { m_instanceSnapshotNameHasBeenSet = true; m_instanceSnapshotName = value; }
 
     /**

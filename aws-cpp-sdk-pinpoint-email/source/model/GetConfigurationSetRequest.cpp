@@ -29,7 +29,7 @@ GetConfigurationSetRequest::GetConfigurationSetRequest() :
 
 Aws::String GetConfigurationSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 Aws::Http::HeaderValueCollection GetConfigurationSetRequest::GetRequestSpecificHeaders() const

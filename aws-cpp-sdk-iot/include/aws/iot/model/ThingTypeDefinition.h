@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the thing type.</p>
      */
+    inline bool ThingTypeNameHasBeenSet() const { return m_thingTypeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the thing type.</p>
+     */
     inline void SetThingTypeName(const Aws::String& value) { m_thingTypeNameHasBeenSet = true; m_thingTypeName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The thing type ARN.</p>
      */
     inline const Aws::String& GetThingTypeArn() const{ return m_thingTypeArn; }
+
+    /**
+     * <p>The thing type ARN.</p>
+     */
+    inline bool ThingTypeArnHasBeenSet() const { return m_thingTypeArnHasBeenSet; }
 
     /**
      * <p>The thing type ARN.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The ThingTypeProperties for the thing type.</p>
      */
+    inline bool ThingTypePropertiesHasBeenSet() const { return m_thingTypePropertiesHasBeenSet; }
+
+    /**
+     * <p>The ThingTypeProperties for the thing type.</p>
+     */
     inline void SetThingTypeProperties(const ThingTypeProperties& value) { m_thingTypePropertiesHasBeenSet = true; m_thingTypeProperties = value; }
 
     /**
@@ -154,6 +169,13 @@ namespace Model
      * deprecated, and a date and time when it was deprecated.</p>
      */
     inline const ThingTypeMetadata& GetThingTypeMetadata() const{ return m_thingTypeMetadata; }
+
+    /**
+     * <p>The ThingTypeMetadata contains additional information about the thing type
+     * including: creation date and time, a value indicating whether the thing type is
+     * deprecated, and a date and time when it was deprecated.</p>
+     */
+    inline bool ThingTypeMetadataHasBeenSet() const { return m_thingTypeMetadataHasBeenSet; }
 
     /**
      * <p>The ThingTypeMetadata contains additional information about the thing type

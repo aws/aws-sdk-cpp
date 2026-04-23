@@ -56,6 +56,12 @@ namespace Model
      * <p>Indicates whether a challenge is required on a new device. Only applicable to
      * a new device.</p>
      */
+    inline bool ChallengeRequiredOnNewDeviceHasBeenSet() const { return m_challengeRequiredOnNewDeviceHasBeenSet; }
+
+    /**
+     * <p>Indicates whether a challenge is required on a new device. Only applicable to
+     * a new device.</p>
+     */
     inline void SetChallengeRequiredOnNewDevice(bool value) { m_challengeRequiredOnNewDeviceHasBeenSet = true; m_challengeRequiredOnNewDevice = value; }
 
     /**
@@ -69,6 +75,11 @@ namespace Model
      * <p>If true, a device is only remembered on user prompt.</p>
      */
     inline bool GetDeviceOnlyRememberedOnUserPrompt() const{ return m_deviceOnlyRememberedOnUserPrompt; }
+
+    /**
+     * <p>If true, a device is only remembered on user prompt.</p>
+     */
+    inline bool DeviceOnlyRememberedOnUserPromptHasBeenSet() const { return m_deviceOnlyRememberedOnUserPromptHasBeenSet; }
 
     /**
      * <p>If true, a device is only remembered on user prompt.</p>

@@ -45,20 +45,26 @@ namespace Model
 
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently,
+     * each supported device can store 10 AMIs.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently,
+     * each supported device can store 10 AMIs.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results for the list of compatible images. Currently,
+     * each supported device can store 10 AMIs.</p>
      */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
-     * <p>The maximum number of results for the list of compatible images. Currently, a
-     * Snowball Edge device can store 10 AMIs.</p>
+     * <p>The maximum number of results for the list of compatible images. Currently,
+     * each supported device can store 10 AMIs.</p>
      */
     inline ListCompatibleImagesRequest& WithMaxResults(int value) { SetMaxResults(value); return *this;}
 
@@ -69,6 +75,13 @@ namespace Model
      * starting point for your list of returned images.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>HTTP requests are stateless. To identify what object comes "next" in the list
+     * of compatible images, you can specify a value for <code>NextToken</code> as the
+     * starting point for your list of returned images.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>HTTP requests are stateless. To identify what object comes "next" in the list

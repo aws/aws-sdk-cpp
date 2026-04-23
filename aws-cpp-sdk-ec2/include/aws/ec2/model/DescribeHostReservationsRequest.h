@@ -55,7 +55,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline const Aws::Vector<Filter>& GetFilter() const{ return m_filter; }
 
@@ -66,7 +73,32 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
+     */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
+     * instance family (for example, <code>m4</code>).</p> </li> <li> <p>
+     * <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
+     * <code>state</code> - The state of the reservation (<code>payment-pending</code>
+     * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
@@ -77,7 +109,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline void SetFilter(Aws::Vector<Filter>&& value) { m_filterHasBeenSet = true; m_filter = std::move(value); }
 
@@ -88,7 +127,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeHostReservationsRequest& WithFilter(const Aws::Vector<Filter>& value) { SetFilter(value); return *this;}
 
@@ -99,7 +145,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeHostReservationsRequest& WithFilter(Aws::Vector<Filter>&& value) { SetFilter(std::move(value)); return *this;}
 
@@ -110,7 +163,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeHostReservationsRequest& AddFilter(const Filter& value) { m_filterHasBeenSet = true; m_filter.push_back(value); return *this; }
 
@@ -121,7 +181,14 @@ namespace Model
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> <li> <p>
      * <code>state</code> - The state of the reservation (<code>payment-pending</code>
      * | <code>payment-failed</code> | <code>active</code> | <code>retired</code>).</p>
-     * </li> </ul>
+     * </li> <li> <p> <code>tag</code>:&lt;key&gt; - The key/value combination of a tag
+     * assigned to the resource. Use the tag key in the filter name and the tag value
+     * as the filter value. For example, to find all resources that have a tag with the
+     * key <code>Owner</code> and the value <code>TeamA</code>, specify
+     * <code>tag:Owner</code> for the filter name and <code>TeamA</code> for the filter
+     * value.</p> </li> <li> <p> <code>tag-key</code> - The key of a tag assigned to
+     * the resource. Use this filter to find all resources assigned a tag with a
+     * specific key, regardless of the tag value.</p> </li> </ul>
      */
     inline DescribeHostReservationsRequest& AddFilter(Filter&& value) { m_filterHasBeenSet = true; m_filter.push_back(std::move(value)); return *this; }
 
@@ -130,6 +197,11 @@ namespace Model
      * <p>One or more host reservation IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetHostReservationIdSet() const{ return m_hostReservationIdSet; }
+
+    /**
+     * <p>One or more host reservation IDs.</p>
+     */
+    inline bool HostReservationIdSetHasBeenSet() const { return m_hostReservationIdSetHasBeenSet; }
 
     /**
      * <p>One or more host reservation IDs.</p>
@@ -183,6 +255,15 @@ namespace Model
      * <code>maxResults</code> is given a larger value than 500, you receive an
      * error.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -199,6 +280,11 @@ namespace Model
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>

@@ -53,42 +53,56 @@ namespace Model
 
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
+
+    /**
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline void SetValues(Aws::Vector<Aws::String>&& value) { m_valuesHasBeenSet = true; m_values = std::move(value); }
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline PartitionInput& WithValues(const Aws::Vector<Aws::String>& value) { SetValues(value); return *this;}
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline PartitionInput& WithValues(Aws::Vector<Aws::String>&& value) { SetValues(std::move(value)); return *this;}
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline PartitionInput& AddValues(const Aws::String& value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline PartitionInput& AddValues(Aws::String&& value) { m_valuesHasBeenSet = true; m_values.push_back(std::move(value)); return *this; }
 
     /**
-     * <p>The values of the partition.</p>
+     * <p>The values of the partition. Although this parameter is not required by the
+     * SDK, you must specify this parameter for a valid input.</p>
      */
     inline PartitionInput& AddValues(const char* value) { m_valuesHasBeenSet = true; m_values.push_back(value); return *this; }
 
@@ -97,6 +111,11 @@ namespace Model
      * <p>The last time at which the partition was accessed.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAccessTime() const{ return m_lastAccessTime; }
+
+    /**
+     * <p>The last time at which the partition was accessed.</p>
+     */
+    inline bool LastAccessTimeHasBeenSet() const { return m_lastAccessTimeHasBeenSet; }
 
     /**
      * <p>The last time at which the partition was accessed.</p>
@@ -129,6 +148,12 @@ namespace Model
      * <p>Provides information about the physical location where the partition is
      * stored.</p>
      */
+    inline bool StorageDescriptorHasBeenSet() const { return m_storageDescriptorHasBeenSet; }
+
+    /**
+     * <p>Provides information about the physical location where the partition is
+     * stored.</p>
+     */
     inline void SetStorageDescriptor(const StorageDescriptor& value) { m_storageDescriptorHasBeenSet = true; m_storageDescriptor = value; }
 
     /**
@@ -154,6 +179,11 @@ namespace Model
      * <p>These key-value pairs define partition parameters.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>These key-value pairs define partition parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>These key-value pairs define partition parameters.</p>
@@ -216,6 +246,12 @@ namespace Model
      * partition.</p>
      */
     inline const Aws::Utils::DateTime& GetLastAnalyzedTime() const{ return m_lastAnalyzedTime; }
+
+    /**
+     * <p>The last time at which column statistics were computed for this
+     * partition.</p>
+     */
+    inline bool LastAnalyzedTimeHasBeenSet() const { return m_lastAnalyzedTimeHasBeenSet; }
 
     /**
      * <p>The last time at which column statistics were computed for this

@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>The VPC security groups and subnets attached to a Lambda
+   * <p>The VPC security groups and subnets that are attached to a Lambda
    * function.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/VpcConfig">AWS
    * API Reference</a></p>
@@ -53,6 +53,11 @@ namespace Model
      * <p>A list of VPC subnet IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSubnetIds() const{ return m_subnetIds; }
+
+    /**
+     * <p>A list of VPC subnet IDs.</p>
+     */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
 
     /**
      * <p>A list of VPC subnet IDs.</p>
@@ -94,6 +99,11 @@ namespace Model
      * <p>A list of VPC security groups IDs.</p>
      */
     inline const Aws::Vector<Aws::String>& GetSecurityGroupIds() const{ return m_securityGroupIds; }
+
+    /**
+     * <p>A list of VPC security groups IDs.</p>
+     */
+    inline bool SecurityGroupIdsHasBeenSet() const { return m_securityGroupIdsHasBeenSet; }
 
     /**
      * <p>A list of VPC security groups IDs.</p>

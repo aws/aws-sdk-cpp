@@ -36,8 +36,8 @@ namespace Model
 {
 
   /**
-   * <p>Information about where the text detected by is located on an
-   * image.</p><p><h3>See Also:</h3>   <a
+   * <p>Information about where the text detected by <a>DetectText</a> is located on
+   * an image.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rekognition-2016-06-27/Geometry">AWS
    * API Reference</a></p>
    */
@@ -55,6 +55,12 @@ namespace Model
      * image.</p>
      */
     inline const BoundingBox& GetBoundingBox() const{ return m_boundingBox; }
+
+    /**
+     * <p>An axis-aligned coarse representation of the detected text's location on the
+     * image.</p>
+     */
+    inline bool BoundingBoxHasBeenSet() const { return m_boundingBoxHasBeenSet; }
 
     /**
      * <p>An axis-aligned coarse representation of the detected text's location on the
@@ -85,6 +91,11 @@ namespace Model
      * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>
      */
     inline const Aws::Vector<Point>& GetPolygon() const{ return m_polygon; }
+
+    /**
+     * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>
+     */
+    inline bool PolygonHasBeenSet() const { return m_polygonHasBeenSet; }
 
     /**
      * <p>Within the bounding box, a fine-grained polygon around the detected text.</p>

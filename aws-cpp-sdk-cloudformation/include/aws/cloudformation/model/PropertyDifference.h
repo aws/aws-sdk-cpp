@@ -65,6 +65,11 @@ namespace Model
     /**
      * <p>The fully-qualified path to the resource property.</p>
      */
+    inline bool PropertyPathHasBeenSet() const { return m_propertyPathHasBeenSet; }
+
+    /**
+     * <p>The fully-qualified path to the resource property.</p>
+     */
     inline void SetPropertyPath(const Aws::String& value) { m_propertyPathHasBeenSet = true; m_propertyPath = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * template and any values specified as template parameters.</p>
      */
     inline const Aws::String& GetExpectedValue() const{ return m_expectedValue; }
+
+    /**
+     * <p>The expected property value of the resource property, as defined in the stack
+     * template and any values specified as template parameters.</p>
+     */
+    inline bool ExpectedValueHasBeenSet() const { return m_expectedValueHasBeenSet; }
 
     /**
      * <p>The expected property value of the resource property, as defined in the stack
@@ -144,6 +155,11 @@ namespace Model
     /**
      * <p>The actual property value of the resource property.</p>
      */
+    inline bool ActualValueHasBeenSet() const { return m_actualValueHasBeenSet; }
+
+    /**
+     * <p>The actual property value of the resource property.</p>
+     */
     inline void SetActualValue(const Aws::String& value) { m_actualValueHasBeenSet = true; m_actualValue = value; }
 
     /**
@@ -181,6 +197,16 @@ namespace Model
      * template and any values specified as template parameters).</p> </li> </ul>
      */
     inline const DifferenceType& GetDifferenceType() const{ return m_differenceType; }
+
+    /**
+     * <p>The type of property difference.</p> <ul> <li> <p> <code>ADD</code>: A value
+     * has been added to a resource property that is an array or list data type.</p>
+     * </li> <li> <p> <code>REMOVE</code>: The property has been removed from the
+     * current resource configuration.</p> </li> <li> <p> <code>NOT_EQUAL</code>: The
+     * current property value differs from its expected value (as defined in the stack
+     * template and any values specified as template parameters).</p> </li> </ul>
+     */
+    inline bool DifferenceTypeHasBeenSet() const { return m_differenceTypeHasBeenSet; }
 
     /**
      * <p>The type of property difference.</p> <ul> <li> <p> <code>ADD</code>: A value

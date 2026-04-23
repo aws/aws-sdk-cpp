@@ -60,6 +60,13 @@ namespace Model
      * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
      * will take place.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p> <code>COUNT</code> overrides the action specified by the individual rule
+     * within a <code>RuleGroup</code> . If set to <code>NONE</code>, the rule's action
+     * will take place.</p>
+     */
     inline void SetType(const WafOverrideActionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**

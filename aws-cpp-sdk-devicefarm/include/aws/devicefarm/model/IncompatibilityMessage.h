@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>A message about the incompatibility.</p>
      */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+
+    /**
+     * <p>A message about the incompatibility.</p>
+     */
     inline void SetMessage(const Aws::String& value) { m_messageHasBeenSet = true; m_message = value; }
 
     /**
@@ -93,6 +98,16 @@ namespace Model
      * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
      */
     inline const DeviceAttribute& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>
+     * <p>ARN: The ARN.</p> </li> <li> <p>FORM_FACTOR: The form factor (for example,
+     * phone or tablet).</p> </li> <li> <p>MANUFACTURER: The manufacturer.</p> </li>
+     * <li> <p>PLATFORM: The platform (for example, Android or iOS).</p> </li> <li>
+     * <p>REMOTE_ACCESS_ENABLED: Whether the device is enabled for remote access.</p>
+     * </li> <li> <p>APPIUM_VERSION: The Appium version for the test.</p> </li> </ul>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of incompatibility.</p> <p>Allowed values include:</p> <ul> <li>

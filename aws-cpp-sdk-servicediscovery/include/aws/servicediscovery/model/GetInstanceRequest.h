@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the service that the instance is associated with.</p>
      */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the service that the instance is associated with.</p>
+     */
     inline void SetServiceId(const Aws::String& value) { m_serviceIdHasBeenSet = true; m_serviceId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ID of the instance that you want to get information about.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance that you want to get information about.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance that you want to get information about.</p>

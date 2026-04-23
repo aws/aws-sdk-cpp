@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
      * be used only once in a list of alarms.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the alarm. Maximum length is 255 characters. Each alarm name can
+     * be used only once in a list of alarms.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**

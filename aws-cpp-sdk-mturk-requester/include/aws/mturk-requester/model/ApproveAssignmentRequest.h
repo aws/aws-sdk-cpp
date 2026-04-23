@@ -54,6 +54,12 @@ namespace Model
      * <p> The ID of the assignment. The assignment must correspond to a HIT created by
      * the Requester. </p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the assignment. The assignment must correspond to a HIT created by
+     * the Requester. </p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * <p> A message for the Worker, which the Worker can see in the Status section of
      * the web site. </p>
      */
+    inline bool RequesterFeedbackHasBeenSet() const { return m_requesterFeedbackHasBeenSet; }
+
+    /**
+     * <p> A message for the Worker, which the Worker can see in the Status section of
+     * the web site. </p>
+     */
     inline void SetRequesterFeedback(const Aws::String& value) { m_requesterFeedbackHasBeenSet = true; m_requesterFeedback = value; }
 
     /**
@@ -135,6 +147,12 @@ namespace Model
      * previously rejected. Defaults to <code>False</code>. </p>
      */
     inline bool GetOverrideRejection() const{ return m_overrideRejection; }
+
+    /**
+     * <p> A flag indicating that an assignment should be approved even if it was
+     * previously rejected. Defaults to <code>False</code>. </p>
+     */
+    inline bool OverrideRejectionHasBeenSet() const { return m_overrideRejectionHasBeenSet; }
 
     /**
      * <p> A flag indicating that an assignment should be approved even if it was

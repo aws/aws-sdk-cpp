@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>Identifier of the directory consumer account.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>Identifier of the directory consumer account.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>Type of identifier to be used in the <code>Id</code> field.</p>
      */
     inline const TargetType& GetType() const{ return m_type; }
+
+    /**
+     * <p>Type of identifier to be used in the <code>Id</code> field.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>Type of identifier to be used in the <code>Id</code> field.</p>

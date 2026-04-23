@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>Values to narrow the results returned.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>Values to narrow the results returned.</p>
+     */
     inline void SetFilter(const EventFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -79,6 +84,15 @@ namespace Model
      * does not contain a pagination token value.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>If the results of a search are large, only a portion of the results are
+     * returned, and a <code>nextToken</code> pagination token is returned in the
+     * response. To retrieve the next batch of results, reissue the search request and
+     * include the returned token. When all results have been returned, the response
+     * does not contain a pagination token value.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>If the results of a search are large, only a portion of the results are
@@ -145,6 +159,12 @@ namespace Model
      * <p>The maximum number of items to return in one batch, between 10 and 100,
      * inclusive.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of items to return in one batch, between 10 and 100,
+     * inclusive.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -159,6 +179,12 @@ namespace Model
      * and the only supported value at this time.</p>
      */
     inline const Aws::String& GetLocale() const{ return m_locale; }
+
+    /**
+     * <p>The locale (language) to return information in. English (en) is the default
+     * and the only supported value at this time.</p>
+     */
+    inline bool LocaleHasBeenSet() const { return m_localeHasBeenSet; }
 
     /**
      * <p>The locale (language) to return information in. English (en) is the default

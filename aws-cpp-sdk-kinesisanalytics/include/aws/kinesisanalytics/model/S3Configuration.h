@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Provides a description of an Amazon S3 data source, including the Amazon
    * Resource Name (ARN) of the S3 bucket, the ARN of the IAM role that is used to
-   * access the bucket, and the name of the S3 object that contains the
+   * access the bucket, and the name of the Amazon S3 object that contains the
    * data.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/kinesisanalytics-2015-08-14/S3Configuration">AWS
    * API Reference</a></p>
@@ -54,6 +54,11 @@ namespace Model
      * <p>IAM ARN of the role used to access the data.</p>
      */
     inline const Aws::String& GetRoleARN() const{ return m_roleARN; }
+
+    /**
+     * <p>IAM ARN of the role used to access the data.</p>
+     */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
 
     /**
      * <p>IAM ARN of the role used to access the data.</p>
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>ARN of the S3 bucket that contains the data.</p>
      */
+    inline bool BucketARNHasBeenSet() const { return m_bucketARNHasBeenSet; }
+
+    /**
+     * <p>ARN of the S3 bucket that contains the data.</p>
+     */
     inline void SetBucketARN(const Aws::String& value) { m_bucketARNHasBeenSet = true; m_bucketARN = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The name of the object that contains the data.</p>
      */
     inline const Aws::String& GetFileKey() const{ return m_fileKey; }
+
+    /**
+     * <p>The name of the object that contains the data.</p>
+     */
+    inline bool FileKeyHasBeenSet() const { return m_fileKeyHasBeenSet; }
 
     /**
      * <p>The name of the object that contains the data.</p>

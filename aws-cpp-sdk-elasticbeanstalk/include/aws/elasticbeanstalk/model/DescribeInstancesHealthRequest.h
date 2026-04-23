@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
      */
+    inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+
+    /**
+     * <p>Specify the AWS Elastic Beanstalk environment by name.</p>
+     */
     inline void SetEnvironmentName(const Aws::String& value) { m_environmentNameHasBeenSet = true; m_environmentName = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
      */
     inline const Aws::String& GetEnvironmentId() const{ return m_environmentId; }
+
+    /**
+     * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
+     */
+    inline bool EnvironmentIdHasBeenSet() const { return m_environmentIdHasBeenSet; }
 
     /**
      * <p>Specify the AWS Elastic Beanstalk environment by ID.</p>
@@ -130,6 +140,13 @@ namespace Model
      * returns a list of instances.</p>
      */
     inline const Aws::Vector<InstancesHealthAttribute>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>Specifies the response elements you wish to receive. To retrieve all
+     * attributes, set to <code>All</code>. If no attribute names are specified,
+     * returns a list of instances.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>Specifies the response elements you wish to receive. To retrieve all
@@ -178,6 +195,11 @@ namespace Model
      * <p>Specify the pagination token returned by a previous call.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Specify the pagination token returned by a previous call.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Specify the pagination token returned by a previous call.</p>

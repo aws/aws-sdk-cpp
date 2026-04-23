@@ -63,6 +63,11 @@ namespace Model
     /**
      * <p>The name of the parameter.</p>
      */
+    inline bool ParameterNameHasBeenSet() const { return m_parameterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the parameter.</p>
+     */
     inline void SetParameterName(const Aws::String& value) { m_parameterNameHasBeenSet = true; m_parameterName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
      * <p>A description of the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the parameter.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the parameter.</p>
@@ -135,6 +145,11 @@ namespace Model
     /**
      * <p>The source of the parameter value.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The source of the parameter value.</p>
+     */
     inline void SetSource(const Aws::String& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -171,6 +186,11 @@ namespace Model
     /**
      * <p>The valid data type for the parameter.</p>
      */
+    inline bool DataTypeHasBeenSet() const { return m_dataTypeHasBeenSet; }
+
+    /**
+     * <p>The valid data type for the parameter.</p>
+     */
     inline void SetDataType(const Aws::String& value) { m_dataTypeHasBeenSet = true; m_dataType = value; }
 
     /**
@@ -203,6 +223,11 @@ namespace Model
      * <p>The valid range of values for the parameter.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
+    /**
+     * <p>The valid range of values for the parameter.</p>
+     */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
      * <p>The valid range of values for the parameter.</p>
@@ -247,6 +272,13 @@ namespace Model
      * parameter can be modified. Some parameters have security or operational
      * implications that prevent them from being changed.</p>
      */
+    inline bool IsModifiableHasBeenSet() const { return m_isModifiableHasBeenSet; }
+
+    /**
+     * <p>Indicates whether (<code>true</code>) or not (<code>false</code>) the
+     * parameter can be modified. Some parameters have security or operational
+     * implications that prevent them from being changed.</p>
+     */
     inline void SetIsModifiable(bool value) { m_isModifiableHasBeenSet = true; m_isModifiable = value; }
 
     /**
@@ -261,6 +293,11 @@ namespace Model
      * <p>The earliest cache engine version to which the parameter can apply.</p>
      */
     inline const Aws::String& GetMinimumEngineVersion() const{ return m_minimumEngineVersion; }
+
+    /**
+     * <p>The earliest cache engine version to which the parameter can apply.</p>
+     */
+    inline bool MinimumEngineVersionHasBeenSet() const { return m_minimumEngineVersionHasBeenSet; }
 
     /**
      * <p>The earliest cache engine version to which the parameter can apply.</p>
@@ -298,6 +335,12 @@ namespace Model
      * parameter.</p>
      */
     inline const Aws::Vector<CacheNodeTypeSpecificValue>& GetCacheNodeTypeSpecificValues() const{ return m_cacheNodeTypeSpecificValues; }
+
+    /**
+     * <p>A list of cache node types and their corresponding values for this
+     * parameter.</p>
+     */
+    inline bool CacheNodeTypeSpecificValuesHasBeenSet() const { return m_cacheNodeTypeSpecificValuesHasBeenSet; }
 
     /**
      * <p>A list of cache node types and their corresponding values for this
@@ -344,6 +387,15 @@ namespace Model
      * a Cluster</a>.</p>
      */
     inline const ChangeType& GetChangeType() const{ return m_changeType; }
+
+    /**
+     * <p>Indicates whether a change to the parameter is applied immediately or
+     * requires a reboot for the change to be applied. You can force a reboot or wait
+     * until the next maintenance window's reboot. For more information, see <a
+     * href="http://docs.aws.amazon.com/AmazonElastiCache/latest/red-ug/Clusters.Rebooting.html">Rebooting
+     * a Cluster</a>.</p>
+     */
+    inline bool ChangeTypeHasBeenSet() const { return m_changeTypeHasBeenSet; }
 
     /**
      * <p>Indicates whether a change to the parameter is applied immediately or

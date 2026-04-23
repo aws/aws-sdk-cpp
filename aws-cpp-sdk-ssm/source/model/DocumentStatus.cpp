@@ -34,6 +34,7 @@ namespace Aws
         static const int Active_HASH = HashingUtils::HashString("Active");
         static const int Updating_HASH = HashingUtils::HashString("Updating");
         static const int Deleting_HASH = HashingUtils::HashString("Deleting");
+        static const int Failed_HASH = HashingUtils::HashString("Failed");
 
 
         DocumentStatus GetDocumentStatusForName(const Aws::String& name)
@@ -54,6 +55,10 @@ namespace Aws
           else if (hashCode == Deleting_HASH)
           {
             return DocumentStatus::Deleting;
+          }
+          else if (hashCode == Failed_HASH)
+          {
+            return DocumentStatus::Failed;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -77,6 +82,8 @@ namespace Aws
             return "Updating";
           case DocumentStatus::Deleting:
             return "Deleting";
+          case DocumentStatus::Failed:
+            return "Failed";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -84,7 +91,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

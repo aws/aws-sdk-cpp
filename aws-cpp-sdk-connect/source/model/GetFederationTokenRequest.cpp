@@ -29,7 +29,7 @@ GetFederationTokenRequest::GetFederationTokenRequest() :
 
 Aws::String GetFederationTokenRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

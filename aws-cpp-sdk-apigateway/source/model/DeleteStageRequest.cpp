@@ -30,7 +30,7 @@ DeleteStageRequest::DeleteStageRequest() :
 
 Aws::String DeleteStageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -23,7 +23,9 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 ContinueDeploymentRequest::ContinueDeploymentRequest() : 
-    m_deploymentIdHasBeenSet(false)
+    m_deploymentIdHasBeenSet(false),
+    m_deploymentWaitType(DeploymentWaitType::NOT_SET),
+    m_deploymentWaitTypeHasBeenSet(false)
 {
 }
 
@@ -35,6 +37,11 @@ Aws::String ContinueDeploymentRequest::SerializePayload() const
   {
    payload.WithString("deploymentId", m_deploymentId);
 
+  }
+
+  if(m_deploymentWaitTypeHasBeenSet)
+  {
+   payload.WithString("deploymentWaitType", DeploymentWaitTypeMapper::GetNameForDeploymentWaitType(m_deploymentWaitType));
   }
 
   return payload.View().WriteReadable();

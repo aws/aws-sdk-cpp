@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -98,6 +103,11 @@ namespace Model
     /**
      * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The type of API entities of the to-be-retrieved documentation parts. </p>
+     */
     inline void SetType(const DocumentationPartType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
      */
     inline const Aws::String& GetNameQuery() const{ return m_nameQuery; }
+
+    /**
+     * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
+     */
+    inline bool NameQueryHasBeenSet() const { return m_nameQueryHasBeenSet; }
 
     /**
      * <p>The name of API entities of the to-be-retrieved documentation parts.</p>
@@ -160,6 +175,11 @@ namespace Model
     /**
      * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
      */
+    inline bool PathHasBeenSet() const { return m_pathHasBeenSet; }
+
+    /**
+     * <p>The path of API entities of the to-be-retrieved documentation parts.</p>
+     */
     inline void SetPath(const Aws::String& value) { m_pathHasBeenSet = true; m_path = value; }
 
     /**
@@ -192,6 +212,11 @@ namespace Model
      * <p>The current pagination position in the paged result set.</p>
      */
     inline const Aws::String& GetPosition() const{ return m_position; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
 
     /**
      * <p>The current pagination position in the paged result set.</p>
@@ -234,6 +259,12 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -250,6 +281,14 @@ namespace Model
      * without content.</p>
      */
     inline const LocationStatusType& GetLocationStatus() const{ return m_locationStatus; }
+
+    /**
+     * <p>The status of the API documentation parts to retrieve. Valid values are
+     * <code>DOCUMENTED</code> for retrieving <a>DocumentationPart</a> resources with
+     * content and <code>UNDOCUMENTED</code> for <a>DocumentationPart</a> resources
+     * without content.</p>
+     */
+    inline bool LocationStatusHasBeenSet() const { return m_locationStatusHasBeenSet; }
 
     /**
      * <p>The status of the API documentation parts to retrieve. Valid values are

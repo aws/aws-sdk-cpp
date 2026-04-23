@@ -30,7 +30,7 @@ DeletePlacementRequest::DeletePlacementRequest() :
 
 Aws::String DeletePlacementRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

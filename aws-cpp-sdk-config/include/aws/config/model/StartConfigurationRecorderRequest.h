@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the recorder object that records each configuration change made
      * to the resources.</p>
      */
+    inline bool ConfigurationRecorderNameHasBeenSet() const { return m_configurationRecorderNameHasBeenSet; }
+
+    /**
+     * <p>The name of the recorder object that records each configuration change made
+     * to the resources.</p>
+     */
     inline void SetConfigurationRecorderName(const Aws::String& value) { m_configurationRecorderNameHasBeenSet = true; m_configurationRecorderName = value; }
 
     /**

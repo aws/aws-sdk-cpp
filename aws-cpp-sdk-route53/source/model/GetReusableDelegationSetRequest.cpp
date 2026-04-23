@@ -30,7 +30,7 @@ GetReusableDelegationSetRequest::GetReusableDelegationSetRequest() :
 
 Aws::String GetReusableDelegationSetRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

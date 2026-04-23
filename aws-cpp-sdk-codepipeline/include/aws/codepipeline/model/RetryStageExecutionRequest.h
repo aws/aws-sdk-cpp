@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the pipeline that contains the failed stage.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline that contains the failed stage.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The name of the failed stage to be retried.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the failed stage to be retried.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the failed stage to be retried.</p>
@@ -127,6 +137,13 @@ namespace Model
      * the failed stage</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+
+    /**
+     * <p>The ID of the pipeline execution in the failed stage to be retried. Use the
+     * <a>GetPipelineState</a> action to retrieve the current pipelineExecutionId of
+     * the failed stage</p>
+     */
+    inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
 
     /**
      * <p>The ID of the pipeline execution in the failed stage to be retried. Use the
@@ -176,6 +193,12 @@ namespace Model
      * FAILED_ACTIONS.</p>
      */
     inline const StageRetryMode& GetRetryMode() const{ return m_retryMode; }
+
+    /**
+     * <p>The scope of the retry attempt. Currently, the only supported value is
+     * FAILED_ACTIONS.</p>
+     */
+    inline bool RetryModeHasBeenSet() const { return m_retryModeHasBeenSet; }
 
     /**
      * <p>The scope of the retry attempt. Currently, the only supported value is

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The namespace to filter against.</p>
      */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespace to filter against.</p>
+     */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The name of the metric to filter against.</p>
      */
     inline const Aws::String& GetMetricName() const{ return m_metricName; }
+
+    /**
+     * <p>The name of the metric to filter against.</p>
+     */
+    inline bool MetricNameHasBeenSet() const { return m_metricNameHasBeenSet; }
 
     /**
      * <p>The name of the metric to filter against.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The dimensions to filter against.</p>
      */
+    inline bool DimensionsHasBeenSet() const { return m_dimensionsHasBeenSet; }
+
+    /**
+     * <p>The dimensions to filter against.</p>
+     */
     inline void SetDimensions(const Aws::Vector<DimensionFilter>& value) { m_dimensionsHasBeenSet = true; m_dimensions = value; }
 
     /**
@@ -161,6 +176,12 @@ namespace Model
      * available.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token returned by a previous call to indicate that there is more data
+     * available.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token returned by a previous call to indicate that there is more data

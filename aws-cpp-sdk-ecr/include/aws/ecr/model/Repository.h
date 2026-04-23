@@ -64,6 +64,15 @@ namespace Model
      * repository name. For example,
      * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
      */
+    inline bool RepositoryArnHasBeenSet() const { return m_repositoryArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) that identifies the repository. The ARN
+     * contains the <code>arn:aws:ecr</code> namespace, followed by the region of the
+     * repository, AWS account ID of the repository owner, repository namespace, and
+     * repository name. For example,
+     * <code>arn:aws:ecr:region:012345678910:repository/test</code>.</p>
+     */
     inline void SetRepositoryArn(const Aws::String& value) { m_repositoryArnHasBeenSet = true; m_repositoryArn = value; }
 
     /**
@@ -122,6 +131,12 @@ namespace Model
      * <p>The AWS account ID associated with the registry that contains the
      * repository.</p>
      */
+    inline bool RegistryIdHasBeenSet() const { return m_registryIdHasBeenSet; }
+
+    /**
+     * <p>The AWS account ID associated with the registry that contains the
+     * repository.</p>
+     */
     inline void SetRegistryId(const Aws::String& value) { m_registryIdHasBeenSet = true; m_registryId = value; }
 
     /**
@@ -163,6 +178,11 @@ namespace Model
     /**
      * <p>The name of the repository.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -196,6 +216,12 @@ namespace Model
      * or <code>pull</code> operations.</p>
      */
     inline const Aws::String& GetRepositoryUri() const{ return m_repositoryUri; }
+
+    /**
+     * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
+     * or <code>pull</code> operations.</p>
+     */
+    inline bool RepositoryUriHasBeenSet() const { return m_repositoryUriHasBeenSet; }
 
     /**
      * <p>The URI for the repository. You can use this URI for Docker <code>push</code>
@@ -239,6 +265,12 @@ namespace Model
      * created.</p>
      */
     inline const Aws::Utils::DateTime& GetCreatedAt() const{ return m_createdAt; }
+
+    /**
+     * <p>The date and time, in JavaScript date format, when the repository was
+     * created.</p>
+     */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
 
     /**
      * <p>The date and time, in JavaScript date format, when the repository was

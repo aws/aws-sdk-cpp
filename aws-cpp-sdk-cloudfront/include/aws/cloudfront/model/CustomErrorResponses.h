@@ -42,7 +42,7 @@ namespace Model
    * href="http://docs.aws.amazon.com/AmazonCloudFront/latest/DeveloperGuide/custom-error-pages.html">Customizing
    * Error Responses</a> in the <i>Amazon CloudFront Developer
    * Guide</i>.</p><p><h3>See Also:</h3>   <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-06-18/CustomErrorResponses">AWS
+   * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2018-11-05/CustomErrorResponses">AWS
    * API Reference</a></p>
    */
   class AWS_CLOUDFRONT_API CustomErrorResponses
@@ -67,6 +67,13 @@ namespace Model
      * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
      * can omit <code>Items</code>.</p>
      */
+    inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+
+    /**
+     * <p>The number of HTTP status codes for which you want to specify a custom error
+     * page and/or a caching duration. If <code>Quantity</code> is <code>0</code>, you
+     * can omit <code>Items</code>.</p>
+     */
     inline void SetQuantity(int value) { m_quantityHasBeenSet = true; m_quantity = value; }
 
     /**
@@ -83,6 +90,13 @@ namespace Model
      * caching duration. </p>
      */
     inline const Aws::Vector<CustomErrorResponse>& GetItems() const{ return m_items; }
+
+    /**
+     * <p>A complex type that contains a <code>CustomErrorResponse</code> element for
+     * each HTTP status code for which you want to specify a custom error page and/or a
+     * caching duration. </p>
+     */
+    inline bool ItemsHasBeenSet() const { return m_itemsHasBeenSet; }
 
     /**
      * <p>A complex type that contains a <code>CustomErrorResponse</code> element for

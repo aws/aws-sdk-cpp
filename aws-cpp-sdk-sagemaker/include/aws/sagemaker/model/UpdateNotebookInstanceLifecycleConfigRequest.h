@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The name of the lifecycle configuration.</p>
      */
+    inline bool NotebookInstanceLifecycleConfigNameHasBeenSet() const { return m_notebookInstanceLifecycleConfigNameHasBeenSet; }
+
+    /**
+     * <p>The name of the lifecycle configuration.</p>
+     */
     inline void SetNotebookInstanceLifecycleConfigName(const Aws::String& value) { m_notebookInstanceLifecycleConfigNameHasBeenSet = true; m_notebookInstanceLifecycleConfigName = value; }
 
     /**
@@ -86,6 +91,11 @@ namespace Model
      * <p>The shell script that runs only once, when you create a notebook instance</p>
      */
     inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnCreate() const{ return m_onCreate; }
+
+    /**
+     * <p>The shell script that runs only once, when you create a notebook instance</p>
+     */
+    inline bool OnCreateHasBeenSet() const { return m_onCreateHasBeenSet; }
 
     /**
      * <p>The shell script that runs only once, when you create a notebook instance</p>
@@ -123,6 +133,12 @@ namespace Model
      * including when you create the notebook instance.</p>
      */
     inline const Aws::Vector<NotebookInstanceLifecycleHook>& GetOnStart() const{ return m_onStart; }
+
+    /**
+     * <p>The shell script that runs every time you start a notebook instance,
+     * including when you create the notebook instance.</p>
+     */
+    inline bool OnStartHasBeenSet() const { return m_onStartHasBeenSet; }
 
     /**
      * <p>The shell script that runs every time you start a notebook instance,

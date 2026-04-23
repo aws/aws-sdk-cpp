@@ -51,49 +51,56 @@ namespace Model
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline const Aws::String& GetSql() const{ return m_sql; }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
+     */
+    inline bool SqlHasBeenSet() const { return m_sqlHasBeenSet; }
+
+    /**
+     * <p>The SQL statement used to query the topic. For more information, see <a
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(const Aws::String& value) { m_sqlHasBeenSet = true; m_sql = value; }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(Aws::String&& value) { m_sqlHasBeenSet = true; m_sql = std::move(value); }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline void SetSql(const char* value) { m_sqlHasBeenSet = true; m_sql.assign(value); }
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(const Aws::String& value) { SetSql(value); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(Aws::String&& value) { SetSql(std::move(value)); return *this;}
 
     /**
      * <p>The SQL statement used to query the topic. For more information, see <a
-     * href="http://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
+     * href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-rules.html#aws-iot-sql-reference">AWS
      * IoT SQL Reference</a> in the <i>AWS IoT Developer Guide</i>.</p>
      */
     inline TopicRulePayload& WithSql(const char* value) { SetSql(value); return *this;}
@@ -103,6 +110,11 @@ namespace Model
      * <p>The description of the rule.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the rule.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the rule.</p>
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The actions associated with the rule.</p>
      */
+    inline bool ActionsHasBeenSet() const { return m_actionsHasBeenSet; }
+
+    /**
+     * <p>The actions associated with the rule.</p>
+     */
     inline void SetActions(const Aws::Vector<Action>& value) { m_actionsHasBeenSet = true; m_actions = value; }
 
     /**
@@ -179,6 +196,11 @@ namespace Model
     /**
      * <p>Specifies whether the rule is disabled.</p>
      */
+    inline bool RuleDisabledHasBeenSet() const { return m_ruleDisabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the rule is disabled.</p>
+     */
     inline void SetRuleDisabled(bool value) { m_ruleDisabledHasBeenSet = true; m_ruleDisabled = value; }
 
     /**
@@ -191,6 +213,11 @@ namespace Model
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
      */
     inline const Aws::String& GetAwsIotSqlVersion() const{ return m_awsIotSqlVersion; }
+
+    /**
+     * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
+     */
+    inline bool AwsIotSqlVersionHasBeenSet() const { return m_awsIotSqlVersionHasBeenSet; }
 
     /**
      * <p>The version of the SQL rules engine to use when evaluating the rule.</p>
@@ -227,6 +254,11 @@ namespace Model
      * <p>The action to take when an error occurs.</p>
      */
     inline const Action& GetErrorAction() const{ return m_errorAction; }
+
+    /**
+     * <p>The action to take when an error occurs.</p>
+     */
+    inline bool ErrorActionHasBeenSet() const { return m_errorActionHasBeenSet; }
 
     /**
      * <p>The action to take when an error occurs.</p>

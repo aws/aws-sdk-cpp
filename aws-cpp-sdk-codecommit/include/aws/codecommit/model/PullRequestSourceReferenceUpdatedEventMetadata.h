@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the repository where the pull request was updated.</p>
      */
+    inline bool RepositoryNameHasBeenSet() const { return m_repositoryNameHasBeenSet; }
+
+    /**
+     * <p>The name of the repository where the pull request was updated.</p>
+     */
     inline void SetRepositoryName(const Aws::String& value) { m_repositoryNameHasBeenSet = true; m_repositoryName = value; }
 
     /**
@@ -89,6 +94,12 @@ namespace Model
      * of the branch at the time the pull request was updated.</p>
      */
     inline const Aws::String& GetBeforeCommitId() const{ return m_beforeCommitId; }
+
+    /**
+     * <p>The full commit ID of the commit in the destination branch that was the tip
+     * of the branch at the time the pull request was updated.</p>
+     */
+    inline bool BeforeCommitIdHasBeenSet() const { return m_beforeCommitIdHasBeenSet; }
 
     /**
      * <p>The full commit ID of the commit in the destination branch that was the tip
@@ -137,6 +148,12 @@ namespace Model
      * <p>The full commit ID of the commit in the source branch that was the tip of the
      * branch at the time the pull request was updated.</p>
      */
+    inline bool AfterCommitIdHasBeenSet() const { return m_afterCommitIdHasBeenSet; }
+
+    /**
+     * <p>The full commit ID of the commit in the source branch that was the tip of the
+     * branch at the time the pull request was updated.</p>
+     */
     inline void SetAfterCommitId(const Aws::String& value) { m_afterCommitIdHasBeenSet = true; m_afterCommitId = value; }
 
     /**
@@ -175,6 +192,12 @@ namespace Model
      * destination branch have in common.</p>
      */
     inline const Aws::String& GetMergeBase() const{ return m_mergeBase; }
+
+    /**
+     * <p>The commit ID of the most recent commit that the source branch and the
+     * destination branch have in common.</p>
+     */
+    inline bool MergeBaseHasBeenSet() const { return m_mergeBaseHasBeenSet; }
 
     /**
      * <p>The commit ID of the most recent commit that the source branch and the

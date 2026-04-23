@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The user's name.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The user's name.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>Services that the user's request hit.</p>
      */
     inline const Aws::Vector<ServiceId>& GetServiceIds() const{ return m_serviceIds; }
+
+    /**
+     * <p>Services that the user's request hit.</p>
+     */
+    inline bool ServiceIdsHasBeenSet() const { return m_serviceIdsHasBeenSet; }
 
     /**
      * <p>Services that the user's request hit.</p>

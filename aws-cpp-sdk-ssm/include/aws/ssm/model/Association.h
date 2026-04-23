@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The name of the Systems Manager document.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the Systems Manager document.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -129,6 +139,12 @@ namespace Model
      * is a binding between a document and a set of targets with a schedule.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID created by the system when you create an association. An association
+     * is a binding between a document and a set of targets with a schedule.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The ID created by the system when you create an association. An association
@@ -175,6 +191,11 @@ namespace Model
     /**
      * <p>The association version.</p>
      */
+    inline bool AssociationVersionHasBeenSet() const { return m_associationVersionHasBeenSet; }
+
+    /**
+     * <p>The association version.</p>
+     */
     inline void SetAssociationVersion(const Aws::String& value) { m_associationVersionHasBeenSet = true; m_associationVersion = value; }
 
     /**
@@ -207,6 +228,11 @@ namespace Model
      * <p>The version of the document used in the association.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The version of the document used in the association.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The version of the document used in the association.</p>
@@ -247,6 +273,11 @@ namespace Model
     /**
      * <p>The instances targeted by the request to create an association. </p>
      */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The instances targeted by the request to create an association. </p>
+     */
     inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
 
     /**
@@ -283,6 +314,11 @@ namespace Model
     /**
      * <p>The date on which the association was last run.</p>
      */
+    inline bool LastExecutionDateHasBeenSet() const { return m_lastExecutionDateHasBeenSet; }
+
+    /**
+     * <p>The date on which the association was last run.</p>
+     */
     inline void SetLastExecutionDate(const Aws::Utils::DateTime& value) { m_lastExecutionDateHasBeenSet = true; m_lastExecutionDate = value; }
 
     /**
@@ -309,6 +345,11 @@ namespace Model
     /**
      * <p>Information about the association.</p>
      */
+    inline bool OverviewHasBeenSet() const { return m_overviewHasBeenSet; }
+
+    /**
+     * <p>Information about the association.</p>
+     */
     inline void SetOverview(const AssociationOverview& value) { m_overviewHasBeenSet = true; m_overview = value; }
 
     /**
@@ -331,6 +372,11 @@ namespace Model
      * <p>A cron expression that specifies a schedule when the association runs.</p>
      */
     inline const Aws::String& GetScheduleExpression() const{ return m_scheduleExpression; }
+
+    /**
+     * <p>A cron expression that specifies a schedule when the association runs.</p>
+     */
+    inline bool ScheduleExpressionHasBeenSet() const { return m_scheduleExpressionHasBeenSet; }
 
     /**
      * <p>A cron expression that specifies a schedule when the association runs.</p>
@@ -367,6 +413,11 @@ namespace Model
      * <p>The association name.</p>
      */
     inline const Aws::String& GetAssociationName() const{ return m_associationName; }
+
+    /**
+     * <p>The association name.</p>
+     */
+    inline bool AssociationNameHasBeenSet() const { return m_associationNameHasBeenSet; }
 
     /**
      * <p>The association name.</p>

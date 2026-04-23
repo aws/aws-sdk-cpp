@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The encoded message that was returned with the response.</p>
      */
+    inline bool EncodedMessageHasBeenSet() const { return m_encodedMessageHasBeenSet; }
+
+    /**
+     * <p>The encoded message that was returned with the response.</p>
+     */
     inline void SetEncodedMessage(const Aws::String& value) { m_encodedMessageHasBeenSet = true; m_encodedMessage = value; }
 
     /**

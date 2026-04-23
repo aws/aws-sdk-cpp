@@ -56,6 +56,11 @@ namespace Model
     /**
      * AWS Account ID.
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * AWS Account ID.
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * A reason why the account hasn't been processed.
      */
     inline const Aws::String& GetResult() const{ return m_result; }
+
+    /**
+     * A reason why the account hasn't been processed.
+     */
+    inline bool ResultHasBeenSet() const { return m_resultHasBeenSet; }
 
     /**
      * A reason why the account hasn't been processed.

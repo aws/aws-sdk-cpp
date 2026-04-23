@@ -33,7 +33,8 @@ EventDestinationDefinition::EventDestinationDefinition() :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false)
+    m_matchingEventTypesHasBeenSet(false),
+    m_snsDestinationHasBeenSet(false)
 {
 }
 
@@ -42,7 +43,8 @@ EventDestinationDefinition::EventDestinationDefinition(JsonView jsonValue) :
     m_enabled(false),
     m_enabledHasBeenSet(false),
     m_kinesisFirehoseDestinationHasBeenSet(false),
-    m_matchingEventTypesHasBeenSet(false)
+    m_matchingEventTypesHasBeenSet(false),
+    m_snsDestinationHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -80,6 +82,13 @@ EventDestinationDefinition& EventDestinationDefinition::operator =(JsonView json
     m_matchingEventTypesHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("SnsDestination"))
+  {
+    m_snsDestination = jsonValue.GetObject("SnsDestination");
+
+    m_snsDestinationHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -113,6 +122,12 @@ JsonValue EventDestinationDefinition::Jsonize() const
      matchingEventTypesJsonList[matchingEventTypesIndex].AsString(EventTypeMapper::GetNameForEventType(m_matchingEventTypes[matchingEventTypesIndex]));
    }
    payload.WithArray("MatchingEventTypes", std::move(matchingEventTypesJsonList));
+
+  }
+
+  if(m_snsDestinationHasBeenSet)
+  {
+   payload.WithObject("SnsDestination", m_snsDestination.Jsonize());
 
   }
 

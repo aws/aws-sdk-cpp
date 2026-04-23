@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The details of the volume status.</p>
      */
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
+
+    /**
+     * <p>The details of the volume status.</p>
+     */
     inline void SetDetails(const Aws::Vector<VolumeStatusDetails>& value) { m_detailsHasBeenSet = true; m_details = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The status of the volume.</p>
      */
     inline const VolumeStatusInfoStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the volume.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the volume.</p>

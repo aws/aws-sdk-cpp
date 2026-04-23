@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Information about the attachment of the egress-only internet gateway.</p>
      */
+    inline bool AttachmentsHasBeenSet() const { return m_attachmentsHasBeenSet; }
+
+    /**
+     * <p>Information about the attachment of the egress-only internet gateway.</p>
+     */
     inline void SetAttachments(const Aws::Vector<InternetGatewayAttachment>& value) { m_attachmentsHasBeenSet = true; m_attachments = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The ID of the egress-only internet gateway.</p>
      */
     inline const Aws::String& GetEgressOnlyInternetGatewayId() const{ return m_egressOnlyInternetGatewayId; }
+
+    /**
+     * <p>The ID of the egress-only internet gateway.</p>
+     */
+    inline bool EgressOnlyInternetGatewayIdHasBeenSet() const { return m_egressOnlyInternetGatewayIdHasBeenSet; }
 
     /**
      * <p>The ID of the egress-only internet gateway.</p>

@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>Specifies the identifier for the DB snapshot.</p>
      */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>Specifies the identifier for the DB snapshot.</p>
+     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * created from.</p>
      */
     inline const Aws::String& GetDBInstanceIdentifier() const{ return m_dBInstanceIdentifier; }
+
+    /**
+     * <p>Specifies the DB instance identifier of the DB instance this DB snapshot was
+     * created from.</p>
+     */
+    inline bool DBInstanceIdentifierHasBeenSet() const { return m_dBInstanceIdentifierHasBeenSet; }
 
     /**
      * <p>Specifies the DB instance identifier of the DB instance this DB snapshot was
@@ -143,6 +154,12 @@ namespace Model
      * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
      */
+    inline bool SnapshotCreateTimeHasBeenSet() const { return m_snapshotCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Provides the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC).</p>
+     */
     inline void SetSnapshotCreateTime(const Aws::Utils::DateTime& value) { m_snapshotCreateTimeHasBeenSet = true; m_snapshotCreateTime = value; }
 
     /**
@@ -168,6 +185,11 @@ namespace Model
      * <p>Specifies the name of the database engine.</p>
      */
     inline const Aws::String& GetEngine() const{ return m_engine; }
+
+    /**
+     * <p>Specifies the name of the database engine.</p>
+     */
+    inline bool EngineHasBeenSet() const { return m_engineHasBeenSet; }
 
     /**
      * <p>Specifies the name of the database engine.</p>
@@ -208,6 +230,11 @@ namespace Model
     /**
      * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
      */
+    inline bool AllocatedStorageHasBeenSet() const { return m_allocatedStorageHasBeenSet; }
+
+    /**
+     * <p>Specifies the allocated storage size in gibibytes (GiB).</p>
+     */
     inline void SetAllocatedStorage(int value) { m_allocatedStorageHasBeenSet = true; m_allocatedStorage = value; }
 
     /**
@@ -220,6 +247,11 @@ namespace Model
      * <p>Specifies the status of this DB snapshot.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Specifies the status of this DB snapshot.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Specifies the status of this DB snapshot.</p>
@@ -262,6 +294,12 @@ namespace Model
      * <p>Specifies the port that the database engine was listening on at the time of
      * the snapshot.</p>
      */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
+
+    /**
+     * <p>Specifies the port that the database engine was listening on at the time of
+     * the snapshot.</p>
+     */
     inline void SetPort(int value) { m_portHasBeenSet = true; m_port = value; }
 
     /**
@@ -276,6 +314,12 @@ namespace Model
      * the time of the DB snapshot.</p>
      */
     inline const Aws::String& GetAvailabilityZone() const{ return m_availabilityZone; }
+
+    /**
+     * <p>Specifies the name of the Availability Zone the DB instance was located in at
+     * the time of the DB snapshot.</p>
+     */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
 
     /**
      * <p>Specifies the name of the Availability Zone the DB instance was located in at
@@ -322,6 +366,11 @@ namespace Model
     /**
      * <p>Provides the VPC ID associated with the DB snapshot.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>Provides the VPC ID associated with the DB snapshot.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -360,6 +409,12 @@ namespace Model
      * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
      * (UTC).</p>
      */
+    inline bool InstanceCreateTimeHasBeenSet() const { return m_instanceCreateTimeHasBeenSet; }
+
+    /**
+     * <p>Specifies the time when the snapshot was taken, in Universal Coordinated Time
+     * (UTC).</p>
+     */
     inline void SetInstanceCreateTime(const Aws::Utils::DateTime& value) { m_instanceCreateTimeHasBeenSet = true; m_instanceCreateTime = value; }
 
     /**
@@ -385,6 +440,11 @@ namespace Model
      * <p>Provides the master username for the DB snapshot.</p>
      */
     inline const Aws::String& GetMasterUsername() const{ return m_masterUsername; }
+
+    /**
+     * <p>Provides the master username for the DB snapshot.</p>
+     */
+    inline bool MasterUsernameHasBeenSet() const { return m_masterUsernameHasBeenSet; }
 
     /**
      * <p>Provides the master username for the DB snapshot.</p>
@@ -425,6 +485,11 @@ namespace Model
     /**
      * <p>Specifies the version of the database engine.</p>
      */
+    inline bool EngineVersionHasBeenSet() const { return m_engineVersionHasBeenSet; }
+
+    /**
+     * <p>Specifies the version of the database engine.</p>
+     */
     inline void SetEngineVersion(const Aws::String& value) { m_engineVersionHasBeenSet = true; m_engineVersion = value; }
 
     /**
@@ -461,6 +526,11 @@ namespace Model
     /**
      * <p>License model information for the restored DB instance.</p>
      */
+    inline bool LicenseModelHasBeenSet() const { return m_licenseModelHasBeenSet; }
+
+    /**
+     * <p>License model information for the restored DB instance.</p>
+     */
     inline void SetLicenseModel(const Aws::String& value) { m_licenseModelHasBeenSet = true; m_licenseModel = value; }
 
     /**
@@ -493,6 +563,11 @@ namespace Model
      * <p>Provides the type of the DB snapshot.</p>
      */
     inline const Aws::String& GetSnapshotType() const{ return m_snapshotType; }
+
+    /**
+     * <p>Provides the type of the DB snapshot.</p>
+     */
+    inline bool SnapshotTypeHasBeenSet() const { return m_snapshotTypeHasBeenSet; }
 
     /**
      * <p>Provides the type of the DB snapshot.</p>
@@ -535,6 +610,12 @@ namespace Model
      * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
      * instance at the time of the snapshot.</p>
      */
+    inline bool IopsHasBeenSet() const { return m_iopsHasBeenSet; }
+
+    /**
+     * <p>Specifies the Provisioned IOPS (I/O operations per second) value of the DB
+     * instance at the time of the snapshot.</p>
+     */
     inline void SetIops(int value) { m_iopsHasBeenSet = true; m_iops = value; }
 
     /**
@@ -548,6 +629,11 @@ namespace Model
      * <p>Provides the option group name for the DB snapshot.</p>
      */
     inline const Aws::String& GetOptionGroupName() const{ return m_optionGroupName; }
+
+    /**
+     * <p>Provides the option group name for the DB snapshot.</p>
+     */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
 
     /**
      * <p>Provides the option group name for the DB snapshot.</p>
@@ -588,6 +674,11 @@ namespace Model
     /**
      * <p>The percentage of the estimated data that has been transferred.</p>
      */
+    inline bool PercentProgressHasBeenSet() const { return m_percentProgressHasBeenSet; }
+
+    /**
+     * <p>The percentage of the estimated data that has been transferred.</p>
+     */
     inline void SetPercentProgress(int value) { m_percentProgressHasBeenSet = true; m_percentProgress = value; }
 
     /**
@@ -600,6 +691,11 @@ namespace Model
      * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
      */
     inline const Aws::String& GetSourceRegion() const{ return m_sourceRegion; }
+
+    /**
+     * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
+     */
+    inline bool SourceRegionHasBeenSet() const { return m_sourceRegionHasBeenSet; }
 
     /**
      * <p>The AWS Region that the DB snapshot was created in or copied from.</p>
@@ -637,6 +733,12 @@ namespace Model
      * from. It only has value in case of cross-customer or cross-region copy.</p>
      */
     inline const Aws::String& GetSourceDBSnapshotIdentifier() const{ return m_sourceDBSnapshotIdentifier; }
+
+    /**
+     * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
+     * from. It only has value in case of cross-customer or cross-region copy.</p>
+     */
+    inline bool SourceDBSnapshotIdentifierHasBeenSet() const { return m_sourceDBSnapshotIdentifierHasBeenSet; }
 
     /**
      * <p>The DB snapshot Amazon Resource Name (ARN) that the DB snapshot was copied
@@ -683,6 +785,11 @@ namespace Model
     /**
      * <p>Specifies the storage type associated with DB snapshot.</p>
      */
+    inline bool StorageTypeHasBeenSet() const { return m_storageTypeHasBeenSet; }
+
+    /**
+     * <p>Specifies the storage type associated with DB snapshot.</p>
+     */
     inline void SetStorageType(const Aws::String& value) { m_storageTypeHasBeenSet = true; m_storageType = value; }
 
     /**
@@ -716,6 +823,12 @@ namespace Model
      * encryption.</p>
      */
     inline const Aws::String& GetTdeCredentialArn() const{ return m_tdeCredentialArn; }
+
+    /**
+     * <p>The ARN from the key store with which to associate the instance for TDE
+     * encryption.</p>
+     */
+    inline bool TdeCredentialArnHasBeenSet() const { return m_tdeCredentialArnHasBeenSet; }
 
     /**
      * <p>The ARN from the key store with which to associate the instance for TDE
@@ -762,6 +875,11 @@ namespace Model
     /**
      * <p>Specifies whether the DB snapshot is encrypted.</p>
      */
+    inline bool EncryptedHasBeenSet() const { return m_encryptedHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the DB snapshot is encrypted.</p>
+     */
     inline void SetEncrypted(bool value) { m_encryptedHasBeenSet = true; m_encrypted = value; }
 
     /**
@@ -775,6 +893,12 @@ namespace Model
      * encrypted DB snapshot. </p>
      */
     inline const Aws::String& GetKmsKeyId() const{ return m_kmsKeyId; }
+
+    /**
+     * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
+     * encrypted DB snapshot. </p>
+     */
+    inline bool KmsKeyIdHasBeenSet() const { return m_kmsKeyIdHasBeenSet; }
 
     /**
      * <p> If <code>Encrypted</code> is true, the AWS KMS key identifier for the
@@ -821,6 +945,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
      */
+    inline bool DBSnapshotArnHasBeenSet() const { return m_dBSnapshotArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) for the DB snapshot.</p>
+     */
     inline void SetDBSnapshotArn(const Aws::String& value) { m_dBSnapshotArnHasBeenSet = true; m_dBSnapshotArn = value; }
 
     /**
@@ -856,6 +985,14 @@ namespace Model
      * specified. </p>
      */
     inline const Aws::String& GetTimezone() const{ return m_timezone; }
+
+    /**
+     * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
+     * element is empty. <code>Timezone</code> content appears only for snapshots taken
+     * from Microsoft SQL Server DB instances that were created with a time zone
+     * specified. </p>
+     */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
 
     /**
      * <p>The time zone of the DB snapshot. In most cases, the <code>Timezone</code>
@@ -916,6 +1053,12 @@ namespace Model
      * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
      * database accounts is enabled, and otherwise false.</p>
      */
+    inline bool IAMDatabaseAuthenticationEnabledHasBeenSet() const { return m_iAMDatabaseAuthenticationEnabledHasBeenSet; }
+
+    /**
+     * <p>True if mapping of AWS Identity and Access Management (IAM) accounts to
+     * database accounts is enabled, and otherwise false.</p>
+     */
     inline void SetIAMDatabaseAuthenticationEnabled(bool value) { m_iAMDatabaseAuthenticationEnabledHasBeenSet = true; m_iAMDatabaseAuthenticationEnabled = value; }
 
     /**
@@ -930,6 +1073,12 @@ namespace Model
      * instance class of the DB instance when the DB snapshot was created.</p>
      */
     inline const Aws::Vector<ProcessorFeature>& GetProcessorFeatures() const{ return m_processorFeatures; }
+
+    /**
+     * <p>The number of CPU cores and the number of threads per core for the DB
+     * instance class of the DB instance when the DB snapshot was created.</p>
+     */
+    inline bool ProcessorFeaturesHasBeenSet() const { return m_processorFeaturesHasBeenSet; }
 
     /**
      * <p>The number of CPU cores and the number of threads per core for the DB
@@ -973,6 +1122,12 @@ namespace Model
      * is unique to an AWS Region.</p>
      */
     inline const Aws::String& GetDbiResourceId() const{ return m_dbiResourceId; }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
+    inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
 
     /**
      * <p>The identifier for the source DB instance, which can't be changed and which

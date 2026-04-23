@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The time stamp when the attachment initiated.</p>
      */
+    inline bool AttachTimeHasBeenSet() const { return m_attachTimeHasBeenSet; }
+
+    /**
+     * <p>The time stamp when the attachment initiated.</p>
+     */
     inline void SetAttachTime(const Aws::Utils::DateTime& value) { m_attachTimeHasBeenSet = true; m_attachTime = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The device name.</p>
      */
     inline const Aws::String& GetDevice() const{ return m_device; }
+
+    /**
+     * <p>The device name.</p>
+     */
+    inline bool DeviceHasBeenSet() const { return m_deviceHasBeenSet; }
 
     /**
      * <p>The device name.</p>
@@ -122,6 +132,11 @@ namespace Model
     /**
      * <p>The ID of the instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -158,6 +173,11 @@ namespace Model
     /**
      * <p>The attachment state of the volume.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The attachment state of the volume.</p>
+     */
     inline void SetState(const VolumeAttachmentState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -180,6 +200,11 @@ namespace Model
      * <p>The ID of the volume.</p>
      */
     inline const Aws::String& GetVolumeId() const{ return m_volumeId; }
+
+    /**
+     * <p>The ID of the volume.</p>
+     */
+    inline bool VolumeIdHasBeenSet() const { return m_volumeIdHasBeenSet; }
 
     /**
      * <p>The ID of the volume.</p>
@@ -220,6 +245,11 @@ namespace Model
     /**
      * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
      */
+    inline bool DeleteOnTerminationHasBeenSet() const { return m_deleteOnTerminationHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the EBS volume is deleted on instance termination.</p>
+     */
     inline void SetDeleteOnTermination(bool value) { m_deleteOnTerminationHasBeenSet = true; m_deleteOnTermination = value; }
 
     /**
@@ -230,6 +260,9 @@ namespace Model
 
     
     inline const ResponseMetadata& GetResponseMetadata() const{ return m_responseMetadata; }
+
+    
+    inline bool ResponseMetadataHasBeenSet() const { return m_responseMetadataHasBeenSet; }
 
     
     inline void SetResponseMetadata(const ResponseMetadata& value) { m_responseMetadataHasBeenSet = true; m_responseMetadata = value; }

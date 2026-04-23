@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the configuration aggregators.</p>
      */
+    inline bool ConfigurationAggregatorNamesHasBeenSet() const { return m_configurationAggregatorNamesHasBeenSet; }
+
+    /**
+     * <p>The name of the configuration aggregators.</p>
+     */
     inline void SetConfigurationAggregatorNames(const Aws::Vector<Aws::String>& value) { m_configurationAggregatorNamesHasBeenSet = true; m_configurationAggregatorNames = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>The nextToken string returned on a previous page that you use to get the next
      * page of results in a paginated response.</p>
      */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+
+    /**
+     * <p>The nextToken string returned on a previous page that you use to get the next
+     * page of results in a paginated response.</p>
+     */
     inline void SetNextToken(const Aws::String& value) { m_nextTokenHasBeenSet = true; m_nextToken = value; }
 
     /**
@@ -134,6 +145,12 @@ namespace Model
      * default is maximum. If you specify 0, AWS Config uses the default.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of configuration aggregators returned on each page. The
+     * default is maximum. If you specify 0, AWS Config uses the default.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of configuration aggregators returned on each page. The

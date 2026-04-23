@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>Describes the server with the specified ServerName.</p>
      */
+    inline bool ServerNameHasBeenSet() const { return m_serverNameHasBeenSet; }
+
+    /**
+     * <p>Describes the server with the specified ServerName.</p>
+     */
     inline void SetServerName(const Aws::String& value) { m_serverNameHasBeenSet = true; m_serverName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>This is not currently implemented for <code>DescribeServers</code> requests.
@@ -128,6 +139,12 @@ namespace Model
      * </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>This is not currently implemented for <code>DescribeServers</code> requests.
+     * </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>This is not currently implemented for <code>DescribeServers</code> requests.

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the stream for the shard split.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream for the shard split.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The shard ID of the shard to split.</p>
      */
     inline const Aws::String& GetShardToSplit() const{ return m_shardToSplit; }
+
+    /**
+     * <p>The shard ID of the shard to split.</p>
+     */
+    inline bool ShardToSplitHasBeenSet() const { return m_shardToSplitHasBeenSet; }
 
     /**
      * <p>The shard ID of the shard to split.</p>
@@ -130,6 +140,17 @@ namespace Model
      * key values in the range are distributed to the other child shard.</p>
      */
     inline const Aws::String& GetNewStartingHashKey() const{ return m_newStartingHashKey; }
+
+    /**
+     * <p>A hash key value for the starting hash key of one of the child shards created
+     * by the split. The hash key range for a given shard constitutes a set of ordered
+     * contiguous positive integers. The value for <code>NewStartingHashKey</code> must
+     * be in the range of hash keys being mapped into the shard. The
+     * <code>NewStartingHashKey</code> hash key value and all higher hash key values in
+     * hash key range are distributed to one of the child shards. All the lower hash
+     * key values in the range are distributed to the other child shard.</p>
+     */
+    inline bool NewStartingHashKeyHasBeenSet() const { return m_newStartingHashKeyHasBeenSet; }
 
     /**
      * <p>A hash key value for the starting hash key of one of the child shards created

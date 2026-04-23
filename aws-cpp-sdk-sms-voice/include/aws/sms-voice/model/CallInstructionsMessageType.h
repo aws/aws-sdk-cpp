@@ -58,6 +58,12 @@ namespace Model
      * The language to use when delivering the message. For a complete list of
      * supported languages, see the Amazon Polly Developer Guide.
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * The language to use when delivering the message. For a complete list of
+     * supported languages, see the Amazon Polly Developer Guide.
+     */
     inline void SetText(const Aws::String& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**

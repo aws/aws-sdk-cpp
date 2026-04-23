@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The hourly rate of the reservation.</p>
      */
+    inline bool HourlyPriceHasBeenSet() const { return m_hourlyPriceHasBeenSet; }
+
+    /**
+     * <p>The hourly rate of the reservation.</p>
+     */
     inline void SetHourlyPrice(const Aws::String& value) { m_hourlyPriceHasBeenSet = true; m_hourlyPrice = value; }
 
     /**
@@ -90,6 +95,12 @@ namespace Model
      * hourlyPrice * number of hours remaining).</p>
      */
     inline const Aws::String& GetRemainingTotalValue() const{ return m_remainingTotalValue; }
+
+    /**
+     * <p>The balance of the total value (the sum of remainingUpfrontValue +
+     * hourlyPrice * number of hours remaining).</p>
+     */
+    inline bool RemainingTotalValueHasBeenSet() const { return m_remainingTotalValueHasBeenSet; }
 
     /**
      * <p>The balance of the total value (the sum of remainingUpfrontValue +
@@ -132,6 +143,11 @@ namespace Model
      * <p>The remaining upfront cost of the reservation.</p>
      */
     inline const Aws::String& GetRemainingUpfrontValue() const{ return m_remainingUpfrontValue; }
+
+    /**
+     * <p>The remaining upfront cost of the reservation.</p>
+     */
+    inline bool RemainingUpfrontValueHasBeenSet() const { return m_remainingUpfrontValueHasBeenSet; }
 
     /**
      * <p>The remaining upfront cost of the reservation.</p>

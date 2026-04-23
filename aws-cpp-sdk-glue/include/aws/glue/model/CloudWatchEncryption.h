@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The encryption mode to use for CloudWatch data.</p>
      */
+    inline bool CloudWatchEncryptionModeHasBeenSet() const { return m_cloudWatchEncryptionModeHasBeenSet; }
+
+    /**
+     * <p>The encryption mode to use for CloudWatch data.</p>
+     */
     inline void SetCloudWatchEncryptionMode(const CloudWatchEncryptionMode& value) { m_cloudWatchEncryptionModeHasBeenSet = true; m_cloudWatchEncryptionMode = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
      */
     inline const Aws::String& GetKmsKeyArn() const{ return m_kmsKeyArn; }
+
+    /**
+     * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>
+     */
+    inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
 
     /**
      * <p>The AWS ARN of the KMS key to be used to encrypt the data.</p>

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the skill group to update. </p>
      */
+    inline bool SkillGroupArnHasBeenSet() const { return m_skillGroupArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the skill group to update. </p>
+     */
     inline void SetSkillGroupArn(const Aws::String& value) { m_skillGroupArnHasBeenSet = true; m_skillGroupArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
     /**
      * <p>The updated name for the skill group.</p>
      */
+    inline bool SkillGroupNameHasBeenSet() const { return m_skillGroupNameHasBeenSet; }
+
+    /**
+     * <p>The updated name for the skill group.</p>
+     */
     inline void SetSkillGroupName(const Aws::String& value) { m_skillGroupNameHasBeenSet = true; m_skillGroupName = value; }
 
     /**
@@ -120,6 +130,11 @@ namespace Model
      * <p>The updated description for the skill group.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The updated description for the skill group.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The updated description for the skill group.</p>

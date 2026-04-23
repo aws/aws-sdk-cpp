@@ -23,6 +23,7 @@ using namespace Aws::Utils::Json;
 using namespace Aws::Utils;
 
 CreateJobRequest::CreateJobRequest() : 
+    m_accelerationSettingsHasBeenSet(false),
     m_billingTagsSource(BillingTagsSource::NOT_SET),
     m_billingTagsSourceHasBeenSet(false),
     m_clientRequestToken(Aws::Utils::UUID::RandomUUID()),
@@ -31,6 +32,8 @@ CreateJobRequest::CreateJobRequest() :
     m_queueHasBeenSet(false),
     m_roleHasBeenSet(false),
     m_settingsHasBeenSet(false),
+    m_statusUpdateInterval(StatusUpdateInterval::NOT_SET),
+    m_statusUpdateIntervalHasBeenSet(false),
     m_userMetadataHasBeenSet(false)
 {
 }
@@ -38,6 +41,12 @@ CreateJobRequest::CreateJobRequest() :
 Aws::String CreateJobRequest::SerializePayload() const
 {
   JsonValue payload;
+
+  if(m_accelerationSettingsHasBeenSet)
+  {
+   payload.WithObject("accelerationSettings", m_accelerationSettings.Jsonize());
+
+  }
 
   if(m_billingTagsSourceHasBeenSet)
   {
@@ -72,6 +81,11 @@ Aws::String CreateJobRequest::SerializePayload() const
   {
    payload.WithObject("settings", m_settings.Jsonize());
 
+  }
+
+  if(m_statusUpdateIntervalHasBeenSet)
+  {
+   payload.WithString("statusUpdateInterval", StatusUpdateIntervalMapper::GetNameForStatusUpdateInterval(m_statusUpdateInterval));
   }
 
   if(m_userMetadataHasBeenSet)

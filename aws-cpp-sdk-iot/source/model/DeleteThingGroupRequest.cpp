@@ -34,7 +34,7 @@ DeleteThingGroupRequest::DeleteThingGroupRequest() :
 
 Aws::String DeleteThingGroupRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DeleteThingGroupRequest::AddQueryStringParameters(URI& uri) const

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique identifier (ID) for the attack that to be described.</p>
      */
+    inline bool AttackIdHasBeenSet() const { return m_attackIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier (ID) for the attack that to be described.</p>
+     */
     inline void SetAttackId(const Aws::String& value) { m_attackIdHasBeenSet = true; m_attackId = value; }
 
     /**

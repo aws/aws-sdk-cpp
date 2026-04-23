@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Elastic Load Balancing instance's name.</p>
      */
+    inline bool ElasticLoadBalancerNameHasBeenSet() const { return m_elasticLoadBalancerNameHasBeenSet; }
+
+    /**
+     * <p>The Elastic Load Balancing instance's name.</p>
+     */
     inline void SetElasticLoadBalancerName(const Aws::String& value) { m_elasticLoadBalancerNameHasBeenSet = true; m_elasticLoadBalancerName = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The instance's AWS region.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The instance's AWS region.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The instance's AWS region.</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The instance's public DNS name.</p>
      */
+    inline bool DnsNameHasBeenSet() const { return m_dnsNameHasBeenSet; }
+
+    /**
+     * <p>The instance's public DNS name.</p>
+     */
     inline void SetDnsName(const Aws::String& value) { m_dnsNameHasBeenSet = true; m_dnsName = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The ID of the stack that the instance is associated with.</p>
      */
     inline const Aws::String& GetStackId() const{ return m_stackId; }
+
+    /**
+     * <p>The ID of the stack that the instance is associated with.</p>
+     */
+    inline bool StackIdHasBeenSet() const { return m_stackIdHasBeenSet; }
 
     /**
      * <p>The ID of the stack that the instance is associated with.</p>
@@ -200,6 +220,11 @@ namespace Model
     /**
      * <p>The ID of the layer that the instance is attached to.</p>
      */
+    inline bool LayerIdHasBeenSet() const { return m_layerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the layer that the instance is attached to.</p>
+     */
     inline void SetLayerId(const Aws::String& value) { m_layerIdHasBeenSet = true; m_layerId = value; }
 
     /**
@@ -236,6 +261,11 @@ namespace Model
     /**
      * <p>The VPC ID.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The VPC ID.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -268,6 +298,11 @@ namespace Model
      * <p>A list of Availability Zones.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAvailabilityZones() const{ return m_availabilityZones; }
+
+    /**
+     * <p>A list of Availability Zones.</p>
+     */
+    inline bool AvailabilityZonesHasBeenSet() const { return m_availabilityZonesHasBeenSet; }
 
     /**
      * <p>A list of Availability Zones.</p>
@@ -313,6 +348,11 @@ namespace Model
     /**
      * <p>A list of subnet IDs, if the stack is running in a VPC.</p>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>A list of subnet IDs, if the stack is running in a VPC.</p>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -351,6 +391,12 @@ namespace Model
      * managing traffic for.</p>
      */
     inline const Aws::Vector<Aws::String>& GetEc2InstanceIds() const{ return m_ec2InstanceIds; }
+
+    /**
+     * <p>A list of the EC2 instances that the Elastic Load Balancing instance is
+     * managing traffic for.</p>
+     */
+    inline bool Ec2InstanceIdsHasBeenSet() const { return m_ec2InstanceIdsHasBeenSet; }
 
     /**
      * <p>A list of the EC2 instances that the Elastic Load Balancing instance is

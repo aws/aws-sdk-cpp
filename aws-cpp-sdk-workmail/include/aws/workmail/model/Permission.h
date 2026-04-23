@@ -37,8 +37,8 @@ namespace Model
 {
 
   /**
-   * <p>Permission granted to an entity (user, group) to access a certain aspect of
-   * another entity's mailbox.</p><p><h3>See Also:</h3>   <a
+   * <p>Permission granted to a user, group, or resource to access a certain aspect
+   * of another user, group, or resource mailbox.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workmail-2017-10-01/Permission">AWS
    * API Reference</a></p>
    */
@@ -52,70 +52,81 @@ namespace Model
 
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline const Aws::String& GetGranteeId() const{ return m_granteeId; }
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
+     * granted.</p>
+     */
+    inline bool GranteeIdHasBeenSet() const { return m_granteeIdHasBeenSet; }
+
+    /**
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline void SetGranteeId(const Aws::String& value) { m_granteeIdHasBeenSet = true; m_granteeId = value; }
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline void SetGranteeId(Aws::String&& value) { m_granteeIdHasBeenSet = true; m_granteeId = std::move(value); }
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline void SetGranteeId(const char* value) { m_granteeIdHasBeenSet = true; m_granteeId.assign(value); }
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline Permission& WithGranteeId(const Aws::String& value) { SetGranteeId(value); return *this;}
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline Permission& WithGranteeId(Aws::String&& value) { SetGranteeId(std::move(value)); return *this;}
 
     /**
-     * <p>The identifier of the entity (user or group) to which the permissions are
+     * <p>The identifier of the user, group, or resource to which the permissions are
      * granted.</p>
      */
     inline Permission& WithGranteeId(const char* value) { SetGranteeId(value); return *this;}
 
 
     /**
-     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
      */
     inline const MemberType& GetGranteeType() const{ return m_granteeType; }
 
     /**
-     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
+     */
+    inline bool GranteeTypeHasBeenSet() const { return m_granteeTypeHasBeenSet; }
+
+    /**
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
      */
     inline void SetGranteeType(const MemberType& value) { m_granteeTypeHasBeenSet = true; m_granteeType = value; }
 
     /**
-     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
      */
     inline void SetGranteeType(MemberType&& value) { m_granteeTypeHasBeenSet = true; m_granteeType = std::move(value); }
 
     /**
-     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
      */
     inline Permission& WithGranteeType(const MemberType& value) { SetGranteeType(value); return *this;}
 
     /**
-     * <p>The type of entity (user, group) of the entity referred to in GranteeId.</p>
+     * <p>The type of user, group, or resource referred to in GranteeId.</p>
      */
     inline Permission& WithGranteeType(MemberType&& value) { SetGranteeType(std::move(value)); return *this;}
 
@@ -129,6 +140,16 @@ namespace Model
      * of other folder-level permissions set on the mailbox.</p>
      */
     inline const Aws::Vector<PermissionType>& GetPermissionValues() const{ return m_permissionValues; }
+
+    /**
+     * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send
+     * email as the owner of the mailbox (the grantee is not mentioned on these
+     * emails). SEND_ON_BEHALF allows the grantee to send email on behalf of the owner
+     * of the mailbox (the grantee is not mentioned as the physical sender of these
+     * emails). FULL_ACCESS allows the grantee full access to the mailbox, irrespective
+     * of other folder-level permissions set on the mailbox.</p>
+     */
+    inline bool PermissionValuesHasBeenSet() const { return m_permissionValuesHasBeenSet; }
 
     /**
      * <p>The permissions granted to the grantee. SEND_AS allows the grantee to send

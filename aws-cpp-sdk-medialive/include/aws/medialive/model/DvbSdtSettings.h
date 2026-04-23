@@ -68,6 +68,17 @@ namespace Model
      * information. The sdtNone setting means output stream will not contain SDT
      * information.
      */
+    inline bool OutputSdtHasBeenSet() const { return m_outputSdtHasBeenSet; }
+
+    /**
+     * Selects method of inserting SDT information into output stream. The sdtFollow
+     * setting copies SDT information from input stream to output stream. The
+     * sdtFollowIfPresent setting copies SDT information from input stream to output
+     * stream if SDT information is present in the input, otherwise it will fall back
+     * on the user-defined values. The sdtManual setting means user will enter the SDT
+     * information. The sdtNone setting means output stream will not contain SDT
+     * information.
+     */
     inline void SetOutputSdt(const DvbSdtOutputSdt& value) { m_outputSdtHasBeenSet = true; m_outputSdt = value; }
 
     /**
@@ -114,6 +125,12 @@ namespace Model
      * The number of milliseconds between instances of this table in the output
      * transport stream.
      */
+    inline bool RepIntervalHasBeenSet() const { return m_repIntervalHasBeenSet; }
+
+    /**
+     * The number of milliseconds between instances of this table in the output
+     * transport stream.
+     */
     inline void SetRepInterval(int value) { m_repIntervalHasBeenSet = true; m_repInterval = value; }
 
     /**
@@ -128,6 +145,12 @@ namespace Model
      * Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceName() const{ return m_serviceName; }
+
+    /**
+     * The service name placed in the serviceDescriptor in the Service Description
+     * Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceNameHasBeenSet() const { return m_serviceNameHasBeenSet; }
 
     /**
      * The service name placed in the serviceDescriptor in the Service Description
@@ -171,6 +194,12 @@ namespace Model
      * Description Table. Maximum length is 256 characters.
      */
     inline const Aws::String& GetServiceProviderName() const{ return m_serviceProviderName; }
+
+    /**
+     * The service provider name placed in the serviceDescriptor in the Service
+     * Description Table. Maximum length is 256 characters.
+     */
+    inline bool ServiceProviderNameHasBeenSet() const { return m_serviceProviderNameHasBeenSet; }
 
     /**
      * The service provider name placed in the serviceDescriptor in the Service

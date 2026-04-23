@@ -66,37 +66,42 @@ namespace Model
 
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline const Aws::String& GetNamespace() const{ return m_namespace; }
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
+     */
+    inline bool NamespaceHasBeenSet() const { return m_namespaceHasBeenSet; }
+
+    /**
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline void SetNamespace(const Aws::String& value) { m_namespaceHasBeenSet = true; m_namespace = value; }
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline void SetNamespace(Aws::String&& value) { m_namespaceHasBeenSet = true; m_namespace = std::move(value); }
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline void SetNamespace(const char* value) { m_namespaceHasBeenSet = true; m_namespace.assign(value); }
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline SystemControl& WithNamespace(const Aws::String& value) { SetNamespace(value); return *this;}
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline SystemControl& WithNamespace(Aws::String&& value) { SetNamespace(std::move(value)); return *this;}
 
     /**
-     * <p>The namespaced kernel parameter to set a <code>value</code> for.</p>
+     * <p>The namespaced kernel parameter for which to set a <code>value</code>.</p>
      */
     inline SystemControl& WithNamespace(const char* value) { SetNamespace(value); return *this;}
 
@@ -106,6 +111,12 @@ namespace Model
      * <code>namespace</code>.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value for the namespaced kernel parameter specified in
+     * <code>namespace</code>.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value for the namespaced kernel parameter specified in

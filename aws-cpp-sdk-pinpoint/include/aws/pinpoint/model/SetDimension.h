@@ -69,6 +69,17 @@ INCLUSIVE - Endpoints that match the criteria are
 EXCLUSIVE - Endpoints that match the criteria are
      * excluded from the segment.
      */
+    inline bool DimensionTypeHasBeenSet() const { return m_dimensionTypeHasBeenSet; }
+
+    /**
+     * The type of dimension:
+
+INCLUSIVE - Endpoints that match the criteria are
+     * included in the segment.
+
+EXCLUSIVE - Endpoints that match the criteria are
+     * excluded from the segment.
+     */
     inline void SetDimensionType(const DimensionType& value) { m_dimensionTypeHasBeenSet = true; m_dimensionType = value; }
 
     /**
@@ -111,6 +122,13 @@ EXCLUSIVE - Endpoints that match the criteria are
      * Type.
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * The criteria values for the segment dimension. Endpoints with matching attribute
+     * values are included or excluded from the segment, depending on the setting for
+     * Type.
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * The criteria values for the segment dimension. Endpoints with matching attribute

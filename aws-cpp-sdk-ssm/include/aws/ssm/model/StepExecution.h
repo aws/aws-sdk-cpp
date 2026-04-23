@@ -21,6 +21,8 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/ssm/model/FailureDetails.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/model/TargetLocation.h>
+#include <aws/ssm/model/Target.h>
 #include <utility>
 
 namespace Aws
@@ -61,6 +63,11 @@ namespace Model
     /**
      * <p>The name of this execution step.</p>
      */
+    inline bool StepNameHasBeenSet() const { return m_stepNameHasBeenSet; }
+
+    /**
+     * <p>The name of this execution step.</p>
+     */
     inline void SetStepName(const Aws::String& value) { m_stepNameHasBeenSet = true; m_stepName = value; }
 
     /**
@@ -94,6 +101,12 @@ namespace Model
      * step.</p>
      */
     inline const Aws::String& GetAction() const{ return m_action; }
+
+    /**
+     * <p>The action this step performs. The action determines the behavior of the
+     * step.</p>
+     */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
 
     /**
      * <p>The action this step performs. The action determines the behavior of the
@@ -140,6 +153,11 @@ namespace Model
     /**
      * <p>The timeout seconds of the step.</p>
      */
+    inline bool TimeoutSecondsHasBeenSet() const { return m_timeoutSecondsHasBeenSet; }
+
+    /**
+     * <p>The timeout seconds of the step.</p>
+     */
     inline void SetTimeoutSeconds(long long value) { m_timeoutSecondsHasBeenSet = true; m_timeoutSeconds = value; }
 
     /**
@@ -152,6 +170,11 @@ namespace Model
      * <p>The action to take if the step fails. The default value is Abort.</p>
      */
     inline const Aws::String& GetOnFailure() const{ return m_onFailure; }
+
+    /**
+     * <p>The action to take if the step fails. The default value is Abort.</p>
+     */
+    inline bool OnFailureHasBeenSet() const { return m_onFailureHasBeenSet; }
 
     /**
      * <p>The action to take if the step fails. The default value is Abort.</p>
@@ -194,6 +217,12 @@ namespace Model
      * <p>The maximum number of tries to run the action of the step. The default value
      * is 1.</p>
      */
+    inline bool MaxAttemptsHasBeenSet() const { return m_maxAttemptsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of tries to run the action of the step. The default value
+     * is 1.</p>
+     */
     inline void SetMaxAttempts(int value) { m_maxAttemptsHasBeenSet = true; m_maxAttempts = value; }
 
     /**
@@ -208,6 +237,12 @@ namespace Model
      * the step is in Pending status, this field is not populated.</p>
      */
     inline const Aws::Utils::DateTime& GetExecutionStartTime() const{ return m_executionStartTime; }
+
+    /**
+     * <p>If a step has begun execution, this contains the time the step started. If
+     * the step is in Pending status, this field is not populated.</p>
+     */
+    inline bool ExecutionStartTimeHasBeenSet() const { return m_executionStartTimeHasBeenSet; }
 
     /**
      * <p>If a step has begun execution, this contains the time the step started. If
@@ -244,6 +279,12 @@ namespace Model
      * <p>If a step has finished execution, this contains the time the execution ended.
      * If the step has not yet concluded, this field is not populated.</p>
      */
+    inline bool ExecutionEndTimeHasBeenSet() const { return m_executionEndTimeHasBeenSet; }
+
+    /**
+     * <p>If a step has finished execution, this contains the time the execution ended.
+     * If the step has not yet concluded, this field is not populated.</p>
+     */
     inline void SetExecutionEndTime(const Aws::Utils::DateTime& value) { m_executionEndTimeHasBeenSet = true; m_executionEndTime = value; }
 
     /**
@@ -275,6 +316,12 @@ namespace Model
      * <p>The execution status for this step. Valid values include: Pending,
      * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
      */
+    inline bool StepStatusHasBeenSet() const { return m_stepStatusHasBeenSet; }
+
+    /**
+     * <p>The execution status for this step. Valid values include: Pending,
+     * InProgress, Success, Cancelled, Failed, and TimedOut.</p>
+     */
     inline void SetStepStatus(const AutomationExecutionStatus& value) { m_stepStatusHasBeenSet = true; m_stepStatus = value; }
 
     /**
@@ -300,6 +347,11 @@ namespace Model
      * <p>The response code returned by the execution of the step.</p>
      */
     inline const Aws::String& GetResponseCode() const{ return m_responseCode; }
+
+    /**
+     * <p>The response code returned by the execution of the step.</p>
+     */
+    inline bool ResponseCodeHasBeenSet() const { return m_responseCodeHasBeenSet; }
 
     /**
      * <p>The response code returned by the execution of the step.</p>
@@ -336,6 +388,11 @@ namespace Model
      * <p>Fully-resolved values passed into the step before execution.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetInputs() const{ return m_inputs; }
+
+    /**
+     * <p>Fully-resolved values passed into the step before execution.</p>
+     */
+    inline bool InputsHasBeenSet() const { return m_inputsHasBeenSet; }
 
     /**
      * <p>Fully-resolved values passed into the step before execution.</p>
@@ -401,6 +458,11 @@ namespace Model
     /**
      * <p>Returned values from the execution of the step.</p>
      */
+    inline bool OutputsHasBeenSet() const { return m_outputsHasBeenSet; }
+
+    /**
+     * <p>Returned values from the execution of the step.</p>
+     */
     inline void SetOutputs(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_outputsHasBeenSet = true; m_outputs = value; }
 
     /**
@@ -457,6 +519,11 @@ namespace Model
     /**
      * <p>A message associated with the response code for an execution.</p>
      */
+    inline bool ResponseHasBeenSet() const { return m_responseHasBeenSet; }
+
+    /**
+     * <p>A message associated with the response code for an execution.</p>
+     */
     inline void SetResponse(const Aws::String& value) { m_responseHasBeenSet = true; m_response = value; }
 
     /**
@@ -489,6 +556,11 @@ namespace Model
      * <p>If a step failed, this message explains why the execution failed.</p>
      */
     inline const Aws::String& GetFailureMessage() const{ return m_failureMessage; }
+
+    /**
+     * <p>If a step failed, this message explains why the execution failed.</p>
+     */
+    inline bool FailureMessageHasBeenSet() const { return m_failureMessageHasBeenSet; }
 
     /**
      * <p>If a step failed, this message explains why the execution failed.</p>
@@ -529,6 +601,11 @@ namespace Model
     /**
      * <p>Information about the Automation failure.</p>
      */
+    inline bool FailureDetailsHasBeenSet() const { return m_failureDetailsHasBeenSet; }
+
+    /**
+     * <p>Information about the Automation failure.</p>
+     */
     inline void SetFailureDetails(const FailureDetails& value) { m_failureDetailsHasBeenSet = true; m_failureDetails = value; }
 
     /**
@@ -551,6 +628,11 @@ namespace Model
      * <p>The unique ID of a step execution.</p>
      */
     inline const Aws::String& GetStepExecutionId() const{ return m_stepExecutionId; }
+
+    /**
+     * <p>The unique ID of a step execution.</p>
+     */
+    inline bool StepExecutionIdHasBeenSet() const { return m_stepExecutionIdHasBeenSet; }
 
     /**
      * <p>The unique ID of a step execution.</p>
@@ -584,57 +666,62 @@ namespace Model
 
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& GetOverriddenParameters() const{ return m_overriddenParameters; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
+     */
+    inline bool OverriddenParametersHasBeenSet() const { return m_overriddenParametersHasBeenSet; }
+
+    /**
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline void SetOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = value; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline void SetOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters = std::move(value); }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& WithOverriddenParameters(const Aws::Map<Aws::String, Aws::Vector<Aws::String>>& value) { SetOverriddenParameters(value); return *this;}
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& WithOverriddenParameters(Aws::Map<Aws::String, Aws::Vector<Aws::String>>&& value) { SetOverriddenParameters(std::move(value)); return *this;}
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const Aws::String& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(Aws::String&& key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), value); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const Aws::String& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(Aws::String&& key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(std::move(key), std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const char* key, Aws::Vector<Aws::String>&& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, std::move(value)); return *this; }
 
     /**
-     * <p>A user-specified list of parameters to override when executing a step.</p>
+     * <p>A user-specified list of parameters to override when running a step.</p>
      */
     inline StepExecution& AddOverriddenParameters(const char* key, const Aws::Vector<Aws::String>& value) { m_overriddenParametersHasBeenSet = true; m_overriddenParameters.emplace(key, value); return *this; }
 
@@ -644,6 +731,12 @@ namespace Model
      * succeeds or fails.</p>
      */
     inline bool GetIsEnd() const{ return m_isEnd; }
+
+    /**
+     * <p>The flag which can be used to end automation no matter whether the step
+     * succeeds or fails.</p>
+     */
+    inline bool IsEndHasBeenSet() const { return m_isEndHasBeenSet; }
 
     /**
      * <p>The flag which can be used to end automation no matter whether the step
@@ -662,6 +755,11 @@ namespace Model
      * <p>The next step after the step succeeds.</p>
      */
     inline const Aws::String& GetNextStep() const{ return m_nextStep; }
+
+    /**
+     * <p>The next step after the step succeeds.</p>
+     */
+    inline bool NextStepHasBeenSet() const { return m_nextStepHasBeenSet; }
 
     /**
      * <p>The next step after the step succeeds.</p>
@@ -704,6 +802,12 @@ namespace Model
      * <p>The flag which can be used to help decide whether the failure of current step
      * leads to the Automation failure.</p>
      */
+    inline bool IsCriticalHasBeenSet() const { return m_isCriticalHasBeenSet; }
+
+    /**
+     * <p>The flag which can be used to help decide whether the failure of current step
+     * leads to the Automation failure.</p>
+     */
     inline void SetIsCritical(bool value) { m_isCriticalHasBeenSet = true; m_isCritical = value; }
 
     /**
@@ -716,7 +820,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -725,7 +829,16 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
+     * branching, we add step:stepName to support the automation to go to another
+     * specific step.</p>
+     */
+    inline bool ValidNextStepsHasBeenSet() const { return m_validNextStepsHasBeenSet; }
+
+    /**
+     * <p>Strategies used when step fails, we support Continue and Abort. Abort will
+     * fail the automation when the step fails. Continue will ignore the failure of
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -734,7 +847,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -743,7 +856,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -752,7 +865,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -761,7 +874,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -770,7 +883,7 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
@@ -779,11 +892,89 @@ namespace Model
     /**
      * <p>Strategies used when step fails, we support Continue and Abort. Abort will
      * fail the automation when the step fails. Continue will ignore the failure of
-     * current step and allow automation to execute the next step. With conditional
+     * current step and allow automation to run the next step. With conditional
      * branching, we add step:stepName to support the automation to go to another
      * specific step.</p>
      */
     inline StepExecution& AddValidNextSteps(const char* value) { m_validNextStepsHasBeenSet = true; m_validNextSteps.push_back(value); return *this; }
+
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline const Aws::Vector<Target>& GetTargets() const{ return m_targets; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline bool TargetsHasBeenSet() const { return m_targetsHasBeenSet; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline void SetTargets(const Aws::Vector<Target>& value) { m_targetsHasBeenSet = true; m_targets = value; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline void SetTargets(Aws::Vector<Target>&& value) { m_targetsHasBeenSet = true; m_targets = std::move(value); }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& WithTargets(const Aws::Vector<Target>& value) { SetTargets(value); return *this;}
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& WithTargets(Aws::Vector<Target>&& value) { SetTargets(std::move(value)); return *this;}
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& AddTargets(const Target& value) { m_targetsHasBeenSet = true; m_targets.push_back(value); return *this; }
+
+    /**
+     * <p>The targets for the step execution.</p>
+     */
+    inline StepExecution& AddTargets(Target&& value) { m_targetsHasBeenSet = true; m_targets.push_back(std::move(value)); return *this; }
+
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline const TargetLocation& GetTargetLocation() const{ return m_targetLocation; }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline bool TargetLocationHasBeenSet() const { return m_targetLocationHasBeenSet; }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline void SetTargetLocation(const TargetLocation& value) { m_targetLocationHasBeenSet = true; m_targetLocation = value; }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline void SetTargetLocation(TargetLocation&& value) { m_targetLocationHasBeenSet = true; m_targetLocation = std::move(value); }
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline StepExecution& WithTargetLocation(const TargetLocation& value) { SetTargetLocation(value); return *this;}
+
+    /**
+     * <p>The combination of AWS Regions and accounts targeted by the current
+     * Automation execution.</p>
+     */
+    inline StepExecution& WithTargetLocation(TargetLocation&& value) { SetTargetLocation(std::move(value)); return *this;}
 
   private:
 
@@ -846,6 +1037,12 @@ namespace Model
 
     Aws::Vector<Aws::String> m_validNextSteps;
     bool m_validNextStepsHasBeenSet;
+
+    Aws::Vector<Target> m_targets;
+    bool m_targetsHasBeenSet;
+
+    TargetLocation m_targetLocation;
+    bool m_targetLocationHasBeenSet;
   };
 
 } // namespace Model

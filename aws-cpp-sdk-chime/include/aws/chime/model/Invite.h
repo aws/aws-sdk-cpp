@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The invite ID.</p>
      */
+    inline bool InviteIdHasBeenSet() const { return m_inviteIdHasBeenSet; }
+
+    /**
+     * <p>The invite ID.</p>
+     */
     inline void SetInviteId(const Aws::String& value) { m_inviteIdHasBeenSet = true; m_inviteId = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The status of the invite.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the invite.</p>
+     */
     inline void SetStatus(const InviteStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -116,6 +126,11 @@ namespace Model
      * <p>The email address to which the invite is sent.</p>
      */
     inline const Aws::String& GetEmailAddress() const{ return m_emailAddress; }
+
+    /**
+     * <p>The email address to which the invite is sent.</p>
+     */
+    inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
 
     /**
      * <p>The email address to which the invite is sent.</p>
@@ -152,6 +167,11 @@ namespace Model
      * <p>The status of the invite email.</p>
      */
     inline const EmailStatus& GetEmailStatus() const{ return m_emailStatus; }
+
+    /**
+     * <p>The status of the invite email.</p>
+     */
+    inline bool EmailStatusHasBeenSet() const { return m_emailStatusHasBeenSet; }
 
     /**
      * <p>The status of the invite email.</p>

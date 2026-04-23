@@ -62,6 +62,11 @@ namespace Model
     /**
      * <p>The ID of the conversion task.</p>
      */
+    inline bool ConversionTaskIdHasBeenSet() const { return m_conversionTaskIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the conversion task.</p>
+     */
     inline void SetConversionTaskId(const Aws::String& value) { m_conversionTaskIdHasBeenSet = true; m_conversionTaskId = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * expiration time, we automatically cancel the task.</p>
      */
     inline const Aws::String& GetExpirationTime() const{ return m_expirationTime; }
+
+    /**
+     * <p>The time when the task expires. If the upload isn't complete before the
+     * expiration time, we automatically cancel the task.</p>
+     */
+    inline bool ExpirationTimeHasBeenSet() const { return m_expirationTimeHasBeenSet; }
 
     /**
      * <p>The time when the task expires. If the upload isn't complete before the
@@ -143,6 +154,12 @@ namespace Model
      * <p>If the task is for importing an instance, this contains information about the
      * import instance task.</p>
      */
+    inline bool ImportInstanceHasBeenSet() const { return m_importInstanceHasBeenSet; }
+
+    /**
+     * <p>If the task is for importing an instance, this contains information about the
+     * import instance task.</p>
+     */
     inline void SetImportInstance(const ImportInstanceTaskDetails& value) { m_importInstanceHasBeenSet = true; m_importInstance = value; }
 
     /**
@@ -169,6 +186,12 @@ namespace Model
      * import volume task.</p>
      */
     inline const ImportVolumeTaskDetails& GetImportVolume() const{ return m_importVolume; }
+
+    /**
+     * <p>If the task is for importing a volume, this contains information about the
+     * import volume task.</p>
+     */
+    inline bool ImportVolumeHasBeenSet() const { return m_importVolumeHasBeenSet; }
 
     /**
      * <p>If the task is for importing a volume, this contains information about the
@@ -203,6 +226,11 @@ namespace Model
     /**
      * <p>The state of the conversion task.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The state of the conversion task.</p>
+     */
     inline void SetState(const ConversionTaskState& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -225,6 +253,11 @@ namespace Model
      * <p>The status message related to the conversion task.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>The status message related to the conversion task.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>The status message related to the conversion task.</p>
@@ -261,6 +294,11 @@ namespace Model
      * <p>Any tags assigned to the task.</p>
      */
     inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>Any tags assigned to the task.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
 
     /**
      * <p>Any tags assigned to the task.</p>

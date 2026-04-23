@@ -62,6 +62,14 @@ namespace Model
      * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
      * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>instance-family</code> - The
+     * instance family of the offering (for example, <code>m4</code>).</p> </li> <li>
+     * <p> <code>payment-option</code> - The payment option (<code>NoUpfront</code> |
+     * <code>PartialUpfront</code> | <code>AllUpfront</code>).</p> </li> </ul>
+     */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -121,6 +129,15 @@ namespace Model
      * times one of the supported durations (1 or 3). For example, specify 94608000 for
      * three years.</p>
      */
+    inline bool MaxDurationHasBeenSet() const { return m_maxDurationHasBeenSet; }
+
+    /**
+     * <p>This is the maximum duration of the reservation to purchase, specified in
+     * seconds. Reservations are available in one-year and three-year terms. The number
+     * of seconds specified must be the number of seconds in a year (365x24x60x60)
+     * times one of the supported durations (1 or 3). For example, specify 94608000 for
+     * three years.</p>
+     */
     inline void SetMaxDuration(int value) { m_maxDurationHasBeenSet = true; m_maxDuration = value; }
 
     /**
@@ -141,6 +158,15 @@ namespace Model
      * error.</p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an
+     * error.</p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p>The maximum number of results to return for the request in a single page. The
@@ -177,6 +203,15 @@ namespace Model
      * (365x24x60x60) times one of the supported durations (1 or 3). For example,
      * specify 31536000 for one year.</p>
      */
+    inline bool MinDurationHasBeenSet() const { return m_minDurationHasBeenSet; }
+
+    /**
+     * <p>This is the minimum duration of the reservation you'd like to purchase,
+     * specified in seconds. Reservations are available in one-year and three-year
+     * terms. The number of seconds specified must be the number of seconds in a year
+     * (365x24x60x60) times one of the supported durations (1 or 3). For example,
+     * specify 31536000 for one year.</p>
+     */
     inline void SetMinDuration(int value) { m_minDurationHasBeenSet = true; m_minDuration = value; }
 
     /**
@@ -193,6 +228,11 @@ namespace Model
      * <p>The token to use to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to use to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to use to retrieve the next page of results.</p>
@@ -229,6 +269,11 @@ namespace Model
      * <p>The ID of the reservation offering.</p>
      */
     inline const Aws::String& GetOfferingId() const{ return m_offeringId; }
+
+    /**
+     * <p>The ID of the reservation offering.</p>
+     */
+    inline bool OfferingIdHasBeenSet() const { return m_offeringIdHasBeenSet; }
 
     /**
      * <p>The ID of the reservation offering.</p>

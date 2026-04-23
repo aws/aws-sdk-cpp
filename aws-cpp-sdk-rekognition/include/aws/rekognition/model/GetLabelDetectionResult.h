@@ -250,6 +250,49 @@ namespace Model
      */
     inline GetLabelDetectionResult& AddLabels(LabelDetection&& value) { m_labels.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline const Aws::String& GetLabelModelVersion() const{ return m_labelModelVersion; }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(const Aws::String& value) { m_labelModelVersion = value; }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(Aws::String&& value) { m_labelModelVersion = std::move(value); }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline void SetLabelModelVersion(const char* value) { m_labelModelVersion.assign(value); }
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline GetLabelDetectionResult& WithLabelModelVersion(const Aws::String& value) { SetLabelModelVersion(value); return *this;}
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline GetLabelDetectionResult& WithLabelModelVersion(Aws::String&& value) { SetLabelModelVersion(std::move(value)); return *this;}
+
+    /**
+     * <p>Version number of the label detection model that was used to detect
+     * labels.</p>
+     */
+    inline GetLabelDetectionResult& WithLabelModelVersion(const char* value) { SetLabelModelVersion(value); return *this;}
+
   private:
 
     VideoJobStatus m_jobStatus;
@@ -261,6 +304,8 @@ namespace Model
     Aws::String m_nextToken;
 
     Aws::Vector<LabelDetection> m_labels;
+
+    Aws::String m_labelModelVersion;
   };
 
 } // namespace Model

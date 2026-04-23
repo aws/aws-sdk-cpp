@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The protocols.</p>
      */
+    inline bool SslProtocolsHasBeenSet() const { return m_sslProtocolsHasBeenSet; }
+
+    /**
+     * <p>The protocols.</p>
+     */
     inline void SetSslProtocols(const Aws::Vector<Aws::String>& value) { m_sslProtocolsHasBeenSet = true; m_sslProtocols = value; }
 
     /**
@@ -101,6 +106,11 @@ namespace Model
     /**
      * <p>The ciphers.</p>
      */
+    inline bool CiphersHasBeenSet() const { return m_ciphersHasBeenSet; }
+
+    /**
+     * <p>The ciphers.</p>
+     */
     inline void SetCiphers(const Aws::Vector<Cipher>& value) { m_ciphersHasBeenSet = true; m_ciphers = value; }
 
     /**
@@ -133,6 +143,11 @@ namespace Model
      * <p>The name of the policy.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the policy.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the policy.</p>

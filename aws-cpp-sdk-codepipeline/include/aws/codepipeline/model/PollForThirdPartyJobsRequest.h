@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Represents information about an action type.</p>
      */
+    inline bool ActionTypeIdHasBeenSet() const { return m_actionTypeIdHasBeenSet; }
+
+    /**
+     * <p>Represents information about an action type.</p>
+     */
     inline void SetActionTypeId(const ActionTypeId& value) { m_actionTypeIdHasBeenSet = true; m_actionTypeId = value; }
 
     /**
@@ -78,6 +83,11 @@ namespace Model
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>
      */
     inline int GetMaxBatchSize() const{ return m_maxBatchSize; }
+
+    /**
+     * <p>The maximum number of jobs to return in a poll for jobs call.</p>
+     */
+    inline bool MaxBatchSizeHasBeenSet() const { return m_maxBatchSizeHasBeenSet; }
 
     /**
      * <p>The maximum number of jobs to return in a poll for jobs call.</p>

@@ -27,7 +27,8 @@ namespace Model
   {
     NOT_SET,
     i386,
-    x86_64
+    x86_64,
+    arm64
   };
 
 namespace ArchitectureValuesMapper

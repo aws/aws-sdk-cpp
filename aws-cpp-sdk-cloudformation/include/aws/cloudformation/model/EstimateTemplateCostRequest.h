@@ -70,6 +70,16 @@ namespace Model
      * pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
+    inline bool TemplateBodyHasBeenSet() const { return m_templateBodyHasBeenSet; }
+
+    /**
+     * <p>Structure containing the template body with a minimum length of 1 byte and a
+     * maximum length of 51,200 bytes. (For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.)</p> <p>Conditional: You must
+     * pass <code>TemplateBody</code> or <code>TemplateURL</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
+     */
     inline void SetTemplateBody(const Aws::String& value) { m_templateBodyHasBeenSet = true; m_templateBody = value; }
 
     /**
@@ -141,6 +151,16 @@ namespace Model
      * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
      * only <code>TemplateBody</code> is used.</p>
      */
+    inline bool TemplateURLHasBeenSet() const { return m_templateURLHasBeenSet; }
+
+    /**
+     * <p>Location of file containing the template body. The URL must point to a
+     * template that is located in an Amazon S3 bucket. For more information, go to <a
+     * href="http://docs.aws.amazon.com/AWSCloudFormation/latest/UserGuide/template-anatomy.html">Template
+     * Anatomy</a> in the AWS CloudFormation User Guide.</p> <p>Conditional: You must
+     * pass <code>TemplateURL</code> or <code>TemplateBody</code>. If both are passed,
+     * only <code>TemplateBody</code> is used.</p>
+     */
     inline void SetTemplateURL(const Aws::String& value) { m_templateURLHasBeenSet = true; m_templateURL = value; }
 
     /**
@@ -199,6 +219,12 @@ namespace Model
      * parameters.</p>
      */
     inline const Aws::Vector<Parameter>& GetParameters() const{ return m_parameters; }
+
+    /**
+     * <p>A list of <code>Parameter</code> structures that specify input
+     * parameters.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
 
     /**
      * <p>A list of <code>Parameter</code> structures that specify input

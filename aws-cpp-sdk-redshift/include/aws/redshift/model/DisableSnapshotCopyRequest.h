@@ -61,6 +61,13 @@ namespace Model
      * of snapshots to a destination region.</p> <p>Constraints: Must be the valid name
      * of an existing cluster that has cross-region snapshot copy enabled.</p>
      */
+    inline bool ClusterIdentifierHasBeenSet() const { return m_clusterIdentifierHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the source cluster that you want to disable copying
+     * of snapshots to a destination region.</p> <p>Constraints: Must be the valid name
+     * of an existing cluster that has cross-region snapshot copy enabled.</p>
+     */
     inline void SetClusterIdentifier(const Aws::String& value) { m_clusterIdentifierHasBeenSet = true; m_clusterIdentifier = value; }
 
     /**

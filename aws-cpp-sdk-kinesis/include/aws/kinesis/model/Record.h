@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The unique identifier of the record within its shard.</p>
      */
+    inline bool SequenceNumberHasBeenSet() const { return m_sequenceNumberHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of the record within its shard.</p>
+     */
     inline void SetSequenceNumber(const Aws::String& value) { m_sequenceNumberHasBeenSet = true; m_sequenceNumber = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The approximate time that the record was inserted into the stream.</p>
      */
+    inline bool ApproximateArrivalTimestampHasBeenSet() const { return m_approximateArrivalTimestampHasBeenSet; }
+
+    /**
+     * <p>The approximate time that the record was inserted into the stream.</p>
+     */
     inline void SetApproximateArrivalTimestamp(const Aws::Utils::DateTime& value) { m_approximateArrivalTimestampHasBeenSet = true; m_approximateArrivalTimestamp = value; }
 
     /**
@@ -121,6 +131,15 @@ namespace Model
      * (1 MB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
+     * Data Streams, which does not inspect, interpret, or change the data in the blob
+     * in any way. When the data blob (the payload before base64-encoding) is added to
+     * the partition key size, the total size must not exceed the maximum record size
+     * (1 MB).</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * <p>The data blob. The data in the blob is both opaque and immutable to Kinesis
@@ -167,6 +186,11 @@ namespace Model
     /**
      * <p>Identifies which shard in the stream the data record is assigned to.</p>
      */
+    inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
+
+    /**
+     * <p>Identifies which shard in the stream the data record is assigned to.</p>
+     */
     inline void SetPartitionKey(const Aws::String& value) { m_partitionKeyHasBeenSet = true; m_partitionKey = value; }
 
     /**
@@ -203,6 +227,15 @@ namespace Model
      * key.</p> </li> </ul>
      */
     inline const EncryptionType& GetEncryptionType() const{ return m_encryptionType; }
+
+    /**
+     * <p>The encryption type used on the record. This parameter can be one of the
+     * following values:</p> <ul> <li> <p> <code>NONE</code>: Do not encrypt the
+     * records in the stream.</p> </li> <li> <p> <code>KMS</code>: Use server-side
+     * encryption on the records in the stream using a customer-managed AWS KMS
+     * key.</p> </li> </ul>
+     */
+    inline bool EncryptionTypeHasBeenSet() const { return m_encryptionTypeHasBeenSet; }
 
     /**
      * <p>The encryption type used on the record. This parameter can be one of the

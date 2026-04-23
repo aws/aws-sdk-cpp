@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the pipeline that will start processing the revision to the
      * source.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline that will start processing the revision to the
+     * source.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -97,6 +103,12 @@ namespace Model
      * revision.</p>
      */
     inline const Aws::String& GetStageName() const{ return m_stageName; }
+
+    /**
+     * <p>The name of the stage that contains the action that will act upon the
+     * revision.</p>
+     */
+    inline bool StageNameHasBeenSet() const { return m_stageNameHasBeenSet; }
 
     /**
      * <p>The name of the stage that contains the action that will act upon the
@@ -143,6 +155,11 @@ namespace Model
     /**
      * <p>The name of the action that will process the revision.</p>
      */
+    inline bool ActionNameHasBeenSet() const { return m_actionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the action that will process the revision.</p>
+     */
     inline void SetActionName(const Aws::String& value) { m_actionNameHasBeenSet = true; m_actionName = value; }
 
     /**
@@ -175,6 +192,11 @@ namespace Model
      * <p>Represents information about the version (or revision) of an action.</p>
      */
     inline const ActionRevision& GetActionRevision() const{ return m_actionRevision; }
+
+    /**
+     * <p>Represents information about the version (or revision) of an action.</p>
+     */
+    inline bool ActionRevisionHasBeenSet() const { return m_actionRevisionHasBeenSet; }
 
     /**
      * <p>Represents information about the version (or revision) of an action.</p>

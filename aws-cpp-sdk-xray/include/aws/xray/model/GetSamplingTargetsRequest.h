@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>Information about rules that the service is using to sample requests.</p>
      */
+    inline bool SamplingStatisticsDocumentsHasBeenSet() const { return m_samplingStatisticsDocumentsHasBeenSet; }
+
+    /**
+     * <p>Information about rules that the service is using to sample requests.</p>
+     */
     inline void SetSamplingStatisticsDocuments(const Aws::Vector<SamplingStatisticsDocument>& value) { m_samplingStatisticsDocumentsHasBeenSet = true; m_samplingStatisticsDocuments = value; }
 
     /**

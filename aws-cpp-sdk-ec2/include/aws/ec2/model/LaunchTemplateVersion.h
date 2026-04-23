@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of the launch template.</p>
      */
+    inline bool LaunchTemplateIdHasBeenSet() const { return m_launchTemplateIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the launch template.</p>
+     */
     inline void SetLaunchTemplateId(const Aws::String& value) { m_launchTemplateIdHasBeenSet = true; m_launchTemplateId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the launch template.</p>
      */
     inline const Aws::String& GetLaunchTemplateName() const{ return m_launchTemplateName; }
+
+    /**
+     * <p>The name of the launch template.</p>
+     */
+    inline bool LaunchTemplateNameHasBeenSet() const { return m_launchTemplateNameHasBeenSet; }
 
     /**
      * <p>The name of the launch template.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The version number.</p>
      */
+    inline bool VersionNumberHasBeenSet() const { return m_versionNumberHasBeenSet; }
+
+    /**
+     * <p>The version number.</p>
+     */
     inline void SetVersionNumber(long long value) { m_versionNumberHasBeenSet = true; m_versionNumber = value; }
 
     /**
@@ -143,6 +158,11 @@ namespace Model
      * <p>The description for the version.</p>
      */
     inline const Aws::String& GetVersionDescription() const{ return m_versionDescription; }
+
+    /**
+     * <p>The description for the version.</p>
+     */
+    inline bool VersionDescriptionHasBeenSet() const { return m_versionDescriptionHasBeenSet; }
 
     /**
      * <p>The description for the version.</p>
@@ -183,6 +203,11 @@ namespace Model
     /**
      * <p>The time the version was created.</p>
      */
+    inline bool CreateTimeHasBeenSet() const { return m_createTimeHasBeenSet; }
+
+    /**
+     * <p>The time the version was created.</p>
+     */
     inline void SetCreateTime(const Aws::Utils::DateTime& value) { m_createTimeHasBeenSet = true; m_createTime = value; }
 
     /**
@@ -205,6 +230,11 @@ namespace Model
      * <p>The principal that created the version.</p>
      */
     inline const Aws::String& GetCreatedBy() const{ return m_createdBy; }
+
+    /**
+     * <p>The principal that created the version.</p>
+     */
+    inline bool CreatedByHasBeenSet() const { return m_createdByHasBeenSet; }
 
     /**
      * <p>The principal that created the version.</p>
@@ -245,6 +275,11 @@ namespace Model
     /**
      * <p>Indicates whether the version is the default version.</p>
      */
+    inline bool DefaultVersionHasBeenSet() const { return m_defaultVersionHasBeenSet; }
+
+    /**
+     * <p>Indicates whether the version is the default version.</p>
+     */
     inline void SetDefaultVersion(bool value) { m_defaultVersionHasBeenSet = true; m_defaultVersion = value; }
 
     /**
@@ -257,6 +292,11 @@ namespace Model
      * <p>Information about the launch template.</p>
      */
     inline const ResponseLaunchTemplateData& GetLaunchTemplateData() const{ return m_launchTemplateData; }
+
+    /**
+     * <p>Information about the launch template.</p>
+     */
+    inline bool LaunchTemplateDataHasBeenSet() const { return m_launchTemplateDataHasBeenSet; }
 
     /**
      * <p>Information about the launch template.</p>

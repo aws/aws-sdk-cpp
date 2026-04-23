@@ -141,6 +141,28 @@ namespace Model
 
 
     /**
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
+     */
+    inline bool GetContainsOldGroupVersions() const{ return m_containsOldGroupVersions; }
+
+    /**
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
+     */
+    inline void SetContainsOldGroupVersions(bool value) { m_containsOldGroupVersions = value; }
+
+    /**
+     * <p>A flag indicating whether the group's filter expression has been consistent,
+     * or if the returned service graph may show traces from an older version of the
+     * group's filter expression.</p>
+     */
+    inline GetServiceGraphResult& WithContainsOldGroupVersions(bool value) { SetContainsOldGroupVersions(value); return *this;}
+
+
+    /**
      * <p>Pagination token. Not used.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
@@ -182,6 +204,8 @@ namespace Model
     Aws::Utils::DateTime m_endTime;
 
     Aws::Vector<Service> m_services;
+
+    bool m_containsOldGroupVersions;
 
     Aws::String m_nextToken;
   };

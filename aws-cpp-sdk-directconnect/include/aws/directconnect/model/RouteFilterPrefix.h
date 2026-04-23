@@ -59,6 +59,12 @@ namespace Model
      * <p>The CIDR block for the advertised route. Separate multiple routes using
      * commas. An IPv6 CIDR must use /64 or shorter.</p>
      */
+    inline bool CidrHasBeenSet() const { return m_cidrHasBeenSet; }
+
+    /**
+     * <p>The CIDR block for the advertised route. Separate multiple routes using
+     * commas. An IPv6 CIDR must use /64 or shorter.</p>
+     */
     inline void SetCidr(const Aws::String& value) { m_cidrHasBeenSet = true; m_cidr = value; }
 
     /**

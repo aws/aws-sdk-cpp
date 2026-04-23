@@ -19,5 +19,6 @@ import lombok.Data;
 
 @Data
 public class C2jXmlNamespace {
+    private String prefix;
     private String uri;
 }

@@ -61,6 +61,12 @@ namespace Model
      * <p>The email address that you want to use as the "From" address for the email.
      * The address that you specify has to be verified. </p>
      */
+    inline bool FromEmailAddressHasBeenSet() const { return m_fromEmailAddressHasBeenSet; }
+
+    /**
+     * <p>The email address that you want to use as the "From" address for the email.
+     * The address that you specify has to be verified. </p>
+     */
     inline void SetFromEmailAddress(const Aws::String& value) { m_fromEmailAddressHasBeenSet = true; m_fromEmailAddress = value; }
 
     /**
@@ -102,6 +108,11 @@ namespace Model
     /**
      * <p>An object that contains the recipients of the email message.</p>
      */
+    inline bool DestinationHasBeenSet() const { return m_destinationHasBeenSet; }
+
+    /**
+     * <p>An object that contains the recipients of the email message.</p>
+     */
     inline void SetDestination(const Destination& value) { m_destinationHasBeenSet = true; m_destination = value; }
 
     /**
@@ -125,6 +136,12 @@ namespace Model
      * the message, each Reply-to address receives the reply.</p>
      */
     inline const Aws::Vector<Aws::String>& GetReplyToAddresses() const{ return m_replyToAddresses; }
+
+    /**
+     * <p>The "Reply-to" email addresses for the message. When the recipient replies to
+     * the message, each Reply-to address receives the reply.</p>
+     */
+    inline bool ReplyToAddressesHasBeenSet() const { return m_replyToAddressesHasBeenSet; }
 
     /**
      * <p>The "Reply-to" email addresses for the message. When the recipient replies to
@@ -179,6 +196,12 @@ namespace Model
      * <p>The address that Amazon Pinpoint should send bounce and complaint
      * notifications to.</p>
      */
+    inline bool FeedbackForwardingEmailAddressHasBeenSet() const { return m_feedbackForwardingEmailAddressHasBeenSet; }
+
+    /**
+     * <p>The address that Amazon Pinpoint should send bounce and complaint
+     * notifications to.</p>
+     */
     inline void SetFeedbackForwardingEmailAddress(const Aws::String& value) { m_feedbackForwardingEmailAddressHasBeenSet = true; m_feedbackForwardingEmailAddress = value; }
 
     /**
@@ -222,6 +245,12 @@ namespace Model
      * <p>An object that contains the body of the message. You can send either a Simple
      * message or a Raw message.</p>
      */
+    inline bool ContentHasBeenSet() const { return m_contentHasBeenSet; }
+
+    /**
+     * <p>An object that contains the body of the message. You can send either a Simple
+     * message or a Raw message.</p>
+     */
     inline void SetContent(const EmailContent& value) { m_contentHasBeenSet = true; m_content = value; }
 
     /**
@@ -250,6 +279,14 @@ namespace Model
      * sending events. </p>
      */
     inline const Aws::Vector<MessageTag>& GetEmailTags() const{ return m_emailTags; }
+
+    /**
+     * <p>A list of tags, in the form of name/value pairs, to apply to an email that
+     * you send using the <code>SendEmail</code> operation. Tags correspond to
+     * characteristics of the email that you define, so that you can publish email
+     * sending events. </p>
+     */
+    inline bool EmailTagsHasBeenSet() const { return m_emailTagsHasBeenSet; }
 
     /**
      * <p>A list of tags, in the form of name/value pairs, to apply to an email that
@@ -305,6 +342,12 @@ namespace Model
      * email.</p>
      */
     inline const Aws::String& GetConfigurationSetName() const{ return m_configurationSetName; }
+
+    /**
+     * <p>The name of the configuration set that you want to use when sending the
+     * email.</p>
+     */
+    inline bool ConfigurationSetNameHasBeenSet() const { return m_configurationSetNameHasBeenSet; }
 
     /**
      * <p>The name of the configuration set that you want to use when sending the

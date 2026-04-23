@@ -64,6 +64,12 @@ namespace Model
      * <p>Maximum number of game sessions that an individual can create during the
      * policy period. </p>
      */
+    inline bool NewGameSessionsPerCreatorHasBeenSet() const { return m_newGameSessionsPerCreatorHasBeenSet; }
+
+    /**
+     * <p>Maximum number of game sessions that an individual can create during the
+     * policy period. </p>
+     */
     inline void SetNewGameSessionsPerCreator(int value) { m_newGameSessionsPerCreatorHasBeenSet = true; m_newGameSessionsPerCreator = value; }
 
     /**
@@ -77,6 +83,11 @@ namespace Model
      * <p>Time span used in evaluating the resource creation limit policy. </p>
      */
     inline int GetPolicyPeriodInMinutes() const{ return m_policyPeriodInMinutes; }
+
+    /**
+     * <p>Time span used in evaluating the resource creation limit policy. </p>
+     */
+    inline bool PolicyPeriodInMinutesHasBeenSet() const { return m_policyPeriodInMinutesHasBeenSet; }
 
     /**
      * <p>Time span used in evaluating the resource creation limit policy. </p>

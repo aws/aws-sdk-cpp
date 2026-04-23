@@ -36,7 +36,7 @@ namespace Model
   /**
    * <p>Contains the available processor feature information for the DB instance
    * class of a DB instance.</p> <p>For more information, see <a
-   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
    * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/AvailableProcessorFeature">AWS
@@ -58,6 +58,12 @@ namespace Model
      * <code>threadsPerCore</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
+     * <code>threadsPerCore</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The default value for the processor feature of the DB instance class.</p>
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value for the processor feature of the DB instance class.</p>
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -136,6 +147,11 @@ namespace Model
      * <p>The allowed values for the processor feature of the DB instance class.</p>
      */
     inline const Aws::String& GetAllowedValues() const{ return m_allowedValues; }
+
+    /**
+     * <p>The allowed values for the processor feature of the DB instance class.</p>
+     */
+    inline bool AllowedValuesHasBeenSet() const { return m_allowedValuesHasBeenSet; }
 
     /**
      * <p>The allowed values for the processor feature of the DB instance class.</p>

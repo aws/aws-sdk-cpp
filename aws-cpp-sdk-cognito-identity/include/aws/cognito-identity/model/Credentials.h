@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Access Key portion of the credentials.</p>
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * <p>The Access Key portion of the credentials.</p>
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The Secret Access Key portion of the credentials</p>
      */
     inline const Aws::String& GetSecretKey() const{ return m_secretKey; }
+
+    /**
+     * <p>The Secret Access Key portion of the credentials</p>
+     */
+    inline bool SecretKeyHasBeenSet() const { return m_secretKeyHasBeenSet; }
 
     /**
      * <p>The Secret Access Key portion of the credentials</p>
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The Session Token portion of the credentials</p>
      */
+    inline bool SessionTokenHasBeenSet() const { return m_sessionTokenHasBeenSet; }
+
+    /**
+     * <p>The Session Token portion of the credentials</p>
+     */
     inline void SetSessionToken(const Aws::String& value) { m_sessionTokenHasBeenSet = true; m_sessionToken = value; }
 
     /**
@@ -160,6 +175,11 @@ namespace Model
      * <p>The date at which these credentials will expire.</p>
      */
     inline const Aws::Utils::DateTime& GetExpiration() const{ return m_expiration; }
+
+    /**
+     * <p>The date at which these credentials will expire.</p>
+     */
+    inline bool ExpirationHasBeenSet() const { return m_expirationHasBeenSet; }
 
     /**
      * <p>The date at which these credentials will expire.</p>

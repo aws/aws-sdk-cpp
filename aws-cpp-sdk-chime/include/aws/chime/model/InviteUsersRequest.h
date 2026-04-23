@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The Amazon Chime account ID.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The Amazon Chime account ID.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -83,6 +88,11 @@ namespace Model
      * <p>The user email addresses to which to send the invite.</p>
      */
     inline const Aws::Vector<Aws::String>& GetUserEmailList() const{ return m_userEmailList; }
+
+    /**
+     * <p>The user email addresses to which to send the invite.</p>
+     */
+    inline bool UserEmailListHasBeenSet() const { return m_userEmailListHasBeenSet; }
 
     /**
      * <p>The user email addresses to which to send the invite.</p>

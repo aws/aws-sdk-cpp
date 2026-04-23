@@ -44,7 +44,9 @@ ContainerProperties::ContainerProperties() :
     m_privileged(false),
     m_privilegedHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
 }
 
@@ -64,7 +66,9 @@ ContainerProperties::ContainerProperties(JsonView jsonValue) :
     m_privileged(false),
     m_privilegedHasBeenSet(false),
     m_ulimitsHasBeenSet(false),
-    m_userHasBeenSet(false)
+    m_userHasBeenSet(false),
+    m_instanceTypeHasBeenSet(false),
+    m_resourceRequirementsHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -170,6 +174,23 @@ ContainerProperties& ContainerProperties::operator =(JsonView jsonValue)
     m_userHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("instanceType"))
+  {
+    m_instanceType = jsonValue.GetString("instanceType");
+
+    m_instanceTypeHasBeenSet = true;
+  }
+
+  if(jsonValue.ValueExists("resourceRequirements"))
+  {
+    Array<JsonView> resourceRequirementsJsonList = jsonValue.GetArray("resourceRequirements");
+    for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+    {
+      m_resourceRequirements.push_back(resourceRequirementsJsonList[resourceRequirementsIndex].AsObject());
+    }
+    m_resourceRequirementsHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -271,6 +292,23 @@ JsonValue ContainerProperties::Jsonize() const
   if(m_userHasBeenSet)
   {
    payload.WithString("user", m_user);
+
+  }
+
+  if(m_instanceTypeHasBeenSet)
+  {
+   payload.WithString("instanceType", m_instanceType);
+
+  }
+
+  if(m_resourceRequirementsHasBeenSet)
+  {
+   Array<JsonValue> resourceRequirementsJsonList(m_resourceRequirements.size());
+   for(unsigned resourceRequirementsIndex = 0; resourceRequirementsIndex < resourceRequirementsJsonList.GetLength(); ++resourceRequirementsIndex)
+   {
+     resourceRequirementsJsonList[resourceRequirementsIndex].AsObject(m_resourceRequirements[resourceRequirementsIndex].Jsonize());
+   }
+   payload.WithArray("resourceRequirements", std::move(resourceRequirementsJsonList));
 
   }
 

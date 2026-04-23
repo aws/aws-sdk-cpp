@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The contents of the certificate's domain.crt file.</p>
      */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
+
+    /**
+     * <p>The contents of the certificate's domain.crt file.</p>
+     */
     inline void SetCertificate(const Aws::String& value) { m_certificateHasBeenSet = true; m_certificate = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The private key; the contents of the certificate's domain.kex file.</p>
      */
     inline const Aws::String& GetPrivateKey() const{ return m_privateKey; }
+
+    /**
+     * <p>The private key; the contents of the certificate's domain.kex file.</p>
+     */
+    inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
 
     /**
      * <p>The private key; the contents of the certificate's domain.kex file.</p>
@@ -124,6 +134,12 @@ namespace Model
      * client authentication.</p>
      */
     inline const Aws::String& GetChain() const{ return m_chain; }
+
+    /**
+     * <p>Optional. Can be used to specify an intermediate certificate authority key or
+     * client authentication.</p>
+     */
+    inline bool ChainHasBeenSet() const { return m_chainHasBeenSet; }
 
     /**
      * <p>Optional. Can be used to specify an intermediate certificate authority key or

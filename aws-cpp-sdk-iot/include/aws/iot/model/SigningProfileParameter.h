@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Certificate ARN.</p>
      */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>Certificate ARN.</p>
+     */
     inline void SetCertificateArn(const Aws::String& value) { m_certificateArnHasBeenSet = true; m_certificateArn = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
     /**
      * <p>The hardware platform of your device.</p>
      */
+    inline bool PlatformHasBeenSet() const { return m_platformHasBeenSet; }
+
+    /**
+     * <p>The hardware platform of your device.</p>
+     */
     inline void SetPlatform(const Aws::String& value) { m_platformHasBeenSet = true; m_platform = value; }
 
     /**
@@ -123,6 +133,11 @@ namespace Model
      * <p>The location of the code-signing certificate on your device.</p>
      */
     inline const Aws::String& GetCertificatePathOnDevice() const{ return m_certificatePathOnDevice; }
+
+    /**
+     * <p>The location of the code-signing certificate on your device.</p>
+     */
+    inline bool CertificatePathOnDeviceHasBeenSet() const { return m_certificatePathOnDeviceHasBeenSet; }
 
     /**
      * <p>The location of the code-signing certificate on your device.</p>

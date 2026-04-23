@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The DNS hostname of the endpoint.</p>
      */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
+
+    /**
+     * <p>The DNS hostname of the endpoint.</p>
+     */
     inline void SetAddress(const Aws::String& value) { m_addressHasBeenSet = true; m_address = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The port number that applications should use to connect to the endpoint.</p>
      */
     inline int GetPort() const{ return m_port; }
+
+    /**
+     * <p>The port number that applications should use to connect to the endpoint.</p>
+     */
+    inline bool PortHasBeenSet() const { return m_portHasBeenSet; }
 
     /**
      * <p>The port number that applications should use to connect to the endpoint.</p>

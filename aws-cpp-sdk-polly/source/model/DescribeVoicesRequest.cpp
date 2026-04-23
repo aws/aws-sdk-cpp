@@ -36,7 +36,7 @@ DescribeVoicesRequest::DescribeVoicesRequest() :
 
 Aws::String DescribeVoicesRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void DescribeVoicesRequest::AddQueryStringParameters(URI& uri) const

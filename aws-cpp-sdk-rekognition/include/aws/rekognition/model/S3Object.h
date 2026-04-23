@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>Name of the S3 bucket.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>Name of the S3 bucket.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -96,6 +101,11 @@ namespace Model
     /**
      * <p>S3 object key name.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>S3 object key name.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>
      */
     inline const Aws::String& GetVersion() const{ return m_version; }
+
+    /**
+     * <p>If the bucket is versioning enabled, you can specify the object version. </p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>If the bucket is versioning enabled, you can specify the object version. </p>

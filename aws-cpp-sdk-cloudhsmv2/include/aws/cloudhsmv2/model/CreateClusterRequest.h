@@ -61,6 +61,15 @@ namespace Model
      * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
      * per Availability Zone.</p> </li> </ul>
      */
+    inline bool SubnetIdsHasBeenSet() const { return m_subnetIdsHasBeenSet; }
+
+    /**
+     * <p>The identifiers (IDs) of the subnets where you are creating the cluster. You
+     * must specify at least one subnet. If you specify multiple subnets, they must
+     * meet the following criteria:</p> <ul> <li> <p>All subnets must be in the same
+     * virtual private cloud (VPC).</p> </li> <li> <p>You can specify only one subnet
+     * per Availability Zone.</p> </li> </ul>
+     */
     inline void SetSubnetIds(const Aws::Vector<Aws::String>& value) { m_subnetIdsHasBeenSet = true; m_subnetIds = value; }
 
     /**
@@ -128,6 +137,12 @@ namespace Model
      * <p>The type of HSM to use in the cluster. Currently the only allowed value is
      * <code>hsm1.medium</code>.</p>
      */
+    inline bool HsmTypeHasBeenSet() const { return m_hsmTypeHasBeenSet; }
+
+    /**
+     * <p>The type of HSM to use in the cluster. Currently the only allowed value is
+     * <code>hsm1.medium</code>.</p>
+     */
     inline void SetHsmType(const Aws::String& value) { m_hsmTypeHasBeenSet = true; m_hsmType = value; }
 
     /**
@@ -167,6 +182,13 @@ namespace Model
      * backup ID, use <a>DescribeBackups</a>.</p>
      */
     inline const Aws::String& GetSourceBackupId() const{ return m_sourceBackupId; }
+
+    /**
+     * <p>The identifier (ID) of the cluster backup to restore. Use this value to
+     * restore the cluster from a backup instead of creating a new cluster. To find the
+     * backup ID, use <a>DescribeBackups</a>.</p>
+     */
+    inline bool SourceBackupIdHasBeenSet() const { return m_sourceBackupIdHasBeenSet; }
 
     /**
      * <p>The identifier (ID) of the cluster backup to restore. Use this value to

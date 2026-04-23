@@ -65,6 +65,12 @@ namespace Model
      * <p>Specify a max count rule to restrict the number of application versions that
      * are retained for an application.</p>
      */
+    inline bool MaxCountRuleHasBeenSet() const { return m_maxCountRuleHasBeenSet; }
+
+    /**
+     * <p>Specify a max count rule to restrict the number of application versions that
+     * are retained for an application.</p>
+     */
     inline void SetMaxCountRule(const MaxCountRule& value) { m_maxCountRuleHasBeenSet = true; m_maxCountRule = value; }
 
     /**
@@ -91,6 +97,12 @@ namespace Model
      * versions are retained for an application.</p>
      */
     inline const MaxAgeRule& GetMaxAgeRule() const{ return m_maxAgeRule; }
+
+    /**
+     * <p>Specify a max age rule to restrict the length of time that application
+     * versions are retained for an application.</p>
+     */
+    inline bool MaxAgeRuleHasBeenSet() const { return m_maxAgeRuleHasBeenSet; }
 
     /**
      * <p>Specify a max age rule to restrict the length of time that application

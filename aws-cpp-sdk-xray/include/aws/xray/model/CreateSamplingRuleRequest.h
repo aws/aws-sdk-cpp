@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The rule definition.</p>
      */
+    inline bool SamplingRuleHasBeenSet() const { return m_samplingRuleHasBeenSet; }
+
+    /**
+     * <p>The rule definition.</p>
+     */
     inline void SetSamplingRule(const SamplingRule& value) { m_samplingRuleHasBeenSet = true; m_samplingRule = value; }
 
     /**

@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the Maintenance Window execution that ran the task.</p>
      */
+    inline bool WindowExecutionIdHasBeenSet() const { return m_windowExecutionIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Maintenance Window execution that ran the task.</p>
+     */
     inline void SetWindowExecutionId(const Aws::String& value) { m_windowExecutionIdHasBeenSet = true; m_windowExecutionId = value; }
 
     /**
@@ -93,6 +98,12 @@ namespace Model
      * execution.</p>
      */
     inline const Aws::String& GetTaskExecutionId() const{ return m_taskExecutionId; }
+
+    /**
+     * <p>The ID of the specific task execution in the Maintenance Window
+     * execution.</p>
+     */
+    inline bool TaskExecutionIdHasBeenSet() const { return m_taskExecutionIdHasBeenSet; }
 
     /**
      * <p>The ID of the specific task execution in the Maintenance Window
@@ -139,6 +150,11 @@ namespace Model
     /**
      * <p>The ID of the task invocation.</p>
      */
+    inline bool InvocationIdHasBeenSet() const { return m_invocationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the task invocation.</p>
+     */
     inline void SetInvocationId(const Aws::String& value) { m_invocationIdHasBeenSet = true; m_invocationId = value; }
 
     /**
@@ -172,6 +188,12 @@ namespace Model
      * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
      */
     inline const Aws::String& GetExecutionId() const{ return m_executionId; }
+
+    /**
+     * <p>The ID of the action performed in the service that actually handled the task
+     * invocation. If the task type is RUN_COMMAND, this value is the command ID.</p>
+     */
+    inline bool ExecutionIdHasBeenSet() const { return m_executionIdHasBeenSet; }
 
     /**
      * <p>The ID of the action performed in the service that actually handled the task
@@ -218,6 +240,11 @@ namespace Model
     /**
      * <p>The task type.</p>
      */
+    inline bool TaskTypeHasBeenSet() const { return m_taskTypeHasBeenSet; }
+
+    /**
+     * <p>The task type.</p>
+     */
     inline void SetTaskType(const MaintenanceWindowTaskType& value) { m_taskTypeHasBeenSet = true; m_taskType = value; }
 
     /**
@@ -237,44 +264,42 @@ namespace Model
 
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline const Aws::String& GetParameters() const{ return m_parameters; }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
+     */
+    inline bool ParametersHasBeenSet() const { return m_parametersHasBeenSet; }
+
+    /**
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(const Aws::String& value) { m_parametersHasBeenSet = true; m_parameters = value; }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(Aws::String&& value) { m_parametersHasBeenSet = true; m_parameters = std::move(value); }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline void SetParameters(const char* value) { m_parametersHasBeenSet = true; m_parameters.assign(value); }
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(const Aws::String& value) { SetParameters(value); return *this;}
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(Aws::String&& value) { SetParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters that were provided for the invocation when it was
-     * executed.</p>
+     * <p>The parameters that were provided for the invocation when it was run.</p>
      */
     inline MaintenanceWindowExecutionTaskInvocationIdentity& WithParameters(const char* value) { SetParameters(value); return *this;}
 
@@ -283,6 +308,11 @@ namespace Model
      * <p>The status of the task invocation.</p>
      */
     inline const MaintenanceWindowExecutionStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the task invocation.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the task invocation.</p>
@@ -310,6 +340,12 @@ namespace Model
      * certain Status values. </p>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>The details explaining the status of the task invocation. Only available for
+     * certain Status values. </p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>The details explaining the status of the task invocation. Only available for
@@ -356,6 +392,11 @@ namespace Model
     /**
      * <p>The time the invocation started.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The time the invocation started.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -378,6 +419,11 @@ namespace Model
      * <p>The time the invocation finished.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The time the invocation finished.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The time the invocation finished.</p>
@@ -406,6 +452,13 @@ namespace Model
      * during the task invocation.</p>
      */
     inline const Aws::String& GetOwnerInformation() const{ return m_ownerInformation; }
+
+    /**
+     * <p>User-provided value that was specified when the target was registered with
+     * the Maintenance Window. This was also included in any CloudWatch events raised
+     * during the task invocation.</p>
+     */
+    inline bool OwnerInformationHasBeenSet() const { return m_ownerInformationHasBeenSet; }
 
     /**
      * <p>User-provided value that was specified when the target was registered with
@@ -455,6 +508,12 @@ namespace Model
      * performed for.</p>
      */
     inline const Aws::String& GetWindowTargetId() const{ return m_windowTargetId; }
+
+    /**
+     * <p>The ID of the target definition in this Maintenance Window the invocation was
+     * performed for.</p>
+     */
+    inline bool WindowTargetIdHasBeenSet() const { return m_windowTargetIdHasBeenSet; }
 
     /**
      * <p>The ID of the target definition in this Maintenance Window the invocation was

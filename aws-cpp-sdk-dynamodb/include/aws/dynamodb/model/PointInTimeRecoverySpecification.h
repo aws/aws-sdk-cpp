@@ -56,6 +56,12 @@ namespace Model
      * <p>Indicates whether point in time recovery is enabled (true) or disabled
      * (false) on the table.</p>
      */
+    inline bool PointInTimeRecoveryEnabledHasBeenSet() const { return m_pointInTimeRecoveryEnabledHasBeenSet; }
+
+    /**
+     * <p>Indicates whether point in time recovery is enabled (true) or disabled
+     * (false) on the table.</p>
+     */
     inline void SetPointInTimeRecoveryEnabled(bool value) { m_pointInTimeRecoveryEnabledHasBeenSet = true; m_pointInTimeRecoveryEnabled = value; }
 
     /**

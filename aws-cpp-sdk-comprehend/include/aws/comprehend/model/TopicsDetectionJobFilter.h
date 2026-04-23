@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p/>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -96,6 +101,12 @@ namespace Model
      * <p>Filters the list of topic detection jobs based on job status. Returns only
      * jobs with the specified status.</p>
      */
+    inline bool JobStatusHasBeenSet() const { return m_jobStatusHasBeenSet; }
+
+    /**
+     * <p>Filters the list of topic detection jobs based on job status. Returns only
+     * jobs with the specified status.</p>
+     */
     inline void SetJobStatus(const JobStatus& value) { m_jobStatusHasBeenSet = true; m_jobStatus = value; }
 
     /**
@@ -123,6 +134,13 @@ namespace Model
      * returned in descending order, newest to oldest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeBefore() const{ return m_submitTimeBefore; }
+
+    /**
+     * <p>Filters the list of jobs based on the time that the job was submitted for
+     * processing. Only returns jobs submitted before the specified time. Jobs are
+     * returned in descending order, newest to oldest.</p>
+     */
+    inline bool SubmitTimeBeforeHasBeenSet() const { return m_submitTimeBeforeHasBeenSet; }
 
     /**
      * <p>Filters the list of jobs based on the time that the job was submitted for
@@ -159,6 +177,13 @@ namespace Model
      * returned in ascending order, oldest to newest.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTimeAfter() const{ return m_submitTimeAfter; }
+
+    /**
+     * <p>Filters the list of jobs based on the time that the job was submitted for
+     * processing. Only returns jobs submitted after the specified time. Jobs are
+     * returned in ascending order, oldest to newest.</p>
+     */
+    inline bool SubmitTimeAfterHasBeenSet() const { return m_submitTimeAfterHasBeenSet; }
 
     /**
      * <p>Filters the list of jobs based on the time that the job was submitted for

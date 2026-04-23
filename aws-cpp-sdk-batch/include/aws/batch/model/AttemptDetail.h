@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Details about the container in this job attempt.</p>
      */
+    inline bool ContainerHasBeenSet() const { return m_containerHasBeenSet; }
+
+    /**
+     * <p>Details about the container in this job attempt.</p>
+     */
     inline void SetContainer(const AttemptContainerDetail& value) { m_containerHasBeenSet = true; m_container = value; }
 
     /**
@@ -75,21 +80,28 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
     inline long long GetStartedAt() const{ return m_startedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
+     * started (when the attempt transitioned from the <code>STARTING</code> state to
+     * the <code>RUNNING</code> state).</p>
+     */
+    inline bool StartedAtHasBeenSet() const { return m_startedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
     inline void SetStartedAt(long long value) { m_startedAtHasBeenSet = true; m_startedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * started (when the attempt transitioned from the <code>STARTING</code> state to
      * the <code>RUNNING</code> state).</p>
      */
@@ -97,21 +109,28 @@ namespace Model
 
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline long long GetStoppedAt() const{ return m_stoppedAt; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
+     * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
+     * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
+     */
+    inline bool StoppedAtHasBeenSet() const { return m_stoppedAtHasBeenSet; }
+
+    /**
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
     inline void SetStoppedAt(long long value) { m_stoppedAtHasBeenSet = true; m_stoppedAt = value; }
 
     /**
-     * <p>The Unix time stamp (in seconds and milliseconds) for when the attempt was
+     * <p>The Unix timestamp (in seconds and milliseconds) for when the attempt was
      * stopped (when the attempt transitioned from the <code>RUNNING</code> state to a
      * terminal state, such as <code>SUCCEEDED</code> or <code>FAILED</code>).</p>
      */
@@ -123,6 +142,12 @@ namespace Model
      * current status of the job attempt.</p>
      */
     inline const Aws::String& GetStatusReason() const{ return m_statusReason; }
+
+    /**
+     * <p>A short, human-readable string to provide additional details about the
+     * current status of the job attempt.</p>
+     */
+    inline bool StatusReasonHasBeenSet() const { return m_statusReasonHasBeenSet; }
 
     /**
      * <p>A short, human-readable string to provide additional details about the

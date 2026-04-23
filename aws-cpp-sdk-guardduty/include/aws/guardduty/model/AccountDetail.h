@@ -56,6 +56,11 @@ namespace Model
     /**
      * Member account ID.
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * Member account ID.
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * Member account's email address.
      */
     inline const Aws::String& GetEmail() const{ return m_email; }
+
+    /**
+     * Member account's email address.
+     */
+    inline bool EmailHasBeenSet() const { return m_emailHasBeenSet; }
 
     /**
      * Member account's email address.

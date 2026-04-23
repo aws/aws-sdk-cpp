@@ -59,6 +59,12 @@ namespace Model
      * <p>The clientToken portion of the clientId and clientToken pair used to verify
      * that the calling entity is allowed access to the job and its details.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The clientToken portion of the clientId and clientToken pair used to verify
+     * that the calling entity is allowed access to the job and its details.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
      * <p>The identifier used to identify the job in AWS CodePipeline.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The identifier used to identify the job in AWS CodePipeline.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The identifier used to identify the job in AWS CodePipeline.</p>

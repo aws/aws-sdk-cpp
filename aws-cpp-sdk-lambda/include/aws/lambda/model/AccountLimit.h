@@ -32,11 +32,8 @@ namespace Model
 {
 
   /**
-   * <p>Provides limits of code size and concurrency associated with the current
-   * account and region. For more information or to request a limit increase for
-   * concurrent executions, see <a
-   * href="http://docs.aws.amazon.com/lambda/latest/dg/limits.html">Lambda
-   * Limits</a>. </p><p><h3>See Also:</h3>   <a
+   * <p>Limits that are related to concurrency and code storage. All file and storage
+   * sizes are in bytes.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/lambda-2015-03-31/AccountLimit">AWS
    * API Reference</a></p>
    */
@@ -50,108 +47,122 @@ namespace Model
 
 
     /**
-     * <p>Maximum size, in bytes, of a code package you can upload per region. The
-     * default size is 75 GB. </p>
+     * <p>The amount of storage space that you can use for all deployment packages and
+     * layer archives.</p>
      */
     inline long long GetTotalCodeSize() const{ return m_totalCodeSize; }
 
     /**
-     * <p>Maximum size, in bytes, of a code package you can upload per region. The
-     * default size is 75 GB. </p>
+     * <p>The amount of storage space that you can use for all deployment packages and
+     * layer archives.</p>
+     */
+    inline bool TotalCodeSizeHasBeenSet() const { return m_totalCodeSizeHasBeenSet; }
+
+    /**
+     * <p>The amount of storage space that you can use for all deployment packages and
+     * layer archives.</p>
      */
     inline void SetTotalCodeSize(long long value) { m_totalCodeSizeHasBeenSet = true; m_totalCodeSize = value; }
 
     /**
-     * <p>Maximum size, in bytes, of a code package you can upload per region. The
-     * default size is 75 GB. </p>
+     * <p>The amount of storage space that you can use for all deployment packages and
+     * layer archives.</p>
      */
     inline AccountLimit& WithTotalCodeSize(long long value) { SetTotalCodeSize(value); return *this;}
 
 
     /**
-     * <p>Size, in bytes, of code/dependencies that you can zip into a deployment
-     * package (uncompressed zip/jar size) for uploading. The default limit is 250
-     * MB.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline long long GetCodeSizeUnzipped() const{ return m_codeSizeUnzipped; }
 
     /**
-     * <p>Size, in bytes, of code/dependencies that you can zip into a deployment
-     * package (uncompressed zip/jar size) for uploading. The default limit is 250
-     * MB.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
+     */
+    inline bool CodeSizeUnzippedHasBeenSet() const { return m_codeSizeUnzippedHasBeenSet; }
+
+    /**
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline void SetCodeSizeUnzipped(long long value) { m_codeSizeUnzippedHasBeenSet = true; m_codeSizeUnzipped = value; }
 
     /**
-     * <p>Size, in bytes, of code/dependencies that you can zip into a deployment
-     * package (uncompressed zip/jar size) for uploading. The default limit is 250
-     * MB.</p>
+     * <p>The maximum size of your function's code and layers when they're
+     * extracted.</p>
      */
     inline AccountLimit& WithCodeSizeUnzipped(long long value) { SetCodeSizeUnzipped(value); return *this;}
 
 
     /**
-     * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
-     * larger files. Default limit is 50 MB.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline long long GetCodeSizeZipped() const{ return m_codeSizeZipped; }
 
     /**
-     * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
-     * larger files. Default limit is 50 MB.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
+     */
+    inline bool CodeSizeZippedHasBeenSet() const { return m_codeSizeZippedHasBeenSet; }
+
+    /**
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline void SetCodeSizeZipped(long long value) { m_codeSizeZippedHasBeenSet = true; m_codeSizeZipped = value; }
 
     /**
-     * <p>Size, in bytes, of a single zipped code/dependencies package you can upload
-     * for your Lambda function(.zip/.jar file). Try using Amazon S3 for uploading
-     * larger files. Default limit is 50 MB.</p>
+     * <p>The maximum size of a deployment package when it's uploaded directly to AWS
+     * Lambda. Use Amazon S3 for larger files.</p>
      */
     inline AccountLimit& WithCodeSizeZipped(long long value) { SetCodeSizeZipped(value); return *this;}
 
 
     /**
-     * <p>Number of simultaneous executions of your function per region. The default
-     * limit is 1000.</p>
+     * <p>The maximum number of simultaneous function executions.</p>
      */
     inline int GetConcurrentExecutions() const{ return m_concurrentExecutions; }
 
     /**
-     * <p>Number of simultaneous executions of your function per region. The default
-     * limit is 1000.</p>
+     * <p>The maximum number of simultaneous function executions.</p>
+     */
+    inline bool ConcurrentExecutionsHasBeenSet() const { return m_concurrentExecutionsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of simultaneous function executions.</p>
      */
     inline void SetConcurrentExecutions(int value) { m_concurrentExecutionsHasBeenSet = true; m_concurrentExecutions = value; }
 
     /**
-     * <p>Number of simultaneous executions of your function per region. The default
-     * limit is 1000.</p>
+     * <p>The maximum number of simultaneous function executions.</p>
      */
     inline AccountLimit& WithConcurrentExecutions(int value) { SetConcurrentExecutions(value); return *this;}
 
 
     /**
-     * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline int GetUnreservedConcurrentExecutions() const{ return m_unreservedConcurrentExecutions; }
 
     /**
-     * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
+     */
+    inline bool UnreservedConcurrentExecutionsHasBeenSet() const { return m_unreservedConcurrentExecutionsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline void SetUnreservedConcurrentExecutions(int value) { m_unreservedConcurrentExecutionsHasBeenSet = true; m_unreservedConcurrentExecutions = value; }
 
     /**
-     * <p>The number of concurrent executions available to functions that do not have
-     * concurrency limits set. For more information, see <a
-     * href="http://docs.aws.amazon.com/lambda/latest/dg/concurrent-executions.html">Managing
-     * Concurrency</a>.</p>
+     * <p>The maximum number of simultaneous function executions, minus the capacity
+     * that's reserved for individual functions with <a>PutFunctionConcurrency</a>.</p>
      */
     inline AccountLimit& WithUnreservedConcurrentExecutions(int value) { SetUnreservedConcurrentExecutions(value); return *this;}
 

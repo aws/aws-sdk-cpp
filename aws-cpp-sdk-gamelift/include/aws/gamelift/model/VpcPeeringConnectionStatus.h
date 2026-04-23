@@ -37,7 +37,7 @@ namespace Model
    * <p>Represents status information for a VPC peering connection. Status is
    * associated with a <a>VpcPeeringConnection</a> object. Status codes and messages
    * are provided from EC2 (see <a
-   * href="http://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>).
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpcPeeringConnectionStateReason.html">VpcPeeringConnectionStateReason</a>).
    * Connection status information is also communicated as a fleet
    * <a>Event</a>.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/VpcPeeringConnectionStatus">AWS
@@ -56,6 +56,11 @@ namespace Model
      * <p>Code indicating the status of a VPC peering connection.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
+
+    /**
+     * <p>Code indicating the status of a VPC peering connection.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
 
     /**
      * <p>Code indicating the status of a VPC peering connection.</p>
@@ -92,6 +97,11 @@ namespace Model
      * <p>Additional messaging associated with the connection status. </p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>Additional messaging associated with the connection status. </p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>Additional messaging associated with the connection status. </p>

@@ -31,4 +31,10 @@ public class C2jOperation {
     private List<C2jError> errors;
     private String documentation;
     private boolean deprecated;
+    // For HostPrefixInjection
+    private C2jEndpoint endpoint; // endpoint trait
+
+    // For Cellular Request Routing
+    private boolean endpointoperation; // endpointoperation trait
+    private C2jEndpointDiscovery endpointdiscovery; //endpointdiscovery trait
 }

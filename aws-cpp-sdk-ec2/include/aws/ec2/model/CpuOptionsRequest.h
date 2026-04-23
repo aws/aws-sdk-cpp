@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The number of CPU cores for the instance.</p>
      */
+    inline bool CoreCountHasBeenSet() const { return m_coreCountHasBeenSet; }
+
+    /**
+     * <p>The number of CPU cores for the instance.</p>
+     */
     inline void SetCoreCount(int value) { m_coreCountHasBeenSet = true; m_coreCount = value; }
 
     /**
@@ -70,6 +75,13 @@ namespace Model
      * specify the default value of <code>2</code>.</p>
      */
     inline int GetThreadsPerCore() const{ return m_threadsPerCore; }
+
+    /**
+     * <p>The number of threads per CPU core. To disable Intel Hyper-Threading
+     * Technology for the instance, specify a value of <code>1</code>. Otherwise,
+     * specify the default value of <code>2</code>.</p>
+     */
+    inline bool ThreadsPerCoreHasBeenSet() const { return m_threadsPerCoreHasBeenSet; }
 
     /**
      * <p>The number of threads per CPU core. To disable Intel Hyper-Threading

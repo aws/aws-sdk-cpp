@@ -49,7 +49,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -58,7 +58,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
+    inline bool PolicyArnHasBeenSet() const { return m_policyArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the managed policy that you want
+     * information about.</p> <p>For more information about ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -67,7 +76,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -76,7 +85,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -85,7 +94,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -94,7 +103,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -103,7 +112,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the managed policy that you want
      * information about.</p> <p>For more information about ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -111,65 +120,74 @@ namespace Model
 
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
+
+    /**
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline void SetVersionId(const Aws::String& value) { m_versionIdHasBeenSet = true; m_versionId = value; }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline void SetVersionId(Aws::String&& value) { m_versionIdHasBeenSet = true; m_versionId = std::move(value); }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline void SetVersionId(const char* value) { m_versionIdHasBeenSet = true; m_versionId.assign(value); }
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(const Aws::String& value) { SetVersionId(value); return *this;}
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(Aws::String&& value) { SetVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows (per
-     * its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a string of
-     * characters that consists of the lowercase letter 'v' followed by one or two
-     * digits, and optionally followed by a period '.' and a string of letters and
-     * digits.</p>
+     * <p>Identifies the policy version to retrieve.</p> <p>This parameter allows
+     * (through its <a href="http://wikipedia.org/wiki/regex">regex pattern</a>) a
+     * string of characters that consists of the lowercase letter 'v' followed by one
+     * or two digits, and optionally followed by a period '.' and a string of letters
+     * and digits.</p>
      */
     inline GetPolicyVersionRequest& WithVersionId(const char* value) { SetVersionId(value); return *this;}
 

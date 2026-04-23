@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
      */
+    inline bool UserPoolArnHasBeenSet() const { return m_userPoolArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon Cognito user pool.</p>
+     */
     inline void SetUserPoolArn(const Aws::String& value) { m_userPoolArnHasBeenSet = true; m_userPoolArn = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The ID of the Amazon Cognito user pool client.</p>
      */
     inline const Aws::String& GetUserPoolClientId() const{ return m_userPoolClientId; }
+
+    /**
+     * <p>The ID of the Amazon Cognito user pool client.</p>
+     */
+    inline bool UserPoolClientIdHasBeenSet() const { return m_userPoolClientIdHasBeenSet; }
 
     /**
      * <p>The ID of the Amazon Cognito user pool client.</p>
@@ -129,6 +139,12 @@ namespace Model
      * pool.</p>
      */
     inline const Aws::String& GetUserPoolDomain() const{ return m_userPoolDomain; }
+
+    /**
+     * <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user
+     * pool.</p>
+     */
+    inline bool UserPoolDomainHasBeenSet() const { return m_userPoolDomainHasBeenSet; }
 
     /**
      * <p>The domain prefix or fully-qualified domain name of the Amazon Cognito user
@@ -177,6 +193,12 @@ namespace Model
      * <p>The name of the cookie used to maintain session information. The default is
      * AWSELBAuthSessionCookie.</p>
      */
+    inline bool SessionCookieNameHasBeenSet() const { return m_sessionCookieNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cookie used to maintain session information. The default is
+     * AWSELBAuthSessionCookie.</p>
+     */
     inline void SetSessionCookieName(const Aws::String& value) { m_sessionCookieNameHasBeenSet = true; m_sessionCookieName = value; }
 
     /**
@@ -216,6 +238,13 @@ namespace Model
      * how to separate multiple values, see the documentation for your IdP.</p>
      */
     inline const Aws::String& GetScope() const{ return m_scope; }
+
+    /**
+     * <p>The set of user claims to be requested from the IdP. The default is
+     * <code>openid</code>.</p> <p>To verify which scope values your IdP supports and
+     * how to separate multiple values, see the documentation for your IdP.</p>
+     */
+    inline bool ScopeHasBeenSet() const { return m_scopeHasBeenSet; }
 
     /**
      * <p>The set of user claims to be requested from the IdP. The default is
@@ -270,6 +299,12 @@ namespace Model
      * <p>The maximum duration of the authentication session, in seconds. The default
      * is 604800 seconds (7 days).</p>
      */
+    inline bool SessionTimeoutHasBeenSet() const { return m_sessionTimeoutHasBeenSet; }
+
+    /**
+     * <p>The maximum duration of the authentication session, in seconds. The default
+     * is 604800 seconds (7 days).</p>
+     */
     inline void SetSessionTimeout(long long value) { m_sessionTimeoutHasBeenSet = true; m_sessionTimeout = value; }
 
     /**
@@ -284,6 +319,12 @@ namespace Model
      * authorization endpoint.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetAuthenticationRequestExtraParams() const{ return m_authenticationRequestExtraParams; }
+
+    /**
+     * <p>The query parameters (up to 10) to include in the redirect request to the
+     * authorization endpoint.</p>
+     */
+    inline bool AuthenticationRequestExtraParamsHasBeenSet() const { return m_authenticationRequestExtraParamsHasBeenSet; }
 
     /**
      * <p>The query parameters (up to 10) to include in the redirect request to the
@@ -360,6 +401,15 @@ namespace Model
      * authorization endpoint. This is the default value.</p> </li> </ul>
      */
     inline const AuthenticateCognitoActionConditionalBehaviorEnum& GetOnUnauthenticatedRequest() const{ return m_onUnauthenticatedRequest; }
+
+    /**
+     * <p>The behavior if the user is not authenticated. The following are possible
+     * values:</p> <ul> <li> <p>deny<code/> - Return an HTTP 401 Unauthorized
+     * error.</p> </li> <li> <p>allow<code/> - Allow the request to be forwarded to the
+     * target.</p> </li> <li> <p>authenticate<code/> - Redirect the request to the IdP
+     * authorization endpoint. This is the default value.</p> </li> </ul>
+     */
+    inline bool OnUnauthenticatedRequestHasBeenSet() const { return m_onUnauthenticatedRequestHasBeenSet; }
 
     /**
      * <p>The behavior if the user is not authenticated. The following are possible

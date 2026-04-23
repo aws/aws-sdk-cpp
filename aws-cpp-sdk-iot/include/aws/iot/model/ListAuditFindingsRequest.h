@@ -54,6 +54,12 @@ namespace Model
      * <p>A filter to limit results to the audit with the specified ID. You must
      * specify either the taskId or the startTime and endTime, but not both.</p>
      */
+    inline bool TaskIdHasBeenSet() const { return m_taskIdHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to the audit with the specified ID. You must
+     * specify either the taskId or the startTime and endTime, but not both.</p>
+     */
     inline void SetTaskId(const Aws::String& value) { m_taskIdHasBeenSet = true; m_taskId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>A filter to limit results to the findings for the specified audit check.</p>
      */
+    inline bool CheckNameHasBeenSet() const { return m_checkNameHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to the findings for the specified audit check.</p>
+     */
     inline void SetCheckName(const Aws::String& value) { m_checkNameHasBeenSet = true; m_checkName = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>Information identifying the non-compliant resource.</p>
      */
+    inline bool ResourceIdentifierHasBeenSet() const { return m_resourceIdentifierHasBeenSet; }
+
+    /**
+     * <p>Information identifying the non-compliant resource.</p>
+     */
     inline void SetResourceIdentifier(const ResourceIdentifier& value) { m_resourceIdentifierHasBeenSet = true; m_resourceIdentifier = value; }
 
     /**
@@ -157,6 +173,11 @@ namespace Model
     /**
      * <p>The maximum number of results to return at one time. The default is 25.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return at one time. The default is 25.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -169,6 +190,11 @@ namespace Model
      * <p>The token for the next set of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token for the next set of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token for the next set of results.</p>
@@ -211,6 +237,12 @@ namespace Model
      * <p>A filter to limit results to those found after the specified time. You must
      * specify either the startTime and endTime or the taskId, but not both.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>A filter to limit results to those found after the specified time. You must
+     * specify either the startTime and endTime or the taskId, but not both.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -237,6 +269,12 @@ namespace Model
      * specify either the startTime and endTime or the taskId, but not both.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>A filter to limit results to those found before the specified time. You must
+     * specify either the startTime and endTime or the taskId, but not both.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>A filter to limit results to those found before the specified time. You must

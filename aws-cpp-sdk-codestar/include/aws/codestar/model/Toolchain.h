@@ -63,6 +63,13 @@ namespace Model
      * project request is stored. AWS CodeStar retrieves the file during project
      * creation.</p>
      */
+    inline bool SourceHasBeenSet() const { return m_sourceHasBeenSet; }
+
+    /**
+     * <p>The Amazon S3 location where the toolchain template file provided with the
+     * project request is stored. AWS CodeStar retrieves the file during project
+     * creation.</p>
+     */
     inline void SetSource(const ToolchainSource& value) { m_sourceHasBeenSet = true; m_source = value; }
 
     /**
@@ -92,6 +99,12 @@ namespace Model
      * during stack provisioning.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The service role ARN for AWS CodeStar to use for the toolchain template
+     * during stack provisioning.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The service role ARN for AWS CodeStar to use for the toolchain template
@@ -135,6 +148,12 @@ namespace Model
      * during stack provisioning, if any.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStackParameters() const{ return m_stackParameters; }
+
+    /**
+     * <p>The list of parameter overrides to be passed into the toolchain template
+     * during stack provisioning, if any.</p>
+     */
+    inline bool StackParametersHasBeenSet() const { return m_stackParametersHasBeenSet; }
 
     /**
      * <p>The list of parameter overrides to be passed into the toolchain template

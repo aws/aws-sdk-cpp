@@ -43,7 +43,7 @@ namespace Model
 
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -55,7 +55,19 @@ namespace Model
     inline const Aws::String& GetFunctionName() const{ return m_functionName; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
+     * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
+     * <li> <p> <b>Function ARN</b> -
+     * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
+     * </li> <li> <p> <b>Partial ARN</b> -
+     * <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length
+     * constraint applies only to the full ARN. If you specify only the function name,
+     * it is limited to 64 characters in length.</p>
+     */
+    inline bool FunctionNameHasBeenSet() const { return m_functionNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -67,7 +79,7 @@ namespace Model
     inline void SetFunctionName(const Aws::String& value) { m_functionNameHasBeenSet = true; m_functionName = value; }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -79,7 +91,7 @@ namespace Model
     inline void SetFunctionName(Aws::String&& value) { m_functionNameHasBeenSet = true; m_functionName = std::move(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -91,7 +103,7 @@ namespace Model
     inline void SetFunctionName(const char* value) { m_functionNameHasBeenSet = true; m_functionName.assign(value); }
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -103,7 +115,7 @@ namespace Model
     inline GetAliasRequest& WithFunctionName(const Aws::String& value) { SetFunctionName(value); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -115,7 +127,7 @@ namespace Model
     inline GetAliasRequest& WithFunctionName(Aws::String&& value) { SetFunctionName(std::move(value)); return *this;}
 
     /**
-     * <p>The name of the lambda function.</p> <p class="title"> <b>Name formats</b>
+     * <p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b>
      * </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li>
      * <li> <p> <b>Function ARN</b> -
      * <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p>
@@ -128,37 +140,42 @@ namespace Model
 
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(Aws::String&& value) { m_nameHasBeenSet = true; m_name = std::move(value); }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline void SetName(const char* value) { m_nameHasBeenSet = true; m_name.assign(value); }
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(const Aws::String& value) { SetName(value); return *this;}
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(Aws::String&& value) { SetName(std::move(value)); return *this;}
 
     /**
-     * <p>Name of the alias for which you want to retrieve information.</p>
+     * <p>The name of the alias.</p>
      */
     inline GetAliasRequest& WithName(const char* value) { SetName(value); return *this;}
 

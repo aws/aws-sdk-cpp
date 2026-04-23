@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetExpressionName() const{ return m_expressionName; }
 
     
+    inline bool ExpressionNameHasBeenSet() const { return m_expressionNameHasBeenSet; }
+
+    
     inline void SetExpressionName(const Aws::String& value) { m_expressionNameHasBeenSet = true; m_expressionName = value; }
 
     
@@ -75,6 +78,9 @@ namespace Model
 
     
     inline const Aws::String& GetExpressionValue() const{ return m_expressionValue; }
+
+    
+    inline bool ExpressionValueHasBeenSet() const { return m_expressionValueHasBeenSet; }
 
     
     inline void SetExpressionValue(const Aws::String& value) { m_expressionValueHasBeenSet = true; m_expressionValue = value; }

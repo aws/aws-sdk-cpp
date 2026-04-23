@@ -54,6 +54,12 @@ namespace Model
      * <p>The ID of the resolver rule association that you want to get information
      * about.</p>
      */
+    inline bool ResolverRuleAssociationIdHasBeenSet() const { return m_resolverRuleAssociationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the resolver rule association that you want to get information
+     * about.</p>
+     */
     inline void SetResolverRuleAssociationId(const Aws::String& value) { m_resolverRuleAssociationIdHasBeenSet = true; m_resolverRuleAssociationId = value; }
 
     /**

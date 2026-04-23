@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The URL of the upload.</p>
      */
+    inline bool UploadUrlHasBeenSet() const { return m_uploadUrlHasBeenSet; }
+
+    /**
+     * <p>The URL of the upload.</p>
+     */
     inline void SetUploadUrl(const Aws::String& value) { m_uploadUrlHasBeenSet = true; m_uploadUrl = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The signed headers.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetSignedHeaders() const{ return m_signedHeaders; }
+
+    /**
+     * <p>The signed headers.</p>
+     */
+    inline bool SignedHeadersHasBeenSet() const { return m_signedHeadersHasBeenSet; }
 
     /**
      * <p>The signed headers.</p>

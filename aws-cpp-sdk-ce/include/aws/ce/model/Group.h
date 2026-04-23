@@ -37,7 +37,7 @@ namespace Model
 {
 
   /**
-   * <p>One level of grouped data within the results.</p><p><h3>See Also:</h3>   <a
+   * <p>One level of grouped data in the results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/Group">AWS API
    * Reference</a></p>
    */
@@ -54,6 +54,11 @@ namespace Model
      * <p>The keys that are included in this group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetKeys() const{ return m_keys; }
+
+    /**
+     * <p>The keys that are included in this group.</p>
+     */
+    inline bool KeysHasBeenSet() const { return m_keysHasBeenSet; }
 
     /**
      * <p>The keys that are included in this group.</p>
@@ -95,6 +100,11 @@ namespace Model
      * <p>The metrics that are included in this group.</p>
      */
     inline const Aws::Map<Aws::String, MetricValue>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>The metrics that are included in this group.</p>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>The metrics that are included in this group.</p>

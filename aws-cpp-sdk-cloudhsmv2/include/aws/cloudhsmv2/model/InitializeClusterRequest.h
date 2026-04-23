@@ -54,6 +54,12 @@ namespace Model
      * <p>The identifier (ID) of the cluster that you are claiming. To find the cluster
      * ID, use <a>DescribeClusters</a>.</p>
      */
+    inline bool ClusterIdHasBeenSet() const { return m_clusterIdHasBeenSet; }
+
+    /**
+     * <p>The identifier (ID) of the cluster that you are claiming. To find the cluster
+     * ID, use <a>DescribeClusters</a>.</p>
+     */
     inline void SetClusterId(const Aws::String& value) { m_clusterIdHasBeenSet = true; m_clusterId = value; }
 
     /**
@@ -93,6 +99,13 @@ namespace Model
      * characters.</p>
      */
     inline const Aws::String& GetSignedCert() const{ return m_signedCert; }
+
+    /**
+     * <p>The cluster certificate issued (signed) by your issuing certificate authority
+     * (CA). The certificate must be in PEM format and can contain a maximum of 5000
+     * characters.</p>
+     */
+    inline bool SignedCertHasBeenSet() const { return m_signedCertHasBeenSet; }
 
     /**
      * <p>The cluster certificate issued (signed) by your issuing certificate authority
@@ -145,6 +158,15 @@ namespace Model
      * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
      */
     inline const Aws::String& GetTrustAnchor() const{ return m_trustAnchor; }
+
+    /**
+     * <p>The issuing certificate of the issuing certificate authority (CA) that issued
+     * (signed) the cluster certificate. This can be a root (self-signed) certificate
+     * or a certificate chain that begins with the certificate that issued the cluster
+     * certificate and ends with a root certificate. The certificate or certificate
+     * chain must be in PEM format and can contain a maximum of 5000 characters.</p>
+     */
+    inline bool TrustAnchorHasBeenSet() const { return m_trustAnchorHasBeenSet; }
 
     /**
      * <p>The issuing certificate of the issuing certificate authority (CA) that issued

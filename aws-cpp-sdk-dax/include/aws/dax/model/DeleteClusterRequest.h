@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the cluster to be deleted.</p>
      */
+    inline bool ClusterNameHasBeenSet() const { return m_clusterNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster to be deleted.</p>
+     */
     inline void SetClusterName(const Aws::String& value) { m_clusterNameHasBeenSet = true; m_clusterName = value; }
 
     /**

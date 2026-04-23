@@ -29,7 +29,7 @@ ReadPipelineRequest::ReadPipelineRequest() :
 
 Aws::String ReadPipelineRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

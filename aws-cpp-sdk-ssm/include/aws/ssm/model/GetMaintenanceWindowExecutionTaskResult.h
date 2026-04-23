@@ -128,105 +128,105 @@ namespace Model
 
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline const Aws::String& GetTaskArn() const{ return m_taskArn; }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(const Aws::String& value) { m_taskArn = value; }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(Aws::String&& value) { m_taskArn = std::move(value); }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline void SetTaskArn(const char* value) { m_taskArn.assign(value); }
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const Aws::String& value) { SetTaskArn(value); return *this;}
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(Aws::String&& value) { SetTaskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The ARN of the executed task.</p>
+     * <p>The ARN of the task that ran.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskArn(const char* value) { SetTaskArn(value); return *this;}
 
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline void SetServiceRole(const Aws::String& value) { m_serviceRole = value; }
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline void SetServiceRole(Aws::String&& value) { m_serviceRole = std::move(value); }
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline void SetServiceRole(const char* value) { m_serviceRole.assign(value); }
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(const Aws::String& value) { SetServiceRole(value); return *this;}
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(Aws::String&& value) { SetServiceRole(std::move(value)); return *this;}
 
     /**
-     * <p>The role that was assumed when executing the task.</p>
+     * <p>The role that was assumed when running the task.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithServiceRole(const char* value) { SetServiceRole(value); return *this;}
 
 
     /**
-     * <p>The type of task executed.</p>
+     * <p>The type of task that was run.</p>
      */
     inline const MaintenanceWindowTaskType& GetType() const{ return m_type; }
 
     /**
-     * <p>The type of task executed.</p>
+     * <p>The type of task that was run.</p>
      */
     inline void SetType(const MaintenanceWindowTaskType& value) { m_type = value; }
 
     /**
-     * <p>The type of task executed.</p>
+     * <p>The type of task that was run.</p>
      */
     inline void SetType(MaintenanceWindowTaskType&& value) { m_type = std::move(value); }
 
     /**
-     * <p>The type of task executed.</p>
+     * <p>The type of task that was run.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithType(const MaintenanceWindowTaskType& value) { SetType(value); return *this;}
 
     /**
-     * <p>The type of task executed.</p>
+     * <p>The type of task that was run.</p>
      */
     inline GetMaintenanceWindowExecutionTaskResult& WithType(MaintenanceWindowTaskType&& value) { SetType(std::move(value)); return *this;}
 
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -239,7 +239,7 @@ namespace Model
     inline const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& GetTaskParameters() const{ return m_taskParameters; }
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -252,7 +252,7 @@ namespace Model
     inline void SetTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { m_taskParameters = value; }
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -265,7 +265,7 @@ namespace Model
     inline void SetTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { m_taskParameters = std::move(value); }
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -278,7 +278,7 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(const Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>& value) { SetTaskParameters(value); return *this;}
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -291,7 +291,7 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskResult& WithTaskParameters(Aws::Vector<Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>>&& value) { SetTaskParameters(std::move(value)); return *this;}
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how
@@ -304,7 +304,7 @@ namespace Model
     inline GetMaintenanceWindowExecutionTaskResult& AddTaskParameters(const Aws::Map<Aws::String, MaintenanceWindowTaskParameterValueExpression>& value) { m_taskParameters.push_back(value); return *this; }
 
     /**
-     * <p>The parameters passed to the task when it was executed.</p> <note> <p>
+     * <p>The parameters passed to the task when it was run.</p> <note> <p>
      * <code>TaskParameters</code> has been deprecated. To specify parameters to pass
      * to a task when it runs, instead use the <code>Parameters</code> option in the
      * <code>TaskInvocationParameters</code> structure. For information about how

@@ -54,6 +54,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
      * specified by the lifecycle policy.</p>
      */
+    inline bool ExecutionRoleArnHasBeenSet() const { return m_executionRoleArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role used to run the operations
+     * specified by the lifecycle policy.</p>
+     */
     inline void SetExecutionRoleArn(const Aws::String& value) { m_executionRoleArnHasBeenSet = true; m_executionRoleArn = value; }
 
     /**
@@ -92,6 +98,12 @@ namespace Model
      * supported.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
+     * supported.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are
@@ -138,6 +150,11 @@ namespace Model
     /**
      * <p>The desired activation state of the lifecycle policy after creation.</p>
      */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+
+    /**
+     * <p>The desired activation state of the lifecycle policy after creation.</p>
+     */
     inline void SetState(const SettablePolicyStateValues& value) { m_stateHasBeenSet = true; m_state = value; }
 
     /**
@@ -161,6 +178,12 @@ namespace Model
      * be re-used across lifecycle policies.</p>
      */
     inline const PolicyDetails& GetPolicyDetails() const{ return m_policyDetails; }
+
+    /**
+     * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot
+     * be re-used across lifecycle policies.</p>
+     */
+    inline bool PolicyDetailsHasBeenSet() const { return m_policyDetailsHasBeenSet; }
 
     /**
      * <p>The configuration details of the lifecycle policy.</p> <p>Target tags cannot

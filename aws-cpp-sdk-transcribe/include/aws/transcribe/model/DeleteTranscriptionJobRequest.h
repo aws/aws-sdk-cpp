@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the transcription job to be deleted.</p>
      */
+    inline bool TranscriptionJobNameHasBeenSet() const { return m_transcriptionJobNameHasBeenSet; }
+
+    /**
+     * <p>The name of the transcription job to be deleted.</p>
+     */
     inline void SetTranscriptionJobName(const Aws::String& value) { m_transcriptionJobNameHasBeenSet = true; m_transcriptionJobName = value; }
 
     /**

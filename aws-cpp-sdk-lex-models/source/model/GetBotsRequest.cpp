@@ -35,7 +35,7 @@ GetBotsRequest::GetBotsRequest() :
 
 Aws::String GetBotsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetBotsRequest::AddQueryStringParameters(URI& uri) const

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The exit code to return upon completion.</p>
      */
+    inline bool ExitCodeHasBeenSet() const { return m_exitCodeHasBeenSet; }
+
+    /**
+     * <p>The exit code to return upon completion.</p>
+     */
     inline void SetExitCode(int value) { m_exitCodeHasBeenSet = true; m_exitCode = value; }
 
     /**
@@ -69,6 +74,12 @@ namespace Model
      * details about a running or stopped container.</p>
      */
     inline const Aws::String& GetReason() const{ return m_reason; }
+
+    /**
+     * <p>A short (255 max characters) human-readable string to provide additional
+     * details about a running or stopped container.</p>
+     */
+    inline bool ReasonHasBeenSet() const { return m_reasonHasBeenSet; }
 
     /**
      * <p>A short (255 max characters) human-readable string to provide additional

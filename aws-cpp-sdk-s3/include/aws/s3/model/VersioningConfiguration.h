@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/VersioningConfiguration">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API VersioningConfiguration
   {
   public:
@@ -50,6 +55,14 @@ namespace Model
      * returned.</p>
      */
     inline const MFADelete& GetMFADelete() const{ return m_mFADelete; }
+
+    /**
+     * <p>Specifies whether MFA delete is enabled in the bucket versioning
+     * configuration. This element is only returned if the bucket has been configured
+     * with MFA delete. If the bucket has never been so configured, this element is not
+     * returned.</p>
+     */
+    inline bool MFADeleteHasBeenSet() const { return m_mFADeleteHasBeenSet; }
 
     /**
      * <p>Specifies whether MFA delete is enabled in the bucket versioning
@@ -88,6 +101,11 @@ namespace Model
      * <p>The versioning state of the bucket.</p>
      */
     inline const BucketVersioningStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The versioning state of the bucket.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The versioning state of the bucket.</p>

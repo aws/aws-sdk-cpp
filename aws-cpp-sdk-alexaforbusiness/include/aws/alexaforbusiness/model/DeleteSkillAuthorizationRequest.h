@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique identifier of a skill.</p>
      */
+    inline bool SkillIdHasBeenSet() const { return m_skillIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier of a skill.</p>
+     */
     inline void SetSkillId(const Aws::String& value) { m_skillIdHasBeenSet = true; m_skillId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The room that the skill is authorized for.</p>
      */
     inline const Aws::String& GetRoomArn() const{ return m_roomArn; }
+
+    /**
+     * <p>The room that the skill is authorized for.</p>
+     */
+    inline bool RoomArnHasBeenSet() const { return m_roomArnHasBeenSet; }
 
     /**
      * <p>The room that the skill is authorized for.</p>

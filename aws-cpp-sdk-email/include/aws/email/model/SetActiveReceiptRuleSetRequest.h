@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the receipt rule set to make active. Setting this value to null
      * disables all email receiving.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set to make active. Setting this value to null
+     * disables all email receiving.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**

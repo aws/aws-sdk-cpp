@@ -65,6 +65,17 @@ namespace Model
      * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot
      * Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the slot type. The name is <i>not</i> case sensitive. </p> <p>The
+     * name can't match a built-in slot type name, or a built-in slot type name with
+     * "AMAZON." removed. For example, because there is a built-in slot type called
+     * <code>AMAZON.DATE</code>, you can't create a custom slot type called
+     * <code>DATE</code>.</p> <p>For a list of built-in slot types, see <a
+     * href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot
+     * Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -131,6 +142,11 @@ namespace Model
     /**
      * <p>A description of the slot type.</p>
      */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+
+    /**
+     * <p>A description of the slot type.</p>
+     */
     inline void SetDescription(const Aws::String& value) { m_descriptionHasBeenSet = true; m_description = value; }
 
     /**
@@ -172,6 +188,20 @@ namespace Model
      * to use. </p>
      */
     inline const Aws::Vector<EnumerationValue>& GetEnumerationValues() const{ return m_enumerationValues; }
+
+    /**
+     * <p>A list of <code>EnumerationValue</code> objects that defines the values that
+     * the slot type can take. Each value can have a list of <code>synonyms</code>,
+     * which are additional values that help train the machine learning model about the
+     * values that it resolves for a slot. </p> <p>When Amazon Lex resolves a slot
+     * value, it generates a resolution list that contains up to five possible values
+     * for the slot. If you are using a Lambda function, this resolution list is passed
+     * to the function. If you are not using a Lambda function you can choose to return
+     * the value that the user entered or the first value in the resolution list as the
+     * slot value. The <code>valueSelectionStrategy</code> field indicates the option
+     * to use. </p>
+     */
+    inline bool EnumerationValuesHasBeenSet() const { return m_enumerationValuesHasBeenSet; }
 
     /**
      * <p>A list of <code>EnumerationValue</code> objects that defines the values that
@@ -280,6 +310,18 @@ namespace Model
      * field, or if the checksum does not match the <code>$LATEST</code> version, you
      * get a <code>PreconditionFailedException</code> exception.</p>
      */
+    inline bool ChecksumHasBeenSet() const { return m_checksumHasBeenSet; }
+
+    /**
+     * <p>Identifies a specific revision of the <code>$LATEST</code> version.</p>
+     * <p>When you create a new slot type, leave the <code>checksum</code> field blank.
+     * If you specify a checksum you get a <code>BadRequestException</code>
+     * exception.</p> <p>When you want to update a slot type, set the
+     * <code>checksum</code> field to the checksum of the most recent revision of the
+     * <code>$LATEST</code> version. If you don't specify the <code> checksum</code>
+     * field, or if the checksum does not match the <code>$LATEST</code> version, you
+     * get a <code>PreconditionFailedException</code> exception.</p>
+     */
     inline void SetChecksum(const Aws::String& value) { m_checksumHasBeenSet = true; m_checksum = value; }
 
     /**
@@ -367,6 +409,19 @@ namespace Model
      * <code>valueSelectionStrategy</code>, the default is
      * <code>ORIGINAL_VALUE</code>.</p>
      */
+    inline bool ValueSelectionStrategyHasBeenSet() const { return m_valueSelectionStrategyHasBeenSet; }
+
+    /**
+     * <p>Determines the slot resolution strategy that Amazon Lex uses to return slot
+     * type values. The field can be set to one of the following values:</p> <ul> <li>
+     * <p> <code>ORIGINAL_VALUE</code> - Returns the value entered by the user, if the
+     * user value is similar to the slot value.</p> </li> <li> <p>
+     * <code>TOP_RESOLUTION</code> - If there is a resolution list for the slot, return
+     * the first value in the resolution list as the slot type value. If there is no
+     * resolution list, null is returned.</p> </li> </ul> <p>If you don't specify the
+     * <code>valueSelectionStrategy</code>, the default is
+     * <code>ORIGINAL_VALUE</code>.</p>
+     */
     inline void SetValueSelectionStrategy(const SlotValueSelectionStrategy& value) { m_valueSelectionStrategyHasBeenSet = true; m_valueSelectionStrategy = value; }
 
     /**
@@ -411,6 +466,9 @@ namespace Model
 
     
     inline bool GetCreateVersion() const{ return m_createVersion; }
+
+    
+    inline bool CreateVersionHasBeenSet() const { return m_createVersionHasBeenSet; }
 
     
     inline void SetCreateVersion(bool value) { m_createVersionHasBeenSet = true; m_createVersion = value; }

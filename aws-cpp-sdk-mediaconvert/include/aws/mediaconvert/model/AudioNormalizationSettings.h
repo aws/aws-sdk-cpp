@@ -50,35 +50,77 @@ namespace Model
     Aws::Utils::Json::JsonValue Jsonize() const;
 
 
-    
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
     inline const AudioNormalizationAlgorithm& GetAlgorithm() const{ return m_algorithm; }
 
-    
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
+    inline bool AlgorithmHasBeenSet() const { return m_algorithmHasBeenSet; }
+
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
     inline void SetAlgorithm(const AudioNormalizationAlgorithm& value) { m_algorithmHasBeenSet = true; m_algorithm = value; }
 
-    
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
     inline void SetAlgorithm(AudioNormalizationAlgorithm&& value) { m_algorithmHasBeenSet = true; m_algorithm = std::move(value); }
 
-    
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
     inline AudioNormalizationSettings& WithAlgorithm(const AudioNormalizationAlgorithm& value) { SetAlgorithm(value); return *this;}
 
-    
+    /**
+     * Audio normalization algorithm to use. 1770-1 conforms to the CALM Act
+     * specification, 1770-2 conforms to the EBU R-128 specification.
+     */
     inline AudioNormalizationSettings& WithAlgorithm(AudioNormalizationAlgorithm&& value) { SetAlgorithm(std::move(value)); return *this;}
 
 
-    
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
     inline const AudioNormalizationAlgorithmControl& GetAlgorithmControl() const{ return m_algorithmControl; }
 
-    
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
+    inline bool AlgorithmControlHasBeenSet() const { return m_algorithmControlHasBeenSet; }
+
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
     inline void SetAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = value; }
 
-    
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
     inline void SetAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { m_algorithmControlHasBeenSet = true; m_algorithmControl = std::move(value); }
 
-    
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
     inline AudioNormalizationSettings& WithAlgorithmControl(const AudioNormalizationAlgorithmControl& value) { SetAlgorithmControl(value); return *this;}
 
-    
+    /**
+     * When enabled the output audio is corrected using the chosen algorithm. If
+     * disabled, the audio will be measured but not adjusted.
+     */
     inline AudioNormalizationSettings& WithAlgorithmControl(AudioNormalizationAlgorithmControl&& value) { SetAlgorithmControl(std::move(value)); return *this;}
 
 
@@ -88,6 +130,13 @@ namespace Model
      * when not using real_time_correction.
      */
     inline int GetCorrectionGateLevel() const{ return m_correctionGateLevel; }
+
+    /**
+     * Content measuring above this level will be corrected to the target level.
+     * Content measuring below this level will not be corrected. Gating only applies
+     * when not using real_time_correction.
+     */
+    inline bool CorrectionGateLevelHasBeenSet() const { return m_correctionGateLevelHasBeenSet; }
 
     /**
      * Content measuring above this level will be corrected to the target level.
@@ -104,35 +153,71 @@ namespace Model
     inline AudioNormalizationSettings& WithCorrectionGateLevel(int value) { SetCorrectionGateLevel(value); return *this;}
 
 
-    
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
     inline const AudioNormalizationLoudnessLogging& GetLoudnessLogging() const{ return m_loudnessLogging; }
 
-    
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
+    inline bool LoudnessLoggingHasBeenSet() const { return m_loudnessLoggingHasBeenSet; }
+
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
     inline void SetLoudnessLogging(const AudioNormalizationLoudnessLogging& value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = value; }
 
-    
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
     inline void SetLoudnessLogging(AudioNormalizationLoudnessLogging&& value) { m_loudnessLoggingHasBeenSet = true; m_loudnessLogging = std::move(value); }
 
-    
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
     inline AudioNormalizationSettings& WithLoudnessLogging(const AudioNormalizationLoudnessLogging& value) { SetLoudnessLogging(value); return *this;}
 
-    
+    /**
+     * If set to LOG, log each output's audio track loudness to a CSV file.
+     */
     inline AudioNormalizationSettings& WithLoudnessLogging(AudioNormalizationLoudnessLogging&& value) { SetLoudnessLogging(std::move(value)); return *this;}
 
 
-    
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
     inline const AudioNormalizationPeakCalculation& GetPeakCalculation() const{ return m_peakCalculation; }
 
-    
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
+    inline bool PeakCalculationHasBeenSet() const { return m_peakCalculationHasBeenSet; }
+
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
     inline void SetPeakCalculation(const AudioNormalizationPeakCalculation& value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = value; }
 
-    
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
     inline void SetPeakCalculation(AudioNormalizationPeakCalculation&& value) { m_peakCalculationHasBeenSet = true; m_peakCalculation = std::move(value); }
 
-    
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
     inline AudioNormalizationSettings& WithPeakCalculation(const AudioNormalizationPeakCalculation& value) { SetPeakCalculation(value); return *this;}
 
-    
+    /**
+     * If set to TRUE_PEAK, calculate and log the TruePeak for each output's audio
+     * track loudness.
+     */
     inline AudioNormalizationSettings& WithPeakCalculation(AudioNormalizationPeakCalculation&& value) { SetPeakCalculation(std::move(value)); return *this;}
 
 
@@ -143,6 +228,14 @@ namespace Model
      * a target of -23 LKFS.
      */
     inline double GetTargetLkfs() const{ return m_targetLkfs; }
+
+    /**
+     * Target LKFS(loudness) to adjust volume to. If no value is entered, a default
+     * value will be used according to the chosen algorithm. The CALM Act (1770-1)
+     * recommends a target of -24 LKFS. The EBU R-128 specification (1770-2) recommends
+     * a target of -23 LKFS.
+     */
+    inline bool TargetLkfsHasBeenSet() const { return m_targetLkfsHasBeenSet; }
 
     /**
      * Target LKFS(loudness) to adjust volume to. If no value is entered, a default

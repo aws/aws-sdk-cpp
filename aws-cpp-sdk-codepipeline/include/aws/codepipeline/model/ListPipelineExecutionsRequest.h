@@ -58,6 +58,12 @@ namespace Model
      * <p>The name of the pipeline for which you want to get execution summary
      * information.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline for which you want to get execution summary
+     * information.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -105,6 +111,14 @@ namespace Model
      * available pipeline execution history is limited to the most recent 12 months,
      * based on pipeline execution start times. Default value is 100.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned nextToken value. The
+     * available pipeline execution history is limited to the most recent 12 months,
+     * based on pipeline execution start times. Default value is 100.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -121,6 +135,12 @@ namespace Model
      * which can be used to return the next set of pipeline executions in the list.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token that was returned from the previous ListPipelineExecutions call,
+     * which can be used to return the next set of pipeline executions in the list.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token that was returned from the previous ListPipelineExecutions call,

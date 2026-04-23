@@ -26,7 +26,9 @@ CreateDatasetRequest::CreateDatasetRequest() :
     m_datasetNameHasBeenSet(false),
     m_actionsHasBeenSet(false),
     m_triggersHasBeenSet(false),
+    m_contentDeliveryRulesHasBeenSet(false),
     m_retentionPeriodHasBeenSet(false),
+    m_versioningConfigurationHasBeenSet(false),
     m_tagsHasBeenSet(false)
 {
 }
@@ -63,9 +65,26 @@ Aws::String CreateDatasetRequest::SerializePayload() const
 
   }
 
+  if(m_contentDeliveryRulesHasBeenSet)
+  {
+   Array<JsonValue> contentDeliveryRulesJsonList(m_contentDeliveryRules.size());
+   for(unsigned contentDeliveryRulesIndex = 0; contentDeliveryRulesIndex < contentDeliveryRulesJsonList.GetLength(); ++contentDeliveryRulesIndex)
+   {
+     contentDeliveryRulesJsonList[contentDeliveryRulesIndex].AsObject(m_contentDeliveryRules[contentDeliveryRulesIndex].Jsonize());
+   }
+   payload.WithArray("contentDeliveryRules", std::move(contentDeliveryRulesJsonList));
+
+  }
+
   if(m_retentionPeriodHasBeenSet)
   {
    payload.WithObject("retentionPeriod", m_retentionPeriod.Jsonize());
+
+  }
+
+  if(m_versioningConfigurationHasBeenSet)
+  {
+   payload.WithObject("versioningConfiguration", m_versioningConfiguration.Jsonize());
 
   }
 

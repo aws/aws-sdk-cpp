@@ -64,6 +64,13 @@ namespace Model
      * have one tag with the same key. If you try to add an existing tag (same key),
      * the existing tag value will be updated to the new value.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key for the tag. Tag keys are case sensitive. Every DAX cluster can only
+     * have one tag with the same key. If you try to add an existing tag (same key),
+     * the existing tag value will be updated to the new value.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -106,6 +113,11 @@ namespace Model
      * <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of the tag. Tag values are case-sensitive and can be null. </p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of the tag. Tag values are case-sensitive and can be null. </p>

@@ -81,6 +81,20 @@ namespace Model
      * is returned by <a>CreateSqlInjectionMatchSet</a> and by
      * <a>ListSqlInjectionMatchSets</a>.</p>
      */
+    inline bool SqlInjectionMatchSetIdHasBeenSet() const { return m_sqlInjectionMatchSetIdHasBeenSet; }
+
+    /**
+     * <p>A unique identifier for a <code>SqlInjectionMatchSet</code>. You use
+     * <code>SqlInjectionMatchSetId</code> to get information about a
+     * <code>SqlInjectionMatchSet</code> (see <a>GetSqlInjectionMatchSet</a>), update a
+     * <code>SqlInjectionMatchSet</code> (see <a>UpdateSqlInjectionMatchSet</a>),
+     * insert a <code>SqlInjectionMatchSet</code> into a <code>Rule</code> or delete
+     * one from a <code>Rule</code> (see <a>UpdateRule</a>), and delete a
+     * <code>SqlInjectionMatchSet</code> from AWS WAF (see
+     * <a>DeleteSqlInjectionMatchSet</a>).</p> <p> <code>SqlInjectionMatchSetId</code>
+     * is returned by <a>CreateSqlInjectionMatchSet</a> and by
+     * <a>ListSqlInjectionMatchSets</a>.</p>
+     */
     inline void SetSqlInjectionMatchSetId(const Aws::String& value) { m_sqlInjectionMatchSetIdHasBeenSet = true; m_sqlInjectionMatchSetId = value; }
 
     /**
@@ -162,6 +176,11 @@ namespace Model
     /**
      * <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name, if any, of the <code>SqlInjectionMatchSet</code>.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -195,6 +214,12 @@ namespace Model
      * malicious SQL code.</p>
      */
     inline const Aws::Vector<SqlInjectionMatchTuple>& GetSqlInjectionMatchTuples() const{ return m_sqlInjectionMatchTuples; }
+
+    /**
+     * <p>Specifies the parts of web requests that you want to inspect for snippets of
+     * malicious SQL code.</p>
+     */
+    inline bool SqlInjectionMatchTuplesHasBeenSet() const { return m_sqlInjectionMatchTuplesHasBeenSet; }
 
     /**
      * <p>Specifies the parts of web requests that you want to inspect for snippets of

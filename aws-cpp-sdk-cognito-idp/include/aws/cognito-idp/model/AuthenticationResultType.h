@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The access token.</p>
      */
+    inline bool AccessTokenHasBeenSet() const { return m_accessTokenHasBeenSet; }
+
+    /**
+     * <p>The access token.</p>
+     */
     inline void SetAccessToken(const Aws::String& value) { m_accessTokenHasBeenSet = true; m_accessToken = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The expiration period of the authentication result in seconds.</p>
      */
+    inline bool ExpiresInHasBeenSet() const { return m_expiresInHasBeenSet; }
+
+    /**
+     * <p>The expiration period of the authentication result in seconds.</p>
+     */
     inline void SetExpiresIn(int value) { m_expiresInHasBeenSet = true; m_expiresIn = value; }
 
     /**
@@ -104,6 +114,11 @@ namespace Model
      * <p>The token type.</p>
      */
     inline const Aws::String& GetTokenType() const{ return m_tokenType; }
+
+    /**
+     * <p>The token type.</p>
+     */
+    inline bool TokenTypeHasBeenSet() const { return m_tokenTypeHasBeenSet; }
 
     /**
      * <p>The token type.</p>
@@ -144,6 +159,11 @@ namespace Model
     /**
      * <p>The refresh token.</p>
      */
+    inline bool RefreshTokenHasBeenSet() const { return m_refreshTokenHasBeenSet; }
+
+    /**
+     * <p>The refresh token.</p>
+     */
     inline void SetRefreshToken(const Aws::String& value) { m_refreshTokenHasBeenSet = true; m_refreshToken = value; }
 
     /**
@@ -180,6 +200,11 @@ namespace Model
     /**
      * <p>The ID token.</p>
      */
+    inline bool IdTokenHasBeenSet() const { return m_idTokenHasBeenSet; }
+
+    /**
+     * <p>The ID token.</p>
+     */
     inline void SetIdToken(const Aws::String& value) { m_idTokenHasBeenSet = true; m_idToken = value; }
 
     /**
@@ -212,6 +237,11 @@ namespace Model
      * <p>The new device metadata from an authentication result.</p>
      */
     inline const NewDeviceMetadataType& GetNewDeviceMetadata() const{ return m_newDeviceMetadata; }
+
+    /**
+     * <p>The new device metadata from an authentication result.</p>
+     */
+    inline bool NewDeviceMetadataHasBeenSet() const { return m_newDeviceMetadataHasBeenSet; }
 
     /**
      * <p>The new device metadata from an authentication result.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The key for the filter. Supported values are FailedCount, InstalledCount,
      * InstalledOtherCount, MissingCount and NotApplicableCount.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The key for the filter. Supported values are FailedCount, InstalledCount,
+     * InstalledOtherCount, MissingCount and NotApplicableCount.</p>
+     */
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -97,6 +103,11 @@ namespace Model
      * <p>The value for the filter, must be an integer greater than or equal to 0.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value for the filter, must be an integer greater than or equal to 0.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value for the filter, must be an integer greater than or equal to 0.</p>
@@ -139,6 +150,12 @@ namespace Model
      * NotEqual, LessThan or GreaterThan.</p>
      */
     inline const InstancePatchStateOperatorType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of comparison that should be performed for the value: Equal,
+     * NotEqual, LessThan or GreaterThan.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of comparison that should be performed for the value: Equal,

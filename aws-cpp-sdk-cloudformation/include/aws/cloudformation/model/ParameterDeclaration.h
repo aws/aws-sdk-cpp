@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name that is associated with the parameter.</p>
      */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
+
+    /**
+     * <p>The name that is associated with the parameter.</p>
+     */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
@@ -94,6 +99,11 @@ namespace Model
     /**
      * <p>The default value of the parameter.</p>
      */
+    inline bool DefaultValueHasBeenSet() const { return m_defaultValueHasBeenSet; }
+
+    /**
+     * <p>The default value of the parameter.</p>
+     */
     inline void SetDefaultValue(const Aws::String& value) { m_defaultValueHasBeenSet = true; m_defaultValue = value; }
 
     /**
@@ -126,6 +136,11 @@ namespace Model
      * <p>The type of parameter.</p>
      */
     inline const Aws::String& GetParameterType() const{ return m_parameterType; }
+
+    /**
+     * <p>The type of parameter.</p>
+     */
+    inline bool ParameterTypeHasBeenSet() const { return m_parameterTypeHasBeenSet; }
 
     /**
      * <p>The type of parameter.</p>
@@ -168,6 +183,12 @@ namespace Model
      * <p>Flag that indicates whether the parameter value is shown as plain text in
      * logs and in the AWS Management Console.</p>
      */
+    inline bool NoEchoHasBeenSet() const { return m_noEchoHasBeenSet; }
+
+    /**
+     * <p>Flag that indicates whether the parameter value is shown as plain text in
+     * logs and in the AWS Management Console.</p>
+     */
     inline void SetNoEcho(bool value) { m_noEchoHasBeenSet = true; m_noEcho = value; }
 
     /**
@@ -181,6 +202,11 @@ namespace Model
      * <p>The description that is associate with the parameter.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description that is associate with the parameter.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description that is associate with the parameter.</p>
@@ -217,6 +243,11 @@ namespace Model
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
      */
     inline const ParameterConstraints& GetParameterConstraints() const{ return m_parameterConstraints; }
+
+    /**
+     * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>
+     */
+    inline bool ParameterConstraintsHasBeenSet() const { return m_parameterConstraintsHasBeenSet; }
 
     /**
      * <p>The criteria that AWS CloudFormation uses to validate parameter values.</p>

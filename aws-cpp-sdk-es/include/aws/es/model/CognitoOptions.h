@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies the option to enable Cognito for Kibana authentication.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies the option to enable Cognito for Kibana authentication.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**
@@ -71,6 +76,11 @@ namespace Model
      * <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>Specifies the Cognito user pool ID for Kibana authentication.</p>
@@ -111,6 +121,11 @@ namespace Model
     /**
      * <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
      */
+    inline bool IdentityPoolIdHasBeenSet() const { return m_identityPoolIdHasBeenSet; }
+
+    /**
+     * <p>Specifies the Cognito identity pool ID for Kibana authentication.</p>
+     */
     inline void SetIdentityPoolId(const Aws::String& value) { m_identityPoolIdHasBeenSet = true; m_identityPoolId = value; }
 
     /**
@@ -144,6 +159,12 @@ namespace Model
      * Cognito resources.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>Specifies the role ARN that provides Elasticsearch permissions for accessing
+     * Cognito resources.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>Specifies the role ARN that provides Elasticsearch permissions for accessing

@@ -33,6 +33,11 @@ namespace S3
 namespace Model
 {
 
+  /**
+   * <p/><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/s3-2006-03-01/AnalyticsS3BucketDestination">AWS
+   * API Reference</a></p>
+   */
   class AWS_S3_API AnalyticsS3BucketDestination
   {
   public:
@@ -47,6 +52,11 @@ namespace Model
      * <p>The file format used when exporting data to Amazon S3.</p>
      */
     inline const AnalyticsS3ExportFileFormat& GetFormat() const{ return m_format; }
+
+    /**
+     * <p>The file format used when exporting data to Amazon S3.</p>
+     */
+    inline bool FormatHasBeenSet() const { return m_formatHasBeenSet; }
 
     /**
      * <p>The file format used when exporting data to Amazon S3.</p>
@@ -74,6 +84,12 @@ namespace Model
      * provided, the owner will not be validated prior to exporting data.</p>
      */
     inline const Aws::String& GetBucketAccountId() const{ return m_bucketAccountId; }
+
+    /**
+     * <p>The account ID that owns the destination bucket. If no account ID is
+     * provided, the owner will not be validated prior to exporting data.</p>
+     */
+    inline bool BucketAccountIdHasBeenSet() const { return m_bucketAccountIdHasBeenSet; }
 
     /**
      * <p>The account ID that owns the destination bucket. If no account ID is
@@ -120,6 +136,11 @@ namespace Model
     /**
      * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
      */
+    inline bool BucketHasBeenSet() const { return m_bucketHasBeenSet; }
+
+    /**
+     * <p>The Amazon resource name (ARN) of the bucket to which data is exported.</p>
+     */
     inline void SetBucket(const Aws::String& value) { m_bucketHasBeenSet = true; m_bucket = value; }
 
     /**
@@ -153,6 +174,12 @@ namespace Model
      * prefix.</p>
      */
     inline const Aws::String& GetPrefix() const{ return m_prefix; }
+
+    /**
+     * <p>The prefix to use when exporting data. The exported data begins with this
+     * prefix.</p>
+     */
+    inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
 
     /**
      * <p>The prefix to use when exporting data. The exported data begins with this

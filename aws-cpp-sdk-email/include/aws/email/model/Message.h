@@ -61,6 +61,12 @@ namespace Model
      * <p>The subject of the message: A short summary of the content, which will appear
      * in the recipient's inbox.</p>
      */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
+
+    /**
+     * <p>The subject of the message: A short summary of the content, which will appear
+     * in the recipient's inbox.</p>
+     */
     inline void SetSubject(const Content& value) { m_subjectHasBeenSet = true; m_subject = value; }
 
     /**
@@ -86,6 +92,11 @@ namespace Model
      * <p>The message body.</p>
      */
     inline const Body& GetBody() const{ return m_body; }
+
+    /**
+     * <p>The message body.</p>
+     */
+    inline bool BodyHasBeenSet() const { return m_bodyHasBeenSet; }
 
     /**
      * <p>The message body.</p>

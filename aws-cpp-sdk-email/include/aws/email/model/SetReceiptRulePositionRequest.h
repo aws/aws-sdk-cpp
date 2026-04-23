@@ -63,6 +63,12 @@ namespace Model
      * <p>The name of the receipt rule set that contains the receipt rule to
      * reposition.</p>
      */
+    inline bool RuleSetNameHasBeenSet() const { return m_ruleSetNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule set that contains the receipt rule to
+     * reposition.</p>
+     */
     inline void SetRuleSetName(const Aws::String& value) { m_ruleSetNameHasBeenSet = true; m_ruleSetName = value; }
 
     /**
@@ -104,6 +110,11 @@ namespace Model
     /**
      * <p>The name of the receipt rule to reposition.</p>
      */
+    inline bool RuleNameHasBeenSet() const { return m_ruleNameHasBeenSet; }
+
+    /**
+     * <p>The name of the receipt rule to reposition.</p>
+     */
     inline void SetRuleName(const Aws::String& value) { m_ruleNameHasBeenSet = true; m_ruleName = value; }
 
     /**
@@ -137,6 +148,12 @@ namespace Model
      * rule.</p>
      */
     inline const Aws::String& GetAfter() const{ return m_after; }
+
+    /**
+     * <p>The name of the receipt rule after which to place the specified receipt
+     * rule.</p>
+     */
+    inline bool AfterHasBeenSet() const { return m_afterHasBeenSet; }
 
     /**
      * <p>The name of the receipt rule after which to place the specified receipt

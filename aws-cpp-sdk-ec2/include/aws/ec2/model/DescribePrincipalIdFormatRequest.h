@@ -61,6 +61,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -89,6 +97,24 @@ namespace Model
      * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
      */
     inline const Aws::Vector<Aws::String>& GetResources() const{ return m_resources; }
+
+    /**
+     * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
+     * <code>customer-gateway</code> | <code>dhcp-options</code> |
+     * <code>elastic-ip-allocation</code> | <code>elastic-ip-association</code> |
+     * <code>export-task</code> | <code>flow-log</code> | <code>image</code> |
+     * <code>import-task</code> | <code>instance</code> | <code>internet-gateway</code>
+     * | <code>network-acl</code> | <code>network-acl-association</code> |
+     * <code>network-interface</code> | <code>network-interface-attachment</code> |
+     * <code>prefix-list</code> | <code>reservation</code> | <code>route-table</code> |
+     * <code>route-table-association</code> | <code>security-group</code> |
+     * <code>snapshot</code> | <code>subnet</code> |
+     * <code>subnet-cidr-block-association</code> | <code>volume</code> |
+     * <code>vpc</code> | <code>vpc-cidr-block-association</code> |
+     * <code>vpc-endpoint</code> | <code>vpc-peering-connection</code> |
+     * <code>vpn-connection</code> | <code>vpn-gateway</code> </p>
+     */
+    inline bool ResourcesHasBeenSet() const { return m_resourcesHasBeenSet; }
 
     /**
      * <p>The type of resource: <code>bundle</code> | <code>conversion-task</code> |
@@ -227,6 +253,12 @@ namespace Model
      * <p>The maximum number of results to return in a single call. To retrieve the
      * remaining results, make another call with the returned NextToken value. </p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return in a single call. To retrieve the
+     * remaining results, make another call with the returned NextToken value. </p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -240,6 +272,11 @@ namespace Model
      * <p>The token to request the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to request the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to request the next page of results.</p>

@@ -29,7 +29,8 @@ CreateTapeWithBarcodeRequest::CreateTapeWithBarcodeRequest() :
     m_tapeBarcodeHasBeenSet(false),
     m_kMSEncrypted(false),
     m_kMSEncryptedHasBeenSet(false),
-    m_kMSKeyHasBeenSet(false)
+    m_kMSKeyHasBeenSet(false),
+    m_poolIdHasBeenSet(false)
 {
 }
 
@@ -64,6 +65,12 @@ Aws::String CreateTapeWithBarcodeRequest::SerializePayload() const
   if(m_kMSKeyHasBeenSet)
   {
    payload.WithString("KMSKey", m_kMSKey);
+
+  }
+
+  if(m_poolIdHasBeenSet)
+  {
+   payload.WithString("PoolId", m_poolId);
 
   }
 

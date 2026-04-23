@@ -36,8 +36,8 @@ namespace Model
    * start or stop remote control of shared screens, or start or stop the dial-out
    * option in the Amazon Chime web application. For more information about these
    * settings, see <a
-   * href="http://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the Policies
-   * Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
+   * href="https://docs.aws.amazon.com/chime/latest/ag/policies.html">Use the
+   * Policies Page</a> in the <i>Amazon Chime Administration Guide</i>.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/chime-2018-05-01/AccountSettings">AWS
    * API Reference</a></p>
@@ -61,6 +61,12 @@ namespace Model
      * <p>Setting that stops or starts remote control of shared screens during
      * meetings.</p>
      */
+    inline bool DisableRemoteControlHasBeenSet() const { return m_disableRemoteControlHasBeenSet; }
+
+    /**
+     * <p>Setting that stops or starts remote control of shared screens during
+     * meetings.</p>
+     */
     inline void SetDisableRemoteControl(bool value) { m_disableRemoteControlHasBeenSet = true; m_disableRemoteControl = value; }
 
     /**
@@ -73,24 +79,32 @@ namespace Model
     /**
      * <p>Setting that allows meeting participants to choose the <b>Call me at a phone
      * number</b> option. For more information, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
-     * Meeting without the Amazon Chime App</a>.</p>
+     * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+     * a Meeting without the Amazon Chime App</a>.</p>
      */
     inline bool GetEnableDialOut() const{ return m_enableDialOut; }
 
     /**
      * <p>Setting that allows meeting participants to choose the <b>Call me at a phone
      * number</b> option. For more information, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
-     * Meeting without the Amazon Chime App</a>.</p>
+     * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+     * a Meeting without the Amazon Chime App</a>.</p>
+     */
+    inline bool EnableDialOutHasBeenSet() const { return m_enableDialOutHasBeenSet; }
+
+    /**
+     * <p>Setting that allows meeting participants to choose the <b>Call me at a phone
+     * number</b> option. For more information, see <a
+     * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+     * a Meeting without the Amazon Chime App</a>.</p>
      */
     inline void SetEnableDialOut(bool value) { m_enableDialOutHasBeenSet = true; m_enableDialOut = value; }
 
     /**
      * <p>Setting that allows meeting participants to choose the <b>Call me at a phone
      * number</b> option. For more information, see <a
-     * href="http://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join a
-     * Meeting without the Amazon Chime App</a>.</p>
+     * href="https://docs.aws.amazon.com/chime/latest/ug/chime-join-meeting.html">Join
+     * a Meeting without the Amazon Chime App</a>.</p>
      */
     inline AccountSettings& WithEnableDialOut(bool value) { SetEnableDialOut(value); return *this;}
 

@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The names of the parameters to delete.</p>
      */
+    inline bool NamesHasBeenSet() const { return m_namesHasBeenSet; }
+
+    /**
+     * <p>The names of the parameters to delete.</p>
+     */
     inline void SetNames(const Aws::Vector<Aws::String>& value) { m_namesHasBeenSet = true; m_names = value; }
 
     /**

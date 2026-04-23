@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Uniquely identifies the evaluation result.</p>
      */
+    inline bool EvaluationResultIdentifierHasBeenSet() const { return m_evaluationResultIdentifierHasBeenSet; }
+
+    /**
+     * <p>Uniquely identifies the evaluation result.</p>
+     */
     inline void SetEvaluationResultIdentifier(const EvaluationResultIdentifier& value) { m_evaluationResultIdentifierHasBeenSet = true; m_evaluationResultIdentifier = value; }
 
     /**
@@ -87,6 +92,15 @@ namespace Model
      * value.</p>
      */
     inline const ComplianceType& GetComplianceType() const{ return m_complianceType; }
+
+    /**
+     * <p>The resource compliance status.</p> <p>For the
+     * <code>AggregationEvaluationResult</code> data type, AWS Config supports only the
+     * <code>COMPLIANT</code> and <code>NON_COMPLIANT</code>. AWS Config does not
+     * support the <code>NOT_APPLICABLE</code> and <code>INSUFFICIENT_DATA</code>
+     * value.</p>
+     */
+    inline bool ComplianceTypeHasBeenSet() const { return m_complianceTypeHasBeenSet; }
 
     /**
      * <p>The resource compliance status.</p> <p>For the
@@ -133,6 +147,11 @@ namespace Model
     /**
      * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
      */
+    inline bool ResultRecordedTimeHasBeenSet() const { return m_resultRecordedTimeHasBeenSet; }
+
+    /**
+     * <p>The time when AWS Config recorded the aggregate evaluation result.</p>
+     */
     inline void SetResultRecordedTime(const Aws::Utils::DateTime& value) { m_resultRecordedTimeHasBeenSet = true; m_resultRecordedTime = value; }
 
     /**
@@ -155,6 +174,11 @@ namespace Model
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
      */
     inline const Aws::Utils::DateTime& GetConfigRuleInvokedTime() const{ return m_configRuleInvokedTime; }
+
+    /**
+     * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
+     */
+    inline bool ConfigRuleInvokedTimeHasBeenSet() const { return m_configRuleInvokedTimeHasBeenSet; }
 
     /**
      * <p>The time when the AWS Config rule evaluated the AWS resource.</p>
@@ -182,6 +206,12 @@ namespace Model
      * compliance.</p>
      */
     inline const Aws::String& GetAnnotation() const{ return m_annotation; }
+
+    /**
+     * <p>Supplementary information about how the agrregate evaluation determined the
+     * compliance.</p>
+     */
+    inline bool AnnotationHasBeenSet() const { return m_annotationHasBeenSet; }
 
     /**
      * <p>Supplementary information about how the agrregate evaluation determined the
@@ -228,6 +258,11 @@ namespace Model
     /**
      * <p>The 12-digit account ID of the source account.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The 12-digit account ID of the source account.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -260,6 +295,11 @@ namespace Model
      * <p>The source region from where the data is aggregated.</p>
      */
     inline const Aws::String& GetAwsRegion() const{ return m_awsRegion; }
+
+    /**
+     * <p>The source region from where the data is aggregated.</p>
+     */
+    inline bool AwsRegionHasBeenSet() const { return m_awsRegionHasBeenSet; }
 
     /**
      * <p>The source region from where the data is aggregated.</p>

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The identifier for the DB snapshot to describe the attributes for.</p>
      */
+    inline bool DBSnapshotIdentifierHasBeenSet() const { return m_dBSnapshotIdentifierHasBeenSet; }
+
+    /**
+     * <p>The identifier for the DB snapshot to describe the attributes for.</p>
+     */
     inline void SetDBSnapshotIdentifier(const Aws::String& value) { m_dBSnapshotIdentifierHasBeenSet = true; m_dBSnapshotIdentifier = value; }
 
     /**

@@ -49,6 +49,9 @@ namespace Model
     inline const Aws::String& GetKey() const{ return m_key; }
 
     
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    
     inline void SetKey(const Aws::String& value) { m_keyHasBeenSet = true; m_key = value; }
 
     
@@ -69,6 +72,9 @@ namespace Model
 
     
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     
     inline void SetValues(const Aws::Vector<Aws::String>& value) { m_valuesHasBeenSet = true; m_values = value; }

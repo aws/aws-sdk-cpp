@@ -17,6 +17,7 @@
 #include <aws/storagegateway/StorageGateway_EXPORTS.h>
 #include <aws/storagegateway/StorageGatewayRequest.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <utility>
 
 namespace Aws
@@ -48,44 +49,58 @@ namespace Model
 
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline const Aws::String& GetGatewayARN() const{ return m_gatewayARN; }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
+     */
+    inline bool GatewayARNHasBeenSet() const { return m_gatewayARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline void SetGatewayARN(const Aws::String& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = value; }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline void SetGatewayARN(Aws::String&& value) { m_gatewayARNHasBeenSet = true; m_gatewayARN = std::move(value); }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline void SetGatewayARN(const char* value) { m_gatewayARNHasBeenSet = true; m_gatewayARN.assign(value); }
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline JoinDomainRequest& WithGatewayARN(const Aws::String& value) { SetGatewayARN(value); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline JoinDomainRequest& WithGatewayARN(Aws::String&& value) { SetGatewayARN(std::move(value)); return *this;}
 
     /**
-     * <p>The unique Amazon Resource Name (ARN) of the file gateway you want to add to
-     * the Active Directory domain. </p>
+     * <p>The Amazon Resource Name (ARN) of the gateway. Use the
+     * <code>ListGateways</code> operation to return a list of gateways for your
+     * account and region.</p>
      */
     inline JoinDomainRequest& WithGatewayARN(const char* value) { SetGatewayARN(value); return *this;}
 
@@ -94,6 +109,11 @@ namespace Model
      * <p>The name of the domain that you want the gateway to join.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The name of the domain that you want the gateway to join.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The name of the domain that you want the gateway to join.</p>
@@ -127,10 +147,137 @@ namespace Model
 
 
     /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline const Aws::String& GetOrganizationalUnit() const{ return m_organizationalUnit; }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline bool OrganizationalUnitHasBeenSet() const { return m_organizationalUnitHasBeenSet; }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline void SetOrganizationalUnit(const Aws::String& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = value; }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline void SetOrganizationalUnit(Aws::String&& value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit = std::move(value); }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline void SetOrganizationalUnit(const char* value) { m_organizationalUnitHasBeenSet = true; m_organizationalUnit.assign(value); }
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline JoinDomainRequest& WithOrganizationalUnit(const Aws::String& value) { SetOrganizationalUnit(value); return *this;}
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline JoinDomainRequest& WithOrganizationalUnit(Aws::String&& value) { SetOrganizationalUnit(std::move(value)); return *this;}
+
+    /**
+     * <p>The organizational unit (OU) is a container with an Active Directory that can
+     * hold users, groups, computers, and other OUs and this parameter specifies the OU
+     * that the gateway will join within the AD domain.</p>
+     */
+    inline JoinDomainRequest& WithOrganizationalUnit(const char* value) { SetOrganizationalUnit(value); return *this;}
+
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline const Aws::Vector<Aws::String>& GetDomainControllers() const{ return m_domainControllers; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline bool DomainControllersHasBeenSet() const { return m_domainControllersHasBeenSet; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline void SetDomainControllers(const Aws::Vector<Aws::String>& value) { m_domainControllersHasBeenSet = true; m_domainControllers = value; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline void SetDomainControllers(Aws::Vector<Aws::String>&& value) { m_domainControllersHasBeenSet = true; m_domainControllers = std::move(value); }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline JoinDomainRequest& WithDomainControllers(const Aws::Vector<Aws::String>& value) { SetDomainControllers(value); return *this;}
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline JoinDomainRequest& WithDomainControllers(Aws::Vector<Aws::String>&& value) { SetDomainControllers(std::move(value)); return *this;}
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline JoinDomainRequest& AddDomainControllers(const Aws::String& value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(value); return *this; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline JoinDomainRequest& AddDomainControllers(Aws::String&& value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(std::move(value)); return *this; }
+
+    /**
+     * <p>List of IPv4 addresses, NetBIOS names, or host names of your domain server.
+     * If you need to specify the port number include it after the colon (“:”). For
+     * example, <code>mydc.mydomain.com:389</code>.</p>
+     */
+    inline JoinDomainRequest& AddDomainControllers(const char* value) { m_domainControllersHasBeenSet = true; m_domainControllers.push_back(value); return *this; }
+
+
+    /**
      * <p>Sets the user name of user who has permission to add the gateway to the
      * Active Directory domain.</p>
      */
     inline const Aws::String& GetUserName() const{ return m_userName; }
+
+    /**
+     * <p>Sets the user name of user who has permission to add the gateway to the
+     * Active Directory domain.</p>
+     */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
 
     /**
      * <p>Sets the user name of user who has permission to add the gateway to the
@@ -179,6 +326,12 @@ namespace Model
      * <p>Sets the password of the user who has permission to add the gateway to the
      * Active Directory domain.</p>
      */
+    inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+
+    /**
+     * <p>Sets the password of the user who has permission to add the gateway to the
+     * Active Directory domain.</p>
+     */
     inline void SetPassword(const Aws::String& value) { m_passwordHasBeenSet = true; m_password = value; }
 
     /**
@@ -218,6 +371,12 @@ namespace Model
 
     Aws::String m_domainName;
     bool m_domainNameHasBeenSet;
+
+    Aws::String m_organizationalUnit;
+    bool m_organizationalUnitHasBeenSet;
+
+    Aws::Vector<Aws::String> m_domainControllers;
+    bool m_domainControllersHasBeenSet;
 
     Aws::String m_userName;
     bool m_userNameHasBeenSet;

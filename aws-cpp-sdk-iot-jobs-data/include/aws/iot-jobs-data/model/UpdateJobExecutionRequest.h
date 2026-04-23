@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique identifier assigned to this job when it was created.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>The unique identifier assigned to this job when it was created.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The name of the thing associated with the device.</p>
      */
     inline const Aws::String& GetThingName() const{ return m_thingName; }
+
+    /**
+     * <p>The name of the thing associated with the device.</p>
+     */
+    inline bool ThingNameHasBeenSet() const { return m_thingNameHasBeenSet; }
 
     /**
      * <p>The name of the thing associated with the device.</p>
@@ -126,6 +136,12 @@ namespace Model
      * <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or
      * REJECTED). This must be specified on every update.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The new status for the job execution (IN_PROGRESS, FAILED, SUCCESS, or
+     * REJECTED). This must be specified on every update.</p>
+     */
     inline void SetStatus(const JobExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -152,6 +168,12 @@ namespace Model
      * job execution. If not specified, the statusDetails are unchanged.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p> Optional. A collection of name/value pairs that describe the status of the
+     * job execution. If not specified, the statusDetails are unchanged.</p>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p> Optional. A collection of name/value pairs that describe the status of the
@@ -244,6 +266,19 @@ namespace Model
      * specified when the job was created (<code>CreateJob</code> using field
      * <code>timeoutConfig</code>).</p>
      */
+    inline bool StepTimeoutInMinutesHasBeenSet() const { return m_stepTimeoutInMinutesHasBeenSet; }
+
+    /**
+     * <p>Specifies the amount of time this device has to finish execution of this job.
+     * If the job execution status is not set to a terminal state before this timer
+     * expires, or before the timer is reset (by again calling
+     * <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code>
+     * and specifying a new timeout value in this field) the job execution status will
+     * be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting
+     * this timeout has no effect on that job execution timeout which may have been
+     * specified when the job was created (<code>CreateJob</code> using field
+     * <code>timeoutConfig</code>).</p>
+     */
     inline void SetStepTimeoutInMinutes(long long value) { m_stepTimeoutInMinutesHasBeenSet = true; m_stepTimeoutInMinutes = value; }
 
     /**
@@ -280,6 +315,17 @@ namespace Model
      * separate DescribeJobExecution request in order to obtain the job execution
      * status data.)</p>
      */
+    inline bool ExpectedVersionHasBeenSet() const { return m_expectedVersionHasBeenSet; }
+
+    /**
+     * <p>Optional. The expected current version of the job execution. Each time you
+     * update the job execution, its version is incremented. If the version of the job
+     * execution stored in Jobs does not match, the update is rejected with a
+     * VersionMismatch error, and an ErrorResponse that contains the current job
+     * execution status data is returned. (This makes it unnecessary to perform a
+     * separate DescribeJobExecution request in order to obtain the job execution
+     * status data.)</p>
+     */
     inline void SetExpectedVersion(long long value) { m_expectedVersionHasBeenSet = true; m_expectedVersion = value; }
 
     /**
@@ -304,6 +350,12 @@ namespace Model
      * <p>Optional. When included and set to true, the response contains the
      * JobExecutionState data. The default is false.</p>
      */
+    inline bool IncludeJobExecutionStateHasBeenSet() const { return m_includeJobExecutionStateHasBeenSet; }
+
+    /**
+     * <p>Optional. When included and set to true, the response contains the
+     * JobExecutionState data. The default is false.</p>
+     */
     inline void SetIncludeJobExecutionState(bool value) { m_includeJobExecutionStateHasBeenSet = true; m_includeJobExecutionState = value; }
 
     /**
@@ -323,6 +375,12 @@ namespace Model
      * <p>Optional. When set to true, the response contains the job document. The
      * default is false.</p>
      */
+    inline bool IncludeJobDocumentHasBeenSet() const { return m_includeJobDocumentHasBeenSet; }
+
+    /**
+     * <p>Optional. When set to true, the response contains the job document. The
+     * default is false.</p>
+     */
     inline void SetIncludeJobDocument(bool value) { m_includeJobDocumentHasBeenSet = true; m_includeJobDocument = value; }
 
     /**
@@ -337,6 +395,12 @@ namespace Model
      * device.</p>
      */
     inline long long GetExecutionNumber() const{ return m_executionNumber; }
+
+    /**
+     * <p>Optional. A number that identifies a particular job execution on a particular
+     * device.</p>
+     */
+    inline bool ExecutionNumberHasBeenSet() const { return m_executionNumberHasBeenSet; }
 
     /**
      * <p>Optional. A number that identifies a particular job execution on a particular

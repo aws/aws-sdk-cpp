@@ -66,6 +66,13 @@ namespace Model
      * audio codec. Include one instance of (AudioDescriptions) per output.
      * (AudioDescriptions) can contain multiple groups of encoding settings.
      */
+    inline bool AudioDescriptionsHasBeenSet() const { return m_audioDescriptionsHasBeenSet; }
+
+    /**
+     * (AudioDescriptions) contains groups of audio encoding settings organized by
+     * audio codec. Include one instance of (AudioDescriptions) per output.
+     * (AudioDescriptions) can contain multiple groups of encoding settings.
+     */
     inline void SetAudioDescriptions(const Aws::Vector<AudioDescription>& value) { m_audioDescriptionsHasBeenSet = true; m_audioDescriptions = value; }
 
     /**
@@ -116,6 +123,13 @@ namespace Model
      * has captions, include one instance of (CaptionDescriptions).
      * (CaptionDescriptions) can contain multiple groups of captions settings.
      */
+    inline bool CaptionDescriptionsHasBeenSet() const { return m_captionDescriptionsHasBeenSet; }
+
+    /**
+     * (CaptionDescriptions) contains groups of captions settings. For each output that
+     * has captions, include one instance of (CaptionDescriptions).
+     * (CaptionDescriptions) can contain multiple groups of captions settings.
+     */
     inline void SetCaptionDescriptions(const Aws::Vector<CaptionDescription>& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions = value; }
 
     /**
@@ -154,19 +168,34 @@ namespace Model
     inline Output& AddCaptionDescriptions(CaptionDescription&& value) { m_captionDescriptionsHasBeenSet = true; m_captionDescriptions.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * Container specific settings.
+     */
     inline const ContainerSettings& GetContainerSettings() const{ return m_containerSettings; }
 
-    
+    /**
+     * Container specific settings.
+     */
+    inline bool ContainerSettingsHasBeenSet() const { return m_containerSettingsHasBeenSet; }
+
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(const ContainerSettings& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = value; }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline void SetContainerSettings(ContainerSettings&& value) { m_containerSettingsHasBeenSet = true; m_containerSettings = std::move(value); }
 
-    
+    /**
+     * Container specific settings.
+     */
     inline Output& WithContainerSettings(const ContainerSettings& value) { SetContainerSettings(value); return *this;}
 
-    
+    /**
+     * Container specific settings.
+     */
     inline Output& WithContainerSettings(ContainerSettings&& value) { SetContainerSettings(std::move(value)); return *this;}
 
 
@@ -178,6 +207,15 @@ namespace Model
      * service will use codec extensions (e.g. AAC, H265, H265, AC3)
      */
     inline const Aws::String& GetExtension() const{ return m_extension; }
+
+    /**
+     * Use Extension (Extension) to specify the file extension for outputs in File
+     * output groups. If you do not specify a value, the service will use default
+     * extensions by container type as follows * MPEG-2 transport stream, m2ts *
+     * Quicktime, mov * MXF container, mxf * MPEG-4 container, mp4 * No Container, the
+     * service will use codec extensions (e.g. AAC, H265, H265, AC3)
+     */
+    inline bool ExtensionHasBeenSet() const { return m_extensionHasBeenSet; }
 
     /**
      * Use Extension (Extension) to specify the file extension for outputs in File
@@ -252,6 +290,16 @@ namespace Model
      * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
      * output, you must use them in the same way in all outputs of the output group.
      */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
+
+    /**
+     * Use Name modifier (NameModifier) to have the service add a string to the end of
+     * each output filename. You specify the base filename as part of your destination
+     * URI. When you create multiple outputs in the same output group, Name modifier
+     * (NameModifier) is required. Name modifier also accepts format identifiers. For
+     * DASH ISO outputs, if you use the format identifiers $Number$ or $Time$ in one
+     * output, you must use them in the same way in all outputs of the output group.
+     */
     inline void SetNameModifier(const Aws::String& value) { m_nameModifierHasBeenSet = true; m_nameModifier = value; }
 
     /**
@@ -305,19 +353,34 @@ namespace Model
     inline Output& WithNameModifier(const char* value) { SetNameModifier(value); return *this;}
 
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline const OutputSettings& GetOutputSettings() const{ return m_outputSettings; }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
+    inline bool OutputSettingsHasBeenSet() const { return m_outputSettingsHasBeenSet; }
+
+    /**
+     * Specific settings for this type of output.
+     */
     inline void SetOutputSettings(const OutputSettings& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = value; }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline void SetOutputSettings(OutputSettings&& value) { m_outputSettingsHasBeenSet = true; m_outputSettings = std::move(value); }
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline Output& WithOutputSettings(const OutputSettings& value) { SetOutputSettings(value); return *this;}
 
-    
+    /**
+     * Specific settings for this type of output.
+     */
     inline Output& WithOutputSettings(OutputSettings&& value) { SetOutputSettings(std::move(value)); return *this;}
 
 
@@ -327,6 +390,13 @@ namespace Model
      * Container settings (ContainerSettings), but not both.
      */
     inline const Aws::String& GetPreset() const{ return m_preset; }
+
+    /**
+     * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
+     * the system or custom preset name. You can specify either Preset (Preset) or
+     * Container settings (ContainerSettings), but not both.
+     */
+    inline bool PresetHasBeenSet() const { return m_presetHasBeenSet; }
 
     /**
      * Use Preset (Preset) to specifiy a preset for your transcoding settings. Provide
@@ -377,6 +447,13 @@ namespace Model
      * Video codec (codec). Include one instance of (VideoDescription) per output.
      */
     inline const VideoDescription& GetVideoDescription() const{ return m_videoDescription; }
+
+    /**
+     * (VideoDescription) contains a group of video encoding settings. The specific
+     * video settings depend on the video codec you choose when you specify a value for
+     * Video codec (codec). Include one instance of (VideoDescription) per output.
+     */
+    inline bool VideoDescriptionHasBeenSet() const { return m_videoDescriptionHasBeenSet; }
 
     /**
      * (VideoDescription) contains a group of video encoding settings. The specific

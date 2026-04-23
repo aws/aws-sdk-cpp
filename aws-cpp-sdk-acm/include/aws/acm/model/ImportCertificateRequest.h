@@ -47,7 +47,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -55,7 +55,15 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
+     * certificate, omit this field. </p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -63,7 +71,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -71,7 +79,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -79,7 +87,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -87,7 +95,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -95,7 +103,7 @@ namespace Model
 
     /**
      * <p>The <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Name (ARN)</a> of an imported certificate to replace. To import a new
      * certificate, omit this field. </p>
      */
@@ -106,6 +114,11 @@ namespace Model
      * <p>The certificate to import.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificate() const{ return m_certificate; }
+
+    /**
+     * <p>The certificate to import.</p>
+     */
+    inline bool CertificateHasBeenSet() const { return m_certificateHasBeenSet; }
 
     /**
      * <p>The certificate to import.</p>
@@ -136,6 +149,11 @@ namespace Model
     /**
      * <p>The private key that matches the public key in the certificate.</p>
      */
+    inline bool PrivateKeyHasBeenSet() const { return m_privateKeyHasBeenSet; }
+
+    /**
+     * <p>The private key that matches the public key in the certificate.</p>
+     */
     inline void SetPrivateKey(const Aws::Utils::CryptoBuffer& value) { m_privateKeyHasBeenSet = true; m_privateKey = value; }
 
     /**
@@ -158,6 +176,11 @@ namespace Model
      * <p>The PEM encoded certificate chain.</p>
      */
     inline const Aws::Utils::ByteBuffer& GetCertificateChain() const{ return m_certificateChain; }
+
+    /**
+     * <p>The PEM encoded certificate chain.</p>
+     */
+    inline bool CertificateChainHasBeenSet() const { return m_certificateChainHasBeenSet; }
 
     /**
      * <p>The PEM encoded certificate chain.</p>

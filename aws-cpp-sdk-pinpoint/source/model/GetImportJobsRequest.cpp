@@ -34,7 +34,7 @@ GetImportJobsRequest::GetImportJobsRequest() :
 
 Aws::String GetImportJobsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void GetImportJobsRequest::AddQueryStringParameters(URI& uri) const

@@ -33,7 +33,7 @@ CreateKeysAndCertificateRequest::CreateKeysAndCertificateRequest() :
 
 Aws::String CreateKeysAndCertificateRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void CreateKeysAndCertificateRequest::AddQueryStringParameters(URI& uri) const

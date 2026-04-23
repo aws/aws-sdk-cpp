@@ -62,6 +62,12 @@ namespace Model
      * <p>The base path name that callers of the API must provide as part of the URL
      * after the domain name.</p>
      */
+    inline bool BasePathHasBeenSet() const { return m_basePathHasBeenSet; }
+
+    /**
+     * <p>The base path name that callers of the API must provide as part of the URL
+     * after the domain name.</p>
+     */
     inline void SetBasePath(const Aws::String& value) { m_basePathHasBeenSet = true; m_basePath = value; }
 
     /**
@@ -103,6 +109,11 @@ namespace Model
     /**
      * <p>The string identifier of the associated <a>RestApi</a>.</p>
      */
+    inline bool RestApiIdHasBeenSet() const { return m_restApiIdHasBeenSet; }
+
+    /**
+     * <p>The string identifier of the associated <a>RestApi</a>.</p>
+     */
     inline void SetRestApiId(const Aws::String& value) { m_restApiIdHasBeenSet = true; m_restApiId = value; }
 
     /**
@@ -135,6 +146,11 @@ namespace Model
      * <p>The name of the associated stage.</p>
      */
     inline const Aws::String& GetStage() const{ return m_stage; }
+
+    /**
+     * <p>The name of the associated stage.</p>
+     */
+    inline bool StageHasBeenSet() const { return m_stageHasBeenSet; }
 
     /**
      * <p>The name of the associated stage.</p>

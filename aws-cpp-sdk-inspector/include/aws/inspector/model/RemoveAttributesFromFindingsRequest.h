@@ -55,6 +55,12 @@ namespace Model
      * <p>The ARNs that specify the findings that you want to remove attributes
      * from.</p>
      */
+    inline bool FindingArnsHasBeenSet() const { return m_findingArnsHasBeenSet; }
+
+    /**
+     * <p>The ARNs that specify the findings that you want to remove attributes
+     * from.</p>
+     */
     inline void SetFindingArns(const Aws::Vector<Aws::String>& value) { m_findingArnsHasBeenSet = true; m_findingArns = value; }
 
     /**
@@ -99,6 +105,12 @@ namespace Model
      * findings.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeKeys() const{ return m_attributeKeys; }
+
+    /**
+     * <p>The array of attribute keys that you want to remove from specified
+     * findings.</p>
+     */
+    inline bool AttributeKeysHasBeenSet() const { return m_attributeKeysHasBeenSet; }
 
     /**
      * <p>The array of attribute keys that you want to remove from specified

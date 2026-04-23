@@ -29,7 +29,7 @@ DescribeConfigurationRequest::DescribeConfigurationRequest() :
 
 Aws::String DescribeConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

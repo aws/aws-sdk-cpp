@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the bot. The name is case sensitive. </p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the bot. The name is case sensitive. </p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -82,6 +87,11 @@ namespace Model
      * <p>The version or alias of the bot.</p>
      */
     inline const Aws::String& GetVersionOrAlias() const{ return m_versionOrAlias; }
+
+    /**
+     * <p>The version or alias of the bot.</p>
+     */
+    inline bool VersionOrAliasHasBeenSet() const { return m_versionOrAliasHasBeenSet; }
 
     /**
      * <p>The version or alias of the bot.</p>

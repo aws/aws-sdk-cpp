@@ -34,7 +34,7 @@ ListScheduledAuditsRequest::ListScheduledAuditsRequest() :
 
 Aws::String ListScheduledAuditsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListScheduledAuditsRequest::AddQueryStringParameters(URI& uri) const

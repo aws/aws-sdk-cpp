@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A list of application names separated by spaces.</p>
      */
+    inline bool ApplicationNamesHasBeenSet() const { return m_applicationNamesHasBeenSet; }
+
+    /**
+     * <p>A list of application names separated by spaces.</p>
+     */
     inline void SetApplicationNames(const Aws::Vector<Aws::String>& value) { m_applicationNamesHasBeenSet = true; m_applicationNames = value; }
 
     /**

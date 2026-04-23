@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the Auto Scaling group.</p>
      */
+    inline bool AutoScalingGroupNameHasBeenSet() const { return m_autoScalingGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the Auto Scaling group.</p>
+     */
     inline void SetAutoScalingGroupName(const Aws::String& value) { m_autoScalingGroupNameHasBeenSet = true; m_autoScalingGroupName = value; }
 
     /**
@@ -94,6 +99,18 @@ namespace Model
      * <code>GroupTotalInstances</code> </p> </li> </ul>
      */
     inline const Aws::Vector<Aws::String>& GetMetrics() const{ return m_metrics; }
+
+    /**
+     * <p>One or more of the following metrics. If you omit this parameter, all metrics
+     * are disabled.</p> <ul> <li> <p> <code>GroupMinSize</code> </p> </li> <li> <p>
+     * <code>GroupMaxSize</code> </p> </li> <li> <p> <code>GroupDesiredCapacity</code>
+     * </p> </li> <li> <p> <code>GroupInServiceInstances</code> </p> </li> <li> <p>
+     * <code>GroupPendingInstances</code> </p> </li> <li> <p>
+     * <code>GroupStandbyInstances</code> </p> </li> <li> <p>
+     * <code>GroupTerminatingInstances</code> </p> </li> <li> <p>
+     * <code>GroupTotalInstances</code> </p> </li> </ul>
+     */
+    inline bool MetricsHasBeenSet() const { return m_metricsHasBeenSet; }
 
     /**
      * <p>One or more of the following metrics. If you omit this parameter, all metrics

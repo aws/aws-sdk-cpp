@@ -30,7 +30,7 @@ CancelPipelineReprocessingRequest::CancelPipelineReprocessingRequest() :
 
 Aws::String CancelPipelineReprocessingRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

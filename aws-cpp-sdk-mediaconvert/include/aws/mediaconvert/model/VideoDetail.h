@@ -53,6 +53,11 @@ namespace Model
     /**
      * Height in pixels for the output
      */
+    inline bool HeightInPxHasBeenSet() const { return m_heightInPxHasBeenSet; }
+
+    /**
+     * Height in pixels for the output
+     */
     inline void SetHeightInPx(int value) { m_heightInPxHasBeenSet = true; m_heightInPx = value; }
 
     /**
@@ -65,6 +70,11 @@ namespace Model
      * Width in pixels for the output
      */
     inline int GetWidthInPx() const{ return m_widthInPx; }
+
+    /**
+     * Width in pixels for the output
+     */
+    inline bool WidthInPxHasBeenSet() const { return m_widthInPxHasBeenSet; }
 
     /**
      * Width in pixels for the output

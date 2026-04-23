@@ -59,6 +59,12 @@ namespace Model
      * <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is
      * installed.</p>
      */
+    inline bool HostnameHasBeenSet() const { return m_hostnameHasBeenSet; }
+
+    /**
+     * <p>The hostname of the EC2 instance on which the Amazon Inspector Agent is
+     * installed.</p>
+     */
     inline void SetHostname(const Aws::String& value) { m_hostnameHasBeenSet = true; m_hostname = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The ID of the EC2 instance where the agent is installed.</p>
      */
+    inline bool AgentIdHasBeenSet() const { return m_agentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the EC2 instance where the agent is installed.</p>
+     */
     inline void SetAgentId(const Aws::String& value) { m_agentIdHasBeenSet = true; m_agentId = value; }
 
     /**
@@ -132,6 +143,11 @@ namespace Model
      * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
      */
     inline const Aws::String& GetAutoScalingGroup() const{ return m_autoScalingGroup; }
+
+    /**
+     * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
+     */
+    inline bool AutoScalingGroupHasBeenSet() const { return m_autoScalingGroupHasBeenSet; }
 
     /**
      * <p>The Auto Scaling group for the EC2 instance where the agent is installed.</p>
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The health status of the Amazon Inspector Agent.</p>
      */
+    inline bool AgentHealthHasBeenSet() const { return m_agentHealthHasBeenSet; }
+
+    /**
+     * <p>The health status of the Amazon Inspector Agent.</p>
+     */
     inline void SetAgentHealth(const AgentHealth& value) { m_agentHealthHasBeenSet = true; m_agentHealth = value; }
 
     /**
@@ -194,6 +215,11 @@ namespace Model
      * <p>The version of the Amazon Inspector Agent.</p>
      */
     inline const Aws::String& GetAgentVersion() const{ return m_agentVersion; }
+
+    /**
+     * <p>The version of the Amazon Inspector Agent.</p>
+     */
+    inline bool AgentVersionHasBeenSet() const { return m_agentVersionHasBeenSet; }
 
     /**
      * <p>The version of the Amazon Inspector Agent.</p>
@@ -231,6 +257,12 @@ namespace Model
      * Inspector Agent is installed.</p>
      */
     inline const Aws::String& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>The operating system running on the EC2 instance on which the Amazon
+     * Inspector Agent is installed.</p>
+     */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
      * <p>The operating system running on the EC2 instance on which the Amazon
@@ -279,6 +311,12 @@ namespace Model
      * <p>The kernel version of the operating system running on the EC2 instance on
      * which the Amazon Inspector Agent is installed.</p>
      */
+    inline bool KernelVersionHasBeenSet() const { return m_kernelVersionHasBeenSet; }
+
+    /**
+     * <p>The kernel version of the operating system running on the EC2 instance on
+     * which the Amazon Inspector Agent is installed.</p>
+     */
     inline void SetKernelVersion(const Aws::String& value) { m_kernelVersionHasBeenSet = true; m_kernelVersion = value; }
 
     /**
@@ -317,6 +355,12 @@ namespace Model
      * installed.</p>
      */
     inline const Aws::String& GetIpv4Address() const{ return m_ipv4Address; }
+
+    /**
+     * <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is
+     * installed.</p>
+     */
+    inline bool Ipv4AddressHasBeenSet() const { return m_ipv4AddressHasBeenSet; }
 
     /**
      * <p>The IP address of the EC2 instance on which the Amazon Inspector Agent is

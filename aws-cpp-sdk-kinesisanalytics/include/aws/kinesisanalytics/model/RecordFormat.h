@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The type of record format.</p>
      */
+    inline bool RecordFormatTypeHasBeenSet() const { return m_recordFormatTypeHasBeenSet; }
+
+    /**
+     * <p>The type of record format.</p>
+     */
     inline void SetRecordFormatType(const RecordFormatType& value) { m_recordFormatTypeHasBeenSet = true; m_recordFormatType = value; }
 
     /**
@@ -82,6 +87,14 @@ namespace Model
      * streaming source.</p>
      */
     inline const MappingParameters& GetMappingParameters() const{ return m_mappingParameters; }
+
+    /**
+     * <p>When configuring application input at the time of creating or updating an
+     * application, provides additional mapping information specific to the record
+     * format (such as JSON, CSV, or record fields delimited by some delimiter) on the
+     * streaming source.</p>
+     */
+    inline bool MappingParametersHasBeenSet() const { return m_mappingParametersHasBeenSet; }
 
     /**
      * <p>When configuring application input at the time of creating or updating an

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
      */
+    inline bool MLModelIdHasBeenSet() const { return m_mLModelIdHasBeenSet; }
+
+    /**
+     * <p>The ID assigned to the <code>MLModel</code> at creation.</p>
+     */
     inline void SetMLModelId(const Aws::String& value) { m_mLModelIdHasBeenSet = true; m_mLModelId = value; }
 
     /**
@@ -86,6 +91,13 @@ namespace Model
      * false, <code>Recipe</code> is not returned.</p>
      */
     inline bool GetVerbose() const{ return m_verbose; }
+
+    /**
+     * <p>Specifies whether the <code>GetMLModel</code> operation should return
+     * <code>Recipe</code>.</p> <p>If true, <code>Recipe</code> is returned.</p> <p>If
+     * false, <code>Recipe</code> is not returned.</p>
+     */
+    inline bool VerboseHasBeenSet() const { return m_verboseHasBeenSet; }
 
     /**
      * <p>Specifies whether the <code>GetMLModel</code> operation should return

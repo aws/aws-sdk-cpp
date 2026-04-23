@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The name of the dashboard.</p>
      */
+    inline bool DashboardNameHasBeenSet() const { return m_dashboardNameHasBeenSet; }
+
+    /**
+     * <p>The name of the dashboard.</p>
+     */
     inline void SetDashboardName(const Aws::String& value) { m_dashboardNameHasBeenSet = true; m_dashboardName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
      */
     inline const Aws::String& GetDashboardArn() const{ return m_dashboardArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
+     */
+    inline bool DashboardArnHasBeenSet() const { return m_dashboardArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the dashboard.</p>
@@ -134,6 +144,13 @@ namespace Model
      * or through the console. This number is expressed as the number of milliseconds
      * since Jan 1, 1970 00:00:00 UTC.</p>
      */
+    inline bool LastModifiedHasBeenSet() const { return m_lastModifiedHasBeenSet; }
+
+    /**
+     * <p>The time stamp of when the dashboard was last modified, either by an API call
+     * or through the console. This number is expressed as the number of milliseconds
+     * since Jan 1, 1970 00:00:00 UTC.</p>
+     */
     inline void SetLastModified(const Aws::Utils::DateTime& value) { m_lastModifiedHasBeenSet = true; m_lastModified = value; }
 
     /**
@@ -162,6 +179,11 @@ namespace Model
      * <p>The size of the dashboard, in bytes.</p>
      */
     inline long long GetSize() const{ return m_size; }
+
+    /**
+     * <p>The size of the dashboard, in bytes.</p>
+     */
+    inline bool SizeHasBeenSet() const { return m_sizeHasBeenSet; }
 
     /**
      * <p>The size of the dashboard, in bytes.</p>

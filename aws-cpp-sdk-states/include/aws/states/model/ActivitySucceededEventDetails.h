@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Contains details about an activity which successfully terminated during an
+   * <p>Contains details about an activity that successfully terminated during an
    * execution.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/states-2016-11-23/ActivitySucceededEventDetails">AWS
    * API Reference</a></p>
@@ -52,6 +52,11 @@ namespace Model
      * <p>The JSON data output by the activity task.</p>
      */
     inline const Aws::String& GetOutput() const{ return m_output; }
+
+    /**
+     * <p>The JSON data output by the activity task.</p>
+     */
+    inline bool OutputHasBeenSet() const { return m_outputHasBeenSet; }
 
     /**
      * <p>The JSON data output by the activity task.</p>

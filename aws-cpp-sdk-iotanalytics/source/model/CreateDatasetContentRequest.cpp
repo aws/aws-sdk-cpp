@@ -29,7 +29,7 @@ CreateDatasetContentRequest::CreateDatasetContentRequest() :
 
 Aws::String CreateDatasetContentRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

@@ -29,7 +29,7 @@ DeleteFunctionConcurrencyRequest::DeleteFunctionConcurrencyRequest() :
 
 Aws::String DeleteFunctionConcurrencyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

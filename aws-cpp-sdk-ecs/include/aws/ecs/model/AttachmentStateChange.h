@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the attachment.</p>
      */
+    inline bool AttachmentArnHasBeenSet() const { return m_attachmentArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the attachment.</p>
+     */
     inline void SetAttachmentArn(const Aws::String& value) { m_attachmentArnHasBeenSet = true; m_attachmentArn = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The status of the attachment.</p>
      */
     inline const Aws::String& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the attachment.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the attachment.</p>

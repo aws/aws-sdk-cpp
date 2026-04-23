@@ -35,7 +35,7 @@ namespace CodeDeploy
 namespace Model
 {
   /**
-   * <p>Represents the output of a GetOnPremisesInstance operation.</p><p><h3>See
+   * <p> Represents the output of a GetOnPremisesInstance operation. </p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/codedeploy-2014-10-06/GetOnPremisesInstanceOutput">AWS
    * API Reference</a></p>
@@ -49,27 +49,27 @@ namespace Model
 
 
     /**
-     * <p>Information about the on-premises instance.</p>
+     * <p> Information about the on-premises instance. </p>
      */
     inline const InstanceInfo& GetInstanceInfo() const{ return m_instanceInfo; }
 
     /**
-     * <p>Information about the on-premises instance.</p>
+     * <p> Information about the on-premises instance. </p>
      */
     inline void SetInstanceInfo(const InstanceInfo& value) { m_instanceInfo = value; }
 
     /**
-     * <p>Information about the on-premises instance.</p>
+     * <p> Information about the on-premises instance. </p>
      */
     inline void SetInstanceInfo(InstanceInfo&& value) { m_instanceInfo = std::move(value); }
 
     /**
-     * <p>Information about the on-premises instance.</p>
+     * <p> Information about the on-premises instance. </p>
      */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(const InstanceInfo& value) { SetInstanceInfo(value); return *this;}
 
     /**
-     * <p>Information about the on-premises instance.</p>
+     * <p> Information about the on-premises instance. </p>
      */
     inline GetOnPremisesInstanceResult& WithInstanceInfo(InstanceInfo&& value) { SetInstanceInfo(std::move(value)); return *this;}
 

@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The Availability Zone of the subnet.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The Availability Zone of the subnet.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -90,10 +95,57 @@ namespace Model
 
 
     /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline const Aws::String& GetAvailabilityZoneId() const{ return m_availabilityZoneId; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline bool AvailabilityZoneIdHasBeenSet() const { return m_availabilityZoneIdHasBeenSet; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const Aws::String& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = value; }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(Aws::String&& value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId = std::move(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline void SetAvailabilityZoneId(const char* value) { m_availabilityZoneIdHasBeenSet = true; m_availabilityZoneId.assign(value); }
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(const Aws::String& value) { SetAvailabilityZoneId(value); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(Aws::String&& value) { SetAvailabilityZoneId(std::move(value)); return *this;}
+
+    /**
+     * <p>The AZ ID of the subnet.</p>
+     */
+    inline Subnet& WithAvailabilityZoneId(const char* value) { SetAvailabilityZoneId(value); return *this;}
+
+
+    /**
      * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
      * for any stopped instances are considered unavailable.</p>
      */
     inline int GetAvailableIpAddressCount() const{ return m_availableIpAddressCount; }
+
+    /**
+     * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
+     * for any stopped instances are considered unavailable.</p>
+     */
+    inline bool AvailableIpAddressCountHasBeenSet() const { return m_availableIpAddressCountHasBeenSet; }
 
     /**
      * <p>The number of unused private IPv4 addresses in the subnet. The IPv4 addresses
@@ -112,6 +164,11 @@ namespace Model
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
      */
     inline const Aws::String& GetCidrBlock() const{ return m_cidrBlock; }
+
+    /**
+     * <p>The IPv4 CIDR block assigned to the subnet.</p>
+     */
+    inline bool CidrBlockHasBeenSet() const { return m_cidrBlockHasBeenSet; }
 
     /**
      * <p>The IPv4 CIDR block assigned to the subnet.</p>
@@ -152,6 +209,11 @@ namespace Model
     /**
      * <p>Indicates whether this is the default subnet for the Availability Zone.</p>
      */
+    inline bool DefaultForAzHasBeenSet() const { return m_defaultForAzHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this is the default subnet for the Availability Zone.</p>
+     */
     inline void SetDefaultForAz(bool value) { m_defaultForAzHasBeenSet = true; m_defaultForAz = value; }
 
     /**
@@ -170,6 +232,12 @@ namespace Model
      * <p>Indicates whether instances launched in this subnet receive a public IPv4
      * address.</p>
      */
+    inline bool MapPublicIpOnLaunchHasBeenSet() const { return m_mapPublicIpOnLaunchHasBeenSet; }
+
+    /**
+     * <p>Indicates whether instances launched in this subnet receive a public IPv4
+     * address.</p>
+     */
     inline void SetMapPublicIpOnLaunch(bool value) { m_mapPublicIpOnLaunchHasBeenSet = true; m_mapPublicIpOnLaunch = value; }
 
     /**
@@ -183,6 +251,11 @@ namespace Model
      * <p>The current state of the subnet.</p>
      */
     inline const SubnetState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The current state of the subnet.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The current state of the subnet.</p>
@@ -209,6 +282,11 @@ namespace Model
      * <p>The ID of the subnet.</p>
      */
     inline const Aws::String& GetSubnetId() const{ return m_subnetId; }
+
+    /**
+     * <p>The ID of the subnet.</p>
+     */
+    inline bool SubnetIdHasBeenSet() const { return m_subnetIdHasBeenSet; }
 
     /**
      * <p>The ID of the subnet.</p>
@@ -249,6 +327,11 @@ namespace Model
     /**
      * <p>The ID of the VPC the subnet is in.</p>
      */
+    inline bool VpcIdHasBeenSet() const { return m_vpcIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC the subnet is in.</p>
+     */
     inline void SetVpcId(const Aws::String& value) { m_vpcIdHasBeenSet = true; m_vpcId = value; }
 
     /**
@@ -278,10 +361,57 @@ namespace Model
 
 
     /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline const Aws::String& GetOwnerId() const{ return m_ownerId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline bool OwnerIdHasBeenSet() const { return m_ownerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(const Aws::String& value) { m_ownerIdHasBeenSet = true; m_ownerId = value; }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(Aws::String&& value) { m_ownerIdHasBeenSet = true; m_ownerId = std::move(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline void SetOwnerId(const char* value) { m_ownerIdHasBeenSet = true; m_ownerId.assign(value); }
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(const Aws::String& value) { SetOwnerId(value); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(Aws::String&& value) { SetOwnerId(std::move(value)); return *this;}
+
+    /**
+     * <p>The ID of the AWS account that owns the subnet.</p>
+     */
+    inline Subnet& WithOwnerId(const char* value) { SetOwnerId(value); return *this;}
+
+
+    /**
      * <p>Indicates whether a network interface created in this subnet (including a
      * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
      */
     inline bool GetAssignIpv6AddressOnCreation() const{ return m_assignIpv6AddressOnCreation; }
+
+    /**
+     * <p>Indicates whether a network interface created in this subnet (including a
+     * network interface created by <a>RunInstances</a>) receives an IPv6 address.</p>
+     */
+    inline bool AssignIpv6AddressOnCreationHasBeenSet() const { return m_assignIpv6AddressOnCreationHasBeenSet; }
 
     /**
      * <p>Indicates whether a network interface created in this subnet (including a
@@ -300,6 +430,11 @@ namespace Model
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
      */
     inline const Aws::Vector<SubnetIpv6CidrBlockAssociation>& GetIpv6CidrBlockAssociationSet() const{ return m_ipv6CidrBlockAssociationSet; }
+
+    /**
+     * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
+     */
+    inline bool Ipv6CidrBlockAssociationSetHasBeenSet() const { return m_ipv6CidrBlockAssociationSetHasBeenSet; }
 
     /**
      * <p>Information about the IPv6 CIDR blocks associated with the subnet.</p>
@@ -340,6 +475,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the subnet.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the subnet.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -367,10 +507,54 @@ namespace Model
      */
     inline Subnet& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
 
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline const Aws::String& GetSubnetArn() const{ return m_subnetArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline bool SubnetArnHasBeenSet() const { return m_subnetArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(const Aws::String& value) { m_subnetArnHasBeenSet = true; m_subnetArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(Aws::String&& value) { m_subnetArnHasBeenSet = true; m_subnetArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline void SetSubnetArn(const char* value) { m_subnetArnHasBeenSet = true; m_subnetArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(const Aws::String& value) { SetSubnetArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(Aws::String&& value) { SetSubnetArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the subnet.</p>
+     */
+    inline Subnet& WithSubnetArn(const char* value) { SetSubnetArn(value); return *this;}
+
   private:
 
     Aws::String m_availabilityZone;
     bool m_availabilityZoneHasBeenSet;
+
+    Aws::String m_availabilityZoneId;
+    bool m_availabilityZoneIdHasBeenSet;
 
     int m_availableIpAddressCount;
     bool m_availableIpAddressCountHasBeenSet;
@@ -393,6 +577,9 @@ namespace Model
     Aws::String m_vpcId;
     bool m_vpcIdHasBeenSet;
 
+    Aws::String m_ownerId;
+    bool m_ownerIdHasBeenSet;
+
     bool m_assignIpv6AddressOnCreation;
     bool m_assignIpv6AddressOnCreationHasBeenSet;
 
@@ -401,6 +588,9 @@ namespace Model
 
     Aws::Vector<Tag> m_tags;
     bool m_tagsHasBeenSet;
+
+    Aws::String m_subnetArn;
+    bool m_subnetArnHasBeenSet;
   };
 
 } // namespace Model

@@ -64,6 +64,15 @@ namespace Model
      * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
      * AWS account by specifying <code>AWS::::Account</code>.</p>
      */
+    inline bool ResourceTypesHasBeenSet() const { return m_resourceTypesHasBeenSet; }
+
+    /**
+     * <p>Specify one or more resource types to get the number of resources that are
+     * compliant and the number that are noncompliant for each resource type.</p>
+     * <p>For this request, you can specify an AWS resource type such as
+     * <code>AWS::EC2::Instance</code>. You can specify that the resource type is an
+     * AWS account by specifying <code>AWS::::Account</code>.</p>
+     */
     inline void SetResourceTypes(const Aws::Vector<Aws::String>& value) { m_resourceTypesHasBeenSet = true; m_resourceTypes = value; }
 
     /**

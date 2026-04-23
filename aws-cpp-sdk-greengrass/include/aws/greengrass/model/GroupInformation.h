@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ARN of the group.
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * The ARN of the group.
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * The time, in milliseconds since the epoch, when the group was created.
      */
     inline const Aws::String& GetCreationTimestamp() const{ return m_creationTimestamp; }
+
+    /**
+     * The time, in milliseconds since the epoch, when the group was created.
+     */
+    inline bool CreationTimestampHasBeenSet() const { return m_creationTimestampHasBeenSet; }
 
     /**
      * The time, in milliseconds since the epoch, when the group was created.
@@ -127,6 +137,11 @@ namespace Model
     /**
      * The ID of the group.
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * The ID of the group.
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -159,6 +174,11 @@ namespace Model
      * The time, in milliseconds since the epoch, when the group was last updated.
      */
     inline const Aws::String& GetLastUpdatedTimestamp() const{ return m_lastUpdatedTimestamp; }
+
+    /**
+     * The time, in milliseconds since the epoch, when the group was last updated.
+     */
+    inline bool LastUpdatedTimestampHasBeenSet() const { return m_lastUpdatedTimestampHasBeenSet; }
 
     /**
      * The time, in milliseconds since the epoch, when the group was last updated.
@@ -199,6 +219,11 @@ namespace Model
     /**
      * The latest version of the group.
      */
+    inline bool LatestVersionHasBeenSet() const { return m_latestVersionHasBeenSet; }
+
+    /**
+     * The latest version of the group.
+     */
     inline void SetLatestVersion(const Aws::String& value) { m_latestVersionHasBeenSet = true; m_latestVersion = value; }
 
     /**
@@ -235,6 +260,11 @@ namespace Model
     /**
      * The ARN of the latest version of the group.
      */
+    inline bool LatestVersionArnHasBeenSet() const { return m_latestVersionArnHasBeenSet; }
+
+    /**
+     * The ARN of the latest version of the group.
+     */
     inline void SetLatestVersionArn(const Aws::String& value) { m_latestVersionArnHasBeenSet = true; m_latestVersionArn = value; }
 
     /**
@@ -267,6 +297,11 @@ namespace Model
      * The name of the group.
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * The name of the group.
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * The name of the group.

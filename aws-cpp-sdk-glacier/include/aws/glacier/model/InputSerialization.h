@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>Describes the serialization of a CSV-encoded object.</p>
      */
+    inline bool CsvHasBeenSet() const { return m_csvHasBeenSet; }
+
+    /**
+     * <p>Describes the serialization of a CSV-encoded object.</p>
+     */
     inline void SetCsv(const CSVInput& value) { m_csvHasBeenSet = true; m_csv = value; }
 
     /**

@@ -240,25 +240,39 @@ namespace Model
     inline ListMultipartUploadsResult& WithPrefix(const char* value) { SetPrefix(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::String& GetDelimiter() const{ return m_delimiter; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const Aws::String& value) { m_delimiter = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(Aws::String&& value) { m_delimiter = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetDelimiter(const char* value) { m_delimiter.assign(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithDelimiter(const Aws::String& value) { SetDelimiter(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithDelimiter(Aws::String&& value) { SetDelimiter(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithDelimiter(const char* value) { SetDelimiter(value); return *this;}
 
 
@@ -349,47 +363,75 @@ namespace Model
     inline ListMultipartUploadsResult& WithIsTruncated(bool value) { SetIsTruncated(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<MultipartUpload>& GetUploads() const{ return m_uploads; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetUploads(const Aws::Vector<MultipartUpload>& value) { m_uploads = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetUploads(Aws::Vector<MultipartUpload>&& value) { m_uploads = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithUploads(const Aws::Vector<MultipartUpload>& value) { SetUploads(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithUploads(Aws::Vector<MultipartUpload>&& value) { SetUploads(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& AddUploads(const MultipartUpload& value) { m_uploads.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& AddUploads(MultipartUpload&& value) { m_uploads.push_back(std::move(value)); return *this; }
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<CommonPrefix>& GetCommonPrefixes() const{ return m_commonPrefixes; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { m_commonPrefixes = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { m_commonPrefixes = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithCommonPrefixes(const Aws::Vector<CommonPrefix>& value) { SetCommonPrefixes(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& WithCommonPrefixes(Aws::Vector<CommonPrefix>&& value) { SetCommonPrefixes(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& AddCommonPrefixes(const CommonPrefix& value) { m_commonPrefixes.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline ListMultipartUploadsResult& AddCommonPrefixes(CommonPrefix&& value) { m_commonPrefixes.push_back(std::move(value)); return *this; }
 
 

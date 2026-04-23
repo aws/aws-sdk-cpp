@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Reference that identifies the object whose attributes will be retrieved.</p>
      */
+    inline bool ObjectReferenceHasBeenSet() const { return m_objectReferenceHasBeenSet; }
+
+    /**
+     * <p>Reference that identifies the object whose attributes will be retrieved.</p>
+     */
     inline void SetObjectReference(const ObjectReference& value) { m_objectReferenceHasBeenSet = true; m_objectReference = value; }
 
     /**
@@ -84,6 +89,12 @@ namespace Model
      * <a>SchemaFacet</a> for details.</p>
      */
     inline const SchemaFacet& GetSchemaFacet() const{ return m_schemaFacet; }
+
+    /**
+     * <p>Identifier for the facet whose attributes will be retrieved. See
+     * <a>SchemaFacet</a> for details.</p>
+     */
+    inline bool SchemaFacetHasBeenSet() const { return m_schemaFacetHasBeenSet; }
 
     /**
      * <p>Identifier for the facet whose attributes will be retrieved. See
@@ -114,6 +125,11 @@ namespace Model
      * <p>List of attribute names whose values will be retrieved.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAttributeNames() const{ return m_attributeNames; }
+
+    /**
+     * <p>List of attribute names whose values will be retrieved.</p>
+     */
+    inline bool AttributeNamesHasBeenSet() const { return m_attributeNamesHasBeenSet; }
 
     /**
      * <p>List of attribute names whose values will be retrieved.</p>

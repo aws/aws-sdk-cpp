@@ -66,6 +66,12 @@ namespace Model
      * <p>Specifies the values of hyperparameters that do not change for the tuning
      * job.</p>
      */
+    inline bool StaticHyperParametersHasBeenSet() const { return m_staticHyperParametersHasBeenSet; }
+
+    /**
+     * <p>Specifies the values of hyperparameters that do not change for the tuning
+     * job.</p>
+     */
     inline void SetStaticHyperParameters(const Aws::Map<Aws::String, Aws::String>& value) { m_staticHyperParametersHasBeenSet = true; m_staticHyperParameters = value; }
 
     /**
@@ -131,31 +137,43 @@ namespace Model
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline const HyperParameterAlgorithmSpecification& GetAlgorithmSpecification() const{ return m_algorithmSpecification; }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
+     */
+    inline bool AlgorithmSpecificationHasBeenSet() const { return m_algorithmSpecificationHasBeenSet; }
+
+    /**
+     * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = value; }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline void SetAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { m_algorithmSpecificationHasBeenSet = true; m_algorithmSpecification = std::move(value); }
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(const HyperParameterAlgorithmSpecification& value) { SetAlgorithmSpecification(value); return *this;}
 
     /**
      * <p>The <a>HyperParameterAlgorithmSpecification</a> object that specifies the
-     * algorithm to use for the training jobs that the tuning job launches.</p>
+     * resource algorithm to use for the training jobs that the tuning job
+     * launches.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithAlgorithmSpecification(HyperParameterAlgorithmSpecification&& value) { SetAlgorithmSpecification(std::move(value)); return *this;}
 
@@ -165,6 +183,12 @@ namespace Model
      * jobs that the tuning job launches.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the IAM role associated with the training
+     * jobs that the tuning job launches.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the IAM role associated with the training
@@ -213,6 +237,12 @@ namespace Model
      * <p>An array of <a>Channel</a> objects that specify the input for the training
      * jobs that the tuning job launches.</p>
      */
+    inline bool InputDataConfigHasBeenSet() const { return m_inputDataConfigHasBeenSet; }
+
+    /**
+     * <p>An array of <a>Channel</a> objects that specify the input for the training
+     * jobs that the tuning job launches.</p>
+     */
     inline void SetInputDataConfig(const Aws::Vector<Channel>& value) { m_inputDataConfigHasBeenSet = true; m_inputDataConfig = value; }
 
     /**
@@ -251,7 +281,7 @@ namespace Model
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline const VpcConfig& GetVpcConfig() const{ return m_vpcConfig; }
@@ -261,7 +291,17 @@ namespace Model
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
+     */
+    inline bool VpcConfigHasBeenSet() const { return m_vpcConfigHasBeenSet; }
+
+    /**
+     * <p>The <a>VpcConfig</a> object that specifies the VPC that you want the training
+     * jobs that this hyperparameter tuning job launches to connect to. Control access
+     * to and from your training container by configuring the VPC. For more
+     * information, see <a
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(const VpcConfig& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = value; }
@@ -271,7 +311,7 @@ namespace Model
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline void SetVpcConfig(VpcConfig&& value) { m_vpcConfigHasBeenSet = true; m_vpcConfig = std::move(value); }
@@ -281,7 +321,7 @@ namespace Model
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithVpcConfig(const VpcConfig& value) { SetVpcConfig(value); return *this;}
@@ -291,7 +331,7 @@ namespace Model
      * jobs that this hyperparameter tuning job launches to connect to. Control access
      * to and from your training container by configuring the VPC. For more
      * information, see <a
-     * href="http://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
+     * href="https://docs.aws.amazon.com/sagemaker/latest/dg/train-vpc.html">Protect
      * Training Jobs by Using an Amazon Virtual Private Cloud</a>.</p>
      */
     inline HyperParameterTrainingJobDefinition& WithVpcConfig(VpcConfig&& value) { SetVpcConfig(std::move(value)); return *this;}
@@ -302,6 +342,12 @@ namespace Model
      * from the training jobs that the tuning job launches.</p>
      */
     inline const OutputDataConfig& GetOutputDataConfig() const{ return m_outputDataConfig; }
+
+    /**
+     * <p>Specifies the path to the Amazon S3 bucket where you store model artifacts
+     * from the training jobs that the tuning job launches.</p>
+     */
+    inline bool OutputDataConfigHasBeenSet() const { return m_outputDataConfigHasBeenSet; }
 
     /**
      * <p>Specifies the path to the Amazon S3 bucket where you store model artifacts
@@ -338,6 +384,17 @@ namespace Model
      * training algorithms, specify an instance count greater than 1.</p>
      */
     inline const ResourceConfig& GetResourceConfig() const{ return m_resourceConfig; }
+
+    /**
+     * <p>The resources, including the compute instances and storage volumes, to use
+     * for the training jobs that the tuning job launches.</p> <p>Storage volumes store
+     * model artifacts and incremental states. Training algorithms might also use
+     * storage volumes for scratch space. If you want Amazon SageMaker to use the
+     * storage volume to store the training data, choose <code>File</code> as the
+     * <code>TrainingInputMode</code> in the algorithm specification. For distributed
+     * training algorithms, specify an instance count greater than 1.</p>
+     */
+    inline bool ResourceConfigHasBeenSet() const { return m_resourceConfigHasBeenSet; }
 
     /**
      * <p>The resources, including the compute instances and storage volumes, to use
@@ -404,6 +461,17 @@ namespace Model
      * stopping condition has been met, training algorithms provided by Amazon
      * SageMaker save the intermediate results of the job.</p>
      */
+    inline bool StoppingConditionHasBeenSet() const { return m_stoppingConditionHasBeenSet; }
+
+    /**
+     * <p>Sets a maximum duration for the training jobs that the tuning job launches.
+     * Use this parameter to limit model training costs. </p> <p>To stop a job, Amazon
+     * SageMaker sends the algorithm the <code>SIGTERM</code> signal. This delays job
+     * termination for 120 seconds. Algorithms might use this 120-second window to save
+     * the model artifacts.</p> <p>When Amazon SageMaker terminates a job because the
+     * stopping condition has been met, training algorithms provided by Amazon
+     * SageMaker save the intermediate results of the job.</p>
+     */
     inline void SetStoppingCondition(const StoppingCondition& value) { m_stoppingConditionHasBeenSet = true; m_stoppingCondition = value; }
 
     /**
@@ -439,6 +507,88 @@ namespace Model
      */
     inline HyperParameterTrainingJobDefinition& WithStoppingCondition(StoppingCondition&& value) { SetStoppingCondition(std::move(value)); return *this;}
 
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline bool GetEnableNetworkIsolation() const{ return m_enableNetworkIsolation; }
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline bool EnableNetworkIsolationHasBeenSet() const { return m_enableNetworkIsolationHasBeenSet; }
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline void SetEnableNetworkIsolation(bool value) { m_enableNetworkIsolationHasBeenSet = true; m_enableNetworkIsolation = value; }
+
+    /**
+     * <p>Isolates the training container. No inbound or outbound network calls can be
+     * made, except for calls between peers within a training cluster for distributed
+     * training. If network isolation is used for training jobs that are configured to
+     * use a VPC, Amazon SageMaker downloads and uploads customer data and model
+     * artifacts through the specified VPC, but the training container does not have
+     * network access.</p> <note> <p>The Semantic Segmentation built-in algorithm does
+     * not support network isolation.</p> </note>
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnableNetworkIsolation(bool value) { SetEnableNetworkIsolation(value); return *this;}
+
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
+     */
+    inline bool GetEnableInterContainerTrafficEncryption() const{ return m_enableInterContainerTrafficEncryption; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
+     */
+    inline bool EnableInterContainerTrafficEncryptionHasBeenSet() const { return m_enableInterContainerTrafficEncryptionHasBeenSet; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
+     */
+    inline void SetEnableInterContainerTrafficEncryption(bool value) { m_enableInterContainerTrafficEncryptionHasBeenSet = true; m_enableInterContainerTrafficEncryption = value; }
+
+    /**
+     * <p>To encrypt all communications between ML compute instances in distributed
+     * training, choose <code>True</code>. Encryption provides greater security for
+     * distributed training, but training might take longer. How long it takes depends
+     * on the amount of communication between compute instances, especially if you use
+     * a deep learning algorithm in distributed training.</p>
+     */
+    inline HyperParameterTrainingJobDefinition& WithEnableInterContainerTrafficEncryption(bool value) { SetEnableInterContainerTrafficEncryption(value); return *this;}
+
   private:
 
     Aws::Map<Aws::String, Aws::String> m_staticHyperParameters;
@@ -464,6 +614,12 @@ namespace Model
 
     StoppingCondition m_stoppingCondition;
     bool m_stoppingConditionHasBeenSet;
+
+    bool m_enableNetworkIsolation;
+    bool m_enableNetworkIsolationHasBeenSet;
+
+    bool m_enableInterContainerTrafficEncryption;
+    bool m_enableInterContainerTrafficEncryptionHasBeenSet;
   };
 
 } // namespace Model

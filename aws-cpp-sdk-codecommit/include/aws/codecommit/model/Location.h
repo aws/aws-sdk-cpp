@@ -59,6 +59,12 @@ namespace Model
      * <p>The name of the file being compared, including its extension and
      * subdirectory, if any.</p>
      */
+    inline bool FilePathHasBeenSet() const { return m_filePathHasBeenSet; }
+
+    /**
+     * <p>The name of the file being compared, including its extension and
+     * subdirectory, if any.</p>
+     */
     inline void SetFilePath(const Aws::String& value) { m_filePathHasBeenSet = true; m_filePath = value; }
 
     /**
@@ -100,6 +106,11 @@ namespace Model
     /**
      * <p>The position of a change within a compared file, in line number format.</p>
      */
+    inline bool FilePositionHasBeenSet() const { return m_filePositionHasBeenSet; }
+
+    /**
+     * <p>The position of a change within a compared file, in line number format.</p>
+     */
     inline void SetFilePosition(long long value) { m_filePositionHasBeenSet = true; m_filePosition = value; }
 
     /**
@@ -113,6 +124,12 @@ namespace Model
      * 'before' or 'after' of that comparison.</p>
      */
     inline const RelativeFileVersionEnum& GetRelativeFileVersion() const{ return m_relativeFileVersion; }
+
+    /**
+     * <p>In a comparison of commits or a pull request, whether the change is in the
+     * 'before' or 'after' of that comparison.</p>
+     */
+    inline bool RelativeFileVersionHasBeenSet() const { return m_relativeFileVersionHasBeenSet; }
 
     /**
      * <p>In a comparison of commits or a pull request, whether the change is in the

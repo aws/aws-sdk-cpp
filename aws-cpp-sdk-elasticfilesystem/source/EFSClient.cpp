@@ -24,6 +24,9 @@
 #include <aws/core/utils/json/JsonSerializer.h>
 #include <aws/core/utils/memory/stl/AWSStringStream.h>
 #include <aws/core/utils/threading/Executor.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/logging/LogMacros.h>
+
 #include <aws/elasticfilesystem/EFSClient.h>
 #include <aws/elasticfilesystem/EFSEndpoint.h>
 #include <aws/elasticfilesystem/EFSErrorMarshaller.h>
@@ -34,10 +37,12 @@
 #include <aws/elasticfilesystem/model/DeleteMountTargetRequest.h>
 #include <aws/elasticfilesystem/model/DeleteTagsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeFileSystemsRequest.h>
+#include <aws/elasticfilesystem/model/DescribeLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetSecurityGroupsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeMountTargetsRequest.h>
 #include <aws/elasticfilesystem/model/DescribeTagsRequest.h>
 #include <aws/elasticfilesystem/model/ModifyMountTargetSecurityGroupsRequest.h>
+#include <aws/elasticfilesystem/model/PutLifecycleConfigurationRequest.h>
 #include <aws/elasticfilesystem/model/UpdateFileSystemRequest.h>
 
 using namespace Aws;
@@ -89,25 +94,32 @@ EFSClient::~EFSClient()
 
 void EFSClient::init(const ClientConfiguration& config)
 {
-  Aws::StringStream ss;
-  ss << SchemeMapper::ToString(config.scheme) << "://";
-
-  if(config.endpointOverride.empty())
+  m_configScheme = SchemeMapper::ToString(config.scheme);
+  if (config.endpointOverride.empty())
   {
-    ss << EFSEndpoint::ForRegion(config.region, config.useDualStack);
+      m_uri = m_configScheme + "://" + EFSEndpoint::ForRegion(config.region, config.useDualStack);
   }
   else
   {
-    ss << config.endpointOverride;
+      OverrideEndpoint(config.endpointOverride);
   }
-
-  m_uri = ss.str();
 }
 
+void EFSClient::OverrideEndpoint(const Aws::String& endpoint)
+{
+  if (endpoint.compare(0, 7, "http://") == 0 || endpoint.compare(0, 8, "https://") == 0)
+  {
+      m_uri = endpoint;
+  }
+  else
+  {
+      m_uri = m_configScheme + "://" + endpoint;
+  }
+}
 CreateFileSystemOutcome EFSClient::CreateFileSystem(const CreateFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -141,8 +153,8 @@ void EFSClient::CreateFileSystemAsyncHelper(const CreateFileSystemRequest& reque
 
 CreateMountTargetOutcome EFSClient::CreateMountTarget(const CreateMountTargetRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_POST, Aws::Auth::SIGV4_SIGNER);
@@ -176,8 +188,13 @@ void EFSClient::CreateMountTargetAsyncHelper(const CreateMountTargetRequest& req
 
 CreateTagsOutcome EFSClient::CreateTags(const CreateTagsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("CreateTags", "Required field: FileSystemId, is not set");
+    return CreateTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/create-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -212,8 +229,13 @@ void EFSClient::CreateTagsAsyncHelper(const CreateTagsRequest& request, const Cr
 
 DeleteFileSystemOutcome EFSClient::DeleteFileSystem(const DeleteFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteFileSystem", "Required field: FileSystemId, is not set");
+    return DeleteFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -248,8 +270,13 @@ void EFSClient::DeleteFileSystemAsyncHelper(const DeleteFileSystemRequest& reque
 
 DeleteMountTargetOutcome EFSClient::DeleteMountTarget(const DeleteMountTargetRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteMountTarget", "Required field: MountTargetId, is not set");
+    return DeleteMountTargetOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -284,8 +311,13 @@ void EFSClient::DeleteMountTargetAsyncHelper(const DeleteMountTargetRequest& req
 
 DeleteTagsOutcome EFSClient::DeleteTags(const DeleteTagsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DeleteTags", "Required field: FileSystemId, is not set");
+    return DeleteTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/delete-tags/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());
@@ -320,8 +352,8 @@ void EFSClient::DeleteTagsAsyncHelper(const DeleteTagsRequest& request, const De
 
 DescribeFileSystemsOutcome EFSClient::DescribeFileSystems(const DescribeFileSystemsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -353,10 +385,57 @@ void EFSClient::DescribeFileSystemsAsyncHelper(const DescribeFileSystemsRequest&
   handler(this, request, DescribeFileSystems(request), context);
 }
 
+DescribeLifecycleConfigurationOutcome EFSClient::DescribeLifecycleConfiguration(const DescribeLifecycleConfigurationRequest& request) const
+{
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeLifecycleConfiguration", "Required field: FileSystemId, is not set");
+    return DescribeLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/lifecycle-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return DescribeLifecycleConfigurationOutcome(DescribeLifecycleConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return DescribeLifecycleConfigurationOutcome(outcome.GetError());
+  }
+}
+
+DescribeLifecycleConfigurationOutcomeCallable EFSClient::DescribeLifecycleConfigurationCallable(const DescribeLifecycleConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< DescribeLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->DescribeLifecycleConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::DescribeLifecycleConfigurationAsync(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->DescribeLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::DescribeLifecycleConfigurationAsyncHelper(const DescribeLifecycleConfigurationRequest& request, const DescribeLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, DescribeLifecycleConfiguration(request), context);
+}
+
 DescribeMountTargetSecurityGroupsOutcome EFSClient::DescribeMountTargetSecurityGroups(const DescribeMountTargetSecurityGroupsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeMountTargetSecurityGroups", "Required field: MountTargetId, is not set");
+    return DescribeMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
@@ -392,8 +471,8 @@ void EFSClient::DescribeMountTargetSecurityGroupsAsyncHelper(const DescribeMount
 
 DescribeMountTargetsOutcome EFSClient::DescribeMountTargets(const DescribeMountTargetsRequest& request) const
 {
-  Aws::StringStream ss;
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets";
   uri.SetPath(uri.GetPath() + ss.str());
   JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_GET, Aws::Auth::SIGV4_SIGNER);
@@ -427,8 +506,13 @@ void EFSClient::DescribeMountTargetsAsyncHelper(const DescribeMountTargetsReques
 
 DescribeTagsOutcome EFSClient::DescribeTags(const DescribeTagsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("DescribeTags", "Required field: FileSystemId, is not set");
+    return DescribeTagsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/tags/";
   ss << request.GetFileSystemId();
   ss << "/";
@@ -464,8 +548,13 @@ void EFSClient::DescribeTagsAsyncHelper(const DescribeTagsRequest& request, cons
 
 ModifyMountTargetSecurityGroupsOutcome EFSClient::ModifyMountTargetSecurityGroups(const ModifyMountTargetSecurityGroupsRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.MountTargetIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("ModifyMountTargetSecurityGroups", "Required field: MountTargetId, is not set");
+    return ModifyMountTargetSecurityGroupsOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [MountTargetId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/mount-targets/";
   ss << request.GetMountTargetId();
   ss << "/security-groups";
@@ -499,10 +588,57 @@ void EFSClient::ModifyMountTargetSecurityGroupsAsyncHelper(const ModifyMountTarg
   handler(this, request, ModifyMountTargetSecurityGroups(request), context);
 }
 
+PutLifecycleConfigurationOutcome EFSClient::PutLifecycleConfiguration(const PutLifecycleConfigurationRequest& request) const
+{
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("PutLifecycleConfiguration", "Required field: FileSystemId, is not set");
+    return PutLifecycleConfigurationOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
+  Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
+  ss << "/2015-02-01/file-systems/";
+  ss << request.GetFileSystemId();
+  ss << "/lifecycle-configuration";
+  uri.SetPath(uri.GetPath() + ss.str());
+  JsonOutcome outcome = MakeRequest(uri, request, HttpMethod::HTTP_PUT, Aws::Auth::SIGV4_SIGNER);
+  if(outcome.IsSuccess())
+  {
+    return PutLifecycleConfigurationOutcome(PutLifecycleConfigurationResult(outcome.GetResult()));
+  }
+  else
+  {
+    return PutLifecycleConfigurationOutcome(outcome.GetError());
+  }
+}
+
+PutLifecycleConfigurationOutcomeCallable EFSClient::PutLifecycleConfigurationCallable(const PutLifecycleConfigurationRequest& request) const
+{
+  auto task = Aws::MakeShared< std::packaged_task< PutLifecycleConfigurationOutcome() > >(ALLOCATION_TAG, [this, request](){ return this->PutLifecycleConfiguration(request); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void EFSClient::PutLifecycleConfigurationAsync(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_executor->Submit( [this, request, handler, context](){ this->PutLifecycleConfigurationAsyncHelper( request, handler, context ); } );
+}
+
+void EFSClient::PutLifecycleConfigurationAsyncHelper(const PutLifecycleConfigurationRequest& request, const PutLifecycleConfigurationResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  handler(this, request, PutLifecycleConfiguration(request), context);
+}
+
 UpdateFileSystemOutcome EFSClient::UpdateFileSystem(const UpdateFileSystemRequest& request) const
 {
-  Aws::StringStream ss;
+  if (!request.FileSystemIdHasBeenSet())
+  {
+    AWS_LOGSTREAM_ERROR("UpdateFileSystem", "Required field: FileSystemId, is not set");
+    return UpdateFileSystemOutcome(Aws::Client::AWSError<EFSErrors>(EFSErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [FileSystemId]", false));
+  }
   Aws::Http::URI uri = m_uri;
+  Aws::StringStream ss;
   ss << "/2015-02-01/file-systems/";
   ss << request.GetFileSystemId();
   uri.SetPath(uri.GetPath() + ss.str());

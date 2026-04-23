@@ -19,7 +19,9 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/lightsail/model/ResourceLocation.h>
 #include <aws/lightsail/model/ResourceType.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/lightsail/model/DiskSnapshotState.h>
+#include <aws/lightsail/model/Tag.h>
 #include <utility>
 
 namespace Aws
@@ -55,6 +57,11 @@ namespace Model
      * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the disk snapshot (e.g., <code>my-disk-snapshot</code>).</p>
@@ -95,6 +102,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the disk snapshot.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -129,6 +141,13 @@ namespace Model
      * our support team to look up your Lightsail information more easily.</p>
      */
     inline const Aws::String& GetSupportCode() const{ return m_supportCode; }
+
+    /**
+     * <p>The support code. Include this code in your email to support when you have
+     * questions about an instance or another resource in Lightsail. This code enables
+     * our support team to look up your Lightsail information more easily.</p>
+     */
+    inline bool SupportCodeHasBeenSet() const { return m_supportCodeHasBeenSet; }
 
     /**
      * <p>The support code. Include this code in your email to support when you have
@@ -181,6 +200,11 @@ namespace Model
     /**
      * <p>The date when the disk snapshot was created.</p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The date when the disk snapshot was created.</p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -203,6 +227,11 @@ namespace Model
      * <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
      */
     inline const ResourceLocation& GetLocation() const{ return m_location; }
+
+    /**
+     * <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
+     */
+    inline bool LocationHasBeenSet() const { return m_locationHasBeenSet; }
 
     /**
      * <p>The AWS Region and Availability Zone where the disk snapshot was created.</p>
@@ -233,6 +262,11 @@ namespace Model
     /**
      * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
      */
+    inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+
+    /**
+     * <p>The Lightsail resource type (e.g., <code>DiskSnapshot</code>).</p>
+     */
     inline void SetResourceType(const ResourceType& value) { m_resourceTypeHasBeenSet = true; m_resourceType = value; }
 
     /**
@@ -252,9 +286,79 @@ namespace Model
 
 
     /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline const Aws::Vector<Tag>& GetTags() const{ return m_tags; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline void SetTags(Aws::Vector<Tag>&& value) { m_tagsHasBeenSet = true; m_tags = std::move(value); }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline DiskSnapshot& WithTags(const Aws::Vector<Tag>& value) { SetTags(value); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline DiskSnapshot& WithTags(Aws::Vector<Tag>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline DiskSnapshot& AddTags(const Tag& value) { m_tagsHasBeenSet = true; m_tags.push_back(value); return *this; }
+
+    /**
+     * <p>The tag keys and optional values for the resource. For more information about
+     * tags in Lightsail, see the <a
+     * href="https://lightsail.aws.amazon.com/ls/docs/en/articles/amazon-lightsail-tags">Lightsail
+     * Dev Guide</a>.</p>
+     */
+    inline DiskSnapshot& AddTags(Tag&& value) { m_tagsHasBeenSet = true; m_tags.push_back(std::move(value)); return *this; }
+
+
+    /**
      * <p>The size of the disk in GB.</p>
      */
     inline int GetSizeInGb() const{ return m_sizeInGb; }
+
+    /**
+     * <p>The size of the disk in GB.</p>
+     */
+    inline bool SizeInGbHasBeenSet() const { return m_sizeInGbHasBeenSet; }
 
     /**
      * <p>The size of the disk in GB.</p>
@@ -271,6 +375,11 @@ namespace Model
      * <p>The status of the disk snapshot operation.</p>
      */
     inline const DiskSnapshotState& GetState() const{ return m_state; }
+
+    /**
+     * <p>The status of the disk snapshot operation.</p>
+     */
+    inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
 
     /**
      * <p>The status of the disk snapshot operation.</p>
@@ -297,6 +406,11 @@ namespace Model
      * <p>The progress of the disk snapshot operation.</p>
      */
     inline const Aws::String& GetProgress() const{ return m_progress; }
+
+    /**
+     * <p>The progress of the disk snapshot operation.</p>
+     */
+    inline bool ProgressHasBeenSet() const { return m_progressHasBeenSet; }
 
     /**
      * <p>The progress of the disk snapshot operation.</p>
@@ -330,89 +444,199 @@ namespace Model
 
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline const Aws::String& GetFromDiskName() const{ return m_fromDiskName; }
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
+     */
+    inline bool FromDiskNameHasBeenSet() const { return m_fromDiskNameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline void SetFromDiskName(const Aws::String& value) { m_fromDiskNameHasBeenSet = true; m_fromDiskName = value; }
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline void SetFromDiskName(Aws::String&& value) { m_fromDiskNameHasBeenSet = true; m_fromDiskName = std::move(value); }
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline void SetFromDiskName(const char* value) { m_fromDiskNameHasBeenSet = true; m_fromDiskName.assign(value); }
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline DiskSnapshot& WithFromDiskName(const Aws::String& value) { SetFromDiskName(value); return *this;}
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline DiskSnapshot& WithFromDiskName(Aws::String&& value) { SetFromDiskName(std::move(value)); return *this;}
 
     /**
-     * <p>The unique name of the source disk from which you are creating the disk
-     * snapshot.</p>
+     * <p>The unique name of the source disk from which the disk snapshot was
+     * created.</p>
      */
     inline DiskSnapshot& WithFromDiskName(const char* value) { SetFromDiskName(value); return *this;}
 
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline const Aws::String& GetFromDiskArn() const{ return m_fromDiskArn; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
+     */
+    inline bool FromDiskArnHasBeenSet() const { return m_fromDiskArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline void SetFromDiskArn(const Aws::String& value) { m_fromDiskArnHasBeenSet = true; m_fromDiskArn = value; }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline void SetFromDiskArn(Aws::String&& value) { m_fromDiskArnHasBeenSet = true; m_fromDiskArn = std::move(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline void SetFromDiskArn(const char* value) { m_fromDiskArnHasBeenSet = true; m_fromDiskArn.assign(value); }
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline DiskSnapshot& WithFromDiskArn(const Aws::String& value) { SetFromDiskArn(value); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline DiskSnapshot& WithFromDiskArn(Aws::String&& value) { SetFromDiskArn(std::move(value)); return *this;}
 
     /**
-     * <p>The Amazon Resource Name (ARN) of the source disk from which you are creating
-     * the disk snapshot.</p>
+     * <p>The Amazon Resource Name (ARN) of the source disk from which the disk
+     * snapshot was created.</p>
      */
     inline DiskSnapshot& WithFromDiskArn(const char* value) { SetFromDiskArn(value); return *this;}
+
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline const Aws::String& GetFromInstanceName() const{ return m_fromInstanceName; }
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline bool FromInstanceNameHasBeenSet() const { return m_fromInstanceNameHasBeenSet; }
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline void SetFromInstanceName(const Aws::String& value) { m_fromInstanceNameHasBeenSet = true; m_fromInstanceName = value; }
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline void SetFromInstanceName(Aws::String&& value) { m_fromInstanceNameHasBeenSet = true; m_fromInstanceName = std::move(value); }
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline void SetFromInstanceName(const char* value) { m_fromInstanceNameHasBeenSet = true; m_fromInstanceName.assign(value); }
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceName(const Aws::String& value) { SetFromInstanceName(value); return *this;}
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceName(Aws::String&& value) { SetFromInstanceName(std::move(value)); return *this;}
+
+    /**
+     * <p>The unique name of the source instance from which the disk (system volume)
+     * snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceName(const char* value) { SetFromInstanceName(value); return *this;}
+
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline const Aws::String& GetFromInstanceArn() const{ return m_fromInstanceArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline bool FromInstanceArnHasBeenSet() const { return m_fromInstanceArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline void SetFromInstanceArn(const Aws::String& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = value; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline void SetFromInstanceArn(Aws::String&& value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn = std::move(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline void SetFromInstanceArn(const char* value) { m_fromInstanceArnHasBeenSet = true; m_fromInstanceArn.assign(value); }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceArn(const Aws::String& value) { SetFromInstanceArn(value); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceArn(Aws::String&& value) { SetFromInstanceArn(std::move(value)); return *this;}
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the source instance from which the disk
+     * (system volume) snapshot was created.</p>
+     */
+    inline DiskSnapshot& WithFromInstanceArn(const char* value) { SetFromInstanceArn(value); return *this;}
 
   private:
 
@@ -434,6 +658,9 @@ namespace Model
     ResourceType m_resourceType;
     bool m_resourceTypeHasBeenSet;
 
+    Aws::Vector<Tag> m_tags;
+    bool m_tagsHasBeenSet;
+
     int m_sizeInGb;
     bool m_sizeInGbHasBeenSet;
 
@@ -448,6 +675,12 @@ namespace Model
 
     Aws::String m_fromDiskArn;
     bool m_fromDiskArnHasBeenSet;
+
+    Aws::String m_fromInstanceName;
+    bool m_fromInstanceNameHasBeenSet;
+
+    Aws::String m_fromInstanceArn;
+    bool m_fromInstanceArnHasBeenSet;
   };
 
 } // namespace Model

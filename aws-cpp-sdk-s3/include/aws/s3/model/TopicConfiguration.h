@@ -56,6 +56,9 @@ namespace Model
     inline const Aws::String& GetId() const{ return m_id; }
 
     
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     
@@ -79,6 +82,12 @@ namespace Model
      * will publish a message when it detects events of the specified type.</p>
      */
     inline const Aws::String& GetTopicArn() const{ return m_topicArn; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
+     * will publish a message when it detects events of the specified type.</p>
+     */
+    inline bool TopicArnHasBeenSet() const { return m_topicArnHasBeenSet; }
 
     /**
      * <p>The Amazon Resource Name (ARN) of the Amazon SNS topic to which Amazon S3
@@ -117,30 +126,52 @@ namespace Model
     inline TopicConfiguration& WithTopicArn(const char* value) { SetTopicArn(value); return *this;}
 
 
-    
+    /**
+     * <p/>
+     */
     inline const Aws::Vector<Event>& GetEvents() const{ return m_events; }
 
-    
+    /**
+     * <p/>
+     */
+    inline bool EventsHasBeenSet() const { return m_eventsHasBeenSet; }
+
+    /**
+     * <p/>
+     */
     inline void SetEvents(const Aws::Vector<Event>& value) { m_eventsHasBeenSet = true; m_events = value; }
 
-    
+    /**
+     * <p/>
+     */
     inline void SetEvents(Aws::Vector<Event>&& value) { m_eventsHasBeenSet = true; m_events = std::move(value); }
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& WithEvents(const Aws::Vector<Event>& value) { SetEvents(value); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& WithEvents(Aws::Vector<Event>&& value) { SetEvents(std::move(value)); return *this;}
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& AddEvents(const Event& value) { m_eventsHasBeenSet = true; m_events.push_back(value); return *this; }
 
-    
+    /**
+     * <p/>
+     */
     inline TopicConfiguration& AddEvents(Event&& value) { m_eventsHasBeenSet = true; m_events.push_back(std::move(value)); return *this; }
 
 
     
     inline const NotificationConfigurationFilter& GetFilter() const{ return m_filter; }
+
+    
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
 
     
     inline void SetFilter(const NotificationConfigurationFilter& value) { m_filterHasBeenSet = true; m_filter = value; }

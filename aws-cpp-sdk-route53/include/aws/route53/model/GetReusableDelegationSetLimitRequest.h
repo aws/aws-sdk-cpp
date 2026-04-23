@@ -59,6 +59,13 @@ namespace Model
      * number of hosted zones that you can associate with the specified reusable
      * delegation set.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>Specify <code>MAX_ZONES_BY_REUSABLE_DELEGATION_SET</code> to get the maximum
+     * number of hosted zones that you can associate with the specified reusable
+     * delegation set.</p>
+     */
     inline void SetType(const ReusableDelegationSetLimitType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -87,6 +94,11 @@ namespace Model
      * <p>The ID of the delegation set that you want to get the limit for.</p>
      */
     inline const Aws::String& GetDelegationSetId() const{ return m_delegationSetId; }
+
+    /**
+     * <p>The ID of the delegation set that you want to get the limit for.</p>
+     */
+    inline bool DelegationSetIdHasBeenSet() const { return m_delegationSetIdHasBeenSet; }
 
     /**
      * <p>The ID of the delegation set that you want to get the limit for.</p>

@@ -60,6 +60,12 @@ namespace Model
      * <p>The identifier for the source DB instance, which can't be changed and which
      * is unique to an AWS Region.</p>
      */
+    inline bool DbiResourceIdHasBeenSet() const { return m_dbiResourceIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the source DB instance, which can't be changed and which
+     * is unique to an AWS Region.</p>
+     */
     inline void SetDbiResourceId(const Aws::String& value) { m_dbiResourceIdHasBeenSet = true; m_dbiResourceId = value; }
 
     /**

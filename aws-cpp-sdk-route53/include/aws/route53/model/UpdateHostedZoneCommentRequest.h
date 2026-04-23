@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>The ID for the hosted zone that you want to update the comment for.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID for the hosted zone that you want to update the comment for.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -88,6 +93,13 @@ namespace Model
      * <code>Comment</code> element, if any.</p>
      */
     inline const Aws::String& GetComment() const{ return m_comment; }
+
+    /**
+     * <p>The new comment for the hosted zone. If you don't specify a value for
+     * <code>Comment</code>, Amazon Route 53 deletes the existing value of the
+     * <code>Comment</code> element, if any.</p>
+     */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
 
     /**
      * <p>The new comment for the hosted zone. If you don't specify a value for

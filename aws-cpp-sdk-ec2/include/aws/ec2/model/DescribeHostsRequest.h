@@ -84,6 +84,25 @@ namespace Model
      * filter to find all resources assigned a tag with a specific key, regardless of
      * the tag value.</p> </li> </ul>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>One or more filters.</p> <ul> <li> <p> <code>auto-placement</code> - Whether
+     * auto-placement is enabled or disabled (<code>on</code> | <code>off</code>).</p>
+     * </li> <li> <p> <code>availability-zone</code> - The Availability Zone of the
+     * host.</p> </li> <li> <p> <code>client-token</code> - The idempotency token that
+     * you provided when you allocated the host.</p> </li> <li> <p>
+     * <code>host-reservation-id</code> - The ID of the reservation assigned to this
+     * host.</p> </li> <li> <p> <code>instance-type</code> - The instance type size
+     * that the Dedicated Host is configured to support.</p> </li> <li> <p>
+     * <code>state</code> - The allocation state of the Dedicated Host
+     * (<code>available</code> | <code>under-assessment</code> |
+     * <code>permanent-failure</code> | <code>released</code> |
+     * <code>released-permanent-failure</code>).</p> </li> <li> <p>
+     * <code>tag-key</code> - The key of a tag assigned to the resource. Use this
+     * filter to find all resources assigned a tag with a specific key, regardless of
+     * the tag value.</p> </li> </ul>
+     */
     inline void SetFilter(const Aws::Vector<Filter>& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**
@@ -192,6 +211,12 @@ namespace Model
      * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
      * launches.</p>
      */
+    inline bool HostIdsHasBeenSet() const { return m_hostIdsHasBeenSet; }
+
+    /**
+     * <p>The IDs of the Dedicated Hosts. The IDs are used for targeted instance
+     * launches.</p>
+     */
     inline void SetHostIds(const Aws::Vector<Aws::String>& value) { m_hostIdsHasBeenSet = true; m_hostIds = value; }
 
     /**
@@ -249,6 +274,16 @@ namespace Model
      * You cannot specify this parameter and the host IDs parameter in the same
      * request.</p>
      */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+
+    /**
+     * <p>The maximum number of results to return for the request in a single page. The
+     * remaining results can be seen by sending another request with the returned
+     * <code>nextToken</code> value. This value can be between 5 and 500. If
+     * <code>maxResults</code> is given a larger value than 500, you receive an error.
+     * You cannot specify this parameter and the host IDs parameter in the same
+     * request.</p>
+     */
     inline void SetMaxResults(int value) { m_maxResultsHasBeenSet = true; m_maxResults = value; }
 
     /**
@@ -266,6 +301,11 @@ namespace Model
      * <p>The token to retrieve the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>The token to retrieve the next page of results.</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>The token to retrieve the next page of results.</p>

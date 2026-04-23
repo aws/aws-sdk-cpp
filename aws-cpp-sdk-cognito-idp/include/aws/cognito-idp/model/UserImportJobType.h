@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The job name for the user import job.</p>
      */
+    inline bool JobNameHasBeenSet() const { return m_jobNameHasBeenSet; }
+
+    /**
+     * <p>The job name for the user import job.</p>
+     */
     inline void SetJobName(const Aws::String& value) { m_jobNameHasBeenSet = true; m_jobName = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The job ID for the user import job.</p>
      */
     inline const Aws::String& GetJobId() const{ return m_jobId; }
+
+    /**
+     * <p>The job ID for the user import job.</p>
+     */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
 
     /**
      * <p>The job ID for the user import job.</p>
@@ -126,6 +136,12 @@ namespace Model
      * into.</p>
      */
     inline const Aws::String& GetUserPoolId() const{ return m_userPoolId; }
+
+    /**
+     * <p>The user pool ID for the user pool that the users are being imported
+     * into.</p>
+     */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
 
     /**
      * <p>The user pool ID for the user pool that the users are being imported
@@ -172,6 +188,11 @@ namespace Model
     /**
      * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
      */
+    inline bool PreSignedUrlHasBeenSet() const { return m_preSignedUrlHasBeenSet; }
+
+    /**
+     * <p>The pre-signed URL to be used to upload the <code>.csv</code> file.</p>
+     */
     inline void SetPreSignedUrl(const Aws::String& value) { m_preSignedUrlHasBeenSet = true; m_preSignedUrl = value; }
 
     /**
@@ -208,6 +229,11 @@ namespace Model
     /**
      * <p>The date the user import job was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The date the user import job was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -234,6 +260,11 @@ namespace Model
     /**
      * <p>The date when the user import job was started.</p>
      */
+    inline bool StartDateHasBeenSet() const { return m_startDateHasBeenSet; }
+
+    /**
+     * <p>The date when the user import job was started.</p>
+     */
     inline void SetStartDate(const Aws::Utils::DateTime& value) { m_startDateHasBeenSet = true; m_startDate = value; }
 
     /**
@@ -256,6 +287,11 @@ namespace Model
      * <p>The date when the user import job was completed.</p>
      */
     inline const Aws::Utils::DateTime& GetCompletionDate() const{ return m_completionDate; }
+
+    /**
+     * <p>The date when the user import job was completed.</p>
+     */
+    inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
      * <p>The date when the user import job was completed.</p>
@@ -294,6 +330,23 @@ namespace Model
      * started.</p> </li> </ul>
      */
     inline const UserImportJobStatusType& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
+     * <code>Created</code> - The job was created but not started.</p> </li> <li> <p>
+     * <code>Pending</code> - A transition state. You have started the job, but it has
+     * not begun importing users yet.</p> </li> <li> <p> <code>InProgress</code> - The
+     * job has started, and users are being imported.</p> </li> <li> <p>
+     * <code>Stopping</code> - You have stopped the job, but the job has not stopped
+     * importing users yet.</p> </li> <li> <p> <code>Stopped</code> - You have stopped
+     * the job, and the job has stopped importing users.</p> </li> <li> <p>
+     * <code>Succeeded</code> - The job has completed successfully.</p> </li> <li> <p>
+     * <code>Failed</code> - The job has stopped due to an error.</p> </li> <li> <p>
+     * <code>Expired</code> - You created a job, but did not start the job within 24-48
+     * hours. All data associated with the job was deleted, and the job cannot be
+     * started.</p> </li> </ul>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the user import job. One of the following:</p> <ul> <li> <p>
@@ -376,6 +429,13 @@ namespace Model
      * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
      * Cognito Developer Guide.</p>
      */
+    inline bool CloudWatchLogsRoleArnHasBeenSet() const { return m_cloudWatchLogsRoleArnHasBeenSet; }
+
+    /**
+     * <p>The role ARN for the Amazon CloudWatch Logging role for the user import job.
+     * For more information, see "Creating the CloudWatch Logs IAM Role" in the Amazon
+     * Cognito Developer Guide.</p>
+     */
     inline void SetCloudWatchLogsRoleArn(const Aws::String& value) { m_cloudWatchLogsRoleArnHasBeenSet = true; m_cloudWatchLogsRoleArn = value; }
 
     /**
@@ -422,6 +482,11 @@ namespace Model
     /**
      * <p>The number of users that were successfully imported.</p>
      */
+    inline bool ImportedUsersHasBeenSet() const { return m_importedUsersHasBeenSet; }
+
+    /**
+     * <p>The number of users that were successfully imported.</p>
+     */
     inline void SetImportedUsers(long long value) { m_importedUsersHasBeenSet = true; m_importedUsers = value; }
 
     /**
@@ -434,6 +499,11 @@ namespace Model
      * <p>The number of users that were skipped.</p>
      */
     inline long long GetSkippedUsers() const{ return m_skippedUsers; }
+
+    /**
+     * <p>The number of users that were skipped.</p>
+     */
+    inline bool SkippedUsersHasBeenSet() const { return m_skippedUsersHasBeenSet; }
 
     /**
      * <p>The number of users that were skipped.</p>
@@ -454,6 +524,11 @@ namespace Model
     /**
      * <p>The number of users that could not be imported.</p>
      */
+    inline bool FailedUsersHasBeenSet() const { return m_failedUsersHasBeenSet; }
+
+    /**
+     * <p>The number of users that could not be imported.</p>
+     */
     inline void SetFailedUsers(long long value) { m_failedUsersHasBeenSet = true; m_failedUsers = value; }
 
     /**
@@ -466,6 +541,11 @@ namespace Model
      * <p>The message returned when the user import job is completed.</p>
      */
     inline const Aws::String& GetCompletionMessage() const{ return m_completionMessage; }
+
+    /**
+     * <p>The message returned when the user import job is completed.</p>
+     */
+    inline bool CompletionMessageHasBeenSet() const { return m_completionMessageHasBeenSet; }
 
     /**
      * <p>The message returned when the user import job is completed.</p>

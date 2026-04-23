@@ -55,6 +55,12 @@ namespace Model
      * <p>Amazon WorkDocs authentication token. Do not set this field when using
      * administrative API actions, as in accessing the API using AWS credentials.</p>
      */
+    inline bool AuthenticationTokenHasBeenSet() const { return m_authenticationTokenHasBeenSet; }
+
+    /**
+     * <p>Amazon WorkDocs authentication token. Do not set this field when using
+     * administrative API actions, as in accessing the API using AWS credentials.</p>
+     */
     inline void SetAuthenticationToken(const Aws::String& value) { m_authenticationTokenHasBeenSet = true; m_authenticationToken = value; }
 
     /**
@@ -96,6 +102,11 @@ namespace Model
     /**
      * <p>The ID of the document.</p>
      */
+    inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the document.</p>
+     */
     inline void SetDocumentId(const Aws::String& value) { m_documentIdHasBeenSet = true; m_documentId = value; }
 
     /**
@@ -128,6 +139,11 @@ namespace Model
      * <p>The ID of the document version.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>The ID of the document version.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>The ID of the document version.</p>
@@ -168,6 +184,11 @@ namespace Model
     /**
      * <p>The ID of the parent comment.</p>
      */
+    inline bool ParentIdHasBeenSet() const { return m_parentIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the parent comment.</p>
+     */
     inline void SetParentId(const Aws::String& value) { m_parentIdHasBeenSet = true; m_parentId = value; }
 
     /**
@@ -204,6 +225,11 @@ namespace Model
     /**
      * <p>The ID of the root comment in the thread.</p>
      */
+    inline bool ThreadIdHasBeenSet() const { return m_threadIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the root comment in the thread.</p>
+     */
     inline void SetThreadId(const Aws::String& value) { m_threadIdHasBeenSet = true; m_threadId = value; }
 
     /**
@@ -236,6 +262,11 @@ namespace Model
      * <p>The text of the comment.</p>
      */
     inline const Aws::String& GetText() const{ return m_text; }
+
+    /**
+     * <p>The text of the comment.</p>
+     */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
 
     /**
      * <p>The text of the comment.</p>
@@ -282,6 +313,14 @@ namespace Model
      * PUBLIC, where the comment is visible to document owners, co-owners, and
      * contributors.</p>
      */
+    inline bool VisibilityHasBeenSet() const { return m_visibilityHasBeenSet; }
+
+    /**
+     * <p>The visibility of the comment. Options are either PRIVATE, where the comment
+     * is visible only to the comment author and document owner and co-owners, or
+     * PUBLIC, where the comment is visible to document owners, co-owners, and
+     * contributors.</p>
+     */
     inline void SetVisibility(const CommentVisibilityType& value) { m_visibilityHasBeenSet = true; m_visibility = value; }
 
     /**
@@ -314,6 +353,12 @@ namespace Model
      * after the comment is created.</p>
      */
     inline bool GetNotifyCollaborators() const{ return m_notifyCollaborators; }
+
+    /**
+     * <p>Set this parameter to TRUE to send an email out to the document collaborators
+     * after the comment is created.</p>
+     */
+    inline bool NotifyCollaboratorsHasBeenSet() const { return m_notifyCollaboratorsHasBeenSet; }
 
     /**
      * <p>Set this parameter to TRUE to send an email out to the document collaborators

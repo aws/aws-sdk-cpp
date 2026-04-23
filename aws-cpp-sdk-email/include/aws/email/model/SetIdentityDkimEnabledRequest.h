@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The identity for which DKIM signing should be enabled or disabled.</p>
      */
+    inline bool IdentityHasBeenSet() const { return m_identityHasBeenSet; }
+
+    /**
+     * <p>The identity for which DKIM signing should be enabled or disabled.</p>
+     */
     inline void SetIdentity(const Aws::String& value) { m_identityHasBeenSet = true; m_identity = value; }
 
     /**
@@ -94,6 +99,13 @@ namespace Model
      * to disable it. </p>
      */
     inline bool GetDkimEnabled() const{ return m_dkimEnabled; }
+
+    /**
+     * <p>Sets whether DKIM signing is enabled for an identity. Set to
+     * <code>true</code> to enable DKIM signing for this identity; <code>false</code>
+     * to disable it. </p>
+     */
+    inline bool DkimEnabledHasBeenSet() const { return m_dkimEnabledHasBeenSet; }
 
     /**
      * <p>Sets whether DKIM signing is enabled for an identity. Set to

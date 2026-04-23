@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The <code>sha256</code> digest of the image manifest.</p>
      */
+    inline bool ImageDigestHasBeenSet() const { return m_imageDigestHasBeenSet; }
+
+    /**
+     * <p>The <code>sha256</code> digest of the image manifest.</p>
+     */
     inline void SetImageDigest(const Aws::String& value) { m_imageDigestHasBeenSet = true; m_imageDigest = value; }
 
     /**
@@ -88,6 +93,11 @@ namespace Model
      * <p>The tag used for the image.</p>
      */
     inline const Aws::String& GetImageTag() const{ return m_imageTag; }
+
+    /**
+     * <p>The tag used for the image.</p>
+     */
+    inline bool ImageTagHasBeenSet() const { return m_imageTagHasBeenSet; }
 
     /**
      * <p>The tag used for the image.</p>

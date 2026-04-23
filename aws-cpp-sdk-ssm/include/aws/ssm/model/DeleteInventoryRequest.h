@@ -56,6 +56,12 @@ namespace Model
      * <p>The name of the custom inventory type for which you want to delete either all
      * previously collected data, or the inventory type itself. </p>
      */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
+
+    /**
+     * <p>The name of the custom inventory type for which you want to delete either all
+     * previously collected data, or the inventory type itself. </p>
+     */
     inline void SetTypeName(const Aws::String& value) { m_typeNameHasBeenSet = true; m_typeName = value; }
 
     /**
@@ -101,6 +107,19 @@ namespace Model
      * the schema later, if you want.</p>
      */
     inline const InventorySchemaDeleteOption& GetSchemaDeleteOption() const{ return m_schemaDeleteOption; }
+
+    /**
+     * <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type
+     * (schema). If you don't choose this option, the system only deletes existing
+     * inventory data associated with the custom inventory type. Choose one of the
+     * following options:</p> <p>DisableSchema: If you choose this option, the system
+     * ignores all inventory data for the specified version, and any earlier versions.
+     * To enable this schema again, you must call the <code>PutInventory</code> action
+     * for a version greater than the disbled version.</p> <p>DeleteSchema: This option
+     * deletes the specified custom type from the Inventory service. You can recreate
+     * the schema later, if you want.</p>
+     */
+    inline bool SchemaDeleteOptionHasBeenSet() const { return m_schemaDeleteOptionHasBeenSet; }
 
     /**
      * <p>Use the <code>SchemaDeleteOption</code> to delete a custom inventory type
@@ -171,6 +190,15 @@ namespace Model
      * is what you intend to delete, you can run the same command without specifying
      * the <code>DryRun</code> option.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Use this option to view a summary of the deletion request without deleting
+     * any data or the data type. This option is useful when you only want to
+     * understand what will be deleted. Once you validate that the data to be deleted
+     * is what you intend to delete, you can run the same command without specifying
+     * the <code>DryRun</code> option.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -187,6 +215,11 @@ namespace Model
      * <p>User-provided idempotency token.</p>
      */
     inline const Aws::String& GetClientToken() const{ return m_clientToken; }
+
+    /**
+     * <p>User-provided idempotency token.</p>
+     */
+    inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
 
     /**
      * <p>User-provided idempotency token.</p>

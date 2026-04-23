@@ -60,6 +60,13 @@ namespace Model
      * must be in the same account you use for Kinesis Data Firehose. Cross-account
      * roles aren't allowed.</p>
      */
+    inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+
+    /**
+     * <p>The role that Kinesis Data Firehose can use to access AWS Glue. This role
+     * must be in the same account you use for Kinesis Data Firehose. Cross-account
+     * roles aren't allowed.</p>
+     */
     inline void SetRoleARN(const Aws::String& value) { m_roleARNHasBeenSet = true; m_roleARN = value; }
 
     /**
@@ -108,6 +115,12 @@ namespace Model
      * <p>The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS
      * account ID is used by default.</p>
      */
+    inline bool CatalogIdHasBeenSet() const { return m_catalogIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS Glue Data Catalog. If you don't supply this, the AWS
+     * account ID is used by default.</p>
+     */
     inline void SetCatalogId(const Aws::String& value) { m_catalogIdHasBeenSet = true; m_catalogId = value; }
 
     /**
@@ -146,6 +159,12 @@ namespace Model
      * output data.</p>
      */
     inline const Aws::String& GetDatabaseName() const{ return m_databaseName; }
+
+    /**
+     * <p>Specifies the name of the AWS Glue database that contains the schema for the
+     * output data.</p>
+     */
+    inline bool DatabaseNameHasBeenSet() const { return m_databaseNameHasBeenSet; }
 
     /**
      * <p>Specifies the name of the AWS Glue database that contains the schema for the
@@ -194,6 +213,12 @@ namespace Model
      * <p>Specifies the AWS Glue table that contains the column information that
      * constitutes your data schema.</p>
      */
+    inline bool TableNameHasBeenSet() const { return m_tableNameHasBeenSet; }
+
+    /**
+     * <p>Specifies the AWS Glue table that contains the column information that
+     * constitutes your data schema.</p>
+     */
     inline void SetTableName(const Aws::String& value) { m_tableNameHasBeenSet = true; m_tableName = value; }
 
     /**
@@ -235,6 +260,11 @@ namespace Model
     /**
      * <p>If you don't specify an AWS Region, the default is the current Region.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>If you don't specify an AWS Region, the default is the current Region.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -270,6 +300,14 @@ namespace Model
      * automatically picked up.</p>
      */
     inline const Aws::String& GetVersionId() const{ return m_versionId; }
+
+    /**
+     * <p>Specifies the table version for the output data schema. If you don't specify
+     * this version ID, or if you set it to <code>LATEST</code>, Kinesis Data Firehose
+     * uses the most recent version. This means that any updates to the table are
+     * automatically picked up.</p>
+     */
+    inline bool VersionIdHasBeenSet() const { return m_versionIdHasBeenSet; }
 
     /**
      * <p>Specifies the table version for the output data schema. If you don't specify

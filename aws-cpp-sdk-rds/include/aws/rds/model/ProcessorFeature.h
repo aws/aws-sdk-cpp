@@ -52,7 +52,7 @@ namespace Model
    * <a>DescribeDBSnapshots</a> </p> </li> <li> <p>
    * <a>DescribeValidDBInstanceModifications</a> </p> </li> </ul> <p>For more
    * information, see <a
-   * href="http://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
+   * href="https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/Concepts.DBInstanceClass.html#USER_ConfigureProcessor">Configuring
    * the Processor of the DB Instance Class</a> in the <i>Amazon RDS User Guide. </i>
    * </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/rds-2014-10-31/ProcessorFeature">AWS
@@ -74,6 +74,12 @@ namespace Model
      * <code>threadsPerCore</code>.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
+     * <code>threadsPerCore</code>.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>The name of the processor feature. Valid names are <code>coreCount</code> and
@@ -116,6 +122,11 @@ namespace Model
      * <p>The value of a processor feature name.</p>
      */
     inline const Aws::String& GetValue() const{ return m_value; }
+
+    /**
+     * <p>The value of a processor feature name.</p>
+     */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
 
     /**
      * <p>The value of a processor feature name.</p>

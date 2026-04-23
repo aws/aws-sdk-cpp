@@ -58,6 +58,13 @@ namespace Model
      * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
      * <a>ListIPSets</a>.</p>
      */
+    inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>IPSetId</code> of the <a>IPSet</a> that you want to update.
+     * <code>IPSetId</code> is returned by <a>CreateIPSet</a> and by
+     * <a>ListIPSets</a>.</p>
+     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
      */
+    inline bool ChangeTokenHasBeenSet() const { return m_changeTokenHasBeenSet; }
+
+    /**
+     * <p>The value returned by the most recent call to <a>GetChangeToken</a>.</p>
+     */
     inline void SetChangeToken(const Aws::String& value) { m_changeTokenHasBeenSet = true; m_changeToken = value; }
 
     /**
@@ -141,6 +153,16 @@ namespace Model
      * insert a maximum of 1000 addresses in a single request.</p>
      */
     inline const Aws::Vector<IPSetUpdate>& GetUpdates() const{ return m_updates; }
+
+    /**
+     * <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or
+     * delete from an <a>IPSet</a>. For more information, see the applicable data
+     * types:</p> <ul> <li> <p> <a>IPSetUpdate</a>: Contains <code>Action</code> and
+     * <code>IPSetDescriptor</code> </p> </li> <li> <p> <a>IPSetDescriptor</a>:
+     * Contains <code>Type</code> and <code>Value</code> </p> </li> </ul> <p>You can
+     * insert a maximum of 1000 addresses in a single request.</p>
+     */
+    inline bool UpdatesHasBeenSet() const { return m_updatesHasBeenSet; }
 
     /**
      * <p>An array of <code>IPSetUpdate</code> objects that you want to insert into or

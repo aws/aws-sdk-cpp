@@ -35,7 +35,7 @@ namespace Model
 {
 
   /**
-   * <p>Information about a WorkSpace.</p><p><h3>See Also:</h3>   <a
+   * <p>Describes a WorkSpace.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/workspaces-2015-04-08/WorkspaceProperties">AWS
    * API Reference</a></p>
    */
@@ -50,35 +50,42 @@ namespace Model
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline const RunningMode& GetRunningMode() const{ return m_runningMode; }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * the WorkSpace Running Mode</a>.</p>
+     */
+    inline bool RunningModeHasBeenSet() const { return m_runningModeHasBeenSet; }
+
+    /**
+     * <p>The running mode. For more information, see <a
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(const RunningMode& value) { m_runningModeHasBeenSet = true; m_runningMode = value; }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline void SetRunningMode(RunningMode&& value) { m_runningModeHasBeenSet = true; m_runningMode = std::move(value); }
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(const RunningMode& value) { SetRunningMode(value); return *this;}
 
     /**
      * <p>The running mode. For more information, see <a
-     * href="http://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
+     * href="https://docs.aws.amazon.com/workspaces/latest/adminguide/running-mode.html">Manage
      * the WorkSpace Running Mode</a>.</p>
      */
     inline WorkspaceProperties& WithRunningMode(RunningMode&& value) { SetRunningMode(std::move(value)); return *this;}
@@ -89,6 +96,12 @@ namespace Model
      * Configured in 60 minute intervals.</p>
      */
     inline int GetRunningModeAutoStopTimeoutInMinutes() const{ return m_runningModeAutoStopTimeoutInMinutes; }
+
+    /**
+     * <p>The time after a user logs off when WorkSpaces are automatically stopped.
+     * Configured in 60 minute intervals.</p>
+     */
+    inline bool RunningModeAutoStopTimeoutInMinutesHasBeenSet() const { return m_runningModeAutoStopTimeoutInMinutesHasBeenSet; }
 
     /**
      * <p>The time after a user logs off when WorkSpaces are automatically stopped.
@@ -111,6 +124,11 @@ namespace Model
     /**
      * <p>The size of the root volume.</p>
      */
+    inline bool RootVolumeSizeGibHasBeenSet() const { return m_rootVolumeSizeGibHasBeenSet; }
+
+    /**
+     * <p>The size of the root volume.</p>
+     */
     inline void SetRootVolumeSizeGib(int value) { m_rootVolumeSizeGibHasBeenSet = true; m_rootVolumeSizeGib = value; }
 
     /**
@@ -123,6 +141,11 @@ namespace Model
      * <p>The size of the user storage.</p>
      */
     inline int GetUserVolumeSizeGib() const{ return m_userVolumeSizeGib; }
+
+    /**
+     * <p>The size of the user storage.</p>
+     */
+    inline bool UserVolumeSizeGibHasBeenSet() const { return m_userVolumeSizeGibHasBeenSet; }
 
     /**
      * <p>The size of the user storage.</p>
@@ -141,6 +164,13 @@ namespace Model
      * WorkSpaces Bundles</a>.</p>
      */
     inline const Compute& GetComputeTypeName() const{ return m_computeTypeName; }
+
+    /**
+     * <p>The compute type. For more information, see <a
+     * href="http://aws.amazon.com/workspaces/details/#Amazon_WorkSpaces_Bundles">Amazon
+     * WorkSpaces Bundles</a>.</p>
+     */
+    inline bool ComputeTypeNameHasBeenSet() const { return m_computeTypeNameHasBeenSet; }
 
     /**
      * <p>The compute type. For more information, see <a

@@ -75,6 +75,13 @@ namespace Model
      * invoking. You can then process the client information in your Lambda function as
      * you choose through the context variable.</p>
      */
+    inline bool ClientContextHasBeenSet() const { return m_clientContextHasBeenSet; }
+
+    /**
+     * <p>Pass client-specific information to the Lambda function that you are
+     * invoking. You can then process the client information in your Lambda function as
+     * you choose through the context variable.</p>
+     */
     inline void SetClientContext(const Aws::String& value) { m_clientContextHasBeenSet = true; m_clientContext = value; }
 
     /**
@@ -120,6 +127,14 @@ namespace Model
      * alias ARN to invoke the Lambda function version to which the alias points.</p>
      */
     inline const Aws::String& GetQualifier() const{ return m_qualifier; }
+
+    /**
+     * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
+     * function version, the action uses the qualified function ARN to invoke a
+     * specific Lambda function. If you specify an alias name, the action uses the
+     * alias ARN to invoke the Lambda function version to which the alias points.</p>
+     */
+    inline bool QualifierHasBeenSet() const { return m_qualifierHasBeenSet; }
 
     /**
      * <p>(Optional) Specify a Lambda function version or alias name. If you specify a
@@ -174,6 +189,11 @@ namespace Model
      * <p>JSON to provide to your Lambda function as input.</p>
      */
     inline const Aws::Utils::CryptoBuffer& GetPayload() const{ return m_payload; }
+
+    /**
+     * <p>JSON to provide to your Lambda function as input.</p>
+     */
+    inline bool PayloadHasBeenSet() const { return m_payloadHasBeenSet; }
 
     /**
      * <p>JSON to provide to your Lambda function as input.</p>

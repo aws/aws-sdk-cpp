@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the pipeline that was executed.</p>
      */
+    inline bool PipelineNameHasBeenSet() const { return m_pipelineNameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline that was executed.</p>
+     */
     inline void SetPipelineName(const Aws::String& value) { m_pipelineNameHasBeenSet = true; m_pipelineName = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The version number of the pipeline that was executed.</p>
      */
+    inline bool PipelineVersionHasBeenSet() const { return m_pipelineVersionHasBeenSet; }
+
+    /**
+     * <p>The version number of the pipeline that was executed.</p>
+     */
     inline void SetPipelineVersion(int value) { m_pipelineVersionHasBeenSet = true; m_pipelineVersion = value; }
 
     /**
@@ -107,6 +117,11 @@ namespace Model
      * <p>The ID of the pipeline execution.</p>
      */
     inline const Aws::String& GetPipelineExecutionId() const{ return m_pipelineExecutionId; }
+
+    /**
+     * <p>The ID of the pipeline execution.</p>
+     */
+    inline bool PipelineExecutionIdHasBeenSet() const { return m_pipelineExecutionIdHasBeenSet; }
 
     /**
      * <p>The ID of the pipeline execution.</p>
@@ -159,6 +174,17 @@ namespace Model
      * </p> </li> <li> <p>Failed: The pipeline execution was not completed
      * successfully.</p> </li> </ul>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the pipeline execution.</p> <ul> <li> <p>InProgress: The
+     * pipeline execution is currently running.</p> </li> <li> <p>Succeeded: The
+     * pipeline execution was completed successfully. </p> </li> <li> <p>Superseded:
+     * While this pipeline execution was waiting for the next stage to be completed, a
+     * newer pipeline execution advanced and continued through the pipeline instead.
+     * </p> </li> <li> <p>Failed: The pipeline execution was not completed
+     * successfully.</p> </li> </ul>
+     */
     inline void SetStatus(const PipelineExecutionStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -199,6 +225,11 @@ namespace Model
      * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
      */
     inline const Aws::Vector<ArtifactRevision>& GetArtifactRevisions() const{ return m_artifactRevisions; }
+
+    /**
+     * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>
+     */
+    inline bool ArtifactRevisionsHasBeenSet() const { return m_artifactRevisionsHasBeenSet; }
 
     /**
      * <p>A list of ArtifactRevision objects included in a pipeline execution.</p>

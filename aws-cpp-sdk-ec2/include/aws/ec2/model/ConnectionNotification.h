@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The ID of the notification.</p>
      */
+    inline bool ConnectionNotificationIdHasBeenSet() const { return m_connectionNotificationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the notification.</p>
+     */
     inline void SetConnectionNotificationId(const Aws::String& value) { m_connectionNotificationIdHasBeenSet = true; m_connectionNotificationId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The ID of the endpoint service.</p>
      */
     inline const Aws::String& GetServiceId() const{ return m_serviceId; }
+
+    /**
+     * <p>The ID of the endpoint service.</p>
+     */
+    inline bool ServiceIdHasBeenSet() const { return m_serviceIdHasBeenSet; }
 
     /**
      * <p>The ID of the endpoint service.</p>
@@ -133,6 +143,11 @@ namespace Model
     /**
      * <p>The ID of the VPC endpoint.</p>
      */
+    inline bool VpcEndpointIdHasBeenSet() const { return m_vpcEndpointIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the VPC endpoint.</p>
+     */
     inline void SetVpcEndpointId(const Aws::String& value) { m_vpcEndpointIdHasBeenSet = true; m_vpcEndpointId = value; }
 
     /**
@@ -169,6 +184,11 @@ namespace Model
     /**
      * <p>The type of notification.</p>
      */
+    inline bool ConnectionNotificationTypeHasBeenSet() const { return m_connectionNotificationTypeHasBeenSet; }
+
+    /**
+     * <p>The type of notification.</p>
+     */
     inline void SetConnectionNotificationType(const ConnectionNotificationType& value) { m_connectionNotificationTypeHasBeenSet = true; m_connectionNotificationType = value; }
 
     /**
@@ -191,6 +211,11 @@ namespace Model
      * <p>The ARN of the SNS topic for the notification.</p>
      */
     inline const Aws::String& GetConnectionNotificationArn() const{ return m_connectionNotificationArn; }
+
+    /**
+     * <p>The ARN of the SNS topic for the notification.</p>
+     */
+    inline bool ConnectionNotificationArnHasBeenSet() const { return m_connectionNotificationArnHasBeenSet; }
 
     /**
      * <p>The ARN of the SNS topic for the notification.</p>
@@ -228,6 +253,12 @@ namespace Model
      * <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
      */
     inline const Aws::Vector<Aws::String>& GetConnectionEvents() const{ return m_connectionEvents; }
+
+    /**
+     * <p>The events for the notification. Valid values are <code>Accept</code>,
+     * <code>Connect</code>, <code>Delete</code>, and <code>Reject</code>.</p>
+     */
+    inline bool ConnectionEventsHasBeenSet() const { return m_connectionEventsHasBeenSet; }
 
     /**
      * <p>The events for the notification. Valid values are <code>Accept</code>,
@@ -276,6 +307,11 @@ namespace Model
      * <p>The state of the notification.</p>
      */
     inline const ConnectionNotificationState& GetConnectionNotificationState() const{ return m_connectionNotificationState; }
+
+    /**
+     * <p>The state of the notification.</p>
+     */
+    inline bool ConnectionNotificationStateHasBeenSet() const { return m_connectionNotificationStateHasBeenSet; }
 
     /**
      * <p>The state of the notification.</p>

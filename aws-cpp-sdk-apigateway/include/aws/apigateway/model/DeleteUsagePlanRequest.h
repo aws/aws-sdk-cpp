@@ -54,6 +54,11 @@ namespace Model
     /**
      * <p>[Required] The Id of the to-be-deleted usage plan.</p>
      */
+    inline bool UsagePlanIdHasBeenSet() const { return m_usagePlanIdHasBeenSet; }
+
+    /**
+     * <p>[Required] The Id of the to-be-deleted usage plan.</p>
+     */
     inline void SetUsagePlanId(const Aws::String& value) { m_usagePlanIdHasBeenSet = true; m_usagePlanId = value; }
 
     /**

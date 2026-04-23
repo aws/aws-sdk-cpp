@@ -27,10 +27,6 @@ namespace Model
 {
 
   /**
-   * <p>Contains the parameters for ConfirmProductInstance.</p><p><h3>See Also:</h3> 
-   * <a
-   * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/ConfirmProductInstanceRequest">AWS
-   * API Reference</a></p>
    */
   class AWS_EC2_API ConfirmProductInstanceRequest : public EC2Request
   {
@@ -54,6 +50,11 @@ namespace Model
      * <p>The ID of the instance.</p>
      */
     inline const Aws::String& GetInstanceId() const{ return m_instanceId; }
+
+    /**
+     * <p>The ID of the instance.</p>
+     */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
 
     /**
      * <p>The ID of the instance.</p>
@@ -94,6 +95,11 @@ namespace Model
     /**
      * <p>The product code. This must be a product code that you own.</p>
      */
+    inline bool ProductCodeHasBeenSet() const { return m_productCodeHasBeenSet; }
+
+    /**
+     * <p>The product code. This must be a product code that you own.</p>
+     */
     inline void SetProductCode(const Aws::String& value) { m_productCodeHasBeenSet = true; m_productCode = value; }
 
     /**
@@ -129,6 +135,14 @@ namespace Model
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Checks whether you have the required permissions for the action, without

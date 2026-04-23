@@ -29,7 +29,7 @@ ClaimDevicesByClaimCodeRequest::ClaimDevicesByClaimCodeRequest() :
 
 Aws::String ClaimDevicesByClaimCodeRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

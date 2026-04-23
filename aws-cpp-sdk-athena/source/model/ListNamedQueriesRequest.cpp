@@ -25,7 +25,8 @@ using namespace Aws::Utils;
 ListNamedQueriesRequest::ListNamedQueriesRequest() : 
     m_nextTokenHasBeenSet(false),
     m_maxResults(0),
-    m_maxResultsHasBeenSet(false)
+    m_maxResultsHasBeenSet(false),
+    m_workGroupHasBeenSet(false)
 {
 }
 
@@ -42,6 +43,12 @@ Aws::String ListNamedQueriesRequest::SerializePayload() const
   if(m_maxResultsHasBeenSet)
   {
    payload.WithInteger("MaxResults", m_maxResults);
+
+  }
+
+  if(m_workGroupHasBeenSet)
+  {
+   payload.WithString("WorkGroup", m_workGroup);
 
   }
 

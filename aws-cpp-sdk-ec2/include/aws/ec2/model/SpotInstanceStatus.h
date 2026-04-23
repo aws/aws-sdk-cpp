@@ -53,49 +53,56 @@ namespace Model
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline const Aws::String& GetCode() const{ return m_code; }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
+     */
+    inline bool CodeHasBeenSet() const { return m_codeHasBeenSet; }
+
+    /**
+     * <p>The status code. For a list of status codes, see <a
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(const Aws::String& value) { m_codeHasBeenSet = true; m_code = value; }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(Aws::String&& value) { m_codeHasBeenSet = true; m_code = std::move(value); }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline void SetCode(const char* value) { m_codeHasBeenSet = true; m_code.assign(value); }
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const Aws::String& value) { SetCode(value); return *this;}
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(Aws::String&& value) { SetCode(std::move(value)); return *this;}
 
     /**
      * <p>The status code. For a list of status codes, see <a
-     * href="http://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
+     * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/spot-bid-status.html#spot-instance-bid-status-understand">Spot
      * Status Codes</a> in the <i>Amazon EC2 User Guide for Linux Instances</i>.</p>
      */
     inline SpotInstanceStatus& WithCode(const char* value) { SetCode(value); return *this;}
@@ -105,6 +112,11 @@ namespace Model
      * <p>The description for the status code.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>The description for the status code.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>The description for the status code.</p>
@@ -142,6 +154,12 @@ namespace Model
      * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
      */
     inline const Aws::Utils::DateTime& GetUpdateTime() const{ return m_updateTime; }
+
+    /**
+     * <p>The date and time of the most recent status update, in UTC format (for
+     * example, <i>YYYY</i>-<i>MM</i>-<i>DD</i>T<i>HH</i>:<i>MM</i>:<i>SS</i>Z).</p>
+     */
+    inline bool UpdateTimeHasBeenSet() const { return m_updateTimeHasBeenSet; }
 
     /**
      * <p>The date and time of the most recent status update, in UTC format (for

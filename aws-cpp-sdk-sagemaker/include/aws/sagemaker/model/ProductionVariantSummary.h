@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the variant.</p>
      */
+    inline bool VariantNameHasBeenSet() const { return m_variantNameHasBeenSet; }
+
+    /**
+     * <p>The name of the variant.</p>
+     */
     inline void SetVariantName(const Aws::String& value) { m_variantNameHasBeenSet = true; m_variantName = value; }
 
     /**
@@ -95,6 +100,13 @@ namespace Model
      * <code>ProductionVariant</code>.</p>
      */
     inline const Aws::Vector<DeployedImage>& GetDeployedImages() const{ return m_deployedImages; }
+
+    /**
+     * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
+     * Container Registry paths of the inference images deployed on instances of this
+     * <code>ProductionVariant</code>.</p>
+     */
+    inline bool DeployedImagesHasBeenSet() const { return m_deployedImagesHasBeenSet; }
 
     /**
      * <p>An array of <code>DeployedImage</code> objects that specify the Amazon EC2
@@ -147,6 +159,11 @@ namespace Model
     /**
      * <p>The weight associated with the variant.</p>
      */
+    inline bool CurrentWeightHasBeenSet() const { return m_currentWeightHasBeenSet; }
+
+    /**
+     * <p>The weight associated with the variant.</p>
+     */
     inline void SetCurrentWeight(double value) { m_currentWeightHasBeenSet = true; m_currentWeight = value; }
 
     /**
@@ -160,6 +177,12 @@ namespace Model
      * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline double GetDesiredWeight() const{ return m_desiredWeight; }
+
+    /**
+     * <p>The requested weight, as specified in the
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
+     */
+    inline bool DesiredWeightHasBeenSet() const { return m_desiredWeightHasBeenSet; }
 
     /**
      * <p>The requested weight, as specified in the
@@ -182,6 +205,11 @@ namespace Model
     /**
      * <p>The number of instances associated with the variant.</p>
      */
+    inline bool CurrentInstanceCountHasBeenSet() const { return m_currentInstanceCountHasBeenSet; }
+
+    /**
+     * <p>The number of instances associated with the variant.</p>
+     */
     inline void SetCurrentInstanceCount(int value) { m_currentInstanceCountHasBeenSet = true; m_currentInstanceCount = value; }
 
     /**
@@ -195,6 +223,12 @@ namespace Model
      * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
      */
     inline int GetDesiredInstanceCount() const{ return m_desiredInstanceCount; }
+
+    /**
+     * <p>The number of instances requested in the
+     * <code>UpdateEndpointWeightsAndCapacities</code> request. </p>
+     */
+    inline bool DesiredInstanceCountHasBeenSet() const { return m_desiredInstanceCountHasBeenSet; }
 
     /**
      * <p>The number of instances requested in the

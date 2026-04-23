@@ -60,6 +60,14 @@ namespace Model
      * Set to <code>true</code> to enable the automatic warm-up feature, or set to
      * <code>false</code> to disable it.</p>
      */
+    inline bool AutoWarmupEnabledHasBeenSet() const { return m_autoWarmupEnabledHasBeenSet; }
+
+    /**
+     * <p>Enables or disables the automatic warm-up feature for dedicated IP addresses
+     * that are associated with your Amazon Pinpoint account in the current AWS Region.
+     * Set to <code>true</code> to enable the automatic warm-up feature, or set to
+     * <code>false</code> to disable it.</p>
+     */
     inline void SetAutoWarmupEnabled(bool value) { m_autoWarmupEnabledHasBeenSet = true; m_autoWarmupEnabled = value; }
 
     /**

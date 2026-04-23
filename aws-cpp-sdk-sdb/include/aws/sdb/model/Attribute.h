@@ -57,6 +57,11 @@ namespace Model
     /**
      * The name of the attribute.
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * The name of the attribute.
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p></p>
      */
     inline const Aws::String& GetAlternateNameEncoding() const{ return m_alternateNameEncoding; }
+
+    /**
+     * <p></p>
+     */
+    inline bool AlternateNameEncodingHasBeenSet() const { return m_alternateNameEncodingHasBeenSet; }
 
     /**
      * <p></p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * The value of the attribute.
      */
+    inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+
+    /**
+     * The value of the attribute.
+     */
     inline void SetValue(const Aws::String& value) { m_valueHasBeenSet = true; m_value = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p></p>
      */
     inline const Aws::String& GetAlternateValueEncoding() const{ return m_alternateValueEncoding; }
+
+    /**
+     * <p></p>
+     */
+    inline bool AlternateValueEncodingHasBeenSet() const { return m_alternateValueEncodingHasBeenSet; }
 
     /**
      * <p></p>

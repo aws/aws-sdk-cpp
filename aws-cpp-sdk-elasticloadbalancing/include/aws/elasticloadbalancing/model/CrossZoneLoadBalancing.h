@@ -58,6 +58,12 @@ namespace Model
      * <p>Specifies whether cross-zone load balancing is enabled for the load
      * balancer.</p>
      */
+    inline bool EnabledHasBeenSet() const { return m_enabledHasBeenSet; }
+
+    /**
+     * <p>Specifies whether cross-zone load balancing is enabled for the load
+     * balancer.</p>
+     */
     inline void SetEnabled(bool value) { m_enabledHasBeenSet = true; m_enabled = value; }
 
     /**

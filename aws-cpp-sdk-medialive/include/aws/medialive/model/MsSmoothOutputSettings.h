@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * Placeholder documentation for MsSmoothOutputSettings<p><h3>See Also:</h3>   <a
+   * Ms Smooth Output Settings<p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/medialive-2017-10-14/MsSmoothOutputSettings">AWS
    * API Reference</a></p>
    */
@@ -52,6 +52,12 @@ namespace Model
      * multiple outputs of the same type.
      */
     inline const Aws::String& GetNameModifier() const{ return m_nameModifier; }
+
+    /**
+     * String concatenated to the end of the destination filename.  Required for
+     * multiple outputs of the same type.
+     */
+    inline bool NameModifierHasBeenSet() const { return m_nameModifierHasBeenSet; }
 
     /**
      * String concatenated to the end of the destination filename.  Required for

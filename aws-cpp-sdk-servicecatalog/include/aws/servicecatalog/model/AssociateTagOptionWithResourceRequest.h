@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The resource identifier.</p>
      */
+    inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+
+    /**
+     * <p>The resource identifier.</p>
+     */
     inline void SetResourceId(const Aws::String& value) { m_resourceIdHasBeenSet = true; m_resourceId = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The TagOption identifier.</p>
      */
     inline const Aws::String& GetTagOptionId() const{ return m_tagOptionId; }
+
+    /**
+     * <p>The TagOption identifier.</p>
+     */
+    inline bool TagOptionIdHasBeenSet() const { return m_tagOptionIdHasBeenSet; }
 
     /**
      * <p>The TagOption identifier.</p>

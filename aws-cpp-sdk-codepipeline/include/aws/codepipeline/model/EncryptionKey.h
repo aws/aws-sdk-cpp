@@ -60,6 +60,12 @@ namespace Model
      * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
      * key ARN.</p>
      */
+    inline bool IdHasBeenSet() const { return m_idHasBeenSet; }
+
+    /**
+     * <p>The ID used to identify the key. For an AWS KMS key, this is the key ID or
+     * key ARN.</p>
+     */
     inline void SetId(const Aws::String& value) { m_idHasBeenSet = true; m_id = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
      */
     inline const EncryptionKeyType& GetType() const{ return m_type; }
+
+    /**
+     * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)
+     * key. When creating or updating a pipeline, the value must be set to 'KMS'.</p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
 
     /**
      * <p>The type of encryption key, such as an AWS Key Management Service (AWS KMS)

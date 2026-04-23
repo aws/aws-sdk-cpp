@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The authorizer name.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**
@@ -84,6 +89,11 @@ namespace Model
      * <p>The ARN of the authorizer's Lambda function.</p>
      */
     inline const Aws::String& GetAuthorizerFunctionArn() const{ return m_authorizerFunctionArn; }
+
+    /**
+     * <p>The ARN of the authorizer's Lambda function.</p>
+     */
+    inline bool AuthorizerFunctionArnHasBeenSet() const { return m_authorizerFunctionArnHasBeenSet; }
 
     /**
      * <p>The ARN of the authorizer's Lambda function.</p>
@@ -121,6 +131,12 @@ namespace Model
      * headers.</p>
      */
     inline const Aws::String& GetTokenKeyName() const{ return m_tokenKeyName; }
+
+    /**
+     * <p>The name of the token key used to extract the token from the HTTP
+     * headers.</p>
+     */
+    inline bool TokenKeyNameHasBeenSet() const { return m_tokenKeyNameHasBeenSet; }
 
     /**
      * <p>The name of the token key used to extract the token from the HTTP
@@ -164,6 +180,12 @@ namespace Model
      * authentication service.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTokenSigningPublicKeys() const{ return m_tokenSigningPublicKeys; }
+
+    /**
+     * <p>The public keys used to verify the digital signature returned by your custom
+     * authentication service.</p>
+     */
+    inline bool TokenSigningPublicKeysHasBeenSet() const { return m_tokenSigningPublicKeysHasBeenSet; }
 
     /**
      * <p>The public keys used to verify the digital signature returned by your custom
@@ -236,6 +258,11 @@ namespace Model
      * <p>The status of the create authorizer request.</p>
      */
     inline const AuthorizerStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the create authorizer request.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the create authorizer request.</p>

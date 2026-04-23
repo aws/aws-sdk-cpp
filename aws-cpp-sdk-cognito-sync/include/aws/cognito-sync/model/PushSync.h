@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>List of SNS platform application ARNs that could be used by clients.</p>
      */
+    inline bool ApplicationArnsHasBeenSet() const { return m_applicationArnsHasBeenSet; }
+
+    /**
+     * <p>List of SNS platform application ARNs that could be used by clients.</p>
+     */
     inline void SetApplicationArns(const Aws::Vector<Aws::String>& value) { m_applicationArnsHasBeenSet = true; m_applicationArns = value; }
 
     /**
@@ -95,6 +100,12 @@ namespace Model
      * developer.</p>
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * <p>A role configured to allow Cognito to call SNS on behalf of the
+     * developer.</p>
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * <p>A role configured to allow Cognito to call SNS on behalf of the

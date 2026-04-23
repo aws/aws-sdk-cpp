@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p> A unique identifier for the assignment.</p>
      */
+    inline bool AssignmentIdHasBeenSet() const { return m_assignmentIdHasBeenSet; }
+
+    /**
+     * <p> A unique identifier for the assignment.</p>
+     */
     inline void SetAssignmentId(const Aws::String& value) { m_assignmentIdHasBeenSet = true; m_assignmentId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p> The ID of the Worker who accepted the HIT.</p>
      */
     inline const Aws::String& GetWorkerId() const{ return m_workerId; }
+
+    /**
+     * <p> The ID of the Worker who accepted the HIT.</p>
+     */
+    inline bool WorkerIdHasBeenSet() const { return m_workerIdHasBeenSet; }
 
     /**
      * <p> The ID of the Worker who accepted the HIT.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p> The ID of the HIT.</p>
      */
+    inline bool HITIdHasBeenSet() const { return m_hITIdHasBeenSet; }
+
+    /**
+     * <p> The ID of the HIT.</p>
+     */
     inline void SetHITId(const Aws::String& value) { m_hITIdHasBeenSet = true; m_hITId = value; }
 
     /**
@@ -167,6 +182,11 @@ namespace Model
     /**
      * <p> The status of the assignment.</p>
      */
+    inline bool AssignmentStatusHasBeenSet() const { return m_assignmentStatusHasBeenSet; }
+
+    /**
+     * <p> The status of the assignment.</p>
+     */
     inline void SetAssignmentStatus(const AssignmentStatus& value) { m_assignmentStatusHasBeenSet = true; m_assignmentStatus = value; }
 
     /**
@@ -194,6 +214,16 @@ namespace Model
      * submitted results.</p>
      */
     inline const Aws::Utils::DateTime& GetAutoApprovalTime() const{ return m_autoApprovalTime; }
+
+    /**
+     * <p> If results have been submitted, AutoApprovalTime is the date and time the
+     * results of the assignment results are considered Approved automatically if they
+     * have not already been explicitly approved or rejected by the Requester. This
+     * value is derived from the auto-approval delay specified by the Requester in the
+     * HIT. This value is omitted from the assignment if the Worker has not yet
+     * submitted results.</p>
+     */
+    inline bool AutoApprovalTimeHasBeenSet() const { return m_autoApprovalTimeHasBeenSet; }
 
     /**
      * <p> If results have been submitted, AutoApprovalTime is the date and time the
@@ -244,6 +274,11 @@ namespace Model
     /**
      * <p> The date and time the Worker accepted the assignment.</p>
      */
+    inline bool AcceptTimeHasBeenSet() const { return m_acceptTimeHasBeenSet; }
+
+    /**
+     * <p> The date and time the Worker accepted the assignment.</p>
+     */
     inline void SetAcceptTime(const Aws::Utils::DateTime& value) { m_acceptTimeHasBeenSet = true; m_acceptTime = value; }
 
     /**
@@ -268,6 +303,13 @@ namespace Model
      * Worker has not yet submitted results.</p>
      */
     inline const Aws::Utils::DateTime& GetSubmitTime() const{ return m_submitTime; }
+
+    /**
+     * <p> If the Worker has submitted results, SubmitTime is the date and time the
+     * assignment was submitted. This value is omitted from the assignment if the
+     * Worker has not yet submitted results.</p>
+     */
+    inline bool SubmitTimeHasBeenSet() const { return m_submitTimeHasBeenSet; }
 
     /**
      * <p> If the Worker has submitted results, SubmitTime is the date and time the
@@ -305,6 +347,14 @@ namespace Model
      * the results.</p>
      */
     inline const Aws::Utils::DateTime& GetApprovalTime() const{ return m_approvalTime; }
+
+    /**
+     * <p> If the Worker has submitted results and the Requester has approved the
+     * results, ApprovalTime is the date and time the Requester approved the results.
+     * This value is omitted from the assignment if the Requester has not yet approved
+     * the results.</p>
+     */
+    inline bool ApprovalTimeHasBeenSet() const { return m_approvalTimeHasBeenSet; }
 
     /**
      * <p> If the Worker has submitted results and the Requester has approved the
@@ -351,6 +401,13 @@ namespace Model
      * results, RejectionTime is the date and time the Requester rejected the
      * results.</p>
      */
+    inline bool RejectionTimeHasBeenSet() const { return m_rejectionTimeHasBeenSet; }
+
+    /**
+     * <p> If the Worker has submitted results and the Requester has rejected the
+     * results, RejectionTime is the date and time the Requester rejected the
+     * results.</p>
+     */
     inline void SetRejectionTime(const Aws::Utils::DateTime& value) { m_rejectionTimeHasBeenSet = true; m_rejectionTime = value; }
 
     /**
@@ -381,6 +438,13 @@ namespace Model
      * accepted the HIT.</p>
      */
     inline const Aws::Utils::DateTime& GetDeadline() const{ return m_deadline; }
+
+    /**
+     * <p> The date and time of the deadline for the assignment. This value is derived
+     * from the deadline specification for the HIT and the date and time the Worker
+     * accepted the HIT.</p>
+     */
+    inline bool DeadlineHasBeenSet() const { return m_deadlineHasBeenSet; }
 
     /**
      * <p> The date and time of the deadline for the assignment. This value is derived
@@ -418,6 +482,14 @@ namespace Model
      * or Answer may be empty.</p>
      */
     inline const Aws::String& GetAnswer() const{ return m_answer; }
+
+    /**
+     * <p> The Worker's answers submitted for the HIT contained in a
+     * QuestionFormAnswers document, if the Worker provides an answer. If the Worker
+     * does not provide any answers, Answer may contain a QuestionFormAnswers document,
+     * or Answer may be empty.</p>
+     */
+    inline bool AnswerHasBeenSet() const { return m_answerHasBeenSet; }
 
     /**
      * <p> The Worker's answers submitted for the HIT contained in a
@@ -474,6 +546,13 @@ namespace Model
      * rejected the assignment and specified feedback.</p>
      */
     inline const Aws::String& GetRequesterFeedback() const{ return m_requesterFeedback; }
+
+    /**
+     * <p> The feedback string included with the call to the ApproveAssignment
+     * operation or the RejectAssignment operation, if the Requester approved or
+     * rejected the assignment and specified feedback.</p>
+     */
+    inline bool RequesterFeedbackHasBeenSet() const { return m_requesterFeedbackHasBeenSet; }
 
     /**
      * <p> The feedback string included with the call to the ApproveAssignment

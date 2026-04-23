@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the room profile to delete. Required.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the room profile to delete. Required.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**

@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The name of the application.</p>
      */
+    inline bool ApplicationNameHasBeenSet() const { return m_applicationNameHasBeenSet; }
+
+    /**
+     * <p>The name of the application.</p>
+     */
     inline void SetApplicationName(const Aws::String& value) { m_applicationNameHasBeenSet = true; m_applicationName = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The lifecycle configuration.</p>
      */
     inline const ApplicationResourceLifecycleConfig& GetResourceLifecycleConfig() const{ return m_resourceLifecycleConfig; }
+
+    /**
+     * <p>The lifecycle configuration.</p>
+     */
+    inline bool ResourceLifecycleConfigHasBeenSet() const { return m_resourceLifecycleConfigHasBeenSet; }
 
     /**
      * <p>The lifecycle configuration.</p>

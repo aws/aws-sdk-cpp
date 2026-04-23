@@ -30,7 +30,7 @@ AbortVaultLockRequest::AbortVaultLockRequest() :
 
 Aws::String AbortVaultLockRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

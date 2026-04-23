@@ -55,7 +55,8 @@ namespace Model
    * </p> </li> <li> <p> <code>WindowsServer2008R2</code> </p> </li> <li> <p>
    * <code>WindowsServer2012</code> </p> </li> <li> <p>
    * <code>WindowsServer2012R2</code> </p> </li> <li> <p>
-   * <code>WindowsServer2016</code> </p> </li> <li> <p> <code>*</code> </p> <p>
+   * <code>WindowsServer2016</code> </p> </li> <li> <p>
+   * <code>WindowsServer2019</code> </p> </li> <li> <p> <code>*</code> </p> <p>
    * <i>Use a wildcard character (*) to target all supported operating system
    * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
@@ -138,7 +139,9 @@ namespace Model
    * <code>RedhatEnterpriseLinux7.1</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.2</code> </p> </li> <li> <p>
    * <code>RedhatEnterpriseLinux7.3</code> </p> </li> <li> <p>
-   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p> <code>*</code> </p>
+   * <code>RedhatEnterpriseLinux7.4</code> </p> </li> <li> <p>
+   * <code>RedhatEnterpriseLinux7.5</code> </p> </li> <li> <p>
+   * <code>RedhatEnterpriseLinux7.6</code> </p> </li> <li> <p> <code>*</code> </p>
    * <p> <i>Use a wildcard character (*) to target all supported operating system
    * versions.</i> </p> </li> </ul> <p> <i>Supported key:</i>
    * <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul> <li> <p>
@@ -178,16 +181,17 @@ namespace Model
    * </p> </li> <li> <p> <code>CentOS7.0</code> </p> </li> <li> <p>
    * <code>CentOS7.1</code> </p> </li> <li> <p> <code>CentOS7.2</code> </p> </li>
    * <li> <p> <code>CentOS7.3</code> </p> </li> <li> <p> <code>CentOS7.4</code> </p>
-   * </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to target
-   * all supported operating system versions.</i> </p> </li> </ul> <p> <i>Supported
-   * key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported values:</i> </p> <ul>
-   * <li> <p> <code>Security</code> </p> </li> <li> <p> <code>Bugfix</code> </p>
-   * </li> <li> <p> <code>Enhancement</code> </p> </li> <li> <p>
-   * <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p> </li>
-   * </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p> <i>Supported
-   * values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li> <li> <p>
-   * <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p> </li> <li>
-   * <p> <code>Low</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
+   * </li> <li> <p> <code>CentOS7.5</code> </p> </li> <li> <p> <code>CentOS7.6</code>
+   * </p> </li> <li> <p> <code>*</code> </p> <p> <i>Use a wildcard character (*) to
+   * target all supported operating system versions.</i> </p> </li> </ul> <p>
+   * <i>Supported key:</i> <code>CLASSIFICATION</code> </p> <p> <i>Supported
+   * values:</i> </p> <ul> <li> <p> <code>Security</code> </p> </li> <li> <p>
+   * <code>Bugfix</code> </p> </li> <li> <p> <code>Enhancement</code> </p> </li> <li>
+   * <p> <code>Recommended</code> </p> </li> <li> <p> <code>Newpackage</code> </p>
+   * </li> </ul> <p> <i>Supported key:</i> <code>SEVERITY</code> </p> <p>
+   * <i>Supported values:</i> </p> <ul> <li> <p> <code>Critical</code> </p> </li>
+   * <li> <p> <code>Important</code> </p> </li> <li> <p> <code>Medium</code> </p>
+   * </li> <li> <p> <code>Low</code> </p> </li> </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/PatchFilter">AWS API
    * Reference</a></p>
    */
@@ -205,6 +209,12 @@ namespace Model
      * for each operating system type.</p>
      */
     inline const PatchFilterKey& GetKey() const{ return m_key; }
+
+    /**
+     * <p>The key for the filter.</p> <p>See <a>PatchFilter</a> for lists of valid keys
+     * for each operating system type.</p>
+     */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
 
     /**
      * <p>The key for the filter.</p> <p>See <a>PatchFilter</a> for lists of valid keys
@@ -236,6 +246,12 @@ namespace Model
      * valid values for each key based on operating system type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetValues() const{ return m_values; }
+
+    /**
+     * <p>The value for the filter key.</p> <p>See <a>PatchFilter</a> for lists of
+     * valid values for each key based on operating system type.</p>
+     */
+    inline bool ValuesHasBeenSet() const { return m_valuesHasBeenSet; }
 
     /**
      * <p>The value for the filter key.</p> <p>See <a>PatchFilter</a> for lists of

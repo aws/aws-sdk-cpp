@@ -52,6 +52,9 @@ namespace Model
     inline const SigningConfigurationOverrides& GetSigningConfiguration() const{ return m_signingConfiguration; }
 
     
+    inline bool SigningConfigurationHasBeenSet() const { return m_signingConfigurationHasBeenSet; }
+
+    
     inline void SetSigningConfiguration(const SigningConfigurationOverrides& value) { m_signingConfigurationHasBeenSet = true; m_signingConfiguration = value; }
 
     

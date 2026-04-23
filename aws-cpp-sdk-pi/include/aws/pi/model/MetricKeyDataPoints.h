@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The dimension(s) to which the data points apply.</p>
      */
+    inline bool KeyHasBeenSet() const { return m_keyHasBeenSet; }
+
+    /**
+     * <p>The dimension(s) to which the data points apply.</p>
+     */
     inline void SetKey(const ResponseResourceMetricKey& value) { m_keyHasBeenSet = true; m_key = value; }
 
     /**
@@ -81,6 +86,12 @@ namespace Model
      * time.</p>
      */
     inline const Aws::Vector<DataPoint>& GetDataPoints() const{ return m_dataPoints; }
+
+    /**
+     * <p>An array of timestamp-value pairs, representing measurements over a period of
+     * time.</p>
+     */
+    inline bool DataPointsHasBeenSet() const { return m_dataPointsHasBeenSet; }
 
     /**
      * <p>An array of timestamp-value pairs, representing measurements over a period of

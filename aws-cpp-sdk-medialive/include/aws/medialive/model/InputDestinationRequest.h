@@ -59,6 +59,13 @@ to.
 to.
 
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * A unique name for the location the RTMP stream is being pushed
+to.
+
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**

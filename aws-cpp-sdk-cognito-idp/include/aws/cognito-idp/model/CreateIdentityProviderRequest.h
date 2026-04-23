@@ -55,6 +55,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
      * <p>The identity provider name.</p>
      */
     inline const Aws::String& GetProviderName() const{ return m_providerName; }
+
+    /**
+     * <p>The identity provider name.</p>
+     */
+    inline bool ProviderNameHasBeenSet() const { return m_providerNameHasBeenSet; }
 
     /**
      * <p>The identity provider name.</p>
@@ -127,6 +137,11 @@ namespace Model
     /**
      * <p>The identity provider type.</p>
      */
+    inline bool ProviderTypeHasBeenSet() const { return m_providerTypeHasBeenSet; }
+
+    /**
+     * <p>The identity provider type.</p>
+     */
     inline void SetProviderType(const IdentityProviderTypeType& value) { m_providerTypeHasBeenSet = true; m_providerType = value; }
 
     /**
@@ -150,6 +165,12 @@ namespace Model
      * <code>MetadataFile</code>.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetProviderDetails() const{ return m_providerDetails; }
+
+    /**
+     * <p>The identity provider details, such as <code>MetadataURL</code> and
+     * <code>MetadataFile</code>.</p>
+     */
+    inline bool ProviderDetailsHasBeenSet() const { return m_providerDetailsHasBeenSet; }
 
     /**
      * <p>The identity provider details, such as <code>MetadataURL</code> and
@@ -228,6 +249,12 @@ namespace Model
      * <p>A mapping of identity provider attributes to standard and custom user pool
      * attributes.</p>
      */
+    inline bool AttributeMappingHasBeenSet() const { return m_attributeMappingHasBeenSet; }
+
+    /**
+     * <p>A mapping of identity provider attributes to standard and custom user pool
+     * attributes.</p>
+     */
     inline void SetAttributeMapping(const Aws::Map<Aws::String, Aws::String>& value) { m_attributeMappingHasBeenSet = true; m_attributeMapping = value; }
 
     /**
@@ -295,6 +322,11 @@ namespace Model
      * <p>A list of identity provider identifiers.</p>
      */
     inline const Aws::Vector<Aws::String>& GetIdpIdentifiers() const{ return m_idpIdentifiers; }
+
+    /**
+     * <p>A list of identity provider identifiers.</p>
+     */
+    inline bool IdpIdentifiersHasBeenSet() const { return m_idpIdentifiersHasBeenSet; }
 
     /**
      * <p>A list of identity provider identifiers.</p>

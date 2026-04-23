@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>Valid storage options for your DB instance. </p>
      */
+    inline bool StorageHasBeenSet() const { return m_storageHasBeenSet; }
+
+    /**
+     * <p>Valid storage options for your DB instance. </p>
+     */
     inline void SetStorage(const Aws::Vector<ValidStorageOptions>& value) { m_storageHasBeenSet = true; m_storage = value; }
 
     /**

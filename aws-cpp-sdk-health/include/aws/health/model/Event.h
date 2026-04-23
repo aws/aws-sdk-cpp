@@ -69,6 +69,15 @@ namespace Model
      * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
      * </p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The unique identifier for the event. Format:
+     * <code>arn:aws:health:<i>event-region</i>::event/<i>SERVICE</i>/<i>EVENT_TYPE_CODE</i>/<i>EVENT_TYPE_PLUS_ID</i>
+     * </code>. Example: <code>Example:
+     * arn:aws:health:us-east-1::event/EC2/EC2_INSTANCE_RETIREMENT_SCHEDULED/EC2_INSTANCE_RETIREMENT_SCHEDULED_ABC123-DEF456</code>
+     * </p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**
@@ -127,6 +136,12 @@ namespace Model
      * <p>The AWS service that is affected by the event. For example, <code>EC2</code>,
      * <code>RDS</code>.</p>
      */
+    inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+
+    /**
+     * <p>The AWS service that is affected by the event. For example, <code>EC2</code>,
+     * <code>RDS</code>.</p>
+     */
     inline void SetService(const Aws::String& value) { m_serviceHasBeenSet = true; m_service = value; }
 
     /**
@@ -166,6 +181,13 @@ namespace Model
      * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
      */
     inline const Aws::String& GetEventTypeCode() const{ return m_eventTypeCode; }
+
+    /**
+     * <p>The unique identifier for the event type. The format is
+     * <code>AWS_<i>SERVICE</i>_<i>DESCRIPTION</i> </code>; for example,
+     * <code>AWS_EC2_SYSTEM_MAINTENANCE_EVENT</code>.</p>
+     */
+    inline bool EventTypeCodeHasBeenSet() const { return m_eventTypeCodeHasBeenSet; }
 
     /**
      * <p>The unique identifier for the event type. The format is
@@ -220,6 +242,12 @@ namespace Model
      * <p>The category of the event. Possible values are <code>issue</code>,
      * <code>scheduledChange</code>, and <code>accountNotification</code>.</p>
      */
+    inline bool EventTypeCategoryHasBeenSet() const { return m_eventTypeCategoryHasBeenSet; }
+
+    /**
+     * <p>The category of the event. Possible values are <code>issue</code>,
+     * <code>scheduledChange</code>, and <code>accountNotification</code>.</p>
+     */
     inline void SetEventTypeCategory(const EventTypeCategory& value) { m_eventTypeCategoryHasBeenSet = true; m_eventTypeCategory = value; }
 
     /**
@@ -245,6 +273,11 @@ namespace Model
      * <p>The AWS region name of the event.</p>
      */
     inline const Aws::String& GetRegion() const{ return m_region; }
+
+    /**
+     * <p>The AWS region name of the event.</p>
+     */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
 
     /**
      * <p>The AWS region name of the event.</p>
@@ -285,6 +318,11 @@ namespace Model
     /**
      * <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
      */
+    inline bool AvailabilityZoneHasBeenSet() const { return m_availabilityZoneHasBeenSet; }
+
+    /**
+     * <p>The AWS Availability Zone of the event. For example, us-east-1a.</p>
+     */
     inline void SetAvailabilityZone(const Aws::String& value) { m_availabilityZoneHasBeenSet = true; m_availabilityZone = value; }
 
     /**
@@ -321,6 +359,11 @@ namespace Model
     /**
      * <p>The date and time that the event began.</p>
      */
+    inline bool StartTimeHasBeenSet() const { return m_startTimeHasBeenSet; }
+
+    /**
+     * <p>The date and time that the event began.</p>
+     */
     inline void SetStartTime(const Aws::Utils::DateTime& value) { m_startTimeHasBeenSet = true; m_startTime = value; }
 
     /**
@@ -343,6 +386,11 @@ namespace Model
      * <p>The date and time that the event ended.</p>
      */
     inline const Aws::Utils::DateTime& GetEndTime() const{ return m_endTime; }
+
+    /**
+     * <p>The date and time that the event ended.</p>
+     */
+    inline bool EndTimeHasBeenSet() const { return m_endTimeHasBeenSet; }
 
     /**
      * <p>The date and time that the event ended.</p>
@@ -373,6 +421,11 @@ namespace Model
     /**
      * <p>The most recent date and time that the event was updated.</p>
      */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
+
+    /**
+     * <p>The most recent date and time that the event was updated.</p>
+     */
     inline void SetLastUpdatedTime(const Aws::Utils::DateTime& value) { m_lastUpdatedTimeHasBeenSet = true; m_lastUpdatedTime = value; }
 
     /**
@@ -396,6 +449,12 @@ namespace Model
      * <code>closed</code>, and <code>upcoming</code>.</p>
      */
     inline const EventStatusCode& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The most recent status of the event. Possible values are <code>open</code>,
+     * <code>closed</code>, and <code>upcoming</code>.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The most recent status of the event. Possible values are <code>open</code>,

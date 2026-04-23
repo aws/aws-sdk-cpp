@@ -30,7 +30,7 @@ GetUsagePlanKeyRequest::GetUsagePlanKeyRequest() :
 
 Aws::String GetUsagePlanKeyRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

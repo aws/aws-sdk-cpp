@@ -31,7 +31,7 @@ GetAccountLimitRequest::GetAccountLimitRequest() :
 
 Aws::String GetAccountLimitRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

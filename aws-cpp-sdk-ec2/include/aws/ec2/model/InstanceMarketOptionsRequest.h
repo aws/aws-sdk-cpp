@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The market type.</p>
      */
+    inline bool MarketTypeHasBeenSet() const { return m_marketTypeHasBeenSet; }
+
+    /**
+     * <p>The market type.</p>
+     */
     inline void SetMarketType(const MarketType& value) { m_marketTypeHasBeenSet = true; m_marketType = value; }
 
     /**
@@ -81,6 +86,11 @@ namespace Model
      * <p>The options for Spot Instances.</p>
      */
     inline const SpotMarketOptions& GetSpotOptions() const{ return m_spotOptions; }
+
+    /**
+     * <p>The options for Spot Instances.</p>
+     */
+    inline bool SpotOptionsHasBeenSet() const { return m_spotOptionsHasBeenSet; }
 
     /**
      * <p>The options for Spot Instances.</p>

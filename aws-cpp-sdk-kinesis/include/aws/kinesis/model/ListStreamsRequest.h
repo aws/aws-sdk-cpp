@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The maximum number of streams to list.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of streams to list.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -68,6 +73,11 @@ namespace Model
      * <p>The name of the stream to start the list with.</p>
      */
     inline const Aws::String& GetExclusiveStartStreamName() const{ return m_exclusiveStartStreamName; }
+
+    /**
+     * <p>The name of the stream to start the list with.</p>
+     */
+    inline bool ExclusiveStartStreamNameHasBeenSet() const { return m_exclusiveStartStreamNameHasBeenSet; }
 
     /**
      * <p>The name of the stream to start the list with.</p>

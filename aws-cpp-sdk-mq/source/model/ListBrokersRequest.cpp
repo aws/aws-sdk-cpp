@@ -34,7 +34,7 @@ ListBrokersRequest::ListBrokersRequest() :
 
 Aws::String ListBrokersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListBrokersRequest::AddQueryStringParameters(URI& uri) const

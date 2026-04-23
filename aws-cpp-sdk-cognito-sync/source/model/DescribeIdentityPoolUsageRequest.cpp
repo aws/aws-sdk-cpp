@@ -29,7 +29,7 @@ DescribeIdentityPoolUsageRequest::DescribeIdentityPoolUsageRequest() :
 
 Aws::String DescribeIdentityPoolUsageRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

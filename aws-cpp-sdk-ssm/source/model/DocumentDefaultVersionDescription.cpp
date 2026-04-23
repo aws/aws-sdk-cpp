@@ -30,13 +30,15 @@ namespace Model
 
 DocumentDefaultVersionDescription::DocumentDefaultVersionDescription() : 
     m_nameHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false)
+    m_defaultVersionHasBeenSet(false),
+    m_defaultVersionNameHasBeenSet(false)
 {
 }
 
 DocumentDefaultVersionDescription::DocumentDefaultVersionDescription(JsonView jsonValue) : 
     m_nameHasBeenSet(false),
-    m_defaultVersionHasBeenSet(false)
+    m_defaultVersionHasBeenSet(false),
+    m_defaultVersionNameHasBeenSet(false)
 {
   *this = jsonValue;
 }
@@ -57,6 +59,13 @@ DocumentDefaultVersionDescription& DocumentDefaultVersionDescription::operator =
     m_defaultVersionHasBeenSet = true;
   }
 
+  if(jsonValue.ValueExists("DefaultVersionName"))
+  {
+    m_defaultVersionName = jsonValue.GetString("DefaultVersionName");
+
+    m_defaultVersionNameHasBeenSet = true;
+  }
+
   return *this;
 }
 
@@ -73,6 +82,12 @@ JsonValue DocumentDefaultVersionDescription::Jsonize() const
   if(m_defaultVersionHasBeenSet)
   {
    payload.WithString("DefaultVersion", m_defaultVersion);
+
+  }
+
+  if(m_defaultVersionNameHasBeenSet)
+  {
+   payload.WithString("DefaultVersionName", m_defaultVersionName);
 
   }
 

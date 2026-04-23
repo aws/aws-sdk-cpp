@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
      */
+    inline bool DiskNameHasBeenSet() const { return m_diskNameHasBeenSet; }
+
+    /**
+     * <p>The unique Lightsail disk name (e.g., <code>my-disk</code>).</p>
+     */
     inline void SetDiskName(const Aws::String& value) { m_diskNameHasBeenSet = true; m_diskName = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * disk.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The name of the Lightsail instance where you want to utilize the storage
+     * disk.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The name of the Lightsail instance where you want to utilize the storage
@@ -127,6 +138,11 @@ namespace Model
      * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
      */
     inline const Aws::String& GetDiskPath() const{ return m_diskPath; }
+
+    /**
+     * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>
+     */
+    inline bool DiskPathHasBeenSet() const { return m_diskPathHasBeenSet; }
 
     /**
      * <p>The disk path to expose to the instance (e.g., <code>/dev/xvdf</code>).</p>

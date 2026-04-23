@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>A name for the configuration.</p>
      */
+    inline bool SyncNameHasBeenSet() const { return m_syncNameHasBeenSet; }
+
+    /**
+     * <p>A name for the configuration.</p>
+     */
     inline void SetSyncName(const Aws::String& value) { m_syncNameHasBeenSet = true; m_syncName = value; }
 
     /**
@@ -85,6 +90,11 @@ namespace Model
      * <p>Amazon S3 configuration details for the sync.</p>
      */
     inline const ResourceDataSyncS3Destination& GetS3Destination() const{ return m_s3Destination; }
+
+    /**
+     * <p>Amazon S3 configuration details for the sync.</p>
+     */
+    inline bool S3DestinationHasBeenSet() const { return m_s3DestinationHasBeenSet; }
 
     /**
      * <p>Amazon S3 configuration details for the sync.</p>

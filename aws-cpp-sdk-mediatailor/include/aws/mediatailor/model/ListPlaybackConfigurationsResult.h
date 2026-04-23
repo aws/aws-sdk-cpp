@@ -45,94 +45,94 @@ namespace Model
 
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline const Aws::Vector<PlaybackConfiguration>& GetItems() const{ return m_items; }
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline void SetItems(const Aws::Vector<PlaybackConfiguration>& value) { m_items = value; }
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline void SetItems(Aws::Vector<PlaybackConfiguration>&& value) { m_items = std::move(value); }
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline ListPlaybackConfigurationsResult& WithItems(const Aws::Vector<PlaybackConfiguration>& value) { SetItems(value); return *this;}
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline ListPlaybackConfigurationsResult& WithItems(Aws::Vector<PlaybackConfiguration>&& value) { SetItems(std::move(value)); return *this;}
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline ListPlaybackConfigurationsResult& AddItems(const PlaybackConfiguration& value) { m_items.push_back(value); return *this; }
 
     /**
-     * <p>Array of playback configurations. This may be all of the available
-     * configurations or a subset, depending on the settings you provide and on the
+     * <p>Array of playback configurations. This might be all the available
+     * configurations or a subset, depending on the settings that you provide and the
      * total number of configurations stored. </p>
      */
     inline ListPlaybackConfigurationsResult& AddItems(PlaybackConfiguration&& value) { m_items.push_back(std::move(value)); return *this; }
 
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const Aws::String& value) { m_nextToken = value; }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(Aws::String&& value) { m_nextToken = std::move(value); }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline void SetNextToken(const char* value) { m_nextToken.assign(value); }
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsResult& WithNextToken(const Aws::String& value) { SetNextToken(value); return *this;}
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsResult& WithNextToken(Aws::String&& value) { SetNextToken(std::move(value)); return *this;}
 
     /**
-     * <p>Pagination token returned by the GET list request when results overrun the
-     * meximum allowed. Use the token to fetch the next page of results.</p>
+     * <p>Pagination token returned by the GET list request when results exceed the
+     * maximum allowed. Use the token to fetch the next page of results.</p>
      */
     inline ListPlaybackConfigurationsResult& WithNextToken(const char* value) { SetNextToken(value); return *this;}
 

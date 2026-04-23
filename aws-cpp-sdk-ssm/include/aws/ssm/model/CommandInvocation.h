@@ -42,10 +42,10 @@ namespace Model
   /**
    * <p>An invocation is copy of a command sent to a specific instance. A command can
    * apply to one or more instances. A command invocation applies to one instance.
-   * For example, if a user executes SendCommand against three instances, then a
-   * command invocation is created for each requested instance ID. A command
-   * invocation returns status and detail information about a command you executed.
-   * </p><p><h3>See Also:</h3>   <a
+   * For example, if a user runs SendCommand against three instances, then a command
+   * invocation is created for each requested instance ID. A command invocation
+   * returns status and detail information about a command you ran. </p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ssm-2014-11-06/CommandInvocation">AWS
    * API Reference</a></p>
    */
@@ -62,6 +62,11 @@ namespace Model
      * <p>The command against which this invocation was requested.</p>
      */
     inline const Aws::String& GetCommandId() const{ return m_commandId; }
+
+    /**
+     * <p>The command against which this invocation was requested.</p>
+     */
+    inline bool CommandIdHasBeenSet() const { return m_commandIdHasBeenSet; }
 
     /**
      * <p>The command against which this invocation was requested.</p>
@@ -102,6 +107,11 @@ namespace Model
     /**
      * <p>The instance ID in which this invocation was requested.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID in which this invocation was requested.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -136,6 +146,13 @@ namespace Model
      * instance.</p>
      */
     inline const Aws::String& GetInstanceName() const{ return m_instanceName; }
+
+    /**
+     * <p>The name of the invocation target. For Amazon EC2 instances this is the value
+     * for the aws:Name tag. For on-premises instances, this is the name of the
+     * instance.</p>
+     */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
 
     /**
      * <p>The name of the invocation target. For Amazon EC2 instances this is the value
@@ -190,6 +207,12 @@ namespace Model
      * <p>User-specified information about the command, such as a brief description of
      * what the command should do.</p>
      */
+    inline bool CommentHasBeenSet() const { return m_commentHasBeenSet; }
+
+    /**
+     * <p>User-specified information about the command, such as a brief description of
+     * what the command should do.</p>
+     */
     inline void SetComment(const Aws::String& value) { m_commentHasBeenSet = true; m_comment = value; }
 
     /**
@@ -231,6 +254,11 @@ namespace Model
     /**
      * <p>The document name that was requested for execution.</p>
      */
+    inline bool DocumentNameHasBeenSet() const { return m_documentNameHasBeenSet; }
+
+    /**
+     * <p>The document name that was requested for execution.</p>
+     */
     inline void SetDocumentName(const Aws::String& value) { m_documentNameHasBeenSet = true; m_documentName = value; }
 
     /**
@@ -263,6 +291,11 @@ namespace Model
      * <p>The SSM document version.</p>
      */
     inline const Aws::String& GetDocumentVersion() const{ return m_documentVersion; }
+
+    /**
+     * <p>The SSM document version.</p>
+     */
+    inline bool DocumentVersionHasBeenSet() const { return m_documentVersionHasBeenSet; }
 
     /**
      * <p>The SSM document version.</p>
@@ -303,6 +336,11 @@ namespace Model
     /**
      * <p>The time and date the request was sent to this instance.</p>
      */
+    inline bool RequestedDateTimeHasBeenSet() const { return m_requestedDateTimeHasBeenSet; }
+
+    /**
+     * <p>The time and date the request was sent to this instance.</p>
+     */
     inline void SetRequestedDateTime(const Aws::Utils::DateTime& value) { m_requestedDateTimeHasBeenSet = true; m_requestedDateTime = value; }
 
     /**
@@ -325,6 +363,11 @@ namespace Model
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
      */
     inline const CommandInvocationStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>Whether or not the invocation succeeded, failed, or is pending.</p>
@@ -381,6 +424,41 @@ namespace Model
      * canceled by the system. This is a terminal state.</p> </li> </ul>
      */
     inline const Aws::String& GetStatusDetails() const{ return m_statusDetails; }
+
+    /**
+     * <p>A detailed status of the command execution for each invocation (each instance
+     * targeted by the command). StatusDetails includes more information than Status
+     * because it includes states resulting from error and concurrency control
+     * parameters. StatusDetails can show different results than Status. For more
+     * information about these statuses, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/monitor-commands.html">Understanding
+     * Command Statuses</a> in the <i>AWS Systems Manager User Guide</i>. StatusDetails
+     * can be one of the following values:</p> <ul> <li> <p>Pending: The command has
+     * not been sent to the instance.</p> </li> <li> <p>In Progress: The command has
+     * been sent to the instance but has not reached a terminal state.</p> </li> <li>
+     * <p>Success: The execution of the command or plugin was successfully completed.
+     * This is a terminal state.</p> </li> <li> <p>Delivery Timed Out: The command was
+     * not delivered to the instance before the delivery timeout expired. Delivery
+     * timeouts do not count against the parent command's MaxErrors limit, but they do
+     * contribute to whether the parent command status is Success or Incomplete. This
+     * is a terminal state.</p> </li> <li> <p>Execution Timed Out: Command execution
+     * started on the instance, but the execution was not complete before the execution
+     * timeout expired. Execution timeouts count against the MaxErrors limit of the
+     * parent command. This is a terminal state.</p> </li> <li> <p>Failed: The command
+     * was not successful on the instance. For a plugin, this indicates that the result
+     * code was not zero. For a command invocation, this indicates that the result code
+     * for one or more plugins was not zero. Invocation failures count against the
+     * MaxErrors limit of the parent command. This is a terminal state.</p> </li> <li>
+     * <p>Canceled: The command was terminated before it was completed. This is a
+     * terminal state.</p> </li> <li> <p>Undeliverable: The command can't be delivered
+     * to the instance. The instance might not exist or might not be responding.
+     * Undeliverable invocations don't count against the parent command's MaxErrors
+     * limit and don't contribute to whether the parent command status is Success or
+     * Incomplete. This is a terminal state.</p> </li> <li> <p>Terminated: The parent
+     * command exceeded its MaxErrors limit and subsequent command invocations were
+     * canceled by the system. This is a terminal state.</p> </li> </ul>
+     */
+    inline bool StatusDetailsHasBeenSet() const { return m_statusDetailsHasBeenSet; }
 
     /**
      * <p>A detailed status of the command execution for each invocation (each instance
@@ -601,6 +679,11 @@ namespace Model
     /**
      * <p> Gets the trace output sent by the agent. </p>
      */
+    inline bool TraceOutputHasBeenSet() const { return m_traceOutputHasBeenSet; }
+
+    /**
+     * <p> Gets the trace output sent by the agent. </p>
+     */
     inline void SetTraceOutput(const Aws::String& value) { m_traceOutputHasBeenSet = true; m_traceOutput = value; }
 
     /**
@@ -636,6 +719,14 @@ namespace Model
      * bucket was defined for the command.</p>
      */
     inline const Aws::String& GetStandardOutputUrl() const{ return m_standardOutputUrl; }
+
+    /**
+     * <p>The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was
+     * defined for the parent command. For an invocation, StandardOutputUrl is
+     * populated if there is just one plugin defined for the command, and the Amazon S3
+     * bucket was defined for the command.</p>
+     */
+    inline bool StandardOutputUrlHasBeenSet() const { return m_standardOutputUrlHasBeenSet; }
 
     /**
      * <p>The URL to the plugin's StdOut file in Amazon S3, if the Amazon S3 bucket was
@@ -700,6 +791,14 @@ namespace Model
      * if there is just one plugin defined for the command, and the Amazon S3 bucket
      * was defined for the command.</p>
      */
+    inline bool StandardErrorUrlHasBeenSet() const { return m_standardErrorUrlHasBeenSet; }
+
+    /**
+     * <p>The URL to the plugin's StdErr file in Amazon S3, if the Amazon S3 bucket was
+     * defined for the parent command. For an invocation, StandardErrorUrl is populated
+     * if there is just one plugin defined for the command, and the Amazon S3 bucket
+     * was defined for the command.</p>
+     */
     inline void SetStandardErrorUrl(const Aws::String& value) { m_standardErrorUrlHasBeenSet = true; m_standardErrorUrl = value; }
 
     /**
@@ -747,6 +846,9 @@ namespace Model
     inline const Aws::Vector<CommandPlugin>& GetCommandPlugins() const{ return m_commandPlugins; }
 
     
+    inline bool CommandPluginsHasBeenSet() const { return m_commandPluginsHasBeenSet; }
+
+    
     inline void SetCommandPlugins(const Aws::Vector<CommandPlugin>& value) { m_commandPluginsHasBeenSet = true; m_commandPlugins = value; }
 
     
@@ -770,6 +872,12 @@ namespace Model
      * notifications about command status changes on a per instance basis.</p>
      */
     inline const Aws::String& GetServiceRole() const{ return m_serviceRole; }
+
+    /**
+     * <p>The IAM service role that Run Command uses to act on your behalf when sending
+     * notifications about command status changes on a per instance basis.</p>
+     */
+    inline bool ServiceRoleHasBeenSet() const { return m_serviceRoleHasBeenSet; }
 
     /**
      * <p>The IAM service role that Run Command uses to act on your behalf when sending
@@ -818,6 +926,12 @@ namespace Model
      * <p>Configurations for sending notifications about command status changes on a
      * per instance basis.</p>
      */
+    inline bool NotificationConfigHasBeenSet() const { return m_notificationConfigHasBeenSet; }
+
+    /**
+     * <p>Configurations for sending notifications about command status changes on a
+     * per instance basis.</p>
+     */
     inline void SetNotificationConfig(const NotificationConfig& value) { m_notificationConfigHasBeenSet = true; m_notificationConfig = value; }
 
     /**
@@ -844,6 +958,12 @@ namespace Model
      * command output.</p>
      */
     inline const CloudWatchOutputConfig& GetCloudWatchOutputConfig() const{ return m_cloudWatchOutputConfig; }
+
+    /**
+     * <p>CloudWatch Logs information where you want Systems Manager to send the
+     * command output.</p>
+     */
+    inline bool CloudWatchOutputConfigHasBeenSet() const { return m_cloudWatchOutputConfigHasBeenSet; }
 
     /**
      * <p>CloudWatch Logs information where you want Systems Manager to send the

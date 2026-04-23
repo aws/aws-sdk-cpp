@@ -42,19 +42,34 @@ namespace Model
     ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
 
 
-    
+    /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert
+     * resource.
+     */
     inline const ResourceTags& GetResourceTags() const{ return m_resourceTags; }
 
-    
+    /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert
+     * resource.
+     */
     inline void SetResourceTags(const ResourceTags& value) { m_resourceTags = value; }
 
-    
+    /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert
+     * resource.
+     */
     inline void SetResourceTags(ResourceTags&& value) { m_resourceTags = std::move(value); }
 
-    
+    /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert
+     * resource.
+     */
     inline ListTagsForResourceResult& WithResourceTags(const ResourceTags& value) { SetResourceTags(value); return *this;}
 
-    
+    /**
+     * The Amazon Resource Name (ARN) and tags for an AWS Elemental MediaConvert
+     * resource.
+     */
     inline ListTagsForResourceResult& WithResourceTags(ResourceTags&& value) { SetResourceTags(std::move(value)); return *this;}
 
   private:

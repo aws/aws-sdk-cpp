@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>A type of exception, such as <code>InvalidArnException</code>.</p>
      */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>A type of exception, such as <code>InvalidArnException</code>.</p>
+     */
     inline void SetType(const BatchReadExceptionType& value) { m_typeHasBeenSet = true; m_type = value; }
 
     /**
@@ -79,6 +84,11 @@ namespace Model
      * <p>An exception message that is associated with the failure.</p>
      */
     inline const Aws::String& GetMessage() const{ return m_message; }
+
+    /**
+     * <p>An exception message that is associated with the failure.</p>
+     */
+    inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
 
     /**
      * <p>An exception message that is associated with the failure.</p>

@@ -30,7 +30,7 @@ GetQueryLoggingConfigRequest::GetQueryLoggingConfigRequest() :
 
 Aws::String GetQueryLoggingConfigRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

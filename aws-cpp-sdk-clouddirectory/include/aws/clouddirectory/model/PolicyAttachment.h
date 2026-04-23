@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The ID of <code>PolicyAttachment</code>.</p>
      */
+    inline bool PolicyIdHasBeenSet() const { return m_policyIdHasBeenSet; }
+
+    /**
+     * <p>The ID of <code>PolicyAttachment</code>.</p>
+     */
     inline void SetPolicyId(const Aws::String& value) { m_policyIdHasBeenSet = true; m_policyId = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetObjectIdentifier() const{ return m_objectIdentifier; }
+
+    /**
+     * <p>The <code>ObjectIdentifier</code> that is associated with
+     * <code>PolicyAttachment</code>.</p>
+     */
+    inline bool ObjectIdentifierHasBeenSet() const { return m_objectIdentifierHasBeenSet; }
 
     /**
      * <p>The <code>ObjectIdentifier</code> that is associated with
@@ -135,6 +146,12 @@ namespace Model
      * <code>PolicyAttachment</code>.</p>
      */
     inline const Aws::String& GetPolicyType() const{ return m_policyType; }
+
+    /**
+     * <p>The type of policy that can be associated with
+     * <code>PolicyAttachment</code>.</p>
+     */
+    inline bool PolicyTypeHasBeenSet() const { return m_policyTypeHasBeenSet; }
 
     /**
      * <p>The type of policy that can be associated with

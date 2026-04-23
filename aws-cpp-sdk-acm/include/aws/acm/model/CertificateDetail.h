@@ -64,7 +64,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -73,7 +73,16 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
+     * Reference</i>.</p>
+     */
+    inline bool CertificateArnHasBeenSet() const { return m_certificateArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
+     * ARNs, see <a
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -82,7 +91,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -91,7 +100,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -100,7 +109,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -109,7 +118,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -118,7 +127,7 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the certificate. For more information about
      * ARNs, see <a
-     * href="http://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
+     * href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon
      * Resource Names (ARNs) and AWS Service Namespaces</a> in the <i>AWS General
      * Reference</i>.</p>
      */
@@ -130,6 +139,12 @@ namespace Model
      * or example.com.</p>
      */
     inline const Aws::String& GetDomainName() const{ return m_domainName; }
+
+    /**
+     * <p>The fully qualified domain name for the certificate, such as www.example.com
+     * or example.com.</p>
+     */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
 
     /**
      * <p>The fully qualified domain name for the certificate, such as www.example.com
@@ -176,6 +191,15 @@ namespace Model
      * that can be used to connect to the website. </p>
      */
     inline const Aws::Vector<Aws::String>& GetSubjectAlternativeNames() const{ return m_subjectAlternativeNames; }
+
+    /**
+     * <p>One or more domain names (subject alternative names) included in the
+     * certificate. This list contains the domain names that are bound to the public
+     * key that is contained in the certificate. The subject alternative names include
+     * the canonical domain name (CN) of the certificate and additional domain names
+     * that can be used to connect to the website. </p>
+     */
+    inline bool SubjectAlternativeNamesHasBeenSet() const { return m_subjectAlternativeNamesHasBeenSet; }
 
     /**
      * <p>One or more domain names (subject alternative names) included in the
@@ -253,6 +277,13 @@ namespace Model
      * occurs as a result of the <a>RequestCertificate</a> request. This field exists
      * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
+    inline bool DomainValidationOptionsHasBeenSet() const { return m_domainValidationOptionsHasBeenSet; }
+
+    /**
+     * <p>Contains information about the initial validation of each domain name that
+     * occurs as a result of the <a>RequestCertificate</a> request. This field exists
+     * only when the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     */
     inline void SetDomainValidationOptions(const Aws::Vector<DomainValidation>& value) { m_domainValidationOptionsHasBeenSet = true; m_domainValidationOptions = value; }
 
     /**
@@ -299,6 +330,11 @@ namespace Model
     /**
      * <p>The serial number of the certificate.</p>
      */
+    inline bool SerialHasBeenSet() const { return m_serialHasBeenSet; }
+
+    /**
+     * <p>The serial number of the certificate.</p>
+     */
     inline void SetSerial(const Aws::String& value) { m_serialHasBeenSet = true; m_serial = value; }
 
     /**
@@ -332,6 +368,12 @@ namespace Model
      * the certificate.</p>
      */
     inline const Aws::String& GetSubject() const{ return m_subject; }
+
+    /**
+     * <p>The name of the entity that is associated with the public key contained in
+     * the certificate.</p>
+     */
+    inline bool SubjectHasBeenSet() const { return m_subjectHasBeenSet; }
 
     /**
      * <p>The name of the entity that is associated with the public key contained in
@@ -380,6 +422,12 @@ namespace Model
      * <p>The name of the certificate authority that issued and signed the
      * certificate.</p>
      */
+    inline bool IssuerHasBeenSet() const { return m_issuerHasBeenSet; }
+
+    /**
+     * <p>The name of the certificate authority that issued and signed the
+     * certificate.</p>
+     */
     inline void SetIssuer(const Aws::String& value) { m_issuerHasBeenSet = true; m_issuer = value; }
 
     /**
@@ -423,6 +471,12 @@ namespace Model
      * <p>The time at which the certificate was requested. This value exists only when
      * the certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
+    inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+
+    /**
+     * <p>The time at which the certificate was requested. This value exists only when
+     * the certificate type is <code>AMAZON_ISSUED</code>. </p>
+     */
     inline void SetCreatedAt(const Aws::Utils::DateTime& value) { m_createdAtHasBeenSet = true; m_createdAt = value; }
 
     /**
@@ -449,6 +503,12 @@ namespace Model
      * certificate type is <code>AMAZON_ISSUED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetIssuedAt() const{ return m_issuedAt; }
+
+    /**
+     * <p>The time at which the certificate was issued. This value exists only when the
+     * certificate type is <code>AMAZON_ISSUED</code>. </p>
+     */
+    inline bool IssuedAtHasBeenSet() const { return m_issuedAtHasBeenSet; }
 
     /**
      * <p>The time at which the certificate was issued. This value exists only when the
@@ -485,6 +545,12 @@ namespace Model
      * <p>The date and time at which the certificate was imported. This value exists
      * only when the certificate type is <code>IMPORTED</code>. </p>
      */
+    inline bool ImportedAtHasBeenSet() const { return m_importedAtHasBeenSet; }
+
+    /**
+     * <p>The date and time at which the certificate was imported. This value exists
+     * only when the certificate type is <code>IMPORTED</code>. </p>
+     */
     inline void SetImportedAt(const Aws::Utils::DateTime& value) { m_importedAtHasBeenSet = true; m_importedAt = value; }
 
     /**
@@ -514,6 +580,11 @@ namespace Model
     /**
      * <p>The status of the certificate.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the certificate.</p>
+     */
     inline void SetStatus(const CertificateStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -537,6 +608,12 @@ namespace Model
      * the certificate status is <code>REVOKED</code>. </p>
      */
     inline const Aws::Utils::DateTime& GetRevokedAt() const{ return m_revokedAt; }
+
+    /**
+     * <p>The time at which the certificate was revoked. This value exists only when
+     * the certificate status is <code>REVOKED</code>. </p>
+     */
+    inline bool RevokedAtHasBeenSet() const { return m_revokedAtHasBeenSet; }
 
     /**
      * <p>The time at which the certificate was revoked. This value exists only when
@@ -573,6 +650,12 @@ namespace Model
      * <p>The reason the certificate was revoked. This value exists only when the
      * certificate status is <code>REVOKED</code>. </p>
      */
+    inline bool RevocationReasonHasBeenSet() const { return m_revocationReasonHasBeenSet; }
+
+    /**
+     * <p>The reason the certificate was revoked. This value exists only when the
+     * certificate status is <code>REVOKED</code>. </p>
+     */
     inline void SetRevocationReason(const RevocationReason& value) { m_revocationReasonHasBeenSet = true; m_revocationReason = value; }
 
     /**
@@ -598,6 +681,11 @@ namespace Model
      * <p>The time before which the certificate is not valid.</p>
      */
     inline const Aws::Utils::DateTime& GetNotBefore() const{ return m_notBefore; }
+
+    /**
+     * <p>The time before which the certificate is not valid.</p>
+     */
+    inline bool NotBeforeHasBeenSet() const { return m_notBeforeHasBeenSet; }
 
     /**
      * <p>The time before which the certificate is not valid.</p>
@@ -628,6 +716,11 @@ namespace Model
     /**
      * <p>The time after which the certificate is not valid.</p>
      */
+    inline bool NotAfterHasBeenSet() const { return m_notAfterHasBeenSet; }
+
+    /**
+     * <p>The time after which the certificate is not valid.</p>
+     */
     inline void SetNotAfter(const Aws::Utils::DateTime& value) { m_notAfterHasBeenSet = true; m_notAfter = value; }
 
     /**
@@ -654,6 +747,11 @@ namespace Model
     /**
      * <p>The algorithm that was used to generate the public-private key pair.</p>
      */
+    inline bool KeyAlgorithmHasBeenSet() const { return m_keyAlgorithmHasBeenSet; }
+
+    /**
+     * <p>The algorithm that was used to generate the public-private key pair.</p>
+     */
     inline void SetKeyAlgorithm(const KeyAlgorithm& value) { m_keyAlgorithmHasBeenSet = true; m_keyAlgorithm = value; }
 
     /**
@@ -676,6 +774,11 @@ namespace Model
      * <p>The algorithm that was used to sign the certificate.</p>
      */
     inline const Aws::String& GetSignatureAlgorithm() const{ return m_signatureAlgorithm; }
+
+    /**
+     * <p>The algorithm that was used to sign the certificate.</p>
+     */
+    inline bool SignatureAlgorithmHasBeenSet() const { return m_signatureAlgorithmHasBeenSet; }
 
     /**
      * <p>The algorithm that was used to sign the certificate.</p>
@@ -713,6 +816,12 @@ namespace Model
      * certificate can be used by multiple AWS resources. </p>
      */
     inline const Aws::Vector<Aws::String>& GetInUseBy() const{ return m_inUseBy; }
+
+    /**
+     * <p>A list of ARNs for the AWS resources that are using the certificate. A
+     * certificate can be used by multiple AWS resources. </p>
+     */
+    inline bool InUseByHasBeenSet() const { return m_inUseByHasBeenSet; }
 
     /**
      * <p>A list of ARNs for the AWS resources that are using the certificate. A
@@ -760,7 +869,7 @@ namespace Model
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline const FailureReason& GetFailureReason() const{ return m_failureReason; }
@@ -768,7 +877,15 @@ namespace Model
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     */
+    inline bool FailureReasonHasBeenSet() const { return m_failureReasonHasBeenSet; }
+
+    /**
+     * <p>The reason the certificate request failed. This value exists only when the
+     * certificate status is <code>FAILED</code>. For more information, see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(const FailureReason& value) { m_failureReasonHasBeenSet = true; m_failureReason = value; }
@@ -776,7 +893,7 @@ namespace Model
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetFailureReason(FailureReason&& value) { m_failureReasonHasBeenSet = true; m_failureReason = std::move(value); }
@@ -784,7 +901,7 @@ namespace Model
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(const FailureReason& value) { SetFailureReason(value); return *this;}
@@ -792,7 +909,7 @@ namespace Model
     /**
      * <p>The reason the certificate request failed. This value exists only when the
      * certificate status is <code>FAILED</code>. For more information, see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/troubleshooting.html#troubleshooting-failed">Certificate
      * Request Failed</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithFailureReason(FailureReason&& value) { SetFailureReason(std::move(value)); return *this;}
@@ -803,11 +920,11 @@ namespace Model
      * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
      * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
      * provide <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for imported certificates. For more information about the
      * differences between certificates that you import and those that ACM provides,
      * see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline const CertificateType& GetType() const{ return m_type; }
@@ -817,11 +934,25 @@ namespace Model
      * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
      * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
      * provide <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for imported certificates. For more information about the
      * differences between certificates that you import and those that ACM provides,
      * see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
+     */
+    inline bool TypeHasBeenSet() const { return m_typeHasBeenSet; }
+
+    /**
+     * <p>The source of the certificate. For certificates provided by ACM, this value
+     * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
+     * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
+     * provide <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for imported certificates. For more information about the
+     * differences between certificates that you import and those that ACM provides,
+     * see <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(const CertificateType& value) { m_typeHasBeenSet = true; m_type = value; }
@@ -831,11 +962,11 @@ namespace Model
      * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
      * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
      * provide <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for imported certificates. For more information about the
      * differences between certificates that you import and those that ACM provides,
      * see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline void SetType(CertificateType&& value) { m_typeHasBeenSet = true; m_type = std::move(value); }
@@ -845,11 +976,11 @@ namespace Model
      * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
      * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
      * provide <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for imported certificates. For more information about the
      * differences between certificates that you import and those that ACM provides,
      * see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(const CertificateType& value) { SetType(value); return *this;}
@@ -859,11 +990,11 @@ namespace Model
      * is <code>AMAZON_ISSUED</code>. For certificates that you imported with
      * <a>ImportCertificate</a>, this value is <code>IMPORTED</code>. ACM does not
      * provide <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for imported certificates. For more information about the
      * differences between certificates that you import and those that ACM provides,
      * see <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/import-certificate.html">Importing
      * Certificates</a> in the <i>AWS Certificate Manager User Guide</i>. </p>
      */
     inline CertificateDetail& WithType(CertificateType&& value) { SetType(std::move(value)); return *this;}
@@ -871,7 +1002,7 @@ namespace Model
 
     /**
      * <p>Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for the certificate. This field exists only when the certificate
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
@@ -879,7 +1010,15 @@ namespace Model
 
     /**
      * <p>Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * renewal</a> for the certificate. This field exists only when the certificate
+     * type is <code>AMAZON_ISSUED</code>.</p>
+     */
+    inline bool RenewalSummaryHasBeenSet() const { return m_renewalSummaryHasBeenSet; }
+
+    /**
+     * <p>Contains information about the status of ACM's <a
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for the certificate. This field exists only when the certificate
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
@@ -887,7 +1026,7 @@ namespace Model
 
     /**
      * <p>Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for the certificate. This field exists only when the certificate
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
@@ -895,7 +1034,7 @@ namespace Model
 
     /**
      * <p>Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for the certificate. This field exists only when the certificate
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
@@ -903,7 +1042,7 @@ namespace Model
 
     /**
      * <p>Contains information about the status of ACM's <a
-     * href="http://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
+     * href="https://docs.aws.amazon.com/acm/latest/userguide/acm-renewal.html">managed
      * renewal</a> for the certificate. This field exists only when the certificate
      * type is <code>AMAZON_ISSUED</code>.</p>
      */
@@ -917,6 +1056,14 @@ namespace Model
      * NON_REPUDIATION, and more.</p>
      */
     inline const Aws::Vector<KeyUsage>& GetKeyUsages() const{ return m_keyUsages; }
+
+    /**
+     * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
+     * that identifies the purpose of the public key contained in the certificate.
+     * Possible extension values include DIGITAL_SIGNATURE, KEY_ENCHIPHERMENT,
+     * NON_REPUDIATION, and more.</p>
+     */
+    inline bool KeyUsagesHasBeenSet() const { return m_keyUsagesHasBeenSet; }
 
     /**
      * <p>A list of Key Usage X.509 v3 extension objects. Each object is a string value
@@ -979,6 +1126,13 @@ namespace Model
      * specifies a purpose for which the certificate public key can be used and
      * consists of a name and an object identifier (OID). </p>
      */
+    inline bool ExtendedKeyUsagesHasBeenSet() const { return m_extendedKeyUsagesHasBeenSet; }
+
+    /**
+     * <p>Contains a list of Extended Key Usage X.509 v3 extension objects. Each object
+     * specifies a purpose for which the certificate public key can be used and
+     * consists of a name and an object identifier (OID). </p>
+     */
     inline void SetExtendedKeyUsages(const Aws::Vector<ExtendedKeyUsage>& value) { m_extendedKeyUsagesHasBeenSet = true; m_extendedKeyUsages = value; }
 
     /**
@@ -1031,6 +1185,14 @@ namespace Model
      * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
      * </p>
      */
+    inline bool CertificateAuthorityArnHasBeenSet() const { return m_certificateAuthorityArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the ACM PCA private certificate authority
+     * (CA) that issued the certificate. This has the following format: </p> <p>
+     * <code>arn:aws:acm-pca:region:account:certificate-authority/12345678-1234-1234-1234-123456789012</code>
+     * </p>
+     */
     inline void SetCertificateAuthorityArn(const Aws::String& value) { m_certificateAuthorityArnHasBeenSet = true; m_certificateAuthorityArn = value; }
 
     /**
@@ -1075,27 +1237,44 @@ namespace Model
 
 
     /**
-     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
      */
     inline const RenewalEligibility& GetRenewalEligibility() const{ return m_renewalEligibility; }
 
     /**
-     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
+     */
+    inline bool RenewalEligibilityHasBeenSet() const { return m_renewalEligibilityHasBeenSet; }
+
+    /**
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
      */
     inline void SetRenewalEligibility(const RenewalEligibility& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = value; }
 
     /**
-     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
      */
     inline void SetRenewalEligibility(RenewalEligibility&& value) { m_renewalEligibilityHasBeenSet = true; m_renewalEligibility = std::move(value); }
 
     /**
-     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
      */
     inline CertificateDetail& WithRenewalEligibility(const RenewalEligibility& value) { SetRenewalEligibility(value); return *this;}
 
     /**
-     * <p>Specifies whether the certificate is eligible for renewal.</p>
+     * <p>Specifies whether the certificate is eligible for renewal. At this time, only
+     * exported private certificates can be renewed with the <a>RenewCertificate</a>
+     * command.</p>
      */
     inline CertificateDetail& WithRenewalEligibility(RenewalEligibility&& value) { SetRenewalEligibility(std::move(value)); return *this;}
 
@@ -1108,6 +1287,15 @@ namespace Model
      * cryptographically secure. </p>
      */
     inline const CertificateOptions& GetOptions() const{ return m_options; }
+
+    /**
+     * <p>Value that specifies whether to add the certificate to a transparency log.
+     * Certificate transparency makes it possible to detect SSL certificates that have
+     * been mistakenly or maliciously issued. A browser might respond to certificate
+     * that has not been logged by showing an error message. The logs are
+     * cryptographically secure. </p>
+     */
+    inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
 
     /**
      * <p>Value that specifies whether to add the certificate to a transparency log.

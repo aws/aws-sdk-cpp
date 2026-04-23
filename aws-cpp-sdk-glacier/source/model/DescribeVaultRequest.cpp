@@ -30,7 +30,7 @@ DescribeVaultRequest::DescribeVaultRequest() :
 
 Aws::String DescribeVaultRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

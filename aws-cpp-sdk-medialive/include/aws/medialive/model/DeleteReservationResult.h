@@ -20,6 +20,7 @@
 #include <aws/medialive/model/OfferingType.h>
 #include <aws/medialive/model/ReservationResourceSpecification.h>
 #include <aws/medialive/model/ReservationState.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -550,6 +551,67 @@ namespace Model
 
 
     /**
+     * A collection of key-value pairs
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetTags() const{ return m_tags; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline void SetTags(const Aws::Map<Aws::String, Aws::String>& value) { m_tags = value; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline void SetTags(Aws::Map<Aws::String, Aws::String>&& value) { m_tags = std::move(value); }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& WithTags(const Aws::Map<Aws::String, Aws::String>& value) { SetTags(value); return *this;}
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& WithTags(Aws::Map<Aws::String, Aws::String>&& value) { SetTags(std::move(value)); return *this;}
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(const Aws::String& key, const Aws::String& value) { m_tags.emplace(key, value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(Aws::String&& key, const Aws::String& value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(const Aws::String& key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(Aws::String&& key, Aws::String&& value) { m_tags.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(const char* key, Aws::String&& value) { m_tags.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(Aws::String&& key, const char* value) { m_tags.emplace(std::move(key), value); return *this; }
+
+    /**
+     * A collection of key-value pairs
+     */
+    inline DeleteReservationResult& AddTags(const char* key, const char* value) { m_tags.emplace(key, value); return *this; }
+
+
+    /**
      * Recurring usage charge for each reserved resource, e.g. '157.0'
      */
     inline double GetUsagePrice() const{ return m_usagePrice; }
@@ -597,6 +659,8 @@ namespace Model
     Aws::String m_start;
 
     ReservationState m_state;
+
+    Aws::Map<Aws::String, Aws::String> m_tags;
 
     double m_usagePrice;
   };

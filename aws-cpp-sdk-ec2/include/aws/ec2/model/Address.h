@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The ID of the instance that the address is associated with (if any).</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the instance that the address is associated with (if any).</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -92,6 +97,11 @@ namespace Model
      * <p>The Elastic IP address.</p>
      */
     inline const Aws::String& GetPublicIp() const{ return m_publicIp; }
+
+    /**
+     * <p>The Elastic IP address.</p>
+     */
+    inline bool PublicIpHasBeenSet() const { return m_publicIpHasBeenSet; }
 
     /**
      * <p>The Elastic IP address.</p>
@@ -132,6 +142,11 @@ namespace Model
     /**
      * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
      */
+    inline bool AllocationIdHasBeenSet() const { return m_allocationIdHasBeenSet; }
+
+    /**
+     * <p>The ID representing the allocation of the address for use with EC2-VPC.</p>
+     */
     inline void SetAllocationId(const Aws::String& value) { m_allocationIdHasBeenSet = true; m_allocationId = value; }
 
     /**
@@ -165,6 +180,12 @@ namespace Model
      * VPC.</p>
      */
     inline const Aws::String& GetAssociationId() const{ return m_associationId; }
+
+    /**
+     * <p>The ID representing the association of the address with an instance in a
+     * VPC.</p>
+     */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
 
     /**
      * <p>The ID representing the association of the address with an instance in a
@@ -215,6 +236,13 @@ namespace Model
      * EC2-Classic (<code>standard</code>) or instances in a VPC
      * (<code>vpc</code>).</p>
      */
+    inline bool DomainHasBeenSet() const { return m_domainHasBeenSet; }
+
+    /**
+     * <p>Indicates whether this Elastic IP address is for use with instances in
+     * EC2-Classic (<code>standard</code>) or instances in a VPC
+     * (<code>vpc</code>).</p>
+     */
     inline void SetDomain(const DomainType& value) { m_domainHasBeenSet = true; m_domain = value; }
 
     /**
@@ -243,6 +271,11 @@ namespace Model
      * <p>The ID of the network interface.</p>
      */
     inline const Aws::String& GetNetworkInterfaceId() const{ return m_networkInterfaceId; }
+
+    /**
+     * <p>The ID of the network interface.</p>
+     */
+    inline bool NetworkInterfaceIdHasBeenSet() const { return m_networkInterfaceIdHasBeenSet; }
 
     /**
      * <p>The ID of the network interface.</p>
@@ -283,6 +316,11 @@ namespace Model
     /**
      * <p>The ID of the AWS account that owns the network interface.</p>
      */
+    inline bool NetworkInterfaceOwnerIdHasBeenSet() const { return m_networkInterfaceOwnerIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the AWS account that owns the network interface.</p>
+     */
     inline void SetNetworkInterfaceOwnerId(const Aws::String& value) { m_networkInterfaceOwnerIdHasBeenSet = true; m_networkInterfaceOwnerId = value; }
 
     /**
@@ -315,6 +353,11 @@ namespace Model
      * <p>The private IP address associated with the Elastic IP address.</p>
      */
     inline const Aws::String& GetPrivateIpAddress() const{ return m_privateIpAddress; }
+
+    /**
+     * <p>The private IP address associated with the Elastic IP address.</p>
+     */
+    inline bool PrivateIpAddressHasBeenSet() const { return m_privateIpAddressHasBeenSet; }
 
     /**
      * <p>The private IP address associated with the Elastic IP address.</p>
@@ -355,6 +398,11 @@ namespace Model
     /**
      * <p>Any tags assigned to the Elastic IP address.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>Any tags assigned to the Elastic IP address.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -387,6 +435,11 @@ namespace Model
      * <p>The ID of an address pool.</p>
      */
     inline const Aws::String& GetPublicIpv4Pool() const{ return m_publicIpv4Pool; }
+
+    /**
+     * <p>The ID of an address pool.</p>
+     */
+    inline bool PublicIpv4PoolHasBeenSet() const { return m_publicIpv4PoolHasBeenSet; }
 
     /**
      * <p>The ID of an address pool.</p>

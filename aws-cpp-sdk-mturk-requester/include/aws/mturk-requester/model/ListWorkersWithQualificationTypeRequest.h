@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The ID of the Qualification type of the Qualifications to return.</p>
      */
+    inline bool QualificationTypeIdHasBeenSet() const { return m_qualificationTypeIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the Qualification type of the Qualifications to return.</p>
+     */
     inline void SetQualificationTypeId(const Aws::String& value) { m_qualificationTypeIdHasBeenSet = true; m_qualificationTypeId = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * <p> The status of the Qualifications to return. Can be <code>Granted |
      * Revoked</code>. </p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p> The status of the Qualifications to return. Can be <code>Granted |
+     * Revoked</code>. </p>
+     */
     inline void SetStatus(const QualificationStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -116,6 +127,11 @@ namespace Model
      * <p>Pagination Token</p>
      */
     inline const Aws::String& GetNextToken() const{ return m_nextToken; }
+
+    /**
+     * <p>Pagination Token</p>
+     */
+    inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
 
     /**
      * <p>Pagination Token</p>
@@ -152,6 +168,11 @@ namespace Model
      * <p> Limit the number of results returned. </p>
      */
     inline int GetMaxResults() const{ return m_maxResults; }
+
+    /**
+     * <p> Limit the number of results returned. </p>
+     */
+    inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
 
     /**
      * <p> Limit the number of results returned. </p>

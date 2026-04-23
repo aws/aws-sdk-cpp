@@ -52,6 +52,12 @@ namespace Model
      * <p>The ARN of the resource for which you want a list of tags. The resource must
      * exist within the account you are using.</p>
      */
+    inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the resource for which you want a list of tags. The resource must
+     * exist within the account you are using.</p>
+     */
     inline void SetArn(const Aws::String& value) { m_arnHasBeenSet = true; m_arn = value; }
 
     /**

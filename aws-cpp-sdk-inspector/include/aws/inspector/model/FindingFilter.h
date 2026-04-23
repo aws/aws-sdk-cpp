@@ -64,6 +64,13 @@ namespace Model
      * data type property must be the exact match of the value of the <b>agentId</b>
      * property of the <a>Finding</a> data type.</p>
      */
+    inline bool AgentIdsHasBeenSet() const { return m_agentIdsHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, one of the values that is specified for this
+     * data type property must be the exact match of the value of the <b>agentId</b>
+     * property of the <a>Finding</a> data type.</p>
+     */
     inline void SetAgentIds(const Aws::Vector<Aws::String>& value) { m_agentIdsHasBeenSet = true; m_agentIds = value; }
 
     /**
@@ -115,6 +122,13 @@ namespace Model
      * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetAutoScalingGroups() const{ return m_autoScalingGroups; }
+
+    /**
+     * <p>For a record to match a filter, one of the values that is specified for this
+     * data type property must be the exact match of the value of the
+     * <b>autoScalingGroup</b> property of the <a>Finding</a> data type.</p>
+     */
+    inline bool AutoScalingGroupsHasBeenSet() const { return m_autoScalingGroupsHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
@@ -178,6 +192,13 @@ namespace Model
      * data type property must be the exact match of the value of the <b>ruleName</b>
      * property of the <a>Finding</a> data type.</p>
      */
+    inline bool RuleNamesHasBeenSet() const { return m_ruleNamesHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, one of the values that is specified for this
+     * data type property must be the exact match of the value of the <b>ruleName</b>
+     * property of the <a>Finding</a> data type.</p>
+     */
     inline void SetRuleNames(const Aws::Vector<Aws::String>& value) { m_ruleNamesHasBeenSet = true; m_ruleNames = value; }
 
     /**
@@ -235,6 +256,13 @@ namespace Model
      * data type property must be the exact match of the value of the <b>severity</b>
      * property of the <a>Finding</a> data type.</p>
      */
+    inline bool SeveritiesHasBeenSet() const { return m_severitiesHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, one of the values that is specified for this
+     * data type property must be the exact match of the value of the <b>severity</b>
+     * property of the <a>Finding</a> data type.</p>
+     */
     inline void SetSeverities(const Aws::Vector<Severity>& value) { m_severitiesHasBeenSet = true; m_severities = value; }
 
     /**
@@ -279,6 +307,13 @@ namespace Model
      * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.</p>
      */
     inline const Aws::Vector<Aws::String>& GetRulesPackageArns() const{ return m_rulesPackageArns; }
+
+    /**
+     * <p>For a record to match a filter, one of the values that is specified for this
+     * data type property must be the exact match of the value of the
+     * <b>rulesPackageArn</b> property of the <a>Finding</a> data type.</p>
+     */
+    inline bool RulesPackageArnsHasBeenSet() const { return m_rulesPackageArnsHasBeenSet; }
 
     /**
      * <p>For a record to match a filter, one of the values that is specified for this
@@ -342,6 +377,13 @@ namespace Model
      * this data type property must be contained in the list of values of the
      * <b>attributes</b> property of the <a>Finding</a> data type.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the list of values that are specified for
+     * this data type property must be contained in the list of values of the
+     * <b>attributes</b> property of the <a>Finding</a> data type.</p>
+     */
     inline void SetAttributes(const Aws::Vector<Attribute>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**
@@ -392,6 +434,13 @@ namespace Model
      * type property must be contained in the list of values of the
      * <b>userAttributes</b> property of the <a>Finding</a> data type.</p>
      */
+    inline bool UserAttributesHasBeenSet() const { return m_userAttributesHasBeenSet; }
+
+    /**
+     * <p>For a record to match a filter, the value that is specified for this data
+     * type property must be contained in the list of values of the
+     * <b>userAttributes</b> property of the <a>Finding</a> data type.</p>
+     */
     inline void SetUserAttributes(const Aws::Vector<Attribute>& value) { m_userAttributesHasBeenSet = true; m_userAttributes = value; }
 
     /**
@@ -434,6 +483,11 @@ namespace Model
      * <p>The time range during which the finding is generated.</p>
      */
     inline const TimestampRange& GetCreationTimeRange() const{ return m_creationTimeRange; }
+
+    /**
+     * <p>The time range during which the finding is generated.</p>
+     */
+    inline bool CreationTimeRangeHasBeenSet() const { return m_creationTimeRangeHasBeenSet; }
 
     /**
      * <p>The time range during which the finding is generated.</p>

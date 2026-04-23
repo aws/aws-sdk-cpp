@@ -55,6 +55,9 @@ namespace Model
     inline const Aws::String& GetJobId() const{ return m_jobId; }
 
     
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     
@@ -77,6 +80,9 @@ namespace Model
     inline const Aws::Utils::DateTime& GetCreationDate() const{ return m_creationDate; }
 
     
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     
@@ -93,6 +99,9 @@ namespace Model
     inline bool GetIsCanceled() const{ return m_isCanceled; }
 
     
+    inline bool IsCanceledHasBeenSet() const { return m_isCanceledHasBeenSet; }
+
+    
     inline void SetIsCanceled(bool value) { m_isCanceledHasBeenSet = true; m_isCanceled = value; }
 
     
@@ -101,6 +110,9 @@ namespace Model
 
     
     inline const JobType& GetJobType() const{ return m_jobType; }
+
+    
+    inline bool JobTypeHasBeenSet() const { return m_jobTypeHasBeenSet; }
 
     
     inline void SetJobType(const JobType& value) { m_jobTypeHasBeenSet = true; m_jobType = value; }

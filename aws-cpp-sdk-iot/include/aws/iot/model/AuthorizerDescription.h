@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The authorizer name.</p>
      */
+    inline bool AuthorizerNameHasBeenSet() const { return m_authorizerNameHasBeenSet; }
+
+    /**
+     * <p>The authorizer name.</p>
+     */
     inline void SetAuthorizerName(const Aws::String& value) { m_authorizerNameHasBeenSet = true; m_authorizerName = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The authorizer ARN.</p>
      */
     inline const Aws::String& GetAuthorizerArn() const{ return m_authorizerArn; }
+
+    /**
+     * <p>The authorizer ARN.</p>
+     */
+    inline bool AuthorizerArnHasBeenSet() const { return m_authorizerArnHasBeenSet; }
 
     /**
      * <p>The authorizer ARN.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>The authorizer's Lambda function ARN.</p>
      */
+    inline bool AuthorizerFunctionArnHasBeenSet() const { return m_authorizerFunctionArnHasBeenSet; }
+
+    /**
+     * <p>The authorizer's Lambda function ARN.</p>
+     */
     inline void SetAuthorizerFunctionArn(const Aws::String& value) { m_authorizerFunctionArnHasBeenSet = true; m_authorizerFunctionArn = value; }
 
     /**
@@ -162,6 +177,11 @@ namespace Model
      * <p>The key used to extract the token from the HTTP headers.</p>
      */
     inline const Aws::String& GetTokenKeyName() const{ return m_tokenKeyName; }
+
+    /**
+     * <p>The key used to extract the token from the HTTP headers.</p>
+     */
+    inline bool TokenKeyNameHasBeenSet() const { return m_tokenKeyNameHasBeenSet; }
 
     /**
      * <p>The key used to extract the token from the HTTP headers.</p>
@@ -199,6 +219,12 @@ namespace Model
      * authentication service.</p>
      */
     inline const Aws::Map<Aws::String, Aws::String>& GetTokenSigningPublicKeys() const{ return m_tokenSigningPublicKeys; }
+
+    /**
+     * <p>The public keys used to validate the token signature returned by your custom
+     * authentication service.</p>
+     */
+    inline bool TokenSigningPublicKeysHasBeenSet() const { return m_tokenSigningPublicKeysHasBeenSet; }
 
     /**
      * <p>The public keys used to validate the token signature returned by your custom
@@ -275,6 +301,11 @@ namespace Model
     /**
      * <p>The status of the authorizer.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The status of the authorizer.</p>
+     */
     inline void SetStatus(const AuthorizerStatus& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -301,6 +332,11 @@ namespace Model
     /**
      * <p>The UNIX timestamp of when the authorizer was created.</p>
      */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
+
+    /**
+     * <p>The UNIX timestamp of when the authorizer was created.</p>
+     */
     inline void SetCreationDate(const Aws::Utils::DateTime& value) { m_creationDateHasBeenSet = true; m_creationDate = value; }
 
     /**
@@ -323,6 +359,11 @@ namespace Model
      * <p>The UNIX timestamp of when the authorizer was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastModifiedDate() const{ return m_lastModifiedDate; }
+
+    /**
+     * <p>The UNIX timestamp of when the authorizer was last updated.</p>
+     */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
 
     /**
      * <p>The UNIX timestamp of when the authorizer was last updated.</p>

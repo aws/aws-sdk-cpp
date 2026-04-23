@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the cluster subnet group name to be deleted.</p>
      */
+    inline bool ClusterSubnetGroupNameHasBeenSet() const { return m_clusterSubnetGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the cluster subnet group name to be deleted.</p>
+     */
     inline void SetClusterSubnetGroupName(const Aws::String& value) { m_clusterSubnetGroupNameHasBeenSet = true; m_clusterSubnetGroupName = value; }
 
     /**

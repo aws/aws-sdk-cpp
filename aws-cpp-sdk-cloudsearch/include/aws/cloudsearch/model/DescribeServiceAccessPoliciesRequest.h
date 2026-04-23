@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>The name of the domain you want to describe.</p>
      */
+    inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+
+    /**
+     * <p>The name of the domain you want to describe.</p>
+     */
     inline void SetDomainName(const Aws::String& value) { m_domainNameHasBeenSet = true; m_domainName = value; }
 
     /**
@@ -94,6 +99,12 @@ namespace Model
      * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
      */
     inline bool GetDeployed() const{ return m_deployed; }
+
+    /**
+     * <p>Whether to display the deployed configuration (<code>true</code>) or include
+     * any pending changes (<code>false</code>). Defaults to <code>false</code>.</p>
+     */
+    inline bool DeployedHasBeenSet() const { return m_deployedHasBeenSet; }
 
     /**
      * <p>Whether to display the deployed configuration (<code>true</code>) or include

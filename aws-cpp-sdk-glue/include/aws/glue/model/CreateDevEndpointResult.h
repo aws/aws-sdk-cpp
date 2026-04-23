@@ -18,6 +18,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
 #include <utility>
 
 namespace Aws
@@ -562,6 +563,67 @@ namespace Model
      */
     inline CreateDevEndpointResult& WithCreatedTimestamp(Aws::Utils::DateTime&& value) { SetCreatedTimestamp(std::move(value)); return *this;}
 
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline const Aws::Map<Aws::String, Aws::String>& GetArguments() const{ return m_arguments; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline void SetArguments(const Aws::Map<Aws::String, Aws::String>& value) { m_arguments = value; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline void SetArguments(Aws::Map<Aws::String, Aws::String>&& value) { m_arguments = std::move(value); }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& WithArguments(const Aws::Map<Aws::String, Aws::String>& value) { SetArguments(value); return *this;}
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& WithArguments(Aws::Map<Aws::String, Aws::String>&& value) { SetArguments(std::move(value)); return *this;}
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(const Aws::String& key, const Aws::String& value) { m_arguments.emplace(key, value); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, const Aws::String& value) { m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(const Aws::String& key, Aws::String&& value) { m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, Aws::String&& value) { m_arguments.emplace(std::move(key), std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(const char* key, Aws::String&& value) { m_arguments.emplace(key, std::move(value)); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(Aws::String&& key, const char* value) { m_arguments.emplace(std::move(key), value); return *this; }
+
+    /**
+     * <p>The map of arguments used to configure this DevEndpoint.</p>
+     */
+    inline CreateDevEndpointResult& AddArguments(const char* key, const char* value) { m_arguments.emplace(key, value); return *this; }
+
   private:
 
     Aws::String m_endpointName;
@@ -593,6 +655,8 @@ namespace Model
     Aws::String m_securityConfiguration;
 
     Aws::Utils::DateTime m_createdTimestamp;
+
+    Aws::Map<Aws::String, Aws::String> m_arguments;
   };
 
 } // namespace Model

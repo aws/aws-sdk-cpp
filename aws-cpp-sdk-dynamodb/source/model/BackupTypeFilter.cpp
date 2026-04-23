@@ -32,6 +32,7 @@ namespace Aws
 
         static const int USER_HASH = HashingUtils::HashString("USER");
         static const int SYSTEM_HASH = HashingUtils::HashString("SYSTEM");
+        static const int AWS_BACKUP_HASH = HashingUtils::HashString("AWS_BACKUP");
         static const int ALL_HASH = HashingUtils::HashString("ALL");
 
 
@@ -45,6 +46,10 @@ namespace Aws
           else if (hashCode == SYSTEM_HASH)
           {
             return BackupTypeFilter::SYSTEM;
+          }
+          else if (hashCode == AWS_BACKUP_HASH)
+          {
+            return BackupTypeFilter::AWS_BACKUP;
           }
           else if (hashCode == ALL_HASH)
           {
@@ -68,6 +73,8 @@ namespace Aws
             return "USER";
           case BackupTypeFilter::SYSTEM:
             return "SYSTEM";
+          case BackupTypeFilter::AWS_BACKUP:
+            return "AWS_BACKUP";
           case BackupTypeFilter::ALL:
             return "ALL";
           default:
@@ -77,7 +84,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The name of the stream to put the data record into.</p>
      */
+    inline bool StreamNameHasBeenSet() const { return m_streamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the stream to put the data record into.</p>
+     */
     inline void SetStreamName(const Aws::String& value) { m_streamNameHasBeenSet = true; m_streamName = value; }
 
     /**
@@ -92,6 +97,14 @@ namespace Model
      * size (1 MB).</p>
      */
     inline const Aws::Utils::ByteBuffer& GetData() const{ return m_data; }
+
+    /**
+     * <p>The data blob to put into the record, which is base64-encoded when the blob
+     * is serialized. When the data blob (the payload before base64-encoding) is added
+     * to the partition key size, the total size must not exceed the maximum record
+     * size (1 MB).</p>
+     */
+    inline bool DataHasBeenSet() const { return m_dataHasBeenSet; }
 
     /**
      * <p>The data blob to put into the record, which is base64-encoded when the blob
@@ -137,6 +150,18 @@ namespace Model
      * the same shard within the stream.</p>
      */
     inline const Aws::String& GetPartitionKey() const{ return m_partitionKey; }
+
+    /**
+     * <p>Determines which shard in the stream the data record is assigned to.
+     * Partition keys are Unicode strings with a maximum length limit of 256 characters
+     * for each key. Amazon Kinesis Data Streams uses the partition key as input to a
+     * hash function that maps the partition key and associated data to a specific
+     * shard. Specifically, an MD5 hash function is used to map partition keys to
+     * 128-bit integer values and to map associated data records to shards. As a result
+     * of this hashing mechanism, all data records with the same partition key map to
+     * the same shard within the stream.</p>
+     */
+    inline bool PartitionKeyHasBeenSet() const { return m_partitionKeyHasBeenSet; }
 
     /**
      * <p>Determines which shard in the stream the data record is assigned to.
@@ -221,6 +246,12 @@ namespace Model
      * <p>The hash value used to explicitly determine the shard the data record is
      * assigned to by overriding the partition key hash.</p>
      */
+    inline bool ExplicitHashKeyHasBeenSet() const { return m_explicitHashKeyHasBeenSet; }
+
+    /**
+     * <p>The hash value used to explicitly determine the shard the data record is
+     * assigned to by overriding the partition key hash.</p>
+     */
     inline void SetExplicitHashKey(const Aws::String& value) { m_explicitHashKeyHasBeenSet = true; m_explicitHashKey = value; }
 
     /**
@@ -263,6 +294,16 @@ namespace Model
      * time.</p>
      */
     inline const Aws::String& GetSequenceNumberForOrdering() const{ return m_sequenceNumberForOrdering; }
+
+    /**
+     * <p>Guarantees strictly increasing sequence numbers, for puts from the same
+     * client and to the same partition key. Usage: set the
+     * <code>SequenceNumberForOrdering</code> of record <i>n</i> to the sequence number
+     * of record <i>n-1</i> (as returned in the result when putting record <i>n-1</i>).
+     * If this parameter is not set, records are coarsely ordered based on arrival
+     * time.</p>
+     */
+    inline bool SequenceNumberForOrderingHasBeenSet() const { return m_sequenceNumberForOrderingHasBeenSet; }
 
     /**
      * <p>Guarantees strictly increasing sequence numbers, for puts from the same

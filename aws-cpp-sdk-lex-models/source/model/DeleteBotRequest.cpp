@@ -29,7 +29,7 @@ DeleteBotRequest::DeleteBotRequest() :
 
 Aws::String DeleteBotRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

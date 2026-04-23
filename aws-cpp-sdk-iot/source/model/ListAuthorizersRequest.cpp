@@ -38,7 +38,7 @@ ListAuthorizersRequest::ListAuthorizersRequest() :
 
 Aws::String ListAuthorizersRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListAuthorizersRequest::AddQueryStringParameters(URI& uri) const

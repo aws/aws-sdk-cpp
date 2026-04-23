@@ -57,6 +57,12 @@ namespace Model
      * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
      * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
      */
+    inline bool ParameterKeyHasBeenSet() const { return m_parameterKeyHasBeenSet; }
+
+    /**
+     * <p>The parameter key of a room skill parameter. ParameterKey is an enumerated
+     * type that only takes “DEFAULT” or “SCOPE” as valid values.</p>
+     */
     inline void SetParameterKey(const Aws::String& value) { m_parameterKeyHasBeenSet = true; m_parameterKey = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The parameter value of a room skill parameter.</p>
      */
     inline const Aws::String& GetParameterValue() const{ return m_parameterValue; }
+
+    /**
+     * <p>The parameter value of a room skill parameter.</p>
+     */
+    inline bool ParameterValueHasBeenSet() const { return m_parameterValueHasBeenSet; }
 
     /**
      * <p>The parameter value of a room skill parameter.</p>

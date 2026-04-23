@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the instance (a virtual private server) to stop.</p>
      */
+    inline bool InstanceNameHasBeenSet() const { return m_instanceNameHasBeenSet; }
+
+    /**
+     * <p>The name of the instance (a virtual private server) to stop.</p>
+     */
     inline void SetInstanceName(const Aws::String& value) { m_instanceNameHasBeenSet = true; m_instanceName = value; }
 
     /**
@@ -88,6 +93,15 @@ namespace Model
      * normally without adding this parameter to your API request.</p> </important>
      */
     inline bool GetForce() const{ return m_force; }
+
+    /**
+     * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a
+     * <code>stopping</code> state to stop.</p> <important> <p>Only use the
+     * <code>force</code> parameter if your instance is stuck in the
+     * <code>stopping</code> state. In any other state, your instance should stop
+     * normally without adding this parameter to your API request.</p> </important>
+     */
+    inline bool ForceHasBeenSet() const { return m_forceHasBeenSet; }
 
     /**
      * <p>When set to <code>True</code>, forces a Lightsail instance that is stuck in a

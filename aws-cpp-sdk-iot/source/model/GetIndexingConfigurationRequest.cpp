@@ -28,7 +28,7 @@ GetIndexingConfigurationRequest::GetIndexingConfigurationRequest()
 
 Aws::String GetIndexingConfigurationRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

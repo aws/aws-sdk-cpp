@@ -37,7 +37,7 @@ ListJobExecutionsForJobRequest::ListJobExecutionsForJobRequest() :
 
 Aws::String ListJobExecutionsForJobRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListJobExecutionsForJobRequest::AddQueryStringParameters(URI& uri) const

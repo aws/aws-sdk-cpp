@@ -58,6 +58,13 @@ namespace Model
      * the container instance to update. If you do not specify a cluster, the default
      * cluster is assumed.</p>
      */
+    inline bool ClusterHasBeenSet() const { return m_clusterHasBeenSet; }
+
+    /**
+     * <p>The short name or full Amazon Resource Name (ARN) of the cluster that hosts
+     * the container instance to update. If you do not specify a cluster, the default
+     * cluster is assumed.</p>
+     */
     inline void SetCluster(const Aws::String& value) { m_clusterHasBeenSet = true; m_cluster = value; }
 
     /**
@@ -104,6 +111,11 @@ namespace Model
     /**
      * <p>A list of container instance IDs or full ARN entries.</p>
      */
+    inline bool ContainerInstancesHasBeenSet() const { return m_containerInstancesHasBeenSet; }
+
+    /**
+     * <p>A list of container instance IDs or full ARN entries.</p>
+     */
     inline void SetContainerInstances(const Aws::Vector<Aws::String>& value) { m_containerInstancesHasBeenSet = true; m_containerInstances = value; }
 
     /**
@@ -141,6 +153,11 @@ namespace Model
      * <p>The container instance state with which to update the container instance.</p>
      */
     inline const ContainerInstanceStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The container instance state with which to update the container instance.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The container instance state with which to update the container instance.</p>

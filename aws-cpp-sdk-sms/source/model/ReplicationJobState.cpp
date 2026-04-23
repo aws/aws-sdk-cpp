@@ -35,6 +35,9 @@ namespace Aws
         static const int FAILED_HASH = HashingUtils::HashString("FAILED");
         static const int DELETING_HASH = HashingUtils::HashString("DELETING");
         static const int DELETED_HASH = HashingUtils::HashString("DELETED");
+        static const int COMPLETED_HASH = HashingUtils::HashString("COMPLETED");
+        static const int PAUSED_ON_FAILURE_HASH = HashingUtils::HashString("PAUSED_ON_FAILURE");
+        static const int FAILING_HASH = HashingUtils::HashString("FAILING");
 
 
         ReplicationJobState GetReplicationJobStateForName(const Aws::String& name)
@@ -60,6 +63,18 @@ namespace Aws
           {
             return ReplicationJobState::DELETED;
           }
+          else if (hashCode == COMPLETED_HASH)
+          {
+            return ReplicationJobState::COMPLETED;
+          }
+          else if (hashCode == PAUSED_ON_FAILURE_HASH)
+          {
+            return ReplicationJobState::PAUSED_ON_FAILURE;
+          }
+          else if (hashCode == FAILING_HASH)
+          {
+            return ReplicationJobState::FAILING;
+          }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
           {
@@ -84,6 +99,12 @@ namespace Aws
             return "DELETING";
           case ReplicationJobState::DELETED:
             return "DELETED";
+          case ReplicationJobState::COMPLETED:
+            return "COMPLETED";
+          case ReplicationJobState::PAUSED_ON_FAILURE:
+            return "PAUSED_ON_FAILURE";
+          case ReplicationJobState::FAILING:
+            return "FAILING";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -91,7 +112,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

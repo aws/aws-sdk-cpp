@@ -68,6 +68,14 @@ namespace Model
      * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
      * groups numbered 0001 to 0015. </p>
      */
+    inline bool NodeGroupIdHasBeenSet() const { return m_nodeGroupIdHasBeenSet; }
+
+    /**
+     * <p>The identifier for the node group (shard). A Redis (cluster mode disabled)
+     * replication group contains only 1 node group; therefore, the node group ID is
+     * 0001. A Redis (cluster mode enabled) replication group contains 1 to 15 node
+     * groups numbered 0001 to 0015. </p>
+     */
     inline void SetNodeGroupId(const Aws::String& value) { m_nodeGroupIdHasBeenSet = true; m_nodeGroupId = value; }
 
     /**
@@ -121,6 +129,12 @@ namespace Model
      * <p>The current state of this replication group - <code>creating</code>,
      * <code>available</code>, etc.</p>
      */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+
+    /**
+     * <p>The current state of this replication group - <code>creating</code>,
+     * <code>available</code>, etc.</p>
+     */
     inline void SetStatus(const Aws::String& value) { m_statusHasBeenSet = true; m_status = value; }
 
     /**
@@ -162,6 +176,11 @@ namespace Model
     /**
      * <p>The endpoint of the primary node in this node group (shard).</p>
      */
+    inline bool PrimaryEndpointHasBeenSet() const { return m_primaryEndpointHasBeenSet; }
+
+    /**
+     * <p>The endpoint of the primary node in this node group (shard).</p>
+     */
     inline void SetPrimaryEndpoint(const Endpoint& value) { m_primaryEndpointHasBeenSet = true; m_primaryEndpoint = value; }
 
     /**
@@ -184,6 +203,11 @@ namespace Model
      * <p>The keyspace for this node group (shard).</p>
      */
     inline const Aws::String& GetSlots() const{ return m_slots; }
+
+    /**
+     * <p>The keyspace for this node group (shard).</p>
+     */
+    inline bool SlotsHasBeenSet() const { return m_slotsHasBeenSet; }
 
     /**
      * <p>The keyspace for this node group (shard).</p>
@@ -221,6 +245,12 @@ namespace Model
      * (shard).</p>
      */
     inline const Aws::Vector<NodeGroupMember>& GetNodeGroupMembers() const{ return m_nodeGroupMembers; }
+
+    /**
+     * <p>A list containing information about individual nodes within the node group
+     * (shard).</p>
+     */
+    inline bool NodeGroupMembersHasBeenSet() const { return m_nodeGroupMembersHasBeenSet; }
 
     /**
      * <p>A list containing information about individual nodes within the node group

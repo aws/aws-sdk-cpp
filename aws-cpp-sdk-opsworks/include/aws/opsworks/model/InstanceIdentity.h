@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>A JSON document that contains the metadata.</p>
      */
+    inline bool DocumentHasBeenSet() const { return m_documentHasBeenSet; }
+
+    /**
+     * <p>A JSON document that contains the metadata.</p>
+     */
     inline void SetDocument(const Aws::String& value) { m_documentHasBeenSet = true; m_document = value; }
 
     /**
@@ -91,6 +96,12 @@ namespace Model
      * authenticity.</p>
      */
     inline const Aws::String& GetSignature() const{ return m_signature; }
+
+    /**
+     * <p>A signature that can be used to verify the document's accuracy and
+     * authenticity.</p>
+     */
+    inline bool SignatureHasBeenSet() const { return m_signatureHasBeenSet; }
 
     /**
      * <p>A signature that can be used to verify the document's accuracy and

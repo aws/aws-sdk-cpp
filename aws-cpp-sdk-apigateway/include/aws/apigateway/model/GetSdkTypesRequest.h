@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
@@ -92,6 +97,12 @@ namespace Model
      * the maximum value is 500.</p>
      */
     inline int GetLimit() const{ return m_limit; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
 
     /**
      * <p>The maximum number of returned results per page. The default value is 25 and

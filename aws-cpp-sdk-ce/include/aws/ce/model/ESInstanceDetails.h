@@ -34,7 +34,7 @@ namespace Model
 {
 
   /**
-   * <p>Details about the ES instances that AWS recommends that you
+   * <p>Details about the Amazon ES instances that AWS recommends that you
    * purchase.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/ESInstanceDetails">AWS
    * API Reference</a></p>
@@ -52,6 +52,11 @@ namespace Model
      * <p>The class of instance that AWS recommends.</p>
      */
     inline const Aws::String& GetInstanceClass() const{ return m_instanceClass; }
+
+    /**
+     * <p>The class of instance that AWS recommends.</p>
+     */
+    inline bool InstanceClassHasBeenSet() const { return m_instanceClassHasBeenSet; }
 
     /**
      * <p>The class of instance that AWS recommends.</p>
@@ -92,6 +97,11 @@ namespace Model
     /**
      * <p>The size of instance that AWS recommends.</p>
      */
+    inline bool InstanceSizeHasBeenSet() const { return m_instanceSizeHasBeenSet; }
+
+    /**
+     * <p>The size of instance that AWS recommends.</p>
+     */
     inline void SetInstanceSize(const Aws::String& value) { m_instanceSizeHasBeenSet = true; m_instanceSize = value; }
 
     /**
@@ -128,6 +138,11 @@ namespace Model
     /**
      * <p>The AWS Region of the recommended reservation.</p>
      */
+    inline bool RegionHasBeenSet() const { return m_regionHasBeenSet; }
+
+    /**
+     * <p>The AWS Region of the recommended reservation.</p>
+     */
     inline void SetRegion(const Aws::String& value) { m_regionHasBeenSet = true; m_region = value; }
 
     /**
@@ -157,17 +172,22 @@ namespace Model
 
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline bool GetCurrentGeneration() const{ return m_currentGeneration; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
+     */
+    inline bool CurrentGenerationHasBeenSet() const { return m_currentGenerationHasBeenSet; }
+
+    /**
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline void SetCurrentGeneration(bool value) { m_currentGenerationHasBeenSet = true; m_currentGeneration = value; }
 
     /**
-     * <p>Whether the recommendation is for a current generation instance.</p>
+     * <p>Whether the recommendation is for a current-generation instance.</p>
      */
     inline ESInstanceDetails& WithCurrentGeneration(bool value) { SetCurrentGeneration(value); return *this;}
 
@@ -176,6 +196,11 @@ namespace Model
      * <p>Whether the recommended reservation is size flexible.</p>
      */
     inline bool GetSizeFlexEligible() const{ return m_sizeFlexEligible; }
+
+    /**
+     * <p>Whether the recommended reservation is size flexible.</p>
+     */
+    inline bool SizeFlexEligibleHasBeenSet() const { return m_sizeFlexEligibleHasBeenSet; }
 
     /**
      * <p>Whether the recommended reservation is size flexible.</p>

@@ -68,6 +68,12 @@ namespace Model
      * <p>The prediction label for either a <code>BINARY</code> or
      * <code>MULTICLASS</code> <code>MLModel</code>.</p>
      */
+    inline bool PredictedLabelHasBeenSet() const { return m_predictedLabelHasBeenSet; }
+
+    /**
+     * <p>The prediction label for either a <code>BINARY</code> or
+     * <code>MULTICLASS</code> <code>MLModel</code>.</p>
+     */
     inline void SetPredictedLabel(const Aws::String& value) { m_predictedLabelHasBeenSet = true; m_predictedLabel = value; }
 
     /**
@@ -109,6 +115,11 @@ namespace Model
     /**
      * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
      */
+    inline bool PredictedValueHasBeenSet() const { return m_predictedValueHasBeenSet; }
+
+    /**
+     * The prediction value for <code>REGRESSION</code> <code>MLModel</code>.
+     */
     inline void SetPredictedValue(double value) { m_predictedValueHasBeenSet = true; m_predictedValue = value; }
 
     /**
@@ -119,6 +130,9 @@ namespace Model
 
     
     inline const Aws::Map<Aws::String, double>& GetPredictedScores() const{ return m_predictedScores; }
+
+    
+    inline bool PredictedScoresHasBeenSet() const { return m_predictedScoresHasBeenSet; }
 
     
     inline void SetPredictedScores(const Aws::Map<Aws::String, double>& value) { m_predictedScoresHasBeenSet = true; m_predictedScores = value; }
@@ -144,6 +158,9 @@ namespace Model
 
     
     inline const Aws::Map<DetailsAttributes, Aws::String>& GetDetails() const{ return m_details; }
+
+    
+    inline bool DetailsHasBeenSet() const { return m_detailsHasBeenSet; }
 
     
     inline void SetDetails(const Aws::Map<DetailsAttributes, Aws::String>& value) { m_detailsHasBeenSet = true; m_details = value; }

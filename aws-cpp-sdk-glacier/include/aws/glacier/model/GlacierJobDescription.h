@@ -61,6 +61,11 @@ namespace Model
     /**
      * <p>An opaque string that identifies an Amazon Glacier job.</p>
      */
+    inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+
+    /**
+     * <p>An opaque string that identifies an Amazon Glacier job.</p>
+     */
     inline void SetJobId(const Aws::String& value) { m_jobIdHasBeenSet = true; m_jobId = value; }
 
     /**
@@ -93,6 +98,11 @@ namespace Model
      * <p>The job description provided when initiating the job.</p>
      */
     inline const Aws::String& GetJobDescription() const{ return m_jobDescription; }
+
+    /**
+     * <p>The job description provided when initiating the job.</p>
+     */
+    inline bool JobDescriptionHasBeenSet() const { return m_jobDescriptionHasBeenSet; }
 
     /**
      * <p>The job description provided when initiating the job.</p>
@@ -135,6 +145,12 @@ namespace Model
      * <p>The job type. This value is either <code>ArchiveRetrieval</code>,
      * <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>The job type. This value is either <code>ArchiveRetrieval</code>,
+     * <code>InventoryRetrieval</code>, or <code>Select</code>. </p>
+     */
     inline void SetAction(const ActionCode& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -161,6 +177,12 @@ namespace Model
      * this field is null.</p>
      */
     inline const Aws::String& GetArchiveId() const{ return m_archiveId; }
+
+    /**
+     * <p>The archive ID requested for a select job or archive retrieval. Otherwise,
+     * this field is null.</p>
+     */
+    inline bool ArchiveIdHasBeenSet() const { return m_archiveIdHasBeenSet; }
 
     /**
      * <p>The archive ID requested for a select job or archive retrieval. Otherwise,
@@ -209,6 +231,12 @@ namespace Model
      * <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval
      * was requested.</p>
      */
+    inline bool VaultARNHasBeenSet() const { return m_vaultARNHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the vault from which an archive retrieval
+     * was requested.</p>
+     */
     inline void SetVaultARN(const Aws::String& value) { m_vaultARNHasBeenSet = true; m_vaultARN = value; }
 
     /**
@@ -248,6 +276,13 @@ namespace Model
      * <code>"2012-03-20T17:03:43.221Z"</code>.</p>
      */
     inline const Aws::String& GetCreationDate() const{ return m_creationDate; }
+
+    /**
+     * <p>The UTC date when the job was created. This value is a string representation
+     * of ISO 8601 date format, for example
+     * <code>"2012-03-20T17:03:43.221Z"</code>.</p>
+     */
+    inline bool CreationDateHasBeenSet() const { return m_creationDateHasBeenSet; }
 
     /**
      * <p>The UTC date when the job was created. This value is a string representation
@@ -302,6 +337,12 @@ namespace Model
      * <p>The job status. When a job is completed, you get the job's output using Get
      * Job Output (GET output).</p>
      */
+    inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
+
+    /**
+     * <p>The job status. When a job is completed, you get the job's output using Get
+     * Job Output (GET output).</p>
+     */
     inline void SetCompleted(bool value) { m_completedHasBeenSet = true; m_completed = value; }
 
     /**
@@ -316,6 +357,12 @@ namespace Model
      * <code>Failed</code>, and indicates the status of the job.</p>
      */
     inline const StatusCode& GetStatusCode() const{ return m_statusCode; }
+
+    /**
+     * <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
+     * <code>Failed</code>, and indicates the status of the job.</p>
+     */
+    inline bool StatusCodeHasBeenSet() const { return m_statusCodeHasBeenSet; }
 
     /**
      * <p>The status code can be <code>InProgress</code>, <code>Succeeded</code>, or
@@ -346,6 +393,11 @@ namespace Model
      * <p>A friendly message that describes the job status.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A friendly message that describes the job status.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A friendly message that describes the job status.</p>
@@ -390,6 +442,13 @@ namespace Model
      * being requested for download. For an inventory retrieval or select job, this
      * value is null.</p>
      */
+    inline bool ArchiveSizeInBytesHasBeenSet() const { return m_archiveSizeInBytesHasBeenSet; }
+
+    /**
+     * <p>For an archive retrieval job, this value is the size in bytes of the archive
+     * being requested for download. For an inventory retrieval or select job, this
+     * value is null.</p>
+     */
     inline void SetArchiveSizeInBytes(long long value) { m_archiveSizeInBytesHasBeenSet = true; m_archiveSizeInBytes = value; }
 
     /**
@@ -412,6 +471,13 @@ namespace Model
      * inventory requested for download. For an archive retrieval or select job, this
      * value is null.</p>
      */
+    inline bool InventorySizeInBytesHasBeenSet() const { return m_inventorySizeInBytesHasBeenSet; }
+
+    /**
+     * <p>For an inventory retrieval job, this value is the size in bytes of the
+     * inventory requested for download. For an archive retrieval or select job, this
+     * value is null.</p>
+     */
     inline void SetInventorySizeInBytes(long long value) { m_inventorySizeInBytesHasBeenSet = true; m_inventorySizeInBytes = value; }
 
     /**
@@ -426,6 +492,11 @@ namespace Model
      * <p>An Amazon SNS topic that receives notification.</p>
      */
     inline const Aws::String& GetSNSTopic() const{ return m_sNSTopic; }
+
+    /**
+     * <p>An Amazon SNS topic that receives notification.</p>
+     */
+    inline bool SNSTopicHasBeenSet() const { return m_sNSTopicHasBeenSet; }
 
     /**
      * <p>An Amazon SNS topic that receives notification.</p>
@@ -463,6 +534,12 @@ namespace Model
      * the value is null.</p>
      */
     inline const Aws::String& GetCompletionDate() const{ return m_completionDate; }
+
+    /**
+     * <p>The UTC time that the job request completed. While the job is in progress,
+     * the value is null.</p>
+     */
+    inline bool CompletionDateHasBeenSet() const { return m_completionDateHasBeenSet; }
 
     /**
      * <p>The UTC time that the job request completed. While the job is in progress,
@@ -515,6 +592,21 @@ namespace Model
      * </ul>
      */
     inline const Aws::String& GetSHA256TreeHash() const{ return m_sHA256TreeHash; }
+
+    /**
+     * <p>For an archive retrieval job, this value is the checksum of the archive.
+     * Otherwise, this value is null.</p> <p>The SHA256 tree hash value for the
+     * requested range of an archive. If the <b>InitiateJob</b> request for an archive
+     * specified a tree-hash aligned range, then this field returns a value.</p> <p>If
+     * the whole archive is retrieved, this value is the same as the
+     * ArchiveSHA256TreeHash value.</p> <p>This field is null for the following:</p>
+     * <ul> <li> <p>Archive retrieval jobs that specify a range that is not tree-hash
+     * aligned</p> </li> </ul> <ul> <li> <p>Archival jobs that specify a range that is
+     * equal to the whole archive, when the job status is <code>InProgress</code> </p>
+     * </li> </ul> <ul> <li> <p>Inventory jobs</p> </li> <li> <p>Select jobs</p> </li>
+     * </ul>
+     */
+    inline bool SHA256TreeHashHasBeenSet() const { return m_sHA256TreeHashHasBeenSet; }
 
     /**
      * <p>For an archive retrieval job, this value is the checksum of the archive.
@@ -617,6 +709,12 @@ namespace Model
      * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
      * inventory retrieval or select jobs, this field is null.</p>
      */
+    inline bool ArchiveSHA256TreeHashHasBeenSet() const { return m_archiveSHA256TreeHashHasBeenSet; }
+
+    /**
+     * <p>The SHA256 tree hash of the entire archive for an archive retrieval. For
+     * inventory retrieval or select jobs, this field is null.</p>
+     */
     inline void SetArchiveSHA256TreeHash(const Aws::String& value) { m_archiveSHA256TreeHashHasBeenSet = true; m_archiveSHA256TreeHash = value; }
 
     /**
@@ -659,6 +757,16 @@ namespace Model
      * </p>
      */
     inline const Aws::String& GetRetrievalByteRange() const{ return m_retrievalByteRange; }
+
+    /**
+     * <p>The retrieved byte range for archive retrieval jobs in the form
+     * <i>StartByteValue</i>-<i>EndByteValue</i>. If no range was specified in the
+     * archive retrieval, then the whole archive is retrieved. In this case,
+     * <i>StartByteValue</i> equals 0 and <i>EndByteValue</i> equals the size of the
+     * archive minus 1. For inventory retrieval or select jobs, this field is null.
+     * </p>
+     */
+    inline bool RetrievalByteRangeHasBeenSet() const { return m_retrievalByteRangeHasBeenSet; }
 
     /**
      * <p>The retrieved byte range for archive retrieval jobs in the form
@@ -733,6 +841,13 @@ namespace Model
      * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
      * <code>Standard</code> is the default.</p>
      */
+    inline bool TierHasBeenSet() const { return m_tierHasBeenSet; }
+
+    /**
+     * <p>The tier to use for a select or an archive retrieval. Valid values are
+     * <code>Expedited</code>, <code>Standard</code>, or <code>Bulk</code>.
+     * <code>Standard</code> is the default.</p>
+     */
     inline void SetTier(const Aws::String& value) { m_tierHasBeenSet = true; m_tier = value; }
 
     /**
@@ -779,6 +894,11 @@ namespace Model
     /**
      * <p>Parameters used for range inventory retrieval.</p>
      */
+    inline bool InventoryRetrievalParametersHasBeenSet() const { return m_inventoryRetrievalParametersHasBeenSet; }
+
+    /**
+     * <p>Parameters used for range inventory retrieval.</p>
+     */
     inline void SetInventoryRetrievalParameters(const InventoryRetrievalJobDescription& value) { m_inventoryRetrievalParametersHasBeenSet = true; m_inventoryRetrievalParameters = value; }
 
     /**
@@ -801,6 +921,11 @@ namespace Model
      * <p>Contains the job output location.</p>
      */
     inline const Aws::String& GetJobOutputPath() const{ return m_jobOutputPath; }
+
+    /**
+     * <p>Contains the job output location.</p>
+     */
+    inline bool JobOutputPathHasBeenSet() const { return m_jobOutputPathHasBeenSet; }
 
     /**
      * <p>Contains the job output location.</p>
@@ -841,6 +966,11 @@ namespace Model
     /**
      * <p>Contains the parameters used for a select.</p>
      */
+    inline bool SelectParametersHasBeenSet() const { return m_selectParametersHasBeenSet; }
+
+    /**
+     * <p>Contains the parameters used for a select.</p>
+     */
     inline void SetSelectParameters(const SelectParameters& value) { m_selectParametersHasBeenSet = true; m_selectParameters = value; }
 
     /**
@@ -863,6 +993,11 @@ namespace Model
      * <p>Contains the location where the data from the select job is stored.</p>
      */
     inline const OutputLocation& GetOutputLocation() const{ return m_outputLocation; }
+
+    /**
+     * <p>Contains the location where the data from the select job is stored.</p>
+     */
+    inline bool OutputLocationHasBeenSet() const { return m_outputLocationHasBeenSet; }
 
     /**
      * <p>Contains the location where the data from the select job is stored.</p>

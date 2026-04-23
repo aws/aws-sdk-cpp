@@ -51,6 +51,11 @@ namespace Model
     /**
      * <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
      */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the role that allows IoT to write to Cloudwatch logs.</p>
+     */
     inline void SetRoleArn(const Aws::String& value) { m_roleArnHasBeenSet = true; m_roleArn = value; }
 
     /**
@@ -87,6 +92,11 @@ namespace Model
     /**
      * <p>The default logging level.</p>
      */
+    inline bool DefaultLogLevelHasBeenSet() const { return m_defaultLogLevelHasBeenSet; }
+
+    /**
+     * <p>The default logging level.</p>
+     */
     inline void SetDefaultLogLevel(const LogLevel& value) { m_defaultLogLevelHasBeenSet = true; m_defaultLogLevel = value; }
 
     /**
@@ -109,6 +119,11 @@ namespace Model
      * <p>If true all logs are disabled. The default is false.</p>
      */
     inline bool GetDisableAllLogs() const{ return m_disableAllLogs; }
+
+    /**
+     * <p>If true all logs are disabled. The default is false.</p>
+     */
+    inline bool DisableAllLogsHasBeenSet() const { return m_disableAllLogsHasBeenSet; }
 
     /**
      * <p>If true all logs are disabled. The default is false.</p>

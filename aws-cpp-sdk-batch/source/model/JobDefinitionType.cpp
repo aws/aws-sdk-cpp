@@ -31,6 +31,7 @@ namespace Aws
       {
 
         static const int container_HASH = HashingUtils::HashString("container");
+        static const int multinode_HASH = HashingUtils::HashString("multinode");
 
 
         JobDefinitionType GetJobDefinitionTypeForName(const Aws::String& name)
@@ -39,6 +40,10 @@ namespace Aws
           if (hashCode == container_HASH)
           {
             return JobDefinitionType::container;
+          }
+          else if (hashCode == multinode_HASH)
+          {
+            return JobDefinitionType::multinode;
           }
           EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
           if(overflowContainer)
@@ -56,6 +61,8 @@ namespace Aws
           {
           case JobDefinitionType::container:
             return "container";
+          case JobDefinitionType::multinode:
+            return "multinode";
           default:
             EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
             if(overflowContainer)
@@ -63,7 +70,7 @@ namespace Aws
               return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
             }
 
-            return "";
+            return {};
           }
         }
 

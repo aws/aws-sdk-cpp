@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the database snapshot that you are deleting.</p>
      */
+    inline bool RelationalDatabaseSnapshotNameHasBeenSet() const { return m_relationalDatabaseSnapshotNameHasBeenSet; }
+
+    /**
+     * <p>The name of the database snapshot that you are deleting.</p>
+     */
     inline void SetRelationalDatabaseSnapshotName(const Aws::String& value) { m_relationalDatabaseSnapshotNameHasBeenSet = true; m_relationalDatabaseSnapshotName = value; }
 
     /**

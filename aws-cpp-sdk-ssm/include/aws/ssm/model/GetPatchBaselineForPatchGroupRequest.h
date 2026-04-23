@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>The name of the patch group whose patch baseline should be retrieved.</p>
      */
+    inline bool PatchGroupHasBeenSet() const { return m_patchGroupHasBeenSet; }
+
+    /**
+     * <p>The name of the patch group whose patch baseline should be retrieved.</p>
+     */
     inline void SetPatchGroup(const Aws::String& value) { m_patchGroupHasBeenSet = true; m_patchGroup = value; }
 
     /**
@@ -86,6 +91,12 @@ namespace Model
      * baseline.</p>
      */
     inline const OperatingSystem& GetOperatingSystem() const{ return m_operatingSystem; }
+
+    /**
+     * <p>Returns he operating system rule specified for patch groups using the patch
+     * baseline.</p>
+     */
+    inline bool OperatingSystemHasBeenSet() const { return m_operatingSystemHasBeenSet; }
 
     /**
      * <p>Returns he operating system rule specified for patch groups using the patch

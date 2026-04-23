@@ -33,7 +33,7 @@ UntagResourceRequest::UntagResourceRequest() :
 
 Aws::String UntagResourceRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void UntagResourceRequest::AddQueryStringParameters(URI& uri) const

@@ -59,6 +59,13 @@ namespace Model
      * email clients that don't support HTML, or clients where the recipient has
      * disabled HTML rendering.</p>
      */
+    inline bool TextHasBeenSet() const { return m_textHasBeenSet; }
+
+    /**
+     * <p>An object that represents the version of the message that is displayed in
+     * email clients that don't support HTML, or clients where the recipient has
+     * disabled HTML rendering.</p>
+     */
     inline void SetText(const Content& value) { m_textHasBeenSet = true; m_text = value; }
 
     /**
@@ -89,6 +96,13 @@ namespace Model
      * hyperlinks, images, and more. </p>
      */
     inline const Content& GetHtml() const{ return m_html; }
+
+    /**
+     * <p>An object that represents the version of the message that is displayed in
+     * email clients that support HTML. HTML messages can include formatted text,
+     * hyperlinks, images, and more. </p>
+     */
+    inline bool HtmlHasBeenSet() const { return m_htmlHasBeenSet; }
 
     /**
      * <p>An object that represents the version of the message that is displayed in

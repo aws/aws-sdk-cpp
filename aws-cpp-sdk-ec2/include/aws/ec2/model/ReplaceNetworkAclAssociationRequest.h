@@ -56,6 +56,12 @@ namespace Model
      * <p>The ID of the current association between the original network ACL and the
      * subnet.</p>
      */
+    inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the current association between the original network ACL and the
+     * subnet.</p>
+     */
     inline void SetAssociationId(const Aws::String& value) { m_associationIdHasBeenSet = true; m_associationId = value; }
 
     /**
@@ -103,6 +109,14 @@ namespace Model
      * required permissions, the error response is <code>DryRunOperation</code>.
      * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
      */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+
+    /**
+     * <p>Checks whether you have the required permissions for the action, without
+     * actually making the request, and provides an error response. If you have the
+     * required permissions, the error response is <code>DryRunOperation</code>.
+     * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+     */
     inline void SetDryRun(bool value) { m_dryRunHasBeenSet = true; m_dryRun = value; }
 
     /**
@@ -118,6 +132,11 @@ namespace Model
      * <p>The ID of the new network ACL to associate with the subnet.</p>
      */
     inline const Aws::String& GetNetworkAclId() const{ return m_networkAclId; }
+
+    /**
+     * <p>The ID of the new network ACL to associate with the subnet.</p>
+     */
+    inline bool NetworkAclIdHasBeenSet() const { return m_networkAclIdHasBeenSet; }
 
     /**
      * <p>The ID of the new network ACL to associate with the subnet.</p>

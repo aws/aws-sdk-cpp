@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ARN of the device to disassociate from a room. Required.</p>
      */
+    inline bool DeviceArnHasBeenSet() const { return m_deviceArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of the device to disassociate from a room. Required.</p>
+     */
     inline void SetDeviceArn(const Aws::String& value) { m_deviceArnHasBeenSet = true; m_deviceArn = value; }
 
     /**

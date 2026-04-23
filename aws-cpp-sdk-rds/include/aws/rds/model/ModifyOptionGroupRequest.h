@@ -65,6 +65,14 @@ namespace Model
      * option group, and that option group can't be removed from a DB instance once it
      * is associated with a DB instance</p>
      */
+    inline bool OptionGroupNameHasBeenSet() const { return m_optionGroupNameHasBeenSet; }
+
+    /**
+     * <p>The name of the option group to be modified.</p> <p>Permanent options, such
+     * as the TDE option for Oracle Advanced Security TDE, can't be removed from an
+     * option group, and that option group can't be removed from a DB instance once it
+     * is associated with a DB instance</p>
+     */
     inline void SetOptionGroupName(const Aws::String& value) { m_optionGroupNameHasBeenSet = true; m_optionGroupName = value; }
 
     /**
@@ -118,6 +126,12 @@ namespace Model
      * <p>Options in this list are added to the option group or, if already present,
      * the specified configuration is used to update the existing configuration.</p>
      */
+    inline bool OptionsToIncludeHasBeenSet() const { return m_optionsToIncludeHasBeenSet; }
+
+    /**
+     * <p>Options in this list are added to the option group or, if already present,
+     * the specified configuration is used to update the existing configuration.</p>
+     */
     inline void SetOptionsToInclude(const Aws::Vector<OptionConfiguration>& value) { m_optionsToIncludeHasBeenSet = true; m_optionsToInclude = value; }
 
     /**
@@ -155,6 +169,11 @@ namespace Model
      * <p>Options in this list are removed from the option group.</p>
      */
     inline const Aws::Vector<Aws::String>& GetOptionsToRemove() const{ return m_optionsToRemove; }
+
+    /**
+     * <p>Options in this list are removed from the option group.</p>
+     */
+    inline bool OptionsToRemoveHasBeenSet() const { return m_optionsToRemoveHasBeenSet; }
 
     /**
      * <p>Options in this list are removed from the option group.</p>
@@ -197,6 +216,12 @@ namespace Model
      * next maintenance window for each instance associated with the option group.</p>
      */
     inline bool GetApplyImmediately() const{ return m_applyImmediately; }
+
+    /**
+     * <p>Indicates whether the changes should be applied immediately, or during the
+     * next maintenance window for each instance associated with the option group.</p>
+     */
+    inline bool ApplyImmediatelyHasBeenSet() const { return m_applyImmediatelyHasBeenSet; }
 
     /**
      * <p>Indicates whether the changes should be applied immediately, or during the

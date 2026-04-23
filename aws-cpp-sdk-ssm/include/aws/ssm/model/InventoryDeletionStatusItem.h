@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
      */
+    inline bool DeletionIdHasBeenSet() const { return m_deletionIdHasBeenSet; }
+
+    /**
+     * <p>The deletion ID returned by the <code>DeleteInventory</code> action.</p>
+     */
     inline void SetDeletionId(const Aws::String& value) { m_deletionIdHasBeenSet = true; m_deletionId = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The name of the inventory data type.</p>
      */
     inline const Aws::String& GetTypeName() const{ return m_typeName; }
+
+    /**
+     * <p>The name of the inventory data type.</p>
+     */
+    inline bool TypeNameHasBeenSet() const { return m_typeNameHasBeenSet; }
 
     /**
      * <p>The name of the inventory data type.</p>
@@ -131,6 +141,11 @@ namespace Model
     /**
      * <p>The UTC timestamp when the delete operation started.</p>
      */
+    inline bool DeletionStartTimeHasBeenSet() const { return m_deletionStartTimeHasBeenSet; }
+
+    /**
+     * <p>The UTC timestamp when the delete operation started.</p>
+     */
     inline void SetDeletionStartTime(const Aws::Utils::DateTime& value) { m_deletionStartTimeHasBeenSet = true; m_deletionStartTime = value; }
 
     /**
@@ -157,6 +172,11 @@ namespace Model
     /**
      * <p>The status of the operation. Possible values are InProgress and Complete.</p>
      */
+    inline bool LastStatusHasBeenSet() const { return m_lastStatusHasBeenSet; }
+
+    /**
+     * <p>The status of the operation. Possible values are InProgress and Complete.</p>
+     */
     inline void SetLastStatus(const InventoryDeletionStatus& value) { m_lastStatusHasBeenSet = true; m_lastStatus = value; }
 
     /**
@@ -179,6 +199,11 @@ namespace Model
      * <p>Information about the status.</p>
      */
     inline const Aws::String& GetLastStatusMessage() const{ return m_lastStatusMessage; }
+
+    /**
+     * <p>Information about the status.</p>
+     */
+    inline bool LastStatusMessageHasBeenSet() const { return m_lastStatusMessageHasBeenSet; }
 
     /**
      * <p>Information about the status.</p>
@@ -227,6 +252,15 @@ namespace Model
      * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
      * Guide</i>.</p>
      */
+    inline bool DeletionSummaryHasBeenSet() const { return m_deletionSummaryHasBeenSet; }
+
+    /**
+     * <p>Information about the delete operation. For more information about this
+     * summary, see <a
+     * href="http://docs.aws.amazon.com/systems-manager/latest/userguide/sysman-inventory-delete.html#sysman-inventory-delete-summary">Understanding
+     * the Delete Inventory Summary</a> in the <i>AWS Systems Manager User
+     * Guide</i>.</p>
+     */
     inline void SetDeletionSummary(const InventoryDeletionSummary& value) { m_deletionSummaryHasBeenSet = true; m_deletionSummary = value; }
 
     /**
@@ -261,6 +295,11 @@ namespace Model
      * <p>The UTC timestamp of when the last status report.</p>
      */
     inline const Aws::Utils::DateTime& GetLastStatusUpdateTime() const{ return m_lastStatusUpdateTime; }
+
+    /**
+     * <p>The UTC timestamp of when the last status report.</p>
+     */
+    inline bool LastStatusUpdateTimeHasBeenSet() const { return m_lastStatusUpdateTimeHasBeenSet; }
 
     /**
      * <p>The UTC timestamp of when the last status report.</p>

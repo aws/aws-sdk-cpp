@@ -57,6 +57,12 @@ namespace Model
      * <p>The <code>accountId</code> that is associated with the budget that you want
      * to delete.</p>
      */
+    inline bool AccountIdHasBeenSet() const { return m_accountIdHasBeenSet; }
+
+    /**
+     * <p>The <code>accountId</code> that is associated with the budget that you want
+     * to delete.</p>
+     */
     inline void SetAccountId(const Aws::String& value) { m_accountIdHasBeenSet = true; m_accountId = value; }
 
     /**
@@ -94,6 +100,11 @@ namespace Model
      * <p>The name of the budget that you want to delete.</p>
      */
     inline const Aws::String& GetBudgetName() const{ return m_budgetName; }
+
+    /**
+     * <p>The name of the budget that you want to delete.</p>
+     */
+    inline bool BudgetNameHasBeenSet() const { return m_budgetNameHasBeenSet; }
 
     /**
      * <p>The name of the budget that you want to delete.</p>

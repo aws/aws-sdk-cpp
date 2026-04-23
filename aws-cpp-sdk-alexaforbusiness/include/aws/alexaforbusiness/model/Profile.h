@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The ARN of a room profile.</p>
      */
+    inline bool ProfileArnHasBeenSet() const { return m_profileArnHasBeenSet; }
+
+    /**
+     * <p>The ARN of a room profile.</p>
+     */
     inline void SetProfileArn(const Aws::String& value) { m_profileArnHasBeenSet = true; m_profileArn = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The name of a room profile.</p>
      */
     inline const Aws::String& GetProfileName() const{ return m_profileName; }
+
+    /**
+     * <p>The name of a room profile.</p>
+     */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
 
     /**
      * <p>The name of a room profile.</p>
@@ -130,6 +140,11 @@ namespace Model
     /**
      * <p>Retrieves if the profile is default or not.</p>
      */
+    inline bool IsDefaultHasBeenSet() const { return m_isDefaultHasBeenSet; }
+
+    /**
+     * <p>Retrieves if the profile is default or not.</p>
+     */
     inline void SetIsDefault(bool value) { m_isDefaultHasBeenSet = true; m_isDefault = value; }
 
     /**
@@ -142,6 +157,11 @@ namespace Model
      * <p>The address of a room profile.</p>
      */
     inline const Aws::String& GetAddress() const{ return m_address; }
+
+    /**
+     * <p>The address of a room profile.</p>
+     */
+    inline bool AddressHasBeenSet() const { return m_addressHasBeenSet; }
 
     /**
      * <p>The address of a room profile.</p>
@@ -182,6 +202,11 @@ namespace Model
     /**
      * <p>The time zone of a room profile.</p>
      */
+    inline bool TimezoneHasBeenSet() const { return m_timezoneHasBeenSet; }
+
+    /**
+     * <p>The time zone of a room profile.</p>
+     */
     inline void SetTimezone(const Aws::String& value) { m_timezoneHasBeenSet = true; m_timezone = value; }
 
     /**
@@ -218,6 +243,11 @@ namespace Model
     /**
      * <p>The distance unit of a room profile.</p>
      */
+    inline bool DistanceUnitHasBeenSet() const { return m_distanceUnitHasBeenSet; }
+
+    /**
+     * <p>The distance unit of a room profile.</p>
+     */
     inline void SetDistanceUnit(const DistanceUnit& value) { m_distanceUnitHasBeenSet = true; m_distanceUnit = value; }
 
     /**
@@ -240,6 +270,11 @@ namespace Model
      * <p>The temperature unit of a room profile.</p>
      */
     inline const TemperatureUnit& GetTemperatureUnit() const{ return m_temperatureUnit; }
+
+    /**
+     * <p>The temperature unit of a room profile.</p>
+     */
+    inline bool TemperatureUnitHasBeenSet() const { return m_temperatureUnitHasBeenSet; }
 
     /**
      * <p>The temperature unit of a room profile.</p>
@@ -270,6 +305,11 @@ namespace Model
     /**
      * <p>The wake word of a room profile.</p>
      */
+    inline bool WakeWordHasBeenSet() const { return m_wakeWordHasBeenSet; }
+
+    /**
+     * <p>The wake word of a room profile.</p>
+     */
     inline void SetWakeWord(const WakeWord& value) { m_wakeWordHasBeenSet = true; m_wakeWord = value; }
 
     /**
@@ -296,6 +336,11 @@ namespace Model
     /**
      * <p>The setup mode of a room profile.</p>
      */
+    inline bool SetupModeDisabledHasBeenSet() const { return m_setupModeDisabledHasBeenSet; }
+
+    /**
+     * <p>The setup mode of a room profile.</p>
+     */
     inline void SetSetupModeDisabled(bool value) { m_setupModeDisabledHasBeenSet = true; m_setupModeDisabled = value; }
 
     /**
@@ -308,6 +353,11 @@ namespace Model
      * <p>The max volume limit of a room profile.</p>
      */
     inline int GetMaxVolumeLimit() const{ return m_maxVolumeLimit; }
+
+    /**
+     * <p>The max volume limit of a room profile.</p>
+     */
+    inline bool MaxVolumeLimitHasBeenSet() const { return m_maxVolumeLimitHasBeenSet; }
 
     /**
      * <p>The max volume limit of a room profile.</p>
@@ -328,6 +378,11 @@ namespace Model
     /**
      * <p>The PSTN setting of a room profile.</p>
      */
+    inline bool PSTNEnabledHasBeenSet() const { return m_pSTNEnabledHasBeenSet; }
+
+    /**
+     * <p>The PSTN setting of a room profile.</p>
+     */
     inline void SetPSTNEnabled(bool value) { m_pSTNEnabledHasBeenSet = true; m_pSTNEnabled = value; }
 
     /**
@@ -340,6 +395,11 @@ namespace Model
      * <p>The ARN of the address book.</p>
      */
     inline const Aws::String& GetAddressBookArn() const{ return m_addressBookArn; }
+
+    /**
+     * <p>The ARN of the address book.</p>
+     */
+    inline bool AddressBookArnHasBeenSet() const { return m_addressBookArnHasBeenSet; }
 
     /**
      * <p>The ARN of the address book.</p>

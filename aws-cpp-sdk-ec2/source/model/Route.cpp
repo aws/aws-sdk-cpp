@@ -39,6 +39,7 @@ Route::Route() :
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false),
@@ -57,6 +58,7 @@ Route::Route(const XmlNode& xmlNode) :
     m_instanceIdHasBeenSet(false),
     m_instanceOwnerIdHasBeenSet(false),
     m_natGatewayIdHasBeenSet(false),
+    m_transitGatewayIdHasBeenSet(false),
     m_networkInterfaceIdHasBeenSet(false),
     m_origin(RouteOrigin::NOT_SET),
     m_originHasBeenSet(false),
@@ -120,6 +122,12 @@ Route& Route::operator =(const XmlNode& xmlNode)
     {
       m_natGatewayId = StringUtils::Trim(natGatewayIdNode.GetText().c_str());
       m_natGatewayIdHasBeenSet = true;
+    }
+    XmlNode transitGatewayIdNode = resultNode.FirstChild("transitGatewayId");
+    if(!transitGatewayIdNode.IsNull())
+    {
+      m_transitGatewayId = StringUtils::Trim(transitGatewayIdNode.GetText().c_str());
+      m_transitGatewayIdHasBeenSet = true;
     }
     XmlNode networkInterfaceIdNode = resultNode.FirstChild("networkInterfaceId");
     if(!networkInterfaceIdNode.IsNull())
@@ -192,6 +200,11 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location, unsigned
       oStream << location << index << locationValue << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
   }
 
+  if(m_transitGatewayIdHasBeenSet)
+  {
+      oStream << location << index << locationValue << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
+  }
+
   if(m_networkInterfaceIdHasBeenSet)
   {
       oStream << location << index << locationValue << ".NetworkInterfaceId=" << StringUtils::URLEncode(m_networkInterfaceId.c_str()) << "&";
@@ -247,6 +260,10 @@ void Route::OutputToStream(Aws::OStream& oStream, const char* location) const
   if(m_natGatewayIdHasBeenSet)
   {
       oStream << location << ".NatGatewayId=" << StringUtils::URLEncode(m_natGatewayId.c_str()) << "&";
+  }
+  if(m_transitGatewayIdHasBeenSet)
+  {
+      oStream << location << ".TransitGatewayId=" << StringUtils::URLEncode(m_transitGatewayId.c_str()) << "&";
   }
   if(m_networkInterfaceIdHasBeenSet)
   {

@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The ID of the interconnect.</p>
      */
+    inline bool InterconnectIdHasBeenSet() const { return m_interconnectIdHasBeenSet; }
+
+    /**
+     * <p>The ID of the interconnect.</p>
+     */
     inline void SetInterconnectId(const Aws::String& value) { m_interconnectIdHasBeenSet = true; m_interconnectId = value; }
 
     /**

@@ -56,6 +56,12 @@ namespace Model
      * <p>The name (friendly name, not ARN) of the IAM role for which you want to set
      * the permissions boundary.</p>
      */
+    inline bool RoleNameHasBeenSet() const { return m_roleNameHasBeenSet; }
+
+    /**
+     * <p>The name (friendly name, not ARN) of the IAM role for which you want to set
+     * the permissions boundary.</p>
+     */
     inline void SetRoleName(const Aws::String& value) { m_roleNameHasBeenSet = true; m_roleName = value; }
 
     /**
@@ -94,6 +100,12 @@ namespace Model
      * role.</p>
      */
     inline const Aws::String& GetPermissionsBoundary() const{ return m_permissionsBoundary; }
+
+    /**
+     * <p>The ARN of the policy that is used to set the permissions boundary for the
+     * role.</p>
+     */
+    inline bool PermissionsBoundaryHasBeenSet() const { return m_permissionsBoundaryHasBeenSet; }
 
     /**
      * <p>The ARN of the policy that is used to set the permissions boundary for the

@@ -59,6 +59,11 @@ DescribeVpcsResponse& DescribeVpcsResponse::operator =(const Aws::AmazonWebServi
       }
 
     }
+    XmlNode nextTokenNode = resultNode.FirstChild("nextToken");
+    if(!nextTokenNode.IsNull())
+    {
+      m_nextToken = StringUtils::Trim(nextTokenNode.GetText().c_str());
+    }
   }
 
   if (!rootNode.IsNull()) {

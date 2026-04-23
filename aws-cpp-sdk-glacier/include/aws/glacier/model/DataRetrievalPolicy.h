@@ -60,6 +60,13 @@ namespace Model
      * one rule, which contains a Strategy field and optionally a BytesPerHour
      * field.</p>
      */
+    inline bool RulesHasBeenSet() const { return m_rulesHasBeenSet; }
+
+    /**
+     * <p>The policy rule. Although this is a list type, currently there must be only
+     * one rule, which contains a Strategy field and optionally a BytesPerHour
+     * field.</p>
+     */
     inline void SetRules(const Aws::Vector<DataRetrievalRule>& value) { m_rulesHasBeenSet = true; m_rules = value; }
 
     /**

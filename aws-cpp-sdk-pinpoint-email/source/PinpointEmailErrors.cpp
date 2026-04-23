@@ -31,6 +31,7 @@ namespace PinpointEmailErrorMapper
 static const int SENDING_PAUSED_HASH = HashingUtils::HashString("SendingPausedException");
 static const int ACCOUNT_SUSPENDED_HASH = HashingUtils::HashString("AccountSuspendedException");
 static const int ALREADY_EXISTS_HASH = HashingUtils::HashString("AlreadyExistsException");
+static const int CONCURRENT_MODIFICATION_HASH = HashingUtils::HashString("ConcurrentModificationException");
 static const int NOT_FOUND_HASH = HashingUtils::HashString("NotFoundException");
 static const int MESSAGE_REJECTED_HASH = HashingUtils::HashString("MessageRejected");
 static const int BAD_REQUEST_HASH = HashingUtils::HashString("BadRequestException");
@@ -54,6 +55,10 @@ AWSError<CoreErrors> GetErrorForName(const char* errorName)
   else if (hashCode == ALREADY_EXISTS_HASH)
   {
     return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::ALREADY_EXISTS), false);
+  }
+  else if (hashCode == CONCURRENT_MODIFICATION_HASH)
+  {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(PinpointEmailErrors::CONCURRENT_MODIFICATION), false);
   }
   else if (hashCode == NOT_FOUND_HASH)
   {

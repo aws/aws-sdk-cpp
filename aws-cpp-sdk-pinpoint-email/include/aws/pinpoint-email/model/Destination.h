@@ -59,6 +59,12 @@ namespace Model
      * <p>An array that contains the email addresses of the "To" recipients for the
      * email.</p>
      */
+    inline bool ToAddressesHasBeenSet() const { return m_toAddressesHasBeenSet; }
+
+    /**
+     * <p>An array that contains the email addresses of the "To" recipients for the
+     * email.</p>
+     */
     inline void SetToAddresses(const Aws::Vector<Aws::String>& value) { m_toAddressesHasBeenSet = true; m_toAddresses = value; }
 
     /**
@@ -108,6 +114,12 @@ namespace Model
      * <p>An array that contains the email addresses of the "CC" (carbon copy)
      * recipients for the email.</p>
      */
+    inline bool CcAddressesHasBeenSet() const { return m_ccAddressesHasBeenSet; }
+
+    /**
+     * <p>An array that contains the email addresses of the "CC" (carbon copy)
+     * recipients for the email.</p>
+     */
     inline void SetCcAddresses(const Aws::Vector<Aws::String>& value) { m_ccAddressesHasBeenSet = true; m_ccAddresses = value; }
 
     /**
@@ -152,6 +164,12 @@ namespace Model
      * recipients for the email.</p>
      */
     inline const Aws::Vector<Aws::String>& GetBccAddresses() const{ return m_bccAddresses; }
+
+    /**
+     * <p>An array that contains the email addresses of the "BCC" (blind carbon copy)
+     * recipients for the email.</p>
+     */
+    inline bool BccAddressesHasBeenSet() const { return m_bccAddressesHasBeenSet; }
 
     /**
      * <p>An array that contains the email addresses of the "BCC" (blind carbon copy)

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>The name of the delivery stream.</p>
      */
+    inline bool DeliveryStreamNameHasBeenSet() const { return m_deliveryStreamNameHasBeenSet; }
+
+    /**
+     * <p>The name of the delivery stream.</p>
+     */
     inline void SetDeliveryStreamName(const Aws::String& value) { m_deliveryStreamNameHasBeenSet = true; m_deliveryStreamName = value; }
 
     /**
@@ -85,7 +90,7 @@ namespace Model
 
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -95,7 +100,17 @@ namespace Model
     inline const Aws::String& GetCurrentDeliveryStreamVersionId() const{ return m_currentDeliveryStreamVersionId; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
+     * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
+     * perform conditional operations. For example, if there is an interleaving update
+     * and this value is null, then the update destination fails. After the update is
+     * successful, the <code>VersionId</code> value is updated. The service then
+     * performs a merge of the old configuration with the new configuration.</p>
+     */
+    inline bool CurrentDeliveryStreamVersionIdHasBeenSet() const { return m_currentDeliveryStreamVersionIdHasBeenSet; }
+
+    /**
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -105,7 +120,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(const Aws::String& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = value; }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -115,7 +130,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(Aws::String&& value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId = std::move(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -125,7 +140,7 @@ namespace Model
     inline void SetCurrentDeliveryStreamVersionId(const char* value) { m_currentDeliveryStreamVersionIdHasBeenSet = true; m_currentDeliveryStreamVersionId.assign(value); }
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -135,7 +150,7 @@ namespace Model
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(const Aws::String& value) { SetCurrentDeliveryStreamVersionId(value); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -145,7 +160,7 @@ namespace Model
     inline UpdateDestinationRequest& WithCurrentDeliveryStreamVersionId(Aws::String&& value) { SetCurrentDeliveryStreamVersionId(std::move(value)); return *this;}
 
     /**
-     * <p>Obtain this value from the <b>VersionId</b> result of
+     * <p>Obtain this value from the <code>VersionId</code> result of
      * <a>DeliveryStreamDescription</a>. This value is required, and helps the service
      * perform conditional operations. For example, if there is an interleaving update
      * and this value is null, then the update destination fails. After the update is
@@ -159,6 +174,11 @@ namespace Model
      * <p>The ID of the destination.</p>
      */
     inline const Aws::String& GetDestinationId() const{ return m_destinationId; }
+
+    /**
+     * <p>The ID of the destination.</p>
+     */
+    inline bool DestinationIdHasBeenSet() const { return m_destinationIdHasBeenSet; }
 
     /**
      * <p>The ID of the destination.</p>
@@ -199,6 +219,11 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon S3.</p>
      */
+    inline bool ExtendedS3DestinationUpdateHasBeenSet() const { return m_extendedS3DestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update for a destination in Amazon S3.</p>
+     */
     inline void SetExtendedS3DestinationUpdate(const ExtendedS3DestinationUpdate& value) { m_extendedS3DestinationUpdateHasBeenSet = true; m_extendedS3DestinationUpdate = value; }
 
     /**
@@ -221,6 +246,11 @@ namespace Model
      * <p>Describes an update for a destination in Amazon Redshift.</p>
      */
     inline const RedshiftDestinationUpdate& GetRedshiftDestinationUpdate() const{ return m_redshiftDestinationUpdate; }
+
+    /**
+     * <p>Describes an update for a destination in Amazon Redshift.</p>
+     */
+    inline bool RedshiftDestinationUpdateHasBeenSet() const { return m_redshiftDestinationUpdateHasBeenSet; }
 
     /**
      * <p>Describes an update for a destination in Amazon Redshift.</p>
@@ -251,6 +281,11 @@ namespace Model
     /**
      * <p>Describes an update for a destination in Amazon ES.</p>
      */
+    inline bool ElasticsearchDestinationUpdateHasBeenSet() const { return m_elasticsearchDestinationUpdateHasBeenSet; }
+
+    /**
+     * <p>Describes an update for a destination in Amazon ES.</p>
+     */
     inline void SetElasticsearchDestinationUpdate(const ElasticsearchDestinationUpdate& value) { m_elasticsearchDestinationUpdateHasBeenSet = true; m_elasticsearchDestinationUpdate = value; }
 
     /**
@@ -273,6 +308,11 @@ namespace Model
      * <p>Describes an update for a destination in Splunk.</p>
      */
     inline const SplunkDestinationUpdate& GetSplunkDestinationUpdate() const{ return m_splunkDestinationUpdate; }
+
+    /**
+     * <p>Describes an update for a destination in Splunk.</p>
+     */
+    inline bool SplunkDestinationUpdateHasBeenSet() const { return m_splunkDestinationUpdateHasBeenSet; }
 
     /**
      * <p>Describes an update for a destination in Splunk.</p>

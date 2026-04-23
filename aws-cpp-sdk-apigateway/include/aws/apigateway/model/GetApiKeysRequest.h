@@ -60,6 +60,11 @@ namespace Model
     /**
      * <p>The current pagination position in the paged result set.</p>
      */
+    inline bool PositionHasBeenSet() const { return m_positionHasBeenSet; }
+
+    /**
+     * <p>The current pagination position in the paged result set.</p>
+     */
     inline void SetPosition(const Aws::String& value) { m_positionHasBeenSet = true; m_position = value; }
 
     /**
@@ -98,6 +103,12 @@ namespace Model
      * <p>The maximum number of returned results per page. The default value is 25 and
      * the maximum value is 500.</p>
      */
+    inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+
+    /**
+     * <p>The maximum number of returned results per page. The default value is 25 and
+     * the maximum value is 500.</p>
+     */
     inline void SetLimit(int value) { m_limitHasBeenSet = true; m_limit = value; }
 
     /**
@@ -111,6 +122,11 @@ namespace Model
      * <p>The name of queried API keys.</p>
      */
     inline const Aws::String& GetNameQuery() const{ return m_nameQuery; }
+
+    /**
+     * <p>The name of queried API keys.</p>
+     */
+    inline bool NameQueryHasBeenSet() const { return m_nameQueryHasBeenSet; }
 
     /**
      * <p>The name of queried API keys.</p>
@@ -148,6 +164,12 @@ namespace Model
      * as a developer portal.</p>
      */
     inline const Aws::String& GetCustomerId() const{ return m_customerId; }
+
+    /**
+     * <p>The identifier of a customer in AWS Marketplace or an external system, such
+     * as a developer portal.</p>
+     */
+    inline bool CustomerIdHasBeenSet() const { return m_customerIdHasBeenSet; }
 
     /**
      * <p>The identifier of a customer in AWS Marketplace or an external system, such
@@ -191,6 +213,12 @@ namespace Model
      * (<code>false</code>) the result contains key values.</p>
      */
     inline bool GetIncludeValues() const{ return m_includeValues; }
+
+    /**
+     * <p>A boolean flag to specify whether (<code>true</code>) or not
+     * (<code>false</code>) the result contains key values.</p>
+     */
+    inline bool IncludeValuesHasBeenSet() const { return m_includeValuesHasBeenSet; }
 
     /**
      * <p>A boolean flag to specify whether (<code>true</code>) or not

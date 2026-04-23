@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The load permissions to add.</p>
      */
+    inline bool AddHasBeenSet() const { return m_addHasBeenSet; }
+
+    /**
+     * <p>The load permissions to add.</p>
+     */
     inline void SetAdd(const Aws::Vector<LoadPermissionRequest>& value) { m_addHasBeenSet = true; m_add = value; }
 
     /**
@@ -91,6 +96,11 @@ namespace Model
      * <p>The load permissions to remove.</p>
      */
     inline const Aws::Vector<LoadPermissionRequest>& GetRemove() const{ return m_remove; }
+
+    /**
+     * <p>The load permissions to remove.</p>
+     */
+    inline bool RemoveHasBeenSet() const { return m_removeHasBeenSet; }
 
     /**
      * <p>The load permissions to remove.</p>

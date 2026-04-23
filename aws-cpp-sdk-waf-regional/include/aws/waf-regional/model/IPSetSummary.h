@@ -60,6 +60,13 @@ namespace Model
      * <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed information
      * about an <a>IPSet</a>.</p>
      */
+    inline bool IPSetIdHasBeenSet() const { return m_iPSetIdHasBeenSet; }
+
+    /**
+     * <p>The <code>IPSetId</code> for an <a>IPSet</a>. You can use
+     * <code>IPSetId</code> in a <a>GetIPSet</a> request to get detailed information
+     * about an <a>IPSet</a>.</p>
+     */
     inline void SetIPSetId(const Aws::String& value) { m_iPSetIdHasBeenSet = true; m_iPSetId = value; }
 
     /**
@@ -103,6 +110,12 @@ namespace Model
      * of an <code>IPSet</code> after you create it.</p>
      */
     inline const Aws::String& GetName() const{ return m_name; }
+
+    /**
+     * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name
+     * of an <code>IPSet</code> after you create it.</p>
+     */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
 
     /**
      * <p>A friendly name or description of the <a>IPSet</a>. You can't change the name

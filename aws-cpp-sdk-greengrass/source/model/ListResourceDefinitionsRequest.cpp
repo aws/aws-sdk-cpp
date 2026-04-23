@@ -33,7 +33,7 @@ ListResourceDefinitionsRequest::ListResourceDefinitionsRequest() :
 
 Aws::String ListResourceDefinitionsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 void ListResourceDefinitionsRequest::AddQueryStringParameters(URI& uri) const

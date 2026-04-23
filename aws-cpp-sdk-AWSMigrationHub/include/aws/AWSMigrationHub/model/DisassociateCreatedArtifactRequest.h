@@ -52,6 +52,11 @@ namespace Model
     /**
      * <p>The name of the ProgressUpdateStream. </p>
      */
+    inline bool ProgressUpdateStreamHasBeenSet() const { return m_progressUpdateStreamHasBeenSet; }
+
+    /**
+     * <p>The name of the ProgressUpdateStream. </p>
+     */
     inline void SetProgressUpdateStream(const Aws::String& value) { m_progressUpdateStreamHasBeenSet = true; m_progressUpdateStream = value; }
 
     /**
@@ -85,6 +90,12 @@ namespace Model
      * the artifact.</p>
      */
     inline const Aws::String& GetMigrationTaskName() const{ return m_migrationTaskName; }
+
+    /**
+     * <p>Unique identifier that references the migration task to be disassociated with
+     * the artifact.</p>
+     */
+    inline bool MigrationTaskNameHasBeenSet() const { return m_migrationTaskNameHasBeenSet; }
 
     /**
      * <p>Unique identifier that references the migration task to be disassociated with
@@ -133,6 +144,12 @@ namespace Model
      * <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance,
      * RDS instance, etc.)</p>
      */
+    inline bool CreatedArtifactNameHasBeenSet() const { return m_createdArtifactNameHasBeenSet; }
+
+    /**
+     * <p>An ARN of the AWS resource related to the migration (e.g., AMI, EC2 instance,
+     * RDS instance, etc.)</p>
+     */
     inline void SetCreatedArtifactName(const Aws::String& value) { m_createdArtifactNameHasBeenSet = true; m_createdArtifactName = value; }
 
     /**
@@ -171,6 +188,12 @@ namespace Model
      * to test if the caller has permission to make the call.</p>
      */
     inline bool GetDryRun() const{ return m_dryRun; }
+
+    /**
+     * <p>Optional boolean flag to indicate whether any effect should take place. Used
+     * to test if the caller has permission to make the call.</p>
+     */
+    inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
 
     /**
      * <p>Optional boolean flag to indicate whether any effect should take place. Used

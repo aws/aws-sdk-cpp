@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The Amazon Resource Name (ARN) of the resource share.</p>
      */
+    inline bool ResourceShareArnHasBeenSet() const { return m_resourceShareArnHasBeenSet; }
+
+    /**
+     * <p>The Amazon Resource Name (ARN) of the resource share.</p>
+     */
     inline void SetResourceShareArn(const Aws::String& value) { m_resourceShareArnHasBeenSet = true; m_resourceShareArn = value; }
 
     /**
@@ -95,6 +100,11 @@ namespace Model
     /**
      * <p>The name of the resource share.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the resource share.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -127,6 +137,11 @@ namespace Model
      * <p>The ID of the AWS account that owns the resource share.</p>
      */
     inline const Aws::String& GetOwningAccountId() const{ return m_owningAccountId; }
+
+    /**
+     * <p>The ID of the AWS account that owns the resource share.</p>
+     */
+    inline bool OwningAccountIdHasBeenSet() const { return m_owningAccountIdHasBeenSet; }
 
     /**
      * <p>The ID of the AWS account that owns the resource share.</p>
@@ -169,6 +184,12 @@ namespace Model
      * <p>Indicates whether principals outside your organization can be associated with
      * a resource share.</p>
      */
+    inline bool AllowExternalPrincipalsHasBeenSet() const { return m_allowExternalPrincipalsHasBeenSet; }
+
+    /**
+     * <p>Indicates whether principals outside your organization can be associated with
+     * a resource share.</p>
+     */
     inline void SetAllowExternalPrincipals(bool value) { m_allowExternalPrincipalsHasBeenSet = true; m_allowExternalPrincipals = value; }
 
     /**
@@ -182,6 +203,11 @@ namespace Model
      * <p>The status of the resource share.</p>
      */
     inline const ResourceShareStatus& GetStatus() const{ return m_status; }
+
+    /**
+     * <p>The status of the resource share.</p>
+     */
+    inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
 
     /**
      * <p>The status of the resource share.</p>
@@ -208,6 +234,11 @@ namespace Model
      * <p>A message about the status of the resource share.</p>
      */
     inline const Aws::String& GetStatusMessage() const{ return m_statusMessage; }
+
+    /**
+     * <p>A message about the status of the resource share.</p>
+     */
+    inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
 
     /**
      * <p>A message about the status of the resource share.</p>
@@ -248,6 +279,11 @@ namespace Model
     /**
      * <p>The tags for the resource share.</p>
      */
+    inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+
+    /**
+     * <p>The tags for the resource share.</p>
+     */
     inline void SetTags(const Aws::Vector<Tag>& value) { m_tagsHasBeenSet = true; m_tags = value; }
 
     /**
@@ -284,6 +320,11 @@ namespace Model
     /**
      * <p>The time when the resource share was created.</p>
      */
+    inline bool CreationTimeHasBeenSet() const { return m_creationTimeHasBeenSet; }
+
+    /**
+     * <p>The time when the resource share was created.</p>
+     */
     inline void SetCreationTime(const Aws::Utils::DateTime& value) { m_creationTimeHasBeenSet = true; m_creationTime = value; }
 
     /**
@@ -306,6 +347,11 @@ namespace Model
      * <p>The time when the resource share was last updated.</p>
      */
     inline const Aws::Utils::DateTime& GetLastUpdatedTime() const{ return m_lastUpdatedTime; }
+
+    /**
+     * <p>The time when the resource share was last updated.</p>
+     */
+    inline bool LastUpdatedTimeHasBeenSet() const { return m_lastUpdatedTimeHasBeenSet; }
 
     /**
      * <p>The time when the resource share was last updated.</p>

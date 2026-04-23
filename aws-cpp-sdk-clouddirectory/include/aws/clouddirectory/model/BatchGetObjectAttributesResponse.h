@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The attribute values that are associated with an object.</p>
      */
+    inline bool AttributesHasBeenSet() const { return m_attributesHasBeenSet; }
+
+    /**
+     * <p>The attribute values that are associated with an object.</p>
+     */
     inline void SetAttributes(const Aws::Vector<AttributeKeyAndValue>& value) { m_attributesHasBeenSet = true; m_attributes = value; }
 
     /**

@@ -27,21 +27,21 @@ public class HttpTest {
     @Test
     public void testParseHttpURIParts() {
         Http http = new Http();
-        http.setRequestUri("/test/{var1}/test1/{var2}");
+        http.setRequestUri("/test/{var-1}/test1/{var2}");
 
         List<String> parts = http.getRequestUriParts();
         assertEquals(2, parts.size());
         assertEquals("/test/", parts.get(0));
         assertEquals("/test1/", parts.get(1));
 
-        http.setRequestUri("/test/{var1}/{var2}");
+        http.setRequestUri("/test/{var1}/{var-2}");
 
         parts = http.getRequestUriParts();
         assertEquals(2, parts.size());
         assertEquals("/test/", parts.get(0));
         assertEquals("/", parts.get(1));
 
-        http.setRequestUri("/test/{var1}/test1/{var2+}?varParam={var3}");
+        http.setRequestUri("/test/{var1}/test1/{var2+}?varParam={var-3}");
         parts = http.getRequestUriParts();
         assertEquals(3, parts.size());
         assertEquals("/test/", parts.get(0));
@@ -57,27 +57,27 @@ public class HttpTest {
     @Test
     public void testParseHttpParameters() {
         Http http = new Http();
-        http.setRequestUri("/test/{var1}/test1/{var2}");
+        http.setRequestUri("/test/{var-1}/test1/{var2}");
 
         List<String> vars = http.getRequestParameters();
         assertEquals(2, vars.size());
-        assertEquals("var1", vars.get(0));
+        assertEquals("var-1", vars.get(0));
         assertEquals("var2", vars.get(1));
 
-        http.setRequestUri("/test/{var1}/{var2}");
+        http.setRequestUri("/test/{var1}/{var2-}");
 
         vars = http.getRequestParameters();
         assertEquals(2, vars.size());
         assertEquals("var1", vars.get(0));
-        assertEquals("var2", vars.get(1));
+        assertEquals("var2-", vars.get(1));
 
-        http.setRequestUri("/test/{var1}/test1/{var2+}?varParam={var3}&varParam2={var4}");
+        http.setRequestUri("/test/{var1}/test1/{var2+}?varParam={var-3}&varParam2={var-4}");
         vars = http.getRequestParameters();
         assertEquals(4, vars.size());
         assertEquals("var1", vars.get(0));
         assertEquals("var2", vars.get(1));
-        assertEquals("var3", vars.get(2));
-        assertEquals("var4", vars.get(3));
+        assertEquals("var-3", vars.get(2));
+        assertEquals("var-4", vars.get(3));
 
         http.setRequestUri("/");
         vars = http.getRequestParameters();

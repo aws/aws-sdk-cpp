@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>The name of the group.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the group.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -94,6 +99,14 @@ namespace Model
      * match the criteria. </p>
      */
     inline const Aws::Vector<InventoryFilter>& GetFilters() const{ return m_filters; }
+
+    /**
+     * <p>Filters define the criteria for the group. The <code>matchingCount</code>
+     * field displays the number of resources that match the criteria. The
+     * <code>notMatchingCount</code> field displays the number of resources that don't
+     * match the criteria. </p>
+     */
+    inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
 
     /**
      * <p>Filters define the criteria for the group. The <code>matchingCount</code>

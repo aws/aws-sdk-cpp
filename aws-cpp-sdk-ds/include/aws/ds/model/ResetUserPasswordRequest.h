@@ -54,6 +54,12 @@ namespace Model
      * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
      * the user resides.</p>
      */
+    inline bool DirectoryIdHasBeenSet() const { return m_directoryIdHasBeenSet; }
+
+    /**
+     * <p>Identifier of the AWS Managed Microsoft AD or Simple AD directory in which
+     * the user resides.</p>
+     */
     inline void SetDirectoryId(const Aws::String& value) { m_directoryIdHasBeenSet = true; m_directoryId = value; }
 
     /**
@@ -95,6 +101,11 @@ namespace Model
     /**
      * <p>The user name of the user whose password will be reset.</p>
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * <p>The user name of the user whose password will be reset.</p>
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -127,6 +138,11 @@ namespace Model
      * <p>The new password that will be reset.</p>
      */
     inline const Aws::String& GetNewPassword() const{ return m_newPassword; }
+
+    /**
+     * <p>The new password that will be reset.</p>
+     */
+    inline bool NewPasswordHasBeenSet() const { return m_newPasswordHasBeenSet; }
 
     /**
      * <p>The new password that will be reset.</p>

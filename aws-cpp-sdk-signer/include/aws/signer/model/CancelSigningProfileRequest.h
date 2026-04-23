@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the signing profile to be canceled.</p>
      */
+    inline bool ProfileNameHasBeenSet() const { return m_profileNameHasBeenSet; }
+
+    /**
+     * <p>The name of the signing profile to be canceled.</p>
+     */
     inline void SetProfileName(const Aws::String& value) { m_profileNameHasBeenSet = true; m_profileName = value; }
 
     /**

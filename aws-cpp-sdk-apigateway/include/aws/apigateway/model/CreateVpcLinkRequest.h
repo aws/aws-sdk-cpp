@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>[Required] The name used to label and identify the VPC link.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>[Required] The name used to label and identify the VPC link.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The description of the VPC link.</p>
      */
     inline const Aws::String& GetDescription() const{ return m_description; }
+
+    /**
+     * <p>The description of the VPC link.</p>
+     */
+    inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
 
     /**
      * <p>The description of the VPC link.</p>
@@ -127,6 +137,13 @@ namespace Model
      * API owner.</p>
      */
     inline const Aws::Vector<Aws::String>& GetTargetArns() const{ return m_targetArns; }
+
+    /**
+     * <p>[Required] The ARNs of network load balancers of the VPC targeted by the VPC
+     * link. The network load balancers must be owned by the same AWS account of the
+     * API owner.</p>
+     */
+    inline bool TargetArnsHasBeenSet() const { return m_targetArnsHasBeenSet; }
 
     /**
      * <p>[Required] The ARNs of network load balancers of the VPC targeted by the VPC

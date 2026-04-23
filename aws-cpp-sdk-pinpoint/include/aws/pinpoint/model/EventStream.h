@@ -55,6 +55,11 @@ namespace Model
     /**
      * The ID of the application from which events should be published.
      */
+    inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+
+    /**
+     * The ID of the application from which events should be published.
+     */
     inline void SetApplicationId(const Aws::String& value) { m_applicationIdHasBeenSet = true; m_applicationId = value; }
 
     /**
@@ -92,6 +97,16 @@ namespace Model
      * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
      */
     inline const Aws::String& GetDestinationStreamArn() const{ return m_destinationStreamArn; }
+
+    /**
+     * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
+     * stream to which you want to publish events.
+ Firehose ARN:
+     * arn:aws:firehose:REGION:ACCOUNT_ID:deliverystream/STREAM_NAME
+ Kinesis ARN:
+     * arn:aws:kinesis:REGION:ACCOUNT_ID:stream/STREAM_NAME
+     */
+    inline bool DestinationStreamArnHasBeenSet() const { return m_destinationStreamArnHasBeenSet; }
 
     /**
      * The Amazon Resource Name (ARN) of the Amazon Kinesis stream or Firehose delivery
@@ -168,6 +183,14 @@ namespace Model
      * requirement is removed, and external IDs are not recommended for IAM roles
      * assumed by Amazon Pinpoint.
      */
+    inline bool ExternalIdHasBeenSet() const { return m_externalIdHasBeenSet; }
+
+    /**
+     * (Deprecated) Your AWS account ID, which you assigned to the ExternalID key in an
+     * IAM trust policy. Used by Amazon Pinpoint to assume an IAM role. This
+     * requirement is removed, and external IDs are not recommended for IAM roles
+     * assumed by Amazon Pinpoint.
+     */
     inline void SetExternalId(const Aws::String& value) { m_externalIdHasBeenSet = true; m_externalId = value; }
 
     /**
@@ -219,6 +242,11 @@ namespace Model
     /**
      * The date the event stream was last updated in ISO 8601 format.
      */
+    inline bool LastModifiedDateHasBeenSet() const { return m_lastModifiedDateHasBeenSet; }
+
+    /**
+     * The date the event stream was last updated in ISO 8601 format.
+     */
     inline void SetLastModifiedDate(const Aws::String& value) { m_lastModifiedDateHasBeenSet = true; m_lastModifiedDate = value; }
 
     /**
@@ -251,6 +279,11 @@ namespace Model
      * The IAM user who last modified the event stream.
      */
     inline const Aws::String& GetLastUpdatedBy() const{ return m_lastUpdatedBy; }
+
+    /**
+     * The IAM user who last modified the event stream.
+     */
+    inline bool LastUpdatedByHasBeenSet() const { return m_lastUpdatedByHasBeenSet; }
 
     /**
      * The IAM user who last modified the event stream.
@@ -288,6 +321,12 @@ namespace Model
      * your account.
      */
     inline const Aws::String& GetRoleArn() const{ return m_roleArn; }
+
+    /**
+     * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in
+     * your account.
+     */
+    inline bool RoleArnHasBeenSet() const { return m_roleArnHasBeenSet; }
 
     /**
      * The IAM role that authorizes Amazon Pinpoint to publish events to the stream in

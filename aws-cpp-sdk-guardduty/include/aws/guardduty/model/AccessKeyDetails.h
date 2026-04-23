@@ -57,6 +57,11 @@ namespace Model
     /**
      * Access key ID of the user.
      */
+    inline bool AccessKeyIdHasBeenSet() const { return m_accessKeyIdHasBeenSet; }
+
+    /**
+     * Access key ID of the user.
+     */
     inline void SetAccessKeyId(const Aws::String& value) { m_accessKeyIdHasBeenSet = true; m_accessKeyId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * The principal ID of the user.
      */
     inline const Aws::String& GetPrincipalId() const{ return m_principalId; }
+
+    /**
+     * The principal ID of the user.
+     */
+    inline bool PrincipalIdHasBeenSet() const { return m_principalIdHasBeenSet; }
 
     /**
      * The principal ID of the user.
@@ -129,6 +139,11 @@ namespace Model
     /**
      * The name of the user.
      */
+    inline bool UserNameHasBeenSet() const { return m_userNameHasBeenSet; }
+
+    /**
+     * The name of the user.
+     */
     inline void SetUserName(const Aws::String& value) { m_userNameHasBeenSet = true; m_userName = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * The type of the user.
      */
     inline const Aws::String& GetUserType() const{ return m_userType; }
+
+    /**
+     * The type of the user.
+     */
+    inline bool UserTypeHasBeenSet() const { return m_userTypeHasBeenSet; }
 
     /**
      * The type of the user.

@@ -29,7 +29,7 @@ GetChannelsRequest::GetChannelsRequest() :
 
 Aws::String GetChannelsRequest::SerializePayload() const
 {
-  return "";
+  return {};
 }
 
 

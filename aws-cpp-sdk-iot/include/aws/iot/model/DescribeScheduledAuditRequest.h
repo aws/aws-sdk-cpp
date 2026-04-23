@@ -50,6 +50,11 @@ namespace Model
     /**
      * <p>The name of the scheduled audit whose information you want to get.</p>
      */
+    inline bool ScheduledAuditNameHasBeenSet() const { return m_scheduledAuditNameHasBeenSet; }
+
+    /**
+     * <p>The name of the scheduled audit whose information you want to get.</p>
+     */
     inline void SetScheduledAuditName(const Aws::String& value) { m_scheduledAuditNameHasBeenSet = true; m_scheduledAuditName = value; }
 
     /**

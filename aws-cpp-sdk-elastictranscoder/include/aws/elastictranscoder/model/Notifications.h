@@ -60,6 +60,12 @@ namespace Model
      * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
      * notify when Elastic Transcoder has started to process the job.</p>
      */
+    inline bool ProgressingHasBeenSet() const { return m_progressingHasBeenSet; }
+
+    /**
+     * <p>The Amazon Simple Notification Service (Amazon SNS) topic that you want to
+     * notify when Elastic Transcoder has started to process the job.</p>
+     */
     inline void SetProgressing(const Aws::String& value) { m_progressingHasBeenSet = true; m_progressing = value; }
 
     /**
@@ -98,6 +104,12 @@ namespace Model
      * finished processing the job.</p>
      */
     inline const Aws::String& GetCompleted() const{ return m_completed; }
+
+    /**
+     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
+     * finished processing the job.</p>
+     */
+    inline bool CompletedHasBeenSet() const { return m_completedHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder has
@@ -146,6 +158,12 @@ namespace Model
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
      * encounters a warning condition.</p>
      */
+    inline bool WarningHasBeenSet() const { return m_warningHasBeenSet; }
+
+    /**
+     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
+     * encounters a warning condition.</p>
+     */
     inline void SetWarning(const Aws::String& value) { m_warningHasBeenSet = true; m_warning = value; }
 
     /**
@@ -184,6 +202,12 @@ namespace Model
      * encounters an error condition.</p>
      */
     inline const Aws::String& GetError() const{ return m_error; }
+
+    /**
+     * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder
+     * encounters an error condition.</p>
+     */
+    inline bool ErrorHasBeenSet() const { return m_errorHasBeenSet; }
 
     /**
      * <p>The Amazon SNS topic that you want to notify when Elastic Transcoder

@@ -56,6 +56,11 @@ namespace Model
     /**
      * <p>Provides update information for an <a>InputLambdaProcessor</a>.</p>
      */
+    inline bool InputLambdaProcessorUpdateHasBeenSet() const { return m_inputLambdaProcessorUpdateHasBeenSet; }
+
+    /**
+     * <p>Provides update information for an <a>InputLambdaProcessor</a>.</p>
+     */
     inline void SetInputLambdaProcessorUpdate(const InputLambdaProcessorUpdate& value) { m_inputLambdaProcessorUpdateHasBeenSet = true; m_inputLambdaProcessorUpdate = value; }
 
     /**

@@ -59,6 +59,11 @@ namespace Model
     /**
      * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
      */
+    inline bool ActionHasBeenSet() const { return m_actionHasBeenSet; }
+
+    /**
+     * <p>Specifies whether to insert or delete a <code>RegexPatternString</code>.</p>
+     */
     inline void SetAction(const ChangeAction& value) { m_actionHasBeenSet = true; m_action = value; }
 
     /**
@@ -82,6 +87,12 @@ namespace Model
      * search for, such as <code>B[a@]dB[o0]t</code>.</p>
      */
     inline const Aws::String& GetRegexPatternString() const{ return m_regexPatternString; }
+
+    /**
+     * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to
+     * search for, such as <code>B[a@]dB[o0]t</code>.</p>
+     */
+    inline bool RegexPatternStringHasBeenSet() const { return m_regexPatternStringHasBeenSet; }
 
     /**
      * <p>Specifies the regular expression (regex) pattern that you want AWS WAF to

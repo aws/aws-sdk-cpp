@@ -57,6 +57,13 @@ namespace Model
      * <code>DescribeCommands</code> returns a description of the commands associated
      * with the specified deployment.</p>
      */
+    inline bool DeploymentIdHasBeenSet() const { return m_deploymentIdHasBeenSet; }
+
+    /**
+     * <p>The deployment ID. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the commands associated
+     * with the specified deployment.</p>
+     */
     inline void SetDeploymentId(const Aws::String& value) { m_deploymentIdHasBeenSet = true; m_deploymentId = value; }
 
     /**
@@ -107,6 +114,13 @@ namespace Model
      * returns a description of the commands associated with the specified
      * instance.</p>
      */
+    inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+
+    /**
+     * <p>The instance ID. If you include this parameter, <code>DescribeCommands</code>
+     * returns a description of the commands associated with the specified
+     * instance.</p>
+     */
     inline void SetInstanceId(const Aws::String& value) { m_instanceIdHasBeenSet = true; m_instanceId = value; }
 
     /**
@@ -151,6 +165,13 @@ namespace Model
      * Otherwise, it returns a description of every command.</p>
      */
     inline const Aws::Vector<Aws::String>& GetCommandIds() const{ return m_commandIds; }
+
+    /**
+     * <p>An array of command IDs. If you include this parameter,
+     * <code>DescribeCommands</code> returns a description of the specified commands.
+     * Otherwise, it returns a description of every command.</p>
+     */
+    inline bool CommandIdsHasBeenSet() const { return m_commandIdsHasBeenSet; }
 
     /**
      * <p>An array of command IDs. If you include this parameter,

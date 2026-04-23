@@ -53,6 +53,11 @@ namespace Model
     /**
      * <p>ID of the collection to search.</p>
      */
+    inline bool CollectionIdHasBeenSet() const { return m_collectionIdHasBeenSet; }
+
+    /**
+     * <p>ID of the collection to search.</p>
+     */
     inline void SetCollectionId(const Aws::String& value) { m_collectionIdHasBeenSet = true; m_collectionId = value; }
 
     /**
@@ -84,35 +89,60 @@ namespace Model
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline const Image& GetImage() const{ return m_image; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
+     */
+    inline bool ImageHasBeenSet() const { return m_imageHasBeenSet; }
+
+    /**
+     * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
+     * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetImage(const Image& value) { m_imageHasBeenSet = true; m_image = value; }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline void SetImage(Image&& value) { m_imageHasBeenSet = true; m_image = std::move(value); }
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline SearchFacesByImageRequest& WithImage(const Image& value) { SetImage(value); return *this;}
 
     /**
      * <p>The input image as base64-encoded bytes or an S3 object. If you use the AWS
      * CLI to call Amazon Rekognition operations, passing base64-encoded image bytes is
-     * not supported. </p>
+     * not supported. </p> <p>If you are using an AWS SDK to call Amazon Rekognition,
+     * you might not need to base64-encode image bytes passed using the
+     * <code>Bytes</code> field. For more information, see Images in the Amazon
+     * Rekognition developer guide.</p>
      */
     inline SearchFacesByImageRequest& WithImage(Image&& value) { SetImage(std::move(value)); return *this;}
 
@@ -122,6 +152,12 @@ namespace Model
      * of faces with the highest confidence in the match.</p>
      */
     inline int GetMaxFaces() const{ return m_maxFaces; }
+
+    /**
+     * <p>Maximum number of faces to return. The operation returns the maximum number
+     * of faces with the highest confidence in the match.</p>
+     */
+    inline bool MaxFacesHasBeenSet() const { return m_maxFacesHasBeenSet; }
 
     /**
      * <p>Maximum number of faces to return. The operation returns the maximum number
@@ -142,6 +178,13 @@ namespace Model
      * 70%.</p>
      */
     inline double GetFaceMatchThreshold() const{ return m_faceMatchThreshold; }
+
+    /**
+     * <p>(Optional) Specifies the minimum confidence in the face match to return. For
+     * example, don't return any matches where confidence in matches is less than
+     * 70%.</p>
+     */
+    inline bool FaceMatchThresholdHasBeenSet() const { return m_faceMatchThresholdHasBeenSet; }
 
     /**
      * <p>(Optional) Specifies the minimum confidence in the face match to return. For

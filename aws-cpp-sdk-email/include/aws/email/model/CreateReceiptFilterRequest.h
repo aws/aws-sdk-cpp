@@ -64,6 +64,13 @@ namespace Model
      * consists of a name, an IP address range, and whether to allow or block mail from
      * it.</p>
      */
+    inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+
+    /**
+     * <p>A data structure that describes the IP address filter to create, which
+     * consists of a name, an IP address range, and whether to allow or block mail from
+     * it.</p>
+     */
     inline void SetFilter(const ReceiptFilter& value) { m_filterHasBeenSet = true; m_filter = value; }
 
     /**

@@ -58,6 +58,11 @@ namespace Model
     /**
      * <p>The principal.</p>
      */
+    inline bool PrincipalHasBeenSet() const { return m_principalHasBeenSet; }
+
+    /**
+     * <p>The principal.</p>
+     */
     inline void SetPrincipal(const Aws::String& value) { m_principalHasBeenSet = true; m_principal = value; }
 
     /**
@@ -90,6 +95,11 @@ namespace Model
      * <p>The Cognito identity pool ID.</p>
      */
     inline const Aws::String& GetCognitoIdentityPoolId() const{ return m_cognitoIdentityPoolId; }
+
+    /**
+     * <p>The Cognito identity pool ID.</p>
+     */
+    inline bool CognitoIdentityPoolIdHasBeenSet() const { return m_cognitoIdentityPoolIdHasBeenSet; }
 
     /**
      * <p>The Cognito identity pool ID.</p>
@@ -127,6 +137,12 @@ namespace Model
      * response for each <code>authInfo</code> object in the list.</p>
      */
     inline const Aws::Vector<AuthInfo>& GetAuthInfos() const{ return m_authInfos; }
+
+    /**
+     * <p>A list of authorization info objects. Simulating authorization will create a
+     * response for each <code>authInfo</code> object in the list.</p>
+     */
+    inline bool AuthInfosHasBeenSet() const { return m_authInfosHasBeenSet; }
 
     /**
      * <p>A list of authorization info objects. Simulating authorization will create a
@@ -173,6 +189,11 @@ namespace Model
     /**
      * <p>The MQTT client ID.</p>
      */
+    inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+
+    /**
+     * <p>The MQTT client ID.</p>
+     */
     inline void SetClientId(const Aws::String& value) { m_clientIdHasBeenSet = true; m_clientId = value; }
 
     /**
@@ -206,6 +227,12 @@ namespace Model
      * if they are attached to the principal being authorized.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNamesToAdd() const{ return m_policyNamesToAdd; }
+
+    /**
+     * <p>When testing custom authorization, the policies specified here are treated as
+     * if they are attached to the principal being authorized.</p>
+     */
+    inline bool PolicyNamesToAddHasBeenSet() const { return m_policyNamesToAddHasBeenSet; }
 
     /**
      * <p>When testing custom authorization, the policies specified here are treated as
@@ -255,6 +282,12 @@ namespace Model
      * if they are not attached to the principal being authorized.</p>
      */
     inline const Aws::Vector<Aws::String>& GetPolicyNamesToSkip() const{ return m_policyNamesToSkip; }
+
+    /**
+     * <p>When testing custom authorization, the policies specified here are treated as
+     * if they are not attached to the principal being authorized.</p>
+     */
+    inline bool PolicyNamesToSkipHasBeenSet() const { return m_policyNamesToSkipHasBeenSet; }
 
     /**
      * <p>When testing custom authorization, the policies specified here are treated as

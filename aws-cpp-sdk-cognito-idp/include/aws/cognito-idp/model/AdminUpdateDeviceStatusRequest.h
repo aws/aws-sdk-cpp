@@ -57,6 +57,11 @@ namespace Model
     /**
      * <p>The user pool ID.</p>
      */
+    inline bool UserPoolIdHasBeenSet() const { return m_userPoolIdHasBeenSet; }
+
+    /**
+     * <p>The user pool ID.</p>
+     */
     inline void SetUserPoolId(const Aws::String& value) { m_userPoolIdHasBeenSet = true; m_userPoolId = value; }
 
     /**
@@ -89,6 +94,11 @@ namespace Model
      * <p>The user name.</p>
      */
     inline const Aws::String& GetUsername() const{ return m_username; }
+
+    /**
+     * <p>The user name.</p>
+     */
+    inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
 
     /**
      * <p>The user name.</p>
@@ -129,6 +139,11 @@ namespace Model
     /**
      * <p>The device key.</p>
      */
+    inline bool DeviceKeyHasBeenSet() const { return m_deviceKeyHasBeenSet; }
+
+    /**
+     * <p>The device key.</p>
+     */
     inline void SetDeviceKey(const Aws::String& value) { m_deviceKeyHasBeenSet = true; m_deviceKey = value; }
 
     /**
@@ -161,6 +176,11 @@ namespace Model
      * <p>The status indicating whether a device has been remembered or not.</p>
      */
     inline const DeviceRememberedStatusType& GetDeviceRememberedStatus() const{ return m_deviceRememberedStatus; }
+
+    /**
+     * <p>The status indicating whether a device has been remembered or not.</p>
+     */
+    inline bool DeviceRememberedStatusHasBeenSet() const { return m_deviceRememberedStatusHasBeenSet; }
 
     /**
      * <p>The status indicating whether a device has been remembered or not.</p>

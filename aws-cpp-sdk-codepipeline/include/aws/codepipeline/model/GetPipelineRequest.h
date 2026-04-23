@@ -57,6 +57,12 @@ namespace Model
      * <p>The name of the pipeline for which you want to get information. Pipeline
      * names must be unique under an Amazon Web Services (AWS) user account.</p>
      */
+    inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+
+    /**
+     * <p>The name of the pipeline for which you want to get information. Pipeline
+     * names must be unique under an Amazon Web Services (AWS) user account.</p>
+     */
     inline void SetName(const Aws::String& value) { m_nameHasBeenSet = true; m_name = value; }
 
     /**
@@ -95,6 +101,12 @@ namespace Model
      * to the most current version.</p>
      */
     inline int GetVersion() const{ return m_version; }
+
+    /**
+     * <p>The version number of the pipeline. If you do not specify a version, defaults
+     * to the most current version.</p>
+     */
+    inline bool VersionHasBeenSet() const { return m_versionHasBeenSet; }
 
     /**
      * <p>The version number of the pipeline. If you do not specify a version, defaults
