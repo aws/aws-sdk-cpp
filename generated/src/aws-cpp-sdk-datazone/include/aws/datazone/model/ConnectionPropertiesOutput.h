@@ -10,6 +10,7 @@
 #include <aws/datazone/model/GluePropertiesOutput.h>
 #include <aws/datazone/model/HyperPodPropertiesOutput.h>
 #include <aws/datazone/model/IamPropertiesOutput.h>
+#include <aws/datazone/model/LakehousePropertiesOutput.h>
 #include <aws/datazone/model/MlflowPropertiesOutput.h>
 #include <aws/datazone/model/RedshiftPropertiesOutput.h>
 #include <aws/datazone/model/S3PropertiesOutput.h>
@@ -257,6 +258,24 @@ class ConnectionPropertiesOutput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The lakehouse properties of a connection.</p>
+   */
+  inline const LakehousePropertiesOutput& GetLakehouseProperties() const { return m_lakehouseProperties; }
+  inline bool LakehousePropertiesHasBeenSet() const { return m_lakehousePropertiesHasBeenSet; }
+  template <typename LakehousePropertiesT = LakehousePropertiesOutput>
+  void SetLakehouseProperties(LakehousePropertiesT&& value) {
+    m_lakehousePropertiesHasBeenSet = true;
+    m_lakehouseProperties = std::forward<LakehousePropertiesT>(value);
+  }
+  template <typename LakehousePropertiesT = LakehousePropertiesOutput>
+  ConnectionPropertiesOutput& WithLakehouseProperties(LakehousePropertiesT&& value) {
+    SetLakehouseProperties(std::forward<LakehousePropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesOutput m_athenaProperties;
 
@@ -281,6 +300,8 @@ class ConnectionPropertiesOutput {
   WorkflowsMwaaPropertiesOutput m_workflowsMwaaProperties;
 
   WorkflowsServerlessPropertiesOutput m_workflowsServerlessProperties;
+
+  LakehousePropertiesOutput m_lakehouseProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_hyperPodPropertiesHasBeenSet = false;
@@ -293,6 +314,7 @@ class ConnectionPropertiesOutput {
   bool m_mlflowPropertiesHasBeenSet = false;
   bool m_workflowsMwaaPropertiesHasBeenSet = false;
   bool m_workflowsServerlessPropertiesHasBeenSet = false;
+  bool m_lakehousePropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

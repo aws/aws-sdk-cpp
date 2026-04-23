@@ -30,7 +30,7 @@ class DeleteProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The name of the provisioning template.</p>
+   * <p>The id of the provisioning profile.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

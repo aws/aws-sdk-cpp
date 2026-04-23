@@ -9,6 +9,7 @@
 #include <aws/datazone/model/AthenaPropertiesPatch.h>
 #include <aws/datazone/model/GluePropertiesPatch.h>
 #include <aws/datazone/model/IamPropertiesPatch.h>
+#include <aws/datazone/model/LakehousePropertiesPatch.h>
 #include <aws/datazone/model/MlflowPropertiesPatch.h>
 #include <aws/datazone/model/RedshiftPropertiesPatch.h>
 #include <aws/datazone/model/S3PropertiesPatch.h>
@@ -181,6 +182,24 @@ class ConnectionPropertiesPatch {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The lakehouse properties of a connection properties patch.</p>
+   */
+  inline const LakehousePropertiesPatch& GetLakehouseProperties() const { return m_lakehouseProperties; }
+  inline bool LakehousePropertiesHasBeenSet() const { return m_lakehousePropertiesHasBeenSet; }
+  template <typename LakehousePropertiesT = LakehousePropertiesPatch>
+  void SetLakehouseProperties(LakehousePropertiesT&& value) {
+    m_lakehousePropertiesHasBeenSet = true;
+    m_lakehouseProperties = std::forward<LakehousePropertiesT>(value);
+  }
+  template <typename LakehousePropertiesT = LakehousePropertiesPatch>
+  ConnectionPropertiesPatch& WithLakehouseProperties(LakehousePropertiesT&& value) {
+    SetLakehouseProperties(std::forward<LakehousePropertiesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   AthenaPropertiesPatch m_athenaProperties;
 
@@ -197,6 +216,8 @@ class ConnectionPropertiesPatch {
   AmazonQPropertiesPatch m_amazonQProperties;
 
   MlflowPropertiesPatch m_mlflowProperties;
+
+  LakehousePropertiesPatch m_lakehouseProperties;
   bool m_athenaPropertiesHasBeenSet = false;
   bool m_gluePropertiesHasBeenSet = false;
   bool m_iamPropertiesHasBeenSet = false;
@@ -205,6 +226,7 @@ class ConnectionPropertiesPatch {
   bool m_s3PropertiesHasBeenSet = false;
   bool m_amazonQPropertiesHasBeenSet = false;
   bool m_mlflowPropertiesHasBeenSet = false;
+  bool m_lakehousePropertiesHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -55,7 +55,7 @@ class AuthConfigUpdate {
   ///@{
   /**
    * <p>The General Authorization update information containing authorization
-   * materials to add or update in Kinesis Data Streams.</p>
+   * materials to add or update.</p>
    */
   inline const GeneralAuthorizationUpdate& GetGeneralAuthorizationUpdate() const { return m_generalAuthorizationUpdate; }
   inline bool GeneralAuthorizationUpdateHasBeenSet() const { return m_generalAuthorizationUpdateHasBeenSet; }

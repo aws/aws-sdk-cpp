@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/ProvisioningProfileStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningType.h>
 
 #include <utility>
@@ -34,7 +35,7 @@ class ProvisioningProfileSummary {
 
   ///@{
   /**
-   * <p>The name of the provisioning template.</p>
+   * <p>The name of the provisioning profile.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
@@ -70,8 +71,7 @@ class ProvisioningProfileSummary {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the provisioning template used in the
-   * provisioning profile.</p>
+   * <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
@@ -103,6 +103,22 @@ class ProvisioningProfileSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The status of a provisioning profile.</p>
+   */
+  inline ProvisioningProfileStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ProvisioningProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ProvisioningProfileSummary& WithStatus(ProvisioningProfileStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_name;
 
@@ -111,10 +127,13 @@ class ProvisioningProfileSummary {
   Aws::String m_arn;
 
   ProvisioningType m_provisioningType{ProvisioningType::NOT_SET};
+
+  ProvisioningProfileStatus m_status{ProvisioningProfileStatus::NOT_SET};
   bool m_nameHasBeenSet = false;
   bool m_idHasBeenSet = false;
   bool m_arnHasBeenSet = false;
   bool m_provisioningTypeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
 };
 
 }  // namespace Model

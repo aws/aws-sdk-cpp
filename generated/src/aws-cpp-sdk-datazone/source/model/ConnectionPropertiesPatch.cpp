@@ -50,6 +50,10 @@ ConnectionPropertiesPatch& ConnectionPropertiesPatch::operator=(JsonView jsonVal
     m_mlflowProperties = jsonValue.GetObject("mlflowProperties");
     m_mlflowPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lakehouseProperties")) {
+    m_lakehouseProperties = jsonValue.GetObject("lakehouseProperties");
+    m_lakehousePropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue ConnectionPropertiesPatch::Jsonize() const {
 
   if (m_mlflowPropertiesHasBeenSet) {
     payload.WithObject("mlflowProperties", m_mlflowProperties.Jsonize());
+  }
+
+  if (m_lakehousePropertiesHasBeenSet) {
+    payload.WithObject("lakehouseProperties", m_lakehouseProperties.Jsonize());
   }
 
   return payload;

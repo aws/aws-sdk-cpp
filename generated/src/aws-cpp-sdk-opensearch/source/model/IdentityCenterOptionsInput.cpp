@@ -26,6 +26,10 @@ IdentityCenterOptionsInput& IdentityCenterOptionsInput::operator=(JsonView jsonV
     m_identityCenterInstanceARN = jsonValue.GetString("IdentityCenterInstanceARN");
     m_identityCenterInstanceARNHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IdentityCenterInstanceRegion")) {
+    m_identityCenterInstanceRegion = jsonValue.GetString("IdentityCenterInstanceRegion");
+    m_identityCenterInstanceRegionHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("SubjectKey")) {
     m_subjectKey = SubjectKeyIdCOptionMapper::GetSubjectKeyIdCOptionForName(jsonValue.GetString("SubjectKey"));
     m_subjectKeyHasBeenSet = true;
@@ -46,6 +50,10 @@ JsonValue IdentityCenterOptionsInput::Jsonize() const {
 
   if (m_identityCenterInstanceARNHasBeenSet) {
     payload.WithString("IdentityCenterInstanceARN", m_identityCenterInstanceARN);
+  }
+
+  if (m_identityCenterInstanceRegionHasBeenSet) {
+    payload.WithString("IdentityCenterInstanceRegion", m_identityCenterInstanceRegion);
   }
 
   if (m_subjectKeyHasBeenSet) {

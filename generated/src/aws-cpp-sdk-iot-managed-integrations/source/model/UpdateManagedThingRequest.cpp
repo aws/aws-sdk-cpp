@@ -55,10 +55,6 @@ Aws::String UpdateManagedThingRequest::SerializePayload() const {
     payload.WithArray("CapabilitySchemas", std::move(capabilitySchemasJsonList));
   }
 
-  if (m_capabilitiesHasBeenSet) {
-    payload.WithString("Capabilities", m_capabilities);
-  }
-
   if (m_classificationHasBeenSet) {
     payload.WithString("Classification", m_classification);
   }

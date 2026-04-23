@@ -50,7 +50,7 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The id of the certificate authority (CA) certificate.</p>
+   * <p>The body of the PEM-encoded certificate authority (CA) certificate.</p>
    */
   inline const Aws::String& GetCaCertificate() const { return m_caCertificate; }
   inline bool CaCertificateHasBeenSet() const { return m_caCertificateHasBeenSet; }
@@ -68,7 +68,9 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The claim certificate.</p>
+   * <p>The body of the PEM-encoded claim certificate. If a claim certificate is
+   * provided, it will be used for the provisioning profile. Otherwise, a claim
+   * certificate will be generated.</p>
    */
   inline const Aws::String& GetClaimCertificate() const { return m_claimCertificate; }
   inline bool ClaimCertificateHasBeenSet() const { return m_claimCertificateHasBeenSet; }
@@ -86,7 +88,7 @@ class CreateProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The name of the provisioning template.</p>
+   * <p>The name of the provisioning profile.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }

@@ -67,10 +67,6 @@ Aws::String CreateManagedThingRequest::SerializePayload() const {
     payload.WithArray("CapabilitySchemas", std::move(capabilitySchemasJsonList));
   }
 
-  if (m_capabilitiesHasBeenSet) {
-    payload.WithString("Capabilities", m_capabilities);
-  }
-
   if (m_clientTokenHasBeenSet) {
     payload.WithString("ClientToken", m_clientToken);
   }

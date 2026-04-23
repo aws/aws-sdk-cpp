@@ -7,6 +7,7 @@
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/ProvisioningProfileStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningType.h>
 
 #include <utility>
@@ -31,8 +32,7 @@ class CreateProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the provisioning template used in the
-   * provisioning profile.</p>
+   * <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
@@ -49,7 +49,7 @@ class CreateProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The name of the provisioning template.</p>
+   * <p>The name of the provisioning profile.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
@@ -99,7 +99,22 @@ class CreateProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The id of the claim certificate.</p>
+   * <p>The status of a provisioning profile.</p>
+   */
+  inline ProvisioningProfileStatus GetStatus() const { return m_status; }
+  inline void SetStatus(ProvisioningProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateProvisioningProfileResult& WithStatus(ProvisioningProfileStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The body of the PEM-encoded claim certificate.</p>
    */
   inline const Aws::String& GetClaimCertificate() const { return m_claimCertificate; }
   template <typename ClaimCertificateT = Aws::String>
@@ -116,7 +131,7 @@ class CreateProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The private key of the claim certificate. This is stored securely on the
+   * <p>The private key of the claim certificate. This may be stored securely on the
    * device for validating the connection endpoint with IoT managed integrations
    * using the public key.</p>
    */
@@ -158,6 +173,8 @@ class CreateProvisioningProfileResult {
 
   Aws::String m_id;
 
+  ProvisioningProfileStatus m_status{ProvisioningProfileStatus::NOT_SET};
+
   Aws::String m_claimCertificate;
 
   Aws::String m_claimCertificatePrivateKey;
@@ -168,6 +185,7 @@ class CreateProvisioningProfileResult {
   bool m_nameHasBeenSet = false;
   bool m_provisioningTypeHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_claimCertificateHasBeenSet = false;
   bool m_claimCertificatePrivateKeyHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -72,6 +72,24 @@ class IdentityCenterOptionsInput {
 
   ///@{
   /**
+   * <p>The Region of the IAM Identity Center instance.</p>
+   */
+  inline const Aws::String& GetIdentityCenterInstanceRegion() const { return m_identityCenterInstanceRegion; }
+  inline bool IdentityCenterInstanceRegionHasBeenSet() const { return m_identityCenterInstanceRegionHasBeenSet; }
+  template <typename IdentityCenterInstanceRegionT = Aws::String>
+  void SetIdentityCenterInstanceRegion(IdentityCenterInstanceRegionT&& value) {
+    m_identityCenterInstanceRegionHasBeenSet = true;
+    m_identityCenterInstanceRegion = std::forward<IdentityCenterInstanceRegionT>(value);
+  }
+  template <typename IdentityCenterInstanceRegionT = Aws::String>
+  IdentityCenterOptionsInput& WithIdentityCenterInstanceRegion(IdentityCenterInstanceRegionT&& value) {
+    SetIdentityCenterInstanceRegion(std::forward<IdentityCenterInstanceRegionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the attribute that contains the subject identifier (such as
    * username, user ID, or email) in IAM Identity Center.</p>
    */
@@ -108,11 +126,14 @@ class IdentityCenterOptionsInput {
 
   Aws::String m_identityCenterInstanceARN;
 
+  Aws::String m_identityCenterInstanceRegion;
+
   SubjectKeyIdCOption m_subjectKey{SubjectKeyIdCOption::NOT_SET};
 
   RolesKeyIdCOption m_rolesKey{RolesKeyIdCOption::NOT_SET};
   bool m_enabledAPIAccessHasBeenSet = false;
   bool m_identityCenterInstanceARNHasBeenSet = false;
+  bool m_identityCenterInstanceRegionHasBeenSet = false;
   bool m_subjectKeyHasBeenSet = false;
   bool m_rolesKeyHasBeenSet = false;
 };

@@ -350,6 +350,7 @@
 #include <aws/opensearch/model/ScheduledBy.h>
 #include <aws/opensearch/model/SecurityLakeDirectQueryDataSource.h>
 #include <aws/opensearch/model/ServerlessVectorAcceleration.h>
+#include <aws/opensearch/model/ServiceOptions.h>
 #include <aws/opensearch/model/ServiceSoftwareOptions.h>
 #include <aws/opensearch/model/SkipUnavailableStatus.h>
 #include <aws/opensearch/model/SlotNotAvailableException.h>

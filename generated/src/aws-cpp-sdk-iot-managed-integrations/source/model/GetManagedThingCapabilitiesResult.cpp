@@ -28,10 +28,6 @@ GetManagedThingCapabilitiesResult& GetManagedThingCapabilitiesResult::operator=(
     m_managedThingId = jsonValue.GetString("ManagedThingId");
     m_managedThingIdHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("Capabilities")) {
-    m_capabilities = jsonValue.GetString("Capabilities");
-    m_capabilitiesHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("CapabilityReport")) {
     m_capabilityReport = jsonValue.GetObject("CapabilityReport");
     m_capabilityReportHasBeenSet = true;

@@ -263,24 +263,6 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The capabilities of the device such as light bulb.</p>
-   */
-  inline const Aws::String& GetCapabilities() const { return m_capabilities; }
-  inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-  template <typename CapabilitiesT = Aws::String>
-  void SetCapabilities(CapabilitiesT&& value) {
-    m_capabilitiesHasBeenSet = true;
-    m_capabilities = std::forward<CapabilitiesT>(value);
-  }
-  template <typename CapabilitiesT = Aws::String>
-  CreateManagedThingRequest& WithCapabilities(CapabilitiesT&& value) {
-    SetCapabilities(std::forward<CapabilitiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>An idempotency token. If you retry a request that completed successfully
    * initially using the same client token and parameters, then the retry attempt
    * will succeed without performing any further actions.</p>
@@ -394,8 +376,6 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   Aws::Vector<CapabilitySchemaItem> m_capabilitySchemas;
 
-  Aws::String m_capabilities;
-
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
   Aws::String m_classification;
@@ -415,7 +395,6 @@ class CreateManagedThingRequest : public IoTManagedIntegrationsRequest {
   bool m_nameHasBeenSet = false;
   bool m_capabilityReportHasBeenSet = false;
   bool m_capabilitySchemasHasBeenSet = false;
-  bool m_capabilitiesHasBeenSet = false;
   bool m_clientTokenHasBeenSet = true;
   bool m_classificationHasBeenSet = false;
   bool m_tagsHasBeenSet = false;

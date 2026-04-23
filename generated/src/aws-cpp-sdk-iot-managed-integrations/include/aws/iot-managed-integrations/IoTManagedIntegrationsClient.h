@@ -374,10 +374,10 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Create a provisioning profile for a device to execute the provisioning flows
-   * using a provisioning template. The provisioning template is a document that
-   * defines the set of resources and policies applied to a device during the
-   * provisioning process.</p><p><h3>See Also:</h3>   <a
+   * <p>Create a provisioning profile for executing device provisioning flows. The
+   * provisioning profile is a document that defines the set of resources and
+   * policies applied to a device during the provisioning process.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/CreateProvisioningProfile">AWS
    * API Reference</a></p>
    */
@@ -1283,7 +1283,7 @@ class AWS_IOTMANAGEDINTEGRATIONS_API IoTManagedIntegrationsClient
   }
 
   /**
-   * <p>Get a provisioning profile by template name.</p><p><h3>See Also:</h3>   <a
+   * <p>Get details of a provisioning profile.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/iot-managed-integrations-2025-03-03/GetProvisioningProfile">AWS
    * API Reference</a></p>
    */

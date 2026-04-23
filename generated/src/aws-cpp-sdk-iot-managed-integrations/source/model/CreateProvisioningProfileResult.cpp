@@ -38,6 +38,10 @@ CreateProvisioningProfileResult& CreateProvisioningProfileResult::operator=(cons
     m_id = jsonValue.GetString("Id");
     m_idHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = ProvisioningProfileStatusMapper::GetProvisioningProfileStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ClaimCertificate")) {
     m_claimCertificate = jsonValue.GetString("ClaimCertificate");
     m_claimCertificateHasBeenSet = true;

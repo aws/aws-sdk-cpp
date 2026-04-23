@@ -203,6 +203,7 @@
 #include <aws/iot-managed-integrations/model/OtaType.h>
 #include <aws/iot-managed-integrations/model/ProactiveRefreshTokenRenewal.h>
 #include <aws/iot-managed-integrations/model/ProtocolType.h>
+#include <aws/iot-managed-integrations/model/ProvisioningProfileStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningProfileSummary.h>
 #include <aws/iot-managed-integrations/model/ProvisioningStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningType.h>

@@ -26,6 +26,10 @@ AuthorizedPrincipal& AuthorizedPrincipal::operator=(JsonView jsonValue) {
     m_principal = jsonValue.GetString("Principal");
     m_principalHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ServiceOptions")) {
+    m_serviceOptions = jsonValue.GetObject("ServiceOptions");
+    m_serviceOptionsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -38,6 +42,10 @@ JsonValue AuthorizedPrincipal::Jsonize() const {
 
   if (m_principalHasBeenSet) {
     payload.WithString("Principal", m_principal);
+  }
+
+  if (m_serviceOptionsHasBeenSet) {
+    payload.WithObject("ServiceOptions", m_serviceOptions.Jsonize());
   }
 
   return payload;

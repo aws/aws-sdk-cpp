@@ -415,6 +415,9 @@
 #include <aws/datazone/model/JobRunSummary.h>
 #include <aws/datazone/model/JobType.h>
 #include <aws/datazone/model/LakeFormationConfiguration.h>
+#include <aws/datazone/model/LakehousePropertiesInput.h>
+#include <aws/datazone/model/LakehousePropertiesOutput.h>
+#include <aws/datazone/model/LakehousePropertiesPatch.h>
 #include <aws/datazone/model/LessThanExpression.h>
 #include <aws/datazone/model/LessThanOrEqualToExpression.h>
 #include <aws/datazone/model/LikeExpression.h>

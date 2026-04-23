@@ -34,6 +34,10 @@ ProvisioningProfileSummary& ProvisioningProfileSummary::operator=(JsonView jsonV
     m_provisioningType = ProvisioningTypeMapper::GetProvisioningTypeForName(jsonValue.GetString("ProvisioningType"));
     m_provisioningTypeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = ProvisioningProfileStatusMapper::GetProvisioningProfileStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -54,6 +58,10 @@ JsonValue ProvisioningProfileSummary::Jsonize() const {
 
   if (m_provisioningTypeHasBeenSet) {
     payload.WithString("ProvisioningType", ProvisioningTypeMapper::GetNameForProvisioningType(m_provisioningType));
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", ProvisioningProfileStatusMapper::GetNameForProvisioningProfileStatus(m_status));
   }
 
   return payload;

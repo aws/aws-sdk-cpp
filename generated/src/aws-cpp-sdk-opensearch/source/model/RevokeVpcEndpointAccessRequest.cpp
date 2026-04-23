@@ -23,5 +23,9 @@ Aws::String RevokeVpcEndpointAccessRequest::SerializePayload() const {
     payload.WithString("Service", AWSServicePrincipalMapper::GetNameForAWSServicePrincipal(m_service));
   }
 
+  if (m_serviceOptionsHasBeenSet) {
+    payload.WithObject("ServiceOptions", m_serviceOptions.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }

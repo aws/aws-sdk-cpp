@@ -7,6 +7,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/PrincipalType.h>
+#include <aws/opensearch/model/ServiceOptions.h>
 
 #include <utility>
 
@@ -69,12 +70,34 @@ class AuthorizedPrincipal {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The options for the service, including the supported Regions for the endpoint
+   * access.</p>
+   */
+  inline const ServiceOptions& GetServiceOptions() const { return m_serviceOptions; }
+  inline bool ServiceOptionsHasBeenSet() const { return m_serviceOptionsHasBeenSet; }
+  template <typename ServiceOptionsT = ServiceOptions>
+  void SetServiceOptions(ServiceOptionsT&& value) {
+    m_serviceOptionsHasBeenSet = true;
+    m_serviceOptions = std::forward<ServiceOptionsT>(value);
+  }
+  template <typename ServiceOptionsT = ServiceOptions>
+  AuthorizedPrincipal& WithServiceOptions(ServiceOptionsT&& value) {
+    SetServiceOptions(std::forward<ServiceOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   PrincipalType m_principalType{PrincipalType::NOT_SET};
 
   Aws::String m_principal;
+
+  ServiceOptions m_serviceOptions;
   bool m_principalTypeHasBeenSet = false;
   bool m_principalHasBeenSet = false;
+  bool m_serviceOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

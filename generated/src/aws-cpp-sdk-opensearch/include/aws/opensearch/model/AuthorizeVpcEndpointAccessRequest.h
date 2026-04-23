@@ -8,6 +8,7 @@
 #include <aws/opensearch/OpenSearchServiceRequest.h>
 #include <aws/opensearch/OpenSearchService_EXPORTS.h>
 #include <aws/opensearch/model/AWSServicePrincipal.h>
+#include <aws/opensearch/model/ServiceOptions.h>
 
 #include <utility>
 
@@ -80,15 +81,37 @@ class AuthorizeVpcEndpointAccessRequest : public OpenSearchServiceRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The options for the service, including the supported Regions for the endpoint
+   * access.</p>
+   */
+  inline const ServiceOptions& GetServiceOptions() const { return m_serviceOptions; }
+  inline bool ServiceOptionsHasBeenSet() const { return m_serviceOptionsHasBeenSet; }
+  template <typename ServiceOptionsT = ServiceOptions>
+  void SetServiceOptions(ServiceOptionsT&& value) {
+    m_serviceOptionsHasBeenSet = true;
+    m_serviceOptions = std::forward<ServiceOptionsT>(value);
+  }
+  template <typename ServiceOptionsT = ServiceOptions>
+  AuthorizeVpcEndpointAccessRequest& WithServiceOptions(ServiceOptionsT&& value) {
+    SetServiceOptions(std::forward<ServiceOptionsT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_domainName;
 
   Aws::String m_account;
 
   AWSServicePrincipal m_service{AWSServicePrincipal::NOT_SET};
+
+  ServiceOptions m_serviceOptions;
   bool m_domainNameHasBeenSet = false;
   bool m_accountHasBeenSet = false;
   bool m_serviceHasBeenSet = false;
+  bool m_serviceOptionsHasBeenSet = false;
 };
 
 }  // namespace Model

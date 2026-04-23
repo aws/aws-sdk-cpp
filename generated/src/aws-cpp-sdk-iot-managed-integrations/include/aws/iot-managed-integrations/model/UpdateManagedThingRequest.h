@@ -225,24 +225,6 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The capabilities of the device such as light bulb.</p>
-   */
-  inline const Aws::String& GetCapabilities() const { return m_capabilities; }
-  inline bool CapabilitiesHasBeenSet() const { return m_capabilitiesHasBeenSet; }
-  template <typename CapabilitiesT = Aws::String>
-  void SetCapabilities(CapabilitiesT&& value) {
-    m_capabilitiesHasBeenSet = true;
-    m_capabilities = std::forward<CapabilitiesT>(value);
-  }
-  template <typename CapabilitiesT = Aws::String>
-  UpdateManagedThingRequest& WithCapabilities(CapabilitiesT&& value) {
-    SetCapabilities(std::forward<CapabilitiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The classification of the managed thing such as light bulb or thermostat.</p>
    */
   inline const Aws::String& GetClassification() const { return m_classification; }
@@ -319,8 +301,6 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
 
   Aws::Vector<CapabilitySchemaItem> m_capabilitySchemas;
 
-  Aws::String m_capabilities;
-
   Aws::String m_classification;
 
   HubNetworkMode m_hubNetworkMode{HubNetworkMode::NOT_SET};
@@ -336,7 +316,6 @@ class UpdateManagedThingRequest : public IoTManagedIntegrationsRequest {
   bool m_nameHasBeenSet = false;
   bool m_capabilityReportHasBeenSet = false;
   bool m_capabilitySchemasHasBeenSet = false;
-  bool m_capabilitiesHasBeenSet = false;
   bool m_classificationHasBeenSet = false;
   bool m_hubNetworkModeHasBeenSet = false;
   bool m_metaDataHasBeenSet = false;

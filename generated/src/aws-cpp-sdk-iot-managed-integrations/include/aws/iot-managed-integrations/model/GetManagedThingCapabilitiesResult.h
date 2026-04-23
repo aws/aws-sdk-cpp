@@ -48,23 +48,6 @@ class GetManagedThingCapabilitiesResult {
 
   ///@{
   /**
-   * <p>The capabilities of the device such as light bulb.</p>
-   */
-  inline const Aws::String& GetCapabilities() const { return m_capabilities; }
-  template <typename CapabilitiesT = Aws::String>
-  void SetCapabilities(CapabilitiesT&& value) {
-    m_capabilitiesHasBeenSet = true;
-    m_capabilities = std::forward<CapabilitiesT>(value);
-  }
-  template <typename CapabilitiesT = Aws::String>
-  GetManagedThingCapabilitiesResult& WithCapabilities(CapabilitiesT&& value) {
-    SetCapabilities(std::forward<CapabilitiesT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>A report of the capabilities for the managed thing.</p>
    */
   inline const CapabilityReport& GetCapabilityReport() const { return m_capabilityReport; }
@@ -99,14 +82,11 @@ class GetManagedThingCapabilitiesResult {
  private:
   Aws::String m_managedThingId;
 
-  Aws::String m_capabilities;
-
   CapabilityReport m_capabilityReport;
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_managedThingIdHasBeenSet = false;
-  bool m_capabilitiesHasBeenSet = false;
   bool m_capabilityReportHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };

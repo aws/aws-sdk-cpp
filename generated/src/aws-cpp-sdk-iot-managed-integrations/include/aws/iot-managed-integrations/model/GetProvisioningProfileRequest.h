@@ -30,7 +30,7 @@ class GetProvisioningProfileRequest : public IoTManagedIntegrationsRequest {
 
   ///@{
   /**
-   * <p>The provisioning template the device uses for the provisioning process.</p>
+   * <p>The id of a provisioning profile.</p>
    */
   inline const Aws::String& GetIdentifier() const { return m_identifier; }
   inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }

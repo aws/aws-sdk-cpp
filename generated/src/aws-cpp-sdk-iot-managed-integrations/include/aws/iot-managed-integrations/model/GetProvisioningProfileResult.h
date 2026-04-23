@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSMap.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/iot-managed-integrations/IoTManagedIntegrations_EXPORTS.h>
+#include <aws/iot-managed-integrations/model/ProvisioningProfileStatus.h>
 #include <aws/iot-managed-integrations/model/ProvisioningType.h>
 
 #include <utility>
@@ -32,8 +33,7 @@ class GetProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The Amazon Resource Name (ARN) of the provisioning template used in the
-   * provisioning profile.</p>
+   * <p>The Amazon Resource Name (ARN) of the provisioning profile.</p>
    */
   inline const Aws::String& GetArn() const { return m_arn; }
   template <typename ArnT = Aws::String>
@@ -50,7 +50,7 @@ class GetProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The name of the provisioning template.</p>
+   * <p>The name of the provisioning profile.</p>
    */
   inline const Aws::String& GetName() const { return m_name; }
   template <typename NameT = Aws::String>
@@ -100,7 +100,22 @@ class GetProvisioningProfileResult {
 
   ///@{
   /**
-   * <p>The id of the claim certificate.</p>
+   * <p>The status of a provisioning profile.</p>
+   */
+  inline ProvisioningProfileStatus GetStatus() const { return m_status; }
+  inline void SetStatus(ProvisioningProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline GetProvisioningProfileResult& WithStatus(ProvisioningProfileStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The body of the PEM-encoded claim certificate.</p>
    */
   inline const Aws::String& GetClaimCertificate() const { return m_claimCertificate; }
   template <typename ClaimCertificateT = Aws::String>
@@ -164,6 +179,8 @@ class GetProvisioningProfileResult {
 
   Aws::String m_id;
 
+  ProvisioningProfileStatus m_status{ProvisioningProfileStatus::NOT_SET};
+
   Aws::String m_claimCertificate;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -174,6 +191,7 @@ class GetProvisioningProfileResult {
   bool m_nameHasBeenSet = false;
   bool m_provisioningTypeHasBeenSet = false;
   bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_claimCertificateHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;

@@ -66,6 +66,10 @@ ConnectionPropertiesInput& ConnectionPropertiesInput::operator=(JsonView jsonVal
     m_workflowsServerlessProperties = jsonValue.GetObject("workflowsServerlessProperties");
     m_workflowsServerlessPropertiesHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("lakehouseProperties")) {
+    m_lakehouseProperties = jsonValue.GetObject("lakehouseProperties");
+    m_lakehousePropertiesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -118,6 +122,10 @@ JsonValue ConnectionPropertiesInput::Jsonize() const {
 
   if (m_workflowsServerlessPropertiesHasBeenSet) {
     payload.WithObject("workflowsServerlessProperties", m_workflowsServerlessProperties.Jsonize());
+  }
+
+  if (m_lakehousePropertiesHasBeenSet) {
+    payload.WithObject("lakehouseProperties", m_lakehouseProperties.Jsonize());
   }
 
   return payload;
