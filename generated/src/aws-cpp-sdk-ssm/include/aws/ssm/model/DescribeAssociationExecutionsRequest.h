@@ -1,0 +1,131 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ssm/SSMRequest.h>
+#include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/AssociationExecutionFilter.h>
+
+#include <utility>
+
+namespace Aws {
+namespace SSM {
+namespace Model {
+
+/**
+ */
+class DescribeAssociationExecutionsRequest : public SSMRequest {
+ public:
+  AWS_SSM_API DescribeAssociationExecutionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeAssociationExecutions"; }
+
+  AWS_SSM_API Aws::String SerializePayload() const override;
+
+  AWS_SSM_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The association ID for which you want to view execution history details.</p>
+   */
+  inline const Aws::String& GetAssociationId() const { return m_associationId; }
+  inline bool AssociationIdHasBeenSet() const { return m_associationIdHasBeenSet; }
+  template <typename AssociationIdT = Aws::String>
+  void SetAssociationId(AssociationIdT&& value) {
+    m_associationIdHasBeenSet = true;
+    m_associationId = std::forward<AssociationIdT>(value);
+  }
+  template <typename AssociationIdT = Aws::String>
+  DescribeAssociationExecutionsRequest& WithAssociationId(AssociationIdT&& value) {
+    SetAssociationId(std::forward<AssociationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Filters for the request. You can specify the following filters and
+   * values.</p> <p>ExecutionId (EQUAL)</p> <p>Status (EQUAL)</p> <p>CreatedTime
+   * (EQUAL, GREATER_THAN, LESS_THAN)</p>
+   */
+  inline const Aws::Vector<AssociationExecutionFilter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<AssociationExecutionFilter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<AssociationExecutionFilter>>
+  DescribeAssociationExecutionsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = AssociationExecutionFilter>
+  DescribeAssociationExecutionsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of items to return for this call. The call also returns a
+   * token that you can specify in a subsequent call to get the next set of
+   * results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline DescribeAssociationExecutionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A token to start the list. Use this token to get the next set of results.
+   * </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeAssociationExecutionsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_associationId;
+
+  Aws::Vector<AssociationExecutionFilter> m_filters;
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+  bool m_associationIdHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

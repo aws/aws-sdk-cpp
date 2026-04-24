@@ -1,0 +1,177 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ModelPackageContainerDefinition.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+ModelPackageContainerDefinition::ModelPackageContainerDefinition(JsonView jsonValue) { *this = jsonValue; }
+
+ModelPackageContainerDefinition& ModelPackageContainerDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContainerHostname")) {
+    m_containerHostname = jsonValue.GetString("ContainerHostname");
+    m_containerHostnameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Image")) {
+    m_image = jsonValue.GetString("Image");
+    m_imageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ImageDigest")) {
+    m_imageDigest = jsonValue.GetString("ImageDigest");
+    m_imageDigestHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelDataUrl")) {
+    m_modelDataUrl = jsonValue.GetString("ModelDataUrl");
+    m_modelDataUrlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelDataSource")) {
+    m_modelDataSource = jsonValue.GetObject("ModelDataSource");
+    m_modelDataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ProductId")) {
+    m_productId = jsonValue.GetString("ProductId");
+    m_productIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Environment")) {
+    Aws::Map<Aws::String, JsonView> environmentJsonMap = jsonValue.GetObject("Environment").GetAllObjects();
+    for (auto& environmentItem : environmentJsonMap) {
+      m_environment[environmentItem.first] = environmentItem.second.AsString();
+    }
+    m_environmentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelInput")) {
+    m_modelInput = jsonValue.GetObject("ModelInput");
+    m_modelInputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Framework")) {
+    m_framework = jsonValue.GetString("Framework");
+    m_frameworkHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FrameworkVersion")) {
+    m_frameworkVersion = jsonValue.GetString("FrameworkVersion");
+    m_frameworkVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NearestModelName")) {
+    m_nearestModelName = jsonValue.GetString("NearestModelName");
+    m_nearestModelNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdditionalModelDataSources")) {
+    Aws::Utils::Array<JsonView> additionalModelDataSourcesJsonList = jsonValue.GetArray("AdditionalModelDataSources");
+    for (unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength();
+         ++additionalModelDataSourcesIndex) {
+      m_additionalModelDataSources.push_back(additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject());
+    }
+    m_additionalModelDataSourcesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdditionalS3DataSource")) {
+    m_additionalS3DataSource = jsonValue.GetObject("AdditionalS3DataSource");
+    m_additionalS3DataSourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ModelDataETag")) {
+    m_modelDataETag = jsonValue.GetString("ModelDataETag");
+    m_modelDataETagHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsCheckpoint")) {
+    m_isCheckpoint = jsonValue.GetBool("IsCheckpoint");
+    m_isCheckpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BaseModel")) {
+    m_baseModel = jsonValue.GetObject("BaseModel");
+    m_baseModelHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ModelPackageContainerDefinition::Jsonize() const {
+  JsonValue payload;
+
+  if (m_containerHostnameHasBeenSet) {
+    payload.WithString("ContainerHostname", m_containerHostname);
+  }
+
+  if (m_imageHasBeenSet) {
+    payload.WithString("Image", m_image);
+  }
+
+  if (m_imageDigestHasBeenSet) {
+    payload.WithString("ImageDigest", m_imageDigest);
+  }
+
+  if (m_modelDataUrlHasBeenSet) {
+    payload.WithString("ModelDataUrl", m_modelDataUrl);
+  }
+
+  if (m_modelDataSourceHasBeenSet) {
+    payload.WithObject("ModelDataSource", m_modelDataSource.Jsonize());
+  }
+
+  if (m_productIdHasBeenSet) {
+    payload.WithString("ProductId", m_productId);
+  }
+
+  if (m_environmentHasBeenSet) {
+    JsonValue environmentJsonMap;
+    for (auto& environmentItem : m_environment) {
+      environmentJsonMap.WithString(environmentItem.first, environmentItem.second);
+    }
+    payload.WithObject("Environment", std::move(environmentJsonMap));
+  }
+
+  if (m_modelInputHasBeenSet) {
+    payload.WithObject("ModelInput", m_modelInput.Jsonize());
+  }
+
+  if (m_frameworkHasBeenSet) {
+    payload.WithString("Framework", m_framework);
+  }
+
+  if (m_frameworkVersionHasBeenSet) {
+    payload.WithString("FrameworkVersion", m_frameworkVersion);
+  }
+
+  if (m_nearestModelNameHasBeenSet) {
+    payload.WithString("NearestModelName", m_nearestModelName);
+  }
+
+  if (m_additionalModelDataSourcesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> additionalModelDataSourcesJsonList(m_additionalModelDataSources.size());
+    for (unsigned additionalModelDataSourcesIndex = 0; additionalModelDataSourcesIndex < additionalModelDataSourcesJsonList.GetLength();
+         ++additionalModelDataSourcesIndex) {
+      additionalModelDataSourcesJsonList[additionalModelDataSourcesIndex].AsObject(
+          m_additionalModelDataSources[additionalModelDataSourcesIndex].Jsonize());
+    }
+    payload.WithArray("AdditionalModelDataSources", std::move(additionalModelDataSourcesJsonList));
+  }
+
+  if (m_additionalS3DataSourceHasBeenSet) {
+    payload.WithObject("AdditionalS3DataSource", m_additionalS3DataSource.Jsonize());
+  }
+
+  if (m_modelDataETagHasBeenSet) {
+    payload.WithString("ModelDataETag", m_modelDataETag);
+  }
+
+  if (m_isCheckpointHasBeenSet) {
+    payload.WithBool("IsCheckpoint", m_isCheckpoint);
+  }
+
+  if (m_baseModelHasBeenSet) {
+    payload.WithObject("BaseModel", m_baseModel.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

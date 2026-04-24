@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/databrew/model/UpdateRecipeRequest.h>
+
+#include <utility>
+
+using namespace Aws::GlueDataBrew::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateRecipeRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
+  }
+
+  if (m_stepsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> stepsJsonList(m_steps.size());
+    for (unsigned stepsIndex = 0; stepsIndex < stepsJsonList.GetLength(); ++stepsIndex) {
+      stepsJsonList[stepsIndex].AsObject(m_steps[stepsIndex].Jsonize());
+    }
+    payload.WithArray("Steps", std::move(stepsJsonList));
+  }
+
+  return payload.View().WriteReadable();
+}

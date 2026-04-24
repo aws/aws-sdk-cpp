@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/CreatePackageResult.h>
+
+#include <utility>
+
+using namespace Aws::IoT::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreatePackageResult::CreatePackageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+CreatePackageResult& CreatePackageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("packageName")) {
+    m_packageName = jsonValue.GetString("packageName");
+    m_packageNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("packageArn")) {
+    m_packageArn = jsonValue.GetString("packageArn");
+    m_packageArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

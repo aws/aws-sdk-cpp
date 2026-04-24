@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/Alias.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace PaymentCryptography {
+namespace Model {
+class GetAliasResult {
+ public:
+  AWS_PAYMENTCRYPTOGRAPHY_API GetAliasResult() = default;
+  AWS_PAYMENTCRYPTOGRAPHY_API GetAliasResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PAYMENTCRYPTOGRAPHY_API GetAliasResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The alias of the Amazon Web Services Payment Cryptography key.</p>
+   */
+  inline const Alias& GetAlias() const { return m_alias; }
+  template <typename AliasT = Alias>
+  void SetAlias(AliasT&& value) {
+    m_aliasHasBeenSet = true;
+    m_alias = std::forward<AliasT>(value);
+  }
+  template <typename AliasT = Alias>
+  GetAliasResult& WithAlias(AliasT&& value) {
+    SetAlias(std::forward<AliasT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetAliasResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Alias m_alias;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_aliasHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

@@ -1,0 +1,171 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Request.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}Errors.h>
+\#include <aws/${metadata.projectName}/S3ExpressIdentityProvider.h>
+\#include <aws/core/client/AWSClient.h>
+\#include <aws/core/utils/ConcurrentCache.h>
+\#include <aws/core/http/HttpRequest.h>
+\#include <smithy/identity/signer/built-in/SigV4Signer.h>
+\#include <smithy/identity/signer/built-in/SigV4aSigner.h>
+\#include <smithy/identity/identity/AwsCredentialIdentity.h>
+
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+    extern ${CppViewHelper.computeExportValue($serviceNamespace)} const char *S3_EXPRESS_SIGNER_NAME;
+
+namespace {
+    template <typename T>
+    struct IsValidS3ExpressSigner : std::false_type {};
+
+    template <>
+    struct IsValidS3ExpressSigner<smithy::AwsSigV4Signer> : std::true_type {};
+
+    template <>
+    struct IsValidS3ExpressSigner<smithy::AwsSigV4aSigner> : std::true_type {};
+}
+
+    //Ensuring S3 Express Signer can use Sigv4 or Sigv4a signing algorithm
+    template <typename BASECLASS>
+    class S3ExpressSignerBase : public std::enable_if<IsValidS3ExpressSigner<BASECLASS>::value, BASECLASS>::type
+    {
+        public:
+        using SigningFutureOutcome = typename BASECLASS::SigningFutureOutcome;
+        using SigningProperties = typename BASECLASS::SigningProperties;
+        using SigningError = typename BASECLASS::SigningError;
+        explicit S3ExpressSignerBase(const Aws::String& serviceName, const Aws::String& region)
+            : BASECLASS(serviceName, region)
+        {
+        }
+
+        explicit S3ExpressSignerBase(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool escapeUrl)
+            : BASECLASS(serviceName, region, policy, escapeUrl)
+        {
+        }
+
+        template <typename... Args>
+        explicit S3ExpressSignerBase(Args&&... args)
+            : BASECLASS(std::forward<Args>(args)...)
+        {
+        }
+
+
+        SigningFutureOutcome sign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const smithy::AwsCredentialIdentityBase& identity, SigningProperties properties) override;
+
+        SigningFutureOutcome presign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const smithy::AwsCredentialIdentityBase& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds) override;
+
+        protected:
+        
+
+        inline bool hasRequestId(const Aws::String &requestId) const {
+            std::lock_guard<std::mutex> lock(m_requestProcessing);
+            return m_requestsProcessing.find(requestId) != m_requestsProcessing.end();
+        }
+
+        inline void putRequestId(const Aws::String &requestId) const {
+            std::lock_guard<std::mutex> lock(m_requestProcessing);
+            m_requestsProcessing.insert(requestId);
+        }
+
+        inline void deleteRequestId(const Aws::String &requestId) const {
+            std::lock_guard<std::mutex> lock(m_requestProcessing);
+            m_requestsProcessing.erase(requestId);
+        }
+
+        mutable std::set<Aws::String> m_requestsProcessing;
+        mutable std::mutex m_requestProcessing;
+    };
+
+    template <typename SIGNER>
+    class SmithyS3ExpressSigner : public smithy::AwsSignerBase<S3ExpressIdentity> {
+
+        public:
+        explicit SmithyS3ExpressSigner(const Aws::String& serviceName, const Aws::String& region)
+        : m_signer(serviceName, region)
+        {
+        }
+
+        explicit SmithyS3ExpressSigner(const Aws::String& serviceName, const Aws::String& region, Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy, bool escapeUrl)
+            : m_signer(serviceName, region, policy, escapeUrl)
+        {
+        }
+
+        SigningFutureOutcome sign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const S3ExpressIdentity& identity, SigningProperties properties)
+        {
+            const smithy::AwsCredentialIdentity identityToUse{identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken(), identity.expiration(), identity.accountId()};
+            return m_signer.sign(httpRequest, identityToUse, properties);
+        }
+
+        SigningFutureOutcome presign(std::shared_ptr<Aws::Http::HttpRequest> httpRequest, const S3ExpressIdentity& identity, SigningProperties properties, const Aws::String& region, const Aws::String& serviceName, long long expirationTimeInSeconds)
+        {
+            const smithy::AwsCredentialIdentity identityToUse{identity.accessKeyId(), identity.secretAccessKey(), identity.sessionToken(), identity.expiration(), identity.accountId()};
+            return m_signer.presign(httpRequest, identityToUse, properties, region, serviceName, expirationTimeInSeconds);
+        }
+
+        private:
+        S3ExpressSignerBase<SIGNER> m_signer;
+    };
+
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigner : public Aws::Client::AWSAuthV4Signer {
+        public:
+            S3ExpressSigner(std::shared_ptr<S3ExpressIdentityProvider> S3ExpressIdentityProvider,
+                const std::shared_ptr<Auth::AWSCredentialsProvider> &credentialsProvider,
+                const Aws::String &serviceName,
+                const Aws::String &region,
+                PayloadSigningPolicy signingPolicy = PayloadSigningPolicy::RequestDependent,
+                bool urlEscapePath = true,
+                Aws::Auth::AWSSigningAlgorithm signingAlgorithm = Aws::Auth::AWSSigningAlgorithm::SIGV4);
+
+            virtual ~S3ExpressSigner() {};
+
+            const char *GetName() const override;
+
+            bool SignRequest(Aws::Http::HttpRequest &request,
+                const char *region,
+                const char *serviceName,
+                bool signBody
+            ) const override;
+
+            bool PresignRequest(Aws::Http::HttpRequest& request,
+                const char* region,
+                const char* serviceName,
+                long long expirationInSeconds
+            ) const override;
+
+            Aws::Auth::AWSCredentials GetCredentials(const std::shared_ptr<Aws::Http::ServiceSpecificParameters> &serviceSpecificParameters) const override;
+
+        protected:
+            bool ServiceRequireUnsignedPayload(const String &serviceName) const override;
+
+        private:
+            inline bool hasRequestId(const Aws::String &requestId) const {
+                std::lock_guard<std::mutex> lock(m_requestProcessing);
+                return m_requestsProcessing.find(requestId) != m_requestsProcessing.end();
+            }
+
+            inline void putRequestId(const Aws::String &requestId) const {
+                std::lock_guard<std::mutex> lock(m_requestProcessing);
+                m_requestsProcessing.insert(requestId);
+            }
+
+            inline void deleteRequestId(const Aws::String &requestId) const {
+                std::lock_guard<std::mutex> lock(m_requestProcessing);
+                m_requestsProcessing.erase(requestId);
+            }
+
+            std::shared_ptr<S3ExpressIdentityProvider> m_S3ExpressIdentityProvider;
+            std::shared_ptr<Auth::AWSCredentialsProvider> m_credentialsProvider;
+            mutable std::set<Aws::String> m_requestsProcessing;
+            mutable std::mutex m_requestProcessing;
+            const Aws::String m_serviceName;
+            const Aws::String m_region;
+            const Aws::String m_endpoint;
+    };
+}
+}

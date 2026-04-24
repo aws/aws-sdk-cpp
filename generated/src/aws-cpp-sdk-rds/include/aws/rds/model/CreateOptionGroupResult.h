@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/OptionGroup.h>
+#include <aws/rds/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace RDS {
+namespace Model {
+class CreateOptionGroupResult {
+ public:
+  AWS_RDS_API CreateOptionGroupResult() = default;
+  AWS_RDS_API CreateOptionGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RDS_API CreateOptionGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+
+  inline const OptionGroup& GetOptionGroup() const { return m_optionGroup; }
+  template <typename OptionGroupT = OptionGroup>
+  void SetOptionGroup(OptionGroupT&& value) {
+    m_optionGroupHasBeenSet = true;
+    m_optionGroup = std::forward<OptionGroupT>(value);
+  }
+  template <typename OptionGroupT = OptionGroup>
+  CreateOptionGroupResult& WithOptionGroup(OptionGroupT&& value) {
+    SetOptionGroup(std::forward<OptionGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  CreateOptionGroupResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  OptionGroup m_optionGroup;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_optionGroupHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

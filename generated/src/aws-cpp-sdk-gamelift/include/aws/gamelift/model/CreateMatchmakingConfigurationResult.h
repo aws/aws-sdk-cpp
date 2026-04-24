@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/model/MatchmakingConfiguration.h>
+
+#include <utility>
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
+class CreateMatchmakingConfigurationResult {
+ public:
+  AWS_GAMELIFT_API CreateMatchmakingConfigurationResult() = default;
+  AWS_GAMELIFT_API CreateMatchmakingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_GAMELIFT_API CreateMatchmakingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+
+  ///@{
+  /**
+   * <p>Object that describes the newly created matchmaking configuration.</p>
+   */
+  inline const MatchmakingConfiguration& GetConfiguration() const { return m_configuration; }
+  template <typename ConfigurationT = MatchmakingConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = MatchmakingConfiguration>
+  CreateMatchmakingConfigurationResult& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateMatchmakingConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  MatchmakingConfiguration m_configuration;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_configurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

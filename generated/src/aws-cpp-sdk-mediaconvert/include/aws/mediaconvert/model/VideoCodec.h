@@ -1,0 +1,38 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class VideoCodec {
+  NOT_SET,
+  AV1,
+  AVC_INTRA,
+  FRAME_CAPTURE,
+  GIF,
+  H_264,
+  H_265,
+  MPEG2,
+  PASSTHROUGH,
+  PRORES,
+  UNCOMPRESSED,
+  VC3,
+  VP8,
+  VP9,
+  XAVC
+};
+
+namespace VideoCodecMapper {
+AWS_MEDIACONVERT_API VideoCodec GetVideoCodecForName(const Aws::String& name);
+
+AWS_MEDIACONVERT_API Aws::String GetNameForVideoCodec(VideoCodec value);
+}  // namespace VideoCodecMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/ListGroupsForEntityFilters.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace WorkMail {
+namespace Model {
+
+ListGroupsForEntityFilters::ListGroupsForEntityFilters(JsonView jsonValue) { *this = jsonValue; }
+
+ListGroupsForEntityFilters& ListGroupsForEntityFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GroupNamePrefix")) {
+    m_groupNamePrefix = jsonValue.GetString("GroupNamePrefix");
+    m_groupNamePrefixHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ListGroupsForEntityFilters::Jsonize() const {
+  JsonValue payload;
+
+  if (m_groupNamePrefixHasBeenSet) {
+    payload.WithString("GroupNamePrefix", m_groupNamePrefix);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace WorkMail
+}  // namespace Aws

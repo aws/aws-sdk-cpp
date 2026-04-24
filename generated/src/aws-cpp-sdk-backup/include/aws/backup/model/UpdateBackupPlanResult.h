@@ -1,0 +1,197 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/backup/Backup_EXPORTS.h>
+#include <aws/backup/model/AdvancedBackupSetting.h>
+#include <aws/backup/model/ScanSetting.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Backup {
+namespace Model {
+class UpdateBackupPlanResult {
+ public:
+  AWS_BACKUP_API UpdateBackupPlanResult() = default;
+  AWS_BACKUP_API UpdateBackupPlanResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BACKUP_API UpdateBackupPlanResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Uniquely identifies a backup plan.</p>
+   */
+  inline const Aws::String& GetBackupPlanId() const { return m_backupPlanId; }
+  template <typename BackupPlanIdT = Aws::String>
+  void SetBackupPlanId(BackupPlanIdT&& value) {
+    m_backupPlanIdHasBeenSet = true;
+    m_backupPlanId = std::forward<BackupPlanIdT>(value);
+  }
+  template <typename BackupPlanIdT = Aws::String>
+  UpdateBackupPlanResult& WithBackupPlanId(BackupPlanIdT&& value) {
+    SetBackupPlanId(std::forward<BackupPlanIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An Amazon Resource Name (ARN) that uniquely identifies a backup plan; for
+   * example,
+   * <code>arn:aws:backup:us-east-1:123456789012:plan:8F81F553-3A74-4A3F-B93D-B3360DC80C50</code>.</p>
+   */
+  inline const Aws::String& GetBackupPlanArn() const { return m_backupPlanArn; }
+  template <typename BackupPlanArnT = Aws::String>
+  void SetBackupPlanArn(BackupPlanArnT&& value) {
+    m_backupPlanArnHasBeenSet = true;
+    m_backupPlanArn = std::forward<BackupPlanArnT>(value);
+  }
+  template <typename BackupPlanArnT = Aws::String>
+  UpdateBackupPlanResult& WithBackupPlanArn(BackupPlanArnT&& value) {
+    SetBackupPlanArn(std::forward<BackupPlanArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The date and time a backup plan is created, in Unix format and Coordinated
+   * Universal Time (UTC). The value of <code>CreationDate</code> is accurate to
+   * milliseconds. For example, the value 1516925490.087 represents Friday, January
+   * 26, 2018 12:11:30.087 AM.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationDate() const { return m_creationDate; }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  void SetCreationDate(CreationDateT&& value) {
+    m_creationDateHasBeenSet = true;
+    m_creationDate = std::forward<CreationDateT>(value);
+  }
+  template <typename CreationDateT = Aws::Utils::DateTime>
+  UpdateBackupPlanResult& WithCreationDate(CreationDateT&& value) {
+    SetCreationDate(std::forward<CreationDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Unique, randomly generated, Unicode, UTF-8 encoded strings that are at most
+   * 1,024 bytes long. Version Ids cannot be edited.</p>
+   */
+  inline const Aws::String& GetVersionId() const { return m_versionId; }
+  template <typename VersionIdT = Aws::String>
+  void SetVersionId(VersionIdT&& value) {
+    m_versionIdHasBeenSet = true;
+    m_versionId = std::forward<VersionIdT>(value);
+  }
+  template <typename VersionIdT = Aws::String>
+  UpdateBackupPlanResult& WithVersionId(VersionIdT&& value) {
+    SetVersionId(std::forward<VersionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains a list of <code>BackupOptions</code> for each resource type.</p>
+   */
+  inline const Aws::Vector<AdvancedBackupSetting>& GetAdvancedBackupSettings() const { return m_advancedBackupSettings; }
+  template <typename AdvancedBackupSettingsT = Aws::Vector<AdvancedBackupSetting>>
+  void SetAdvancedBackupSettings(AdvancedBackupSettingsT&& value) {
+    m_advancedBackupSettingsHasBeenSet = true;
+    m_advancedBackupSettings = std::forward<AdvancedBackupSettingsT>(value);
+  }
+  template <typename AdvancedBackupSettingsT = Aws::Vector<AdvancedBackupSetting>>
+  UpdateBackupPlanResult& WithAdvancedBackupSettings(AdvancedBackupSettingsT&& value) {
+    SetAdvancedBackupSettings(std::forward<AdvancedBackupSettingsT>(value));
+    return *this;
+  }
+  template <typename AdvancedBackupSettingsT = AdvancedBackupSetting>
+  UpdateBackupPlanResult& AddAdvancedBackupSettings(AdvancedBackupSettingsT&& value) {
+    m_advancedBackupSettingsHasBeenSet = true;
+    m_advancedBackupSettings.emplace_back(std::forward<AdvancedBackupSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contains your scanning configuration for the backup plan and includes the
+   * Malware scanner, your selected resources, and scanner role.</p>
+   */
+  inline const Aws::Vector<ScanSetting>& GetScanSettings() const { return m_scanSettings; }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  void SetScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings = std::forward<ScanSettingsT>(value);
+  }
+  template <typename ScanSettingsT = Aws::Vector<ScanSetting>>
+  UpdateBackupPlanResult& WithScanSettings(ScanSettingsT&& value) {
+    SetScanSettings(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  template <typename ScanSettingsT = ScanSetting>
+  UpdateBackupPlanResult& AddScanSettings(ScanSettingsT&& value) {
+    m_scanSettingsHasBeenSet = true;
+    m_scanSettings.emplace_back(std::forward<ScanSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateBackupPlanResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_backupPlanId;
+
+  Aws::String m_backupPlanArn;
+
+  Aws::Utils::DateTime m_creationDate{};
+
+  Aws::String m_versionId;
+
+  Aws::Vector<AdvancedBackupSetting> m_advancedBackupSettings;
+
+  Aws::Vector<ScanSetting> m_scanSettings;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_backupPlanIdHasBeenSet = false;
+  bool m_backupPlanArnHasBeenSet = false;
+  bool m_creationDateHasBeenSet = false;
+  bool m_versionIdHasBeenSet = false;
+  bool m_advancedBackupSettingsHasBeenSet = false;
+  bool m_scanSettingsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Backup
+}  // namespace Aws

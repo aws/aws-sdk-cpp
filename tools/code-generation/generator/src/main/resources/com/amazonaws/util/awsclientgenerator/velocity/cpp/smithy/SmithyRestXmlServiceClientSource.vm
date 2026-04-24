@@ -1,0 +1,96 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/MacroParseOverrideOrDefault.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+\#include <aws/core/utils/Outcome.h>
+\#include <aws/core/auth/AWSAuthSigner.h>
+\#include <aws/core/client/CoreErrors.h>
+\#include <aws/core/client/RetryStrategy.h>
+\#include <aws/core/http/HttpClient.h>
+\#include <aws/core/http/HttpResponse.h>
+\#include <aws/core/http/HttpClientFactory.h>
+\#include <aws/core/auth/AWSCredentialsProviderChain.h>
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/threading/Executor.h>
+\#include <aws/core/utils/DNS.h>
+\#include <aws/core/utils/logging/LogMacros.h>
+#if($serviceModel.endpointRules)
+\#include <aws/core/utils/logging/ErrorMacros.h>
+#end
+\#include <smithy/identity/resolver/built-in/SimpleAwsCredentialIdentityResolver.h>
+\#include <smithy/identity/resolver/built-in/AwsCredentialsProviderIdentityResolver.h>
+\#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientSourceHeaders.vm")
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace ${rootNamespace}::${serviceNamespace};
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Xml;
+using namespace smithy::components::tracing;
+#if($serviceModel.endpointRules)
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+#end
+#if($serviceModel.metadata.namespace == "S3")
+using namespace Aws::Utils;
+#end
+
+
+#if(!${onlyGeneratedOperations})
+namespace Aws
+{
+  namespace ${metadata.namespace}
+  {
+    const char SERVICE_NAME[] = "${metadata.signingName}";
+    const char ALLOCATION_TAG[] = "${className}";
+  }
+}
+const char* ${className}::GetServiceName() {return SERVICE_NAME;}
+const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
+#end
+#set($hostOverrideString = '')
+#if($metadata.globalEndpoint)
+#set($hostOverrideString = ', "' + $metadata.globalEndpoint + '"')
+#end
+
+#if(!${onlyGeneratedOperations})
+#parseOverrideOrDefault( "ServiceClientSourceInit_template" "com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSourceInit.vm")
+
+#if($metadata.findFirstSupportedProtocol() == "query")
+Aws::String ${className}::ConvertRequestToPresignedUrl(const AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const
+{
+  EndpointUpdateCallback endpointCallback = [&](Aws::Endpoint::AWSEndpoint& endpoint){
+    Aws::StringStream ss;
+    ss << "?" << requestToConvert.SerializePayload();
+    endpoint.SetQueryString(ss.str());
+  };
+  return AwsSmithyClientT::GeneratePresignedUrl(std::move(endpointCallback), Aws::Http::HttpMethod::HTTP_GET, region,  GetServiceName(), 3600, {}, {});
+}
+#if($serviceModel.metadata.serviceId == "RDS")
+
+Aws::String ${className}::GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const
+{
+    Aws::StringStream ss;
+    ss << "http://" << dbHostName << ":" << port;
+    URI uri(ss.str());
+    uri.AddQueryStringParameter("Action", "connect");
+    uri.AddQueryStringParameter("DBUser", dbUserName);
+    auto url = AwsLegacyClientT::GeneratePresignedUrl(uri, Aws::Http::HttpMethod::HTTP_GET, dbRegion, "rds-db", 900/*15 minutes*/, {});
+    Aws::Utils::StringUtils::Replace(url, "http://", "");
+
+    return url;
+}
+
+#end
+#end
+#end
+#if($serviceNamespace == "S3Crt")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/SmithyS3CrtSpecificOperations.vm")
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyRestXmlServiceClientOperations.vm")

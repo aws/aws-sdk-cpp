@@ -1,0 +1,118 @@
+#set($arnEndpointSupported = true)
+#set($vpcEndpointSupported = true)
+#if(!$serviceModel.endpointRules)
+#set($AdditionalServiceSpecificConfigLoadString = "LoadS3ControlSpecificConfig(config.profileName);")
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/rest/RestXmlServiceClientSource.vm")
+
+#if(!$onlyGeneratedOperations)
+#if(!$serviceModel.endpointRules)
+static const char S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE[] = "AWS_S3_USE_ARN_REGION";
+static const char S3_USE_ARN_REGION_CONFIG_FILE_OPTION[] = "s3_use_arn_region";
+
+void ${className}::Load${metadata.classNamePrefix}SpecificConfig(const Aws::String& profile)
+{
+  Aws::String s3UseArnRegion = Aws::Environment::GetEnv(S3_USE_ARN_REGION_ENVIRONMENT_VARIABLE);
+  if (s3UseArnRegion.empty())
+  {
+    s3UseArnRegion = Aws::Config::GetCachedConfigValue(profile, S3_USE_ARN_REGION_CONFIG_FILE_OPTION);
+  }
+
+  if (s3UseArnRegion == "true")
+  {
+    m_useArnRegion = true;
+  }
+  else
+  {
+    if (!s3UseArnRegion.empty() && s3UseArnRegion != "false")
+    {
+      AWS_LOGSTREAM_WARN("${className}", "AWS_S3_USE_ARN_REGION in environment variables or s3_use_arn_region in config file"
+                                  << "should either be true of false if specified, otherwise turn off this flag by default.");
+    }
+    m_useArnRegion = false;
+  }
+}
+
+ComputeEndpointOutcome ${className}::ComputeEndpointString(bool hasOutpostId) const
+{
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
+    Aws::StringStream ss;
+    ss << m_scheme << "://";
+    if (hasOutpostId)
+    {
+        if (m_useDualStack)
+        {
+            return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                "S3 Outposts endpoints do not support dualstack right now.", false));
+        }
+        else if (m_useCustomEndpoint)
+        {
+            ss << m_baseUri;
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), "s3-outposts"));
+        }
+        else
+        {
+            ss << ${metadata.classNamePrefix}Endpoint::ForRegion(m_region, m_useDualStack, hasOutpostId);
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), "s3-outposts"));
+        }
+    }
+    else
+    {
+        ss << m_baseUri;
+        return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), Aws::Region::ComputeSignerRegion(m_region), SERVICE_NAME));
+    }
+}
+
+ComputeEndpointOutcome ${className}::ComputeEndpointString(const Aws::String& name, bool hasOutpostId, const Aws::String& uriPathPrefix) const
+{
+    if (m_useDualStack && m_useCustomEndpoint)
+    {
+        return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+            "Dual-stack endpoint is incompatible with a custom endpoint override.", false));
+    }
+
+    Aws::StringStream ss;
+    ss << m_scheme << "://";
+    Aws::String signerRegion = Aws::Region::ComputeSignerRegion(m_region);
+    ${metadata.classNamePrefix}ARN arn(name);
+
+    if (arn)
+    {
+        ${metadata.classNamePrefix}ARNOutcome ${metadata.classNamePrefix}ArnOutcome = m_useArnRegion ? arn.Validate() : arn.Validate(m_region.c_str());
+        if (!${metadata.classNamePrefix}ArnOutcome.IsSuccess())
+        {
+            return ComputeEndpointOutcome(${metadata.classNamePrefix}ArnOutcome.GetError());
+        }
+        signerRegion = m_useArnRegion ? arn.GetRegion() : signerRegion;
+        if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+        {
+            if (m_useDualStack)
+            {
+                return ComputeEndpointOutcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::VALIDATION, "VALIDATION",
+                    "Outposts Access Points do not support dualstack right now.", false));
+            }
+            ss << ${metadata.classNamePrefix}Endpoint::ForOutpostsArn(arn, m_useArnRegion ? "" : m_region, m_useDualStack, m_useCustomEndpoint ? m_baseUri : "");
+            if (!uriPathPrefix.empty())
+            {
+                ss << uriPathPrefix << arn.GetSubResourceId();
+            }
+            return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, "s3-outposts"));
+        }
+    }
+
+    ss << m_baseUri;
+    if (!uriPathPrefix.empty())
+    {
+        ss << uriPathPrefix << name;
+    }
+
+    Aws::String signerServiceName = hasOutpostId ? "s3-outposts" : SERVICE_NAME;
+    return ComputeEndpointOutcome(ComputeEndpointResult(ss.str(), signerRegion, signerServiceName));
+}
+#end
+#end

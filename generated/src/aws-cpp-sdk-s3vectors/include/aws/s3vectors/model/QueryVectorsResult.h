@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/s3vectors/S3Vectors_EXPORTS.h>
+#include <aws/s3vectors/model/DistanceMetric.h>
+#include <aws/s3vectors/model/QueryOutputVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace S3Vectors {
+namespace Model {
+class QueryVectorsResult {
+ public:
+  AWS_S3VECTORS_API QueryVectorsResult() = default;
+  AWS_S3VECTORS_API QueryVectorsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_S3VECTORS_API QueryVectorsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The vectors in the approximate nearest neighbor search.</p>
+   */
+  inline const Aws::Vector<QueryOutputVector>& GetVectors() const { return m_vectors; }
+  template <typename VectorsT = Aws::Vector<QueryOutputVector>>
+  void SetVectors(VectorsT&& value) {
+    m_vectorsHasBeenSet = true;
+    m_vectors = std::forward<VectorsT>(value);
+  }
+  template <typename VectorsT = Aws::Vector<QueryOutputVector>>
+  QueryVectorsResult& WithVectors(VectorsT&& value) {
+    SetVectors(std::forward<VectorsT>(value));
+    return *this;
+  }
+  template <typename VectorsT = QueryOutputVector>
+  QueryVectorsResult& AddVectors(VectorsT&& value) {
+    m_vectorsHasBeenSet = true;
+    m_vectors.emplace_back(std::forward<VectorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The distance metric that was used for the similarity search calculation. This
+   * is the same distance metric that was configured for the vector index when it was
+   * created.</p>
+   */
+  inline DistanceMetric GetDistanceMetric() const { return m_distanceMetric; }
+  inline void SetDistanceMetric(DistanceMetric value) {
+    m_distanceMetricHasBeenSet = true;
+    m_distanceMetric = value;
+  }
+  inline QueryVectorsResult& WithDistanceMetric(DistanceMetric value) {
+    SetDistanceMetric(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  QueryVectorsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<QueryOutputVector> m_vectors;
+
+  DistanceMetric m_distanceMetric{DistanceMetric::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_vectorsHasBeenSet = false;
+  bool m_distanceMetricHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace S3Vectors
+}  // namespace Aws

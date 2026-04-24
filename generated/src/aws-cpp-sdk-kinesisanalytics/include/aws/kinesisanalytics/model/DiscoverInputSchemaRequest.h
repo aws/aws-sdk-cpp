@@ -1,0 +1,152 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kinesisanalytics/KinesisAnalyticsRequest.h>
+#include <aws/kinesisanalytics/KinesisAnalytics_EXPORTS.h>
+#include <aws/kinesisanalytics/model/InputProcessingConfiguration.h>
+#include <aws/kinesisanalytics/model/InputStartingPositionConfiguration.h>
+#include <aws/kinesisanalytics/model/S3Configuration.h>
+
+#include <utility>
+
+namespace Aws {
+namespace KinesisAnalytics {
+namespace Model {
+
+/**
+ */
+class DiscoverInputSchemaRequest : public KinesisAnalyticsRequest {
+ public:
+  AWS_KINESISANALYTICS_API DiscoverInputSchemaRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DiscoverInputSchema"; }
+
+  AWS_KINESISANALYTICS_API Aws::String SerializePayload() const override;
+
+  AWS_KINESISANALYTICS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>Amazon Resource Name (ARN) of the streaming source.</p>
+   */
+  inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+  inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+  template <typename ResourceARNT = Aws::String>
+  void SetResourceARN(ResourceARNT&& value) {
+    m_resourceARNHasBeenSet = true;
+    m_resourceARN = std::forward<ResourceARNT>(value);
+  }
+  template <typename ResourceARNT = Aws::String>
+  DiscoverInputSchemaRequest& WithResourceARN(ResourceARNT&& value) {
+    SetResourceARN(std::forward<ResourceARNT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ARN of the IAM role that Amazon Kinesis Analytics can assume to access the
+   * stream on your behalf.</p>
+   */
+  inline const Aws::String& GetRoleARN() const { return m_roleARN; }
+  inline bool RoleARNHasBeenSet() const { return m_roleARNHasBeenSet; }
+  template <typename RoleARNT = Aws::String>
+  void SetRoleARN(RoleARNT&& value) {
+    m_roleARNHasBeenSet = true;
+    m_roleARN = std::forward<RoleARNT>(value);
+  }
+  template <typename RoleARNT = Aws::String>
+  DiscoverInputSchemaRequest& WithRoleARN(RoleARNT&& value) {
+    SetRoleARN(std::forward<RoleARNT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Point at which you want Amazon Kinesis Analytics to start reading records
+   * from the specified streaming source discovery purposes.</p>
+   */
+  inline const InputStartingPositionConfiguration& GetInputStartingPositionConfiguration() const {
+    return m_inputStartingPositionConfiguration;
+  }
+  inline bool InputStartingPositionConfigurationHasBeenSet() const { return m_inputStartingPositionConfigurationHasBeenSet; }
+  template <typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+  void SetInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) {
+    m_inputStartingPositionConfigurationHasBeenSet = true;
+    m_inputStartingPositionConfiguration = std::forward<InputStartingPositionConfigurationT>(value);
+  }
+  template <typename InputStartingPositionConfigurationT = InputStartingPositionConfiguration>
+  DiscoverInputSchemaRequest& WithInputStartingPositionConfiguration(InputStartingPositionConfigurationT&& value) {
+    SetInputStartingPositionConfiguration(std::forward<InputStartingPositionConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specify this parameter to discover a schema from data in an Amazon S3
+   * object.</p>
+   */
+  inline const S3Configuration& GetS3Configuration() const { return m_s3Configuration; }
+  inline bool S3ConfigurationHasBeenSet() const { return m_s3ConfigurationHasBeenSet; }
+  template <typename S3ConfigurationT = S3Configuration>
+  void SetS3Configuration(S3ConfigurationT&& value) {
+    m_s3ConfigurationHasBeenSet = true;
+    m_s3Configuration = std::forward<S3ConfigurationT>(value);
+  }
+  template <typename S3ConfigurationT = S3Configuration>
+  DiscoverInputSchemaRequest& WithS3Configuration(S3ConfigurationT&& value) {
+    SetS3Configuration(std::forward<S3ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <a
+   * href="https://docs.aws.amazon.com/kinesisanalytics/latest/dev/API_InputProcessingConfiguration.html">InputProcessingConfiguration</a>
+   * to use to preprocess the records before discovering the schema of the
+   * records.</p>
+   */
+  inline const InputProcessingConfiguration& GetInputProcessingConfiguration() const { return m_inputProcessingConfiguration; }
+  inline bool InputProcessingConfigurationHasBeenSet() const { return m_inputProcessingConfigurationHasBeenSet; }
+  template <typename InputProcessingConfigurationT = InputProcessingConfiguration>
+  void SetInputProcessingConfiguration(InputProcessingConfigurationT&& value) {
+    m_inputProcessingConfigurationHasBeenSet = true;
+    m_inputProcessingConfiguration = std::forward<InputProcessingConfigurationT>(value);
+  }
+  template <typename InputProcessingConfigurationT = InputProcessingConfiguration>
+  DiscoverInputSchemaRequest& WithInputProcessingConfiguration(InputProcessingConfigurationT&& value) {
+    SetInputProcessingConfiguration(std::forward<InputProcessingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceARN;
+
+  Aws::String m_roleARN;
+
+  InputStartingPositionConfiguration m_inputStartingPositionConfiguration;
+
+  S3Configuration m_s3Configuration;
+
+  InputProcessingConfiguration m_inputProcessingConfiguration;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_roleARNHasBeenSet = false;
+  bool m_inputStartingPositionConfigurationHasBeenSet = false;
+  bool m_s3ConfigurationHasBeenSet = false;
+  bool m_inputProcessingConfigurationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace KinesisAnalytics
+}  // namespace Aws

@@ -1,0 +1,69 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlDeserializeTemplateMacros/AllXmlDeserializeTemplateMacros.vm")
+#foreach($entry in $shape.members.entrySet())##loop over member in this shape
+#set($listVarName = false)
+#set($listMemberName = false)
+#set($mapVarName = false)
+#if($entry.value.usedForPayload)##is the member something that actually goes into the xml payload
+#if($entry.key != "ResponseMetadata")##don't include responsemetadata member here.
+#set($spaces = '')
+#set($memberName = $entry.key)
+#set($member = $entry.value)
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#if($lowerCaseVarName.equals("result"))
+#set($lowerCaseVarName = "$CppViewHelper.computeVariableName($shape.name)$CppViewHelper.convertToUpperCamel($memberName)")
+#end
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#if($memberName == $shape.payload)##member is the whole payload (not wrapped)
+#if($member.shape.structure)
+    $memberVarName = resultNode;
+    ${CppViewHelper.computeVariableHasBeenSetName($memberName)} = true;
+#break
+#end
+#set($memberIsWholePayload = true)
+#end
+#if($member.shape.list)##member is list
+#deserializeXmlListPayloadElement($memberName $member $memberIsWholePayload $lowerCaseVarName)
+#elseif($member.shape.map)##member is a map
+#deserializeXmlMapPayloadElement($memberName $member $memberIsWholePayload $lowerCaseVarName)
+#else##this is not a map or a list
+#set($substituteString = "Aws::Utils::Xml::DecodeEscapedXmlText(${lowerCaseVarName}Node.GetText())")
+#if($member.locationName)##location specified
+#if($member.xmlAttribute)
+    auto ${lowerCaseVarName} = resultNode.GetAttributeValue("${member.locationName}");
+#set($substituteString = "${lowerCaseVarName}")
+#else
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${member.locationName}");
+#end
+#else##no location specified
+#if($shape.event && $member.eventPayload)
+    XmlNode ${lowerCaseVarName}Node = resultNode;
+#else
+    XmlNode ${lowerCaseVarName}Node = resultNode.FirstChild("${memberName}");
+#end##shape of the member is event
+#end##this is not a map or a list
+#end##member is list
+#if($member.shape.map || $member.shape.list)
+##MOVED TO MACRO
+#elseif($member.shape.enum || $member.shape.blob || $member.shape.primitive || $member.shape.structure || $member.shape.string || $member.shape.timeStamp)
+#set($srcXmlarName = "${lowerCaseVarName}Node")
+#if($member.xmlAttribute)
+#set($srcXmlarName = "${lowerCaseVarName}")
+    if(!${lowerCaseVarName}.empty())
+#else
+    if(!${lowerCaseVarName}Node.IsNull())
+#end
+    {
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+      ${memberVarName} = Aws::MakeShared<$CppViewHelper.computeCppType($member.shape)>("${typeInfo.className}", #deserializeXmlSingleElement($member, $srcXmlarName, "", true));
+#else
+      ${memberVarName} = #deserializeXmlSingleElement($member, $srcXmlarName, "", true);
+#end
+#else
+      static_assert(false, "Codegen failure: unknown type to deserialize XML element: ${memberVarName}:${member}");
+#end
+      $varNameHasBeenSet = true;
+    }
+#end##don't include responsemetadata member here.
+#end##is the member something that actually goes into the xml payload
+#end##loop over member in this shape

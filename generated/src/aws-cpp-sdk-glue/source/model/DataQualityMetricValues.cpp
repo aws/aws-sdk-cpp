@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/DataQualityMetricValues.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Glue {
+namespace Model {
+
+DataQualityMetricValues::DataQualityMetricValues(JsonView jsonValue) { *this = jsonValue; }
+
+DataQualityMetricValues& DataQualityMetricValues::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ActualValue")) {
+    m_actualValue = jsonValue.GetDouble("ActualValue");
+    m_actualValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExpectedValue")) {
+    m_expectedValue = jsonValue.GetDouble("ExpectedValue");
+    m_expectedValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LowerLimit")) {
+    m_lowerLimit = jsonValue.GetDouble("LowerLimit");
+    m_lowerLimitHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UpperLimit")) {
+    m_upperLimit = jsonValue.GetDouble("UpperLimit");
+    m_upperLimitHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DataQualityMetricValues::Jsonize() const {
+  JsonValue payload;
+
+  if (m_actualValueHasBeenSet) {
+    payload.WithDouble("ActualValue", m_actualValue);
+  }
+
+  if (m_expectedValueHasBeenSet) {
+    payload.WithDouble("ExpectedValue", m_expectedValue);
+  }
+
+  if (m_lowerLimitHasBeenSet) {
+    payload.WithDouble("LowerLimit", m_lowerLimit);
+  }
+
+  if (m_upperLimitHasBeenSet) {
+    payload.WithDouble("UpperLimit", m_upperLimit);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/compute-optimizer-automation/ComputeOptimizerAutomation_EXPORTS.h>
+#include <aws/compute-optimizer-automation/model/EstimatedMonthlySavings.h>
+#include <aws/crt/cbor/Cbor.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace ComputeOptimizerAutomation {
+namespace Model {
+
+/**
+ * <p>Aggregate totals for a group of recommended actions, including count and
+ * estimated monthly savings.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-automation-2025-09-22/RecommendedActionTotal">AWS
+ * API Reference</a></p>
+ */
+class RecommendedActionTotal {
+ public:
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal() = default;
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API RecommendedActionTotal& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZERAUTOMATION_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+  ///@{
+  /**
+   * <p>The total number of recommended actions in this group.</p>
+   */
+  inline int64_t GetRecommendedActionCount() const { return m_recommendedActionCount; }
+  inline bool RecommendedActionCountHasBeenSet() const { return m_recommendedActionCountHasBeenSet; }
+  inline void SetRecommendedActionCount(int64_t value) {
+    m_recommendedActionCountHasBeenSet = true;
+    m_recommendedActionCount = value;
+  }
+  inline RecommendedActionTotal& WithRecommendedActionCount(int64_t value) {
+    SetRecommendedActionCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EstimatedMonthlySavings& GetEstimatedMonthlySavings() const { return m_estimatedMonthlySavings; }
+  inline bool EstimatedMonthlySavingsHasBeenSet() const { return m_estimatedMonthlySavingsHasBeenSet; }
+  template <typename EstimatedMonthlySavingsT = EstimatedMonthlySavings>
+  void SetEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) {
+    m_estimatedMonthlySavingsHasBeenSet = true;
+    m_estimatedMonthlySavings = std::forward<EstimatedMonthlySavingsT>(value);
+  }
+  template <typename EstimatedMonthlySavingsT = EstimatedMonthlySavings>
+  RecommendedActionTotal& WithEstimatedMonthlySavings(EstimatedMonthlySavingsT&& value) {
+    SetEstimatedMonthlySavings(std::forward<EstimatedMonthlySavingsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  int64_t m_recommendedActionCount{0};
+
+  EstimatedMonthlySavings m_estimatedMonthlySavings;
+  bool m_recommendedActionCountHasBeenSet = false;
+  bool m_estimatedMonthlySavingsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ComputeOptimizerAutomation
+}  // namespace Aws

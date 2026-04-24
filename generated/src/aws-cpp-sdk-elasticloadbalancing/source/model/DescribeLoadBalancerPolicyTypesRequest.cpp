@@ -1,0 +1,32 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/elasticloadbalancing/model/DescribeLoadBalancerPolicyTypesRequest.h>
+
+using namespace Aws::ElasticLoadBalancing::Model;
+using namespace Aws::Utils;
+
+Aws::String DescribeLoadBalancerPolicyTypesRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=DescribeLoadBalancerPolicyTypes&";
+  if (m_policyTypeNamesHasBeenSet) {
+    if (m_policyTypeNames.empty()) {
+      ss << "PolicyTypeNames=&";
+    } else {
+      unsigned policyTypeNamesCount = 1;
+      for (auto& item : m_policyTypeNames) {
+        ss << "PolicyTypeNames.member." << policyTypeNamesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        policyTypeNamesCount++;
+      }
+    }
+  }
+
+  ss << "Version=2012-06-01";
+  return ss.str();
+}
+
+void DescribeLoadBalancerPolicyTypesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

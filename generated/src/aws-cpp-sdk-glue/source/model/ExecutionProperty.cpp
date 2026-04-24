@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/glue/model/ExecutionProperty.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Glue {
+namespace Model {
+
+ExecutionProperty::ExecutionProperty(JsonView jsonValue) { *this = jsonValue; }
+
+ExecutionProperty& ExecutionProperty::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxConcurrentRuns")) {
+    m_maxConcurrentRuns = jsonValue.GetInteger("MaxConcurrentRuns");
+    m_maxConcurrentRunsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ExecutionProperty::Jsonize() const {
+  JsonValue payload;
+
+  if (m_maxConcurrentRunsHasBeenSet) {
+    payload.WithInteger("MaxConcurrentRuns", m_maxConcurrentRuns);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

@@ -1,0 +1,158 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/pinpoint-email/PinpointEmailClient.h>
+#include <aws/pinpoint-email/PinpointEmailEndpointProvider.h>
+#include <aws/pinpoint-email/PinpointEmailEndpointRules.h>
+#include <aws/pinpoint-email/PinpointEmailErrorMarshaller.h>
+#include <aws/pinpoint-email/PinpointEmailErrors.h>
+#include <aws/pinpoint-email/PinpointEmailRequest.h>
+#include <aws/pinpoint-email/PinpointEmailServiceClientModel.h>
+#include <aws/pinpoint-email/PinpointEmail_EXPORTS.h>
+#include <aws/pinpoint-email/model/BehaviorOnMxFailure.h>
+#include <aws/pinpoint-email/model/BlacklistEntry.h>
+#include <aws/pinpoint-email/model/Body.h>
+#include <aws/pinpoint-email/model/CloudWatchDestination.h>
+#include <aws/pinpoint-email/model/CloudWatchDimensionConfiguration.h>
+#include <aws/pinpoint-email/model/Content.h>
+#include <aws/pinpoint-email/model/CreateConfigurationSetEventDestinationRequest.h>
+#include <aws/pinpoint-email/model/CreateConfigurationSetEventDestinationResult.h>
+#include <aws/pinpoint-email/model/CreateConfigurationSetRequest.h>
+#include <aws/pinpoint-email/model/CreateConfigurationSetResult.h>
+#include <aws/pinpoint-email/model/CreateDedicatedIpPoolRequest.h>
+#include <aws/pinpoint-email/model/CreateDedicatedIpPoolResult.h>
+#include <aws/pinpoint-email/model/CreateDeliverabilityTestReportRequest.h>
+#include <aws/pinpoint-email/model/CreateDeliverabilityTestReportResult.h>
+#include <aws/pinpoint-email/model/CreateEmailIdentityRequest.h>
+#include <aws/pinpoint-email/model/CreateEmailIdentityResult.h>
+#include <aws/pinpoint-email/model/DailyVolume.h>
+#include <aws/pinpoint-email/model/DedicatedIp.h>
+#include <aws/pinpoint-email/model/DeleteConfigurationSetEventDestinationRequest.h>
+#include <aws/pinpoint-email/model/DeleteConfigurationSetEventDestinationResult.h>
+#include <aws/pinpoint-email/model/DeleteConfigurationSetRequest.h>
+#include <aws/pinpoint-email/model/DeleteConfigurationSetResult.h>
+#include <aws/pinpoint-email/model/DeleteDedicatedIpPoolRequest.h>
+#include <aws/pinpoint-email/model/DeleteDedicatedIpPoolResult.h>
+#include <aws/pinpoint-email/model/DeleteEmailIdentityRequest.h>
+#include <aws/pinpoint-email/model/DeleteEmailIdentityResult.h>
+#include <aws/pinpoint-email/model/DeliverabilityDashboardAccountStatus.h>
+#include <aws/pinpoint-email/model/DeliverabilityTestReport.h>
+#include <aws/pinpoint-email/model/DeliverabilityTestStatus.h>
+#include <aws/pinpoint-email/model/DeliveryOptions.h>
+#include <aws/pinpoint-email/model/Destination.h>
+#include <aws/pinpoint-email/model/DimensionValueSource.h>
+#include <aws/pinpoint-email/model/DkimAttributes.h>
+#include <aws/pinpoint-email/model/DkimStatus.h>
+#include <aws/pinpoint-email/model/DomainDeliverabilityCampaign.h>
+#include <aws/pinpoint-email/model/DomainDeliverabilityTrackingOption.h>
+#include <aws/pinpoint-email/model/DomainIspPlacement.h>
+#include <aws/pinpoint-email/model/EmailContent.h>
+#include <aws/pinpoint-email/model/EventDestination.h>
+#include <aws/pinpoint-email/model/EventDestinationDefinition.h>
+#include <aws/pinpoint-email/model/EventType.h>
+#include <aws/pinpoint-email/model/GetAccountRequest.h>
+#include <aws/pinpoint-email/model/GetAccountResult.h>
+#include <aws/pinpoint-email/model/GetBlacklistReportsRequest.h>
+#include <aws/pinpoint-email/model/GetBlacklistReportsResult.h>
+#include <aws/pinpoint-email/model/GetConfigurationSetEventDestinationsRequest.h>
+#include <aws/pinpoint-email/model/GetConfigurationSetEventDestinationsResult.h>
+#include <aws/pinpoint-email/model/GetConfigurationSetRequest.h>
+#include <aws/pinpoint-email/model/GetConfigurationSetResult.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpRequest.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpResult.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpsRequest.h>
+#include <aws/pinpoint-email/model/GetDedicatedIpsResult.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsRequest.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityDashboardOptionsResult.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityTestReportRequest.h>
+#include <aws/pinpoint-email/model/GetDeliverabilityTestReportResult.h>
+#include <aws/pinpoint-email/model/GetDomainDeliverabilityCampaignRequest.h>
+#include <aws/pinpoint-email/model/GetDomainDeliverabilityCampaignResult.h>
+#include <aws/pinpoint-email/model/GetDomainStatisticsReportRequest.h>
+#include <aws/pinpoint-email/model/GetDomainStatisticsReportResult.h>
+#include <aws/pinpoint-email/model/GetEmailIdentityRequest.h>
+#include <aws/pinpoint-email/model/GetEmailIdentityResult.h>
+#include <aws/pinpoint-email/model/IdentityInfo.h>
+#include <aws/pinpoint-email/model/IdentityType.h>
+#include <aws/pinpoint-email/model/InboxPlacementTrackingOption.h>
+#include <aws/pinpoint-email/model/IspPlacement.h>
+#include <aws/pinpoint-email/model/KinesisFirehoseDestination.h>
+#include <aws/pinpoint-email/model/ListConfigurationSetsRequest.h>
+#include <aws/pinpoint-email/model/ListConfigurationSetsResult.h>
+#include <aws/pinpoint-email/model/ListDedicatedIpPoolsRequest.h>
+#include <aws/pinpoint-email/model/ListDedicatedIpPoolsResult.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsRequest.h>
+#include <aws/pinpoint-email/model/ListDeliverabilityTestReportsResult.h>
+#include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsRequest.h>
+#include <aws/pinpoint-email/model/ListDomainDeliverabilityCampaignsResult.h>
+#include <aws/pinpoint-email/model/ListEmailIdentitiesRequest.h>
+#include <aws/pinpoint-email/model/ListEmailIdentitiesResult.h>
+#include <aws/pinpoint-email/model/ListTagsForResourceRequest.h>
+#include <aws/pinpoint-email/model/ListTagsForResourceResult.h>
+#include <aws/pinpoint-email/model/MailFromAttributes.h>
+#include <aws/pinpoint-email/model/MailFromDomainStatus.h>
+#include <aws/pinpoint-email/model/Message.h>
+#include <aws/pinpoint-email/model/MessageTag.h>
+#include <aws/pinpoint-email/model/OverallVolume.h>
+#include <aws/pinpoint-email/model/PinpointDestination.h>
+#include <aws/pinpoint-email/model/PlacementStatistics.h>
+#include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutAccountDedicatedIpWarmupAttributesResult.h>
+#include <aws/pinpoint-email/model/PutAccountSendingAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutAccountSendingAttributesResult.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetDeliveryOptionsRequest.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetDeliveryOptionsResult.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetReputationOptionsRequest.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetReputationOptionsResult.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetSendingOptionsRequest.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetSendingOptionsResult.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetTrackingOptionsRequest.h>
+#include <aws/pinpoint-email/model/PutConfigurationSetTrackingOptionsResult.h>
+#include <aws/pinpoint-email/model/PutDedicatedIpInPoolRequest.h>
+#include <aws/pinpoint-email/model/PutDedicatedIpInPoolResult.h>
+#include <aws/pinpoint-email/model/PutDedicatedIpWarmupAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutDedicatedIpWarmupAttributesResult.h>
+#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionRequest.h>
+#include <aws/pinpoint-email/model/PutDeliverabilityDashboardOptionResult.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityDkimAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityDkimAttributesResult.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityFeedbackAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityFeedbackAttributesResult.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityMailFromAttributesRequest.h>
+#include <aws/pinpoint-email/model/PutEmailIdentityMailFromAttributesResult.h>
+#include <aws/pinpoint-email/model/RawMessage.h>
+#include <aws/pinpoint-email/model/ReputationOptions.h>
+#include <aws/pinpoint-email/model/SendEmailRequest.h>
+#include <aws/pinpoint-email/model/SendEmailResult.h>
+#include <aws/pinpoint-email/model/SendQuota.h>
+#include <aws/pinpoint-email/model/SendingOptions.h>
+#include <aws/pinpoint-email/model/SnsDestination.h>
+#include <aws/pinpoint-email/model/Tag.h>
+#include <aws/pinpoint-email/model/TagResourceRequest.h>
+#include <aws/pinpoint-email/model/TagResourceResult.h>
+#include <aws/pinpoint-email/model/Template.h>
+#include <aws/pinpoint-email/model/TlsPolicy.h>
+#include <aws/pinpoint-email/model/TrackingOptions.h>
+#include <aws/pinpoint-email/model/UntagResourceRequest.h>
+#include <aws/pinpoint-email/model/UntagResourceResult.h>
+#include <aws/pinpoint-email/model/UpdateConfigurationSetEventDestinationRequest.h>
+#include <aws/pinpoint-email/model/UpdateConfigurationSetEventDestinationResult.h>
+#include <aws/pinpoint-email/model/VolumeStatistics.h>
+#include <aws/pinpoint-email/model/WarmupStatus.h>
+
+using PinpointEmailIncludeTest = ::testing::Test;
+
+TEST_F(PinpointEmailIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::PinpointEmail::PinpointEmailClient>("PinpointEmailIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

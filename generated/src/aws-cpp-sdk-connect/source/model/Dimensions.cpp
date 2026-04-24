@@ -1,0 +1,88 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connect/model/Dimensions.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Connect {
+namespace Model {
+
+Dimensions::Dimensions(JsonView jsonValue) { *this = jsonValue; }
+
+Dimensions& Dimensions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Queue")) {
+    m_queue = jsonValue.GetObject("Queue");
+    m_queueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Channel")) {
+    m_channel = ChannelMapper::GetChannelForName(jsonValue.GetString("Channel"));
+    m_channelHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoutingProfile")) {
+    m_routingProfile = jsonValue.GetObject("RoutingProfile");
+    m_routingProfileHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RoutingStepExpression")) {
+    m_routingStepExpression = jsonValue.GetString("RoutingStepExpression");
+    m_routingStepExpressionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AgentStatus")) {
+    m_agentStatus = jsonValue.GetObject("AgentStatus");
+    m_agentStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Subtype")) {
+    m_subtype = jsonValue.GetString("Subtype");
+    m_subtypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ValidationTestType")) {
+    m_validationTestType = jsonValue.GetString("ValidationTestType");
+    m_validationTestTypeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Dimensions::Jsonize() const {
+  JsonValue payload;
+
+  if (m_queueHasBeenSet) {
+    payload.WithObject("Queue", m_queue.Jsonize());
+  }
+
+  if (m_channelHasBeenSet) {
+    payload.WithString("Channel", ChannelMapper::GetNameForChannel(m_channel));
+  }
+
+  if (m_routingProfileHasBeenSet) {
+    payload.WithObject("RoutingProfile", m_routingProfile.Jsonize());
+  }
+
+  if (m_routingStepExpressionHasBeenSet) {
+    payload.WithString("RoutingStepExpression", m_routingStepExpression);
+  }
+
+  if (m_agentStatusHasBeenSet) {
+    payload.WithObject("AgentStatus", m_agentStatus.Jsonize());
+  }
+
+  if (m_subtypeHasBeenSet) {
+    payload.WithString("Subtype", m_subtype);
+  }
+
+  if (m_validationTestTypeHasBeenSet) {
+    payload.WithString("ValidationTestType", m_validationTestType);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

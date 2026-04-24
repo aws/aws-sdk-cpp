@@ -1,0 +1,96 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/compute-optimizer/model/S3Destination.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
+
+#include <utility>
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace ComputeOptimizer {
+namespace Model {
+class ExportEBSVolumeRecommendationsResult {
+ public:
+  AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult() = default;
+  AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_COMPUTEOPTIMIZER_API ExportEBSVolumeRecommendationsResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+
+  ///@{
+  /**
+   * <p>The identification number of the export job.</p> <p>Use the
+   * <a>DescribeRecommendationExportJobs</a> action, and specify the job ID to view
+   * the status of an export job.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  ExportEBSVolumeRecommendationsResult& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const S3Destination& GetS3Destination() const { return m_s3Destination; }
+  template <typename S3DestinationT = S3Destination>
+  void SetS3Destination(S3DestinationT&& value) {
+    m_s3DestinationHasBeenSet = true;
+    m_s3Destination = std::forward<S3DestinationT>(value);
+  }
+  template <typename S3DestinationT = S3Destination>
+  ExportEBSVolumeRecommendationsResult& WithS3Destination(S3DestinationT&& value) {
+    SetS3Destination(std::forward<S3DestinationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ExportEBSVolumeRecommendationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_jobId;
+
+  S3Destination m_s3Destination;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_jobIdHasBeenSet = false;
+  bool m_s3DestinationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

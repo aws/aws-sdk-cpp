@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/xray/XRay_EXPORTS.h>
+#include <aws/xray/model/EncryptionConfig.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace XRay {
+namespace Model {
+class PutEncryptionConfigResult {
+ public:
+  AWS_XRAY_API PutEncryptionConfigResult() = default;
+  AWS_XRAY_API PutEncryptionConfigResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_XRAY_API PutEncryptionConfigResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The new encryption configuration.</p>
+   */
+  inline const EncryptionConfig& GetEncryptionConfig() const { return m_encryptionConfig; }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  void SetEncryptionConfig(EncryptionConfigT&& value) {
+    m_encryptionConfigHasBeenSet = true;
+    m_encryptionConfig = std::forward<EncryptionConfigT>(value);
+  }
+  template <typename EncryptionConfigT = EncryptionConfig>
+  PutEncryptionConfigResult& WithEncryptionConfig(EncryptionConfigT&& value) {
+    SetEncryptionConfig(std::forward<EncryptionConfigT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  PutEncryptionConfigResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  EncryptionConfig m_encryptionConfig;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_encryptionConfigHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

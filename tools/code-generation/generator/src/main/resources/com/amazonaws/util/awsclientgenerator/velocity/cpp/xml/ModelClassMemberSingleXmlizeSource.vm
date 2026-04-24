@@ -1,0 +1,42 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlSerializeTemplateMacros/AllXmlSerializeTemplateMacros.vm")
+#if($member.shape.enum || $member.shape.boolean || $member.shape.primitive || $member.shape.timeStamp || $member.shape.structure || $member.shape.blob)
+#serializeXmlSinglePayloadElement($spaces, $serializationName, $lowerCaseVarName, $member, $memberVarName)
+#elseif($member.shape.string)
+#if($member.xmlAttribute)
+  ${spaces}parentNode.SetAttributeValue("${serializationName}", ${memberVarName});
+#else
+  ${spaces}XmlNode ${lowerCaseVarName}Node = parentNode.CreateChildElement("${serializationName}");
+#if($operation.arnEndpointAllowed && $operation.arnLocation.equals("body") && $operation.arnEndpointMemberName.equals($memberName) && !$serviceModel.endpointRules))
+## TODO: just remove this block once endpoints check can be removed
+  ${spaces}${metadata.classNamePrefix}ARN arn($CppViewHelper.computeMemberVariableName($operation.arnEndpointMemberName));
+  ${spaces}if (arn && arn.Validate().IsSuccess())
+  ${spaces}{
+  ${spaces}  if (arn.GetResourceType() == ARNResourceType::BUCKET)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetResourceId());
+  ${spaces}  }
+  ${spaces}  else if (arn.GetResourceType() == ARNResourceType::OUTPOST)
+  ${spaces}  {
+  ${spaces}    ${lowerCaseVarName}Node.SetText(arn.GetSubResourceId());
+  ${spaces}  }
+  ${spaces}  else
+  ${spaces}  {
+  ${spaces}    // It's a valid ARN, but has incorrect resource type.
+  ${spaces}    assert(false);
+  ${spaces}  }
+  ${spaces}}
+  ${spaces}else
+  ${spaces}{
+  ${spaces}  ${lowerCaseVarName}Node.SetText(${memberVarName});
+  ${spaces}}
+#else
+  ${spaces}${lowerCaseVarName}Node.SetText(${memberVarName});
+#end##$operation.arnEndpointAllowed...
+#end
+#elseif($member.shape.list)
+#serializeXmlListPayloadElement($spaces, $serializationName, $lowerCaseVarName, $member, $memberVarName)
+#elseif($member.shape.map)
+#serializeXmlMapPayloadElement($spaces, $serializationName, $lowerCaseVarName, $member, $memberVarName)
+#else
+!!!! Code generation error: the template does not support this shape under $serializationName serialization to xml: ${member}
+#end##End of member.shape is structure or list

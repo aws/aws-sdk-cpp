@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/Backup.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace FSx {
+namespace Model {
+/**
+ * <p>The response object for the <code>CreateBackup</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/fsx-2018-03-01/CreateBackupResponse">AWS
+ * API Reference</a></p>
+ */
+class CreateBackupResult {
+ public:
+  AWS_FSX_API CreateBackupResult() = default;
+  AWS_FSX_API CreateBackupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_FSX_API CreateBackupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A description of the backup.</p>
+   */
+  inline const Backup& GetBackup() const { return m_backup; }
+  template <typename BackupT = Backup>
+  void SetBackup(BackupT&& value) {
+    m_backupHasBeenSet = true;
+    m_backup = std::forward<BackupT>(value);
+  }
+  template <typename BackupT = Backup>
+  CreateBackupResult& WithBackup(BackupT&& value) {
+    SetBackup(std::forward<BackupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateBackupResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Backup m_backup;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_backupHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

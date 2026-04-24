@@ -1,0 +1,24 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <aws/core/auth/signer-provider/DefaultAuthSignerProvider.h>
+\#include <aws/${metadata.projectName}/S3ExpressIdentityProvider.h>
+
+
+namespace ${rootNamespace} {
+    namespace Auth {
+        class S3ExpressSignerProvider: public DefaultAuthSignerProvider {
+        public:
+            S3ExpressSignerProvider(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                const std::shared_ptr<${serviceNamespace}::S3ExpressIdentityProvider>& S3ExpressIdentityProvider,
+                const ${rootNamespace}::String& serviceName,
+                const ${rootNamespace}::String& region,
+                ${rootNamespace}::Client::AWSAuthV4Signer::PayloadSigningPolicy signingPolicy = ${rootNamespace}::Client::AWSAuthV4Signer::PayloadSigningPolicy::RequestDependent,
+                bool urlEscapePath = true);
+        };
+    }
+}

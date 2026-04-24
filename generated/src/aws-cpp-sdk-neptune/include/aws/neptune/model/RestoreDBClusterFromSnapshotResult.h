@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/neptune/Neptune_EXPORTS.h>
+#include <aws/neptune/model/DBCluster.h>
+#include <aws/neptune/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace Neptune {
+namespace Model {
+class RestoreDBClusterFromSnapshotResult {
+ public:
+  AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult() = default;
+  AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_NEPTUNE_API RestoreDBClusterFromSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+
+  inline const DBCluster& GetDBCluster() const { return m_dBCluster; }
+  template <typename DBClusterT = DBCluster>
+  void SetDBCluster(DBClusterT&& value) {
+    m_dBClusterHasBeenSet = true;
+    m_dBCluster = std::forward<DBClusterT>(value);
+  }
+  template <typename DBClusterT = DBCluster>
+  RestoreDBClusterFromSnapshotResult& WithDBCluster(DBClusterT&& value) {
+    SetDBCluster(std::forward<DBClusterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  RestoreDBClusterFromSnapshotResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  DBCluster m_dBCluster;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dBClusterHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

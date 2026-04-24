@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotfleetwise/model/NetworkFileDefinition.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoTFleetWise {
+namespace Model {
+
+NetworkFileDefinition::NetworkFileDefinition(JsonView jsonValue) { *this = jsonValue; }
+
+NetworkFileDefinition& NetworkFileDefinition::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("canDbc")) {
+    m_canDbc = jsonValue.GetObject("canDbc");
+    m_canDbcHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue NetworkFileDefinition::Jsonize() const {
+  JsonValue payload;
+
+  if (m_canDbcHasBeenSet) {
+    payload.WithObject("canDbc", m_canDbc.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace IoTFleetWise
+}  // namespace Aws

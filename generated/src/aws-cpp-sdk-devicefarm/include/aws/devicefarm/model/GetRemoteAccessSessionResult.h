@@ -1,0 +1,82 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/devicefarm/DeviceFarm_EXPORTS.h>
+#include <aws/devicefarm/model/RemoteAccessSession.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DeviceFarm {
+namespace Model {
+/**
+ * <p>Represents the response from the server that lists detailed information about
+ * the remote access session.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/devicefarm-2015-06-23/GetRemoteAccessSessionResult">AWS
+ * API Reference</a></p>
+ */
+class GetRemoteAccessSessionResult {
+ public:
+  AWS_DEVICEFARM_API GetRemoteAccessSessionResult() = default;
+  AWS_DEVICEFARM_API GetRemoteAccessSessionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DEVICEFARM_API GetRemoteAccessSessionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A container that lists detailed information about the remote access
+   * session.</p>
+   */
+  inline const RemoteAccessSession& GetRemoteAccessSession() const { return m_remoteAccessSession; }
+  template <typename RemoteAccessSessionT = RemoteAccessSession>
+  void SetRemoteAccessSession(RemoteAccessSessionT&& value) {
+    m_remoteAccessSessionHasBeenSet = true;
+    m_remoteAccessSession = std::forward<RemoteAccessSessionT>(value);
+  }
+  template <typename RemoteAccessSessionT = RemoteAccessSession>
+  GetRemoteAccessSessionResult& WithRemoteAccessSession(RemoteAccessSessionT&& value) {
+    SetRemoteAccessSession(std::forward<RemoteAccessSessionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetRemoteAccessSessionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  RemoteAccessSession m_remoteAccessSession;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_remoteAccessSessionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

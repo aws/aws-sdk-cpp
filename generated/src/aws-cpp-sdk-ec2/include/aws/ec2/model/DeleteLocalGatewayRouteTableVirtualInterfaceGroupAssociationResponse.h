@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/LocalGatewayRouteTableVirtualInterfaceGroupAssociation.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse {
+ public:
+  AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse() = default;
+  AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>Information about the association.</p>
+   */
+  inline const LocalGatewayRouteTableVirtualInterfaceGroupAssociation& GetLocalGatewayRouteTableVirtualInterfaceGroupAssociation() const {
+    return m_localGatewayRouteTableVirtualInterfaceGroupAssociation;
+  }
+  template <typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationT = LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+  void SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(LocalGatewayRouteTableVirtualInterfaceGroupAssociationT&& value) {
+    m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = true;
+    m_localGatewayRouteTableVirtualInterfaceGroupAssociation = std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationT>(value);
+  }
+  template <typename LocalGatewayRouteTableVirtualInterfaceGroupAssociationT = LocalGatewayRouteTableVirtualInterfaceGroupAssociation>
+  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithLocalGatewayRouteTableVirtualInterfaceGroupAssociation(
+      LocalGatewayRouteTableVirtualInterfaceGroupAssociationT&& value) {
+    SetLocalGatewayRouteTableVirtualInterfaceGroupAssociation(std::forward<LocalGatewayRouteTableVirtualInterfaceGroupAssociationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DeleteLocalGatewayRouteTableVirtualInterfaceGroupAssociationResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  LocalGatewayRouteTableVirtualInterfaceGroupAssociation m_localGatewayRouteTableVirtualInterfaceGroupAssociation;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_localGatewayRouteTableVirtualInterfaceGroupAssociationHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

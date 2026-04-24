@@ -1,0 +1,148 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/ServiceManagedEc2AutoScalingConfiguration.h>
+#include <aws/deadline/model/ServiceManagedEc2InstanceCapabilities.h>
+#include <aws/deadline/model/ServiceManagedEc2InstanceMarketOptions.h>
+#include <aws/deadline/model/VpcConfiguration.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace deadline {
+namespace Model {
+
+/**
+ * <p>The configuration details for a service managed EC2 fleet.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/ServiceManagedEc2FleetConfiguration">AWS
+ * API Reference</a></p>
+ */
+class ServiceManagedEc2FleetConfiguration {
+ public:
+  AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration() = default;
+  AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEADLINE_API ServiceManagedEc2FleetConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DEADLINE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The instance capabilities for the service managed EC2 fleet.</p>
+   */
+  inline const ServiceManagedEc2InstanceCapabilities& GetInstanceCapabilities() const { return m_instanceCapabilities; }
+  inline bool InstanceCapabilitiesHasBeenSet() const { return m_instanceCapabilitiesHasBeenSet; }
+  template <typename InstanceCapabilitiesT = ServiceManagedEc2InstanceCapabilities>
+  void SetInstanceCapabilities(InstanceCapabilitiesT&& value) {
+    m_instanceCapabilitiesHasBeenSet = true;
+    m_instanceCapabilities = std::forward<InstanceCapabilitiesT>(value);
+  }
+  template <typename InstanceCapabilitiesT = ServiceManagedEc2InstanceCapabilities>
+  ServiceManagedEc2FleetConfiguration& WithInstanceCapabilities(InstanceCapabilitiesT&& value) {
+    SetInstanceCapabilities(std::forward<InstanceCapabilitiesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The instance market options for the service managed EC2 fleet.</p>
+   */
+  inline const ServiceManagedEc2InstanceMarketOptions& GetInstanceMarketOptions() const { return m_instanceMarketOptions; }
+  inline bool InstanceMarketOptionsHasBeenSet() const { return m_instanceMarketOptionsHasBeenSet; }
+  template <typename InstanceMarketOptionsT = ServiceManagedEc2InstanceMarketOptions>
+  void SetInstanceMarketOptions(InstanceMarketOptionsT&& value) {
+    m_instanceMarketOptionsHasBeenSet = true;
+    m_instanceMarketOptions = std::forward<InstanceMarketOptionsT>(value);
+  }
+  template <typename InstanceMarketOptionsT = ServiceManagedEc2InstanceMarketOptions>
+  ServiceManagedEc2FleetConfiguration& WithInstanceMarketOptions(InstanceMarketOptionsT&& value) {
+    SetInstanceMarketOptions(std::forward<InstanceMarketOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The VPC configuration for the service managed EC2 fleet.</p>
+   */
+  inline const VpcConfiguration& GetVpcConfiguration() const { return m_vpcConfiguration; }
+  inline bool VpcConfigurationHasBeenSet() const { return m_vpcConfigurationHasBeenSet; }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  void SetVpcConfiguration(VpcConfigurationT&& value) {
+    m_vpcConfigurationHasBeenSet = true;
+    m_vpcConfiguration = std::forward<VpcConfigurationT>(value);
+  }
+  template <typename VpcConfigurationT = VpcConfiguration>
+  ServiceManagedEc2FleetConfiguration& WithVpcConfiguration(VpcConfigurationT&& value) {
+    SetVpcConfiguration(std::forward<VpcConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The storage profile ID for the service managed EC2 fleet.</p>
+   */
+  inline const Aws::String& GetStorageProfileId() const { return m_storageProfileId; }
+  inline bool StorageProfileIdHasBeenSet() const { return m_storageProfileIdHasBeenSet; }
+  template <typename StorageProfileIdT = Aws::String>
+  void SetStorageProfileId(StorageProfileIdT&& value) {
+    m_storageProfileIdHasBeenSet = true;
+    m_storageProfileId = std::forward<StorageProfileIdT>(value);
+  }
+  template <typename StorageProfileIdT = Aws::String>
+  ServiceManagedEc2FleetConfiguration& WithStorageProfileId(StorageProfileIdT&& value) {
+    SetStorageProfileId(std::forward<StorageProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The auto scaling configuration settings for the service managed EC2
+   * fleet.</p>
+   */
+  inline const ServiceManagedEc2AutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
+  inline bool AutoScalingConfigurationHasBeenSet() const { return m_autoScalingConfigurationHasBeenSet; }
+  template <typename AutoScalingConfigurationT = ServiceManagedEc2AutoScalingConfiguration>
+  void SetAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    m_autoScalingConfigurationHasBeenSet = true;
+    m_autoScalingConfiguration = std::forward<AutoScalingConfigurationT>(value);
+  }
+  template <typename AutoScalingConfigurationT = ServiceManagedEc2AutoScalingConfiguration>
+  ServiceManagedEc2FleetConfiguration& WithAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    SetAutoScalingConfiguration(std::forward<AutoScalingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ServiceManagedEc2InstanceCapabilities m_instanceCapabilities;
+
+  ServiceManagedEc2InstanceMarketOptions m_instanceMarketOptions;
+
+  VpcConfiguration m_vpcConfiguration;
+
+  Aws::String m_storageProfileId;
+
+  ServiceManagedEc2AutoScalingConfiguration m_autoScalingConfiguration;
+  bool m_instanceCapabilitiesHasBeenSet = false;
+  bool m_instanceMarketOptionsHasBeenSet = false;
+  bool m_vpcConfigurationHasBeenSet = false;
+  bool m_storageProfileIdHasBeenSet = false;
+  bool m_autoScalingConfigurationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

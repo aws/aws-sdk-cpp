@@ -1,0 +1,21 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/Waiter.h>
+#include <aws/core/utils/memory/AWSMemory.h>
+#include <aws/securitylake/SecurityLakeClient.h>
+
+#include <algorithm>
+
+namespace Aws {
+namespace SecurityLake {
+
+template <typename DerivedClient = SecurityLakeClient>
+class SecurityLakeWaiter {
+ public:
+};
+}  // namespace SecurityLake
+}  // namespace Aws

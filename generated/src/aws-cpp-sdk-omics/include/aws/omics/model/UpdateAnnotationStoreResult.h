@@ -1,0 +1,235 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/omics/Omics_EXPORTS.h>
+#include <aws/omics/model/ReferenceItem.h>
+#include <aws/omics/model/StoreFormat.h>
+#include <aws/omics/model/StoreOptions.h>
+#include <aws/omics/model/StoreStatus.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Omics {
+namespace Model {
+class UpdateAnnotationStoreResult {
+ public:
+  AWS_OMICS_API UpdateAnnotationStoreResult() = default;
+  AWS_OMICS_API UpdateAnnotationStoreResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_OMICS_API UpdateAnnotationStoreResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The store's ID.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateAnnotationStoreResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The store's genome reference.</p>
+   */
+  inline const ReferenceItem& GetReference() const { return m_reference; }
+  template <typename ReferenceT = ReferenceItem>
+  void SetReference(ReferenceT&& value) {
+    m_referenceHasBeenSet = true;
+    m_reference = std::forward<ReferenceT>(value);
+  }
+  template <typename ReferenceT = ReferenceItem>
+  UpdateAnnotationStoreResult& WithReference(ReferenceT&& value) {
+    SetReference(std::forward<ReferenceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The store's status.</p>
+   */
+  inline StoreStatus GetStatus() const { return m_status; }
+  inline void SetStatus(StoreStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateAnnotationStoreResult& WithStatus(StoreStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The store's name.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateAnnotationStoreResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The store's description.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateAnnotationStoreResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>When the store was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreationTime() const { return m_creationTime; }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  void SetCreationTime(CreationTimeT&& value) {
+    m_creationTimeHasBeenSet = true;
+    m_creationTime = std::forward<CreationTimeT>(value);
+  }
+  template <typename CreationTimeT = Aws::Utils::DateTime>
+  UpdateAnnotationStoreResult& WithCreationTime(CreationTimeT&& value) {
+    SetCreationTime(std::forward<CreationTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>When the store was updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdateTime() const { return m_updateTime; }
+  template <typename UpdateTimeT = Aws::Utils::DateTime>
+  void SetUpdateTime(UpdateTimeT&& value) {
+    m_updateTimeHasBeenSet = true;
+    m_updateTime = std::forward<UpdateTimeT>(value);
+  }
+  template <typename UpdateTimeT = Aws::Utils::DateTime>
+  UpdateAnnotationStoreResult& WithUpdateTime(UpdateTimeT&& value) {
+    SetUpdateTime(std::forward<UpdateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Parsing options for the store.</p>
+   */
+  inline const StoreOptions& GetStoreOptions() const { return m_storeOptions; }
+  template <typename StoreOptionsT = StoreOptions>
+  void SetStoreOptions(StoreOptionsT&& value) {
+    m_storeOptionsHasBeenSet = true;
+    m_storeOptions = std::forward<StoreOptionsT>(value);
+  }
+  template <typename StoreOptionsT = StoreOptions>
+  UpdateAnnotationStoreResult& WithStoreOptions(StoreOptionsT&& value) {
+    SetStoreOptions(std::forward<StoreOptionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The annotation file format of the store.</p>
+   */
+  inline StoreFormat GetStoreFormat() const { return m_storeFormat; }
+  inline void SetStoreFormat(StoreFormat value) {
+    m_storeFormatHasBeenSet = true;
+    m_storeFormat = value;
+  }
+  inline UpdateAnnotationStoreResult& WithStoreFormat(StoreFormat value) {
+    SetStoreFormat(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateAnnotationStoreResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_id;
+
+  ReferenceItem m_reference;
+
+  StoreStatus m_status{StoreStatus::NOT_SET};
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::Utils::DateTime m_creationTime{};
+
+  Aws::Utils::DateTime m_updateTime{};
+
+  StoreOptions m_storeOptions;
+
+  StoreFormat m_storeFormat{StoreFormat::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_idHasBeenSet = false;
+  bool m_referenceHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_creationTimeHasBeenSet = false;
+  bool m_updateTimeHasBeenSet = false;
+  bool m_storeOptionsHasBeenSet = false;
+  bool m_storeFormatHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Omics
+}  // namespace Aws

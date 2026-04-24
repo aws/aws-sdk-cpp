@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/CreatePolicyVersionResult.h>
+
+#include <utility>
+
+using namespace Aws::IAM::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreatePolicyVersionResult::CreatePolicyVersionResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+
+CreatePolicyVersionResult& CreatePolicyVersionResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreatePolicyVersionResult")) {
+    resultNode = rootNode.FirstChild("CreatePolicyVersionResult");
+  }
+
+  if (!resultNode.IsNull()) {
+    XmlNode policyVersionNode = resultNode.FirstChild("PolicyVersion");
+    if (!policyVersionNode.IsNull()) {
+      m_policyVersion = policyVersionNode;
+      m_policyVersionHasBeenSet = true;
+    }
+  }
+
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::CreatePolicyVersionResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  }
+  return *this;
+}

@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/neptune/Neptune_EXPORTS.h>
+#include <aws/neptune/model/DBClusterSnapshotAttributesResult.h>
+#include <aws/neptune/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace Neptune {
+namespace Model {
+class ModifyDBClusterSnapshotAttributeResult {
+ public:
+  AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult() = default;
+  AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_NEPTUNE_API ModifyDBClusterSnapshotAttributeResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+
+  inline const DBClusterSnapshotAttributesResult& GetDBClusterSnapshotAttributesResult() const {
+    return m_dBClusterSnapshotAttributesResult;
+  }
+  template <typename DBClusterSnapshotAttributesResultT = DBClusterSnapshotAttributesResult>
+  void SetDBClusterSnapshotAttributesResult(DBClusterSnapshotAttributesResultT&& value) {
+    m_dBClusterSnapshotAttributesResultHasBeenSet = true;
+    m_dBClusterSnapshotAttributesResult = std::forward<DBClusterSnapshotAttributesResultT>(value);
+  }
+  template <typename DBClusterSnapshotAttributesResultT = DBClusterSnapshotAttributesResult>
+  ModifyDBClusterSnapshotAttributeResult& WithDBClusterSnapshotAttributesResult(DBClusterSnapshotAttributesResultT&& value) {
+    SetDBClusterSnapshotAttributesResult(std::forward<DBClusterSnapshotAttributesResultT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  ModifyDBClusterSnapshotAttributeResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  DBClusterSnapshotAttributesResult m_dBClusterSnapshotAttributesResult;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dBClusterSnapshotAttributesResultHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Neptune
+}  // namespace Aws

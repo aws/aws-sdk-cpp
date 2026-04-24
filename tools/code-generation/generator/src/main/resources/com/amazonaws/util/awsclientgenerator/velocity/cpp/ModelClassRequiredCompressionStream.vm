@@ -1,0 +1,19 @@
+#if($shape.requestCompressionRequired)
+#if($shape.requestCompressionRequiredGzip)
+
+#ifdef ENABLED_ZLIB_REQUEST_COMPRESSION
+Aws::Client::CompressionAlgorithm ${typeInfo.className}::GetSelectedCompressionAlgorithm(Aws::Client::RequestCompressionConfig config) const
+{
+    if (config.useRequestCompression == Aws::Client::UseRequestCompression::DISABLE)
+    {
+        return Aws::Client::CompressionAlgorithm::NONE;
+    }
+    else
+    {
+        return Aws::Client::CompressionAlgorithm::GZIP;
+    }
+}
+#endif
+
+#end
+#end

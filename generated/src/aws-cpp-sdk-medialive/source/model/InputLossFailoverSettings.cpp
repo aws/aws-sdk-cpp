@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/InputLossFailoverSettings.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+
+InputLossFailoverSettings::InputLossFailoverSettings(JsonView jsonValue) { *this = jsonValue; }
+
+InputLossFailoverSettings& InputLossFailoverSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("inputLossThresholdMsec")) {
+    m_inputLossThresholdMsec = jsonValue.GetInteger("inputLossThresholdMsec");
+    m_inputLossThresholdMsecHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue InputLossFailoverSettings::Jsonize() const {
+  JsonValue payload;
+
+  if (m_inputLossThresholdMsecHasBeenSet) {
+    payload.WithInteger("inputLossThresholdMsec", m_inputLossThresholdMsec);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -1,0 +1,62 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/client/AWSError.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/snowball/SnowballErrors.h>
+
+using namespace Aws::Client;
+using namespace Aws::Utils;
+using namespace Aws::Snowball;
+
+namespace Aws {
+namespace Snowball {
+namespace SnowballErrorMapper {
+
+static const int CLUSTER_LIMIT_EXCEEDED_HASH = HashingUtils::HashString("ClusterLimitExceededException");
+static const int CONFLICT_HASH = HashingUtils::HashString("ConflictException");
+static const int INVALID_ADDRESS_HASH = HashingUtils::HashString("InvalidAddressException");
+static const int INVALID_JOB_STATE_HASH = HashingUtils::HashString("InvalidJobStateException");
+static const int K_M_S_REQUEST_FAILED_HASH = HashingUtils::HashString("KMSRequestFailedException");
+static const int EC2_REQUEST_FAILED_HASH = HashingUtils::HashString("Ec2RequestFailedException");
+static const int INVALID_INPUT_COMBINATION_HASH = HashingUtils::HashString("InvalidInputCombinationException");
+static const int UNSUPPORTED_ADDRESS_HASH = HashingUtils::HashString("UnsupportedAddressException");
+static const int INVALID_NEXT_TOKEN_HASH = HashingUtils::HashString("InvalidNextTokenException");
+static const int INVALID_RESOURCE_HASH = HashingUtils::HashString("InvalidResourceException");
+static const int RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH = HashingUtils::HashString("ReturnShippingLabelAlreadyExistsException");
+
+AWSError<CoreErrors> GetErrorForName(const char* errorName) {
+  int hashCode = HashingUtils::HashString(errorName);
+
+  if (hashCode == CLUSTER_LIMIT_EXCEEDED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::CLUSTER_LIMIT_EXCEEDED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == CONFLICT_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::CONFLICT), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_ADDRESS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_ADDRESS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_JOB_STATE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_JOB_STATE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == K_M_S_REQUEST_FAILED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::K_M_S_REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == EC2_REQUEST_FAILED_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::EC2_REQUEST_FAILED), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_INPUT_COMBINATION_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_INPUT_COMBINATION), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == UNSUPPORTED_ADDRESS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::UNSUPPORTED_ADDRESS), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_NEXT_TOKEN_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_NEXT_TOKEN), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == INVALID_RESOURCE_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::INVALID_RESOURCE), RetryableType::NOT_RETRYABLE);
+  } else if (hashCode == RETURN_SHIPPING_LABEL_ALREADY_EXISTS_HASH) {
+    return AWSError<CoreErrors>(static_cast<CoreErrors>(SnowballErrors::RETURN_SHIPPING_LABEL_ALREADY_EXISTS),
+                                RetryableType::NOT_RETRYABLE);
+  }
+  return AWSError<CoreErrors>(CoreErrors::UNKNOWN, false);
+}
+
+}  // namespace SnowballErrorMapper
+}  // namespace Snowball
+}  // namespace Aws

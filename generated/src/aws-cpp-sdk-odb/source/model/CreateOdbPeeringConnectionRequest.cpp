@@ -1,0 +1,68 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/odb/model/CreateOdbPeeringConnectionRequest.h>
+
+#include <utility>
+
+using namespace Aws::odb::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateOdbPeeringConnectionRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_odbNetworkIdHasBeenSet) {
+    payload.WithString("odbNetworkId", m_odbNetworkId);
+  }
+
+  if (m_peerNetworkIdHasBeenSet) {
+    payload.WithString("peerNetworkId", m_peerNetworkId);
+  }
+
+  if (m_displayNameHasBeenSet) {
+    payload.WithString("displayName", m_displayName);
+  }
+
+  if (m_peerNetworkCidrsToBeAddedHasBeenSet) {
+    Aws::Utils::Array<JsonValue> peerNetworkCidrsToBeAddedJsonList(m_peerNetworkCidrsToBeAdded.size());
+    for (unsigned peerNetworkCidrsToBeAddedIndex = 0; peerNetworkCidrsToBeAddedIndex < peerNetworkCidrsToBeAddedJsonList.GetLength();
+         ++peerNetworkCidrsToBeAddedIndex) {
+      peerNetworkCidrsToBeAddedJsonList[peerNetworkCidrsToBeAddedIndex].AsString(
+          m_peerNetworkCidrsToBeAdded[peerNetworkCidrsToBeAddedIndex]);
+    }
+    payload.WithArray("peerNetworkCidrsToBeAdded", std::move(peerNetworkCidrsToBeAddedJsonList));
+  }
+
+  if (m_peerNetworkRouteTableIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> peerNetworkRouteTableIdsJsonList(m_peerNetworkRouteTableIds.size());
+    for (unsigned peerNetworkRouteTableIdsIndex = 0; peerNetworkRouteTableIdsIndex < peerNetworkRouteTableIdsJsonList.GetLength();
+         ++peerNetworkRouteTableIdsIndex) {
+      peerNetworkRouteTableIdsJsonList[peerNetworkRouteTableIdsIndex].AsString(m_peerNetworkRouteTableIds[peerNetworkRouteTableIdsIndex]);
+    }
+    payload.WithArray("peerNetworkRouteTableIds", std::move(peerNetworkRouteTableIdsJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection CreateOdbPeeringConnectionRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Odb.CreateOdbPeeringConnection"));
+  return headers;
+}

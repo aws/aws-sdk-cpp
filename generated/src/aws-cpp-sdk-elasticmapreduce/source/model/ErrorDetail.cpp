@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/elasticmapreduce/model/ErrorDetail.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace EMR {
+namespace Model {
+
+ErrorDetail::ErrorDetail(JsonView jsonValue) { *this = jsonValue; }
+
+ErrorDetail& ErrorDetail::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ErrorCode")) {
+    m_errorCode = jsonValue.GetString("ErrorCode");
+    m_errorCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ErrorData")) {
+    Aws::Utils::Array<JsonView> errorDataJsonList = jsonValue.GetArray("ErrorData");
+    for (unsigned errorDataIndex = 0; errorDataIndex < errorDataJsonList.GetLength(); ++errorDataIndex) {
+      Aws::Map<Aws::String, JsonView> stringMap2JsonMap = errorDataJsonList[errorDataIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> stringMap2Map;
+      for (auto& stringMap2Item : stringMap2JsonMap) {
+        stringMap2Map[stringMap2Item.first] = stringMap2Item.second.AsString();
+      }
+      m_errorData.push_back(std::move(stringMap2Map));
+    }
+    m_errorDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ErrorMessage")) {
+    m_errorMessage = jsonValue.GetString("ErrorMessage");
+    m_errorMessageHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ErrorDetail::Jsonize() const {
+  JsonValue payload;
+
+  if (m_errorCodeHasBeenSet) {
+    payload.WithString("ErrorCode", m_errorCode);
+  }
+
+  if (m_errorDataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> errorDataJsonList(m_errorData.size());
+    for (unsigned errorDataIndex = 0; errorDataIndex < errorDataJsonList.GetLength(); ++errorDataIndex) {
+      JsonValue stringMapJsonMap;
+      for (auto& stringMapItem : m_errorData[errorDataIndex]) {
+        stringMapJsonMap.WithString(stringMapItem.first, stringMapItem.second);
+      }
+      errorDataJsonList[errorDataIndex].AsObject(std::move(stringMapJsonMap));
+    }
+    payload.WithArray("ErrorData", std::move(errorDataJsonList));
+  }
+
+  if (m_errorMessageHasBeenSet) {
+    payload.WithString("ErrorMessage", m_errorMessage);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

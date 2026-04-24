@@ -1,0 +1,52 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/rds/model/ModifyDBClusterSnapshotAttributeRequest.h>
+
+using namespace Aws::RDS::Model;
+using namespace Aws::Utils;
+
+Aws::String ModifyDBClusterSnapshotAttributeRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=ModifyDBClusterSnapshotAttribute&";
+  if (m_dBClusterSnapshotIdentifierHasBeenSet) {
+    ss << "DBClusterSnapshotIdentifier=" << StringUtils::URLEncode(m_dBClusterSnapshotIdentifier.c_str()) << "&";
+  }
+
+  if (m_attributeNameHasBeenSet) {
+    ss << "AttributeName=" << StringUtils::URLEncode(m_attributeName.c_str()) << "&";
+  }
+
+  if (m_valuesToAddHasBeenSet) {
+    if (m_valuesToAdd.empty()) {
+      ss << "ValuesToAdd=&";
+    } else {
+      unsigned valuesToAddCount = 1;
+      for (auto& item : m_valuesToAdd) {
+        ss << "ValuesToAdd.AttributeValue." << valuesToAddCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        valuesToAddCount++;
+      }
+    }
+  }
+
+  if (m_valuesToRemoveHasBeenSet) {
+    if (m_valuesToRemove.empty()) {
+      ss << "ValuesToRemove=&";
+    } else {
+      unsigned valuesToRemoveCount = 1;
+      for (auto& item : m_valuesToRemove) {
+        ss << "ValuesToRemove.AttributeValue." << valuesToRemoveCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        valuesToRemoveCount++;
+      }
+    }
+  }
+
+  ss << "Version=2014-10-31";
+  return ss.str();
+}
+
+void ModifyDBClusterSnapshotAttributeRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

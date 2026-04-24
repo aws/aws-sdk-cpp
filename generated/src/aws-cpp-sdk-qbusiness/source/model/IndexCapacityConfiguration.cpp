@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/IndexCapacityConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+
+IndexCapacityConfiguration::IndexCapacityConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+IndexCapacityConfiguration& IndexCapacityConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("units")) {
+    m_units = jsonValue.GetInteger("units");
+    m_unitsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue IndexCapacityConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_unitsHasBeenSet) {
+    payload.WithInteger("units", m_units);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

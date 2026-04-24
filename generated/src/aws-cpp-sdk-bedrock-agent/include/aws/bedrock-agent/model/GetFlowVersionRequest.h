@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agent/BedrockAgentRequest.h>
+#include <aws/bedrock-agent/BedrockAgent_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace BedrockAgent {
+namespace Model {
+
+/**
+ */
+class GetFlowVersionRequest : public BedrockAgentRequest {
+ public:
+  AWS_BEDROCKAGENT_API GetFlowVersionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetFlowVersion"; }
+
+  AWS_BEDROCKAGENT_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the flow for which to get information.</p>
+   */
+  inline const Aws::String& GetFlowIdentifier() const { return m_flowIdentifier; }
+  inline bool FlowIdentifierHasBeenSet() const { return m_flowIdentifierHasBeenSet; }
+  template <typename FlowIdentifierT = Aws::String>
+  void SetFlowIdentifier(FlowIdentifierT&& value) {
+    m_flowIdentifierHasBeenSet = true;
+    m_flowIdentifier = std::forward<FlowIdentifierT>(value);
+  }
+  template <typename FlowIdentifierT = Aws::String>
+  GetFlowVersionRequest& WithFlowIdentifier(FlowIdentifierT&& value) {
+    SetFlowIdentifier(std::forward<FlowIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version of the flow for which to get information.</p>
+   */
+  inline const Aws::String& GetFlowVersion() const { return m_flowVersion; }
+  inline bool FlowVersionHasBeenSet() const { return m_flowVersionHasBeenSet; }
+  template <typename FlowVersionT = Aws::String>
+  void SetFlowVersion(FlowVersionT&& value) {
+    m_flowVersionHasBeenSet = true;
+    m_flowVersion = std::forward<FlowVersionT>(value);
+  }
+  template <typename FlowVersionT = Aws::String>
+  GetFlowVersionRequest& WithFlowVersion(FlowVersionT&& value) {
+    SetFlowVersion(std::forward<FlowVersionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_flowIdentifier;
+
+  Aws::String m_flowVersion;
+  bool m_flowIdentifierHasBeenSet = false;
+  bool m_flowVersionHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgent
+}  // namespace Aws

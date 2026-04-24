@@ -1,0 +1,97 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
+class CreateImagePipelineResult {
+ public:
+  AWS_IMAGEBUILDER_API CreateImagePipelineResult() = default;
+  AWS_IMAGEBUILDER_API CreateImagePipelineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IMAGEBUILDER_API CreateImagePipelineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The request ID that uniquely identifies this request.</p>
+   */
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateImagePipelineResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The client token that uniquely identifies the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateImagePipelineResult& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the image pipeline that was created by this
+   * request.</p>
+   */
+  inline const Aws::String& GetImagePipelineArn() const { return m_imagePipelineArn; }
+  template <typename ImagePipelineArnT = Aws::String>
+  void SetImagePipelineArn(ImagePipelineArnT&& value) {
+    m_imagePipelineArnHasBeenSet = true;
+    m_imagePipelineArn = std::forward<ImagePipelineArnT>(value);
+  }
+  template <typename ImagePipelineArnT = Aws::String>
+  CreateImagePipelineResult& WithImagePipelineArn(ImagePipelineArnT&& value) {
+    SetImagePipelineArn(std::forward<ImagePipelineArnT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_requestId;
+
+  Aws::String m_clientToken;
+
+  Aws::String m_imagePipelineArn;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_requestIdHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_imagePipelineArnHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

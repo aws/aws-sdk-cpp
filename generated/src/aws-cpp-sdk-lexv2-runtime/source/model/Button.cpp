@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-runtime/model/Button.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace Model {
+
+Button::Button(JsonView jsonValue) { *this = jsonValue; }
+
+Button& Button::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("value")) {
+    m_value = jsonValue.GetString("value");
+    m_valueHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Button::Jsonize() const {
+  JsonValue payload;
+
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
+  }
+
+  if (m_valueHasBeenSet) {
+    payload.WithString("value", m_value);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

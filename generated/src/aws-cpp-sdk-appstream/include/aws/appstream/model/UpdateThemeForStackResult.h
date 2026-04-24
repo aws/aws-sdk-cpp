@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/appstream/AppStream_EXPORTS.h>
+#include <aws/appstream/model/Theme.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppStream {
+namespace Model {
+class UpdateThemeForStackResult {
+ public:
+  AWS_APPSTREAM_API UpdateThemeForStackResult() = default;
+  AWS_APPSTREAM_API UpdateThemeForStackResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPSTREAM_API UpdateThemeForStackResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p> The theme object that contains the metadata of the custom branding.</p>
+   */
+  inline const Theme& GetTheme() const { return m_theme; }
+  template <typename ThemeT = Theme>
+  void SetTheme(ThemeT&& value) {
+    m_themeHasBeenSet = true;
+    m_theme = std::forward<ThemeT>(value);
+  }
+  template <typename ThemeT = Theme>
+  UpdateThemeForStackResult& WithTheme(ThemeT&& value) {
+    SetTheme(std::forward<ThemeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateThemeForStackResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Theme m_theme;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_themeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace AppStream
+}  // namespace Aws

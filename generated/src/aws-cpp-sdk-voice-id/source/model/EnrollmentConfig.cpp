@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/EnrollmentConfig.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+
+EnrollmentConfig::EnrollmentConfig(JsonView jsonValue) { *this = jsonValue; }
+
+EnrollmentConfig& EnrollmentConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExistingEnrollmentAction")) {
+    m_existingEnrollmentAction =
+        ExistingEnrollmentActionMapper::GetExistingEnrollmentActionForName(jsonValue.GetString("ExistingEnrollmentAction"));
+    m_existingEnrollmentActionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FraudDetectionConfig")) {
+    m_fraudDetectionConfig = jsonValue.GetObject("FraudDetectionConfig");
+    m_fraudDetectionConfigHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue EnrollmentConfig::Jsonize() const {
+  JsonValue payload;
+
+  if (m_existingEnrollmentActionHasBeenSet) {
+    payload.WithString("ExistingEnrollmentAction",
+                       ExistingEnrollmentActionMapper::GetNameForExistingEnrollmentAction(m_existingEnrollmentAction));
+  }
+
+  if (m_fraudDetectionConfigHasBeenSet) {
+    payload.WithObject("FraudDetectionConfig", m_fraudDetectionConfig.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

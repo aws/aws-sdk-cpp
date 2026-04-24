@@ -1,0 +1,100 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/AssetItemAdditionalAttributes.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+
+AssetItemAdditionalAttributes::AssetItemAdditionalAttributes(JsonView jsonValue) { *this = jsonValue; }
+
+AssetItemAdditionalAttributes& AssetItemAdditionalAttributes::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("formsOutput")) {
+    Aws::Utils::Array<JsonView> formsOutputJsonList = jsonValue.GetArray("formsOutput");
+    for (unsigned formsOutputIndex = 0; formsOutputIndex < formsOutputJsonList.GetLength(); ++formsOutputIndex) {
+      m_formsOutput.push_back(formsOutputJsonList[formsOutputIndex].AsObject());
+    }
+    m_formsOutputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("readOnlyFormsOutput")) {
+    Aws::Utils::Array<JsonView> readOnlyFormsOutputJsonList = jsonValue.GetArray("readOnlyFormsOutput");
+    for (unsigned readOnlyFormsOutputIndex = 0; readOnlyFormsOutputIndex < readOnlyFormsOutputJsonList.GetLength();
+         ++readOnlyFormsOutputIndex) {
+      m_readOnlyFormsOutput.push_back(readOnlyFormsOutputJsonList[readOnlyFormsOutputIndex].AsObject());
+    }
+    m_readOnlyFormsOutputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("latestTimeSeriesDataPointFormsOutput")) {
+    Aws::Utils::Array<JsonView> latestTimeSeriesDataPointFormsOutputJsonList = jsonValue.GetArray("latestTimeSeriesDataPointFormsOutput");
+    for (unsigned latestTimeSeriesDataPointFormsOutputIndex = 0;
+         latestTimeSeriesDataPointFormsOutputIndex < latestTimeSeriesDataPointFormsOutputJsonList.GetLength();
+         ++latestTimeSeriesDataPointFormsOutputIndex) {
+      m_latestTimeSeriesDataPointFormsOutput.push_back(
+          latestTimeSeriesDataPointFormsOutputJsonList[latestTimeSeriesDataPointFormsOutputIndex].AsObject());
+    }
+    m_latestTimeSeriesDataPointFormsOutputHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("matchRationale")) {
+    Aws::Utils::Array<JsonView> matchRationaleJsonList = jsonValue.GetArray("matchRationale");
+    for (unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex) {
+      m_matchRationale.push_back(matchRationaleJsonList[matchRationaleIndex].AsObject());
+    }
+    m_matchRationaleHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AssetItemAdditionalAttributes::Jsonize() const {
+  JsonValue payload;
+
+  if (m_formsOutputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> formsOutputJsonList(m_formsOutput.size());
+    for (unsigned formsOutputIndex = 0; formsOutputIndex < formsOutputJsonList.GetLength(); ++formsOutputIndex) {
+      formsOutputJsonList[formsOutputIndex].AsObject(m_formsOutput[formsOutputIndex].Jsonize());
+    }
+    payload.WithArray("formsOutput", std::move(formsOutputJsonList));
+  }
+
+  if (m_readOnlyFormsOutputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> readOnlyFormsOutputJsonList(m_readOnlyFormsOutput.size());
+    for (unsigned readOnlyFormsOutputIndex = 0; readOnlyFormsOutputIndex < readOnlyFormsOutputJsonList.GetLength();
+         ++readOnlyFormsOutputIndex) {
+      readOnlyFormsOutputJsonList[readOnlyFormsOutputIndex].AsObject(m_readOnlyFormsOutput[readOnlyFormsOutputIndex].Jsonize());
+    }
+    payload.WithArray("readOnlyFormsOutput", std::move(readOnlyFormsOutputJsonList));
+  }
+
+  if (m_latestTimeSeriesDataPointFormsOutputHasBeenSet) {
+    Aws::Utils::Array<JsonValue> latestTimeSeriesDataPointFormsOutputJsonList(m_latestTimeSeriesDataPointFormsOutput.size());
+    for (unsigned latestTimeSeriesDataPointFormsOutputIndex = 0;
+         latestTimeSeriesDataPointFormsOutputIndex < latestTimeSeriesDataPointFormsOutputJsonList.GetLength();
+         ++latestTimeSeriesDataPointFormsOutputIndex) {
+      latestTimeSeriesDataPointFormsOutputJsonList[latestTimeSeriesDataPointFormsOutputIndex].AsObject(
+          m_latestTimeSeriesDataPointFormsOutput[latestTimeSeriesDataPointFormsOutputIndex].Jsonize());
+    }
+    payload.WithArray("latestTimeSeriesDataPointFormsOutput", std::move(latestTimeSeriesDataPointFormsOutputJsonList));
+  }
+
+  if (m_matchRationaleHasBeenSet) {
+    Aws::Utils::Array<JsonValue> matchRationaleJsonList(m_matchRationale.size());
+    for (unsigned matchRationaleIndex = 0; matchRationaleIndex < matchRationaleJsonList.GetLength(); ++matchRationaleIndex) {
+      matchRationaleJsonList[matchRationaleIndex].AsObject(m_matchRationale[matchRationaleIndex].Jsonize());
+    }
+    payload.WithArray("matchRationale", std::move(matchRationaleJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

@@ -1,0 +1,35 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/GetDataLakeSourcesRequest.h>
+
+#include <utility>
+
+using namespace Aws::SecurityLake::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String GetDataLakeSourcesRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_accountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> accountsJsonList(m_accounts.size());
+    for (unsigned accountsIndex = 0; accountsIndex < accountsJsonList.GetLength(); ++accountsIndex) {
+      accountsJsonList[accountsIndex].AsString(m_accounts[accountsIndex]);
+    }
+    payload.WithArray("accounts", std::move(accountsJsonList));
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    payload.WithInteger("maxResults", m_maxResults);
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
+  }
+
+  return payload.View().WriteReadable();
+}

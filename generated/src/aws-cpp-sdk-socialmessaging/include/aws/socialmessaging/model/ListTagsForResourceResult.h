@@ -1,0 +1,100 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/socialmessaging/SocialMessaging_EXPORTS.h>
+#include <aws/socialmessaging/model/Tag.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SocialMessaging {
+namespace Model {
+class ListTagsForResourceResult {
+ public:
+  AWS_SOCIALMESSAGING_API ListTagsForResourceResult() = default;
+  AWS_SOCIALMESSAGING_API ListTagsForResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SOCIALMESSAGING_API ListTagsForResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The status code of the response.</p>
+   */
+  inline int GetStatusCode() const { return m_statusCode; }
+  inline void SetStatusCode(int value) {
+    m_statusCodeHasBeenSet = true;
+    m_statusCode = value;
+  }
+  inline ListTagsForResourceResult& WithStatusCode(int value) {
+    SetStatusCode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The tags for the resource.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  ListTagsForResourceResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  ListTagsForResourceResult& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListTagsForResourceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  int m_statusCode{0};
+
+  Aws::Vector<Tag> m_tags;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_statusCodeHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SocialMessaging
+}  // namespace Aws

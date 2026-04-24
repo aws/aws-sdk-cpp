@@ -1,0 +1,126 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/CloudWatchEvents_EXPORTS.h>
+#include <aws/events/model/ConnectionHttpParameters.h>
+#include <aws/events/model/ConnectionOAuthHttpMethod.h>
+#include <aws/events/model/CreateConnectionOAuthClientRequestParameters.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CloudWatchEvents {
+namespace Model {
+
+/**
+ * <p>Contains the OAuth authorization parameters to use for the
+ * connection.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/events-2015-10-07/CreateConnectionOAuthRequestParameters">AWS
+ * API Reference</a></p>
+ */
+class CreateConnectionOAuthRequestParameters {
+ public:
+  AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthRequestParameters() = default;
+  AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthRequestParameters(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLOUDWATCHEVENTS_API CreateConnectionOAuthRequestParameters& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CLOUDWATCHEVENTS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>A <code>CreateConnectionOAuthClientRequestParameters</code> object that
+   * contains the client parameters for OAuth authorization.</p>
+   */
+  inline const CreateConnectionOAuthClientRequestParameters& GetClientParameters() const { return m_clientParameters; }
+  inline bool ClientParametersHasBeenSet() const { return m_clientParametersHasBeenSet; }
+  template <typename ClientParametersT = CreateConnectionOAuthClientRequestParameters>
+  void SetClientParameters(ClientParametersT&& value) {
+    m_clientParametersHasBeenSet = true;
+    m_clientParameters = std::forward<ClientParametersT>(value);
+  }
+  template <typename ClientParametersT = CreateConnectionOAuthClientRequestParameters>
+  CreateConnectionOAuthRequestParameters& WithClientParameters(ClientParametersT&& value) {
+    SetClientParameters(std::forward<ClientParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The URL to the authorization endpoint when OAuth is specified as the
+   * authorization type.</p>
+   */
+  inline const Aws::String& GetAuthorizationEndpoint() const { return m_authorizationEndpoint; }
+  inline bool AuthorizationEndpointHasBeenSet() const { return m_authorizationEndpointHasBeenSet; }
+  template <typename AuthorizationEndpointT = Aws::String>
+  void SetAuthorizationEndpoint(AuthorizationEndpointT&& value) {
+    m_authorizationEndpointHasBeenSet = true;
+    m_authorizationEndpoint = std::forward<AuthorizationEndpointT>(value);
+  }
+  template <typename AuthorizationEndpointT = Aws::String>
+  CreateConnectionOAuthRequestParameters& WithAuthorizationEndpoint(AuthorizationEndpointT&& value) {
+    SetAuthorizationEndpoint(std::forward<AuthorizationEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The method to use for the authorization request.</p>
+   */
+  inline ConnectionOAuthHttpMethod GetHttpMethod() const { return m_httpMethod; }
+  inline bool HttpMethodHasBeenSet() const { return m_httpMethodHasBeenSet; }
+  inline void SetHttpMethod(ConnectionOAuthHttpMethod value) {
+    m_httpMethodHasBeenSet = true;
+    m_httpMethod = value;
+  }
+  inline CreateConnectionOAuthRequestParameters& WithHttpMethod(ConnectionOAuthHttpMethod value) {
+    SetHttpMethod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A <code>ConnectionHttpParameters</code> object that contains details about
+   * the additional parameters to use for the connection.</p>
+   */
+  inline const ConnectionHttpParameters& GetOAuthHttpParameters() const { return m_oAuthHttpParameters; }
+  inline bool OAuthHttpParametersHasBeenSet() const { return m_oAuthHttpParametersHasBeenSet; }
+  template <typename OAuthHttpParametersT = ConnectionHttpParameters>
+  void SetOAuthHttpParameters(OAuthHttpParametersT&& value) {
+    m_oAuthHttpParametersHasBeenSet = true;
+    m_oAuthHttpParameters = std::forward<OAuthHttpParametersT>(value);
+  }
+  template <typename OAuthHttpParametersT = ConnectionHttpParameters>
+  CreateConnectionOAuthRequestParameters& WithOAuthHttpParameters(OAuthHttpParametersT&& value) {
+    SetOAuthHttpParameters(std::forward<OAuthHttpParametersT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  CreateConnectionOAuthClientRequestParameters m_clientParameters;
+
+  Aws::String m_authorizationEndpoint;
+
+  ConnectionOAuthHttpMethod m_httpMethod{ConnectionOAuthHttpMethod::NOT_SET};
+
+  ConnectionHttpParameters m_oAuthHttpParameters;
+  bool m_clientParametersHasBeenSet = false;
+  bool m_authorizationEndpointHasBeenSet = false;
+  bool m_httpMethodHasBeenSet = false;
+  bool m_oAuthHttpParametersHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

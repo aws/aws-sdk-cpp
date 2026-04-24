@@ -1,0 +1,43 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/CreateSubscriptionGrantRequest.h>
+
+#include <utility>
+
+using namespace Aws::DataZone::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateSubscriptionGrantRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_environmentIdentifierHasBeenSet) {
+    payload.WithString("environmentIdentifier", m_environmentIdentifier);
+  }
+
+  if (m_subscriptionTargetIdentifierHasBeenSet) {
+    payload.WithString("subscriptionTargetIdentifier", m_subscriptionTargetIdentifier);
+  }
+
+  if (m_grantedEntityHasBeenSet) {
+    payload.WithObject("grantedEntity", m_grantedEntity.Jsonize());
+  }
+
+  if (m_assetTargetNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> assetTargetNamesJsonList(m_assetTargetNames.size());
+    for (unsigned assetTargetNamesIndex = 0; assetTargetNamesIndex < assetTargetNamesJsonList.GetLength(); ++assetTargetNamesIndex) {
+      assetTargetNamesJsonList[assetTargetNamesIndex].AsObject(m_assetTargetNames[assetTargetNamesIndex].Jsonize());
+    }
+    payload.WithArray("assetTargetNames", std::move(assetTargetNamesJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  return payload.View().WriteReadable();
+}

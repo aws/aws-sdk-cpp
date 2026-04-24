@@ -1,0 +1,226 @@
+#if(!$serviceModel.endpointRules)
+#set($startIndex = 0)
+#set($skipFirst = false)
+#if($virtualAddressingSupported || $arnEndpointSupported)
+#if($operation.hasOutpostIdMember)
+#set($outpostIdParam = "request.${CppViewHelper.convertToUpperCamel($operation.outpostIdMemberName)}HasBeenSet()")
+#else
+#set($outpostIdParam = "false")
+#end
+#if($operation.arnLocation.equals("uri"))
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriPartString = ${uriParts.get($startIndex)})
+#else
+#set($uriPartString = "")
+#end
+#if($operation.virtualAddressAllowed)
+      ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.virtualAddressMemberName)}());
+#set($startIndex = 1)
+#set($skipFirst = true)
+#elseif($operation.arnEndpointAllowed)
+      ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}(), $outpostIdParam, "$uriPartString");
+#if($operation.arnLocation.equals("uri"))
+#set($startIndex = 1)
+#set($skipFirst = true)
+#end
+#elseif($operation.hasOutpostIdMember)
+      ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString($outpostIdParam);
+#elseif($operation.requiresServiceNameOverride)
+      ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointStringWithServiceName("$operation.serviceNameOverride");
+#else
+      ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+#end
+      if (!computeEndpointOutcome.IsSuccess())
+      {
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
+#if($operation.request)
+          return handler(this, request, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
+#else
+          return handler(this, ${operation.name}Outcome(computeEndpointOutcome.GetError()), handlerContext);
+#end
+#else
+          return ${operation.name}Outcome(computeEndpointOutcome.GetError());
+#end
+      }
+      Aws::Http::URI uri = computeEndpointOutcome.GetResult().endpoint;
+#else
+#if($metadata.hasEndpointTrait)
+      Aws::Http::URI uri = m_scheme + "://" + m_baseUri;
+#else
+      Aws::Http::URI uri = m_uri;
+#end
+#end
+#if($operation.hasEndpointDiscoveryTrait)
+      if (m_enableEndpointDiscovery)
+      {
+#set($hasId=false)
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+#set($hasId=true)
+#break
+#end
+#end
+#if($hasId)
+          Aws::String endpointKey = "${operation.name}.";
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+          endpointKey += "${memberEntry.key}:" + request.Get${memberEntry.key}() + ".";
+#end
+#end
+#else
+          Aws::String endpointKey = "Shared";
+#end
+          Aws::String endpoint;
+          if (m_endpointsCache.Get(endpointKey, endpoint))
+          {
+              AWS_LOGSTREAM_TRACE("${operation.name}", "Making request to cached endpoint: " << endpoint);
+              uri = m_configScheme + "://" + endpoint;
+          }
+          else
+          {
+              AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoint discovery is enabled and there is no usable endpoint in cache. Discovering endpoints from service...");
+              ${metadata.endpointOperationName}Request endpointRequest;
+#if($hasId)
+              endpointRequest.WithOperation("${operation.name}");
+#end
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.endpointDiscoveryId)
+              endpointRequest.AddIdentifiers("${memberEntry.key}", request.Get${memberEntry.key}());
+#end
+#end
+              auto endpointOutcome = ${metadata.endpointOperationName}(endpointRequest);
+              if (endpointOutcome.IsSuccess() && !endpointOutcome.GetResult().GetEndpoints().empty())
+              {
+                  const auto& item = endpointOutcome.GetResult().GetEndpoints()[0];
+                  m_endpointsCache.Put(endpointKey, item.GetAddress(), std::chrono::minutes(item.GetCachePeriodInMinutes()));
+                  uri = m_configScheme + "://" + item.GetAddress();
+                  AWS_LOGSTREAM_TRACE("${operation.name}", "Endpoints cache updated. Address: " << item.GetAddress() << ". Valid in: " << item.GetCachePeriodInMinutes() << " minutes. Making request to newly discovered endpoint.");
+              }
+              else
+              {
+#if($operation.requireEndpointDiscovery)
+                  AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError());
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
+#if($operation.request)
+                  return handler(this, request,
+                      ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+                      handlerContext);
+#else
+                  return handler(this,
+                      ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false)),
+                      handlerContext);
+#end
+#else
+                  return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::RESOURCE_NOT_FOUND, "INVALID_ENDPOINT", "Failed to discover endpoint", false));
+#end
+#else
+                      AWS_LOGSTREAM_ERROR("${operation.name}", "Failed to discover endpoints " << endpointOutcome.GetError() << "\n Endpoint discovery is not required for this operation, falling back to the regional endpoint.");
+#end
+              }
+          }
+      }
+#if($operation.requireEndpointDiscovery)
+      else
+      {
+          Aws::String errorMessage = R"(Unable to perform "${operation.name}" without endpoint discovery. )"
+              R"(Make sure your environment variable "AWS_ENABLE_ENDPOINT_DISCOVERY", )"
+              R"(your config file's variable "endpoint_discovery_enabled" and )"
+              R"(ClientConfiguration's "enableEndpointDiscovery" are explicitly set to true or not set at all.)";
+          return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_ACTION, "INVALID_ACTION", errorMessage, false));
+      }
+#end
+#end
+#if($operation.hasEndpointTrait)
+#if($operation.arnEndpointAllowed)
+#set($arnInRequestParameters=" && !${metadata.classNamePrefix}ARN(request.Get${CppViewHelper.convertToUpperCamel($operation.arnEndpointMemberName)}())")
+#else
+#set($arnInRequestParameters="")
+#end
+      if (m_enableHostPrefixInjection${arnInRequestParameters})
+      {
+#foreach($member in $operation.endpoint.getMemberReferences())
+          if (request.Get${member}().empty())
+          {
+              AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${member}, is empty");
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
+#if($operation.request)
+              return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), handlerContext);
+#else
+              return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false)), handlerContext);
+#end
+#else
+              return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host prefix field is empty", false));
+#end
+          }
+#end
+          uri.SetAuthority(${operation.endpoint.constructHostPrefixString("request")} + uri.GetAuthority());
+          if (!Aws::Utils::IsValidHost(uri.GetAuthority()))
+          {
+              AWS_LOGSTREAM_ERROR("${operation.name}", "Invalid DNS host: " << uri.GetAuthority());
+#if($serviceNamespace == "S3Crt" && $operation.s3CrtEnabled)
+#if($operation.request)
+              return handler(this, request, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), handlerContext);
+#else
+              return handler(this, ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false)), handlerContext);
+#end
+#else
+              return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "Host is invalid", false));
+#end
+          }
+      }
+#end
+#end##-#if(!$serviceModel.endpointRules)
+#if($serviceModel.endpointRules)
+#if($operation.arnEndpointAllowed && $operation.hasAccountIdMember)
+#set($accountIdMemberWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($operation.accountIdMemberName))
+      if (request.Get${accountIdMemberWithFirstLetterCapitalized}().size() != 12 || request.Get${accountIdMemberWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
+      {
+          AWS_LOGSTREAM_ERROR("${operation.name}", "HostPrefix required field: ${accountIdMemberWithFirstLetterCapitalized} has invalid value");
+          return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${accountIdMemberWithFirstLetterCapitalized} is invalid", false));
+      }
+#else
+#foreach($memberEntry in $operation.request.shape.members.entrySet())
+#if($memberEntry.value.validationNeeded && !$memberEntry.value.streaming && !$memberEntry.value.usedForPayload && $memberEntry.key.equalsIgnoreCase("AccountId"))
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($memberEntry.key))
+      if (request.Get${memberKeyWithFirstLetterCapitalized}().size() != 12 || request.Get${memberKeyWithFirstLetterCapitalized}().find_first_not_of("0123456789") != Aws::String::npos)
+      {
+          AWS_LOGSTREAM_ERROR("${operation.name}", "Required field: ${memberKeyWithFirstLetterCapitalized} has invalid value");
+          return ${operation.name}Outcome(Aws::Client::AWSError<${metadata.classNamePrefix}Errors>(${metadata.classNamePrefix}Errors::INVALID_PARAMETER_VALUE, "INVALID_PARAMETER", "${memberKeyWithFirstLetterCapitalized} is invalid", false));
+      }
+#end
+#end
+#end
+#if($serviceModel.metadata.serviceId == "EC2")
+#set($presignSpelling = "PresignedUrl")
+#set($shouldGenerateUrl = "request.SourceRegionHasBeenSet()")
+#else
+#set($presignSpelling = "PreSignedUrl")
+#set($shouldGenerateUrl = "request.SourceRegionHasBeenSet() && !request.${presignSpelling}HasBeenSet()")
+#end
+#if($operation.hasPreSignedUrl)
+  ${operation.request.shape.name} newRequest = request;
+      if (${shouldGenerateUrl})
+      {
+          Aws::Endpoint::EndpointParameters endpointParameters;
+#if($operation.staticContextParams)
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+          parameters.emplace_back(Aws::String("${staticParamPair.key}"), ${staticParamPair.value.get("value").getValue()});
+#end
+#end
+          endpointParameters.emplace_back(Aws::Endpoint::EndpointParameter("Region", request.GetSourceRegion()));
+          ResolveEndpointOutcome presignedEndpointResolutionOutcome = m_endpointProvider->ResolveEndpoint(endpointParameters);
+          AWS_OPERATION_CHECK_SUCCESS(presignedEndpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, presignedEndpointResolutionOutcome.GetError().GetMessage());
+          newRequest.Set${presignSpelling}(GeneratePresignedUrl(request, presignedEndpointResolutionOutcome.GetResult().GetURI(),
+                                                  Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(),
+                                                  {{ "DestinationRegion", m_region }}, 3600));
+      }
+#end##-#if($operation.hasPreSignedUrl)
+#else##-#if($serviceModel.endpointRules)
+  ${operation.request.shape.name} newRequest = request;
+      if (${shouldGenerateUrl})
+      {
+          Aws::Http::URI sourceUri(m_configScheme + "://" + ${metadata.classNamePrefix}Endpoint::ForRegion(request.GetSourceRegion(), m_useDualStack));
+          newRequest.Set${presignSpelling}(GeneratePresignedUrl(request, sourceUri, Aws::Http::HttpMethod::HTTP_GET, request.GetSourceRegion().c_str(), {{ "DestinationRegion", m_region }}, 3600));
+      }
+#end##-#if($serviceModel.endpointRules)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointDiscoveryWithRules.vm")

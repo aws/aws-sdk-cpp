@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSM {
+namespace Model {
+class DeleteMaintenanceWindowResult {
+ public:
+  AWS_SSM_API DeleteMaintenanceWindowResult() = default;
+  AWS_SSM_API DeleteMaintenanceWindowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSM_API DeleteMaintenanceWindowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ID of the deleted maintenance window.</p>
+   */
+  inline const Aws::String& GetWindowId() const { return m_windowId; }
+  template <typename WindowIdT = Aws::String>
+  void SetWindowId(WindowIdT&& value) {
+    m_windowIdHasBeenSet = true;
+    m_windowId = std::forward<WindowIdT>(value);
+  }
+  template <typename WindowIdT = Aws::String>
+  DeleteMaintenanceWindowResult& WithWindowId(WindowIdT&& value) {
+    SetWindowId(std::forward<WindowIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteMaintenanceWindowResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_windowId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_windowIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

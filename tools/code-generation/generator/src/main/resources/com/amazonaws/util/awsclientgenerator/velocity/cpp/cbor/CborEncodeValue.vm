@@ -1,0 +1,69 @@
+#if($shapeMember.enum)
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(${shapeMember.name}Mapper::GetNameFor${shapeMember.name}(${value}).c_str()));
+#elseif($shapeMember.list)
+encoder.WriteArrayStart(${value}.size());
+for(const auto& item_${recursionDepth} : ${value}) {
+#if($shapeMember.sparse)
+    if (!item_${recursionDepth}.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseItem_${recursionDepth} = *item_${recursionDepth};
+#set($value = "sparseItem_${recursionDepth}")
+#set($shapeMember = $shapeMember.listMember.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+    }
+#else
+#set($value = "item_${recursionDepth}")
+#set($shapeMember = $shapeMember.listMember.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+#end
+}
+#elseif($shapeMember.map)
+encoder.WriteMapStart(${value}.size());
+for(const auto& item_${recursionDepth} : ${value}) {
+#if($shapeMember.mapKey.shape.enum)
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(${shapeMember.mapKey.shape.name}Mapper::GetNameFor${shapeMember.mapKey.shape.name}(item_${recursionDepth}.first).c_str()));
+#else
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString(item_${recursionDepth}.first.c_str()));
+#end
+#if($shapeMember.sparse)
+    if (!item_${recursionDepth}.second.has_value()) { encoder.WriteNull(); } else {
+    const auto& sparseVal_${recursionDepth} = *item_${recursionDepth}.second;
+#set($value = "sparseVal_${recursionDepth}")
+#set($shapeMember = $shapeMember.mapValue.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+    }
+#else
+#set($value = "item_${recursionDepth}.second")
+#set($shapeMember = $shapeMember.mapValue.shape)
+#set($recursionDepth = $recursionDepth + 1)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#set($recursionDepth = $recursionDepth - 1)
+#end
+}
+#elseif($shapeMember.blob)
+encoder.WriteBytes(Aws::Crt::ByteCursorFromCString(reinterpret_cast<const char*>(${value}.GetUnderlyingData())));
+#elseif($shapeMember.string)
+encoder.WriteText(Aws::Crt::ByteCursorFromCString(${value}.c_str()));
+#elseif($shapeMember.boolean)
+encoder.WriteBool(${value});
+#elseif($shapeMember.double)
+encoder.WriteFloat(${value});
+#elseif($shapeMember.float)
+encoder.WriteFloat(${value});
+#elseif($shapeMember.structure)
+    #if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName()) ##pointer or not
+        ${value}->CborEncode(encoder);
+    #else
+        ${value}.CborEncode(encoder);
+    #end
+#elseif($shapeMember.timeStamp)
+encoder.WriteTag(1); //1 represents Epoch-based date/time. See https://www.rfc-editor.org/rfc/rfc8949.html#tags
+encoder.WriteUInt(${value}.Seconds());
+#else
+(${value} >= 0) ? encoder.WriteUInt(${value}) : encoder.WriteNegInt(${value});
+#end

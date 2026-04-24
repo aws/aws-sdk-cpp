@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ListContactsFilter.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+
+ListContactsFilter::ListContactsFilter(JsonView jsonValue) { *this = jsonValue; }
+
+ListContactsFilter& ListContactsFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FilteredStatus")) {
+    m_filteredStatus = SubscriptionStatusMapper::GetSubscriptionStatusForName(jsonValue.GetString("FilteredStatus"));
+    m_filteredStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TopicFilter")) {
+    m_topicFilter = jsonValue.GetObject("TopicFilter");
+    m_topicFilterHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ListContactsFilter::Jsonize() const {
+  JsonValue payload;
+
+  if (m_filteredStatusHasBeenSet) {
+    payload.WithString("FilteredStatus", SubscriptionStatusMapper::GetNameForSubscriptionStatus(m_filteredStatus));
+  }
+
+  if (m_topicFilterHasBeenSet) {
+    payload.WithObject("TopicFilter", m_topicFilter.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

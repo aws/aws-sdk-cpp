@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
+#include <aws/gamelift/model/GameServer.h>
+
+#include <utility>
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
+class ClaimGameServerResult {
+ public:
+  AWS_GAMELIFT_API ClaimGameServerResult() = default;
+  AWS_GAMELIFT_API ClaimGameServerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_GAMELIFT_API ClaimGameServerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+
+  ///@{
+  /**
+   * <p>Object that describes the newly claimed game server.</p>
+   */
+  inline const GameServer& GetGameServer() const { return m_gameServer; }
+  template <typename GameServerT = GameServer>
+  void SetGameServer(GameServerT&& value) {
+    m_gameServerHasBeenSet = true;
+    m_gameServer = std::forward<GameServerT>(value);
+  }
+  template <typename GameServerT = GameServer>
+  ClaimGameServerResult& WithGameServer(GameServerT&& value) {
+    SetGameServer(std::forward<GameServerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ClaimGameServerResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  GameServer m_gameServer;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_gameServerHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

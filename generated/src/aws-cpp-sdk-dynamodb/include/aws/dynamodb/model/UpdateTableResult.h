@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dynamodb/DynamoDB_EXPORTS.h>
+#include <aws/dynamodb/model/TableDescription.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DynamoDB {
+namespace Model {
+/**
+ * <p>Represents the output of an <code>UpdateTable</code> operation.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/dynamodb-2012-08-10/UpdateTableOutput">AWS
+ * API Reference</a></p>
+ */
+class UpdateTableResult {
+ public:
+  AWS_DYNAMODB_API UpdateTableResult() = default;
+  AWS_DYNAMODB_API UpdateTableResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DYNAMODB_API UpdateTableResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Represents the properties of the table.</p>
+   */
+  inline const TableDescription& GetTableDescription() const { return m_tableDescription; }
+  template <typename TableDescriptionT = TableDescription>
+  void SetTableDescription(TableDescriptionT&& value) {
+    m_tableDescriptionHasBeenSet = true;
+    m_tableDescription = std::forward<TableDescriptionT>(value);
+  }
+  template <typename TableDescriptionT = TableDescription>
+  UpdateTableResult& WithTableDescription(TableDescriptionT&& value) {
+    SetTableDescription(std::forward<TableDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateTableResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  TableDescription m_tableDescription;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_tableDescriptionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DynamoDB
+}  // namespace Aws

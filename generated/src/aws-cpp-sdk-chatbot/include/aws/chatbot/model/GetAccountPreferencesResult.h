@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chatbot/Chatbot_EXPORTS.h>
+#include <aws/chatbot/model/AccountPreferences.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace chatbot {
+namespace Model {
+class GetAccountPreferencesResult {
+ public:
+  AWS_CHATBOT_API GetAccountPreferencesResult() = default;
+  AWS_CHATBOT_API GetAccountPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHATBOT_API GetAccountPreferencesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The preferences related to AWS Chatbot usage in the calling AWS account.</p>
+   */
+  inline const AccountPreferences& GetAccountPreferences() const { return m_accountPreferences; }
+  template <typename AccountPreferencesT = AccountPreferences>
+  void SetAccountPreferences(AccountPreferencesT&& value) {
+    m_accountPreferencesHasBeenSet = true;
+    m_accountPreferences = std::forward<AccountPreferencesT>(value);
+  }
+  template <typename AccountPreferencesT = AccountPreferences>
+  GetAccountPreferencesResult& WithAccountPreferences(AccountPreferencesT&& value) {
+    SetAccountPreferences(std::forward<AccountPreferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetAccountPreferencesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  AccountPreferences m_accountPreferences;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_accountPreferencesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

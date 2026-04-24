@@ -1,0 +1,129 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/ModifyStrategyConfiguration.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgentCoreControl {
+namespace Model {
+
+/**
+ * <p>Input for modifying a memory strategy.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ModifyMemoryStrategyInput">AWS
+ * API Reference</a></p>
+ */
+class ModifyMemoryStrategyInput {
+ public:
+  AWS_BEDROCKAGENTCORECONTROL_API ModifyMemoryStrategyInput() = default;
+  AWS_BEDROCKAGENTCORECONTROL_API ModifyMemoryStrategyInput(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API ModifyMemoryStrategyInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the memory strategy to modify.</p>
+   */
+  inline const Aws::String& GetMemoryStrategyId() const { return m_memoryStrategyId; }
+  inline bool MemoryStrategyIdHasBeenSet() const { return m_memoryStrategyIdHasBeenSet; }
+  template <typename MemoryStrategyIdT = Aws::String>
+  void SetMemoryStrategyId(MemoryStrategyIdT&& value) {
+    m_memoryStrategyIdHasBeenSet = true;
+    m_memoryStrategyId = std::forward<MemoryStrategyIdT>(value);
+  }
+  template <typename MemoryStrategyIdT = Aws::String>
+  ModifyMemoryStrategyInput& WithMemoryStrategyId(MemoryStrategyIdT&& value) {
+    SetMemoryStrategyId(std::forward<MemoryStrategyIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated description of the memory strategy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  ModifyMemoryStrategyInput& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated namespaceTemplates for the memory strategy.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetNamespaceTemplates() const { return m_namespaceTemplates; }
+  inline bool NamespaceTemplatesHasBeenSet() const { return m_namespaceTemplatesHasBeenSet; }
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  void SetNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates = std::forward<NamespaceTemplatesT>(value);
+  }
+  template <typename NamespaceTemplatesT = Aws::Vector<Aws::String>>
+  ModifyMemoryStrategyInput& WithNamespaceTemplates(NamespaceTemplatesT&& value) {
+    SetNamespaceTemplates(std::forward<NamespaceTemplatesT>(value));
+    return *this;
+  }
+  template <typename NamespaceTemplatesT = Aws::String>
+  ModifyMemoryStrategyInput& AddNamespaceTemplates(NamespaceTemplatesT&& value) {
+    m_namespaceTemplatesHasBeenSet = true;
+    m_namespaceTemplates.emplace_back(std::forward<NamespaceTemplatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The updated configuration for the memory strategy.</p>
+   */
+  inline const ModifyStrategyConfiguration& GetConfiguration() const { return m_configuration; }
+  inline bool ConfigurationHasBeenSet() const { return m_configurationHasBeenSet; }
+  template <typename ConfigurationT = ModifyStrategyConfiguration>
+  void SetConfiguration(ConfigurationT&& value) {
+    m_configurationHasBeenSet = true;
+    m_configuration = std::forward<ConfigurationT>(value);
+  }
+  template <typename ConfigurationT = ModifyStrategyConfiguration>
+  ModifyMemoryStrategyInput& WithConfiguration(ConfigurationT&& value) {
+    SetConfiguration(std::forward<ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_memoryStrategyId;
+
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_namespaceTemplates;
+
+  ModifyStrategyConfiguration m_configuration;
+  bool m_memoryStrategyIdHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_namespaceTemplatesHasBeenSet = false;
+  bool m_configurationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

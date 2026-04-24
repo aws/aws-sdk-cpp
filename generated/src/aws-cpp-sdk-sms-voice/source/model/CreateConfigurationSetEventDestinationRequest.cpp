@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sms-voice/model/CreateConfigurationSetEventDestinationRequest.h>
+
+#include <utility>
+
+using namespace Aws::PinpointSMSVoice::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateConfigurationSetEventDestinationRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_eventDestinationHasBeenSet) {
+    payload.WithObject("EventDestination", m_eventDestination.Jsonize());
+  }
+
+  if (m_eventDestinationNameHasBeenSet) {
+    payload.WithString("EventDestinationName", m_eventDestinationName);
+  }
+
+  return payload.View().WriteReadable();
+}

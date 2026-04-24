@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-influxdb/TimestreamInfluxDB_EXPORTS.h>
+#include <aws/timestream-influxdb/model/ClusterStatus.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace TimestreamInfluxDB {
+namespace Model {
+class UpdateDbClusterResult {
+ public:
+  AWS_TIMESTREAMINFLUXDB_API UpdateDbClusterResult() = default;
+  AWS_TIMESTREAMINFLUXDB_API UpdateDbClusterResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_TIMESTREAMINFLUXDB_API UpdateDbClusterResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The status of the DB cluster.</p>
+   */
+  inline ClusterStatus GetDbClusterStatus() const { return m_dbClusterStatus; }
+  inline void SetDbClusterStatus(ClusterStatus value) {
+    m_dbClusterStatusHasBeenSet = true;
+    m_dbClusterStatus = value;
+  }
+  inline UpdateDbClusterResult& WithDbClusterStatus(ClusterStatus value) {
+    SetDbClusterStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateDbClusterResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ClusterStatus m_dbClusterStatus{ClusterStatus::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dbClusterStatusHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace TimestreamInfluxDB
+}  // namespace Aws

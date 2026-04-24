@@ -1,0 +1,140 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/events/CloudWatchEventsRequest.h>
+#include <aws/events/CloudWatchEvents_EXPORTS.h>
+#include <aws/events/model/ArchiveState.h>
+
+#include <utility>
+
+namespace Aws {
+namespace CloudWatchEvents {
+namespace Model {
+
+/**
+ */
+class ListArchivesRequest : public CloudWatchEventsRequest {
+ public:
+  AWS_CLOUDWATCHEVENTS_API ListArchivesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListArchives"; }
+
+  AWS_CLOUDWATCHEVENTS_API Aws::String SerializePayload() const override;
+
+  AWS_CLOUDWATCHEVENTS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>A name prefix to filter the archives returned. Only archives with name that
+   * match the prefix are returned.</p>
+   */
+  inline const Aws::String& GetNamePrefix() const { return m_namePrefix; }
+  inline bool NamePrefixHasBeenSet() const { return m_namePrefixHasBeenSet; }
+  template <typename NamePrefixT = Aws::String>
+  void SetNamePrefix(NamePrefixT&& value) {
+    m_namePrefixHasBeenSet = true;
+    m_namePrefix = std::forward<NamePrefixT>(value);
+  }
+  template <typename NamePrefixT = Aws::String>
+  ListArchivesRequest& WithNamePrefix(NamePrefixT&& value) {
+    SetNamePrefix(std::forward<NamePrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the event source associated with the archive.</p>
+   */
+  inline const Aws::String& GetEventSourceArn() const { return m_eventSourceArn; }
+  inline bool EventSourceArnHasBeenSet() const { return m_eventSourceArnHasBeenSet; }
+  template <typename EventSourceArnT = Aws::String>
+  void SetEventSourceArn(EventSourceArnT&& value) {
+    m_eventSourceArnHasBeenSet = true;
+    m_eventSourceArn = std::forward<EventSourceArnT>(value);
+  }
+  template <typename EventSourceArnT = Aws::String>
+  ListArchivesRequest& WithEventSourceArn(EventSourceArnT&& value) {
+    SetEventSourceArn(std::forward<EventSourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The state of the archive.</p>
+   */
+  inline ArchiveState GetState() const { return m_state; }
+  inline bool StateHasBeenSet() const { return m_stateHasBeenSet; }
+  inline void SetState(ArchiveState value) {
+    m_stateHasBeenSet = true;
+    m_state = value;
+  }
+  inline ListArchivesRequest& WithState(ArchiveState value) {
+    SetState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token returned by a previous call to retrieve the next set of
+   * results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListArchivesRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of results to return.</p>
+   */
+  inline int GetLimit() const { return m_limit; }
+  inline bool LimitHasBeenSet() const { return m_limitHasBeenSet; }
+  inline void SetLimit(int value) {
+    m_limitHasBeenSet = true;
+    m_limit = value;
+  }
+  inline ListArchivesRequest& WithLimit(int value) {
+    SetLimit(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_namePrefix;
+
+  Aws::String m_eventSourceArn;
+
+  ArchiveState m_state{ArchiveState::NOT_SET};
+
+  Aws::String m_nextToken;
+
+  int m_limit{0};
+  bool m_namePrefixHasBeenSet = false;
+  bool m_eventSourceArnHasBeenSet = false;
+  bool m_stateHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_limitHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CloudWatchEvents
+}  // namespace Aws

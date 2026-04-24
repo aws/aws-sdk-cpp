@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/forecast/ForecastService_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ForecastService {
+namespace Model {
+class CreatePredictorResult {
+ public:
+  AWS_FORECASTSERVICE_API CreatePredictorResult() = default;
+  AWS_FORECASTSERVICE_API CreatePredictorResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_FORECASTSERVICE_API CreatePredictorResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the predictor.</p>
+   */
+  inline const Aws::String& GetPredictorArn() const { return m_predictorArn; }
+  template <typename PredictorArnT = Aws::String>
+  void SetPredictorArn(PredictorArnT&& value) {
+    m_predictorArnHasBeenSet = true;
+    m_predictorArn = std::forward<PredictorArnT>(value);
+  }
+  template <typename PredictorArnT = Aws::String>
+  CreatePredictorResult& WithPredictorArn(PredictorArnT&& value) {
+    SetPredictorArn(std::forward<PredictorArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreatePredictorResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_predictorArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_predictorArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

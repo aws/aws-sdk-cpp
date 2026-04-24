@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/greengrass/model/RuntimeConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Greengrass {
+namespace Model {
+
+RuntimeConfiguration::RuntimeConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+RuntimeConfiguration& RuntimeConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TelemetryConfiguration")) {
+    m_telemetryConfiguration = jsonValue.GetObject("TelemetryConfiguration");
+    m_telemetryConfigurationHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue RuntimeConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_telemetryConfigurationHasBeenSet) {
+    payload.WithObject("TelemetryConfiguration", m_telemetryConfiguration.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Greengrass
+}  // namespace Aws

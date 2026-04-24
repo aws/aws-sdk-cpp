@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/osis/model/BufferOptions.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace OSIS {
+namespace Model {
+
+BufferOptions::BufferOptions(JsonView jsonValue) { *this = jsonValue; }
+
+BufferOptions& BufferOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PersistentBufferEnabled")) {
+    m_persistentBufferEnabled = jsonValue.GetBool("PersistentBufferEnabled");
+    m_persistentBufferEnabledHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue BufferOptions::Jsonize() const {
+  JsonValue payload;
+
+  if (m_persistentBufferEnabledHasBeenSet) {
+    payload.WithBool("PersistentBufferEnabled", m_persistentBufferEnabled);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace OSIS
+}  // namespace Aws

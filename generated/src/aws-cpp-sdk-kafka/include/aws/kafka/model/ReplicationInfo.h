@@ -1,0 +1,186 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/kafka/Kafka_EXPORTS.h>
+#include <aws/kafka/model/ConsumerGroupReplication.h>
+#include <aws/kafka/model/TargetCompressionType.h>
+#include <aws/kafka/model/TopicReplication.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Kafka {
+namespace Model {
+
+/**
+ * <p>Specifies configuration for replication between a source and target Kafka
+ * cluster.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kafka-2018-11-14/ReplicationInfo">AWS
+ * API Reference</a></p>
+ */
+class ReplicationInfo {
+ public:
+  AWS_KAFKA_API ReplicationInfo() = default;
+  AWS_KAFKA_API ReplicationInfo(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKA_API ReplicationInfo& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_KAFKA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Configuration relating to consumer group replication.</p>
+   */
+  inline const ConsumerGroupReplication& GetConsumerGroupReplication() const { return m_consumerGroupReplication; }
+  inline bool ConsumerGroupReplicationHasBeenSet() const { return m_consumerGroupReplicationHasBeenSet; }
+  template <typename ConsumerGroupReplicationT = ConsumerGroupReplication>
+  void SetConsumerGroupReplication(ConsumerGroupReplicationT&& value) {
+    m_consumerGroupReplicationHasBeenSet = true;
+    m_consumerGroupReplication = std::forward<ConsumerGroupReplicationT>(value);
+  }
+  template <typename ConsumerGroupReplicationT = ConsumerGroupReplication>
+  ReplicationInfo& WithConsumerGroupReplication(ConsumerGroupReplicationT&& value) {
+    SetConsumerGroupReplication(std::forward<ConsumerGroupReplicationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the source Kafka cluster.</p>
+   */
+  inline const Aws::String& GetSourceKafkaClusterArn() const { return m_sourceKafkaClusterArn; }
+  inline bool SourceKafkaClusterArnHasBeenSet() const { return m_sourceKafkaClusterArnHasBeenSet; }
+  template <typename SourceKafkaClusterArnT = Aws::String>
+  void SetSourceKafkaClusterArn(SourceKafkaClusterArnT&& value) {
+    m_sourceKafkaClusterArnHasBeenSet = true;
+    m_sourceKafkaClusterArn = std::forward<SourceKafkaClusterArnT>(value);
+  }
+  template <typename SourceKafkaClusterArnT = Aws::String>
+  ReplicationInfo& WithSourceKafkaClusterArn(SourceKafkaClusterArnT&& value) {
+    SetSourceKafkaClusterArn(std::forward<SourceKafkaClusterArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the source Kafka cluster.</p>
+   */
+  inline const Aws::String& GetSourceKafkaClusterId() const { return m_sourceKafkaClusterId; }
+  inline bool SourceKafkaClusterIdHasBeenSet() const { return m_sourceKafkaClusterIdHasBeenSet; }
+  template <typename SourceKafkaClusterIdT = Aws::String>
+  void SetSourceKafkaClusterId(SourceKafkaClusterIdT&& value) {
+    m_sourceKafkaClusterIdHasBeenSet = true;
+    m_sourceKafkaClusterId = std::forward<SourceKafkaClusterIdT>(value);
+  }
+  template <typename SourceKafkaClusterIdT = Aws::String>
+  ReplicationInfo& WithSourceKafkaClusterId(SourceKafkaClusterIdT&& value) {
+    SetSourceKafkaClusterId(std::forward<SourceKafkaClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The compression type to use when producing records to target cluster.</p>
+   */
+  inline TargetCompressionType GetTargetCompressionType() const { return m_targetCompressionType; }
+  inline bool TargetCompressionTypeHasBeenSet() const { return m_targetCompressionTypeHasBeenSet; }
+  inline void SetTargetCompressionType(TargetCompressionType value) {
+    m_targetCompressionTypeHasBeenSet = true;
+    m_targetCompressionType = value;
+  }
+  inline ReplicationInfo& WithTargetCompressionType(TargetCompressionType value) {
+    SetTargetCompressionType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the target Kafka cluster.</p>
+   */
+  inline const Aws::String& GetTargetKafkaClusterArn() const { return m_targetKafkaClusterArn; }
+  inline bool TargetKafkaClusterArnHasBeenSet() const { return m_targetKafkaClusterArnHasBeenSet; }
+  template <typename TargetKafkaClusterArnT = Aws::String>
+  void SetTargetKafkaClusterArn(TargetKafkaClusterArnT&& value) {
+    m_targetKafkaClusterArnHasBeenSet = true;
+    m_targetKafkaClusterArn = std::forward<TargetKafkaClusterArnT>(value);
+  }
+  template <typename TargetKafkaClusterArnT = Aws::String>
+  ReplicationInfo& WithTargetKafkaClusterArn(TargetKafkaClusterArnT&& value) {
+    SetTargetKafkaClusterArn(std::forward<TargetKafkaClusterArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the target Kafka cluster.</p>
+   */
+  inline const Aws::String& GetTargetKafkaClusterId() const { return m_targetKafkaClusterId; }
+  inline bool TargetKafkaClusterIdHasBeenSet() const { return m_targetKafkaClusterIdHasBeenSet; }
+  template <typename TargetKafkaClusterIdT = Aws::String>
+  void SetTargetKafkaClusterId(TargetKafkaClusterIdT&& value) {
+    m_targetKafkaClusterIdHasBeenSet = true;
+    m_targetKafkaClusterId = std::forward<TargetKafkaClusterIdT>(value);
+  }
+  template <typename TargetKafkaClusterIdT = Aws::String>
+  ReplicationInfo& WithTargetKafkaClusterId(TargetKafkaClusterIdT&& value) {
+    SetTargetKafkaClusterId(std::forward<TargetKafkaClusterIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration relating to topic replication.</p>
+   */
+  inline const TopicReplication& GetTopicReplication() const { return m_topicReplication; }
+  inline bool TopicReplicationHasBeenSet() const { return m_topicReplicationHasBeenSet; }
+  template <typename TopicReplicationT = TopicReplication>
+  void SetTopicReplication(TopicReplicationT&& value) {
+    m_topicReplicationHasBeenSet = true;
+    m_topicReplication = std::forward<TopicReplicationT>(value);
+  }
+  template <typename TopicReplicationT = TopicReplication>
+  ReplicationInfo& WithTopicReplication(TopicReplicationT&& value) {
+    SetTopicReplication(std::forward<TopicReplicationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ConsumerGroupReplication m_consumerGroupReplication;
+
+  Aws::String m_sourceKafkaClusterArn;
+
+  Aws::String m_sourceKafkaClusterId;
+
+  TargetCompressionType m_targetCompressionType{TargetCompressionType::NOT_SET};
+
+  Aws::String m_targetKafkaClusterArn;
+
+  Aws::String m_targetKafkaClusterId;
+
+  TopicReplication m_topicReplication;
+  bool m_consumerGroupReplicationHasBeenSet = false;
+  bool m_sourceKafkaClusterArnHasBeenSet = false;
+  bool m_sourceKafkaClusterIdHasBeenSet = false;
+  bool m_targetCompressionTypeHasBeenSet = false;
+  bool m_targetKafkaClusterArnHasBeenSet = false;
+  bool m_targetKafkaClusterIdHasBeenSet = false;
+  bool m_topicReplicationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Kafka
+}  // namespace Aws

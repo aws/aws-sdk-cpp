@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/PhysicalTable.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+
+PhysicalTable::PhysicalTable(JsonView jsonValue) { *this = jsonValue; }
+
+PhysicalTable& PhysicalTable::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("RelationalTable")) {
+    m_relationalTable = jsonValue.GetObject("RelationalTable");
+    m_relationalTableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CustomSql")) {
+    m_customSql = jsonValue.GetObject("CustomSql");
+    m_customSqlHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("S3Source")) {
+    m_s3Source = jsonValue.GetObject("S3Source");
+    m_s3SourceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SaaSTable")) {
+    m_saaSTable = jsonValue.GetObject("SaaSTable");
+    m_saaSTableHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue PhysicalTable::Jsonize() const {
+  JsonValue payload;
+
+  if (m_relationalTableHasBeenSet) {
+    payload.WithObject("RelationalTable", m_relationalTable.Jsonize());
+  }
+
+  if (m_customSqlHasBeenSet) {
+    payload.WithObject("CustomSql", m_customSql.Jsonize());
+  }
+
+  if (m_s3SourceHasBeenSet) {
+    payload.WithObject("S3Source", m_s3Source.Jsonize());
+  }
+
+  if (m_saaSTableHasBeenSet) {
+    payload.WithObject("SaaSTable", m_saaSTable.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/swf/model/WorkflowExecutionFilter.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SWF {
+namespace Model {
+
+WorkflowExecutionFilter::WorkflowExecutionFilter(JsonView jsonValue) { *this = jsonValue; }
+
+WorkflowExecutionFilter& WorkflowExecutionFilter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("workflowId")) {
+    m_workflowId = jsonValue.GetString("workflowId");
+    m_workflowIdHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue WorkflowExecutionFilter::Jsonize() const {
+  JsonValue payload;
+
+  if (m_workflowIdHasBeenSet) {
+    payload.WithString("workflowId", m_workflowId);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

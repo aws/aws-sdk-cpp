@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/timestream-write/TimestreamWrite_EXPORTS.h>
+#include <aws/timestream-write/model/Database.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace TimestreamWrite {
+namespace Model {
+class UpdateDatabaseResult {
+ public:
+  AWS_TIMESTREAMWRITE_API UpdateDatabaseResult() = default;
+  AWS_TIMESTREAMWRITE_API UpdateDatabaseResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_TIMESTREAMWRITE_API UpdateDatabaseResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+
+  inline const Database& GetDatabase() const { return m_database; }
+  template <typename DatabaseT = Database>
+  void SetDatabase(DatabaseT&& value) {
+    m_databaseHasBeenSet = true;
+    m_database = std::forward<DatabaseT>(value);
+  }
+  template <typename DatabaseT = Database>
+  UpdateDatabaseResult& WithDatabase(DatabaseT&& value) {
+    SetDatabase(std::forward<DatabaseT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateDatabaseResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Database m_database;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_databaseHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace TimestreamWrite
+}  // namespace Aws

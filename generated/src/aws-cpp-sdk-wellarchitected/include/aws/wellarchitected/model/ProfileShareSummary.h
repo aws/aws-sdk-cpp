@@ -1,0 +1,114 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wellarchitected/WellArchitected_EXPORTS.h>
+#include <aws/wellarchitected/model/ShareStatus.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace WellArchitected {
+namespace Model {
+
+/**
+ * <p>Summary of a profile share.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/wellarchitected-2020-03-31/ProfileShareSummary">AWS
+ * API Reference</a></p>
+ */
+class ProfileShareSummary {
+ public:
+  AWS_WELLARCHITECTED_API ProfileShareSummary() = default;
+  AWS_WELLARCHITECTED_API ProfileShareSummary(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API ProfileShareSummary& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_WELLARCHITECTED_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+
+  inline const Aws::String& GetShareId() const { return m_shareId; }
+  inline bool ShareIdHasBeenSet() const { return m_shareIdHasBeenSet; }
+  template <typename ShareIdT = Aws::String>
+  void SetShareId(ShareIdT&& value) {
+    m_shareIdHasBeenSet = true;
+    m_shareId = std::forward<ShareIdT>(value);
+  }
+  template <typename ShareIdT = Aws::String>
+  ProfileShareSummary& WithShareId(ShareIdT&& value) {
+    SetShareId(std::forward<ShareIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetSharedWith() const { return m_sharedWith; }
+  inline bool SharedWithHasBeenSet() const { return m_sharedWithHasBeenSet; }
+  template <typename SharedWithT = Aws::String>
+  void SetSharedWith(SharedWithT&& value) {
+    m_sharedWithHasBeenSet = true;
+    m_sharedWith = std::forward<SharedWithT>(value);
+  }
+  template <typename SharedWithT = Aws::String>
+  ProfileShareSummary& WithSharedWith(SharedWithT&& value) {
+    SetSharedWith(std::forward<SharedWithT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline ShareStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ShareStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ProfileShareSummary& WithStatus(ShareStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Profile share invitation status message.</p>
+   */
+  inline const Aws::String& GetStatusMessage() const { return m_statusMessage; }
+  inline bool StatusMessageHasBeenSet() const { return m_statusMessageHasBeenSet; }
+  template <typename StatusMessageT = Aws::String>
+  void SetStatusMessage(StatusMessageT&& value) {
+    m_statusMessageHasBeenSet = true;
+    m_statusMessage = std::forward<StatusMessageT>(value);
+  }
+  template <typename StatusMessageT = Aws::String>
+  ProfileShareSummary& WithStatusMessage(StatusMessageT&& value) {
+    SetStatusMessage(std::forward<StatusMessageT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_shareId;
+
+  Aws::String m_sharedWith;
+
+  ShareStatus m_status{ShareStatus::NOT_SET};
+
+  Aws::String m_statusMessage;
+  bool m_shareIdHasBeenSet = false;
+  bool m_sharedWithHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusMessageHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace WellArchitected
+}  // namespace Aws

@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BedrockAgentCoreControl {
+namespace Model {
+
+McpServerTargetConfiguration::McpServerTargetConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+McpServerTargetConfiguration& McpServerTargetConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("endpoint")) {
+    m_endpoint = jsonValue.GetString("endpoint");
+    m_endpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mcpToolSchema")) {
+    m_mcpToolSchema = jsonValue.GetObject("mcpToolSchema");
+    m_mcpToolSchemaHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("resourcePriority")) {
+    m_resourcePriority = jsonValue.GetInteger("resourcePriority");
+    m_resourcePriorityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("listingMode")) {
+    m_listingMode = ListingModeMapper::GetListingModeForName(jsonValue.GetString("listingMode"));
+    m_listingModeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue McpServerTargetConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_endpointHasBeenSet) {
+    payload.WithString("endpoint", m_endpoint);
+  }
+
+  if (m_mcpToolSchemaHasBeenSet) {
+    payload.WithObject("mcpToolSchema", m_mcpToolSchema.Jsonize());
+  }
+
+  if (m_resourcePriorityHasBeenSet) {
+    payload.WithInteger("resourcePriority", m_resourcePriority);
+  }
+
+  if (m_listingModeHasBeenSet) {
+    payload.WithString("listingMode", ListingModeMapper::GetNameForListingMode(m_listingMode));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

@@ -1,0 +1,114 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/swf/SWF_EXPORTS.h>
+#include <aws/swf/model/HistoryEvent.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SWF {
+namespace Model {
+/**
+ * <p>Paginated representation of a workflow history for a workflow execution. This
+ * is the up to date, complete and authoritative record of the events related to
+ * all tasks and events in the life of the workflow execution.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/swf-2012-01-25/History">AWS API
+ * Reference</a></p>
+ */
+class GetWorkflowExecutionHistoryResult {
+ public:
+  AWS_SWF_API GetWorkflowExecutionHistoryResult() = default;
+  AWS_SWF_API GetWorkflowExecutionHistoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SWF_API GetWorkflowExecutionHistoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The list of history events.</p>
+   */
+  inline const Aws::Vector<HistoryEvent>& GetEvents() const { return m_events; }
+  template <typename EventsT = Aws::Vector<HistoryEvent>>
+  void SetEvents(EventsT&& value) {
+    m_eventsHasBeenSet = true;
+    m_events = std::forward<EventsT>(value);
+  }
+  template <typename EventsT = Aws::Vector<HistoryEvent>>
+  GetWorkflowExecutionHistoryResult& WithEvents(EventsT&& value) {
+    SetEvents(std::forward<EventsT>(value));
+    return *this;
+  }
+  template <typename EventsT = HistoryEvent>
+  GetWorkflowExecutionHistoryResult& AddEvents(EventsT&& value) {
+    m_eventsHasBeenSet = true;
+    m_events.emplace_back(std::forward<EventsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If a <code>NextPageToken</code> was returned by a previous call, there are
+   * more results available. To retrieve the next page of results, make the call
+   * again using the returned token in <code>nextPageToken</code>. Keep all other
+   * arguments unchanged.</p> <p>The configured <code>maximumPageSize</code>
+   * determines how many results can be returned in a single call.</p>
+   */
+  inline const Aws::String& GetNextPageToken() const { return m_nextPageToken; }
+  template <typename NextPageTokenT = Aws::String>
+  void SetNextPageToken(NextPageTokenT&& value) {
+    m_nextPageTokenHasBeenSet = true;
+    m_nextPageToken = std::forward<NextPageTokenT>(value);
+  }
+  template <typename NextPageTokenT = Aws::String>
+  GetWorkflowExecutionHistoryResult& WithNextPageToken(NextPageTokenT&& value) {
+    SetNextPageToken(std::forward<NextPageTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetWorkflowExecutionHistoryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<HistoryEvent> m_events;
+
+  Aws::String m_nextPageToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_eventsHasBeenSet = false;
+  bool m_nextPageTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SWF
+}  // namespace Aws

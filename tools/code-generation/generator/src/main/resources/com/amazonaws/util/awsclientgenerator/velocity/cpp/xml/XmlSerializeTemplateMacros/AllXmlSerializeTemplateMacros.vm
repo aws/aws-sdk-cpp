@@ -1,0 +1,4 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlSerializeTemplateMacros/serializeXmlListPayloadElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlSerializeTemplateMacros/serializeXmlMapPayloadElement.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlSerializeTemplateMacros/serializeXmlSingleElementToText.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/XmlSerializeTemplateMacros/serializeXmlSinglePayloadElement.vm")

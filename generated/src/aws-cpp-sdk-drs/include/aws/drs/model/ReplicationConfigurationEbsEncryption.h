@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/drs/Drs_EXPORTS.h>
+
+namespace Aws {
+namespace drs {
+namespace Model {
+enum class ReplicationConfigurationEbsEncryption { NOT_SET, DEFAULT, CUSTOM, NONE };
+
+namespace ReplicationConfigurationEbsEncryptionMapper {
+AWS_DRS_API ReplicationConfigurationEbsEncryption GetReplicationConfigurationEbsEncryptionForName(const Aws::String& name);
+
+AWS_DRS_API Aws::String GetNameForReplicationConfigurationEbsEncryption(ReplicationConfigurationEbsEncryption value);
+}  // namespace ReplicationConfigurationEbsEncryptionMapper
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

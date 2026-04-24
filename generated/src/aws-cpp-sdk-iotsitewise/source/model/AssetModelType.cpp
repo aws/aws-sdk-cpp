@@ -1,0 +1,63 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/iotsitewise/model/AssetModelType.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoTSiteWise {
+namespace Model {
+namespace AssetModelTypeMapper {
+
+static const int ASSET_MODEL_HASH = HashingUtils::HashString("ASSET_MODEL");
+static const int COMPONENT_MODEL_HASH = HashingUtils::HashString("COMPONENT_MODEL");
+static const int INTERFACE_HASH = HashingUtils::HashString("INTERFACE");
+
+AssetModelType GetAssetModelTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == ASSET_MODEL_HASH) {
+    return AssetModelType::ASSET_MODEL;
+  } else if (hashCode == COMPONENT_MODEL_HASH) {
+    return AssetModelType::COMPONENT_MODEL;
+  } else if (hashCode == INTERFACE_HASH) {
+    return AssetModelType::INTERFACE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AssetModelType>(hashCode);
+  }
+
+  return AssetModelType::NOT_SET;
+}
+
+Aws::String GetNameForAssetModelType(AssetModelType enumValue) {
+  switch (enumValue) {
+    case AssetModelType::NOT_SET:
+      return {};
+    case AssetModelType::ASSET_MODEL:
+      return "ASSET_MODEL";
+    case AssetModelType::COMPONENT_MODEL:
+      return "COMPONENT_MODEL";
+    case AssetModelType::INTERFACE:
+      return "INTERFACE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace AssetModelTypeMapper
+}  // namespace Model
+}  // namespace IoTSiteWise
+}  // namespace Aws

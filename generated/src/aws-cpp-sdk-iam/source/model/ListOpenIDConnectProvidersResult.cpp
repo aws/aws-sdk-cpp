@@ -1,0 +1,54 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/iam/model/ListOpenIDConnectProvidersResult.h>
+
+#include <utility>
+
+using namespace Aws::IAM::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListOpenIDConnectProvidersResult::ListOpenIDConnectProvidersResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  *this = result;
+}
+
+ListOpenIDConnectProvidersResult& ListOpenIDConnectProvidersResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListOpenIDConnectProvidersResult")) {
+    resultNode = rootNode.FirstChild("ListOpenIDConnectProvidersResult");
+  }
+
+  if (!resultNode.IsNull()) {
+    XmlNode openIDConnectProviderListNode = resultNode.FirstChild("OpenIDConnectProviderList");
+    if (!openIDConnectProviderListNode.IsNull()) {
+      XmlNode openIDConnectProviderListMember = openIDConnectProviderListNode.FirstChild("member");
+      m_openIDConnectProviderListHasBeenSet = !openIDConnectProviderListMember.IsNull();
+      while (!openIDConnectProviderListMember.IsNull()) {
+        m_openIDConnectProviderList.push_back(openIDConnectProviderListMember);
+        openIDConnectProviderListMember = openIDConnectProviderListMember.NextNode("member");
+      }
+
+      m_openIDConnectProviderListHasBeenSet = true;
+    }
+  }
+
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::IAM::Model::ListOpenIDConnectProvidersResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  }
+  return *this;
+}

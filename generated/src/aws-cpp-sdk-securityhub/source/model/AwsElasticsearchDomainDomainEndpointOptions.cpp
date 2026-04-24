@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AwsElasticsearchDomainDomainEndpointOptions.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+
+AwsElasticsearchDomainDomainEndpointOptions::AwsElasticsearchDomainDomainEndpointOptions(JsonView jsonValue) { *this = jsonValue; }
+
+AwsElasticsearchDomainDomainEndpointOptions& AwsElasticsearchDomainDomainEndpointOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("EnforceHTTPS")) {
+    m_enforceHTTPS = jsonValue.GetBool("EnforceHTTPS");
+    m_enforceHTTPSHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TLSSecurityPolicy")) {
+    m_tLSSecurityPolicy = jsonValue.GetString("TLSSecurityPolicy");
+    m_tLSSecurityPolicyHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AwsElasticsearchDomainDomainEndpointOptions::Jsonize() const {
+  JsonValue payload;
+
+  if (m_enforceHTTPSHasBeenSet) {
+    payload.WithBool("EnforceHTTPS", m_enforceHTTPS);
+  }
+
+  if (m_tLSSecurityPolicyHasBeenSet) {
+    payload.WithString("TLSSecurityPolicy", m_tLSSecurityPolicy);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

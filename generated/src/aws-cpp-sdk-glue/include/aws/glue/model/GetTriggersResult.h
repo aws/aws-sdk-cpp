@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/Trigger.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Glue {
+namespace Model {
+class GetTriggersResult {
+ public:
+  AWS_GLUE_API GetTriggersResult() = default;
+  AWS_GLUE_API GetTriggersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLUE_API GetTriggersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A list of triggers for the specified job.</p>
+   */
+  inline const Aws::Vector<Trigger>& GetTriggers() const { return m_triggers; }
+  template <typename TriggersT = Aws::Vector<Trigger>>
+  void SetTriggers(TriggersT&& value) {
+    m_triggersHasBeenSet = true;
+    m_triggers = std::forward<TriggersT>(value);
+  }
+  template <typename TriggersT = Aws::Vector<Trigger>>
+  GetTriggersResult& WithTriggers(TriggersT&& value) {
+    SetTriggers(std::forward<TriggersT>(value));
+    return *this;
+  }
+  template <typename TriggersT = Trigger>
+  GetTriggersResult& AddTriggers(TriggersT&& value) {
+    m_triggersHasBeenSet = true;
+    m_triggers.emplace_back(std::forward<TriggersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A continuation token, if not all the requested triggers have yet been
+   * returned.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetTriggersResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetTriggersResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<Trigger> m_triggers;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_triggersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Glue
+}  // namespace Aws

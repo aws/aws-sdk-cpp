@@ -1,0 +1,104 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/CapacityBlockOffering.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DescribeCapacityBlockOfferingsResponse {
+ public:
+  AWS_EC2_API DescribeCapacityBlockOfferingsResponse() = default;
+  AWS_EC2_API DescribeCapacityBlockOfferingsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DescribeCapacityBlockOfferingsResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>The recommended Capacity Block offering for the dates specified.</p>
+   */
+  inline const Aws::Vector<CapacityBlockOffering>& GetCapacityBlockOfferings() const { return m_capacityBlockOfferings; }
+  template <typename CapacityBlockOfferingsT = Aws::Vector<CapacityBlockOffering>>
+  void SetCapacityBlockOfferings(CapacityBlockOfferingsT&& value) {
+    m_capacityBlockOfferingsHasBeenSet = true;
+    m_capacityBlockOfferings = std::forward<CapacityBlockOfferingsT>(value);
+  }
+  template <typename CapacityBlockOfferingsT = Aws::Vector<CapacityBlockOffering>>
+  DescribeCapacityBlockOfferingsResponse& WithCapacityBlockOfferings(CapacityBlockOfferingsT&& value) {
+    SetCapacityBlockOfferings(std::forward<CapacityBlockOfferingsT>(value));
+    return *this;
+  }
+  template <typename CapacityBlockOfferingsT = CapacityBlockOffering>
+  DescribeCapacityBlockOfferingsResponse& AddCapacityBlockOfferings(CapacityBlockOfferingsT&& value) {
+    m_capacityBlockOfferingsHasBeenSet = true;
+    m_capacityBlockOfferings.emplace_back(std::forward<CapacityBlockOfferingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token to use to retrieve the next page of results. This value is
+   * <code>null</code> when there are no more results to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeCapacityBlockOfferingsResponse& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeCapacityBlockOfferingsResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<CapacityBlockOffering> m_capacityBlockOfferings;
+
+  Aws::String m_nextToken;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_capacityBlockOfferingsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

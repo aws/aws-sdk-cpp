@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chatbot/Chatbot_EXPORTS.h>
+#include <aws/chatbot/model/ChimeWebhookConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace chatbot {
+namespace Model {
+class CreateChimeWebhookConfigurationResult {
+ public:
+  AWS_CHATBOT_API CreateChimeWebhookConfigurationResult() = default;
+  AWS_CHATBOT_API CreateChimeWebhookConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHATBOT_API CreateChimeWebhookConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>An Amazon Chime webhook configuration.</p>
+   */
+  inline const ChimeWebhookConfiguration& GetWebhookConfiguration() const { return m_webhookConfiguration; }
+  template <typename WebhookConfigurationT = ChimeWebhookConfiguration>
+  void SetWebhookConfiguration(WebhookConfigurationT&& value) {
+    m_webhookConfigurationHasBeenSet = true;
+    m_webhookConfiguration = std::forward<WebhookConfigurationT>(value);
+  }
+  template <typename WebhookConfigurationT = ChimeWebhookConfiguration>
+  CreateChimeWebhookConfigurationResult& WithWebhookConfiguration(WebhookConfigurationT&& value) {
+    SetWebhookConfiguration(std::forward<WebhookConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateChimeWebhookConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ChimeWebhookConfiguration m_webhookConfiguration;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_webhookConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace chatbot
+}  // namespace Aws

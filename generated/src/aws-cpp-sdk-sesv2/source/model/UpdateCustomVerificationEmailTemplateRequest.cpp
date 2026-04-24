@@ -1,0 +1,39 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/UpdateCustomVerificationEmailTemplateRequest.h>
+
+#include <utility>
+
+using namespace Aws::SESV2::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateCustomVerificationEmailTemplateRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_fromEmailAddressHasBeenSet) {
+    payload.WithString("FromEmailAddress", m_fromEmailAddress);
+  }
+
+  if (m_templateSubjectHasBeenSet) {
+    payload.WithString("TemplateSubject", m_templateSubject);
+  }
+
+  if (m_templateContentHasBeenSet) {
+    payload.WithString("TemplateContent", m_templateContent);
+  }
+
+  if (m_successRedirectionURLHasBeenSet) {
+    payload.WithString("SuccessRedirectionURL", m_successRedirectionURL);
+  }
+
+  if (m_failureRedirectionURLHasBeenSet) {
+    payload.WithString("FailureRedirectionURL", m_failureRedirectionURL);
+  }
+
+  return payload.View().WriteReadable();
+}

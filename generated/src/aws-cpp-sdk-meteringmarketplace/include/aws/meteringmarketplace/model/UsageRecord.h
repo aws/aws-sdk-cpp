@@ -1,0 +1,213 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/meteringmarketplace/MarketplaceMetering_EXPORTS.h>
+#include <aws/meteringmarketplace/model/UsageAllocation.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MarketplaceMetering {
+namespace Model {
+
+/**
+ * <p>A <code>UsageRecord</code> indicates a quantity of usage for a given product,
+ * customer, dimension and time.</p> <p>Multiple requests with the same
+ * <code>UsageRecords</code> as input will be de-duplicated to prevent double
+ * charges.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/meteringmarketplace-2016-01-14/UsageRecord">AWS
+ * API Reference</a></p>
+ */
+class UsageRecord {
+ public:
+  AWS_MARKETPLACEMETERING_API UsageRecord() = default;
+  AWS_MARKETPLACEMETERING_API UsageRecord(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACEMETERING_API UsageRecord& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MARKETPLACEMETERING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Timestamp, in UTC, for which the usage is being reported.</p> <p>Your
+   * application can meter usage for up to six hours in the past. Make sure the
+   * <code>timestamp</code> value is not before the start of the software usage.</p>
+   */
+  inline const Aws::Utils::DateTime& GetTimestamp() const { return m_timestamp; }
+  inline bool TimestampHasBeenSet() const { return m_timestampHasBeenSet; }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  void SetTimestamp(TimestampT&& value) {
+    m_timestampHasBeenSet = true;
+    m_timestamp = std::forward<TimestampT>(value);
+  }
+  template <typename TimestampT = Aws::Utils::DateTime>
+  UsageRecord& WithTimestamp(TimestampT&& value) {
+    SetTimestamp(std::forward<TimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>CustomerIdentifier</code> is obtained through the
+   * <code>ResolveCustomer</code> operation and represents an individual buyer in
+   * your application.</p>
+   */
+  inline const Aws::String& GetCustomerIdentifier() const { return m_customerIdentifier; }
+  inline bool CustomerIdentifierHasBeenSet() const { return m_customerIdentifierHasBeenSet; }
+  template <typename CustomerIdentifierT = Aws::String>
+  void SetCustomerIdentifier(CustomerIdentifierT&& value) {
+    m_customerIdentifierHasBeenSet = true;
+    m_customerIdentifier = std::forward<CustomerIdentifierT>(value);
+  }
+  template <typename CustomerIdentifierT = Aws::String>
+  UsageRecord& WithCustomerIdentifier(CustomerIdentifierT&& value) {
+    SetCustomerIdentifier(std::forward<CustomerIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>During the process of registering a product on Amazon Web Services
+   * Marketplace, dimensions are specified. These represent different units of value
+   * in your application.</p>
+   */
+  inline const Aws::String& GetDimension() const { return m_dimension; }
+  inline bool DimensionHasBeenSet() const { return m_dimensionHasBeenSet; }
+  template <typename DimensionT = Aws::String>
+  void SetDimension(DimensionT&& value) {
+    m_dimensionHasBeenSet = true;
+    m_dimension = std::forward<DimensionT>(value);
+  }
+  template <typename DimensionT = Aws::String>
+  UsageRecord& WithDimension(DimensionT&& value) {
+    SetDimension(std::forward<DimensionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The quantity of usage consumed by the customer for the given dimension and
+   * time. Defaults to <code>0</code> if not specified.</p>
+   */
+  inline int GetQuantity() const { return m_quantity; }
+  inline bool QuantityHasBeenSet() const { return m_quantityHasBeenSet; }
+  inline void SetQuantity(int value) {
+    m_quantityHasBeenSet = true;
+    m_quantity = value;
+  }
+  inline UsageRecord& WithQuantity(int value) {
+    SetQuantity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The set of <code>UsageAllocations</code> to submit. The sum of all
+   * <code>UsageAllocation</code> quantities must equal the Quantity of the
+   * <code>UsageRecord</code>.</p>
+   */
+  inline const Aws::Vector<UsageAllocation>& GetUsageAllocations() const { return m_usageAllocations; }
+  inline bool UsageAllocationsHasBeenSet() const { return m_usageAllocationsHasBeenSet; }
+  template <typename UsageAllocationsT = Aws::Vector<UsageAllocation>>
+  void SetUsageAllocations(UsageAllocationsT&& value) {
+    m_usageAllocationsHasBeenSet = true;
+    m_usageAllocations = std::forward<UsageAllocationsT>(value);
+  }
+  template <typename UsageAllocationsT = Aws::Vector<UsageAllocation>>
+  UsageRecord& WithUsageAllocations(UsageAllocationsT&& value) {
+    SetUsageAllocations(std::forward<UsageAllocationsT>(value));
+    return *this;
+  }
+  template <typename UsageAllocationsT = UsageAllocation>
+  UsageRecord& AddUsageAllocations(UsageAllocationsT&& value) {
+    m_usageAllocationsHasBeenSet = true;
+    m_usageAllocations.emplace_back(std::forward<UsageAllocationsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>CustomerAWSAccountId</code> parameter specifies the AWS account ID
+   * of the buyer.</p>  <p>For existing integrations, to access your
+   * <code>CustomerIdentifier</code> to <code>CustomerAWSAccountId</code> mapping,
+   * see <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-account.html">Account
+   * Feeds</a>.</p>
+   */
+  inline const Aws::String& GetCustomerAWSAccountId() const { return m_customerAWSAccountId; }
+  inline bool CustomerAWSAccountIdHasBeenSet() const { return m_customerAWSAccountIdHasBeenSet; }
+  template <typename CustomerAWSAccountIdT = Aws::String>
+  void SetCustomerAWSAccountId(CustomerAWSAccountIdT&& value) {
+    m_customerAWSAccountIdHasBeenSet = true;
+    m_customerAWSAccountId = std::forward<CustomerAWSAccountIdT>(value);
+  }
+  template <typename CustomerAWSAccountIdT = Aws::String>
+  UsageRecord& WithCustomerAWSAccountId(CustomerAWSAccountIdT&& value) {
+    SetCustomerAWSAccountId(std::forward<CustomerAWSAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>LicenseArn</code> is a unique identifier for a specific granted
+   * license. These are used for software purchased through Amazon Web Services
+   * Marketplace.</p>  <p>To access your <code>CustomerAWSAccountId</code> and
+   * <code>LicenseArn</code> mapping, visit <a
+   * href="https://docs.aws.amazon.com/marketplace/latest/userguide/data-feed-agreements.html">Agreements
+   * Feeds</a>.</p>
+   */
+  inline const Aws::String& GetLicenseArn() const { return m_licenseArn; }
+  inline bool LicenseArnHasBeenSet() const { return m_licenseArnHasBeenSet; }
+  template <typename LicenseArnT = Aws::String>
+  void SetLicenseArn(LicenseArnT&& value) {
+    m_licenseArnHasBeenSet = true;
+    m_licenseArn = std::forward<LicenseArnT>(value);
+  }
+  template <typename LicenseArnT = Aws::String>
+  UsageRecord& WithLicenseArn(LicenseArnT&& value) {
+    SetLicenseArn(std::forward<LicenseArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Utils::DateTime m_timestamp{};
+
+  Aws::String m_customerIdentifier;
+
+  Aws::String m_dimension;
+
+  int m_quantity{0};
+
+  Aws::Vector<UsageAllocation> m_usageAllocations;
+
+  Aws::String m_customerAWSAccountId;
+
+  Aws::String m_licenseArn;
+  bool m_timestampHasBeenSet = false;
+  bool m_customerIdentifierHasBeenSet = false;
+  bool m_dimensionHasBeenSet = false;
+  bool m_quantityHasBeenSet = false;
+  bool m_usageAllocationsHasBeenSet = false;
+  bool m_customerAWSAccountIdHasBeenSet = false;
+  bool m_licenseArnHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MarketplaceMetering
+}  // namespace Aws

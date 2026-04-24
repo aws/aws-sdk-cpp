@@ -1,0 +1,196 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/deadline/DeadlineRequest.h>
+#include <aws/deadline/Deadline_EXPORTS.h>
+#include <aws/deadline/model/SearchGroupedFilterExpressions.h>
+#include <aws/deadline/model/SearchSortExpression.h>
+
+#include <utility>
+
+namespace Aws {
+namespace deadline {
+namespace Model {
+
+/**
+ * <p>Shared input fields for all Search operations (filterExpressions,
+ * sortExpressions, itemOffset, pageSize).</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/SearchStepsRequest">AWS
+ * API Reference</a></p>
+ */
+class SearchStepsRequest : public DeadlineRequest {
+ public:
+  AWS_DEADLINE_API SearchStepsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "SearchSteps"; }
+
+  AWS_DEADLINE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The farm ID to use for the step search.</p>
+   */
+  inline const Aws::String& GetFarmId() const { return m_farmId; }
+  inline bool FarmIdHasBeenSet() const { return m_farmIdHasBeenSet; }
+  template <typename FarmIdT = Aws::String>
+  void SetFarmId(FarmIdT&& value) {
+    m_farmIdHasBeenSet = true;
+    m_farmId = std::forward<FarmIdT>(value);
+  }
+  template <typename FarmIdT = Aws::String>
+  SearchStepsRequest& WithFarmId(FarmIdT&& value) {
+    SetFarmId(std::forward<FarmIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The search terms for a resource.</p>
+   */
+  inline const SearchGroupedFilterExpressions& GetFilterExpressions() const { return m_filterExpressions; }
+  inline bool FilterExpressionsHasBeenSet() const { return m_filterExpressionsHasBeenSet; }
+  template <typename FilterExpressionsT = SearchGroupedFilterExpressions>
+  void SetFilterExpressions(FilterExpressionsT&& value) {
+    m_filterExpressionsHasBeenSet = true;
+    m_filterExpressions = std::forward<FilterExpressionsT>(value);
+  }
+  template <typename FilterExpressionsT = SearchGroupedFilterExpressions>
+  SearchStepsRequest& WithFilterExpressions(FilterExpressionsT&& value) {
+    SetFilterExpressions(std::forward<FilterExpressionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The search terms for a resource.</p>
+   */
+  inline const Aws::Vector<SearchSortExpression>& GetSortExpressions() const { return m_sortExpressions; }
+  inline bool SortExpressionsHasBeenSet() const { return m_sortExpressionsHasBeenSet; }
+  template <typename SortExpressionsT = Aws::Vector<SearchSortExpression>>
+  void SetSortExpressions(SortExpressionsT&& value) {
+    m_sortExpressionsHasBeenSet = true;
+    m_sortExpressions = std::forward<SortExpressionsT>(value);
+  }
+  template <typename SortExpressionsT = Aws::Vector<SearchSortExpression>>
+  SearchStepsRequest& WithSortExpressions(SortExpressionsT&& value) {
+    SetSortExpressions(std::forward<SortExpressionsT>(value));
+    return *this;
+  }
+  template <typename SortExpressionsT = SearchSortExpression>
+  SearchStepsRequest& AddSortExpressions(SortExpressionsT&& value) {
+    m_sortExpressionsHasBeenSet = true;
+    m_sortExpressions.emplace_back(std::forward<SortExpressionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The offset for the search results.</p>
+   */
+  inline int GetItemOffset() const { return m_itemOffset; }
+  inline bool ItemOffsetHasBeenSet() const { return m_itemOffsetHasBeenSet; }
+  inline void SetItemOffset(int value) {
+    m_itemOffsetHasBeenSet = true;
+    m_itemOffset = value;
+  }
+  inline SearchStepsRequest& WithItemOffset(int value) {
+    SetItemOffset(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the number of results to return.</p>
+   */
+  inline int GetPageSize() const { return m_pageSize; }
+  inline bool PageSizeHasBeenSet() const { return m_pageSizeHasBeenSet; }
+  inline void SetPageSize(int value) {
+    m_pageSizeHasBeenSet = true;
+    m_pageSize = value;
+  }
+  inline SearchStepsRequest& WithPageSize(int value) {
+    SetPageSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The queue IDs in the step search.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetQueueIds() const { return m_queueIds; }
+  inline bool QueueIdsHasBeenSet() const { return m_queueIdsHasBeenSet; }
+  template <typename QueueIdsT = Aws::Vector<Aws::String>>
+  void SetQueueIds(QueueIdsT&& value) {
+    m_queueIdsHasBeenSet = true;
+    m_queueIds = std::forward<QueueIdsT>(value);
+  }
+  template <typename QueueIdsT = Aws::Vector<Aws::String>>
+  SearchStepsRequest& WithQueueIds(QueueIdsT&& value) {
+    SetQueueIds(std::forward<QueueIdsT>(value));
+    return *this;
+  }
+  template <typename QueueIdsT = Aws::String>
+  SearchStepsRequest& AddQueueIds(QueueIdsT&& value) {
+    m_queueIdsHasBeenSet = true;
+    m_queueIds.emplace_back(std::forward<QueueIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The job ID to use in the step search.</p>
+   */
+  inline const Aws::String& GetJobId() const { return m_jobId; }
+  inline bool JobIdHasBeenSet() const { return m_jobIdHasBeenSet; }
+  template <typename JobIdT = Aws::String>
+  void SetJobId(JobIdT&& value) {
+    m_jobIdHasBeenSet = true;
+    m_jobId = std::forward<JobIdT>(value);
+  }
+  template <typename JobIdT = Aws::String>
+  SearchStepsRequest& WithJobId(JobIdT&& value) {
+    SetJobId(std::forward<JobIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_farmId;
+
+  SearchGroupedFilterExpressions m_filterExpressions;
+
+  Aws::Vector<SearchSortExpression> m_sortExpressions;
+
+  int m_itemOffset{0};
+
+  int m_pageSize{0};
+
+  Aws::Vector<Aws::String> m_queueIds;
+
+  Aws::String m_jobId;
+  bool m_farmIdHasBeenSet = false;
+  bool m_filterExpressionsHasBeenSet = false;
+  bool m_sortExpressionsHasBeenSet = false;
+  bool m_itemOffsetHasBeenSet = false;
+  bool m_pageSizeHasBeenSet = false;
+  bool m_queueIdsHasBeenSet = false;
+  bool m_jobIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace deadline
+}  // namespace Aws

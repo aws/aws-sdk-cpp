@@ -1,0 +1,123 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cloudfront/CloudFront_EXPORTS.h>
+#include <aws/cloudfront/model/StreamingDistribution.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace CloudFront {
+namespace Model {
+/**
+ * <p>The returned result of the corresponding request.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cloudfront-2020-05-31/CreateStreamingDistributionResult">AWS
+ * API Reference</a></p>
+ */
+class CreateStreamingDistribution2020_05_31Result {
+ public:
+  AWS_CLOUDFRONT_API CreateStreamingDistribution2020_05_31Result() = default;
+  AWS_CLOUDFRONT_API CreateStreamingDistribution2020_05_31Result(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_CLOUDFRONT_API CreateStreamingDistribution2020_05_31Result& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>The streaming distribution's information.</p>
+   */
+  inline const StreamingDistribution& GetStreamingDistribution() const { return m_streamingDistribution; }
+  template <typename StreamingDistributionT = StreamingDistribution>
+  void SetStreamingDistribution(StreamingDistributionT&& value) {
+    m_streamingDistributionHasBeenSet = true;
+    m_streamingDistribution = std::forward<StreamingDistributionT>(value);
+  }
+  template <typename StreamingDistributionT = StreamingDistribution>
+  CreateStreamingDistribution2020_05_31Result& WithStreamingDistribution(StreamingDistributionT&& value) {
+    SetStreamingDistribution(std::forward<StreamingDistributionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The fully qualified URI of the new streaming distribution resource just
+   * created.</p>
+   */
+  inline const Aws::String& GetLocation() const { return m_location; }
+  template <typename LocationT = Aws::String>
+  void SetLocation(LocationT&& value) {
+    m_locationHasBeenSet = true;
+    m_location = std::forward<LocationT>(value);
+  }
+  template <typename LocationT = Aws::String>
+  CreateStreamingDistribution2020_05_31Result& WithLocation(LocationT&& value) {
+    SetLocation(std::forward<LocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The current version of the streaming distribution created.</p>
+   */
+  inline const Aws::String& GetETag() const { return m_eTag; }
+  template <typename ETagT = Aws::String>
+  void SetETag(ETagT&& value) {
+    m_eTagHasBeenSet = true;
+    m_eTag = std::forward<ETagT>(value);
+  }
+  template <typename ETagT = Aws::String>
+  CreateStreamingDistribution2020_05_31Result& WithETag(ETagT&& value) {
+    SetETag(std::forward<ETagT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateStreamingDistribution2020_05_31Result& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  StreamingDistribution m_streamingDistribution;
+
+  Aws::String m_location;
+
+  Aws::String m_eTag;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_streamingDistributionHasBeenSet = false;
+  bool m_locationHasBeenSet = false;
+  bool m_eTagHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CloudFront
+}  // namespace Aws

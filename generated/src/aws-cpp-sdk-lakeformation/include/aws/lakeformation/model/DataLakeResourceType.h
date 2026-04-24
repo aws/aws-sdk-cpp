@@ -1,0 +1,33 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/lakeformation/LakeFormation_EXPORTS.h>
+
+namespace Aws {
+namespace LakeFormation {
+namespace Model {
+enum class DataLakeResourceType {
+  NOT_SET,
+  CATALOG,
+  DATABASE,
+  TABLE,
+  DATA_LOCATION,
+  LF_TAG,
+  LF_TAG_POLICY,
+  LF_TAG_POLICY_DATABASE,
+  LF_TAG_POLICY_TABLE,
+  LF_NAMED_TAG_EXPRESSION
+};
+
+namespace DataLakeResourceTypeMapper {
+AWS_LAKEFORMATION_API DataLakeResourceType GetDataLakeResourceTypeForName(const Aws::String& name);
+
+AWS_LAKEFORMATION_API Aws::String GetNameForDataLakeResourceType(DataLakeResourceType value);
+}  // namespace DataLakeResourceTypeMapper
+}  // namespace Model
+}  // namespace LakeFormation
+}  // namespace Aws

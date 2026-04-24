@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/verifiedpermissions/model/CreatePolicyTemplateResult.h>
+
+#include <utility>
+
+using namespace Aws::VerifiedPermissions::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreatePolicyTemplateResult::CreatePolicyTemplateResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+CreatePolicyTemplateResult& CreatePolicyTemplateResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("policyStoreId")) {
+    m_policyStoreId = jsonValue.GetString("policyStoreId");
+    m_policyStoreIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("policyTemplateId")) {
+    m_policyTemplateId = jsonValue.GetString("policyTemplateId");
+    m_policyTemplateIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdDate")) {
+    m_createdDate = jsonValue.GetString("createdDate");
+    m_createdDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("lastUpdatedDate")) {
+    m_lastUpdatedDate = jsonValue.GetString("lastUpdatedDate");
+    m_lastUpdatedDateHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

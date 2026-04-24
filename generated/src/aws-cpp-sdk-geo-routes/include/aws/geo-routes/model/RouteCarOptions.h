@@ -1,0 +1,129 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/geo-routes/GeoRoutes_EXPORTS.h>
+#include <aws/geo-routes/model/RouteEngineType.h>
+#include <aws/geo-routes/model/RouteVehicleLicensePlate.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GeoRoutes {
+namespace Model {
+
+/**
+ * <p> Travel mode options when the provided travel mode is <code>Car</code>. For
+ * <a
+ * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+ * customers, <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions
+ * support only <code>LicensePlate</code> options. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/geo-routes-2020-11-19/RouteCarOptions">AWS
+ * API Reference</a></p>
+ */
+class RouteCarOptions {
+ public:
+  AWS_GEOROUTES_API RouteCarOptions() = default;
+  AWS_GEOROUTES_API RouteCarOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API RouteCarOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GEOROUTES_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p> Engine type of the vehicle. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p>
+   */
+  inline RouteEngineType GetEngineType() const { return m_engineType; }
+  inline bool EngineTypeHasBeenSet() const { return m_engineTypeHasBeenSet; }
+  inline void SetEngineType(RouteEngineType value) {
+    m_engineTypeHasBeenSet = true;
+    m_engineType = value;
+  }
+  inline RouteCarOptions& WithEngineType(RouteEngineType value) {
+    SetEngineType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The vehicle License Plate.</p>
+   */
+  inline const RouteVehicleLicensePlate& GetLicensePlate() const { return m_licensePlate; }
+  inline bool LicensePlateHasBeenSet() const { return m_licensePlateHasBeenSet; }
+  template <typename LicensePlateT = RouteVehicleLicensePlate>
+  void SetLicensePlate(LicensePlateT&& value) {
+    m_licensePlateHasBeenSet = true;
+    m_licensePlate = std::forward<LicensePlateT>(value);
+  }
+  template <typename LicensePlateT = RouteVehicleLicensePlate>
+  RouteCarOptions& WithLicensePlate(LicensePlateT&& value) {
+    SetLicensePlate(std::forward<LicensePlateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Maximum speed specified. Not supported in <code>ap-southeast-1</code> and
+   * <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p> <b>Unit</b>: <code>kilometers per hour</code> </p>
+   */
+  inline double GetMaxSpeed() const { return m_maxSpeed; }
+  inline bool MaxSpeedHasBeenSet() const { return m_maxSpeedHasBeenSet; }
+  inline void SetMaxSpeed(double value) {
+    m_maxSpeedHasBeenSet = true;
+    m_maxSpeed = value;
+  }
+  inline RouteCarOptions& WithMaxSpeed(double value) {
+    SetMaxSpeed(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The number of occupants in the vehicle. Not supported in
+   * <code>ap-southeast-1</code> and <code>ap-southeast-5</code> regions for <a
+   * href="https://docs.aws.amazon.com/location/latest/developerguide/GrabMaps.html">GrabMaps</a>
+   * customers. </p> <p>Default value: <code>1</code> </p>
+   */
+  inline int GetOccupancy() const { return m_occupancy; }
+  inline bool OccupancyHasBeenSet() const { return m_occupancyHasBeenSet; }
+  inline void SetOccupancy(int value) {
+    m_occupancyHasBeenSet = true;
+    m_occupancy = value;
+  }
+  inline RouteCarOptions& WithOccupancy(int value) {
+    SetOccupancy(value);
+    return *this;
+  }
+  ///@}
+ private:
+  RouteEngineType m_engineType{RouteEngineType::NOT_SET};
+
+  RouteVehicleLicensePlate m_licensePlate;
+
+  double m_maxSpeed{0.0};
+
+  int m_occupancy{0};
+  bool m_engineTypeHasBeenSet = false;
+  bool m_licensePlateHasBeenSet = false;
+  bool m_maxSpeedHasBeenSet = false;
+  bool m_occupancyHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GeoRoutes
+}  // namespace Aws

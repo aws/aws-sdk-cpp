@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/Service.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ECS {
+namespace Model {
+/**
+ * <zonbook></zonbook><xhtml></xhtml><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/UpdateServiceResponse">AWS
+ * API Reference</a></p>
+ */
+class UpdateServiceResult {
+ public:
+  AWS_ECS_API UpdateServiceResult() = default;
+  AWS_ECS_API UpdateServiceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ECS_API UpdateServiceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The full description of your service following the update call.</p>
+   */
+  inline const Service& GetService() const { return m_service; }
+  template <typename ServiceT = Service>
+  void SetService(ServiceT&& value) {
+    m_serviceHasBeenSet = true;
+    m_service = std::forward<ServiceT>(value);
+  }
+  template <typename ServiceT = Service>
+  UpdateServiceResult& WithService(ServiceT&& value) {
+    SetService(std::forward<ServiceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateServiceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Service m_service;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_serviceHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

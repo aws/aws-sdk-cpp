@@ -1,0 +1,330 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
+#include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/BrowserEnterprisePolicy.h>
+#include <aws/bedrock-agentcore/model/BrowserExtension.h>
+#include <aws/bedrock-agentcore/model/BrowserProfileConfiguration.h>
+#include <aws/bedrock-agentcore/model/Certificate.h>
+#include <aws/bedrock-agentcore/model/ProxyConfiguration.h>
+#include <aws/bedrock-agentcore/model/ViewPort.h>
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
+
+/**
+ */
+class StartBrowserSessionRequest : public BedrockAgentCoreRequest {
+ public:
+  AWS_BEDROCKAGENTCORE_API StartBrowserSessionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StartBrowserSession"; }
+
+  AWS_BEDROCKAGENTCORE_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCKAGENTCORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The trace identifier for request tracking.</p>
+   */
+  inline const Aws::String& GetTraceId() const { return m_traceId; }
+  inline bool TraceIdHasBeenSet() const { return m_traceIdHasBeenSet; }
+  template <typename TraceIdT = Aws::String>
+  void SetTraceId(TraceIdT&& value) {
+    m_traceIdHasBeenSet = true;
+    m_traceId = std::forward<TraceIdT>(value);
+  }
+  template <typename TraceIdT = Aws::String>
+  StartBrowserSessionRequest& WithTraceId(TraceIdT&& value) {
+    SetTraceId(std::forward<TraceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The parent trace information for distributed tracing.</p>
+   */
+  inline const Aws::String& GetTraceParent() const { return m_traceParent; }
+  inline bool TraceParentHasBeenSet() const { return m_traceParentHasBeenSet; }
+  template <typename TraceParentT = Aws::String>
+  void SetTraceParent(TraceParentT&& value) {
+    m_traceParentHasBeenSet = true;
+    m_traceParent = std::forward<TraceParentT>(value);
+  }
+  template <typename TraceParentT = Aws::String>
+  StartBrowserSessionRequest& WithTraceParent(TraceParentT&& value) {
+    SetTraceParent(std::forward<TraceParentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the browser to use for this session. This identifier
+   * specifies which browser environment to initialize for the session.</p>
+   */
+  inline const Aws::String& GetBrowserIdentifier() const { return m_browserIdentifier; }
+  inline bool BrowserIdentifierHasBeenSet() const { return m_browserIdentifierHasBeenSet; }
+  template <typename BrowserIdentifierT = Aws::String>
+  void SetBrowserIdentifier(BrowserIdentifierT&& value) {
+    m_browserIdentifierHasBeenSet = true;
+    m_browserIdentifier = std::forward<BrowserIdentifierT>(value);
+  }
+  template <typename BrowserIdentifierT = Aws::String>
+  StartBrowserSessionRequest& WithBrowserIdentifier(BrowserIdentifierT&& value) {
+    SetBrowserIdentifier(std::forward<BrowserIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the browser session. This name helps you identify and manage the
+   * session. The name does not need to be unique.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  StartBrowserSessionRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The duration in seconds (time-to-live) after which the session automatically
+   * terminates, regardless of ongoing activity. Defaults to 3600 seconds (1 hour).
+   * Recommended minimum: 60 seconds. Maximum allowed: 28,800 seconds (8 hours).</p>
+   */
+  inline int GetSessionTimeoutSeconds() const { return m_sessionTimeoutSeconds; }
+  inline bool SessionTimeoutSecondsHasBeenSet() const { return m_sessionTimeoutSecondsHasBeenSet; }
+  inline void SetSessionTimeoutSeconds(int value) {
+    m_sessionTimeoutSecondsHasBeenSet = true;
+    m_sessionTimeoutSeconds = value;
+  }
+  inline StartBrowserSessionRequest& WithSessionTimeoutSeconds(int value) {
+    SetSessionTimeoutSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The dimensions of the browser viewport for this session. This determines the
+   * visible area of the web content and affects how web pages are rendered. If not
+   * specified, Amazon Bedrock AgentCore uses a default viewport size.</p>
+   */
+  inline const ViewPort& GetViewPort() const { return m_viewPort; }
+  inline bool ViewPortHasBeenSet() const { return m_viewPortHasBeenSet; }
+  template <typename ViewPortT = ViewPort>
+  void SetViewPort(ViewPortT&& value) {
+    m_viewPortHasBeenSet = true;
+    m_viewPort = std::forward<ViewPortT>(value);
+  }
+  template <typename ViewPortT = ViewPort>
+  StartBrowserSessionRequest& WithViewPort(ViewPortT&& value) {
+    SetViewPort(std::forward<ViewPortT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of browser extensions to load into the browser session.</p>
+   */
+  inline const Aws::Vector<BrowserExtension>& GetExtensions() const { return m_extensions; }
+  inline bool ExtensionsHasBeenSet() const { return m_extensionsHasBeenSet; }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  void SetExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions = std::forward<ExtensionsT>(value);
+  }
+  template <typename ExtensionsT = Aws::Vector<BrowserExtension>>
+  StartBrowserSessionRequest& WithExtensions(ExtensionsT&& value) {
+    SetExtensions(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  template <typename ExtensionsT = BrowserExtension>
+  StartBrowserSessionRequest& AddExtensions(ExtensionsT&& value) {
+    m_extensionsHasBeenSet = true;
+    m_extensions.emplace_back(std::forward<ExtensionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The browser profile configuration to use for this session. A browser profile
+   * contains persistent data such as cookies and local storage that can be reused
+   * across multiple browser sessions. If specified, the session initializes with the
+   * profile's stored data, enabling continuity for tasks that require authentication
+   * or personalized settings.</p>
+   */
+  inline const BrowserProfileConfiguration& GetProfileConfiguration() const { return m_profileConfiguration; }
+  inline bool ProfileConfigurationHasBeenSet() const { return m_profileConfigurationHasBeenSet; }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  void SetProfileConfiguration(ProfileConfigurationT&& value) {
+    m_profileConfigurationHasBeenSet = true;
+    m_profileConfiguration = std::forward<ProfileConfigurationT>(value);
+  }
+  template <typename ProfileConfigurationT = BrowserProfileConfiguration>
+  StartBrowserSessionRequest& WithProfileConfiguration(ProfileConfigurationT&& value) {
+    SetProfileConfiguration(std::forward<ProfileConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Optional proxy configuration for routing browser traffic through
+   * customer-specified proxy servers. When provided, enables HTTP Basic
+   * authentication via Amazon Web Services Secrets Manager and domain-based routing
+   * rules. Requires <code>secretsmanager:GetSecretValue</code> IAM permission for
+   * the specified secret ARNs.</p>
+   */
+  inline const ProxyConfiguration& GetProxyConfiguration() const { return m_proxyConfiguration; }
+  inline bool ProxyConfigurationHasBeenSet() const { return m_proxyConfigurationHasBeenSet; }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  void SetProxyConfiguration(ProxyConfigurationT&& value) {
+    m_proxyConfigurationHasBeenSet = true;
+    m_proxyConfiguration = std::forward<ProxyConfigurationT>(value);
+  }
+  template <typename ProxyConfigurationT = ProxyConfiguration>
+  StartBrowserSessionRequest& WithProxyConfiguration(ProxyConfigurationT&& value) {
+    SetProxyConfiguration(std::forward<ProxyConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of files containing enterprise policies for the browser.</p>
+   */
+  inline const Aws::Vector<BrowserEnterprisePolicy>& GetEnterprisePolicies() const { return m_enterprisePolicies; }
+  inline bool EnterprisePoliciesHasBeenSet() const { return m_enterprisePoliciesHasBeenSet; }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  void SetEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies = std::forward<EnterprisePoliciesT>(value);
+  }
+  template <typename EnterprisePoliciesT = Aws::Vector<BrowserEnterprisePolicy>>
+  StartBrowserSessionRequest& WithEnterprisePolicies(EnterprisePoliciesT&& value) {
+    SetEnterprisePolicies(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  template <typename EnterprisePoliciesT = BrowserEnterprisePolicy>
+  StartBrowserSessionRequest& AddEnterprisePolicies(EnterprisePoliciesT&& value) {
+    m_enterprisePoliciesHasBeenSet = true;
+    m_enterprisePolicies.emplace_back(std::forward<EnterprisePoliciesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of certificates to install in the browser session.</p>
+   */
+  inline const Aws::Vector<Certificate>& GetCertificates() const { return m_certificates; }
+  inline bool CertificatesHasBeenSet() const { return m_certificatesHasBeenSet; }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  void SetCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates = std::forward<CertificatesT>(value);
+  }
+  template <typename CertificatesT = Aws::Vector<Certificate>>
+  StartBrowserSessionRequest& WithCertificates(CertificatesT&& value) {
+    SetCertificates(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  template <typename CertificatesT = Certificate>
+  StartBrowserSessionRequest& AddCertificates(CertificatesT&& value) {
+    m_certificatesHasBeenSet = true;
+    m_certificates.emplace_back(std::forward<CertificatesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier to ensure that the API request completes
+   * no more than one time. If this token matches a previous request, Amazon Bedrock
+   * AgentCore ignores the request, but does not return an error. This parameter
+   * helps prevent the creation of duplicate sessions if there are temporary network
+   * issues.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  StartBrowserSessionRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_traceId;
+
+  Aws::String m_traceParent;
+
+  Aws::String m_browserIdentifier;
+
+  Aws::String m_name;
+
+  int m_sessionTimeoutSeconds{0};
+
+  ViewPort m_viewPort;
+
+  Aws::Vector<BrowserExtension> m_extensions;
+
+  BrowserProfileConfiguration m_profileConfiguration;
+
+  ProxyConfiguration m_proxyConfiguration;
+
+  Aws::Vector<BrowserEnterprisePolicy> m_enterprisePolicies;
+
+  Aws::Vector<Certificate> m_certificates;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_traceIdHasBeenSet = false;
+  bool m_traceParentHasBeenSet = false;
+  bool m_browserIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_sessionTimeoutSecondsHasBeenSet = false;
+  bool m_viewPortHasBeenSet = false;
+  bool m_extensionsHasBeenSet = false;
+  bool m_profileConfigurationHasBeenSet = false;
+  bool m_proxyConfigurationHasBeenSet = false;
+  bool m_enterprisePoliciesHasBeenSet = false;
+  bool m_certificatesHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

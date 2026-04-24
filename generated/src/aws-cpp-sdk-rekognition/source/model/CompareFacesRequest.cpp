@@ -1,0 +1,41 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/CompareFacesRequest.h>
+
+#include <utility>
+
+using namespace Aws::Rekognition::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CompareFacesRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_sourceImageHasBeenSet) {
+    payload.WithObject("SourceImage", m_sourceImage.Jsonize());
+  }
+
+  if (m_targetImageHasBeenSet) {
+    payload.WithObject("TargetImage", m_targetImage.Jsonize());
+  }
+
+  if (m_similarityThresholdHasBeenSet) {
+    payload.WithDouble("SimilarityThreshold", m_similarityThreshold);
+  }
+
+  if (m_qualityFilterHasBeenSet) {
+    payload.WithString("QualityFilter", QualityFilterMapper::GetNameForQualityFilter(m_qualityFilter));
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection CompareFacesRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "RekognitionService.CompareFaces"));
+  return headers;
+}

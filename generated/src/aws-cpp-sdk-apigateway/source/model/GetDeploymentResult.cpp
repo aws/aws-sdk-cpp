@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/apigateway/model/GetDeploymentResult.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::APIGateway::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetDeploymentResult::GetDeploymentResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+GetDeploymentResult& GetDeploymentResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("createdDate")) {
+    m_createdDate = jsonValue.GetDouble("createdDate");
+    m_createdDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("apiSummary")) {
+    Aws::Map<Aws::String, JsonView> apiSummaryJsonMap = jsonValue.GetObject("apiSummary").GetAllObjects();
+    for (auto& apiSummaryItem : apiSummaryJsonMap) {
+      Aws::Map<Aws::String, JsonView> mapOfMethodSnapshot2JsonMap = apiSummaryItem.second.GetAllObjects();
+      Aws::Map<Aws::String, MethodSnapshot> mapOfMethodSnapshot2Map;
+      for (auto& mapOfMethodSnapshot2Item : mapOfMethodSnapshot2JsonMap) {
+        mapOfMethodSnapshot2Map[mapOfMethodSnapshot2Item.first] = mapOfMethodSnapshot2Item.second.AsObject();
+      }
+      m_apiSummary[apiSummaryItem.first] = std::move(mapOfMethodSnapshot2Map);
+    }
+    m_apiSummaryHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr-public/ECRPublic_EXPORTS.h>
+#include <aws/ecr-public/model/Repository.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ECRPublic {
+namespace Model {
+class DeleteRepositoryResult {
+ public:
+  AWS_ECRPUBLIC_API DeleteRepositoryResult() = default;
+  AWS_ECRPUBLIC_API DeleteRepositoryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ECRPUBLIC_API DeleteRepositoryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The repository that was deleted.</p>
+   */
+  inline const Repository& GetRepository() const { return m_repository; }
+  template <typename RepositoryT = Repository>
+  void SetRepository(RepositoryT&& value) {
+    m_repositoryHasBeenSet = true;
+    m_repository = std::forward<RepositoryT>(value);
+  }
+  template <typename RepositoryT = Repository>
+  DeleteRepositoryResult& WithRepository(RepositoryT&& value) {
+    SetRepository(std::forward<RepositoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteRepositoryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Repository m_repository;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_repositoryHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ECRPublic
+}  // namespace Aws

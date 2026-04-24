@@ -1,0 +1,211 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/auth/AWSAuthSigner.h>
+#include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/CoreErrors.h>
+#include <aws/core/client/RetryStrategy.h>
+#include <aws/core/http/HttpClient.h>
+#include <aws/core/http/HttpClientFactory.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DNS.h>
+#include <aws/core/utils/Outcome.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/logging/ErrorMacros.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/threading/Executor.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterClient.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterEndpointProvider.h>
+#include <aws/route53-recovery-cluster/Route53RecoveryClusterErrorMarshaller.h>
+#include <aws/route53-recovery-cluster/model/GetRoutingControlStateRequest.h>
+#include <aws/route53-recovery-cluster/model/ListRoutingControlsRequest.h>
+#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStateRequest.h>
+#include <aws/route53-recovery-cluster/model/UpdateRoutingControlStatesRequest.h>
+#include <smithy/tracing/TracingUtils.h>
+
+using namespace Aws;
+using namespace Aws::Auth;
+using namespace Aws::Client;
+using namespace Aws::Route53RecoveryCluster;
+using namespace Aws::Route53RecoveryCluster::Model;
+using namespace Aws::Http;
+using namespace Aws::Utils::Json;
+using namespace smithy::components::tracing;
+using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+namespace Aws {
+namespace Route53RecoveryCluster {
+const char SERVICE_NAME[] = "route53-recovery-cluster";
+const char ALLOCATION_TAG[] = "Route53RecoveryClusterClient";
+}  // namespace Route53RecoveryCluster
+}  // namespace Aws
+const char* Route53RecoveryClusterClient::GetServiceName() { return SERVICE_NAME; }
+const char* Route53RecoveryClusterClient::GetAllocationTag() { return ALLOCATION_TAG; }
+
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(
+    const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration,
+    std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(
+                    ALLOCATION_TAG,
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
+                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
+                                          : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(
+    const AWSCredentials& credentials, std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider,
+    const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
+                                          : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(
+    const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+    std::shared_ptr<Route53RecoveryClusterEndpointProviderBase> endpointProvider,
+    const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(endpointProvider ? std::move(endpointProvider)
+                                          : Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+/* Legacy constructors due deprecation */
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(const Aws::Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(
+                    ALLOCATION_TAG,
+                    Aws::MakeShared<DefaultAWSCredentialsProviderChain>(ALLOCATION_TAG, clientConfiguration.credentialProviderConfig),
+                    SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(const AWSCredentials& credentials,
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, Aws::MakeShared<SimpleAWSCredentialsProvider>(ALLOCATION_TAG, credentials),
+                                                 SERVICE_NAME, Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+Route53RecoveryClusterClient::Route53RecoveryClusterClient(const std::shared_ptr<AWSCredentialsProvider>& credentialsProvider,
+                                                           const Aws::Client::ClientConfiguration& clientConfiguration)
+    : BASECLASS(clientConfiguration,
+                Aws::MakeShared<AWSAuthV4Signer>(ALLOCATION_TAG, credentialsProvider, SERVICE_NAME,
+                                                 Aws::Region::ComputeSignerRegion(clientConfiguration.region)),
+                Aws::MakeShared<Route53RecoveryClusterErrorMarshaller>(ALLOCATION_TAG)),
+      m_clientConfiguration(clientConfiguration),
+      m_endpointProvider(Aws::MakeShared<Route53RecoveryClusterEndpointProvider>(ALLOCATION_TAG)) {
+  init(m_clientConfiguration);
+}
+
+/* End of legacy constructors due deprecation */
+Route53RecoveryClusterClient::~Route53RecoveryClusterClient() { ShutdownSdkClient(this, -1); }
+
+std::shared_ptr<Route53RecoveryClusterEndpointProviderBase>& Route53RecoveryClusterClient::accessEndpointProvider() {
+  return m_endpointProvider;
+}
+
+void Route53RecoveryClusterClient::init(const Route53RecoveryCluster::Route53RecoveryClusterClientConfiguration& config) {
+  AWSClient::SetServiceClientName("Route53 Recovery Cluster");
+  if (!m_clientConfiguration.executor) {
+    if (!m_clientConfiguration.configFactories.executorCreateFn()) {
+      AWS_LOGSTREAM_FATAL(ALLOCATION_TAG, "Failed to initialize client: config is missing Executor or executorCreateFn");
+      m_isInitialized = false;
+      return;
+    }
+    m_clientConfiguration.executor = m_clientConfiguration.configFactories.executorCreateFn();
+  }
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_endpointProvider->InitBuiltInParameters(config, "route53-recovery-cluster");
+}
+
+void Route53RecoveryClusterClient::OverrideEndpoint(const Aws::String& endpoint) {
+  AWS_CHECK_PTR(SERVICE_NAME, m_endpointProvider);
+  m_clientConfiguration.endpointOverride = endpoint;
+  m_endpointProvider->OverrideEndpoint(endpoint);
+}
+Route53RecoveryClusterClient::InvokeOperationOutcome Route53RecoveryClusterClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE,
+                                            endpointResolutionOutcome.GetError().GetMessage());
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
+
+GetRoutingControlStateOutcome Route53RecoveryClusterClient::GetRoutingControlState(const GetRoutingControlStateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetRoutingControlStateOutcome(result.GetResultWithOwnership())
+                            : GetRoutingControlStateOutcome(std::move(result.GetError()));
+}
+
+ListRoutingControlsOutcome Route53RecoveryClusterClient::ListRoutingControls(const ListRoutingControlsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListRoutingControlsOutcome(result.GetResultWithOwnership())
+                            : ListRoutingControlsOutcome(std::move(result.GetError()));
+}
+
+UpdateRoutingControlStateOutcome Route53RecoveryClusterClient::UpdateRoutingControlState(
+    const UpdateRoutingControlStateRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingControlStateOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingControlStateOutcome(std::move(result.GetError()));
+}
+
+UpdateRoutingControlStatesOutcome Route53RecoveryClusterClient::UpdateRoutingControlStates(
+    const UpdateRoutingControlStatesRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateRoutingControlStatesOutcome(result.GetResultWithOwnership())
+                            : UpdateRoutingControlStatesOutcome(std::move(result.GetError()));
+}

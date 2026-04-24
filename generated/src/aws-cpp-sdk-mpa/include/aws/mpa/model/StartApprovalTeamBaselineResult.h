@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mpa/MPA_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MPA {
+namespace Model {
+class StartApprovalTeamBaselineResult {
+ public:
+  AWS_MPA_API StartApprovalTeamBaselineResult() = default;
+  AWS_MPA_API StartApprovalTeamBaselineResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MPA_API StartApprovalTeamBaselineResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Amazon Resource Name (ARN) for the session.</p>
+   */
+  inline const Aws::String& GetBaselineSessionArn() const { return m_baselineSessionArn; }
+  template <typename BaselineSessionArnT = Aws::String>
+  void SetBaselineSessionArn(BaselineSessionArnT&& value) {
+    m_baselineSessionArnHasBeenSet = true;
+    m_baselineSessionArn = std::forward<BaselineSessionArnT>(value);
+  }
+  template <typename BaselineSessionArnT = Aws::String>
+  StartApprovalTeamBaselineResult& WithBaselineSessionArn(BaselineSessionArnT&& value) {
+    SetBaselineSessionArn(std::forward<BaselineSessionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartApprovalTeamBaselineResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_baselineSessionArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_baselineSessionArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MPA
+}  // namespace Aws

@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-incidents/model/UpdateDeletionProtectionRequest.h>
+
+#include <utility>
+
+using namespace Aws::SSMIncidents::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateDeletionProtectionRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_deletionProtectedHasBeenSet) {
+    payload.WithBool("deletionProtected", m_deletionProtected);
+  }
+
+  return payload.View().WriteReadable();
+}

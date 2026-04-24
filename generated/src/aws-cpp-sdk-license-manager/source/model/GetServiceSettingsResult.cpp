@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/license-manager/model/GetServiceSettingsResult.h>
+
+#include <utility>
+
+using namespace Aws::LicenseManager::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetServiceSettingsResult::GetServiceSettingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+GetServiceSettingsResult& GetServiceSettingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("S3BucketArn")) {
+    m_s3BucketArn = jsonValue.GetString("S3BucketArn");
+    m_s3BucketArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SnsTopicArn")) {
+    m_snsTopicArn = jsonValue.GetString("SnsTopicArn");
+    m_snsTopicArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OrganizationConfiguration")) {
+    m_organizationConfiguration = jsonValue.GetObject("OrganizationConfiguration");
+    m_organizationConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EnableCrossAccountsDiscovery")) {
+    m_enableCrossAccountsDiscovery = jsonValue.GetBool("EnableCrossAccountsDiscovery");
+    m_enableCrossAccountsDiscoveryHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LicenseManagerResourceShareArn")) {
+    m_licenseManagerResourceShareArn = jsonValue.GetString("LicenseManagerResourceShareArn");
+    m_licenseManagerResourceShareArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossRegionDiscoveryHomeRegion")) {
+    m_crossRegionDiscoveryHomeRegion = jsonValue.GetString("CrossRegionDiscoveryHomeRegion");
+    m_crossRegionDiscoveryHomeRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CrossRegionDiscoverySourceRegions")) {
+    Aws::Utils::Array<JsonView> crossRegionDiscoverySourceRegionsJsonList = jsonValue.GetArray("CrossRegionDiscoverySourceRegions");
+    for (unsigned crossRegionDiscoverySourceRegionsIndex = 0;
+         crossRegionDiscoverySourceRegionsIndex < crossRegionDiscoverySourceRegionsJsonList.GetLength();
+         ++crossRegionDiscoverySourceRegionsIndex) {
+      m_crossRegionDiscoverySourceRegions.push_back(
+          crossRegionDiscoverySourceRegionsJsonList[crossRegionDiscoverySourceRegionsIndex].AsString());
+    }
+    m_crossRegionDiscoverySourceRegionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ServiceStatus")) {
+    m_serviceStatus = jsonValue.GetObject("ServiceStatus");
+    m_serviceStatusHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

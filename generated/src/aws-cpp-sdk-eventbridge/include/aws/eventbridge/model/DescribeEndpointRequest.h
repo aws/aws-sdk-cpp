@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/eventbridge/EventBridgeRequest.h>
+#include <aws/eventbridge/EventBridge_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace EventBridge {
+namespace Model {
+
+/**
+ */
+class DescribeEndpointRequest : public EventBridgeRequest {
+ public:
+  AWS_EVENTBRIDGE_API DescribeEndpointRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeEndpoint"; }
+
+  AWS_EVENTBRIDGE_API Aws::String SerializePayload() const override;
+
+  AWS_EVENTBRIDGE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The name of the endpoint you want to get information about. For example,
+   * <code>"Name":"us-east-2-custom_bus_A-endpoint"</code>.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  DescribeEndpointRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The primary Region of the endpoint you want to get information about. For
+   * example <code>"HomeRegion": "us-east-1"</code>.</p>
+   */
+  inline const Aws::String& GetHomeRegion() const { return m_homeRegion; }
+  inline bool HomeRegionHasBeenSet() const { return m_homeRegionHasBeenSet; }
+  template <typename HomeRegionT = Aws::String>
+  void SetHomeRegion(HomeRegionT&& value) {
+    m_homeRegionHasBeenSet = true;
+    m_homeRegion = std::forward<HomeRegionT>(value);
+  }
+  template <typename HomeRegionT = Aws::String>
+  DescribeEndpointRequest& WithHomeRegion(HomeRegionT&& value) {
+    SetHomeRegion(std::forward<HomeRegionT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_name;
+
+  Aws::String m_homeRegion;
+  bool m_nameHasBeenSet = false;
+  bool m_homeRegionHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EventBridge
+}  // namespace Aws

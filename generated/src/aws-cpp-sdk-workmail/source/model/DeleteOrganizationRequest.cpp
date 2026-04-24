@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workmail/model/DeleteOrganizationRequest.h>
+
+#include <utility>
+
+using namespace Aws::WorkMail::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String DeleteOrganizationRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("ClientToken", m_clientToken);
+  }
+
+  if (m_organizationIdHasBeenSet) {
+    payload.WithString("OrganizationId", m_organizationId);
+  }
+
+  if (m_deleteDirectoryHasBeenSet) {
+    payload.WithBool("DeleteDirectory", m_deleteDirectory);
+  }
+
+  if (m_forceDeleteHasBeenSet) {
+    payload.WithBool("ForceDelete", m_forceDelete);
+  }
+
+  if (m_deleteIdentityCenterApplicationHasBeenSet) {
+    payload.WithBool("DeleteIdentityCenterApplication", m_deleteIdentityCenterApplication);
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection DeleteOrganizationRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "WorkMailService.DeleteOrganization"));
+  return headers;
+}

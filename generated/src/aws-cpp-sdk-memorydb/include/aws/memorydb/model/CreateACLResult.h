@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/memorydb/MemoryDB_EXPORTS.h>
+#include <aws/memorydb/model/ACL.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MemoryDB {
+namespace Model {
+class CreateACLResult {
+ public:
+  AWS_MEMORYDB_API CreateACLResult() = default;
+  AWS_MEMORYDB_API CreateACLResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MEMORYDB_API CreateACLResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The newly-created Access Control List.</p>
+   */
+  inline const ACL& GetACL() const { return m_aCL; }
+  template <typename ACLT = ACL>
+  void SetACL(ACLT&& value) {
+    m_aCLHasBeenSet = true;
+    m_aCL = std::forward<ACLT>(value);
+  }
+  template <typename ACLT = ACL>
+  CreateACLResult& WithACL(ACLT&& value) {
+    SetACL(std::forward<ACLT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateACLResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ACL m_aCL;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_aCLHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MemoryDB
+}  // namespace Aws

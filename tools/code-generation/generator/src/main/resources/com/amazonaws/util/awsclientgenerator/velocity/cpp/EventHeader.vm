@@ -1,0 +1,87 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar(${blobMember.key}))
+#set($memberVariableName = $CppViewHelper.computeMemberVariableName($blobMember.key))
+#set($memberDocumentation ="/**${nl}     * ${blobMember.value.documentation}${nl}     */")
+#set($required = "${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)} = true; ")
+#set($cppType = "const Aws::Vector<unsigned char>&")
+#set($moveType = "Aws::Vector<unsigned char>&&")
+#set($classNameRef = "${typeInfo.className}&")
+#set($exportMacro = $typeInfo.exportValue)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+#foreach($header in $typeInfo.headerIncludes)
+\#include $header
+#end
+
+namespace Aws
+{
+#if ($rootNamespace != "Aws")
+} // namespace Aws
+namespace ${rootNamespace}
+{
+#end
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+#if($shape.documentation)
+  /**
+   * $shape.documentation
+   */
+#end
+  class $typeInfo.className
+  {
+  public:
+    ${exportMacro} ${typeInfo.className}() = default;
+    ${exportMacro} ${typeInfo.className}(Aws::Vector<unsigned char>&& value) { ${memberVariableName} = std::move(value); }
+
+    ///@{
+    $memberDocumentation
+    inline ${cppType} Get${memberKeyWithFirstLetterCapitalized}() const { return ${memberVariableName}; }
+    inline ${moveType} Get${memberKeyWithFirstLetterCapitalized}WithOwnership() { return std::move(${memberVariableName}); }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value) { ${required}${memberVariableName} = value; }
+    inline void Set${memberKeyWithFirstLetterCapitalized}(${moveType} value) { ${required}${memberVariableName} = std::move(value); }
+    inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value) { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}
+    inline ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${moveType} value) { Set${memberKeyWithFirstLetterCapitalized}(std::move(value)); return *this;}
+    ///@}
+
+#foreach($eventHeaderMapping in $shape.getEventStreamHeaders().entrySet())
+#set($eventHeader = $eventHeaderMapping.getValue())
+#set($eventHeaderMemberName = $CppViewHelper.computeMemberVariableName($eventHeader.getName()))
+#set($eventHeaderMemberNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($eventHeader.getName()))
+#set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
+#set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
+#if($eventHeader.boolean || $eventHeader.enum)
+#set($constQualifer = "")
+#else
+#set($constQualifer = "const ")
+#end
+    inline $constQualifer$eventHeaderMemberType Get${eventHeaderMemberNameWithFirstLetterCapitalized}() const { return $eventHeaderMemberName; }
+    inline bool ${eventHeaderMemberNameWithFirstLetterCapitalized}HasBeenSet() const { return $eventHeaderMemberHaseBeenSetName; }
+    template<typename T = $eventHeaderMemberType>
+    void Set${eventHeaderMemberNameWithFirstLetterCapitalized}(T&& value) { $eventHeaderMemberHaseBeenSetName = true; $eventHeaderMemberName = std::forward<T>(value); }
+    template<typename T = $eventHeaderMemberType>
+    ${classNameRef} With${eventHeaderMemberNameWithFirstLetterCapitalized}(T&& value) { Set${eventHeaderMemberNameWithFirstLetterCapitalized}(value); return *this; }
+
+#end
+  private:
+
+    Aws::Vector<unsigned char> $memberVariableName;
+    bool ${CppViewHelper.computeVariableHasBeenSetName($blobMember.key)} = false;
+#foreach($eventHeaderMapping in $shape.getEventStreamHeaders().entrySet())
+#set($eventHeader = $eventHeaderMapping.getValue())
+#set($eventHeaderMemberName = $CppViewHelper.computeMemberVariableName($eventHeader.getName()))
+#set($eventHeaderMemberHaseBeenSetName = $CppViewHelper.computeVariableHasBeenSetName($eventHeader.getName()))
+#set($eventHeaderMemberType = $CppViewHelper.computeCppType($eventHeader))
+    $eventHeaderMemberType $eventHeaderMemberName;
+    bool $eventHeaderMemberHaseBeenSetName;
+#end
+  };
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

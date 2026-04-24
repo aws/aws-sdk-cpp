@@ -1,0 +1,43 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/codecommit/model/GetPullRequestApprovalStatesResult.h>
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::CodeCommit::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetPullRequestApprovalStatesResult::GetPullRequestApprovalStatesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+GetPullRequestApprovalStatesResult& GetPullRequestApprovalStatesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("approvals")) {
+    Aws::Utils::Array<JsonView> approvalsJsonList = jsonValue.GetArray("approvals");
+    for (unsigned approvalsIndex = 0; approvalsIndex < approvalsJsonList.GetLength(); ++approvalsIndex) {
+      m_approvals.push_back(approvalsJsonList[approvalsIndex].AsObject());
+    }
+    m_approvalsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

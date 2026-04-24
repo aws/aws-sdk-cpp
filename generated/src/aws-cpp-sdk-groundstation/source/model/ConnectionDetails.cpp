@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/ConnectionDetails.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace GroundStation {
+namespace Model {
+
+ConnectionDetails::ConnectionDetails(JsonView jsonValue) { *this = jsonValue; }
+
+ConnectionDetails& ConnectionDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("socketAddress")) {
+    m_socketAddress = jsonValue.GetObject("socketAddress");
+    m_socketAddressHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("mtu")) {
+    m_mtu = jsonValue.GetInteger("mtu");
+    m_mtuHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ConnectionDetails::Jsonize() const {
+  JsonValue payload;
+
+  if (m_socketAddressHasBeenSet) {
+    payload.WithObject("socketAddress", m_socketAddress.Jsonize());
+  }
+
+  if (m_mtuHasBeenSet) {
+    payload.WithInteger("mtu", m_mtu);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

@@ -1,0 +1,178 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/compute-optimizer/ComputeOptimizer_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace ComputeOptimizer {
+namespace Model {
+
+/**
+ * <p>Describes the configuration of an Amazon Elastic Block Store (Amazon EBS)
+ * volume.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/compute-optimizer-2019-11-01/VolumeConfiguration">AWS
+ * API Reference</a></p>
+ */
+class VolumeConfiguration {
+ public:
+  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration() = default;
+  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API VolumeConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_COMPUTEOPTIMIZER_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+  ///@{
+  /**
+   * <p>The volume type.</p> <p>The volume types can be the following:</p> <ul> <li>
+   * <p>General Purpose SSD <code>gp2</code> and <code>gp3</code> </p> </li> <li>
+   * <p>Provisioned IOPS SSD <code>io1</code>, <code>io2</code>, and <code>io2 Block
+   * Express</code> </p> </li> <li> <p>Throughput Optimized HDD <code>st1</code> </p>
+   * </li> <li> <p>Cold HDD <code>sc1</code> </p> </li> <li> <p>Magnetic volumes
+   * <code>standard</code> </p> </li> </ul>
+   */
+  inline const Aws::String& GetVolumeType() const { return m_volumeType; }
+  inline bool VolumeTypeHasBeenSet() const { return m_volumeTypeHasBeenSet; }
+  template <typename VolumeTypeT = Aws::String>
+  void SetVolumeType(VolumeTypeT&& value) {
+    m_volumeTypeHasBeenSet = true;
+    m_volumeType = std::forward<VolumeTypeT>(value);
+  }
+  template <typename VolumeTypeT = Aws::String>
+  VolumeConfiguration& WithVolumeType(VolumeTypeT&& value) {
+    SetVolumeType(std::forward<VolumeTypeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The size of the volume, in GiB.</p>
+   */
+  inline int64_t GetVolumeSize() const { return m_volumeSize; }
+  inline bool VolumeSizeHasBeenSet() const { return m_volumeSizeHasBeenSet; }
+  inline void SetVolumeSize(int64_t value) {
+    m_volumeSizeHasBeenSet = true;
+    m_volumeSize = value;
+  }
+  inline VolumeConfiguration& WithVolumeSize(int64_t value) {
+    SetVolumeSize(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The baseline IOPS of the volume.</p>
+   */
+  inline int64_t GetVolumeBaselineIOPS() const { return m_volumeBaselineIOPS; }
+  inline bool VolumeBaselineIOPSHasBeenSet() const { return m_volumeBaselineIOPSHasBeenSet; }
+  inline void SetVolumeBaselineIOPS(int64_t value) {
+    m_volumeBaselineIOPSHasBeenSet = true;
+    m_volumeBaselineIOPS = value;
+  }
+  inline VolumeConfiguration& WithVolumeBaselineIOPS(int64_t value) {
+    SetVolumeBaselineIOPS(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The burst IOPS of the volume.</p>
+   */
+  inline int64_t GetVolumeBurstIOPS() const { return m_volumeBurstIOPS; }
+  inline bool VolumeBurstIOPSHasBeenSet() const { return m_volumeBurstIOPSHasBeenSet; }
+  inline void SetVolumeBurstIOPS(int64_t value) {
+    m_volumeBurstIOPSHasBeenSet = true;
+    m_volumeBurstIOPS = value;
+  }
+  inline VolumeConfiguration& WithVolumeBurstIOPS(int64_t value) {
+    SetVolumeBurstIOPS(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The baseline throughput of the volume.</p>
+   */
+  inline int64_t GetVolumeBaselineThroughput() const { return m_volumeBaselineThroughput; }
+  inline bool VolumeBaselineThroughputHasBeenSet() const { return m_volumeBaselineThroughputHasBeenSet; }
+  inline void SetVolumeBaselineThroughput(int64_t value) {
+    m_volumeBaselineThroughputHasBeenSet = true;
+    m_volumeBaselineThroughput = value;
+  }
+  inline VolumeConfiguration& WithVolumeBaselineThroughput(int64_t value) {
+    SetVolumeBaselineThroughput(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The burst throughput of the volume.</p>
+   */
+  inline int64_t GetVolumeBurstThroughput() const { return m_volumeBurstThroughput; }
+  inline bool VolumeBurstThroughputHasBeenSet() const { return m_volumeBurstThroughputHasBeenSet; }
+  inline void SetVolumeBurstThroughput(int64_t value) {
+    m_volumeBurstThroughputHasBeenSet = true;
+    m_volumeBurstThroughput = value;
+  }
+  inline VolumeConfiguration& WithVolumeBurstThroughput(int64_t value) {
+    SetVolumeBurstThroughput(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Contains the image used to boot the instance during launch. </p>
+   */
+  inline bool GetRootVolume() const { return m_rootVolume; }
+  inline bool RootVolumeHasBeenSet() const { return m_rootVolumeHasBeenSet; }
+  inline void SetRootVolume(bool value) {
+    m_rootVolumeHasBeenSet = true;
+    m_rootVolume = value;
+  }
+  inline VolumeConfiguration& WithRootVolume(bool value) {
+    SetRootVolume(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_volumeType;
+
+  int64_t m_volumeSize{0};
+
+  int64_t m_volumeBaselineIOPS{0};
+
+  int64_t m_volumeBurstIOPS{0};
+
+  int64_t m_volumeBaselineThroughput{0};
+
+  int64_t m_volumeBurstThroughput{0};
+
+  bool m_rootVolume{false};
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeSizeHasBeenSet = false;
+  bool m_volumeBaselineIOPSHasBeenSet = false;
+  bool m_volumeBurstIOPSHasBeenSet = false;
+  bool m_volumeBaselineThroughputHasBeenSet = false;
+  bool m_volumeBurstThroughputHasBeenSet = false;
+  bool m_rootVolumeHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ComputeOptimizer
+}  // namespace Aws

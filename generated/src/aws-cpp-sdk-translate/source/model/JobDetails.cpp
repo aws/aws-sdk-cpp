@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/translate/model/JobDetails.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Translate {
+namespace Model {
+
+JobDetails::JobDetails(JsonView jsonValue) { *this = jsonValue; }
+
+JobDetails& JobDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TranslatedDocumentsCount")) {
+    m_translatedDocumentsCount = jsonValue.GetInteger("TranslatedDocumentsCount");
+    m_translatedDocumentsCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DocumentsWithErrorsCount")) {
+    m_documentsWithErrorsCount = jsonValue.GetInteger("DocumentsWithErrorsCount");
+    m_documentsWithErrorsCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InputDocumentsCount")) {
+    m_inputDocumentsCount = jsonValue.GetInteger("InputDocumentsCount");
+    m_inputDocumentsCountHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue JobDetails::Jsonize() const {
+  JsonValue payload;
+
+  if (m_translatedDocumentsCountHasBeenSet) {
+    payload.WithInteger("TranslatedDocumentsCount", m_translatedDocumentsCount);
+  }
+
+  if (m_documentsWithErrorsCountHasBeenSet) {
+    payload.WithInteger("DocumentsWithErrorsCount", m_documentsWithErrorsCount);
+  }
+
+  if (m_inputDocumentsCountHasBeenSet) {
+    payload.WithInteger("InputDocumentsCount", m_inputDocumentsCount);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Translate
+}  // namespace Aws

@@ -1,0 +1,119 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearch/OpenSearchServiceRequest.h>
+#include <aws/opensearch/OpenSearchService_EXPORTS.h>
+#include <aws/opensearch/model/AWSServicePrincipal.h>
+#include <aws/opensearch/model/ServiceOptions.h>
+
+#include <utility>
+
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+
+/**
+ */
+class AuthorizeVpcEndpointAccessRequest : public OpenSearchServiceRequest {
+ public:
+  AWS_OPENSEARCHSERVICE_API AuthorizeVpcEndpointAccessRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "AuthorizeVpcEndpointAccess"; }
+
+  AWS_OPENSEARCHSERVICE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The name of the OpenSearch Service domain to provide access to.</p>
+   */
+  inline const Aws::String& GetDomainName() const { return m_domainName; }
+  inline bool DomainNameHasBeenSet() const { return m_domainNameHasBeenSet; }
+  template <typename DomainNameT = Aws::String>
+  void SetDomainName(DomainNameT&& value) {
+    m_domainNameHasBeenSet = true;
+    m_domainName = std::forward<DomainNameT>(value);
+  }
+  template <typename DomainNameT = Aws::String>
+  AuthorizeVpcEndpointAccessRequest& WithDomainName(DomainNameT&& value) {
+    SetDomainName(std::forward<DomainNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services account ID to grant access to.</p>
+   */
+  inline const Aws::String& GetAccount() const { return m_account; }
+  inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }
+  template <typename AccountT = Aws::String>
+  void SetAccount(AccountT&& value) {
+    m_accountHasBeenSet = true;
+    m_account = std::forward<AccountT>(value);
+  }
+  template <typename AccountT = Aws::String>
+  AuthorizeVpcEndpointAccessRequest& WithAccount(AccountT&& value) {
+    SetAccount(std::forward<AccountT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Web Services service SP to grant access to.</p>
+   */
+  inline AWSServicePrincipal GetService() const { return m_service; }
+  inline bool ServiceHasBeenSet() const { return m_serviceHasBeenSet; }
+  inline void SetService(AWSServicePrincipal value) {
+    m_serviceHasBeenSet = true;
+    m_service = value;
+  }
+  inline AuthorizeVpcEndpointAccessRequest& WithService(AWSServicePrincipal value) {
+    SetService(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The options for the service, including the supported Regions for the endpoint
+   * access.</p>
+   */
+  inline const ServiceOptions& GetServiceOptions() const { return m_serviceOptions; }
+  inline bool ServiceOptionsHasBeenSet() const { return m_serviceOptionsHasBeenSet; }
+  template <typename ServiceOptionsT = ServiceOptions>
+  void SetServiceOptions(ServiceOptionsT&& value) {
+    m_serviceOptionsHasBeenSet = true;
+    m_serviceOptions = std::forward<ServiceOptionsT>(value);
+  }
+  template <typename ServiceOptionsT = ServiceOptions>
+  AuthorizeVpcEndpointAccessRequest& WithServiceOptions(ServiceOptionsT&& value) {
+    SetServiceOptions(std::forward<ServiceOptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainName;
+
+  Aws::String m_account;
+
+  AWSServicePrincipal m_service{AWSServicePrincipal::NOT_SET};
+
+  ServiceOptions m_serviceOptions;
+  bool m_domainNameHasBeenSet = false;
+  bool m_accountHasBeenSet = false;
+  bool m_serviceHasBeenSet = false;
+  bool m_serviceOptionsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

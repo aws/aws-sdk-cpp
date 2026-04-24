@@ -1,0 +1,21 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/pricing/Pricing_EXPORTS.h>
+
+#include <cstddef>
+
+namespace Aws {
+namespace Pricing {
+class PricingEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
+};
+}  // namespace Pricing
+}  // namespace Aws

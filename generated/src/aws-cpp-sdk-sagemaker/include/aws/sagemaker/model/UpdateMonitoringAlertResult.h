@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class UpdateMonitoringAlertResult {
+ public:
+  AWS_SAGEMAKER_API UpdateMonitoringAlertResult() = default;
+  AWS_SAGEMAKER_API UpdateMonitoringAlertResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API UpdateMonitoringAlertResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the monitoring schedule.</p>
+   */
+  inline const Aws::String& GetMonitoringScheduleArn() const { return m_monitoringScheduleArn; }
+  template <typename MonitoringScheduleArnT = Aws::String>
+  void SetMonitoringScheduleArn(MonitoringScheduleArnT&& value) {
+    m_monitoringScheduleArnHasBeenSet = true;
+    m_monitoringScheduleArn = std::forward<MonitoringScheduleArnT>(value);
+  }
+  template <typename MonitoringScheduleArnT = Aws::String>
+  UpdateMonitoringAlertResult& WithMonitoringScheduleArn(MonitoringScheduleArnT&& value) {
+    SetMonitoringScheduleArn(std::forward<MonitoringScheduleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of a monitoring alert.</p>
+   */
+  inline const Aws::String& GetMonitoringAlertName() const { return m_monitoringAlertName; }
+  template <typename MonitoringAlertNameT = Aws::String>
+  void SetMonitoringAlertName(MonitoringAlertNameT&& value) {
+    m_monitoringAlertNameHasBeenSet = true;
+    m_monitoringAlertName = std::forward<MonitoringAlertNameT>(value);
+  }
+  template <typename MonitoringAlertNameT = Aws::String>
+  UpdateMonitoringAlertResult& WithMonitoringAlertName(MonitoringAlertNameT&& value) {
+    SetMonitoringAlertName(std::forward<MonitoringAlertNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateMonitoringAlertResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_monitoringScheduleArn;
+
+  Aws::String m_monitoringAlertName;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_monitoringScheduleArnHasBeenSet = false;
+  bool m_monitoringAlertNameHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

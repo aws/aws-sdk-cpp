@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/docdb/model/CreateDBClusterSnapshotResult.h>
+
+#include <utility>
+
+using namespace Aws::DocDB::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CreateDBClusterSnapshotResult::CreateDBClusterSnapshotResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+
+CreateDBClusterSnapshotResult& CreateDBClusterSnapshotResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "CreateDBClusterSnapshotResult")) {
+    resultNode = rootNode.FirstChild("CreateDBClusterSnapshotResult");
+  }
+
+  if (!resultNode.IsNull()) {
+    XmlNode dBClusterSnapshotNode = resultNode.FirstChild("DBClusterSnapshot");
+    if (!dBClusterSnapshotNode.IsNull()) {
+      m_dBClusterSnapshot = dBClusterSnapshotNode;
+      m_dBClusterSnapshotHasBeenSet = true;
+    }
+  }
+
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::DocDB::Model::CreateDBClusterSnapshotResult", "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  }
+  return *this;
+}

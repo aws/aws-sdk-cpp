@@ -1,0 +1,54 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connect/model/ListDataTableValuesRequest.h>
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::Connect::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+Aws::String ListDataTableValuesRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_recordIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> recordIdsJsonList(m_recordIds.size());
+    for (unsigned recordIdsIndex = 0; recordIdsIndex < recordIdsJsonList.GetLength(); ++recordIdsIndex) {
+      recordIdsJsonList[recordIdsIndex].AsString(m_recordIds[recordIdsIndex]);
+    }
+    payload.WithArray("RecordIds", std::move(recordIdsJsonList));
+  }
+
+  if (m_primaryAttributeValuesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> primaryAttributeValuesJsonList(m_primaryAttributeValues.size());
+    for (unsigned primaryAttributeValuesIndex = 0; primaryAttributeValuesIndex < primaryAttributeValuesJsonList.GetLength();
+         ++primaryAttributeValuesIndex) {
+      primaryAttributeValuesJsonList[primaryAttributeValuesIndex].AsObject(m_primaryAttributeValues[primaryAttributeValuesIndex].Jsonize());
+    }
+    payload.WithArray("PrimaryAttributeValues", std::move(primaryAttributeValuesJsonList));
+  }
+
+  return payload.View().WriteReadable();
+}
+
+void ListDataTableValuesRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+}

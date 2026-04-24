@@ -1,0 +1,128 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/qapps/QAppsRequest.h>
+#include <aws/qapps/QApps_EXPORTS.h>
+#include <aws/qapps/model/LibraryItemStatus.h>
+
+#include <utility>
+
+namespace Aws {
+namespace QApps {
+namespace Model {
+
+/**
+ */
+class UpdateLibraryItemRequest : public QAppsRequest {
+ public:
+  AWS_QAPPS_API UpdateLibraryItemRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateLibraryItem"; }
+
+  AWS_QAPPS_API Aws::String SerializePayload() const override;
+
+  AWS_QAPPS_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Amazon Q Business application environment
+   * instance.</p>
+   */
+  inline const Aws::String& GetInstanceId() const { return m_instanceId; }
+  inline bool InstanceIdHasBeenSet() const { return m_instanceIdHasBeenSet; }
+  template <typename InstanceIdT = Aws::String>
+  void SetInstanceId(InstanceIdT&& value) {
+    m_instanceIdHasBeenSet = true;
+    m_instanceId = std::forward<InstanceIdT>(value);
+  }
+  template <typename InstanceIdT = Aws::String>
+  UpdateLibraryItemRequest& WithInstanceId(InstanceIdT&& value) {
+    SetInstanceId(std::forward<InstanceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the library item to update.</p>
+   */
+  inline const Aws::String& GetLibraryItemId() const { return m_libraryItemId; }
+  inline bool LibraryItemIdHasBeenSet() const { return m_libraryItemIdHasBeenSet; }
+  template <typename LibraryItemIdT = Aws::String>
+  void SetLibraryItemId(LibraryItemIdT&& value) {
+    m_libraryItemIdHasBeenSet = true;
+    m_libraryItemId = std::forward<LibraryItemIdT>(value);
+  }
+  template <typename LibraryItemIdT = Aws::String>
+  UpdateLibraryItemRequest& WithLibraryItemId(LibraryItemIdT&& value) {
+    SetLibraryItemId(std::forward<LibraryItemIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The new status to set for the library item, such as "Published" or
+   * "Hidden".</p>
+   */
+  inline LibraryItemStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(LibraryItemStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateLibraryItemRequest& WithStatus(LibraryItemStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The new categories to associate with the library item.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCategories() const { return m_categories; }
+  inline bool CategoriesHasBeenSet() const { return m_categoriesHasBeenSet; }
+  template <typename CategoriesT = Aws::Vector<Aws::String>>
+  void SetCategories(CategoriesT&& value) {
+    m_categoriesHasBeenSet = true;
+    m_categories = std::forward<CategoriesT>(value);
+  }
+  template <typename CategoriesT = Aws::Vector<Aws::String>>
+  UpdateLibraryItemRequest& WithCategories(CategoriesT&& value) {
+    SetCategories(std::forward<CategoriesT>(value));
+    return *this;
+  }
+  template <typename CategoriesT = Aws::String>
+  UpdateLibraryItemRequest& AddCategories(CategoriesT&& value) {
+    m_categoriesHasBeenSet = true;
+    m_categories.emplace_back(std::forward<CategoriesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceId;
+
+  Aws::String m_libraryItemId;
+
+  LibraryItemStatus m_status{LibraryItemStatus::NOT_SET};
+
+  Aws::Vector<Aws::String> m_categories;
+  bool m_instanceIdHasBeenSet = false;
+  bool m_libraryItemIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_categoriesHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace QApps
+}  // namespace Aws

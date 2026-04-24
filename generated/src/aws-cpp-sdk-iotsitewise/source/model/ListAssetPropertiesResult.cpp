@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotsitewise/model/ListAssetPropertiesResult.h>
+
+#include <utility>
+
+using namespace Aws::IoTSiteWise::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListAssetPropertiesResult::ListAssetPropertiesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListAssetPropertiesResult& ListAssetPropertiesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("assetPropertySummaries")) {
+    Aws::Utils::Array<JsonView> assetPropertySummariesJsonList = jsonValue.GetArray("assetPropertySummaries");
+    for (unsigned assetPropertySummariesIndex = 0; assetPropertySummariesIndex < assetPropertySummariesJsonList.GetLength();
+         ++assetPropertySummariesIndex) {
+      m_assetPropertySummaries.push_back(assetPropertySummariesJsonList[assetPropertySummariesIndex].AsObject());
+    }
+    m_assetPropertySummariesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

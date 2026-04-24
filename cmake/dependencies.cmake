@@ -11,6 +11,20 @@ function(compute_links lib)
     if(${lib}_IN_PROGRESS)
         message(FATAL_ERROR "Circular dependency for library '${lib}'")
     endif()
+
+    #check if target is an alias and use that
+    get_property(aliased_target TARGET "${lib}" PROPERTY ALIASED_TARGET)
+    if(NOT "${aliased_target}" STREQUAL "")
+        set(lib "${aliased_target}")
+    endif()
+
+    #interface libraries cannot be set
+    get_target_property(target_type ${lib} TYPE)
+    if ("INTERFACE_LIBRARY"  STREQUAL ${target_type})
+            message(STATUS "SKIPPING:" ${lib})
+            return()
+    endif()
+
     # Immediately return if output property is already set.
     get_property(complete TARGET ${lib} PROPERTY LINK_LIBRARIES_ALL SET)
     if(complete)
@@ -31,6 +45,12 @@ function(compute_links lib)
     foreach(link ${links})
         if(TARGET ${link}) # Collect only target links
             compute_links(${link})
+            #interface libraries cannot be set
+            get_target_property(target_type ${link} TYPE)
+            if ("INTERFACE_LIBRARY"  STREQUAL ${target_type})
+                    message(STATUS "SKIPPING:" ${link})
+                    continue()
+            endif()
             get_target_property(link_links_all ${link} LINK_LIBRARIES_ALL)
             set_property(TARGET ${lib} APPEND PROPERTY
                 LINK_LIBRARIES_ALL ${link} ${link_links_all}
@@ -50,7 +70,7 @@ endfunction()
 #
 # Uses selection sort (stable).
 function(sort_links targets_list)
-    # Special case of empty input list. Futher code assumes list to be non-empty.
+    # Special case of empty input list. Further code assumes list to be non-empty.
     if(NOT ${targets_list})
         return()
     endif()

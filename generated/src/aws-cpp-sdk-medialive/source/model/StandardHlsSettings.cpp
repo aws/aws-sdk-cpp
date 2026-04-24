@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/StandardHlsSettings.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+
+StandardHlsSettings::StandardHlsSettings(JsonView jsonValue) { *this = jsonValue; }
+
+StandardHlsSettings& StandardHlsSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("audioRenditionSets")) {
+    m_audioRenditionSets = jsonValue.GetString("audioRenditionSets");
+    m_audioRenditionSetsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("m3u8Settings")) {
+    m_m3u8Settings = jsonValue.GetObject("m3u8Settings");
+    m_m3u8SettingsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue StandardHlsSettings::Jsonize() const {
+  JsonValue payload;
+
+  if (m_audioRenditionSetsHasBeenSet) {
+    payload.WithString("audioRenditionSets", m_audioRenditionSets);
+  }
+
+  if (m_m3u8SettingsHasBeenSet) {
+    payload.WithObject("m3u8Settings", m_m3u8Settings.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

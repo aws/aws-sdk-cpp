@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/PendingModifiedRelationalDatabaseValues.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Lightsail {
+namespace Model {
+
+PendingModifiedRelationalDatabaseValues::PendingModifiedRelationalDatabaseValues(JsonView jsonValue) { *this = jsonValue; }
+
+PendingModifiedRelationalDatabaseValues& PendingModifiedRelationalDatabaseValues::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("masterUserPassword")) {
+    m_masterUserPassword = jsonValue.GetString("masterUserPassword");
+    m_masterUserPasswordHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("engineVersion")) {
+    m_engineVersion = jsonValue.GetString("engineVersion");
+    m_engineVersionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("backupRetentionEnabled")) {
+    m_backupRetentionEnabled = jsonValue.GetBool("backupRetentionEnabled");
+    m_backupRetentionEnabledHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue PendingModifiedRelationalDatabaseValues::Jsonize() const {
+  JsonValue payload;
+
+  if (m_masterUserPasswordHasBeenSet) {
+    payload.WithString("masterUserPassword", m_masterUserPassword);
+  }
+
+  if (m_engineVersionHasBeenSet) {
+    payload.WithString("engineVersion", m_engineVersion);
+  }
+
+  if (m_backupRetentionEnabledHasBeenSet) {
+    payload.WithBool("backupRetentionEnabled", m_backupRetentionEnabled);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Lightsail
+}  // namespace Aws

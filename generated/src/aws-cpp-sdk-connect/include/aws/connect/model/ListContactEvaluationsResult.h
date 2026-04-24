@@ -1,0 +1,105 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/EvaluationSummary.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
+class ListContactEvaluationsResult {
+ public:
+  AWS_CONNECT_API ListContactEvaluationsResult() = default;
+  AWS_CONNECT_API ListContactEvaluationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONNECT_API ListContactEvaluationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Provides details about a list of contact evaluations belonging to an
+   * instance.</p>
+   */
+  inline const Aws::Vector<EvaluationSummary>& GetEvaluationSummaryList() const { return m_evaluationSummaryList; }
+  template <typename EvaluationSummaryListT = Aws::Vector<EvaluationSummary>>
+  void SetEvaluationSummaryList(EvaluationSummaryListT&& value) {
+    m_evaluationSummaryListHasBeenSet = true;
+    m_evaluationSummaryList = std::forward<EvaluationSummaryListT>(value);
+  }
+  template <typename EvaluationSummaryListT = Aws::Vector<EvaluationSummary>>
+  ListContactEvaluationsResult& WithEvaluationSummaryList(EvaluationSummaryListT&& value) {
+    SetEvaluationSummaryList(std::forward<EvaluationSummaryListT>(value));
+    return *this;
+  }
+  template <typename EvaluationSummaryListT = EvaluationSummary>
+  ListContactEvaluationsResult& AddEvaluationSummaryList(EvaluationSummaryListT&& value) {
+    m_evaluationSummaryListHasBeenSet = true;
+    m_evaluationSummaryList.emplace_back(std::forward<EvaluationSummaryListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If there are additional results, this is the token for the next set of
+   * results.</p>  <p>This is always returned as null in the response.</p>
+   *
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListContactEvaluationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListContactEvaluationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<EvaluationSummary> m_evaluationSummaryList;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_evaluationSummaryListHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

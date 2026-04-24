@@ -1,0 +1,125 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/glacier/Glacier_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Glacier {
+namespace Model {
+/**
+ * <p>Contains the Amazon Glacier response to your request.</p> <p>For information
+ * about the underlying REST API, see <a
+ * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/api-archive-post.html">Upload
+ * Archive</a>. For conceptual information, see <a
+ * href="https://docs.aws.amazon.com/amazonglacier/latest/dev/working-with-archives.html">Working
+ * with Archives in Amazon Glacier</a>.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/glacier-2012-06-01/ArchiveCreationOutput">AWS
+ * API Reference</a></p>
+ */
+class UploadArchiveResult {
+ public:
+  AWS_GLACIER_API UploadArchiveResult() = default;
+  AWS_GLACIER_API UploadArchiveResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GLACIER_API UploadArchiveResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The relative URI path of the newly added archive resource.</p>
+   */
+  inline const Aws::String& GetLocation() const { return m_location; }
+  template <typename LocationT = Aws::String>
+  void SetLocation(LocationT&& value) {
+    m_locationHasBeenSet = true;
+    m_location = std::forward<LocationT>(value);
+  }
+  template <typename LocationT = Aws::String>
+  UploadArchiveResult& WithLocation(LocationT&& value) {
+    SetLocation(std::forward<LocationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The checksum of the archive computed by Amazon Glacier.</p>
+   */
+  inline const Aws::String& GetChecksum() const { return m_checksum; }
+  template <typename ChecksumT = Aws::String>
+  void SetChecksum(ChecksumT&& value) {
+    m_checksumHasBeenSet = true;
+    m_checksum = std::forward<ChecksumT>(value);
+  }
+  template <typename ChecksumT = Aws::String>
+  UploadArchiveResult& WithChecksum(ChecksumT&& value) {
+    SetChecksum(std::forward<ChecksumT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the archive. This value is also included as part of the
+   * location.</p>
+   */
+  inline const Aws::String& GetArchiveId() const { return m_archiveId; }
+  template <typename ArchiveIdT = Aws::String>
+  void SetArchiveId(ArchiveIdT&& value) {
+    m_archiveIdHasBeenSet = true;
+    m_archiveId = std::forward<ArchiveIdT>(value);
+  }
+  template <typename ArchiveIdT = Aws::String>
+  UploadArchiveResult& WithArchiveId(ArchiveIdT&& value) {
+    SetArchiveId(std::forward<ArchiveIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UploadArchiveResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_location;
+
+  Aws::String m_checksum;
+
+  Aws::String m_archiveId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_locationHasBeenSet = false;
+  bool m_checksumHasBeenSet = false;
+  bool m_archiveIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Glacier
+}  // namespace Aws

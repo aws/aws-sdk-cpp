@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-runtime/model/ActiveContextTimeToLive.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace LexRuntimeV2 {
+namespace Model {
+
+ActiveContextTimeToLive::ActiveContextTimeToLive(JsonView jsonValue) { *this = jsonValue; }
+
+ActiveContextTimeToLive& ActiveContextTimeToLive::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("timeToLiveInSeconds")) {
+    m_timeToLiveInSeconds = jsonValue.GetInteger("timeToLiveInSeconds");
+    m_timeToLiveInSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("turnsToLive")) {
+    m_turnsToLive = jsonValue.GetInteger("turnsToLive");
+    m_turnsToLiveHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ActiveContextTimeToLive::Jsonize() const {
+  JsonValue payload;
+
+  if (m_timeToLiveInSecondsHasBeenSet) {
+    payload.WithInteger("timeToLiveInSeconds", m_timeToLiveInSeconds);
+  }
+
+  if (m_turnsToLiveHasBeenSet) {
+    payload.WithInteger("turnsToLive", m_turnsToLive);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace LexRuntimeV2
+}  // namespace Aws

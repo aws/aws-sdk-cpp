@@ -2,7 +2,9 @@ include(sdksCommon)
 
 set(SDK_DEPENDENCY_BUILD_LIST "")
 
-if(REGENERATE_CLIENTS)
+set(NON_GENERATED_CLIENT_LIST access-management text-to-speech core queues s3-encryption identity-management transfer)  ## Manually generated code with a name mimicking client name
+
+if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
     message(STATUS "Checking for SDK generation requirements")
     include(FindJava)
 
@@ -32,12 +34,14 @@ if(BUILD_ONLY)
             endforeach()
         endif()
 
-        get_dependencies_for_test(${TARGET} DEPENDENCY_LIST)
-        if(DEPENDENCY_LIST)
-            STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
-            foreach(DEPENDENCY IN LISTS LIST_RESULT)
-                list(APPEND SDK_DEPENDENCY_BUILD_LIST ${DEPENDENCY})
-            endforeach()
+        if(ENABLE_TESTING)
+            get_dependencies_for_test(${TARGET} DEPENDENCY_LIST)
+            if(DEPENDENCY_LIST)
+                STRING(REPLACE "," ";" LIST_RESULT ${DEPENDENCY_LIST})
+                foreach(DEPENDENCY IN LISTS LIST_RESULT)
+                    list(APPEND SDK_DEPENDENCY_BUILD_LIST ${DEPENDENCY})
+                endforeach()
+            endif()
         endif()
     endforeach()
     LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
@@ -53,8 +57,12 @@ else()
     # remove any missing targets from the build list, factoring in dependencies appropriately
     foreach(SDK IN LISTS TEMP_SDK_BUILD_LIST)
         set(REMOVE_SDK 0)
-
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+        else()
+            set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+        endif()
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}" AND NOT REGENERATE_CLIENTS)
             set(REMOVE_SDK 1)
@@ -69,46 +77,53 @@ else()
     endforeach()
 endif()
 
-# SDK_BUILD_LIST is now a list of present SDKs that can be processed unconditionally
-if(ADD_CUSTOM_CLIENTS OR REGENERATE_CLIENTS)
-    execute_process(
-        COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --prepareTools
-            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-    )
-endif()
-
 
 if(ENABLE_VIRTUAL_OPERATIONS) # it could be set to 0/1 or ON/OFF
-    set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enableVirtualOperations")
+    set(ENABLE_VIRTUAL_OPERATIONS_ARG "--enable-virtual-operations")
 else()
     set(ENABLE_VIRTUAL_OPERATIONS_ARG "")
 endif()
 
-if(REGENERATE_CLIENTS)
-    message(STATUS "Regenerating clients that have been selected for build.")
+if(REGENERATE_CLIENTS OR REGENERATE_DEFAULTS)
+    message(STATUS "Regenerating clients/defaults that have been selected for build.")
+    if(REGENERATE_CLIENTS AND BUILD_ONLY)
+        foreach(build_only ${BUILD_ONLY})
+            list (FIND NON_GENERATED_CLIENT_LIST ${build_only} _index)
+            if (${_index} GREATER -1) # old cmake search in a list syntax
+                message(FATAL_ERROR "Explicitly requested to regenerate non-regeneratable component: ${build_only}")
+            endif()
+        endforeach()
+    endif()
+
     set(MERGED_BUILD_LIST ${SDK_BUILD_LIST})
-    list(APPEND MERGED_BUILD_LIST ${SDK_DEPENDENCY_BUILD_LIST})
     LIST(REMOVE_DUPLICATES MERGED_BUILD_LIST)
+    list(REMOVE_ITEM MERGED_BUILD_LIST ${NON_GENERATED_CLIENT_LIST})
 
-    foreach(SDK IN LISTS MERGED_BUILD_LIST)
-        get_c2j_date_for_service(${SDK} C2J_DATE)
-        get_c2j_name_for_service(${SDK} C2J_NAME)
-        set(SDK_C2J_FILE "${CMAKE_CURRENT_SOURCE_DIR}/code-generation/api-descriptions/${C2J_NAME}-${C2J_DATE}.normal.json")
+    if(REGENERATE_CLIENTS)
+        set(MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST}")
+        STRING(REPLACE ";" "," MERGED_BUILD_LIST_STR "${MERGED_BUILD_LIST_STR}")
+        set(REGENERATE_CLIENTS_ARG "--client_list")
+    else()
+        set(REGENERATE_CLIENTS_ARG "")
+    endif()
 
-        if(EXISTS ${SDK_C2J_FILE})
-            message(STATUS "Clearing existing directory for ${SDK} to prepare for generation.")
-            file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${SDK}")
+    if(REGENERATE_DEFAULTS)
+        set(REGENERATE_DEFAULTS_ARG "--defaults")
+    else()
+        set(REGENERATE_DEFAULTS_ARG "")
+    endif()
 
-            execute_process(
-                COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${SDK} --apiVersion ${C2J_DATE} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
-                WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
-            message(STATUS "Generated service: ${SDK}, version: ${C2J_DATE}")
-        else()
-           message(STATUS "Directory for ${SDK} is either missing a service definition, is a custom client, or it is not a generated client. Skipping.")
-        endif()
-    endforeach()
+    execute_process(
+        COMMAND ${PYTHON3_CMD} tools/scripts/run_code_generation.py ${REGENERATE_CLIENTS_ARG} ${MERGED_BUILD_LIST_STR} ${REGENERATE_DEFAULTS_ARG} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --output_location ./generated/
+        WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+        RESULT_VARIABLE ret
+    )
+
+    if(ret AND NOT ret EQUAL 0)
+        message(FATAL_ERROR "Failed to regenerate code")
+    endif()
 endif()
+
 
 #at this point, if user has specified some customized clients, generate them and add them to the build here.
 foreach(custom_client ${ADD_CUSTOM_CLIENTS})
@@ -129,7 +144,7 @@ foreach(custom_client ${ADD_CUSTOM_CLIENTS})
         file(REMOVE_RECURSE "${CMAKE_CURRENT_SOURCE_DIR}/aws-cpp-sdk-${C_SERVICE_NAME}")
         message(STATUS "generating client for ${C_SERVICE_NAME} version ${C_VERSION}")
         execute_process(
-            COMMAND ${PYTHON_CMD} scripts/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./
+            COMMAND ${PYTHON3_CMD} tools/scripts/legacy/generate_sdks.py --serviceName ${C_SERVICE_NAME} --apiVersion ${C_VERSION} ${ENABLE_VIRTUAL_OPERATIONS_ARG} --outputLocation ./generated/
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
         )
         LIST(APPEND SDK_BUILD_LIST ${C_SERVICE_NAME})
@@ -141,7 +156,12 @@ endforeach(custom_client)
 if(BUILD_ONLY)
     # make sure all the sdks/c2js are present; a missing sdk-directory or c2j file is a build error when building a manually-specified set
     foreach(SDK IN LISTS SDK_BUILD_LIST)
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+        else()
+            set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+        endif()
 
         if(NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
             message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
@@ -154,7 +174,12 @@ if(BUILD_ONLY)
         if(DEPENDENCY_INDEX LESS 0)
             # test dependencies should also be built from source instead of locating by calling find_package
             # which may cause version conflicts as well as double targeting built targets
-            set(SDK_DIR "aws-cpp-sdk-${SDK}")
+            list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+            if (${_index} GREATER -1) # old cmake search in a list syntax
+                set(SDK_DIR "src/aws-cpp-sdk-${SDK}")
+            else()
+                set(SDK_DIR "generated/src/aws-cpp-sdk-${SDK}")
+            endif()
             if (NOT IS_DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/${SDK_DIR}")
                 message(FATAL_ERROR "${SDK} is required for build, but ${SDK_DIR} directory is missing!")
             endif ()
@@ -168,21 +193,55 @@ if(BUILD_ONLY)
     endforeach()
 endif()
 
+if (BUILD_BENCHMARKS)
+    LIST(APPEND SDK_BUILD_LIST "s3;s3-crt;monitoring;core")
+    add_subdirectory(tests/benchmark)
+endif ()
+
 LIST(REMOVE_DUPLICATES SDK_BUILD_LIST)
 LIST(REMOVE_DUPLICATES SDK_DEPENDENCY_BUILD_LIST)
 
 function(add_sdks)
     LIST(APPEND EXPORTS "")
     foreach(SDK IN LISTS SDK_BUILD_LIST)
-        set(SDK_DIR "aws-cpp-sdk-${SDK}")
+        message(STATUS "Adding ${SDK} to SDK build")
+        set(SDK_TARGET "aws-cpp-sdk-${SDK}")
+        list (FIND NON_GENERATED_CLIENT_LIST ${SDK} _index)
+        if (${_index} GREATER -1) # old cmake search in a list syntax
+            set(SDK_DIR "src/${SDK_TARGET}")
+        else()
+            set(SDK_DIR "generated/src/${SDK_TARGET}")
+        endif()
 
         add_subdirectory("${SDK_DIR}")
-        LIST(APPEND EXPORTS "${SDK_DIR}")
+        LIST(APPEND EXPORTS "${SDK_TARGET}")
+        unset(SDK_TARGET)
     endforeach()
+
+    if(ENABLE_SMOKE_TESTS)
+        file(GLOB subdirs LIST_DIRECTORIES true "${CMAKE_SOURCE_DIR}/generated/smoke-tests/*")
+        foreach(subdir ${subdirs})
+            get_filename_component(folder_name ${subdir} NAME)
+            message(STATUS "smoke test component: ${folder_name}")
+            list(FIND SDK_BUILD_LIST ${folder_name} index)
+
+            # Check if the item was found (index >= 0)
+            if(${index} GREATER -1)
+                message(STATUS "${subdir} is in SDK_BUILD_LIST at index ${index}")
+            
+                if(EXISTS "${subdir}/CMakeLists.txt")
+                    add_subdirectory(${subdir})
+                endif()
+            else()
+                message(STATUS "${subdir} is NOT in SDK_BUILD_LIST")
+            endif()
+
+        endforeach()
+    endif()
 
     #testing
     if(ENABLE_TESTING)
-        add_subdirectory(testing-resources)
+        add_subdirectory(tests/testing-resources)
 
         # android-unified-tests includes all the tests in our code base, those tests related services may not be incldued in BUILD_ONLY,
         # means, those services will not be built, but will be tried to linked against with test targets, which will cause link time error.
@@ -203,7 +262,7 @@ function(add_sdks)
                             continue()
                         endif()
                     endif()
-                    STRING(REPLACE "," ";" LIST_RESULT ${TEST_PROJECTS})
+                    STRING(REPLACE "," ";" LIST_RESULT "${TEST_PROJECTS}")
                     foreach(TEST_PROJECT IN LISTS LIST_RESULT)
                         if(TEST_PROJECT)
                             # before we add the test, make sure all of its dependencies are present

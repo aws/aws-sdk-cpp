@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/redshift-serverless/RedshiftServerless_EXPORTS.h>
+#include <aws/redshift-serverless/model/EndpointAccess.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace RedshiftServerless {
+namespace Model {
+class DeleteEndpointAccessResult {
+ public:
+  AWS_REDSHIFTSERVERLESS_API DeleteEndpointAccessResult() = default;
+  AWS_REDSHIFTSERVERLESS_API DeleteEndpointAccessResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_REDSHIFTSERVERLESS_API DeleteEndpointAccessResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The deleted VPC endpoint.</p>
+   */
+  inline const EndpointAccess& GetEndpoint() const { return m_endpoint; }
+  template <typename EndpointT = EndpointAccess>
+  void SetEndpoint(EndpointT&& value) {
+    m_endpointHasBeenSet = true;
+    m_endpoint = std::forward<EndpointT>(value);
+  }
+  template <typename EndpointT = EndpointAccess>
+  DeleteEndpointAccessResult& WithEndpoint(EndpointT&& value) {
+    SetEndpoint(std::forward<EndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteEndpointAccessResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  EndpointAccess m_endpoint;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_endpointHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RedshiftServerless
+}  // namespace Aws

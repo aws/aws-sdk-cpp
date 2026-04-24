@@ -1,0 +1,119 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/LoRaWANGateway.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+
+LoRaWANGateway::LoRaWANGateway(JsonView jsonValue) { *this = jsonValue; }
+
+LoRaWANGateway& LoRaWANGateway::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("GatewayEui")) {
+    m_gatewayEui = jsonValue.GetString("GatewayEui");
+    m_gatewayEuiHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("RfRegion")) {
+    m_rfRegion = jsonValue.GetString("RfRegion");
+    m_rfRegionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("JoinEuiFilters")) {
+    Aws::Utils::Array<JsonView> joinEuiFiltersJsonList = jsonValue.GetArray("JoinEuiFilters");
+    for (unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex) {
+      Aws::Utils::Array<JsonView> joinEuiRange2JsonList = joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray();
+      Aws::Vector<Aws::String> joinEuiRange2List;
+      joinEuiRange2List.reserve((size_t)joinEuiRange2JsonList.GetLength());
+      for (unsigned joinEuiRange2Index = 0; joinEuiRange2Index < joinEuiRange2JsonList.GetLength(); ++joinEuiRange2Index) {
+        joinEuiRange2List.push_back(joinEuiRange2JsonList[joinEuiRange2Index].AsString());
+      }
+      m_joinEuiFilters.push_back(std::move(joinEuiRange2List));
+    }
+    m_joinEuiFiltersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NetIdFilters")) {
+    Aws::Utils::Array<JsonView> netIdFiltersJsonList = jsonValue.GetArray("NetIdFilters");
+    for (unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex) {
+      m_netIdFilters.push_back(netIdFiltersJsonList[netIdFiltersIndex].AsString());
+    }
+    m_netIdFiltersHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SubBands")) {
+    Aws::Utils::Array<JsonView> subBandsJsonList = jsonValue.GetArray("SubBands");
+    for (unsigned subBandsIndex = 0; subBandsIndex < subBandsJsonList.GetLength(); ++subBandsIndex) {
+      m_subBands.push_back(subBandsJsonList[subBandsIndex].AsInteger());
+    }
+    m_subBandsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Beaconing")) {
+    m_beaconing = jsonValue.GetObject("Beaconing");
+    m_beaconingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MaxEirp")) {
+    m_maxEirp = jsonValue.GetDouble("MaxEirp");
+    m_maxEirpHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue LoRaWANGateway::Jsonize() const {
+  JsonValue payload;
+
+  if (m_gatewayEuiHasBeenSet) {
+    payload.WithString("GatewayEui", m_gatewayEui);
+  }
+
+  if (m_rfRegionHasBeenSet) {
+    payload.WithString("RfRegion", m_rfRegion);
+  }
+
+  if (m_joinEuiFiltersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> joinEuiFiltersJsonList(m_joinEuiFilters.size());
+    for (unsigned joinEuiFiltersIndex = 0; joinEuiFiltersIndex < joinEuiFiltersJsonList.GetLength(); ++joinEuiFiltersIndex) {
+      Aws::Utils::Array<JsonValue> joinEuiRangeJsonList(m_joinEuiFilters[joinEuiFiltersIndex].size());
+      for (unsigned joinEuiRangeIndex = 0; joinEuiRangeIndex < joinEuiRangeJsonList.GetLength(); ++joinEuiRangeIndex) {
+        joinEuiRangeJsonList[joinEuiRangeIndex].AsString(m_joinEuiFilters[joinEuiFiltersIndex][joinEuiRangeIndex]);
+      }
+      joinEuiFiltersJsonList[joinEuiFiltersIndex].AsArray(std::move(joinEuiRangeJsonList));
+    }
+    payload.WithArray("JoinEuiFilters", std::move(joinEuiFiltersJsonList));
+  }
+
+  if (m_netIdFiltersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> netIdFiltersJsonList(m_netIdFilters.size());
+    for (unsigned netIdFiltersIndex = 0; netIdFiltersIndex < netIdFiltersJsonList.GetLength(); ++netIdFiltersIndex) {
+      netIdFiltersJsonList[netIdFiltersIndex].AsString(m_netIdFilters[netIdFiltersIndex]);
+    }
+    payload.WithArray("NetIdFilters", std::move(netIdFiltersJsonList));
+  }
+
+  if (m_subBandsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> subBandsJsonList(m_subBands.size());
+    for (unsigned subBandsIndex = 0; subBandsIndex < subBandsJsonList.GetLength(); ++subBandsIndex) {
+      subBandsJsonList[subBandsIndex].AsInteger(m_subBands[subBandsIndex]);
+    }
+    payload.WithArray("SubBands", std::move(subBandsJsonList));
+  }
+
+  if (m_beaconingHasBeenSet) {
+    payload.WithObject("Beaconing", m_beaconing.Jsonize());
+  }
+
+  if (m_maxEirpHasBeenSet) {
+    payload.WithDouble("MaxEirp", m_maxEirp);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

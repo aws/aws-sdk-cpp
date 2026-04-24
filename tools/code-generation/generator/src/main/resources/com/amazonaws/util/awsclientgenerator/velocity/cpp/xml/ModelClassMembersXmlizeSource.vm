@@ -1,0 +1,37 @@
+  Aws::StringStream ss;
+#if($shape.members.entrySet().size() == 0)
+  AWS_UNREFERENCED_PARAM(parentNode);
+#end
+#if(!$callFromRequestShape && $shape.xmlNamespace)
+##If requestShape has xmlNamespace field, then it has already added xml attribute before calling into this vm.
+#if($shape.xmlNamespace.prefix)
+#set($xmlnsKey = "xmlns:${shape.xmlNamespace.prefix}")
+#else
+#set($xmlnsKey = "xmlns")
+#end
+  parentNode.SetAttributeValue("${xmlnsKey}", "${shape.xmlNamespace.uri}");
+#end
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.usedForPayload)
+#set($spaces = '')
+#set($memberName = $entry.key)
+#set($serializationName = $memberName)
+#set($member = $entry.value)
+#if($member.locationName)
+#set($serializationName = $member.locationName)
+#end
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#if(!$member.required && $useRequiredField)
+#set($spaces = ' ')
+  if($varNameHasBeenSet)
+  {
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMemberSingleXmlizeSource.vm")
+#if(!$member.required && $useRequiredField)
+  }
+
+#end
+#end##End if usedForPayload
+#end##End foreach

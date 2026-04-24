@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DescribeServiceUpdatesResult.h>
+
+#include <utility>
+
+using namespace Aws::ElastiCache::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
+using namespace Aws::Utils;
+using namespace Aws;
+
+DescribeServiceUpdatesResult::DescribeServiceUpdatesResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+
+DescribeServiceUpdatesResult& DescribeServiceUpdatesResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "DescribeServiceUpdatesResult")) {
+    resultNode = rootNode.FirstChild("DescribeServiceUpdatesResult");
+  }
+
+  if (!resultNode.IsNull()) {
+    XmlNode markerNode = resultNode.FirstChild("Marker");
+    if (!markerNode.IsNull()) {
+      m_marker = Aws::Utils::Xml::DecodeEscapedXmlText(markerNode.GetText());
+      m_markerHasBeenSet = true;
+    }
+    XmlNode serviceUpdatesNode = resultNode.FirstChild("ServiceUpdates");
+    if (!serviceUpdatesNode.IsNull()) {
+      XmlNode serviceUpdatesMember = serviceUpdatesNode.FirstChild("ServiceUpdate");
+      m_serviceUpdatesHasBeenSet = !serviceUpdatesMember.IsNull();
+      while (!serviceUpdatesMember.IsNull()) {
+        m_serviceUpdates.push_back(serviceUpdatesMember);
+        serviceUpdatesMember = serviceUpdatesMember.NextNode("ServiceUpdate");
+      }
+
+      m_serviceUpdatesHasBeenSet = true;
+    }
+  }
+
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::ElastiCache::Model::DescribeServiceUpdatesResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  }
+  return *this;
+}

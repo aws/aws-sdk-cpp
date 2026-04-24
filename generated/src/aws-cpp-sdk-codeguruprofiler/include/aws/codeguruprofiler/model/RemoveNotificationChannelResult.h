@@ -1,0 +1,82 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/codeguruprofiler/CodeGuruProfiler_EXPORTS.h>
+#include <aws/codeguruprofiler/model/NotificationConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace CodeGuruProfiler {
+namespace Model {
+/**
+ * <p>The structure representing the
+ * RemoveNotificationChannelResponse.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/codeguruprofiler-2019-07-18/RemoveNotificationChannelResponse">AWS
+ * API Reference</a></p>
+ */
+class RemoveNotificationChannelResult {
+ public:
+  AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult() = default;
+  AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CODEGURUPROFILER_API RemoveNotificationChannelResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The new notification configuration for this profiling group.</p>
+   */
+  inline const NotificationConfiguration& GetNotificationConfiguration() const { return m_notificationConfiguration; }
+  template <typename NotificationConfigurationT = NotificationConfiguration>
+  void SetNotificationConfiguration(NotificationConfigurationT&& value) {
+    m_notificationConfigurationHasBeenSet = true;
+    m_notificationConfiguration = std::forward<NotificationConfigurationT>(value);
+  }
+  template <typename NotificationConfigurationT = NotificationConfiguration>
+  RemoveNotificationChannelResult& WithNotificationConfiguration(NotificationConfigurationT&& value) {
+    SetNotificationConfiguration(std::forward<NotificationConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  RemoveNotificationChannelResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  NotificationConfiguration m_notificationConfiguration;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_notificationConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CodeGuruProfiler
+}  // namespace Aws

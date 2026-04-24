@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/personalize/model/ListBatchSegmentJobsResult.h>
+
+#include <utility>
+
+using namespace Aws::Personalize::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListBatchSegmentJobsResult::ListBatchSegmentJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListBatchSegmentJobsResult& ListBatchSegmentJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("batchSegmentJobs")) {
+    Aws::Utils::Array<JsonView> batchSegmentJobsJsonList = jsonValue.GetArray("batchSegmentJobs");
+    for (unsigned batchSegmentJobsIndex = 0; batchSegmentJobsIndex < batchSegmentJobsJsonList.GetLength(); ++batchSegmentJobsIndex) {
+      m_batchSegmentJobs.push_back(batchSegmentJobsJsonList[batchSegmentJobsIndex].AsObject());
+    }
+    m_batchSegmentJobsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

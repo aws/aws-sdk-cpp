@@ -1,0 +1,60 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/autoscaling/model/DescribeScalingActivitiesRequest.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+using namespace Aws::AutoScaling::Model;
+using namespace Aws::Utils;
+
+Aws::String DescribeScalingActivitiesRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=DescribeScalingActivities&";
+  if (m_activityIdsHasBeenSet) {
+    if (m_activityIds.empty()) {
+      ss << "ActivityIds=&";
+    } else {
+      unsigned activityIdsCount = 1;
+      for (auto& item : m_activityIds) {
+        ss << "ActivityIds.member." << activityIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+        activityIdsCount++;
+      }
+    }
+  }
+
+  if (m_autoScalingGroupNameHasBeenSet) {
+    ss << "AutoScalingGroupName=" << StringUtils::URLEncode(m_autoScalingGroupName.c_str()) << "&";
+  }
+
+  if (m_includeDeletedGroupsHasBeenSet) {
+    ss << "IncludeDeletedGroups=" << std::boolalpha << m_includeDeletedGroups << "&";
+  }
+
+  if (m_maxRecordsHasBeenSet) {
+    ss << "MaxRecords=" << m_maxRecords << "&";
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
+  }
+
+  if (m_filtersHasBeenSet) {
+    if (m_filters.empty()) {
+      ss << "Filters=&";
+    } else {
+      unsigned filtersCount = 1;
+      for (auto& item : m_filters) {
+        item.OutputToStream(ss, "Filters.member.", filtersCount, "");
+        filtersCount++;
+      }
+    }
+  }
+
+  ss << "Version=2011-01-01";
+  return ss.str();
+}
+
+void DescribeScalingActivitiesRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

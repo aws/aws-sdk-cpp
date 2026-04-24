@@ -1,0 +1,88 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/PutAlarmRequest.h>
+
+#include <utility>
+
+using namespace Aws::Lightsail::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String PutAlarmRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_alarmNameHasBeenSet) {
+    payload.WithString("alarmName", m_alarmName);
+  }
+
+  if (m_metricNameHasBeenSet) {
+    payload.WithString("metricName", MetricNameMapper::GetNameForMetricName(m_metricName));
+  }
+
+  if (m_monitoredResourceNameHasBeenSet) {
+    payload.WithString("monitoredResourceName", m_monitoredResourceName);
+  }
+
+  if (m_comparisonOperatorHasBeenSet) {
+    payload.WithString("comparisonOperator", ComparisonOperatorMapper::GetNameForComparisonOperator(m_comparisonOperator));
+  }
+
+  if (m_thresholdHasBeenSet) {
+    payload.WithDouble("threshold", m_threshold);
+  }
+
+  if (m_evaluationPeriodsHasBeenSet) {
+    payload.WithInteger("evaluationPeriods", m_evaluationPeriods);
+  }
+
+  if (m_datapointsToAlarmHasBeenSet) {
+    payload.WithInteger("datapointsToAlarm", m_datapointsToAlarm);
+  }
+
+  if (m_treatMissingDataHasBeenSet) {
+    payload.WithString("treatMissingData", TreatMissingDataMapper::GetNameForTreatMissingData(m_treatMissingData));
+  }
+
+  if (m_contactProtocolsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contactProtocolsJsonList(m_contactProtocols.size());
+    for (unsigned contactProtocolsIndex = 0; contactProtocolsIndex < contactProtocolsJsonList.GetLength(); ++contactProtocolsIndex) {
+      contactProtocolsJsonList[contactProtocolsIndex].AsString(
+          ContactProtocolMapper::GetNameForContactProtocol(m_contactProtocols[contactProtocolsIndex]));
+    }
+    payload.WithArray("contactProtocols", std::move(contactProtocolsJsonList));
+  }
+
+  if (m_notificationTriggersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> notificationTriggersJsonList(m_notificationTriggers.size());
+    for (unsigned notificationTriggersIndex = 0; notificationTriggersIndex < notificationTriggersJsonList.GetLength();
+         ++notificationTriggersIndex) {
+      notificationTriggersJsonList[notificationTriggersIndex].AsString(
+          AlarmStateMapper::GetNameForAlarmState(m_notificationTriggers[notificationTriggersIndex]));
+    }
+    payload.WithArray("notificationTriggers", std::move(notificationTriggersJsonList));
+  }
+
+  if (m_notificationEnabledHasBeenSet) {
+    payload.WithBool("notificationEnabled", m_notificationEnabled);
+  }
+
+  if (m_tagsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> tagsJsonList(m_tags.size());
+    for (unsigned tagsIndex = 0; tagsIndex < tagsJsonList.GetLength(); ++tagsIndex) {
+      tagsJsonList[tagsIndex].AsObject(m_tags[tagsIndex].Jsonize());
+    }
+    payload.WithArray("tags", std::move(tagsJsonList));
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection PutAlarmRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.PutAlarm"));
+  return headers;
+}

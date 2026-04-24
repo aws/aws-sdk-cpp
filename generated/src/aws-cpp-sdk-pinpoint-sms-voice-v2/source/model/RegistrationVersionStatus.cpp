@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/pinpoint-sms-voice-v2/model/RegistrationVersionStatus.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace PinpointSMSVoiceV2 {
+namespace Model {
+namespace RegistrationVersionStatusMapper {
+
+static const int DRAFT_HASH = HashingUtils::HashString("DRAFT");
+static const int SUBMITTED_HASH = HashingUtils::HashString("SUBMITTED");
+static const int AWS_REVIEWING_HASH = HashingUtils::HashString("AWS_REVIEWING");
+static const int REVIEWING_HASH = HashingUtils::HashString("REVIEWING");
+static const int REQUIRES_AUTHENTICATION_HASH = HashingUtils::HashString("REQUIRES_AUTHENTICATION");
+static const int APPROVED_HASH = HashingUtils::HashString("APPROVED");
+static const int DISCARDED_HASH = HashingUtils::HashString("DISCARDED");
+static const int DENIED_HASH = HashingUtils::HashString("DENIED");
+static const int REVOKED_HASH = HashingUtils::HashString("REVOKED");
+static const int ARCHIVED_HASH = HashingUtils::HashString("ARCHIVED");
+static const int REQUIRES_OFFLINE_REVIEW_HASH = HashingUtils::HashString("REQUIRES_OFFLINE_REVIEW");
+
+RegistrationVersionStatus GetRegistrationVersionStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == DRAFT_HASH) {
+    return RegistrationVersionStatus::DRAFT;
+  } else if (hashCode == SUBMITTED_HASH) {
+    return RegistrationVersionStatus::SUBMITTED;
+  } else if (hashCode == AWS_REVIEWING_HASH) {
+    return RegistrationVersionStatus::AWS_REVIEWING;
+  } else if (hashCode == REVIEWING_HASH) {
+    return RegistrationVersionStatus::REVIEWING;
+  } else if (hashCode == REQUIRES_AUTHENTICATION_HASH) {
+    return RegistrationVersionStatus::REQUIRES_AUTHENTICATION;
+  } else if (hashCode == APPROVED_HASH) {
+    return RegistrationVersionStatus::APPROVED;
+  } else if (hashCode == DISCARDED_HASH) {
+    return RegistrationVersionStatus::DISCARDED;
+  } else if (hashCode == DENIED_HASH) {
+    return RegistrationVersionStatus::DENIED;
+  } else if (hashCode == REVOKED_HASH) {
+    return RegistrationVersionStatus::REVOKED;
+  } else if (hashCode == ARCHIVED_HASH) {
+    return RegistrationVersionStatus::ARCHIVED;
+  } else if (hashCode == REQUIRES_OFFLINE_REVIEW_HASH) {
+    return RegistrationVersionStatus::REQUIRES_OFFLINE_REVIEW;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<RegistrationVersionStatus>(hashCode);
+  }
+
+  return RegistrationVersionStatus::NOT_SET;
+}
+
+Aws::String GetNameForRegistrationVersionStatus(RegistrationVersionStatus enumValue) {
+  switch (enumValue) {
+    case RegistrationVersionStatus::NOT_SET:
+      return {};
+    case RegistrationVersionStatus::DRAFT:
+      return "DRAFT";
+    case RegistrationVersionStatus::SUBMITTED:
+      return "SUBMITTED";
+    case RegistrationVersionStatus::AWS_REVIEWING:
+      return "AWS_REVIEWING";
+    case RegistrationVersionStatus::REVIEWING:
+      return "REVIEWING";
+    case RegistrationVersionStatus::REQUIRES_AUTHENTICATION:
+      return "REQUIRES_AUTHENTICATION";
+    case RegistrationVersionStatus::APPROVED:
+      return "APPROVED";
+    case RegistrationVersionStatus::DISCARDED:
+      return "DISCARDED";
+    case RegistrationVersionStatus::DENIED:
+      return "DENIED";
+    case RegistrationVersionStatus::REVOKED:
+      return "REVOKED";
+    case RegistrationVersionStatus::ARCHIVED:
+      return "ARCHIVED";
+    case RegistrationVersionStatus::REQUIRES_OFFLINE_REVIEW:
+      return "REQUIRES_OFFLINE_REVIEW";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace RegistrationVersionStatusMapper
+}  // namespace Model
+}  // namespace PinpointSMSVoiceV2
+}  // namespace Aws

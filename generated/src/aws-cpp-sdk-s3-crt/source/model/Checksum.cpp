@@ -1,0 +1,147 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/s3-crt/model/Checksum.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+
+Checksum::Checksum(const XmlNode& xmlNode) { *this = xmlNode; }
+
+Checksum& Checksum::operator=(const XmlNode& xmlNode) {
+  XmlNode resultNode = xmlNode;
+
+  if (!resultNode.IsNull()) {
+    XmlNode checksumCRC32Node = resultNode.FirstChild("ChecksumCRC32");
+    if (!checksumCRC32Node.IsNull()) {
+      m_checksumCRC32 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32Node.GetText());
+      m_checksumCRC32HasBeenSet = true;
+    }
+    XmlNode checksumCRC32CNode = resultNode.FirstChild("ChecksumCRC32C");
+    if (!checksumCRC32CNode.IsNull()) {
+      m_checksumCRC32C = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC32CNode.GetText());
+      m_checksumCRC32CHasBeenSet = true;
+    }
+    XmlNode checksumCRC64NVMENode = resultNode.FirstChild("ChecksumCRC64NVME");
+    if (!checksumCRC64NVMENode.IsNull()) {
+      m_checksumCRC64NVME = Aws::Utils::Xml::DecodeEscapedXmlText(checksumCRC64NVMENode.GetText());
+      m_checksumCRC64NVMEHasBeenSet = true;
+    }
+    XmlNode checksumSHA1Node = resultNode.FirstChild("ChecksumSHA1");
+    if (!checksumSHA1Node.IsNull()) {
+      m_checksumSHA1 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA1Node.GetText());
+      m_checksumSHA1HasBeenSet = true;
+    }
+    XmlNode checksumSHA256Node = resultNode.FirstChild("ChecksumSHA256");
+    if (!checksumSHA256Node.IsNull()) {
+      m_checksumSHA256 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA256Node.GetText());
+      m_checksumSHA256HasBeenSet = true;
+    }
+    XmlNode checksumSHA512Node = resultNode.FirstChild("ChecksumSHA512");
+    if (!checksumSHA512Node.IsNull()) {
+      m_checksumSHA512 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumSHA512Node.GetText());
+      m_checksumSHA512HasBeenSet = true;
+    }
+    XmlNode checksumMD5Node = resultNode.FirstChild("ChecksumMD5");
+    if (!checksumMD5Node.IsNull()) {
+      m_checksumMD5 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumMD5Node.GetText());
+      m_checksumMD5HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH64Node = resultNode.FirstChild("ChecksumXXHASH64");
+    if (!checksumXXHASH64Node.IsNull()) {
+      m_checksumXXHASH64 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH64Node.GetText());
+      m_checksumXXHASH64HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH3Node = resultNode.FirstChild("ChecksumXXHASH3");
+    if (!checksumXXHASH3Node.IsNull()) {
+      m_checksumXXHASH3 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH3Node.GetText());
+      m_checksumXXHASH3HasBeenSet = true;
+    }
+    XmlNode checksumXXHASH128Node = resultNode.FirstChild("ChecksumXXHASH128");
+    if (!checksumXXHASH128Node.IsNull()) {
+      m_checksumXXHASH128 = Aws::Utils::Xml::DecodeEscapedXmlText(checksumXXHASH128Node.GetText());
+      m_checksumXXHASH128HasBeenSet = true;
+    }
+    XmlNode checksumTypeNode = resultNode.FirstChild("ChecksumType");
+    if (!checksumTypeNode.IsNull()) {
+      m_checksumType = ChecksumTypeMapper::GetChecksumTypeForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(checksumTypeNode.GetText()).c_str()));
+      m_checksumTypeHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void Checksum::AddToNode(XmlNode& parentNode) const {
+  Aws::StringStream ss;
+  if (m_checksumCRC32HasBeenSet) {
+    XmlNode checksumCRC32Node = parentNode.CreateChildElement("ChecksumCRC32");
+    checksumCRC32Node.SetText(m_checksumCRC32);
+  }
+
+  if (m_checksumCRC32CHasBeenSet) {
+    XmlNode checksumCRC32CNode = parentNode.CreateChildElement("ChecksumCRC32C");
+    checksumCRC32CNode.SetText(m_checksumCRC32C);
+  }
+
+  if (m_checksumCRC64NVMEHasBeenSet) {
+    XmlNode checksumCRC64NVMENode = parentNode.CreateChildElement("ChecksumCRC64NVME");
+    checksumCRC64NVMENode.SetText(m_checksumCRC64NVME);
+  }
+
+  if (m_checksumSHA1HasBeenSet) {
+    XmlNode checksumSHA1Node = parentNode.CreateChildElement("ChecksumSHA1");
+    checksumSHA1Node.SetText(m_checksumSHA1);
+  }
+
+  if (m_checksumSHA256HasBeenSet) {
+    XmlNode checksumSHA256Node = parentNode.CreateChildElement("ChecksumSHA256");
+    checksumSHA256Node.SetText(m_checksumSHA256);
+  }
+
+  if (m_checksumSHA512HasBeenSet) {
+    XmlNode checksumSHA512Node = parentNode.CreateChildElement("ChecksumSHA512");
+    checksumSHA512Node.SetText(m_checksumSHA512);
+  }
+
+  if (m_checksumMD5HasBeenSet) {
+    XmlNode checksumMD5Node = parentNode.CreateChildElement("ChecksumMD5");
+    checksumMD5Node.SetText(m_checksumMD5);
+  }
+
+  if (m_checksumXXHASH64HasBeenSet) {
+    XmlNode checksumXXHASH64Node = parentNode.CreateChildElement("ChecksumXXHASH64");
+    checksumXXHASH64Node.SetText(m_checksumXXHASH64);
+  }
+
+  if (m_checksumXXHASH3HasBeenSet) {
+    XmlNode checksumXXHASH3Node = parentNode.CreateChildElement("ChecksumXXHASH3");
+    checksumXXHASH3Node.SetText(m_checksumXXHASH3);
+  }
+
+  if (m_checksumXXHASH128HasBeenSet) {
+    XmlNode checksumXXHASH128Node = parentNode.CreateChildElement("ChecksumXXHASH128");
+    checksumXXHASH128Node.SetText(m_checksumXXHASH128);
+  }
+
+  if (m_checksumTypeHasBeenSet) {
+    XmlNode checksumTypeNode = parentNode.CreateChildElement("ChecksumType");
+    checksumTypeNode.SetText(ChecksumTypeMapper::GetNameForChecksumType(m_checksumType));
+  }
+}
+
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/voice-id/model/JobProgress.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace VoiceID {
+namespace Model {
+
+JobProgress::JobProgress(JsonView jsonValue) { *this = jsonValue; }
+
+JobProgress& JobProgress::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PercentComplete")) {
+    m_percentComplete = jsonValue.GetInteger("PercentComplete");
+    m_percentCompleteHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue JobProgress::Jsonize() const {
+  JsonValue payload;
+
+  if (m_percentCompleteHasBeenSet) {
+    payload.WithInteger("PercentComplete", m_percentComplete);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace VoiceID
+}  // namespace Aws

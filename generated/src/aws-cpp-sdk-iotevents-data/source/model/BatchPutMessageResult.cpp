@@ -1,0 +1,42 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iotevents-data/model/BatchPutMessageResult.h>
+
+#include <utility>
+
+using namespace Aws::IoTEventsData::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+BatchPutMessageResult::BatchPutMessageResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+BatchPutMessageResult& BatchPutMessageResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("BatchPutMessageErrorEntries")) {
+    Aws::Utils::Array<JsonView> batchPutMessageErrorEntriesJsonList = jsonValue.GetArray("BatchPutMessageErrorEntries");
+    for (unsigned batchPutMessageErrorEntriesIndex = 0; batchPutMessageErrorEntriesIndex < batchPutMessageErrorEntriesJsonList.GetLength();
+         ++batchPutMessageErrorEntriesIndex) {
+      m_batchPutMessageErrorEntries.push_back(batchPutMessageErrorEntriesJsonList[batchPutMessageErrorEntriesIndex].AsObject());
+    }
+    m_batchPutMessageErrorEntriesHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

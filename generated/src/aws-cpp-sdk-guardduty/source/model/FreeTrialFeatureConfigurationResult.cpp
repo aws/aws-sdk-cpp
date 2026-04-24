@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/guardduty/model/FreeTrialFeatureConfigurationResult.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace GuardDuty {
+namespace Model {
+
+FreeTrialFeatureConfigurationResult::FreeTrialFeatureConfigurationResult(JsonView jsonValue) { *this = jsonValue; }
+
+FreeTrialFeatureConfigurationResult& FreeTrialFeatureConfigurationResult::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
+    m_name = FreeTrialFeatureResultMapper::GetFreeTrialFeatureResultForName(jsonValue.GetString("name"));
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("freeTrialDaysRemaining")) {
+    m_freeTrialDaysRemaining = jsonValue.GetInteger("freeTrialDaysRemaining");
+    m_freeTrialDaysRemainingHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FreeTrialFeatureConfigurationResult::Jsonize() const {
+  JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", FreeTrialFeatureResultMapper::GetNameForFreeTrialFeatureResult(m_name));
+  }
+
+  if (m_freeTrialDaysRemainingHasBeenSet) {
+    payload.WithInteger("freeTrialDaysRemaining", m_freeTrialDaysRemaining);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace GuardDuty
+}  // namespace Aws

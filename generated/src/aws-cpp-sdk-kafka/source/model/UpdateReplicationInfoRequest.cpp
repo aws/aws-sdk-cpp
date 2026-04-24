@@ -1,0 +1,51 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/kafka/model/UpdateReplicationInfoRequest.h>
+
+#include <utility>
+
+using namespace Aws::Kafka::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateReplicationInfoRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_consumerGroupReplicationHasBeenSet) {
+    payload.WithObject("consumerGroupReplication", m_consumerGroupReplication.Jsonize());
+  }
+
+  if (m_currentVersionHasBeenSet) {
+    payload.WithString("currentVersion", m_currentVersion);
+  }
+
+  if (m_sourceKafkaClusterArnHasBeenSet) {
+    payload.WithString("sourceKafkaClusterArn", m_sourceKafkaClusterArn);
+  }
+
+  if (m_sourceKafkaClusterIdHasBeenSet) {
+    payload.WithString("sourceKafkaClusterId", m_sourceKafkaClusterId);
+  }
+
+  if (m_targetKafkaClusterArnHasBeenSet) {
+    payload.WithString("targetKafkaClusterArn", m_targetKafkaClusterArn);
+  }
+
+  if (m_targetKafkaClusterIdHasBeenSet) {
+    payload.WithString("targetKafkaClusterId", m_targetKafkaClusterId);
+  }
+
+  if (m_topicReplicationHasBeenSet) {
+    payload.WithObject("topicReplication", m_topicReplication.Jsonize());
+  }
+
+  if (m_logDeliveryHasBeenSet) {
+    payload.WithObject("logDelivery", m_logDelivery.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}

@@ -1,0 +1,257 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/cognito-idp/CognitoIdentityProviderRequest.h>
+#include <aws/cognito-idp/CognitoIdentityProvider_EXPORTS.h>
+#include <aws/cognito-idp/model/AnalyticsMetadataType.h>
+#include <aws/cognito-idp/model/UserContextDataType.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace CognitoIdentityProvider {
+namespace Model {
+
+/**
+ * <p>The request representing the confirmation for a password reset.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/cognito-idp-2016-04-18/ConfirmForgotPasswordRequest">AWS
+ * API Reference</a></p>
+ */
+class ConfirmForgotPasswordRequest : public CognitoIdentityProviderRequest {
+ public:
+  AWS_COGNITOIDENTITYPROVIDER_API ConfirmForgotPasswordRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ConfirmForgotPassword"; }
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::String SerializePayload() const override;
+
+  AWS_COGNITOIDENTITYPROVIDER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The ID of the app client where the user wants to reset their password. This
+   * parameter is an identifier of the client application that users are resetting
+   * their password from, but this operation resets users' irrespective of the app
+   * clients they sign in to.</p>
+   */
+  inline const Aws::String& GetClientId() const { return m_clientId; }
+  inline bool ClientIdHasBeenSet() const { return m_clientIdHasBeenSet; }
+  template <typename ClientIdT = Aws::String>
+  void SetClientId(ClientIdT&& value) {
+    m_clientIdHasBeenSet = true;
+    m_clientId = std::forward<ClientIdT>(value);
+  }
+  template <typename ClientIdT = Aws::String>
+  ConfirmForgotPasswordRequest& WithClientId(ClientIdT&& value) {
+    SetClientId(std::forward<ClientIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A keyed-hash message authentication code (HMAC) calculated using the secret
+   * key of a user pool client and username plus the client ID in the message. For
+   * more information about <code>SecretHash</code>, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/signing-up-users-in-your-app.html#cognito-user-pools-computing-secret-hash">Computing
+   * secret hash values</a>.</p>
+   */
+  inline const Aws::String& GetSecretHash() const { return m_secretHash; }
+  inline bool SecretHashHasBeenSet() const { return m_secretHashHasBeenSet; }
+  template <typename SecretHashT = Aws::String>
+  void SetSecretHash(SecretHashT&& value) {
+    m_secretHashHasBeenSet = true;
+    m_secretHash = std::forward<SecretHashT>(value);
+  }
+  template <typename SecretHashT = Aws::String>
+  ConfirmForgotPasswordRequest& WithSecretHash(SecretHashT&& value) {
+    SetSecretHash(std::forward<SecretHashT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the user that you want to query or modify. The value of this
+   * parameter is typically your user's username, but it can be any of their alias
+   * attributes. If <code>username</code> isn't an alias attribute in your user pool,
+   * this value must be the <code>sub</code> of a local user or the username of a
+   * user from a third-party IdP.</p>
+   */
+  inline const Aws::String& GetUsername() const { return m_username; }
+  inline bool UsernameHasBeenSet() const { return m_usernameHasBeenSet; }
+  template <typename UsernameT = Aws::String>
+  void SetUsername(UsernameT&& value) {
+    m_usernameHasBeenSet = true;
+    m_username = std::forward<UsernameT>(value);
+  }
+  template <typename UsernameT = Aws::String>
+  ConfirmForgotPasswordRequest& WithUsername(UsernameT&& value) {
+    SetUsername(std::forward<UsernameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The confirmation code that your user pool delivered when your user requested
+   * to reset their password.</p>
+   */
+  inline const Aws::String& GetConfirmationCode() const { return m_confirmationCode; }
+  inline bool ConfirmationCodeHasBeenSet() const { return m_confirmationCodeHasBeenSet; }
+  template <typename ConfirmationCodeT = Aws::String>
+  void SetConfirmationCode(ConfirmationCodeT&& value) {
+    m_confirmationCodeHasBeenSet = true;
+    m_confirmationCode = std::forward<ConfirmationCodeT>(value);
+  }
+  template <typename ConfirmationCodeT = Aws::String>
+  ConfirmForgotPasswordRequest& WithConfirmationCode(ConfirmationCodeT&& value) {
+    SetConfirmationCode(std::forward<ConfirmationCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The new password that your user wants to set.</p>
+   */
+  inline const Aws::String& GetPassword() const { return m_password; }
+  inline bool PasswordHasBeenSet() const { return m_passwordHasBeenSet; }
+  template <typename PasswordT = Aws::String>
+  void SetPassword(PasswordT&& value) {
+    m_passwordHasBeenSet = true;
+    m_password = std::forward<PasswordT>(value);
+  }
+  template <typename PasswordT = Aws::String>
+  ConfirmForgotPasswordRequest& WithPassword(PasswordT&& value) {
+    SetPassword(std::forward<PasswordT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information that supports analytics outcomes with Amazon Pinpoint, including
+   * the user's endpoint ID. The endpoint ID is a destination for Amazon Pinpoint
+   * push notifications, for example a device identifier, email address, or phone
+   * number.</p>
+   */
+  inline const AnalyticsMetadataType& GetAnalyticsMetadata() const { return m_analyticsMetadata; }
+  inline bool AnalyticsMetadataHasBeenSet() const { return m_analyticsMetadataHasBeenSet; }
+  template <typename AnalyticsMetadataT = AnalyticsMetadataType>
+  void SetAnalyticsMetadata(AnalyticsMetadataT&& value) {
+    m_analyticsMetadataHasBeenSet = true;
+    m_analyticsMetadata = std::forward<AnalyticsMetadataT>(value);
+  }
+  template <typename AnalyticsMetadataT = AnalyticsMetadataType>
+  ConfirmForgotPasswordRequest& WithAnalyticsMetadata(AnalyticsMetadataT&& value) {
+    SetAnalyticsMetadata(std::forward<AnalyticsMetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Contextual data about your user session like the device fingerprint, IP
+   * address, or location. Amazon Cognito threat protection evaluates the risk of an
+   * authentication event based on the context that your app generates and passes to
+   * Amazon Cognito when it makes API requests.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/user-pool-settings-viewing-threat-protection-app.html">Collecting
+   * data for threat protection in applications</a>.</p>
+   */
+  inline const UserContextDataType& GetUserContextData() const { return m_userContextData; }
+  inline bool UserContextDataHasBeenSet() const { return m_userContextDataHasBeenSet; }
+  template <typename UserContextDataT = UserContextDataType>
+  void SetUserContextData(UserContextDataT&& value) {
+    m_userContextDataHasBeenSet = true;
+    m_userContextData = std::forward<UserContextDataT>(value);
+  }
+  template <typename UserContextDataT = UserContextDataType>
+  ConfirmForgotPasswordRequest& WithUserContextData(UserContextDataT&& value) {
+    SetUserContextData(std::forward<UserContextDataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A map of custom key-value pairs that you can provide as input for any custom
+   * workflows that this action triggers. You create custom workflows by assigning
+   * Lambda functions to user pool triggers.</p> <p>When Amazon Cognito invokes any
+   * of these functions, it passes a JSON payload, which the function receives as
+   * input. This payload contains a <code>clientMetadata</code> attribute that
+   * provides the data that you assigned to the ClientMetadata parameter in your
+   * request. In your function code, you can process the <code>clientMetadata</code>
+   * value to enhance your workflow for your specific needs.</p> <p>To review the
+   * Lambda trigger types that Amazon Cognito invokes at runtime with API requests,
+   * see <a
+   * href="https://docs.aws.amazon.com/cognito/latest/developerguide/cognito-user-pools-working-with-lambda-triggers.html#lambda-triggers-by-event">
+   * Connecting API actions to Lambda triggers</a> in the <i>Amazon Cognito Developer
+   * Guide</i>.</p>  <p>When you use the <code>ClientMetadata</code> parameter,
+   * note that Amazon Cognito won't do the following:</p> <ul> <li> <p>Store the
+   * <code>ClientMetadata</code> value. This data is available only to Lambda
+   * triggers that are assigned to a user pool to support custom workflows. If your
+   * user pool configuration doesn't include triggers, the
+   * <code>ClientMetadata</code> parameter serves no purpose.</p> </li> <li>
+   * <p>Validate the <code>ClientMetadata</code> value.</p> </li> <li> <p>Encrypt the
+   * <code>ClientMetadata</code> value. Don't send sensitive information in this
+   * parameter.</p> </li> </ul>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetClientMetadata() const { return m_clientMetadata; }
+  inline bool ClientMetadataHasBeenSet() const { return m_clientMetadataHasBeenSet; }
+  template <typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+  void SetClientMetadata(ClientMetadataT&& value) {
+    m_clientMetadataHasBeenSet = true;
+    m_clientMetadata = std::forward<ClientMetadataT>(value);
+  }
+  template <typename ClientMetadataT = Aws::Map<Aws::String, Aws::String>>
+  ConfirmForgotPasswordRequest& WithClientMetadata(ClientMetadataT&& value) {
+    SetClientMetadata(std::forward<ClientMetadataT>(value));
+    return *this;
+  }
+  template <typename ClientMetadataKeyT = Aws::String, typename ClientMetadataValueT = Aws::String>
+  ConfirmForgotPasswordRequest& AddClientMetadata(ClientMetadataKeyT&& key, ClientMetadataValueT&& value) {
+    m_clientMetadataHasBeenSet = true;
+    m_clientMetadata.emplace(std::forward<ClientMetadataKeyT>(key), std::forward<ClientMetadataValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_clientId;
+
+  Aws::String m_secretHash;
+
+  Aws::String m_username;
+
+  Aws::String m_confirmationCode;
+
+  Aws::String m_password;
+
+  AnalyticsMetadataType m_analyticsMetadata;
+
+  UserContextDataType m_userContextData;
+
+  Aws::Map<Aws::String, Aws::String> m_clientMetadata;
+  bool m_clientIdHasBeenSet = false;
+  bool m_secretHashHasBeenSet = false;
+  bool m_usernameHasBeenSet = false;
+  bool m_confirmationCodeHasBeenSet = false;
+  bool m_passwordHasBeenSet = false;
+  bool m_analyticsMetadataHasBeenSet = false;
+  bool m_userContextDataHasBeenSet = false;
+  bool m_clientMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CognitoIdentityProvider
+}  // namespace Aws

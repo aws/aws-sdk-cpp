@@ -1,0 +1,5 @@
+##-------------------- serializeSubObjQuerySingleElement macro
+#macro( serializeSubObjQuerySingleElement $member $location $memberVarName )
+##/* --- the actual shape member is $member; the actual shape is $member.shape; --- */
+${location} << #serializeQuerySingleElementToText("", $member, $memberVarName)##
+#end##macro serializeSubObjQuerySingleElement

@@ -1,0 +1,295 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/finspace/Finspace_EXPORTS.h>
+#include <aws/finspace/model/KxAzMode.h>
+#include <aws/finspace/model/KxNAS1Configuration.h>
+#include <aws/finspace/model/KxVolumeStatus.h>
+#include <aws/finspace/model/KxVolumeType.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace finspace {
+namespace Model {
+class CreateKxVolumeResult {
+ public:
+  AWS_FINSPACE_API CreateKxVolumeResult() = default;
+  AWS_FINSPACE_API CreateKxVolumeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_FINSPACE_API CreateKxVolumeResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A unique identifier for the kdb environment, whose clusters can attach to the
+   * volume. </p>
+   */
+  inline const Aws::String& GetEnvironmentId() const { return m_environmentId; }
+  template <typename EnvironmentIdT = Aws::String>
+  void SetEnvironmentId(EnvironmentIdT&& value) {
+    m_environmentIdHasBeenSet = true;
+    m_environmentId = std::forward<EnvironmentIdT>(value);
+  }
+  template <typename EnvironmentIdT = Aws::String>
+  CreateKxVolumeResult& WithEnvironmentId(EnvironmentIdT&& value) {
+    SetEnvironmentId(std::forward<EnvironmentIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique identifier for the volume.</p>
+   */
+  inline const Aws::String& GetVolumeName() const { return m_volumeName; }
+  template <typename VolumeNameT = Aws::String>
+  void SetVolumeName(VolumeNameT&& value) {
+    m_volumeNameHasBeenSet = true;
+    m_volumeName = std::forward<VolumeNameT>(value);
+  }
+  template <typename VolumeNameT = Aws::String>
+  CreateKxVolumeResult& WithVolumeName(VolumeNameT&& value) {
+    SetVolumeName(std::forward<VolumeNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The type of file system volume. Currently, FinSpace only supports
+   * <code>NAS_1</code> volume type. </p>
+   */
+  inline KxVolumeType GetVolumeType() const { return m_volumeType; }
+  inline void SetVolumeType(KxVolumeType value) {
+    m_volumeTypeHasBeenSet = true;
+    m_volumeType = value;
+  }
+  inline CreateKxVolumeResult& WithVolumeType(KxVolumeType value) {
+    SetVolumeType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The ARN identifier of the volume. </p>
+   */
+  inline const Aws::String& GetVolumeArn() const { return m_volumeArn; }
+  template <typename VolumeArnT = Aws::String>
+  void SetVolumeArn(VolumeArnT&& value) {
+    m_volumeArnHasBeenSet = true;
+    m_volumeArn = std::forward<VolumeArnT>(value);
+  }
+  template <typename VolumeArnT = Aws::String>
+  CreateKxVolumeResult& WithVolumeArn(VolumeArnT&& value) {
+    SetVolumeArn(std::forward<VolumeArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Specifies the configuration for the Network attached storage (NAS_1) file
+   * system volume.</p>
+   */
+  inline const KxNAS1Configuration& GetNas1Configuration() const { return m_nas1Configuration; }
+  template <typename Nas1ConfigurationT = KxNAS1Configuration>
+  void SetNas1Configuration(Nas1ConfigurationT&& value) {
+    m_nas1ConfigurationHasBeenSet = true;
+    m_nas1Configuration = std::forward<Nas1ConfigurationT>(value);
+  }
+  template <typename Nas1ConfigurationT = KxNAS1Configuration>
+  CreateKxVolumeResult& WithNas1Configuration(Nas1ConfigurationT&& value) {
+    SetNas1Configuration(std::forward<Nas1ConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of volume creation.</p> <ul> <li> <p>CREATING – The volume
+   * creation is in progress.</p> </li> <li> <p>CREATE_FAILED – The volume creation
+   * has failed.</p> </li> <li> <p>ACTIVE – The volume is active.</p> </li> <li>
+   * <p>UPDATING – The volume is in the process of being updated.</p> </li> <li>
+   * <p>UPDATE_FAILED – The update action failed.</p> </li> <li> <p>UPDATED – The
+   * volume is successfully updated.</p> </li> <li> <p>DELETING – The volume is in
+   * the process of being deleted.</p> </li> <li> <p>DELETE_FAILED – The system
+   * failed to delete the volume.</p> </li> <li> <p>DELETED – The volume is
+   * successfully deleted.</p> </li> </ul>
+   */
+  inline KxVolumeStatus GetStatus() const { return m_status; }
+  inline void SetStatus(KxVolumeStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateKxVolumeResult& WithStatus(KxVolumeStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The error message when a failed state occurs. </p>
+   */
+  inline const Aws::String& GetStatusReason() const { return m_statusReason; }
+  template <typename StatusReasonT = Aws::String>
+  void SetStatusReason(StatusReasonT&& value) {
+    m_statusReasonHasBeenSet = true;
+    m_statusReason = std::forward<StatusReasonT>(value);
+  }
+  template <typename StatusReasonT = Aws::String>
+  CreateKxVolumeResult& WithStatusReason(StatusReasonT&& value) {
+    SetStatusReason(std::forward<StatusReasonT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of availability zones you want to assign per volume. Currently,
+   * FinSpace only supports <code>SINGLE</code> for volumes. This places dataview in
+   * a single AZ.</p>
+   */
+  inline KxAzMode GetAzMode() const { return m_azMode; }
+  inline void SetAzMode(KxAzMode value) {
+    m_azModeHasBeenSet = true;
+    m_azMode = value;
+  }
+  inline CreateKxVolumeResult& WithAzMode(KxAzMode value) {
+    SetAzMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> A description of the volume. </p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateKxVolumeResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the availability zones.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetAvailabilityZoneIds() const { return m_availabilityZoneIds; }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  void SetAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds = std::forward<AvailabilityZoneIdsT>(value);
+  }
+  template <typename AvailabilityZoneIdsT = Aws::Vector<Aws::String>>
+  CreateKxVolumeResult& WithAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    SetAvailabilityZoneIds(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  template <typename AvailabilityZoneIdsT = Aws::String>
+  CreateKxVolumeResult& AddAvailabilityZoneIds(AvailabilityZoneIdsT&& value) {
+    m_availabilityZoneIdsHasBeenSet = true;
+    m_availabilityZoneIds.emplace_back(std::forward<AvailabilityZoneIdsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp at which the volume was created in FinSpace. The value is
+   * determined as epoch time in milliseconds. For example, the value for Monday,
+   * November 1, 2021 12:00:00 PM UTC is specified as 1635768000000.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedTimestamp() const { return m_createdTimestamp; }
+  template <typename CreatedTimestampT = Aws::Utils::DateTime>
+  void SetCreatedTimestamp(CreatedTimestampT&& value) {
+    m_createdTimestampHasBeenSet = true;
+    m_createdTimestamp = std::forward<CreatedTimestampT>(value);
+  }
+  template <typename CreatedTimestampT = Aws::Utils::DateTime>
+  CreateKxVolumeResult& WithCreatedTimestamp(CreatedTimestampT&& value) {
+    SetCreatedTimestamp(std::forward<CreatedTimestampT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateKxVolumeResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_environmentId;
+
+  Aws::String m_volumeName;
+
+  KxVolumeType m_volumeType{KxVolumeType::NOT_SET};
+
+  Aws::String m_volumeArn;
+
+  KxNAS1Configuration m_nas1Configuration;
+
+  KxVolumeStatus m_status{KxVolumeStatus::NOT_SET};
+
+  Aws::String m_statusReason;
+
+  KxAzMode m_azMode{KxAzMode::NOT_SET};
+
+  Aws::String m_description;
+
+  Aws::Vector<Aws::String> m_availabilityZoneIds;
+
+  Aws::Utils::DateTime m_createdTimestamp{};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_environmentIdHasBeenSet = false;
+  bool m_volumeNameHasBeenSet = false;
+  bool m_volumeTypeHasBeenSet = false;
+  bool m_volumeArnHasBeenSet = false;
+  bool m_nas1ConfigurationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_statusReasonHasBeenSet = false;
+  bool m_azModeHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_availabilityZoneIdsHasBeenSet = false;
+  bool m_createdTimestampHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace finspace
+}  // namespace Aws

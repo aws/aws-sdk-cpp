@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mgn/model/SsmParameterStoreParameterType.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace mgn {
+namespace Model {
+namespace SsmParameterStoreParameterTypeMapper {
+
+static const int STRING_HASH = HashingUtils::HashString("STRING");
+static const int SECURE_STRING_HASH = HashingUtils::HashString("SECURE_STRING");
+
+SsmParameterStoreParameterType GetSsmParameterStoreParameterTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == STRING_HASH) {
+    return SsmParameterStoreParameterType::STRING;
+  } else if (hashCode == SECURE_STRING_HASH) {
+    return SsmParameterStoreParameterType::SECURE_STRING;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<SsmParameterStoreParameterType>(hashCode);
+  }
+
+  return SsmParameterStoreParameterType::NOT_SET;
+}
+
+Aws::String GetNameForSsmParameterStoreParameterType(SsmParameterStoreParameterType enumValue) {
+  switch (enumValue) {
+    case SsmParameterStoreParameterType::NOT_SET:
+      return {};
+    case SsmParameterStoreParameterType::STRING:
+      return "STRING";
+    case SsmParameterStoreParameterType::SECURE_STRING:
+      return "SECURE_STRING";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace SsmParameterStoreParameterTypeMapper
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

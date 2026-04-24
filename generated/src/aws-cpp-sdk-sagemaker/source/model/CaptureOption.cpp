@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/CaptureOption.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+CaptureOption::CaptureOption(JsonView jsonValue) { *this = jsonValue; }
+
+CaptureOption& CaptureOption::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CaptureMode")) {
+    m_captureMode = CaptureModeMapper::GetCaptureModeForName(jsonValue.GetString("CaptureMode"));
+    m_captureModeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CaptureOption::Jsonize() const {
+  JsonValue payload;
+
+  if (m_captureModeHasBeenSet) {
+    payload.WithString("CaptureMode", CaptureModeMapper::GetNameForCaptureMode(m_captureMode));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

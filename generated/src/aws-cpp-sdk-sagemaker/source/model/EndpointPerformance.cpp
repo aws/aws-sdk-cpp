@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/EndpointPerformance.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+EndpointPerformance::EndpointPerformance(JsonView jsonValue) { *this = jsonValue; }
+
+EndpointPerformance& EndpointPerformance::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Metrics")) {
+    m_metrics = jsonValue.GetObject("Metrics");
+    m_metricsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndpointInfo")) {
+    m_endpointInfo = jsonValue.GetObject("EndpointInfo");
+    m_endpointInfoHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue EndpointPerformance::Jsonize() const {
+  JsonValue payload;
+
+  if (m_metricsHasBeenSet) {
+    payload.WithObject("Metrics", m_metrics.Jsonize());
+  }
+
+  if (m_endpointInfoHasBeenSet) {
+    payload.WithObject("EndpointInfo", m_endpointInfo.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

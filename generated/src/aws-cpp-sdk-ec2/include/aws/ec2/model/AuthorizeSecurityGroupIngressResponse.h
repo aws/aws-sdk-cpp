@@ -1,0 +1,102 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/SecurityGroupRule.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class AuthorizeSecurityGroupIngressResponse {
+ public:
+  AWS_EC2_API AuthorizeSecurityGroupIngressResponse() = default;
+  AWS_EC2_API AuthorizeSecurityGroupIngressResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API AuthorizeSecurityGroupIngressResponse& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>Returns <code>true</code> if the request succeeds; otherwise, returns an
+   * error.</p>
+   */
+  inline bool GetReturn() const { return m_return; }
+  inline void SetReturn(bool value) {
+    m_returnHasBeenSet = true;
+    m_return = value;
+  }
+  inline AuthorizeSecurityGroupIngressResponse& WithReturn(bool value) {
+    SetReturn(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Information about the inbound (ingress) security group rules that were
+   * added.</p>
+   */
+  inline const Aws::Vector<SecurityGroupRule>& GetSecurityGroupRules() const { return m_securityGroupRules; }
+  template <typename SecurityGroupRulesT = Aws::Vector<SecurityGroupRule>>
+  void SetSecurityGroupRules(SecurityGroupRulesT&& value) {
+    m_securityGroupRulesHasBeenSet = true;
+    m_securityGroupRules = std::forward<SecurityGroupRulesT>(value);
+  }
+  template <typename SecurityGroupRulesT = Aws::Vector<SecurityGroupRule>>
+  AuthorizeSecurityGroupIngressResponse& WithSecurityGroupRules(SecurityGroupRulesT&& value) {
+    SetSecurityGroupRules(std::forward<SecurityGroupRulesT>(value));
+    return *this;
+  }
+  template <typename SecurityGroupRulesT = SecurityGroupRule>
+  AuthorizeSecurityGroupIngressResponse& AddSecurityGroupRules(SecurityGroupRulesT&& value) {
+    m_securityGroupRulesHasBeenSet = true;
+    m_securityGroupRules.emplace_back(std::forward<SecurityGroupRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  AuthorizeSecurityGroupIngressResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  bool m_return{false};
+
+  Aws::Vector<SecurityGroupRule> m_securityGroupRules;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_returnHasBeenSet = false;
+  bool m_securityGroupRulesHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

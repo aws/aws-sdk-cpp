@@ -1,0 +1,92 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+#set($serviceNs = $serviceModel.metadata.namespace)
+#set($serviceClient = "${serviceModel.metadata.classNamePrefix}Client")
+\#include <aws/core/utils/logging/LogMacros.h>
+\#include <aws/testing/AwsProtocolTestHelpers.h>
+\#include <aws/${serviceModel.metadata.projectName}/${serviceClient}.h>
+#foreach($header in $sourceIncludes)
+\#include $header
+#end
+
+using $testSuite.name = AWS_PROTOCOL_TEST_SUITE;
+using $serviceClient = Aws::$serviceNs::$serviceClient;
+using namespace Aws::$serviceNs::Model;
+#foreach($case in $testSuite.cases)
+
+AWS_PROTOCOL_TEST($testSuite.name, $case.id) {
+  $serviceClient client(mockCredentials, mockConfig);
+
+#if($case.input && $serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
+  //Cbor specific
+  OutputResponse mockRs;
+  mockRs.statusCode = 200;
+#if($case.input.get().serialized.body)
+  mockRs.body = "${case.input.get().serialized.body}";
+#end
+  SetMockResponse(mockRs);
+
+#elseif($case.output)
+  OutputResponse mockRs;
+  mockRs.statusCode = ${case.output.get().response.status_code};
+#if($case.output.get().response.headers)
+  mockRs.headers = {##
+#foreach($headerEntry in $case.output.get().response.headers.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($case.output.get().response.body)
+  mockRs.body = "${case.output.get().response.body}";
+#end
+  SetMockResponse(mockRs);
+#else
+  SetMockResponse();
+#end
+
+  ${case.given.name}Request request;
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/FillRequest.vm")
+
+  auto outcome = client.${case.given.name}(request);
+#if($case.input)
+#set($serialized = $case.input.get().serialized)
+  ExpectedRequest expectedRq;
+#if($serialized.method)
+  expectedRq.method = "${serialized.method}";
+#end
+#if($serialized.body)
+  expectedRq.body = "${serialized.body}";
+#end
+#if($serialized.uri)
+  expectedRq.uri = "${serialized.uri}";
+#end
+#if($serialized.host)
+  expectedRq.host = "${serialized.host}";
+#end
+#if($serialized.headers)
+  expectedRq.headers = {##
+#foreach($headerEntry in $serialized.headers.entrySet())
+{"${headerEntry.key}", R"(${headerEntry.value})"}#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serialized.forbidHeaders)
+  expectedRq.forbidHeaders = {##
+#foreach($forbidHeader in $serialized.forbidHeaders)
+"$forbidHeader"#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serialized.requireHeaders)
+  expectedRq.requireHeaders = {##
+#foreach($requireHeader in $serialized.requireHeaders)
+"$requireHeader"#if($foreach.hasNext), #end##
+#end
+};
+#end
+#if($serviceModel.metadata.protocol != "smithy-rpc-v2-cbor")
+  ValidateRequestSent(expectedRq);
+#end
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateOutcome.vm")
+}
+#end

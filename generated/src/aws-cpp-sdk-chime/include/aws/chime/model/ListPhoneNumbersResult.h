@@ -1,0 +1,102 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime/Chime_EXPORTS.h>
+#include <aws/chime/model/PhoneNumber.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Chime {
+namespace Model {
+class ListPhoneNumbersResult {
+ public:
+  AWS_CHIME_API ListPhoneNumbersResult() = default;
+  AWS_CHIME_API ListPhoneNumbersResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIME_API ListPhoneNumbersResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The phone number details.</p>
+   */
+  inline const Aws::Vector<PhoneNumber>& GetPhoneNumbers() const { return m_phoneNumbers; }
+  template <typename PhoneNumbersT = Aws::Vector<PhoneNumber>>
+  void SetPhoneNumbers(PhoneNumbersT&& value) {
+    m_phoneNumbersHasBeenSet = true;
+    m_phoneNumbers = std::forward<PhoneNumbersT>(value);
+  }
+  template <typename PhoneNumbersT = Aws::Vector<PhoneNumber>>
+  ListPhoneNumbersResult& WithPhoneNumbers(PhoneNumbersT&& value) {
+    SetPhoneNumbers(std::forward<PhoneNumbersT>(value));
+    return *this;
+  }
+  template <typename PhoneNumbersT = PhoneNumber>
+  ListPhoneNumbersResult& AddPhoneNumbers(PhoneNumbersT&& value) {
+    m_phoneNumbersHasBeenSet = true;
+    m_phoneNumbers.emplace_back(std::forward<PhoneNumbersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token to use to retrieve the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListPhoneNumbersResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListPhoneNumbersResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<PhoneNumber> m_phoneNumbers;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_phoneNumbersHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Chime
+}  // namespace Aws

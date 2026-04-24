@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediaconvert/MediaConvert_EXPORTS.h>
+
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+enum class ScalingBehavior { NOT_SET, DEFAULT, STRETCH_TO_OUTPUT, FIT, FIT_NO_UPSCALE, FILL, SMART_CROP };
+
+namespace ScalingBehaviorMapper {
+AWS_MEDIACONVERT_API ScalingBehavior GetScalingBehaviorForName(const Aws::String& name);
+
+AWS_MEDIACONVERT_API Aws::String GetNameForScalingBehavior(ScalingBehavior value);
+}  // namespace ScalingBehaviorMapper
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

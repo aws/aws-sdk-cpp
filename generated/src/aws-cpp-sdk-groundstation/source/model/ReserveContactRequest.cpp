@@ -1,0 +1,51 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/ReserveContactRequest.h>
+
+#include <utility>
+
+using namespace Aws::GroundStation::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String ReserveContactRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_missionProfileArnHasBeenSet) {
+    payload.WithString("missionProfileArn", m_missionProfileArn);
+  }
+
+  if (m_satelliteArnHasBeenSet) {
+    payload.WithString("satelliteArn", m_satelliteArn);
+  }
+
+  if (m_startTimeHasBeenSet) {
+    payload.WithDouble("startTime", m_startTime.SecondsWithMSPrecision());
+  }
+
+  if (m_endTimeHasBeenSet) {
+    payload.WithDouble("endTime", m_endTime.SecondsWithMSPrecision());
+  }
+
+  if (m_groundStationHasBeenSet) {
+    payload.WithString("groundStation", m_groundStation);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_trackingOverridesHasBeenSet) {
+    payload.WithObject("trackingOverrides", m_trackingOverrides.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}

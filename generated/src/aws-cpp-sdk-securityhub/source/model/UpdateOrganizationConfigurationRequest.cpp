@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/UpdateOrganizationConfigurationRequest.h>
+
+#include <utility>
+
+using namespace Aws::SecurityHub::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateOrganizationConfigurationRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_autoEnableHasBeenSet) {
+    payload.WithBool("AutoEnable", m_autoEnable);
+  }
+
+  if (m_autoEnableStandardsHasBeenSet) {
+    payload.WithString("AutoEnableStandards", AutoEnableStandardsMapper::GetNameForAutoEnableStandards(m_autoEnableStandards));
+  }
+
+  if (m_organizationConfigurationHasBeenSet) {
+    payload.WithObject("OrganizationConfiguration", m_organizationConfiguration.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}

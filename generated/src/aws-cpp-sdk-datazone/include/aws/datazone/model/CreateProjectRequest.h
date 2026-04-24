@@ -1,0 +1,296 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/DataZoneRequest.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
+#include <aws/datazone/model/ProjectMembershipAssignment.h>
+
+#include <utility>
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+
+/**
+ */
+class CreateProjectRequest : public DataZoneRequest {
+ public:
+  AWS_DATAZONE_API CreateProjectRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateProject"; }
+
+  AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon DataZone domain in which this project is created.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  CreateProjectRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the Amazon DataZone project.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  CreateProjectRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the Amazon DataZone project.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  CreateProjectRequest& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource tags of the project.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetResourceTags() const { return m_resourceTags; }
+  inline bool ResourceTagsHasBeenSet() const { return m_resourceTagsHasBeenSet; }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags = std::forward<ResourceTagsT>(value);
+  }
+  template <typename ResourceTagsT = Aws::Map<Aws::String, Aws::String>>
+  CreateProjectRequest& WithResourceTags(ResourceTagsT&& value) {
+    SetResourceTags(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ResourceTagsKeyT = Aws::String, typename ResourceTagsValueT = Aws::String>
+  CreateProjectRequest& AddResourceTags(ResourceTagsKeyT&& key, ResourceTagsValueT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags.emplace(std::forward<ResourceTagsKeyT>(key), std::forward<ResourceTagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The glossary terms that can be used in this Amazon DataZone project.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  inline bool GlossaryTermsHasBeenSet() const { return m_glossaryTermsHasBeenSet; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  CreateProjectRequest& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  CreateProjectRequest& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain unit. This parameter is not required and if it is not
+   * specified, then the project is created at the root domain unit level.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  inline bool DomainUnitIdHasBeenSet() const { return m_domainUnitIdHasBeenSet; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  CreateProjectRequest& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project profile.</p>
+   */
+  inline const Aws::String& GetProjectProfileId() const { return m_projectProfileId; }
+  inline bool ProjectProfileIdHasBeenSet() const { return m_projectProfileIdHasBeenSet; }
+  template <typename ProjectProfileIdT = Aws::String>
+  void SetProjectProfileId(ProjectProfileIdT&& value) {
+    m_projectProfileIdHasBeenSet = true;
+    m_projectProfileId = std::forward<ProjectProfileIdT>(value);
+  }
+  template <typename ProjectProfileIdT = Aws::String>
+  CreateProjectRequest& WithProjectProfileId(ProjectProfileIdT&& value) {
+    SetProjectProfileId(std::forward<ProjectProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user parameters of the project.</p>
+   */
+  inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const { return m_userParameters; }
+  inline bool UserParametersHasBeenSet() const { return m_userParametersHasBeenSet; }
+  template <typename UserParametersT = Aws::Vector<EnvironmentConfigurationUserParameter>>
+  void SetUserParameters(UserParametersT&& value) {
+    m_userParametersHasBeenSet = true;
+    m_userParameters = std::forward<UserParametersT>(value);
+  }
+  template <typename UserParametersT = Aws::Vector<EnvironmentConfigurationUserParameter>>
+  CreateProjectRequest& WithUserParameters(UserParametersT&& value) {
+    SetUserParameters(std::forward<UserParametersT>(value));
+    return *this;
+  }
+  template <typename UserParametersT = EnvironmentConfigurationUserParameter>
+  CreateProjectRequest& AddUserParameters(UserParametersT&& value) {
+    m_userParametersHasBeenSet = true;
+    m_userParameters.emplace_back(std::forward<UserParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The category of the project. Set to 'ADMIN' designates this as an
+   * administrative project for the Amazon DataZone domain.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  inline bool ProjectCategoryHasBeenSet() const { return m_projectCategoryHasBeenSet; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  CreateProjectRequest& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The default project IAM role that is used to access project resources and run
+   * computes such as Glue and Sagemaker.</p>
+   */
+  inline const Aws::String& GetProjectExecutionRole() const { return m_projectExecutionRole; }
+  inline bool ProjectExecutionRoleHasBeenSet() const { return m_projectExecutionRoleHasBeenSet; }
+  template <typename ProjectExecutionRoleT = Aws::String>
+  void SetProjectExecutionRole(ProjectExecutionRoleT&& value) {
+    m_projectExecutionRoleHasBeenSet = true;
+    m_projectExecutionRole = std::forward<ProjectExecutionRoleT>(value);
+  }
+  template <typename ProjectExecutionRoleT = Aws::String>
+  CreateProjectRequest& WithProjectExecutionRole(ProjectExecutionRoleT&& value) {
+    SetProjectExecutionRole(std::forward<ProjectExecutionRoleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The members to be assigned to the project.</p>
+   */
+  inline const Aws::Vector<ProjectMembershipAssignment>& GetMembershipAssignments() const { return m_membershipAssignments; }
+  inline bool MembershipAssignmentsHasBeenSet() const { return m_membershipAssignmentsHasBeenSet; }
+  template <typename MembershipAssignmentsT = Aws::Vector<ProjectMembershipAssignment>>
+  void SetMembershipAssignments(MembershipAssignmentsT&& value) {
+    m_membershipAssignmentsHasBeenSet = true;
+    m_membershipAssignments = std::forward<MembershipAssignmentsT>(value);
+  }
+  template <typename MembershipAssignmentsT = Aws::Vector<ProjectMembershipAssignment>>
+  CreateProjectRequest& WithMembershipAssignments(MembershipAssignmentsT&& value) {
+    SetMembershipAssignments(std::forward<MembershipAssignmentsT>(value));
+    return *this;
+  }
+  template <typename MembershipAssignmentsT = ProjectMembershipAssignment>
+  CreateProjectRequest& AddMembershipAssignments(MembershipAssignmentsT&& value) {
+    m_membershipAssignmentsHasBeenSet = true;
+    m_membershipAssignments.emplace_back(std::forward<MembershipAssignmentsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainIdentifier;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  Aws::Map<Aws::String, Aws::String> m_resourceTags;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::String m_domainUnitId;
+
+  Aws::String m_projectProfileId;
+
+  Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+
+  Aws::String m_projectCategory;
+
+  Aws::String m_projectExecutionRole;
+
+  Aws::Vector<ProjectMembershipAssignment> m_membershipAssignments;
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_projectProfileIdHasBeenSet = false;
+  bool m_userParametersHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
+  bool m_projectExecutionRoleHasBeenSet = false;
+  bool m_membershipAssignmentsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

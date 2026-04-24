@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/groundstation/model/EphemerisDescription.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace GroundStation {
+namespace Model {
+
+EphemerisDescription::EphemerisDescription(JsonView jsonValue) { *this = jsonValue; }
+
+EphemerisDescription& EphemerisDescription::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceS3Object")) {
+    m_sourceS3Object = jsonValue.GetObject("sourceS3Object");
+    m_sourceS3ObjectHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ephemerisData")) {
+    m_ephemerisData = jsonValue.GetString("ephemerisData");
+    m_ephemerisDataHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue EphemerisDescription::Jsonize() const {
+  JsonValue payload;
+
+  if (m_sourceS3ObjectHasBeenSet) {
+    payload.WithObject("sourceS3Object", m_sourceS3Object.Jsonize());
+  }
+
+  if (m_ephemerisDataHasBeenSet) {
+    payload.WithString("ephemerisData", m_ephemerisData);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

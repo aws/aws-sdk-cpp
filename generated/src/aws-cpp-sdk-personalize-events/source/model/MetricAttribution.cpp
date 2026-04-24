@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/personalize-events/model/MetricAttribution.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace PersonalizeEvents {
+namespace Model {
+
+MetricAttribution::MetricAttribution(JsonView jsonValue) { *this = jsonValue; }
+
+MetricAttribution& MetricAttribution::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("eventAttributionSource")) {
+    m_eventAttributionSource = jsonValue.GetString("eventAttributionSource");
+    m_eventAttributionSourceHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue MetricAttribution::Jsonize() const {
+  JsonValue payload;
+
+  if (m_eventAttributionSourceHasBeenSet) {
+    payload.WithString("eventAttributionSource", m_eventAttributionSource);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace PersonalizeEvents
+}  // namespace Aws

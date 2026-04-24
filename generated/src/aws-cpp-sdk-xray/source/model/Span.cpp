@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/xray/model/Span.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace XRay {
+namespace Model {
+
+Span::Span(JsonView jsonValue) { *this = jsonValue; }
+
+Span& Span::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Id")) {
+    m_id = jsonValue.GetString("Id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Document")) {
+    m_document = jsonValue.GetString("Document");
+    m_documentHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Span::Jsonize() const {
+  JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("Id", m_id);
+  }
+
+  if (m_documentHasBeenSet) {
+    payload.WithString("Document", m_document);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace XRay
+}  // namespace Aws

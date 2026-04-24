@@ -1,0 +1,100 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/invoicing/Invoicing_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Invoicing {
+namespace Model {
+
+/**
+ * <p> The fee amount. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/FeesBreakdownAmount">AWS
+ * API Reference</a></p>
+ */
+class FeesBreakdownAmount {
+ public:
+  AWS_INVOICING_API FeesBreakdownAmount() = default;
+  AWS_INVOICING_API FeesBreakdownAmount(Aws::Utils::Json::JsonView jsonValue);
+  AWS_INVOICING_API FeesBreakdownAmount& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p> The list of fees information. </p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  inline bool DescriptionHasBeenSet() const { return m_descriptionHasBeenSet; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  FeesBreakdownAmount& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The fee amount. </p>
+   */
+  inline const Aws::String& GetAmount() const { return m_amount; }
+  inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+  template <typename AmountT = Aws::String>
+  void SetAmount(AmountT&& value) {
+    m_amountHasBeenSet = true;
+    m_amount = std::forward<AmountT>(value);
+  }
+  template <typename AmountT = Aws::String>
+  FeesBreakdownAmount& WithAmount(AmountT&& value) {
+    SetAmount(std::forward<AmountT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Details about the rate amount. </p>
+   */
+  inline const Aws::String& GetRate() const { return m_rate; }
+  inline bool RateHasBeenSet() const { return m_rateHasBeenSet; }
+  template <typename RateT = Aws::String>
+  void SetRate(RateT&& value) {
+    m_rateHasBeenSet = true;
+    m_rate = std::forward<RateT>(value);
+  }
+  template <typename RateT = Aws::String>
+  FeesBreakdownAmount& WithRate(RateT&& value) {
+    SetRate(std::forward<RateT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_description;
+
+  Aws::String m_amount;
+
+  Aws::String m_rate;
+  bool m_descriptionHasBeenSet = false;
+  bool m_amountHasBeenSet = false;
+  bool m_rateHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Invoicing
+}  // namespace Aws

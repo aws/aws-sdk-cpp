@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMakerRequest.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+/**
+ */
+class StopAIRecommendationJobRequest : public SageMakerRequest {
+ public:
+  AWS_SAGEMAKER_API StopAIRecommendationJobRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "StopAIRecommendationJob"; }
+
+  AWS_SAGEMAKER_API Aws::String SerializePayload() const override;
+
+  AWS_SAGEMAKER_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The name of the AI recommendation job to stop.</p>
+   */
+  inline const Aws::String& GetAIRecommendationJobName() const { return m_aIRecommendationJobName; }
+  inline bool AIRecommendationJobNameHasBeenSet() const { return m_aIRecommendationJobNameHasBeenSet; }
+  template <typename AIRecommendationJobNameT = Aws::String>
+  void SetAIRecommendationJobName(AIRecommendationJobNameT&& value) {
+    m_aIRecommendationJobNameHasBeenSet = true;
+    m_aIRecommendationJobName = std::forward<AIRecommendationJobNameT>(value);
+  }
+  template <typename AIRecommendationJobNameT = Aws::String>
+  StopAIRecommendationJobRequest& WithAIRecommendationJobName(AIRecommendationJobNameT&& value) {
+    SetAIRecommendationJobName(std::forward<AIRecommendationJobNameT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_aIRecommendationJobName;
+  bool m_aIRecommendationJobNameHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

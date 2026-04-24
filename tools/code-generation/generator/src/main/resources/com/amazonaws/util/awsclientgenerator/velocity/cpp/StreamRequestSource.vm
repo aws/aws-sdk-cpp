@@ -1,0 +1,89 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/core/AmazonWebServiceResult.h>
+#if($shape.hasQueryStringMembers())
+\#include <aws/core/http/URI.h>
+#end
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+#if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
+\#include <numeric>
+#end
+
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Utils::Stream;
+using namespace Aws::Utils;
+#if($shape.hasQueryStringMembers())
+using namespace Aws::Http;
+#end
+using namespace Aws;
+
+#if($shape.hasEventStreamMembers())
+#foreach($member in $shape.members.entrySet())
+#if($shape.request && $member.value.shape.isEventStream())
+std::shared_ptr<Aws::IOStream> ${typeInfo.className}::GetBody() const
+{
+    return $CppViewHelper.computeMemberVariableName($member.key);
+}
+#end
+#end
+#end
+
+#if($shape.hasQueryStringMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
+#end
+
+#if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+#if($metadata.targetPrefix && $metadata.protocol != "smithy-rpc-v2-cbor")
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
+#end
+#if($metadata.additionalHeaders)
+#foreach($headerEntry in $metadata.additionalHeaders.entrySet())
+  headers.insert(Aws::Http::HeaderValuePair("${headerEntry.key}", "${headerEntry.value}"));
+#end
+#end
+#foreach($headerEntry in $requestSpecificHeaders.entrySet())
+  headers.emplace(${headerEntry.key}, ${headerEntry.value});
+#end
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
+  return headers;
+
+}
+#end
+#if($shape.hasEmbeddedErrors())
+
+bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = Utils::Xml::XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+
+  return false;
+}
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompressionStream.vm")

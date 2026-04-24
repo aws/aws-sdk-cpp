@@ -1,0 +1,88 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dlm/model/FastRestoreRule.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DLM {
+namespace Model {
+
+FastRestoreRule::FastRestoreRule(JsonView jsonValue) { *this = jsonValue; }
+
+FastRestoreRule& FastRestoreRule::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Count")) {
+    m_count = jsonValue.GetInteger("Count");
+    m_countHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Interval")) {
+    m_interval = jsonValue.GetInteger("Interval");
+    m_intervalHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IntervalUnit")) {
+    m_intervalUnit = RetentionIntervalUnitValuesMapper::GetRetentionIntervalUnitValuesForName(jsonValue.GetString("IntervalUnit"));
+    m_intervalUnitHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityZones")) {
+    Aws::Utils::Array<JsonView> availabilityZonesJsonList = jsonValue.GetArray("AvailabilityZones");
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      m_availabilityZones.push_back(availabilityZonesJsonList[availabilityZonesIndex].AsString());
+    }
+    m_availabilityZonesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AvailabilityZoneIds")) {
+    Aws::Utils::Array<JsonView> availabilityZoneIdsJsonList = jsonValue.GetArray("AvailabilityZoneIds");
+    for (unsigned availabilityZoneIdsIndex = 0; availabilityZoneIdsIndex < availabilityZoneIdsJsonList.GetLength();
+         ++availabilityZoneIdsIndex) {
+      m_availabilityZoneIds.push_back(availabilityZoneIdsJsonList[availabilityZoneIdsIndex].AsString());
+    }
+    m_availabilityZoneIdsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FastRestoreRule::Jsonize() const {
+  JsonValue payload;
+
+  if (m_countHasBeenSet) {
+    payload.WithInteger("Count", m_count);
+  }
+
+  if (m_intervalHasBeenSet) {
+    payload.WithInteger("Interval", m_interval);
+  }
+
+  if (m_intervalUnitHasBeenSet) {
+    payload.WithString("IntervalUnit", RetentionIntervalUnitValuesMapper::GetNameForRetentionIntervalUnitValues(m_intervalUnit));
+  }
+
+  if (m_availabilityZonesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZonesJsonList(m_availabilityZones.size());
+    for (unsigned availabilityZonesIndex = 0; availabilityZonesIndex < availabilityZonesJsonList.GetLength(); ++availabilityZonesIndex) {
+      availabilityZonesJsonList[availabilityZonesIndex].AsString(m_availabilityZones[availabilityZonesIndex]);
+    }
+    payload.WithArray("AvailabilityZones", std::move(availabilityZonesJsonList));
+  }
+
+  if (m_availabilityZoneIdsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> availabilityZoneIdsJsonList(m_availabilityZoneIds.size());
+    for (unsigned availabilityZoneIdsIndex = 0; availabilityZoneIdsIndex < availabilityZoneIdsJsonList.GetLength();
+         ++availabilityZoneIdsIndex) {
+      availabilityZoneIdsJsonList[availabilityZoneIdsIndex].AsString(m_availabilityZoneIds[availabilityZoneIdsIndex]);
+    }
+    payload.WithArray("AvailabilityZoneIds", std::move(availabilityZoneIdsJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DLM
+}  // namespace Aws

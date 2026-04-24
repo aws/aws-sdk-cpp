@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sagemaker/SageMaker_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SageMaker {
+namespace Model {
+class CreateUserProfileResult {
+ public:
+  AWS_SAGEMAKER_API CreateUserProfileResult() = default;
+  AWS_SAGEMAKER_API CreateUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SAGEMAKER_API CreateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The user profile Amazon Resource Name (ARN).</p>
+   */
+  inline const Aws::String& GetUserProfileArn() const { return m_userProfileArn; }
+  template <typename UserProfileArnT = Aws::String>
+  void SetUserProfileArn(UserProfileArnT&& value) {
+    m_userProfileArnHasBeenSet = true;
+    m_userProfileArn = std::forward<UserProfileArnT>(value);
+  }
+  template <typename UserProfileArnT = Aws::String>
+  CreateUserProfileResult& WithUserProfileArn(UserProfileArnT&& value) {
+    SetUserProfileArn(std::forward<UserProfileArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateUserProfileResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_userProfileArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_userProfileArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

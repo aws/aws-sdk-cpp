@@ -1,0 +1,54 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#pragma once
+
+\#include <smithy/identity/auth/AuthScheme.h>
+\#include <smithy/identity/resolver/built-in/DefaultAwsCredentialIdentityResolver.h>
+\#include <smithy/identity/auth/AuthSchemeResolverBase.h>
+\#include <smithy/identity/identity/AwsCredentialIdentityBase.h>
+\#include <aws/${metadata.projectName}/S3ExpressSigner.h>
+
+namespace ${rootNamespace} {
+namespace ${serviceNamespace} {
+    constexpr char SIGV4_EXPRESS[] = "sigv4-s3express";
+
+    class ${CppViewHelper.computeExportValue($serviceNamespace)} S3ExpressSigV4AuthScheme : public smithy::AuthScheme<S3ExpressIdentity>
+    {
+    public:
+        using AwsCredentialIdentityResolverT =  smithy::IdentityResolverBase<IdentityT>;
+        using AwsCredentialSignerT =  smithy::AwsSignerBase<IdentityT>;
+        using S3ExpressSigV4AuthSchemeParameters =  smithy::DefaultAuthSchemeResolverParameters;
+
+        explicit S3ExpressSigV4AuthScheme(std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver,
+                                 const Aws::String& serviceName,
+                                 const Aws::String& region,
+                                 Aws::Client::AWSAuthV4Signer::PayloadSigningPolicy policy,
+                                 bool urlEscapePath)
+            : AuthScheme(SIGV4_EXPRESS), 
+            m_identityResolver{identityResolver}, 
+            m_signer{Aws::MakeShared<SmithyS3ExpressSigner<smithy::AwsSigV4Signer>>("S3ExpressSigV4AuthScheme", serviceName, region, policy, urlEscapePath)}
+        {
+            assert(m_identityResolver);
+            assert(m_signer);
+        }
+
+        virtual ~S3ExpressSigV4AuthScheme() = default;
+
+        std::shared_ptr<AwsCredentialIdentityResolverT> identityResolver() override
+        {
+            return m_identityResolver;
+        }
+
+        std::shared_ptr<AwsCredentialSignerT> signer() override
+        {
+            return m_signer;
+        }
+    protected:
+        std::shared_ptr<AwsCredentialIdentityResolverT> m_identityResolver;
+        std::shared_ptr<AwsCredentialSignerT> m_signer;
+    };
+}
+}

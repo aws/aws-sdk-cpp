@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/geo-maps/model/Traffic.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace GeoMaps {
+namespace Model {
+namespace TrafficMapper {
+
+static const int All_HASH = HashingUtils::HashString("All");
+static const int Congestion_HASH = HashingUtils::HashString("Congestion");
+
+Traffic GetTrafficForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == All_HASH) {
+    return Traffic::All;
+  } else if (hashCode == Congestion_HASH) {
+    return Traffic::Congestion;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<Traffic>(hashCode);
+  }
+
+  return Traffic::NOT_SET;
+}
+
+Aws::String GetNameForTraffic(Traffic enumValue) {
+  switch (enumValue) {
+    case Traffic::NOT_SET:
+      return {};
+    case Traffic::All:
+      return "All";
+    case Traffic::Congestion:
+      return "Congestion";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace TrafficMapper
+}  // namespace Model
+}  // namespace GeoMaps
+}  // namespace Aws

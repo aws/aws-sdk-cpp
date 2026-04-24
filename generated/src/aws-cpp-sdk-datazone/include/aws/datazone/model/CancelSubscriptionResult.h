@@ -1,0 +1,279 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/SubscribedListing.h>
+#include <aws/datazone/model/SubscribedPrincipal.h>
+#include <aws/datazone/model/SubscriptionStatus.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
+class CancelSubscriptionResult {
+ public:
+  AWS_DATAZONE_API CancelSubscriptionResult() = default;
+  AWS_DATAZONE_API CancelSubscriptionResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATAZONE_API CancelSubscriptionResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier of the subscription.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CancelSubscriptionResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the Amazon DataZone user who is cancelling the subscription.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  CancelSubscriptionResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user that cancelled the subscription.</p>
+   */
+  inline const Aws::String& GetUpdatedBy() const { return m_updatedBy; }
+  template <typename UpdatedByT = Aws::String>
+  void SetUpdatedBy(UpdatedByT&& value) {
+    m_updatedByHasBeenSet = true;
+    m_updatedBy = std::forward<UpdatedByT>(value);
+  }
+  template <typename UpdatedByT = Aws::String>
+  CancelSubscriptionResult& WithUpdatedBy(UpdatedByT&& value) {
+    SetUpdatedBy(std::forward<UpdatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the Amazon DataZone domain where the subscription is
+   * being cancelled.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  CancelSubscriptionResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the request to cancel the subscription.</p>
+   */
+  inline SubscriptionStatus GetStatus() const { return m_status; }
+  inline void SetStatus(SubscriptionStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CancelSubscriptionResult& WithStatus(SubscriptionStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp that specifies when the request to cancel the subscription was
+   * created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  CancelSubscriptionResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp that specifies when the subscription was cancelled.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  CancelSubscriptionResult& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who is made a subscriber to the specified asset by
+   * the subscription that is being cancelled.</p>
+   */
+  inline const SubscribedPrincipal& GetSubscribedPrincipal() const { return m_subscribedPrincipal; }
+  template <typename SubscribedPrincipalT = SubscribedPrincipal>
+  void SetSubscribedPrincipal(SubscribedPrincipalT&& value) {
+    m_subscribedPrincipalHasBeenSet = true;
+    m_subscribedPrincipal = std::forward<SubscribedPrincipalT>(value);
+  }
+  template <typename SubscribedPrincipalT = SubscribedPrincipal>
+  CancelSubscriptionResult& WithSubscribedPrincipal(SubscribedPrincipalT&& value) {
+    SetSubscribedPrincipal(std::forward<SubscribedPrincipalT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The asset to which a subscription is being cancelled.</p>
+   */
+  inline const SubscribedListing& GetSubscribedListing() const { return m_subscribedListing; }
+  template <typename SubscribedListingT = SubscribedListing>
+  void SetSubscribedListing(SubscribedListingT&& value) {
+    m_subscribedListingHasBeenSet = true;
+    m_subscribedListing = std::forward<SubscribedListingT>(value);
+  }
+  template <typename SubscribedListingT = SubscribedListing>
+  CancelSubscriptionResult& WithSubscribedListing(SubscribedListingT&& value) {
+    SetSubscribedListing(std::forward<SubscribedListingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique ID of the subscripton request for the subscription that is being
+   * cancelled.</p>
+   */
+  inline const Aws::String& GetSubscriptionRequestId() const { return m_subscriptionRequestId; }
+  template <typename SubscriptionRequestIdT = Aws::String>
+  void SetSubscriptionRequestId(SubscriptionRequestIdT&& value) {
+    m_subscriptionRequestIdHasBeenSet = true;
+    m_subscriptionRequestId = std::forward<SubscriptionRequestIdT>(value);
+  }
+  template <typename SubscriptionRequestIdT = Aws::String>
+  CancelSubscriptionResult& WithSubscriptionRequestId(SubscriptionRequestIdT&& value) {
+    SetSubscriptionRequestId(std::forward<SubscriptionRequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether the permissions to the asset are retained after the
+   * subscription is cancelled.</p>
+   */
+  inline bool GetRetainPermissions() const { return m_retainPermissions; }
+  inline void SetRetainPermissions(bool value) {
+    m_retainPermissionsHasBeenSet = true;
+    m_retainPermissions = value;
+  }
+  inline CancelSubscriptionResult& WithRetainPermissions(bool value) {
+    SetRetainPermissions(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CancelSubscriptionResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_id;
+
+  Aws::String m_createdBy;
+
+  Aws::String m_updatedBy;
+
+  Aws::String m_domainId;
+
+  SubscriptionStatus m_status{SubscriptionStatus::NOT_SET};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_updatedAt{};
+
+  SubscribedPrincipal m_subscribedPrincipal;
+
+  SubscribedListing m_subscribedListing;
+
+  Aws::String m_subscriptionRequestId;
+
+  bool m_retainPermissions{false};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_idHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_updatedByHasBeenSet = false;
+  bool m_domainIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+  bool m_subscribedPrincipalHasBeenSet = false;
+  bool m_subscribedListingHasBeenSet = false;
+  bool m_subscriptionRequestIdHasBeenSet = false;
+  bool m_retainPermissionsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

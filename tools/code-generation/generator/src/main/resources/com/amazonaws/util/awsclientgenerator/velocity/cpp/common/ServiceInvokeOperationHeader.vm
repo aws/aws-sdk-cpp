@@ -1,0 +1,14 @@
+
+## Be careful to not have this outcome name clash with an operation outcome name (specifically lambda:Invoke)
+typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, ${metadata.classNamePrefix}Error> InvokeOperationOutcome;
+
+InvokeOperationOutcome InvokeServiceOperation(
+    const AmazonWebServiceRequest& request,
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+#end
+#if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
+    Aws::String bucketName,
+#end
+    Aws::Http::HttpMethod httpMethod
+) const;

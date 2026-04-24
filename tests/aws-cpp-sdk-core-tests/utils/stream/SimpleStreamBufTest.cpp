@@ -1,0 +1,136 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/testing/AwsCppSdkGTestSuite.h>
+#include <aws/core/utils/Array.h>
+#include <aws/core/utils/stream/SimpleStreamBuf.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+
+using namespace Aws::Utils;
+using namespace Aws::Utils::Stream;
+
+// these are all just variants of some of the PreallocatedStreamBuf tests
+const char bufferStr[] = "This is an internal buffer.";
+const char replacementBuf[] = "Boom, I ruined your st";
+const char concatStr[] = "This Boom, I ruined your st";
+
+
+class SimpleStreamBufTest : public Aws::Testing::AwsCppSdkGTestSuite
+{
+};
+
+//Write to an empty buffer via a stream interface, and make sure the buffer
+//contains the data.
+TEST_F(SimpleStreamBufTest, TestStreamWriteToPrefilledBuffer)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
+}
+
+//test read seeking from the beginning
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekBeg)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    ioStream.seekg(5, std::ios_base::beg);
+    Array<uint8_t> readBuf(strlen(bufferStr) + 1 - 5);
+    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
+    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+}
+
+//test read seeking from current pos.
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekCur)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    ioStream.seekg(5, std::ios_base::cur);
+    Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
+    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
+    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+}
+
+//test read seeking from the end.
+TEST_F(SimpleStreamBufTest, TestStreamReadSeekEnd)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    auto seekPos = sizeof(bufferStr) - 5;
+    ioStream.seekg(seekPos, std::ios_base::end);
+    Array<uint8_t> readBuf(sizeof(bufferStr) - 5);
+    ioStream.read((char*)readBuf.GetUnderlyingData(), readBuf.GetLength());
+    ASSERT_EQ(sizeof(bufferStr) - 5, static_cast<size_t>(ioStream.gcount()));
+    ASSERT_STREQ(bufferStr + 5, (const char*)readBuf.GetUnderlyingData());
+}
+
+//test write seeking from the beginning.
+TEST_F(SimpleStreamBufTest, TestStreamWriteSeekBeg)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    ioStream.seekp(5, std::ios_base::beg);   
+    ioStream.write(replacementBuf, sizeof(replacementBuf));
+
+    ASSERT_STREQ(concatStr, streamBuf.str().c_str());
+}
+
+//test write seeking from the end.
+TEST_F(SimpleStreamBufTest, TestStreamWriteSeekEnd)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    auto seekPos = strlen(bufferStr) + 1 - 5;
+    ioStream.seekp(seekPos, std::ios_base::end);
+    ioStream.write(replacementBuf, sizeof(replacementBuf));
+
+    ASSERT_STREQ(concatStr, streamBuf.str().c_str());
+}
+
+TEST_F(SimpleStreamBufTest, TestZeroLengthSeekFromEnd)
+{
+    SimpleStreamBuf streamBuf;
+    Aws::IOStream ioStream(&streamBuf);
+    ioStream.write(bufferStr, sizeof(bufferStr));
+
+    ioStream.seekg(0, std::ios_base::end);
+    ASSERT_FALSE(ioStream.eof());
+
+    // attempting to read a character should fail and hit eof since we're one position after
+    // the last character
+    char ch = 0;
+    ioStream.get(ch);
+    // could check ch == 0 but I don't think the standard guarantees that
+    ASSERT_TRUE(ioStream.eof());
+}
+
+TEST_F(SimpleStreamBufTest, SetStr)
+{
+    SimpleStreamBuf streamBuf;
+    streamBuf.str(bufferStr);
+
+    ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
+}
+
+TEST_F(SimpleStreamBufTest, StringConstructor)
+{
+    SimpleStreamBuf streamBuf(bufferStr);
+    ASSERT_STREQ(bufferStr, streamBuf.str().c_str());
+}
+

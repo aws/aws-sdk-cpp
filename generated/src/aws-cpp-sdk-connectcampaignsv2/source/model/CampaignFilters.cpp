@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connectcampaignsv2/model/CampaignFilters.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ConnectCampaignsV2 {
+namespace Model {
+
+CampaignFilters::CampaignFilters(JsonView jsonValue) { *this = jsonValue; }
+
+CampaignFilters& CampaignFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("instanceIdFilter")) {
+    m_instanceIdFilter = jsonValue.GetObject("instanceIdFilter");
+    m_instanceIdFilterHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CampaignFilters::Jsonize() const {
+  JsonValue payload;
+
+  if (m_instanceIdFilterHasBeenSet) {
+    payload.WithObject("instanceIdFilter", m_instanceIdFilter.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ConnectCampaignsV2
+}  // namespace Aws

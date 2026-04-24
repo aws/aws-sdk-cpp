@@ -1,0 +1,118 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/FilterOperator.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
+
+/**
+ * <p>A search filter in Amazon DataZone.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/datazone-2018-05-10/Filter">AWS API
+ * Reference</a></p>
+ */
+class Filter {
+ public:
+  AWS_DATAZONE_API Filter() = default;
+  AWS_DATAZONE_API Filter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATAZONE_API Filter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_DATAZONE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>A search filter attribute in Amazon DataZone.</p>
+   */
+  inline const Aws::String& GetAttribute() const { return m_attribute; }
+  inline bool AttributeHasBeenSet() const { return m_attributeHasBeenSet; }
+  template <typename AttributeT = Aws::String>
+  void SetAttribute(AttributeT&& value) {
+    m_attributeHasBeenSet = true;
+    m_attribute = std::forward<AttributeT>(value);
+  }
+  template <typename AttributeT = Aws::String>
+  Filter& WithAttribute(AttributeT&& value) {
+    SetAttribute(std::forward<AttributeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A search filter string value in Amazon DataZone.</p>
+   */
+  inline const Aws::String& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = Aws::String>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = Aws::String>
+  Filter& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A search filter integer value in Amazon DataZone.</p>
+   */
+  inline long long GetIntValue() const { return m_intValue; }
+  inline bool IntValueHasBeenSet() const { return m_intValueHasBeenSet; }
+  inline void SetIntValue(long long value) {
+    m_intValueHasBeenSet = true;
+    m_intValue = value;
+  }
+  inline Filter& WithIntValue(long long value) {
+    SetIntValue(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the search filter operator.</p>
+   */
+  inline FilterOperator GetOperator() const { return m_operator; }
+  inline bool OperatorHasBeenSet() const { return m_operatorHasBeenSet; }
+  inline void SetOperator(FilterOperator value) {
+    m_operatorHasBeenSet = true;
+    m_operator = value;
+  }
+  inline Filter& WithOperator(FilterOperator value) {
+    SetOperator(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_attribute;
+
+  Aws::String m_value;
+
+  long long m_intValue{0};
+
+  FilterOperator m_operator{FilterOperator::NOT_SET};
+  bool m_attributeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+  bool m_intValueHasBeenSet = false;
+  bool m_operatorHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

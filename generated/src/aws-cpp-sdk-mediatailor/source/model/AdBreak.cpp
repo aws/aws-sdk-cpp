@@ -1,0 +1,87 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediatailor/model/AdBreak.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaTailor {
+namespace Model {
+
+AdBreak::AdBreak(JsonView jsonValue) { *this = jsonValue; }
+
+AdBreak& AdBreak::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MessageType")) {
+    m_messageType = MessageTypeMapper::GetMessageTypeForName(jsonValue.GetString("MessageType"));
+    m_messageTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OffsetMillis")) {
+    m_offsetMillis = jsonValue.GetInt64("OffsetMillis");
+    m_offsetMillisHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Slate")) {
+    m_slate = jsonValue.GetObject("Slate");
+    m_slateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SpliceInsertMessage")) {
+    m_spliceInsertMessage = jsonValue.GetObject("SpliceInsertMessage");
+    m_spliceInsertMessageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TimeSignalMessage")) {
+    m_timeSignalMessage = jsonValue.GetObject("TimeSignalMessage");
+    m_timeSignalMessageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AdBreakMetadata")) {
+    Aws::Utils::Array<JsonView> adBreakMetadataJsonList = jsonValue.GetArray("AdBreakMetadata");
+    for (unsigned adBreakMetadataIndex = 0; adBreakMetadataIndex < adBreakMetadataJsonList.GetLength(); ++adBreakMetadataIndex) {
+      m_adBreakMetadata.push_back(adBreakMetadataJsonList[adBreakMetadataIndex].AsObject());
+    }
+    m_adBreakMetadataHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AdBreak::Jsonize() const {
+  JsonValue payload;
+
+  if (m_messageTypeHasBeenSet) {
+    payload.WithString("MessageType", MessageTypeMapper::GetNameForMessageType(m_messageType));
+  }
+
+  if (m_offsetMillisHasBeenSet) {
+    payload.WithInt64("OffsetMillis", m_offsetMillis);
+  }
+
+  if (m_slateHasBeenSet) {
+    payload.WithObject("Slate", m_slate.Jsonize());
+  }
+
+  if (m_spliceInsertMessageHasBeenSet) {
+    payload.WithObject("SpliceInsertMessage", m_spliceInsertMessage.Jsonize());
+  }
+
+  if (m_timeSignalMessageHasBeenSet) {
+    payload.WithObject("TimeSignalMessage", m_timeSignalMessage.Jsonize());
+  }
+
+  if (m_adBreakMetadataHasBeenSet) {
+    Aws::Utils::Array<JsonValue> adBreakMetadataJsonList(m_adBreakMetadata.size());
+    for (unsigned adBreakMetadataIndex = 0; adBreakMetadataIndex < adBreakMetadataJsonList.GetLength(); ++adBreakMetadataIndex) {
+      adBreakMetadataJsonList[adBreakMetadataIndex].AsObject(m_adBreakMetadata[adBreakMetadataIndex].Jsonize());
+    }
+    payload.WithArray("AdBreakMetadata", std::move(adBreakMetadataJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaTailor
+}  // namespace Aws

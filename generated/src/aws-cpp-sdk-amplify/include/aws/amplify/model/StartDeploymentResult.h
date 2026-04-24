@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/amplify/Amplify_EXPORTS.h>
+#include <aws/amplify/model/JobSummary.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Amplify {
+namespace Model {
+/**
+ * <p>The result structure for the start a deployment request. </p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/amplify-2017-07-25/StartDeploymentResult">AWS
+ * API Reference</a></p>
+ */
+class StartDeploymentResult {
+ public:
+  AWS_AMPLIFY_API StartDeploymentResult() = default;
+  AWS_AMPLIFY_API StartDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_AMPLIFY_API StartDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The summary for the job. </p>
+   */
+  inline const JobSummary& GetJobSummary() const { return m_jobSummary; }
+  template <typename JobSummaryT = JobSummary>
+  void SetJobSummary(JobSummaryT&& value) {
+    m_jobSummaryHasBeenSet = true;
+    m_jobSummary = std::forward<JobSummaryT>(value);
+  }
+  template <typename JobSummaryT = JobSummary>
+  StartDeploymentResult& WithJobSummary(JobSummaryT&& value) {
+    SetJobSummary(std::forward<JobSummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartDeploymentResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  JobSummary m_jobSummary;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_jobSummaryHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Amplify
+}  // namespace Aws

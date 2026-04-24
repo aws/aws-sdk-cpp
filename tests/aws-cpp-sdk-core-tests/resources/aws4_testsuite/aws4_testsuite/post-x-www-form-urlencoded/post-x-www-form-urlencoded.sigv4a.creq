@@ -1,0 +1,10 @@
+POST
+/
+
+content-type:application/x-www-form-urlencoded
+host:example.amazonaws.com
+x-amz-date:20150830T123600Z
+x-amz-region-set:us-east-1
+
+content-type;host;x-amz-date;x-amz-region-set
+6b597c5625d4e83fc2f5e800cc2bc2c9b447c02aab45004b7f8052da9759fe56

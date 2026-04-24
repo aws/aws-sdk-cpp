@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/ListHyperParameterTuningJobsResult.h>
+
+#include <utility>
+
+using namespace Aws::SageMaker::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListHyperParameterTuningJobsResult::ListHyperParameterTuningJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+ListHyperParameterTuningJobsResult& ListHyperParameterTuningJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("HyperParameterTuningJobSummaries")) {
+    Aws::Utils::Array<JsonView> hyperParameterTuningJobSummariesJsonList = jsonValue.GetArray("HyperParameterTuningJobSummaries");
+    for (unsigned hyperParameterTuningJobSummariesIndex = 0;
+         hyperParameterTuningJobSummariesIndex < hyperParameterTuningJobSummariesJsonList.GetLength();
+         ++hyperParameterTuningJobSummariesIndex) {
+      m_hyperParameterTuningJobSummaries.push_back(
+          hyperParameterTuningJobSummariesJsonList[hyperParameterTuningJobSummariesIndex].AsObject());
+    }
+    m_hyperParameterTuningJobSummariesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

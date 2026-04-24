@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MediaPackageAdditionalDestinations.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+
+MediaPackageAdditionalDestinations::MediaPackageAdditionalDestinations(JsonView jsonValue) { *this = jsonValue; }
+
+MediaPackageAdditionalDestinations& MediaPackageAdditionalDestinations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("destination")) {
+    m_destination = jsonValue.GetObject("destination");
+    m_destinationHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue MediaPackageAdditionalDestinations::Jsonize() const {
+  JsonValue payload;
+
+  if (m_destinationHasBeenSet) {
+    payload.WithObject("destination", m_destination.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/AttackVolumeStatistics.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Shield {
+namespace Model {
+
+AttackVolumeStatistics::AttackVolumeStatistics(JsonView jsonValue) { *this = jsonValue; }
+
+AttackVolumeStatistics& AttackVolumeStatistics::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Max")) {
+    m_max = jsonValue.GetDouble("Max");
+    m_maxHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AttackVolumeStatistics::Jsonize() const {
+  JsonValue payload;
+
+  if (m_maxHasBeenSet) {
+    payload.WithDouble("Max", m_max);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

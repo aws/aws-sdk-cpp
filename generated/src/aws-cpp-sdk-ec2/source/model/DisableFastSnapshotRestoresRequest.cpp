@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/DisableFastSnapshotRestoresRequest.h>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils;
+
+Aws::String DisableFastSnapshotRestoresRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=DisableFastSnapshotRestores&";
+  if (m_availabilityZonesHasBeenSet) {
+    unsigned availabilityZonesCount = 1;
+    for (auto& item : m_availabilityZones) {
+      ss << "AvailabilityZone." << availabilityZonesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      availabilityZonesCount++;
+    }
+  }
+
+  if (m_availabilityZoneIdsHasBeenSet) {
+    unsigned availabilityZoneIdsCount = 1;
+    for (auto& item : m_availabilityZoneIds) {
+      ss << "AvailabilityZoneId." << availabilityZoneIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      availabilityZoneIdsCount++;
+    }
+  }
+
+  if (m_sourceSnapshotIdsHasBeenSet) {
+    unsigned sourceSnapshotIdsCount = 1;
+    for (auto& item : m_sourceSnapshotIds) {
+      ss << "SourceSnapshotId." << sourceSnapshotIdsCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      sourceSnapshotIdsCount++;
+    }
+  }
+
+  if (m_dryRunHasBeenSet) {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  ss << "Version=2016-11-15";
+  return ss.str();
+}
+
+void DisableFastSnapshotRestoresRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

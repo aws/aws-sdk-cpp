@@ -1,0 +1,52 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sagemaker/model/SearchTrainingPlanOfferingsResult.h>
+
+#include <utility>
+
+using namespace Aws::SageMaker::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+SearchTrainingPlanOfferingsResult::SearchTrainingPlanOfferingsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+SearchTrainingPlanOfferingsResult& SearchTrainingPlanOfferingsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("TrainingPlanOfferings")) {
+    Aws::Utils::Array<JsonView> trainingPlanOfferingsJsonList = jsonValue.GetArray("TrainingPlanOfferings");
+    for (unsigned trainingPlanOfferingsIndex = 0; trainingPlanOfferingsIndex < trainingPlanOfferingsJsonList.GetLength();
+         ++trainingPlanOfferingsIndex) {
+      m_trainingPlanOfferings.push_back(trainingPlanOfferingsJsonList[trainingPlanOfferingsIndex].AsObject());
+    }
+    m_trainingPlanOfferingsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TrainingPlanExtensionOfferings")) {
+    Aws::Utils::Array<JsonView> trainingPlanExtensionOfferingsJsonList = jsonValue.GetArray("TrainingPlanExtensionOfferings");
+    for (unsigned trainingPlanExtensionOfferingsIndex = 0;
+         trainingPlanExtensionOfferingsIndex < trainingPlanExtensionOfferingsJsonList.GetLength(); ++trainingPlanExtensionOfferingsIndex) {
+      m_trainingPlanExtensionOfferings.push_back(trainingPlanExtensionOfferingsJsonList[trainingPlanExtensionOfferingsIndex].AsObject());
+    }
+    m_trainingPlanExtensionOfferingsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

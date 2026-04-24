@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
+
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class ComponentStatus { NOT_SET, ACTIVATED, STARTING, STOPPED, STOPPING, RUNNING, RUNNING_WITH_ERROR, UNDEFINED };
+
+namespace ComponentStatusMapper {
+AWS_SSMSAP_API ComponentStatus GetComponentStatusForName(const Aws::String& name);
+
+AWS_SSMSAP_API Aws::String GetNameForComponentStatus(ComponentStatus value);
+}  // namespace ComponentStatusMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

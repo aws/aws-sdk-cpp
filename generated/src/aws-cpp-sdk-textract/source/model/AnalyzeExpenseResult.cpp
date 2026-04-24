@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/textract/model/AnalyzeExpenseResult.h>
+
+#include <utility>
+
+using namespace Aws::Textract::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+AnalyzeExpenseResult::AnalyzeExpenseResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+AnalyzeExpenseResult& AnalyzeExpenseResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("DocumentMetadata")) {
+    m_documentMetadata = jsonValue.GetObject("DocumentMetadata");
+    m_documentMetadataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExpenseDocuments")) {
+    Aws::Utils::Array<JsonView> expenseDocumentsJsonList = jsonValue.GetArray("ExpenseDocuments");
+    for (unsigned expenseDocumentsIndex = 0; expenseDocumentsIndex < expenseDocumentsJsonList.GetLength(); ++expenseDocumentsIndex) {
+      m_expenseDocuments.push_back(expenseDocumentsJsonList[expenseDocumentsIndex].AsObject());
+    }
+    m_expenseDocumentsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

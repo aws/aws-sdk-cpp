@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/apprunner/AppRunner_EXPORTS.h>
+#include <aws/apprunner/model/AutoScalingConfiguration.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppRunner {
+namespace Model {
+class DeleteAutoScalingConfigurationResult {
+ public:
+  AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult() = default;
+  AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPRUNNER_API DeleteAutoScalingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A description of the App Runner auto scaling configuration that this request
+   * just deleted.</p>
+   */
+  inline const AutoScalingConfiguration& GetAutoScalingConfiguration() const { return m_autoScalingConfiguration; }
+  template <typename AutoScalingConfigurationT = AutoScalingConfiguration>
+  void SetAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    m_autoScalingConfigurationHasBeenSet = true;
+    m_autoScalingConfiguration = std::forward<AutoScalingConfigurationT>(value);
+  }
+  template <typename AutoScalingConfigurationT = AutoScalingConfiguration>
+  DeleteAutoScalingConfigurationResult& WithAutoScalingConfiguration(AutoScalingConfigurationT&& value) {
+    SetAutoScalingConfiguration(std::forward<AutoScalingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteAutoScalingConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  AutoScalingConfiguration m_autoScalingConfiguration;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_autoScalingConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace AppRunner
+}  // namespace Aws

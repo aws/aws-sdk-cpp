@@ -1,0 +1,86 @@
+name: clang-format-check
+
+on:
+  pull_request:
+    types: [opened, synchronize]
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  format-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0  # Fetch all commits of the pull request branch
+
+
+      - name: Install clang-format
+        run: sudo apt-get install -y clang-format
+
+      - name: Download clang-format-diff.py
+        run: |
+          wget https://raw.githubusercontent.com/llvm/llvm-project/main/clang/tools/clang-format/clang-format-diff.py
+          chmod +x clang-format-diff.py
+
+      # get names of the base and pr branches
+      - name: Get the base and head branches
+        id: fetchstep
+        env:
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
+        run: |
+          echo "Base branch: $BASE_BRANCH"
+          echo "Head branch: $HEAD_BRANCH"
+          git fetch origin "$BASE_BRANCH"
+          git fetch origin "$HEAD_BRANCH"
+
+      #get differences on the PR branch excluding generated folder in the root
+      - name: git diff
+        id: diffstep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+          BASE_BRANCH: "${{ github.event.pull_request.base.ref }}"
+          HEAD_BRANCH: "${{ github.event.pull_request.head.ref }}"
+        run: |
+          # Format only the changed lines using clang-format-diff.py
+          set -e
+          git diff -U0 --no-color origin/$BASE_BRANCH...origin/$HEAD_BRANCH -- . ':!generated/' > diff_output.patch
+          cat diff_output.patch
+          
+      # run formatter on the differences if any
+      - name: format diff
+        id: formatstep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+        run: |
+          clang-format --version
+          if [ -s diff_output.patch ]; then
+            python3 clang-format-diff.py -iregex '.*\.(cpp|cc|c\+\+|cxx|c|h|hh|hpp)' -p1 -style=file:.clang-format < diff_output.patch > formatted_differences.patch 2> error.log || true
+            if [ -s error.log ]; then
+              echo "Errors from clang-format-diff.py:"
+              cat error.log
+            else
+              echo "No Errors from clang-format-diff.py"
+            fi
+            rm diff_output.patch
+          fi
+
+      # check if differences found after formatting, then exit 
+      - name: Check formatting needed
+        id: validatestep
+        env:
+          ACTIONS_RUNNER_DEBUG: true
+        run: |
+          if [ -s formatted_differences.patch ]; then
+            echo "Formatting issues found!. Formatted changes:"
+            cat formatted_differences.patch
+            rm formatted_differences.patch
+            exit 1
+          fi

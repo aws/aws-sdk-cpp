@@ -1,0 +1,48 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SerializeSingleParameterMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SerializeStreamingPayload.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SetListMacro.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/request/SetMapMacro.vm")
+##-------------------- FillParamsMacro macro
+#macro( FillParamsMacro $spaces $dstObject $currentShape $testInputParam )
+#set($macro.spaces = $spaces)
+#if(!$currentShape.members.containsKey($testInputParam.key) && $testInputParam.key != "contentType")
+static_assert(false, "Codegen failure: Test input has a key $testInputParam.key not found in the model for the current shape: $currentShape");
+#end
+#if(!$testInputParam || !$testInputParam.key)
+static_assert(false, "Codegen failure!");
+/* currentShape = R"($currentShape)" */
+/* currentShape.members = R"($currentShape.members)" */
+/* macro.memberToSet = R"($macro.memberToSet)" */
+/* dstObject = R"($dstObject)" */
+/* testInputParam = R"($testInputParam)" */
+#break
+#end
+#set($macro.fieldSetter = "Set${CppViewHelper.capitalizeFirstChar($testInputParam.key)}")
+#set($macro.memberToSet = $currentShape.members.get($testInputParam.key))
+#if($macro.memberToSet.shape.list)
+#SetListMacro($macro.spaces $dstObject $macro.memberToSet.shape $testInputParam)
+#elseif($macro.memberToSet.shape.map)
+#SetMapMacro($macro.spaces $dstObject $macro.memberToSet.shape $testInputParam)
+#elseif($macro.memberToSet.shape.document)
+#set($macro.innerStructVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}")
+${macro.spaces}{
+  ${macro.spaces}Aws::Utils::Document ${macro.innerStructVarName}(R"j(${testInputParam.value})j");
+  ${macro.spaces}${dstObject}.${macro.fieldSetter}($macro.innerStructVarName);
+${macro.spaces}}
+#elseif($macro.memberToSet.shape.structure)
+${macro.spaces}{
+#set($macro.innerStructVarName = "${dstObject}${CppViewHelper.capitalizeFirstChar(${CppViewHelper.computeVariableName($testInputParam.key)})}")
+  ${macro.spaces}${macro.memberToSet.shape.name} $macro.innerStructVarName;
+#foreach($innerParam in $testInputParam.value.fields())
+#FillParamsMacro("${macro.spaces}  ", $macro.innerStructVarName, $macro.memberToSet.shape, $innerParam)
+#end
+  ${macro.spaces}${dstObject}.${macro.fieldSetter}($macro.innerStructVarName);
+${macro.spaces}}
+#elseif($testInputParam.key != "contentType" && $currentShape.members.containsKey($testInputParam.key) && $CppViewHelper.isStreamingPayloadMember($currentShape, $testInputParam.key))
+${macro.spaces}${dstObject}.SetBody(#SerializeStreamingPayload($macro.memberToSet.shape, $testInputParam.value));
+#elseif(!$macro.memberToSet)
+${macro.spaces}${dstObject}.${macro.fieldSetter}($testInputParam.value);
+#elseif($testInputParam.value != "null")
+${macro.spaces}${dstObject}.${macro.fieldSetter}(#SerializeSingleParameterMacro($macro.memberToSet.shape, $testInputParam.value));
+#end
+#end##macro FillParamsMacro

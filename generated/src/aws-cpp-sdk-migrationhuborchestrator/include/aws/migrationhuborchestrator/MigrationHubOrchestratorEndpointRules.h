@@ -1,0 +1,21 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/migrationhuborchestrator/MigrationHubOrchestrator_EXPORTS.h>
+
+#include <cstddef>
+
+namespace Aws {
+namespace MigrationHubOrchestrator {
+class MigrationHubOrchestratorEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
+};
+}  // namespace MigrationHubOrchestrator
+}  // namespace Aws

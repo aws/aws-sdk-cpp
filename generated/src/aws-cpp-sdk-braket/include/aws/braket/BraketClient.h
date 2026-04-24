@@ -1,0 +1,585 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/braket/BraketPaginationBase.h>
+#include <aws/braket/BraketServiceClientModel.h>
+#include <aws/braket/BraketWaiter.h>
+#include <aws/braket/Braket_EXPORTS.h>
+#include <aws/core/client/AWSClient.h>
+#include <aws/core/client/AWSClientAsyncCRTP.h>
+#include <aws/core/client/ClientConfiguration.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+namespace Aws {
+namespace Braket {
+/**
+ * <p>The Amazon Braket API Reference provides information about the operations and
+ * structures supported by Amazon Braket.</p> <p>To learn about the permissions
+ * required to call an Amazon Braket API action, see <a
+ * href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_amazonbraket.html">Actions,
+ * resources, and condition keys for Amazon Braket</a>. <a
+ * href="https://amazon-braket-sdk-python.readthedocs.io/en/latest/#">Amazon Braket
+ * Python SDK</a> and the <a
+ * href="https://docs.aws.amazon.com/cli/latest/reference/braket/">AWS Command Line
+ * Interface</a> can be used to make discovery and creation of API calls easier.
+ * For more information about Amazon Braket features, see <a
+ * href="https://docs.aws.amazon.com/braket/latest/developerguide/what-is-braket.html">What
+ * is Amazon Braket?</a> and important <a
+ * href="https://docs.aws.amazon.com/braket/latest/developerguide/braket-terms.html">terms
+ * and concepts</a> in the <i>Amazon Braket Developer Guide</i>.</p> <p> <b>In this
+ * guide:</b> </p> <ul> <li> <p/> </li> <li> <p/> </li> <li> <p>
+ * <a>CommonParameters</a> </p> </li> <li> <p> <a>CommonErrors</a> </p> </li> </ul>
+ * <p> <b>Available languages for AWS SDK:</b> </p> <ul> <li> <p> <a
+ * href="https://docs.aws.amazon.com/sdkfornet/v3/apidocs/items/Braket/NBraket.html">.NET</a>
+ * </p> </li> <li> <p> <a
+ * href="https://sdk.amazonaws.com/cpp/api/LATEST/root/html/index.html">C++</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/sdk-for-go/api/service/braket/">Go API
+ * reference</a> </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/AWSJavaSDK/latest/javadoc/com/amazonaws/services/braket/package-summary.html">Java</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/AWSJavaScriptSDK/latest/AWS/Braket.html">JavaScript</a>
+ * </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/aws-sdk-php/v3/api/class-Aws.Braket.BraketClient.html">PHP</a>
+ * </p> </li> <li> <p> <a
+ * href="https://boto3.amazonaws.com/v1/documentation/api/latest/reference/services/braket.html">Python
+ * (Boto)</a> </p> </li> <li> <p> <a
+ * href="https://docs.aws.amazon.com/sdk-for-ruby/v3/api/Aws/Braket.html">Ruby</a>
+ * </p> </li> </ul> <p> <b>Code examples from the Amazon Braket Tutorials GitHub
+ * repository:</b> </p> <ul> <li> <p> <a
+ * href="https://github.com/amazon-braket/amazon-braket-examples">Amazon Braket
+ * Examples</a> </p> </li> </ul>
+ */
+class AWS_BRAKET_API BraketClient : public Aws::Client::AWSJsonClient,
+                                    public Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>,
+                                    public BraketPaginationBase<BraketClient>,
+                                    public BraketWaiter<BraketClient> {
+ public:
+  typedef Aws::Client::AWSJsonClient BASECLASS;
+  static const char* GetServiceName();
+  static const char* GetAllocationTag();
+
+  typedef BraketClientConfiguration ClientConfigurationType;
+  typedef BraketEndpointProvider EndpointProviderType;
+
+  /**
+   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
+   * config is not specified, it will be initialized to default values.
+   */
+  BraketClient(const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration(),
+               std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr);
+
+  /**
+   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+   * is not specified, it will be initialized to default values.
+   */
+  BraketClient(const Aws::Auth::AWSCredentials& credentials, std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr,
+               const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
+
+  /**
+   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+   * the default http client factory will be used
+   */
+  BraketClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+               std::shared_ptr<BraketEndpointProviderBase> endpointProvider = nullptr,
+               const Aws::Braket::BraketClientConfiguration& clientConfiguration = Aws::Braket::BraketClientConfiguration());
+
+  /* Legacy constructors due deprecation */
+  /**
+   * Initializes client to use DefaultCredentialProviderChain, with default http client factory, and optional client config. If client
+   * config is not specified, it will be initialized to default values.
+   */
+  BraketClient(const Aws::Client::ClientConfiguration& clientConfiguration);
+
+  /**
+   * Initializes client to use SimpleAWSCredentialsProvider, with default http client factory, and optional client config. If client config
+   * is not specified, it will be initialized to default values.
+   */
+  BraketClient(const Aws::Auth::AWSCredentials& credentials, const Aws::Client::ClientConfiguration& clientConfiguration);
+
+  /**
+   * Initializes client to use specified credentials provider with specified client config. If http client factory is not supplied,
+   * the default http client factory will be used
+   */
+  BraketClient(const std::shared_ptr<Aws::Auth::AWSCredentialsProvider>& credentialsProvider,
+               const Aws::Client::ClientConfiguration& clientConfiguration);
+
+  /* End of legacy constructors due deprecation */
+  virtual ~BraketClient();
+
+  /**
+   * <p>Cancels an Amazon Braket hybrid job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelJobOutcome CancelJob(const Model::CancelJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CancelJobRequestT = Model::CancelJobRequest>
+  Model::CancelJobOutcomeCallable CancelJobCallable(const CancelJobRequestT& request) const {
+    return SubmitCallable(&BraketClient::CancelJob, request);
+  }
+
+  /**
+   * An Async wrapper for CancelJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CancelJobRequestT = Model::CancelJobRequest>
+  void CancelJobAsync(const CancelJobRequestT& request, const CancelJobResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CancelJob, request, handler, context);
+  }
+
+  /**
+   * <p>Cancels the specified task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CancelQuantumTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CancelQuantumTaskOutcome CancelQuantumTask(const Model::CancelQuantumTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for CancelQuantumTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CancelQuantumTaskRequestT = Model::CancelQuantumTaskRequest>
+  Model::CancelQuantumTaskOutcomeCallable CancelQuantumTaskCallable(const CancelQuantumTaskRequestT& request) const {
+    return SubmitCallable(&BraketClient::CancelQuantumTask, request);
+  }
+
+  /**
+   * An Async wrapper for CancelQuantumTask that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CancelQuantumTaskRequestT = Model::CancelQuantumTaskRequest>
+  void CancelQuantumTaskAsync(const CancelQuantumTaskRequestT& request, const CancelQuantumTaskResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CancelQuantumTask, request, handler, context);
+  }
+
+  /**
+   * <p>Creates an Amazon Braket hybrid job.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateJobOutcome CreateJob(const Model::CreateJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateJobRequestT = Model::CreateJobRequest>
+  Model::CreateJobOutcomeCallable CreateJobCallable(const CreateJobRequestT& request) const {
+    return SubmitCallable(&BraketClient::CreateJob, request);
+  }
+
+  /**
+   * An Async wrapper for CreateJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateJobRequestT = Model::CreateJobRequest>
+  void CreateJobAsync(const CreateJobRequestT& request, const CreateJobResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CreateJob, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a quantum task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateQuantumTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateQuantumTaskOutcome CreateQuantumTask(const Model::CreateQuantumTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateQuantumTask that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateQuantumTaskRequestT = Model::CreateQuantumTaskRequest>
+  Model::CreateQuantumTaskOutcomeCallable CreateQuantumTaskCallable(const CreateQuantumTaskRequestT& request) const {
+    return SubmitCallable(&BraketClient::CreateQuantumTask, request);
+  }
+
+  /**
+   * An Async wrapper for CreateQuantumTask that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateQuantumTaskRequestT = Model::CreateQuantumTaskRequest>
+  void CreateQuantumTaskAsync(const CreateQuantumTaskRequestT& request, const CreateQuantumTaskResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CreateQuantumTask, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a spending limit for a specified quantum device. Spending limits help
+   * you control costs by setting maximum amounts that can be spent on quantum
+   * computing tasks within a specified time period. Simulators do not support
+   * spending limits.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/CreateSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateSpendingLimitOutcome CreateSpendingLimit(const Model::CreateSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateSpendingLimitRequestT = Model::CreateSpendingLimitRequest>
+  Model::CreateSpendingLimitOutcomeCallable CreateSpendingLimitCallable(const CreateSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::CreateSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for CreateSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateSpendingLimitRequestT = Model::CreateSpendingLimitRequest>
+  void CreateSpendingLimitAsync(const CreateSpendingLimitRequestT& request, const CreateSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::CreateSpendingLimit, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an existing spending limit. This operation permanently removes the
+   * spending limit and cannot be undone. After deletion, the associated device
+   * becomes unrestricted for spending.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/DeleteSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteSpendingLimitOutcome DeleteSpendingLimit(const Model::DeleteSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteSpendingLimitRequestT = Model::DeleteSpendingLimitRequest>
+  Model::DeleteSpendingLimitOutcomeCallable DeleteSpendingLimitCallable(const DeleteSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::DeleteSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteSpendingLimitRequestT = Model::DeleteSpendingLimitRequest>
+  void DeleteSpendingLimitAsync(const DeleteSpendingLimitRequestT& request, const DeleteSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::DeleteSpendingLimit, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the devices available in Amazon Braket.</p>  <p>For backwards
+   * compatibility with older versions of BraketSchemas, OpenQASM information is
+   * omitted from GetDevice API calls. To get this information the user-agent needs
+   * to present a recent version of the BraketSchemas (1.8.0 or later). The Braket
+   * SDK automatically reports this for you. If you do not see OpenQASM results in
+   * the GetDevice response when using a Braket SDK, you may need to set
+   * AWS_EXECUTION_ENV environment variable to configure user-agent. See the code
+   * examples provided below for how to do this for the AWS CLI, Boto3, and the Go,
+   * Java, and JavaScript/TypeScript SDKs.</p> <p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetDevice">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetDeviceOutcome GetDevice(const Model::GetDeviceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetDevice that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetDeviceRequestT = Model::GetDeviceRequest>
+  Model::GetDeviceOutcomeCallable GetDeviceCallable(const GetDeviceRequestT& request) const {
+    return SubmitCallable(&BraketClient::GetDevice, request);
+  }
+
+  /**
+   * An Async wrapper for GetDevice that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetDeviceRequestT = Model::GetDeviceRequest>
+  void GetDeviceAsync(const GetDeviceRequestT& request, const GetDeviceResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::GetDevice, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the specified Amazon Braket hybrid job.</p><p><h3>See Also:</h3>
+   * <a href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetJob">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetJobOutcome GetJob(const Model::GetJobRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetJob that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetJobRequestT = Model::GetJobRequest>
+  Model::GetJobOutcomeCallable GetJobCallable(const GetJobRequestT& request) const {
+    return SubmitCallable(&BraketClient::GetJob, request);
+  }
+
+  /**
+   * An Async wrapper for GetJob that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetJobRequestT = Model::GetJobRequest>
+  void GetJobAsync(const GetJobRequestT& request, const GetJobResponseReceivedHandler& handler,
+                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::GetJob, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves the specified quantum task.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/GetQuantumTask">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetQuantumTaskOutcome GetQuantumTask(const Model::GetQuantumTaskRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetQuantumTask that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetQuantumTaskRequestT = Model::GetQuantumTaskRequest>
+  Model::GetQuantumTaskOutcomeCallable GetQuantumTaskCallable(const GetQuantumTaskRequestT& request) const {
+    return SubmitCallable(&BraketClient::GetQuantumTask, request);
+  }
+
+  /**
+   * An Async wrapper for GetQuantumTask that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetQuantumTaskRequestT = Model::GetQuantumTaskRequest>
+  void GetQuantumTaskAsync(const GetQuantumTaskRequestT& request, const GetQuantumTaskResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::GetQuantumTask, request, handler, context);
+  }
+
+  /**
+   * <p>Shows the tags associated with this resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/ListTagsForResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListTagsForResourceOutcome ListTagsForResource(const Model::ListTagsForResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListTagsForResource that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  Model::ListTagsForResourceOutcomeCallable ListTagsForResourceCallable(const ListTagsForResourceRequestT& request) const {
+    return SubmitCallable(&BraketClient::ListTagsForResource, request);
+  }
+
+  /**
+   * An Async wrapper for ListTagsForResource that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListTagsForResourceRequestT = Model::ListTagsForResourceRequest>
+  void ListTagsForResourceAsync(const ListTagsForResourceRequestT& request, const ListTagsForResourceResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::ListTagsForResource, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for devices using the specified filters.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchDevices">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchDevicesOutcome SearchDevices(const Model::SearchDevicesRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchDevices that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchDevicesRequestT = Model::SearchDevicesRequest>
+  Model::SearchDevicesOutcomeCallable SearchDevicesCallable(const SearchDevicesRequestT& request) const {
+    return SubmitCallable(&BraketClient::SearchDevices, request);
+  }
+
+  /**
+   * An Async wrapper for SearchDevices that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchDevicesRequestT = Model::SearchDevicesRequest>
+  void SearchDevicesAsync(const SearchDevicesRequestT& request, const SearchDevicesResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::SearchDevices, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for Amazon Braket hybrid jobs that match the specified filter
+   * values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchJobs">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchJobsOutcome SearchJobs(const Model::SearchJobsRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchJobs that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename SearchJobsRequestT = Model::SearchJobsRequest>
+  Model::SearchJobsOutcomeCallable SearchJobsCallable(const SearchJobsRequestT& request) const {
+    return SubmitCallable(&BraketClient::SearchJobs, request);
+  }
+
+  /**
+   * An Async wrapper for SearchJobs that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename SearchJobsRequestT = Model::SearchJobsRequest>
+  void SearchJobsAsync(const SearchJobsRequestT& request, const SearchJobsResponseReceivedHandler& handler,
+                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::SearchJobs, request, handler, context);
+  }
+
+  /**
+   * <p>Searches for tasks that match the specified filter values.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchQuantumTasks">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchQuantumTasksOutcome SearchQuantumTasks(const Model::SearchQuantumTasksRequest& request) const;
+
+  /**
+   * A Callable wrapper for SearchQuantumTasks that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchQuantumTasksRequestT = Model::SearchQuantumTasksRequest>
+  Model::SearchQuantumTasksOutcomeCallable SearchQuantumTasksCallable(const SearchQuantumTasksRequestT& request) const {
+    return SubmitCallable(&BraketClient::SearchQuantumTasks, request);
+  }
+
+  /**
+   * An Async wrapper for SearchQuantumTasks that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename SearchQuantumTasksRequestT = Model::SearchQuantumTasksRequest>
+  void SearchQuantumTasksAsync(const SearchQuantumTasksRequestT& request, const SearchQuantumTasksResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::SearchQuantumTasks, request, handler, context);
+  }
+
+  /**
+   * <p>Searches and lists spending limits based on specified filters. This operation
+   * supports pagination and allows filtering by various criteria to find specific
+   * spending limits. We recommend using pagination to ensure that the operation
+   * returns quickly and successfully.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/SearchSpendingLimits">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::SearchSpendingLimitsOutcome SearchSpendingLimits(const Model::SearchSpendingLimitsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for SearchSpendingLimits that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename SearchSpendingLimitsRequestT = Model::SearchSpendingLimitsRequest>
+  Model::SearchSpendingLimitsOutcomeCallable SearchSpendingLimitsCallable(const SearchSpendingLimitsRequestT& request = {}) const {
+    return SubmitCallable(&BraketClient::SearchSpendingLimits, request);
+  }
+
+  /**
+   * An Async wrapper for SearchSpendingLimits that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename SearchSpendingLimitsRequestT = Model::SearchSpendingLimitsRequest>
+  void SearchSpendingLimitsAsync(const SearchSpendingLimitsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const SearchSpendingLimitsRequestT& request = {}) const {
+    return SubmitAsync(&BraketClient::SearchSpendingLimits, request, handler, context);
+  }
+
+  /**
+   * <p>Add a tag to the specified resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/TagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::TagResourceOutcome TagResource(const Model::TagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for TagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  Model::TagResourceOutcomeCallable TagResourceCallable(const TagResourceRequestT& request) const {
+    return SubmitCallable(&BraketClient::TagResource, request);
+  }
+
+  /**
+   * An Async wrapper for TagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename TagResourceRequestT = Model::TagResourceRequest>
+  void TagResourceAsync(const TagResourceRequestT& request, const TagResourceResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::TagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Remove tags from a resource.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UntagResource">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UntagResourceOutcome UntagResource(const Model::UntagResourceRequest& request) const;
+
+  /**
+   * A Callable wrapper for UntagResource that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  Model::UntagResourceOutcomeCallable UntagResourceCallable(const UntagResourceRequestT& request) const {
+    return SubmitCallable(&BraketClient::UntagResource, request);
+  }
+
+  /**
+   * An Async wrapper for UntagResource that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UntagResourceRequestT = Model::UntagResourceRequest>
+  void UntagResourceAsync(const UntagResourceRequestT& request, const UntagResourceResponseReceivedHandler& handler,
+                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::UntagResource, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing spending limit. You can modify the spending amount or
+   * time period. Changes take effect immediately.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/braket-2019-09-01/UpdateSpendingLimit">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateSpendingLimitOutcome UpdateSpendingLimit(const Model::UpdateSpendingLimitRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateSpendingLimit that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateSpendingLimitRequestT = Model::UpdateSpendingLimitRequest>
+  Model::UpdateSpendingLimitOutcomeCallable UpdateSpendingLimitCallable(const UpdateSpendingLimitRequestT& request) const {
+    return SubmitCallable(&BraketClient::UpdateSpendingLimit, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateSpendingLimit that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateSpendingLimitRequestT = Model::UpdateSpendingLimitRequest>
+  void UpdateSpendingLimitAsync(const UpdateSpendingLimitRequestT& request, const UpdateSpendingLimitResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BraketClient::UpdateSpendingLimit, request, handler, context);
+  }
+
+  virtual void OverrideEndpoint(const Aws::String& endpoint);
+  virtual std::shared_ptr<BraketEndpointProviderBase>& accessEndpointProvider();
+
+ private:
+  friend class Aws::Client::ClientWithAsyncTemplateMethods<BraketClient>;
+  void init(const BraketClientConfiguration& clientConfiguration);
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<RESPONSE>, BraketError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
+
+  BraketClientConfiguration m_clientConfiguration;
+  std::shared_ptr<BraketEndpointProviderBase> m_endpointProvider;
+};
+
+}  // namespace Braket
+}  // namespace Aws

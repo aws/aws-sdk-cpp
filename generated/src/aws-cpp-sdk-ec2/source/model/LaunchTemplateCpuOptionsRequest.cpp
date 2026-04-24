@@ -1,0 +1,99 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/LaunchTemplateCpuOptionsRequest.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace EC2 {
+namespace Model {
+
+LaunchTemplateCpuOptionsRequest::LaunchTemplateCpuOptionsRequest(const XmlNode& xmlNode) { *this = xmlNode; }
+
+LaunchTemplateCpuOptionsRequest& LaunchTemplateCpuOptionsRequest::operator=(const XmlNode& xmlNode) {
+  XmlNode resultNode = xmlNode;
+
+  if (!resultNode.IsNull()) {
+    XmlNode coreCountNode = resultNode.FirstChild("CoreCount");
+    if (!coreCountNode.IsNull()) {
+      m_coreCount =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(coreCountNode.GetText()).c_str()).c_str());
+      m_coreCountHasBeenSet = true;
+    }
+    XmlNode threadsPerCoreNode = resultNode.FirstChild("ThreadsPerCore");
+    if (!threadsPerCoreNode.IsNull()) {
+      m_threadsPerCore = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(threadsPerCoreNode.GetText()).c_str()).c_str());
+      m_threadsPerCoreHasBeenSet = true;
+    }
+    XmlNode amdSevSnpNode = resultNode.FirstChild("AmdSevSnp");
+    if (!amdSevSnpNode.IsNull()) {
+      m_amdSevSnp = AmdSevSnpSpecificationMapper::GetAmdSevSnpSpecificationForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(amdSevSnpNode.GetText()).c_str()));
+      m_amdSevSnpHasBeenSet = true;
+    }
+    XmlNode nestedVirtualizationNode = resultNode.FirstChild("NestedVirtualization");
+    if (!nestedVirtualizationNode.IsNull()) {
+      m_nestedVirtualization = NestedVirtualizationSpecificationMapper::GetNestedVirtualizationSpecificationForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(nestedVirtualizationNode.GetText()).c_str()));
+      m_nestedVirtualizationHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void LaunchTemplateCpuOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index,
+                                                     const char* locationValue) const {
+  if (m_coreCountHasBeenSet) {
+    oStream << location << index << locationValue << ".CoreCount=" << m_coreCount << "&";
+  }
+
+  if (m_threadsPerCoreHasBeenSet) {
+    oStream << location << index << locationValue << ".ThreadsPerCore=" << m_threadsPerCore << "&";
+  }
+
+  if (m_amdSevSnpHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
+  }
+
+  if (m_nestedVirtualizationHasBeenSet) {
+    oStream << location << index << locationValue << ".NestedVirtualization="
+            << StringUtils::URLEncode(
+                   NestedVirtualizationSpecificationMapper::GetNameForNestedVirtualizationSpecification(m_nestedVirtualization))
+            << "&";
+  }
+}
+
+void LaunchTemplateCpuOptionsRequest::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_coreCountHasBeenSet) {
+    oStream << location << ".CoreCount=" << m_coreCount << "&";
+  }
+  if (m_threadsPerCoreHasBeenSet) {
+    oStream << location << ".ThreadsPerCore=" << m_threadsPerCore << "&";
+  }
+  if (m_amdSevSnpHasBeenSet) {
+    oStream << location
+            << ".AmdSevSnp=" << StringUtils::URLEncode(AmdSevSnpSpecificationMapper::GetNameForAmdSevSnpSpecification(m_amdSevSnp)) << "&";
+  }
+  if (m_nestedVirtualizationHasBeenSet) {
+    oStream << location << ".NestedVirtualization="
+            << StringUtils::URLEncode(
+                   NestedVirtualizationSpecificationMapper::GetNameForNestedVirtualizationSpecification(m_nestedVirtualization))
+            << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

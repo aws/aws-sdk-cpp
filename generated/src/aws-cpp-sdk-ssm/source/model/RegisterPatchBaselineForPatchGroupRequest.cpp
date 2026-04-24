@@ -1,0 +1,33 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/RegisterPatchBaselineForPatchGroupRequest.h>
+
+#include <utility>
+
+using namespace Aws::SSM::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String RegisterPatchBaselineForPatchGroupRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_baselineIdHasBeenSet) {
+    payload.WithString("BaselineId", m_baselineId);
+  }
+
+  if (m_patchGroupHasBeenSet) {
+    payload.WithString("PatchGroup", m_patchGroup);
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection RegisterPatchBaselineForPatchGroupRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "AmazonSSM.RegisterPatchBaselineForPatchGroup"));
+  return headers;
+}

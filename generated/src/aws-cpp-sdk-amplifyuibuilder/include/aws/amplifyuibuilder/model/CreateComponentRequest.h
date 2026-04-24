@@ -1,0 +1,125 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/amplifyuibuilder/AmplifyUIBuilderRequest.h>
+#include <aws/amplifyuibuilder/AmplifyUIBuilder_EXPORTS.h>
+#include <aws/amplifyuibuilder/model/CreateComponentData.h>
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace AmplifyUIBuilder {
+namespace Model {
+
+/**
+ */
+class CreateComponentRequest : public AmplifyUIBuilderRequest {
+ public:
+  AWS_AMPLIFYUIBUILDER_API CreateComponentRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "CreateComponent"; }
+
+  AWS_AMPLIFYUIBUILDER_API Aws::String SerializePayload() const override;
+
+  AWS_AMPLIFYUIBUILDER_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+  /**
+   * <p>The unique ID of the Amplify app to associate with the component.</p>
+   */
+  inline const Aws::String& GetAppId() const { return m_appId; }
+  inline bool AppIdHasBeenSet() const { return m_appIdHasBeenSet; }
+  template <typename AppIdT = Aws::String>
+  void SetAppId(AppIdT&& value) {
+    m_appIdHasBeenSet = true;
+    m_appId = std::forward<AppIdT>(value);
+  }
+  template <typename AppIdT = Aws::String>
+  CreateComponentRequest& WithAppId(AppIdT&& value) {
+    SetAppId(std::forward<AppIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the backend environment that is a part of the Amplify app.</p>
+   */
+  inline const Aws::String& GetEnvironmentName() const { return m_environmentName; }
+  inline bool EnvironmentNameHasBeenSet() const { return m_environmentNameHasBeenSet; }
+  template <typename EnvironmentNameT = Aws::String>
+  void SetEnvironmentName(EnvironmentNameT&& value) {
+    m_environmentNameHasBeenSet = true;
+    m_environmentName = std::forward<EnvironmentNameT>(value);
+  }
+  template <typename EnvironmentNameT = Aws::String>
+  CreateComponentRequest& WithEnvironmentName(EnvironmentNameT&& value) {
+    SetEnvironmentName(std::forward<EnvironmentNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique client token.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateComponentRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Represents the configuration of the component to create.</p>
+   */
+  inline const CreateComponentData& GetComponentToCreate() const { return m_componentToCreate; }
+  inline bool ComponentToCreateHasBeenSet() const { return m_componentToCreateHasBeenSet; }
+  template <typename ComponentToCreateT = CreateComponentData>
+  void SetComponentToCreate(ComponentToCreateT&& value) {
+    m_componentToCreateHasBeenSet = true;
+    m_componentToCreate = std::forward<ComponentToCreateT>(value);
+  }
+  template <typename ComponentToCreateT = CreateComponentData>
+  CreateComponentRequest& WithComponentToCreate(ComponentToCreateT&& value) {
+    SetComponentToCreate(std::forward<ComponentToCreateT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_appId;
+
+  Aws::String m_environmentName;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+
+  CreateComponentData m_componentToCreate;
+  bool m_appIdHasBeenSet = false;
+  bool m_environmentNameHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+  bool m_componentToCreateHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace AmplifyUIBuilder
+}  // namespace Aws

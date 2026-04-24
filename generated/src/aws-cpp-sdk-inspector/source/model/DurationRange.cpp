@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector/model/DurationRange.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Inspector {
+namespace Model {
+
+DurationRange::DurationRange(JsonView jsonValue) { *this = jsonValue; }
+
+DurationRange& DurationRange::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("minSeconds")) {
+    m_minSeconds = jsonValue.GetInteger("minSeconds");
+    m_minSecondsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("maxSeconds")) {
+    m_maxSeconds = jsonValue.GetInteger("maxSeconds");
+    m_maxSecondsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DurationRange::Jsonize() const {
+  JsonValue payload;
+
+  if (m_minSecondsHasBeenSet) {
+    payload.WithInteger("minSeconds", m_minSeconds);
+  }
+
+  if (m_maxSecondsHasBeenSet) {
+    payload.WithInteger("maxSeconds", m_maxSeconds);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Inspector
+}  // namespace Aws

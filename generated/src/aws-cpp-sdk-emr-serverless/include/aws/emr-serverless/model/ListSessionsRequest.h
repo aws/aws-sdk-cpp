@@ -1,0 +1,172 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/emr-serverless/EMRServerlessRequest.h>
+#include <aws/emr-serverless/EMRServerless_EXPORTS.h>
+#include <aws/emr-serverless/model/SessionState.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace EMRServerless {
+namespace Model {
+
+/**
+ */
+class ListSessionsRequest : public EMRServerlessRequest {
+ public:
+  AWS_EMRSERVERLESS_API ListSessionsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "ListSessions"; }
+
+  AWS_EMRSERVERLESS_API Aws::String SerializePayload() const override;
+
+  AWS_EMRSERVERLESS_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  ///@{
+  /**
+   * <p>The ID of the application to list sessions for.</p>
+   */
+  inline const Aws::String& GetApplicationId() const { return m_applicationId; }
+  inline bool ApplicationIdHasBeenSet() const { return m_applicationIdHasBeenSet; }
+  template <typename ApplicationIdT = Aws::String>
+  void SetApplicationId(ApplicationIdT&& value) {
+    m_applicationIdHasBeenSet = true;
+    m_applicationId = std::forward<ApplicationIdT>(value);
+  }
+  template <typename ApplicationIdT = Aws::String>
+  ListSessionsRequest& WithApplicationId(ApplicationIdT&& value) {
+    SetApplicationId(std::forward<ApplicationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next set of session results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListSessionsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of sessions to return in each page of results.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline ListSessionsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An optional filter for session states. Note that if this filter contains
+   * multiple states, the resulting list will be grouped by the state.</p>
+   */
+  inline const Aws::Vector<SessionState>& GetStates() const { return m_states; }
+  inline bool StatesHasBeenSet() const { return m_statesHasBeenSet; }
+  template <typename StatesT = Aws::Vector<SessionState>>
+  void SetStates(StatesT&& value) {
+    m_statesHasBeenSet = true;
+    m_states = std::forward<StatesT>(value);
+  }
+  template <typename StatesT = Aws::Vector<SessionState>>
+  ListSessionsRequest& WithStates(StatesT&& value) {
+    SetStates(std::forward<StatesT>(value));
+    return *this;
+  }
+  inline ListSessionsRequest& AddStates(SessionState value) {
+    m_statesHasBeenSet = true;
+    m_states.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The lower bound of the option to filter by creation date and time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAtAfter() const { return m_createdAtAfter; }
+  inline bool CreatedAtAfterHasBeenSet() const { return m_createdAtAfterHasBeenSet; }
+  template <typename CreatedAtAfterT = Aws::Utils::DateTime>
+  void SetCreatedAtAfter(CreatedAtAfterT&& value) {
+    m_createdAtAfterHasBeenSet = true;
+    m_createdAtAfter = std::forward<CreatedAtAfterT>(value);
+  }
+  template <typename CreatedAtAfterT = Aws::Utils::DateTime>
+  ListSessionsRequest& WithCreatedAtAfter(CreatedAtAfterT&& value) {
+    SetCreatedAtAfter(std::forward<CreatedAtAfterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The upper bound of the option to filter by creation date and time.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAtBefore() const { return m_createdAtBefore; }
+  inline bool CreatedAtBeforeHasBeenSet() const { return m_createdAtBeforeHasBeenSet; }
+  template <typename CreatedAtBeforeT = Aws::Utils::DateTime>
+  void SetCreatedAtBefore(CreatedAtBeforeT&& value) {
+    m_createdAtBeforeHasBeenSet = true;
+    m_createdAtBefore = std::forward<CreatedAtBeforeT>(value);
+  }
+  template <typename CreatedAtBeforeT = Aws::Utils::DateTime>
+  ListSessionsRequest& WithCreatedAtBefore(CreatedAtBeforeT&& value) {
+    SetCreatedAtBefore(std::forward<CreatedAtBeforeT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_applicationId;
+
+  Aws::String m_nextToken;
+
+  int m_maxResults{0};
+
+  Aws::Vector<SessionState> m_states;
+
+  Aws::Utils::DateTime m_createdAtAfter{};
+
+  Aws::Utils::DateTime m_createdAtBefore{};
+  bool m_applicationIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_statesHasBeenSet = false;
+  bool m_createdAtAfterHasBeenSet = false;
+  bool m_createdAtBeforeHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

@@ -1,0 +1,29 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/inspector-scan/model/ScanSbomRequest.h>
+
+#include <utility>
+
+using namespace Aws::inspectorscan::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String ScanSbomRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_sbomHasBeenSet) {
+    if (!m_sbom.View().IsNull()) {
+      payload.WithObject("sbom", JsonValue(m_sbom.View()));
+    }
+  }
+
+  if (m_outputFormatHasBeenSet) {
+    payload.WithString("outputFormat", OutputFormatMapper::GetNameForOutputFormat(m_outputFormat));
+  }
+
+  return payload.View().WriteReadable();
+}

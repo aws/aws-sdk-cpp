@@ -1,0 +1,125 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+#set($className = "${metadata.classNamePrefix}Client")
+#if($serviceModel.metadata.findFirstSupportedProtocol() == "json" || $serviceModel.metadata.findFirstSupportedProtocol() == "rest-json" || $serviceModel.metadata.findFirstSupportedProtocol() == "application-json")
+#set($serializer = "JsonOutcomeSerializer")
+#set($serializerOutcome = "JsonOutcome")
+#elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query")
+#set($serializer = "XmlOutcomeSerializer")
+#set($serializerOutcome = "XmlOutcome")
+#end
+#set($serviceConfiguration = "Aws::" + ${serviceNamespace} + "::" + ${metadata.classNamePrefix} + "ClientConfiguration")
+#pragma once
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}_EXPORTS.h>
+\#include <aws/core/client/ClientConfiguration.h>
+\#include <aws/core/client/AWSClientAsyncCRTP.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}ServiceClientModel.h>
+#if(!$serviceModel.disableSmithyGeneration)
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}PaginationBase.h>
+\#include <aws/$metadata.projectName/${metadata.classNamePrefix}Waiter.h>
+#end
+\#include <smithy/client/AwsSmithyClient.h>
+#if($serviceModel.hasBearerAuth())
+\#include <smithy/identity/auth/built-in/BearerTokenAuthScheme.h>
+#end
+#if($serviceModel.hasSigV4Auth())
+\#include <smithy/identity/auth/built-in/SigV4AuthScheme.h>
+#end
+#if($serviceModel.hasSigV4aAuth())
+\#include <smithy/identity/auth/built-in/SigV4aAuthScheme.h>
+#end
+#if($serviceModel.hasNoAuth())
+\#include <smithy/identity/auth/built-in/NoAuthScheme.h>
+#end
+\#include <smithy/identity/auth/built-in/GenericAuthSchemeResolver.h>
+\#include <smithy/client/serializer/${serializer}.h>
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ErrorMarshaller.h>
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+  ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} extern const char SERVICE_NAME[];
+#if($serviceModel.documentation)
+  /**
+   * ${serviceModel.documentation}
+   */
+#end
+#set($finalClass = " final")
+#if($serviceModel.enableVirtualOperations)
+#set($finalClass = "")
+#end
+#if(!$serviceModel.disableSmithyGeneration)
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
+    public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+      ${serviceConfiguration},
+      smithy::AuthSchemeResolverBase<>,
+      ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
+      ${metadata.classNamePrefix}EndpointProviderBase,
+      smithy::client::$serializer,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>,
+    public ${metadata.classNamePrefix}PaginationBase<${className}>, public ${metadata.classNamePrefix}Waiter<${className}>
+#else
+  class ${CppViewHelper.computeExportValue($metadata.classNamePrefix)} ${className}${finalClass} : Aws::Client::ClientWithAsyncTemplateMethods<${className}>,
+    public smithy::client::AwsSmithyClientT<${rootNamespace}::${serviceNamespace}::SERVICE_NAME,
+      ${serviceConfiguration},
+      smithy::AuthSchemeResolverBase<>,
+      ${rootNamespace}::Crt::Variant<${AuthSchemeVariants}>,
+      ${metadata.classNamePrefix}EndpointProviderBase,
+      smithy::client::$serializer,
+      smithy::client::$serializerOutcome,
+      Aws::Client::${metadata.classNamePrefix}ErrorMarshaller>
+#end
+  {
+    public:
+      static const char* GetServiceName();
+      static const char* GetAllocationTag();
+      inline const char* GetServiceClientName() const override { return "${metadata.serviceId}"; }
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConfigTypeDeclarations.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderConstructors.vm")
+#set($smithy_virtual = "")
+#if($serviceModel.enableVirtualOperations)
+#set($smithy_virtual = "virtual ")
+#end
+#if($metadata.protocol == "query")
+
+        /**
+        * Converts any request object to a presigned URL with the GET method, using region for the signer and a timeout of 15 minutes.
+        */
+        ${smithy_virtual}Aws::String ConvertRequestToPresignedUrl(const Aws::AmazonSerializableWebServiceRequest& requestToConvert, const char* region) const;
+#if($serviceModel.metadata.serviceId == "RDS")
+
+        /**
+        * Generates an auth token for connecting to an rds instance.
+        */
+        ${smithy_virtual}Aws::String GenerateConnectAuthToken(const char* dbHostName, const char* dbRegion, unsigned port, const char* dbUserName) const;
+
+#end
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ServiceClientHeaderOperations.vm")
+
+#foreach($presigner in $serviceModel.presigners)
+        ${smithy_virtual}Aws::Utils::Outcome<String, ${metadata.classNamePrefix}Error> ${presigner.functionName}(const Aws::String& ${presigner.hostNameVarName}, const Aws::String& ${presigner.regionVarName},#foreach($arg in $presigner.queryParams)#if(${arg.variableName}) ${arg.type} ${arg.variableName},#end#end long long expiresIn = 900);
+#end
+        ${smithy_virtual}void OverrideEndpoint(const ${rootNamespace}::String& endpoint);
+        ${smithy_virtual}std::shared_ptr<${metadata.classNamePrefix}EndpointProviderBase>& accessEndpointProvider();
+    private:
+      friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;
+
+#if($metadata.hasEndpointDiscoveryTrait)
+      void OptionallyUpdateDescribeEndpointsCache(${rootNamespace}::Endpoint::AWSEndpoint& resolvedEndpoint,
+        const ${rootNamespace}::String& operationName,
+        const ${rootNamespace}::String& endpointKey,
+        const ${rootNamespace}::${serviceNamespace}::Model::${metadata.endpointOperationName}Request& endpointRequest,
+        bool enforceDiscovery) const;
+      mutable Aws::Utils::ConcurrentCache<${rootNamespace}::String, ${rootNamespace}::String> m_endpointsCache;
+#end
+  };
+
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

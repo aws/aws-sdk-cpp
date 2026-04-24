@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+#include <aws/dms/model/ReplicationTask.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
+/**
+ * <p/><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/dms-2016-01-01/DeleteReplicationTaskResponse">AWS
+ * API Reference</a></p>
+ */
+class DeleteReplicationTaskResult {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATABASEMIGRATIONSERVICE_API DeleteReplicationTaskResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The deleted replication task.</p>
+   */
+  inline const ReplicationTask& GetReplicationTask() const { return m_replicationTask; }
+  template <typename ReplicationTaskT = ReplicationTask>
+  void SetReplicationTask(ReplicationTaskT&& value) {
+    m_replicationTaskHasBeenSet = true;
+    m_replicationTask = std::forward<ReplicationTaskT>(value);
+  }
+  template <typename ReplicationTaskT = ReplicationTask>
+  DeleteReplicationTaskResult& WithReplicationTask(ReplicationTaskT&& value) {
+    SetReplicationTask(std::forward<ReplicationTaskT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteReplicationTaskResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ReplicationTask m_replicationTask;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_replicationTaskHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

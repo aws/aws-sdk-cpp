@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/qconnect/model/AssociationType.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QConnect {
+namespace Model {
+namespace AssociationTypeMapper {
+
+static const int KNOWLEDGE_BASE_HASH = HashingUtils::HashString("KNOWLEDGE_BASE");
+static const int EXTERNAL_BEDROCK_KNOWLEDGE_BASE_HASH = HashingUtils::HashString("EXTERNAL_BEDROCK_KNOWLEDGE_BASE");
+
+AssociationType GetAssociationTypeForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == KNOWLEDGE_BASE_HASH) {
+    return AssociationType::KNOWLEDGE_BASE;
+  } else if (hashCode == EXTERNAL_BEDROCK_KNOWLEDGE_BASE_HASH) {
+    return AssociationType::EXTERNAL_BEDROCK_KNOWLEDGE_BASE;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<AssociationType>(hashCode);
+  }
+
+  return AssociationType::NOT_SET;
+}
+
+Aws::String GetNameForAssociationType(AssociationType enumValue) {
+  switch (enumValue) {
+    case AssociationType::NOT_SET:
+      return {};
+    case AssociationType::KNOWLEDGE_BASE:
+      return "KNOWLEDGE_BASE";
+    case AssociationType::EXTERNAL_BEDROCK_KNOWLEDGE_BASE:
+      return "EXTERNAL_BEDROCK_KNOWLEDGE_BASE";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace AssociationTypeMapper
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

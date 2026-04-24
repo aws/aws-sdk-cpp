@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/ExportTaskError.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace mgn {
+namespace Model {
+
+ExportTaskError::ExportTaskError(JsonView jsonValue) { *this = jsonValue; }
+
+ExportTaskError& ExportTaskError::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("errorDateTime")) {
+    m_errorDateTime = jsonValue.GetString("errorDateTime");
+    m_errorDateTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("errorData")) {
+    m_errorData = jsonValue.GetObject("errorData");
+    m_errorDataHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ExportTaskError::Jsonize() const {
+  JsonValue payload;
+
+  if (m_errorDateTimeHasBeenSet) {
+    payload.WithString("errorDateTime", m_errorDateTime);
+  }
+
+  if (m_errorDataHasBeenSet) {
+    payload.WithObject("errorData", m_errorData.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

@@ -10,6 +10,7 @@ Release
 *#
 *.iml
 tags
+.vscode
 
 # CI Artifacts
 BuildSpec.json
@@ -78,10 +79,19 @@ credentials
 toolchains/android/
 
 # codegen
-code-generation/generator/target/
+tools/code-generation/generator/target/
+tools/code-generation/smithy/codegen/gradle/
+tools/code-generation/smithy/codegen/.gradle/
+tools/code-generation/smithy/cpp-codegen/.gradle/
+tools/code-generation/smithy/cpp-codegen/output/
+tools/code-generation/smithy/cpp-codegen/smithy-build.json
 
 #config output
 aws-cpp-sdk-core/include/aws/core/SDKConfig.h
+src/aws-cpp-sdk-core/include/aws/core/SDKConfig.h
 
 #nuget
 *.nupkg
+
+#temp codegen files
+tools/code-generation/smithy/codegen/cpp-smoke-tests/codegen_output/

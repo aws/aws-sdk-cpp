@@ -1,0 +1,102 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
+#include <aws/personalize/model/DatasetExportJobSummary.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Personalize {
+namespace Model {
+class ListDatasetExportJobsResult {
+ public:
+  AWS_PERSONALIZE_API ListDatasetExportJobsResult() = default;
+  AWS_PERSONALIZE_API ListDatasetExportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PERSONALIZE_API ListDatasetExportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The list of dataset export jobs.</p>
+   */
+  inline const Aws::Vector<DatasetExportJobSummary>& GetDatasetExportJobs() const { return m_datasetExportJobs; }
+  template <typename DatasetExportJobsT = Aws::Vector<DatasetExportJobSummary>>
+  void SetDatasetExportJobs(DatasetExportJobsT&& value) {
+    m_datasetExportJobsHasBeenSet = true;
+    m_datasetExportJobs = std::forward<DatasetExportJobsT>(value);
+  }
+  template <typename DatasetExportJobsT = Aws::Vector<DatasetExportJobSummary>>
+  ListDatasetExportJobsResult& WithDatasetExportJobs(DatasetExportJobsT&& value) {
+    SetDatasetExportJobs(std::forward<DatasetExportJobsT>(value));
+    return *this;
+  }
+  template <typename DatasetExportJobsT = DatasetExportJobSummary>
+  ListDatasetExportJobsResult& AddDatasetExportJobs(DatasetExportJobsT&& value) {
+    m_datasetExportJobsHasBeenSet = true;
+    m_datasetExportJobs.emplace_back(std::forward<DatasetExportJobsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A token for getting the next set of dataset export jobs (if they exist).</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListDatasetExportJobsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListDatasetExportJobsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<DatasetExportJobSummary> m_datasetExportJobs;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_datasetExportJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

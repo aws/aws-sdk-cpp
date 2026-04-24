@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
+class SubmitContactEvaluationResult {
+ public:
+  AWS_CONNECT_API SubmitContactEvaluationResult() = default;
+  AWS_CONNECT_API SubmitContactEvaluationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONNECT_API SubmitContactEvaluationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A unique identifier for the contact evaluation.</p>
+   */
+  inline const Aws::String& GetEvaluationId() const { return m_evaluationId; }
+  template <typename EvaluationIdT = Aws::String>
+  void SetEvaluationId(EvaluationIdT&& value) {
+    m_evaluationIdHasBeenSet = true;
+    m_evaluationId = std::forward<EvaluationIdT>(value);
+  }
+  template <typename EvaluationIdT = Aws::String>
+  SubmitContactEvaluationResult& WithEvaluationId(EvaluationIdT&& value) {
+    SetEvaluationId(std::forward<EvaluationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) for the contact evaluation resource.</p>
+   */
+  inline const Aws::String& GetEvaluationArn() const { return m_evaluationArn; }
+  template <typename EvaluationArnT = Aws::String>
+  void SetEvaluationArn(EvaluationArnT&& value) {
+    m_evaluationArnHasBeenSet = true;
+    m_evaluationArn = std::forward<EvaluationArnT>(value);
+  }
+  template <typename EvaluationArnT = Aws::String>
+  SubmitContactEvaluationResult& WithEvaluationArn(EvaluationArnT&& value) {
+    SetEvaluationArn(std::forward<EvaluationArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  SubmitContactEvaluationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_evaluationId;
+
+  Aws::String m_evaluationArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_evaluationIdHasBeenSet = false;
+  bool m_evaluationArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

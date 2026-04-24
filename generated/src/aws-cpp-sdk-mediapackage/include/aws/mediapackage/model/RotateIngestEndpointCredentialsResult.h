@@ -1,0 +1,217 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mediapackage/MediaPackage_EXPORTS.h>
+#include <aws/mediapackage/model/EgressAccessLogs.h>
+#include <aws/mediapackage/model/HlsIngest.h>
+#include <aws/mediapackage/model/IngressAccessLogs.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MediaPackage {
+namespace Model {
+class RotateIngestEndpointCredentialsResult {
+ public:
+  AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult() = default;
+  AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MEDIAPACKAGE_API RotateIngestEndpointCredentialsResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * The Amazon Resource Name (ARN) assigned to the Channel.
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  RotateIngestEndpointCredentialsResult& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The date and time the Channel was created.
+   */
+  inline const Aws::String& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::String>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::String>
+  RotateIngestEndpointCredentialsResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * A short text description of the Channel.
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  RotateIngestEndpointCredentialsResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EgressAccessLogs& GetEgressAccessLogs() const { return m_egressAccessLogs; }
+  template <typename EgressAccessLogsT = EgressAccessLogs>
+  void SetEgressAccessLogs(EgressAccessLogsT&& value) {
+    m_egressAccessLogsHasBeenSet = true;
+    m_egressAccessLogs = std::forward<EgressAccessLogsT>(value);
+  }
+  template <typename EgressAccessLogsT = EgressAccessLogs>
+  RotateIngestEndpointCredentialsResult& WithEgressAccessLogs(EgressAccessLogsT&& value) {
+    SetEgressAccessLogs(std::forward<EgressAccessLogsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const HlsIngest& GetHlsIngest() const { return m_hlsIngest; }
+  template <typename HlsIngestT = HlsIngest>
+  void SetHlsIngest(HlsIngestT&& value) {
+    m_hlsIngestHasBeenSet = true;
+    m_hlsIngest = std::forward<HlsIngestT>(value);
+  }
+  template <typename HlsIngestT = HlsIngest>
+  RotateIngestEndpointCredentialsResult& WithHlsIngest(HlsIngestT&& value) {
+    SetHlsIngest(std::forward<HlsIngestT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * The ID of the Channel.
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  RotateIngestEndpointCredentialsResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const IngressAccessLogs& GetIngressAccessLogs() const { return m_ingressAccessLogs; }
+  template <typename IngressAccessLogsT = IngressAccessLogs>
+  void SetIngressAccessLogs(IngressAccessLogsT&& value) {
+    m_ingressAccessLogsHasBeenSet = true;
+    m_ingressAccessLogs = std::forward<IngressAccessLogsT>(value);
+  }
+  template <typename IngressAccessLogsT = IngressAccessLogs>
+  RotateIngestEndpointCredentialsResult& WithIngressAccessLogs(IngressAccessLogsT&& value) {
+    SetIngressAccessLogs(std::forward<IngressAccessLogsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  RotateIngestEndpointCredentialsResult& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  RotateIngestEndpointCredentialsResult& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  RotateIngestEndpointCredentialsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_arn;
+
+  Aws::String m_createdAt;
+
+  Aws::String m_description;
+
+  EgressAccessLogs m_egressAccessLogs;
+
+  HlsIngest m_hlsIngest;
+
+  Aws::String m_id;
+
+  IngressAccessLogs m_ingressAccessLogs;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_arnHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_egressAccessLogsHasBeenSet = false;
+  bool m_hlsIngestHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_ingressAccessLogsHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MediaPackage
+}  // namespace Aws

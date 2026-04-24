@@ -1,0 +1,122 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/monitoring/CloudWatch_EXPORTS.h>
+#include <aws/monitoring/model/InsightRule.h>
+#include <aws/monitoring/model/ResponseMetadata.h>
+
+#include <utility>
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace CloudWatch {
+namespace Model {
+class DescribeInsightRulesResult {
+ public:
+  AWS_CLOUDWATCH_API DescribeInsightRulesResult() = default;
+  AWS_CLOUDWATCH_API DescribeInsightRulesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+  AWS_CLOUDWATCH_API DescribeInsightRulesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Cbor::CborValue>& result);
+
+  ///@{
+  /**
+   * <p>If this parameter is present, it is a token that marks the start of the next
+   * batch of returned results. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  DescribeInsightRulesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The rules returned by the operation.</p>
+   */
+  inline const Aws::Vector<InsightRule>& GetInsightRules() const { return m_insightRules; }
+  template <typename InsightRulesT = Aws::Vector<InsightRule>>
+  void SetInsightRules(InsightRulesT&& value) {
+    m_insightRulesHasBeenSet = true;
+    m_insightRules = std::forward<InsightRulesT>(value);
+  }
+  template <typename InsightRulesT = Aws::Vector<InsightRule>>
+  DescribeInsightRulesResult& WithInsightRules(InsightRulesT&& value) {
+    SetInsightRules(std::forward<InsightRulesT>(value));
+    return *this;
+  }
+  template <typename InsightRulesT = InsightRule>
+  DescribeInsightRulesResult& AddInsightRules(InsightRulesT&& value) {
+    m_insightRulesHasBeenSet = true;
+    m_insightRules.emplace_back(std::forward<InsightRulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeInsightRulesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeInsightRulesResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_nextToken;
+
+  Aws::Vector<InsightRule> m_insightRules;
+
+  Aws::String m_requestId;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_insightRulesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CloudWatch
+}  // namespace Aws

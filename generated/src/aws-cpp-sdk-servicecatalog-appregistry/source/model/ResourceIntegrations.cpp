@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/servicecatalog-appregistry/model/ResourceIntegrations.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace AppRegistry {
+namespace Model {
+
+ResourceIntegrations::ResourceIntegrations(JsonView jsonValue) { *this = jsonValue; }
+
+ResourceIntegrations& ResourceIntegrations::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("resourceGroup")) {
+    m_resourceGroup = jsonValue.GetObject("resourceGroup");
+    m_resourceGroupHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ResourceIntegrations::Jsonize() const {
+  JsonValue payload;
+
+  if (m_resourceGroupHasBeenSet) {
+    payload.WithObject("resourceGroup", m_resourceGroup.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace AppRegistry
+}  // namespace Aws

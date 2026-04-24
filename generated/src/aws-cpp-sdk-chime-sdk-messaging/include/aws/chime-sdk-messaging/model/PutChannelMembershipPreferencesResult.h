@@ -1,0 +1,117 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
+#include <aws/chime-sdk-messaging/model/ChannelMembershipPreferences.h>
+#include <aws/chime-sdk-messaging/model/Identity.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ChimeSDKMessaging {
+namespace Model {
+class PutChannelMembershipPreferencesResult {
+ public:
+  AWS_CHIMESDKMESSAGING_API PutChannelMembershipPreferencesResult() = default;
+  AWS_CHIMESDKMESSAGING_API PutChannelMembershipPreferencesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CHIMESDKMESSAGING_API PutChannelMembershipPreferencesResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ARN of the channel.</p>
+   */
+  inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+  template <typename ChannelArnT = Aws::String>
+  void SetChannelArn(ChannelArnT&& value) {
+    m_channelArnHasBeenSet = true;
+    m_channelArn = std::forward<ChannelArnT>(value);
+  }
+  template <typename ChannelArnT = Aws::String>
+  PutChannelMembershipPreferencesResult& WithChannelArn(ChannelArnT&& value) {
+    SetChannelArn(std::forward<ChannelArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The details of a user.</p>
+   */
+  inline const Identity& GetMember() const { return m_member; }
+  template <typename MemberT = Identity>
+  void SetMember(MemberT&& value) {
+    m_memberHasBeenSet = true;
+    m_member = std::forward<MemberT>(value);
+  }
+  template <typename MemberT = Identity>
+  PutChannelMembershipPreferencesResult& WithMember(MemberT&& value) {
+    SetMember(std::forward<MemberT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN and metadata of the member being added.</p>
+   */
+  inline const ChannelMembershipPreferences& GetPreferences() const { return m_preferences; }
+  template <typename PreferencesT = ChannelMembershipPreferences>
+  void SetPreferences(PreferencesT&& value) {
+    m_preferencesHasBeenSet = true;
+    m_preferences = std::forward<PreferencesT>(value);
+  }
+  template <typename PreferencesT = ChannelMembershipPreferences>
+  PutChannelMembershipPreferencesResult& WithPreferences(PreferencesT&& value) {
+    SetPreferences(std::forward<PreferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  PutChannelMembershipPreferencesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_channelArn;
+
+  Identity m_member;
+
+  ChannelMembershipPreferences m_preferences;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberHasBeenSet = false;
+  bool m_preferencesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

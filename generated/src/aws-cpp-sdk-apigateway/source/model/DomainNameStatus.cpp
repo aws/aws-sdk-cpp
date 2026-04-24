@@ -1,0 +1,78 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/apigateway/model/DomainNameStatus.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace APIGateway {
+namespace Model {
+namespace DomainNameStatusMapper {
+
+static const int AVAILABLE_HASH = HashingUtils::HashString("AVAILABLE");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int PENDING_HASH = HashingUtils::HashString("PENDING");
+static const int PENDING_CERTIFICATE_REIMPORT_HASH = HashingUtils::HashString("PENDING_CERTIFICATE_REIMPORT");
+static const int PENDING_OWNERSHIP_VERIFICATION_HASH = HashingUtils::HashString("PENDING_OWNERSHIP_VERIFICATION");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+
+DomainNameStatus GetDomainNameStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == AVAILABLE_HASH) {
+    return DomainNameStatus::AVAILABLE;
+  } else if (hashCode == UPDATING_HASH) {
+    return DomainNameStatus::UPDATING;
+  } else if (hashCode == PENDING_HASH) {
+    return DomainNameStatus::PENDING;
+  } else if (hashCode == PENDING_CERTIFICATE_REIMPORT_HASH) {
+    return DomainNameStatus::PENDING_CERTIFICATE_REIMPORT;
+  } else if (hashCode == PENDING_OWNERSHIP_VERIFICATION_HASH) {
+    return DomainNameStatus::PENDING_OWNERSHIP_VERIFICATION;
+  } else if (hashCode == FAILED_HASH) {
+    return DomainNameStatus::FAILED;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<DomainNameStatus>(hashCode);
+  }
+
+  return DomainNameStatus::NOT_SET;
+}
+
+Aws::String GetNameForDomainNameStatus(DomainNameStatus enumValue) {
+  switch (enumValue) {
+    case DomainNameStatus::NOT_SET:
+      return {};
+    case DomainNameStatus::AVAILABLE:
+      return "AVAILABLE";
+    case DomainNameStatus::UPDATING:
+      return "UPDATING";
+    case DomainNameStatus::PENDING:
+      return "PENDING";
+    case DomainNameStatus::PENDING_CERTIFICATE_REIMPORT:
+      return "PENDING_CERTIFICATE_REIMPORT";
+    case DomainNameStatus::PENDING_OWNERSHIP_VERIFICATION:
+      return "PENDING_OWNERSHIP_VERIFICATION";
+    case DomainNameStatus::FAILED:
+      return "FAILED";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace DomainNameStatusMapper
+}  // namespace Model
+}  // namespace APIGateway
+}  // namespace Aws

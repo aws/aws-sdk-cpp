@@ -1,0 +1,128 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/chime-sdk-messaging/ChimeSDKMessagingRequest.h>
+#include <aws/chime-sdk-messaging/ChimeSDKMessaging_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Http {
+class URI;
+}  // namespace Http
+namespace ChimeSDKMessaging {
+namespace Model {
+
+/**
+ */
+class DescribeChannelMembershipRequest : public ChimeSDKMessagingRequest {
+ public:
+  AWS_CHIMESDKMESSAGING_API DescribeChannelMembershipRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "DescribeChannelMembership"; }
+
+  AWS_CHIMESDKMESSAGING_API Aws::String SerializePayload() const override;
+
+  AWS_CHIMESDKMESSAGING_API void AddQueryStringParameters(Aws::Http::URI& uri) const override;
+
+  AWS_CHIMESDKMESSAGING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The ARN of the channel.</p>
+   */
+  inline const Aws::String& GetChannelArn() const { return m_channelArn; }
+  inline bool ChannelArnHasBeenSet() const { return m_channelArnHasBeenSet; }
+  template <typename ChannelArnT = Aws::String>
+  void SetChannelArn(ChannelArnT&& value) {
+    m_channelArnHasBeenSet = true;
+    m_channelArn = std::forward<ChannelArnT>(value);
+  }
+  template <typename ChannelArnT = Aws::String>
+  DescribeChannelMembershipRequest& WithChannelArn(ChannelArnT&& value) {
+    SetChannelArn(std::forward<ChannelArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The <code>AppInstanceUserArn</code> of the member.</p>
+   */
+  inline const Aws::String& GetMemberArn() const { return m_memberArn; }
+  inline bool MemberArnHasBeenSet() const { return m_memberArnHasBeenSet; }
+  template <typename MemberArnT = Aws::String>
+  void SetMemberArn(MemberArnT&& value) {
+    m_memberArnHasBeenSet = true;
+    m_memberArn = std::forward<MemberArnT>(value);
+  }
+  template <typename MemberArnT = Aws::String>
+  DescribeChannelMembershipRequest& WithMemberArn(MemberArnT&& value) {
+    SetMemberArn(std::forward<MemberArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>
+   * that makes the API call.</p>
+   */
+  inline const Aws::String& GetChimeBearer() const { return m_chimeBearer; }
+  inline bool ChimeBearerHasBeenSet() const { return m_chimeBearerHasBeenSet; }
+  template <typename ChimeBearerT = Aws::String>
+  void SetChimeBearer(ChimeBearerT&& value) {
+    m_chimeBearerHasBeenSet = true;
+    m_chimeBearer = std::forward<ChimeBearerT>(value);
+  }
+  template <typename ChimeBearerT = Aws::String>
+  DescribeChannelMembershipRequest& WithChimeBearer(ChimeBearerT&& value) {
+    SetChimeBearer(std::forward<ChimeBearerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the SubChannel in the request. The response contains an
+   * <code>ElasticChannelConfiguration</code> object.</p>  <p>Only required to
+   * get a user’s SubChannel membership details.</p>
+   */
+  inline const Aws::String& GetSubChannelId() const { return m_subChannelId; }
+  inline bool SubChannelIdHasBeenSet() const { return m_subChannelIdHasBeenSet; }
+  template <typename SubChannelIdT = Aws::String>
+  void SetSubChannelId(SubChannelIdT&& value) {
+    m_subChannelIdHasBeenSet = true;
+    m_subChannelId = std::forward<SubChannelIdT>(value);
+  }
+  template <typename SubChannelIdT = Aws::String>
+  DescribeChannelMembershipRequest& WithSubChannelId(SubChannelIdT&& value) {
+    SetSubChannelId(std::forward<SubChannelIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_channelArn;
+
+  Aws::String m_memberArn;
+
+  Aws::String m_chimeBearer;
+
+  Aws::String m_subChannelId;
+  bool m_channelArnHasBeenSet = false;
+  bool m_memberArnHasBeenSet = false;
+  bool m_chimeBearerHasBeenSet = false;
+  bool m_subChannelIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ChimeSDKMessaging
+}  // namespace Aws

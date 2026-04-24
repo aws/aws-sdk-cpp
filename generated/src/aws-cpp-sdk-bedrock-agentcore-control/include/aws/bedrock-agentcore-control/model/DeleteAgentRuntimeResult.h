@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/AgentRuntimeStatus.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgentCoreControl {
+namespace Model {
+class DeleteAgentRuntimeResult {
+ public:
+  AWS_BEDROCKAGENTCORECONTROL_API DeleteAgentRuntimeResult() = default;
+  AWS_BEDROCKAGENTCORECONTROL_API DeleteAgentRuntimeResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BEDROCKAGENTCORECONTROL_API DeleteAgentRuntimeResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The current status of the AgentCore Runtime deletion.</p>
+   */
+  inline AgentRuntimeStatus GetStatus() const { return m_status; }
+  inline void SetStatus(AgentRuntimeStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline DeleteAgentRuntimeResult& WithStatus(AgentRuntimeStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the AgentCore Runtime.</p>
+   */
+  inline const Aws::String& GetAgentRuntimeId() const { return m_agentRuntimeId; }
+  template <typename AgentRuntimeIdT = Aws::String>
+  void SetAgentRuntimeId(AgentRuntimeIdT&& value) {
+    m_agentRuntimeIdHasBeenSet = true;
+    m_agentRuntimeId = std::forward<AgentRuntimeIdT>(value);
+  }
+  template <typename AgentRuntimeIdT = Aws::String>
+  DeleteAgentRuntimeResult& WithAgentRuntimeId(AgentRuntimeIdT&& value) {
+    SetAgentRuntimeId(std::forward<AgentRuntimeIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteAgentRuntimeResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  AgentRuntimeStatus m_status{AgentRuntimeStatus::NOT_SET};
+
+  Aws::String m_agentRuntimeId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_statusHasBeenSet = false;
+  bool m_agentRuntimeIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

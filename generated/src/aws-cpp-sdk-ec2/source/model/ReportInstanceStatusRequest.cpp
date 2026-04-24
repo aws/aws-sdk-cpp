@@ -1,0 +1,53 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/ec2/model/ReportInstanceStatusRequest.h>
+
+using namespace Aws::EC2::Model;
+using namespace Aws::Utils;
+
+Aws::String ReportInstanceStatusRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=ReportInstanceStatus&";
+  if (m_dryRunHasBeenSet) {
+    ss << "DryRun=" << std::boolalpha << m_dryRun << "&";
+  }
+
+  if (m_instancesHasBeenSet) {
+    unsigned instancesCount = 1;
+    for (auto& item : m_instances) {
+      ss << "InstanceId." << instancesCount << "=" << StringUtils::URLEncode(item.c_str()) << "&";
+      instancesCount++;
+    }
+  }
+
+  if (m_statusHasBeenSet) {
+    ss << "Status=" << StringUtils::URLEncode(ReportStatusTypeMapper::GetNameForReportStatusType(m_status)) << "&";
+  }
+
+  if (m_startTimeHasBeenSet) {
+    ss << "StartTime=" << StringUtils::URLEncode(m_startTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if (m_endTimeHasBeenSet) {
+    ss << "EndTime=" << StringUtils::URLEncode(m_endTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if (m_reasonCodesHasBeenSet) {
+    unsigned reasonCodesCount = 1;
+    for (auto& item : m_reasonCodes) {
+      ss << "ReasonCode." << reasonCodesCount << "="
+         << StringUtils::URLEncode(ReportInstanceReasonCodesMapper::GetNameForReportInstanceReasonCodes(item)) << "&";
+      reasonCodesCount++;
+    }
+  }
+
+  ss << "Version=2016-11-15";
+  return ss.str();
+}
+
+void ReportInstanceStatusRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

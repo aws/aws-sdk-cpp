@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mgn/model/ArchiveWaveRequest.h>
+
+#include <utility>
+
+using namespace Aws::mgn::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String ArchiveWaveRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_waveIDHasBeenSet) {
+    payload.WithString("waveID", m_waveID);
+  }
+
+  if (m_accountIDHasBeenSet) {
+    payload.WithString("accountID", m_accountID);
+  }
+
+  return payload.View().WriteReadable();
+}

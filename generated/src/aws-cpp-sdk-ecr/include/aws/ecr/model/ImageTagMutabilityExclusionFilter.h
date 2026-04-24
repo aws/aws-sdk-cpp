@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecr/ECR_EXPORTS.h>
+#include <aws/ecr/model/ImageTagMutabilityExclusionFilterType.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ECR {
+namespace Model {
+
+/**
+ * <p>A filter that specifies which image tags should be excluded from the
+ * repository's image tag mutability setting.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecr-2015-09-21/ImageTagMutabilityExclusionFilter">AWS
+ * API Reference</a></p>
+ */
+class ImageTagMutabilityExclusionFilter {
+ public:
+  AWS_ECR_API ImageTagMutabilityExclusionFilter() = default;
+  AWS_ECR_API ImageTagMutabilityExclusionFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API ImageTagMutabilityExclusionFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECR_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The type of filter to apply for excluding image tags from mutability
+   * settings.</p>
+   */
+  inline ImageTagMutabilityExclusionFilterType GetFilterType() const { return m_filterType; }
+  inline bool FilterTypeHasBeenSet() const { return m_filterTypeHasBeenSet; }
+  inline void SetFilterType(ImageTagMutabilityExclusionFilterType value) {
+    m_filterTypeHasBeenSet = true;
+    m_filterType = value;
+  }
+  inline ImageTagMutabilityExclusionFilter& WithFilterType(ImageTagMutabilityExclusionFilterType value) {
+    SetFilterType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The filter value used to match image tags for exclusion from mutability
+   * settings.</p>
+   */
+  inline const Aws::String& GetFilter() const { return m_filter; }
+  inline bool FilterHasBeenSet() const { return m_filterHasBeenSet; }
+  template <typename FilterT = Aws::String>
+  void SetFilter(FilterT&& value) {
+    m_filterHasBeenSet = true;
+    m_filter = std::forward<FilterT>(value);
+  }
+  template <typename FilterT = Aws::String>
+  ImageTagMutabilityExclusionFilter& WithFilter(FilterT&& value) {
+    SetFilter(std::forward<FilterT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ImageTagMutabilityExclusionFilterType m_filterType{ImageTagMutabilityExclusionFilterType::NOT_SET};
+
+  Aws::String m_filter;
+  bool m_filterTypeHasBeenSet = false;
+  bool m_filterHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ECR
+}  // namespace Aws

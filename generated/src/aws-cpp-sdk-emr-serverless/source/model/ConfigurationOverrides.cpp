@@ -1,0 +1,66 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/emr-serverless/model/ConfigurationOverrides.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace EMRServerless {
+namespace Model {
+
+ConfigurationOverrides::ConfigurationOverrides(JsonView jsonValue) { *this = jsonValue; }
+
+ConfigurationOverrides& ConfigurationOverrides::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("applicationConfiguration")) {
+    Aws::Utils::Array<JsonView> applicationConfigurationJsonList = jsonValue.GetArray("applicationConfiguration");
+    for (unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength();
+         ++applicationConfigurationIndex) {
+      m_applicationConfiguration.push_back(applicationConfigurationJsonList[applicationConfigurationIndex].AsObject());
+    }
+    m_applicationConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("monitoringConfiguration")) {
+    m_monitoringConfiguration = jsonValue.GetObject("monitoringConfiguration");
+    m_monitoringConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("diskEncryptionConfiguration")) {
+    m_diskEncryptionConfiguration = jsonValue.GetObject("diskEncryptionConfiguration");
+    m_diskEncryptionConfigurationHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ConfigurationOverrides::Jsonize() const {
+  JsonValue payload;
+
+  if (m_applicationConfigurationHasBeenSet) {
+    Aws::Utils::Array<JsonValue> applicationConfigurationJsonList(m_applicationConfiguration.size());
+    for (unsigned applicationConfigurationIndex = 0; applicationConfigurationIndex < applicationConfigurationJsonList.GetLength();
+         ++applicationConfigurationIndex) {
+      applicationConfigurationJsonList[applicationConfigurationIndex].AsObject(
+          m_applicationConfiguration[applicationConfigurationIndex].Jsonize());
+    }
+    payload.WithArray("applicationConfiguration", std::move(applicationConfigurationJsonList));
+  }
+
+  if (m_monitoringConfigurationHasBeenSet) {
+    payload.WithObject("monitoringConfiguration", m_monitoringConfiguration.Jsonize());
+  }
+
+  if (m_diskEncryptionConfigurationHasBeenSet) {
+    payload.WithObject("diskEncryptionConfiguration", m_diskEncryptionConfiguration.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace EMRServerless
+}  // namespace Aws

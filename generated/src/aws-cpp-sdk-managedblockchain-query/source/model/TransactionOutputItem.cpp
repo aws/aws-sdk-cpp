@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/managedblockchain-query/model/TransactionOutputItem.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ManagedBlockchainQuery {
+namespace Model {
+
+TransactionOutputItem::TransactionOutputItem(JsonView jsonValue) { *this = jsonValue; }
+
+TransactionOutputItem& TransactionOutputItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("transactionHash")) {
+    m_transactionHash = jsonValue.GetString("transactionHash");
+    m_transactionHashHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("transactionId")) {
+    m_transactionId = jsonValue.GetString("transactionId");
+    m_transactionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("network")) {
+    m_network = QueryNetworkMapper::GetQueryNetworkForName(jsonValue.GetString("network"));
+    m_networkHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("transactionTimestamp")) {
+    m_transactionTimestamp = jsonValue.GetDouble("transactionTimestamp");
+    m_transactionTimestampHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("confirmationStatus")) {
+    m_confirmationStatus = ConfirmationStatusMapper::GetConfirmationStatusForName(jsonValue.GetString("confirmationStatus"));
+    m_confirmationStatusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue TransactionOutputItem::Jsonize() const {
+  JsonValue payload;
+
+  if (m_transactionHashHasBeenSet) {
+    payload.WithString("transactionHash", m_transactionHash);
+  }
+
+  if (m_transactionIdHasBeenSet) {
+    payload.WithString("transactionId", m_transactionId);
+  }
+
+  if (m_networkHasBeenSet) {
+    payload.WithString("network", QueryNetworkMapper::GetNameForQueryNetwork(m_network));
+  }
+
+  if (m_transactionTimestampHasBeenSet) {
+    payload.WithDouble("transactionTimestamp", m_transactionTimestamp.SecondsWithMSPrecision());
+  }
+
+  if (m_confirmationStatusHasBeenSet) {
+    payload.WithString("confirmationStatus", ConfirmationStatusMapper::GetNameForConfirmationStatus(m_confirmationStatus));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ManagedBlockchainQuery
+}  // namespace Aws

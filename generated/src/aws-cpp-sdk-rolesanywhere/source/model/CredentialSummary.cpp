@@ -1,0 +1,80 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rolesanywhere/model/CredentialSummary.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace RolesAnywhere {
+namespace Model {
+
+CredentialSummary::CredentialSummary(JsonView jsonValue) { *this = jsonValue; }
+
+CredentialSummary& CredentialSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("seenAt")) {
+    m_seenAt = jsonValue.GetString("seenAt");
+    m_seenAtHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("serialNumber")) {
+    m_serialNumber = jsonValue.GetString("serialNumber");
+    m_serialNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("issuer")) {
+    m_issuer = jsonValue.GetString("issuer");
+    m_issuerHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("enabled")) {
+    m_enabled = jsonValue.GetBool("enabled");
+    m_enabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("x509CertificateData")) {
+    m_x509CertificateData = jsonValue.GetString("x509CertificateData");
+    m_x509CertificateDataHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failed")) {
+    m_failed = jsonValue.GetBool("failed");
+    m_failedHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CredentialSummary::Jsonize() const {
+  JsonValue payload;
+
+  if (m_seenAtHasBeenSet) {
+    payload.WithString("seenAt", m_seenAt.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_serialNumberHasBeenSet) {
+    payload.WithString("serialNumber", m_serialNumber);
+  }
+
+  if (m_issuerHasBeenSet) {
+    payload.WithString("issuer", m_issuer);
+  }
+
+  if (m_enabledHasBeenSet) {
+    payload.WithBool("enabled", m_enabled);
+  }
+
+  if (m_x509CertificateDataHasBeenSet) {
+    payload.WithString("x509CertificateData", m_x509CertificateData);
+  }
+
+  if (m_failedHasBeenSet) {
+    payload.WithBool("failed", m_failed);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace RolesAnywhere
+}  // namespace Aws

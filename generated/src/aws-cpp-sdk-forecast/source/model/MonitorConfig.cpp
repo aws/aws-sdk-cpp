@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/forecast/model/MonitorConfig.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ForecastService {
+namespace Model {
+
+MonitorConfig::MonitorConfig(JsonView jsonValue) { *this = jsonValue; }
+
+MonitorConfig& MonitorConfig::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MonitorName")) {
+    m_monitorName = jsonValue.GetString("MonitorName");
+    m_monitorNameHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue MonitorConfig::Jsonize() const {
+  JsonValue payload;
+
+  if (m_monitorNameHasBeenSet) {
+    payload.WithString("MonitorName", m_monitorName);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace ForecastService
+}  // namespace Aws

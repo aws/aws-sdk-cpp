@@ -1,0 +1,258 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2Request.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/Filter.h>
+#include <aws/ec2/model/IpamResourceType.h>
+#include <aws/ec2/model/RequestIpamResourceTag.h>
+
+#include <utility>
+
+namespace Aws {
+namespace EC2 {
+namespace Model {
+
+/**
+ */
+class GetIpamResourceCidrsRequest : public EC2Request {
+ public:
+  AWS_EC2_API GetIpamResourceCidrsRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetIpamResourceCidrs"; }
+
+  AWS_EC2_API Aws::String SerializePayload() const override;
+
+ protected:
+  AWS_EC2_API void DumpBodyToUrl(Aws::Http::URI& uri) const override;
+
+ public:
+  ///@{
+  /**
+   * <p>A check for whether you have the required permissions for the action without
+   * actually making the request and provides an error response. If you have the
+   * required permissions, the error response is <code>DryRunOperation</code>.
+   * Otherwise, it is <code>UnauthorizedOperation</code>.</p>
+   */
+  inline bool GetDryRun() const { return m_dryRun; }
+  inline bool DryRunHasBeenSet() const { return m_dryRunHasBeenSet; }
+  inline void SetDryRun(bool value) {
+    m_dryRunHasBeenSet = true;
+    m_dryRun = value;
+  }
+  inline GetIpamResourceCidrsRequest& WithDryRun(bool value) {
+    SetDryRun(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>One or more filters for the request. For more information about filtering,
+   * see <a
+   * href="https://docs.aws.amazon.com/cli/latest/userguide/cli-usage-filter.html">Filtering
+   * CLI output</a>.</p>
+   */
+  inline const Aws::Vector<Filter>& GetFilters() const { return m_filters; }
+  inline bool FiltersHasBeenSet() const { return m_filtersHasBeenSet; }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  void SetFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters = std::forward<FiltersT>(value);
+  }
+  template <typename FiltersT = Aws::Vector<Filter>>
+  GetIpamResourceCidrsRequest& WithFilters(FiltersT&& value) {
+    SetFilters(std::forward<FiltersT>(value));
+    return *this;
+  }
+  template <typename FiltersT = Filter>
+  GetIpamResourceCidrsRequest& AddFilters(FiltersT&& value) {
+    m_filtersHasBeenSet = true;
+    m_filters.emplace_back(std::forward<FiltersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of results to return in the request.</p>
+   */
+  inline int GetMaxResults() const { return m_maxResults; }
+  inline bool MaxResultsHasBeenSet() const { return m_maxResultsHasBeenSet; }
+  inline void SetMaxResults(int value) {
+    m_maxResultsHasBeenSet = true;
+    m_maxResults = value;
+  }
+  inline GetIpamResourceCidrsRequest& WithMaxResults(int value) {
+    SetMaxResults(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next page of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetIpamResourceCidrsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the scope that the resource is in.</p>
+   */
+  inline const Aws::String& GetIpamScopeId() const { return m_ipamScopeId; }
+  inline bool IpamScopeIdHasBeenSet() const { return m_ipamScopeIdHasBeenSet; }
+  template <typename IpamScopeIdT = Aws::String>
+  void SetIpamScopeId(IpamScopeIdT&& value) {
+    m_ipamScopeIdHasBeenSet = true;
+    m_ipamScopeId = std::forward<IpamScopeIdT>(value);
+  }
+  template <typename IpamScopeIdT = Aws::String>
+  GetIpamResourceCidrsRequest& WithIpamScopeId(IpamScopeIdT&& value) {
+    SetIpamScopeId(std::forward<IpamScopeIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the IPAM pool that the resource is in.</p>
+   */
+  inline const Aws::String& GetIpamPoolId() const { return m_ipamPoolId; }
+  inline bool IpamPoolIdHasBeenSet() const { return m_ipamPoolIdHasBeenSet; }
+  template <typename IpamPoolIdT = Aws::String>
+  void SetIpamPoolId(IpamPoolIdT&& value) {
+    m_ipamPoolIdHasBeenSet = true;
+    m_ipamPoolId = std::forward<IpamPoolIdT>(value);
+  }
+  template <typename IpamPoolIdT = Aws::String>
+  GetIpamResourceCidrsRequest& WithIpamPoolId(IpamPoolIdT&& value) {
+    SetIpamPoolId(std::forward<IpamPoolIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the resource.</p>
+   */
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  inline bool ResourceIdHasBeenSet() const { return m_resourceIdHasBeenSet; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  GetIpamResourceCidrsRequest& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource type.</p>
+   */
+  inline IpamResourceType GetResourceType() const { return m_resourceType; }
+  inline bool ResourceTypeHasBeenSet() const { return m_resourceTypeHasBeenSet; }
+  inline void SetResourceType(IpamResourceType value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = value;
+  }
+  inline GetIpamResourceCidrsRequest& WithResourceType(IpamResourceType value) {
+    SetResourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource tag.</p>
+   */
+  inline const RequestIpamResourceTag& GetResourceTag() const { return m_resourceTag; }
+  inline bool ResourceTagHasBeenSet() const { return m_resourceTagHasBeenSet; }
+  template <typename ResourceTagT = RequestIpamResourceTag>
+  void SetResourceTag(ResourceTagT&& value) {
+    m_resourceTagHasBeenSet = true;
+    m_resourceTag = std::forward<ResourceTagT>(value);
+  }
+  template <typename ResourceTagT = RequestIpamResourceTag>
+  GetIpamResourceCidrsRequest& WithResourceTag(ResourceTagT&& value) {
+    SetResourceTag(std::forward<ResourceTagT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the Amazon Web Services account that owns the resource.</p>
+   */
+  inline const Aws::String& GetResourceOwner() const { return m_resourceOwner; }
+  inline bool ResourceOwnerHasBeenSet() const { return m_resourceOwnerHasBeenSet; }
+  template <typename ResourceOwnerT = Aws::String>
+  void SetResourceOwner(ResourceOwnerT&& value) {
+    m_resourceOwnerHasBeenSet = true;
+    m_resourceOwner = std::forward<ResourceOwnerT>(value);
+  }
+  template <typename ResourceOwnerT = Aws::String>
+  GetIpamResourceCidrsRequest& WithResourceOwner(ResourceOwnerT&& value) {
+    SetResourceOwner(std::forward<ResourceOwnerT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_dryRun{false};
+
+  Aws::Vector<Filter> m_filters;
+
+  int m_maxResults{0};
+
+  Aws::String m_nextToken;
+
+  Aws::String m_ipamScopeId;
+
+  Aws::String m_ipamPoolId;
+
+  Aws::String m_resourceId;
+
+  IpamResourceType m_resourceType{IpamResourceType::NOT_SET};
+
+  RequestIpamResourceTag m_resourceTag;
+
+  Aws::String m_resourceOwner;
+  bool m_dryRunHasBeenSet = false;
+  bool m_filtersHasBeenSet = false;
+  bool m_maxResultsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_ipamScopeIdHasBeenSet = false;
+  bool m_ipamPoolIdHasBeenSet = false;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_resourceTagHasBeenSet = false;
+  bool m_resourceOwnerHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

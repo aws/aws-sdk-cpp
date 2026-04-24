@@ -1,0 +1,176 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/devicefarm/model/RemoteAccessSession.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DeviceFarm {
+namespace Model {
+
+RemoteAccessSession::RemoteAccessSession(JsonView jsonValue) { *this = jsonValue; }
+
+RemoteAccessSession& RemoteAccessSession::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("arn")) {
+    m_arn = jsonValue.GetString("arn");
+    m_arnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("created")) {
+    m_created = jsonValue.GetDouble("created");
+    m_createdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("status")) {
+    m_status = ExecutionStatusMapper::GetExecutionStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("result")) {
+    m_result = ExecutionResultMapper::GetExecutionResultForName(jsonValue.GetString("result"));
+    m_resultHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("message")) {
+    m_message = jsonValue.GetString("message");
+    m_messageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("started")) {
+    m_started = jsonValue.GetDouble("started");
+    m_startedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("stopped")) {
+    m_stopped = jsonValue.GetDouble("stopped");
+    m_stoppedHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("device")) {
+    m_device = jsonValue.GetObject("device");
+    m_deviceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("instanceArn")) {
+    m_instanceArn = jsonValue.GetString("instanceArn");
+    m_instanceArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("billingMethod")) {
+    m_billingMethod = BillingMethodMapper::GetBillingMethodForName(jsonValue.GetString("billingMethod"));
+    m_billingMethodHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deviceMinutes")) {
+    m_deviceMinutes = jsonValue.GetObject("deviceMinutes");
+    m_deviceMinutesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deviceUdid")) {
+    m_deviceUdid = jsonValue.GetString("deviceUdid");
+    m_deviceUdidHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("skipAppResign")) {
+    m_skipAppResign = jsonValue.GetBool("skipAppResign");
+    m_skipAppResignHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("vpcConfig")) {
+    m_vpcConfig = jsonValue.GetObject("vpcConfig");
+    m_vpcConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("deviceProxy")) {
+    m_deviceProxy = jsonValue.GetObject("deviceProxy");
+    m_deviceProxyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("appUpload")) {
+    m_appUpload = jsonValue.GetString("appUpload");
+    m_appUploadHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("endpoints")) {
+    m_endpoints = jsonValue.GetObject("endpoints");
+    m_endpointsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue RemoteAccessSession::Jsonize() const {
+  JsonValue payload;
+
+  if (m_arnHasBeenSet) {
+    payload.WithString("arn", m_arn);
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_createdHasBeenSet) {
+    payload.WithDouble("created", m_created.SecondsWithMSPrecision());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ExecutionStatusMapper::GetNameForExecutionStatus(m_status));
+  }
+
+  if (m_resultHasBeenSet) {
+    payload.WithString("result", ExecutionResultMapper::GetNameForExecutionResult(m_result));
+  }
+
+  if (m_messageHasBeenSet) {
+    payload.WithString("message", m_message);
+  }
+
+  if (m_startedHasBeenSet) {
+    payload.WithDouble("started", m_started.SecondsWithMSPrecision());
+  }
+
+  if (m_stoppedHasBeenSet) {
+    payload.WithDouble("stopped", m_stopped.SecondsWithMSPrecision());
+  }
+
+  if (m_deviceHasBeenSet) {
+    payload.WithObject("device", m_device.Jsonize());
+  }
+
+  if (m_instanceArnHasBeenSet) {
+    payload.WithString("instanceArn", m_instanceArn);
+  }
+
+  if (m_billingMethodHasBeenSet) {
+    payload.WithString("billingMethod", BillingMethodMapper::GetNameForBillingMethod(m_billingMethod));
+  }
+
+  if (m_deviceMinutesHasBeenSet) {
+    payload.WithObject("deviceMinutes", m_deviceMinutes.Jsonize());
+  }
+
+  if (m_deviceUdidHasBeenSet) {
+    payload.WithString("deviceUdid", m_deviceUdid);
+  }
+
+  if (m_skipAppResignHasBeenSet) {
+    payload.WithBool("skipAppResign", m_skipAppResign);
+  }
+
+  if (m_vpcConfigHasBeenSet) {
+    payload.WithObject("vpcConfig", m_vpcConfig.Jsonize());
+  }
+
+  if (m_deviceProxyHasBeenSet) {
+    payload.WithObject("deviceProxy", m_deviceProxy.Jsonize());
+  }
+
+  if (m_appUploadHasBeenSet) {
+    payload.WithString("appUpload", m_appUpload);
+  }
+
+  if (m_endpointsHasBeenSet) {
+    payload.WithObject("endpoints", m_endpoints.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DeviceFarm
+}  // namespace Aws

@@ -1,0 +1,32 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/cost-optimization-hub/CostOptimizationHub_EXPORTS.h>
+
+namespace Aws {
+namespace CostOptimizationHub {
+namespace Model {
+enum class ActionType {
+  NOT_SET,
+  Rightsize,
+  Stop,
+  Upgrade,
+  PurchaseSavingsPlans,
+  PurchaseReservedInstances,
+  MigrateToGraviton,
+  Delete,
+  ScaleIn
+};
+
+namespace ActionTypeMapper {
+AWS_COSTOPTIMIZATIONHUB_API ActionType GetActionTypeForName(const Aws::String& name);
+
+AWS_COSTOPTIMIZATIONHUB_API Aws::String GetNameForActionType(ActionType value);
+}  // namespace ActionTypeMapper
+}  // namespace Model
+}  // namespace CostOptimizationHub
+}  // namespace Aws

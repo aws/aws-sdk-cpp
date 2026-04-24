@@ -1,0 +1,42 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mturk-requester/model/GetAccountBalanceResult.h>
+
+#include <utility>
+
+using namespace Aws::MTurk::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetAccountBalanceResult::GetAccountBalanceResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+GetAccountBalanceResult& GetAccountBalanceResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("AvailableBalance")) {
+    m_availableBalance = jsonValue.GetString("AvailableBalance");
+    m_availableBalanceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OnHoldBalance")) {
+    m_onHoldBalance = jsonValue.GetString("OnHoldBalance");
+    m_onHoldBalanceHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

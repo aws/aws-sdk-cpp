@@ -1,0 +1,154 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/UserProfileDetails.h>
+#include <aws/datazone/model/UserProfileStatus.h>
+#include <aws/datazone/model/UserProfileType.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
+class UpdateUserProfileResult {
+ public:
+  AWS_DATAZONE_API UpdateUserProfileResult() = default;
+  AWS_DATAZONE_API UpdateUserProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATAZONE_API UpdateUserProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier of the Amazon DataZone domain in which a user profile is
+   * updated.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  UpdateUserProfileResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the user profile.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateUserProfileResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the user profile.</p>
+   */
+  inline UserProfileType GetType() const { return m_type; }
+  inline void SetType(UserProfileType value) {
+    m_typeHasBeenSet = true;
+    m_type = value;
+  }
+  inline UpdateUserProfileResult& WithType(UserProfileType value) {
+    SetType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the user profile.</p>
+   */
+  inline UserProfileStatus GetStatus() const { return m_status; }
+  inline void SetStatus(UserProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline UpdateUserProfileResult& WithStatus(UserProfileStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The results of the UpdateUserProfile action.</p>
+   */
+  inline const UserProfileDetails& GetDetails() const { return m_details; }
+  template <typename DetailsT = UserProfileDetails>
+  void SetDetails(DetailsT&& value) {
+    m_detailsHasBeenSet = true;
+    m_details = std::forward<DetailsT>(value);
+  }
+  template <typename DetailsT = UserProfileDetails>
+  UpdateUserProfileResult& WithDetails(DetailsT&& value) {
+    SetDetails(std::forward<DetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateUserProfileResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_domainId;
+
+  Aws::String m_id;
+
+  UserProfileType m_type{UserProfileType::NOT_SET};
+
+  UserProfileStatus m_status{UserProfileStatus::NOT_SET};
+
+  UserProfileDetails m_details;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_typeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_detailsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

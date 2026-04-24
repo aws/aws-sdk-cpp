@@ -1,0 +1,95 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/identitystore/IdentityStore_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace IdentityStore {
+namespace Model {
+class CreateGroupMembershipResult {
+ public:
+  AWS_IDENTITYSTORE_API CreateGroupMembershipResult() = default;
+  AWS_IDENTITYSTORE_API CreateGroupMembershipResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IDENTITYSTORE_API CreateGroupMembershipResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier for a newly created <code>GroupMembership</code> in an
+   * identity store.</p>
+   */
+  inline const Aws::String& GetMembershipId() const { return m_membershipId; }
+  template <typename MembershipIdT = Aws::String>
+  void SetMembershipId(MembershipIdT&& value) {
+    m_membershipIdHasBeenSet = true;
+    m_membershipId = std::forward<MembershipIdT>(value);
+  }
+  template <typename MembershipIdT = Aws::String>
+  CreateGroupMembershipResult& WithMembershipId(MembershipIdT&& value) {
+    SetMembershipId(std::forward<MembershipIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The globally unique identifier for the identity store.</p>
+   */
+  inline const Aws::String& GetIdentityStoreId() const { return m_identityStoreId; }
+  template <typename IdentityStoreIdT = Aws::String>
+  void SetIdentityStoreId(IdentityStoreIdT&& value) {
+    m_identityStoreIdHasBeenSet = true;
+    m_identityStoreId = std::forward<IdentityStoreIdT>(value);
+  }
+  template <typename IdentityStoreIdT = Aws::String>
+  CreateGroupMembershipResult& WithIdentityStoreId(IdentityStoreIdT&& value) {
+    SetIdentityStoreId(std::forward<IdentityStoreIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateGroupMembershipResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_membershipId;
+
+  Aws::String m_identityStoreId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_membershipIdHasBeenSet = false;
+  bool m_identityStoreIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace IdentityStore
+}  // namespace Aws

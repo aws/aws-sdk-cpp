@@ -1,0 +1,205 @@
+#set($exportMacro = $typeInfo.exportValue)
+#foreach($member in $shape.members.entrySet())
+#set($moveType = '')
+#set($moveValueType = '')
+#set($keyMoveType = '')
+#set($keyValueType = '')
+#set($inline = "inline ")
+#if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
+#set($memberDocumentation = '')
+#if($member.value.documentation)
+#set($memberDocumentation ="/**${nl}     * ${member.value.documentation}${nl}     */")
+#end
+
+#if($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.result)
+#set($cppType = "Aws::Utils::Stream::ResponseStream")
+#set($isStream = true)
+#elseif($member.value.shape.isException() && !$member.value.shape.isModeledException())
+#set($cppType = "${metadata.classNamePrefix}Error")
+#set($isStream = false)
+#else
+#set($cppType = $CppViewHelper.computeResultCppType($member.value.shape, $protocol))
+#set($isStream = false)
+#end
+#set($subShape = $member.value.shape)
+#if ($shape.request && $member.value.shape.isEventStream())
+    #set($isEventStreamInput = true)
+#else
+    #set($isEventStreamInput = false)
+#end
+#if(!$subShape.primitive && !$subShape.enum)
+#set($rawCppType = ${cppType})
+#set($cppType = "const ${rawCppType}&")
+#set($moveType = "${rawCppType}&&")
+#end
+#if($subShape.document)
+#set($returnType = "Aws::Utils::DocumentView")
+#else
+#set($returnType = ${cppType})
+#end
+#set ($setHasBeenSet = "${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true; ")
+#set($memberVariableName = $CppViewHelper.computeMemberVariableName($member.key))
+#set($memberKeyWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($member.key))
+#set($hasBeenSetBody = " { return ${CppViewHelper.computeVariableHasBeenSetName($member.key)}; }")
+#set($witherWithCopy = " { Set${memberKeyWithFirstLetterCapitalized}(value); return *this;}")
+#set($witherWithMove = " { Set${memberKeyWithFirstLetterCapitalized}(std::forward<${memberKeyWithFirstLetterCapitalized}T>(value)); return *this;}")
+#set($adderWithCopy = " { ${setHasBeenSet}${memberVariableName}.push_back(value); return *this; }")
+#set($adderWithMove = " { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${memberKeyWithFirstLetterCapitalized}T>(value)); return *this; }")
+#if($member.value.shape.getName() == $shape.getName() && $member.value.shape.list)
+#set($getterBody = "{ return ${memberVariableName}[0]; }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName}.resize(1); ${memberVariableName}[0] = value; }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName}.resize(1); ${memberVariableName}[0] = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); }")
+#elseif($member.value.shape.isMutuallyReferencedWith($shape) || $member.value.shape.getName() == $shape.getName())
+#set($getterBody = "{$nl      return *${memberVariableName};$nl    }")
+#set($setterWithCopy = ";")
+#set($setterWithMove = " {$nl      ${setHasBeenSet}$nl      ${memberVariableName} = Aws::MakeShared<$CppViewHelper.computeResultCppType($member.value.shape, $protocol)>(" + '"' + "${typeInfo.className}" + '"' + ", std::forward<${memberKeyWithFirstLetterCapitalized}T>(value));$nl    }")
+#elseif($member.value.isChecksumMember())
+#set($getterBody = " { return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName} = value; SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName} = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }")
+#else
+#set($getterBody = " { return ${memberVariableName}; }")
+#set($setterWithCopy = " { ${setHasBeenSet}${memberVariableName} = value; }")
+#set($setterWithMove = " { ${setHasBeenSet}${memberVariableName} = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); }")
+#end
+#set($getterFunctionName = "Get${memberKeyWithFirstLetterCapitalized}")
+#if($getterFunctionName == ${member.value.shape.name})
+#set($getterFunctionName = "Get${getterFunctionName}")
+#end
+#if($shape.request)
+#set($getterFunctionName = $CppViewHelper.checkForCollision($getterFunctionName, "GetMember", $memberKeyWithFirstLetterCapitalized))
+#end
+    ///@{
+    $memberDocumentation
+#if($isStream)
+    ${inline}Aws::IOStream& ${getterFunctionName}() const { return ${memberVariableName}.GetUnderlyingStream(); }
+    ${inline}void ReplaceBody(Aws::IOStream* body) { ${memberVariableName} = Aws::Utils::Stream::ResponseStream(body); }
+
+#elseif ($isEventStreamInput)
+    ${exportMacro} std::shared_ptr<${member.value.shape.name}> ${getterFunctionName}() const ${getterBody}
+    ${exportMacro} void Set${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${setterWithCopy}
+    ${exportMacro} ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(const std::shared_ptr<${member.value.shape.name}>& value)${witherWithCopy}
+
+#else
+#set($override = "")
+#if($memberKeyWithFirstLetterCapitalized == "ContentType" && $shape.hasStreamMembers() && $shape.request)
+#set($override = " override ")
+#end
+    ${inline}${returnType} ${getterFunctionName}() const$override${getterBody}
+#end
+#if(!$isStream && !$isEventStreamInput)
+#if(!$member.value.required && $useRequiredField)
+    ${inline}bool ${memberKeyWithFirstLetterCapitalized}HasBeenSet() const${hasBeenSetBody}
+#end
+#if(!$subShape.primitive && !$subShape.enum)
+    template<typename ${memberKeyWithFirstLetterCapitalized}T = $rawCppType>
+    void Set${memberKeyWithFirstLetterCapitalized}(${memberKeyWithFirstLetterCapitalized}T&& value)${setterWithMove}
+#else
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(${cppType} value)${setterWithCopy}
+#end
+#if($member.value.shape.string && $member.value.isChecksumMember())
+    ${inline}void Set${memberKeyWithFirstLetterCapitalized}(const char* value) { ${setHasBeenSet}${memberVariableName}.assign(value); SetChecksumAlgorithm(ChecksumAlgorithm::${member.value.getChecksumEnumMember()}); }
+#end
+#if(!$subShape.primitive && !$subShape.enum)
+    template<typename ${memberKeyWithFirstLetterCapitalized}T = $rawCppType>
+    ${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${memberKeyWithFirstLetterCapitalized}T&& value)${witherWithMove}
+#else
+    ${inline}${classNameRef} With${memberKeyWithFirstLetterCapitalized}(${cppType} value)${witherWithCopy}
+#end
+#end
+#if($member.value.shape.map)
+#set($mapMember = $member.value.shape)
+#set($keyType = $CppViewHelper.computeResultCppType($mapMember.mapKey.shape, $protocol))
+#set($valueType = $CppViewHelper.computeResultCppType($mapMember.mapValue.shape, $protocol))
+#if($mapMember.sparse)
+#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
+#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
+#set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
+    template<typename ${keyTemplType} = $keyType, typename ${valueTemplType} = $optionalValueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyTemplType}&& key, ${valueTemplType}&& value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(std::forward<${keyTemplType}>(key), std::forward<${valueTemplType}>(value)); return *this;
+    }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
+#end
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${optionalValueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
+#else
+#if(!$mapMember.mapKey.shape.primitive && !$mapMember.mapKey.shape.enum && !$mapMember.mapValue.shape.primitive && !$mapMember.mapValue.shape.enum)
+#set($keyTemplType = "${memberKeyWithFirstLetterCapitalized}KeyT")
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}ValueT")
+    template<typename ${keyTemplType} = $keyType, typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyTemplType}&& key, ${valueTemplType}&& value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(std::forward<${keyTemplType}>(key), std::forward<${valueTemplType}>(value)); return *this;
+    }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${keyType} key, ${valueType} value) {
+      ${setHasBeenSet}${memberVariableName}.emplace(key, value); return *this;
+    }
+#end
+#end
+#end
+#if($member.value.shape.list)
+#set($listMember = $member.value.shape)
+#set($valueType = $CppViewHelper.computeResultCppType($listMember.listMember.shape, $protocol))
+#if($listMember.sparse)
+#set($optionalValueType = "Aws::Crt::Optional<${valueType}>")
+#if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
+    template<typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
+#end
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${optionalValueType} value)$adderWithCopy
+#else
+#if(!$listMember.listMember.shape.primitive && !$listMember.listMember.shape.enum)
+#set($valueTemplType = "${memberKeyWithFirstLetterCapitalized}T")
+    template<typename ${valueTemplType} = $valueType>
+    ${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueTemplType}&& value) { ${setHasBeenSet}${memberVariableName}.emplace_back(std::forward<${valueTemplType}>(value)); return *this; }
+#else
+    ${inline}${classNameRef} Add${memberKeyWithFirstLetterCapitalized}(${valueType} value)$adderWithCopy
+#end
+#end
+#end
+    ///@}
+#end##if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
+#end##foreach($member in $shape.members.entrySet())
+#if ($shape.result)
+    inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+#end
+#if($shape.members.size() > 0 || $operation.result.shape.hasEventStreamMembers() || $shape.result)##next contains private only
+  private:
+#foreach($member in $shape.members.entrySet())
+
+#if ($shape.request && $member.value.shape.isEventStream())
+#set($isEventStreamInput = true)
+#else
+#set($isEventStreamInput = false)
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ServiceClientModelHeaderMemberDeclaration.vm")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+    ${operation.name}Handler m_handler;
+    Aws::Utils::Event::EventStreamDecoder m_decoder{Utils::Event::EventStreamDecoder(&m_handler)};
+
+#end
+#if ($shape.result)
+    Aws::Http::HttpResponseCode m_HttpResponseCode;
+#end
+#end##if($shape.members.size() > 0)
+#foreach($member in $shape.members.entrySet())
+#if(!($CppViewHelper.isStreamingPayloadMember($shape, $member.key) && $shape.request))
+#set($isStreamingMember = ($shape.payload && ($shape.payload == $entry.key && !$entry.value.shape.structure)))
+#set($isRequired = $useRequiredField && $member.value.required)
+#if(($isRequired || $member.value.idempotencyToken) && !$isStreamingMember && !$member.value.shape.isEventStream())
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = true;
+#else
+    bool ${CppViewHelper.computeVariableHasBeenSetName($member.key)} = false;
+#end
+#end
+#end##if($shape.members.size() > 0)

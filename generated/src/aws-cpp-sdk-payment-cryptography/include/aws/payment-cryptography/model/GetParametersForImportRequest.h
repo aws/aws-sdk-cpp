@@ -1,0 +1,108 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/payment-cryptography/PaymentCryptographyRequest.h>
+#include <aws/payment-cryptography/PaymentCryptography_EXPORTS.h>
+#include <aws/payment-cryptography/model/KeyAlgorithm.h>
+#include <aws/payment-cryptography/model/KeyMaterialType.h>
+
+#include <utility>
+
+namespace Aws {
+namespace PaymentCryptography {
+namespace Model {
+
+/**
+ */
+class GetParametersForImportRequest : public PaymentCryptographyRequest {
+ public:
+  AWS_PAYMENTCRYPTOGRAPHY_API GetParametersForImportRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetParametersForImport"; }
+
+  AWS_PAYMENTCRYPTOGRAPHY_API Aws::String SerializePayload() const override;
+
+  AWS_PAYMENTCRYPTOGRAPHY_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The method to use for key material import. Import token is only required for
+   * TR-34 WrappedKeyBlock (<code>TR34_KEY_BLOCK</code>) and RSA WrappedKeyCryptogram
+   * (<code>KEY_CRYPTOGRAM</code>).</p> <p>Import token is not required for TR-31,
+   * root public key cerificate or trusted public key certificate.</p>
+   */
+  inline KeyMaterialType GetKeyMaterialType() const { return m_keyMaterialType; }
+  inline bool KeyMaterialTypeHasBeenSet() const { return m_keyMaterialTypeHasBeenSet; }
+  inline void SetKeyMaterialType(KeyMaterialType value) {
+    m_keyMaterialTypeHasBeenSet = true;
+    m_keyMaterialType = value;
+  }
+  inline GetParametersForImportRequest& WithKeyMaterialType(KeyMaterialType value) {
+    SetKeyMaterialType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The wrapping key algorithm to generate a wrapping key certificate. This
+   * certificate wraps the key under import.</p> <p>At this time,
+   * <code>RSA_2048</code> is the allowed algorithm for TR-34 WrappedKeyBlock import.
+   * Additionally, <code>RSA_2048</code>, <code>RSA_3072</code>,
+   * <code>RSA_4096</code> are the allowed algorithms for RSA WrappedKeyCryptogram
+   * import.</p>
+   */
+  inline KeyAlgorithm GetWrappingKeyAlgorithm() const { return m_wrappingKeyAlgorithm; }
+  inline bool WrappingKeyAlgorithmHasBeenSet() const { return m_wrappingKeyAlgorithmHasBeenSet; }
+  inline void SetWrappingKeyAlgorithm(KeyAlgorithm value) {
+    m_wrappingKeyAlgorithmHasBeenSet = true;
+    m_wrappingKeyAlgorithm = value;
+  }
+  inline GetParametersForImportRequest& WithWrappingKeyAlgorithm(KeyAlgorithm value) {
+    SetWrappingKeyAlgorithm(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to reuse the existing import token and wrapping key
+   * certificate. If set to <code>true</code> and a valid import token exists for the
+   * same key material type and wrapping key algorithm with at least 7 days of
+   * remaining validity, the existing token and wrapping key certificate are
+   * returned. Otherwise, a new import token and wrapping key certificate are
+   * generated. The default value is <code>false</code>, which generates a new import
+   * token and wrapping key certificate on every call.</p>
+   */
+  inline bool GetReuseLastGeneratedToken() const { return m_reuseLastGeneratedToken; }
+  inline bool ReuseLastGeneratedTokenHasBeenSet() const { return m_reuseLastGeneratedTokenHasBeenSet; }
+  inline void SetReuseLastGeneratedToken(bool value) {
+    m_reuseLastGeneratedTokenHasBeenSet = true;
+    m_reuseLastGeneratedToken = value;
+  }
+  inline GetParametersForImportRequest& WithReuseLastGeneratedToken(bool value) {
+    SetReuseLastGeneratedToken(value);
+    return *this;
+  }
+  ///@}
+ private:
+  KeyMaterialType m_keyMaterialType{KeyMaterialType::NOT_SET};
+
+  KeyAlgorithm m_wrappingKeyAlgorithm{KeyAlgorithm::NOT_SET};
+
+  bool m_reuseLastGeneratedToken{false};
+  bool m_keyMaterialTypeHasBeenSet = false;
+  bool m_wrappingKeyAlgorithmHasBeenSet = false;
+  bool m_reuseLastGeneratedTokenHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace PaymentCryptography
+}  // namespace Aws

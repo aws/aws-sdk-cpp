@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/billing/model/Expression.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Billing {
+namespace Model {
+
+Expression::Expression(JsonView jsonValue) { *this = jsonValue; }
+
+Expression& Expression::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("dimensions")) {
+    m_dimensions = jsonValue.GetObject("dimensions");
+    m_dimensionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tags")) {
+    m_tags = jsonValue.GetObject("tags");
+    m_tagsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("costCategories")) {
+    m_costCategories = jsonValue.GetObject("costCategories");
+    m_costCategoriesHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("timeRange")) {
+    m_timeRange = jsonValue.GetObject("timeRange");
+    m_timeRangeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Expression::Jsonize() const {
+  JsonValue payload;
+
+  if (m_dimensionsHasBeenSet) {
+    payload.WithObject("dimensions", m_dimensions.Jsonize());
+  }
+
+  if (m_tagsHasBeenSet) {
+    payload.WithObject("tags", m_tags.Jsonize());
+  }
+
+  if (m_costCategoriesHasBeenSet) {
+    payload.WithObject("costCategories", m_costCategories.Jsonize());
+  }
+
+  if (m_timeRangeHasBeenSet) {
+    payload.WithObject("timeRange", m_timeRange.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Billing
+}  // namespace Aws

@@ -1,0 +1,8 @@
+#if($serviceModel.endpointRules)
+      typedef ${metadata.classNamePrefix}ClientConfiguration ClientConfigurationType;
+      typedef ${metadata.classNamePrefix}EndpointProvider EndpointProviderType;
+
+#else
+      typedef Aws::${clientConfigurationNamespace}::ClientConfiguration ClientConfigurationType;
+
+#end

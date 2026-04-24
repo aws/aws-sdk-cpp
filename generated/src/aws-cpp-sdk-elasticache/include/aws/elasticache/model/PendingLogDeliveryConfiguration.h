@@ -1,0 +1,123 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSStreamFwd.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
+#include <aws/elasticache/model/DestinationDetails.h>
+#include <aws/elasticache/model/DestinationType.h>
+#include <aws/elasticache/model/LogFormat.h>
+#include <aws/elasticache/model/LogType.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Xml {
+class XmlNode;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElastiCache {
+namespace Model {
+
+/**
+ * <p>The log delivery configurations being modified </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/elasticache-2015-02-02/PendingLogDeliveryConfiguration">AWS
+ * API Reference</a></p>
+ */
+class PendingLogDeliveryConfiguration {
+ public:
+  AWS_ELASTICACHE_API PendingLogDeliveryConfiguration() = default;
+  AWS_ELASTICACHE_API PendingLogDeliveryConfiguration(const Aws::Utils::Xml::XmlNode& xmlNode);
+  AWS_ELASTICACHE_API PendingLogDeliveryConfiguration& operator=(const Aws::Utils::Xml::XmlNode& xmlNode);
+
+  AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& ostream, const char* location, unsigned index, const char* locationValue) const;
+  AWS_ELASTICACHE_API void OutputToStream(Aws::OStream& oStream, const char* location) const;
+
+  ///@{
+  /**
+   * <p>Refers to <a href="https://redis.io/commands/slowlog">slow-log</a> or
+   * engine-log..</p>
+   */
+  inline LogType GetLogType() const { return m_logType; }
+  inline bool LogTypeHasBeenSet() const { return m_logTypeHasBeenSet; }
+  inline void SetLogType(LogType value) {
+    m_logTypeHasBeenSet = true;
+    m_logType = value;
+  }
+  inline PendingLogDeliveryConfiguration& WithLogType(LogType value) {
+    SetLogType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Returns the destination type, either CloudWatch Logs or Kinesis Data
+   * Firehose.</p>
+   */
+  inline DestinationType GetDestinationType() const { return m_destinationType; }
+  inline bool DestinationTypeHasBeenSet() const { return m_destinationTypeHasBeenSet; }
+  inline void SetDestinationType(DestinationType value) {
+    m_destinationTypeHasBeenSet = true;
+    m_destinationType = value;
+  }
+  inline PendingLogDeliveryConfiguration& WithDestinationType(DestinationType value) {
+    SetDestinationType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Configuration details of either a CloudWatch Logs destination or Kinesis Data
+   * Firehose destination.</p>
+   */
+  inline const DestinationDetails& GetDestinationDetails() const { return m_destinationDetails; }
+  inline bool DestinationDetailsHasBeenSet() const { return m_destinationDetailsHasBeenSet; }
+  template <typename DestinationDetailsT = DestinationDetails>
+  void SetDestinationDetails(DestinationDetailsT&& value) {
+    m_destinationDetailsHasBeenSet = true;
+    m_destinationDetails = std::forward<DestinationDetailsT>(value);
+  }
+  template <typename DestinationDetailsT = DestinationDetails>
+  PendingLogDeliveryConfiguration& WithDestinationDetails(DestinationDetailsT&& value) {
+    SetDestinationDetails(std::forward<DestinationDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Returns the log format, either JSON or TEXT</p>
+   */
+  inline LogFormat GetLogFormat() const { return m_logFormat; }
+  inline bool LogFormatHasBeenSet() const { return m_logFormatHasBeenSet; }
+  inline void SetLogFormat(LogFormat value) {
+    m_logFormatHasBeenSet = true;
+    m_logFormat = value;
+  }
+  inline PendingLogDeliveryConfiguration& WithLogFormat(LogFormat value) {
+    SetLogFormat(value);
+    return *this;
+  }
+  ///@}
+ private:
+  LogType m_logType{LogType::NOT_SET};
+
+  DestinationType m_destinationType{DestinationType::NOT_SET};
+
+  DestinationDetails m_destinationDetails;
+
+  LogFormat m_logFormat{LogFormat::NOT_SET};
+  bool m_logTypeHasBeenSet = false;
+  bool m_destinationTypeHasBeenSet = false;
+  bool m_destinationDetailsHasBeenSet = false;
+  bool m_logFormatHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

@@ -1,0 +1,33 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lightsail/model/EnableAddOnRequest.h>
+
+#include <utility>
+
+using namespace Aws::Lightsail::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String EnableAddOnRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_resourceNameHasBeenSet) {
+    payload.WithString("resourceName", m_resourceName);
+  }
+
+  if (m_addOnRequestHasBeenSet) {
+    payload.WithObject("addOnRequest", m_addOnRequest.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection EnableAddOnRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Lightsail_20161128.EnableAddOn"));
+  return headers;
+}

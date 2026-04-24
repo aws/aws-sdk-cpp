@@ -1,0 +1,98 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/migrationhubstrategy/MigrationHubStrategyRecommendations_EXPORTS.h>
+#include <aws/migrationhubstrategy/model/RecommendationSet.h>
+#include <aws/migrationhubstrategy/model/StrategyRecommendation.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MigrationHubStrategyRecommendations {
+namespace Model {
+
+/**
+ * <p> Contains information about a strategy recommendation for an application
+ * component. </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/migrationhubstrategy-2020-02-19/ApplicationComponentStrategy">AWS
+ * API Reference</a></p>
+ */
+class ApplicationComponentStrategy {
+ public:
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy() = default;
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API ApplicationComponentStrategy& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MIGRATIONHUBSTRATEGYRECOMMENDATIONS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p> Set to true if the recommendation is set as preferred. </p>
+   */
+  inline bool GetIsPreferred() const { return m_isPreferred; }
+  inline bool IsPreferredHasBeenSet() const { return m_isPreferredHasBeenSet; }
+  inline void SetIsPreferred(bool value) {
+    m_isPreferredHasBeenSet = true;
+    m_isPreferred = value;
+  }
+  inline ApplicationComponentStrategy& WithIsPreferred(bool value) {
+    SetIsPreferred(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Strategy recommendation for the application component. </p>
+   */
+  inline const RecommendationSet& GetRecommendation() const { return m_recommendation; }
+  inline bool RecommendationHasBeenSet() const { return m_recommendationHasBeenSet; }
+  template <typename RecommendationT = RecommendationSet>
+  void SetRecommendation(RecommendationT&& value) {
+    m_recommendationHasBeenSet = true;
+    m_recommendation = std::forward<RecommendationT>(value);
+  }
+  template <typename RecommendationT = RecommendationSet>
+  ApplicationComponentStrategy& WithRecommendation(RecommendationT&& value) {
+    SetRecommendation(std::forward<RecommendationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The recommendation status of a strategy for an application component. </p>
+   */
+  inline StrategyRecommendation GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(StrategyRecommendation value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ApplicationComponentStrategy& WithStatus(StrategyRecommendation value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+ private:
+  bool m_isPreferred{false};
+
+  RecommendationSet m_recommendation;
+
+  StrategyRecommendation m_status{StrategyRecommendation::NOT_SET};
+  bool m_isPreferredHasBeenSet = false;
+  bool m_recommendationHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MigrationHubStrategyRecommendations
+}  // namespace Aws

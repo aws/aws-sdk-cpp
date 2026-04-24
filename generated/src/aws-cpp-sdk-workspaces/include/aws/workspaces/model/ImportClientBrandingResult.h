@@ -1,0 +1,176 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/workspaces/WorkSpaces_EXPORTS.h>
+#include <aws/workspaces/model/DefaultClientBrandingAttributes.h>
+#include <aws/workspaces/model/IosClientBrandingAttributes.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace WorkSpaces {
+namespace Model {
+class ImportClientBrandingResult {
+ public:
+  AWS_WORKSPACES_API ImportClientBrandingResult() = default;
+  AWS_WORKSPACES_API ImportClientBrandingResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WORKSPACES_API ImportClientBrandingResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The branding information configured for Windows devices.</p>
+   */
+  inline const DefaultClientBrandingAttributes& GetDeviceTypeWindows() const { return m_deviceTypeWindows; }
+  template <typename DeviceTypeWindowsT = DefaultClientBrandingAttributes>
+  void SetDeviceTypeWindows(DeviceTypeWindowsT&& value) {
+    m_deviceTypeWindowsHasBeenSet = true;
+    m_deviceTypeWindows = std::forward<DeviceTypeWindowsT>(value);
+  }
+  template <typename DeviceTypeWindowsT = DefaultClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeWindows(DeviceTypeWindowsT&& value) {
+    SetDeviceTypeWindows(std::forward<DeviceTypeWindowsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The branding information configured for macOS devices.</p>
+   */
+  inline const DefaultClientBrandingAttributes& GetDeviceTypeOsx() const { return m_deviceTypeOsx; }
+  template <typename DeviceTypeOsxT = DefaultClientBrandingAttributes>
+  void SetDeviceTypeOsx(DeviceTypeOsxT&& value) {
+    m_deviceTypeOsxHasBeenSet = true;
+    m_deviceTypeOsx = std::forward<DeviceTypeOsxT>(value);
+  }
+  template <typename DeviceTypeOsxT = DefaultClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeOsx(DeviceTypeOsxT&& value) {
+    SetDeviceTypeOsx(std::forward<DeviceTypeOsxT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The branding information configured for Android devices.</p>
+   */
+  inline const DefaultClientBrandingAttributes& GetDeviceTypeAndroid() const { return m_deviceTypeAndroid; }
+  template <typename DeviceTypeAndroidT = DefaultClientBrandingAttributes>
+  void SetDeviceTypeAndroid(DeviceTypeAndroidT&& value) {
+    m_deviceTypeAndroidHasBeenSet = true;
+    m_deviceTypeAndroid = std::forward<DeviceTypeAndroidT>(value);
+  }
+  template <typename DeviceTypeAndroidT = DefaultClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeAndroid(DeviceTypeAndroidT&& value) {
+    SetDeviceTypeAndroid(std::forward<DeviceTypeAndroidT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The branding information configured for iOS devices.</p>
+   */
+  inline const IosClientBrandingAttributes& GetDeviceTypeIos() const { return m_deviceTypeIos; }
+  template <typename DeviceTypeIosT = IosClientBrandingAttributes>
+  void SetDeviceTypeIos(DeviceTypeIosT&& value) {
+    m_deviceTypeIosHasBeenSet = true;
+    m_deviceTypeIos = std::forward<DeviceTypeIosT>(value);
+  }
+  template <typename DeviceTypeIosT = IosClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeIos(DeviceTypeIosT&& value) {
+    SetDeviceTypeIos(std::forward<DeviceTypeIosT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The branding information configured for Linux devices.</p>
+   */
+  inline const DefaultClientBrandingAttributes& GetDeviceTypeLinux() const { return m_deviceTypeLinux; }
+  template <typename DeviceTypeLinuxT = DefaultClientBrandingAttributes>
+  void SetDeviceTypeLinux(DeviceTypeLinuxT&& value) {
+    m_deviceTypeLinuxHasBeenSet = true;
+    m_deviceTypeLinux = std::forward<DeviceTypeLinuxT>(value);
+  }
+  template <typename DeviceTypeLinuxT = DefaultClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeLinux(DeviceTypeLinuxT&& value) {
+    SetDeviceTypeLinux(std::forward<DeviceTypeLinuxT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The branding information configured for web access.</p>
+   */
+  inline const DefaultClientBrandingAttributes& GetDeviceTypeWeb() const { return m_deviceTypeWeb; }
+  template <typename DeviceTypeWebT = DefaultClientBrandingAttributes>
+  void SetDeviceTypeWeb(DeviceTypeWebT&& value) {
+    m_deviceTypeWebHasBeenSet = true;
+    m_deviceTypeWeb = std::forward<DeviceTypeWebT>(value);
+  }
+  template <typename DeviceTypeWebT = DefaultClientBrandingAttributes>
+  ImportClientBrandingResult& WithDeviceTypeWeb(DeviceTypeWebT&& value) {
+    SetDeviceTypeWeb(std::forward<DeviceTypeWebT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ImportClientBrandingResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  DefaultClientBrandingAttributes m_deviceTypeWindows;
+
+  DefaultClientBrandingAttributes m_deviceTypeOsx;
+
+  DefaultClientBrandingAttributes m_deviceTypeAndroid;
+
+  IosClientBrandingAttributes m_deviceTypeIos;
+
+  DefaultClientBrandingAttributes m_deviceTypeLinux;
+
+  DefaultClientBrandingAttributes m_deviceTypeWeb;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_deviceTypeWindowsHasBeenSet = false;
+  bool m_deviceTypeOsxHasBeenSet = false;
+  bool m_deviceTypeAndroidHasBeenSet = false;
+  bool m_deviceTypeIosHasBeenSet = false;
+  bool m_deviceTypeLinuxHasBeenSet = false;
+  bool m_deviceTypeWebHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

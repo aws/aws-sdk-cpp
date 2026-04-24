@@ -1,0 +1,57 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/partnercentral-selling/model/AwsOpportunityProject.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+
+AwsOpportunityProject::AwsOpportunityProject(JsonView jsonValue) { *this = jsonValue; }
+
+AwsOpportunityProject& AwsOpportunityProject::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExpectedCustomerSpend")) {
+    Aws::Utils::Array<JsonView> expectedCustomerSpendJsonList = jsonValue.GetArray("ExpectedCustomerSpend");
+    for (unsigned expectedCustomerSpendIndex = 0; expectedCustomerSpendIndex < expectedCustomerSpendJsonList.GetLength();
+         ++expectedCustomerSpendIndex) {
+      m_expectedCustomerSpend.push_back(expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject());
+    }
+    m_expectedCustomerSpendHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AwsPartition")) {
+    m_awsPartition = AwsPartitionMapper::GetAwsPartitionForName(jsonValue.GetString("AwsPartition"));
+    m_awsPartitionHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AwsOpportunityProject::Jsonize() const {
+  JsonValue payload;
+
+  if (m_expectedCustomerSpendHasBeenSet) {
+    Aws::Utils::Array<JsonValue> expectedCustomerSpendJsonList(m_expectedCustomerSpend.size());
+    for (unsigned expectedCustomerSpendIndex = 0; expectedCustomerSpendIndex < expectedCustomerSpendJsonList.GetLength();
+         ++expectedCustomerSpendIndex) {
+      expectedCustomerSpendJsonList[expectedCustomerSpendIndex].AsObject(m_expectedCustomerSpend[expectedCustomerSpendIndex].Jsonize());
+    }
+    payload.WithArray("ExpectedCustomerSpend", std::move(expectedCustomerSpendJsonList));
+  }
+
+  if (m_awsPartitionHasBeenSet) {
+    payload.WithString("AwsPartition", AwsPartitionMapper::GetNameForAwsPartition(m_awsPartition));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

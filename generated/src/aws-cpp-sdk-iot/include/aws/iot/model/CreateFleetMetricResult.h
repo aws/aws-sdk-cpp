@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/iot/IoT_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace IoT {
+namespace Model {
+class CreateFleetMetricResult {
+ public:
+  AWS_IOT_API CreateFleetMetricResult() = default;
+  AWS_IOT_API CreateFleetMetricResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IOT_API CreateFleetMetricResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The name of the fleet metric to create.</p>
+   */
+  inline const Aws::String& GetMetricName() const { return m_metricName; }
+  template <typename MetricNameT = Aws::String>
+  void SetMetricName(MetricNameT&& value) {
+    m_metricNameHasBeenSet = true;
+    m_metricName = std::forward<MetricNameT>(value);
+  }
+  template <typename MetricNameT = Aws::String>
+  CreateFleetMetricResult& WithMetricName(MetricNameT&& value) {
+    SetMetricName(std::forward<MetricNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the new fleet metric.</p>
+   */
+  inline const Aws::String& GetMetricArn() const { return m_metricArn; }
+  template <typename MetricArnT = Aws::String>
+  void SetMetricArn(MetricArnT&& value) {
+    m_metricArnHasBeenSet = true;
+    m_metricArn = std::forward<MetricArnT>(value);
+  }
+  template <typename MetricArnT = Aws::String>
+  CreateFleetMetricResult& WithMetricArn(MetricArnT&& value) {
+    SetMetricArn(std::forward<MetricArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateFleetMetricResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_metricName;
+
+  Aws::String m_metricArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_metricNameHasBeenSet = false;
+  bool m_metricArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

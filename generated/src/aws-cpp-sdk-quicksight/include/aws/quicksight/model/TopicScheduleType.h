@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+enum class TopicScheduleType { NOT_SET, HOURLY, DAILY, WEEKLY, MONTHLY };
+
+namespace TopicScheduleTypeMapper {
+AWS_QUICKSIGHT_API TopicScheduleType GetTopicScheduleTypeForName(const Aws::String& name);
+
+AWS_QUICKSIGHT_API Aws::String GetNameForTopicScheduleType(TopicScheduleType value);
+}  // namespace TopicScheduleTypeMapper
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

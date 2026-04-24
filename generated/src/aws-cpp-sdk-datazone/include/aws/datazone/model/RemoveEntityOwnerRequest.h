@@ -1,0 +1,141 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/UUID.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZoneRequest.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/DataZoneEntityType.h>
+#include <aws/datazone/model/OwnerProperties.h>
+
+#include <utility>
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+
+/**
+ */
+class RemoveEntityOwnerRequest : public DataZoneRequest {
+ public:
+  AWS_DATAZONE_API RemoveEntityOwnerRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "RemoveEntityOwner"; }
+
+  AWS_DATAZONE_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>The ID of the domain where you want to remove an owner from an entity.</p>
+   */
+  inline const Aws::String& GetDomainIdentifier() const { return m_domainIdentifier; }
+  inline bool DomainIdentifierHasBeenSet() const { return m_domainIdentifierHasBeenSet; }
+  template <typename DomainIdentifierT = Aws::String>
+  void SetDomainIdentifier(DomainIdentifierT&& value) {
+    m_domainIdentifierHasBeenSet = true;
+    m_domainIdentifier = std::forward<DomainIdentifierT>(value);
+  }
+  template <typename DomainIdentifierT = Aws::String>
+  RemoveEntityOwnerRequest& WithDomainIdentifier(DomainIdentifierT&& value) {
+    SetDomainIdentifier(std::forward<DomainIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the entity from which you want to remove an owner.</p>
+   */
+  inline DataZoneEntityType GetEntityType() const { return m_entityType; }
+  inline bool EntityTypeHasBeenSet() const { return m_entityTypeHasBeenSet; }
+  inline void SetEntityType(DataZoneEntityType value) {
+    m_entityTypeHasBeenSet = true;
+    m_entityType = value;
+  }
+  inline RemoveEntityOwnerRequest& WithEntityType(DataZoneEntityType value) {
+    SetEntityType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the entity from which you want to remove an owner.</p>
+   */
+  inline const Aws::String& GetEntityIdentifier() const { return m_entityIdentifier; }
+  inline bool EntityIdentifierHasBeenSet() const { return m_entityIdentifierHasBeenSet; }
+  template <typename EntityIdentifierT = Aws::String>
+  void SetEntityIdentifier(EntityIdentifierT&& value) {
+    m_entityIdentifierHasBeenSet = true;
+    m_entityIdentifier = std::forward<EntityIdentifierT>(value);
+  }
+  template <typename EntityIdentifierT = Aws::String>
+  RemoveEntityOwnerRequest& WithEntityIdentifier(EntityIdentifierT&& value) {
+    SetEntityIdentifier(std::forward<EntityIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The owner that you want to remove from an entity.</p>
+   */
+  inline const OwnerProperties& GetOwner() const { return m_owner; }
+  inline bool OwnerHasBeenSet() const { return m_ownerHasBeenSet; }
+  template <typename OwnerT = OwnerProperties>
+  void SetOwner(OwnerT&& value) {
+    m_ownerHasBeenSet = true;
+    m_owner = std::forward<OwnerT>(value);
+  }
+  template <typename OwnerT = OwnerProperties>
+  RemoveEntityOwnerRequest& WithOwner(OwnerT&& value) {
+    SetOwner(std::forward<OwnerT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A unique, case-sensitive identifier that is provided to ensure the
+   * idempotency of the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  inline bool ClientTokenHasBeenSet() const { return m_clientTokenHasBeenSet; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  RemoveEntityOwnerRequest& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_domainIdentifier;
+
+  DataZoneEntityType m_entityType{DataZoneEntityType::NOT_SET};
+
+  Aws::String m_entityIdentifier;
+
+  OwnerProperties m_owner;
+
+  Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
+  bool m_domainIdentifierHasBeenSet = false;
+  bool m_entityTypeHasBeenSet = false;
+  bool m_entityIdentifierHasBeenSet = false;
+  bool m_ownerHasBeenSet = false;
+  bool m_clientTokenHasBeenSet = true;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

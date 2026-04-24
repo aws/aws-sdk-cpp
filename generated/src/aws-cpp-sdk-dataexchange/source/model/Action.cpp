@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/dataexchange/model/Action.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DataExchange {
+namespace Model {
+
+Action::Action(JsonView jsonValue) { *this = jsonValue; }
+
+Action& Action::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ExportRevisionToS3")) {
+    m_exportRevisionToS3 = jsonValue.GetObject("ExportRevisionToS3");
+    m_exportRevisionToS3HasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue Action::Jsonize() const {
+  JsonValue payload;
+
+  if (m_exportRevisionToS3HasBeenSet) {
+    payload.WithObject("ExportRevisionToS3", m_exportRevisionToS3.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DataExchange
+}  // namespace Aws

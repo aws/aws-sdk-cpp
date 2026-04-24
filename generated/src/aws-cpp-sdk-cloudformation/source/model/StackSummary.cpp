@@ -1,0 +1,216 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/cloudformation/model/StackSummary.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace CloudFormation {
+namespace Model {
+
+StackSummary::StackSummary(const XmlNode& xmlNode) { *this = xmlNode; }
+
+StackSummary& StackSummary::operator=(const XmlNode& xmlNode) {
+  XmlNode resultNode = xmlNode;
+
+  if (!resultNode.IsNull()) {
+    XmlNode stackIdNode = resultNode.FirstChild("StackId");
+    if (!stackIdNode.IsNull()) {
+      m_stackId = Aws::Utils::Xml::DecodeEscapedXmlText(stackIdNode.GetText());
+      m_stackIdHasBeenSet = true;
+    }
+    XmlNode stackNameNode = resultNode.FirstChild("StackName");
+    if (!stackNameNode.IsNull()) {
+      m_stackName = Aws::Utils::Xml::DecodeEscapedXmlText(stackNameNode.GetText());
+      m_stackNameHasBeenSet = true;
+    }
+    XmlNode templateDescriptionNode = resultNode.FirstChild("TemplateDescription");
+    if (!templateDescriptionNode.IsNull()) {
+      m_templateDescription = Aws::Utils::Xml::DecodeEscapedXmlText(templateDescriptionNode.GetText());
+      m_templateDescriptionHasBeenSet = true;
+    }
+    XmlNode creationTimeNode = resultNode.FirstChild("CreationTime");
+    if (!creationTimeNode.IsNull()) {
+      m_creationTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(creationTimeNode.GetText()).c_str()).c_str(),
+                                Aws::Utils::DateFormat::ISO_8601);
+      m_creationTimeHasBeenSet = true;
+    }
+    XmlNode lastUpdatedTimeNode = resultNode.FirstChild("LastUpdatedTime");
+    if (!lastUpdatedTimeNode.IsNull()) {
+      m_lastUpdatedTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(lastUpdatedTimeNode.GetText()).c_str()).c_str(),
+                                   Aws::Utils::DateFormat::ISO_8601);
+      m_lastUpdatedTimeHasBeenSet = true;
+    }
+    XmlNode deletionTimeNode = resultNode.FirstChild("DeletionTime");
+    if (!deletionTimeNode.IsNull()) {
+      m_deletionTime = DateTime(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(deletionTimeNode.GetText()).c_str()).c_str(),
+                                Aws::Utils::DateFormat::ISO_8601);
+      m_deletionTimeHasBeenSet = true;
+    }
+    XmlNode stackStatusNode = resultNode.FirstChild("StackStatus");
+    if (!stackStatusNode.IsNull()) {
+      m_stackStatus = StackStatusMapper::GetStackStatusForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusNode.GetText()).c_str()));
+      m_stackStatusHasBeenSet = true;
+    }
+    XmlNode stackStatusReasonNode = resultNode.FirstChild("StackStatusReason");
+    if (!stackStatusReasonNode.IsNull()) {
+      m_stackStatusReason = Aws::Utils::Xml::DecodeEscapedXmlText(stackStatusReasonNode.GetText());
+      m_stackStatusReasonHasBeenSet = true;
+    }
+    XmlNode parentIdNode = resultNode.FirstChild("ParentId");
+    if (!parentIdNode.IsNull()) {
+      m_parentId = Aws::Utils::Xml::DecodeEscapedXmlText(parentIdNode.GetText());
+      m_parentIdHasBeenSet = true;
+    }
+    XmlNode rootIdNode = resultNode.FirstChild("RootId");
+    if (!rootIdNode.IsNull()) {
+      m_rootId = Aws::Utils::Xml::DecodeEscapedXmlText(rootIdNode.GetText());
+      m_rootIdHasBeenSet = true;
+    }
+    XmlNode driftInformationNode = resultNode.FirstChild("DriftInformation");
+    if (!driftInformationNode.IsNull()) {
+      m_driftInformation = driftInformationNode;
+      m_driftInformationHasBeenSet = true;
+    }
+    XmlNode lastOperationsNode = resultNode.FirstChild("LastOperations");
+    if (!lastOperationsNode.IsNull()) {
+      XmlNode lastOperationsMember = lastOperationsNode.FirstChild("member");
+      m_lastOperationsHasBeenSet = !lastOperationsMember.IsNull();
+      while (!lastOperationsMember.IsNull()) {
+        m_lastOperations.push_back(lastOperationsMember);
+        lastOperationsMember = lastOperationsMember.NextNode("member");
+      }
+
+      m_lastOperationsHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_stackIdHasBeenSet) {
+    oStream << location << index << locationValue << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+
+  if (m_stackNameHasBeenSet) {
+    oStream << location << index << locationValue << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+
+  if (m_templateDescriptionHasBeenSet) {
+    oStream << location << index << locationValue << ".TemplateDescription=" << StringUtils::URLEncode(m_templateDescription.c_str())
+            << "&";
+  }
+
+  if (m_creationTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if (m_lastUpdatedTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+
+  if (m_deletionTimeHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str()) << "&";
+  }
+
+  if (m_stackStatusHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
+  }
+
+  if (m_stackStatusReasonHasBeenSet) {
+    oStream << location << index << locationValue << ".StackStatusReason=" << StringUtils::URLEncode(m_stackStatusReason.c_str()) << "&";
+  }
+
+  if (m_parentIdHasBeenSet) {
+    oStream << location << index << locationValue << ".ParentId=" << StringUtils::URLEncode(m_parentId.c_str()) << "&";
+  }
+
+  if (m_rootIdHasBeenSet) {
+    oStream << location << index << locationValue << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
+  }
+
+  if (m_driftInformationHasBeenSet) {
+    Aws::StringStream driftInformationLocationAndMemberSs;
+    driftInformationLocationAndMemberSs << location << index << locationValue << ".DriftInformation";
+    m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_lastOperationsHasBeenSet) {
+    unsigned lastOperationsIdx = 1;
+    for (auto& item : m_lastOperations) {
+      Aws::StringStream lastOperationsSs;
+      lastOperationsSs << location << index << locationValue << ".LastOperations.member." << lastOperationsIdx++;
+      item.OutputToStream(oStream, lastOperationsSs.str().c_str());
+    }
+  }
+}
+
+void StackSummary::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_stackIdHasBeenSet) {
+    oStream << location << ".StackId=" << StringUtils::URLEncode(m_stackId.c_str()) << "&";
+  }
+  if (m_stackNameHasBeenSet) {
+    oStream << location << ".StackName=" << StringUtils::URLEncode(m_stackName.c_str()) << "&";
+  }
+  if (m_templateDescriptionHasBeenSet) {
+    oStream << location << ".TemplateDescription=" << StringUtils::URLEncode(m_templateDescription.c_str()) << "&";
+  }
+  if (m_creationTimeHasBeenSet) {
+    oStream << location << ".CreationTime=" << StringUtils::URLEncode(m_creationTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_lastUpdatedTimeHasBeenSet) {
+    oStream << location
+            << ".LastUpdatedTime=" << StringUtils::URLEncode(m_lastUpdatedTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_deletionTimeHasBeenSet) {
+    oStream << location << ".DeletionTime=" << StringUtils::URLEncode(m_deletionTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601).c_str())
+            << "&";
+  }
+  if (m_stackStatusHasBeenSet) {
+    oStream << location << ".StackStatus=" << StringUtils::URLEncode(StackStatusMapper::GetNameForStackStatus(m_stackStatus)) << "&";
+  }
+  if (m_stackStatusReasonHasBeenSet) {
+    oStream << location << ".StackStatusReason=" << StringUtils::URLEncode(m_stackStatusReason.c_str()) << "&";
+  }
+  if (m_parentIdHasBeenSet) {
+    oStream << location << ".ParentId=" << StringUtils::URLEncode(m_parentId.c_str()) << "&";
+  }
+  if (m_rootIdHasBeenSet) {
+    oStream << location << ".RootId=" << StringUtils::URLEncode(m_rootId.c_str()) << "&";
+  }
+  if (m_driftInformationHasBeenSet) {
+    Aws::String driftInformationLocationAndMember(location);
+    driftInformationLocationAndMember += ".DriftInformation";
+    m_driftInformation.OutputToStream(oStream, driftInformationLocationAndMember.c_str());
+  }
+  if (m_lastOperationsHasBeenSet) {
+    unsigned lastOperationsIdx = 1;
+    for (auto& item : m_lastOperations) {
+      Aws::StringStream lastOperationsSs;
+      lastOperationsSs << location << ".LastOperations.member." << lastOperationsIdx++;
+      item.OutputToStream(oStream, lastOperationsSs.str().c_str());
+    }
+  }
+}
+
+}  // namespace Model
+}  // namespace CloudFormation
+}  // namespace Aws

@@ -1,0 +1,39 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/neptunedata/model/ExecuteGremlinProfileQueryRequest.h>
+
+#include <utility>
+
+using namespace Aws::neptunedata::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String ExecuteGremlinProfileQueryRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_gremlinQueryHasBeenSet) {
+    payload.WithString("gremlin", m_gremlinQuery);
+  }
+
+  if (m_resultsHasBeenSet) {
+    payload.WithBool("profile.results", m_results);
+  }
+
+  if (m_chopHasBeenSet) {
+    payload.WithInteger("profile.chop", m_chop);
+  }
+
+  if (m_serializerHasBeenSet) {
+    payload.WithString("profile.serializer", m_serializer);
+  }
+
+  if (m_indexOpsHasBeenSet) {
+    payload.WithBool("profile.indexOps", m_indexOps);
+  }
+
+  return payload.View().WriteReadable();
+}

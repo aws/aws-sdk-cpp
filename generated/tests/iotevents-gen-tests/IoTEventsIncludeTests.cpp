@@ -1,0 +1,151 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/iotevents/IoTEventsClient.h>
+#include <aws/iotevents/IoTEventsEndpointProvider.h>
+#include <aws/iotevents/IoTEventsEndpointRules.h>
+#include <aws/iotevents/IoTEventsErrorMarshaller.h>
+#include <aws/iotevents/IoTEventsErrors.h>
+#include <aws/iotevents/IoTEventsRequest.h>
+#include <aws/iotevents/IoTEventsServiceClientModel.h>
+#include <aws/iotevents/IoTEvents_EXPORTS.h>
+#include <aws/iotevents/model/AcknowledgeFlow.h>
+#include <aws/iotevents/model/Action.h>
+#include <aws/iotevents/model/AlarmAction.h>
+#include <aws/iotevents/model/AlarmCapabilities.h>
+#include <aws/iotevents/model/AlarmEventActions.h>
+#include <aws/iotevents/model/AlarmModelSummary.h>
+#include <aws/iotevents/model/AlarmModelVersionStatus.h>
+#include <aws/iotevents/model/AlarmModelVersionSummary.h>
+#include <aws/iotevents/model/AlarmNotification.h>
+#include <aws/iotevents/model/AlarmRule.h>
+#include <aws/iotevents/model/AnalysisResult.h>
+#include <aws/iotevents/model/AnalysisResultLevel.h>
+#include <aws/iotevents/model/AnalysisResultLocation.h>
+#include <aws/iotevents/model/AnalysisStatus.h>
+#include <aws/iotevents/model/AssetPropertyTimestamp.h>
+#include <aws/iotevents/model/AssetPropertyValue.h>
+#include <aws/iotevents/model/AssetPropertyVariant.h>
+#include <aws/iotevents/model/Attribute.h>
+#include <aws/iotevents/model/ClearTimerAction.h>
+#include <aws/iotevents/model/ComparisonOperator.h>
+#include <aws/iotevents/model/CreateAlarmModelRequest.h>
+#include <aws/iotevents/model/CreateAlarmModelResult.h>
+#include <aws/iotevents/model/CreateDetectorModelRequest.h>
+#include <aws/iotevents/model/CreateDetectorModelResult.h>
+#include <aws/iotevents/model/CreateInputRequest.h>
+#include <aws/iotevents/model/CreateInputResult.h>
+#include <aws/iotevents/model/DeleteAlarmModelRequest.h>
+#include <aws/iotevents/model/DeleteAlarmModelResult.h>
+#include <aws/iotevents/model/DeleteDetectorModelRequest.h>
+#include <aws/iotevents/model/DeleteDetectorModelResult.h>
+#include <aws/iotevents/model/DeleteInputRequest.h>
+#include <aws/iotevents/model/DeleteInputResult.h>
+#include <aws/iotevents/model/DescribeAlarmModelRequest.h>
+#include <aws/iotevents/model/DescribeAlarmModelResult.h>
+#include <aws/iotevents/model/DescribeDetectorModelAnalysisRequest.h>
+#include <aws/iotevents/model/DescribeDetectorModelAnalysisResult.h>
+#include <aws/iotevents/model/DescribeDetectorModelRequest.h>
+#include <aws/iotevents/model/DescribeDetectorModelResult.h>
+#include <aws/iotevents/model/DescribeInputRequest.h>
+#include <aws/iotevents/model/DescribeInputResult.h>
+#include <aws/iotevents/model/DescribeLoggingOptionsRequest.h>
+#include <aws/iotevents/model/DescribeLoggingOptionsResult.h>
+#include <aws/iotevents/model/DetectorDebugOption.h>
+#include <aws/iotevents/model/DetectorModel.h>
+#include <aws/iotevents/model/DetectorModelConfiguration.h>
+#include <aws/iotevents/model/DetectorModelDefinition.h>
+#include <aws/iotevents/model/DetectorModelSummary.h>
+#include <aws/iotevents/model/DetectorModelVersionStatus.h>
+#include <aws/iotevents/model/DetectorModelVersionSummary.h>
+#include <aws/iotevents/model/DynamoDBAction.h>
+#include <aws/iotevents/model/DynamoDBv2Action.h>
+#include <aws/iotevents/model/EmailConfiguration.h>
+#include <aws/iotevents/model/EmailContent.h>
+#include <aws/iotevents/model/EmailRecipients.h>
+#include <aws/iotevents/model/EvaluationMethod.h>
+#include <aws/iotevents/model/Event.h>
+#include <aws/iotevents/model/FirehoseAction.h>
+#include <aws/iotevents/model/GetDetectorModelAnalysisResultsRequest.h>
+#include <aws/iotevents/model/GetDetectorModelAnalysisResultsResult.h>
+#include <aws/iotevents/model/InitializationConfiguration.h>
+#include <aws/iotevents/model/Input.h>
+#include <aws/iotevents/model/InputConfiguration.h>
+#include <aws/iotevents/model/InputDefinition.h>
+#include <aws/iotevents/model/InputIdentifier.h>
+#include <aws/iotevents/model/InputStatus.h>
+#include <aws/iotevents/model/InputSummary.h>
+#include <aws/iotevents/model/IotEventsAction.h>
+#include <aws/iotevents/model/IotEventsInputIdentifier.h>
+#include <aws/iotevents/model/IotSiteWiseAction.h>
+#include <aws/iotevents/model/IotSiteWiseAssetModelPropertyIdentifier.h>
+#include <aws/iotevents/model/IotSiteWiseInputIdentifier.h>
+#include <aws/iotevents/model/IotTopicPublishAction.h>
+#include <aws/iotevents/model/LambdaAction.h>
+#include <aws/iotevents/model/ListAlarmModelVersionsRequest.h>
+#include <aws/iotevents/model/ListAlarmModelVersionsResult.h>
+#include <aws/iotevents/model/ListAlarmModelsRequest.h>
+#include <aws/iotevents/model/ListAlarmModelsResult.h>
+#include <aws/iotevents/model/ListDetectorModelVersionsRequest.h>
+#include <aws/iotevents/model/ListDetectorModelVersionsResult.h>
+#include <aws/iotevents/model/ListDetectorModelsRequest.h>
+#include <aws/iotevents/model/ListDetectorModelsResult.h>
+#include <aws/iotevents/model/ListInputRoutingsRequest.h>
+#include <aws/iotevents/model/ListInputRoutingsResult.h>
+#include <aws/iotevents/model/ListInputsRequest.h>
+#include <aws/iotevents/model/ListInputsResult.h>
+#include <aws/iotevents/model/ListTagsForResourceRequest.h>
+#include <aws/iotevents/model/ListTagsForResourceResult.h>
+#include <aws/iotevents/model/LoggingLevel.h>
+#include <aws/iotevents/model/LoggingOptions.h>
+#include <aws/iotevents/model/NotificationAction.h>
+#include <aws/iotevents/model/NotificationTargetActions.h>
+#include <aws/iotevents/model/OnEnterLifecycle.h>
+#include <aws/iotevents/model/OnExitLifecycle.h>
+#include <aws/iotevents/model/OnInputLifecycle.h>
+#include <aws/iotevents/model/Payload.h>
+#include <aws/iotevents/model/PayloadType.h>
+#include <aws/iotevents/model/PutLoggingOptionsRequest.h>
+#include <aws/iotevents/model/RecipientDetail.h>
+#include <aws/iotevents/model/ResetTimerAction.h>
+#include <aws/iotevents/model/ResourceAlreadyExistsException.h>
+#include <aws/iotevents/model/RoutedResource.h>
+#include <aws/iotevents/model/SMSConfiguration.h>
+#include <aws/iotevents/model/SNSTopicPublishAction.h>
+#include <aws/iotevents/model/SSOIdentity.h>
+#include <aws/iotevents/model/SetTimerAction.h>
+#include <aws/iotevents/model/SetVariableAction.h>
+#include <aws/iotevents/model/SimpleRule.h>
+#include <aws/iotevents/model/SqsAction.h>
+#include <aws/iotevents/model/StartDetectorModelAnalysisRequest.h>
+#include <aws/iotevents/model/StartDetectorModelAnalysisResult.h>
+#include <aws/iotevents/model/State.h>
+#include <aws/iotevents/model/Tag.h>
+#include <aws/iotevents/model/TagResourceRequest.h>
+#include <aws/iotevents/model/TagResourceResult.h>
+#include <aws/iotevents/model/TransitionEvent.h>
+#include <aws/iotevents/model/UntagResourceRequest.h>
+#include <aws/iotevents/model/UntagResourceResult.h>
+#include <aws/iotevents/model/UpdateAlarmModelRequest.h>
+#include <aws/iotevents/model/UpdateAlarmModelResult.h>
+#include <aws/iotevents/model/UpdateDetectorModelRequest.h>
+#include <aws/iotevents/model/UpdateDetectorModelResult.h>
+#include <aws/iotevents/model/UpdateInputRequest.h>
+#include <aws/iotevents/model/UpdateInputResult.h>
+
+using IoTEventsIncludeTest = ::testing::Test;
+
+TEST_F(IoTEventsIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::IoTEvents::IoTEventsClient>("IoTEventsIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

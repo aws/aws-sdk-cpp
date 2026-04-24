@@ -1,0 +1,61 @@
+@media (prefers-color-scheme: light) {
+    #MSearchCloseImg {
+        filter: brightness(0%)
+    }
+    a:link, a:visited, a:hover, a:focus, a:active {
+        color: var(--primary-dark-color) !important;
+        font-weight: 500;
+        filter: brightness(120%) saturate(250%);
+    }
+}
+
+@media (prefers-color-scheme: dark) {
+    #MSearchCloseImg {
+        filter: brightness(100%)
+    }
+}
+
+div.memberdecls div[class^='memitem']{
+    transition: none;
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+    border-top: 1px solid var(--separator-color);
+    border-bottom: 1px solid var(--separator-color);
+    background-color: var(--fragment-background);
+}
+
+div.memberdecls .memItemLeft,
+div.memberdecls .memItemRight,
+div.memberdecls .memTemplItemLeft,
+div.memberdecls .memTemplItemRight,
+div.memberdecls .memTemplParams {
+    transition: none;
+    padding-top: var(--spacing-small);
+    padding-bottom: var(--spacing-small);
+    background-color: var(--fragment-background);
+}
+
+span.memSeparator {
+    border-color: var(--separator-color);
+}
+
+div.memberdecls .memSeparator {
+    background: var(--page-background-color);
+    height: var(--spacing-large);
+    display:inline-block;
+    border: 0;
+    transition: none;
+}
+
+div.memproto div.memname,
+div.memproto span {
+    font-family: var(--font-family-monospace) !important;
+    color: var(--page-foreground-color);
+    font-size: var(--memname-font-size);
+    text-shadow: none;
+}
+
+div.memproto span.paramname {
+    font-weight: 600;
+    color: var(--primary-dark-color);
+}

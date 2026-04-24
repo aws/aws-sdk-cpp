@@ -1,0 +1,176 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/GroupProfileStatus.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
+class CreateGroupProfileResult {
+ public:
+  AWS_DATAZONE_API CreateGroupProfileResult() = default;
+  AWS_DATAZONE_API CreateGroupProfileResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATAZONE_API CreateGroupProfileResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier of the Amazon DataZone domain in which the group profile is
+   * created.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  CreateGroupProfileResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the group profile.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  CreateGroupProfileResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the group profile.</p>
+   */
+  inline GroupProfileStatus GetStatus() const { return m_status; }
+  inline void SetStatus(GroupProfileStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateGroupProfileResult& WithStatus(GroupProfileStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the group for which group profile is created.</p>
+   */
+  inline const Aws::String& GetGroupName() const { return m_groupName; }
+  template <typename GroupNameT = Aws::String>
+  void SetGroupName(GroupNameT&& value) {
+    m_groupNameHasBeenSet = true;
+    m_groupName = std::forward<GroupNameT>(value);
+  }
+  template <typename GroupNameT = Aws::String>
+  CreateGroupProfileResult& WithGroupName(GroupNameT&& value) {
+    SetGroupName(std::forward<GroupNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM role principal. This role is associated with the group
+   * profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalArn() const { return m_rolePrincipalArn; }
+  template <typename RolePrincipalArnT = Aws::String>
+  void SetRolePrincipalArn(RolePrincipalArnT&& value) {
+    m_rolePrincipalArnHasBeenSet = true;
+    m_rolePrincipalArn = std::forward<RolePrincipalArnT>(value);
+  }
+  template <typename RolePrincipalArnT = Aws::String>
+  CreateGroupProfileResult& WithRolePrincipalArn(RolePrincipalArnT&& value) {
+    SetRolePrincipalArn(std::forward<RolePrincipalArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unique identifier of the IAM role principal. This principal is associated
+   * with the group profile.</p>
+   */
+  inline const Aws::String& GetRolePrincipalId() const { return m_rolePrincipalId; }
+  template <typename RolePrincipalIdT = Aws::String>
+  void SetRolePrincipalId(RolePrincipalIdT&& value) {
+    m_rolePrincipalIdHasBeenSet = true;
+    m_rolePrincipalId = std::forward<RolePrincipalIdT>(value);
+  }
+  template <typename RolePrincipalIdT = Aws::String>
+  CreateGroupProfileResult& WithRolePrincipalId(RolePrincipalIdT&& value) {
+    SetRolePrincipalId(std::forward<RolePrincipalIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateGroupProfileResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_domainId;
+
+  Aws::String m_id;
+
+  GroupProfileStatus m_status{GroupProfileStatus::NOT_SET};
+
+  Aws::String m_groupName;
+
+  Aws::String m_rolePrincipalArn;
+
+  Aws::String m_rolePrincipalId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_groupNameHasBeenSet = false;
+  bool m_rolePrincipalArnHasBeenSet = false;
+  bool m_rolePrincipalIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

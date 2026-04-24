@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iot/model/BillingGroupProperties.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoT {
+namespace Model {
+
+BillingGroupProperties::BillingGroupProperties(JsonView jsonValue) { *this = jsonValue; }
+
+BillingGroupProperties& BillingGroupProperties::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("billingGroupDescription")) {
+    m_billingGroupDescription = jsonValue.GetString("billingGroupDescription");
+    m_billingGroupDescriptionHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue BillingGroupProperties::Jsonize() const {
+  JsonValue payload;
+
+  if (m_billingGroupDescriptionHasBeenSet) {
+    payload.WithString("billingGroupDescription", m_billingGroupDescription);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace IoT
+}  // namespace Aws

@@ -1,0 +1,42 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/AvcIntraUhdSettings.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+
+AvcIntraUhdSettings::AvcIntraUhdSettings(JsonView jsonValue) { *this = jsonValue; }
+
+AvcIntraUhdSettings& AvcIntraUhdSettings::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("qualityTuningLevel")) {
+    m_qualityTuningLevel =
+        AvcIntraUhdQualityTuningLevelMapper::GetAvcIntraUhdQualityTuningLevelForName(jsonValue.GetString("qualityTuningLevel"));
+    m_qualityTuningLevelHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AvcIntraUhdSettings::Jsonize() const {
+  JsonValue payload;
+
+  if (m_qualityTuningLevelHasBeenSet) {
+    payload.WithString("qualityTuningLevel",
+                       AvcIntraUhdQualityTuningLevelMapper::GetNameForAvcIntraUhdQualityTuningLevel(m_qualityTuningLevel));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

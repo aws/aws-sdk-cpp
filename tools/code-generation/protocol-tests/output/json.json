@@ -1,0 +1,2578 @@
+[
+    {
+        "description": "Test cases for DatetimeOffsets operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "DateTime": {
+                "type": "timestamp",
+                "timestampFormat": "iso8601"
+            },
+            "DatetimeOffsetsOutput": {
+                "type": "structure",
+                "members": {
+                    "datetime": {
+                        "shape": "DateTime"
+                    }
+                }
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11DateTimeWithNegativeOffset",
+                "description": "Ensures that clients can correctly parse datetime (timestamps) with offsets",
+                "given": {
+                    "name": "DatetimeOffsets",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "DatetimeOffsetsOutput"
+                    }
+                },
+                "result": {
+                    "datetime": 1576540098
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "      {\n          \"datetime\": \"2019-12-16T22:48:18-01:00\"\n      }\n"
+                }
+            },
+            {
+                "id": "AwsJson11DateTimeWithPositiveOffset",
+                "description": "Ensures that clients can correctly parse datetime (timestamps) with offsets",
+                "given": {
+                    "name": "DatetimeOffsets",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "DatetimeOffsetsOutput"
+                    }
+                },
+                "result": {
+                    "datetime": 1576540098
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "      {\n          \"datetime\": \"2019-12-17T00:48:18+01:00\"\n      }\n"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for EmptyOperation operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {},
+        "cases": [
+            {
+                "id": "handles_empty_output_shape",
+                "description": "When no output is defined, the service is expected to return\nan empty payload, however, client must ignore a JSON payload\nif one is returned. This ensures that if output is added later,\nthen it will not break the client.",
+                "given": {
+                    "name": "EmptyOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{}"
+                }
+            },
+            {
+                "id": "handles_unexpected_json_output",
+                "description": "This client-only test builds on handles_empty_output_shape,\nby including unexpected fields in the JSON. A client\nneeds to ignore JSON output that is empty or that contains\nJSON object data.",
+                "given": {
+                    "name": "EmptyOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"foo\": true\n}"
+                }
+            },
+            {
+                "id": "json_1_1_service_responds_with_no_payload",
+                "description": "When no output is defined, the service is expected to return\nan empty payload. Despite the lack of a payload, the service\nis expected to always send a Content-Type header. Clients must\nhandle cases where a service returns a JSON object and where\na service returns no JSON at all.",
+                "given": {
+                    "name": "EmptyOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": ""
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for FractionalSeconds operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "DateTime": {
+                "type": "timestamp",
+                "timestampFormat": "iso8601"
+            },
+            "FractionalSecondsOutput": {
+                "type": "structure",
+                "members": {
+                    "datetime": {
+                        "shape": "DateTime"
+                    }
+                }
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11DateTimeWithFractionalSeconds",
+                "description": "Ensures that clients can correctly parse datetime timestamps with fractional seconds",
+                "given": {
+                    "name": "FractionalSeconds",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "FractionalSecondsOutput"
+                    }
+                },
+                "result": {
+                    "datetime": 9.46845296123E8
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "      {\n          \"datetime\": \"2000-01-02T20:34:56.123Z\"\n      }\n"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for GreetingWithErrors operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "InvalidGreeting": {
+                "type": "structure",
+                "members": {
+                    "Message": {
+                        "shape": "String"
+                    }
+                },
+                "documentation": "<p>This error is thrown when an invalid greeting value is provided.</p>",
+                "exception": true
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11InvalidGreetingError",
+                "description": "Parses simple JSON errors",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "InvalidGreeting"
+                        }
+                    ]
+                },
+                "errorCode": "InvalidGreeting",
+                "errorMessage": "Hi",
+                "error": {
+                    "Message": "Hi"
+                },
+                "response": {
+                    "status_code": 400,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"InvalidGreeting\",\n    \"Message\": \"Hi\"\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for GreetingWithErrors operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "ComplexError": {
+                "type": "structure",
+                "members": {
+                    "TopLevel": {
+                        "shape": "String"
+                    },
+                    "Nested": {
+                        "shape": "ComplexNestedErrorData"
+                    }
+                },
+                "documentation": "<p>This error is thrown when a request is invalid.</p>",
+                "exception": true
+            },
+            "ComplexNestedErrorData": {
+                "type": "structure",
+                "members": {
+                    "Foo": {
+                        "shape": "String"
+                    }
+                }
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11ComplexError",
+                "description": "Parses a complex error with no message member",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "ComplexError"
+                        }
+                    ]
+                },
+                "errorCode": "ComplexError",
+                "error": {
+                    "TopLevel": "Top level",
+                    "Nested": {
+                        "Foo": "bar"
+                    }
+                },
+                "response": {
+                    "status_code": 400,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"ComplexError\",\n    \"TopLevel\": \"Top level\",\n    \"Nested\": {\n        \"Foo\": \"bar\"\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11EmptyComplexError",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "ComplexError"
+                        }
+                    ]
+                },
+                "errorCode": "ComplexError",
+                "error": {},
+                "response": {
+                    "status_code": 400,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"ComplexError\"\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for GreetingWithErrors operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "FooError": {
+                "type": "structure",
+                "members": {},
+                "documentation": "<p>This error has test cases that test some of the dark corners of Amazon service framework history. It should only be implemented by clients.</p>",
+                "exception": true,
+                "fault": true
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11FooErrorUsingXAmznErrorType",
+                "description": "Serializes the X-Amzn-ErrorType header. For an example service, see Amazon EKS.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "X-Amzn-Errortype": "FooError"
+                    }
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorUsingXAmznErrorTypeWithUri",
+                "description": "Some X-Amzn-Errortype headers contain URLs. Clients need to split the URL on ':' and take only the first half of the string. For example, 'ValidationException:http://internal.amazon.com/coral/com.amazon.coral.validate/'\nis to be interpreted as 'ValidationException'.\n\nFor an example service see Amazon Polly.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "X-Amzn-Errortype": "FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/"
+                    }
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorUsingXAmznErrorTypeWithUriAndNamespace",
+                "description": "X-Amzn-Errortype might contain a URL and a namespace. Client should extract only the shape name. This is a pathalogical case that might not actually happen in any deployed AWS service.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "X-Amzn-Errortype": "aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/"
+                    }
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorUsingCode",
+                "description": "This example uses the 'code' property in the output rather than X-Amzn-Errortype. Some services do this though it's preferable to send the X-Amzn-Errortype. Client implementations must first check for the X-Amzn-Errortype and then check for a top-level 'code' property.\n\nFor example service see Amazon S3 Glacier.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"code\": \"FooError\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorUsingCodeAndNamespace",
+                "description": "Some services serialize errors using code, and it might contain a namespace. Clients should just take the last part of the string after '#'.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"code\": \"aws.protocoltests.restjson#FooError\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorUsingCodeUriAndNamespace",
+                "description": "Some services serialize errors using code, and it might contain a namespace. It also might contain a URI. Clients should just take the last part of the string after '#' and before \":\". This is a pathalogical case that might not occur in any deployed AWS service.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"code\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorWithDunderType",
+                "description": "Some services serialize errors using __type.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"FooError\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorWithDunderTypeAndNamespace",
+                "description": "Some services serialize errors using __type, and it might contain a namespace. Clients should just take the last part of the string after '#'.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorWithDunderTypeUriAndNamespace",
+                "description": "Some services serialize errors using __type, and it might contain a namespace. It also might contain a URI. Clients should just take the last part of the string after '#' and before \":\". This is a pathalogical case that might not occur in any deployed AWS service.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError:http://internal.amazon.com/coral/com.amazon.coral.validate/\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11FooErrorWithNestedTypeProperty",
+                "description": "Some services serialize errors using __type, and if the response includes additional shapes that belong to a different namespace there'll be a nested __type property that must not be considered when determining which error to be surfaced.\n\nFor an example service see Amazon DynamoDB.",
+                "given": {
+                    "name": "GreetingWithErrors",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "documentation": "<p>This operation has three possible return values:</p> <ol> <li>A successful response in the form of GreetingWithErrorsOutput</li> <li>An InvalidGreeting error.</li> <li>A ComplexError error.</li> </ol> <p>Implementations must be able to successfully take a response and properly deserialize successful and error responses.</p>",
+                    "idempotent": true,
+                    "errors": [
+                        {
+                            "shape": "FooError"
+                        }
+                    ]
+                },
+                "errorCode": "FooError",
+                "error": {},
+                "response": {
+                    "status_code": 500,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"__type\": \"aws.protocoltests.restjson#FooError\",\n    \"ErrorDetails\": [\n      {\n          \"__type\": \"com.amazon.internal#ErrorDetails\",\n          \"reason\": \"Some reason\"\n      }\n    ]\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for JsonEnums operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "FooEnum": {
+                "type": "string",
+                "enum": [
+                    "Foo",
+                    "Baz",
+                    "Bar",
+                    "1",
+                    "0"
+                ]
+            },
+            "FooEnumList": {
+                "type": "list",
+                "member": {
+                    "shape": "FooEnum"
+                }
+            },
+            "FooEnumMap": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "FooEnum"
+                }
+            },
+            "FooEnumSet": {
+                "type": "list",
+                "member": {
+                    "shape": "FooEnum"
+                }
+            },
+            "JsonEnumsInputOutput": {
+                "type": "structure",
+                "members": {
+                    "fooEnum1": {
+                        "shape": "FooEnum"
+                    },
+                    "fooEnum2": {
+                        "shape": "FooEnum"
+                    },
+                    "fooEnum3": {
+                        "shape": "FooEnum"
+                    },
+                    "fooEnumList": {
+                        "shape": "FooEnumList"
+                    },
+                    "fooEnumSet": {
+                        "shape": "FooEnumSet"
+                    },
+                    "fooEnumMap": {
+                        "shape": "FooEnumMap"
+                    }
+                }
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11Enums",
+                "description": "Serializes simple scalar properties",
+                "given": {
+                    "name": "JsonEnums",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "JsonEnumsInputOutput"
+                    },
+                    "documentation": "<p>This example serializes enums as top level properties, in lists, sets, and maps.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "fooEnum1": "Foo",
+                    "fooEnum2": "0",
+                    "fooEnum3": "1",
+                    "fooEnumList": [
+                        "Foo",
+                        "0"
+                    ],
+                    "fooEnumSet": [
+                        "Foo",
+                        "0"
+                    ],
+                    "fooEnumMap": {
+                        "hi": "Foo",
+                        "zero": "0"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"fooEnum1\": \"Foo\",\n    \"fooEnum2\": \"0\",\n    \"fooEnum3\": \"1\",\n    \"fooEnumList\": [\n        \"Foo\",\n        \"0\"\n    ],\n    \"fooEnumSet\": [\n        \"Foo\",\n        \"0\"\n    ],\n    \"fooEnumMap\": {\n        \"hi\": \"Foo\",\n        \"zero\": \"0\"\n    }\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for JsonIntEnums operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "IntegerEnum": {
+                "type": "integer",
+                "box": true
+            },
+            "IntegerEnumList": {
+                "type": "list",
+                "member": {
+                    "shape": "IntegerEnum"
+                }
+            },
+            "IntegerEnumMap": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "IntegerEnum"
+                }
+            },
+            "IntegerEnumSet": {
+                "type": "list",
+                "member": {
+                    "shape": "IntegerEnum"
+                }
+            },
+            "JsonIntEnumsInputOutput": {
+                "type": "structure",
+                "members": {
+                    "intEnum1": {
+                        "shape": "IntegerEnum"
+                    },
+                    "intEnum2": {
+                        "shape": "IntegerEnum"
+                    },
+                    "intEnum3": {
+                        "shape": "IntegerEnum"
+                    },
+                    "intEnumList": {
+                        "shape": "IntegerEnumList"
+                    },
+                    "intEnumSet": {
+                        "shape": "IntegerEnumSet"
+                    },
+                    "intEnumMap": {
+                        "shape": "IntegerEnumMap"
+                    }
+                }
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11IntEnums",
+                "description": "Serializes simple scalar properties",
+                "given": {
+                    "name": "JsonIntEnums",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "JsonIntEnumsInputOutput"
+                    },
+                    "documentation": "<p>This example serializes intEnums as top level properties, in lists, sets, and maps.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "intEnum1": 1,
+                    "intEnum2": 2,
+                    "intEnum3": 3,
+                    "intEnumList": [
+                        1,
+                        2
+                    ],
+                    "intEnumSet": [
+                        1,
+                        2
+                    ],
+                    "intEnumMap": {
+                        "a": 1,
+                        "b": 2
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "X-Amz-Target": "JsonProtocol.JsonIntEnums",
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"intEnum1\": 1,\n    \"intEnum2\": 2,\n    \"intEnum3\": 3,\n    \"intEnumList\": [\n        1,\n        2\n    ],\n    \"intEnumSet\": [\n        1,\n        2\n    ],\n    \"intEnumMap\": {\n        \"a\": 1,\n        \"b\": 2\n    }\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for JsonUnions operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "Blob": {
+                "type": "blob"
+            },
+            "Boolean": {
+                "type": "boolean",
+                "box": true
+            },
+            "FooEnum": {
+                "type": "string",
+                "enum": [
+                    "Foo",
+                    "Baz",
+                    "Bar",
+                    "1",
+                    "0"
+                ]
+            },
+            "GreetingStruct": {
+                "type": "structure",
+                "members": {
+                    "hi": {
+                        "shape": "String"
+                    }
+                }
+            },
+            "Integer": {
+                "type": "integer",
+                "box": true
+            },
+            "MyUnion": {
+                "type": "structure",
+                "members": {
+                    "stringValue": {
+                        "shape": "String"
+                    },
+                    "booleanValue": {
+                        "shape": "Boolean"
+                    },
+                    "numberValue": {
+                        "shape": "Integer"
+                    },
+                    "blobValue": {
+                        "shape": "Blob"
+                    },
+                    "timestampValue": {
+                        "shape": "Timestamp"
+                    },
+                    "enumValue": {
+                        "shape": "FooEnum"
+                    },
+                    "listValue": {
+                        "shape": "StringList"
+                    },
+                    "mapValue": {
+                        "shape": "StringMap"
+                    },
+                    "structureValue": {
+                        "shape": "GreetingStruct"
+                    }
+                },
+                "documentation": "<p>A union with a representative set of types for members.</p>",
+                "union": true
+            },
+            "String": {
+                "type": "string"
+            },
+            "StringList": {
+                "type": "list",
+                "member": {
+                    "shape": "String"
+                }
+            },
+            "StringMap": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "String"
+                }
+            },
+            "Timestamp": {
+                "type": "timestamp"
+            },
+            "UnionInputOutput": {
+                "type": "structure",
+                "members": {
+                    "contents": {
+                        "shape": "MyUnion"
+                    }
+                },
+                "documentation": "<p>A shared structure that contains a single union member.</p>"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11DeserializeStringUnionValue",
+                "description": "Deserializes a string union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "stringValue": "foo"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"stringValue\": \"foo\"\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeBooleanUnionValue",
+                "description": "Deserializes a boolean union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "booleanValue": true
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"booleanValue\": true\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeNumberUnionValue",
+                "description": "Deserializes a number union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "numberValue": 1
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"numberValue\": 1\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeBlobUnionValue",
+                "description": "Deserializes a blob union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "blobValue": "foo"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"blobValue\": \"Zm9v\"\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeTimestampUnionValue",
+                "description": "Deserializes a timestamp union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "timestampValue": 1398796238
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"timestampValue\": 1398796238\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeEnumUnionValue",
+                "description": "Deserializes an enum union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "enumValue": "Foo"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"enumValue\": \"Foo\"\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeListUnionValue",
+                "description": "Deserializes a list union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "listValue": [
+                            "foo",
+                            "bar"
+                        ]
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"listValue\": [\"foo\", \"bar\"]\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeMapUnionValue",
+                "description": "Deserializes a map union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "mapValue": {
+                            "foo": "bar",
+                            "spam": "eggs"
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"mapValue\": {\n            \"foo\": \"bar\",\n            \"spam\": \"eggs\"\n        }\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeStructureUnionValue",
+                "description": "Deserializes a structure union value",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "structureValue": {
+                            "hi": "hello"
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11DeserializeIgnoreType",
+                "description": "Ignores an unrecognized __type property",
+                "given": {
+                    "name": "JsonUnions",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "UnionInputOutput"
+                    },
+                    "documentation": "<p>This operation uses unions for inputs and outputs.</p>",
+                    "idempotent": true
+                },
+                "result": {
+                    "contents": {
+                        "structureValue": {
+                            "hi": "hello"
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"contents\": {\n        \"__type\": \"aws.protocoltests.json10#MyUnion\",\n        \"structureValue\": {\n            \"hi\": \"hello\"\n        }\n    }\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for KitchenSinkOperation operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "Blob": {
+                "type": "blob"
+            },
+            "Boolean": {
+                "type": "boolean",
+                "box": true
+            },
+            "Double": {
+                "type": "double",
+                "box": true
+            },
+            "EmptyStruct": {
+                "type": "structure",
+                "members": {}
+            },
+            "Float": {
+                "type": "float",
+                "box": true
+            },
+            "Integer": {
+                "type": "integer",
+                "box": true
+            },
+            "JsonValue": {
+                "type": "string"
+            },
+            "KitchenSink": {
+                "type": "structure",
+                "members": {
+                    "Blob": {
+                        "shape": "Blob"
+                    },
+                    "Boolean": {
+                        "shape": "Boolean"
+                    },
+                    "Double": {
+                        "shape": "Double"
+                    },
+                    "EmptyStruct": {
+                        "shape": "EmptyStruct"
+                    },
+                    "Float": {
+                        "shape": "Float"
+                    },
+                    "HttpdateTimestamp": {
+                        "shape": "SyntheticTimestamp_http_date"
+                    },
+                    "Integer": {
+                        "shape": "Integer"
+                    },
+                    "Iso8601Timestamp": {
+                        "shape": "SyntheticTimestamp_date_time"
+                    },
+                    "JsonValue": {
+                        "shape": "JsonValue",
+                        "jsonvalue": true
+                    },
+                    "ListOfLists": {
+                        "shape": "ListOfListOfStrings"
+                    },
+                    "ListOfMapsOfStrings": {
+                        "shape": "ListOfMapsOfStrings"
+                    },
+                    "ListOfStrings": {
+                        "shape": "ListOfStrings"
+                    },
+                    "ListOfStructs": {
+                        "shape": "ListOfStructs"
+                    },
+                    "Long": {
+                        "shape": "Long"
+                    },
+                    "MapOfListsOfStrings": {
+                        "shape": "MapOfListsOfStrings"
+                    },
+                    "MapOfMaps": {
+                        "shape": "MapOfMapOfStrings"
+                    },
+                    "MapOfStrings": {
+                        "shape": "MapOfStrings"
+                    },
+                    "MapOfStructs": {
+                        "shape": "MapOfStructs"
+                    },
+                    "RecursiveList": {
+                        "shape": "ListOfKitchenSinks"
+                    },
+                    "RecursiveMap": {
+                        "shape": "MapOfKitchenSinks"
+                    },
+                    "RecursiveStruct": {
+                        "shape": "KitchenSink"
+                    },
+                    "SimpleStruct": {
+                        "shape": "SimpleStruct"
+                    },
+                    "String": {
+                        "shape": "String"
+                    },
+                    "StructWithJsonName": {
+                        "shape": "StructWithJsonName"
+                    },
+                    "Timestamp": {
+                        "shape": "Timestamp"
+                    },
+                    "UnixTimestamp": {
+                        "shape": "SyntheticTimestamp_epoch_seconds"
+                    }
+                }
+            },
+            "ListOfKitchenSinks": {
+                "type": "list",
+                "member": {
+                    "shape": "KitchenSink"
+                }
+            },
+            "ListOfListOfStrings": {
+                "type": "list",
+                "member": {
+                    "shape": "ListOfStrings"
+                }
+            },
+            "ListOfMapsOfStrings": {
+                "type": "list",
+                "member": {
+                    "shape": "MapOfStrings"
+                }
+            },
+            "ListOfStrings": {
+                "type": "list",
+                "member": {
+                    "shape": "String"
+                }
+            },
+            "ListOfStructs": {
+                "type": "list",
+                "member": {
+                    "shape": "SimpleStruct"
+                }
+            },
+            "Long": {
+                "type": "long",
+                "box": true
+            },
+            "MapOfKitchenSinks": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "KitchenSink"
+                }
+            },
+            "MapOfListsOfStrings": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "ListOfStrings"
+                }
+            },
+            "MapOfMapOfStrings": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "MapOfStrings"
+                }
+            },
+            "MapOfStrings": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "String"
+                }
+            },
+            "MapOfStructs": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "SimpleStruct"
+                }
+            },
+            "SimpleStruct": {
+                "type": "structure",
+                "members": {
+                    "Value": {
+                        "shape": "String"
+                    }
+                }
+            },
+            "String": {
+                "type": "string"
+            },
+            "StructWithJsonName": {
+                "type": "structure",
+                "members": {
+                    "Value": {
+                        "shape": "String"
+                    }
+                }
+            },
+            "SyntheticTimestamp_date_time": {
+                "type": "timestamp",
+                "timestampFormat": "iso8601"
+            },
+            "SyntheticTimestamp_epoch_seconds": {
+                "type": "timestamp",
+                "timestampFormat": "unixTimestamp"
+            },
+            "SyntheticTimestamp_http_date": {
+                "type": "timestamp",
+                "timestampFormat": "rfc822"
+            },
+            "Timestamp": {
+                "type": "timestamp"
+            }
+        },
+        "cases": [
+            {
+                "id": "parses_operations_with_empty_json_bodies",
+                "description": "Parses operations with empty JSON bodies",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{}"
+                }
+            },
+            {
+                "id": "parses_string_shapes",
+                "description": "Parses string shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "String": "string-value"
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"String\":\"string-value\"}"
+                }
+            },
+            {
+                "id": "parses_integer_shapes",
+                "description": "Parses integer shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Integer": 1234
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Integer\":1234}"
+                }
+            },
+            {
+                "id": "parses_long_shapes",
+                "description": "Parses long shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Long": 1234567890123456789
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Long\":1234567890123456789}"
+                }
+            },
+            {
+                "id": "parses_float_shapes",
+                "description": "Parses float shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Float": 1234.5
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Float\":1234.5}"
+                }
+            },
+            {
+                "id": "parses_double_shapes",
+                "description": "Parses double shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Double": 1.2345678912345679E8
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Double\":123456789.12345679}"
+                }
+            },
+            {
+                "id": "parses_boolean_shapes_true",
+                "description": "Parses boolean shapes (true)",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Boolean": true
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Boolean\":true}"
+                }
+            },
+            {
+                "id": "parses_boolean_false",
+                "description": "Parses boolean (false)",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Boolean": false
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Boolean\":false}"
+                }
+            },
+            {
+                "id": "parses_blob_shapes",
+                "description": "Parses blob shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Blob": "binary-value"
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Blob\":\"YmluYXJ5LXZhbHVl\"}"
+                }
+            },
+            {
+                "id": "parses_timestamp_shapes",
+                "description": "Parses timestamp shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Timestamp": 946845296
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Timestamp\":946845296}"
+                }
+            },
+            {
+                "id": "parses_iso8601_timestamps",
+                "description": "Parses iso8601 timestamps",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "Iso8601Timestamp": 946845296
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"Iso8601Timestamp\":\"2000-01-02T20:34:56Z\"}"
+                }
+            },
+            {
+                "id": "parses_httpdate_timestamps",
+                "description": "Parses httpdate timestamps",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "HttpdateTimestamp": 946845296
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"HttpdateTimestamp\":\"Sun, 02 Jan 2000 20:34:56 GMT\"}"
+                }
+            },
+            {
+                "id": "parses_list_shapes",
+                "description": "Parses list shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "ListOfStrings": [
+                        "abc",
+                        "mno",
+                        "xyz"
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"ListOfStrings\":[\"abc\",\"mno\",\"xyz\"]}"
+                }
+            },
+            {
+                "id": "parses_list_of_map_shapes",
+                "description": "Parses list of map shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "ListOfMapsOfStrings": [
+                        {
+                            "size": "large"
+                        },
+                        {
+                            "color": "red"
+                        }
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"ListOfMapsOfStrings\":[{\"size\":\"large\"},{\"color\":\"red\"}]}"
+                }
+            },
+            {
+                "id": "parses_list_of_list_shapes",
+                "description": "Parses list of list shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "ListOfLists": [
+                        [
+                            "abc",
+                            "mno",
+                            "xyz"
+                        ],
+                        [
+                            "hjk",
+                            "qrs",
+                            "tuv"
+                        ]
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"ListOfLists\":[[\"abc\",\"mno\",\"xyz\"],[\"hjk\",\"qrs\",\"tuv\"]]}"
+                }
+            },
+            {
+                "id": "parses_list_of_structure_shapes",
+                "description": "Parses list of structure shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "ListOfStructs": [
+                        {
+                            "Value": "value-1"
+                        },
+                        {
+                            "Value": "value-2"
+                        }
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"ListOfStructs\":[{\"Value\":\"value-1\"},{\"Value\":\"value-2\"}]}"
+                }
+            },
+            {
+                "id": "parses_list_of_recursive_structure_shapes",
+                "description": "Parses list of recursive structure shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "RecursiveList": [
+                        {
+                            "RecursiveList": [
+                                {
+                                    "RecursiveList": [
+                                        {
+                                            "String": "value"
+                                        }
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"RecursiveList\":[{\"RecursiveList\":[{\"RecursiveList\":[{\"String\":\"value\"}]}]}]}"
+                }
+            },
+            {
+                "id": "parses_map_shapes",
+                "description": "Parses map shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "MapOfStrings": {
+                        "size": "large",
+                        "color": "red"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"MapOfStrings\":{\"size\":\"large\",\"color\":\"red\"}}"
+                }
+            },
+            {
+                "id": "parses_map_of_list_shapes",
+                "description": "Parses map of list shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "MapOfListsOfStrings": {
+                        "sizes": [
+                            "large",
+                            "small"
+                        ],
+                        "colors": [
+                            "red",
+                            "green"
+                        ]
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"MapOfListsOfStrings\":{\"sizes\":[\"large\",\"small\"],\"colors\":[\"red\",\"green\"]}}"
+                }
+            },
+            {
+                "id": "parses_map_of_map_shapes",
+                "description": "Parses map of map shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "MapOfMaps": {
+                        "sizes": {
+                            "large": "L",
+                            "medium": "M"
+                        },
+                        "colors": {
+                            "red": "R",
+                            "blue": "B"
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"MapOfMaps\":{\"sizes\":{\"large\":\"L\",\"medium\":\"M\"},\"colors\":{\"red\":\"R\",\"blue\":\"B\"}}}"
+                }
+            },
+            {
+                "id": "parses_map_of_structure_shapes",
+                "description": "Parses map of structure shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "MapOfStructs": {
+                        "size": {
+                            "Value": "small"
+                        },
+                        "color": {
+                            "Value": "red"
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"MapOfStructs\":{\"size\":{\"Value\":\"small\"},\"color\":{\"Value\":\"red\"}}}"
+                }
+            },
+            {
+                "id": "parses_map_of_recursive_structure_shapes",
+                "description": "Parses map of recursive structure shapes",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {
+                    "RecursiveMap": {
+                        "key-1": {
+                            "RecursiveMap": {
+                                "key-2": {
+                                    "RecursiveMap": {
+                                        "key-3": {
+                                            "String": "value"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\"RecursiveMap\":{\"key-1\":{\"RecursiveMap\":{\"key-2\":{\"RecursiveMap\":{\"key-3\":{\"String\":\"value\"}}}}}}}"
+                }
+            },
+            {
+                "id": "parses_the_request_id_from_the_response",
+                "description": "Parses the request id from the response",
+                "given": {
+                    "name": "KitchenSinkOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "KitchenSink"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1",
+                        "X-Amzn-Requestid": "amazon-uniq-request-id"
+                    },
+                    "body": "{}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for NullOperation operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "NullOperationInputOutput": {
+                "type": "structure",
+                "members": {
+                    "string": {
+                        "shape": "String"
+                    }
+                }
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11StructuresDontDeserializeNullValues",
+                "description": "Null structure values are dropped",
+                "given": {
+                    "name": "NullOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "NullOperationInputOutput"
+                    }
+                },
+                "result": {},
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"string\": null\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for PutAndGetInlineDocuments operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "Document": {
+                "type": "structure",
+                "members": {},
+                "document": true
+            },
+            "PutAndGetInlineDocumentsInputOutput": {
+                "type": "structure",
+                "members": {
+                    "inlineDocument": {
+                        "shape": "Document"
+                    }
+                }
+            }
+        },
+        "cases": [
+            {
+                "id": "PutAndGetInlineDocumentsInput",
+                "description": "Serializes inline documents in a JSON response.",
+                "given": {
+                    "name": "PutAndGetInlineDocuments",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "PutAndGetInlineDocumentsInputOutput"
+                    },
+                    "documentation": "<p>This example serializes an inline document as part of the payload.</p>"
+                },
+                "result": {
+                    "inlineDocument": {
+                        "foo": "bar"
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"inlineDocument\": {\"foo\": \"bar\"}\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for SimpleScalarProperties operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "Double": {
+                "type": "double",
+                "box": true
+            },
+            "Float": {
+                "type": "float",
+                "box": true
+            },
+            "SimpleScalarPropertiesInputOutput": {
+                "type": "structure",
+                "members": {
+                    "floatValue": {
+                        "shape": "Float"
+                    },
+                    "doubleValue": {
+                        "shape": "Double"
+                    }
+                }
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11SupportsNaNFloatInputs",
+                "description": "Supports handling NaN float values.",
+                "given": {
+                    "name": "SimpleScalarProperties",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "SimpleScalarPropertiesInputOutput"
+                    }
+                },
+                "result": {
+                    "floatValue": "NaN",
+                    "doubleValue": "NaN"
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"floatValue\": \"NaN\",\n    \"doubleValue\": \"NaN\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11SupportsInfinityFloatInputs",
+                "description": "Supports handling Infinity float values.",
+                "given": {
+                    "name": "SimpleScalarProperties",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "SimpleScalarPropertiesInputOutput"
+                    }
+                },
+                "result": {
+                    "floatValue": "Infinity",
+                    "doubleValue": "Infinity"
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"floatValue\": \"Infinity\",\n    \"doubleValue\": \"Infinity\"\n}"
+                }
+            },
+            {
+                "id": "AwsJson11SupportsNegativeInfinityFloatInputs",
+                "description": "Supports handling -Infinity float values.",
+                "given": {
+                    "name": "SimpleScalarProperties",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "SimpleScalarPropertiesInputOutput"
+                    }
+                },
+                "result": {
+                    "floatValue": "-Infinity",
+                    "doubleValue": "-Infinity"
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"floatValue\": \"-Infinity\",\n    \"doubleValue\": \"-Infinity\"\n}"
+                }
+            }
+        ]
+    },
+    {
+        "description": "Test cases for SparseNullsOperation operation",
+        "metadata": {
+            "apiVersion": "2018-01-01",
+            "auth": [
+                "aws.auth#sigv4"
+            ],
+            "endpointPrefix": "jsonprotocol",
+            "jsonVersion": "1.1",
+            "protocol": "json",
+            "protocols": [
+                "json"
+            ],
+            "serviceFullName": "JsonProtocol",
+            "serviceId": "Json Protocol",
+            "signatureVersion": "v4",
+            "signingName": "JsonProtocol",
+            "targetPrefix": "JsonProtocol",
+            "uid": "json-protocol-2018-01-01"
+        },
+        "shapes": {
+            "SparseNullsOperationInputOutput": {
+                "type": "structure",
+                "members": {
+                    "sparseStringList": {
+                        "shape": "SparseStringList"
+                    },
+                    "sparseStringMap": {
+                        "shape": "SparseStringMap"
+                    }
+                }
+            },
+            "SparseStringList": {
+                "type": "list",
+                "member": {
+                    "shape": "String"
+                },
+                "sparse": true
+            },
+            "SparseStringMap": {
+                "type": "map",
+                "key": {
+                    "shape": "String"
+                },
+                "value": {
+                    "shape": "String"
+                },
+                "sparse": true
+            },
+            "String": {
+                "type": "string"
+            }
+        },
+        "cases": [
+            {
+                "id": "AwsJson11SparseMapsDeserializeNullValues",
+                "description": "Deserializes null values in maps",
+                "given": {
+                    "name": "SparseNullsOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "SparseNullsOperationInputOutput"
+                    }
+                },
+                "result": {
+                    "sparseStringMap": {
+                        "foo": null
+                    }
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"sparseStringMap\": {\n        \"foo\": null\n    }\n}"
+                }
+            },
+            {
+                "id": "AwsJson11SparseListsDeserializeNull",
+                "description": "Deserializes null values in lists",
+                "given": {
+                    "name": "SparseNullsOperation",
+                    "http": {
+                        "method": "POST",
+                        "requestUri": "/"
+                    },
+                    "output": {
+                        "shape": "SparseNullsOperationInputOutput"
+                    }
+                },
+                "result": {
+                    "sparseStringList": [
+                        null
+                    ]
+                },
+                "response": {
+                    "status_code": 200,
+                    "headers": {
+                        "Content-Type": "application/x-amz-json-1.1"
+                    },
+                    "body": "{\n    \"sparseStringList\": [\n        null\n    ]\n}"
+                }
+            }
+        ]
+    }
+]

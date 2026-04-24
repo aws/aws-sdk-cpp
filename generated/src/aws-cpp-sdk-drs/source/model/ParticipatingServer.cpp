@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/ParticipatingServer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace drs {
+namespace Model {
+
+ParticipatingServer::ParticipatingServer(JsonView jsonValue) { *this = jsonValue; }
+
+ParticipatingServer& ParticipatingServer::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceServerID")) {
+    m_sourceServerID = jsonValue.GetString("sourceServerID");
+    m_sourceServerIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("recoveryInstanceID")) {
+    m_recoveryInstanceID = jsonValue.GetString("recoveryInstanceID");
+    m_recoveryInstanceIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchStatus")) {
+    m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
+    m_launchStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchActionsStatus")) {
+    m_launchActionsStatus = jsonValue.GetObject("launchActionsStatus");
+    m_launchActionsStatusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ParticipatingServer::Jsonize() const {
+  JsonValue payload;
+
+  if (m_sourceServerIDHasBeenSet) {
+    payload.WithString("sourceServerID", m_sourceServerID);
+  }
+
+  if (m_recoveryInstanceIDHasBeenSet) {
+    payload.WithString("recoveryInstanceID", m_recoveryInstanceID);
+  }
+
+  if (m_launchStatusHasBeenSet) {
+    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
+  }
+
+  if (m_launchActionsStatusHasBeenSet) {
+    payload.WithObject("launchActionsStatus", m_launchActionsStatus.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

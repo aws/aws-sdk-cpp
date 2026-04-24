@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/AssociationDescription.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSM {
+namespace Model {
+class UpdateAssociationStatusResult {
+ public:
+  AWS_SSM_API UpdateAssociationStatusResult() = default;
+  AWS_SSM_API UpdateAssociationStatusResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSM_API UpdateAssociationStatusResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Information about the association.</p>
+   */
+  inline const AssociationDescription& GetAssociationDescription() const { return m_associationDescription; }
+  template <typename AssociationDescriptionT = AssociationDescription>
+  void SetAssociationDescription(AssociationDescriptionT&& value) {
+    m_associationDescriptionHasBeenSet = true;
+    m_associationDescription = std::forward<AssociationDescriptionT>(value);
+  }
+  template <typename AssociationDescriptionT = AssociationDescription>
+  UpdateAssociationStatusResult& WithAssociationDescription(AssociationDescriptionT&& value) {
+    SetAssociationDescription(std::forward<AssociationDescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateAssociationStatusResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  AssociationDescription m_associationDescription;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_associationDescriptionHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

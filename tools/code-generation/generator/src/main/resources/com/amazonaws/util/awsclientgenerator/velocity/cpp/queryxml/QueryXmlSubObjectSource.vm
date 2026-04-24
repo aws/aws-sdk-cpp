@@ -1,0 +1,133 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/queryxml/QuerySerializeTemplateMacros/AllQuerySerializeTemplateMacros.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/StringUtils.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+
+\#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace ${rootNamespace}
+{
+namespace ${serviceNamespace}
+{
+namespace Model
+{
+
+${typeInfo.className}::${typeInfo.className}(const XmlNode& xmlNode)
+#if($initializers)
+  : ${typeInfo.className}()
+#end
+{
+  *this = xmlNode;
+}
+
+${typeInfo.className}& ${typeInfo.className}::operator =(const XmlNode& xmlNode)
+{
+  XmlNode resultNode = xmlNode;
+
+  if(!resultNode.IsNull())
+  {
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersDeserializeXml.vm")
+  }
+
+  return *this;
+}
+
+#if($shape.members.isEmpty())
+void ${typeInfo.className}::OutputToStream(Aws::OStream&, const char*, unsigned, const char*) const
+#else
+void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const
+#end
+{
+#foreach($entry in $shape.members.entrySet())
+#set($memberName = $entry.key)
+#set($member = $entry.value)
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#set($spaces = "")
+#if(!$member.required)
+  if($varNameHasBeenSet)
+  {
+#set($spaces = "    ")
+#end
+#if($member.shape.structure)
+  ${spaces}Aws::StringStream ${lowerCaseVarName}LocationAndMemberSs;
+  ${spaces}${lowerCaseVarName}LocationAndMemberSs << location << index << locationValue << ".${memberName}";
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
+#else
+  ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMemberSs.str().c_str());
+#end
+#elseif($member.shape.list)
+#serializeSubObjQueryListElement($spaces, $member, $memberName, $memberVarName)
+#elseif($member.shape.map)
+#serializeSubObjQueryMapElement($spaces, $member, $memberName, $memberVarName)
+#else
+#set($memberLocation = '".' + $memberName + '="')
+#if($member.shape.double)
+#set($spaces = "${spaces}  ")##avoiding huge diff on generation
+#end
+  ${spaces}oStream << location << index << locationValue << #serializeSubObjQuerySingleElement($member, $memberLocation, $memberVarName) << "&";
+#end
+#if(!$member.required)
+  }
+
+#end
+#end
+}
+
+#if($shape.members.isEmpty())
+void ${typeInfo.className}::OutputToStream(Aws::OStream&, const char*) const
+#else
+void ${typeInfo.className}::OutputToStream(Aws::OStream& oStream, const char* location) const
+#end
+{
+#foreach($entry in $shape.members.entrySet())
+#set($memberName = $entry.key)
+#set($member = $entry.value)
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($memberName))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberName))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($memberName))
+#set($spaces = "")
+#if(!$member.required)
+  if($varNameHasBeenSet)
+  {
+#set($spaces = "    ")
+#end
+#if($member.shape.structure)
+  ${spaces}Aws::String ${lowerCaseVarName}LocationAndMember(location);
+  ${spaces}${lowerCaseVarName}LocationAndMember += ".${memberName}";
+#if($member.shape.isMutuallyReferencedWith($shape) || $member.shape.getName() == $shape.getName())
+  ${spaces}${memberVarName}->OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
+#else
+  ${spaces}${memberVarName}.OutputToStream(oStream, ${lowerCaseVarName}LocationAndMember.c_str());
+#end
+#elseif($member.shape.list)
+#serializeSubObjQueryListElement($spaces, $member, $memberName, $memberVarName, false)
+#elseif($member.shape.map)
+#serializeSubObjQueryMapElement($spaces, $member, $memberName, $memberVarName, false)
+#else
+  ${spaces}oStream << location << ".${memberName}=" << #serializeQuerySingleElementToText($spaces, $member, $memberVarName) << "&";
+#end
+#if(!$member.required)
+  }
+#end
+#end
+}
+
+} // namespace Model
+} // namespace ${serviceNamespace}
+} // namespace ${rootNamespace}

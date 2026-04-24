@@ -1,0 +1,92 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/kendra-ranking/KendraRankingRequest.h>
+#include <aws/kendra-ranking/KendraRanking_EXPORTS.h>
+#include <aws/kendra-ranking/model/Tag.h>
+
+#include <utility>
+
+namespace Aws {
+namespace KendraRanking {
+namespace Model {
+
+/**
+ * <p>The request information for tagging a rescore execution plan. A rescore
+ * execution plan is an Amazon Kendra Intelligent Ranking resource used for
+ * provisioning the <code>Rescore</code> API.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/kendra-ranking-2022-10-19/TagResourceRequest">AWS
+ * API Reference</a></p>
+ */
+class TagResourceRequest : public KendraRankingRequest {
+ public:
+  AWS_KENDRARANKING_API TagResourceRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "TagResource"; }
+
+  AWS_KENDRARANKING_API Aws::String SerializePayload() const override;
+
+  AWS_KENDRARANKING_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the rescore execution plan to tag.</p>
+   */
+  inline const Aws::String& GetResourceARN() const { return m_resourceARN; }
+  inline bool ResourceARNHasBeenSet() const { return m_resourceARNHasBeenSet; }
+  template <typename ResourceARNT = Aws::String>
+  void SetResourceARN(ResourceARNT&& value) {
+    m_resourceARNHasBeenSet = true;
+    m_resourceARN = std::forward<ResourceARNT>(value);
+  }
+  template <typename ResourceARNT = Aws::String>
+  TagResourceRequest& WithResourceARN(ResourceARNT&& value) {
+    SetResourceARN(std::forward<ResourceARNT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of tag keys to add to a rescore execution plan. If a tag already
+   * exists, the existing value is replaced with the new value.</p>
+   */
+  inline const Aws::Vector<Tag>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Vector<Tag>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Vector<Tag>>
+  TagResourceRequest& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsT = Tag>
+  TagResourceRequest& AddTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace_back(std::forward<TagsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_resourceARN;
+
+  Aws::Vector<Tag> m_tags;
+  bool m_resourceARNHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace KendraRanking
+}  // namespace Aws

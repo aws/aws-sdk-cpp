@@ -1,0 +1,235 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/pcs/PCS_EXPORTS.h>
+#include <aws/pcs/model/Accounting.h>
+#include <aws/pcs/model/CgroupCustomSetting.h>
+#include <aws/pcs/model/JwtAuth.h>
+#include <aws/pcs/model/SlurmAuthKey.h>
+#include <aws/pcs/model/SlurmCustomSetting.h>
+#include <aws/pcs/model/SlurmRest.h>
+#include <aws/pcs/model/SlurmdbdCustomSetting.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace PCS {
+namespace Model {
+
+/**
+ * <p>Additional options related to the Slurm scheduler.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/pcs-2023-02-10/ClusterSlurmConfiguration">AWS
+ * API Reference</a></p>
+ */
+class ClusterSlurmConfiguration {
+ public:
+  AWS_PCS_API ClusterSlurmConfiguration() = default;
+  AWS_PCS_API ClusterSlurmConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PCS_API ClusterSlurmConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_PCS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The time (in seconds) before an idle node is scaled down.</p> <p>Default:
+   * <code>600</code> </p>
+   */
+  inline int GetScaleDownIdleTimeInSeconds() const { return m_scaleDownIdleTimeInSeconds; }
+  inline bool ScaleDownIdleTimeInSecondsHasBeenSet() const { return m_scaleDownIdleTimeInSecondsHasBeenSet; }
+  inline void SetScaleDownIdleTimeInSeconds(int value) {
+    m_scaleDownIdleTimeInSecondsHasBeenSet = true;
+    m_scaleDownIdleTimeInSeconds = value;
+  }
+  inline ClusterSlurmConfiguration& WithScaleDownIdleTimeInSeconds(int value) {
+    SetScaleDownIdleTimeInSeconds(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional Slurm-specific configuration that directly maps to Slurm
+   * settings.</p>
+   */
+  inline const Aws::Vector<SlurmCustomSetting>& GetSlurmCustomSettings() const { return m_slurmCustomSettings; }
+  inline bool SlurmCustomSettingsHasBeenSet() const { return m_slurmCustomSettingsHasBeenSet; }
+  template <typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+  void SetSlurmCustomSettings(SlurmCustomSettingsT&& value) {
+    m_slurmCustomSettingsHasBeenSet = true;
+    m_slurmCustomSettings = std::forward<SlurmCustomSettingsT>(value);
+  }
+  template <typename SlurmCustomSettingsT = Aws::Vector<SlurmCustomSetting>>
+  ClusterSlurmConfiguration& WithSlurmCustomSettings(SlurmCustomSettingsT&& value) {
+    SetSlurmCustomSettings(std::forward<SlurmCustomSettingsT>(value));
+    return *this;
+  }
+  template <typename SlurmCustomSettingsT = SlurmCustomSetting>
+  ClusterSlurmConfiguration& AddSlurmCustomSettings(SlurmCustomSettingsT&& value) {
+    m_slurmCustomSettingsHasBeenSet = true;
+    m_slurmCustomSettings.emplace_back(std::forward<SlurmCustomSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional SlurmDBD-specific configuration that directly maps to SlurmDBD
+   * settings.</p>
+   */
+  inline const Aws::Vector<SlurmdbdCustomSetting>& GetSlurmdbdCustomSettings() const { return m_slurmdbdCustomSettings; }
+  inline bool SlurmdbdCustomSettingsHasBeenSet() const { return m_slurmdbdCustomSettingsHasBeenSet; }
+  template <typename SlurmdbdCustomSettingsT = Aws::Vector<SlurmdbdCustomSetting>>
+  void SetSlurmdbdCustomSettings(SlurmdbdCustomSettingsT&& value) {
+    m_slurmdbdCustomSettingsHasBeenSet = true;
+    m_slurmdbdCustomSettings = std::forward<SlurmdbdCustomSettingsT>(value);
+  }
+  template <typename SlurmdbdCustomSettingsT = Aws::Vector<SlurmdbdCustomSetting>>
+  ClusterSlurmConfiguration& WithSlurmdbdCustomSettings(SlurmdbdCustomSettingsT&& value) {
+    SetSlurmdbdCustomSettings(std::forward<SlurmdbdCustomSettingsT>(value));
+    return *this;
+  }
+  template <typename SlurmdbdCustomSettingsT = SlurmdbdCustomSetting>
+  ClusterSlurmConfiguration& AddSlurmdbdCustomSettings(SlurmdbdCustomSettingsT&& value) {
+    m_slurmdbdCustomSettingsHasBeenSet = true;
+    m_slurmdbdCustomSettings.emplace_back(std::forward<SlurmdbdCustomSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Additional Cgroup-specific configuration that directly maps to Cgroup
+   * settings.</p>
+   */
+  inline const Aws::Vector<CgroupCustomSetting>& GetCgroupCustomSettings() const { return m_cgroupCustomSettings; }
+  inline bool CgroupCustomSettingsHasBeenSet() const { return m_cgroupCustomSettingsHasBeenSet; }
+  template <typename CgroupCustomSettingsT = Aws::Vector<CgroupCustomSetting>>
+  void SetCgroupCustomSettings(CgroupCustomSettingsT&& value) {
+    m_cgroupCustomSettingsHasBeenSet = true;
+    m_cgroupCustomSettings = std::forward<CgroupCustomSettingsT>(value);
+  }
+  template <typename CgroupCustomSettingsT = Aws::Vector<CgroupCustomSetting>>
+  ClusterSlurmConfiguration& WithCgroupCustomSettings(CgroupCustomSettingsT&& value) {
+    SetCgroupCustomSettings(std::forward<CgroupCustomSettingsT>(value));
+    return *this;
+  }
+  template <typename CgroupCustomSettingsT = CgroupCustomSetting>
+  ClusterSlurmConfiguration& AddCgroupCustomSettings(CgroupCustomSettingsT&& value) {
+    m_cgroupCustomSettingsHasBeenSet = true;
+    m_cgroupCustomSettings.emplace_back(std::forward<CgroupCustomSettingsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The shared Slurm key for authentication, also known as the <b>cluster
+   * secret</b>.</p>
+   */
+  inline const SlurmAuthKey& GetAuthKey() const { return m_authKey; }
+  inline bool AuthKeyHasBeenSet() const { return m_authKeyHasBeenSet; }
+  template <typename AuthKeyT = SlurmAuthKey>
+  void SetAuthKey(AuthKeyT&& value) {
+    m_authKeyHasBeenSet = true;
+    m_authKey = std::forward<AuthKeyT>(value);
+  }
+  template <typename AuthKeyT = SlurmAuthKey>
+  ClusterSlurmConfiguration& WithAuthKey(AuthKeyT&& value) {
+    SetAuthKey(std::forward<AuthKeyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The JWT authentication configuration for Slurm REST API access.</p>
+   */
+  inline const JwtAuth& GetJwtAuth() const { return m_jwtAuth; }
+  inline bool JwtAuthHasBeenSet() const { return m_jwtAuthHasBeenSet; }
+  template <typename JwtAuthT = JwtAuth>
+  void SetJwtAuth(JwtAuthT&& value) {
+    m_jwtAuthHasBeenSet = true;
+    m_jwtAuth = std::forward<JwtAuthT>(value);
+  }
+  template <typename JwtAuthT = JwtAuth>
+  ClusterSlurmConfiguration& WithJwtAuth(JwtAuthT&& value) {
+    SetJwtAuth(std::forward<JwtAuthT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The accounting configuration includes configurable settings for Slurm
+   * accounting.</p>
+   */
+  inline const Accounting& GetAccounting() const { return m_accounting; }
+  inline bool AccountingHasBeenSet() const { return m_accountingHasBeenSet; }
+  template <typename AccountingT = Accounting>
+  void SetAccounting(AccountingT&& value) {
+    m_accountingHasBeenSet = true;
+    m_accounting = std::forward<AccountingT>(value);
+  }
+  template <typename AccountingT = Accounting>
+  ClusterSlurmConfiguration& WithAccounting(AccountingT&& value) {
+    SetAccounting(std::forward<AccountingT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Slurm REST API configuration for the cluster.</p>
+   */
+  inline const SlurmRest& GetSlurmRest() const { return m_slurmRest; }
+  inline bool SlurmRestHasBeenSet() const { return m_slurmRestHasBeenSet; }
+  template <typename SlurmRestT = SlurmRest>
+  void SetSlurmRest(SlurmRestT&& value) {
+    m_slurmRestHasBeenSet = true;
+    m_slurmRest = std::forward<SlurmRestT>(value);
+  }
+  template <typename SlurmRestT = SlurmRest>
+  ClusterSlurmConfiguration& WithSlurmRest(SlurmRestT&& value) {
+    SetSlurmRest(std::forward<SlurmRestT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  int m_scaleDownIdleTimeInSeconds{0};
+
+  Aws::Vector<SlurmCustomSetting> m_slurmCustomSettings;
+
+  Aws::Vector<SlurmdbdCustomSetting> m_slurmdbdCustomSettings;
+
+  Aws::Vector<CgroupCustomSetting> m_cgroupCustomSettings;
+
+  SlurmAuthKey m_authKey;
+
+  JwtAuth m_jwtAuth;
+
+  Accounting m_accounting;
+
+  SlurmRest m_slurmRest;
+  bool m_scaleDownIdleTimeInSecondsHasBeenSet = false;
+  bool m_slurmCustomSettingsHasBeenSet = false;
+  bool m_slurmdbdCustomSettingsHasBeenSet = false;
+  bool m_cgroupCustomSettingsHasBeenSet = false;
+  bool m_authKeyHasBeenSet = false;
+  bool m_jwtAuthHasBeenSet = false;
+  bool m_accountingHasBeenSet = false;
+  bool m_slurmRestHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace PCS
+}  // namespace Aws

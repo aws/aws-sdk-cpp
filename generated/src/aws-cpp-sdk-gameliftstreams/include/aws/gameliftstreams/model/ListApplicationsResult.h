@@ -1,0 +1,105 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/gameliftstreams/GameLiftStreams_EXPORTS.h>
+#include <aws/gameliftstreams/model/ApplicationSummary.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace GameLiftStreams {
+namespace Model {
+class ListApplicationsResult {
+ public:
+  AWS_GAMELIFTSTREAMS_API ListApplicationsResult() = default;
+  AWS_GAMELIFTSTREAMS_API ListApplicationsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_GAMELIFTSTREAMS_API ListApplicationsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A collection of Amazon GameLift Streams applications that are associated with
+   * the Amazon Web Services account in use. Each item includes application metadata
+   * and status.</p>
+   */
+  inline const Aws::Vector<ApplicationSummary>& GetItems() const { return m_items; }
+  template <typename ItemsT = Aws::Vector<ApplicationSummary>>
+  void SetItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items = std::forward<ItemsT>(value);
+  }
+  template <typename ItemsT = Aws::Vector<ApplicationSummary>>
+  ListApplicationsResult& WithItems(ItemsT&& value) {
+    SetItems(std::forward<ItemsT>(value));
+    return *this;
+  }
+  template <typename ItemsT = ApplicationSummary>
+  ListApplicationsResult& AddItems(ItemsT&& value) {
+    m_itemsHasBeenSet = true;
+    m_items.emplace_back(std::forward<ItemsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A token that marks the start of the next sequential page of results. If an
+   * operation doesn't return a token, you've reached the end of the list. </p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListApplicationsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListApplicationsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<ApplicationSummary> m_items;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_itemsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GameLiftStreams
+}  // namespace Aws

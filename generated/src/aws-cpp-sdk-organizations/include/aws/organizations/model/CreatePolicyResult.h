@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
+#include <aws/organizations/model/Policy.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Organizations {
+namespace Model {
+class CreatePolicyResult {
+ public:
+  AWS_ORGANIZATIONS_API CreatePolicyResult() = default;
+  AWS_ORGANIZATIONS_API CreatePolicyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ORGANIZATIONS_API CreatePolicyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A structure that contains details about the newly created policy.</p>
+   */
+  inline const Policy& GetPolicy() const { return m_policy; }
+  template <typename PolicyT = Policy>
+  void SetPolicy(PolicyT&& value) {
+    m_policyHasBeenSet = true;
+    m_policy = std::forward<PolicyT>(value);
+  }
+  template <typename PolicyT = Policy>
+  CreatePolicyResult& WithPolicy(PolicyT&& value) {
+    SetPolicy(std::forward<PolicyT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreatePolicyResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Policy m_policy;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_policyHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

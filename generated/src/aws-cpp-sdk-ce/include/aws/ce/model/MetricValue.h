@@ -1,0 +1,79 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/ce/CostExplorer_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace CostExplorer {
+namespace Model {
+
+/**
+ * <p>The aggregated value for a metric.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ce-2017-10-25/MetricValue">AWS API
+ * Reference</a></p>
+ */
+class MetricValue {
+ public:
+  AWS_COSTEXPLORER_API MetricValue() = default;
+  AWS_COSTEXPLORER_API MetricValue(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COSTEXPLORER_API MetricValue& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_COSTEXPLORER_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The actual number that represents the metric.</p>
+   */
+  inline const Aws::String& GetAmount() const { return m_amount; }
+  inline bool AmountHasBeenSet() const { return m_amountHasBeenSet; }
+  template <typename AmountT = Aws::String>
+  void SetAmount(AmountT&& value) {
+    m_amountHasBeenSet = true;
+    m_amount = std::forward<AmountT>(value);
+  }
+  template <typename AmountT = Aws::String>
+  MetricValue& WithAmount(AmountT&& value) {
+    SetAmount(std::forward<AmountT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The unit that the metric is given in.</p>
+   */
+  inline const Aws::String& GetUnit() const { return m_unit; }
+  inline bool UnitHasBeenSet() const { return m_unitHasBeenSet; }
+  template <typename UnitT = Aws::String>
+  void SetUnit(UnitT&& value) {
+    m_unitHasBeenSet = true;
+    m_unit = std::forward<UnitT>(value);
+  }
+  template <typename UnitT = Aws::String>
+  MetricValue& WithUnit(UnitT&& value) {
+    SetUnit(std::forward<UnitT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_amount;
+
+  Aws::String m_unit;
+  bool m_amountHasBeenSet = false;
+  bool m_unitHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace CostExplorer
+}  // namespace Aws

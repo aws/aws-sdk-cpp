@@ -1,0 +1,98 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/acm-pca/model/KeyAlgorithm.h>
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ACMPCA {
+namespace Model {
+namespace KeyAlgorithmMapper {
+
+static const int RSA_2048_HASH = HashingUtils::HashString("RSA_2048");
+static const int RSA_3072_HASH = HashingUtils::HashString("RSA_3072");
+static const int RSA_4096_HASH = HashingUtils::HashString("RSA_4096");
+static const int EC_prime256v1_HASH = HashingUtils::HashString("EC_prime256v1");
+static const int EC_secp384r1_HASH = HashingUtils::HashString("EC_secp384r1");
+static const int EC_secp521r1_HASH = HashingUtils::HashString("EC_secp521r1");
+static const int ML_DSA_44_HASH = HashingUtils::HashString("ML_DSA_44");
+static const int ML_DSA_65_HASH = HashingUtils::HashString("ML_DSA_65");
+static const int ML_DSA_87_HASH = HashingUtils::HashString("ML_DSA_87");
+static const int SM2_HASH = HashingUtils::HashString("SM2");
+
+KeyAlgorithm GetKeyAlgorithmForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == RSA_2048_HASH) {
+    return KeyAlgorithm::RSA_2048;
+  } else if (hashCode == RSA_3072_HASH) {
+    return KeyAlgorithm::RSA_3072;
+  } else if (hashCode == RSA_4096_HASH) {
+    return KeyAlgorithm::RSA_4096;
+  } else if (hashCode == EC_prime256v1_HASH) {
+    return KeyAlgorithm::EC_prime256v1;
+  } else if (hashCode == EC_secp384r1_HASH) {
+    return KeyAlgorithm::EC_secp384r1;
+  } else if (hashCode == EC_secp521r1_HASH) {
+    return KeyAlgorithm::EC_secp521r1;
+  } else if (hashCode == ML_DSA_44_HASH) {
+    return KeyAlgorithm::ML_DSA_44;
+  } else if (hashCode == ML_DSA_65_HASH) {
+    return KeyAlgorithm::ML_DSA_65;
+  } else if (hashCode == ML_DSA_87_HASH) {
+    return KeyAlgorithm::ML_DSA_87;
+  } else if (hashCode == SM2_HASH) {
+    return KeyAlgorithm::SM2;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<KeyAlgorithm>(hashCode);
+  }
+
+  return KeyAlgorithm::NOT_SET;
+}
+
+Aws::String GetNameForKeyAlgorithm(KeyAlgorithm enumValue) {
+  switch (enumValue) {
+    case KeyAlgorithm::NOT_SET:
+      return {};
+    case KeyAlgorithm::RSA_2048:
+      return "RSA_2048";
+    case KeyAlgorithm::RSA_3072:
+      return "RSA_3072";
+    case KeyAlgorithm::RSA_4096:
+      return "RSA_4096";
+    case KeyAlgorithm::EC_prime256v1:
+      return "EC_prime256v1";
+    case KeyAlgorithm::EC_secp384r1:
+      return "EC_secp384r1";
+    case KeyAlgorithm::EC_secp521r1:
+      return "EC_secp521r1";
+    case KeyAlgorithm::ML_DSA_44:
+      return "ML_DSA_44";
+    case KeyAlgorithm::ML_DSA_65:
+      return "ML_DSA_65";
+    case KeyAlgorithm::ML_DSA_87:
+      return "ML_DSA_87";
+    case KeyAlgorithm::SM2:
+      return "SM2";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace KeyAlgorithmMapper
+}  // namespace Model
+}  // namespace ACMPCA
+}  // namespace Aws

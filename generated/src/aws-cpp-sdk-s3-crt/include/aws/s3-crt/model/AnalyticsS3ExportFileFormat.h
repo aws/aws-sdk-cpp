@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/s3-crt/S3Crt_EXPORTS.h>
+
+namespace Aws {
+namespace S3Crt {
+namespace Model {
+enum class AnalyticsS3ExportFileFormat { NOT_SET, CSV };
+
+namespace AnalyticsS3ExportFileFormatMapper {
+AWS_S3CRT_API AnalyticsS3ExportFileFormat GetAnalyticsS3ExportFileFormatForName(const Aws::String& name);
+
+AWS_S3CRT_API Aws::String GetNameForAnalyticsS3ExportFileFormat(AnalyticsS3ExportFileFormat value);
+}  // namespace AnalyticsS3ExportFileFormatMapper
+}  // namespace Model
+}  // namespace S3Crt
+}  // namespace Aws

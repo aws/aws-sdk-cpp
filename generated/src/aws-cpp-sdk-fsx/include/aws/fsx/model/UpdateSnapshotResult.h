@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fsx/FSx_EXPORTS.h>
+#include <aws/fsx/model/Snapshot.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace FSx {
+namespace Model {
+class UpdateSnapshotResult {
+ public:
+  AWS_FSX_API UpdateSnapshotResult() = default;
+  AWS_FSX_API UpdateSnapshotResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_FSX_API UpdateSnapshotResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Returned after a successful <code>UpdateSnapshot</code> operation, describing
+   * the snapshot that you updated.</p>
+   */
+  inline const Snapshot& GetSnapshot() const { return m_snapshot; }
+  template <typename SnapshotT = Snapshot>
+  void SetSnapshot(SnapshotT&& value) {
+    m_snapshotHasBeenSet = true;
+    m_snapshot = std::forward<SnapshotT>(value);
+  }
+  template <typename SnapshotT = Snapshot>
+  UpdateSnapshotResult& WithSnapshot(SnapshotT&& value) {
+    SetSnapshot(std::forward<SnapshotT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateSnapshotResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Snapshot m_snapshot;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_snapshotHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

@@ -1,0 +1,88 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/CustomParameter.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+
+CustomParameter::CustomParameter(JsonView jsonValue) { *this = jsonValue; }
+
+CustomParameter& CustomParameter::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("keyName")) {
+    m_keyName = jsonValue.GetString("keyName");
+    m_keyNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("description")) {
+    m_description = jsonValue.GetString("description");
+    m_descriptionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("fieldType")) {
+    m_fieldType = jsonValue.GetString("fieldType");
+    m_fieldTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("defaultValue")) {
+    m_defaultValue = jsonValue.GetString("defaultValue");
+    m_defaultValueHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isEditable")) {
+    m_isEditable = jsonValue.GetBool("isEditable");
+    m_isEditableHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isOptional")) {
+    m_isOptional = jsonValue.GetBool("isOptional");
+    m_isOptionalHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("isUpdateSupported")) {
+    m_isUpdateSupported = jsonValue.GetBool("isUpdateSupported");
+    m_isUpdateSupportedHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CustomParameter::Jsonize() const {
+  JsonValue payload;
+
+  if (m_keyNameHasBeenSet) {
+    payload.WithString("keyName", m_keyName);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_fieldTypeHasBeenSet) {
+    payload.WithString("fieldType", m_fieldType);
+  }
+
+  if (m_defaultValueHasBeenSet) {
+    payload.WithString("defaultValue", m_defaultValue);
+  }
+
+  if (m_isEditableHasBeenSet) {
+    payload.WithBool("isEditable", m_isEditable);
+  }
+
+  if (m_isOptionalHasBeenSet) {
+    payload.WithBool("isOptional", m_isOptional);
+  }
+
+  if (m_isUpdateSupportedHasBeenSet) {
+    payload.WithBool("isUpdateSupported", m_isUpdateSupported);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

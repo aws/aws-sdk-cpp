@@ -1,0 +1,87 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-discovery/model/FixedUpfrontPricingTerm.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MarketplaceDiscovery {
+namespace Model {
+
+FixedUpfrontPricingTerm::FixedUpfrontPricingTerm(JsonView jsonValue) { *this = jsonValue; }
+
+FixedUpfrontPricingTerm& FixedUpfrontPricingTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("id")) {
+    m_id = jsonValue.GetString("id");
+    m_idHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = TermTypeMapper::GetTermTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("currencyCode")) {
+    m_currencyCode = jsonValue.GetString("currencyCode");
+    m_currencyCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("duration")) {
+    m_duration = jsonValue.GetString("duration");
+    m_durationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("price")) {
+    m_price = jsonValue.GetString("price");
+    m_priceHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("grants")) {
+    Aws::Utils::Array<JsonView> grantsJsonList = jsonValue.GetArray("grants");
+    for (unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex) {
+      m_grants.push_back(grantsJsonList[grantsIndex].AsObject());
+    }
+    m_grantsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FixedUpfrontPricingTerm::Jsonize() const {
+  JsonValue payload;
+
+  if (m_idHasBeenSet) {
+    payload.WithString("id", m_id);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", TermTypeMapper::GetNameForTermType(m_type));
+  }
+
+  if (m_currencyCodeHasBeenSet) {
+    payload.WithString("currencyCode", m_currencyCode);
+  }
+
+  if (m_durationHasBeenSet) {
+    payload.WithString("duration", m_duration);
+  }
+
+  if (m_priceHasBeenSet) {
+    payload.WithString("price", m_price);
+  }
+
+  if (m_grantsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> grantsJsonList(m_grants.size());
+    for (unsigned grantsIndex = 0; grantsIndex < grantsJsonList.GetLength(); ++grantsIndex) {
+      grantsJsonList[grantsIndex].AsObject(m_grants[grantsIndex].Jsonize());
+    }
+    payload.WithArray("grants", std::move(grantsJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MarketplaceDiscovery
+}  // namespace Aws

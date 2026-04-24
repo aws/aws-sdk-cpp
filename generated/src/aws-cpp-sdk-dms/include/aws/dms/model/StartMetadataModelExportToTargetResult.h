@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/dms/DatabaseMigrationService_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DatabaseMigrationService {
+namespace Model {
+class StartMetadataModelExportToTargetResult {
+ public:
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportToTargetResult() = default;
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportToTargetResult(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATABASEMIGRATIONSERVICE_API StartMetadataModelExportToTargetResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier for the export operation.</p>
+   */
+  inline const Aws::String& GetRequestIdentifier() const { return m_requestIdentifier; }
+  template <typename RequestIdentifierT = Aws::String>
+  void SetRequestIdentifier(RequestIdentifierT&& value) {
+    m_requestIdentifierHasBeenSet = true;
+    m_requestIdentifier = std::forward<RequestIdentifierT>(value);
+  }
+  template <typename RequestIdentifierT = Aws::String>
+  StartMetadataModelExportToTargetResult& WithRequestIdentifier(RequestIdentifierT&& value) {
+    SetRequestIdentifier(std::forward<RequestIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  StartMetadataModelExportToTargetResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_requestIdentifier;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_requestIdentifierHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DatabaseMigrationService
+}  // namespace Aws

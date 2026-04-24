@@ -1,0 +1,35 @@
+#set($projectNameCaps = $projectName.toUpperCase())
+#set($awsProjectProtocolTestSrc = "AWS_" + ${projectNameCaps.replace("-", "_")} +"_SRC")
+#set($awsProjectProtocolTestSrcVar = "${" + $awsProjectProtocolTestSrc +"}")
+add_project($projectName
+    "Tests for the protocol $serviceModel.metadata.findFirstSupportedProtocol() of AWS C++ SDK"
+    testing-resources
+    aws-cpp-sdk-protocol-mock
+    aws-cpp-sdk-${serviceModel.metadata.projectName}
+    aws-cpp-sdk-core)
+
+file(GLOB $awsProjectProtocolTestSrc
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/tests/*.cpp"
+)
+
+if(MSVC AND BUILD_SHARED_LIBS)
+    add_definitions(-DGTEST_LINKED_AS_SHARED_LIBRARY=1)
+endif()
+
+enable_testing()
+
+if(PLATFORM_ANDROID AND BUILD_SHARED_LIBS)
+    add_library(${PROJECT_NAME} "${awsProjectProtocolTestSrcVar}")
+else()
+    add_executable(${PROJECT_NAME} "${awsProjectProtocolTestSrcVar}")
+endif()
+
+set_compiler_flags(${PROJECT_NAME})
+set_compiler_warnings(${PROJECT_NAME})
+
+target_link_libraries(${PROJECT_NAME} ${PROJECT_LIBS})
+
+if(NOT CMAKE_CROSSCOMPILING)
+    SET_TARGET_PROPERTIES(${PROJECT_NAME} PROPERTIES OUTPUT_NAME ${PROJECT_NAME})
+endif()

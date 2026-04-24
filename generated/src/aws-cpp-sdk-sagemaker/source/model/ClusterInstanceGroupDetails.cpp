@@ -1,0 +1,286 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/ClusterInstanceGroupDetails.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+ClusterInstanceGroupDetails::ClusterInstanceGroupDetails(JsonView jsonValue) { *this = jsonValue; }
+
+ClusterInstanceGroupDetails& ClusterInstanceGroupDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CurrentCount")) {
+    m_currentCount = jsonValue.GetInteger("CurrentCount");
+    m_currentCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TargetCount")) {
+    m_targetCount = jsonValue.GetInteger("TargetCount");
+    m_targetCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MinCount")) {
+    m_minCount = jsonValue.GetInteger("MinCount");
+    m_minCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceGroupName")) {
+    m_instanceGroupName = jsonValue.GetString("InstanceGroupName");
+    m_instanceGroupNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceType")) {
+    m_instanceType = ClusterInstanceTypeMapper::GetClusterInstanceTypeForName(jsonValue.GetString("InstanceType"));
+    m_instanceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceRequirements")) {
+    m_instanceRequirements = jsonValue.GetObject("InstanceRequirements");
+    m_instanceRequirementsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceTypeDetails")) {
+    Aws::Utils::Array<JsonView> instanceTypeDetailsJsonList = jsonValue.GetArray("InstanceTypeDetails");
+    for (unsigned instanceTypeDetailsIndex = 0; instanceTypeDetailsIndex < instanceTypeDetailsJsonList.GetLength();
+         ++instanceTypeDetailsIndex) {
+      m_instanceTypeDetails.push_back(instanceTypeDetailsJsonList[instanceTypeDetailsIndex].AsObject());
+    }
+    m_instanceTypeDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LifeCycleConfig")) {
+    m_lifeCycleConfig = jsonValue.GetObject("LifeCycleConfig");
+    m_lifeCycleConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ExecutionRole")) {
+    m_executionRole = jsonValue.GetString("ExecutionRole");
+    m_executionRoleHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ThreadsPerCore")) {
+    m_threadsPerCore = jsonValue.GetInteger("ThreadsPerCore");
+    m_threadsPerCoreHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("InstanceStorageConfigs")) {
+    Aws::Utils::Array<JsonView> instanceStorageConfigsJsonList = jsonValue.GetArray("InstanceStorageConfigs");
+    for (unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength();
+         ++instanceStorageConfigsIndex) {
+      m_instanceStorageConfigs.push_back(instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject());
+    }
+    m_instanceStorageConfigsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OnStartDeepHealthChecks")) {
+    Aws::Utils::Array<JsonView> onStartDeepHealthChecksJsonList = jsonValue.GetArray("OnStartDeepHealthChecks");
+    for (unsigned onStartDeepHealthChecksIndex = 0; onStartDeepHealthChecksIndex < onStartDeepHealthChecksJsonList.GetLength();
+         ++onStartDeepHealthChecksIndex) {
+      m_onStartDeepHealthChecks.push_back(DeepHealthCheckTypeMapper::GetDeepHealthCheckTypeForName(
+          onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString()));
+    }
+    m_onStartDeepHealthChecksHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = InstanceGroupStatusMapper::GetInstanceGroupStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TrainingPlanArn")) {
+    m_trainingPlanArn = jsonValue.GetString("TrainingPlanArn");
+    m_trainingPlanArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TrainingPlanStatus")) {
+    m_trainingPlanStatus = jsonValue.GetString("TrainingPlanStatus");
+    m_trainingPlanStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("OverrideVpcConfig")) {
+    m_overrideVpcConfig = jsonValue.GetObject("OverrideVpcConfig");
+    m_overrideVpcConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ScheduledUpdateConfig")) {
+    m_scheduledUpdateConfig = jsonValue.GetObject("ScheduledUpdateConfig");
+    m_scheduledUpdateConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CurrentImageId")) {
+    m_currentImageId = jsonValue.GetString("CurrentImageId");
+    m_currentImageIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DesiredImageId")) {
+    m_desiredImageId = jsonValue.GetString("DesiredImageId");
+    m_desiredImageIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ActiveOperations")) {
+    Aws::Map<Aws::String, JsonView> activeOperationsJsonMap = jsonValue.GetObject("ActiveOperations").GetAllObjects();
+    for (auto& activeOperationsItem : activeOperationsJsonMap) {
+      m_activeOperations[ActiveClusterOperationNameMapper::GetActiveClusterOperationNameForName(activeOperationsItem.first)] =
+          activeOperationsItem.second.AsInteger();
+    }
+    m_activeOperationsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("KubernetesConfig")) {
+    m_kubernetesConfig = jsonValue.GetObject("KubernetesConfig");
+    m_kubernetesConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CapacityRequirements")) {
+    m_capacityRequirements = jsonValue.GetObject("CapacityRequirements");
+    m_capacityRequirementsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TargetStateCount")) {
+    m_targetStateCount = jsonValue.GetInteger("TargetStateCount");
+    m_targetStateCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SoftwareUpdateStatus")) {
+    m_softwareUpdateStatus = SoftwareUpdateStatusMapper::GetSoftwareUpdateStatusForName(jsonValue.GetString("SoftwareUpdateStatus"));
+    m_softwareUpdateStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ActiveSoftwareUpdateConfig")) {
+    m_activeSoftwareUpdateConfig = jsonValue.GetObject("ActiveSoftwareUpdateConfig");
+    m_activeSoftwareUpdateConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SlurmConfig")) {
+    m_slurmConfig = jsonValue.GetObject("SlurmConfig");
+    m_slurmConfigHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NetworkInterface")) {
+    m_networkInterface = jsonValue.GetObject("NetworkInterface");
+    m_networkInterfaceHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ClusterInstanceGroupDetails::Jsonize() const {
+  JsonValue payload;
+
+  if (m_currentCountHasBeenSet) {
+    payload.WithInteger("CurrentCount", m_currentCount);
+  }
+
+  if (m_targetCountHasBeenSet) {
+    payload.WithInteger("TargetCount", m_targetCount);
+  }
+
+  if (m_minCountHasBeenSet) {
+    payload.WithInteger("MinCount", m_minCount);
+  }
+
+  if (m_instanceGroupNameHasBeenSet) {
+    payload.WithString("InstanceGroupName", m_instanceGroupName);
+  }
+
+  if (m_instanceTypeHasBeenSet) {
+    payload.WithString("InstanceType", ClusterInstanceTypeMapper::GetNameForClusterInstanceType(m_instanceType));
+  }
+
+  if (m_instanceRequirementsHasBeenSet) {
+    payload.WithObject("InstanceRequirements", m_instanceRequirements.Jsonize());
+  }
+
+  if (m_instanceTypeDetailsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceTypeDetailsJsonList(m_instanceTypeDetails.size());
+    for (unsigned instanceTypeDetailsIndex = 0; instanceTypeDetailsIndex < instanceTypeDetailsJsonList.GetLength();
+         ++instanceTypeDetailsIndex) {
+      instanceTypeDetailsJsonList[instanceTypeDetailsIndex].AsObject(m_instanceTypeDetails[instanceTypeDetailsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceTypeDetails", std::move(instanceTypeDetailsJsonList));
+  }
+
+  if (m_lifeCycleConfigHasBeenSet) {
+    payload.WithObject("LifeCycleConfig", m_lifeCycleConfig.Jsonize());
+  }
+
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("ExecutionRole", m_executionRole);
+  }
+
+  if (m_threadsPerCoreHasBeenSet) {
+    payload.WithInteger("ThreadsPerCore", m_threadsPerCore);
+  }
+
+  if (m_instanceStorageConfigsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> instanceStorageConfigsJsonList(m_instanceStorageConfigs.size());
+    for (unsigned instanceStorageConfigsIndex = 0; instanceStorageConfigsIndex < instanceStorageConfigsJsonList.GetLength();
+         ++instanceStorageConfigsIndex) {
+      instanceStorageConfigsJsonList[instanceStorageConfigsIndex].AsObject(m_instanceStorageConfigs[instanceStorageConfigsIndex].Jsonize());
+    }
+    payload.WithArray("InstanceStorageConfigs", std::move(instanceStorageConfigsJsonList));
+  }
+
+  if (m_onStartDeepHealthChecksHasBeenSet) {
+    Aws::Utils::Array<JsonValue> onStartDeepHealthChecksJsonList(m_onStartDeepHealthChecks.size());
+    for (unsigned onStartDeepHealthChecksIndex = 0; onStartDeepHealthChecksIndex < onStartDeepHealthChecksJsonList.GetLength();
+         ++onStartDeepHealthChecksIndex) {
+      onStartDeepHealthChecksJsonList[onStartDeepHealthChecksIndex].AsString(
+          DeepHealthCheckTypeMapper::GetNameForDeepHealthCheckType(m_onStartDeepHealthChecks[onStartDeepHealthChecksIndex]));
+    }
+    payload.WithArray("OnStartDeepHealthChecks", std::move(onStartDeepHealthChecksJsonList));
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("Status", InstanceGroupStatusMapper::GetNameForInstanceGroupStatus(m_status));
+  }
+
+  if (m_trainingPlanArnHasBeenSet) {
+    payload.WithString("TrainingPlanArn", m_trainingPlanArn);
+  }
+
+  if (m_trainingPlanStatusHasBeenSet) {
+    payload.WithString("TrainingPlanStatus", m_trainingPlanStatus);
+  }
+
+  if (m_overrideVpcConfigHasBeenSet) {
+    payload.WithObject("OverrideVpcConfig", m_overrideVpcConfig.Jsonize());
+  }
+
+  if (m_scheduledUpdateConfigHasBeenSet) {
+    payload.WithObject("ScheduledUpdateConfig", m_scheduledUpdateConfig.Jsonize());
+  }
+
+  if (m_currentImageIdHasBeenSet) {
+    payload.WithString("CurrentImageId", m_currentImageId);
+  }
+
+  if (m_desiredImageIdHasBeenSet) {
+    payload.WithString("DesiredImageId", m_desiredImageId);
+  }
+
+  if (m_activeOperationsHasBeenSet) {
+    JsonValue activeOperationsJsonMap;
+    for (auto& activeOperationsItem : m_activeOperations) {
+      activeOperationsJsonMap.WithInteger(
+          ActiveClusterOperationNameMapper::GetNameForActiveClusterOperationName(activeOperationsItem.first), activeOperationsItem.second);
+    }
+    payload.WithObject("ActiveOperations", std::move(activeOperationsJsonMap));
+  }
+
+  if (m_kubernetesConfigHasBeenSet) {
+    payload.WithObject("KubernetesConfig", m_kubernetesConfig.Jsonize());
+  }
+
+  if (m_capacityRequirementsHasBeenSet) {
+    payload.WithObject("CapacityRequirements", m_capacityRequirements.Jsonize());
+  }
+
+  if (m_targetStateCountHasBeenSet) {
+    payload.WithInteger("TargetStateCount", m_targetStateCount);
+  }
+
+  if (m_softwareUpdateStatusHasBeenSet) {
+    payload.WithString("SoftwareUpdateStatus", SoftwareUpdateStatusMapper::GetNameForSoftwareUpdateStatus(m_softwareUpdateStatus));
+  }
+
+  if (m_activeSoftwareUpdateConfigHasBeenSet) {
+    payload.WithObject("ActiveSoftwareUpdateConfig", m_activeSoftwareUpdateConfig.Jsonize());
+  }
+
+  if (m_slurmConfigHasBeenSet) {
+    payload.WithObject("SlurmConfig", m_slurmConfig.Jsonize());
+  }
+
+  if (m_networkInterfaceHasBeenSet) {
+    payload.WithObject("NetworkInterface", m_networkInterface.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

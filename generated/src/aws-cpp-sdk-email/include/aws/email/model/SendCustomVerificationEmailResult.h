@@ -1,0 +1,82 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/email/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace SES {
+namespace Model {
+/**
+ * <p>The response received when attempting to send the custom verification
+ * email.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/SendCustomVerificationEmailResponse">AWS
+ * API Reference</a></p>
+ */
+class SendCustomVerificationEmailResult {
+ public:
+  AWS_SES_API SendCustomVerificationEmailResult() = default;
+  AWS_SES_API SendCustomVerificationEmailResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_SES_API SendCustomVerificationEmailResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>The unique message identifier returned from the
+   * <code>SendCustomVerificationEmail</code> operation.</p>
+   */
+  inline const Aws::String& GetMessageId() const { return m_messageId; }
+  template <typename MessageIdT = Aws::String>
+  void SetMessageId(MessageIdT&& value) {
+    m_messageIdHasBeenSet = true;
+    m_messageId = std::forward<MessageIdT>(value);
+  }
+  template <typename MessageIdT = Aws::String>
+  SendCustomVerificationEmailResult& WithMessageId(MessageIdT&& value) {
+    SetMessageId(std::forward<MessageIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  SendCustomVerificationEmailResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_messageId;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_messageIdHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

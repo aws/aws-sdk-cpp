@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securitylake/model/AwsLogSourceResource.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SecurityLake {
+namespace Model {
+
+AwsLogSourceResource::AwsLogSourceResource(JsonView jsonValue) { *this = jsonValue; }
+
+AwsLogSourceResource& AwsLogSourceResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("sourceName")) {
+    m_sourceName = AwsLogSourceNameMapper::GetAwsLogSourceNameForName(jsonValue.GetString("sourceName"));
+    m_sourceNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sourceVersion")) {
+    m_sourceVersion = jsonValue.GetString("sourceVersion");
+    m_sourceVersionHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AwsLogSourceResource::Jsonize() const {
+  JsonValue payload;
+
+  if (m_sourceNameHasBeenSet) {
+    payload.WithString("sourceName", AwsLogSourceNameMapper::GetNameForAwsLogSourceName(m_sourceName));
+  }
+
+  if (m_sourceVersionHasBeenSet) {
+    payload.WithString("sourceVersion", m_sourceVersion);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SecurityLake
+}  // namespace Aws

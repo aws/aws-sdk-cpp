@@ -1,0 +1,162 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
+
+/**
+ * <p>Instructions on when and how to check the health of a support container in a
+ * container fleet. These properties override any Docker health checks that are set
+ * in the container image. For more information on container health checks, see <a
+ * href="https://docs.aws.amazon.com/AmazonECS/latest/APIReference/API_HealthCheck.html#ECS-Type-HealthCheck-command">HealthCheck
+ * command</a> in the <i>Amazon Elastic Container Service API</i>. Game server
+ * containers don't have a health check parameter; Amazon GameLift Servers
+ * automatically handles health checks for these containers.</p> <p>The following
+ * example instructs the container to initiate a health check command every 60
+ * seconds and wait 10 seconds for it to succeed. If it fails, retry the command 3
+ * times before flagging the container as unhealthy. It also tells the container to
+ * wait 100 seconds after launch before counting failed health checks.</p> <p>
+ * <code>{"Command": [ "CMD-SHELL", "ps cax | grep "processmanager" || exit 1" ],
+ * "Interval": 60, "Timeout": 10, "Retries": 3, "StartPeriod": 100 }</code> </p>
+ * <p> <b>Part of:</b> <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinition.html">SupportContainerDefinition</a>,
+ * <a
+ * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_SupportContainerDefinitionInput.html">SupportContainerDefinitionInput</a>
+ * </p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ContainerHealthCheck">AWS
+ * API Reference</a></p>
+ */
+class ContainerHealthCheck {
+ public:
+  AWS_GAMELIFT_API ContainerHealthCheck() = default;
+  AWS_GAMELIFT_API ContainerHealthCheck(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API ContainerHealthCheck& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+  ///@{
+  /**
+   * <p>A string array that specifies the command that the container runs to
+   * determine if it's healthy.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetCommand() const { return m_command; }
+  inline bool CommandHasBeenSet() const { return m_commandHasBeenSet; }
+  template <typename CommandT = Aws::Vector<Aws::String>>
+  void SetCommand(CommandT&& value) {
+    m_commandHasBeenSet = true;
+    m_command = std::forward<CommandT>(value);
+  }
+  template <typename CommandT = Aws::Vector<Aws::String>>
+  ContainerHealthCheck& WithCommand(CommandT&& value) {
+    SetCommand(std::forward<CommandT>(value));
+    return *this;
+  }
+  template <typename CommandT = Aws::String>
+  ContainerHealthCheck& AddCommand(CommandT&& value) {
+    m_commandHasBeenSet = true;
+    m_command.emplace_back(std::forward<CommandT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time period (in seconds) between each health check.</p>
+   */
+  inline int64_t GetInterval() const { return m_interval; }
+  inline bool IntervalHasBeenSet() const { return m_intervalHasBeenSet; }
+  inline void SetInterval(int64_t value) {
+    m_intervalHasBeenSet = true;
+    m_interval = value;
+  }
+  inline ContainerHealthCheck& WithInterval(int64_t value) {
+    SetInterval(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The number of times to retry a failed health check before flagging the
+   * container unhealthy. The first run of the command does not count as a retry.</p>
+   */
+  inline int64_t GetRetries() const { return m_retries; }
+  inline bool RetriesHasBeenSet() const { return m_retriesHasBeenSet; }
+  inline void SetRetries(int64_t value) {
+    m_retriesHasBeenSet = true;
+    m_retries = value;
+  }
+  inline ContainerHealthCheck& WithRetries(int64_t value) {
+    SetRetries(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The optional grace period (in seconds) to give a container time to bootstrap
+   * before the first failed health check counts toward the number of retries.</p>
+   */
+  inline int64_t GetStartPeriod() const { return m_startPeriod; }
+  inline bool StartPeriodHasBeenSet() const { return m_startPeriodHasBeenSet; }
+  inline void SetStartPeriod(int64_t value) {
+    m_startPeriodHasBeenSet = true;
+    m_startPeriod = value;
+  }
+  inline ContainerHealthCheck& WithStartPeriod(int64_t value) {
+    SetStartPeriod(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time period (in seconds) to wait for a health check to succeed before
+   * counting a failed health check. </p>
+   */
+  inline int64_t GetTimeout() const { return m_timeout; }
+  inline bool TimeoutHasBeenSet() const { return m_timeoutHasBeenSet; }
+  inline void SetTimeout(int64_t value) {
+    m_timeoutHasBeenSet = true;
+    m_timeout = value;
+  }
+  inline ContainerHealthCheck& WithTimeout(int64_t value) {
+    SetTimeout(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<Aws::String> m_command;
+
+  int64_t m_interval{0};
+
+  int64_t m_retries{0};
+
+  int64_t m_startPeriod{0};
+
+  int64_t m_timeout{0};
+  bool m_commandHasBeenSet = false;
+  bool m_intervalHasBeenSet = false;
+  bool m_retriesHasBeenSet = false;
+  bool m_startPeriodHasBeenSet = false;
+  bool m_timeoutHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

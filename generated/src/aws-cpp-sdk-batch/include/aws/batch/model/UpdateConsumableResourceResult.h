@@ -1,0 +1,112 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/batch/Batch_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Batch {
+namespace Model {
+class UpdateConsumableResourceResult {
+ public:
+  AWS_BATCH_API UpdateConsumableResourceResult() = default;
+  AWS_BATCH_API UpdateConsumableResourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_BATCH_API UpdateConsumableResourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The name of the consumable resource to be updated.</p>
+   */
+  inline const Aws::String& GetConsumableResourceName() const { return m_consumableResourceName; }
+  template <typename ConsumableResourceNameT = Aws::String>
+  void SetConsumableResourceName(ConsumableResourceNameT&& value) {
+    m_consumableResourceNameHasBeenSet = true;
+    m_consumableResourceName = std::forward<ConsumableResourceNameT>(value);
+  }
+  template <typename ConsumableResourceNameT = Aws::String>
+  UpdateConsumableResourceResult& WithConsumableResourceName(ConsumableResourceNameT&& value) {
+    SetConsumableResourceName(std::forward<ConsumableResourceNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the consumable resource.</p>
+   */
+  inline const Aws::String& GetConsumableResourceArn() const { return m_consumableResourceArn; }
+  template <typename ConsumableResourceArnT = Aws::String>
+  void SetConsumableResourceArn(ConsumableResourceArnT&& value) {
+    m_consumableResourceArnHasBeenSet = true;
+    m_consumableResourceArn = std::forward<ConsumableResourceArnT>(value);
+  }
+  template <typename ConsumableResourceArnT = Aws::String>
+  UpdateConsumableResourceResult& WithConsumableResourceArn(ConsumableResourceArnT&& value) {
+    SetConsumableResourceArn(std::forward<ConsumableResourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total amount of the consumable resource that is available.</p>
+   */
+  inline long long GetTotalQuantity() const { return m_totalQuantity; }
+  inline void SetTotalQuantity(long long value) {
+    m_totalQuantityHasBeenSet = true;
+    m_totalQuantity = value;
+  }
+  inline UpdateConsumableResourceResult& WithTotalQuantity(long long value) {
+    SetTotalQuantity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateConsumableResourceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_consumableResourceName;
+
+  Aws::String m_consumableResourceArn;
+
+  long long m_totalQuantity{0};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_consumableResourceNameHasBeenSet = false;
+  bool m_consumableResourceArnHasBeenSet = false;
+  bool m_totalQuantityHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Batch
+}  // namespace Aws

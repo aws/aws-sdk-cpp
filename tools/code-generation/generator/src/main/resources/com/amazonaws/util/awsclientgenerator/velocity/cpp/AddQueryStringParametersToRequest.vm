@@ -1,0 +1,28 @@
+void ${typeInfo.className}::AddQueryStringParameters(URI& uri) const
+{
+    Aws::StringStream ss;
+#foreach($memberEntry in $shape.members.entrySet())
+#if($memberEntry.value.usedForQueryString && !$memberEntry.value.customizedQuery)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/request/AddRequestQueryParameter.vm")
+#end
+#end
+#if($shape.customizedQuery)
+    if(!${CppViewHelper.computeMemberVariableName($shape.customizedQuery.shape.name)}.empty())
+    {
+        // only accept customized LogTag which starts with "x-"
+        Aws::Map<Aws::String, Aws::String> collectedLogTags;
+        for(const auto& entry: $CppViewHelper.computeMemberVariableName($shape.customizedQuery.shape.name))
+        {
+            if (!entry.first.empty() && !entry.second.empty() && entry.first.substr(0, 2) == "x-")
+            {
+                collectedLogTags.emplace(entry.first, entry.second);
+            }
+        }
+
+        if (!collectedLogTags.empty())
+        {
+            uri.AddQueryStringParameter(collectedLogTags);
+        }
+    }
+#end
+}

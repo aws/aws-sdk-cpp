@@ -1,0 +1,232 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/ImportStatus.h>
+#include <aws/mgn/model/ImportTaskSummary.h>
+#include <aws/mgn/model/S3BucketSource.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace mgn {
+namespace Model {
+
+/**
+ * <p>Import task.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mgn-2020-02-26/ImportTask">AWS API
+ * Reference</a></p>
+ */
+class ImportTask {
+ public:
+  AWS_MGN_API ImportTask() = default;
+  AWS_MGN_API ImportTask(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API ImportTask& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MGN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>Import task id.</p>
+   */
+  inline const Aws::String& GetImportID() const { return m_importID; }
+  inline bool ImportIDHasBeenSet() const { return m_importIDHasBeenSet; }
+  template <typename ImportIDT = Aws::String>
+  void SetImportID(ImportIDT&& value) {
+    m_importIDHasBeenSet = true;
+    m_importID = std::forward<ImportIDT>(value);
+  }
+  template <typename ImportIDT = Aws::String>
+  ImportTask& WithImportID(ImportIDT&& value) {
+    SetImportID(std::forward<ImportIDT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ImportTask arn.</p>
+   */
+  inline const Aws::String& GetArn() const { return m_arn; }
+  inline bool ArnHasBeenSet() const { return m_arnHasBeenSet; }
+  template <typename ArnT = Aws::String>
+  void SetArn(ArnT&& value) {
+    m_arnHasBeenSet = true;
+    m_arn = std::forward<ArnT>(value);
+  }
+  template <typename ArnT = Aws::String>
+  ImportTask& WithArn(ArnT&& value) {
+    SetArn(std::forward<ArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task s3 bucket source.</p>
+   */
+  inline const S3BucketSource& GetS3BucketSource() const { return m_s3BucketSource; }
+  inline bool S3BucketSourceHasBeenSet() const { return m_s3BucketSourceHasBeenSet; }
+  template <typename S3BucketSourceT = S3BucketSource>
+  void SetS3BucketSource(S3BucketSourceT&& value) {
+    m_s3BucketSourceHasBeenSet = true;
+    m_s3BucketSource = std::forward<S3BucketSourceT>(value);
+  }
+  template <typename S3BucketSourceT = S3BucketSource>
+  ImportTask& WithS3BucketSource(S3BucketSourceT&& value) {
+    SetS3BucketSource(std::forward<S3BucketSourceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task creation datetime.</p>
+   */
+  inline const Aws::String& GetCreationDateTime() const { return m_creationDateTime; }
+  inline bool CreationDateTimeHasBeenSet() const { return m_creationDateTimeHasBeenSet; }
+  template <typename CreationDateTimeT = Aws::String>
+  void SetCreationDateTime(CreationDateTimeT&& value) {
+    m_creationDateTimeHasBeenSet = true;
+    m_creationDateTime = std::forward<CreationDateTimeT>(value);
+  }
+  template <typename CreationDateTimeT = Aws::String>
+  ImportTask& WithCreationDateTime(CreationDateTimeT&& value) {
+    SetCreationDateTime(std::forward<CreationDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task end datetime.</p>
+   */
+  inline const Aws::String& GetEndDateTime() const { return m_endDateTime; }
+  inline bool EndDateTimeHasBeenSet() const { return m_endDateTimeHasBeenSet; }
+  template <typename EndDateTimeT = Aws::String>
+  void SetEndDateTime(EndDateTimeT&& value) {
+    m_endDateTimeHasBeenSet = true;
+    m_endDateTime = std::forward<EndDateTimeT>(value);
+  }
+  template <typename EndDateTimeT = Aws::String>
+  ImportTask& WithEndDateTime(EndDateTimeT&& value) {
+    SetEndDateTime(std::forward<EndDateTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task status.</p>
+   */
+  inline ImportStatus GetStatus() const { return m_status; }
+  inline bool StatusHasBeenSet() const { return m_statusHasBeenSet; }
+  inline void SetStatus(ImportStatus value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline ImportTask& WithStatus(ImportStatus value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task progress percentage.</p>
+   */
+  inline double GetProgressPercentage() const { return m_progressPercentage; }
+  inline bool ProgressPercentageHasBeenSet() const { return m_progressPercentageHasBeenSet; }
+  inline void SetProgressPercentage(double value) {
+    m_progressPercentageHasBeenSet = true;
+    m_progressPercentage = value;
+  }
+  inline ImportTask& WithProgressPercentage(double value) {
+    SetProgressPercentage(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task summary.</p>
+   */
+  inline const ImportTaskSummary& GetSummary() const { return m_summary; }
+  inline bool SummaryHasBeenSet() const { return m_summaryHasBeenSet; }
+  template <typename SummaryT = ImportTaskSummary>
+  void SetSummary(SummaryT&& value) {
+    m_summaryHasBeenSet = true;
+    m_summary = std::forward<SummaryT>(value);
+  }
+  template <typename SummaryT = ImportTaskSummary>
+  ImportTask& WithSummary(SummaryT&& value) {
+    SetSummary(std::forward<SummaryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Import task tags.</p>
+   */
+  inline const Aws::Map<Aws::String, Aws::String>& GetTags() const { return m_tags; }
+  inline bool TagsHasBeenSet() const { return m_tagsHasBeenSet; }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  void SetTags(TagsT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags = std::forward<TagsT>(value);
+  }
+  template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
+  ImportTask& WithTags(TagsT&& value) {
+    SetTags(std::forward<TagsT>(value));
+    return *this;
+  }
+  template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
+  ImportTask& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+    m_tagsHasBeenSet = true;
+    m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_importID;
+
+  Aws::String m_arn;
+
+  S3BucketSource m_s3BucketSource;
+
+  Aws::String m_creationDateTime;
+
+  Aws::String m_endDateTime;
+
+  ImportStatus m_status{ImportStatus::NOT_SET};
+
+  double m_progressPercentage{0.0};
+
+  ImportTaskSummary m_summary;
+
+  Aws::Map<Aws::String, Aws::String> m_tags;
+  bool m_importIDHasBeenSet = false;
+  bool m_arnHasBeenSet = false;
+  bool m_s3BucketSourceHasBeenSet = false;
+  bool m_creationDateTimeHasBeenSet = false;
+  bool m_endDateTimeHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+  bool m_progressPercentageHasBeenSet = false;
+  bool m_summaryHasBeenSet = false;
+  bool m_tagsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace mgn
+}  // namespace Aws

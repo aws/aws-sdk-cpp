@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/securitylake/model/ListSubscribersResult.h>
+
+#include <utility>
+
+using namespace Aws::SecurityLake::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListSubscribersResult::ListSubscribersResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListSubscribersResult& ListSubscribersResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("subscribers")) {
+    Aws::Utils::Array<JsonView> subscribersJsonList = jsonValue.GetArray("subscribers");
+    for (unsigned subscribersIndex = 0; subscribersIndex < subscribersJsonList.GetLength(); ++subscribersIndex) {
+      m_subscribers.push_back(subscribersJsonList[subscribersIndex].AsObject());
+    }
+    m_subscribersHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

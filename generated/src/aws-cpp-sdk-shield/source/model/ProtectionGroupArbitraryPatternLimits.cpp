@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/shield/model/ProtectionGroupArbitraryPatternLimits.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Shield {
+namespace Model {
+
+ProtectionGroupArbitraryPatternLimits::ProtectionGroupArbitraryPatternLimits(JsonView jsonValue) { *this = jsonValue; }
+
+ProtectionGroupArbitraryPatternLimits& ProtectionGroupArbitraryPatternLimits::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("MaxMembers")) {
+    m_maxMembers = jsonValue.GetInt64("MaxMembers");
+    m_maxMembersHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ProtectionGroupArbitraryPatternLimits::Jsonize() const {
+  JsonValue payload;
+
+  if (m_maxMembersHasBeenSet) {
+    payload.WithInt64("MaxMembers", m_maxMembers);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Shield
+}  // namespace Aws

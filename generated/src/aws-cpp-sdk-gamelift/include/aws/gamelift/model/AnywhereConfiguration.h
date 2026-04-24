@@ -1,0 +1,63 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/crt/cbor/Cbor.h>
+#include <aws/gamelift/GameLift_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Cbor {
+class CborValue;
+}  // namespace Cbor
+}  // namespace Utils
+namespace GameLift {
+namespace Model {
+
+/**
+ * <p>Amazon GameLift Servers configuration options for your Anywhere
+ * fleets.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/AnywhereConfiguration">AWS
+ * API Reference</a></p>
+ */
+class AnywhereConfiguration {
+ public:
+  AWS_GAMELIFT_API AnywhereConfiguration() = default;
+  AWS_GAMELIFT_API AnywhereConfiguration(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API AnywhereConfiguration& operator=(const std::shared_ptr<Aws::Crt::Cbor::CborDecoder>& decoder);
+  AWS_GAMELIFT_API void CborEncode(Aws::Crt::Cbor::CborEncoder& encoder) const;
+
+  ///@{
+  /**
+   * <p>The cost to run your fleet per hour. Amazon GameLift Servers uses the
+   * provided cost of your fleet to balance usage in queues. For more information
+   * about queues, see <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/queues-intro.html">Setting
+   * up queues</a> in the <i>Amazon GameLift Servers Developer Guide</i>.</p>
+   */
+  inline const Aws::String& GetCost() const { return m_cost; }
+  inline bool CostHasBeenSet() const { return m_costHasBeenSet; }
+  template <typename CostT = Aws::String>
+  void SetCost(CostT&& value) {
+    m_costHasBeenSet = true;
+    m_cost = std::forward<CostT>(value);
+  }
+  template <typename CostT = Aws::String>
+  AnywhereConfiguration& WithCost(CostT&& value) {
+    SetCost(std::forward<CostT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_cost;
+  bool m_costHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GameLift
+}  // namespace Aws

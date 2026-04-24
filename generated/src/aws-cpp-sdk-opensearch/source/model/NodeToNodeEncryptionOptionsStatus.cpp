@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/opensearch/model/NodeToNodeEncryptionOptionsStatus.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace OpenSearchService {
+namespace Model {
+
+NodeToNodeEncryptionOptionsStatus::NodeToNodeEncryptionOptionsStatus(JsonView jsonValue) { *this = jsonValue; }
+
+NodeToNodeEncryptionOptionsStatus& NodeToNodeEncryptionOptionsStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Options")) {
+    m_options = jsonValue.GetObject("Options");
+    m_optionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = jsonValue.GetObject("Status");
+    m_statusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue NodeToNodeEncryptionOptionsStatus::Jsonize() const {
+  JsonValue payload;
+
+  if (m_optionsHasBeenSet) {
+    payload.WithObject("Options", m_options.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithObject("Status", m_status.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace OpenSearchService
+}  // namespace Aws

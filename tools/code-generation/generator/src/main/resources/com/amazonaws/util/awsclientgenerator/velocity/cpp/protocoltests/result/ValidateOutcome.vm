@@ -1,0 +1,35 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/protocoltests/result/ValidateParamsMacro.vm")
+#if($case.input || $case.output.get().successResult)
+  AWS_ASSERT_SUCCESS(outcome) << outcome.GetError();
+#if($case.output && $case.output.get().successResult)
+#set($expectedResult = $case.output.get().successResult.get().result.get())
+#set($responseShape = $serviceModel.operations.get("${case.given.name}").result.shape)
+#if(!$expectedResult.isEmpty())
+  const ${responseShape.name}& result = outcome.GetResult();
+  ValidateRequestSent([&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) ->  void {
+#else
+  ValidateRequestSent([](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) ->  void {
+#end
+  /* expectedResult = R"( ${expectedResult} )" */
+#elseif($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor")
+#set($expectedResult = $case.input.get().params)
+#set($responseShape = $serviceModel.operations.get("${case.given.name}").result.shape)
+#if(!$expectedResult.isEmpty())
+  const ${responseShape.name}& result = outcome.GetResult();
+  ValidateRequestSent(expectedRq, [&result](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) ->  void {
+#else
+  ValidateRequestSent(expectedRq, [](const ExpectedRequest&, const Aws::ProtocolMock::Model::Request&) ->  void {
+#end
+  /* expectedResult = R"( ${expectedResult} )" */
+#end
+#foreach($param in $expectedResult.fields())
+#ValidateParamsMacro("  ", "result", $responseShape, $param)
+#end
+#if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor" || ($case.output && $case.output.get().successResult))
+  });
+#end
+#end
+#if($case.output && $case.output.get().errorResult)
+  ASSERT_FALSE(outcome.IsSuccess());
+#set($expectedError = $case.output.get().errorResult.get().error.get())
+#end

@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/location/model/CancelJobResult.h>
+
+#include <utility>
+
+using namespace Aws::LocationService::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+CancelJobResult::CancelJobResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+CancelJobResult& CancelJobResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("JobArn")) {
+    m_jobArn = jsonValue.GetString("JobArn");
+    m_jobArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("JobId")) {
+    m_jobId = jsonValue.GetString("JobId");
+    m_jobIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Status")) {
+    m_status = JobStatusMapper::GetJobStatusForName(jsonValue.GetString("Status"));
+    m_statusHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

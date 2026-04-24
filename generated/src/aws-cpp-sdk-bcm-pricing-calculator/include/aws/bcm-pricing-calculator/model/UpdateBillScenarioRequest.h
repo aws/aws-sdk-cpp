@@ -1,0 +1,143 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bcm-pricing-calculator/BCMPricingCalculatorRequest.h>
+#include <aws/bcm-pricing-calculator/BCMPricingCalculator_EXPORTS.h>
+#include <aws/bcm-pricing-calculator/model/GroupSharingPreferenceEnum.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace BCMPricingCalculator {
+namespace Model {
+
+/**
+ */
+class UpdateBillScenarioRequest : public BCMPricingCalculatorRequest {
+ public:
+  AWS_BCMPRICINGCALCULATOR_API UpdateBillScenarioRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "UpdateBillScenario"; }
+
+  AWS_BCMPRICINGCALCULATOR_API Aws::String SerializePayload() const override;
+
+  AWS_BCMPRICINGCALCULATOR_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p> The unique identifier of the bill scenario to update. </p>
+   */
+  inline const Aws::String& GetIdentifier() const { return m_identifier; }
+  inline bool IdentifierHasBeenSet() const { return m_identifierHasBeenSet; }
+  template <typename IdentifierT = Aws::String>
+  void SetIdentifier(IdentifierT&& value) {
+    m_identifierHasBeenSet = true;
+    m_identifier = std::forward<IdentifierT>(value);
+  }
+  template <typename IdentifierT = Aws::String>
+  UpdateBillScenarioRequest& WithIdentifier(IdentifierT&& value) {
+    SetIdentifier(std::forward<IdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The new name for the bill scenario. </p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateBillScenarioRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The new expiration date for the bill scenario. </p>
+   */
+  inline const Aws::Utils::DateTime& GetExpiresAt() const { return m_expiresAt; }
+  inline bool ExpiresAtHasBeenSet() const { return m_expiresAtHasBeenSet; }
+  template <typename ExpiresAtT = Aws::Utils::DateTime>
+  void SetExpiresAt(ExpiresAtT&& value) {
+    m_expiresAtHasBeenSet = true;
+    m_expiresAt = std::forward<ExpiresAtT>(value);
+  }
+  template <typename ExpiresAtT = Aws::Utils::DateTime>
+  UpdateBillScenarioRequest& WithExpiresAt(ExpiresAtT&& value) {
+    SetExpiresAt(std::forward<ExpiresAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The setting for the reserved instance and savings plan group sharing used in
+   * this estimate.</p>
+   */
+  inline GroupSharingPreferenceEnum GetGroupSharingPreference() const { return m_groupSharingPreference; }
+  inline bool GroupSharingPreferenceHasBeenSet() const { return m_groupSharingPreferenceHasBeenSet; }
+  inline void SetGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    m_groupSharingPreferenceHasBeenSet = true;
+    m_groupSharingPreference = value;
+  }
+  inline UpdateBillScenarioRequest& WithGroupSharingPreference(GroupSharingPreferenceEnum value) {
+    SetGroupSharingPreference(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The arn of the cost category used in the reserved and prioritized group
+   * sharing.</p>
+   */
+  inline const Aws::String& GetCostCategoryGroupSharingPreferenceArn() const { return m_costCategoryGroupSharingPreferenceArn; }
+  inline bool CostCategoryGroupSharingPreferenceArnHasBeenSet() const { return m_costCategoryGroupSharingPreferenceArnHasBeenSet; }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  void SetCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    m_costCategoryGroupSharingPreferenceArnHasBeenSet = true;
+    m_costCategoryGroupSharingPreferenceArn = std::forward<CostCategoryGroupSharingPreferenceArnT>(value);
+  }
+  template <typename CostCategoryGroupSharingPreferenceArnT = Aws::String>
+  UpdateBillScenarioRequest& WithCostCategoryGroupSharingPreferenceArn(CostCategoryGroupSharingPreferenceArnT&& value) {
+    SetCostCategoryGroupSharingPreferenceArn(std::forward<CostCategoryGroupSharingPreferenceArnT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_identifier;
+
+  Aws::String m_name;
+
+  Aws::Utils::DateTime m_expiresAt{};
+
+  GroupSharingPreferenceEnum m_groupSharingPreference{GroupSharingPreferenceEnum::NOT_SET};
+
+  Aws::String m_costCategoryGroupSharingPreferenceArn;
+  bool m_identifierHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_expiresAtHasBeenSet = false;
+  bool m_groupSharingPreferenceHasBeenSet = false;
+  bool m_costCategoryGroupSharingPreferenceArnHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BCMPricingCalculator
+}  // namespace Aws

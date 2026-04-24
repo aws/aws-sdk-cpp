@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lakeformation/model/GetQueryStatisticsResult.h>
+
+#include <utility>
+
+using namespace Aws::LakeFormation::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetQueryStatisticsResult::GetQueryStatisticsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+GetQueryStatisticsResult& GetQueryStatisticsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("ExecutionStatistics")) {
+    m_executionStatistics = jsonValue.GetObject("ExecutionStatistics");
+    m_executionStatisticsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PlanningStatistics")) {
+    m_planningStatistics = jsonValue.GetObject("PlanningStatistics");
+    m_planningStatisticsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("QuerySubmissionTime")) {
+    m_querySubmissionTime = jsonValue.GetString("QuerySubmissionTime");
+    m_querySubmissionTimeHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

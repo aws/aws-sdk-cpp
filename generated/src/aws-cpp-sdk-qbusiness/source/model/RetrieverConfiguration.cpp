@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/qbusiness/model/RetrieverConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QBusiness {
+namespace Model {
+
+RetrieverConfiguration::RetrieverConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+RetrieverConfiguration& RetrieverConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("nativeIndexConfiguration")) {
+    m_nativeIndexConfiguration = jsonValue.GetObject("nativeIndexConfiguration");
+    m_nativeIndexConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("kendraIndexConfiguration")) {
+    m_kendraIndexConfiguration = jsonValue.GetObject("kendraIndexConfiguration");
+    m_kendraIndexConfigurationHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue RetrieverConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_nativeIndexConfigurationHasBeenSet) {
+    payload.WithObject("nativeIndexConfiguration", m_nativeIndexConfiguration.Jsonize());
+  }
+
+  if (m_kendraIndexConfigurationHasBeenSet) {
+    payload.WithObject("kendraIndexConfiguration", m_kendraIndexConfiguration.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace QBusiness
+}  // namespace Aws

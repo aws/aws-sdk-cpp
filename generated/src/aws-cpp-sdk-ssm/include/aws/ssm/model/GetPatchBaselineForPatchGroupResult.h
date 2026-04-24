@@ -1,0 +1,114 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm/SSM_EXPORTS.h>
+#include <aws/ssm/model/OperatingSystem.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSM {
+namespace Model {
+class GetPatchBaselineForPatchGroupResult {
+ public:
+  AWS_SSM_API GetPatchBaselineForPatchGroupResult() = default;
+  AWS_SSM_API GetPatchBaselineForPatchGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSM_API GetPatchBaselineForPatchGroupResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ID of the patch baseline that should be used for the patch group.</p>
+   */
+  inline const Aws::String& GetBaselineId() const { return m_baselineId; }
+  template <typename BaselineIdT = Aws::String>
+  void SetBaselineId(BaselineIdT&& value) {
+    m_baselineIdHasBeenSet = true;
+    m_baselineId = std::forward<BaselineIdT>(value);
+  }
+  template <typename BaselineIdT = Aws::String>
+  GetPatchBaselineForPatchGroupResult& WithBaselineId(BaselineIdT&& value) {
+    SetBaselineId(std::forward<BaselineIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the patch group.</p>
+   */
+  inline const Aws::String& GetPatchGroup() const { return m_patchGroup; }
+  template <typename PatchGroupT = Aws::String>
+  void SetPatchGroup(PatchGroupT&& value) {
+    m_patchGroupHasBeenSet = true;
+    m_patchGroup = std::forward<PatchGroupT>(value);
+  }
+  template <typename PatchGroupT = Aws::String>
+  GetPatchBaselineForPatchGroupResult& WithPatchGroup(PatchGroupT&& value) {
+    SetPatchGroup(std::forward<PatchGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The operating system rule specified for patch groups using the patch
+   * baseline.</p>
+   */
+  inline OperatingSystem GetOperatingSystem() const { return m_operatingSystem; }
+  inline void SetOperatingSystem(OperatingSystem value) {
+    m_operatingSystemHasBeenSet = true;
+    m_operatingSystem = value;
+  }
+  inline GetPatchBaselineForPatchGroupResult& WithOperatingSystem(OperatingSystem value) {
+    SetOperatingSystem(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetPatchBaselineForPatchGroupResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_baselineId;
+
+  Aws::String m_patchGroup;
+
+  OperatingSystem m_operatingSystem{OperatingSystem::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_baselineIdHasBeenSet = false;
+  bool m_patchGroupHasBeenSet = false;
+  bool m_operatingSystemHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

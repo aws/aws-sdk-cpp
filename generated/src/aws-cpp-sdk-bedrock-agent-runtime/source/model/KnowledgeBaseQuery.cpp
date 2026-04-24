@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agent-runtime/model/KnowledgeBaseQuery.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BedrockAgentRuntime {
+namespace Model {
+
+KnowledgeBaseQuery::KnowledgeBaseQuery(JsonView jsonValue) { *this = jsonValue; }
+
+KnowledgeBaseQuery& KnowledgeBaseQuery::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("image")) {
+    m_image = jsonValue.GetObject("image");
+    m_imageHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("text")) {
+    m_text = jsonValue.GetString("text");
+    m_textHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("type")) {
+    m_type = KnowledgeBaseQueryTypeMapper::GetKnowledgeBaseQueryTypeForName(jsonValue.GetString("type"));
+    m_typeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue KnowledgeBaseQuery::Jsonize() const {
+  JsonValue payload;
+
+  if (m_imageHasBeenSet) {
+    payload.WithObject("image", m_image.Jsonize());
+  }
+
+  if (m_textHasBeenSet) {
+    payload.WithString("text", m_text);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", KnowledgeBaseQueryTypeMapper::GetNameForKnowledgeBaseQueryType(m_type));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BedrockAgentRuntime
+}  // namespace Aws

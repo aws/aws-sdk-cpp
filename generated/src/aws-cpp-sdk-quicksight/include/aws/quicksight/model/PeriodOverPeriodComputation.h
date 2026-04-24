@@ -1,0 +1,124 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/DimensionField.h>
+#include <aws/quicksight/model/MeasureField.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
+
+/**
+ * <p>The period over period computation configuration.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/quicksight-2018-04-01/PeriodOverPeriodComputation">AWS
+ * API Reference</a></p>
+ */
+class PeriodOverPeriodComputation {
+ public:
+  AWS_QUICKSIGHT_API PeriodOverPeriodComputation() = default;
+  AWS_QUICKSIGHT_API PeriodOverPeriodComputation(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API PeriodOverPeriodComputation& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_QUICKSIGHT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The ID for a computation.</p>
+   */
+  inline const Aws::String& GetComputationId() const { return m_computationId; }
+  inline bool ComputationIdHasBeenSet() const { return m_computationIdHasBeenSet; }
+  template <typename ComputationIdT = Aws::String>
+  void SetComputationId(ComputationIdT&& value) {
+    m_computationIdHasBeenSet = true;
+    m_computationId = std::forward<ComputationIdT>(value);
+  }
+  template <typename ComputationIdT = Aws::String>
+  PeriodOverPeriodComputation& WithComputationId(ComputationIdT&& value) {
+    SetComputationId(std::forward<ComputationIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of a computation.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  PeriodOverPeriodComputation& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The time field that is used in a computation.</p>
+   */
+  inline const DimensionField& GetTime() const { return m_time; }
+  inline bool TimeHasBeenSet() const { return m_timeHasBeenSet; }
+  template <typename TimeT = DimensionField>
+  void SetTime(TimeT&& value) {
+    m_timeHasBeenSet = true;
+    m_time = std::forward<TimeT>(value);
+  }
+  template <typename TimeT = DimensionField>
+  PeriodOverPeriodComputation& WithTime(TimeT&& value) {
+    SetTime(std::forward<TimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The value field that is used in a computation.</p>
+   */
+  inline const MeasureField& GetValue() const { return m_value; }
+  inline bool ValueHasBeenSet() const { return m_valueHasBeenSet; }
+  template <typename ValueT = MeasureField>
+  void SetValue(ValueT&& value) {
+    m_valueHasBeenSet = true;
+    m_value = std::forward<ValueT>(value);
+  }
+  template <typename ValueT = MeasureField>
+  PeriodOverPeriodComputation& WithValue(ValueT&& value) {
+    SetValue(std::forward<ValueT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_computationId;
+
+  Aws::String m_name;
+
+  DimensionField m_time;
+
+  MeasureField m_value;
+  bool m_computationIdHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_timeHasBeenSet = false;
+  bool m_valueHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/drs/model/ParticipatingResource.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace drs {
+namespace Model {
+
+ParticipatingResource::ParticipatingResource(JsonView jsonValue) { *this = jsonValue; }
+
+ParticipatingResource& ParticipatingResource::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("participatingResourceID")) {
+    m_participatingResourceID = jsonValue.GetObject("participatingResourceID");
+    m_participatingResourceIDHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("launchStatus")) {
+    m_launchStatus = LaunchStatusMapper::GetLaunchStatusForName(jsonValue.GetString("launchStatus"));
+    m_launchStatusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ParticipatingResource::Jsonize() const {
+  JsonValue payload;
+
+  if (m_participatingResourceIDHasBeenSet) {
+    payload.WithObject("participatingResourceID", m_participatingResourceID.Jsonize());
+  }
+
+  if (m_launchStatusHasBeenSet) {
+    payload.WithString("launchStatus", LaunchStatusMapper::GetNameForLaunchStatus(m_launchStatus));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace drs
+}  // namespace Aws

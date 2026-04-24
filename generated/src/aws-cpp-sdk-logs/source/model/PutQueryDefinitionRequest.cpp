@@ -1,0 +1,61 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/logs/model/PutQueryDefinitionRequest.h>
+
+#include <utility>
+
+using namespace Aws::CloudWatchLogs::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String PutQueryDefinitionRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_queryLanguageHasBeenSet) {
+    payload.WithString("queryLanguage", QueryLanguageMapper::GetNameForQueryLanguage(m_queryLanguage));
+  }
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_queryDefinitionIdHasBeenSet) {
+    payload.WithString("queryDefinitionId", m_queryDefinitionId);
+  }
+
+  if (m_logGroupNamesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> logGroupNamesJsonList(m_logGroupNames.size());
+    for (unsigned logGroupNamesIndex = 0; logGroupNamesIndex < logGroupNamesJsonList.GetLength(); ++logGroupNamesIndex) {
+      logGroupNamesJsonList[logGroupNamesIndex].AsString(m_logGroupNames[logGroupNamesIndex]);
+    }
+    payload.WithArray("logGroupNames", std::move(logGroupNamesJsonList));
+  }
+
+  if (m_queryStringHasBeenSet) {
+    payload.WithString("queryString", m_queryString);
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_parametersHasBeenSet) {
+    Aws::Utils::Array<JsonValue> parametersJsonList(m_parameters.size());
+    for (unsigned parametersIndex = 0; parametersIndex < parametersJsonList.GetLength(); ++parametersIndex) {
+      parametersJsonList[parametersIndex].AsObject(m_parameters[parametersIndex].Jsonize());
+    }
+    payload.WithArray("parameters", std::move(parametersJsonList));
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection PutQueryDefinitionRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "Logs_20140328.PutQueryDefinition"));
+  return headers;
+}

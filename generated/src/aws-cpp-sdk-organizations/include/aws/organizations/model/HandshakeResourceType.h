@@ -1,0 +1,38 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
+
+namespace Aws {
+namespace Organizations {
+namespace Model {
+enum class HandshakeResourceType {
+  NOT_SET,
+  ACCOUNT,
+  ORGANIZATION,
+  ORGANIZATION_FEATURE_SET,
+  EMAIL,
+  MASTER_EMAIL,
+  MASTER_NAME,
+  NOTES,
+  PARENT_HANDSHAKE,
+  RESPONSIBILITY_TRANSFER,
+  TRANSFER_START_TIMESTAMP,
+  TRANSFER_TYPE,
+  MANAGEMENT_ACCOUNT,
+  MANAGEMENT_EMAIL,
+  MANAGEMENT_NAME
+};
+
+namespace HandshakeResourceTypeMapper {
+AWS_ORGANIZATIONS_API HandshakeResourceType GetHandshakeResourceTypeForName(const Aws::String& name);
+
+AWS_ORGANIZATIONS_API Aws::String GetNameForHandshakeResourceType(HandshakeResourceType value);
+}  // namespace HandshakeResourceTypeMapper
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

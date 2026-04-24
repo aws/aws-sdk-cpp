@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/iotevents/IoTEvents_EXPORTS.h>
+#include <aws/iotevents/model/InputSummary.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace IoTEvents {
+namespace Model {
+class ListInputsResult {
+ public:
+  AWS_IOTEVENTS_API ListInputsResult() = default;
+  AWS_IOTEVENTS_API ListInputsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IOTEVENTS_API ListInputsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Summary information about the inputs.</p>
+   */
+  inline const Aws::Vector<InputSummary>& GetInputSummaries() const { return m_inputSummaries; }
+  template <typename InputSummariesT = Aws::Vector<InputSummary>>
+  void SetInputSummaries(InputSummariesT&& value) {
+    m_inputSummariesHasBeenSet = true;
+    m_inputSummaries = std::forward<InputSummariesT>(value);
+  }
+  template <typename InputSummariesT = Aws::Vector<InputSummary>>
+  ListInputsResult& WithInputSummaries(InputSummariesT&& value) {
+    SetInputSummaries(std::forward<InputSummariesT>(value));
+    return *this;
+  }
+  template <typename InputSummariesT = InputSummary>
+  ListInputsResult& AddInputSummaries(InputSummariesT&& value) {
+    m_inputSummariesHasBeenSet = true;
+    m_inputSummaries.emplace_back(std::forward<InputSummariesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The token that you can use to return the next set of results, or
+   * <code>null</code> if there are no more results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListInputsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListInputsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<InputSummary> m_inputSummaries;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_inputSummariesHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace IoTEvents
+}  // namespace Aws

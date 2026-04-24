@@ -1,0 +1,171 @@
+#foreach($operation in $serviceModel.operations)
+#if($serviceNamespace != "S3Crt" || !$operation.s3CrtEnabled)
+#if($arnEndpointSupported)
+#if($multiRegionAccessPointSupported)
+#set($signerName = ", computeEndpointOutcome.GetResult().signerName.c_str() /*signerName*/")
+#else
+#set($signerName = ", Aws::Auth::SIGV4_SIGNER")
+#end
+#set($signerRegionOverride = ", computeEndpointOutcome.GetResult().signerRegion.c_str() /*signerRegionOverride*/")
+#set($signerServiceNameOverride = ", computeEndpointOutcome.GetResult().signerServiceName.c_str() /*signerServiceNameOverride*/")
+#else
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
+#if($serviceModel.endpointRules)
+#set($signerName = "")
+#set($signerRegionOverride = "")
+#set($signerServiceNameOverride = "")
+#end
+#if($operation.result.shape.hasEventStreamMembers())
+#set($constText = "")
+#set($refText = "&")
+#else
+#set($constText = "const ")
+#set($refText = "")
+#end
+#if($operation.request)
+${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
+{
+#if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers())
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationMethod.vm")
+#else
+  AWS_OPERATION_GUARD(${operation.name});
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + "." + request.GetServiceRequestName(),
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName() }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+    [&]()-> ${operation.name}Outcome {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationEndpointPrepareCommonBody.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/UriRequestQueryParams.vm")
+#if(($serviceModel.metadata.namespace == "S3" || ($serviceModel.metadata.namespace == "S3Crt" && !$operation.s3CrtEnabled)) && $operation.shouldUsePropertyBag)
+      request.SetServiceSpecificParameters(
+        [&]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+          Aws::Map<Aws::String, Aws::String> params;
+          params.emplace("bucketName", request.GetBucket());
+          ServiceSpecificParameters serviceSpecificParameters{params};
+          return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+#end
+#if($operation.hasPreSignedUrl)
+#set($requestText = "newRequest")
+#else
+#set($requestText = "request")
+#end
+#if($operation.result && $operation.result.shape.hasEventStreamMembers())
+  request.SetResponseStreamFactory(
+      [&] { request.GetEventStreamDecoder().Reset(); return Aws::New<Aws::Utils::Event::EventDecoderStream>(ALLOCATION_TAG, request.GetEventStreamDecoder()); }
+  );
+#if($serviceModel.endpointRules)
+      auto result = MakeRequestWithEventStream(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+      auto result = MakeRequestWithEventStream(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end
+#elseif($operation.result && $operation.result.shape.hasStreamMembers())
+#if($serviceModel.endpointRules)
+      auto result = MakeRequestWithUnparsedResponse(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+      auto result = MakeRequestWithUnparsedResponse(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end
+#else
+#if($serviceModel.endpointRules)
+      auto result = MakeRequest(${requestText}, endpointResolutionOutcome.GetResult(), Aws::Http::HttpMethod::HTTP_${operation.http.method});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+      auto result = MakeRequest(uri, ${requestText}, Aws::Http::HttpMethod::HTTP_${operation.http.method}${signerName}${signerRegionOverride}${signerServiceNameOverride});
+      return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end
+#end
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+#end
+}
+
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationOutcomeCallable.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/operation/withrequest/OperationAsync.vm")
+#else
+${operation.name}Outcome ${className}::${operation.name}() const
+{
+  AWS_OPERATION_GUARD(${operation.name});
+  AWS_OPERATION_CHECK_PTR(m_telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto tracer = m_telemetryProvider->getTracer(this->GetServiceClientName(), {});
+  auto meter = m_telemetryProvider->getMeter(this->GetServiceClientName(), {});
+  AWS_OPERATION_CHECK_PTR(meter, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
+  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".${operation.name}",
+    {{ TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}" }, { TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName() }, { TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE }},
+    smithy::components::tracing::SpanKind::CLIENT);
+  return TracingUtils::MakeCallWithTiming<${operation.name}Outcome>(
+    [&]()-> ${operation.name}Outcome {
+#if(!$serviceModel.endpointRules)
+        Aws::StringStream ss;
+#if($virtualAddressingSupported || $arnEndpointSupported)
+        ComputeEndpointOutcome computeEndpointOutcome = ComputeEndpointString();
+        if (!computeEndpointOutcome.IsSuccess())
+        {
+            return ${operation.name}Outcome(computeEndpointOutcome.GetError());
+        }
+        ss << computeEndpointOutcome.GetResult().endpoint;
+#end
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/EndpointRulesNoRequestUriComputation.vm")
+#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+        auto result = MakeRequestWithUnparsedResponse(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName);
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#elseif($operation.request)
+        auto result = MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName);
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+        auto result = MakeRequest(endpointResolutionOutcome.GetResult(), "${operation.name}", Aws::Http::HttpMethod::HTTP_${operation.http.method});
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end
+#else##-#if($serviceModel.endpointRules)
+#if($operation.result && $operation.result.shape.hasStreamMembers())
+        auto result = MakeRequestWithUnparsedResponse(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride});
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#elseif($operation.request)
+        auto result = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, $operation.request.shape.signerName, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride});
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+        auto result = MakeRequest(ss.str(), Aws::Http::HttpMethod::HTTP_${operation.http.method}, Aws::Auth::SIGV4_SIGNER, "${operation.name}"${signerRegionOverride}${signerServiceNameOverride});
+        return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end
+#end
+    },
+    TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
+    *meter,
+    {{TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+}
+#if(0)
+${operation.name}OutcomeCallable ${className}::${operation.name}Callable() const
+{
+  auto task = Aws::MakeShared< std::packaged_task< ${operation.name}Outcome() > >(ALLOCATION_TAG, [this](){ return this->${operation.name}(); } );
+  auto packagedFunction = [task]() { (*task)(); };
+  m_clientConfiguration.executor->Submit(packagedFunction);
+  return task->get_future();
+}
+
+void ${className}::${operation.name}Async(${constText}${operation.name}ResponseReceivedHandler& handler, const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context) const
+{
+  m_clientConfiguration.executor->Submit( [this, handler, context]()
+    {
+      handler(this, ${operation.name}(), context);
+    } );
+}
+#end
+
+#end
+#end
+#end

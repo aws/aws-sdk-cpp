@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/resource-groups/ResourceGroups_EXPORTS.h>
+#include <aws/resource-groups/model/GroupQuery.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ResourceGroups {
+namespace Model {
+class UpdateGroupQueryResult {
+ public:
+  AWS_RESOURCEGROUPS_API UpdateGroupQueryResult() = default;
+  AWS_RESOURCEGROUPS_API UpdateGroupQueryResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_RESOURCEGROUPS_API UpdateGroupQueryResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The updated resource query associated with the resource group after the
+   * update.</p>
+   */
+  inline const GroupQuery& GetGroupQuery() const { return m_groupQuery; }
+  template <typename GroupQueryT = GroupQuery>
+  void SetGroupQuery(GroupQueryT&& value) {
+    m_groupQueryHasBeenSet = true;
+    m_groupQuery = std::forward<GroupQueryT>(value);
+  }
+  template <typename GroupQueryT = GroupQuery>
+  UpdateGroupQueryResult& WithGroupQuery(GroupQueryT&& value) {
+    SetGroupQuery(std::forward<GroupQueryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateGroupQueryResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  GroupQuery m_groupQuery;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_groupQueryHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ResourceGroups
+}  // namespace Aws

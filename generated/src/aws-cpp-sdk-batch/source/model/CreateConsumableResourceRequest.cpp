@@ -1,0 +1,39 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/batch/model/CreateConsumableResourceRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Batch::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateConsumableResourceRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_consumableResourceNameHasBeenSet) {
+    payload.WithString("consumableResourceName", m_consumableResourceName);
+  }
+
+  if (m_totalQuantityHasBeenSet) {
+    payload.WithInt64("totalQuantity", m_totalQuantity);
+  }
+
+  if (m_resourceTypeHasBeenSet) {
+    payload.WithString("resourceType", m_resourceType);
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  return payload.View().WriteReadable();
+}

@@ -1,0 +1,55 @@
+##-------------------- SerializeSingleParameterMacro macro
+#macro( SerializeSingleParameterMacro $shape $value )
+##/* shape = R"($shape)"; value = $value */ ##
+#if($shape.type == "float" || $shape.type == "double")
+##float is code generated as double in CPP SDK
+#if($value == '"NaN"')
+std::numeric_limits<double>::quiet_NaN()##
+#elseif($value == '"Infinity"')
+std::numeric_limits<double>::infinity()##
+#elseif($value == '"-Infinity"')
+-std::numeric_limits<double>::infinity()##
+#else
+${value}##
+#end
+#break
+#end###if($shape.double)
+#if($shape.primitive || $shape.boolean)
+${value}##
+#elseif($shape.string)
+R"(${value.asText()})"##
+#elseif($shape.blob)
+Aws::String(R"(${value.asText()})")##
+#elseif($shape.timeStamp)
+#if($serviceModel.metadata.protocol == "smithy-rpc-v2-cbor") ##Cbor only supports seconds after epoch
+Aws::Utils::DateTime(static_cast<uint64_t>(${value}))##
+#else
+Aws::Utils::DateTime(static_cast<int64_t>(${value}))##
+#end
+#elseif($shape.enum)
+${shape.name}Mapper::Get${shape.name}ForName(R"e(${value.asText()})e")##
+#elseif($shape.list)
+#set($macro.listResult="{")
+#foreach($listItem in $value)
+#set($macro.listResult=$macro.listResult + "#SerializeSingleParameterMacro($shape.listMember.shape, $listItem)")
+#if($foreach.hasNext)#set($macro.listResult=$macro.listResult + ", ")#end
+#end
+#set($macro.listResult=$macro.listResult + "}")
+$macro.listResult##
+#elseif($shape.map)
+#set($macro.mapResult="{")
+#foreach($mapItem in $value.fields())
+#set($macro.mapItem="{" + '"' + "$mapItem.key" + '"' + ",  ")
+#set($macro.mapItem=$macro.mapItem + "#SerializeSingleParameterMacro($shape.mapValue.shape, $mapItem.value)" + "}")
+#set($macro.mapResult=$macro.mapResult + $macro.mapItem)
+#if($foreach.hasNext)#set($macro.mapResult=$macro.mapResult + ", ")#end
+#end
+#set($macro.mapResult=$macro.mapResult + "}")
+$macro.mapResult##
+#elseif($shape.structure)
+${shape.name}(JsonValue(R"j($value)j"))##
+#else
+${value};
+static_assert(false, R"(Codegen failure: Unsupported input $value for shape ${shape} with type ${shape.type})";
+#end
+#end##macro SerializeSingleParameterMacro

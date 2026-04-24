@@ -1,0 +1,73 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/rds/RDS_EXPORTS.h>
+#include <aws/rds/model/BlueGreenDeployment.h>
+#include <aws/rds/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace RDS {
+namespace Model {
+class DeleteBlueGreenDeploymentResult {
+ public:
+  AWS_RDS_API DeleteBlueGreenDeploymentResult() = default;
+  AWS_RDS_API DeleteBlueGreenDeploymentResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_RDS_API DeleteBlueGreenDeploymentResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+
+  inline const BlueGreenDeployment& GetBlueGreenDeployment() const { return m_blueGreenDeployment; }
+  template <typename BlueGreenDeploymentT = BlueGreenDeployment>
+  void SetBlueGreenDeployment(BlueGreenDeploymentT&& value) {
+    m_blueGreenDeploymentHasBeenSet = true;
+    m_blueGreenDeployment = std::forward<BlueGreenDeploymentT>(value);
+  }
+  template <typename BlueGreenDeploymentT = BlueGreenDeployment>
+  DeleteBlueGreenDeploymentResult& WithBlueGreenDeployment(BlueGreenDeploymentT&& value) {
+    SetBlueGreenDeployment(std::forward<BlueGreenDeploymentT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DeleteBlueGreenDeploymentResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  BlueGreenDeployment m_blueGreenDeployment;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_blueGreenDeploymentHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace RDS
+}  // namespace Aws

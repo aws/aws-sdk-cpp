@@ -1,0 +1,325 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/ec2/model/NetworkInfo.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace EC2 {
+namespace Model {
+
+NetworkInfo::NetworkInfo(const XmlNode& xmlNode) { *this = xmlNode; }
+
+NetworkInfo& NetworkInfo::operator=(const XmlNode& xmlNode) {
+  XmlNode resultNode = xmlNode;
+
+  if (!resultNode.IsNull()) {
+    XmlNode networkPerformanceNode = resultNode.FirstChild("networkPerformance");
+    if (!networkPerformanceNode.IsNull()) {
+      m_networkPerformance = Aws::Utils::Xml::DecodeEscapedXmlText(networkPerformanceNode.GetText());
+      m_networkPerformanceHasBeenSet = true;
+    }
+    XmlNode maximumNetworkInterfacesNode = resultNode.FirstChild("maximumNetworkInterfaces");
+    if (!maximumNetworkInterfacesNode.IsNull()) {
+      m_maximumNetworkInterfaces = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkInterfacesNode.GetText()).c_str()).c_str());
+      m_maximumNetworkInterfacesHasBeenSet = true;
+    }
+    XmlNode maximumNetworkCardsNode = resultNode.FirstChild("maximumNetworkCards");
+    if (!maximumNetworkCardsNode.IsNull()) {
+      m_maximumNetworkCards = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNetworkCardsNode.GetText()).c_str()).c_str());
+      m_maximumNetworkCardsHasBeenSet = true;
+    }
+    XmlNode defaultNetworkCardIndexNode = resultNode.FirstChild("defaultNetworkCardIndex");
+    if (!defaultNetworkCardIndexNode.IsNull()) {
+      m_defaultNetworkCardIndex = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(defaultNetworkCardIndexNode.GetText()).c_str()).c_str());
+      m_defaultNetworkCardIndexHasBeenSet = true;
+    }
+    XmlNode networkCardsNode = resultNode.FirstChild("networkCards");
+    if (!networkCardsNode.IsNull()) {
+      XmlNode networkCardsMember = networkCardsNode.FirstChild("item");
+      m_networkCardsHasBeenSet = !networkCardsMember.IsNull();
+      while (!networkCardsMember.IsNull()) {
+        m_networkCards.push_back(networkCardsMember);
+        networkCardsMember = networkCardsMember.NextNode("item");
+      }
+
+      m_networkCardsHasBeenSet = true;
+    }
+    XmlNode ipv4AddressesPerInterfaceNode = resultNode.FirstChild("ipv4AddressesPerInterface");
+    if (!ipv4AddressesPerInterfaceNode.IsNull()) {
+      m_ipv4AddressesPerInterface = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv4AddressesPerInterfaceNode.GetText()).c_str()).c_str());
+      m_ipv4AddressesPerInterfaceHasBeenSet = true;
+    }
+    XmlNode ipv6AddressesPerInterfaceNode = resultNode.FirstChild("ipv6AddressesPerInterface");
+    if (!ipv6AddressesPerInterfaceNode.IsNull()) {
+      m_ipv6AddressesPerInterface = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6AddressesPerInterfaceNode.GetText()).c_str()).c_str());
+      m_ipv6AddressesPerInterfaceHasBeenSet = true;
+    }
+    XmlNode ipv6SupportedNode = resultNode.FirstChild("ipv6Supported");
+    if (!ipv6SupportedNode.IsNull()) {
+      m_ipv6Supported =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv6SupportedNode.GetText()).c_str()).c_str());
+      m_ipv6SupportedHasBeenSet = true;
+    }
+    XmlNode enaSupportNode = resultNode.FirstChild("enaSupport");
+    if (!enaSupportNode.IsNull()) {
+      m_enaSupport = EnaSupportMapper::GetEnaSupportForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSupportNode.GetText()).c_str()));
+      m_enaSupportHasBeenSet = true;
+    }
+    XmlNode efaSupportedNode = resultNode.FirstChild("efaSupported");
+    if (!efaSupportedNode.IsNull()) {
+      m_efaSupported =
+          StringUtils::ConvertToBool(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(efaSupportedNode.GetText()).c_str()).c_str());
+      m_efaSupportedHasBeenSet = true;
+    }
+    XmlNode efaInfoNode = resultNode.FirstChild("efaInfo");
+    if (!efaInfoNode.IsNull()) {
+      m_efaInfo = efaInfoNode;
+      m_efaInfoHasBeenSet = true;
+    }
+    XmlNode encryptionInTransitSupportedNode = resultNode.FirstChild("encryptionInTransitSupported");
+    if (!encryptionInTransitSupportedNode.IsNull()) {
+      m_encryptionInTransitSupported = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(encryptionInTransitSupportedNode.GetText()).c_str()).c_str());
+      m_encryptionInTransitSupportedHasBeenSet = true;
+    }
+    XmlNode enaSrdSupportedNode = resultNode.FirstChild("enaSrdSupported");
+    if (!enaSrdSupportedNode.IsNull()) {
+      m_enaSrdSupported = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(enaSrdSupportedNode.GetText()).c_str()).c_str());
+      m_enaSrdSupportedHasBeenSet = true;
+    }
+    XmlNode bandwidthWeightingsNode = resultNode.FirstChild("bandwidthWeightings");
+    if (!bandwidthWeightingsNode.IsNull()) {
+      XmlNode bandwidthWeightingsMember = bandwidthWeightingsNode.FirstChild("item");
+      m_bandwidthWeightingsHasBeenSet = !bandwidthWeightingsMember.IsNull();
+      while (!bandwidthWeightingsMember.IsNull()) {
+        m_bandwidthWeightings.push_back(
+            BandwidthWeightingTypeMapper::GetBandwidthWeightingTypeForName(StringUtils::Trim(bandwidthWeightingsMember.GetText().c_str())));
+        bandwidthWeightingsMember = bandwidthWeightingsMember.NextNode("item");
+      }
+
+      m_bandwidthWeightingsHasBeenSet = true;
+    }
+    XmlNode flexibleEnaQueuesSupportNode = resultNode.FirstChild("flexibleEnaQueuesSupport");
+    if (!flexibleEnaQueuesSupportNode.IsNull()) {
+      m_flexibleEnaQueuesSupport = FlexibleEnaQueuesSupportMapper::GetFlexibleEnaQueuesSupportForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(flexibleEnaQueuesSupportNode.GetText()).c_str()));
+      m_flexibleEnaQueuesSupportHasBeenSet = true;
+    }
+    XmlNode connectionTrackingConfigurationNode = resultNode.FirstChild("connectionTrackingConfiguration");
+    if (!connectionTrackingConfigurationNode.IsNull()) {
+      m_connectionTrackingConfiguration = connectionTrackingConfigurationNode;
+      m_connectionTrackingConfigurationHasBeenSet = true;
+    }
+    XmlNode secondaryNetworkSupportedNode = resultNode.FirstChild("secondaryNetworkSupported");
+    if (!secondaryNetworkSupportedNode.IsNull()) {
+      m_secondaryNetworkSupported = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(secondaryNetworkSupportedNode.GetText()).c_str()).c_str());
+      m_secondaryNetworkSupportedHasBeenSet = true;
+    }
+    XmlNode maximumSecondaryNetworkInterfacesNode = resultNode.FirstChild("maximumSecondaryNetworkInterfaces");
+    if (!maximumSecondaryNetworkInterfacesNode.IsNull()) {
+      m_maximumSecondaryNetworkInterfaces = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumSecondaryNetworkInterfacesNode.GetText()).c_str()).c_str());
+      m_maximumSecondaryNetworkInterfacesHasBeenSet = true;
+    }
+    XmlNode ipv4AddressesPerSecondaryInterfaceNode = resultNode.FirstChild("ipv4AddressesPerSecondaryInterface");
+    if (!ipv4AddressesPerSecondaryInterfaceNode.IsNull()) {
+      m_ipv4AddressesPerSecondaryInterface = StringUtils::ConvertToInt32(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(ipv4AddressesPerSecondaryInterfaceNode.GetText()).c_str()).c_str());
+      m_ipv4AddressesPerSecondaryInterfaceHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_networkPerformanceHasBeenSet) {
+    oStream << location << index << locationValue << ".NetworkPerformance=" << StringUtils::URLEncode(m_networkPerformance.c_str()) << "&";
+  }
+
+  if (m_maximumNetworkInterfacesHasBeenSet) {
+    oStream << location << index << locationValue << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+
+  if (m_maximumNetworkCardsHasBeenSet) {
+    oStream << location << index << locationValue << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+
+  if (m_defaultNetworkCardIndexHasBeenSet) {
+    oStream << location << index << locationValue << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+
+  if (m_networkCardsHasBeenSet) {
+    unsigned networkCardsIdx = 1;
+    for (auto& item : m_networkCards) {
+      Aws::StringStream networkCardsSs;
+      networkCardsSs << location << index << locationValue << ".NetworkCards." << networkCardsIdx++;
+      item.OutputToStream(oStream, networkCardsSs.str().c_str());
+    }
+  }
+
+  if (m_ipv4AddressesPerInterfaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Ipv4AddressesPerInterface=" << m_ipv4AddressesPerInterface << "&";
+  }
+
+  if (m_ipv6AddressesPerInterfaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Ipv6AddressesPerInterface=" << m_ipv6AddressesPerInterface << "&";
+  }
+
+  if (m_ipv6SupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".Ipv6Supported=" << std::boolalpha << m_ipv6Supported << "&";
+  }
+
+  if (m_enaSupportHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".EnaSupport=" << StringUtils::URLEncode(EnaSupportMapper::GetNameForEnaSupport(m_enaSupport)) << "&";
+  }
+
+  if (m_efaSupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+
+  if (m_efaInfoHasBeenSet) {
+    Aws::StringStream efaInfoLocationAndMemberSs;
+    efaInfoLocationAndMemberSs << location << index << locationValue << ".EfaInfo";
+    m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_encryptionInTransitSupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported
+            << "&";
+  }
+
+  if (m_enaSrdSupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
+  }
+
+  if (m_bandwidthWeightingsHasBeenSet) {
+    unsigned bandwidthWeightingsIdx = 1;
+    for (auto& item : m_bandwidthWeightings) {
+      oStream << location << index << locationValue << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "="
+              << StringUtils::URLEncode(BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item)) << "&";
+    }
+  }
+
+  if (m_flexibleEnaQueuesSupportHasBeenSet) {
+    oStream << location << index << locationValue << ".FlexibleEnaQueuesSupport="
+            << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport))
+            << "&";
+  }
+
+  if (m_connectionTrackingConfigurationHasBeenSet) {
+    Aws::StringStream connectionTrackingConfigurationLocationAndMemberSs;
+    connectionTrackingConfigurationLocationAndMemberSs << location << index << locationValue << ".ConnectionTrackingConfiguration";
+    m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMemberSs.str().c_str());
+  }
+
+  if (m_secondaryNetworkSupportedHasBeenSet) {
+    oStream << location << index << locationValue << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";
+  }
+
+  if (m_maximumSecondaryNetworkInterfacesHasBeenSet) {
+    oStream << location << index << locationValue << ".MaximumSecondaryNetworkInterfaces=" << m_maximumSecondaryNetworkInterfaces << "&";
+  }
+
+  if (m_ipv4AddressesPerSecondaryInterfaceHasBeenSet) {
+    oStream << location << index << locationValue << ".Ipv4AddressesPerSecondaryInterface=" << m_ipv4AddressesPerSecondaryInterface << "&";
+  }
+}
+
+void NetworkInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_networkPerformanceHasBeenSet) {
+    oStream << location << ".NetworkPerformance=" << StringUtils::URLEncode(m_networkPerformance.c_str()) << "&";
+  }
+  if (m_maximumNetworkInterfacesHasBeenSet) {
+    oStream << location << ".MaximumNetworkInterfaces=" << m_maximumNetworkInterfaces << "&";
+  }
+  if (m_maximumNetworkCardsHasBeenSet) {
+    oStream << location << ".MaximumNetworkCards=" << m_maximumNetworkCards << "&";
+  }
+  if (m_defaultNetworkCardIndexHasBeenSet) {
+    oStream << location << ".DefaultNetworkCardIndex=" << m_defaultNetworkCardIndex << "&";
+  }
+  if (m_networkCardsHasBeenSet) {
+    unsigned networkCardsIdx = 1;
+    for (auto& item : m_networkCards) {
+      Aws::StringStream networkCardsSs;
+      networkCardsSs << location << ".NetworkCards." << networkCardsIdx++;
+      item.OutputToStream(oStream, networkCardsSs.str().c_str());
+    }
+  }
+  if (m_ipv4AddressesPerInterfaceHasBeenSet) {
+    oStream << location << ".Ipv4AddressesPerInterface=" << m_ipv4AddressesPerInterface << "&";
+  }
+  if (m_ipv6AddressesPerInterfaceHasBeenSet) {
+    oStream << location << ".Ipv6AddressesPerInterface=" << m_ipv6AddressesPerInterface << "&";
+  }
+  if (m_ipv6SupportedHasBeenSet) {
+    oStream << location << ".Ipv6Supported=" << std::boolalpha << m_ipv6Supported << "&";
+  }
+  if (m_enaSupportHasBeenSet) {
+    oStream << location << ".EnaSupport=" << StringUtils::URLEncode(EnaSupportMapper::GetNameForEnaSupport(m_enaSupport)) << "&";
+  }
+  if (m_efaSupportedHasBeenSet) {
+    oStream << location << ".EfaSupported=" << std::boolalpha << m_efaSupported << "&";
+  }
+  if (m_efaInfoHasBeenSet) {
+    Aws::String efaInfoLocationAndMember(location);
+    efaInfoLocationAndMember += ".EfaInfo";
+    m_efaInfo.OutputToStream(oStream, efaInfoLocationAndMember.c_str());
+  }
+  if (m_encryptionInTransitSupportedHasBeenSet) {
+    oStream << location << ".EncryptionInTransitSupported=" << std::boolalpha << m_encryptionInTransitSupported << "&";
+  }
+  if (m_enaSrdSupportedHasBeenSet) {
+    oStream << location << ".EnaSrdSupported=" << std::boolalpha << m_enaSrdSupported << "&";
+  }
+  if (m_bandwidthWeightingsHasBeenSet) {
+    unsigned bandwidthWeightingsIdx = 1;
+    for (auto& item : m_bandwidthWeightings) {
+      oStream << location << ".BandwidthWeightings." << bandwidthWeightingsIdx++ << "="
+              << StringUtils::URLEncode(BandwidthWeightingTypeMapper::GetNameForBandwidthWeightingType(item)) << "&";
+    }
+  }
+  if (m_flexibleEnaQueuesSupportHasBeenSet) {
+    oStream << location << ".FlexibleEnaQueuesSupport="
+            << StringUtils::URLEncode(FlexibleEnaQueuesSupportMapper::GetNameForFlexibleEnaQueuesSupport(m_flexibleEnaQueuesSupport))
+            << "&";
+  }
+  if (m_connectionTrackingConfigurationHasBeenSet) {
+    Aws::String connectionTrackingConfigurationLocationAndMember(location);
+    connectionTrackingConfigurationLocationAndMember += ".ConnectionTrackingConfiguration";
+    m_connectionTrackingConfiguration.OutputToStream(oStream, connectionTrackingConfigurationLocationAndMember.c_str());
+  }
+  if (m_secondaryNetworkSupportedHasBeenSet) {
+    oStream << location << ".SecondaryNetworkSupported=" << std::boolalpha << m_secondaryNetworkSupported << "&";
+  }
+  if (m_maximumSecondaryNetworkInterfacesHasBeenSet) {
+    oStream << location << ".MaximumSecondaryNetworkInterfaces=" << m_maximumSecondaryNetworkInterfaces << "&";
+  }
+  if (m_ipv4AddressesPerSecondaryInterfaceHasBeenSet) {
+    oStream << location << ".Ipv4AddressesPerSecondaryInterface=" << m_ipv4AddressesPerSecondaryInterface << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

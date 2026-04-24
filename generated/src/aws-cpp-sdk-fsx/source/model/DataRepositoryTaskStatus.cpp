@@ -1,0 +1,72 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/fsx/model/DataRepositoryTaskStatus.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace FSx {
+namespace Model {
+
+DataRepositoryTaskStatus::DataRepositoryTaskStatus(JsonView jsonValue) { *this = jsonValue; }
+
+DataRepositoryTaskStatus& DataRepositoryTaskStatus::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TotalCount")) {
+    m_totalCount = jsonValue.GetInt64("TotalCount");
+    m_totalCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SucceededCount")) {
+    m_succeededCount = jsonValue.GetInt64("SucceededCount");
+    m_succeededCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("FailedCount")) {
+    m_failedCount = jsonValue.GetInt64("FailedCount");
+    m_failedCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastUpdatedTime")) {
+    m_lastUpdatedTime = jsonValue.GetDouble("LastUpdatedTime");
+    m_lastUpdatedTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ReleasedCapacity")) {
+    m_releasedCapacity = jsonValue.GetInt64("ReleasedCapacity");
+    m_releasedCapacityHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DataRepositoryTaskStatus::Jsonize() const {
+  JsonValue payload;
+
+  if (m_totalCountHasBeenSet) {
+    payload.WithInt64("TotalCount", m_totalCount);
+  }
+
+  if (m_succeededCountHasBeenSet) {
+    payload.WithInt64("SucceededCount", m_succeededCount);
+  }
+
+  if (m_failedCountHasBeenSet) {
+    payload.WithInt64("FailedCount", m_failedCount);
+  }
+
+  if (m_lastUpdatedTimeHasBeenSet) {
+    payload.WithDouble("LastUpdatedTime", m_lastUpdatedTime.SecondsWithMSPrecision());
+  }
+
+  if (m_releasedCapacityHasBeenSet) {
+    payload.WithInt64("ReleasedCapacity", m_releasedCapacity);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace FSx
+}  // namespace Aws

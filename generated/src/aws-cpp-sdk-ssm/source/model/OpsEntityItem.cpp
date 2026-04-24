@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm/model/OpsEntityItem.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SSM {
+namespace Model {
+
+OpsEntityItem::OpsEntityItem(JsonView jsonValue) { *this = jsonValue; }
+
+OpsEntityItem& OpsEntityItem::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("CaptureTime")) {
+    m_captureTime = jsonValue.GetString("CaptureTime");
+    m_captureTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Content")) {
+    Aws::Utils::Array<JsonView> contentJsonList = jsonValue.GetArray("Content");
+    for (unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex) {
+      Aws::Map<Aws::String, JsonView> opsEntityItemEntry2JsonMap = contentJsonList[contentIndex].GetAllObjects();
+      Aws::Map<Aws::String, Aws::String> opsEntityItemEntry2Map;
+      for (auto& opsEntityItemEntry2Item : opsEntityItemEntry2JsonMap) {
+        opsEntityItemEntry2Map[opsEntityItemEntry2Item.first] = opsEntityItemEntry2Item.second.AsString();
+      }
+      m_content.push_back(std::move(opsEntityItemEntry2Map));
+    }
+    m_contentHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue OpsEntityItem::Jsonize() const {
+  JsonValue payload;
+
+  if (m_captureTimeHasBeenSet) {
+    payload.WithString("CaptureTime", m_captureTime);
+  }
+
+  if (m_contentHasBeenSet) {
+    Aws::Utils::Array<JsonValue> contentJsonList(m_content.size());
+    for (unsigned contentIndex = 0; contentIndex < contentJsonList.GetLength(); ++contentIndex) {
+      JsonValue opsEntityItemEntryJsonMap;
+      for (auto& opsEntityItemEntryItem : m_content[contentIndex]) {
+        opsEntityItemEntryJsonMap.WithString(opsEntityItemEntryItem.first, opsEntityItemEntryItem.second);
+      }
+      contentJsonList[contentIndex].AsObject(std::move(opsEntityItemEntryJsonMap));
+    }
+    payload.WithArray("Content", std::move(contentJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SSM
+}  // namespace Aws

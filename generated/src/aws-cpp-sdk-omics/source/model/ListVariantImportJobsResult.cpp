@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/omics/model/ListVariantImportJobsResult.h>
+
+#include <utility>
+
+using namespace Aws::Omics::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListVariantImportJobsResult::ListVariantImportJobsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListVariantImportJobsResult& ListVariantImportJobsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("variantImportJobs")) {
+    Aws::Utils::Array<JsonView> variantImportJobsJsonList = jsonValue.GetArray("variantImportJobs");
+    for (unsigned variantImportJobsIndex = 0; variantImportJobsIndex < variantImportJobsJsonList.GetLength(); ++variantImportJobsIndex) {
+      m_variantImportJobs.push_back(variantImportJobsJsonList[variantImportJobsIndex].AsObject());
+    }
+    m_variantImportJobsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

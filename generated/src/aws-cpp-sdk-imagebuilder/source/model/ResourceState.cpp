@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/ResourceState.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace imagebuilder {
+namespace Model {
+
+ResourceState::ResourceState(JsonView jsonValue) { *this = jsonValue; }
+
+ResourceState& ResourceState::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("status")) {
+    m_status = ResourceStatusMapper::GetResourceStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ResourceState::Jsonize() const {
+  JsonValue payload;
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", ResourceStatusMapper::GetNameForResourceStatus(m_status));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

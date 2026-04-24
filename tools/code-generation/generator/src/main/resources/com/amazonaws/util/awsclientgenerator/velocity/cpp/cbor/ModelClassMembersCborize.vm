@@ -1,0 +1,29 @@
+#foreach($entry in $shape.members.entrySet())
+#if($entry.value.locationName)
+#set($memberName = $entry.value.locationName)
+#else
+#set($memberName = $entry.key)
+#end
+
+#set($member = $entry.value)
+#if($member.usedForPayload)
+#set($lowerCaseVarName = $CppViewHelper.computeVariableName($entry.key))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($entry.key))
+#set($varNameHasBeenSet = $CppViewHelper.computeVariableHasBeenSetName($entry.key))
+#set($shapeMember = $member.shape)
+#set($value = $memberVarName)
+
+#if(!$member.required && $useRequiredField)
+    if($varNameHasBeenSet)
+    {
+        encoder.WriteText(Aws::Crt::ByteCursorFromCString("${memberName}"));
+        #set($recursionDepth = 0)
+        #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+     }
+#else
+    encoder.WriteText(Aws::Crt::ByteCursorFromCString("${memberName}"));
+    #set($recursionDepth = 0)
+    #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/cbor/CborEncodeValue.vm")
+#end
+#end
+#end

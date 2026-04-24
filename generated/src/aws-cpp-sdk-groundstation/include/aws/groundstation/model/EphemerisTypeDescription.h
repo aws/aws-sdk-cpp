@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/groundstation/GroundStation_EXPORTS.h>
+#include <aws/groundstation/model/EphemerisDescription.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace GroundStation {
+namespace Model {
+
+/**
+ * <p/><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/groundstation-2019-05-23/EphemerisTypeDescription">AWS
+ * API Reference</a></p>
+ */
+class EphemerisTypeDescription {
+ public:
+  AWS_GROUNDSTATION_API EphemerisTypeDescription() = default;
+  AWS_GROUNDSTATION_API EphemerisTypeDescription(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GROUNDSTATION_API EphemerisTypeDescription& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_GROUNDSTATION_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+
+  inline const EphemerisDescription& GetTle() const { return m_tle; }
+  inline bool TleHasBeenSet() const { return m_tleHasBeenSet; }
+  template <typename TleT = EphemerisDescription>
+  void SetTle(TleT&& value) {
+    m_tleHasBeenSet = true;
+    m_tle = std::forward<TleT>(value);
+  }
+  template <typename TleT = EphemerisDescription>
+  EphemerisTypeDescription& WithTle(TleT&& value) {
+    SetTle(std::forward<TleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EphemerisDescription& GetOem() const { return m_oem; }
+  inline bool OemHasBeenSet() const { return m_oemHasBeenSet; }
+  template <typename OemT = EphemerisDescription>
+  void SetOem(OemT&& value) {
+    m_oemHasBeenSet = true;
+    m_oem = std::forward<OemT>(value);
+  }
+  template <typename OemT = EphemerisDescription>
+  EphemerisTypeDescription& WithOem(OemT&& value) {
+    SetOem(std::forward<OemT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const EphemerisDescription& GetAzEl() const { return m_azEl; }
+  inline bool AzElHasBeenSet() const { return m_azElHasBeenSet; }
+  template <typename AzElT = EphemerisDescription>
+  void SetAzEl(AzElT&& value) {
+    m_azElHasBeenSet = true;
+    m_azEl = std::forward<AzElT>(value);
+  }
+  template <typename AzElT = EphemerisDescription>
+  EphemerisTypeDescription& WithAzEl(AzElT&& value) {
+    SetAzEl(std::forward<AzElT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  EphemerisDescription m_tle;
+
+  EphemerisDescription m_oem;
+
+  EphemerisDescription m_azEl;
+  bool m_tleHasBeenSet = false;
+  bool m_oemHasBeenSet = false;
+  bool m_azElHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace GroundStation
+}  // namespace Aws

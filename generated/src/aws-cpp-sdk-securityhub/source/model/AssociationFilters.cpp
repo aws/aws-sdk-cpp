@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/securityhub/model/AssociationFilters.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SecurityHub {
+namespace Model {
+
+AssociationFilters::AssociationFilters(JsonView jsonValue) { *this = jsonValue; }
+
+AssociationFilters& AssociationFilters::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ConfigurationPolicyId")) {
+    m_configurationPolicyId = jsonValue.GetString("ConfigurationPolicyId");
+    m_configurationPolicyIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AssociationType")) {
+    m_associationType = AssociationTypeMapper::GetAssociationTypeForName(jsonValue.GetString("AssociationType"));
+    m_associationTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AssociationStatus")) {
+    m_associationStatus = ConfigurationPolicyAssociationStatusMapper::GetConfigurationPolicyAssociationStatusForName(
+        jsonValue.GetString("AssociationStatus"));
+    m_associationStatusHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AssociationFilters::Jsonize() const {
+  JsonValue payload;
+
+  if (m_configurationPolicyIdHasBeenSet) {
+    payload.WithString("ConfigurationPolicyId", m_configurationPolicyId);
+  }
+
+  if (m_associationTypeHasBeenSet) {
+    payload.WithString("AssociationType", AssociationTypeMapper::GetNameForAssociationType(m_associationType));
+  }
+
+  if (m_associationStatusHasBeenSet) {
+    payload.WithString("AssociationStatus",
+                       ConfigurationPolicyAssociationStatusMapper::GetNameForConfigurationPolicyAssociationStatus(m_associationStatus));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SecurityHub
+}  // namespace Aws

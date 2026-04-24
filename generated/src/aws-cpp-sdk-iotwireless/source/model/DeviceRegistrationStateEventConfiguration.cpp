@@ -1,0 +1,50 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/DeviceRegistrationStateEventConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+
+DeviceRegistrationStateEventConfiguration::DeviceRegistrationStateEventConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+DeviceRegistrationStateEventConfiguration& DeviceRegistrationStateEventConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Sidewalk")) {
+    m_sidewalk = jsonValue.GetObject("Sidewalk");
+    m_sidewalkHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("WirelessDeviceIdEventTopic")) {
+    m_wirelessDeviceIdEventTopic =
+        EventNotificationTopicStatusMapper::GetEventNotificationTopicStatusForName(jsonValue.GetString("WirelessDeviceIdEventTopic"));
+    m_wirelessDeviceIdEventTopicHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DeviceRegistrationStateEventConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_sidewalkHasBeenSet) {
+    payload.WithObject("Sidewalk", m_sidewalk.Jsonize());
+  }
+
+  if (m_wirelessDeviceIdEventTopicHasBeenSet) {
+    payload.WithString("WirelessDeviceIdEventTopic",
+                       EventNotificationTopicStatusMapper::GetNameForEventNotificationTopicStatus(m_wirelessDeviceIdEventTopic));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/sts/model/AssumeRoleWithSAMLRequest.h>
+#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
+
+using namespace Aws::STS::Model;
+using namespace Aws::Utils;
+
+Aws::String AssumeRoleWithSAMLRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=AssumeRoleWithSAML&";
+  if (m_roleArnHasBeenSet) {
+    ss << "RoleArn=" << StringUtils::URLEncode(m_roleArn.c_str()) << "&";
+  }
+
+  if (m_principalArnHasBeenSet) {
+    ss << "PrincipalArn=" << StringUtils::URLEncode(m_principalArn.c_str()) << "&";
+  }
+
+  if (m_sAMLAssertionHasBeenSet) {
+    ss << "SAMLAssertion=" << StringUtils::URLEncode(m_sAMLAssertion.c_str()) << "&";
+  }
+
+  if (m_policyArnsHasBeenSet) {
+    if (m_policyArns.empty()) {
+      ss << "PolicyArns=&";
+    } else {
+      unsigned policyArnsCount = 1;
+      for (auto& item : m_policyArns) {
+        item.OutputToStream(ss, "PolicyArns.member.", policyArnsCount, "");
+        policyArnsCount++;
+      }
+    }
+  }
+
+  if (m_policyHasBeenSet) {
+    ss << "Policy=" << StringUtils::URLEncode(m_policy.c_str()) << "&";
+  }
+
+  if (m_durationSecondsHasBeenSet) {
+    ss << "DurationSeconds=" << m_durationSeconds << "&";
+  }
+
+  ss << "Version=2011-06-15";
+  return ss.str();
+}
+
+void AssumeRoleWithSAMLRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }
+
+Aws::Vector<smithy::AuthSchemeOption> AssumeRoleWithSAMLRequest::GetRequestSpecificSupportedAuth() const {
+  Aws::Vector<smithy::AuthSchemeOption> authOptions{smithy::NoAuthSchemeOption::noAuthSchemeOption};
+  return authOptions;
+}

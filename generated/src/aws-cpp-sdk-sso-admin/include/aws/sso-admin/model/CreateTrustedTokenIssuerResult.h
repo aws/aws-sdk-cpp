@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/sso-admin/SSOAdmin_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SSOAdmin {
+namespace Model {
+class CreateTrustedTokenIssuerResult {
+ public:
+  AWS_SSOADMIN_API CreateTrustedTokenIssuerResult() = default;
+  AWS_SSOADMIN_API CreateTrustedTokenIssuerResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SSOADMIN_API CreateTrustedTokenIssuerResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ARN of the new trusted token issuer configuration.</p>
+   */
+  inline const Aws::String& GetTrustedTokenIssuerArn() const { return m_trustedTokenIssuerArn; }
+  template <typename TrustedTokenIssuerArnT = Aws::String>
+  void SetTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) {
+    m_trustedTokenIssuerArnHasBeenSet = true;
+    m_trustedTokenIssuerArn = std::forward<TrustedTokenIssuerArnT>(value);
+  }
+  template <typename TrustedTokenIssuerArnT = Aws::String>
+  CreateTrustedTokenIssuerResult& WithTrustedTokenIssuerArn(TrustedTokenIssuerArnT&& value) {
+    SetTrustedTokenIssuerArn(std::forward<TrustedTokenIssuerArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateTrustedTokenIssuerResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_trustedTokenIssuerArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_trustedTokenIssuerArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SSOAdmin
+}  // namespace Aws

@@ -1,0 +1,27 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/signer/model/RevokeSignatureRequest.h>
+
+#include <utility>
+
+using namespace Aws::signer::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String RevokeSignatureRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_jobOwnerHasBeenSet) {
+    payload.WithString("jobOwner", m_jobOwner);
+  }
+
+  if (m_reasonHasBeenSet) {
+    payload.WithString("reason", m_reason);
+  }
+
+  return payload.View().WriteReadable();
+}

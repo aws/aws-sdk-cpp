@@ -1,0 +1,66 @@
+${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request,
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    const std::function<void(Aws::Endpoint::ResolveEndpointOutcome&)>& resolveUri,
+#end
+#if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
+    Aws::String bucketName,
+#end
+    Aws::Http::HttpMethod httpMethod
+) const
+{
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_endpointProvider, operationName, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+#if($serviceModel.metadata.namespace == "S3" || $serviceModel.metadata.namespace == "S3Crt")
+    if (!bucketName.empty()) {
+        request.SetServiceSpecificParameters([bucketName]() -> std::shared_ptr<Http::ServiceSpecificParameters> {
+            Aws::Map<Aws::String, Aws::String> params;
+            params.emplace("bucketName", bucketName);
+            ServiceSpecificParameters serviceSpecificParameters{params};
+            return Aws::MakeShared<ServiceSpecificParameters>(ALLOCATION_TAG, serviceSpecificParameters);
+        }());
+    }
+#end
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(request.GetEndpointContextParams()); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC, *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+             {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+
+        AWS_OPERATION_CHECK_SUCCESS_DYNAMIC(endpointResolutionOutcome, operationName, CoreErrors,
+                                    CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+
+#if($metadata.findFirstSupportedProtocol() == "smithy-rpc-v2-cbor")
+        endpointResolutionOutcome.GetResult().AddPathSegments("/service/${serviceModel.metadata.targetPrefix}/operation/");
+        endpointResolutionOutcome.GetResult().AddPathSegment(operationName);
+#end
+
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+        resolveUri(endpointResolutionOutcome);
+#end
+
+        return InvokeOperationOutcome{MakeRequest(request, endpointResolutionOutcome.GetResult(), httpMethod, Aws::Auth::SIGV4_SIGNER)};
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}

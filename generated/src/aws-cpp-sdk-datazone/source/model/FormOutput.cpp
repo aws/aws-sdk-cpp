@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/FormOutput.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+
+FormOutput::FormOutput(JsonView jsonValue) { *this = jsonValue; }
+
+FormOutput& FormOutput::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("formName")) {
+    m_formName = jsonValue.GetString("formName");
+    m_formNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("typeName")) {
+    m_typeName = jsonValue.GetString("typeName");
+    m_typeNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("typeRevision")) {
+    m_typeRevision = jsonValue.GetString("typeRevision");
+    m_typeRevisionHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("content")) {
+    m_content = jsonValue.GetString("content");
+    m_contentHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue FormOutput::Jsonize() const {
+  JsonValue payload;
+
+  if (m_formNameHasBeenSet) {
+    payload.WithString("formName", m_formName);
+  }
+
+  if (m_typeNameHasBeenSet) {
+    payload.WithString("typeName", m_typeName);
+  }
+
+  if (m_typeRevisionHasBeenSet) {
+    payload.WithString("typeRevision", m_typeRevision);
+  }
+
+  if (m_contentHasBeenSet) {
+    payload.WithString("content", m_content);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

@@ -11,6 +11,9 @@ else()
         set(COMPILER_CLANG 1)
     else()
         set(COMPILER_GCC 1)
+        if(MINGW)
+            set(COMPILER_MINGW 1)
+        endif()
     endif()
     set(USE_GCC_FLAGS 1)
 endif()
@@ -33,7 +36,15 @@ endfunction()
 
 
 macro(set_gcc_flags)
-    list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions" "-std=c++${CPP_STANDARD}")
+    list(APPEND AWS_COMPILER_FLAGS "-fno-exceptions")
+
+    if(NOT NO_CPPSTD_IN_PKG_CONFIG)
+        list(APPEND AWS_COMPILER_FLAGS "-std=c++${CPP_STANDARD}")
+    endif()
+
+    if(COMPILER_IS_MINGW)
+        list(APPEND AWS_COMPILER_FLAGS -D__USE_MINGW_ANSI_STDIO=1)
+    endif()
 
     if(NOT BUILD_SHARED_LIBS)
         list(APPEND AWS_COMPILER_FLAGS "-fPIC")
@@ -53,7 +64,10 @@ macro(set_gcc_flags)
 endmacro()
 
 macro(set_gcc_warnings)
-    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-Werror" "-pedantic" "-Wextra")
+    list(APPEND AWS_COMPILER_WARNINGS "-Wall" "-pedantic" "-Wextra")
+    if(AWS_SDK_WARNINGS_ARE_ERRORS)
+        list(APPEND AWS_COMPILER_WARNINGS "-Werror")
+    endif ()
     if(COMPILER_CLANG)
         if(PLATFORM_ANDROID)
             # when using clang with libc and API lower than 21 we need to include Android support headers and ignore the gnu-include-next warning.
@@ -66,6 +80,10 @@ macro(set_gcc_warnings)
                 endif()
             endif()
         endif()
+    endif()
+    # when using gcc we need to ignore warnings for missing initalizers as it was identified as a bug in gcc
+    if (CMAKE_CXX_COMPILER_ID STREQUAL "GNU" AND CMAKE_CXX_COMPILER_VERSION VERSION_LESS 5.0)
+        list(APPEND AWS_COMPILER_WARNINGS "-Wno-missing-field-initializers")
     endif()
 endmacro()
 
@@ -87,6 +105,8 @@ macro(set_msvc_flags)
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /MP")
         # some of the clients are exceeding the 16-bit code section limit when building x64 debug, so use /bigobj when we build
         set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /bigobj")
+        # do not assume charset
+        set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /utf-8")
 
         if(NOT ENABLE_RTTI)
             string(REGEX REPLACE "/GR " " " CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS}")
@@ -147,7 +167,7 @@ macro(set_msvc_warnings)
         endif()
 
         # warnings as errors, max warning level (4)
-        if(NOT CMAKE_CXX_FLAGS MATCHES "/WX")
+        if(NOT CMAKE_CXX_FLAGS MATCHES "/WX" AND AWS_SDK_WARNINGS_ARE_ERRORS)
             set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /WX")
         endif()
 

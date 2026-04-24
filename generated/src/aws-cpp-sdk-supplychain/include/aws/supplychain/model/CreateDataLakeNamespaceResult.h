@@ -1,0 +1,81 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/supplychain/SupplyChain_EXPORTS.h>
+#include <aws/supplychain/model/DataLakeNamespace.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace SupplyChain {
+namespace Model {
+/**
+ * <p>The response parameters of CreateDataLakeNamespace.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/CreateDataLakeNamespaceResponse">AWS
+ * API Reference</a></p>
+ */
+class CreateDataLakeNamespaceResult {
+ public:
+  AWS_SUPPLYCHAIN_API CreateDataLakeNamespaceResult() = default;
+  AWS_SUPPLYCHAIN_API CreateDataLakeNamespaceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_SUPPLYCHAIN_API CreateDataLakeNamespaceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The detail of created namespace.</p>
+   */
+  inline const DataLakeNamespace& GetNamespace() const { return m_namespace; }
+  template <typename NamespaceT = DataLakeNamespace>
+  void SetNamespace(NamespaceT&& value) {
+    m_namespaceHasBeenSet = true;
+    m_namespace = std::forward<NamespaceT>(value);
+  }
+  template <typename NamespaceT = DataLakeNamespace>
+  CreateDataLakeNamespaceResult& WithNamespace(NamespaceT&& value) {
+    SetNamespace(std::forward<NamespaceT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateDataLakeNamespaceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  DataLakeNamespace m_namespace;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_namespaceHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SupplyChain
+}  // namespace Aws

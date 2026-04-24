@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/ssm-contacts/model/ContactTargetInfo.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SSMContacts {
+namespace Model {
+
+ContactTargetInfo::ContactTargetInfo(JsonView jsonValue) { *this = jsonValue; }
+
+ContactTargetInfo& ContactTargetInfo::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactId")) {
+    m_contactId = jsonValue.GetString("ContactId");
+    m_contactIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("IsEssential")) {
+    m_isEssential = jsonValue.GetBool("IsEssential");
+    m_isEssentialHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ContactTargetInfo::Jsonize() const {
+  JsonValue payload;
+
+  if (m_contactIdHasBeenSet) {
+    payload.WithString("ContactId", m_contactId);
+  }
+
+  if (m_isEssentialHasBeenSet) {
+    payload.WithBool("IsEssential", m_isEssential);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SSMContacts
+}  // namespace Aws

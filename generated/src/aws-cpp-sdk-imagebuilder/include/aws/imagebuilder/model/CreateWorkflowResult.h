@@ -1,0 +1,117 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/imagebuilder/Imagebuilder_EXPORTS.h>
+#include <aws/imagebuilder/model/LatestVersionReferences.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace imagebuilder {
+namespace Model {
+class CreateWorkflowResult {
+ public:
+  AWS_IMAGEBUILDER_API CreateWorkflowResult() = default;
+  AWS_IMAGEBUILDER_API CreateWorkflowResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_IMAGEBUILDER_API CreateWorkflowResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The client token that uniquely identifies the request.</p>
+   */
+  inline const Aws::String& GetClientToken() const { return m_clientToken; }
+  template <typename ClientTokenT = Aws::String>
+  void SetClientToken(ClientTokenT&& value) {
+    m_clientTokenHasBeenSet = true;
+    m_clientToken = std::forward<ClientTokenT>(value);
+  }
+  template <typename ClientTokenT = Aws::String>
+  CreateWorkflowResult& WithClientToken(ClientTokenT&& value) {
+    SetClientToken(std::forward<ClientTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the workflow resource that the request
+   * created.</p>
+   */
+  inline const Aws::String& GetWorkflowBuildVersionArn() const { return m_workflowBuildVersionArn; }
+  template <typename WorkflowBuildVersionArnT = Aws::String>
+  void SetWorkflowBuildVersionArn(WorkflowBuildVersionArnT&& value) {
+    m_workflowBuildVersionArnHasBeenSet = true;
+    m_workflowBuildVersionArn = std::forward<WorkflowBuildVersionArnT>(value);
+  }
+  template <typename WorkflowBuildVersionArnT = Aws::String>
+  CreateWorkflowResult& WithWorkflowBuildVersionArn(WorkflowBuildVersionArnT&& value) {
+    SetWorkflowBuildVersionArn(std::forward<WorkflowBuildVersionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource ARNs with different wildcard variations of semantic
+   * versioning.</p>
+   */
+  inline const LatestVersionReferences& GetLatestVersionReferences() const { return m_latestVersionReferences; }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  void SetLatestVersionReferences(LatestVersionReferencesT&& value) {
+    m_latestVersionReferencesHasBeenSet = true;
+    m_latestVersionReferences = std::forward<LatestVersionReferencesT>(value);
+  }
+  template <typename LatestVersionReferencesT = LatestVersionReferences>
+  CreateWorkflowResult& WithLatestVersionReferences(LatestVersionReferencesT&& value) {
+    SetLatestVersionReferences(std::forward<LatestVersionReferencesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  CreateWorkflowResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_clientToken;
+
+  Aws::String m_workflowBuildVersionArn;
+
+  LatestVersionReferences m_latestVersionReferences;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_clientTokenHasBeenSet = false;
+  bool m_workflowBuildVersionArnHasBeenSet = false;
+  bool m_latestVersionReferencesHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace imagebuilder
+}  // namespace Aws

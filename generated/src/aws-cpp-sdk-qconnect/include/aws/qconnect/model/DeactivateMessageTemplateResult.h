@@ -1,0 +1,113 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/qconnect/QConnect_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace QConnect {
+namespace Model {
+class DeactivateMessageTemplateResult {
+ public:
+  AWS_QCONNECT_API DeactivateMessageTemplateResult() = default;
+  AWS_QCONNECT_API DeactivateMessageTemplateResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_QCONNECT_API DeactivateMessageTemplateResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the message template.</p>
+   */
+  inline const Aws::String& GetMessageTemplateArn() const { return m_messageTemplateArn; }
+  template <typename MessageTemplateArnT = Aws::String>
+  void SetMessageTemplateArn(MessageTemplateArnT&& value) {
+    m_messageTemplateArnHasBeenSet = true;
+    m_messageTemplateArn = std::forward<MessageTemplateArnT>(value);
+  }
+  template <typename MessageTemplateArnT = Aws::String>
+  DeactivateMessageTemplateResult& WithMessageTemplateArn(MessageTemplateArnT&& value) {
+    SetMessageTemplateArn(std::forward<MessageTemplateArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the message template.</p>
+   */
+  inline const Aws::String& GetMessageTemplateId() const { return m_messageTemplateId; }
+  template <typename MessageTemplateIdT = Aws::String>
+  void SetMessageTemplateId(MessageTemplateIdT&& value) {
+    m_messageTemplateIdHasBeenSet = true;
+    m_messageTemplateId = std::forward<MessageTemplateIdT>(value);
+  }
+  template <typename MessageTemplateIdT = Aws::String>
+  DeactivateMessageTemplateResult& WithMessageTemplateId(MessageTemplateIdT&& value) {
+    SetMessageTemplateId(std::forward<MessageTemplateIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The version number of the message template version that has been
+   * deactivated.</p>
+   */
+  inline long long GetVersionNumber() const { return m_versionNumber; }
+  inline void SetVersionNumber(long long value) {
+    m_versionNumberHasBeenSet = true;
+    m_versionNumber = value;
+  }
+  inline DeactivateMessageTemplateResult& WithVersionNumber(long long value) {
+    SetVersionNumber(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeactivateMessageTemplateResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_messageTemplateArn;
+
+  Aws::String m_messageTemplateId;
+
+  long long m_versionNumber{0};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_messageTemplateArnHasBeenSet = false;
+  bool m_messageTemplateIdHasBeenSet = false;
+  bool m_versionNumberHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace QConnect
+}  // namespace Aws

@@ -1,0 +1,165 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ecs/ECS_EXPORTS.h>
+#include <aws/ecs/model/AutoRepairConfiguration.h>
+#include <aws/ecs/model/InfrastructureOptimization.h>
+#include <aws/ecs/model/InstanceLaunchTemplate.h>
+#include <aws/ecs/model/PropagateMITags.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace ECS {
+namespace Model {
+
+/**
+ * <p>The configuration for creating a Amazon ECS Managed Instances provider. This
+ * specifies how Amazon ECS should manage Amazon EC2 instances, including the
+ * infrastructure role, instance launch template, and whether to propagate tags
+ * from the capacity provider to the instances.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/ecs-2014-11-13/CreateManagedInstancesProviderConfiguration">AWS
+ * API Reference</a></p>
+ */
+class CreateManagedInstancesProviderConfiguration {
+ public:
+  AWS_ECS_API CreateManagedInstancesProviderConfiguration() = default;
+  AWS_ECS_API CreateManagedInstancesProviderConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECS_API CreateManagedInstancesProviderConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_ECS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the infrastructure role that Amazon ECS
+   * uses to manage instances on your behalf. This role must have permissions to
+   * launch, terminate, and manage Amazon EC2 instances, as well as access to other
+   * Amazon Web Services services required for Amazon ECS Managed Instances
+   * functionality.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AmazonECS/latest/developerguide/infrastructure_IAM_role.html">Amazon
+   * ECS infrastructure IAM role</a> in the <i>Amazon ECS Developer Guide</i>. </p>
+   */
+  inline const Aws::String& GetInfrastructureRoleArn() const { return m_infrastructureRoleArn; }
+  inline bool InfrastructureRoleArnHasBeenSet() const { return m_infrastructureRoleArnHasBeenSet; }
+  template <typename InfrastructureRoleArnT = Aws::String>
+  void SetInfrastructureRoleArn(InfrastructureRoleArnT&& value) {
+    m_infrastructureRoleArnHasBeenSet = true;
+    m_infrastructureRoleArn = std::forward<InfrastructureRoleArnT>(value);
+  }
+  template <typename InfrastructureRoleArnT = Aws::String>
+  CreateManagedInstancesProviderConfiguration& WithInfrastructureRoleArn(InfrastructureRoleArnT&& value) {
+    SetInfrastructureRoleArn(std::forward<InfrastructureRoleArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The launch template configuration that specifies how Amazon ECS should launch
+   * Amazon EC2 instances. This includes the instance profile, network configuration,
+   * storage settings, and instance requirements for attribute-based instance type
+   * selection.</p> <p>For more information, see <a
+   * href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ec2-launch-templates.html">Store
+   * instance launch parameters in Amazon EC2 launch templates</a> in the <i>Amazon
+   * EC2 User Guide</i>.</p>
+   */
+  inline const InstanceLaunchTemplate& GetInstanceLaunchTemplate() const { return m_instanceLaunchTemplate; }
+  inline bool InstanceLaunchTemplateHasBeenSet() const { return m_instanceLaunchTemplateHasBeenSet; }
+  template <typename InstanceLaunchTemplateT = InstanceLaunchTemplate>
+  void SetInstanceLaunchTemplate(InstanceLaunchTemplateT&& value) {
+    m_instanceLaunchTemplateHasBeenSet = true;
+    m_instanceLaunchTemplate = std::forward<InstanceLaunchTemplateT>(value);
+  }
+  template <typename InstanceLaunchTemplateT = InstanceLaunchTemplate>
+  CreateManagedInstancesProviderConfiguration& WithInstanceLaunchTemplate(InstanceLaunchTemplateT&& value) {
+    SetInstanceLaunchTemplate(std::forward<InstanceLaunchTemplateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether to propagate tags from the capacity provider to the Amazon
+   * ECS Managed Instances. When enabled, tags applied to the capacity provider are
+   * automatically applied to all instances launched by this provider.</p>
+   */
+  inline PropagateMITags GetPropagateTags() const { return m_propagateTags; }
+  inline bool PropagateTagsHasBeenSet() const { return m_propagateTagsHasBeenSet; }
+  inline void SetPropagateTags(PropagateMITags value) {
+    m_propagateTagsHasBeenSet = true;
+    m_propagateTags = value;
+  }
+  inline CreateManagedInstancesProviderConfiguration& WithPropagateTags(PropagateMITags value) {
+    SetPropagateTags(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Defines how Amazon ECS Managed Instances optimizes the infrastastructure in
+   * your capacity provider. Provides control over the delay between when EC2
+   * instances become idle or underutilized and when Amazon ECS optimizes them.</p>
+   */
+  inline const InfrastructureOptimization& GetInfrastructureOptimization() const { return m_infrastructureOptimization; }
+  inline bool InfrastructureOptimizationHasBeenSet() const { return m_infrastructureOptimizationHasBeenSet; }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  void SetInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    m_infrastructureOptimizationHasBeenSet = true;
+    m_infrastructureOptimization = std::forward<InfrastructureOptimizationT>(value);
+  }
+  template <typename InfrastructureOptimizationT = InfrastructureOptimization>
+  CreateManagedInstancesProviderConfiguration& WithInfrastructureOptimization(InfrastructureOptimizationT&& value) {
+    SetInfrastructureOptimization(std::forward<InfrastructureOptimizationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The auto repair configuration for the Amazon ECS Managed Instances capacity
+   * provider. Use this to enable or disable automatic replacement of container
+   * instances that are detected as unhealthy.</p>
+   */
+  inline const AutoRepairConfiguration& GetAutoRepairConfiguration() const { return m_autoRepairConfiguration; }
+  inline bool AutoRepairConfigurationHasBeenSet() const { return m_autoRepairConfigurationHasBeenSet; }
+  template <typename AutoRepairConfigurationT = AutoRepairConfiguration>
+  void SetAutoRepairConfiguration(AutoRepairConfigurationT&& value) {
+    m_autoRepairConfigurationHasBeenSet = true;
+    m_autoRepairConfiguration = std::forward<AutoRepairConfigurationT>(value);
+  }
+  template <typename AutoRepairConfigurationT = AutoRepairConfiguration>
+  CreateManagedInstancesProviderConfiguration& WithAutoRepairConfiguration(AutoRepairConfigurationT&& value) {
+    SetAutoRepairConfiguration(std::forward<AutoRepairConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_infrastructureRoleArn;
+
+  InstanceLaunchTemplate m_instanceLaunchTemplate;
+
+  PropagateMITags m_propagateTags{PropagateMITags::NOT_SET};
+
+  InfrastructureOptimization m_infrastructureOptimization;
+
+  AutoRepairConfiguration m_autoRepairConfiguration;
+  bool m_infrastructureRoleArnHasBeenSet = false;
+  bool m_instanceLaunchTemplateHasBeenSet = false;
+  bool m_propagateTagsHasBeenSet = false;
+  bool m_infrastructureOptimizationHasBeenSet = false;
+  bool m_autoRepairConfigurationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ECS
+}  // namespace Aws

@@ -1,0 +1,78 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticache/model/DataStorage.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace ElastiCache {
+namespace Model {
+
+DataStorage::DataStorage(const XmlNode& xmlNode) { *this = xmlNode; }
+
+DataStorage& DataStorage::operator=(const XmlNode& xmlNode) {
+  XmlNode resultNode = xmlNode;
+
+  if (!resultNode.IsNull()) {
+    XmlNode maximumNode = resultNode.FirstChild("Maximum");
+    if (!maximumNode.IsNull()) {
+      m_maximum =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(maximumNode.GetText()).c_str()).c_str());
+      m_maximumHasBeenSet = true;
+    }
+    XmlNode minimumNode = resultNode.FirstChild("Minimum");
+    if (!minimumNode.IsNull()) {
+      m_minimum =
+          StringUtils::ConvertToInt32(StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(minimumNode.GetText()).c_str()).c_str());
+      m_minimumHasBeenSet = true;
+    }
+    XmlNode unitNode = resultNode.FirstChild("Unit");
+    if (!unitNode.IsNull()) {
+      m_unit = DataStorageUnitMapper::GetDataStorageUnitForName(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(unitNode.GetText()).c_str()));
+      m_unitHasBeenSet = true;
+    }
+  }
+
+  return *this;
+}
+
+void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location, unsigned index, const char* locationValue) const {
+  if (m_maximumHasBeenSet) {
+    oStream << location << index << locationValue << ".Maximum=" << m_maximum << "&";
+  }
+
+  if (m_minimumHasBeenSet) {
+    oStream << location << index << locationValue << ".Minimum=" << m_minimum << "&";
+  }
+
+  if (m_unitHasBeenSet) {
+    oStream << location << index << locationValue
+            << ".Unit=" << StringUtils::URLEncode(DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit)) << "&";
+  }
+}
+
+void DataStorage::OutputToStream(Aws::OStream& oStream, const char* location) const {
+  if (m_maximumHasBeenSet) {
+    oStream << location << ".Maximum=" << m_maximum << "&";
+  }
+  if (m_minimumHasBeenSet) {
+    oStream << location << ".Minimum=" << m_minimum << "&";
+  }
+  if (m_unitHasBeenSet) {
+    oStream << location << ".Unit=" << StringUtils::URLEncode(DataStorageUnitMapper::GetNameForDataStorageUnit(m_unit)) << "&";
+  }
+}
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

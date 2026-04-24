@@ -1,0 +1,27 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#pragma once
+
+\#include <aws/core/Core_EXPORTS.h>
+\#include <aws/core/utils/memory/stl/AWSString.h>
+
+namespace Aws
+{
+    /**
+     * AWS Regions
+     */
+    namespace Region
+    {
+#foreach($region in $regions)
+        static const char ${CppViewHelper.convertToUpperSnake($region.getKey())}[] = "${region.getKey()}"; // ${region.getValue().getDescription()}
+#end
+
+        // If a pseudo region, for example, aws-global or us-east-1-fips is provided, it should be converted to the region name used for signing.
+        Aws::String AWS_CORE_API ComputeSignerRegion(const Aws::String& region);
+
+        // A FIPs region starts with "fips-" or ends with "-fips".
+        bool AWS_CORE_API IsFipsRegion(const Aws::String& region);
+    }
+
+} // namespace Aws
+

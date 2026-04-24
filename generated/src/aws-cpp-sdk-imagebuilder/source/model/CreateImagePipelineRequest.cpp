@@ -1,0 +1,99 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/CreateImagePipelineRequest.h>
+
+#include <utility>
+
+using namespace Aws::imagebuilder::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateImagePipelineRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_imageRecipeArnHasBeenSet) {
+    payload.WithString("imageRecipeArn", m_imageRecipeArn);
+  }
+
+  if (m_containerRecipeArnHasBeenSet) {
+    payload.WithString("containerRecipeArn", m_containerRecipeArn);
+  }
+
+  if (m_infrastructureConfigurationArnHasBeenSet) {
+    payload.WithString("infrastructureConfigurationArn", m_infrastructureConfigurationArn);
+  }
+
+  if (m_distributionConfigurationArnHasBeenSet) {
+    payload.WithString("distributionConfigurationArn", m_distributionConfigurationArn);
+  }
+
+  if (m_imageTestsConfigurationHasBeenSet) {
+    payload.WithObject("imageTestsConfiguration", m_imageTestsConfiguration.Jsonize());
+  }
+
+  if (m_enhancedImageMetadataEnabledHasBeenSet) {
+    payload.WithBool("enhancedImageMetadataEnabled", m_enhancedImageMetadataEnabled);
+  }
+
+  if (m_scheduleHasBeenSet) {
+    payload.WithObject("schedule", m_schedule.Jsonize());
+  }
+
+  if (m_statusHasBeenSet) {
+    payload.WithString("status", PipelineStatusMapper::GetNameForPipelineStatus(m_status));
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_imageTagsHasBeenSet) {
+    JsonValue imageTagsJsonMap;
+    for (auto& imageTagsItem : m_imageTags) {
+      imageTagsJsonMap.WithString(imageTagsItem.first, imageTagsItem.second);
+    }
+    payload.WithObject("imageTags", std::move(imageTagsJsonMap));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  if (m_imageScanningConfigurationHasBeenSet) {
+    payload.WithObject("imageScanningConfiguration", m_imageScanningConfiguration.Jsonize());
+  }
+
+  if (m_workflowsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> workflowsJsonList(m_workflows.size());
+    for (unsigned workflowsIndex = 0; workflowsIndex < workflowsJsonList.GetLength(); ++workflowsIndex) {
+      workflowsJsonList[workflowsIndex].AsObject(m_workflows[workflowsIndex].Jsonize());
+    }
+    payload.WithArray("workflows", std::move(workflowsJsonList));
+  }
+
+  if (m_executionRoleHasBeenSet) {
+    payload.WithString("executionRole", m_executionRole);
+  }
+
+  if (m_loggingConfigurationHasBeenSet) {
+    payload.WithObject("loggingConfiguration", m_loggingConfiguration.Jsonize());
+  }
+
+  return payload.View().WriteReadable();
+}

@@ -1,0 +1,28 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/docdb/model/SwitchoverGlobalClusterRequest.h>
+
+using namespace Aws::DocDB::Model;
+using namespace Aws::Utils;
+
+Aws::String SwitchoverGlobalClusterRequest::SerializePayload() const {
+  Aws::StringStream ss;
+  ss << "Action=SwitchoverGlobalCluster&";
+  if (m_globalClusterIdentifierHasBeenSet) {
+    ss << "GlobalClusterIdentifier=" << StringUtils::URLEncode(m_globalClusterIdentifier.c_str()) << "&";
+  }
+
+  if (m_targetDbClusterIdentifierHasBeenSet) {
+    ss << "TargetDbClusterIdentifier=" << StringUtils::URLEncode(m_targetDbClusterIdentifier.c_str()) << "&";
+  }
+
+  ss << "Version=2014-10-31";
+  return ss.str();
+}
+
+void SwitchoverGlobalClusterRequest::DumpBodyToUrl(Aws::Http::URI& uri) const { uri.SetQueryString(SerializePayload()); }

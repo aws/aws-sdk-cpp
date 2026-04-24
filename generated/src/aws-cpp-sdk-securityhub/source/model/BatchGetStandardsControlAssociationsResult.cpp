@@ -1,0 +1,56 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/securityhub/model/BatchGetStandardsControlAssociationsResult.h>
+
+#include <utility>
+
+using namespace Aws::SecurityHub::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+BatchGetStandardsControlAssociationsResult::BatchGetStandardsControlAssociationsResult(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+BatchGetStandardsControlAssociationsResult& BatchGetStandardsControlAssociationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("StandardsControlAssociationDetails")) {
+    Aws::Utils::Array<JsonView> standardsControlAssociationDetailsJsonList = jsonValue.GetArray("StandardsControlAssociationDetails");
+    for (unsigned standardsControlAssociationDetailsIndex = 0;
+         standardsControlAssociationDetailsIndex < standardsControlAssociationDetailsJsonList.GetLength();
+         ++standardsControlAssociationDetailsIndex) {
+      m_standardsControlAssociationDetails.push_back(
+          standardsControlAssociationDetailsJsonList[standardsControlAssociationDetailsIndex].AsObject());
+    }
+    m_standardsControlAssociationDetailsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("UnprocessedAssociations")) {
+    Aws::Utils::Array<JsonView> unprocessedAssociationsJsonList = jsonValue.GetArray("UnprocessedAssociations");
+    for (unsigned unprocessedAssociationsIndex = 0; unprocessedAssociationsIndex < unprocessedAssociationsJsonList.GetLength();
+         ++unprocessedAssociationsIndex) {
+      m_unprocessedAssociations.push_back(unprocessedAssociationsJsonList[unprocessedAssociationsIndex].AsObject());
+    }
+    m_unprocessedAssociationsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

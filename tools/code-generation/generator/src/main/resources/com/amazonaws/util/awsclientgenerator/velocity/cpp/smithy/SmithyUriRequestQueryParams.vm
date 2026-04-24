@@ -1,0 +1,89 @@
+#set($indent = "    ")
+#if($operation.http.requestUri.contains("?"))
+${indent}  Aws::StringStream ss;
+#end
+#set($uriParts = $operation.http.requestUriParts)
+#set($uriVars = $operation.http.requestParameters)
+#if(!$startIndex)
+#set($startIndex = 0)
+#end
+#set($partIndex = 1)
+#set($queryStart = false)
+#if($uriParts.size() > $startIndex)
+#set($uriPartString = ${uriParts.get($startIndex)})
+#if($uriPartString.contains("?"))## if (request uri contains query) ----------
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+#set($hasEndPointOverrides = true)
+#if($pathAndQuery.get(0).toLowerCase().contains("resourcearn"))
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
+#end
+${indent}  resolvedEndpoint.AddPathSegments("${pathAndQuery.get(0)}");
+#end
+${indent}  ss.str("${pathAndQuery.get(1)}");
+#elseif(!$uriPartString.equals("/"))
+#set($hasEndPointOverrides = true)
+#if($uriPartString.get(0).toLowerCase().contains("resourcearn"))
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
+#end
+${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
+#elseif($uriVars.size() > 0)
+#set($hasEndPointOverrides = true)
+#end## ---------------------------- if (request uri contains query) end ------
+#foreach($var in $uriVars)## for (parameter in request uri parameters) -------
+#set($varIndex = $partIndex - 1)
+#set($uriVar = $uriVars.get($varIndex).replace('+', ''))
+#set($greedySyntax = $uriVars.get($varIndex).contains("+"))
+#if(!$skipFirst)
+#set($partShapeMember = $operation.request.shape.getMemberByLocationName($uriVar))
+#if($partShapeMember.shape.enum)
+#set($parameter = "${partShapeMember.shape.name}Mapper::GetNameFor${partShapeMember.shape.name}(request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}())")
+#elseif($partShapeMember.shape.timeStamp)
+#if($partShapeMember.shape.timestampFormat != "unixTimestamp")
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}().ToGmtString(Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInQueryString($partShapeMember.shape))")
+#else
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}().Seconds()")
+#end
+#else
+#set($parameter = "request.Get${CppViewHelper.convertToUpperCamel($operation.request.shape.getMemberNameByLocationName($uriVar))}()")
+#end
+#if($queryStart)
+${indent}  ss << $parameter;
+#else
+#if($greedySyntax)
+#if($parameter.toLowerCase().contains("resourcearn"))
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
+#end
+${indent}  resolvedEndpoint.AddPathSegments($parameter);
+#else
+${indent}  resolvedEndpoint.AddPathSegment($parameter);
+#end
+#end
+#if($uriParts.size() > $partIndex)
+#set($uriPartString = "${uriParts.get($partIndex)}")
+#if(!$queryStart && $uriPartString.contains("?"))
+#set($queryStart = true)
+#set($pathAndQuery = $operation.http.splitUriPartIntoPathAndQuery($uriPartString))
+#if(!$pathAndQuery.get(0).isEmpty())
+#if($pathAndQuery.get(0).toLowerCase().contains("resourcearn"))
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
+#end
+${indent}  resolvedEndpoint.AddPathSegment("${pathAndQuery.get(0)}");
+#end
+${indent}  ss.str("${pathAndQuery.get(1)}");
+#elseif(!$uriPartString.equals("/"))
+#if($uriPartString.toLowerCase().contains("resourcearn"))
+${indent}  resolvedEndpoint.SetRfc3986Encoded(true);
+#end
+${indent}  resolvedEndpoint.AddPathSegments("$uriPartString");
+#end
+#end
+#end## --------------------- if !skipFirst end ---
+#set($partIndex = $partIndex + 1)
+#set($skipFirst = false)
+#end## --------------------- if uriParts.size() > startIndex end ---
+#end## --------------------- for (parameter in request uri parameters) end ---
+#if($queryStart)
+${indent}  resolvedEndpoint.SetQueryString(ss.str());
+#end

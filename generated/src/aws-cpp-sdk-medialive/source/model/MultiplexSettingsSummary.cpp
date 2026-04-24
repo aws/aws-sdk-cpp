@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/medialive/model/MultiplexSettingsSummary.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaLive {
+namespace Model {
+
+MultiplexSettingsSummary::MultiplexSettingsSummary(JsonView jsonValue) { *this = jsonValue; }
+
+MultiplexSettingsSummary& MultiplexSettingsSummary::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("transportStreamBitrate")) {
+    m_transportStreamBitrate = jsonValue.GetInteger("transportStreamBitrate");
+    m_transportStreamBitrateHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue MultiplexSettingsSummary::Jsonize() const {
+  JsonValue payload;
+
+  if (m_transportStreamBitrateHasBeenSet) {
+    payload.WithInteger("transportStreamBitrate", m_transportStreamBitrate);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaLive
+}  // namespace Aws

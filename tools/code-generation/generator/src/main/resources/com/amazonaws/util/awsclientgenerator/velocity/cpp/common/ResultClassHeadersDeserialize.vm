@@ -1,0 +1,60 @@
+#if(!$shape.hasHeaderMembers() && $ResultClassHeadersDeserializeDoNotGetHeaders)
+  AWS_UNREFERENCED_PARAM(headers);
+#end
+#if($shape.hasHeaderMembers())
+#if(!$ResultClassHeadersDeserializeDoNotGetHeaders)
+  const auto& headers = result.GetHeaderValueCollection();
+#end
+#foreach($memberEntry in $shape.members.entrySet())
+#set($varName = $CppViewHelper.computeVariableName($memberEntry.key))
+#set($memberVarName = $CppViewHelper.computeMemberVariableName($memberEntry.key))
+#if($memberEntry.value.usedForHeader)
+#if($memberEntry.value.shape.map)
+  std::size_t prefixSize = sizeof("${memberEntry.value.locationName}") - 1; //subtract the NULL terminator out
+  for(const auto& item : headers)
+  {
+    std::size_t foundPrefix = item.first.find("${memberEntry.value.locationName}");
+
+    if(foundPrefix != std::string::npos)
+    {
+      ${memberVarName}[item.first.substr(prefixSize)] = item.second;
+      ${CppViewHelper.computeVariableHasBeenSetName($memberEntry.key)} = true;
+    }
+  }
+
+#else
+  const auto& ${varName}Iter = headers.find("${memberEntry.value.locationName}");
+  if(${varName}Iter != headers.end())
+  {
+#if($memberEntry.value.shape.string)
+    ${memberVarName} = ${varName}Iter->second;
+#elseif($memberEntry.value.shape.timeStamp)
+#if($memberEntry.value.shape.timestampFormat != "unixTimestamp")
+    ${memberVarName} = DateTime(${varName}Iter->second.c_str(), Aws::Utils::DateFormat::$CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape));
+#else
+    ${memberVarName} = DateTime(StringUtils::ConvertToDouble(${varName}Iter->second.c_str()));
+#end
+    if(!${memberVarName}.WasParseSuccessful())
+    {
+      AWS_LOGSTREAM_WARN("${serviceNamespace}::${typeInfo.className}", "Failed to parse ${varName} header as an $CppViewHelper.computeTimestampFormatInHeader($memberEntry.value.shape) timestamp: " << ${varName}Iter->second.c_str());
+    }
+#elseif($memberEntry.value.shape.enum)
+    ${memberVarName} = ${memberEntry.value.shape.name}Mapper::Get${memberEntry.value.shape.name}ForName(${varName}Iter->second);
+#elseif($memberEntry.value.shape.blob)
+    ${memberVarName} = HashingUtils::Base64Decode(StringUtils::Trim(${varName}Iter->second.c_str()));
+#elseif($memberEntry.value.shape.primitive)
+    ${memberVarName} = ${CppViewHelper.computeXmlConversionMethodName($memberEntry.value.shape)}(${varName}Iter->second.c_str());
+#else
+##    static_assert(false, "Code generation failure: unknown type to deserialize: ${memberEntry.value.shape}!");
+#end
+    ${CppViewHelper.computeVariableHasBeenSetName($memberEntry.key)} = true;
+#if($metadata.awsQueryCompatible && $memberEntry.value.shape.structure && $memberEntry.value.shape.name == 'ResponseMetadata')
+     // for backward compatibility for customers used to an old XML Client interface
+     m_responseMetadata.SetRequestId(${varName}Iter->second);
+#end
+  }
+
+#end
+#end
+#end
+#end

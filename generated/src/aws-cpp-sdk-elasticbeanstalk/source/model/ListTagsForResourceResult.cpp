@@ -1,0 +1,58 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/logging/LogMacros.h>
+#include <aws/core/utils/xml/XmlSerializer.h>
+#include <aws/elasticbeanstalk/model/ListTagsForResourceResult.h>
+
+#include <utility>
+
+using namespace Aws::ElasticBeanstalk::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils::Logging;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListTagsForResourceResult::ListTagsForResourceResult(const Aws::AmazonWebServiceResult<XmlDocument>& result) { *this = result; }
+
+ListTagsForResourceResult& ListTagsForResourceResult::operator=(const Aws::AmazonWebServiceResult<XmlDocument>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  const XmlDocument& xmlDocument = result.GetPayload();
+  XmlNode rootNode = xmlDocument.GetRootElement();
+  XmlNode resultNode = rootNode;
+  if (!rootNode.IsNull() && (rootNode.GetName() != "ListTagsForResourceResult")) {
+    resultNode = rootNode.FirstChild("ListTagsForResourceResult");
+  }
+
+  if (!resultNode.IsNull()) {
+    XmlNode resourceArnNode = resultNode.FirstChild("ResourceArn");
+    if (!resourceArnNode.IsNull()) {
+      m_resourceArn = Aws::Utils::Xml::DecodeEscapedXmlText(resourceArnNode.GetText());
+      m_resourceArnHasBeenSet = true;
+    }
+    XmlNode resourceTagsNode = resultNode.FirstChild("ResourceTags");
+    if (!resourceTagsNode.IsNull()) {
+      XmlNode resourceTagsMember = resourceTagsNode.FirstChild("member");
+      m_resourceTagsHasBeenSet = !resourceTagsMember.IsNull();
+      while (!resourceTagsMember.IsNull()) {
+        m_resourceTags.push_back(resourceTagsMember);
+        resourceTagsMember = resourceTagsMember.NextNode("member");
+      }
+
+      m_resourceTagsHasBeenSet = true;
+    }
+  }
+
+  if (!rootNode.IsNull()) {
+    XmlNode responseMetadataNode = rootNode.FirstChild("ResponseMetadata");
+    m_responseMetadata = responseMetadataNode;
+    m_responseMetadataHasBeenSet = true;
+    AWS_LOGSTREAM_DEBUG("Aws::ElasticBeanstalk::Model::ListTagsForResourceResult",
+                        "x-amzn-request-id: " << m_responseMetadata.GetRequestId());
+  }
+  return *this;
+}

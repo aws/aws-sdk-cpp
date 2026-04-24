@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rum/model/UserDetails.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace CloudWatchRUM {
+namespace Model {
+
+UserDetails::UserDetails(JsonView jsonValue) { *this = jsonValue; }
+
+UserDetails& UserDetails::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("userId")) {
+    m_userId = jsonValue.GetString("userId");
+    m_userIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("sessionId")) {
+    m_sessionId = jsonValue.GetString("sessionId");
+    m_sessionIdHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue UserDetails::Jsonize() const {
+  JsonValue payload;
+
+  if (m_userIdHasBeenSet) {
+    payload.WithString("userId", m_userId);
+  }
+
+  if (m_sessionIdHasBeenSet) {
+    payload.WithString("sessionId", m_sessionId);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace CloudWatchRUM
+}  // namespace Aws

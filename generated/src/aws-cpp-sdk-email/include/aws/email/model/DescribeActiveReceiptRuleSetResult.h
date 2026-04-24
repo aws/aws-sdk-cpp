@@ -1,0 +1,110 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/email/SES_EXPORTS.h>
+#include <aws/email/model/ReceiptRule.h>
+#include <aws/email/model/ReceiptRuleSetMetadata.h>
+#include <aws/email/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace SES {
+namespace Model {
+/**
+ * <p>Represents the metadata and receipt rules for the receipt rule set that is
+ * currently active.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/email-2010-12-01/DescribeActiveReceiptRuleSetResponse">AWS
+ * API Reference</a></p>
+ */
+class DescribeActiveReceiptRuleSetResult {
+ public:
+  AWS_SES_API DescribeActiveReceiptRuleSetResult() = default;
+  AWS_SES_API DescribeActiveReceiptRuleSetResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_SES_API DescribeActiveReceiptRuleSetResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>The metadata for the currently active receipt rule set. The metadata consists
+   * of the rule set name and a timestamp of when the rule set was created.</p>
+   */
+  inline const ReceiptRuleSetMetadata& GetMetadata() const { return m_metadata; }
+  template <typename MetadataT = ReceiptRuleSetMetadata>
+  void SetMetadata(MetadataT&& value) {
+    m_metadataHasBeenSet = true;
+    m_metadata = std::forward<MetadataT>(value);
+  }
+  template <typename MetadataT = ReceiptRuleSetMetadata>
+  DescribeActiveReceiptRuleSetResult& WithMetadata(MetadataT&& value) {
+    SetMetadata(std::forward<MetadataT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The receipt rules that belong to the active rule set.</p>
+   */
+  inline const Aws::Vector<ReceiptRule>& GetRules() const { return m_rules; }
+  template <typename RulesT = Aws::Vector<ReceiptRule>>
+  void SetRules(RulesT&& value) {
+    m_rulesHasBeenSet = true;
+    m_rules = std::forward<RulesT>(value);
+  }
+  template <typename RulesT = Aws::Vector<ReceiptRule>>
+  DescribeActiveReceiptRuleSetResult& WithRules(RulesT&& value) {
+    SetRules(std::forward<RulesT>(value));
+    return *this;
+  }
+  template <typename RulesT = ReceiptRule>
+  DescribeActiveReceiptRuleSetResult& AddRules(RulesT&& value) {
+    m_rulesHasBeenSet = true;
+    m_rules.emplace_back(std::forward<RulesT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DescribeActiveReceiptRuleSetResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ReceiptRuleSetMetadata m_metadata;
+
+  Aws::Vector<ReceiptRule> m_rules;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_metadataHasBeenSet = false;
+  bool m_rulesHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SES
+}  // namespace Aws

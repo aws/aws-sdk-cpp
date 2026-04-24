@@ -1,0 +1,84 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/UnsuccessfulItem.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class DeleteVpcEndpointServiceConfigurationsResponse {
+ public:
+  AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse() = default;
+  AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API DeleteVpcEndpointServiceConfigurationsResponse& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>Information about the service configurations that were not deleted, if
+   * applicable.</p>
+   */
+  inline const Aws::Vector<UnsuccessfulItem>& GetUnsuccessful() const { return m_unsuccessful; }
+  template <typename UnsuccessfulT = Aws::Vector<UnsuccessfulItem>>
+  void SetUnsuccessful(UnsuccessfulT&& value) {
+    m_unsuccessfulHasBeenSet = true;
+    m_unsuccessful = std::forward<UnsuccessfulT>(value);
+  }
+  template <typename UnsuccessfulT = Aws::Vector<UnsuccessfulItem>>
+  DeleteVpcEndpointServiceConfigurationsResponse& WithUnsuccessful(UnsuccessfulT&& value) {
+    SetUnsuccessful(std::forward<UnsuccessfulT>(value));
+    return *this;
+  }
+  template <typename UnsuccessfulT = UnsuccessfulItem>
+  DeleteVpcEndpointServiceConfigurationsResponse& AddUnsuccessful(UnsuccessfulT&& value) {
+    m_unsuccessfulHasBeenSet = true;
+    m_unsuccessful.emplace_back(std::forward<UnsuccessfulT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  DeleteVpcEndpointServiceConfigurationsResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<UnsuccessfulItem> m_unsuccessful;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_unsuccessfulHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

@@ -1,0 +1,61 @@
+/* S3 CRT specifics */
+S3CrtClientConfiguration::S3CrtConfigFactories S3CrtClientConfiguration::S3CrtConfigFactories::defaultFactories = []()
+{
+  S3CrtConfigFactories factories;
+
+  factories.retryStrategyCreateFn = [](const S3Crt::S3CrtClientConfiguration& config) -> aws_retry_strategy*
+  {
+    aws_event_loop_group *el_group = config.clientBootstrap ?
+      config.clientBootstrap->GetUnderlyingHandle()->event_loop_group : Aws::GetDefaultClientBootstrap()->GetUnderlyingHandle()->event_loop_group;
+
+    using CrtRetryStrategyType = S3Crt::S3CrtClientConfiguration::CrtRetryStrategyConfig::CrtRetryStrategyType;
+
+    CrtRetryStrategyType strategyToUse = config.crtRetryStrategyConfig.crtRetryStrategyType;
+
+    if (strategyToUse == CrtRetryStrategyType::NOT_SET && config.retryStrategy)
+    {
+      if (config.retryStrategy)
+      {
+        if(Aws::String("standard") == config.retryStrategy->GetStrategyName())
+          strategyToUse = CrtRetryStrategyType::STANDARD;
+        else if(Aws::String("adaptive") == config.retryStrategy->GetStrategyName())
+          strategyToUse = CrtRetryStrategyType::EXPONENTIAL_BACKOFF;
+        else
+          strategyToUse = CrtRetryStrategyType::DEFAULT;
+      }
+    }
+
+    if (strategyToUse == CrtRetryStrategyType::DEFAULT)
+    {
+      return nullptr;
+    }
+
+    if (strategyToUse == CrtRetryStrategyType::STANDARD)
+    {
+      aws_standard_retry_options options {};
+      return aws_retry_strategy_new_standard(Aws::get_aws_allocator(), &options);
+    }
+
+    if (strategyToUse == CrtRetryStrategyType::EXPONENTIAL_BACKOFF)
+    {
+      aws_exponential_backoff_retry_options options {};
+      options.el_group = el_group,
+      options.max_retries = config.crtRetryStrategyConfig.config.maxRetries;
+      options.backoff_scale_factor_ms = config.crtRetryStrategyConfig.config.scaleFactorMs;
+      options.max_backoff_secs = config.crtRetryStrategyConfig.config.maxBackoffSecs;
+      options.jitter_mode = AWS_EXPONENTIAL_BACKOFF_JITTER_FULL;
+      return aws_retry_strategy_new_exponential_backoff(Aws::get_aws_allocator(), &options);
+    }
+
+    if (strategyToUse == CrtRetryStrategyType::NO_RETRY)
+    {
+      aws_no_retry_options options {};
+      return aws_retry_strategy_new_no_retry(Aws::get_aws_allocator(), &options);
+    }
+
+    return nullptr;
+  };
+
+  return factories;
+}();
+/* End of S3 CRT specifics */

@@ -1,0 +1,79 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/personalize/Personalize_EXPORTS.h>
+#include <aws/personalize/model/Campaign.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Personalize {
+namespace Model {
+class DescribeCampaignResult {
+ public:
+  AWS_PERSONALIZE_API DescribeCampaignResult() = default;
+  AWS_PERSONALIZE_API DescribeCampaignResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_PERSONALIZE_API DescribeCampaignResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   *  <p>The <code>latestCampaignUpdate</code> field is only returned when the
+   * campaign has had at least one <code>UpdateCampaign</code> call. </p>
+   * <p>The properties of the campaign.</p>  <p>The
+   * <code>latestCampaignUpdate</code> field is only returned when the campaign has
+   * had at least one <code>UpdateCampaign</code> call.</p>
+   */
+  inline const Campaign& GetCampaign() const { return m_campaign; }
+  template <typename CampaignT = Campaign>
+  void SetCampaign(CampaignT&& value) {
+    m_campaignHasBeenSet = true;
+    m_campaign = std::forward<CampaignT>(value);
+  }
+  template <typename CampaignT = Campaign>
+  DescribeCampaignResult& WithCampaign(CampaignT&& value) {
+    SetCampaign(std::forward<CampaignT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeCampaignResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Campaign m_campaign;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_campaignHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Personalize
+}  // namespace Aws

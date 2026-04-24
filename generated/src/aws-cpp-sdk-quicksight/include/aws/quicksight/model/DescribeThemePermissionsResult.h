@@ -1,0 +1,140 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/quicksight/QuickSight_EXPORTS.h>
+#include <aws/quicksight/model/ResourcePermission.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace QuickSight {
+namespace Model {
+class DescribeThemePermissionsResult {
+ public:
+  AWS_QUICKSIGHT_API DescribeThemePermissionsResult() = default;
+  AWS_QUICKSIGHT_API DescribeThemePermissionsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_QUICKSIGHT_API DescribeThemePermissionsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ID for the theme.</p>
+   */
+  inline const Aws::String& GetThemeId() const { return m_themeId; }
+  template <typename ThemeIdT = Aws::String>
+  void SetThemeId(ThemeIdT&& value) {
+    m_themeIdHasBeenSet = true;
+    m_themeId = std::forward<ThemeIdT>(value);
+  }
+  template <typename ThemeIdT = Aws::String>
+  DescribeThemePermissionsResult& WithThemeId(ThemeIdT&& value) {
+    SetThemeId(std::forward<ThemeIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the theme.</p>
+   */
+  inline const Aws::String& GetThemeArn() const { return m_themeArn; }
+  template <typename ThemeArnT = Aws::String>
+  void SetThemeArn(ThemeArnT&& value) {
+    m_themeArnHasBeenSet = true;
+    m_themeArn = std::forward<ThemeArnT>(value);
+  }
+  template <typename ThemeArnT = Aws::String>
+  DescribeThemePermissionsResult& WithThemeArn(ThemeArnT&& value) {
+    SetThemeArn(std::forward<ThemeArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of resource permissions set on the theme. </p>
+   */
+  inline const Aws::Vector<ResourcePermission>& GetPermissions() const { return m_permissions; }
+  template <typename PermissionsT = Aws::Vector<ResourcePermission>>
+  void SetPermissions(PermissionsT&& value) {
+    m_permissionsHasBeenSet = true;
+    m_permissions = std::forward<PermissionsT>(value);
+  }
+  template <typename PermissionsT = Aws::Vector<ResourcePermission>>
+  DescribeThemePermissionsResult& WithPermissions(PermissionsT&& value) {
+    SetPermissions(std::forward<PermissionsT>(value));
+    return *this;
+  }
+  template <typename PermissionsT = ResourcePermission>
+  DescribeThemePermissionsResult& AddPermissions(PermissionsT&& value) {
+    m_permissionsHasBeenSet = true;
+    m_permissions.emplace_back(std::forward<PermissionsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DescribeThemePermissionsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The HTTP status of the request.</p>
+   */
+  inline int GetStatus() const { return m_status; }
+  inline void SetStatus(int value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline DescribeThemePermissionsResult& WithStatus(int value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_themeId;
+
+  Aws::String m_themeArn;
+
+  Aws::Vector<ResourcePermission> m_permissions;
+
+  Aws::String m_requestId;
+
+  int m_status{0};
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_themeIdHasBeenSet = false;
+  bool m_themeArnHasBeenSet = false;
+  bool m_permissionsHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

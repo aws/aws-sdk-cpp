@@ -1,0 +1,98 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
+#include <aws/machinelearning/model/TaggableResourceType.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MachineLearning {
+namespace Model {
+/**
+ * <p>Amazon ML returns the following elements.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/DeleteTagsOutput">AWS
+ * API Reference</a></p>
+ */
+class DeleteTagsResult {
+ public:
+  AWS_MACHINELEARNING_API DeleteTagsResult() = default;
+  AWS_MACHINELEARNING_API DeleteTagsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MACHINELEARNING_API DeleteTagsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ID of the ML object from which tags were deleted.</p>
+   */
+  inline const Aws::String& GetResourceId() const { return m_resourceId; }
+  template <typename ResourceIdT = Aws::String>
+  void SetResourceId(ResourceIdT&& value) {
+    m_resourceIdHasBeenSet = true;
+    m_resourceId = std::forward<ResourceIdT>(value);
+  }
+  template <typename ResourceIdT = Aws::String>
+  DeleteTagsResult& WithResourceId(ResourceIdT&& value) {
+    SetResourceId(std::forward<ResourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The type of the ML object from which tags were deleted.</p>
+   */
+  inline TaggableResourceType GetResourceType() const { return m_resourceType; }
+  inline void SetResourceType(TaggableResourceType value) {
+    m_resourceTypeHasBeenSet = true;
+    m_resourceType = value;
+  }
+  inline DeleteTagsResult& WithResourceType(TaggableResourceType value) {
+    SetResourceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteTagsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_resourceId;
+
+  TaggableResourceType m_resourceType{TaggableResourceType::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_resourceIdHasBeenSet = false;
+  bool m_resourceTypeHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

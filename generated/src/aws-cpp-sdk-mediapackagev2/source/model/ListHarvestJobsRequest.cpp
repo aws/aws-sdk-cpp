@@ -1,0 +1,51 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/mediapackagev2/model/ListHarvestJobsRequest.h>
+
+#include <utility>
+
+using namespace Aws::mediapackagev2::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+Aws::String ListHarvestJobsRequest::SerializePayload() const { return {}; }
+
+void ListHarvestJobsRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_channelNameHasBeenSet) {
+    ss << m_channelName;
+    uri.AddQueryStringParameter("channelName", ss.str());
+    ss.str("");
+  }
+
+  if (m_originEndpointNameHasBeenSet) {
+    ss << m_originEndpointName;
+    uri.AddQueryStringParameter("originEndpointName", ss.str());
+    ss.str("");
+  }
+
+  if (m_statusHasBeenSet) {
+    ss << HarvestJobStatusMapper::GetNameForHarvestJobStatus(m_status);
+    uri.AddQueryStringParameter("includeStatus", ss.str());
+    ss.str("");
+  }
+
+  if (m_maxResultsHasBeenSet) {
+    ss << m_maxResults;
+    uri.AddQueryStringParameter("maxResults", ss.str());
+    ss.str("");
+  }
+
+  if (m_nextTokenHasBeenSet) {
+    ss << m_nextToken;
+    uri.AddQueryStringParameter("nextToken", ss.str());
+    ss.str("");
+  }
+}

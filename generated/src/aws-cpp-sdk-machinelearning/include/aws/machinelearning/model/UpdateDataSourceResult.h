@@ -1,0 +1,83 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/machinelearning/MachineLearning_EXPORTS.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MachineLearning {
+namespace Model {
+/**
+ * <p>Represents the output of an <code>UpdateDataSource</code> operation.</p>
+ * <p>You can see the updated content by using the <code>GetBatchPrediction</code>
+ * operation.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/machinelearning-2014-12-12/UpdateDataSourceOutput">AWS
+ * API Reference</a></p>
+ */
+class UpdateDataSourceResult {
+ public:
+  AWS_MACHINELEARNING_API UpdateDataSourceResult() = default;
+  AWS_MACHINELEARNING_API UpdateDataSourceResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MACHINELEARNING_API UpdateDataSourceResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The ID assigned to the <code>DataSource</code> during creation. This value
+   * should be identical to the value of the <code>DataSourceID</code> in the
+   * request.</p>
+   */
+  inline const Aws::String& GetDataSourceId() const { return m_dataSourceId; }
+  template <typename DataSourceIdT = Aws::String>
+  void SetDataSourceId(DataSourceIdT&& value) {
+    m_dataSourceIdHasBeenSet = true;
+    m_dataSourceId = std::forward<DataSourceIdT>(value);
+  }
+  template <typename DataSourceIdT = Aws::String>
+  UpdateDataSourceResult& WithDataSourceId(DataSourceIdT&& value) {
+    SetDataSourceId(std::forward<DataSourceIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateDataSourceResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_dataSourceId;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_dataSourceIdHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MachineLearning
+}  // namespace Aws

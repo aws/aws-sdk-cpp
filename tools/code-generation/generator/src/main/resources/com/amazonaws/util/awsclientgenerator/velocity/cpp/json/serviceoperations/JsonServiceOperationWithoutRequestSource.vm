@@ -1,0 +1,3 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withoutrequest/OperationOutcome.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withoutrequest/OperationOutcomeCallable.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/json/serviceoperations/withoutrequest/OperationAsync.vm")

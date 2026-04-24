@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/AxisLinearScale.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+
+AxisLinearScale::AxisLinearScale(JsonView jsonValue) { *this = jsonValue; }
+
+AxisLinearScale& AxisLinearScale::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StepCount")) {
+    m_stepCount = jsonValue.GetInteger("StepCount");
+    m_stepCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StepSize")) {
+    m_stepSize = jsonValue.GetDouble("StepSize");
+    m_stepSizeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AxisLinearScale::Jsonize() const {
+  JsonValue payload;
+
+  if (m_stepCountHasBeenSet) {
+    payload.WithInteger("StepCount", m_stepCount);
+  }
+
+  if (m_stepSizeHasBeenSet) {
+    payload.WithDouble("StepSize", m_stepSize);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

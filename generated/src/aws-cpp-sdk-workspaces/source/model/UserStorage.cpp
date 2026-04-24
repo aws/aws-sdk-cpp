@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/workspaces/model/UserStorage.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace WorkSpaces {
+namespace Model {
+
+UserStorage::UserStorage(JsonView jsonValue) { *this = jsonValue; }
+
+UserStorage& UserStorage::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Capacity")) {
+    m_capacity = jsonValue.GetString("Capacity");
+    m_capacityHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue UserStorage::Jsonize() const {
+  JsonValue payload;
+
+  if (m_capacityHasBeenSet) {
+    payload.WithString("Capacity", m_capacity);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace WorkSpaces
+}  // namespace Aws

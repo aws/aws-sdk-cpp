@@ -1,0 +1,129 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connectcases/ConnectCases_EXPORTS.h>
+#include <aws/connectcases/model/SearchCasesResponseItem.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/crt/Optional.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ConnectCases {
+namespace Model {
+class SearchCasesResult {
+ public:
+  AWS_CONNECTCASES_API SearchCasesResult() = default;
+  AWS_CONNECTCASES_API SearchCasesResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONNECTCASES_API SearchCasesResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The token for the next set of results. This is null if there are no more
+   * results to return.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  SearchCasesResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of case documents where each case contains the properties
+   * <code>CaseId</code> and <code>Fields</code> where each field is a complex union
+   * structure. </p>
+   */
+  inline const Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>& GetCases() const { return m_cases; }
+  template <typename CasesT = Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>>
+  void SetCases(CasesT&& value) {
+    m_casesHasBeenSet = true;
+    m_cases = std::forward<CasesT>(value);
+  }
+  template <typename CasesT = Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>>>
+  SearchCasesResult& WithCases(CasesT&& value) {
+    SetCases(std::forward<CasesT>(value));
+    return *this;
+  }
+  template <typename CasesT = SearchCasesResponseItem>
+  SearchCasesResult& AddCases(CasesT&& value) {
+    m_casesHasBeenSet = true;
+    m_cases.emplace_back(std::forward<CasesT>(value));
+    return *this;
+  }
+  inline SearchCasesResult& AddCases(Aws::Crt::Optional<SearchCasesResponseItem> value) {
+    m_casesHasBeenSet = true;
+    m_cases.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The total number of cases that matched the search criteria.</p>
+   */
+  inline long long GetTotalCount() const { return m_totalCount; }
+  inline void SetTotalCount(long long value) {
+    m_totalCountHasBeenSet = true;
+    m_totalCount = value;
+  }
+  inline SearchCasesResult& WithTotalCount(long long value) {
+    SetTotalCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  SearchCasesResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_nextToken;
+
+  Aws::Vector<Aws::Crt::Optional<SearchCasesResponseItem>> m_cases;
+
+  long long m_totalCount{0};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_casesHasBeenSet = false;
+  bool m_totalCountHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ConnectCases
+}  // namespace Aws

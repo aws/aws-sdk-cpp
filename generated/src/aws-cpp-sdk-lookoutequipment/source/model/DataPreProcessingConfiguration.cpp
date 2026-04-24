@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lookoutequipment/model/DataPreProcessingConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace LookoutEquipment {
+namespace Model {
+
+DataPreProcessingConfiguration::DataPreProcessingConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+DataPreProcessingConfiguration& DataPreProcessingConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("TargetSamplingRate")) {
+    m_targetSamplingRate = TargetSamplingRateMapper::GetTargetSamplingRateForName(jsonValue.GetString("TargetSamplingRate"));
+    m_targetSamplingRateHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue DataPreProcessingConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_targetSamplingRateHasBeenSet) {
+    payload.WithString("TargetSamplingRate", TargetSamplingRateMapper::GetNameForTargetSamplingRate(m_targetSamplingRate));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace LookoutEquipment
+}  // namespace Aws

@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/ssm-sap/SsmSap_EXPORTS.h>
+
+namespace Aws {
+namespace SsmSap {
+namespace Model {
+enum class ComponentType { NOT_SET, HANA, HANA_NODE, ABAP, ASCS, DIALOG, WEBDISP, WD, ERS };
+
+namespace ComponentTypeMapper {
+AWS_SSMSAP_API ComponentType GetComponentTypeForName(const Aws::String& name);
+
+AWS_SSMSAP_API Aws::String GetNameForComponentType(ComponentType value);
+}  // namespace ComponentTypeMapper
+}  // namespace Model
+}  // namespace SsmSap
+}  // namespace Aws

@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/wafv2/WAFV2_EXPORTS.h>
+#include <aws/wafv2/model/LoggingConfiguration.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace WAFV2 {
+namespace Model {
+class GetLoggingConfigurationResult {
+ public:
+  AWS_WAFV2_API GetLoggingConfigurationResult() = default;
+  AWS_WAFV2_API GetLoggingConfigurationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_WAFV2_API GetLoggingConfigurationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The <a>LoggingConfiguration</a> for the specified web ACL.</p>
+   */
+  inline const LoggingConfiguration& GetLoggingConfiguration() const { return m_loggingConfiguration; }
+  template <typename LoggingConfigurationT = LoggingConfiguration>
+  void SetLoggingConfiguration(LoggingConfigurationT&& value) {
+    m_loggingConfigurationHasBeenSet = true;
+    m_loggingConfiguration = std::forward<LoggingConfigurationT>(value);
+  }
+  template <typename LoggingConfigurationT = LoggingConfiguration>
+  GetLoggingConfigurationResult& WithLoggingConfiguration(LoggingConfigurationT&& value) {
+    SetLoggingConfiguration(std::forward<LoggingConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetLoggingConfigurationResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  LoggingConfiguration m_loggingConfiguration;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_loggingConfigurationHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace WAFV2
+}  // namespace Aws

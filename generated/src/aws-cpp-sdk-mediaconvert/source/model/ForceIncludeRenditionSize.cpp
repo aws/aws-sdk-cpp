@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mediaconvert/model/ForceIncludeRenditionSize.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MediaConvert {
+namespace Model {
+
+ForceIncludeRenditionSize::ForceIncludeRenditionSize(JsonView jsonValue) { *this = jsonValue; }
+
+ForceIncludeRenditionSize& ForceIncludeRenditionSize::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("height")) {
+    m_height = jsonValue.GetInteger("height");
+    m_heightHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("width")) {
+    m_width = jsonValue.GetInteger("width");
+    m_widthHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ForceIncludeRenditionSize::Jsonize() const {
+  JsonValue payload;
+
+  if (m_heightHasBeenSet) {
+    payload.WithInteger("height", m_height);
+  }
+
+  if (m_widthHasBeenSet) {
+    payload.WithInteger("width", m_width);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MediaConvert
+}  // namespace Aws

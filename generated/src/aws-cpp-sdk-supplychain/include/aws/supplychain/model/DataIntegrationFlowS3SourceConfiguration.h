@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/supplychain/SupplyChain_EXPORTS.h>
+#include <aws/supplychain/model/DataIntegrationFlowS3Options.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace SupplyChain {
+namespace Model {
+
+/**
+ * <p>The S3 DataIntegrationFlow source configuration parameters.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/supplychain-2024-01-01/DataIntegrationFlowS3SourceConfiguration">AWS
+ * API Reference</a></p>
+ */
+class DataIntegrationFlowS3SourceConfiguration {
+ public:
+  AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration() = default;
+  AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SUPPLYCHAIN_API DataIntegrationFlowS3SourceConfiguration& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_SUPPLYCHAIN_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The bucketName of the S3 source objects.</p>
+   */
+  inline const Aws::String& GetBucketName() const { return m_bucketName; }
+  inline bool BucketNameHasBeenSet() const { return m_bucketNameHasBeenSet; }
+  template <typename BucketNameT = Aws::String>
+  void SetBucketName(BucketNameT&& value) {
+    m_bucketNameHasBeenSet = true;
+    m_bucketName = std::forward<BucketNameT>(value);
+  }
+  template <typename BucketNameT = Aws::String>
+  DataIntegrationFlowS3SourceConfiguration& WithBucketName(BucketNameT&& value) {
+    SetBucketName(std::forward<BucketNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The prefix of the S3 source objects. To trigger data ingestion, S3 files need
+   * to be put under <code>s3://<i>bucketName</i>/<i>prefix</i>/</code>.</p>
+   */
+  inline const Aws::String& GetPrefix() const { return m_prefix; }
+  inline bool PrefixHasBeenSet() const { return m_prefixHasBeenSet; }
+  template <typename PrefixT = Aws::String>
+  void SetPrefix(PrefixT&& value) {
+    m_prefixHasBeenSet = true;
+    m_prefix = std::forward<PrefixT>(value);
+  }
+  template <typename PrefixT = Aws::String>
+  DataIntegrationFlowS3SourceConfiguration& WithPrefix(PrefixT&& value) {
+    SetPrefix(std::forward<PrefixT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The other options of the S3 DataIntegrationFlow source.</p>
+   */
+  inline const DataIntegrationFlowS3Options& GetOptions() const { return m_options; }
+  inline bool OptionsHasBeenSet() const { return m_optionsHasBeenSet; }
+  template <typename OptionsT = DataIntegrationFlowS3Options>
+  void SetOptions(OptionsT&& value) {
+    m_optionsHasBeenSet = true;
+    m_options = std::forward<OptionsT>(value);
+  }
+  template <typename OptionsT = DataIntegrationFlowS3Options>
+  DataIntegrationFlowS3SourceConfiguration& WithOptions(OptionsT&& value) {
+    SetOptions(std::forward<OptionsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_bucketName;
+
+  Aws::String m_prefix;
+
+  DataIntegrationFlowS3Options m_options;
+  bool m_bucketNameHasBeenSet = false;
+  bool m_prefixHasBeenSet = false;
+  bool m_optionsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SupplyChain
+}  // namespace Aws

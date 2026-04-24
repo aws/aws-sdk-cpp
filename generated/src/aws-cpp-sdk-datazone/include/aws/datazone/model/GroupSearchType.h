@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+
+namespace Aws {
+namespace DataZone {
+namespace Model {
+enum class GroupSearchType { NOT_SET, SSO_GROUP, DATAZONE_SSO_GROUP, IAM_ROLE_SESSION_GROUP };
+
+namespace GroupSearchTypeMapper {
+AWS_DATAZONE_API GroupSearchType GetGroupSearchTypeForName(const Aws::String& name);
+
+AWS_DATAZONE_API Aws::String GetNameForGroupSearchType(GroupSearchType value);
+}  // namespace GroupSearchTypeMapper
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

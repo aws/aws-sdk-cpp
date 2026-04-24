@@ -1,0 +1,128 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/rekognition/model/SegmentDetection.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Rekognition {
+namespace Model {
+
+SegmentDetection::SegmentDetection(JsonView jsonValue) { *this = jsonValue; }
+
+SegmentDetection& SegmentDetection::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Type")) {
+    m_type = SegmentTypeMapper::GetSegmentTypeForName(jsonValue.GetString("Type"));
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StartTimestampMillis")) {
+    m_startTimestampMillis = jsonValue.GetInt64("StartTimestampMillis");
+    m_startTimestampMillisHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndTimestampMillis")) {
+    m_endTimestampMillis = jsonValue.GetInt64("EndTimestampMillis");
+    m_endTimestampMillisHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DurationMillis")) {
+    m_durationMillis = jsonValue.GetInt64("DurationMillis");
+    m_durationMillisHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StartTimecodeSMPTE")) {
+    m_startTimecodeSMPTE = jsonValue.GetString("StartTimecodeSMPTE");
+    m_startTimecodeSMPTEHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndTimecodeSMPTE")) {
+    m_endTimecodeSMPTE = jsonValue.GetString("EndTimecodeSMPTE");
+    m_endTimecodeSMPTEHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DurationSMPTE")) {
+    m_durationSMPTE = jsonValue.GetString("DurationSMPTE");
+    m_durationSMPTEHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TechnicalCueSegment")) {
+    m_technicalCueSegment = jsonValue.GetObject("TechnicalCueSegment");
+    m_technicalCueSegmentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ShotSegment")) {
+    m_shotSegment = jsonValue.GetObject("ShotSegment");
+    m_shotSegmentHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("StartFrameNumber")) {
+    m_startFrameNumber = jsonValue.GetInt64("StartFrameNumber");
+    m_startFrameNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EndFrameNumber")) {
+    m_endFrameNumber = jsonValue.GetInt64("EndFrameNumber");
+    m_endFrameNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DurationFrames")) {
+    m_durationFrames = jsonValue.GetInt64("DurationFrames");
+    m_durationFramesHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue SegmentDetection::Jsonize() const {
+  JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("Type", SegmentTypeMapper::GetNameForSegmentType(m_type));
+  }
+
+  if (m_startTimestampMillisHasBeenSet) {
+    payload.WithInt64("StartTimestampMillis", m_startTimestampMillis);
+  }
+
+  if (m_endTimestampMillisHasBeenSet) {
+    payload.WithInt64("EndTimestampMillis", m_endTimestampMillis);
+  }
+
+  if (m_durationMillisHasBeenSet) {
+    payload.WithInt64("DurationMillis", m_durationMillis);
+  }
+
+  if (m_startTimecodeSMPTEHasBeenSet) {
+    payload.WithString("StartTimecodeSMPTE", m_startTimecodeSMPTE);
+  }
+
+  if (m_endTimecodeSMPTEHasBeenSet) {
+    payload.WithString("EndTimecodeSMPTE", m_endTimecodeSMPTE);
+  }
+
+  if (m_durationSMPTEHasBeenSet) {
+    payload.WithString("DurationSMPTE", m_durationSMPTE);
+  }
+
+  if (m_technicalCueSegmentHasBeenSet) {
+    payload.WithObject("TechnicalCueSegment", m_technicalCueSegment.Jsonize());
+  }
+
+  if (m_shotSegmentHasBeenSet) {
+    payload.WithObject("ShotSegment", m_shotSegment.Jsonize());
+  }
+
+  if (m_startFrameNumberHasBeenSet) {
+    payload.WithInt64("StartFrameNumber", m_startFrameNumber);
+  }
+
+  if (m_endFrameNumberHasBeenSet) {
+    payload.WithInt64("EndFrameNumber", m_endFrameNumber);
+  }
+
+  if (m_durationFramesHasBeenSet) {
+    payload.WithInt64("DurationFrames", m_durationFrames);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Rekognition
+}  // namespace Aws

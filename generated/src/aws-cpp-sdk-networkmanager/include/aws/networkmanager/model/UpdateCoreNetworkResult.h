@@ -1,0 +1,75 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/networkmanager/NetworkManager_EXPORTS.h>
+#include <aws/networkmanager/model/CoreNetwork.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace NetworkManager {
+namespace Model {
+class UpdateCoreNetworkResult {
+ public:
+  AWS_NETWORKMANAGER_API UpdateCoreNetworkResult() = default;
+  AWS_NETWORKMANAGER_API UpdateCoreNetworkResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_NETWORKMANAGER_API UpdateCoreNetworkResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Returns information about a core network update.</p>
+   */
+  inline const CoreNetwork& GetCoreNetwork() const { return m_coreNetwork; }
+  template <typename CoreNetworkT = CoreNetwork>
+  void SetCoreNetwork(CoreNetworkT&& value) {
+    m_coreNetworkHasBeenSet = true;
+    m_coreNetwork = std::forward<CoreNetworkT>(value);
+  }
+  template <typename CoreNetworkT = CoreNetwork>
+  UpdateCoreNetworkResult& WithCoreNetwork(CoreNetworkT&& value) {
+    SetCoreNetwork(std::forward<CoreNetworkT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateCoreNetworkResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  CoreNetwork m_coreNetwork;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_coreNetworkHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace NetworkManager
+}  // namespace Aws

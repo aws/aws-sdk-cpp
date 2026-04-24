@@ -1,0 +1,94 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/sesv2/SESV2Request.h>
+#include <aws/sesv2/SESV2_EXPORTS.h>
+#include <aws/sesv2/model/SuppressionListReason.h>
+#include <aws/sesv2/model/SuppressionValidationAttributes.h>
+
+#include <utility>
+
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+
+/**
+ * <p>A request to change your account's suppression preferences.</p><p><h3>See
+ * Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/sesv2-2019-09-27/PutAccountSuppressionAttributesRequest">AWS
+ * API Reference</a></p>
+ */
+class PutAccountSuppressionAttributesRequest : public SESV2Request {
+ public:
+  AWS_SESV2_API PutAccountSuppressionAttributesRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "PutAccountSuppressionAttributes"; }
+
+  AWS_SESV2_API Aws::String SerializePayload() const override;
+
+  ///@{
+  /**
+   * <p>A list that contains the reasons that email addresses will be automatically
+   * added to the suppression list for your account. This list can contain any or all
+   * of the following:</p> <ul> <li> <p> <code>COMPLAINT</code> – Amazon SES adds an
+   * email address to the suppression list for your account when a message sent to
+   * that address results in a complaint.</p> </li> <li> <p> <code>BOUNCE</code> –
+   * Amazon SES adds an email address to the suppression list for your account when a
+   * message sent to that address results in a hard bounce.</p> </li> </ul>
+   */
+  inline const Aws::Vector<SuppressionListReason>& GetSuppressedReasons() const { return m_suppressedReasons; }
+  inline bool SuppressedReasonsHasBeenSet() const { return m_suppressedReasonsHasBeenSet; }
+  template <typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+  void SetSuppressedReasons(SuppressedReasonsT&& value) {
+    m_suppressedReasonsHasBeenSet = true;
+    m_suppressedReasons = std::forward<SuppressedReasonsT>(value);
+  }
+  template <typename SuppressedReasonsT = Aws::Vector<SuppressionListReason>>
+  PutAccountSuppressionAttributesRequest& WithSuppressedReasons(SuppressedReasonsT&& value) {
+    SetSuppressedReasons(std::forward<SuppressedReasonsT>(value));
+    return *this;
+  }
+  inline PutAccountSuppressionAttributesRequest& AddSuppressedReasons(SuppressionListReason value) {
+    m_suppressedReasonsHasBeenSet = true;
+    m_suppressedReasons.push_back(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>An object that contains additional suppression attributes for your
+   * account.</p>
+   */
+  inline const SuppressionValidationAttributes& GetValidationAttributes() const { return m_validationAttributes; }
+  inline bool ValidationAttributesHasBeenSet() const { return m_validationAttributesHasBeenSet; }
+  template <typename ValidationAttributesT = SuppressionValidationAttributes>
+  void SetValidationAttributes(ValidationAttributesT&& value) {
+    m_validationAttributesHasBeenSet = true;
+    m_validationAttributes = std::forward<ValidationAttributesT>(value);
+  }
+  template <typename ValidationAttributesT = SuppressionValidationAttributes>
+  PutAccountSuppressionAttributesRequest& WithValidationAttributes(ValidationAttributesT&& value) {
+    SetValidationAttributes(std::forward<ValidationAttributesT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::Vector<SuppressionListReason> m_suppressedReasons;
+
+  SuppressionValidationAttributes m_validationAttributes;
+  bool m_suppressedReasonsHasBeenSet = false;
+  bool m_validationAttributesHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

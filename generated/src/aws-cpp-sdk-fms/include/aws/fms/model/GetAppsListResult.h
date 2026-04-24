@@ -1,0 +1,95 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/fms/FMS_EXPORTS.h>
+#include <aws/fms/model/AppsListData.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace FMS {
+namespace Model {
+class GetAppsListResult {
+ public:
+  AWS_FMS_API GetAppsListResult() = default;
+  AWS_FMS_API GetAppsListResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_FMS_API GetAppsListResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>Information about the specified Firewall Manager applications list.</p>
+   */
+  inline const AppsListData& GetAppsList() const { return m_appsList; }
+  template <typename AppsListT = AppsListData>
+  void SetAppsList(AppsListT&& value) {
+    m_appsListHasBeenSet = true;
+    m_appsList = std::forward<AppsListT>(value);
+  }
+  template <typename AppsListT = AppsListData>
+  GetAppsListResult& WithAppsList(AppsListT&& value) {
+    SetAppsList(std::forward<AppsListT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon Resource Name (ARN) of the applications list.</p>
+   */
+  inline const Aws::String& GetAppsListArn() const { return m_appsListArn; }
+  template <typename AppsListArnT = Aws::String>
+  void SetAppsListArn(AppsListArnT&& value) {
+    m_appsListArnHasBeenSet = true;
+    m_appsListArn = std::forward<AppsListArnT>(value);
+  }
+  template <typename AppsListArnT = Aws::String>
+  GetAppsListResult& WithAppsListArn(AppsListArnT&& value) {
+    SetAppsListArn(std::forward<AppsListArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  GetAppsListResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  AppsListData m_appsList;
+
+  Aws::String m_appsListArn;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_appsListHasBeenSet = false;
+  bool m_appsListArnHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace FMS
+}  // namespace Aws

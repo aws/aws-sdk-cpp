@@ -1,0 +1,104 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mailmanager/MailManager_EXPORTS.h>
+#include <aws/mailmanager/model/ImportJob.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace MailManager {
+namespace Model {
+class ListAddressListImportJobsResult {
+ public:
+  AWS_MAILMANAGER_API ListAddressListImportJobsResult() = default;
+  AWS_MAILMANAGER_API ListAddressListImportJobsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_MAILMANAGER_API ListAddressListImportJobsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The list of import jobs.</p>
+   */
+  inline const Aws::Vector<ImportJob>& GetImportJobs() const { return m_importJobs; }
+  template <typename ImportJobsT = Aws::Vector<ImportJob>>
+  void SetImportJobs(ImportJobsT&& value) {
+    m_importJobsHasBeenSet = true;
+    m_importJobs = std::forward<ImportJobsT>(value);
+  }
+  template <typename ImportJobsT = Aws::Vector<ImportJob>>
+  ListAddressListImportJobsResult& WithImportJobs(ImportJobsT&& value) {
+    SetImportJobs(std::forward<ImportJobsT>(value));
+    return *this;
+  }
+  template <typename ImportJobsT = ImportJob>
+  ListAddressListImportJobsResult& AddImportJobs(ImportJobsT&& value) {
+    m_importJobsHasBeenSet = true;
+    m_importJobs.emplace_back(std::forward<ImportJobsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If NextToken is returned, there are more results available. The value of
+   * NextToken is a unique pagination token for each page. Make the call again using
+   * the returned token to retrieve the next page.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListAddressListImportJobsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListAddressListImportJobsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<ImportJob> m_importJobs;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_importJobsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

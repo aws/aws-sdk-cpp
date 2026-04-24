@@ -1,0 +1,19 @@
+
+#if($serviceModel.endpointRules)
+        AWS_OPERATION_CHECK_PTR(m_endpointProvider, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
+#if($operation.staticContextParams)
+        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters = {
+#foreach($staticParamPair in $operation.staticContextParams.entrySet())
+        {"${staticParamPair.key}", "${staticParamPair.value.get("value").getValue()}"}#if( $foreach.hasNext ),#end
+#end
+        };
+#else
+        const Aws::Vector<Aws::Endpoint::EndpointParameter> staticEndpointParameters;
+#end
+        auto endpointResolutionOutcome = TracingUtils::MakeCallWithTiming<ResolveEndpointOutcome>(
+            [&]() -> ResolveEndpointOutcome { return m_endpointProvider->ResolveEndpoint(staticEndpointParameters); },
+            TracingUtils::SMITHY_CLIENT_ENDPOINT_RESOLUTION_METRIC,
+            *meter,
+            {{TracingUtils::SMITHY_METHOD_DIMENSION, "${operation.name}"}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+        AWS_OPERATION_CHECK_SUCCESS(endpointResolutionOutcome, ${operation.name}, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE, endpointResolutionOutcome.GetError().GetMessage());
+#end

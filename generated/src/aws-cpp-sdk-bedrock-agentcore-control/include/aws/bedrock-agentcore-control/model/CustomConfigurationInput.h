@@ -1,0 +1,148 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/EpisodicOverrideConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/SelfManagedConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/SemanticOverrideConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/SummaryOverrideConfigurationInput.h>
+#include <aws/bedrock-agentcore-control/model/UserPreferenceOverrideConfigurationInput.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgentCoreControl {
+namespace Model {
+
+/**
+ * <p>Input for custom configuration of a memory strategy.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CustomConfigurationInput">AWS
+ * API Reference</a></p>
+ */
+class CustomConfigurationInput {
+ public:
+  AWS_BEDROCKAGENTCORECONTROL_API CustomConfigurationInput() = default;
+  AWS_BEDROCKAGENTCORECONTROL_API CustomConfigurationInput(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API CustomConfigurationInput& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The semantic override configuration for a custom memory strategy.</p>
+   */
+  inline const SemanticOverrideConfigurationInput& GetSemanticOverride() const { return m_semanticOverride; }
+  inline bool SemanticOverrideHasBeenSet() const { return m_semanticOverrideHasBeenSet; }
+  template <typename SemanticOverrideT = SemanticOverrideConfigurationInput>
+  void SetSemanticOverride(SemanticOverrideT&& value) {
+    m_semanticOverrideHasBeenSet = true;
+    m_semanticOverride = std::forward<SemanticOverrideT>(value);
+  }
+  template <typename SemanticOverrideT = SemanticOverrideConfigurationInput>
+  CustomConfigurationInput& WithSemanticOverride(SemanticOverrideT&& value) {
+    SetSemanticOverride(std::forward<SemanticOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The summary override configuration for a custom memory strategy.</p>
+   */
+  inline const SummaryOverrideConfigurationInput& GetSummaryOverride() const { return m_summaryOverride; }
+  inline bool SummaryOverrideHasBeenSet() const { return m_summaryOverrideHasBeenSet; }
+  template <typename SummaryOverrideT = SummaryOverrideConfigurationInput>
+  void SetSummaryOverride(SummaryOverrideT&& value) {
+    m_summaryOverrideHasBeenSet = true;
+    m_summaryOverride = std::forward<SummaryOverrideT>(value);
+  }
+  template <typename SummaryOverrideT = SummaryOverrideConfigurationInput>
+  CustomConfigurationInput& WithSummaryOverride(SummaryOverrideT&& value) {
+    SetSummaryOverride(std::forward<SummaryOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user preference override configuration for a custom memory strategy.</p>
+   */
+  inline const UserPreferenceOverrideConfigurationInput& GetUserPreferenceOverride() const { return m_userPreferenceOverride; }
+  inline bool UserPreferenceOverrideHasBeenSet() const { return m_userPreferenceOverrideHasBeenSet; }
+  template <typename UserPreferenceOverrideT = UserPreferenceOverrideConfigurationInput>
+  void SetUserPreferenceOverride(UserPreferenceOverrideT&& value) {
+    m_userPreferenceOverrideHasBeenSet = true;
+    m_userPreferenceOverride = std::forward<UserPreferenceOverrideT>(value);
+  }
+  template <typename UserPreferenceOverrideT = UserPreferenceOverrideConfigurationInput>
+  CustomConfigurationInput& WithUserPreferenceOverride(UserPreferenceOverrideT&& value) {
+    SetUserPreferenceOverride(std::forward<UserPreferenceOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The episodic memory strategy override configuration for a custom memory
+   * strategy.</p>
+   */
+  inline const EpisodicOverrideConfigurationInput& GetEpisodicOverride() const { return m_episodicOverride; }
+  inline bool EpisodicOverrideHasBeenSet() const { return m_episodicOverrideHasBeenSet; }
+  template <typename EpisodicOverrideT = EpisodicOverrideConfigurationInput>
+  void SetEpisodicOverride(EpisodicOverrideT&& value) {
+    m_episodicOverrideHasBeenSet = true;
+    m_episodicOverride = std::forward<EpisodicOverrideT>(value);
+  }
+  template <typename EpisodicOverrideT = EpisodicOverrideConfigurationInput>
+  CustomConfigurationInput& WithEpisodicOverride(EpisodicOverrideT&& value) {
+    SetEpisodicOverride(std::forward<EpisodicOverrideT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The self managed configuration for a custom memory strategy.</p>
+   */
+  inline const SelfManagedConfigurationInput& GetSelfManagedConfiguration() const { return m_selfManagedConfiguration; }
+  inline bool SelfManagedConfigurationHasBeenSet() const { return m_selfManagedConfigurationHasBeenSet; }
+  template <typename SelfManagedConfigurationT = SelfManagedConfigurationInput>
+  void SetSelfManagedConfiguration(SelfManagedConfigurationT&& value) {
+    m_selfManagedConfigurationHasBeenSet = true;
+    m_selfManagedConfiguration = std::forward<SelfManagedConfigurationT>(value);
+  }
+  template <typename SelfManagedConfigurationT = SelfManagedConfigurationInput>
+  CustomConfigurationInput& WithSelfManagedConfiguration(SelfManagedConfigurationT&& value) {
+    SetSelfManagedConfiguration(std::forward<SelfManagedConfigurationT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  SemanticOverrideConfigurationInput m_semanticOverride;
+
+  SummaryOverrideConfigurationInput m_summaryOverride;
+
+  UserPreferenceOverrideConfigurationInput m_userPreferenceOverride;
+
+  EpisodicOverrideConfigurationInput m_episodicOverride;
+
+  SelfManagedConfigurationInput m_selfManagedConfiguration;
+  bool m_semanticOverrideHasBeenSet = false;
+  bool m_summaryOverrideHasBeenSet = false;
+  bool m_userPreferenceOverrideHasBeenSet = false;
+  bool m_episodicOverrideHasBeenSet = false;
+  bool m_selfManagedConfigurationHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCoreControl
+}  // namespace Aws

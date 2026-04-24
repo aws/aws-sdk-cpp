@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/license-manager/model/AutomatedDiscoveryInformation.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace LicenseManager {
+namespace Model {
+
+AutomatedDiscoveryInformation::AutomatedDiscoveryInformation(JsonView jsonValue) { *this = jsonValue; }
+
+AutomatedDiscoveryInformation& AutomatedDiscoveryInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("LastRunTime")) {
+    m_lastRunTime = jsonValue.GetDouble("LastRunTime");
+    m_lastRunTimeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue AutomatedDiscoveryInformation::Jsonize() const {
+  JsonValue payload;
+
+  if (m_lastRunTimeHasBeenSet) {
+    payload.WithDouble("LastRunTime", m_lastRunTime.SecondsWithMSPrecision());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace LicenseManager
+}  // namespace Aws

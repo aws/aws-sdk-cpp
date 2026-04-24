@@ -1,0 +1,31 @@
+#!/bin/bash
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+
+# This script is an example of how to build the SDK on Debug build-type using gcc10 with c++20 standard flag
+# Directories created and files are prefixed with PREFIX_DIR argument
+# A clone of aws-sdk-cpp is expected to be in ${PREFIX_DIR}/aws-sdk-cpp
+# Platform: Amazon Linux 2
+
+set -e
+
+if [ "$#" -ne 1 ]; then
+  echo "Usage: ${0} PREFIX_DIR"
+  exit 1
+fi
+PREFIX_DIR="$1"
+
+mkdir "${PREFIX_DIR}/al2-build"
+mkdir "${PREFIX_DIR}/al2-install"
+cd "${PREFIX_DIR}/al2-build"
+cmake -GNinja ../aws-sdk-cpp -DCMAKE_BUILD_TYPE=Debug -DCMAKE_TOOLCHAIN_FILE=../aws-sdk-cpp/toolchains/gcc10-c++20.cmake -DCMAKE_INSTALL_PREFIX="${PREFIX_DIR}/al2-install" -DAWS_ENABLE_CORE_INTEGRATION_TEST=ON
+ninja-build -j $(grep -c ^processor /proc/cpuinfo)
+ninja-build install
+
+# Clean up temp build files, however leave built integration tests as they have no install target
+rm -rf "${PREFIX_DIR}/al2-build/AWSSDK/"
+rm -rf "${PREFIX_DIR}/al2-build/CMakeFiles/"
+rm -rf "${PREFIX_DIR}/al2-build/crt/"
+rm -rf "${PREFIX_DIR}/al2-build/generated/"
+rm -rf "${PREFIX_DIR}/al2-build/lib/"
+rm -rf "${PREFIX_DIR}/al2-build/src/"

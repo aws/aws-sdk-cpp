@@ -1,0 +1,23 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/datazone/model/UpdateSubscriptionRequestRequest.h>
+
+#include <utility>
+
+using namespace Aws::DataZone::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdateSubscriptionRequestRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_requestReasonHasBeenSet) {
+    payload.WithString("requestReason", m_requestReason);
+  }
+
+  return payload.View().WriteReadable();
+}

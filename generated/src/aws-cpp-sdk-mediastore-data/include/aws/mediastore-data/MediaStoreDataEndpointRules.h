@@ -1,0 +1,21 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/mediastore-data/MediaStoreData_EXPORTS.h>
+
+#include <cstddef>
+
+namespace Aws {
+namespace MediaStoreData {
+class MediaStoreDataEndpointRules {
+ public:
+  static const size_t RulesBlobStrLen;
+  static const size_t RulesBlobSize;
+
+  static const char* GetRulesBlob();
+};
+}  // namespace MediaStoreData
+}  // namespace Aws

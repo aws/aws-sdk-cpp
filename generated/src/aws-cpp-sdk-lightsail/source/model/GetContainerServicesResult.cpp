@@ -1,0 +1,41 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/lightsail/model/GetContainerServicesResult.h>
+
+#include <utility>
+
+using namespace Aws::Lightsail::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+GetContainerServicesResult::GetContainerServicesResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+GetContainerServicesResult& GetContainerServicesResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("containerServices")) {
+    Aws::Utils::Array<JsonView> containerServicesJsonList = jsonValue.GetArray("containerServices");
+    for (unsigned containerServicesIndex = 0; containerServicesIndex < containerServicesJsonList.GetLength(); ++containerServicesIndex) {
+      m_containerServices.push_back(containerServicesJsonList[containerServicesIndex].AsObject());
+    }
+    m_containerServicesHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

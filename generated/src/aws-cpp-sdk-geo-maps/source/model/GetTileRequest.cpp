@@ -1,0 +1,35 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/http/URI.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/geo-maps/model/GetTileRequest.h>
+
+#include <utility>
+
+using namespace Aws::GeoMaps::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws::Http;
+
+Aws::String GetTileRequest::SerializePayload() const { return {}; }
+
+void GetTileRequest::AddQueryStringParameters(URI& uri) const {
+  Aws::StringStream ss;
+  if (m_additionalFeaturesHasBeenSet) {
+    for (const auto& item : m_additionalFeatures) {
+      ss << TileAdditionalFeatureMapper::GetNameForTileAdditionalFeature(item);
+      uri.AddQueryStringParameter("additional-features", ss.str());
+      ss.str("");
+    }
+  }
+
+  if (m_keyHasBeenSet) {
+    ss << m_key;
+    uri.AddQueryStringParameter("key", ss.str());
+    ss.str("");
+  }
+}

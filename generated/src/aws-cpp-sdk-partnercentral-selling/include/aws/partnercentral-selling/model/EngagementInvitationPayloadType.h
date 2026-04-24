@@ -1,0 +1,22 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/partnercentral-selling/PartnerCentralSelling_EXPORTS.h>
+
+namespace Aws {
+namespace PartnerCentralSelling {
+namespace Model {
+enum class EngagementInvitationPayloadType { NOT_SET, OpportunityInvitation, LeadInvitation };
+
+namespace EngagementInvitationPayloadTypeMapper {
+AWS_PARTNERCENTRALSELLING_API EngagementInvitationPayloadType GetEngagementInvitationPayloadTypeForName(const Aws::String& name);
+
+AWS_PARTNERCENTRALSELLING_API Aws::String GetNameForEngagementInvitationPayloadType(EngagementInvitationPayloadType value);
+}  // namespace EngagementInvitationPayloadTypeMapper
+}  // namespace Model
+}  // namespace PartnerCentralSelling
+}  // namespace Aws

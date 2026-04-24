@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/macie2/model/BucketPermissionConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Macie2 {
+namespace Model {
+
+BucketPermissionConfiguration::BucketPermissionConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+BucketPermissionConfiguration& BucketPermissionConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("accountLevelPermissions")) {
+    m_accountLevelPermissions = jsonValue.GetObject("accountLevelPermissions");
+    m_accountLevelPermissionsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("bucketLevelPermissions")) {
+    m_bucketLevelPermissions = jsonValue.GetObject("bucketLevelPermissions");
+    m_bucketLevelPermissionsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue BucketPermissionConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_accountLevelPermissionsHasBeenSet) {
+    payload.WithObject("accountLevelPermissions", m_accountLevelPermissions.Jsonize());
+  }
+
+  if (m_bucketLevelPermissionsHasBeenSet) {
+    payload.WithObject("bucketLevelPermissions", m_bucketLevelPermissions.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Macie2
+}  // namespace Aws

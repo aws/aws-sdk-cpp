@@ -1,0 +1,87 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+
+#include <utility>
+
+using namespace Aws::BedrockAgentCore::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String StartBrowserSessionRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_sessionTimeoutSecondsHasBeenSet) {
+    payload.WithInteger("sessionTimeoutSeconds", m_sessionTimeoutSeconds);
+  }
+
+  if (m_viewPortHasBeenSet) {
+    payload.WithObject("viewPort", m_viewPort.Jsonize());
+  }
+
+  if (m_extensionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> extensionsJsonList(m_extensions.size());
+    for (unsigned extensionsIndex = 0; extensionsIndex < extensionsJsonList.GetLength(); ++extensionsIndex) {
+      extensionsJsonList[extensionsIndex].AsObject(m_extensions[extensionsIndex].Jsonize());
+    }
+    payload.WithArray("extensions", std::move(extensionsJsonList));
+  }
+
+  if (m_profileConfigurationHasBeenSet) {
+    payload.WithObject("profileConfiguration", m_profileConfiguration.Jsonize());
+  }
+
+  if (m_proxyConfigurationHasBeenSet) {
+    payload.WithObject("proxyConfiguration", m_proxyConfiguration.Jsonize());
+  }
+
+  if (m_enterprisePoliciesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> enterprisePoliciesJsonList(m_enterprisePolicies.size());
+    for (unsigned enterprisePoliciesIndex = 0; enterprisePoliciesIndex < enterprisePoliciesJsonList.GetLength();
+         ++enterprisePoliciesIndex) {
+      enterprisePoliciesJsonList[enterprisePoliciesIndex].AsObject(m_enterprisePolicies[enterprisePoliciesIndex].Jsonize());
+    }
+    payload.WithArray("enterprisePolicies", std::move(enterprisePoliciesJsonList));
+  }
+
+  if (m_certificatesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> certificatesJsonList(m_certificates.size());
+    for (unsigned certificatesIndex = 0; certificatesIndex < certificatesJsonList.GetLength(); ++certificatesIndex) {
+      certificatesJsonList[certificatesIndex].AsObject(m_certificates[certificatesIndex].Jsonize());
+    }
+    payload.WithArray("certificates", std::move(certificatesJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  return payload.View().WriteReadable();
+}
+
+Aws::Http::HeaderValueCollection StartBrowserSessionRequest::GetRequestSpecificHeaders() const {
+  Aws::Http::HeaderValueCollection headers;
+  Aws::StringStream ss;
+  if (m_traceIdHasBeenSet) {
+    ss << m_traceId;
+    headers.emplace("x-amzn-trace-id", ss.str());
+    ss.str("");
+  }
+
+  if (m_traceParentHasBeenSet) {
+    ss << m_traceParent;
+    headers.emplace("traceparent", ss.str());
+    ss.str("");
+  }
+
+  return headers;
+}

@@ -1,0 +1,46 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/forecast/model/ListExplainabilityExportsResult.h>
+
+#include <utility>
+
+using namespace Aws::ForecastService::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListExplainabilityExportsResult::ListExplainabilityExportsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListExplainabilityExportsResult& ListExplainabilityExportsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("ExplainabilityExports")) {
+    Aws::Utils::Array<JsonView> explainabilityExportsJsonList = jsonValue.GetArray("ExplainabilityExports");
+    for (unsigned explainabilityExportsIndex = 0; explainabilityExportsIndex < explainabilityExportsJsonList.GetLength();
+         ++explainabilityExportsIndex) {
+      m_explainabilityExports.push_back(explainabilityExportsJsonList[explainabilityExportsIndex].AsObject());
+    }
+    m_explainabilityExportsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("NextToken")) {
+    m_nextToken = jsonValue.GetString("NextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

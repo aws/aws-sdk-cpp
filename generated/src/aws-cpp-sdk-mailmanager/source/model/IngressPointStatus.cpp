@@ -1,0 +1,83 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/Globals.h>
+#include <aws/core/utils/EnumParseOverflowContainer.h>
+#include <aws/core/utils/HashingUtils.h>
+#include <aws/mailmanager/model/IngressPointStatus.h>
+
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MailManager {
+namespace Model {
+namespace IngressPointStatusMapper {
+
+static const int PROVISIONING_HASH = HashingUtils::HashString("PROVISIONING");
+static const int DEPROVISIONING_HASH = HashingUtils::HashString("DEPROVISIONING");
+static const int UPDATING_HASH = HashingUtils::HashString("UPDATING");
+static const int ACTIVE_HASH = HashingUtils::HashString("ACTIVE");
+static const int CLOSED_HASH = HashingUtils::HashString("CLOSED");
+static const int FAILED_HASH = HashingUtils::HashString("FAILED");
+static const int ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST_HASH = HashingUtils::HashString("ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST");
+
+IngressPointStatus GetIngressPointStatusForName(const Aws::String& name) {
+  int hashCode = HashingUtils::HashString(name.c_str());
+  if (hashCode == PROVISIONING_HASH) {
+    return IngressPointStatus::PROVISIONING;
+  } else if (hashCode == DEPROVISIONING_HASH) {
+    return IngressPointStatus::DEPROVISIONING;
+  } else if (hashCode == UPDATING_HASH) {
+    return IngressPointStatus::UPDATING;
+  } else if (hashCode == ACTIVE_HASH) {
+    return IngressPointStatus::ACTIVE;
+  } else if (hashCode == CLOSED_HASH) {
+    return IngressPointStatus::CLOSED;
+  } else if (hashCode == FAILED_HASH) {
+    return IngressPointStatus::FAILED;
+  } else if (hashCode == ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST_HASH) {
+    return IngressPointStatus::ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST;
+  }
+  EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+  if (overflowContainer) {
+    overflowContainer->StoreOverflow(hashCode, name);
+    return static_cast<IngressPointStatus>(hashCode);
+  }
+
+  return IngressPointStatus::NOT_SET;
+}
+
+Aws::String GetNameForIngressPointStatus(IngressPointStatus enumValue) {
+  switch (enumValue) {
+    case IngressPointStatus::NOT_SET:
+      return {};
+    case IngressPointStatus::PROVISIONING:
+      return "PROVISIONING";
+    case IngressPointStatus::DEPROVISIONING:
+      return "DEPROVISIONING";
+    case IngressPointStatus::UPDATING:
+      return "UPDATING";
+    case IngressPointStatus::ACTIVE:
+      return "ACTIVE";
+    case IngressPointStatus::CLOSED:
+      return "CLOSED";
+    case IngressPointStatus::FAILED:
+      return "FAILED";
+    case IngressPointStatus::ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST:
+      return "ASSOCIATED_VPC_ENDPOINT_DOES_NOT_EXIST";
+    default:
+      EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
+      if (overflowContainer) {
+        return overflowContainer->RetrieveOverflow(static_cast<int>(enumValue));
+      }
+
+      return {};
+  }
+}
+
+}  // namespace IngressPointStatusMapper
+}  // namespace Model
+}  // namespace MailManager
+}  // namespace Aws

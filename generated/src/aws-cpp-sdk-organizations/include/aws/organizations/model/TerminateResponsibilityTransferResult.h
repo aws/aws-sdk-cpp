@@ -1,0 +1,77 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/organizations/Organizations_EXPORTS.h>
+#include <aws/organizations/model/ResponsibilityTransfer.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Organizations {
+namespace Model {
+class TerminateResponsibilityTransferResult {
+ public:
+  AWS_ORGANIZATIONS_API TerminateResponsibilityTransferResult() = default;
+  AWS_ORGANIZATIONS_API TerminateResponsibilityTransferResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_ORGANIZATIONS_API TerminateResponsibilityTransferResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>A <code>ResponsibilityTransfer</code> object. Contains details for a
+   * transfer.</p>
+   */
+  inline const ResponsibilityTransfer& GetResponsibilityTransfer() const { return m_responsibilityTransfer; }
+  template <typename ResponsibilityTransferT = ResponsibilityTransfer>
+  void SetResponsibilityTransfer(ResponsibilityTransferT&& value) {
+    m_responsibilityTransferHasBeenSet = true;
+    m_responsibilityTransfer = std::forward<ResponsibilityTransferT>(value);
+  }
+  template <typename ResponsibilityTransferT = ResponsibilityTransfer>
+  TerminateResponsibilityTransferResult& WithResponsibilityTransfer(ResponsibilityTransferT&& value) {
+    SetResponsibilityTransfer(std::forward<ResponsibilityTransferT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  TerminateResponsibilityTransferResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  ResponsibilityTransfer m_responsibilityTransfer;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_responsibilityTransferHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Organizations
+}  // namespace Aws

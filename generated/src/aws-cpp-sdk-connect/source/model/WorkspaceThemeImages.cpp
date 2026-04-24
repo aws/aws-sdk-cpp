@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/connect/model/WorkspaceThemeImages.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace Connect {
+namespace Model {
+
+WorkspaceThemeImages::WorkspaceThemeImages(JsonView jsonValue) { *this = jsonValue; }
+
+WorkspaceThemeImages& WorkspaceThemeImages::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("Logo")) {
+    m_logo = jsonValue.GetObject("Logo");
+    m_logoHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue WorkspaceThemeImages::Jsonize() const {
+  JsonValue payload;
+
+  if (m_logoHasBeenSet) {
+    payload.WithObject("Logo", m_logo.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws

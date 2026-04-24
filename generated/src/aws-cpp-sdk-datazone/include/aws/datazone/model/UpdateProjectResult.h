@@ -1,0 +1,405 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/datazone/DataZone_EXPORTS.h>
+#include <aws/datazone/model/EnvironmentConfigurationUserParameter.h>
+#include <aws/datazone/model/EnvironmentDeploymentDetails.h>
+#include <aws/datazone/model/ProjectDeletionError.h>
+#include <aws/datazone/model/ProjectStatus.h>
+#include <aws/datazone/model/ResourceTag.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace DataZone {
+namespace Model {
+class UpdateProjectResult {
+ public:
+  AWS_DATAZONE_API UpdateProjectResult() = default;
+  AWS_DATAZONE_API UpdateProjectResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DATAZONE_API UpdateProjectResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The identifier of the Amazon DataZone domain in which a project is
+   * updated.</p>
+   */
+  inline const Aws::String& GetDomainId() const { return m_domainId; }
+  template <typename DomainIdT = Aws::String>
+  void SetDomainId(DomainIdT&& value) {
+    m_domainIdHasBeenSet = true;
+    m_domainId = std::forward<DomainIdT>(value);
+  }
+  template <typename DomainIdT = Aws::String>
+  UpdateProjectResult& WithDomainId(DomainIdT&& value) {
+    SetDomainId(std::forward<DomainIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the project that is to be updated.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateProjectResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the project that is to be updated.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateProjectResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the project that is to be updated.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateProjectResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The status of the project.</p>
+   */
+  inline ProjectStatus GetProjectStatus() const { return m_projectStatus; }
+  inline void SetProjectStatus(ProjectStatus value) {
+    m_projectStatusHasBeenSet = true;
+    m_projectStatus = value;
+  }
+  inline UpdateProjectResult& WithProjectStatus(ProjectStatus value) {
+    SetProjectStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies the error message that is returned if the operation cannot be
+   * successfully completed.</p>
+   */
+  inline const Aws::Vector<ProjectDeletionError>& GetFailureReasons() const { return m_failureReasons; }
+  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
+  void SetFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons = std::forward<FailureReasonsT>(value);
+  }
+  template <typename FailureReasonsT = Aws::Vector<ProjectDeletionError>>
+  UpdateProjectResult& WithFailureReasons(FailureReasonsT&& value) {
+    SetFailureReasons(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  template <typename FailureReasonsT = ProjectDeletionError>
+  UpdateProjectResult& AddFailureReasons(FailureReasonsT&& value) {
+    m_failureReasonsHasBeenSet = true;
+    m_failureReasons.emplace_back(std::forward<FailureReasonsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The Amazon DataZone user who created the project.</p>
+   */
+  inline const Aws::String& GetCreatedBy() const { return m_createdBy; }
+  template <typename CreatedByT = Aws::String>
+  void SetCreatedBy(CreatedByT&& value) {
+    m_createdByHasBeenSet = true;
+    m_createdBy = std::forward<CreatedByT>(value);
+  }
+  template <typename CreatedByT = Aws::String>
+  UpdateProjectResult& WithCreatedBy(CreatedByT&& value) {
+    SetCreatedBy(std::forward<CreatedByT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the project was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  UpdateProjectResult& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp of when the project was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastUpdatedAt() const { return m_lastUpdatedAt; }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  void SetLastUpdatedAt(LastUpdatedAtT&& value) {
+    m_lastUpdatedAtHasBeenSet = true;
+    m_lastUpdatedAt = std::forward<LastUpdatedAtT>(value);
+  }
+  template <typename LastUpdatedAtT = Aws::Utils::DateTime>
+  UpdateProjectResult& WithLastUpdatedAt(LastUpdatedAtT&& value) {
+    SetLastUpdatedAt(std::forward<LastUpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The resource tags of the project.</p>
+   */
+  inline const Aws::Vector<ResourceTag>& GetResourceTags() const { return m_resourceTags; }
+  template <typename ResourceTagsT = Aws::Vector<ResourceTag>>
+  void SetResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags = std::forward<ResourceTagsT>(value);
+  }
+  template <typename ResourceTagsT = Aws::Vector<ResourceTag>>
+  UpdateProjectResult& WithResourceTags(ResourceTagsT&& value) {
+    SetResourceTags(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  template <typename ResourceTagsT = ResourceTag>
+  UpdateProjectResult& AddResourceTags(ResourceTagsT&& value) {
+    m_resourceTagsHasBeenSet = true;
+    m_resourceTags.emplace_back(std::forward<ResourceTagsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The glossary terms of the project that are to be updated.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetGlossaryTerms() const { return m_glossaryTerms; }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  void SetGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms = std::forward<GlossaryTermsT>(value);
+  }
+  template <typename GlossaryTermsT = Aws::Vector<Aws::String>>
+  UpdateProjectResult& WithGlossaryTerms(GlossaryTermsT&& value) {
+    SetGlossaryTerms(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  template <typename GlossaryTermsT = Aws::String>
+  UpdateProjectResult& AddGlossaryTerms(GlossaryTermsT&& value) {
+    m_glossaryTermsHasBeenSet = true;
+    m_glossaryTerms.emplace_back(std::forward<GlossaryTermsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the domain unit.</p>
+   */
+  inline const Aws::String& GetDomainUnitId() const { return m_domainUnitId; }
+  template <typename DomainUnitIdT = Aws::String>
+  void SetDomainUnitId(DomainUnitIdT&& value) {
+    m_domainUnitIdHasBeenSet = true;
+    m_domainUnitId = std::forward<DomainUnitIdT>(value);
+  }
+  template <typename DomainUnitIdT = Aws::String>
+  UpdateProjectResult& WithDomainUnitId(DomainUnitIdT&& value) {
+    SetDomainUnitId(std::forward<DomainUnitIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the project profile.</p>
+   */
+  inline const Aws::String& GetProjectProfileId() const { return m_projectProfileId; }
+  template <typename ProjectProfileIdT = Aws::String>
+  void SetProjectProfileId(ProjectProfileIdT&& value) {
+    m_projectProfileIdHasBeenSet = true;
+    m_projectProfileId = std::forward<ProjectProfileIdT>(value);
+  }
+  template <typename ProjectProfileIdT = Aws::String>
+  UpdateProjectResult& WithProjectProfileId(ProjectProfileIdT&& value) {
+    SetProjectProfileId(std::forward<ProjectProfileIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user parameters of the project.</p>
+   */
+  inline const Aws::Vector<EnvironmentConfigurationUserParameter>& GetUserParameters() const { return m_userParameters; }
+  template <typename UserParametersT = Aws::Vector<EnvironmentConfigurationUserParameter>>
+  void SetUserParameters(UserParametersT&& value) {
+    m_userParametersHasBeenSet = true;
+    m_userParameters = std::forward<UserParametersT>(value);
+  }
+  template <typename UserParametersT = Aws::Vector<EnvironmentConfigurationUserParameter>>
+  UpdateProjectResult& WithUserParameters(UserParametersT&& value) {
+    SetUserParameters(std::forward<UserParametersT>(value));
+    return *this;
+  }
+  template <typename UserParametersT = EnvironmentConfigurationUserParameter>
+  UpdateProjectResult& AddUserParameters(UserParametersT&& value) {
+    m_userParametersHasBeenSet = true;
+    m_userParameters.emplace_back(std::forward<UserParametersT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The environment deployment details of the project.</p>
+   */
+  inline const EnvironmentDeploymentDetails& GetEnvironmentDeploymentDetails() const { return m_environmentDeploymentDetails; }
+  template <typename EnvironmentDeploymentDetailsT = EnvironmentDeploymentDetails>
+  void SetEnvironmentDeploymentDetails(EnvironmentDeploymentDetailsT&& value) {
+    m_environmentDeploymentDetailsHasBeenSet = true;
+    m_environmentDeploymentDetails = std::forward<EnvironmentDeploymentDetailsT>(value);
+  }
+  template <typename EnvironmentDeploymentDetailsT = EnvironmentDeploymentDetails>
+  UpdateProjectResult& WithEnvironmentDeploymentDetails(EnvironmentDeploymentDetailsT&& value) {
+    SetEnvironmentDeploymentDetails(std::forward<EnvironmentDeploymentDetailsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The category of the project.</p>
+   */
+  inline const Aws::String& GetProjectCategory() const { return m_projectCategory; }
+  template <typename ProjectCategoryT = Aws::String>
+  void SetProjectCategory(ProjectCategoryT&& value) {
+    m_projectCategoryHasBeenSet = true;
+    m_projectCategory = std::forward<ProjectCategoryT>(value);
+  }
+  template <typename ProjectCategoryT = Aws::String>
+  UpdateProjectResult& WithProjectCategory(ProjectCategoryT&& value) {
+    SetProjectCategory(std::forward<ProjectCategoryT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateProjectResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_domainId;
+
+  Aws::String m_id;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  ProjectStatus m_projectStatus{ProjectStatus::NOT_SET};
+
+  Aws::Vector<ProjectDeletionError> m_failureReasons;
+
+  Aws::String m_createdBy;
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  Aws::Utils::DateTime m_lastUpdatedAt{};
+
+  Aws::Vector<ResourceTag> m_resourceTags;
+
+  Aws::Vector<Aws::String> m_glossaryTerms;
+
+  Aws::String m_domainUnitId;
+
+  Aws::String m_projectProfileId;
+
+  Aws::Vector<EnvironmentConfigurationUserParameter> m_userParameters;
+
+  EnvironmentDeploymentDetails m_environmentDeploymentDetails;
+
+  Aws::String m_projectCategory;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_domainIdHasBeenSet = false;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_projectStatusHasBeenSet = false;
+  bool m_failureReasonsHasBeenSet = false;
+  bool m_createdByHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_lastUpdatedAtHasBeenSet = false;
+  bool m_resourceTagsHasBeenSet = false;
+  bool m_glossaryTermsHasBeenSet = false;
+  bool m_domainUnitIdHasBeenSet = false;
+  bool m_projectProfileIdHasBeenSet = false;
+  bool m_userParametersHasBeenSet = false;
+  bool m_environmentDeploymentDetailsHasBeenSet = false;
+  bool m_projectCategoryHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace DataZone
+}  // namespace Aws

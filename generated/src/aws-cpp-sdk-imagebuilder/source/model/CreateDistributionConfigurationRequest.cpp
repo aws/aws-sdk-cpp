@@ -1,0 +1,47 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/imagebuilder/model/CreateDistributionConfigurationRequest.h>
+
+#include <utility>
+
+using namespace Aws::imagebuilder::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateDistributionConfigurationRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_distributionsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> distributionsJsonList(m_distributions.size());
+    for (unsigned distributionsIndex = 0; distributionsIndex < distributionsJsonList.GetLength(); ++distributionsIndex) {
+      distributionsJsonList[distributionsIndex].AsObject(m_distributions[distributionsIndex].Jsonize());
+    }
+    payload.WithArray("distributions", std::move(distributionsJsonList));
+  }
+
+  if (m_tagsHasBeenSet) {
+    JsonValue tagsJsonMap;
+    for (auto& tagsItem : m_tags) {
+      tagsJsonMap.WithString(tagsItem.first, tagsItem.second);
+    }
+    payload.WithObject("tags", std::move(tagsJsonMap));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  return payload.View().WriteReadable();
+}

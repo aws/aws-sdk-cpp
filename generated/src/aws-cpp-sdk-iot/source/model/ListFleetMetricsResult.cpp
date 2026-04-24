@@ -1,0 +1,45 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/iot/model/ListFleetMetricsResult.h>
+
+#include <utility>
+
+using namespace Aws::IoT::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListFleetMetricsResult::ListFleetMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListFleetMetricsResult& ListFleetMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("fleetMetrics")) {
+    Aws::Utils::Array<JsonView> fleetMetricsJsonList = jsonValue.GetArray("fleetMetrics");
+    for (unsigned fleetMetricsIndex = 0; fleetMetricsIndex < fleetMetricsJsonList.GetLength(); ++fleetMetricsIndex) {
+      m_fleetMetrics.push_back(fleetMetricsJsonList[fleetMetricsIndex].AsObject());
+    }
+    m_fleetMetricsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

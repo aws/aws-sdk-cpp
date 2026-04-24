@@ -1,0 +1,31 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lexv2-models/model/CreateExportRequest.h>
+
+#include <utility>
+
+using namespace Aws::LexModelsV2::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String CreateExportRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_resourceSpecificationHasBeenSet) {
+    payload.WithObject("resourceSpecification", m_resourceSpecification.Jsonize());
+  }
+
+  if (m_fileFormatHasBeenSet) {
+    payload.WithString("fileFormat", ImportExportFileFormatMapper::GetNameForImportExportFileFormat(m_fileFormat));
+  }
+
+  if (m_filePasswordHasBeenSet) {
+    payload.WithString("filePassword", m_filePassword);
+  }
+
+  return payload.View().WriteReadable();
+}

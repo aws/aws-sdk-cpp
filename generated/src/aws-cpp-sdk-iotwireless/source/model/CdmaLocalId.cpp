@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/iotwireless/model/CdmaLocalId.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace IoTWireless {
+namespace Model {
+
+CdmaLocalId::CdmaLocalId(JsonView jsonValue) { *this = jsonValue; }
+
+CdmaLocalId& CdmaLocalId::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("PnOffset")) {
+    m_pnOffset = jsonValue.GetInteger("PnOffset");
+    m_pnOffsetHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CdmaChannel")) {
+    m_cdmaChannel = jsonValue.GetInteger("CdmaChannel");
+    m_cdmaChannelHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue CdmaLocalId::Jsonize() const {
+  JsonValue payload;
+
+  if (m_pnOffsetHasBeenSet) {
+    payload.WithInteger("PnOffset", m_pnOffset);
+  }
+
+  if (m_cdmaChannelHasBeenSet) {
+    payload.WithInteger("CdmaChannel", m_cdmaChannel);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace IoTWireless
+}  // namespace Aws

@@ -1,0 +1,208 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/appconfig/AppConfig_EXPORTS.h>
+#include <aws/appconfig/model/GrowthType.h>
+#include <aws/appconfig/model/ReplicateTo.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace AppConfig {
+namespace Model {
+class UpdateDeploymentStrategyResult {
+ public:
+  AWS_APPCONFIG_API UpdateDeploymentStrategyResult() = default;
+  AWS_APPCONFIG_API UpdateDeploymentStrategyResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_APPCONFIG_API UpdateDeploymentStrategyResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The deployment strategy ID.</p>
+   */
+  inline const Aws::String& GetId() const { return m_id; }
+  template <typename IdT = Aws::String>
+  void SetId(IdT&& value) {
+    m_idHasBeenSet = true;
+    m_id = std::forward<IdT>(value);
+  }
+  template <typename IdT = Aws::String>
+  UpdateDeploymentStrategyResult& WithId(IdT&& value) {
+    SetId(std::forward<IdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The name of the deployment strategy.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateDeploymentStrategyResult& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The description of the deployment strategy.</p>
+   */
+  inline const Aws::String& GetDescription() const { return m_description; }
+  template <typename DescriptionT = Aws::String>
+  void SetDescription(DescriptionT&& value) {
+    m_descriptionHasBeenSet = true;
+    m_description = std::forward<DescriptionT>(value);
+  }
+  template <typename DescriptionT = Aws::String>
+  UpdateDeploymentStrategyResult& WithDescription(DescriptionT&& value) {
+    SetDescription(std::forward<DescriptionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Total amount of time the deployment lasted.</p>
+   */
+  inline int GetDeploymentDurationInMinutes() const { return m_deploymentDurationInMinutes; }
+  inline void SetDeploymentDurationInMinutes(int value) {
+    m_deploymentDurationInMinutesHasBeenSet = true;
+    m_deploymentDurationInMinutes = value;
+  }
+  inline UpdateDeploymentStrategyResult& WithDeploymentDurationInMinutes(int value) {
+    SetDeploymentDurationInMinutes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The algorithm used to define how percentage grew over time.</p>
+   */
+  inline GrowthType GetGrowthType() const { return m_growthType; }
+  inline void SetGrowthType(GrowthType value) {
+    m_growthTypeHasBeenSet = true;
+    m_growthType = value;
+  }
+  inline UpdateDeploymentStrategyResult& WithGrowthType(GrowthType value) {
+    SetGrowthType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The percentage of targets that received a deployed configuration during each
+   * interval.</p>
+   */
+  inline double GetGrowthFactor() const { return m_growthFactor; }
+  inline void SetGrowthFactor(double value) {
+    m_growthFactorHasBeenSet = true;
+    m_growthFactor = value;
+  }
+  inline UpdateDeploymentStrategyResult& WithGrowthFactor(double value) {
+    SetGrowthFactor(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The amount of time that AppConfig monitored for alarms before considering the
+   * deployment to be complete and no longer eligible for automatic rollback.</p>
+   */
+  inline int GetFinalBakeTimeInMinutes() const { return m_finalBakeTimeInMinutes; }
+  inline void SetFinalBakeTimeInMinutes(int value) {
+    m_finalBakeTimeInMinutesHasBeenSet = true;
+    m_finalBakeTimeInMinutes = value;
+  }
+  inline UpdateDeploymentStrategyResult& WithFinalBakeTimeInMinutes(int value) {
+    SetFinalBakeTimeInMinutes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Save the deployment strategy to a Systems Manager (SSM) document.</p>
+   */
+  inline ReplicateTo GetReplicateTo() const { return m_replicateTo; }
+  inline void SetReplicateTo(ReplicateTo value) {
+    m_replicateToHasBeenSet = true;
+    m_replicateTo = value;
+  }
+  inline UpdateDeploymentStrategyResult& WithReplicateTo(ReplicateTo value) {
+    SetReplicateTo(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  UpdateDeploymentStrategyResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_id;
+
+  Aws::String m_name;
+
+  Aws::String m_description;
+
+  int m_deploymentDurationInMinutes{0};
+
+  GrowthType m_growthType{GrowthType::NOT_SET};
+
+  double m_growthFactor{0.0};
+
+  int m_finalBakeTimeInMinutes{0};
+
+  ReplicateTo m_replicateTo{ReplicateTo::NOT_SET};
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_idHasBeenSet = false;
+  bool m_nameHasBeenSet = false;
+  bool m_descriptionHasBeenSet = false;
+  bool m_deploymentDurationInMinutesHasBeenSet = false;
+  bool m_growthTypeHasBeenSet = false;
+  bool m_growthFactorHasBeenSet = false;
+  bool m_finalBakeTimeInMinutesHasBeenSet = false;
+  bool m_replicateToHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace AppConfig
+}  // namespace Aws

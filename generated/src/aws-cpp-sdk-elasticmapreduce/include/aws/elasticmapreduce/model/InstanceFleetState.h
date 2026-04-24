@@ -1,0 +1,32 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/elasticmapreduce/EMR_EXPORTS.h>
+
+namespace Aws {
+namespace EMR {
+namespace Model {
+enum class InstanceFleetState {
+  NOT_SET,
+  PROVISIONING,
+  BOOTSTRAPPING,
+  RUNNING,
+  RESIZING,
+  RECONFIGURING,
+  SUSPENDED,
+  TERMINATING,
+  TERMINATED
+};
+
+namespace InstanceFleetStateMapper {
+AWS_EMR_API InstanceFleetState GetInstanceFleetStateForName(const Aws::String& name);
+
+AWS_EMR_API Aws::String GetNameForInstanceFleetState(InstanceFleetState value);
+}  // namespace InstanceFleetStateMapper
+}  // namespace Model
+}  // namespace EMR
+}  // namespace Aws

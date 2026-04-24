@@ -1,0 +1,49 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/support-app/model/ListSlackChannelConfigurationsResult.h>
+
+#include <utility>
+
+using namespace Aws::SupportApp::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListSlackChannelConfigurationsResult::ListSlackChannelConfigurationsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  *this = result;
+}
+
+ListSlackChannelConfigurationsResult& ListSlackChannelConfigurationsResult::operator=(
+    const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("slackChannelConfigurations")) {
+    Aws::Utils::Array<JsonView> slackChannelConfigurationsJsonList = jsonValue.GetArray("slackChannelConfigurations");
+    for (unsigned slackChannelConfigurationsIndex = 0; slackChannelConfigurationsIndex < slackChannelConfigurationsJsonList.GetLength();
+         ++slackChannelConfigurationsIndex) {
+      m_slackChannelConfigurations.push_back(slackChannelConfigurationsJsonList[slackChannelConfigurationsIndex].AsObject());
+    }
+    m_slackChannelConfigurationsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/detective/Detective_EXPORTS.h>
+#include <aws/detective/model/Administrator.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace Detective {
+namespace Model {
+class ListOrganizationAdminAccountsResult {
+ public:
+  AWS_DETECTIVE_API ListOrganizationAdminAccountsResult() = default;
+  AWS_DETECTIVE_API ListOrganizationAdminAccountsResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_DETECTIVE_API ListOrganizationAdminAccountsResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>The list of Detective administrator accounts.</p>
+   */
+  inline const Aws::Vector<Administrator>& GetAdministrators() const { return m_administrators; }
+  template <typename AdministratorsT = Aws::Vector<Administrator>>
+  void SetAdministrators(AdministratorsT&& value) {
+    m_administratorsHasBeenSet = true;
+    m_administrators = std::forward<AdministratorsT>(value);
+  }
+  template <typename AdministratorsT = Aws::Vector<Administrator>>
+  ListOrganizationAdminAccountsResult& WithAdministrators(AdministratorsT&& value) {
+    SetAdministrators(std::forward<AdministratorsT>(value));
+    return *this;
+  }
+  template <typename AdministratorsT = Administrator>
+  ListOrganizationAdminAccountsResult& AddAdministrators(AdministratorsT&& value) {
+    m_administratorsHasBeenSet = true;
+    m_administrators.emplace_back(std::forward<AdministratorsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>If there are more accounts remaining in the results, then this is the
+   * pagination token to use to request the next page of accounts.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  ListOrganizationAdminAccountsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  ListOrganizationAdminAccountsResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::Vector<Administrator> m_administrators;
+
+  Aws::String m_nextToken;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_administratorsHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Detective
+}  // namespace Aws

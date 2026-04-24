@@ -1,0 +1,40 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sagemaker/model/MonitoringAlertActions.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SageMaker {
+namespace Model {
+
+MonitoringAlertActions::MonitoringAlertActions(JsonView jsonValue) { *this = jsonValue; }
+
+MonitoringAlertActions& MonitoringAlertActions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ModelDashboardIndicator")) {
+    m_modelDashboardIndicator = jsonValue.GetObject("ModelDashboardIndicator");
+    m_modelDashboardIndicatorHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue MonitoringAlertActions::Jsonize() const {
+  JsonValue payload;
+
+  if (m_modelDashboardIndicatorHasBeenSet) {
+    payload.WithObject("ModelDashboardIndicator", m_modelDashboardIndicator.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SageMaker
+}  // namespace Aws

@@ -1,0 +1,74 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/elasticache/ElastiCache_EXPORTS.h>
+#include <aws/elasticache/model/GlobalReplicationGroup.h>
+#include <aws/elasticache/model/ResponseMetadata.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace ElastiCache {
+namespace Model {
+class ModifyGlobalReplicationGroupResult {
+ public:
+  AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult() = default;
+  AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_ELASTICACHE_API ModifyGlobalReplicationGroupResult& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+
+  inline const GlobalReplicationGroup& GetGlobalReplicationGroup() const { return m_globalReplicationGroup; }
+  template <typename GlobalReplicationGroupT = GlobalReplicationGroup>
+  void SetGlobalReplicationGroup(GlobalReplicationGroupT&& value) {
+    m_globalReplicationGroupHasBeenSet = true;
+    m_globalReplicationGroup = std::forward<GlobalReplicationGroupT>(value);
+  }
+  template <typename GlobalReplicationGroupT = GlobalReplicationGroup>
+  ModifyGlobalReplicationGroupResult& WithGlobalReplicationGroup(GlobalReplicationGroupT&& value) {
+    SetGlobalReplicationGroup(std::forward<GlobalReplicationGroupT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  ModifyGlobalReplicationGroupResult& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  GlobalReplicationGroup m_globalReplicationGroup;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_globalReplicationGroupHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ElastiCache
+}  // namespace Aws

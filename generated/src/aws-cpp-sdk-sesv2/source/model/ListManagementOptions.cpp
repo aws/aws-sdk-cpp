@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/sesv2/model/ListManagementOptions.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace SESV2 {
+namespace Model {
+
+ListManagementOptions::ListManagementOptions(JsonView jsonValue) { *this = jsonValue; }
+
+ListManagementOptions& ListManagementOptions::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ContactListName")) {
+    m_contactListName = jsonValue.GetString("ContactListName");
+    m_contactListNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TopicName")) {
+    m_topicName = jsonValue.GetString("TopicName");
+    m_topicNameHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ListManagementOptions::Jsonize() const {
+  JsonValue payload;
+
+  if (m_contactListNameHasBeenSet) {
+    payload.WithString("ContactListName", m_contactListName);
+  }
+
+  if (m_topicNameHasBeenSet) {
+    payload.WithString("TopicName", m_topicName);
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace SESV2
+}  // namespace Aws

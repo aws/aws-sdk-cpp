@@ -1,0 +1,103 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/opensearchserverless/OpenSearchServerless_EXPORTS.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterGroupAttribute.h>
+#include <aws/opensearchserverless/model/IamIdentityCenterUserAttribute.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace OpenSearchServerless {
+namespace Model {
+
+/**
+ * <p>Describes IAM Identity Center options for creating an OpenSearch Serverless
+ * security configuration in the form of a key-value map.</p><p><h3>See Also:</h3>
+ * <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/opensearchserverless-2021-11-01/CreateIamIdentityCenterConfigOptions">AWS
+ * API Reference</a></p>
+ */
+class CreateIamIdentityCenterConfigOptions {
+ public:
+  AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions() = default;
+  AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVERLESS_API CreateIamIdentityCenterConfigOptions& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_OPENSEARCHSERVERLESS_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The ARN of the IAM Identity Center instance used to integrate with OpenSearch
+   * Serverless.</p>
+   */
+  inline const Aws::String& GetInstanceArn() const { return m_instanceArn; }
+  inline bool InstanceArnHasBeenSet() const { return m_instanceArnHasBeenSet; }
+  template <typename InstanceArnT = Aws::String>
+  void SetInstanceArn(InstanceArnT&& value) {
+    m_instanceArnHasBeenSet = true;
+    m_instanceArn = std::forward<InstanceArnT>(value);
+  }
+  template <typename InstanceArnT = Aws::String>
+  CreateIamIdentityCenterConfigOptions& WithInstanceArn(InstanceArnT&& value) {
+    SetInstanceArn(std::forward<InstanceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user attribute for this IAM Identity Center integration. Defaults to
+   * <code>UserId</code>.</p>
+   */
+  inline IamIdentityCenterUserAttribute GetUserAttribute() const { return m_userAttribute; }
+  inline bool UserAttributeHasBeenSet() const { return m_userAttributeHasBeenSet; }
+  inline void SetUserAttribute(IamIdentityCenterUserAttribute value) {
+    m_userAttributeHasBeenSet = true;
+    m_userAttribute = value;
+  }
+  inline CreateIamIdentityCenterConfigOptions& WithUserAttribute(IamIdentityCenterUserAttribute value) {
+    SetUserAttribute(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The group attribute for this IAM Identity Center integration. Defaults to
+   * <code>GroupId</code>.</p>
+   */
+  inline IamIdentityCenterGroupAttribute GetGroupAttribute() const { return m_groupAttribute; }
+  inline bool GroupAttributeHasBeenSet() const { return m_groupAttributeHasBeenSet; }
+  inline void SetGroupAttribute(IamIdentityCenterGroupAttribute value) {
+    m_groupAttributeHasBeenSet = true;
+    m_groupAttribute = value;
+  }
+  inline CreateIamIdentityCenterConfigOptions& WithGroupAttribute(IamIdentityCenterGroupAttribute value) {
+    SetGroupAttribute(value);
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_instanceArn;
+
+  IamIdentityCenterUserAttribute m_userAttribute{IamIdentityCenterUserAttribute::NOT_SET};
+
+  IamIdentityCenterGroupAttribute m_groupAttribute{IamIdentityCenterGroupAttribute::NOT_SET};
+  bool m_instanceArnHasBeenSet = false;
+  bool m_userAttributeHasBeenSet = false;
+  bool m_groupAttributeHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace OpenSearchServerless
+}  // namespace Aws

@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/http/HttpResponse.h>
+#include <aws/ec2/EC2_EXPORTS.h>
+#include <aws/ec2/model/ResponseMetadata.h>
+#include <aws/ec2/model/VpcBlockPublicAccessExclusion.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Xml {
+class XmlDocument;
+}  // namespace Xml
+}  // namespace Utils
+namespace EC2 {
+namespace Model {
+class ModifyVpcBlockPublicAccessExclusionResponse {
+ public:
+  AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse() = default;
+  AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse(const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+  AWS_EC2_API ModifyVpcBlockPublicAccessExclusionResponse& operator=(
+      const Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>& result);
+
+  ///@{
+  /**
+   * <p>Details related to the exclusion.</p>
+   */
+  inline const VpcBlockPublicAccessExclusion& GetVpcBlockPublicAccessExclusion() const { return m_vpcBlockPublicAccessExclusion; }
+  template <typename VpcBlockPublicAccessExclusionT = VpcBlockPublicAccessExclusion>
+  void SetVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusionT&& value) {
+    m_vpcBlockPublicAccessExclusionHasBeenSet = true;
+    m_vpcBlockPublicAccessExclusion = std::forward<VpcBlockPublicAccessExclusionT>(value);
+  }
+  template <typename VpcBlockPublicAccessExclusionT = VpcBlockPublicAccessExclusion>
+  ModifyVpcBlockPublicAccessExclusionResponse& WithVpcBlockPublicAccessExclusion(VpcBlockPublicAccessExclusionT&& value) {
+    SetVpcBlockPublicAccessExclusion(std::forward<VpcBlockPublicAccessExclusionT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const ResponseMetadata& GetResponseMetadata() const { return m_responseMetadata; }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  void SetResponseMetadata(ResponseMetadataT&& value) {
+    m_responseMetadataHasBeenSet = true;
+    m_responseMetadata = std::forward<ResponseMetadataT>(value);
+  }
+  template <typename ResponseMetadataT = ResponseMetadata>
+  ModifyVpcBlockPublicAccessExclusionResponse& WithResponseMetadata(ResponseMetadataT&& value) {
+    SetResponseMetadata(std::forward<ResponseMetadataT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  VpcBlockPublicAccessExclusion m_vpcBlockPublicAccessExclusion;
+
+  ResponseMetadata m_responseMetadata;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_vpcBlockPublicAccessExclusionHasBeenSet = false;
+  bool m_responseMetadataHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace EC2
+}  // namespace Aws

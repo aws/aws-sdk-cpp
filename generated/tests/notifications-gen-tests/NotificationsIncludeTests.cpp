@@ -1,0 +1,162 @@
+/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <gtest/gtest.h>
+#include <aws/testing/AwsTestHelpers.h>
+
+#include <aws/notifications/NotificationsClient.h>
+#include <aws/notifications/NotificationsEndpointProvider.h>
+#include <aws/notifications/NotificationsEndpointRules.h>
+#include <aws/notifications/NotificationsErrorMarshaller.h>
+#include <aws/notifications/NotificationsErrors.h>
+#include <aws/notifications/NotificationsRequest.h>
+#include <aws/notifications/NotificationsServiceClientModel.h>
+#include <aws/notifications/Notifications_EXPORTS.h>
+#include <aws/notifications/model/AccessStatus.h>
+#include <aws/notifications/model/AccountContactType.h>
+#include <aws/notifications/model/AggregationDetail.h>
+#include <aws/notifications/model/AggregationDuration.h>
+#include <aws/notifications/model/AggregationEventType.h>
+#include <aws/notifications/model/AggregationKey.h>
+#include <aws/notifications/model/AggregationSummary.h>
+#include <aws/notifications/model/AssociateChannelRequest.h>
+#include <aws/notifications/model/AssociateChannelResult.h>
+#include <aws/notifications/model/AssociateManagedNotificationAccountContactRequest.h>
+#include <aws/notifications/model/AssociateManagedNotificationAccountContactResult.h>
+#include <aws/notifications/model/AssociateManagedNotificationAdditionalChannelRequest.h>
+#include <aws/notifications/model/AssociateManagedNotificationAdditionalChannelResult.h>
+#include <aws/notifications/model/AssociateOrganizationalUnitRequest.h>
+#include <aws/notifications/model/AssociateOrganizationalUnitResult.h>
+#include <aws/notifications/model/ChannelAssociationOverrideOption.h>
+#include <aws/notifications/model/ChannelType.h>
+#include <aws/notifications/model/ConflictException.h>
+#include <aws/notifications/model/CreateEventRuleRequest.h>
+#include <aws/notifications/model/CreateEventRuleResult.h>
+#include <aws/notifications/model/CreateNotificationConfigurationRequest.h>
+#include <aws/notifications/model/CreateNotificationConfigurationResult.h>
+#include <aws/notifications/model/DeleteEventRuleRequest.h>
+#include <aws/notifications/model/DeleteEventRuleResult.h>
+#include <aws/notifications/model/DeleteNotificationConfigurationRequest.h>
+#include <aws/notifications/model/DeleteNotificationConfigurationResult.h>
+#include <aws/notifications/model/DeregisterNotificationHubRequest.h>
+#include <aws/notifications/model/DeregisterNotificationHubResult.h>
+#include <aws/notifications/model/Dimension.h>
+#include <aws/notifications/model/DisableNotificationsAccessForOrganizationRequest.h>
+#include <aws/notifications/model/DisableNotificationsAccessForOrganizationResult.h>
+#include <aws/notifications/model/DisassociateChannelRequest.h>
+#include <aws/notifications/model/DisassociateChannelResult.h>
+#include <aws/notifications/model/DisassociateManagedNotificationAccountContactRequest.h>
+#include <aws/notifications/model/DisassociateManagedNotificationAccountContactResult.h>
+#include <aws/notifications/model/DisassociateManagedNotificationAdditionalChannelRequest.h>
+#include <aws/notifications/model/DisassociateManagedNotificationAdditionalChannelResult.h>
+#include <aws/notifications/model/DisassociateOrganizationalUnitRequest.h>
+#include <aws/notifications/model/DisassociateOrganizationalUnitResult.h>
+#include <aws/notifications/model/EnableNotificationsAccessForOrganizationRequest.h>
+#include <aws/notifications/model/EnableNotificationsAccessForOrganizationResult.h>
+#include <aws/notifications/model/EventRuleStatus.h>
+#include <aws/notifications/model/EventRuleStatusSummary.h>
+#include <aws/notifications/model/EventRuleStructure.h>
+#include <aws/notifications/model/EventStatus.h>
+#include <aws/notifications/model/GetEventRuleRequest.h>
+#include <aws/notifications/model/GetEventRuleResult.h>
+#include <aws/notifications/model/GetManagedNotificationChildEventRequest.h>
+#include <aws/notifications/model/GetManagedNotificationChildEventResult.h>
+#include <aws/notifications/model/GetManagedNotificationConfigurationRequest.h>
+#include <aws/notifications/model/GetManagedNotificationConfigurationResult.h>
+#include <aws/notifications/model/GetManagedNotificationEventRequest.h>
+#include <aws/notifications/model/GetManagedNotificationEventResult.h>
+#include <aws/notifications/model/GetNotificationConfigurationRequest.h>
+#include <aws/notifications/model/GetNotificationConfigurationResult.h>
+#include <aws/notifications/model/GetNotificationEventRequest.h>
+#include <aws/notifications/model/GetNotificationEventResult.h>
+#include <aws/notifications/model/GetNotificationsAccessForOrganizationRequest.h>
+#include <aws/notifications/model/GetNotificationsAccessForOrganizationResult.h>
+#include <aws/notifications/model/ListChannelsRequest.h>
+#include <aws/notifications/model/ListChannelsResult.h>
+#include <aws/notifications/model/ListEventRulesRequest.h>
+#include <aws/notifications/model/ListEventRulesResult.h>
+#include <aws/notifications/model/ListManagedNotificationChannelAssociationsRequest.h>
+#include <aws/notifications/model/ListManagedNotificationChannelAssociationsResult.h>
+#include <aws/notifications/model/ListManagedNotificationChildEventsRequest.h>
+#include <aws/notifications/model/ListManagedNotificationChildEventsResult.h>
+#include <aws/notifications/model/ListManagedNotificationConfigurationsRequest.h>
+#include <aws/notifications/model/ListManagedNotificationConfigurationsResult.h>
+#include <aws/notifications/model/ListManagedNotificationEventsRequest.h>
+#include <aws/notifications/model/ListManagedNotificationEventsResult.h>
+#include <aws/notifications/model/ListMemberAccountsRequest.h>
+#include <aws/notifications/model/ListMemberAccountsResult.h>
+#include <aws/notifications/model/ListNotificationConfigurationsRequest.h>
+#include <aws/notifications/model/ListNotificationConfigurationsResult.h>
+#include <aws/notifications/model/ListNotificationEventsRequest.h>
+#include <aws/notifications/model/ListNotificationEventsResult.h>
+#include <aws/notifications/model/ListNotificationHubsRequest.h>
+#include <aws/notifications/model/ListNotificationHubsResult.h>
+#include <aws/notifications/model/ListOrganizationalUnitsRequest.h>
+#include <aws/notifications/model/ListOrganizationalUnitsResult.h>
+#include <aws/notifications/model/ListTagsForResourceRequest.h>
+#include <aws/notifications/model/ListTagsForResourceResult.h>
+#include <aws/notifications/model/LocaleCode.h>
+#include <aws/notifications/model/ManagedNotificationChannelAssociationSummary.h>
+#include <aws/notifications/model/ManagedNotificationChildEvent.h>
+#include <aws/notifications/model/ManagedNotificationChildEventOverview.h>
+#include <aws/notifications/model/ManagedNotificationChildEventSummary.h>
+#include <aws/notifications/model/ManagedNotificationConfigurationStructure.h>
+#include <aws/notifications/model/ManagedNotificationEvent.h>
+#include <aws/notifications/model/ManagedNotificationEventOverview.h>
+#include <aws/notifications/model/ManagedNotificationEventSummary.h>
+#include <aws/notifications/model/ManagedSourceEventMetadataSummary.h>
+#include <aws/notifications/model/MediaElement.h>
+#include <aws/notifications/model/MediaElementType.h>
+#include <aws/notifications/model/MemberAccount.h>
+#include <aws/notifications/model/MemberAccountNotificationConfigurationStatus.h>
+#include <aws/notifications/model/MessageComponents.h>
+#include <aws/notifications/model/MessageComponentsSummary.h>
+#include <aws/notifications/model/NotificationConfigurationStatus.h>
+#include <aws/notifications/model/NotificationConfigurationStructure.h>
+#include <aws/notifications/model/NotificationConfigurationSubtype.h>
+#include <aws/notifications/model/NotificationEvent.h>
+#include <aws/notifications/model/NotificationEventOverview.h>
+#include <aws/notifications/model/NotificationEventSummary.h>
+#include <aws/notifications/model/NotificationHubOverview.h>
+#include <aws/notifications/model/NotificationHubStatus.h>
+#include <aws/notifications/model/NotificationHubStatusSummary.h>
+#include <aws/notifications/model/NotificationType.h>
+#include <aws/notifications/model/NotificationsAccessForOrganization.h>
+#include <aws/notifications/model/RegisterNotificationHubRequest.h>
+#include <aws/notifications/model/RegisterNotificationHubResult.h>
+#include <aws/notifications/model/Resource.h>
+#include <aws/notifications/model/ResourceNotFoundException.h>
+#include <aws/notifications/model/SchemaVersion.h>
+#include <aws/notifications/model/ServiceQuotaExceededException.h>
+#include <aws/notifications/model/SourceEventMetadata.h>
+#include <aws/notifications/model/SourceEventMetadataSummary.h>
+#include <aws/notifications/model/SummarizationDimensionDetail.h>
+#include <aws/notifications/model/SummarizationDimensionOverview.h>
+#include <aws/notifications/model/TagResourceRequest.h>
+#include <aws/notifications/model/TagResourceResult.h>
+#include <aws/notifications/model/TextPartType.h>
+#include <aws/notifications/model/TextPartValue.h>
+#include <aws/notifications/model/ThrottlingException.h>
+#include <aws/notifications/model/UntagResourceRequest.h>
+#include <aws/notifications/model/UntagResourceResult.h>
+#include <aws/notifications/model/UpdateEventRuleRequest.h>
+#include <aws/notifications/model/UpdateEventRuleResult.h>
+#include <aws/notifications/model/UpdateNotificationConfigurationRequest.h>
+#include <aws/notifications/model/UpdateNotificationConfigurationResult.h>
+#include <aws/notifications/model/ValidationException.h>
+#include <aws/notifications/model/ValidationExceptionField.h>
+#include <aws/notifications/model/ValidationExceptionReason.h>
+
+using NotificationsIncludeTest = ::testing::Test;
+
+TEST_F(NotificationsIncludeTest, TestClientCompiles)
+{
+  Aws::Client::ClientConfigurationInitValues cfgInit;
+  cfgInit.shouldDisableIMDS = true;
+  Aws::Client::ClientConfiguration config(cfgInit);
+  AWS_UNREFERENCED_PARAM(config);
+  // auto pClient = Aws::MakeUnique<Aws::Notifications::NotificationsClient>("NotificationsIncludeTest", config);
+  // ASSERT_TRUE(pClient.get());
+}

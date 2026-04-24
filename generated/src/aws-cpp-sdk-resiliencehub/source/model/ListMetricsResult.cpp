@@ -1,0 +1,51 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/AmazonWebServiceResult.h>
+#include <aws/core/utils/StringUtils.h>
+#include <aws/core/utils/UnreferencedParam.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/memory/stl/AWSStringStream.h>
+#include <aws/resiliencehub/model/ListMetricsResult.h>
+
+#include <utility>
+
+using namespace Aws::ResilienceHub::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+using namespace Aws;
+
+ListMetricsResult::ListMetricsResult(const Aws::AmazonWebServiceResult<JsonValue>& result) { *this = result; }
+
+ListMetricsResult& ListMetricsResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
+  m_HttpResponseCode = result.GetResponseCode();
+  JsonView jsonValue = result.GetPayload().View();
+  if (jsonValue.ValueExists("nextToken")) {
+    m_nextToken = jsonValue.GetString("nextToken");
+    m_nextTokenHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("rows")) {
+    Aws::Utils::Array<JsonView> rowsJsonList = jsonValue.GetArray("rows");
+    for (unsigned rowsIndex = 0; rowsIndex < rowsJsonList.GetLength(); ++rowsIndex) {
+      Aws::Utils::Array<JsonView> row2JsonList = rowsJsonList[rowsIndex].AsArray();
+      Aws::Vector<Aws::String> row2List;
+      row2List.reserve((size_t)row2JsonList.GetLength());
+      for (unsigned row2Index = 0; row2Index < row2JsonList.GetLength(); ++row2Index) {
+        row2List.push_back(row2JsonList[row2Index].AsString());
+      }
+      m_rows.push_back(std::move(row2List));
+    }
+    m_rowsHasBeenSet = true;
+  }
+
+  const auto& headers = result.GetHeaderValueCollection();
+  const auto& requestIdIter = headers.find("x-amzn-requestid");
+  if (requestIdIter != headers.end()) {
+    m_requestId = requestIdIter->second;
+    m_requestIdHasBeenSet = true;
+  }
+
+  return *this;
+}

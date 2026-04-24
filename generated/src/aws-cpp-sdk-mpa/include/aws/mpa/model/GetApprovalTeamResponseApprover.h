@@ -1,0 +1,237 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/mpa/MPA_EXPORTS.h>
+#include <aws/mpa/model/ApproverLastActivity.h>
+#include <aws/mpa/model/IdentityStatus.h>
+#include <aws/mpa/model/MfaMethod.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace MPA {
+namespace Model {
+
+/**
+ * <p>Contains details for an approver.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/mpa-2022-07-26/GetApprovalTeamResponseApprover">AWS
+ * API Reference</a></p>
+ */
+class GetApprovalTeamResponseApprover {
+ public:
+  AWS_MPA_API GetApprovalTeamResponseApprover() = default;
+  AWS_MPA_API GetApprovalTeamResponseApprover(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MPA_API GetApprovalTeamResponseApprover& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_MPA_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>ID for the approver.</p>
+   */
+  inline const Aws::String& GetApproverId() const { return m_approverId; }
+  inline bool ApproverIdHasBeenSet() const { return m_approverIdHasBeenSet; }
+  template <typename ApproverIdT = Aws::String>
+  void SetApproverId(ApproverIdT&& value) {
+    m_approverIdHasBeenSet = true;
+    m_approverId = std::forward<ApproverIdT>(value);
+  }
+  template <typename ApproverIdT = Aws::String>
+  GetApprovalTeamResponseApprover& WithApproverId(ApproverIdT&& value) {
+    SetApproverId(std::forward<ApproverIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Timestamp when the approver responded to an approval team invitation.</p>
+   */
+  inline const Aws::Utils::DateTime& GetResponseTime() const { return m_responseTime; }
+  inline bool ResponseTimeHasBeenSet() const { return m_responseTimeHasBeenSet; }
+  template <typename ResponseTimeT = Aws::Utils::DateTime>
+  void SetResponseTime(ResponseTimeT&& value) {
+    m_responseTimeHasBeenSet = true;
+    m_responseTime = std::forward<ResponseTimeT>(value);
+  }
+  template <typename ResponseTimeT = Aws::Utils::DateTime>
+  GetApprovalTeamResponseApprover& WithResponseTime(ResponseTimeT&& value) {
+    SetResponseTime(std::forward<ResponseTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>ID for the user.</p>
+   */
+  inline const Aws::String& GetPrimaryIdentityId() const { return m_primaryIdentityId; }
+  inline bool PrimaryIdentityIdHasBeenSet() const { return m_primaryIdentityIdHasBeenSet; }
+  template <typename PrimaryIdentityIdT = Aws::String>
+  void SetPrimaryIdentityId(PrimaryIdentityIdT&& value) {
+    m_primaryIdentityIdHasBeenSet = true;
+    m_primaryIdentityId = std::forward<PrimaryIdentityIdT>(value);
+  }
+  template <typename PrimaryIdentityIdT = Aws::String>
+  GetApprovalTeamResponseApprover& WithPrimaryIdentityId(PrimaryIdentityIdT&& value) {
+    SetPrimaryIdentityId(std::forward<PrimaryIdentityIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amazon Resource Name (ARN) for the identity source. The identity source
+   * manages the user authentication for approvers.</p>
+   */
+  inline const Aws::String& GetPrimaryIdentitySourceArn() const { return m_primaryIdentitySourceArn; }
+  inline bool PrimaryIdentitySourceArnHasBeenSet() const { return m_primaryIdentitySourceArnHasBeenSet; }
+  template <typename PrimaryIdentitySourceArnT = Aws::String>
+  void SetPrimaryIdentitySourceArn(PrimaryIdentitySourceArnT&& value) {
+    m_primaryIdentitySourceArnHasBeenSet = true;
+    m_primaryIdentitySourceArn = std::forward<PrimaryIdentitySourceArnT>(value);
+  }
+  template <typename PrimaryIdentitySourceArnT = Aws::String>
+  GetApprovalTeamResponseApprover& WithPrimaryIdentitySourceArn(PrimaryIdentitySourceArnT&& value) {
+    SetPrimaryIdentitySourceArn(std::forward<PrimaryIdentitySourceArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Status for the identity source. For example, if an approver has accepted a
+   * team invitation with a user authentication method managed by the identity
+   * source.</p>
+   */
+  inline IdentityStatus GetPrimaryIdentityStatus() const { return m_primaryIdentityStatus; }
+  inline bool PrimaryIdentityStatusHasBeenSet() const { return m_primaryIdentityStatusHasBeenSet; }
+  inline void SetPrimaryIdentityStatus(IdentityStatus value) {
+    m_primaryIdentityStatusHasBeenSet = true;
+    m_primaryIdentityStatus = value;
+  }
+  inline GetApprovalTeamResponseApprover& WithPrimaryIdentityStatus(IdentityStatus value) {
+    SetPrimaryIdentityStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Last Activity performed by the approver.</p>
+   */
+  inline ApproverLastActivity GetLastActivity() const { return m_lastActivity; }
+  inline bool LastActivityHasBeenSet() const { return m_lastActivityHasBeenSet; }
+  inline void SetLastActivity(ApproverLastActivity value) {
+    m_lastActivityHasBeenSet = true;
+    m_lastActivity = value;
+  }
+  inline GetApprovalTeamResponseApprover& WithLastActivity(ApproverLastActivity value) {
+    SetLastActivity(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Timestamp when the approver last responded to an operation or invitation
+   * request.</p>
+   */
+  inline const Aws::Utils::DateTime& GetLastActivityTime() const { return m_lastActivityTime; }
+  inline bool LastActivityTimeHasBeenSet() const { return m_lastActivityTimeHasBeenSet; }
+  template <typename LastActivityTimeT = Aws::Utils::DateTime>
+  void SetLastActivityTime(LastActivityTimeT&& value) {
+    m_lastActivityTimeHasBeenSet = true;
+    m_lastActivityTime = std::forward<LastActivityTimeT>(value);
+  }
+  template <typename LastActivityTimeT = Aws::Utils::DateTime>
+  GetApprovalTeamResponseApprover& WithLastActivityTime(LastActivityTimeT&& value) {
+    SetLastActivityTime(std::forward<LastActivityTimeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Amazon Resource Name (ARN) for the pending baseline session.</p>
+   */
+  inline const Aws::String& GetPendingBaselineSessionArn() const { return m_pendingBaselineSessionArn; }
+  inline bool PendingBaselineSessionArnHasBeenSet() const { return m_pendingBaselineSessionArnHasBeenSet; }
+  template <typename PendingBaselineSessionArnT = Aws::String>
+  void SetPendingBaselineSessionArn(PendingBaselineSessionArnT&& value) {
+    m_pendingBaselineSessionArnHasBeenSet = true;
+    m_pendingBaselineSessionArn = std::forward<PendingBaselineSessionArnT>(value);
+  }
+  template <typename PendingBaselineSessionArnT = Aws::String>
+  GetApprovalTeamResponseApprover& WithPendingBaselineSessionArn(PendingBaselineSessionArnT&& value) {
+    SetPendingBaselineSessionArn(std::forward<PendingBaselineSessionArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Multi-factor authentication configuration for the approver</p>
+   */
+  inline const Aws::Vector<MfaMethod>& GetMfaMethods() const { return m_mfaMethods; }
+  inline bool MfaMethodsHasBeenSet() const { return m_mfaMethodsHasBeenSet; }
+  template <typename MfaMethodsT = Aws::Vector<MfaMethod>>
+  void SetMfaMethods(MfaMethodsT&& value) {
+    m_mfaMethodsHasBeenSet = true;
+    m_mfaMethods = std::forward<MfaMethodsT>(value);
+  }
+  template <typename MfaMethodsT = Aws::Vector<MfaMethod>>
+  GetApprovalTeamResponseApprover& WithMfaMethods(MfaMethodsT&& value) {
+    SetMfaMethods(std::forward<MfaMethodsT>(value));
+    return *this;
+  }
+  template <typename MfaMethodsT = MfaMethod>
+  GetApprovalTeamResponseApprover& AddMfaMethods(MfaMethodsT&& value) {
+    m_mfaMethodsHasBeenSet = true;
+    m_mfaMethods.emplace_back(std::forward<MfaMethodsT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_approverId;
+
+  Aws::Utils::DateTime m_responseTime{};
+
+  Aws::String m_primaryIdentityId;
+
+  Aws::String m_primaryIdentitySourceArn;
+
+  IdentityStatus m_primaryIdentityStatus{IdentityStatus::NOT_SET};
+
+  ApproverLastActivity m_lastActivity{ApproverLastActivity::NOT_SET};
+
+  Aws::Utils::DateTime m_lastActivityTime{};
+
+  Aws::String m_pendingBaselineSessionArn;
+
+  Aws::Vector<MfaMethod> m_mfaMethods;
+  bool m_approverIdHasBeenSet = false;
+  bool m_responseTimeHasBeenSet = false;
+  bool m_primaryIdentityIdHasBeenSet = false;
+  bool m_primaryIdentitySourceArnHasBeenSet = false;
+  bool m_primaryIdentityStatusHasBeenSet = false;
+  bool m_lastActivityHasBeenSet = false;
+  bool m_lastActivityTimeHasBeenSet = false;
+  bool m_pendingBaselineSessionArnHasBeenSet = false;
+  bool m_mfaMethodsHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace MPA
+}  // namespace Aws

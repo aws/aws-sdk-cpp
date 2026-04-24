@@ -1,0 +1,48 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/marketplace-agreement/model/RenewalTerm.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace AgreementService {
+namespace Model {
+
+RenewalTerm::RenewalTerm(JsonView jsonValue) { *this = jsonValue; }
+
+RenewalTerm& RenewalTerm::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("type")) {
+    m_type = jsonValue.GetString("type");
+    m_typeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configuration")) {
+    m_configuration = jsonValue.GetObject("configuration");
+    m_configurationHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue RenewalTerm::Jsonize() const {
+  JsonValue payload;
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", m_type);
+  }
+
+  if (m_configurationHasBeenSet) {
+    payload.WithObject("configuration", m_configuration.Jsonize());
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace AgreementService
+}  // namespace Aws

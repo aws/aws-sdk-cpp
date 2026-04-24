@@ -1,0 +1,158 @@
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cfamily/Attribution.vm")
+
+#set($metadata = $serviceModel.metadata)
+#set($rootNamespace = $serviceModel.namespace)
+#set($serviceNamespace = $metadata.namespace)
+\#include <aws/${metadata.projectName}/model/${typeInfo.className}.h>
+#if(!$serviceModel.endpointRules)
+#if($operation.hasAccountIdInArn || $operation.hasOutpostIdInArn)
+\#include <aws/${metadata.projectName}/${metadata.classNamePrefix}ARN.h>
+#end
+#end
+\#include <aws/core/utils/xml/XmlSerializer.h>
+\#include <aws/core/utils/memory/stl/AWSStringStream.h>
+\#include <aws/core/utils/UnreferencedParam.h>
+#if($shape.hasQueryStringMembers())
+\#include <aws/core/http/URI.h>
+#end
+#foreach($header in $typeInfo.sourceIncludes)
+\#include $header
+#end
+#if($serviceModel.useSmithyClient)
+#if($operation.hasSigV4aAuth())
+\#include <smithy/identity/auth/built-in/SigV4aAuthSchemeOption.h>
+#end
+#if($operation.hasSigV4Auth())
+\#include <smithy/identity/auth/built-in/SigV4AuthSchemeOption.h>
+#end
+#if($operation.hasBearerAuth())
+\#include <smithy/identity/auth/built-in/BearerTokenAuthSchemeOption.h>
+#end
+#if($operation.hasNoAuth())
+\#include <smithy/identity/auth/built-in/NoAuthSchemeOption.h>
+#end
+#end ###if($serviceModel.useSmithyClient)
+\#include <utility>
+#if(${CppViewHelper.hasListMemberUsedForHeader($shape)})
+\#include <numeric>
+#end
+
+using namespace ${rootNamespace}::${serviceNamespace}::Model;
+using namespace Aws::Utils::Xml;
+using namespace Aws::Utils;
+#if($shape.hasQueryStringMembers())
+using namespace Aws::Http;
+#end
+
+#if($shape.hasEmbeddedErrors())
+
+bool ${typeInfo.className}::HasEmbeddedError(Aws::IOStream &body,
+  const Aws::Http::HeaderValueCollection &header) const
+{
+  // Header is unused
+  AWS_UNREFERENCED_PARAM(header);
+
+  auto readPointer = body.tellg();
+  Utils::Xml::XmlDocument doc = XmlDocument::CreateFromXmlStream(body);
+  body.seekg(readPointer);
+  if (!doc.WasParseSuccessful()) {
+    return false;
+  }
+
+  if (!doc.GetRootElement().IsNull() && doc.GetRootElement().GetName() == Aws::String("Error")) {
+    return true;
+  }
+  return false;
+}
+#end
+
+Aws::String ${typeInfo.className}::SerializePayload() const
+{
+#if($shape.hasPayloadMembers() && $shape.payload)
+#if($shape.name == $shape.payload)
+#set($xmlNamespace = $shape.xmlNamespace)
+#set($locationName = $shape.locationName)
+#else
+#set($payloadMember = $shape.members.get($shape.payload))
+#set($xmlNamespace = ${payloadMember.xmlNamespace})
+#set($locationName = $payloadMember.locationName)
+#end
+#if(!$payloadMember || !$payloadMember.shape.enum && !$payloadMember.shape.string && !$payloadMember.shape.string)##if payload is structured
+#if($locationName)
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${locationName}");
+#else
+  XmlDocument payloadDoc = XmlDocument::CreateWithRootNode("${shape.payload}");
+#end
+
+  XmlNode parentNode = payloadDoc.GetRootElement();
+#end
+#if($xmlNamespace)
+#if($xmlNamespace.prefix)
+#set($xmlnsKey = "xmlns:${xmlNamespace.prefix}")
+#else
+#set($xmlnsKey = "xmlns")
+#end
+  parentNode.SetAttributeValue("${xmlnsKey}", "${xmlNamespace.uri}");
+#end
+
+#if($payloadMember)
+#if($payloadMember.shape.enum || $payloadMember.shape.string || $payloadMember.shape.string)
+##payload member is "streamed", i.e. payload doc is not the XML, but the enum string/string/blob itself
+##and CPP SDK did not generate legacy "streaming" request for some modelling quirks) - we need to set the payload to just a string/buffer.
+#if($payloadMember.shape.enum)
+  if ($payloadMember.shape.name::NOT_SET != ${CppViewHelper.computeMemberVariableName($shape.payload)}) {
+    return ${payloadMember.shape.name}Mapper::GetNameFor${payloadMember.shape.name}(${CppViewHelper.computeMemberVariableName($shape.payload)});
+  }
+  return {};
+#elseif($payloadMember.shape.string)
+  return ${CppViewHelper.computeMemberVariableName($shape.payload)};
+#else
+  static_assert(false, "Failed to generate code to serialize non-streaming request with non-structured (not xml) plain string/blob payload" /*payloadMember: $payloadMember*/);
+#end
+#else
+  ${CppViewHelper.computeMemberVariableName($shape.payload)}.AddToNode(parentNode);
+  if(parentNode.HasChildren())
+  {
+    return payloadDoc.ConvertToString();
+  }
+
+  return {};
+#end
+#else
+#set($useRequiredField = true)
+#set($callFromRequestShape = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/xml/ModelClassMembersXmlizeSource.vm")
+  return payloadDoc.ConvertToString();
+#end
+#else
+  return {};
+#end
+}
+
+#if($shape.hasQueryStringMembers())
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/AddQueryStringParametersToRequest.vm")
+#end
+
+#if($shape.hasHeaderMembers() || $metadata.targetPrefix)
+Aws::Http::HeaderValueCollection ${typeInfo.className}::GetRequestSpecificHeaders() const
+{
+  Aws::Http::HeaderValueCollection headers;
+#if($metadata.targetPrefix)
+  headers.insert(Aws::Http::HeaderValuePair("X-Amz-Target", "${metadata.targetPrefix}.${CppViewHelper.computeOperationNameFromInputOutputShape($shape.name)}"));
+#end
+#set($useRequiredField = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassHeaderMembersSource.vm")
+  return headers;
+}
+#end
+
+#if($serviceModel.useSmithyClient && $operation.auth)
+Aws::Vector<smithy::AuthSchemeOption> ${typeInfo.className}::GetRequestSpecificSupportedAuth() const
+{
+  Aws::Vector<smithy::AuthSchemeOption> authOptions{$CppViewHelper.computeAuthSchemes($operation)};
+  return authOptions;
+}
+#end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/model/ModelGetEndpointRulesContextParamDefinition.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassChecksumMembers.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/ModelClassRequiredCompression.vm")

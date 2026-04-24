@@ -1,0 +1,64 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/quicksight/model/ReferenceLineDataConfiguration.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace QuickSight {
+namespace Model {
+
+ReferenceLineDataConfiguration::ReferenceLineDataConfiguration(JsonView jsonValue) { *this = jsonValue; }
+
+ReferenceLineDataConfiguration& ReferenceLineDataConfiguration::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("StaticConfiguration")) {
+    m_staticConfiguration = jsonValue.GetObject("StaticConfiguration");
+    m_staticConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DynamicConfiguration")) {
+    m_dynamicConfiguration = jsonValue.GetObject("DynamicConfiguration");
+    m_dynamicConfigurationHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AxisBinding")) {
+    m_axisBinding = AxisBindingMapper::GetAxisBindingForName(jsonValue.GetString("AxisBinding"));
+    m_axisBindingHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("SeriesType")) {
+    m_seriesType = ReferenceLineSeriesTypeMapper::GetReferenceLineSeriesTypeForName(jsonValue.GetString("SeriesType"));
+    m_seriesTypeHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ReferenceLineDataConfiguration::Jsonize() const {
+  JsonValue payload;
+
+  if (m_staticConfigurationHasBeenSet) {
+    payload.WithObject("StaticConfiguration", m_staticConfiguration.Jsonize());
+  }
+
+  if (m_dynamicConfigurationHasBeenSet) {
+    payload.WithObject("DynamicConfiguration", m_dynamicConfiguration.Jsonize());
+  }
+
+  if (m_axisBindingHasBeenSet) {
+    payload.WithString("AxisBinding", AxisBindingMapper::GetNameForAxisBinding(m_axisBinding));
+  }
+
+  if (m_seriesTypeHasBeenSet) {
+    payload.WithString("SeriesType", ReferenceLineSeriesTypeMapper::GetNameForReferenceLineSeriesType(m_seriesType));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace QuickSight
+}  // namespace Aws

@@ -1,0 +1,35 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/lambda/model/PublishVersionRequest.h>
+
+#include <utility>
+
+using namespace Aws::Lambda::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String PublishVersionRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_codeSha256HasBeenSet) {
+    payload.WithString("CodeSha256", m_codeSha256);
+  }
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("Description", m_description);
+  }
+
+  if (m_revisionIdHasBeenSet) {
+    payload.WithString("RevisionId", m_revisionId);
+  }
+
+  if (m_publishToHasBeenSet) {
+    payload.WithString("PublishTo", FunctionVersionLatestPublishedMapper::GetNameForFunctionVersionLatestPublished(m_publishTo));
+  }
+
+  return payload.View().WriteReadable();
+}

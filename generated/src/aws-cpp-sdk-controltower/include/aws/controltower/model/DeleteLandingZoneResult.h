@@ -1,0 +1,76 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/controltower/ControlTower_EXPORTS.h>
+#include <aws/core/http/HttpResponse.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+template <typename RESULT_TYPE>
+class AmazonWebServiceResult;
+
+namespace Utils {
+namespace Json {
+class JsonValue;
+}  // namespace Json
+}  // namespace Utils
+namespace ControlTower {
+namespace Model {
+class DeleteLandingZoneResult {
+ public:
+  AWS_CONTROLTOWER_API DeleteLandingZoneResult() = default;
+  AWS_CONTROLTOWER_API DeleteLandingZoneResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+  AWS_CONTROLTOWER_API DeleteLandingZoneResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
+
+  ///@{
+  /**
+   * <p>&gt;A unique identifier assigned to a <code>DeleteLandingZone</code>
+   * operation. You can use this identifier as an input parameter of
+   * <code>GetLandingZoneOperation</code> to check the operation's status.</p>
+   */
+  inline const Aws::String& GetOperationIdentifier() const { return m_operationIdentifier; }
+  template <typename OperationIdentifierT = Aws::String>
+  void SetOperationIdentifier(OperationIdentifierT&& value) {
+    m_operationIdentifierHasBeenSet = true;
+    m_operationIdentifier = std::forward<OperationIdentifierT>(value);
+  }
+  template <typename OperationIdentifierT = Aws::String>
+  DeleteLandingZoneResult& WithOperationIdentifier(OperationIdentifierT&& value) {
+    SetOperationIdentifier(std::forward<OperationIdentifierT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+
+  inline const Aws::String& GetRequestId() const { return m_requestId; }
+  template <typename RequestIdT = Aws::String>
+  void SetRequestId(RequestIdT&& value) {
+    m_requestIdHasBeenSet = true;
+    m_requestId = std::forward<RequestIdT>(value);
+  }
+  template <typename RequestIdT = Aws::String>
+  DeleteLandingZoneResult& WithRequestId(RequestIdT&& value) {
+    SetRequestId(std::forward<RequestIdT>(value));
+    return *this;
+  }
+  ///@}
+  inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
+
+ private:
+  Aws::String m_operationIdentifier;
+
+  Aws::String m_requestId;
+  Aws::Http::HttpResponseCode m_HttpResponseCode;
+  bool m_operationIdentifierHasBeenSet = false;
+  bool m_requestIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace ControlTower
+}  // namespace Aws

@@ -1,0 +1,111 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/mpa/model/GetApprovalTeamResponseApprover.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace MPA {
+namespace Model {
+
+GetApprovalTeamResponseApprover::GetApprovalTeamResponseApprover(JsonView jsonValue) { *this = jsonValue; }
+
+GetApprovalTeamResponseApprover& GetApprovalTeamResponseApprover::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("ApproverId")) {
+    m_approverId = jsonValue.GetString("ApproverId");
+    m_approverIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ResponseTime")) {
+    m_responseTime = jsonValue.GetString("ResponseTime");
+    m_responseTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PrimaryIdentityId")) {
+    m_primaryIdentityId = jsonValue.GetString("PrimaryIdentityId");
+    m_primaryIdentityIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PrimaryIdentitySourceArn")) {
+    m_primaryIdentitySourceArn = jsonValue.GetString("PrimaryIdentitySourceArn");
+    m_primaryIdentitySourceArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PrimaryIdentityStatus")) {
+    m_primaryIdentityStatus = IdentityStatusMapper::GetIdentityStatusForName(jsonValue.GetString("PrimaryIdentityStatus"));
+    m_primaryIdentityStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastActivity")) {
+    m_lastActivity = ApproverLastActivityMapper::GetApproverLastActivityForName(jsonValue.GetString("LastActivity"));
+    m_lastActivityHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("LastActivityTime")) {
+    m_lastActivityTime = jsonValue.GetString("LastActivityTime");
+    m_lastActivityTimeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("PendingBaselineSessionArn")) {
+    m_pendingBaselineSessionArn = jsonValue.GetString("PendingBaselineSessionArn");
+    m_pendingBaselineSessionArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("MfaMethods")) {
+    Aws::Utils::Array<JsonView> mfaMethodsJsonList = jsonValue.GetArray("MfaMethods");
+    for (unsigned mfaMethodsIndex = 0; mfaMethodsIndex < mfaMethodsJsonList.GetLength(); ++mfaMethodsIndex) {
+      m_mfaMethods.push_back(mfaMethodsJsonList[mfaMethodsIndex].AsObject());
+    }
+    m_mfaMethodsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue GetApprovalTeamResponseApprover::Jsonize() const {
+  JsonValue payload;
+
+  if (m_approverIdHasBeenSet) {
+    payload.WithString("ApproverId", m_approverId);
+  }
+
+  if (m_responseTimeHasBeenSet) {
+    payload.WithString("ResponseTime", m_responseTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_primaryIdentityIdHasBeenSet) {
+    payload.WithString("PrimaryIdentityId", m_primaryIdentityId);
+  }
+
+  if (m_primaryIdentitySourceArnHasBeenSet) {
+    payload.WithString("PrimaryIdentitySourceArn", m_primaryIdentitySourceArn);
+  }
+
+  if (m_primaryIdentityStatusHasBeenSet) {
+    payload.WithString("PrimaryIdentityStatus", IdentityStatusMapper::GetNameForIdentityStatus(m_primaryIdentityStatus));
+  }
+
+  if (m_lastActivityHasBeenSet) {
+    payload.WithString("LastActivity", ApproverLastActivityMapper::GetNameForApproverLastActivity(m_lastActivity));
+  }
+
+  if (m_lastActivityTimeHasBeenSet) {
+    payload.WithString("LastActivityTime", m_lastActivityTime.ToGmtString(Aws::Utils::DateFormat::ISO_8601));
+  }
+
+  if (m_pendingBaselineSessionArnHasBeenSet) {
+    payload.WithString("PendingBaselineSessionArn", m_pendingBaselineSessionArn);
+  }
+
+  if (m_mfaMethodsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> mfaMethodsJsonList(m_mfaMethods.size());
+    for (unsigned mfaMethodsIndex = 0; mfaMethodsIndex < mfaMethodsJsonList.GetLength(); ++mfaMethodsIndex) {
+      mfaMethodsJsonList[mfaMethodsIndex].AsObject(m_mfaMethods[mfaMethodsIndex].Jsonize());
+    }
+    payload.WithArray("MfaMethods", std::move(mfaMethodsJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace MPA
+}  // namespace Aws

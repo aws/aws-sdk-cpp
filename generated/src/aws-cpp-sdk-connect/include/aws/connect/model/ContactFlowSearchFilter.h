@@ -1,0 +1,78 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/connect/Connect_EXPORTS.h>
+#include <aws/connect/model/ContactFlowAttributeFilter.h>
+#include <aws/connect/model/ControlPlaneTagFilter.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace Connect {
+namespace Model {
+
+/**
+ * <p>Filters to be applied to search results.</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ContactFlowSearchFilter">AWS
+ * API Reference</a></p>
+ */
+class ContactFlowSearchFilter {
+ public:
+  AWS_CONNECT_API ContactFlowSearchFilter() = default;
+  AWS_CONNECT_API ContactFlowSearchFilter(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API ContactFlowSearchFilter& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_CONNECT_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+
+  inline const ControlPlaneTagFilter& GetTagFilter() const { return m_tagFilter; }
+  inline bool TagFilterHasBeenSet() const { return m_tagFilterHasBeenSet; }
+  template <typename TagFilterT = ControlPlaneTagFilter>
+  void SetTagFilter(TagFilterT&& value) {
+    m_tagFilterHasBeenSet = true;
+    m_tagFilter = std::forward<TagFilterT>(value);
+  }
+  template <typename TagFilterT = ControlPlaneTagFilter>
+  ContactFlowSearchFilter& WithTagFilter(TagFilterT&& value) {
+    SetTagFilter(std::forward<TagFilterT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> Flow attribute filter for contact flow search operations. </p>
+   */
+  inline const ContactFlowAttributeFilter& GetFlowAttributeFilter() const { return m_flowAttributeFilter; }
+  inline bool FlowAttributeFilterHasBeenSet() const { return m_flowAttributeFilterHasBeenSet; }
+  template <typename FlowAttributeFilterT = ContactFlowAttributeFilter>
+  void SetFlowAttributeFilter(FlowAttributeFilterT&& value) {
+    m_flowAttributeFilterHasBeenSet = true;
+    m_flowAttributeFilter = std::forward<FlowAttributeFilterT>(value);
+  }
+  template <typename FlowAttributeFilterT = ContactFlowAttributeFilter>
+  ContactFlowSearchFilter& WithFlowAttributeFilter(FlowAttributeFilterT&& value) {
+    SetFlowAttributeFilter(std::forward<FlowAttributeFilterT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  ControlPlaneTagFilter m_tagFilter;
+
+  ContactFlowAttributeFilter m_flowAttributeFilter;
+  bool m_tagFilterHasBeenSet = false;
+  bool m_flowAttributeFilterHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace Connect
+}  // namespace Aws
