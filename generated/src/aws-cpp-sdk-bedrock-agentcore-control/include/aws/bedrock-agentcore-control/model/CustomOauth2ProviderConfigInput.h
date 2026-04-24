@@ -6,7 +6,10 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2Discovery.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 
 #include <utility>
 
@@ -86,15 +89,66 @@ class CustomOauth2ProviderConfigInput {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The default private endpoint for the custom OAuth2 provider, enabling secure
+   * connectivity through a VPC Lattice resource configuration.</p>
+   */
+  inline const PrivateEndpoint& GetPrivateEndpoint() const { return m_privateEndpoint; }
+  inline bool PrivateEndpointHasBeenSet() const { return m_privateEndpointHasBeenSet; }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  void SetPrivateEndpoint(PrivateEndpointT&& value) {
+    m_privateEndpointHasBeenSet = true;
+    m_privateEndpoint = std::forward<PrivateEndpointT>(value);
+  }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  CustomOauth2ProviderConfigInput& WithPrivateEndpoint(PrivateEndpointT&& value) {
+    SetPrivateEndpoint(std::forward<PrivateEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The list of private endpoint overrides for the custom OAuth2 provider. Each
+   * override maps a specific domain to a private endpoint, enabling secure
+   * connectivity through VPC Lattice resource configurations.</p>
+   */
+  inline const Aws::Vector<PrivateEndpointOverride>& GetPrivateEndpointOverrides() const { return m_privateEndpointOverrides; }
+  inline bool PrivateEndpointOverridesHasBeenSet() const { return m_privateEndpointOverridesHasBeenSet; }
+  template <typename PrivateEndpointOverridesT = Aws::Vector<PrivateEndpointOverride>>
+  void SetPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    m_privateEndpointOverridesHasBeenSet = true;
+    m_privateEndpointOverrides = std::forward<PrivateEndpointOverridesT>(value);
+  }
+  template <typename PrivateEndpointOverridesT = Aws::Vector<PrivateEndpointOverride>>
+  CustomOauth2ProviderConfigInput& WithPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    SetPrivateEndpointOverrides(std::forward<PrivateEndpointOverridesT>(value));
+    return *this;
+  }
+  template <typename PrivateEndpointOverridesT = PrivateEndpointOverride>
+  CustomOauth2ProviderConfigInput& AddPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    m_privateEndpointOverridesHasBeenSet = true;
+    m_privateEndpointOverrides.emplace_back(std::forward<PrivateEndpointOverridesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Oauth2Discovery m_oauthDiscovery;
 
   Aws::String m_clientId;
 
   Aws::String m_clientSecret;
+
+  PrivateEndpoint m_privateEndpoint;
+
+  Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
   bool m_oauthDiscoveryHasBeenSet = false;
   bool m_clientIdHasBeenSet = false;
   bool m_clientSecretHasBeenSet = false;
+  bool m_privateEndpointHasBeenSet = false;
+  bool m_privateEndpointOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

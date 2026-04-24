@@ -12,6 +12,7 @@
 #include <aws/connect/model/GetMetricDataV2PaginationTraits.h>
 #include <aws/connect/model/ListAgentStatusesPaginationTraits.h>
 #include <aws/connect/model/ListApprovedOriginsPaginationTraits.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsPaginationTraits.h>
 #include <aws/connect/model/ListAuthenticationProfilesPaginationTraits.h>
 #include <aws/connect/model/ListBotsPaginationTraits.h>
 #include <aws/connect/model/ListChildHoursOfOperationsPaginationTraits.h>
@@ -183,6 +184,18 @@ class ConnectPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListApprovedOriginsRequest,
                                              Pagination::ListApprovedOriginsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListAttachedFilesConfigurations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedFilesConfigurationsRequest,
+                                    Pagination::ListAttachedFilesConfigurationsPaginationTraits<DerivedClient>>
+  ListAttachedFilesConfigurationsPaginator(const Model::ListAttachedFilesConfigurationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListAttachedFilesConfigurationsRequest,
+                                             Pagination::ListAttachedFilesConfigurationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -20,8 +20,8 @@ namespace ConnectHealth {
 namespace Model {
 
 /**
- * <p>Input configuration for creating a Pulse web application. Used only in
- * CreateDomain operation input.</p><p><h3>See Also:</h3>   <a
+ * <p>Input configuration for creating a web application. Used only in CreateDomain
+ * operation input.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/connecthealth-2025-01-29/CreateWebAppConfiguration">AWS
  * API Reference</a></p>
  */

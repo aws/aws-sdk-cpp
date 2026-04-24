@@ -3409,6 +3409,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Describes the attached files configuration for the specified Amazon Connect
+   * instance and attachment scope.</p> <p>If a custom configuration exists for the
+   * specified attachment scope, the custom configuration is returned. If no custom
+   * configuration exists, the default configuration values for that attachment scope
+   * are returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/DescribeAttachedFilesConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeAttachedFilesConfigurationOutcome DescribeAttachedFilesConfiguration(
+      const Model::DescribeAttachedFilesConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeAttachedFilesConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeAttachedFilesConfigurationRequestT = Model::DescribeAttachedFilesConfigurationRequest>
+  Model::DescribeAttachedFilesConfigurationOutcomeCallable DescribeAttachedFilesConfigurationCallable(
+      const DescribeAttachedFilesConfigurationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::DescribeAttachedFilesConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeAttachedFilesConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeAttachedFilesConfigurationRequestT = Model::DescribeAttachedFilesConfigurationRequest>
+  void DescribeAttachedFilesConfigurationAsync(const DescribeAttachedFilesConfigurationRequestT& request,
+                                               const DescribeAttachedFilesConfigurationResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::DescribeAttachedFilesConfiguration, request, handler, context);
+  }
+
+  /**
    * <p>This API is in preview release for Amazon Connect and is subject to change.
    * To request access to this API, contact Amazon Web Services Support.</p>
    * <p>Describes the target authentication profile.</p><p><h3>See Also:</h3>   <a
@@ -5715,6 +5748,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
                                    const ListAssociatedContactsResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::ListAssociatedContacts, request, handler, context);
+  }
+
+  /**
+   * <p>Provides summary information about the attached files configurations for the
+   * specified Amazon Connect instance.</p> <p>This API returns effective
+   * configurations (custom overrides or defaults) for each attachment scope. If no
+   * custom configuration exists for a scope, the default configuration values are
+   * returned.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/ListAttachedFilesConfigurations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListAttachedFilesConfigurationsOutcome ListAttachedFilesConfigurations(
+      const Model::ListAttachedFilesConfigurationsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListAttachedFilesConfigurations that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListAttachedFilesConfigurationsRequestT = Model::ListAttachedFilesConfigurationsRequest>
+  Model::ListAttachedFilesConfigurationsOutcomeCallable ListAttachedFilesConfigurationsCallable(
+      const ListAttachedFilesConfigurationsRequestT& request) const {
+    return SubmitCallable(&ConnectClient::ListAttachedFilesConfigurations, request);
+  }
+
+  /**
+   * An Async wrapper for ListAttachedFilesConfigurations that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListAttachedFilesConfigurationsRequestT = Model::ListAttachedFilesConfigurationsRequest>
+  void ListAttachedFilesConfigurationsAsync(const ListAttachedFilesConfigurationsRequestT& request,
+                                            const ListAttachedFilesConfigurationsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::ListAttachedFilesConfigurations, request, handler, context);
   }
 
   /**
@@ -9571,6 +9637,39 @@ class AWS_CONNECT_API ConnectClient : public Aws::Client::AWSJsonClient,
   void UpdateAgentStatusAsync(const UpdateAgentStatusRequestT& request, const UpdateAgentStatusResponseReceivedHandler& handler,
                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&ConnectClient::UpdateAgentStatus, request, handler, context);
+  }
+
+  /**
+   * <p>Updates the attached files configuration for the specified Amazon Connect
+   * instance and attachment scope.</p> <p>If no instance-specific configuration
+   * exists, this operation creates one. Partial updates are supported—only specified
+   * fields are updated, while unspecified fields retain their current
+   * values.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/connect-2017-08-08/UpdateAttachedFilesConfiguration">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateAttachedFilesConfigurationOutcome UpdateAttachedFilesConfiguration(
+      const Model::UpdateAttachedFilesConfigurationRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateAttachedFilesConfiguration that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename UpdateAttachedFilesConfigurationRequestT = Model::UpdateAttachedFilesConfigurationRequest>
+  Model::UpdateAttachedFilesConfigurationOutcomeCallable UpdateAttachedFilesConfigurationCallable(
+      const UpdateAttachedFilesConfigurationRequestT& request) const {
+    return SubmitCallable(&ConnectClient::UpdateAttachedFilesConfiguration, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateAttachedFilesConfiguration that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdateAttachedFilesConfigurationRequestT = Model::UpdateAttachedFilesConfigurationRequest>
+  void UpdateAttachedFilesConfigurationAsync(const UpdateAttachedFilesConfigurationRequestT& request,
+                                             const UpdateAttachedFilesConfigurationResponseReceivedHandler& handler,
+                                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&ConnectClient::UpdateAttachedFilesConfiguration, request, handler, context);
   }
 
   /**

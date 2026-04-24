@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/awstransfer/Transfer_EXPORTS.h>
+#include <aws/awstransfer/model/WebAppVpcEndpointIpAddressType.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -58,9 +59,29 @@ class UpdateWebAppVpcConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The IP address type for the web app's VPC endpoint. This determines whether
+   * the endpoint is accessible over IPv4 only, or over both IPv4 and IPv6.</p>
+   */
+  inline WebAppVpcEndpointIpAddressType GetIpAddressType() const { return m_ipAddressType; }
+  inline bool IpAddressTypeHasBeenSet() const { return m_ipAddressTypeHasBeenSet; }
+  inline void SetIpAddressType(WebAppVpcEndpointIpAddressType value) {
+    m_ipAddressTypeHasBeenSet = true;
+    m_ipAddressType = value;
+  }
+  inline UpdateWebAppVpcConfig& WithIpAddressType(WebAppVpcEndpointIpAddressType value) {
+    SetIpAddressType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<Aws::String> m_subnetIds;
+
+  WebAppVpcEndpointIpAddressType m_ipAddressType{WebAppVpcEndpointIpAddressType::NOT_SET};
   bool m_subnetIdsHasBeenSet = false;
+  bool m_ipAddressTypeHasBeenSet = false;
 };
 
 }  // namespace Model

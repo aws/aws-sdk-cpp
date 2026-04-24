@@ -47,9 +47,51 @@ class GetQueryResultsRequest : public CloudWatchLogsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The token for the next set of items to return. The token expires after 1
+   * hour.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  inline bool NextTokenHasBeenSet() const { return m_nextTokenHasBeenSet; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetQueryResultsRequest& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The maximum number of log events to return in the response. The maximum is
+   * 10,000 log events.</p>
+   */
+  inline int GetMaxItems() const { return m_maxItems; }
+  inline bool MaxItemsHasBeenSet() const { return m_maxItemsHasBeenSet; }
+  inline void SetMaxItems(int value) {
+    m_maxItemsHasBeenSet = true;
+    m_maxItems = value;
+  }
+  inline GetQueryResultsRequest& WithMaxItems(int value) {
+    SetMaxItems(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_queryId;
+
+  Aws::String m_nextToken;
+
+  int m_maxItems{0};
   bool m_queryIdHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
+  bool m_maxItemsHasBeenSet = false;
 };
 
 }  // namespace Model

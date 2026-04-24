@@ -6,6 +6,8 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/ListFlowAssociationsRequest.h>
+#include <aws/connect/model/ListHoursOfOperationOverridesRequest.h>
 #include <aws/connect/model/ListHoursOfOperationsRequest.h>
 #include <aws/connect/model/ListInstanceAttributesRequest.h>
 #include <aws/connect/model/ListInstanceStorageConfigsRequest.h>
@@ -104,8 +106,6 @@
 #include <aws/connect/model/StopContactStreamingRequest.h>
 #include <aws/connect/model/StopTestCaseExecutionRequest.h>
 #include <aws/connect/model/SubmitContactEvaluationRequest.h>
-#include <aws/connect/model/SuspendContactRecordingRequest.h>
-#include <aws/connect/model/TagContactRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -131,6 +131,50 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+ListFlowAssociationsOutcome ConnectClient::ListFlowAssociations(const ListFlowAssociationsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListFlowAssociations", "Required field: InstanceId, is not set");
+    return ListFlowAssociationsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                            "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/flow-associations-summary/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListFlowAssociationsOutcome(result.GetResultWithOwnership())
+                            : ListFlowAssociationsOutcome(std::move(result.GetError()));
+}
+
+ListHoursOfOperationOverridesOutcome ConnectClient::ListHoursOfOperationOverrides(
+    const ListHoursOfOperationOverridesRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHoursOfOperationOverrides", "Required field: InstanceId, is not set");
+    return ListHoursOfOperationOverridesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [InstanceId]", false));
+  }
+  if (!request.HoursOfOperationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListHoursOfOperationOverrides", "Required field: HoursOfOperationId, is not set");
+    return ListHoursOfOperationOverridesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                                     "Missing required field [HoursOfOperationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/overrides");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListHoursOfOperationOverridesOutcome(result.GetResultWithOwnership())
+                            : ListHoursOfOperationOverridesOutcome(std::move(result.GetError()));
+}
 
 ListHoursOfOperationsOutcome ConnectClient::ListHoursOfOperations(const ListHoursOfOperationsRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
@@ -1708,25 +1752,4 @@ SubmitContactEvaluationOutcome ConnectClient::SubmitContactEvaluation(const Subm
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? SubmitContactEvaluationOutcome(result.GetResultWithOwnership())
                             : SubmitContactEvaluationOutcome(std::move(result.GetError()));
-}
-
-SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const SuspendContactRecordingRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/suspend-recording");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? SuspendContactRecordingOutcome(result.GetResultWithOwnership())
-                            : SuspendContactRecordingOutcome(std::move(result.GetError()));
-}
-
-TagContactOutcome ConnectClient::TagContact(const TagContactRequest& request) const {
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/tags");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
-  return result.IsSuccess() ? TagContactOutcome(result.GetResultWithOwnership()) : TagContactOutcome(std::move(result.GetError()));
 }

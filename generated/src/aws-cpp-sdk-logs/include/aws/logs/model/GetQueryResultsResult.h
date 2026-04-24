@@ -137,6 +137,25 @@ class GetQueryResultsResult {
   ///@}
 
   ///@{
+  /**
+   * <p>If there are more log events remaining in the results, the response includes
+   * a <code>nextToken</code>. You can use this token in a subsequent
+   * <code>GetQueryResults</code> request to get the next set of results.</p>
+   */
+  inline const Aws::String& GetNextToken() const { return m_nextToken; }
+  template <typename NextTokenT = Aws::String>
+  void SetNextToken(NextTokenT&& value) {
+    m_nextTokenHasBeenSet = true;
+    m_nextToken = std::forward<NextTokenT>(value);
+  }
+  template <typename NextTokenT = Aws::String>
+  GetQueryResultsResult& WithNextToken(NextTokenT&& value) {
+    SetNextToken(std::forward<NextTokenT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -163,6 +182,8 @@ class GetQueryResultsResult {
 
   Aws::String m_encryptionKey;
 
+  Aws::String m_nextToken;
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_queryLanguageHasBeenSet = false;
@@ -170,6 +191,7 @@ class GetQueryResultsResult {
   bool m_statisticsHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_encryptionKeyHasBeenSet = false;
+  bool m_nextTokenHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

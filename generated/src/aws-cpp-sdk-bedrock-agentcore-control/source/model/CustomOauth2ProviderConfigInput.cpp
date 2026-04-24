@@ -30,6 +30,18 @@ CustomOauth2ProviderConfigInput& CustomOauth2ProviderConfigInput::operator=(Json
     m_clientSecret = jsonValue.GetString("clientSecret");
     m_clientSecretHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateEndpoint")) {
+    m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
+    m_privateEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateEndpointOverrides")) {
+    Aws::Utils::Array<JsonView> privateEndpointOverridesJsonList = jsonValue.GetArray("privateEndpointOverrides");
+    for (unsigned privateEndpointOverridesIndex = 0; privateEndpointOverridesIndex < privateEndpointOverridesJsonList.GetLength();
+         ++privateEndpointOverridesIndex) {
+      m_privateEndpointOverrides.push_back(privateEndpointOverridesJsonList[privateEndpointOverridesIndex].AsObject());
+    }
+    m_privateEndpointOverridesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +58,20 @@ JsonValue CustomOauth2ProviderConfigInput::Jsonize() const {
 
   if (m_clientSecretHasBeenSet) {
     payload.WithString("clientSecret", m_clientSecret);
+  }
+
+  if (m_privateEndpointHasBeenSet) {
+    payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
+  }
+
+  if (m_privateEndpointOverridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> privateEndpointOverridesJsonList(m_privateEndpointOverrides.size());
+    for (unsigned privateEndpointOverridesIndex = 0; privateEndpointOverridesIndex < privateEndpointOverridesJsonList.GetLength();
+         ++privateEndpointOverridesIndex) {
+      privateEndpointOverridesJsonList[privateEndpointOverridesIndex].AsObject(
+          m_privateEndpointOverrides[privateEndpointOverridesIndex].Jsonize());
+    }
+    payload.WithArray("privateEndpointOverrides", std::move(privateEndpointOverridesJsonList));
   }
 
   return payload;

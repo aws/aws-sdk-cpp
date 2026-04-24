@@ -6,6 +6,8 @@
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/CustomClaimValidationType.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSVector.h>
 
@@ -151,6 +153,48 @@ class CustomJWTAuthorizerConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const PrivateEndpoint& GetPrivateEndpoint() const { return m_privateEndpoint; }
+  inline bool PrivateEndpointHasBeenSet() const { return m_privateEndpointHasBeenSet; }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  void SetPrivateEndpoint(PrivateEndpointT&& value) {
+    m_privateEndpointHasBeenSet = true;
+    m_privateEndpoint = std::forward<PrivateEndpointT>(value);
+  }
+  template <typename PrivateEndpointT = PrivateEndpoint>
+  CustomJWTAuthorizerConfiguration& WithPrivateEndpoint(PrivateEndpointT&& value) {
+    SetPrivateEndpoint(std::forward<PrivateEndpointT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A list of private endpoint overrides for the JWT authorizer. Each override
+   * maps a specific domain to a private endpoint, enabling secure connectivity
+   * through VPC Lattice resource configurations.</p>
+   */
+  inline const Aws::Vector<PrivateEndpointOverride>& GetPrivateEndpointOverrides() const { return m_privateEndpointOverrides; }
+  inline bool PrivateEndpointOverridesHasBeenSet() const { return m_privateEndpointOverridesHasBeenSet; }
+  template <typename PrivateEndpointOverridesT = Aws::Vector<PrivateEndpointOverride>>
+  void SetPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    m_privateEndpointOverridesHasBeenSet = true;
+    m_privateEndpointOverrides = std::forward<PrivateEndpointOverridesT>(value);
+  }
+  template <typename PrivateEndpointOverridesT = Aws::Vector<PrivateEndpointOverride>>
+  CustomJWTAuthorizerConfiguration& WithPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    SetPrivateEndpointOverrides(std::forward<PrivateEndpointOverridesT>(value));
+    return *this;
+  }
+  template <typename PrivateEndpointOverridesT = PrivateEndpointOverride>
+  CustomJWTAuthorizerConfiguration& AddPrivateEndpointOverrides(PrivateEndpointOverridesT&& value) {
+    m_privateEndpointOverridesHasBeenSet = true;
+    m_privateEndpointOverrides.emplace_back(std::forward<PrivateEndpointOverridesT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_discoveryUrl;
 
@@ -161,11 +205,17 @@ class CustomJWTAuthorizerConfiguration {
   Aws::Vector<Aws::String> m_allowedScopes;
 
   Aws::Vector<CustomClaimValidationType> m_customClaims;
+
+  PrivateEndpoint m_privateEndpoint;
+
+  Aws::Vector<PrivateEndpointOverride> m_privateEndpointOverrides;
   bool m_discoveryUrlHasBeenSet = false;
   bool m_allowedAudienceHasBeenSet = false;
   bool m_allowedClientsHasBeenSet = false;
   bool m_allowedScopesHasBeenSet = false;
   bool m_customClaimsHasBeenSet = false;
+  bool m_privateEndpointHasBeenSet = false;
+  bool m_privateEndpointOverridesHasBeenSet = false;
 };
 
 }  // namespace Model

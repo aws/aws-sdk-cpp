@@ -12,6 +12,7 @@
 #include <aws/connect/model/GetMetricDataV2PaginationTraits.h>
 #include <aws/connect/model/ListAgentStatusesPaginationTraits.h>
 #include <aws/connect/model/ListApprovedOriginsPaginationTraits.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsPaginationTraits.h>
 #include <aws/connect/model/ListAuthenticationProfilesPaginationTraits.h>
 #include <aws/connect/model/ListBotsPaginationTraits.h>
 #include <aws/connect/model/ListChildHoursOfOperationsPaginationTraits.h>
@@ -110,6 +111,9 @@ using ListAgentStatusesPaginator = Aws::Utils::Pagination::Paginator<ConnectClie
                                                                      Pagination::ListAgentStatusesPaginationTraits<ConnectClient>>;
 using ListApprovedOriginsPaginator = Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListApprovedOriginsRequest,
                                                                        Pagination::ListApprovedOriginsPaginationTraits<ConnectClient>>;
+using ListAttachedFilesConfigurationsPaginator =
+    Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListAttachedFilesConfigurationsRequest,
+                                      Pagination::ListAttachedFilesConfigurationsPaginationTraits<ConnectClient>>;
 using ListAuthenticationProfilesPaginator =
     Aws::Utils::Pagination::Paginator<ConnectClient, Model::ListAuthenticationProfilesRequest,
                                       Pagination::ListAuthenticationProfilesPaginationTraits<ConnectClient>>;

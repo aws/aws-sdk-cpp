@@ -56,8 +56,9 @@ class CodeConfiguration {
 
   ///@{
   /**
-   * <p>The runtime environment for executing the code (for example, Python 3.9 or
-   * Node.js 18).</p>
+   * <p>The runtime environment for executing the agent code. Specify the programming
+   * language and version to use for the agent runtime. For valid values, see the
+   * list of supported runtimes.</p>
    */
   inline AgentManagedRuntimeType GetRuntime() const { return m_runtime; }
   inline bool RuntimeHasBeenSet() const { return m_runtimeHasBeenSet; }

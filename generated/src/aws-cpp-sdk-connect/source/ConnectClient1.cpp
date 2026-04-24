@@ -13,6 +13,7 @@
 #include <aws/connect/model/DeleteWorkspacePageRequest.h>
 #include <aws/connect/model/DeleteWorkspaceRequest.h>
 #include <aws/connect/model/DescribeAgentStatusRequest.h>
+#include <aws/connect/model/DescribeAttachedFilesConfigurationRequest.h>
 #include <aws/connect/model/DescribeAuthenticationProfileRequest.h>
 #include <aws/connect/model/DescribeContactEvaluationRequest.h>
 #include <aws/connect/model/DescribeContactFlowModuleAliasRequest.h>
@@ -86,6 +87,7 @@
 #include <aws/connect/model/ListAnalyticsDataLakeDataSetsRequest.h>
 #include <aws/connect/model/ListApprovedOriginsRequest.h>
 #include <aws/connect/model/ListAssociatedContactsRequest.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsRequest.h>
 #include <aws/connect/model/ListAuthenticationProfilesRequest.h>
 #include <aws/connect/model/ListBotsRequest.h>
 #include <aws/connect/model/ListChildHoursOfOperationsRequest.h>
@@ -104,8 +106,6 @@
 #include <aws/connect/model/ListEntitySecurityProfilesRequest.h>
 #include <aws/connect/model/ListEvaluationFormVersionsRequest.h>
 #include <aws/connect/model/ListEvaluationFormsRequest.h>
-#include <aws/connect/model/ListFlowAssociationsRequest.h>
-#include <aws/connect/model/ListHoursOfOperationOverridesRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
 #include <aws/core/client/CoreErrors.h>
@@ -317,6 +317,31 @@ DescribeAgentStatusOutcome ConnectClient::DescribeAgentStatus(const DescribeAgen
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? DescribeAgentStatusOutcome(result.GetResultWithOwnership())
                             : DescribeAgentStatusOutcome(std::move(result.GetError()));
+}
+
+DescribeAttachedFilesConfigurationOutcome ConnectClient::DescribeAttachedFilesConfiguration(
+    const DescribeAttachedFilesConfigurationRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAttachedFilesConfiguration", "Required field: InstanceId, is not set");
+    return DescribeAttachedFilesConfigurationOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.AttachmentScopeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DescribeAttachedFilesConfiguration", "Required field: AttachmentScope, is not set");
+    return DescribeAttachedFilesConfigurationOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentScope]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files-configurations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(AttachmentScopeMapper::GetNameForAttachmentScope(request.GetAttachmentScope()));
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? DescribeAttachedFilesConfigurationOutcome(result.GetResultWithOwnership())
+                            : DescribeAttachedFilesConfigurationOutcome(std::move(result.GetError()));
 }
 
 DescribeAuthenticationProfileOutcome ConnectClient::DescribeAuthenticationProfile(
@@ -2045,6 +2070,25 @@ ListAssociatedContactsOutcome ConnectClient::ListAssociatedContacts(const ListAs
                             : ListAssociatedContactsOutcome(std::move(result.GetError()));
 }
 
+ListAttachedFilesConfigurationsOutcome ConnectClient::ListAttachedFilesConfigurations(
+    const ListAttachedFilesConfigurationsRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListAttachedFilesConfigurations", "Required field: InstanceId, is not set");
+    return ListAttachedFilesConfigurationsOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files-configurations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAttachedFilesConfigurationsOutcome(result.GetResultWithOwnership())
+                            : ListAttachedFilesConfigurationsOutcome(std::move(result.GetError()));
+}
+
 ListAuthenticationProfilesOutcome ConnectClient::ListAuthenticationProfiles(const ListAuthenticationProfilesRequest& request) const {
   if (!request.InstanceIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListAuthenticationProfiles", "Required field: InstanceId, is not set");
@@ -2444,48 +2488,4 @@ ListEvaluationFormsOutcome ConnectClient::ListEvaluationForms(const ListEvaluati
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? ListEvaluationFormsOutcome(result.GetResultWithOwnership())
                             : ListEvaluationFormsOutcome(std::move(result.GetError()));
-}
-
-ListFlowAssociationsOutcome ConnectClient::ListFlowAssociations(const ListFlowAssociationsRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListFlowAssociations", "Required field: InstanceId, is not set");
-    return ListFlowAssociationsOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                            "Missing required field [InstanceId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/flow-associations-summary/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListFlowAssociationsOutcome(result.GetResultWithOwnership())
-                            : ListFlowAssociationsOutcome(std::move(result.GetError()));
-}
-
-ListHoursOfOperationOverridesOutcome ConnectClient::ListHoursOfOperationOverrides(
-    const ListHoursOfOperationOverridesRequest& request) const {
-  if (!request.InstanceIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListHoursOfOperationOverrides", "Required field: InstanceId, is not set");
-    return ListHoursOfOperationOverridesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                     "Missing required field [InstanceId]", false));
-  }
-  if (!request.HoursOfOperationIdHasBeenSet()) {
-    AWS_LOGSTREAM_ERROR("ListHoursOfOperationOverrides", "Required field: HoursOfOperationId, is not set");
-    return ListHoursOfOperationOverridesOutcome(Aws::Client::AWSError<ConnectErrors>(ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
-                                                                                     "Missing required field [HoursOfOperationId]", false));
-  }
-
-  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
-    (void)endpointResolutionOutcome;
-    endpointResolutionOutcome.GetResult().AddPathSegments("/hours-of-operations/");
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
-    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetHoursOfOperationId());
-    endpointResolutionOutcome.GetResult().AddPathSegments("/overrides");
-  };
-
-  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
-  return result.IsSuccess() ? ListHoursOfOperationOverridesOutcome(result.GetResultWithOwnership())
-                            : ListHoursOfOperationOverridesOutcome(std::move(result.GetError()));
 }

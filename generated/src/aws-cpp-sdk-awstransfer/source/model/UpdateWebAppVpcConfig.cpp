@@ -25,6 +25,10 @@ UpdateWebAppVpcConfig& UpdateWebAppVpcConfig::operator=(JsonView jsonValue) {
     }
     m_subnetIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IpAddressType")) {
+    m_ipAddressType = WebAppVpcEndpointIpAddressTypeMapper::GetWebAppVpcEndpointIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -37,6 +41,10 @@ JsonValue UpdateWebAppVpcConfig::Jsonize() const {
       subnetIdsJsonList[subnetIdsIndex].AsString(m_subnetIds[subnetIdsIndex]);
     }
     payload.WithArray("SubnetIds", std::move(subnetIdsJsonList));
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("IpAddressType", WebAppVpcEndpointIpAddressTypeMapper::GetNameForWebAppVpcEndpointIpAddressType(m_ipAddressType));
   }
 
   return payload;

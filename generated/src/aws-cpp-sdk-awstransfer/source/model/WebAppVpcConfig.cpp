@@ -36,6 +36,10 @@ WebAppVpcConfig& WebAppVpcConfig::operator=(JsonView jsonValue) {
     }
     m_securityGroupIdsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("IpAddressType")) {
+    m_ipAddressType = WebAppVpcEndpointIpAddressTypeMapper::GetWebAppVpcEndpointIpAddressTypeForName(jsonValue.GetString("IpAddressType"));
+    m_ipAddressTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -60,6 +64,10 @@ JsonValue WebAppVpcConfig::Jsonize() const {
       securityGroupIdsJsonList[securityGroupIdsIndex].AsString(m_securityGroupIds[securityGroupIdsIndex]);
     }
     payload.WithArray("SecurityGroupIds", std::move(securityGroupIdsJsonList));
+  }
+
+  if (m_ipAddressTypeHasBeenSet) {
+    payload.WithString("IpAddressType", WebAppVpcEndpointIpAddressTypeMapper::GetNameForWebAppVpcEndpointIpAddressType(m_ipAddressType));
   }
 
   return payload;

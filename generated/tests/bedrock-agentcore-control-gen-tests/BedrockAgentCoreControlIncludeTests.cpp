@@ -342,8 +342,8 @@
 #include <aws/bedrock-agentcore-control/model/ListingMode.h>
 #include <aws/bedrock-agentcore-control/model/LlmAsAJudgeEvaluatorConfig.h>
 #include <aws/bedrock-agentcore-control/model/MCPGatewayConfiguration.h>
-#include <aws/bedrock-agentcore-control/model/ManagedLatticeResource.h>
 #include <aws/bedrock-agentcore-control/model/ManagedResourceDetails.h>
+#include <aws/bedrock-agentcore-control/model/ManagedVpcResource.h>
 #include <aws/bedrock-agentcore-control/model/McpDescriptor.h>
 #include <aws/bedrock-agentcore-control/model/McpLambdaTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpServerTargetConfiguration.h>
@@ -397,6 +397,7 @@
 #include <aws/bedrock-agentcore-control/model/PolicyStatus.h>
 #include <aws/bedrock-agentcore-control/model/PolicyValidationMode.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
+#include <aws/bedrock-agentcore-control/model/PrivateEndpointOverride.h>
 #include <aws/bedrock-agentcore-control/model/ProtocolConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/PutResourcePolicyResult.h>
@@ -452,6 +453,7 @@
 #include <aws/bedrock-agentcore-control/model/SlackOauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/StartPolicyGenerationResult.h>
+#include <aws/bedrock-agentcore-control/model/Status.h>
 #include <aws/bedrock-agentcore-control/model/StrategyConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResource.h>
 #include <aws/bedrock-agentcore-control/model/StreamDeliveryResources.h>

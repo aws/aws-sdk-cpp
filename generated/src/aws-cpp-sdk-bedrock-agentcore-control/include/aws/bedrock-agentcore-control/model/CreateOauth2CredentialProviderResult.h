@@ -7,6 +7,7 @@
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
 #include <aws/bedrock-agentcore-control/model/Oauth2ProviderConfigOutput.h>
 #include <aws/bedrock-agentcore-control/model/Secret.h>
+#include <aws/bedrock-agentcore-control/model/Status.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
@@ -118,6 +119,21 @@ class CreateOauth2CredentialProviderResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The current status of the OAuth2 credential provider.</p>
+   */
+  inline Status GetStatus() const { return m_status; }
+  inline void SetStatus(Status value) {
+    m_statusHasBeenSet = true;
+    m_status = value;
+  }
+  inline CreateOauth2CredentialProviderResult& WithStatus(Status value) {
+    SetStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -144,6 +160,8 @@ class CreateOauth2CredentialProviderResult {
 
   Oauth2ProviderConfigOutput m_oauth2ProviderConfigOutput;
 
+  Status m_status{Status::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_clientSecretArnHasBeenSet = false;
@@ -151,6 +169,7 @@ class CreateOauth2CredentialProviderResult {
   bool m_credentialProviderArnHasBeenSet = false;
   bool m_callbackUrlHasBeenSet = false;
   bool m_oauth2ProviderConfigOutputHasBeenSet = false;
+  bool m_statusHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

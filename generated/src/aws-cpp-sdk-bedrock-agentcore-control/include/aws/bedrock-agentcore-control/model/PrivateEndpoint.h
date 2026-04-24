@@ -5,7 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
-#include <aws/bedrock-agentcore-control/model/ManagedLatticeResource.h>
+#include <aws/bedrock-agentcore-control/model/ManagedVpcResource.h>
 #include <aws/bedrock-agentcore-control/model/SelfManagedLatticeResource.h>
 
 #include <utility>
@@ -58,25 +58,25 @@ class PrivateEndpoint {
    * Lattice resource. The gateway creates and manages the VPC Lattice resources on
    * your behalf.</p>
    */
-  inline const ManagedLatticeResource& GetManagedLatticeResource() const { return m_managedLatticeResource; }
-  inline bool ManagedLatticeResourceHasBeenSet() const { return m_managedLatticeResourceHasBeenSet; }
-  template <typename ManagedLatticeResourceT = ManagedLatticeResource>
-  void SetManagedLatticeResource(ManagedLatticeResourceT&& value) {
-    m_managedLatticeResourceHasBeenSet = true;
-    m_managedLatticeResource = std::forward<ManagedLatticeResourceT>(value);
+  inline const ManagedVpcResource& GetManagedVpcResource() const { return m_managedVpcResource; }
+  inline bool ManagedVpcResourceHasBeenSet() const { return m_managedVpcResourceHasBeenSet; }
+  template <typename ManagedVpcResourceT = ManagedVpcResource>
+  void SetManagedVpcResource(ManagedVpcResourceT&& value) {
+    m_managedVpcResourceHasBeenSet = true;
+    m_managedVpcResource = std::forward<ManagedVpcResourceT>(value);
   }
-  template <typename ManagedLatticeResourceT = ManagedLatticeResource>
-  PrivateEndpoint& WithManagedLatticeResource(ManagedLatticeResourceT&& value) {
-    SetManagedLatticeResource(std::forward<ManagedLatticeResourceT>(value));
+  template <typename ManagedVpcResourceT = ManagedVpcResource>
+  PrivateEndpoint& WithManagedVpcResource(ManagedVpcResourceT&& value) {
+    SetManagedVpcResource(std::forward<ManagedVpcResourceT>(value));
     return *this;
   }
   ///@}
  private:
   SelfManagedLatticeResource m_selfManagedLatticeResource;
 
-  ManagedLatticeResource m_managedLatticeResource;
+  ManagedVpcResource m_managedVpcResource;
   bool m_selfManagedLatticeResourceHasBeenSet = false;
-  bool m_managedLatticeResourceHasBeenSet = false;
+  bool m_managedVpcResourceHasBeenSet = false;
 };
 
 }  // namespace Model

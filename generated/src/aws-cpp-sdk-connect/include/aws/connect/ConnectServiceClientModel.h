@@ -98,6 +98,7 @@
 #include <aws/connect/model/DeleteWorkspacePageResult.h>
 #include <aws/connect/model/DeleteWorkspaceResult.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
+#include <aws/connect/model/DescribeAttachedFilesConfigurationResult.h>
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationResult.h>
 #include <aws/connect/model/DescribeContactFlowModuleAliasResult.h>
@@ -157,6 +158,7 @@
 #include <aws/connect/model/ListAnalyticsDataLakeDataSetsResult.h>
 #include <aws/connect/model/ListApprovedOriginsResult.h>
 #include <aws/connect/model/ListAssociatedContactsResult.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsResult.h>
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsResult.h>
 #include <aws/connect/model/ListChildHoursOfOperationsResult.h>
@@ -283,6 +285,7 @@
 #include <aws/connect/model/TagContactResult.h>
 #include <aws/connect/model/TransferContactResult.h>
 #include <aws/connect/model/UntagContactResult.h>
+#include <aws/connect/model/UpdateAttachedFilesConfigurationResult.h>
 #include <aws/connect/model/UpdateContactAttributesResult.h>
 #include <aws/connect/model/UpdateContactEvaluationResult.h>
 #include <aws/connect/model/UpdateContactFlowContentResult.h>
@@ -455,6 +458,7 @@ class DeleteWorkspaceRequest;
 class DeleteWorkspaceMediaRequest;
 class DeleteWorkspacePageRequest;
 class DescribeAgentStatusRequest;
+class DescribeAttachedFilesConfigurationRequest;
 class DescribeAuthenticationProfileRequest;
 class DescribeContactRequest;
 class DescribeContactEvaluationRequest;
@@ -528,6 +532,7 @@ class ListAnalyticsDataAssociationsRequest;
 class ListAnalyticsDataLakeDataSetsRequest;
 class ListApprovedOriginsRequest;
 class ListAssociatedContactsRequest;
+class ListAttachedFilesConfigurationsRequest;
 class ListAuthenticationProfilesRequest;
 class ListBotsRequest;
 class ListChildHoursOfOperationsRequest;
@@ -653,6 +658,7 @@ class TransferContactRequest;
 class UntagContactRequest;
 class UntagResourceRequest;
 class UpdateAgentStatusRequest;
+class UpdateAttachedFilesConfigurationRequest;
 class UpdateAuthenticationProfileRequest;
 class UpdateContactRequest;
 class UpdateContactAttributesRequest;
@@ -825,6 +831,7 @@ typedef Aws::Utils::Outcome<DeleteWorkspaceResult, ConnectError> DeleteWorkspace
 typedef Aws::Utils::Outcome<DeleteWorkspaceMediaResult, ConnectError> DeleteWorkspaceMediaOutcome;
 typedef Aws::Utils::Outcome<DeleteWorkspacePageResult, ConnectError> DeleteWorkspacePageOutcome;
 typedef Aws::Utils::Outcome<DescribeAgentStatusResult, ConnectError> DescribeAgentStatusOutcome;
+typedef Aws::Utils::Outcome<DescribeAttachedFilesConfigurationResult, ConnectError> DescribeAttachedFilesConfigurationOutcome;
 typedef Aws::Utils::Outcome<DescribeAuthenticationProfileResult, ConnectError> DescribeAuthenticationProfileOutcome;
 typedef Aws::Utils::Outcome<DescribeContactResult, ConnectError> DescribeContactOutcome;
 typedef Aws::Utils::Outcome<DescribeContactEvaluationResult, ConnectError> DescribeContactEvaluationOutcome;
@@ -898,6 +905,7 @@ typedef Aws::Utils::Outcome<ListAnalyticsDataAssociationsResult, ConnectError> L
 typedef Aws::Utils::Outcome<ListAnalyticsDataLakeDataSetsResult, ConnectError> ListAnalyticsDataLakeDataSetsOutcome;
 typedef Aws::Utils::Outcome<ListApprovedOriginsResult, ConnectError> ListApprovedOriginsOutcome;
 typedef Aws::Utils::Outcome<ListAssociatedContactsResult, ConnectError> ListAssociatedContactsOutcome;
+typedef Aws::Utils::Outcome<ListAttachedFilesConfigurationsResult, ConnectError> ListAttachedFilesConfigurationsOutcome;
 typedef Aws::Utils::Outcome<ListAuthenticationProfilesResult, ConnectError> ListAuthenticationProfilesOutcome;
 typedef Aws::Utils::Outcome<ListBotsResult, ConnectError> ListBotsOutcome;
 typedef Aws::Utils::Outcome<ListChildHoursOfOperationsResult, ConnectError> ListChildHoursOfOperationsOutcome;
@@ -1023,6 +1031,7 @@ typedef Aws::Utils::Outcome<TransferContactResult, ConnectError> TransferContact
 typedef Aws::Utils::Outcome<UntagContactResult, ConnectError> UntagContactOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UntagResourceOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAgentStatusOutcome;
+typedef Aws::Utils::Outcome<UpdateAttachedFilesConfigurationResult, ConnectError> UpdateAttachedFilesConfigurationOutcome;
 typedef Aws::Utils::Outcome<Aws::NoResult, ConnectError> UpdateAuthenticationProfileOutcome;
 typedef Aws::Utils::Outcome<UpdateContactResult, ConnectError> UpdateContactOutcome;
 typedef Aws::Utils::Outcome<UpdateContactAttributesResult, ConnectError> UpdateContactAttributesOutcome;
@@ -1195,6 +1204,7 @@ typedef std::future<DeleteWorkspaceOutcome> DeleteWorkspaceOutcomeCallable;
 typedef std::future<DeleteWorkspaceMediaOutcome> DeleteWorkspaceMediaOutcomeCallable;
 typedef std::future<DeleteWorkspacePageOutcome> DeleteWorkspacePageOutcomeCallable;
 typedef std::future<DescribeAgentStatusOutcome> DescribeAgentStatusOutcomeCallable;
+typedef std::future<DescribeAttachedFilesConfigurationOutcome> DescribeAttachedFilesConfigurationOutcomeCallable;
 typedef std::future<DescribeAuthenticationProfileOutcome> DescribeAuthenticationProfileOutcomeCallable;
 typedef std::future<DescribeContactOutcome> DescribeContactOutcomeCallable;
 typedef std::future<DescribeContactEvaluationOutcome> DescribeContactEvaluationOutcomeCallable;
@@ -1268,6 +1278,7 @@ typedef std::future<ListAnalyticsDataAssociationsOutcome> ListAnalyticsDataAssoc
 typedef std::future<ListAnalyticsDataLakeDataSetsOutcome> ListAnalyticsDataLakeDataSetsOutcomeCallable;
 typedef std::future<ListApprovedOriginsOutcome> ListApprovedOriginsOutcomeCallable;
 typedef std::future<ListAssociatedContactsOutcome> ListAssociatedContactsOutcomeCallable;
+typedef std::future<ListAttachedFilesConfigurationsOutcome> ListAttachedFilesConfigurationsOutcomeCallable;
 typedef std::future<ListAuthenticationProfilesOutcome> ListAuthenticationProfilesOutcomeCallable;
 typedef std::future<ListBotsOutcome> ListBotsOutcomeCallable;
 typedef std::future<ListChildHoursOfOperationsOutcome> ListChildHoursOfOperationsOutcomeCallable;
@@ -1393,6 +1404,7 @@ typedef std::future<TransferContactOutcome> TransferContactOutcomeCallable;
 typedef std::future<UntagContactOutcome> UntagContactOutcomeCallable;
 typedef std::future<UntagResourceOutcome> UntagResourceOutcomeCallable;
 typedef std::future<UpdateAgentStatusOutcome> UpdateAgentStatusOutcomeCallable;
+typedef std::future<UpdateAttachedFilesConfigurationOutcome> UpdateAttachedFilesConfigurationOutcomeCallable;
 typedef std::future<UpdateAuthenticationProfileOutcome> UpdateAuthenticationProfileOutcomeCallable;
 typedef std::future<UpdateContactOutcome> UpdateContactOutcomeCallable;
 typedef std::future<UpdateContactAttributesOutcome> UpdateContactAttributesOutcomeCallable;
@@ -1803,6 +1815,10 @@ typedef std::function<void(const ConnectClient*, const Model::DeleteWorkspacePag
 typedef std::function<void(const ConnectClient*, const Model::DescribeAgentStatusRequest&, const Model::DescribeAgentStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeAgentStatusResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::DescribeAttachedFilesConfigurationRequest&,
+                           const Model::DescribeAttachedFilesConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeAttachedFilesConfigurationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::DescribeAuthenticationProfileRequest&,
                            const Model::DescribeAuthenticationProfileOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
@@ -2042,6 +2058,10 @@ typedef std::function<void(const ConnectClient*, const Model::ListApprovedOrigin
 typedef std::function<void(const ConnectClient*, const Model::ListAssociatedContactsRequest&, const Model::ListAssociatedContactsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAssociatedContactsResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::ListAttachedFilesConfigurationsRequest&,
+                           const Model::ListAttachedFilesConfigurationsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListAttachedFilesConfigurationsResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::ListAuthenticationProfilesRequest&,
                            const Model::ListAuthenticationProfilesOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListAuthenticationProfilesResponseReceivedHandler;
@@ -2429,6 +2449,10 @@ typedef std::function<void(const ConnectClient*, const Model::UntagResourceReque
 typedef std::function<void(const ConnectClient*, const Model::UpdateAgentStatusRequest&, const Model::UpdateAgentStatusOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAgentStatusResponseReceivedHandler;
+typedef std::function<void(const ConnectClient*, const Model::UpdateAttachedFilesConfigurationRequest&,
+                           const Model::UpdateAttachedFilesConfigurationOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdateAttachedFilesConfigurationResponseReceivedHandler;
 typedef std::function<void(const ConnectClient*, const Model::UpdateAuthenticationProfileRequest&,
                            const Model::UpdateAuthenticationProfileOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateAuthenticationProfileResponseReceivedHandler;

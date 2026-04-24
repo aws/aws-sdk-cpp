@@ -50,6 +50,18 @@ CustomJWTAuthorizerConfiguration& CustomJWTAuthorizerConfiguration::operator=(Js
     }
     m_customClaimsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("privateEndpoint")) {
+    m_privateEndpoint = jsonValue.GetObject("privateEndpoint");
+    m_privateEndpointHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("privateEndpointOverrides")) {
+    Aws::Utils::Array<JsonView> privateEndpointOverridesJsonList = jsonValue.GetArray("privateEndpointOverrides");
+    for (unsigned privateEndpointOverridesIndex = 0; privateEndpointOverridesIndex < privateEndpointOverridesJsonList.GetLength();
+         ++privateEndpointOverridesIndex) {
+      m_privateEndpointOverrides.push_back(privateEndpointOverridesJsonList[privateEndpointOverridesIndex].AsObject());
+    }
+    m_privateEndpointOverridesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -90,6 +102,20 @@ JsonValue CustomJWTAuthorizerConfiguration::Jsonize() const {
       customClaimsJsonList[customClaimsIndex].AsObject(m_customClaims[customClaimsIndex].Jsonize());
     }
     payload.WithArray("customClaims", std::move(customClaimsJsonList));
+  }
+
+  if (m_privateEndpointHasBeenSet) {
+    payload.WithObject("privateEndpoint", m_privateEndpoint.Jsonize());
+  }
+
+  if (m_privateEndpointOverridesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> privateEndpointOverridesJsonList(m_privateEndpointOverrides.size());
+    for (unsigned privateEndpointOverridesIndex = 0; privateEndpointOverridesIndex < privateEndpointOverridesJsonList.GetLength();
+         ++privateEndpointOverridesIndex) {
+      privateEndpointOverridesJsonList[privateEndpointOverridesIndex].AsObject(
+          m_privateEndpointOverrides[privateEndpointOverridesIndex].Jsonize());
+    }
+    payload.WithArray("privateEndpointOverrides", std::move(privateEndpointOverridesJsonList));
   }
 
   return payload;

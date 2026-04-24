@@ -10,7 +10,7 @@
 namespace Aws {
 namespace EVS {
 namespace Model {
-enum class InstanceType { NOT_SET, i4i_metal };
+enum class InstanceType { NOT_SET, i4i_metal, i7i_metal_24xl };
 
 namespace InstanceTypeMapper {
 AWS_EVS_API InstanceType GetInstanceTypeForName(const Aws::String& name);

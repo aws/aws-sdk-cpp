@@ -43,6 +43,7 @@
 #include <aws/connect/model/AiUseCase.h>
 #include <aws/connect/model/AliasConfiguration.h>
 #include <aws/connect/model/AllowedCapabilities.h>
+#include <aws/connect/model/AllowedExtension.h>
 #include <aws/connect/model/AllowedUserAction.h>
 #include <aws/connect/model/AnalyticsDataAssociationResult.h>
 #include <aws/connect/model/AnalyticsDataSetsResult.h>
@@ -87,7 +88,10 @@
 #include <aws/connect/model/AttachedFileError.h>
 #include <aws/connect/model/AttachedFileInvalidRequestExceptionReason.h>
 #include <aws/connect/model/AttachedFileServiceQuotaExceededExceptionReason.h>
+#include <aws/connect/model/AttachedFilesConfiguration.h>
+#include <aws/connect/model/AttachedFilesConfigurationSummary.h>
 #include <aws/connect/model/AttachmentReference.h>
+#include <aws/connect/model/AttachmentScope.h>
 #include <aws/connect/model/Attendee.h>
 #include <aws/connect/model/Attribute.h>
 #include <aws/connect/model/AttributeAndCondition.h>
@@ -365,6 +369,8 @@
 #include <aws/connect/model/DeleteWorkspaceResult.h>
 #include <aws/connect/model/DescribeAgentStatusRequest.h>
 #include <aws/connect/model/DescribeAgentStatusResult.h>
+#include <aws/connect/model/DescribeAttachedFilesConfigurationRequest.h>
+#include <aws/connect/model/DescribeAttachedFilesConfigurationResult.h>
 #include <aws/connect/model/DescribeAuthenticationProfileRequest.h>
 #include <aws/connect/model/DescribeAuthenticationProfileResult.h>
 #include <aws/connect/model/DescribeContactEvaluationRequest.h>
@@ -575,6 +581,7 @@
 #include <aws/connect/model/ExecutionRecordStatus.h>
 #include <aws/connect/model/Expiry.h>
 #include <aws/connect/model/Expression.h>
+#include <aws/connect/model/ExtensionConfiguration.h>
 #include <aws/connect/model/ExternalInvocationConfiguration.h>
 #include <aws/connect/model/FailedBatchAssociationSummary.h>
 #include <aws/connect/model/FailedRequest.h>
@@ -698,6 +705,8 @@
 #include <aws/connect/model/ListApprovedOriginsResult.h>
 #include <aws/connect/model/ListAssociatedContactsRequest.h>
 #include <aws/connect/model/ListAssociatedContactsResult.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsRequest.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsResult.h>
 #include <aws/connect/model/ListAuthenticationProfilesRequest.h>
 #include <aws/connect/model/ListAuthenticationProfilesResult.h>
 #include <aws/connect/model/ListBotsRequest.h>
@@ -1220,6 +1229,8 @@
 #include <aws/connect/model/UntagContactResult.h>
 #include <aws/connect/model/UntagResourceRequest.h>
 #include <aws/connect/model/UpdateAgentStatusRequest.h>
+#include <aws/connect/model/UpdateAttachedFilesConfigurationRequest.h>
+#include <aws/connect/model/UpdateAttachedFilesConfigurationResult.h>
 #include <aws/connect/model/UpdateAuthenticationProfileRequest.h>
 #include <aws/connect/model/UpdateCaseActionDefinition.h>
 #include <aws/connect/model/UpdateContactAttributesRequest.h>

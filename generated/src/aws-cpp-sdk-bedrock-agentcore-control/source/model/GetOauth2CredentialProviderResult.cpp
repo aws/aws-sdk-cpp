@@ -57,6 +57,14 @@ GetOauth2CredentialProviderResult& GetOauth2CredentialProviderResult::operator=(
     m_lastUpdatedTime = jsonValue.GetDouble("lastUpdatedTime");
     m_lastUpdatedTimeHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("status")) {
+    m_status = StatusMapper::GetStatusForName(jsonValue.GetString("status"));
+    m_statusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("failureReason")) {
+    m_failureReason = jsonValue.GetString("failureReason");
+    m_failureReasonHasBeenSet = true;
+  }
 
   const auto& headers = result.GetHeaderValueCollection();
   const auto& requestIdIter = headers.find("x-amzn-requestid");

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class AgentManagedRuntimeType { NOT_SET, PYTHON_3_10, PYTHON_3_11, PYTHON_3_12, PYTHON_3_13, PYTHON_3_14 };
+enum class AgentManagedRuntimeType { NOT_SET, PYTHON_3_10, PYTHON_3_11, PYTHON_3_12, PYTHON_3_13, PYTHON_3_14, NODE_22 };
 
 namespace AgentManagedRuntimeTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API AgentManagedRuntimeType GetAgentManagedRuntimeTypeForName(const Aws::String& name);

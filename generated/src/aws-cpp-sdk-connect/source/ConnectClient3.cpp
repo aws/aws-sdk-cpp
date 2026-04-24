@@ -6,11 +6,14 @@
 #include <aws/connect/ConnectClient.h>
 #include <aws/connect/ConnectEndpointProvider.h>
 #include <aws/connect/ConnectErrorMarshaller.h>
+#include <aws/connect/model/SuspendContactRecordingRequest.h>
+#include <aws/connect/model/TagContactRequest.h>
 #include <aws/connect/model/TagResourceRequest.h>
 #include <aws/connect/model/TransferContactRequest.h>
 #include <aws/connect/model/UntagContactRequest.h>
 #include <aws/connect/model/UntagResourceRequest.h>
 #include <aws/connect/model/UpdateAgentStatusRequest.h>
+#include <aws/connect/model/UpdateAttachedFilesConfigurationRequest.h>
 #include <aws/connect/model/UpdateAuthenticationProfileRequest.h>
 #include <aws/connect/model/UpdateContactAttributesRequest.h>
 #include <aws/connect/model/UpdateContactEvaluationRequest.h>
@@ -98,6 +101,27 @@ using namespace Aws::Http;
 using namespace Aws::Utils::Json;
 using namespace smithy::components::tracing;
 using ResolveEndpointOutcome = Aws::Endpoint::ResolveEndpointOutcome;
+
+SuspendContactRecordingOutcome ConnectClient::SuspendContactRecording(const SuspendContactRecordingRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/suspend-recording");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? SuspendContactRecordingOutcome(result.GetResultWithOwnership())
+                            : SuspendContactRecordingOutcome(std::move(result.GetError()));
+}
+
+TagContactOutcome ConnectClient::TagContact(const TagContactRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/contact/tags");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagContactOutcome(result.GetResultWithOwnership()) : TagContactOutcome(std::move(result.GetError()));
+}
 
 TagResourceOutcome ConnectClient::TagResource(const TagResourceRequest& request) const {
   if (!request.ResourceArnHasBeenSet()) {
@@ -199,6 +223,31 @@ UpdateAgentStatusOutcome ConnectClient::UpdateAgentStatus(const UpdateAgentStatu
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? UpdateAgentStatusOutcome(result.GetResultWithOwnership())
                             : UpdateAgentStatusOutcome(std::move(result.GetError()));
+}
+
+UpdateAttachedFilesConfigurationOutcome ConnectClient::UpdateAttachedFilesConfiguration(
+    const UpdateAttachedFilesConfigurationRequest& request) const {
+  if (!request.InstanceIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAttachedFilesConfiguration", "Required field: InstanceId, is not set");
+    return UpdateAttachedFilesConfigurationOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [InstanceId]", false));
+  }
+  if (!request.AttachmentScopeHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateAttachedFilesConfiguration", "Required field: AttachmentScope, is not set");
+    return UpdateAttachedFilesConfigurationOutcome(Aws::Client::AWSError<ConnectErrors>(
+        ConnectErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [AttachmentScope]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/attached-files-configurations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetInstanceId());
+    endpointResolutionOutcome.GetResult().AddPathSegment(AttachmentScopeMapper::GetNameForAttachmentScope(request.GetAttachmentScope()));
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdateAttachedFilesConfigurationOutcome(result.GetResultWithOwnership())
+                            : UpdateAttachedFilesConfigurationOutcome(std::move(result.GetError()));
 }
 
 UpdateAuthenticationProfileOutcome ConnectClient::UpdateAuthenticationProfile(const UpdateAuthenticationProfileRequest& request) const {

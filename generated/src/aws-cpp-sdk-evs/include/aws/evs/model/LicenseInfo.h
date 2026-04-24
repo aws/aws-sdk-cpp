@@ -37,7 +37,7 @@ class LicenseInfo {
   /**
    * <p> The VCF solution key. This license unlocks VMware VCF product features,
    * including vSphere, NSX, SDDC Manager, and vCenter Server. The VCF solution key
-   * must cover a minimum of 256 cores.</p>
+   * must meet the instance-type-specific minimum core requirements.</p>
    */
   inline const Aws::String& GetSolutionKey() const { return m_solutionKey; }
   inline bool SolutionKeyHasBeenSet() const { return m_solutionKeyHasBeenSet; }
@@ -56,7 +56,7 @@ class LicenseInfo {
   ///@{
   /**
    * <p> The VSAN license key. This license unlocks vSAN features. The vSAN license
-   * key must provide at least 110 TiB of vSAN capacity.</p>
+   * key must meet the instance-type-specific minimum capacity requirements.</p>
    */
   inline const Aws::String& GetVsanKey() const { return m_vsanKey; }
   inline bool VsanKeyHasBeenSet() const { return m_vsanKeyHasBeenSet; }

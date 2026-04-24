@@ -19,6 +19,14 @@ Aws::String GetQueryResultsRequest::SerializePayload() const {
     payload.WithString("queryId", m_queryId);
   }
 
+  if (m_nextTokenHasBeenSet) {
+    payload.WithString("nextToken", m_nextToken);
+  }
+
+  if (m_maxItemsHasBeenSet) {
+    payload.WithInteger("maxItems", m_maxItems);
+  }
+
   return payload.View().WriteReadable();
 }
 

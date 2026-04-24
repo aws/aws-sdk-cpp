@@ -26,14 +26,14 @@ namespace Model {
  * <p>Configuration for a managed VPC Lattice resource. The gateway creates and
  * manages the VPC Lattice resource gateway and resource configuration on your
  * behalf using a service-linked role.</p><p><h3>See Also:</h3>   <a
- * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ManagedLatticeResource">AWS
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ManagedVpcResource">AWS
  * API Reference</a></p>
  */
-class ManagedLatticeResource {
+class ManagedVpcResource {
  public:
-  AWS_BEDROCKAGENTCORECONTROL_API ManagedLatticeResource() = default;
-  AWS_BEDROCKAGENTCORECONTROL_API ManagedLatticeResource(Aws::Utils::Json::JsonView jsonValue);
-  AWS_BEDROCKAGENTCORECONTROL_API ManagedLatticeResource& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API ManagedVpcResource() = default;
+  AWS_BEDROCKAGENTCORECONTROL_API ManagedVpcResource(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORECONTROL_API ManagedVpcResource& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_BEDROCKAGENTCORECONTROL_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
@@ -48,7 +48,7 @@ class ManagedLatticeResource {
     m_vpcIdentifier = std::forward<VpcIdentifierT>(value);
   }
   template <typename VpcIdentifierT = Aws::String>
-  ManagedLatticeResource& WithVpcIdentifier(VpcIdentifierT&& value) {
+  ManagedVpcResource& WithVpcIdentifier(VpcIdentifierT&& value) {
     SetVpcIdentifier(std::forward<VpcIdentifierT>(value));
     return *this;
   }
@@ -67,12 +67,12 @@ class ManagedLatticeResource {
     m_subnetIds = std::forward<SubnetIdsT>(value);
   }
   template <typename SubnetIdsT = Aws::Vector<Aws::String>>
-  ManagedLatticeResource& WithSubnetIds(SubnetIdsT&& value) {
+  ManagedVpcResource& WithSubnetIds(SubnetIdsT&& value) {
     SetSubnetIds(std::forward<SubnetIdsT>(value));
     return *this;
   }
   template <typename SubnetIdsT = Aws::String>
-  ManagedLatticeResource& AddSubnetIds(SubnetIdsT&& value) {
+  ManagedVpcResource& AddSubnetIds(SubnetIdsT&& value) {
     m_subnetIdsHasBeenSet = true;
     m_subnetIds.emplace_back(std::forward<SubnetIdsT>(value));
     return *this;
@@ -89,7 +89,7 @@ class ManagedLatticeResource {
     m_endpointIpAddressTypeHasBeenSet = true;
     m_endpointIpAddressType = value;
   }
-  inline ManagedLatticeResource& WithEndpointIpAddressType(EndpointIpAddressType value) {
+  inline ManagedVpcResource& WithEndpointIpAddressType(EndpointIpAddressType value) {
     SetEndpointIpAddressType(value);
     return *this;
   }
@@ -108,12 +108,12 @@ class ManagedLatticeResource {
     m_securityGroupIds = std::forward<SecurityGroupIdsT>(value);
   }
   template <typename SecurityGroupIdsT = Aws::Vector<Aws::String>>
-  ManagedLatticeResource& WithSecurityGroupIds(SecurityGroupIdsT&& value) {
+  ManagedVpcResource& WithSecurityGroupIds(SecurityGroupIdsT&& value) {
     SetSecurityGroupIds(std::forward<SecurityGroupIdsT>(value));
     return *this;
   }
   template <typename SecurityGroupIdsT = Aws::String>
-  ManagedLatticeResource& AddSecurityGroupIds(SecurityGroupIdsT&& value) {
+  ManagedVpcResource& AddSecurityGroupIds(SecurityGroupIdsT&& value) {
     m_securityGroupIdsHasBeenSet = true;
     m_securityGroupIds.emplace_back(std::forward<SecurityGroupIdsT>(value));
     return *this;
@@ -132,12 +132,12 @@ class ManagedLatticeResource {
     m_tags = std::forward<TagsT>(value);
   }
   template <typename TagsT = Aws::Map<Aws::String, Aws::String>>
-  ManagedLatticeResource& WithTags(TagsT&& value) {
+  ManagedVpcResource& WithTags(TagsT&& value) {
     SetTags(std::forward<TagsT>(value));
     return *this;
   }
   template <typename TagsKeyT = Aws::String, typename TagsValueT = Aws::String>
-  ManagedLatticeResource& AddTags(TagsKeyT&& key, TagsValueT&& value) {
+  ManagedVpcResource& AddTags(TagsKeyT&& key, TagsValueT&& value) {
     m_tagsHasBeenSet = true;
     m_tags.emplace(std::forward<TagsKeyT>(key), std::forward<TagsValueT>(value));
     return *this;
@@ -158,7 +158,7 @@ class ManagedLatticeResource {
     m_routingDomain = std::forward<RoutingDomainT>(value);
   }
   template <typename RoutingDomainT = Aws::String>
-  ManagedLatticeResource& WithRoutingDomain(RoutingDomainT&& value) {
+  ManagedVpcResource& WithRoutingDomain(RoutingDomainT&& value) {
     SetRoutingDomain(std::forward<RoutingDomainT>(value));
     return *this;
   }

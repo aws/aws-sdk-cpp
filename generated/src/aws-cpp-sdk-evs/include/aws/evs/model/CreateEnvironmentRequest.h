@@ -247,11 +247,14 @@ class CreateEnvironmentRequest : public EVSRequest {
   /**
    * <p>The license information that Amazon EVS requires to create an environment.
    * Amazon EVS requires two license keys: a VCF solution key and a vSAN license key.
-   * The VCF solution key must cover a minimum of 256 cores. The vSAN license key
-   * must provide at least 110 TiB of vSAN capacity.</p> <p>VCF licenses can be used
-   * for only one Amazon EVS environment. Amazon EVS does not support reuse of VCF
-   * licenses for multiple environments.</p> <p>VCF license information can be
-   * retrieved from the Broadcom portal.</p>
+   * The VCF solution key must meet minimum core requirements, and the vSAN license
+   * key must meet minimum capacity requirements for your selected instance type.</p>
+   * <p>For information about minimum license requirements, see <a
+   * href="https://docs.aws.amazon.com/evs/latest/userguide/vcf-license-mgmt.html">the
+   * VCF subscriptions section</a> in the <i>Amazon EVS User Guide</i>.</p> <p>VCF
+   * licenses can be used for only one Amazon EVS environment. Amazon EVS does not
+   * support reuse of VCF licenses for multiple environments.</p> <p>VCF license
+   * information can be retrieved from the Broadcom portal.</p>
    */
   inline const Aws::Vector<LicenseInfo>& GetLicenseInfo() const { return m_licenseInfo; }
   inline bool LicenseInfoHasBeenSet() const { return m_licenseInfoHasBeenSet; }

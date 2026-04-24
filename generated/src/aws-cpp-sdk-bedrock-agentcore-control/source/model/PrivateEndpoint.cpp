@@ -22,9 +22,9 @@ PrivateEndpoint& PrivateEndpoint::operator=(JsonView jsonValue) {
     m_selfManagedLatticeResource = jsonValue.GetObject("selfManagedLatticeResource");
     m_selfManagedLatticeResourceHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("managedLatticeResource")) {
-    m_managedLatticeResource = jsonValue.GetObject("managedLatticeResource");
-    m_managedLatticeResourceHasBeenSet = true;
+  if (jsonValue.ValueExists("managedVpcResource")) {
+    m_managedVpcResource = jsonValue.GetObject("managedVpcResource");
+    m_managedVpcResourceHasBeenSet = true;
   }
   return *this;
 }
@@ -36,8 +36,8 @@ JsonValue PrivateEndpoint::Jsonize() const {
     payload.WithObject("selfManagedLatticeResource", m_selfManagedLatticeResource.Jsonize());
   }
 
-  if (m_managedLatticeResourceHasBeenSet) {
-    payload.WithObject("managedLatticeResource", m_managedLatticeResource.Jsonize());
+  if (m_managedVpcResourceHasBeenSet) {
+    payload.WithObject("managedVpcResource", m_managedVpcResource.Jsonize());
   }
 
   return payload;

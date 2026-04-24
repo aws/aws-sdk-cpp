@@ -57,6 +57,7 @@
 #include <aws/connect/model/ListHoursOfOperationsPaginationTraits.h>
 #include <aws/connect/model/SearchWorkspacesPaginationTraits.h>
 #include <aws/connect/model/ListUserHierarchyGroupsPaginationTraits.h>
+#include <aws/connect/model/ListAttachedFilesConfigurationsPaginationTraits.h>
 #include <aws/connect/model/SearchAvailablePhoneNumbersPaginationTraits.h>
 #include <aws/connect/model/ListPromptsPaginationTraits.h>
 #include <aws/connect/model/ListContactFlowModulesPaginationTraits.h>

@@ -257,6 +257,7 @@
 #include <aws/awstransfer/model/WebAppIdentityProviderDetails.h>
 #include <aws/awstransfer/model/WebAppUnits.h>
 #include <aws/awstransfer/model/WebAppVpcConfig.h>
+#include <aws/awstransfer/model/WebAppVpcEndpointIpAddressType.h>
 #include <aws/awstransfer/model/WorkflowDetail.h>
 #include <aws/awstransfer/model/WorkflowDetails.h>
 #include <aws/awstransfer/model/WorkflowStep.h>

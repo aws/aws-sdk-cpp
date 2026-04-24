@@ -96,10 +96,9 @@ class Host {
 
   ///@{
   /**
-   * <p>The EC2 instance type of the host.</p>  <p>Currently, Amazon EVS
-   * supports only the <code>i4i.metal</code> instance type.</p>
-   * <p>EC2 instances created through Amazon EVS do not support associating an IAM
-   * instance profile.</p>
+   * <p>The EC2 instance type of the host.</p>  <p>EC2 instances created
+   * through Amazon EVS do not support associating an IAM instance profile.</p>
+   *
    */
   inline InstanceType GetInstanceType() const { return m_instanceType; }
   inline bool InstanceTypeHasBeenSet() const { return m_instanceTypeHasBeenSet; }

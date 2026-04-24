@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0.
  */
 
-#include <aws/bedrock-agentcore-control/model/ManagedLatticeResource.h>
+#include <aws/bedrock-agentcore-control/model/ManagedVpcResource.h>
 #include <aws/core/utils/json/JsonSerializer.h>
 
 #include <utility>
@@ -15,9 +15,9 @@ namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
 
-ManagedLatticeResource::ManagedLatticeResource(JsonView jsonValue) { *this = jsonValue; }
+ManagedVpcResource::ManagedVpcResource(JsonView jsonValue) { *this = jsonValue; }
 
-ManagedLatticeResource& ManagedLatticeResource::operator=(JsonView jsonValue) {
+ManagedVpcResource& ManagedVpcResource::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("vpcIdentifier")) {
     m_vpcIdentifier = jsonValue.GetString("vpcIdentifier");
     m_vpcIdentifierHasBeenSet = true;
@@ -54,7 +54,7 @@ ManagedLatticeResource& ManagedLatticeResource::operator=(JsonView jsonValue) {
   return *this;
 }
 
-JsonValue ManagedLatticeResource::Jsonize() const {
+JsonValue ManagedVpcResource::Jsonize() const {
   JsonValue payload;
 
   if (m_vpcIdentifierHasBeenSet) {
