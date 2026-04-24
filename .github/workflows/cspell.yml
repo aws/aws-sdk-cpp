@@ -1,4 +1,4 @@
-name: cspell
+name: master
 
 on: [push]
 
