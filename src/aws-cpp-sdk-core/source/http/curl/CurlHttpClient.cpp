@@ -19,6 +19,7 @@
 #include <algorithm>
 #include <cassert>
 #include <thread>
+#include <ostream>
 
 using namespace Aws::Client;
 using namespace Aws::Http;
@@ -181,6 +182,27 @@ static int64_t GetContentLengthFromHeader(CURL* connectionHandle,
   return hasContentLength ? static_cast<int64_t>(contentLength) : -1;
 }
 
+// Best-effort output position probe for diagnostics only.
+// Returns false if the stream does not support positioning.
+static bool TryGetOutputPos(std::ostream& os,
+                            std::ostream::pos_type& outPos) noexcept
+{
+    std::streambuf* sb = os.rdbuf();
+    if (!sb)
+    {
+        return false;
+    }
+
+    const auto pos = sb->pubseekoff(0, std::ios_base::cur, std::ios_base::out);
+    if (pos == std::ostream::pos_type(std::ostream::off_type(-1)))
+    {
+        return false;
+    }
+
+    outPos = pos;
+    return true;
+}
+
 static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
 {
     if (ptr)
@@ -217,38 +239,51 @@ static size_t WriteData(char* ptr, size_t size, size_t nmemb, void* userdata)
           }
         }
 
-        if (response->GetResponseBody().fail()) {
-            const auto& ref = response->GetResponseBody();
-            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Response output stream in bad state (eof: "
-                    << ref.eof() << ", bad: " << ref.bad() << ")");
+        auto& body = response->GetResponseBody();
+
+        if (body.fail()) {
+            const auto& ref = body;
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG,
+                "Response output stream in bad state (eof: "
+                << ref.eof() << ", bad: " << ref.bad() << ")");
             return 0;
         }
 
-        auto cur = response->GetResponseBody().tellp();
-        if (response->GetResponseBody().fail()) {
-            const auto& ref = response->GetResponseBody();
-            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Unable to query response output position (eof: "
-                    << ref.eof() << ", bad: " << ref.bad() << ")");
+        body.write(ptr, static_cast<std::streamsize>(sizeToWrite));
+        if (body.fail()) {
+            const auto& ref = body;
+
+            std::ostream::pos_type pos{};
+            const bool hasPos = TryGetOutputPos(body, pos);
+
+            Aws::StringStream ss;
+            ss << "Failed to write " << size << " / " << sizeToWrite << " B response";
+            if (hasPos) {
+                ss << " at " << pos;
+            } else {
+                ss << " (output stream not seekable)";
+            }
+            ss << " (received so far: "
+                << context->m_numBytesResponseReceived
+                << " B, eof: " << ref.eof()
+                << ", bad: " << ref.bad() << ")";
+
+            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, ss.str());
             return 0;
         }
 
-        response->GetResponseBody().write(ptr, static_cast<std::streamsize>(sizeToWrite));
-        if (response->GetResponseBody().fail()) {
-            const auto& ref = response->GetResponseBody();
-            AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to write " << size << " / " << sizeToWrite << " B response"
-                << " at " << cur << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
-            return 0;
-        }
         if ((context->m_request->IsEventStreamRequest() || context->m_request->HasEventStreamResponse() )
             && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE))
         {
-            response->GetResponseBody().flush();
-            if (response->GetResponseBody().fail()) {
-                const auto& ref = response->GetResponseBody();
-                AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG, "Failed to flush event response (eof: "
+            body.flush();
+            if (body.fail()) {
+                const auto& ref = body;
+                AWS_LOGSTREAM_ERROR(CURL_HTTP_CLIENT_TAG,
+                    "Failed to flush event response (eof: "
                     << ref.eof() << ", bad: " << ref.bad() << ")");
                 return 0;
             }
+
         }
         auto& receivedHandler = context->m_request->GetDataReceivedEventHandler();
         if (receivedHandler)
