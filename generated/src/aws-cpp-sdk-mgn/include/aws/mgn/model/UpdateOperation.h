@@ -35,6 +35,40 @@ class UpdateOperation {
 
   ///@{
   /**
+   * <p>The updated name for the construct.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  UpdateOperation& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Whether to exclude this construct from the migration.</p>
+   */
+  inline bool GetExcluded() const { return m_excluded; }
+  inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+  inline void SetExcluded(bool value) {
+    m_excludedHasBeenSet = true;
+    m_excluded = value;
+  }
+  inline UpdateOperation& WithExcluded(bool value) {
+    SetExcluded(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The properties to update on the construct.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetProperties() const { return m_properties; }
@@ -57,7 +91,13 @@ class UpdateOperation {
   }
   ///@}
  private:
+  Aws::String m_name;
+
+  bool m_excluded{false};
+
   Aws::Map<Aws::String, Aws::String> m_properties;
+  bool m_nameHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;
 };
 

@@ -72,6 +72,7 @@
 #include <aws/mgn/model/DeleteLaunchConfigurationTemplateResult.h>
 #include <aws/mgn/model/DeleteNetworkMigrationDefinitionRequest.h>
 #include <aws/mgn/model/DeleteNetworkMigrationDefinitionResult.h>
+#include <aws/mgn/model/DeleteOperation.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateRequest.h>
 #include <aws/mgn/model/DeleteReplicationConfigurationTemplateResult.h>
 #include <aws/mgn/model/DeleteSourceServerRequest.h>
@@ -232,6 +233,8 @@
 #include <aws/mgn/model/ManagedAccount.h>
 #include <aws/mgn/model/MarkAsArchivedRequest.h>
 #include <aws/mgn/model/MarkAsArchivedResult.h>
+#include <aws/mgn/model/MergeConstruct.h>
+#include <aws/mgn/model/MergeOperation.h>
 #include <aws/mgn/model/NetworkInterface.h>
 #include <aws/mgn/model/NetworkMigrationAnalysisJobDetails.h>
 #include <aws/mgn/model/NetworkMigrationAnalysisResult.h>
@@ -298,6 +301,8 @@
 #include <aws/mgn/model/SourceServerActionDocument.h>
 #include <aws/mgn/model/SourceServerActionsRequestFilters.h>
 #include <aws/mgn/model/SourceServerConnectorAction.h>
+#include <aws/mgn/model/SplitConstruct.h>
+#include <aws/mgn/model/SplitOperation.h>
 #include <aws/mgn/model/SsmDocument.h>
 #include <aws/mgn/model/SsmDocumentType.h>
 #include <aws/mgn/model/SsmExternalParameter.h>

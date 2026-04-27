@@ -30,6 +30,10 @@ JWTOptionsOutput& JWTOptionsOutput::operator=(JsonView jsonValue) {
     m_rolesKey = jsonValue.GetString("RolesKey");
     m_rolesKeyHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("JwksUrl")) {
+    m_jwksUrl = jsonValue.GetString("JwksUrl");
+    m_jwksUrlHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("PublicKey")) {
     m_publicKey = jsonValue.GetString("PublicKey");
     m_publicKeyHasBeenSet = true;
@@ -50,6 +54,10 @@ JsonValue JWTOptionsOutput::Jsonize() const {
 
   if (m_rolesKeyHasBeenSet) {
     payload.WithString("RolesKey", m_rolesKey);
+  }
+
+  if (m_jwksUrlHasBeenSet) {
+    payload.WithString("JwksUrl", m_jwksUrl);
   }
 
   if (m_publicKeyHasBeenSet) {

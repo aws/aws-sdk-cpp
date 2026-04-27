@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
+#include <aws/application-signals/model/CompositeSliConfig.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/EvaluationType.h>
 #include <aws/application-signals/model/MetricSource.h>
@@ -221,6 +222,25 @@ class ServiceLevelObjectiveSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The composite SLI configuration for service-level SLOs that monitor multiple
+   * operations of a service.</p>
+   */
+  inline const CompositeSliConfig& GetCompositeSliConfig() const { return m_compositeSliConfig; }
+  inline bool CompositeSliConfigHasBeenSet() const { return m_compositeSliConfigHasBeenSet; }
+  template <typename CompositeSliConfigT = CompositeSliConfig>
+  void SetCompositeSliConfig(CompositeSliConfigT&& value) {
+    m_compositeSliConfigHasBeenSet = true;
+    m_compositeSliConfig = std::forward<CompositeSliConfigT>(value);
+  }
+  template <typename CompositeSliConfigT = CompositeSliConfig>
+  ServiceLevelObjectiveSummary& WithCompositeSliConfig(CompositeSliConfigT&& value) {
+    SetCompositeSliConfig(std::forward<CompositeSliConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -239,6 +259,8 @@ class ServiceLevelObjectiveSummary {
   MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
 
   MetricSource m_metricSource;
+
+  CompositeSliConfig m_compositeSliConfig;
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_keyAttributesHasBeenSet = false;
@@ -248,6 +270,7 @@ class ServiceLevelObjectiveSummary {
   bool m_evaluationTypeHasBeenSet = false;
   bool m_metricSourceTypeHasBeenSet = false;
   bool m_metricSourceHasBeenSet = false;
+  bool m_compositeSliConfigHasBeenSet = false;
 };
 
 }  // namespace Model

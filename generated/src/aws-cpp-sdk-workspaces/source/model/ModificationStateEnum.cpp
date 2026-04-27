@@ -17,6 +17,7 @@ namespace ModificationStateEnumMapper {
 
 static const int UPDATE_INITIATED_HASH = HashingUtils::HashString("UPDATE_INITIATED");
 static const int UPDATE_IN_PROGRESS_HASH = HashingUtils::HashString("UPDATE_IN_PROGRESS");
+static const int UPDATE_FAILED_HASH = HashingUtils::HashString("UPDATE_FAILED");
 
 ModificationStateEnum GetModificationStateEnumForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ModificationStateEnum GetModificationStateEnumForName(const Aws::String& name) {
     return ModificationStateEnum::UPDATE_INITIATED;
   } else if (hashCode == UPDATE_IN_PROGRESS_HASH) {
     return ModificationStateEnum::UPDATE_IN_PROGRESS;
+  } else if (hashCode == UPDATE_FAILED_HASH) {
+    return ModificationStateEnum::UPDATE_FAILED;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForModificationStateEnum(ModificationStateEnum enumValue) {
       return "UPDATE_INITIATED";
     case ModificationStateEnum::UPDATE_IN_PROGRESS:
       return "UPDATE_IN_PROGRESS";
+    case ModificationStateEnum::UPDATE_FAILED:
+      return "UPDATE_FAILED";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

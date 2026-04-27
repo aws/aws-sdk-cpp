@@ -8,6 +8,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/glue/GlueRequest.h>
 #include <aws/glue/Glue_EXPORTS.h>
+#include <aws/glue/model/AuditContext.h>
 #include <aws/glue/model/Segment.h>
 
 #include <utility>
@@ -247,6 +248,22 @@ class GetPartitionsRequest : public GlueRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+
+  inline const AuditContext& GetAuditContext() const { return m_auditContext; }
+  inline bool AuditContextHasBeenSet() const { return m_auditContextHasBeenSet; }
+  template <typename AuditContextT = AuditContext>
+  void SetAuditContext(AuditContextT&& value) {
+    m_auditContextHasBeenSet = true;
+    m_auditContext = std::forward<AuditContextT>(value);
+  }
+  template <typename AuditContextT = AuditContext>
+  GetPartitionsRequest& WithAuditContext(AuditContextT&& value) {
+    SetAuditContext(std::forward<AuditContextT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_catalogId;
 
@@ -267,6 +284,8 @@ class GetPartitionsRequest : public GlueRequest {
   Aws::String m_transactionId;
 
   Aws::Utils::DateTime m_queryAsOfTime{};
+
+  AuditContext m_auditContext;
   bool m_catalogIdHasBeenSet = false;
   bool m_databaseNameHasBeenSet = false;
   bool m_tableNameHasBeenSet = false;
@@ -277,6 +296,7 @@ class GetPartitionsRequest : public GlueRequest {
   bool m_excludeColumnSchemaHasBeenSet = false;
   bool m_transactionIdHasBeenSet = false;
   bool m_queryAsOfTimeHasBeenSet = false;
+  bool m_auditContextHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -739,9 +739,16 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * compatible key state. For details, see <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/key-state.html">Key
    * states of KMS keys</a> in the <i>Key Management Service Developer Guide</i>.</p>
-   * <p> <b>Cross-account use</b>: Yes. If you use the <code>KeyId</code> parameter
-   * to identify a KMS key in a different Amazon Web Services account, specify the
-   * key ARN or the alias ARN of the KMS key.</p> <p> <b>Required permissions</b>: <a
+   * <p> <b>Cross-account use</b>: Yes. To specify a KMS key in a different Amazon
+   * Web Services account, use the <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+   * ARN</a> or <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+   * ARN</a>. A short <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+   * ID</a> is also acceptable when decrypting symmetric ciphertexts, though using a
+   * full key ARN is recommended to be more explicit about the intended KMS key.</p>
+   * <p> <b>Required permissions</b>: <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:Decrypt</a>
    * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
    * <a>Encrypt</a> </p> </li> <li> <p> <a>GenerateDataKey</a> </p> </li> <li> <p>
@@ -2017,6 +2024,71 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
+   * <p>Returns usage information about the last successful cryptographic operation
+   * performed with a specified KMS key, including the operation type, timestamp, and
+   * associated CloudTrail event ID.</p> <p>The <code>TrackingStartDate</code> in the
+   * <code>GetKeyLastUsage</code> response indicates the date from which KMS began
+   * recording cryptographic activity for a given key. Use this value together with
+   * <code>KeyCreationDate</code> to understand the key's usage history:</p> <ul>
+   * <li> <p>If the <code>KeyLastUsage</code> response element is <i>present</i>, the
+   * key has been used for a successful cryptographic operation since the
+   * <code>TrackingStartDate</code>. The response includes the operation type,
+   * timestamp, and associated CloudTrail event ID.</p> </li> <li> <p>If the
+   * <code>KeyLastUsage</code> response element is <i>empty</i> and
+   * <code>KeyCreationDate</code> is on or after <code>TrackingStartDate</code>, the
+   * key has not been used for a successful cryptographic operation since it was
+   * created.</p> </li> <li> <p>If the <code>KeyLastUsage</code> response element is
+   * <i>empty</i> and <code>KeyCreationDate</code> is before
+   * <code>TrackingStartDate</code>, there is no record of the key being used for a
+   * successful cryptographic operation since the <code>TrackingStartDate</code>.
+   * However, the key may have been used before tracking began. To determine whether
+   * the key was used before the <code>TrackingStartDate</code>, examine your past
+   * CloudTrail logs.</p> </li> </ul> <p>For multi-Region KMS keys, primary and
+   * replica keys track last usage independently. Each key in a multi-Region key set
+   * maintains its own usage information.</p> <p>The <code>ReEncrypt</code> operation
+   * uses two keys: a source key for decryption and a destination key for encryption.
+   * Usage information is recorded for both keys independently, each with the
+   * CloudTrail event ID from the respective key owner's account.</p>  <p>Do
+   * not use <code>GetKeyLastUsage</code> as the sole indicator when scheduling a key
+   * for deletion. Instead, first <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/enabling-keys.html">disable
+   * the key</a> and monitor CloudTrail for <code>DisabledException</code> entries,
+   * as there could be infrequent workflows that are dependent on the key. By looking
+   * for this exception, you can identify potential dependencies and workload
+   * failures before they occur.</p>  <p> <b>Cross-account use</b>: No. You
+   * cannot perform this operation on a KMS key in a different Amazon Web Services
+   * account.</p> <p> <b>Required permissions</b>: <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:GetKeyLastUsage</a>
+   * (key policy)</p> <p> <b>Related operations:</b> </p> <ul> <li> <p>
+   * <a>DescribeKey</a> </p> </li> <li> <p> <a>DisableKey</a> </p> </li> <li> <p>
+   * <a>ScheduleKeyDeletion</a> </p> </li> </ul> <p> <b>Eventual consistency</b>: The
+   * KMS API follows an eventual consistency model. For more information, see <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/accessing-kms.html#programming-eventual-consistency">KMS
+   * eventual consistency</a>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/kms-2014-11-01/GetKeyLastUsage">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetKeyLastUsageOutcome GetKeyLastUsage(const Model::GetKeyLastUsageRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetKeyLastUsage that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetKeyLastUsageRequestT = Model::GetKeyLastUsageRequest>
+  Model::GetKeyLastUsageOutcomeCallable GetKeyLastUsageCallable(const GetKeyLastUsageRequestT& request) const {
+    return SubmitCallable(&KMSClient::GetKeyLastUsage, request);
+  }
+
+  /**
+   * An Async wrapper for GetKeyLastUsage that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetKeyLastUsageRequestT = Model::GetKeyLastUsageRequest>
+  void GetKeyLastUsageAsync(const GetKeyLastUsageRequestT& request, const GetKeyLastUsageResponseReceivedHandler& handler,
+                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&KMSClient::GetKeyLastUsage, request, handler, context);
+  }
+
+  /**
    * <p>Gets a key policy attached to the specified KMS key.</p> <p> <b>Cross-account
    * use</b>: No. You cannot perform this operation on a KMS key in a different
    * Amazon Web Services account.</p> <p> <b>Required permissions</b>: <a
@@ -2841,8 +2913,16 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * <p> <b>Cross-account use</b>: Yes. The source KMS key and destination KMS key
    * can be in different Amazon Web Services accounts. Either or both KMS keys can be
    * in a different account than the caller. To specify a KMS key in a different
-   * account, you must use its key ARN or alias ARN.</p> <p> <b>Required
-   * permissions</b>:</p> <ul> <li> <p> <a
+   * account, use the <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-ARN">key
+   * ARN</a> or <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-alias-ARN">alias
+   * ARN</a>. A short <a
+   * href="https://docs.aws.amazon.com/kms/latest/developerguide/concepts.html#key-id-key-id">key
+   * ID</a> is also acceptable for the source key when decrypting symmetric
+   * ciphertexts, though using a full key ARN is recommended to be more explicit
+   * about the intended KMS key.</p> <p> <b>Required permissions</b>:</p> <ul> <li>
+   * <p> <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ReEncryptFrom</a>
    * permission on the source KMS key (key policy)</p> </li> <li> <p> <a
    * href="https://docs.aws.amazon.com/kms/latest/developerguide/kms-api-permissions-reference.html">kms:ReEncryptTo</a>
@@ -3531,12 +3611,14 @@ class AWS_KMS_API KMSClient : public Aws::Client::AWSJsonClient,
    * (<code>NewCustomKeyStoreName</code>), to tell KMS about a change to the
    * <code>kmsuser</code> crypto user password (<code>KeyStorePassword</code>), or to
    * associate the custom key store with a different, but related, CloudHSM cluster
-   * (<code>CloudHsmClusterId</code>). To update any property of an CloudHSM key
+   * (<code>CloudHsmClusterId</code>). To update most properties of an CloudHSM key
    * store, the <code>ConnectionState</code> of the CloudHSM key store must be
-   * <code>DISCONNECTED</code>. </p> <p>For an external key store, you can use this
-   * operation to change the custom key store friendly name
-   * (<code>NewCustomKeyStoreName</code>), or to tell KMS about a change to the
-   * external key store proxy authentication credentials
+   * <code>DISCONNECTED</code>. However, you can update the
+   * <code>CustomKeyStoreName</code> of an AWS CloudHSM key store when it is in the
+   * <code>CONNECTED</code> or <code>DISCONNECTED</code> state.</p> <p>For an
+   * external key store, you can use this operation to change the custom key store
+   * friendly name (<code>NewCustomKeyStoreName</code>), or to tell KMS about a
+   * change to the external key store proxy authentication credentials
    * (<code>XksProxyAuthenticationCredential</code>), connection method
    * (<code>XksProxyConnectivity</code>), external proxy endpoint
    * (<code>XksProxyUriEndpoint</code>) and path (<code>XksProxyUriPath</code>). For

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
-enum class ModificationStateEnum { NOT_SET, UPDATE_INITIATED, UPDATE_IN_PROGRESS };
+enum class ModificationStateEnum { NOT_SET, UPDATE_INITIATED, UPDATE_IN_PROGRESS, UPDATE_FAILED };
 
 namespace ModificationStateEnumMapper {
 AWS_WORKSPACES_API ModificationStateEnum GetModificationStateEnumForName(const Aws::String& name);

@@ -15,6 +15,7 @@ namespace Omics {
 namespace Model {
 namespace BatchStatusMapper {
 
+static const int CREATING_HASH = HashingUtils::HashString("CREATING");
 static const int PENDING_HASH = HashingUtils::HashString("PENDING");
 static const int SUBMITTING_HASH = HashingUtils::HashString("SUBMITTING");
 static const int INPROGRESS_HASH = HashingUtils::HashString("INPROGRESS");
@@ -27,7 +28,9 @@ static const int RUNS_DELETED_HASH = HashingUtils::HashString("RUNS_DELETED");
 
 BatchStatus GetBatchStatusForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
-  if (hashCode == PENDING_HASH) {
+  if (hashCode == CREATING_HASH) {
+    return BatchStatus::CREATING;
+  } else if (hashCode == PENDING_HASH) {
     return BatchStatus::PENDING;
   } else if (hashCode == SUBMITTING_HASH) {
     return BatchStatus::SUBMITTING;
@@ -59,6 +62,8 @@ Aws::String GetNameForBatchStatus(BatchStatus enumValue) {
   switch (enumValue) {
     case BatchStatus::NOT_SET:
       return {};
+    case BatchStatus::CREATING:
+      return "CREATING";
     case BatchStatus::PENDING:
       return "PENDING";
     case BatchStatus::SUBMITTING:

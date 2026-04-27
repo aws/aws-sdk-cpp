@@ -10,7 +10,19 @@
 namespace Aws {
 namespace Omics {
 namespace Model {
-enum class BatchStatus { NOT_SET, PENDING, SUBMITTING, INPROGRESS, STOPPING, CANCELLED, FAILED, PROCESSED, RUNS_DELETING, RUNS_DELETED };
+enum class BatchStatus {
+  NOT_SET,
+  CREATING,
+  PENDING,
+  SUBMITTING,
+  INPROGRESS,
+  STOPPING,
+  CANCELLED,
+  FAILED,
+  PROCESSED,
+  RUNS_DELETING,
+  RUNS_DELETED
+};
 
 namespace BatchStatusMapper {
 AWS_OMICS_API BatchStatus GetBatchStatusForName(const Aws::String& name);

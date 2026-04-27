@@ -86,6 +86,25 @@ class JWTOptionsOutput {
 
   ///@{
   /**
+   * <p>The configured JWKS URL endpoint from which the cluster retrieves public keys
+   * to verify JWT requests.</p>
+   */
+  inline const Aws::String& GetJwksUrl() const { return m_jwksUrl; }
+  inline bool JwksUrlHasBeenSet() const { return m_jwksUrlHasBeenSet; }
+  template <typename JwksUrlT = Aws::String>
+  void SetJwksUrl(JwksUrlT&& value) {
+    m_jwksUrlHasBeenSet = true;
+    m_jwksUrl = std::forward<JwksUrlT>(value);
+  }
+  template <typename JwksUrlT = Aws::String>
+  JWTOptionsOutput& WithJwksUrl(JwksUrlT&& value) {
+    SetJwksUrl(std::forward<JwksUrlT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The key used to verify the signature of incoming JWT requests.</p>
    */
   inline const Aws::String& GetPublicKey() const { return m_publicKey; }
@@ -108,10 +127,13 @@ class JWTOptionsOutput {
 
   Aws::String m_rolesKey;
 
+  Aws::String m_jwksUrl;
+
   Aws::String m_publicKey;
   bool m_enabledHasBeenSet = false;
   bool m_subjectKeyHasBeenSet = false;
   bool m_rolesKeyHasBeenSet = false;
+  bool m_jwksUrlHasBeenSet = false;
   bool m_publicKeyHasBeenSet = false;
 };
 

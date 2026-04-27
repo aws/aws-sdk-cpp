@@ -55,6 +55,10 @@ Aws::String GetPartitionsRequest::SerializePayload() const {
     payload.WithDouble("QueryAsOfTime", m_queryAsOfTime.SecondsWithMSPrecision());
   }
 
+  if (m_auditContextHasBeenSet) {
+    payload.WithObject("AuditContext", m_auditContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

@@ -35,6 +35,10 @@ Aws::String GetTableVersionsRequest::SerializePayload() const {
     payload.WithInteger("MaxResults", m_maxResults);
   }
 
+  if (m_auditContextHasBeenSet) {
+    payload.WithObject("AuditContext", m_auditContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

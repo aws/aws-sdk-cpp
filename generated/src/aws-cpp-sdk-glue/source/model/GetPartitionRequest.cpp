@@ -35,6 +35,10 @@ Aws::String GetPartitionRequest::SerializePayload() const {
     payload.WithArray("PartitionValues", std::move(partitionValuesJsonList));
   }
 
+  if (m_auditContextHasBeenSet) {
+    payload.WithObject("AuditContext", m_auditContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 

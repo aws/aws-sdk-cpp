@@ -45,6 +45,7 @@
 #include <aws/kms/model/GenerateDataKeyWithoutPlaintextRequest.h>
 #include <aws/kms/model/GenerateMacRequest.h>
 #include <aws/kms/model/GenerateRandomRequest.h>
+#include <aws/kms/model/GetKeyLastUsageRequest.h>
 #include <aws/kms/model/GetKeyPolicyRequest.h>
 #include <aws/kms/model/GetKeyRotationStatusRequest.h>
 #include <aws/kms/model/GetParametersForImportRequest.h>
@@ -361,6 +362,12 @@ GenerateMacOutcome KMSClient::GenerateMac(const GenerateMacRequest& request) con
 GenerateRandomOutcome KMSClient::GenerateRandom(const GenerateRandomRequest& request) const {
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GenerateRandomOutcome(result.GetResultWithOwnership()) : GenerateRandomOutcome(std::move(result.GetError()));
+}
+
+GetKeyLastUsageOutcome KMSClient::GetKeyLastUsage(const GetKeyLastUsageRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetKeyLastUsageOutcome(result.GetResultWithOwnership())
+                            : GetKeyLastUsageOutcome(std::move(result.GetError()));
 }
 
 GetKeyPolicyOutcome KMSClient::GetKeyPolicy(const GetKeyPolicyRequest& request) const {

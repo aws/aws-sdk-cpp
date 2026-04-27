@@ -154,6 +154,23 @@ class UpdateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether DevOps Agent will automatically investigate this SLO when
+   * it is breached</p>
+   */
+  inline bool GetAutoInvestigationEnabled() const { return m_autoInvestigationEnabled; }
+  inline bool AutoInvestigationEnabledHasBeenSet() const { return m_autoInvestigationEnabledHasBeenSet; }
+  inline void SetAutoInvestigationEnabled(bool value) {
+    m_autoInvestigationEnabledHasBeenSet = true;
+    m_autoInvestigationEnabled = value;
+  }
+  inline UpdateServiceLevelObjectiveRequest& WithAutoInvestigationEnabled(bool value) {
+    SetAutoInvestigationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -166,12 +183,15 @@ class UpdateServiceLevelObjectiveRequest : public ApplicationSignalsRequest {
   Goal m_goal;
 
   Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
+
+  bool m_autoInvestigationEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_sliConfigHasBeenSet = false;
   bool m_requestBasedSliConfigHasBeenSet = false;
   bool m_goalHasBeenSet = false;
   bool m_burnRateConfigurationsHasBeenSet = false;
+  bool m_autoInvestigationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

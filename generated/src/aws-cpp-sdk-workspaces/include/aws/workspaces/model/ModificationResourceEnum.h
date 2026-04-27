@@ -10,7 +10,7 @@
 namespace Aws {
 namespace WorkSpaces {
 namespace Model {
-enum class ModificationResourceEnum { NOT_SET, ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE };
+enum class ModificationResourceEnum { NOT_SET, ROOT_VOLUME, USER_VOLUME, COMPUTE_TYPE, PROTOCOL };
 
 namespace ModificationResourceEnumMapper {
 AWS_WORKSPACES_API ModificationResourceEnum GetModificationResourceEnumForName(const Aws::String& name);

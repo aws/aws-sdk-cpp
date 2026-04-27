@@ -119,6 +119,24 @@ class S3TableIntegrationSource {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The identifier of the parent data source for this association.</p>
+   */
+  inline const Aws::String& GetParentSourceIdentifier() const { return m_parentSourceIdentifier; }
+  inline bool ParentSourceIdentifierHasBeenSet() const { return m_parentSourceIdentifierHasBeenSet; }
+  template <typename ParentSourceIdentifierT = Aws::String>
+  void SetParentSourceIdentifier(ParentSourceIdentifierT&& value) {
+    m_parentSourceIdentifierHasBeenSet = true;
+    m_parentSourceIdentifier = std::forward<ParentSourceIdentifierT>(value);
+  }
+  template <typename ParentSourceIdentifierT = Aws::String>
+  S3TableIntegrationSource& WithParentSourceIdentifier(ParentSourceIdentifierT&& value) {
+    SetParentSourceIdentifier(std::forward<ParentSourceIdentifierT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_identifier;
 
@@ -129,11 +147,14 @@ class S3TableIntegrationSource {
   Aws::String m_statusReason;
 
   long long m_createdTimeStamp{0};
+
+  Aws::String m_parentSourceIdentifier;
   bool m_identifierHasBeenSet = false;
   bool m_dataSourceHasBeenSet = false;
   bool m_statusHasBeenSet = false;
   bool m_statusReasonHasBeenSet = false;
   bool m_createdTimeStampHasBeenSet = false;
+  bool m_parentSourceIdentifierHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -56,5 +56,9 @@ Aws::String CreateServiceLevelObjectiveRequest::SerializePayload() const {
     payload.WithBool("CreateRecommendedSlo", m_createRecommendedSlo);
   }
 
+  if (m_autoInvestigationEnabledHasBeenSet) {
+    payload.WithBool("AutoInvestigationEnabled", m_autoInvestigationEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

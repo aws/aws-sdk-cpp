@@ -93,6 +93,14 @@ DefaultRunSetting& DefaultRunSetting::operator=(JsonView jsonValue) {
     m_workflowVersionName = jsonValue.GetString("workflowVersionName");
     m_workflowVersionNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("networkingMode")) {
+    m_networkingMode = NetworkingModeMapper::GetNetworkingModeForName(jsonValue.GetString("networkingMode"));
+    m_networkingModeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("configurationName")) {
+    m_configurationName = jsonValue.GetString("configurationName");
+    m_configurationNameHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -175,6 +183,14 @@ JsonValue DefaultRunSetting::Jsonize() const {
 
   if (m_workflowVersionNameHasBeenSet) {
     payload.WithString("workflowVersionName", m_workflowVersionName);
+  }
+
+  if (m_networkingModeHasBeenSet) {
+    payload.WithString("networkingMode", NetworkingModeMapper::GetNameForNetworkingMode(m_networkingMode));
+  }
+
+  if (m_configurationNameHasBeenSet) {
+    payload.WithString("configurationName", m_configurationName);
   }
 
   return payload;

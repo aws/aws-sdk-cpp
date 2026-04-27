@@ -5,6 +5,9 @@
 
 #pragma once
 #include <aws/mgn/Mgn_EXPORTS.h>
+#include <aws/mgn/model/DeleteOperation.h>
+#include <aws/mgn/model/MergeOperation.h>
+#include <aws/mgn/model/SplitOperation.h>
 #include <aws/mgn/model/UpdateOperation.h>
 
 #include <utility>
@@ -34,6 +37,61 @@ class OperationUnion {
 
   ///@{
   /**
+   * <p>A merge operation to combine constructs from different segments.</p>
+   */
+  inline const MergeOperation& GetMerge() const { return m_merge; }
+  inline bool MergeHasBeenSet() const { return m_mergeHasBeenSet; }
+  template <typename MergeT = MergeOperation>
+  void SetMerge(MergeT&& value) {
+    m_mergeHasBeenSet = true;
+    m_merge = std::forward<MergeT>(value);
+  }
+  template <typename MergeT = MergeOperation>
+  OperationUnion& WithMerge(MergeT&& value) {
+    SetMerge(std::forward<MergeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A split operation to divide a construct into multiple constructs with
+   * specified CIDR blocks.</p>
+   */
+  inline const SplitOperation& GetSplit() const { return m_split; }
+  inline bool SplitHasBeenSet() const { return m_splitHasBeenSet; }
+  template <typename SplitT = SplitOperation>
+  void SetSplit(SplitT&& value) {
+    m_splitHasBeenSet = true;
+    m_split = std::forward<SplitT>(value);
+  }
+  template <typename SplitT = SplitOperation>
+  OperationUnion& WithSplit(SplitT&& value) {
+    SetSplit(std::forward<SplitT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>A delete operation to remove a construct from the mapping.</p>
+   */
+  inline const DeleteOperation& GetDelete() const { return m_delete; }
+  inline bool DeleteHasBeenSet() const { return m_deleteHasBeenSet; }
+  template <typename DeleteT = DeleteOperation>
+  void SetDelete(DeleteT&& value) {
+    m_deleteHasBeenSet = true;
+    m_delete = std::forward<DeleteT>(value);
+  }
+  template <typename DeleteT = DeleteOperation>
+  OperationUnion& WithDelete(DeleteT&& value) {
+    SetDelete(std::forward<DeleteT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>An update operation to modify construct properties.</p>
    */
   inline const UpdateOperation& GetUpdate() const { return m_update; }
@@ -50,7 +108,16 @@ class OperationUnion {
   }
   ///@}
  private:
+  MergeOperation m_merge;
+
+  SplitOperation m_split;
+
+  DeleteOperation m_delete;
+
   UpdateOperation m_update;
+  bool m_mergeHasBeenSet = false;
+  bool m_splitHasBeenSet = false;
+  bool m_deleteHasBeenSet = false;
   bool m_updateHasBeenSet = false;
 };
 

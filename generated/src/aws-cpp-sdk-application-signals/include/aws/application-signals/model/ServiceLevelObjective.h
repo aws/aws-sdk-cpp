@@ -255,6 +255,23 @@ class ServiceLevelObjective {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether DevOps Agent will automatically investigate this SLO when
+   * it is breached</p>
+   */
+  inline bool GetAutoInvestigationEnabled() const { return m_autoInvestigationEnabled; }
+  inline bool AutoInvestigationEnabledHasBeenSet() const { return m_autoInvestigationEnabledHasBeenSet; }
+  inline void SetAutoInvestigationEnabled(bool value) {
+    m_autoInvestigationEnabledHasBeenSet = true;
+    m_autoInvestigationEnabled = value;
+  }
+  inline ServiceLevelObjective& WithAutoInvestigationEnabled(bool value) {
+    SetAutoInvestigationEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -277,6 +294,8 @@ class ServiceLevelObjective {
   Aws::Vector<BurnRateConfiguration> m_burnRateConfigurations;
 
   MetricSourceType m_metricSourceType{MetricSourceType::NOT_SET};
+
+  bool m_autoInvestigationEnabled{false};
   bool m_arnHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
@@ -288,6 +307,7 @@ class ServiceLevelObjective {
   bool m_goalHasBeenSet = false;
   bool m_burnRateConfigurationsHasBeenSet = false;
   bool m_metricSourceTypeHasBeenSet = false;
+  bool m_autoInvestigationEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

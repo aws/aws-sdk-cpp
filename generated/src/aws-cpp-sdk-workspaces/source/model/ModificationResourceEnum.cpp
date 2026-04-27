@@ -18,6 +18,7 @@ namespace ModificationResourceEnumMapper {
 static const int ROOT_VOLUME_HASH = HashingUtils::HashString("ROOT_VOLUME");
 static const int USER_VOLUME_HASH = HashingUtils::HashString("USER_VOLUME");
 static const int COMPUTE_TYPE_HASH = HashingUtils::HashString("COMPUTE_TYPE");
+static const int PROTOCOL_HASH = HashingUtils::HashString("PROTOCOL");
 
 ModificationResourceEnum GetModificationResourceEnumForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +28,8 @@ ModificationResourceEnum GetModificationResourceEnumForName(const Aws::String& n
     return ModificationResourceEnum::USER_VOLUME;
   } else if (hashCode == COMPUTE_TYPE_HASH) {
     return ModificationResourceEnum::COMPUTE_TYPE;
+  } else if (hashCode == PROTOCOL_HASH) {
+    return ModificationResourceEnum::PROTOCOL;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +50,8 @@ Aws::String GetNameForModificationResourceEnum(ModificationResourceEnum enumValu
       return "USER_VOLUME";
     case ModificationResourceEnum::COMPUTE_TYPE:
       return "COMPUTE_TYPE";
+    case ModificationResourceEnum::PROTOCOL:
+      return "PROTOCOL";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

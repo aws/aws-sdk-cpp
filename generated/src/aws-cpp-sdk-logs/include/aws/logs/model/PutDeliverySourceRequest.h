@@ -56,8 +56,10 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * logs. For example,
    * <code>arn:aws:workmail:us-east-1:123456789012:organization/m-1234EXAMPLEabcd1234abcd1234abcd1234</code>
    * </p> <p>For the <code>SECURITY_FINDING_LOGS</code> logType, use a wildcard ARN
-   * for the hub resource. For example,
-   * <code>arn:aws:securityhub:us-east-1:111122223333:hub/ *</code> </p>
+   * for the hub resource. For Amazon Web Services Security Hub CSPM, use
+   * <code>arn:aws:securityhub:us-east-1:111122223333:hub/ *</code> and for Amazon Web
+   * Services Security Hub, use
+   * <code>arn:aws:securityhub:us-east-1:111122223333:hubv2/ *</code> </p>
    */
   inline const Aws::String& GetResourceArn() const { return m_resourceArn; }
   inline bool ResourceArnHasBeenSet() const { return m_resourceArnHasBeenSet; }
@@ -104,13 +106,15 @@ class PutDeliverySourceRequest : public CloudWatchLogsRequest {
    * <p>For Network Firewall Proxy, the valid values are <code>ALERT_LOGS</code>,
    * <code>ALLOW_LOGS</code>, and <code>DENY_LOGS</code>.</p> </li> <li> <p>For
    * Network Load Balancer, the valid value is <code>NLB_ACCESS_LOGS</code>.</p>
-   * </li> <li> <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code> and
-   * <code>PCS_JOBCOMP_LOGS</code>.</p> </li> <li> <p>For Quick, the valid values are
-   * <code>CHAT_LOGS</code> and <code>FEEDBACK_LOGS</code>.</p> </li> <li> <p>For
-   * Amazon Web Services RTB Fabric, the valid values is
-   * <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For Amazon Q, the valid values
-   * are <code>EVENT_LOGS</code> and <code>SYNC_JOB_LOGS</code>.</p> </li> <li>
-   * <p>For Amazon Web Services Security Hub CSPM, the valid value is
+   * </li> <li> <p>For PCS, the valid values are <code>PCS_SCHEDULER_LOGS</code>,
+   * <code>PCS_JOBCOMP_LOGS</code>, and <code>PCS_SCHEDULER_AUDIT_LOGS</code>.</p>
+   * </li> <li> <p>For Quick, the valid values are <code>CHAT_LOGS</code> and
+   * <code>FEEDBACK_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services RTB
+   * Fabric, the valid values is <code>APPLICATION_LOGS</code>.</p> </li> <li> <p>For
+   * Amazon Q, the valid values are <code>EVENT_LOGS</code> and
+   * <code>SYNC_JOB_LOGS</code>.</p> </li> <li> <p>For Amazon Web Services Security
+   * Hub CSPM, the valid value is <code>SECURITY_FINDING_LOGS</code>.</p> </li> <li>
+   * <p>For Amazon Web Services Security Hub, the valid value is
    * <code>SECURITY_FINDING_LOGS</code>.</p> </li> <li> <p>For Amazon SES mail
    * manager, the valid values are <code>APPLICATION_LOGS</code> and
    * <code>TRAFFIC_POLICY_DEBUG_LOGS</code>.</p> </li> <li> <p>For Amazon WorkMail,

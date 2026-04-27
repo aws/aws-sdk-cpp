@@ -2995,9 +2995,10 @@ class AWS_OMICS_API OmicsClient : public Aws::Client::AWSJsonClient,
    * via <code>inlineSettings</code> (up to 100 runs) or via a JSON file stored in
    * Amazon S3 via <code>s3UriSettings</code> (up to 100,000 runs).</p> <p>
    * <code>StartRunBatch</code> validates common fields synchronously and returns
-   * immediately with a batch ID and status <code>PENDING</code>. Runs are submitted
-   * gradually and asynchronously at a rate governed by your <code>StartRun</code>
-   * throughput quota.</p><p><h3>See Also:</h3>   <a
+   * immediately with a batch ID and status <code>CREATING</code>. The batch
+   * transitions to <code>PENDING</code> once initial setup completes. Runs are then
+   * submitted gradually and asynchronously at a rate governed by your
+   * <code>StartRun</code> throughput quota.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/omics-2022-11-28/StartRunBatch">AWS
    * API Reference</a></p>
    */

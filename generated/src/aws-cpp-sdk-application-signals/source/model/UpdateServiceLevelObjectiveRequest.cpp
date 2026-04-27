@@ -40,5 +40,9 @@ Aws::String UpdateServiceLevelObjectiveRequest::SerializePayload() const {
     payload.WithArray("BurnRateConfigurations", std::move(burnRateConfigurationsJsonList));
   }
 
+  if (m_autoInvestigationEnabledHasBeenSet) {
+    payload.WithBool("AutoInvestigationEnabled", m_autoInvestigationEnabled);
+  }
+
   return payload.View().WriteReadable();
 }

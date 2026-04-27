@@ -18,6 +18,14 @@ namespace Model {
 UpdateOperation::UpdateOperation(JsonView jsonValue) { *this = jsonValue; }
 
 UpdateOperation& UpdateOperation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("name")) {
+    m_name = jsonValue.GetString("name");
+    m_nameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("excluded")) {
+    m_excluded = jsonValue.GetBool("excluded");
+    m_excludedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("properties")) {
     Aws::Map<Aws::String, JsonView> propertiesJsonMap = jsonValue.GetObject("properties").GetAllObjects();
     for (auto& propertiesItem : propertiesJsonMap) {
@@ -30,6 +38,14 @@ UpdateOperation& UpdateOperation::operator=(JsonView jsonValue) {
 
 JsonValue UpdateOperation::Jsonize() const {
   JsonValue payload;
+
+  if (m_nameHasBeenSet) {
+    payload.WithString("name", m_name);
+  }
+
+  if (m_excludedHasBeenSet) {
+    payload.WithBool("excluded", m_excluded);
+  }
 
   if (m_propertiesHasBeenSet) {
     JsonValue propertiesJsonMap;

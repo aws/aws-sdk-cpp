@@ -103,7 +103,13 @@ class GetBatchResult {
 
   ///@{
   /**
-   * <p>The current status of the run batch.</p>
+   * <p>The current status of the run batch. Possible values: <code>CREATING</code>
+   * (initial setup), <code>PENDING</code> (ready to submit runs),
+   * <code>SUBMITTING</code> (submitting runs), <code>INPROGRESS</code> (runs
+   * executing), <code>STOPPING</code> (cancellation in progress),
+   * <code>PROCESSED</code> (all runs completed), <code>CANCELLED</code> (batch
+   * cancelled), <code>FAILED</code> (batch failed), <code>RUNS_DELETING</code>
+   * (deleting runs), <code>RUNS_DELETED</code> (runs deleted).</p>
    */
   inline BatchStatus GetStatus() const { return m_status; }
   inline void SetStatus(BatchStatus value) {

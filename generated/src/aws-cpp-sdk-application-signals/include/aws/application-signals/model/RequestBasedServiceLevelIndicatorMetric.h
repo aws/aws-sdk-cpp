@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/application-signals/ApplicationSignals_EXPORTS.h>
+#include <aws/application-signals/model/CompositeSliConfig.h>
 #include <aws/application-signals/model/DependencyConfig.h>
 #include <aws/application-signals/model/MetricDataQuery.h>
 #include <aws/application-signals/model/MetricSource.h>
@@ -199,6 +200,25 @@ class RequestBasedServiceLevelIndicatorMetric {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The composite SLI configuration for service-level SLOs that monitor multiple
+   * operations of a service.</p>
+   */
+  inline const CompositeSliConfig& GetCompositeSliConfig() const { return m_compositeSliConfig; }
+  inline bool CompositeSliConfigHasBeenSet() const { return m_compositeSliConfigHasBeenSet; }
+  template <typename CompositeSliConfigT = CompositeSliConfig>
+  void SetCompositeSliConfig(CompositeSliConfigT&& value) {
+    m_compositeSliConfigHasBeenSet = true;
+    m_compositeSliConfig = std::forward<CompositeSliConfigT>(value);
+  }
+  template <typename CompositeSliConfigT = CompositeSliConfig>
+  RequestBasedServiceLevelIndicatorMetric& WithCompositeSliConfig(CompositeSliConfigT&& value) {
+    SetCompositeSliConfig(std::forward<CompositeSliConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::Map<Aws::String, Aws::String> m_keyAttributes;
 
@@ -213,6 +233,8 @@ class RequestBasedServiceLevelIndicatorMetric {
   DependencyConfig m_dependencyConfig;
 
   MetricSource m_metricSource;
+
+  CompositeSliConfig m_compositeSliConfig;
   bool m_keyAttributesHasBeenSet = false;
   bool m_operationNameHasBeenSet = false;
   bool m_metricTypeHasBeenSet = false;
@@ -220,6 +242,7 @@ class RequestBasedServiceLevelIndicatorMetric {
   bool m_monitoredRequestCountMetricHasBeenSet = false;
   bool m_dependencyConfigHasBeenSet = false;
   bool m_metricSourceHasBeenSet = false;
+  bool m_compositeSliConfigHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -38,6 +38,10 @@ NetworkMigrationMapperSegmentConstruct& NetworkMigrationMapperSegmentConstruct::
     m_logicalID = jsonValue.GetString("logicalID");
     m_logicalIDHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("excluded")) {
+    m_excluded = jsonValue.GetBool("excluded");
+    m_excludedHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("createdAt")) {
     m_createdAt = jsonValue.GetDouble("createdAt");
     m_createdAtHasBeenSet = true;
@@ -77,6 +81,10 @@ JsonValue NetworkMigrationMapperSegmentConstruct::Jsonize() const {
 
   if (m_logicalIDHasBeenSet) {
     payload.WithString("logicalID", m_logicalID);
+  }
+
+  if (m_excludedHasBeenSet) {
+    payload.WithBool("excluded", m_excluded);
   }
 
   if (m_createdAtHasBeenSet) {

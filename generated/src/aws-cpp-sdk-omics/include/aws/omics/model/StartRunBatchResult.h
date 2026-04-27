@@ -65,7 +65,8 @@ class StartRunBatchResult {
 
   ///@{
   /**
-   * <p>The initial status of the run batch.</p>
+   * <p>The initial status of the run batch. Returns <code>CREATING</code> while the
+   * batch is being initialized.</p>
    */
   inline BatchStatus GetStatus() const { return m_status; }
   inline void SetStatus(BatchStatus value) {

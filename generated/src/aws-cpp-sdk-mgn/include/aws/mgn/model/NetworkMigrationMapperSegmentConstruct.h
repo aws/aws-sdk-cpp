@@ -129,6 +129,22 @@ class NetworkMigrationMapperSegmentConstruct {
 
   ///@{
   /**
+   * <p>Whether this construct is excluded from the migration.</p>
+   */
+  inline bool GetExcluded() const { return m_excluded; }
+  inline bool ExcludedHasBeenSet() const { return m_excludedHasBeenSet; }
+  inline void SetExcluded(bool value) {
+    m_excludedHasBeenSet = true;
+    m_excluded = value;
+  }
+  inline NetworkMigrationMapperSegmentConstruct& WithExcluded(bool value) {
+    SetExcluded(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The timestamp when the construct was created.</p>
    */
   inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
@@ -197,6 +213,8 @@ class NetworkMigrationMapperSegmentConstruct {
 
   Aws::String m_logicalID;
 
+  bool m_excluded{false};
+
   Aws::Utils::DateTime m_createdAt{};
 
   Aws::Utils::DateTime m_updatedAt{};
@@ -207,6 +225,7 @@ class NetworkMigrationMapperSegmentConstruct {
   bool m_nameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_logicalIDHasBeenSet = false;
+  bool m_excludedHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_propertiesHasBeenSet = false;

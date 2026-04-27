@@ -18,6 +18,18 @@ namespace Model {
 OperationUnion::OperationUnion(JsonView jsonValue) { *this = jsonValue; }
 
 OperationUnion& OperationUnion::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("merge")) {
+    m_merge = jsonValue.GetObject("merge");
+    m_mergeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("split")) {
+    m_split = jsonValue.GetObject("split");
+    m_splitHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("delete")) {
+    m_delete = jsonValue.GetObject("delete");
+    m_deleteHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("update")) {
     m_update = jsonValue.GetObject("update");
     m_updateHasBeenSet = true;
@@ -27,6 +39,18 @@ OperationUnion& OperationUnion::operator=(JsonView jsonValue) {
 
 JsonValue OperationUnion::Jsonize() const {
   JsonValue payload;
+
+  if (m_mergeHasBeenSet) {
+    payload.WithObject("merge", m_merge.Jsonize());
+  }
+
+  if (m_splitHasBeenSet) {
+    payload.WithObject("split", m_split.Jsonize());
+  }
+
+  if (m_deleteHasBeenSet) {
+    payload.WithObject("delete", m_delete.Jsonize());
+  }
 
   if (m_updateHasBeenSet) {
     payload.WithObject("update", m_update.Jsonize());

@@ -9,6 +9,7 @@
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/omics/Omics_EXPORTS.h>
 #include <aws/omics/model/CacheBehavior.h>
+#include <aws/omics/model/NetworkingMode.h>
 #include <aws/omics/model/RunLogLevel.h>
 #include <aws/omics/model/RunRetentionMode.h>
 #include <aws/omics/model/StorageType.h>
@@ -371,6 +372,41 @@ class DefaultRunSetting {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Optional configuration for run networking behavior. If not specified, this
+   * will default to RESTRICTED.</p>
+   */
+  inline NetworkingMode GetNetworkingMode() const { return m_networkingMode; }
+  inline bool NetworkingModeHasBeenSet() const { return m_networkingModeHasBeenSet; }
+  inline void SetNetworkingMode(NetworkingMode value) {
+    m_networkingModeHasBeenSet = true;
+    m_networkingMode = value;
+  }
+  inline DefaultRunSetting& WithNetworkingMode(NetworkingMode value) {
+    SetNetworkingMode(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Optional configuration name to use for the workflow run.</p>
+   */
+  inline const Aws::String& GetConfigurationName() const { return m_configurationName; }
+  inline bool ConfigurationNameHasBeenSet() const { return m_configurationNameHasBeenSet; }
+  template <typename ConfigurationNameT = Aws::String>
+  void SetConfigurationName(ConfigurationNameT&& value) {
+    m_configurationNameHasBeenSet = true;
+    m_configurationName = std::forward<ConfigurationNameT>(value);
+  }
+  template <typename ConfigurationNameT = Aws::String>
+  DefaultRunSetting& WithConfigurationName(ConfigurationNameT&& value) {
+    SetConfigurationName(std::forward<ConfigurationNameT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_workflowId;
 
@@ -407,6 +443,10 @@ class DefaultRunSetting {
   Aws::String m_outputBucketOwnerId;
 
   Aws::String m_workflowVersionName;
+
+  NetworkingMode m_networkingMode{NetworkingMode::NOT_SET};
+
+  Aws::String m_configurationName;
   bool m_workflowIdHasBeenSet = false;
   bool m_workflowTypeHasBeenSet = false;
   bool m_roleArnHasBeenSet = false;
@@ -425,6 +465,8 @@ class DefaultRunSetting {
   bool m_workflowOwnerIdHasBeenSet = false;
   bool m_outputBucketOwnerIdHasBeenSet = false;
   bool m_workflowVersionNameHasBeenSet = false;
+  bool m_networkingModeHasBeenSet = false;
+  bool m_configurationNameHasBeenSet = false;
 };
 
 }  // namespace Model

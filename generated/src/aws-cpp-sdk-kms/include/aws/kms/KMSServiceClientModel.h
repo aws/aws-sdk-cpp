@@ -43,6 +43,7 @@
 #include <aws/kms/model/GenerateMacResult.h>
 #include <aws/kms/model/GenerateRandomRequest.h>
 #include <aws/kms/model/GenerateRandomResult.h>
+#include <aws/kms/model/GetKeyLastUsageResult.h>
 #include <aws/kms/model/GetKeyPolicyResult.h>
 #include <aws/kms/model/GetKeyRotationStatusResult.h>
 #include <aws/kms/model/GetParametersForImportResult.h>
@@ -124,6 +125,7 @@ class GenerateDataKeyPairWithoutPlaintextRequest;
 class GenerateDataKeyWithoutPlaintextRequest;
 class GenerateMacRequest;
 class GenerateRandomRequest;
+class GetKeyLastUsageRequest;
 class GetKeyPolicyRequest;
 class GetKeyRotationStatusRequest;
 class GetParametersForImportRequest;
@@ -180,6 +182,7 @@ typedef Aws::Utils::Outcome<GenerateDataKeyPairWithoutPlaintextResult, KMSError>
 typedef Aws::Utils::Outcome<GenerateDataKeyWithoutPlaintextResult, KMSError> GenerateDataKeyWithoutPlaintextOutcome;
 typedef Aws::Utils::Outcome<GenerateMacResult, KMSError> GenerateMacOutcome;
 typedef Aws::Utils::Outcome<GenerateRandomResult, KMSError> GenerateRandomOutcome;
+typedef Aws::Utils::Outcome<GetKeyLastUsageResult, KMSError> GetKeyLastUsageOutcome;
 typedef Aws::Utils::Outcome<GetKeyPolicyResult, KMSError> GetKeyPolicyOutcome;
 typedef Aws::Utils::Outcome<GetKeyRotationStatusResult, KMSError> GetKeyRotationStatusOutcome;
 typedef Aws::Utils::Outcome<GetParametersForImportResult, KMSError> GetParametersForImportOutcome;
@@ -236,6 +239,7 @@ typedef std::future<GenerateDataKeyPairWithoutPlaintextOutcome> GenerateDataKeyP
 typedef std::future<GenerateDataKeyWithoutPlaintextOutcome> GenerateDataKeyWithoutPlaintextOutcomeCallable;
 typedef std::future<GenerateMacOutcome> GenerateMacOutcomeCallable;
 typedef std::future<GenerateRandomOutcome> GenerateRandomOutcomeCallable;
+typedef std::future<GetKeyLastUsageOutcome> GetKeyLastUsageOutcomeCallable;
 typedef std::future<GetKeyPolicyOutcome> GetKeyPolicyOutcomeCallable;
 typedef std::future<GetKeyRotationStatusOutcome> GetKeyRotationStatusOutcomeCallable;
 typedef std::future<GetParametersForImportOutcome> GetParametersForImportOutcomeCallable;
@@ -347,6 +351,9 @@ typedef std::function<void(const KMSClient*, const Model::GenerateMacRequest&, c
 typedef std::function<void(const KMSClient*, const Model::GenerateRandomRequest&, const Model::GenerateRandomOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GenerateRandomResponseReceivedHandler;
+typedef std::function<void(const KMSClient*, const Model::GetKeyLastUsageRequest&, const Model::GetKeyLastUsageOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetKeyLastUsageResponseReceivedHandler;
 typedef std::function<void(const KMSClient*, const Model::GetKeyPolicyRequest&, const Model::GetKeyPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetKeyPolicyResponseReceivedHandler;

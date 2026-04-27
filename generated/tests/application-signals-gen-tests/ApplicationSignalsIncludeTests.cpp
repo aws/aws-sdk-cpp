@@ -29,6 +29,8 @@
 #include <aws/application-signals/model/CanaryEntity.h>
 #include <aws/application-signals/model/ChangeEvent.h>
 #include <aws/application-signals/model/ChangeEventType.h>
+#include <aws/application-signals/model/CompositeSliComponent.h>
+#include <aws/application-signals/model/CompositeSliConfig.h>
 #include <aws/application-signals/model/ConnectionType.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveRequest.h>
 #include <aws/application-signals/model/CreateServiceLevelObjectiveResult.h>
@@ -92,6 +94,8 @@
 #include <aws/application-signals/model/RequestBasedServiceLevelIndicatorMetricConfig.h>
 #include <aws/application-signals/model/ResourceNotFoundException.h>
 #include <aws/application-signals/model/RollingInterval.h>
+#include <aws/application-signals/model/SelectionConfig.h>
+#include <aws/application-signals/model/SelectionType.h>
 #include <aws/application-signals/model/Service.h>
 #include <aws/application-signals/model/ServiceDependency.h>
 #include <aws/application-signals/model/ServiceDependent.h>

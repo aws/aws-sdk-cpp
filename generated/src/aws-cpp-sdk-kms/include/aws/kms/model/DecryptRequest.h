@@ -137,7 +137,7 @@ class DecryptRequest : public KMSRequest {
    * ensures that you use the KMS key that you intend.</p> <p>To specify a KMS key,
    * use its key ID, key ARN, alias name, or alias ARN. When using an alias name,
    * prefix it with <code>"alias/"</code>. To specify a KMS key in a different Amazon
-   * Web Services account, you must use the key ARN or alias ARN.</p> <p>For
+   * Web Services account, you should use the key ARN or alias ARN.</p> <p>For
    * example:</p> <ul> <li> <p>Key ID:
    * <code>1234abcd-12ab-34cd-56ef-1234567890ab</code> </p> </li> <li> <p>Key ARN:
    * <code>arn:aws:kms:us-east-2:111122223333:key/1234abcd-12ab-34cd-56ef-1234567890ab</code>

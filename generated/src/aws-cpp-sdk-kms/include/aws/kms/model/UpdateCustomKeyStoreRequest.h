@@ -58,9 +58,8 @@ class UpdateCustomKeyStoreRequest : public KMSRequest {
    * specify. The custom key store name must be unique in the Amazon Web Services
    * account.</p>  <p>Do not include confidential or sensitive information
    * in this field. This field may be displayed in plaintext in CloudTrail logs and
-   * other output.</p>  <p>To change this value, an CloudHSM key store
-   * must be disconnected. An external key store can be connected or
-   * disconnected.</p>
+   * other output.</p>  <p>To change this value, the custom key store can
+   * be connected or disconnected.</p>
    */
   inline const Aws::String& GetNewCustomKeyStoreName() const { return m_newCustomKeyStoreName; }
   inline bool NewCustomKeyStoreNameHasBeenSet() const { return m_newCustomKeyStoreNameHasBeenSet; }

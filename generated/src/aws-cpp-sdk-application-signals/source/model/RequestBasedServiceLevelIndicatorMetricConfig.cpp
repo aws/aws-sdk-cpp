@@ -57,6 +57,10 @@ RequestBasedServiceLevelIndicatorMetricConfig& RequestBasedServiceLevelIndicator
     m_metricName = jsonValue.GetString("MetricName");
     m_metricNameHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CompositeSliConfig")) {
+    m_compositeSliConfig = jsonValue.GetObject("CompositeSliConfig");
+    m_compositeSliConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -103,6 +107,10 @@ JsonValue RequestBasedServiceLevelIndicatorMetricConfig::Jsonize() const {
 
   if (m_metricNameHasBeenSet) {
     payload.WithString("MetricName", m_metricName);
+  }
+
+  if (m_compositeSliConfigHasBeenSet) {
+    payload.WithObject("CompositeSliConfig", m_compositeSliConfig.Jsonize());
   }
 
   return payload;

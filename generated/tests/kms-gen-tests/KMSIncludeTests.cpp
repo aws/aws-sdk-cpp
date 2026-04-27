@@ -69,6 +69,8 @@
 #include <aws/kms/model/GenerateMacResult.h>
 #include <aws/kms/model/GenerateRandomRequest.h>
 #include <aws/kms/model/GenerateRandomResult.h>
+#include <aws/kms/model/GetKeyLastUsageRequest.h>
+#include <aws/kms/model/GetKeyLastUsageResult.h>
 #include <aws/kms/model/GetKeyPolicyRequest.h>
 #include <aws/kms/model/GetKeyPolicyResult.h>
 #include <aws/kms/model/GetKeyRotationStatusRequest.h>
@@ -87,6 +89,8 @@
 #include <aws/kms/model/IncludeKeyMaterial.h>
 #include <aws/kms/model/KeyAgreementAlgorithmSpec.h>
 #include <aws/kms/model/KeyEncryptionMechanism.h>
+#include <aws/kms/model/KeyLastUsageData.h>
+#include <aws/kms/model/KeyLastUsageTrackingOperation.h>
 #include <aws/kms/model/KeyListEntry.h>
 #include <aws/kms/model/KeyManagerType.h>
 #include <aws/kms/model/KeyMaterialState.h>

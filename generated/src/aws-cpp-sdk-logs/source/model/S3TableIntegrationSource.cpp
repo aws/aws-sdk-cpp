@@ -38,6 +38,10 @@ S3TableIntegrationSource& S3TableIntegrationSource::operator=(JsonView jsonValue
     m_createdTimeStamp = jsonValue.GetInt64("createdTimeStamp");
     m_createdTimeStampHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("parentSourceIdentifier")) {
+    m_parentSourceIdentifier = jsonValue.GetString("parentSourceIdentifier");
+    m_parentSourceIdentifierHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -62,6 +66,10 @@ JsonValue S3TableIntegrationSource::Jsonize() const {
 
   if (m_createdTimeStampHasBeenSet) {
     payload.WithInt64("createdTimeStamp", m_createdTimeStamp);
+  }
+
+  if (m_parentSourceIdentifierHasBeenSet) {
+    payload.WithString("parentSourceIdentifier", m_parentSourceIdentifier);
   }
 
   return payload;

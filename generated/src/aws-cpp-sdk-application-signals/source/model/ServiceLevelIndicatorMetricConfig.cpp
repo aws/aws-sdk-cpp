@@ -60,6 +60,10 @@ ServiceLevelIndicatorMetricConfig& ServiceLevelIndicatorMetricConfig::operator=(
     m_dependencyConfig = jsonValue.GetObject("DependencyConfig");
     m_dependencyConfigHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CompositeSliConfig")) {
+    m_compositeSliConfig = jsonValue.GetObject("CompositeSliConfig");
+    m_compositeSliConfigHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -108,6 +112,10 @@ JsonValue ServiceLevelIndicatorMetricConfig::Jsonize() const {
 
   if (m_dependencyConfigHasBeenSet) {
     payload.WithObject("DependencyConfig", m_dependencyConfig.Jsonize());
+  }
+
+  if (m_compositeSliConfigHasBeenSet) {
+    payload.WithObject("CompositeSliConfig", m_compositeSliConfig.Jsonize());
   }
 
   return payload;

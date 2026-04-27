@@ -31,6 +31,10 @@ Aws::String GetTableVersionRequest::SerializePayload() const {
     payload.WithString("VersionId", m_versionId);
   }
 
+  if (m_auditContextHasBeenSet) {
+    payload.WithObject("AuditContext", m_auditContext.Jsonize());
+  }
+
   return payload.View().WriteReadable();
 }
 
