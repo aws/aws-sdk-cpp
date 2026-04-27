@@ -63,7 +63,7 @@
 #set($setterWithMove = " { ${setHasBeenSet}${memberVariableName} = std::forward<${memberKeyWithFirstLetterCapitalized}T>(value); }")
 #end
 #set($getterFunctionName = "Get${memberKeyWithFirstLetterCapitalized}")
-#if($getterFunctionName == ${member.value.shape.name})
+#if($getterFunctionName == ${member.value.shape.name} || $getterFunctionName == ${typeInfo.className})
 #set($getterFunctionName = "Get${getterFunctionName}")
 #end
 #if($shape.request)
