@@ -859,6 +859,12 @@ class AWS_BEDROCKDATAAUTOMATION_API BedrockDataAutomationClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, BedrockDataAutomationError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace BedrockDataAutomation

@@ -2352,6 +2352,10 @@ class AWS_DYNAMODB_API DynamoDBClient
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<DynamoDBClient>;
 
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, DynamoDBError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
+
   void OptionallyUpdateDescribeEndpointsCache(Aws::Endpoint::AWSEndpoint& resolvedEndpoint, const Aws::String& operationName,
                                               const Aws::String& endpointKey,
                                               const Aws::DynamoDB::Model::DescribeEndpointsRequest& endpointRequest,

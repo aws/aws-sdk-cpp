@@ -928,6 +928,10 @@ class AWS_STS_API STSClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<STSClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Xml::XmlDocument>, STSError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace STS
