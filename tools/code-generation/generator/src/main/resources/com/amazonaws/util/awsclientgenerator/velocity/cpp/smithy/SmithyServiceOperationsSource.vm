@@ -1,5 +1,8 @@
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
+#if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers())
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceInvokeOperationMethod.vm")
+#else
   AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
   AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ${operation.name}, CoreErrors, CoreErrors::NOT_INITIALIZED);
@@ -36,5 +39,5 @@ ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation
     TracingUtils::SMITHY_CLIENT_DURATION_METRIC,
     *meter,
     {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()}, {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+#end
 }
-

@@ -2187,6 +2187,12 @@ class AWS_BEDROCKAGENT_API BedrockAgentClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockAgentClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, BedrockAgentError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace BedrockAgent

@@ -3269,6 +3269,12 @@ class AWS_BEDROCK_API BedrockClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, BedrockError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace Bedrock

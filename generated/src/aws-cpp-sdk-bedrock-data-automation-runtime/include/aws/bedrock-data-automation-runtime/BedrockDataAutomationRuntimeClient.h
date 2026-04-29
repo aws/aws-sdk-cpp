@@ -256,6 +256,11 @@ class AWS_BEDROCKDATAAUTOMATIONRUNTIME_API BedrockDataAutomationRuntimeClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockDataAutomationRuntimeClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, BedrockDataAutomationRuntimeError>
+      InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace BedrockDataAutomationRuntime

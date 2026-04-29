@@ -29,10 +29,8 @@
 #if($operation.request)
 ${operation.name}Outcome ${className}::${operation.name}(${constText}${operation.request.shape.name}& request) const
 {
-#if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers() && false)
-  ## This is not included in SmithyClientHeader, and this should be done for BOTH smithyJson and smithyRestXml (not just xml)
-  ## hence the false
-  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceInvokeOperationMethod.vm")
+#if(!$operation.result.shape.hasEventStreamMembers() && !$operation.result.shape.hasStreamMembers())
+  #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceInvokeOperationMethod.vm")
 #else
   AWS_OPERATION_GUARD(${operation.name});
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")

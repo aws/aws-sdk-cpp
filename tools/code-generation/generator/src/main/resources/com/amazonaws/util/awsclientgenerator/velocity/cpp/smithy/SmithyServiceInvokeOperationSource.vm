@@ -1,0 +1,40 @@
+${className}::InvokeOperationOutcome ${className}::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request,
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+#end
+    Aws::Http::HttpMethod httpMethod
+) const
+{
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_clientConfiguration.telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto result = MakeRequestDeserialize(&request, operationName, httpMethod, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+          resolveUri(resolvedEndpoint);
+#else
+          AWS_UNREFERENCED_PARAM(resolvedEndpoint);
+#end
+        });
+        return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership()) : InvokeOperationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+       {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}

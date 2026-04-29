@@ -146,153 +146,63 @@ void BedrockDataAutomationRuntimeClient::OverrideEndpoint(const Aws::String& end
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+BedrockDataAutomationRuntimeClient::InvokeOperationOutcome BedrockDataAutomationRuntimeClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_clientConfiguration.telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto result =
+            MakeRequestDeserialize(&request, operationName, httpMethod,
+                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
+                                  : InvokeOperationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
 GetDataAutomationStatusOutcome BedrockDataAutomationRuntimeClient::GetDataAutomationStatus(
     const GetDataAutomationStatusRequest& request) const {
-  AWS_OPERATION_GUARD(GetDataAutomationStatus);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetDataAutomationStatus, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetDataAutomationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetDataAutomationStatus, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetDataAutomationStatus",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetDataAutomationStatusOutcome>(
-      [&]() -> GetDataAutomationStatusOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? GetDataAutomationStatusOutcome(result.GetResultWithOwnership())
-                                  : GetDataAutomationStatusOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetDataAutomationStatusOutcome(result.GetResultWithOwnership())
+                            : GetDataAutomationStatusOutcome(std::move(result.GetError()));
 }
-
 InvokeDataAutomationOutcome BedrockDataAutomationRuntimeClient::InvokeDataAutomation(const InvokeDataAutomationRequest& request) const {
-  AWS_OPERATION_GUARD(InvokeDataAutomation);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeDataAutomation, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, InvokeDataAutomation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, InvokeDataAutomation, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeDataAutomation",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeDataAutomationOutcome>(
-      [&]() -> InvokeDataAutomationOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? InvokeDataAutomationOutcome(result.GetResultWithOwnership())
-                                  : InvokeDataAutomationOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeDataAutomationOutcome(result.GetResultWithOwnership())
+                            : InvokeDataAutomationOutcome(std::move(result.GetError()));
 }
-
 InvokeDataAutomationAsyncOutcome BedrockDataAutomationRuntimeClient::InvokeDataAutomationAsync(
     const InvokeDataAutomationAsyncRequest& request) const {
-  AWS_OPERATION_GUARD(InvokeDataAutomationAsync);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeDataAutomationAsync, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, InvokeDataAutomationAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, InvokeDataAutomationAsync, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".InvokeDataAutomationAsync",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<InvokeDataAutomationAsyncOutcome>(
-      [&]() -> InvokeDataAutomationAsyncOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? InvokeDataAutomationAsyncOutcome(result.GetResultWithOwnership())
-                                  : InvokeDataAutomationAsyncOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? InvokeDataAutomationAsyncOutcome(result.GetResultWithOwnership())
+                            : InvokeDataAutomationAsyncOutcome(std::move(result.GetError()));
 }
-
 ListTagsForResourceOutcome BedrockDataAutomationRuntimeClient::ListTagsForResource(const ListTagsForResourceRequest& request) const {
-  AWS_OPERATION_GUARD(ListTagsForResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListTagsForResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListTagsForResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListTagsForResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListTagsForResourceOutcome>(
-      [&]() -> ListTagsForResourceOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
-                                  : ListTagsForResourceOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListTagsForResourceOutcome(result.GetResultWithOwnership())
+                            : ListTagsForResourceOutcome(std::move(result.GetError()));
 }
-
 TagResourceOutcome BedrockDataAutomationRuntimeClient::TagResource(const TagResourceRequest& request) const {
-  AWS_OPERATION_GUARD(TagResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, TagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, TagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".TagResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<TagResourceOutcome>(
-      [&]() -> TagResourceOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? TagResourceOutcome(result.GetResultWithOwnership()) : TagResourceOutcome(std::move(result.GetError()));
 }
-
 UntagResourceOutcome BedrockDataAutomationRuntimeClient::UntagResource(const UntagResourceRequest& request) const {
-  AWS_OPERATION_GUARD(UntagResource);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, UntagResource, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, UntagResource, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".UntagResource",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<UntagResourceOutcome>(
-      [&]() -> UntagResourceOutcome {
-        auto result =
-            MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                   [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { AWS_UNREFERENCED_PARAM(resolvedEndpoint); });
-        return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership())
-                                  : UntagResourceOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UntagResourceOutcome(result.GetResultWithOwnership()) : UntagResourceOutcome(std::move(result.GetError()));
 }

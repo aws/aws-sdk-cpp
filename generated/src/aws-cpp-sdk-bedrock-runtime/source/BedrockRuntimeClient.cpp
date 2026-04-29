@@ -181,9 +181,37 @@ void BedrockRuntimeClient::OverrideEndpoint(const Aws::String& endpoint) {
   m_clientConfiguration.endpointOverride = endpoint;
   m_endpointProvider->OverrideEndpoint(endpoint);
 }
+BedrockRuntimeClient::InvokeOperationOutcome BedrockRuntimeClient::InvokeServiceOperation(
+    const AmazonWebServiceRequest& request, const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+    Aws::Http::HttpMethod httpMethod) const {
+  auto operationName = request.GetServiceRequestName();
+  auto serviceName = GetServiceClientName();
+
+  AWS_OPERATION_GUARD_DYNAMIC(operationName);
+
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(m_clientConfiguration.telemetryProvider, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(serviceName, {});
+  auto meter = m_clientConfiguration.telemetryProvider->getMeter(serviceName, {});
+  AWS_OPERATION_CHECK_PTR_DYNAMIC(meter, operationName, CoreErrors, CoreErrors::NOT_INITIALIZED);
+
+  auto span = tracer->CreateSpan(Aws::String(serviceName) + "." + operationName,
+                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName},
+                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName},
+                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
+                                 smithy::components::tracing::SpanKind::CLIENT);
+
+  return TracingUtils::MakeCallWithTiming<InvokeOperationOutcome>(
+      [&]() -> InvokeOperationOutcome {
+        auto result = MakeRequestDeserialize(&request, operationName, httpMethod,
+                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolveUri(resolvedEndpoint); });
+        return result.IsSuccess() ? InvokeOperationOutcome(result.GetResultWithOwnership())
+                                  : InvokeOperationOutcome(std::move(result.GetError()));
+      },
+      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
+      {{TracingUtils::SMITHY_METHOD_DIMENSION, operationName}, {TracingUtils::SMITHY_SERVICE_DIMENSION, serviceName}});
+}
 ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailRequest& request) const {
-  AWS_OPERATION_GUARD(ApplyGuardrail);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ApplyGuardrail, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.GuardrailIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ApplyGuardrail", "Required field: GuardrailIdentifier, is not set");
     return ApplyGuardrailOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
@@ -194,65 +222,36 @@ ApplyGuardrailOutcome BedrockRuntimeClient::ApplyGuardrail(const ApplyGuardrailR
     return ApplyGuardrailOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [GuardrailVersion]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ApplyGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ApplyGuardrail, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ApplyGuardrail",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ApplyGuardrailOutcome>(
-      [&]() -> ApplyGuardrailOutcome {
-        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                               resolvedEndpoint.AddPathSegments("/guardrail/");
-                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
-                                               resolvedEndpoint.AddPathSegments("/version/");
-                                               resolvedEndpoint.AddPathSegment(request.GetGuardrailVersion());
-                                               resolvedEndpoint.AddPathSegments("/apply");
-                                             });
-        return result.IsSuccess() ? ApplyGuardrailOutcome(result.GetResultWithOwnership())
-                                  : ApplyGuardrailOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
 
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/guardrail/");
+        resolvedEndpoint.AddPathSegment(request.GetGuardrailIdentifier());
+        resolvedEndpoint.AddPathSegments("/version/");
+        resolvedEndpoint.AddPathSegment(request.GetGuardrailVersion());
+        resolvedEndpoint.AddPathSegments("/apply");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ApplyGuardrailOutcome(result.GetResultWithOwnership()) : ApplyGuardrailOutcome(std::move(result.GetError()));
+}
 ConverseOutcome BedrockRuntimeClient::Converse(const ConverseRequest& request) const {
-  AWS_OPERATION_GUARD(Converse);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, Converse, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ModelIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("Converse", "Required field: ModelId, is not set");
     return ConverseOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                        "Missing required field [ModelId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, Converse, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, Converse, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".Converse",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ConverseOutcome>(
-      [&]() -> ConverseOutcome {
-        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                               resolvedEndpoint.AddPathSegments("/model/");
-                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                               resolvedEndpoint.AddPathSegments("/converse");
-                                             });
-        return result.IsSuccess() ? ConverseOutcome(result.GetResultWithOwnership()) : ConverseOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
 
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/model/");
+        resolvedEndpoint.AddPathSegment(request.GetModelId());
+        resolvedEndpoint.AddPathSegments("/converse");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ConverseOutcome(result.GetResultWithOwnership()) : ConverseOutcome(std::move(result.GetError()));
+}
 ConverseStreamOutcome BedrockRuntimeClient::ConverseStream(ConverseStreamRequest& request) const {
   AWS_OPERATION_GUARD(ConverseStream);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, ConverseStream, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -297,71 +296,39 @@ ConverseStreamOutcome BedrockRuntimeClient::ConverseStream(ConverseStreamRequest
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
-
 CountTokensOutcome BedrockRuntimeClient::CountTokens(const CountTokensRequest& request) const {
-  AWS_OPERATION_GUARD(CountTokens);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, CountTokens, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.ModelIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CountTokens", "Required field: ModelId, is not set");
     return CountTokensOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                           "Missing required field [ModelId]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, CountTokens, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, CountTokens, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".CountTokens",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<CountTokensOutcome>(
-      [&]() -> CountTokensOutcome {
-        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                               resolvedEndpoint.AddPathSegments("/model/");
-                                               resolvedEndpoint.AddPathSegment(request.GetModelId());
-                                               resolvedEndpoint.AddPathSegments("/count-tokens");
-                                             });
-        return result.IsSuccess() ? CountTokensOutcome(result.GetResultWithOwnership()) : CountTokensOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
 
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/model/");
+        resolvedEndpoint.AddPathSegment(request.GetModelId());
+        resolvedEndpoint.AddPathSegments("/count-tokens");
+      },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CountTokensOutcome(result.GetResultWithOwnership()) : CountTokensOutcome(std::move(result.GetError()));
+}
 GetAsyncInvokeOutcome BedrockRuntimeClient::GetAsyncInvoke(const GetAsyncInvokeRequest& request) const {
-  AWS_OPERATION_GUARD(GetAsyncInvoke);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, GetAsyncInvoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
   if (!request.InvocationArnHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetAsyncInvoke", "Required field: InvocationArn, is not set");
     return GetAsyncInvokeOutcome(Aws::Client::AWSError<BedrockRuntimeErrors>(BedrockRuntimeErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
                                                                              "Missing required field [InvocationArn]", false));
   }
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, GetAsyncInvoke, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, GetAsyncInvoke, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".GetAsyncInvoke",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<GetAsyncInvokeOutcome>(
-      [&]() -> GetAsyncInvokeOutcome {
-        auto result = MakeRequestDeserialize(&request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-                                             [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void {
-                                               resolvedEndpoint.AddPathSegments("/async-invoke/");
-                                               resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
-                                             });
-        return result.IsSuccess() ? GetAsyncInvokeOutcome(result.GetResultWithOwnership())
-                                  : GetAsyncInvokeOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
-}
 
+  auto result = InvokeServiceOperation(
+      request,
+      [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+        resolvedEndpoint.AddPathSegments("/async-invoke/");
+        resolvedEndpoint.AddPathSegment(request.GetInvocationArn());
+      },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetAsyncInvokeOutcome(result.GetResultWithOwnership()) : GetAsyncInvokeOutcome(std::move(result.GetError()));
+}
 InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& request) const {
   AWS_OPERATION_GUARD(InvokeModel);
   AWS_OPERATION_CHECK_PTR(m_endpointProvider, InvokeModel, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
@@ -393,7 +360,6 @@ InvokeModelOutcome BedrockRuntimeClient::InvokeModel(const InvokeModelRequest& r
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
-
 void BedrockRuntimeClient::InvokeModelWithBidirectionalStreamAsync(
     Model::InvokeModelWithBidirectionalStreamRequest& request,
     const InvokeModelWithBidirectionalStreamStreamReadyHandler& streamReadyHandler,
@@ -484,53 +450,17 @@ InvokeModelWithResponseStreamOutcome BedrockRuntimeClient::InvokeModelWithRespon
       {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
-
 ListAsyncInvokesOutcome BedrockRuntimeClient::ListAsyncInvokes(const ListAsyncInvokesRequest& request) const {
-  AWS_OPERATION_GUARD(ListAsyncInvokes);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, ListAsyncInvokes, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, ListAsyncInvokes, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, ListAsyncInvokes, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".ListAsyncInvokes",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<ListAsyncInvokesOutcome>(
-      [&]() -> ListAsyncInvokesOutcome {
-        auto result = MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_GET,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); });
-        return result.IsSuccess() ? ListAsyncInvokesOutcome(result.GetResultWithOwnership())
-                                  : ListAsyncInvokesOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/async-invoke"); },
+      Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListAsyncInvokesOutcome(result.GetResultWithOwnership())
+                            : ListAsyncInvokesOutcome(std::move(result.GetError()));
 }
-
 StartAsyncInvokeOutcome BedrockRuntimeClient::StartAsyncInvoke(const StartAsyncInvokeRequest& request) const {
-  AWS_OPERATION_GUARD(StartAsyncInvoke);
-  AWS_OPERATION_CHECK_PTR(m_endpointProvider, StartAsyncInvoke, CoreErrors, CoreErrors::ENDPOINT_RESOLUTION_FAILURE);
-  AWS_OPERATION_CHECK_PTR(m_clientConfiguration.telemetryProvider, StartAsyncInvoke, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto tracer = m_clientConfiguration.telemetryProvider->getTracer(this->GetServiceClientName(), {});
-  auto meter = m_clientConfiguration.telemetryProvider->getMeter(this->GetServiceClientName(), {});
-  AWS_OPERATION_CHECK_PTR(meter, StartAsyncInvoke, CoreErrors, CoreErrors::NOT_INITIALIZED);
-  auto span = tracer->CreateSpan(Aws::String(this->GetServiceClientName()) + ".StartAsyncInvoke",
-                                 {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-                                  {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()},
-                                  {TracingUtils::SMITHY_SYSTEM_DIMENSION, TracingUtils::SMITHY_METHOD_AWS_VALUE}},
-                                 smithy::components::tracing::SpanKind::CLIENT);
-  return TracingUtils::MakeCallWithTiming<StartAsyncInvokeOutcome>(
-      [&]() -> StartAsyncInvokeOutcome {
-        auto result = MakeRequestDeserialize(
-            &request, request.GetServiceRequestName(), Aws::Http::HttpMethod::HTTP_POST,
-            [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) -> void { resolvedEndpoint.AddPathSegments("/async-invoke"); });
-        return result.IsSuccess() ? StartAsyncInvokeOutcome(result.GetResultWithOwnership())
-                                  : StartAsyncInvokeOutcome(std::move(result.GetError()));
-      },
-      TracingUtils::SMITHY_CLIENT_DURATION_METRIC, *meter,
-      {{TracingUtils::SMITHY_METHOD_DIMENSION, request.GetServiceRequestName()},
-       {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
+  auto result = InvokeServiceOperation(
+      request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) { resolvedEndpoint.AddPathSegments("/async-invoke"); },
+      Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartAsyncInvokeOutcome(result.GetResultWithOwnership())
+                            : StartAsyncInvokeOutcome(std::move(result.GetError()));
 }

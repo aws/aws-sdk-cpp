@@ -111,6 +111,8 @@ namespace ${serviceNamespace}
     private:
       friend class ${rootNamespace}::Client::ClientWithAsyncTemplateMethods<${className}>;
 
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceInvokeOperationHeader.vm")
+
 #if($metadata.hasEndpointDiscoveryTrait)
       void OptionallyUpdateDescribeEndpointsCache(${rootNamespace}::Endpoint::AWSEndpoint& resolvedEndpoint,
         const ${rootNamespace}::String& operationName,

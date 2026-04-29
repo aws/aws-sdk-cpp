@@ -525,6 +525,12 @@ class AWS_BEDROCKRUNTIME_API BedrockRuntimeClient
 
  private:
   friend class Aws::Client::ClientWithAsyncTemplateMethods<BedrockRuntimeClient>;
+
+  typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>, BedrockRuntimeError> InvokeOperationOutcome;
+
+  InvokeOperationOutcome InvokeServiceOperation(const AmazonWebServiceRequest& request,
+                                                const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+                                                Aws::Http::HttpMethod httpMethod) const;
 };
 
 }  // namespace BedrockRuntime
