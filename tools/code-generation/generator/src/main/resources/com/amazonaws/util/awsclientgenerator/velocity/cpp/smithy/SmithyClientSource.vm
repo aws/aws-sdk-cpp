@@ -47,8 +47,8 @@ const char* ${className}::GetServiceName() {return SERVICE_NAME;}
 const char* ${className}::GetAllocationTag() {return ALLOCATION_TAG;}
 
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyClientSourceInit.vm")
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceInvokeOperationSource.vm")
 #end
-
 #parse("/com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyJsonServiceOperationsSource.vm")
 
 #if($metadata.hasEndpointDiscoveryTrait)

@@ -1,0 +1,13 @@
+#set($emitGenericOperation = true)
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/common/ServiceClientOperationRequestRequiredMemberValidate.vm")
+#set($emitGenericOperation = false)
+
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    auto result = InvokeServiceOperation(request, [&](Aws::Endpoint::AWSEndpoint& resolvedEndpoint) {
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyUriRequestQueryParams.vm")
+    }, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+    return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#else
+    auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_${operation.http.method});
+    return result.IsSuccess() ? ${operation.name}Outcome(result.GetResultWithOwnership()) : ${operation.name}Outcome(std::move(result.GetError()));
+#end

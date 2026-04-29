@@ -89,6 +89,7 @@ Aws::String ${className}::GenerateConnectAuthToken(const char* dbHostName, const
 
 #end
 #end
+#parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/smithy/SmithyServiceInvokeOperationSource.vm")
 #end
 #if($serviceNamespace == "S3Crt")
 #parse("com/amazonaws/util/awsclientgenerator/velocity/cpp/s3/s3-crt/SmithyS3CrtSpecificOperations.vm")

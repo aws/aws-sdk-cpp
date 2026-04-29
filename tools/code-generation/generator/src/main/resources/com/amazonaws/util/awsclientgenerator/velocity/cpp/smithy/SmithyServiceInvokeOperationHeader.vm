@@ -1,0 +1,15 @@
+## Be careful to not have this outcome name clash with an operation outcome name (specifically lambda:Invoke)
+#if($serviceModel.metadata.findFirstSupportedProtocol() == "json" || $serviceModel.metadata.findFirstSupportedProtocol() == "rest-json" || $serviceModel.metadata.findFirstSupportedProtocol() == "application-json")
+#set($invokeResponseType = "Aws::Utils::Json::JsonValue")
+#elseif($serviceModel.metadata.findFirstSupportedProtocol() == "rest-xml" || $serviceModel.metadata.findFirstSupportedProtocol() == "query")
+#set($invokeResponseType = "Aws::Utils::Xml::XmlDocument")
+#end
+typedef Aws::Utils::Outcome<Aws::AmazonWebServiceResult<${invokeResponseType}>, ${metadata.classNamePrefix}Error> InvokeOperationOutcome;
+
+InvokeOperationOutcome InvokeServiceOperation(
+    const AmazonWebServiceRequest& request,
+#if($metadata.protocol == "rest-json" || $metadata.protocol == "rest-xml")
+    const std::function<void(Aws::Endpoint::AWSEndpoint&)>& resolveUri,
+#end
+    Aws::Http::HttpMethod httpMethod
+) const;
