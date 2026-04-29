@@ -30,6 +30,24 @@ class PutAccountNameRequest : public AccountRequest {
 
   ///@{
   /**
+   * <p>The name of the account.</p>
+   */
+  inline const Aws::String& GetAccountName() const { return m_accountName; }
+  inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
+  template <typename AccountNameT = Aws::String>
+  void SetAccountName(AccountNameT&& value) {
+    m_accountNameHasBeenSet = true;
+    m_accountName = std::forward<AccountNameT>(value);
+  }
+  template <typename AccountNameT = Aws::String>
+  PutAccountNameRequest& WithAccountName(AccountNameT&& value) {
+    SetAccountName(std::forward<AccountNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the 12 digit account ID number of the Amazon Web Services account
    * that you want to access or modify with this operation.</p> <p>If you do not
    * specify this parameter, it defaults to the Amazon Web Services account of the
@@ -64,30 +82,12 @@ class PutAccountNameRequest : public AccountRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>The name of the account.</p>
-   */
-  inline const Aws::String& GetAccountName() const { return m_accountName; }
-  inline bool AccountNameHasBeenSet() const { return m_accountNameHasBeenSet; }
-  template <typename AccountNameT = Aws::String>
-  void SetAccountName(AccountNameT&& value) {
-    m_accountNameHasBeenSet = true;
-    m_accountName = std::forward<AccountNameT>(value);
-  }
-  template <typename AccountNameT = Aws::String>
-  PutAccountNameRequest& WithAccountName(AccountNameT&& value) {
-    SetAccountName(std::forward<AccountNameT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_accountId;
-
   Aws::String m_accountName;
-  bool m_accountIdHasBeenSet = false;
+
+  Aws::String m_accountId;
   bool m_accountNameHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
 };
 
 }  // namespace Model

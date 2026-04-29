@@ -182,8 +182,11 @@ class GameSessionPlacement {
 
   ///@{
   /**
-   * <p>A unique identifier for the game session. This value isn't final until
-   * placement status is <code>FULFILLED</code>.</p>
+   * <p>An identifier for the game session that is unique across all regions. The
+   * value is always a full ARN in the following format:
+   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+   * string&gt;</code>. This value is the same as <code>GameSessionArn</code>. This
+   * value isn't final until placement status is <code>FULFILLED</code>.</p>
    */
   inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
   inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }
@@ -201,9 +204,11 @@ class GameSessionPlacement {
 
   ///@{
   /**
-   * <p>Identifier for the game session created by this placement request. This
-   * identifier is unique across all Regions. This value isn't final until placement
-   * status is <code>FULFILLED</code>.</p>
+   * <p>An identifier for the game session that is unique across all regions. The
+   * value is always a full ARN in the following format:
+   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+   * string&gt;</code>. This value is the same as <code>GameSessionId</code>. This
+   * value isn't final until placement status is <code>FULFILLED</code>.</p>
    */
   inline const Aws::String& GetGameSessionArn() const { return m_gameSessionArn; }
   inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }

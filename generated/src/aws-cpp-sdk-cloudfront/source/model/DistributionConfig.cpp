@@ -149,6 +149,11 @@ DistributionConfig& DistributionConfig::operator=(const XmlNode& xmlNode) {
       m_connectionFunctionAssociation = connectionFunctionAssociationNode;
       m_connectionFunctionAssociationHasBeenSet = true;
     }
+    XmlNode cacheTagConfigNode = resultNode.FirstChild("CacheTagConfig");
+    if (!cacheTagConfigNode.IsNull()) {
+      m_cacheTagConfig = cacheTagConfigNode;
+      m_cacheTagConfigHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -280,6 +285,11 @@ void DistributionConfig::AddToNode(XmlNode& parentNode) const {
   if (m_connectionFunctionAssociationHasBeenSet) {
     XmlNode connectionFunctionAssociationNode = parentNode.CreateChildElement("ConnectionFunctionAssociation");
     m_connectionFunctionAssociation.AddToNode(connectionFunctionAssociationNode);
+  }
+
+  if (m_cacheTagConfigHasBeenSet) {
+    XmlNode cacheTagConfigNode = parentNode.CreateChildElement("CacheTagConfig");
+    m_cacheTagConfig.AddToNode(cacheTagConfigNode);
   }
 }
 

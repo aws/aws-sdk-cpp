@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/TargetProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
@@ -315,6 +316,21 @@ class CreateGatewayTargetResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The protocol type of the created gateway target.</p>
+   */
+  inline TargetProtocolType GetProtocolType() const { return m_protocolType; }
+  inline void SetProtocolType(TargetProtocolType value) {
+    m_protocolTypeHasBeenSet = true;
+    m_protocolType = value;
+  }
+  inline CreateGatewayTargetResult& WithProtocolType(TargetProtocolType value) {
+    SetProtocolType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -361,6 +377,8 @@ class CreateGatewayTargetResult {
 
   AuthorizationData m_authorizationData;
 
+  TargetProtocolType m_protocolType{TargetProtocolType::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
   bool m_gatewayArnHasBeenSet = false;
@@ -378,6 +396,7 @@ class CreateGatewayTargetResult {
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointManagedResourcesHasBeenSet = false;
   bool m_authorizationDataHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

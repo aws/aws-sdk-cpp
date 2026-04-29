@@ -72,8 +72,8 @@ class UpdateAnycastIpList2020_05_31Request : public CloudFrontRequest {
 
   ///@{
   /**
-   * <p> A list of IPAM CIDR configurations that specify the IP address ranges and
-   * IPAM pool settings for updating the Anycast static IP list. </p>
+   * <p>A list of IPAM CIDR configurations that specify the IP address ranges and
+   * IPAM pool settings for updating the Anycast static IP list.</p>
    */
   inline const Aws::Vector<IpamCidrConfig>& GetIpamCidrConfigs() const { return m_ipamCidrConfigs; }
   inline bool IpamCidrConfigsHasBeenSet() const { return m_ipamCidrConfigsHasBeenSet; }

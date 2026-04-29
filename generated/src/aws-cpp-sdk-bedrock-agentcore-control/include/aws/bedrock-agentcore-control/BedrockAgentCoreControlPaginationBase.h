@@ -12,7 +12,10 @@
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
@@ -123,6 +126,30 @@ class BedrockAgentCoreControlPaginationBase {
   }
 
   /**
+   * Create a paginator for ListConfigurationBundles operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationBundlesRequest,
+                                    Pagination::ListConfigurationBundlesPaginationTraits<DerivedClient>>
+  ListConfigurationBundlesPaginator(const Model::ListConfigurationBundlesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationBundlesRequest,
+                                             Pagination::ListConfigurationBundlesPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListConfigurationBundleVersions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationBundleVersionsRequest,
+                                    Pagination::ListConfigurationBundleVersionsPaginationTraits<DerivedClient>>
+  ListConfigurationBundleVersionsPaginator(const Model::ListConfigurationBundleVersionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListConfigurationBundleVersionsRequest,
+                                             Pagination::ListConfigurationBundleVersionsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
    * Create a paginator for ListEvaluators operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluatorsRequest, Pagination::ListEvaluatorsPaginationTraits<DerivedClient>>
@@ -131,6 +158,18 @@ class BedrockAgentCoreControlPaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListEvaluatorsRequest,
                                              Pagination::ListEvaluatorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                         request};
+  }
+
+  /**
+   * Create a paginator for ListGatewayRules operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayRulesRequest,
+                                    Pagination::ListGatewayRulesPaginationTraits<DerivedClient>>
+  ListGatewayRulesPaginator(const Model::ListGatewayRulesRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListGatewayRulesRequest,
+                                             Pagination::ListGatewayRulesPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                          request};
   }
 
   /**

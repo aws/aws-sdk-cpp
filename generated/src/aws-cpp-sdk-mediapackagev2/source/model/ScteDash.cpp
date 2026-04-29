@@ -22,6 +22,10 @@ ScteDash& ScteDash::operator=(JsonView jsonValue) {
     m_adMarkerDash = AdMarkerDashMapper::GetAdMarkerDashForName(jsonValue.GetString("AdMarkerDash"));
     m_adMarkerDashHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScteInManifests")) {
+    m_scteInManifests = ScteInManifestsMapper::GetScteInManifestsForName(jsonValue.GetString("ScteInManifests"));
+    m_scteInManifestsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ScteDash::Jsonize() const {
 
   if (m_adMarkerDashHasBeenSet) {
     payload.WithString("AdMarkerDash", AdMarkerDashMapper::GetNameForAdMarkerDash(m_adMarkerDash));
+  }
+
+  if (m_scteInManifestsHasBeenSet) {
+    payload.WithString("ScteInManifests", ScteInManifestsMapper::GetNameForScteInManifests(m_scteInManifests));
   }
 
   return payload;

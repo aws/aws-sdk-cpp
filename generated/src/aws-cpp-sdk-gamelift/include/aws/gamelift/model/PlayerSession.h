@@ -82,8 +82,10 @@ class PlayerSession {
 
   ///@{
   /**
-   * <p>A unique identifier for the game session that the player session is connected
-   * to.</p>
+   * <p>An identifier for the game session that is unique across all regions that the
+   * player session is connected to. The value is always a full ARN in the following
+   * format: <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet
+   * ID&gt;/&lt;ID string&gt;</code>.</p>
    */
   inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
   inline bool GameSessionIdHasBeenSet() const { return m_gameSessionIdHasBeenSet; }

@@ -31,5 +31,9 @@ Aws::String UpdateEvaluatorRequest::SerializePayload() const {
     payload.WithString("level", EvaluatorLevelMapper::GetNameForEvaluatorLevel(m_level));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   return payload.View().WriteReadable();
 }

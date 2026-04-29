@@ -29,6 +29,13 @@ Scte& Scte::operator=(JsonView jsonValue) {
     m_scteInSegments = ScteInSegmentsMapper::GetScteInSegmentsForName(jsonValue.GetString("ScteInSegments"));
     m_scteInSegmentsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("CustomAdTypes")) {
+    Aws::Utils::Array<JsonView> customAdTypesJsonList = jsonValue.GetArray("CustomAdTypes");
+    for (unsigned customAdTypesIndex = 0; customAdTypesIndex < customAdTypesJsonList.GetLength(); ++customAdTypesIndex) {
+      m_customAdTypes.push_back(CustomAdTypeMapper::GetCustomAdTypeForName(customAdTypesJsonList[customAdTypesIndex].AsString()));
+    }
+    m_customAdTypesHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -45,6 +52,14 @@ JsonValue Scte::Jsonize() const {
 
   if (m_scteInSegmentsHasBeenSet) {
     payload.WithString("ScteInSegments", ScteInSegmentsMapper::GetNameForScteInSegments(m_scteInSegments));
+  }
+
+  if (m_customAdTypesHasBeenSet) {
+    Aws::Utils::Array<JsonValue> customAdTypesJsonList(m_customAdTypes.size());
+    for (unsigned customAdTypesIndex = 0; customAdTypesIndex < customAdTypesJsonList.GetLength(); ++customAdTypesIndex) {
+      customAdTypesJsonList[customAdTypesIndex].AsString(CustomAdTypeMapper::GetNameForCustomAdType(m_customAdTypes[customAdTypesIndex]));
+    }
+    payload.WithArray("CustomAdTypes", std::move(customAdTypesJsonList));
   }
 
   return payload;

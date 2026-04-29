@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
+#include <aws/mediapackagev2/model/CustomAdType.h>
 #include <aws/mediapackagev2/model/ScteFilter.h>
 #include <aws/mediapackagev2/model/ScteInSegments.h>
 
@@ -61,8 +62,10 @@ class Scte {
   /**
    * <p>Controls whether SCTE-35 messages are included in segment files.</p> <ul>
    * <li> <p>None – SCTE-35 messages are not included in segments (default)</p> </li>
-   * <li> <p>All – SCTE-35 messages are embedded in segment data</p> </li> </ul> <p>
-   * For DASH manifests, when set to <code>All</code>, an
+   * <li> <p>All – SCTE-35 messages are embedded in segment data</p> </li> <li>
+   * <p>MatchesFilter – SCTE-35 messages which match the ScteFilter are embedded in
+   * segment data</p> </li> </ul> <p> For DASH manifests, when set to
+   * <code>All</code> or <code>MatchesFilter</code>, an
    * <code>InbandEventStream</code> tag signals that SCTE messages are present in
    * segments. This setting works independently of manifest ad markers.</p>
    */
@@ -77,12 +80,44 @@ class Scte {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>A list of additional non-Ad SCTE-35 event types to treat as advertisements.
+   * When configured, events matching these types produce ad markers (such as
+   * <code>SCTE35-OUT</code> and <code>SCTE35-IN</code> in HLS DATERANGE tags) in
+   * manifests.</p> <p>Valid values: <code>PROGRAM</code> | <code>CHAPTER</code> |
+   * <code>UNSCHEDULED_EVENT</code> | <code>ALTERNATE_CONTENT_OPPORTUNITY</code> |
+   * <code>NETWORK</code> </p> <p>If you don't specify any values, the default is
+   * empty (only default ad types are used).</p>
+   */
+  inline const Aws::Vector<CustomAdType>& GetCustomAdTypes() const { return m_customAdTypes; }
+  inline bool CustomAdTypesHasBeenSet() const { return m_customAdTypesHasBeenSet; }
+  template <typename CustomAdTypesT = Aws::Vector<CustomAdType>>
+  void SetCustomAdTypes(CustomAdTypesT&& value) {
+    m_customAdTypesHasBeenSet = true;
+    m_customAdTypes = std::forward<CustomAdTypesT>(value);
+  }
+  template <typename CustomAdTypesT = Aws::Vector<CustomAdType>>
+  Scte& WithCustomAdTypes(CustomAdTypesT&& value) {
+    SetCustomAdTypes(std::forward<CustomAdTypesT>(value));
+    return *this;
+  }
+  inline Scte& AddCustomAdTypes(CustomAdType value) {
+    m_customAdTypesHasBeenSet = true;
+    m_customAdTypes.push_back(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::Vector<ScteFilter> m_scteFilter;
 
   ScteInSegments m_scteInSegments{ScteInSegments::NOT_SET};
+
+  Aws::Vector<CustomAdType> m_customAdTypes;
   bool m_scteFilterHasBeenSet = false;
   bool m_scteInSegmentsHasBeenSet = false;
+  bool m_customAdTypesHasBeenSet = false;
 };
 
 }  // namespace Model

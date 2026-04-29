@@ -34,6 +34,24 @@ class ContactInformation {
 
   ///@{
   /**
+   * <p>The full name of the primary contact address.</p>
+   */
+  inline const Aws::String& GetFullName() const { return m_fullName; }
+  inline bool FullNameHasBeenSet() const { return m_fullNameHasBeenSet; }
+  template <typename FullNameT = Aws::String>
+  void SetFullName(FullNameT&& value) {
+    m_fullNameHasBeenSet = true;
+    m_fullName = std::forward<FullNameT>(value);
+  }
+  template <typename FullNameT = Aws::String>
+  ContactInformation& WithFullName(FullNameT&& value) {
+    SetFullName(std::forward<FullNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The first line of the primary contact address.</p>
    */
   inline const Aws::String& GetAddressLine1() const { return m_addressLine1; }
@@ -106,37 +124,23 @@ class ContactInformation {
 
   ///@{
   /**
-   * <p>The name of the company associated with the primary contact information, if
-   * any.</p>
+   * <p>The state or region of the primary contact address. If the mailing address is
+   * within the United States (US), the value in this field can be either a two
+   * character state code (for example, <code>NJ</code>) or the full state name (for
+   * example, <code>New Jersey</code>). This field is required in the following
+   * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
+   * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
    */
-  inline const Aws::String& GetCompanyName() const { return m_companyName; }
-  inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
-  template <typename CompanyNameT = Aws::String>
-  void SetCompanyName(CompanyNameT&& value) {
-    m_companyNameHasBeenSet = true;
-    m_companyName = std::forward<CompanyNameT>(value);
+  inline const Aws::String& GetStateOrRegion() const { return m_stateOrRegion; }
+  inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }
+  template <typename StateOrRegionT = Aws::String>
+  void SetStateOrRegion(StateOrRegionT&& value) {
+    m_stateOrRegionHasBeenSet = true;
+    m_stateOrRegion = std::forward<StateOrRegionT>(value);
   }
-  template <typename CompanyNameT = Aws::String>
-  ContactInformation& WithCompanyName(CompanyNameT&& value) {
-    SetCompanyName(std::forward<CompanyNameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The ISO-3166 two-letter country code for the primary contact address.</p>
-   */
-  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
-  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
-  template <typename CountryCodeT = Aws::String>
-  void SetCountryCode(CountryCodeT&& value) {
-    m_countryCodeHasBeenSet = true;
-    m_countryCode = std::forward<CountryCodeT>(value);
-  }
-  template <typename CountryCodeT = Aws::String>
-  ContactInformation& WithCountryCode(CountryCodeT&& value) {
-    SetCountryCode(std::forward<CountryCodeT>(value));
+  template <typename StateOrRegionT = Aws::String>
+  ContactInformation& WithStateOrRegion(StateOrRegionT&& value) {
+    SetStateOrRegion(std::forward<StateOrRegionT>(value));
     return *this;
   }
   ///@}
@@ -161,18 +165,36 @@ class ContactInformation {
 
   ///@{
   /**
-   * <p>The full name of the primary contact address.</p>
+   * <p>The postal code of the primary contact address.</p>
    */
-  inline const Aws::String& GetFullName() const { return m_fullName; }
-  inline bool FullNameHasBeenSet() const { return m_fullNameHasBeenSet; }
-  template <typename FullNameT = Aws::String>
-  void SetFullName(FullNameT&& value) {
-    m_fullNameHasBeenSet = true;
-    m_fullName = std::forward<FullNameT>(value);
+  inline const Aws::String& GetPostalCode() const { return m_postalCode; }
+  inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
+  template <typename PostalCodeT = Aws::String>
+  void SetPostalCode(PostalCodeT&& value) {
+    m_postalCodeHasBeenSet = true;
+    m_postalCode = std::forward<PostalCodeT>(value);
   }
-  template <typename FullNameT = Aws::String>
-  ContactInformation& WithFullName(FullNameT&& value) {
-    SetFullName(std::forward<FullNameT>(value));
+  template <typename PostalCodeT = Aws::String>
+  ContactInformation& WithPostalCode(PostalCodeT&& value) {
+    SetPostalCode(std::forward<PostalCodeT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ISO-3166 two-letter country code for the primary contact address.</p>
+   */
+  inline const Aws::String& GetCountryCode() const { return m_countryCode; }
+  inline bool CountryCodeHasBeenSet() const { return m_countryCodeHasBeenSet; }
+  template <typename CountryCodeT = Aws::String>
+  void SetCountryCode(CountryCodeT&& value) {
+    m_countryCodeHasBeenSet = true;
+    m_countryCode = std::forward<CountryCodeT>(value);
+  }
+  template <typename CountryCodeT = Aws::String>
+  ContactInformation& WithCountryCode(CountryCodeT&& value) {
+    SetCountryCode(std::forward<CountryCodeT>(value));
     return *this;
   }
   ///@}
@@ -198,41 +220,19 @@ class ContactInformation {
 
   ///@{
   /**
-   * <p>The postal code of the primary contact address.</p>
+   * <p>The name of the company associated with the primary contact information, if
+   * any.</p>
    */
-  inline const Aws::String& GetPostalCode() const { return m_postalCode; }
-  inline bool PostalCodeHasBeenSet() const { return m_postalCodeHasBeenSet; }
-  template <typename PostalCodeT = Aws::String>
-  void SetPostalCode(PostalCodeT&& value) {
-    m_postalCodeHasBeenSet = true;
-    m_postalCode = std::forward<PostalCodeT>(value);
+  inline const Aws::String& GetCompanyName() const { return m_companyName; }
+  inline bool CompanyNameHasBeenSet() const { return m_companyNameHasBeenSet; }
+  template <typename CompanyNameT = Aws::String>
+  void SetCompanyName(CompanyNameT&& value) {
+    m_companyNameHasBeenSet = true;
+    m_companyName = std::forward<CompanyNameT>(value);
   }
-  template <typename PostalCodeT = Aws::String>
-  ContactInformation& WithPostalCode(PostalCodeT&& value) {
-    SetPostalCode(std::forward<PostalCodeT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>The state or region of the primary contact address. If the mailing address is
-   * within the United States (US), the value in this field can be either a two
-   * character state code (for example, <code>NJ</code>) or the full state name (for
-   * example, <code>New Jersey</code>). This field is required in the following
-   * countries: <code>US</code>, <code>CA</code>, <code>GB</code>, <code>DE</code>,
-   * <code>JP</code>, <code>IN</code>, and <code>BR</code>.</p>
-   */
-  inline const Aws::String& GetStateOrRegion() const { return m_stateOrRegion; }
-  inline bool StateOrRegionHasBeenSet() const { return m_stateOrRegionHasBeenSet; }
-  template <typename StateOrRegionT = Aws::String>
-  void SetStateOrRegion(StateOrRegionT&& value) {
-    m_stateOrRegionHasBeenSet = true;
-    m_stateOrRegion = std::forward<StateOrRegionT>(value);
-  }
-  template <typename StateOrRegionT = Aws::String>
-  ContactInformation& WithStateOrRegion(StateOrRegionT&& value) {
-    SetStateOrRegion(std::forward<StateOrRegionT>(value));
+  template <typename CompanyNameT = Aws::String>
+  ContactInformation& WithCompanyName(CompanyNameT&& value) {
+    SetCompanyName(std::forward<CompanyNameT>(value));
     return *this;
   }
   ///@}
@@ -256,6 +256,8 @@ class ContactInformation {
   }
   ///@}
  private:
+  Aws::String m_fullName;
+
   Aws::String m_addressLine1;
 
   Aws::String m_addressLine2;
@@ -264,32 +266,30 @@ class ContactInformation {
 
   Aws::String m_city;
 
-  Aws::String m_companyName;
-
-  Aws::String m_countryCode;
+  Aws::String m_stateOrRegion;
 
   Aws::String m_districtOrCounty;
 
-  Aws::String m_fullName;
+  Aws::String m_postalCode;
+
+  Aws::String m_countryCode;
 
   Aws::String m_phoneNumber;
 
-  Aws::String m_postalCode;
-
-  Aws::String m_stateOrRegion;
+  Aws::String m_companyName;
 
   Aws::String m_websiteUrl;
+  bool m_fullNameHasBeenSet = false;
   bool m_addressLine1HasBeenSet = false;
   bool m_addressLine2HasBeenSet = false;
   bool m_addressLine3HasBeenSet = false;
   bool m_cityHasBeenSet = false;
-  bool m_companyNameHasBeenSet = false;
-  bool m_countryCodeHasBeenSet = false;
-  bool m_districtOrCountyHasBeenSet = false;
-  bool m_fullNameHasBeenSet = false;
-  bool m_phoneNumberHasBeenSet = false;
-  bool m_postalCodeHasBeenSet = false;
   bool m_stateOrRegionHasBeenSet = false;
+  bool m_districtOrCountyHasBeenSet = false;
+  bool m_postalCodeHasBeenSet = false;
+  bool m_countryCodeHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_companyNameHasBeenSet = false;
   bool m_websiteUrlHasBeenSet = false;
 };
 

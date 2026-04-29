@@ -52,8 +52,8 @@ class HarnessBedrockModelConfig {
 
   ///@{
   /**
-   * <p>The maximum number of tokens to allow in the generated response per
-   * iteration.</p>
+   * <p>The maximum number of tokens to allow in the generated response per model
+   * call.</p>
    */
   inline int GetMaxTokens() const { return m_maxTokens; }
   inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }

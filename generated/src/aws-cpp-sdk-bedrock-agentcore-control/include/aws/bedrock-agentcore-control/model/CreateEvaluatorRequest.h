@@ -133,6 +133,30 @@ class CreateEvaluatorRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
+   * <p> The Amazon Resource Name (ARN) of a customer managed KMS key to use for
+   * encrypting sensitive evaluator data, including instructions and rating scale. If
+   * you don't specify a KMS key, the evaluator data is encrypted with an Amazon Web
+   * Services owned key. Only symmetric encryption KMS keys are supported. For more
+   * information, see <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption
+   * at rest for AgentCore Evaluations</a>. </p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  CreateEvaluatorRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A map of tag keys and values to assign to an AgentCore Evaluator. Tags enable
    * you to categorize your resources in different ways, for example, by purpose,
    * owner, or environment.</p>
@@ -167,12 +191,15 @@ class CreateEvaluatorRequest : public BedrockAgentCoreControlRequest {
 
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
 
+  Aws::String m_kmsKeyArn;
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_clientTokenHasBeenSet = true;
   bool m_evaluatorNameHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorConfigHasBeenSet = false;
   bool m_levelHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

@@ -19,6 +19,7 @@
 #include <aws/mediapackagev2/model/DashUtcTiming.h>
 #include <aws/mediapackagev2/model/FilterConfiguration.h>
 #include <aws/mediapackagev2/model/ScteDash.h>
+#include <aws/mediapackagev2/model/UriPathType.h>
 
 #include <utility>
 
@@ -390,6 +391,24 @@ class GetDashManifestConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of path used in manifest URIs. <code>LEAF</code> indicates
+   * leaf-relative paths. <code>ROOT</code> indicates root-relative paths that
+   * include the full path from root.</p>
+   */
+  inline UriPathType GetUriPathType() const { return m_uriPathType; }
+  inline bool UriPathTypeHasBeenSet() const { return m_uriPathTypeHasBeenSet; }
+  inline void SetUriPathType(UriPathType value) {
+    m_uriPathTypeHasBeenSet = true;
+    m_uriPathType = value;
+  }
+  inline GetDashManifestConfiguration& WithUriPathType(UriPathType value) {
+    SetUriPathType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestName;
 
@@ -426,6 +445,8 @@ class GetDashManifestConfiguration {
   DashCompactness m_compactness{DashCompactness::NOT_SET};
 
   DashSubtitleConfiguration m_subtitleConfiguration;
+
+  UriPathType m_uriPathType{UriPathType::NOT_SET};
   bool m_manifestNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_manifestWindowSecondsHasBeenSet = false;
@@ -444,6 +465,7 @@ class GetDashManifestConfiguration {
   bool m_dvbSettingsHasBeenSet = false;
   bool m_compactnessHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
+  bool m_uriPathTypeHasBeenSet = false;
 };
 
 }  // namespace Model

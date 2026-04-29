@@ -30,7 +30,7 @@ class GetMonitorSettingsResult {
 
   ///@{
   /**
-   * <p>Monitor settings as key-value pairs.</p>
+   * <p>The monitor settings as key-value pairs.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetSettings() const { return m_settings; }
   template <typename SettingsT = Aws::Map<Aws::String, Aws::String>>

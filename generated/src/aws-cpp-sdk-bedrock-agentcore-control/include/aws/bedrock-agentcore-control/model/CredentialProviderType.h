@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 namespace Model {
-enum class CredentialProviderType { NOT_SET, GATEWAY_IAM_ROLE, OAUTH, API_KEY };
+enum class CredentialProviderType { NOT_SET, GATEWAY_IAM_ROLE, OAUTH, API_KEY, CALLER_IAM_CREDENTIALS, JWT_PASSTHROUGH };
 
 namespace CredentialProviderTypeMapper {
 AWS_BEDROCKAGENTCORECONTROL_API CredentialProviderType GetCredentialProviderTypeForName(const Aws::String& name);

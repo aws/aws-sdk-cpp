@@ -49,9 +49,9 @@ class UpdateMonitorSettingsRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>Monitor settings as key-value pairs. Keys present in the request are
-   * upserted; keys absent are left unchanged. Send an empty string value to delete a
-   * key.</p>
+   * <p>The monitor settings to update as key-value pairs. Keys present in the
+   * request are upserted; keys absent are left unchanged. Send an empty string value
+   * to delete a key.</p>
    */
   inline const Aws::Map<Aws::String, Aws::String>& GetSettings() const { return m_settings; }
   inline bool SettingsHasBeenSet() const { return m_settingsHasBeenSet; }

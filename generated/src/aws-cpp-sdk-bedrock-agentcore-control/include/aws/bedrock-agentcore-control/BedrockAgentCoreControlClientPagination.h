@@ -12,7 +12,10 @@
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
@@ -51,9 +54,18 @@ using ListBrowsersPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCore
 using ListCodeInterpretersPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListCodeInterpretersRequest,
                                       Pagination::ListCodeInterpretersPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListConfigurationBundlesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListConfigurationBundlesRequest,
+                                      Pagination::ListConfigurationBundlesPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListConfigurationBundleVersionsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListConfigurationBundleVersionsRequest,
+                                      Pagination::ListConfigurationBundleVersionsPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListEvaluatorsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListEvaluatorsRequest,
                                       Pagination::ListEvaluatorsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListGatewayRulesPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListGatewayRulesRequest,
+                                      Pagination::ListGatewayRulesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListGatewaysPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListGatewaysRequest,
                                                                 Pagination::ListGatewaysPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListGatewayTargetsPaginator =

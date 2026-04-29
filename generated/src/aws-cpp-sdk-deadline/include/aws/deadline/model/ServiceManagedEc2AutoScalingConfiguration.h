@@ -66,7 +66,7 @@ class ServiceManagedEc2AutoScalingConfiguration {
   ///@{
   /**
    * <p>The number of workers that can be added per minute to the fleet. The default
-   * is a service-defined value that balances efficiency with cost.</p>
+   * is 10 workers per minute.</p>
    */
   inline int GetScaleOutWorkersPerMinute() const { return m_scaleOutWorkersPerMinute; }
   inline bool ScaleOutWorkersPerMinuteHasBeenSet() const { return m_scaleOutWorkersPerMinuteHasBeenSet; }

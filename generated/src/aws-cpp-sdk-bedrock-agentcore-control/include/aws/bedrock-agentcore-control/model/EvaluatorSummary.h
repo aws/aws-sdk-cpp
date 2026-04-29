@@ -210,6 +210,26 @@ class EvaluatorSummary {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of the customer managed KMS key used to
+   * encrypt the evaluator's sensitive data. This field is only present for
+   * evaluators encrypted with a customer managed key. </p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  EvaluatorSummary& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_evaluatorArn;
 
@@ -230,6 +250,8 @@ class EvaluatorSummary {
   Aws::Utils::DateTime m_updatedAt{};
 
   bool m_lockedForModification{false};
+
+  Aws::String m_kmsKeyArn;
   bool m_evaluatorArnHasBeenSet = false;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_evaluatorNameHasBeenSet = false;
@@ -240,6 +262,7 @@ class EvaluatorSummary {
   bool m_createdAtHasBeenSet = false;
   bool m_updatedAtHasBeenSet = false;
   bool m_lockedForModificationHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

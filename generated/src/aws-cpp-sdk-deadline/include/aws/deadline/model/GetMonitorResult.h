@@ -146,7 +146,7 @@ class GetMonitorResult {
 
   ///@{
   /**
-   * <p>The AWS region where IAM Identity Center is enabled.</p>
+   * <p>The AWS Region where IAM Identity Center is enabled.</p>
    */
   inline const Aws::String& GetIdentityCenterRegion() const { return m_identityCenterRegion; }
   template <typename IdentityCenterRegionT = Aws::String>

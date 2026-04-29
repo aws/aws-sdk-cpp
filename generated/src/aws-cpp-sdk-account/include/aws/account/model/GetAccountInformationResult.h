@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/account/Account_EXPORTS.h>
+#include <aws/account/model/AccountState.h>
 #include <aws/core/http/HttpResponse.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -27,23 +28,6 @@ class GetAccountInformationResult {
   AWS_ACCOUNT_API GetAccountInformationResult() = default;
   AWS_ACCOUNT_API GetAccountInformationResult(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
   AWS_ACCOUNT_API GetAccountInformationResult& operator=(const Aws::AmazonWebServiceResult<Aws::Utils::Json::JsonValue>& result);
-
-  ///@{
-  /**
-   * <p>The date and time the account was created.</p>
-   */
-  inline const Aws::Utils::DateTime& GetAccountCreatedDate() const { return m_accountCreatedDate; }
-  template <typename AccountCreatedDateT = Aws::Utils::DateTime>
-  void SetAccountCreatedDate(AccountCreatedDateT&& value) {
-    m_accountCreatedDateHasBeenSet = true;
-    m_accountCreatedDate = std::forward<AccountCreatedDateT>(value);
-  }
-  template <typename AccountCreatedDateT = Aws::Utils::DateTime>
-  GetAccountInformationResult& WithAccountCreatedDate(AccountCreatedDateT&& value) {
-    SetAccountCreatedDate(std::forward<AccountCreatedDateT>(value));
-    return *this;
-  }
-  ///@}
 
   ///@{
   /**
@@ -95,6 +79,41 @@ class GetAccountInformationResult {
   ///@}
 
   ///@{
+  /**
+   * <p>The date and time the account was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetAccountCreatedDate() const { return m_accountCreatedDate; }
+  template <typename AccountCreatedDateT = Aws::Utils::DateTime>
+  void SetAccountCreatedDate(AccountCreatedDateT&& value) {
+    m_accountCreatedDateHasBeenSet = true;
+    m_accountCreatedDate = std::forward<AccountCreatedDateT>(value);
+  }
+  template <typename AccountCreatedDateT = Aws::Utils::DateTime>
+  GetAccountInformationResult& WithAccountCreatedDate(AccountCreatedDateT&& value) {
+    SetAccountCreatedDate(std::forward<AccountCreatedDateT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The state of the account. Each account state represents a specific phase in
+   * the account lifecycle. Use this information to manage account access, automate
+   * workflows, or trigger actions based on account state changes.</p> <p>Valid
+   * values: <code>PENDING_ACTIVATION | ACTIVE | SUSPENDED | CLOSED</code> </p>
+   */
+  inline AccountState GetAccountState() const { return m_accountState; }
+  inline void SetAccountState(AccountState value) {
+    m_accountStateHasBeenSet = true;
+    m_accountState = value;
+  }
+  inline GetAccountInformationResult& WithAccountState(AccountState value) {
+    SetAccountState(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
 
   inline const Aws::String& GetRequestId() const { return m_requestId; }
   template <typename RequestIdT = Aws::String>
@@ -111,17 +130,20 @@ class GetAccountInformationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  Aws::Utils::DateTime m_accountCreatedDate{};
-
   Aws::String m_accountId;
 
   Aws::String m_accountName;
 
+  Aws::Utils::DateTime m_accountCreatedDate{};
+
+  AccountState m_accountState{AccountState::NOT_SET};
+
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_accountCreatedDateHasBeenSet = false;
   bool m_accountIdHasBeenSet = false;
   bool m_accountNameHasBeenSet = false;
+  bool m_accountCreatedDateHasBeenSet = false;
+  bool m_accountStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

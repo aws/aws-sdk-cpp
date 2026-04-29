@@ -140,7 +140,9 @@ class UpdateContainerFleetRequest : public GameLiftRequest {
    * <p>A revised set of port numbers to open on each fleet instance. By default,
    * Amazon GameLift Servers calculates an optimal port range based on your fleet
    * configuration. If you previously set this parameter manually, you can't reset
-   * this to use the calculated settings.</p>
+   * this to use the calculated settings.</p> <p>The port range must not overlap with
+   * the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This
+   * range is reserved for internal Amazon GameLift Servers services.</p>
    */
   inline const ConnectionPortRange& GetInstanceConnectionPortRange() const { return m_instanceConnectionPortRange; }
   inline bool InstanceConnectionPortRangeHasBeenSet() const { return m_instanceConnectionPortRangeHasBeenSet; }
@@ -159,6 +161,9 @@ class UpdateContainerFleetRequest : public GameLiftRequest {
   ///@{
   /**
    * <p>A set of ports to add to the container fleet's inbound permissions.</p>
+   * <p>The port range must not overlap with the Amazon GameLift Servers reserved
+   * port range <code>4092-4191</code>. This range is reserved for internal Amazon
+   * GameLift Servers services.</p>
    */
   inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissionAuthorizations() const {
     return m_instanceInboundPermissionAuthorizations;

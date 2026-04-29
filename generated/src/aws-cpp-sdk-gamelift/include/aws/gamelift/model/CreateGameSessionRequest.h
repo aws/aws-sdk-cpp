@@ -199,11 +199,11 @@ class CreateGameSessionRequest : public GameLiftRequest {
    * are processed only once. Subsequent requests with the same string return the
    * original <code>GameSession</code> object, with an updated status. Maximum token
    * length is 48 characters. If provided, this string is included in the new game
-   * session's ID. A game session ARN has the following format:
-   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;custom
-   * ID string or idempotency token&gt;</code>. Idempotency tokens remain in use for
-   * 30 days after a game session has ended; game session objects are retained for
-   * this time period and then deleted.</p>
+   * session's ID. The value is always a full ARN in the following format:
+   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+   * string&gt;</code>. Idempotency tokens remain in use for 30 days after a game
+   * session has ended; game session objects are retained for this time period and
+   * then deleted.</p>
    */
   inline const Aws::String& GetIdempotencyToken() const { return m_idempotencyToken; }
   inline bool IdempotencyTokenHasBeenSet() const { return m_idempotencyTokenHasBeenSet; }

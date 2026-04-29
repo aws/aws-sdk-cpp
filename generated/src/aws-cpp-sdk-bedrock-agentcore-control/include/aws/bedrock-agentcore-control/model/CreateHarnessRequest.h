@@ -351,7 +351,8 @@ class CreateHarnessRequest : public BedrockAgentCoreControlRequest {
 
   ///@{
   /**
-   * <p>The maximum number of tokens the agent can generate per iteration.</p>
+   * <p>The maximum total number of output tokens the agent can generate across all
+   * model calls within a single invocation.</p>
    */
   inline int GetMaxTokens() const { return m_maxTokens; }
   inline bool MaxTokensHasBeenSet() const { return m_maxTokensHasBeenSet; }

@@ -15,28 +15,28 @@ using namespace Aws::Utils;
 Aws::String PutAlternateContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIdHasBeenSet) {
-    payload.WithString("AccountId", m_accountId);
+  if (m_nameHasBeenSet) {
+    payload.WithString("Name", m_name);
   }
 
-  if (m_alternateContactTypeHasBeenSet) {
-    payload.WithString("AlternateContactType", AlternateContactTypeMapper::GetNameForAlternateContactType(m_alternateContactType));
+  if (m_titleHasBeenSet) {
+    payload.WithString("Title", m_title);
   }
 
   if (m_emailAddressHasBeenSet) {
     payload.WithString("EmailAddress", m_emailAddress);
   }
 
-  if (m_nameHasBeenSet) {
-    payload.WithString("Name", m_name);
-  }
-
   if (m_phoneNumberHasBeenSet) {
     payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
-  if (m_titleHasBeenSet) {
-    payload.WithString("Title", m_title);
+  if (m_alternateContactTypeHasBeenSet) {
+    payload.WithString("AlternateContactType", AlternateContactTypeMapper::GetNameForAlternateContactType(m_alternateContactType));
+  }
+
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();

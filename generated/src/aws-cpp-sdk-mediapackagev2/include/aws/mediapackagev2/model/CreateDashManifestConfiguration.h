@@ -19,6 +19,7 @@
 #include <aws/mediapackagev2/model/DashUtcTiming.h>
 #include <aws/mediapackagev2/model/FilterConfiguration.h>
 #include <aws/mediapackagev2/model/ScteDash.h>
+#include <aws/mediapackagev2/model/UriPathType.h>
 
 #include <utility>
 
@@ -376,6 +377,26 @@ class CreateDashManifestConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of path to use in manifest URIs. <code>LEAF</code> uses
+   * leaf-relative paths (for example, <code>index_1.mpd</code>). <code>ROOT</code>
+   * uses root-relative paths that include the full path from root (for example,
+   * <code>/out/v1/channel-group/channel/endpoint/index_1.mpd</code>). If you don't
+   * specify a value, the default is <code>LEAF</code>.</p>
+   */
+  inline UriPathType GetUriPathType() const { return m_uriPathType; }
+  inline bool UriPathTypeHasBeenSet() const { return m_uriPathTypeHasBeenSet; }
+  inline void SetUriPathType(UriPathType value) {
+    m_uriPathTypeHasBeenSet = true;
+    m_uriPathType = value;
+  }
+  inline CreateDashManifestConfiguration& WithUriPathType(UriPathType value) {
+    SetUriPathType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestName;
 
@@ -410,6 +431,8 @@ class CreateDashManifestConfiguration {
   DashCompactness m_compactness{DashCompactness::NOT_SET};
 
   DashSubtitleConfiguration m_subtitleConfiguration;
+
+  UriPathType m_uriPathType{UriPathType::NOT_SET};
   bool m_manifestNameHasBeenSet = false;
   bool m_manifestWindowSecondsHasBeenSet = false;
   bool m_filterConfigurationHasBeenSet = false;
@@ -427,6 +450,7 @@ class CreateDashManifestConfiguration {
   bool m_dvbSettingsHasBeenSet = false;
   bool m_compactnessHasBeenSet = false;
   bool m_subtitleConfigurationHasBeenSet = false;
+  bool m_uriPathTypeHasBeenSet = false;
 };
 
 }  // namespace Model

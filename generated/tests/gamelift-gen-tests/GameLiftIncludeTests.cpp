@@ -47,6 +47,7 @@
 #include <aws/gamelift/model/ContainerFleetStatus.h>
 #include <aws/gamelift/model/ContainerGroupDefinition.h>
 #include <aws/gamelift/model/ContainerGroupDefinitionStatus.h>
+#include <aws/gamelift/model/ContainerGroupPortMapping.h>
 #include <aws/gamelift/model/ContainerGroupType.h>
 #include <aws/gamelift/model/ContainerHealthCheck.h>
 #include <aws/gamelift/model/ContainerIdentifier.h>
@@ -54,6 +55,7 @@
 #include <aws/gamelift/model/ContainerMountPointAccessLevel.h>
 #include <aws/gamelift/model/ContainerOperatingSystem.h>
 #include <aws/gamelift/model/ContainerPortConfiguration.h>
+#include <aws/gamelift/model/ContainerPortMapping.h>
 #include <aws/gamelift/model/ContainerPortRange.h>
 #include <aws/gamelift/model/CreateAliasRequest.h>
 #include <aws/gamelift/model/CreateAliasResult.h>
@@ -132,6 +134,8 @@
 #include <aws/gamelift/model/DescribeContainerFleetResult.h>
 #include <aws/gamelift/model/DescribeContainerGroupDefinitionRequest.h>
 #include <aws/gamelift/model/DescribeContainerGroupDefinitionResult.h>
+#include <aws/gamelift/model/DescribeContainerGroupPortMappingsRequest.h>
+#include <aws/gamelift/model/DescribeContainerGroupPortMappingsResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>

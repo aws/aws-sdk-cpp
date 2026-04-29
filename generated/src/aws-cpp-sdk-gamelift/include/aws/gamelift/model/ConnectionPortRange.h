@@ -19,7 +19,10 @@ namespace Model {
 /**
  * <p>The set of port numbers to open on each instance in a container fleet.
  * Connection ports are used by inbound traffic to connect with processes that are
- * running in containers on the fleet.</p><p><h3>See Also:</h3>   <a
+ * running in containers on the fleet.</p> <p>The port range must not overlap with
+ * the Amazon GameLift Servers reserved port range <code>4092-4191</code>. This
+ * range is reserved for internal Amazon GameLift Servers services.</p><p><h3>See
+ * Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/ConnectionPortRange">AWS
  * API Reference</a></p>
  */

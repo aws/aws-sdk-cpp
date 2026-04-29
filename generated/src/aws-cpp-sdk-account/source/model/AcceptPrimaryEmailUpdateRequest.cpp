@@ -19,12 +19,12 @@ Aws::String AcceptPrimaryEmailUpdateRequest::SerializePayload() const {
     payload.WithString("AccountId", m_accountId);
   }
 
-  if (m_otpHasBeenSet) {
-    payload.WithString("Otp", m_otp);
-  }
-
   if (m_primaryEmailHasBeenSet) {
     payload.WithString("PrimaryEmail", m_primaryEmail);
+  }
+
+  if (m_otpHasBeenSet) {
+    payload.WithString("Otp", m_otp);
   }
 
   return payload.View().WriteReadable();

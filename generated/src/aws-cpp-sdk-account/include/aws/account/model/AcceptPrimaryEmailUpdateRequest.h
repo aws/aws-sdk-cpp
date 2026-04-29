@@ -63,25 +63,6 @@ class AcceptPrimaryEmailUpdateRequest : public AccountRequest {
 
   ///@{
   /**
-   * <p>The OTP code sent to the <code>PrimaryEmail</code> specified on the
-   * <code>StartPrimaryEmailUpdate</code> API call.</p>
-   */
-  inline const Aws::String& GetOtp() const { return m_otp; }
-  inline bool OtpHasBeenSet() const { return m_otpHasBeenSet; }
-  template <typename OtpT = Aws::String>
-  void SetOtp(OtpT&& value) {
-    m_otpHasBeenSet = true;
-    m_otp = std::forward<OtpT>(value);
-  }
-  template <typename OtpT = Aws::String>
-  AcceptPrimaryEmailUpdateRequest& WithOtp(OtpT&& value) {
-    SetOtp(std::forward<OtpT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The new primary email address for use with the specified account. This must
    * match the <code>PrimaryEmail</code> from the
    * <code>StartPrimaryEmailUpdate</code> API call.</p>
@@ -99,15 +80,34 @@ class AcceptPrimaryEmailUpdateRequest : public AccountRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The OTP code sent to the <code>PrimaryEmail</code> specified on the
+   * <code>StartPrimaryEmailUpdate</code> API call.</p>
+   */
+  inline const Aws::String& GetOtp() const { return m_otp; }
+  inline bool OtpHasBeenSet() const { return m_otpHasBeenSet; }
+  template <typename OtpT = Aws::String>
+  void SetOtp(OtpT&& value) {
+    m_otpHasBeenSet = true;
+    m_otp = std::forward<OtpT>(value);
+  }
+  template <typename OtpT = Aws::String>
+  AcceptPrimaryEmailUpdateRequest& WithOtp(OtpT&& value) {
+    SetOtp(std::forward<OtpT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_accountId;
 
-  Aws::String m_otp;
-
   Aws::String m_primaryEmail;
+
+  Aws::String m_otp;
   bool m_accountIdHasBeenSet = false;
-  bool m_otpHasBeenSet = false;
   bool m_primaryEmailHasBeenSet = false;
+  bool m_otpHasBeenSet = false;
 };
 
 }  // namespace Model

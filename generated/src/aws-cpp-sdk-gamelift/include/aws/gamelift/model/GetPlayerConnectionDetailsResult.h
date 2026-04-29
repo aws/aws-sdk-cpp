@@ -31,8 +31,11 @@ class GetPlayerConnectionDetailsResult {
 
   ///@{
   /**
-   * <p>A unique identifier for the game session for which the player connection
-   * details were retrieved.</p>
+   * <p>An identifier for the game session that is unique across all regions for
+   * which the player connection details were retrieved. The value is always a full
+   * ARN in the following format:
+   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+   * string&gt;</code>.</p>
    */
   inline const Aws::String& GetGameSessionId() const { return m_gameSessionId; }
   template <typename GameSessionIdT = Aws::String>

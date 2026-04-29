@@ -22,10 +22,6 @@ GetAccountInformationResult::GetAccountInformationResult(const Aws::AmazonWebSer
 GetAccountInformationResult& GetAccountInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("AccountCreatedDate")) {
-    m_accountCreatedDate = jsonValue.GetString("AccountCreatedDate");
-    m_accountCreatedDateHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("AccountId")) {
     m_accountId = jsonValue.GetString("AccountId");
     m_accountIdHasBeenSet = true;
@@ -33,6 +29,14 @@ GetAccountInformationResult& GetAccountInformationResult::operator=(const Aws::A
   if (jsonValue.ValueExists("AccountName")) {
     m_accountName = jsonValue.GetString("AccountName");
     m_accountNameHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AccountCreatedDate")) {
+    m_accountCreatedDate = jsonValue.GetString("AccountCreatedDate");
+    m_accountCreatedDateHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AccountState")) {
+    m_accountState = AccountStateMapper::GetAccountStateForName(jsonValue.GetString("AccountState"));
+    m_accountStateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

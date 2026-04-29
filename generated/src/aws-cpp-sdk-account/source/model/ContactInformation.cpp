@@ -18,6 +18,10 @@ namespace Model {
 ContactInformation::ContactInformation(JsonView jsonValue) { *this = jsonValue; }
 
 ContactInformation& ContactInformation::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("FullName")) {
+    m_fullName = jsonValue.GetString("FullName");
+    m_fullNameHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("AddressLine1")) {
     m_addressLine1 = jsonValue.GetString("AddressLine1");
     m_addressLine1HasBeenSet = true;
@@ -34,33 +38,29 @@ ContactInformation& ContactInformation::operator=(JsonView jsonValue) {
     m_city = jsonValue.GetString("City");
     m_cityHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("CompanyName")) {
-    m_companyName = jsonValue.GetString("CompanyName");
-    m_companyNameHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("CountryCode")) {
-    m_countryCode = jsonValue.GetString("CountryCode");
-    m_countryCodeHasBeenSet = true;
+  if (jsonValue.ValueExists("StateOrRegion")) {
+    m_stateOrRegion = jsonValue.GetString("StateOrRegion");
+    m_stateOrRegionHasBeenSet = true;
   }
   if (jsonValue.ValueExists("DistrictOrCounty")) {
     m_districtOrCounty = jsonValue.GetString("DistrictOrCounty");
     m_districtOrCountyHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("FullName")) {
-    m_fullName = jsonValue.GetString("FullName");
-    m_fullNameHasBeenSet = true;
+  if (jsonValue.ValueExists("PostalCode")) {
+    m_postalCode = jsonValue.GetString("PostalCode");
+    m_postalCodeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CountryCode")) {
+    m_countryCode = jsonValue.GetString("CountryCode");
+    m_countryCodeHasBeenSet = true;
   }
   if (jsonValue.ValueExists("PhoneNumber")) {
     m_phoneNumber = jsonValue.GetString("PhoneNumber");
     m_phoneNumberHasBeenSet = true;
   }
-  if (jsonValue.ValueExists("PostalCode")) {
-    m_postalCode = jsonValue.GetString("PostalCode");
-    m_postalCodeHasBeenSet = true;
-  }
-  if (jsonValue.ValueExists("StateOrRegion")) {
-    m_stateOrRegion = jsonValue.GetString("StateOrRegion");
-    m_stateOrRegionHasBeenSet = true;
+  if (jsonValue.ValueExists("CompanyName")) {
+    m_companyName = jsonValue.GetString("CompanyName");
+    m_companyNameHasBeenSet = true;
   }
   if (jsonValue.ValueExists("WebsiteUrl")) {
     m_websiteUrl = jsonValue.GetString("WebsiteUrl");
@@ -71,6 +71,10 @@ ContactInformation& ContactInformation::operator=(JsonView jsonValue) {
 
 JsonValue ContactInformation::Jsonize() const {
   JsonValue payload;
+
+  if (m_fullNameHasBeenSet) {
+    payload.WithString("FullName", m_fullName);
+  }
 
   if (m_addressLine1HasBeenSet) {
     payload.WithString("AddressLine1", m_addressLine1);
@@ -88,32 +92,28 @@ JsonValue ContactInformation::Jsonize() const {
     payload.WithString("City", m_city);
   }
 
-  if (m_companyNameHasBeenSet) {
-    payload.WithString("CompanyName", m_companyName);
-  }
-
-  if (m_countryCodeHasBeenSet) {
-    payload.WithString("CountryCode", m_countryCode);
+  if (m_stateOrRegionHasBeenSet) {
+    payload.WithString("StateOrRegion", m_stateOrRegion);
   }
 
   if (m_districtOrCountyHasBeenSet) {
     payload.WithString("DistrictOrCounty", m_districtOrCounty);
   }
 
-  if (m_fullNameHasBeenSet) {
-    payload.WithString("FullName", m_fullName);
+  if (m_postalCodeHasBeenSet) {
+    payload.WithString("PostalCode", m_postalCode);
+  }
+
+  if (m_countryCodeHasBeenSet) {
+    payload.WithString("CountryCode", m_countryCode);
   }
 
   if (m_phoneNumberHasBeenSet) {
     payload.WithString("PhoneNumber", m_phoneNumber);
   }
 
-  if (m_postalCodeHasBeenSet) {
-    payload.WithString("PostalCode", m_postalCode);
-  }
-
-  if (m_stateOrRegionHasBeenSet) {
-    payload.WithString("StateOrRegion", m_stateOrRegion);
+  if (m_companyNameHasBeenSet) {
+    payload.WithString("CompanyName", m_companyName);
   }
 
   if (m_websiteUrlHasBeenSet) {

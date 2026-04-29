@@ -24,6 +24,14 @@ static const int DISTRIBUTOR_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashStri
 static const int PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("PROVIDER_OVERLAY_PLACEMENT_OPPORTUNITY");
 static const int DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY_HASH = HashingUtils::HashString("DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY");
 static const int PROGRAM_HASH = HashingUtils::HashString("PROGRAM");
+static const int CHAPTER_HASH = HashingUtils::HashString("CHAPTER");
+static const int UNSCHEDULED_EVENT_HASH = HashingUtils::HashString("UNSCHEDULED_EVENT");
+static const int ALTERNATE_CONTENT_OPPORTUNITY_HASH = HashingUtils::HashString("ALTERNATE_CONTENT_OPPORTUNITY");
+static const int NETWORK_HASH = HashingUtils::HashString("NETWORK");
+static const int PROVIDER_PROMO_HASH = HashingUtils::HashString("PROVIDER_PROMO");
+static const int DISTRIBUTOR_PROMO_HASH = HashingUtils::HashString("DISTRIBUTOR_PROMO");
+static const int PROVIDER_AD_BLOCK_HASH = HashingUtils::HashString("PROVIDER_AD_BLOCK");
+static const int DISTRIBUTOR_AD_BLOCK_HASH = HashingUtils::HashString("DISTRIBUTOR_AD_BLOCK");
 
 ScteFilter GetScteFilterForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -45,6 +53,22 @@ ScteFilter GetScteFilterForName(const Aws::String& name) {
     return ScteFilter::DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY;
   } else if (hashCode == PROGRAM_HASH) {
     return ScteFilter::PROGRAM;
+  } else if (hashCode == CHAPTER_HASH) {
+    return ScteFilter::CHAPTER;
+  } else if (hashCode == UNSCHEDULED_EVENT_HASH) {
+    return ScteFilter::UNSCHEDULED_EVENT;
+  } else if (hashCode == ALTERNATE_CONTENT_OPPORTUNITY_HASH) {
+    return ScteFilter::ALTERNATE_CONTENT_OPPORTUNITY;
+  } else if (hashCode == NETWORK_HASH) {
+    return ScteFilter::NETWORK;
+  } else if (hashCode == PROVIDER_PROMO_HASH) {
+    return ScteFilter::PROVIDER_PROMO;
+  } else if (hashCode == DISTRIBUTOR_PROMO_HASH) {
+    return ScteFilter::DISTRIBUTOR_PROMO;
+  } else if (hashCode == PROVIDER_AD_BLOCK_HASH) {
+    return ScteFilter::PROVIDER_AD_BLOCK;
+  } else if (hashCode == DISTRIBUTOR_AD_BLOCK_HASH) {
+    return ScteFilter::DISTRIBUTOR_AD_BLOCK;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -77,6 +101,22 @@ Aws::String GetNameForScteFilter(ScteFilter enumValue) {
       return "DISTRIBUTOR_OVERLAY_PLACEMENT_OPPORTUNITY";
     case ScteFilter::PROGRAM:
       return "PROGRAM";
+    case ScteFilter::CHAPTER:
+      return "CHAPTER";
+    case ScteFilter::UNSCHEDULED_EVENT:
+      return "UNSCHEDULED_EVENT";
+    case ScteFilter::ALTERNATE_CONTENT_OPPORTUNITY:
+      return "ALTERNATE_CONTENT_OPPORTUNITY";
+    case ScteFilter::NETWORK:
+      return "NETWORK";
+    case ScteFilter::PROVIDER_PROMO:
+      return "PROVIDER_PROMO";
+    case ScteFilter::DISTRIBUTOR_PROMO:
+      return "DISTRIBUTOR_PROMO";
+    case ScteFilter::PROVIDER_AD_BLOCK:
+      return "PROVIDER_AD_BLOCK";
+    case ScteFilter::DISTRIBUTOR_AD_BLOCK:
+      return "DISTRIBUTOR_AD_BLOCK";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

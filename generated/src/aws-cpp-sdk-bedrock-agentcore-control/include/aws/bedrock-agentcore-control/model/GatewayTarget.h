@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/MetadataConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/PrivateEndpoint.h>
 #include <aws/bedrock-agentcore-control/model/TargetConfiguration.h>
+#include <aws/bedrock-agentcore-control/model/TargetProtocolType.h>
 #include <aws/bedrock-agentcore-control/model/TargetStatus.h>
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
@@ -328,6 +329,22 @@ class GatewayTarget {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The protocol type of the gateway target.</p>
+   */
+  inline TargetProtocolType GetProtocolType() const { return m_protocolType; }
+  inline bool ProtocolTypeHasBeenSet() const { return m_protocolTypeHasBeenSet; }
+  inline void SetProtocolType(TargetProtocolType value) {
+    m_protocolTypeHasBeenSet = true;
+    m_protocolType = value;
+  }
+  inline GatewayTarget& WithProtocolType(TargetProtocolType value) {
+    SetProtocolType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_gatewayArn;
 
@@ -358,6 +375,8 @@ class GatewayTarget {
   Aws::Vector<ManagedResourceDetails> m_privateEndpointManagedResources;
 
   AuthorizationData m_authorizationData;
+
+  TargetProtocolType m_protocolType{TargetProtocolType::NOT_SET};
   bool m_gatewayArnHasBeenSet = false;
   bool m_targetIdHasBeenSet = false;
   bool m_createdAtHasBeenSet = false;
@@ -373,6 +392,7 @@ class GatewayTarget {
   bool m_privateEndpointHasBeenSet = false;
   bool m_privateEndpointManagedResourcesHasBeenSet = false;
   bool m_authorizationDataHasBeenSet = false;
+  bool m_protocolTypeHasBeenSet = false;
 };
 
 }  // namespace Model

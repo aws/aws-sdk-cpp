@@ -22,6 +22,10 @@ TargetConfiguration& TargetConfiguration::operator=(JsonView jsonValue) {
     m_mcp = jsonValue.GetObject("mcp");
     m_mcpHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("http")) {
+    m_http = jsonValue.GetObject("http");
+    m_httpHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue TargetConfiguration::Jsonize() const {
 
   if (m_mcpHasBeenSet) {
     payload.WithObject("mcp", m_mcp.Jsonize());
+  }
+
+  if (m_httpHasBeenSet) {
+    payload.WithObject("http", m_http.Jsonize());
   }
 
   return payload;

@@ -132,7 +132,7 @@ class JobSearchSummary {
    * <code>READY</code>–ready to be processed.</p> </li> <li> <p>
    * <code>ASSIGNED</code>–assigned and will run next on a worker.</p> </li> <li> <p>
    * <code>SCHEDULED</code>–scheduled to be run on a worker.</p> </li> <li> <p>
-   * <code>INTERRUPTING</code>���being interrupted.</p> </li> <li> <p>
+   * <code>INTERRUPTING</code>–being interrupted.</p> </li> <li> <p>
    * <code>RUNNING</code>–running on a worker.</p> </li> <li> <p>
    * <code>SUSPENDED</code>–the task is suspended.</p> </li> <li> <p>
    * <code>CANCELED</code>–the task has been canceled.</p> </li> <li> <p>

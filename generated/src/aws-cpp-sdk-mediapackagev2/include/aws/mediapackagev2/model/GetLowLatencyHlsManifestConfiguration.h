@@ -9,6 +9,7 @@
 #include <aws/mediapackagev2/model/FilterConfiguration.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
 #include <aws/mediapackagev2/model/StartTag.h>
+#include <aws/mediapackagev2/model/UriPathType.h>
 
 #include <utility>
 
@@ -203,6 +204,24 @@ class GetLowLatencyHlsManifestConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The type of path used in manifest URIs. <code>LEAF</code> indicates
+   * leaf-relative paths. <code>ROOT</code> indicates root-relative paths that
+   * include the full path from root.</p>
+   */
+  inline UriPathType GetUriPathType() const { return m_uriPathType; }
+  inline bool UriPathTypeHasBeenSet() const { return m_uriPathTypeHasBeenSet; }
+  inline void SetUriPathType(UriPathType value) {
+    m_uriPathTypeHasBeenSet = true;
+    m_uriPathType = value;
+  }
+  inline GetLowLatencyHlsManifestConfiguration& WithUriPathType(UriPathType value) {
+    SetUriPathType(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_manifestName;
 
@@ -221,6 +240,8 @@ class GetLowLatencyHlsManifestConfiguration {
   StartTag m_startTag;
 
   bool m_urlEncodeChildManifest{false};
+
+  UriPathType m_uriPathType{UriPathType::NOT_SET};
   bool m_manifestNameHasBeenSet = false;
   bool m_urlHasBeenSet = false;
   bool m_childManifestNameHasBeenSet = false;
@@ -230,6 +251,7 @@ class GetLowLatencyHlsManifestConfiguration {
   bool m_filterConfigurationHasBeenSet = false;
   bool m_startTagHasBeenSet = false;
   bool m_urlEncodeChildManifestHasBeenSet = false;
+  bool m_uriPathTypeHasBeenSet = false;
 };
 
 }  // namespace Model

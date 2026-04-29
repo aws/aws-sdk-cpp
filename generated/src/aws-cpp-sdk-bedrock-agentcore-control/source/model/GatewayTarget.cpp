@@ -92,6 +92,10 @@ GatewayTarget& GatewayTarget::operator=(JsonView jsonValue) {
     m_authorizationData = jsonValue.GetObject("authorizationData");
     m_authorizationDataHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("protocolType")) {
+    m_protocolType = TargetProtocolTypeMapper::GetTargetProtocolTypeForName(jsonValue.GetString("protocolType"));
+    m_protocolTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -174,6 +178,10 @@ JsonValue GatewayTarget::Jsonize() const {
 
   if (m_authorizationDataHasBeenSet) {
     payload.WithObject("authorizationData", m_authorizationData.Jsonize());
+  }
+
+  if (m_protocolTypeHasBeenSet) {
+    payload.WithString("protocolType", TargetProtocolTypeMapper::GetNameForTargetProtocolType(m_protocolType));
   }
 
   return payload;

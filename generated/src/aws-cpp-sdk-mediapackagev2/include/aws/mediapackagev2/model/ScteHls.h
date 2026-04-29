@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/mediapackagev2/Mediapackagev2_EXPORTS.h>
 #include <aws/mediapackagev2/model/AdMarkerHls.h>
+#include <aws/mediapackagev2/model/ScteInManifests.h>
 
 #include <utility>
 
@@ -57,9 +58,31 @@ class ScteHls {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Controls which SCTE-35 events appear in HLS manifests. <code>ALL</code>
+   * includes all non-implicit SCTE-35 events. <code>MATCHES_FILTER</code> includes
+   * only events whose type matches the configured <code>ScteFilter</code>.</p> <p>If
+   * you don't specify a value, the default is <code>ALL</code>.</p>
+   */
+  inline ScteInManifests GetScteInManifests() const { return m_scteInManifests; }
+  inline bool ScteInManifestsHasBeenSet() const { return m_scteInManifestsHasBeenSet; }
+  inline void SetScteInManifests(ScteInManifests value) {
+    m_scteInManifestsHasBeenSet = true;
+    m_scteInManifests = value;
+  }
+  inline ScteHls& WithScteInManifests(ScteInManifests value) {
+    SetScteInManifests(value);
+    return *this;
+  }
+  ///@}
  private:
   AdMarkerHls m_adMarkerHls{AdMarkerHls::NOT_SET};
+
+  ScteInManifests m_scteInManifests{ScteInManifests::NOT_SET};
   bool m_adMarkerHlsHasBeenSet = false;
+  bool m_scteInManifestsHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,10 @@ ScteHls& ScteHls::operator=(JsonView jsonValue) {
     m_adMarkerHls = AdMarkerHlsMapper::GetAdMarkerHlsForName(jsonValue.GetString("AdMarkerHls"));
     m_adMarkerHlsHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ScteInManifests")) {
+    m_scteInManifests = ScteInManifestsMapper::GetScteInManifestsForName(jsonValue.GetString("ScteInManifests"));
+    m_scteInManifestsHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue ScteHls::Jsonize() const {
 
   if (m_adMarkerHlsHasBeenSet) {
     payload.WithString("AdMarkerHls", AdMarkerHlsMapper::GetNameForAdMarkerHls(m_adMarkerHls));
+  }
+
+  if (m_scteInManifestsHasBeenSet) {
+    payload.WithString("ScteInManifests", ScteInManifestsMapper::GetNameForScteInManifests(m_scteInManifests));
   }
 
   return payload;

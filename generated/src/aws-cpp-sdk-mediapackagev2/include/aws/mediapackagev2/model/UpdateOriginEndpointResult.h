@@ -17,6 +17,7 @@
 #include <aws/mediapackagev2/model/GetLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/GetMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
 
@@ -301,6 +302,21 @@ class UpdateOriginEndpointResult {
 
   ///@{
   /**
+   * <p>The separator character used in generated URIs for this origin endpoint.</p>
+   */
+  inline UriSeparator GetUriSeparator() const { return m_uriSeparator; }
+  inline void SetUriSeparator(UriSeparator value) {
+    m_uriSeparatorHasBeenSet = true;
+    m_uriSeparator = value;
+  }
+  inline UpdateOriginEndpointResult& WithUriSeparator(UriSeparator value) {
+    SetUriSeparator(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The current Entity Tag (ETag) associated with this resource. The entity tag
    * can be used to safely make concurrent updates to the resource.</p>
    */
@@ -409,6 +425,8 @@ class UpdateOriginEndpointResult {
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
 
+  UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
+
   Aws::String m_eTag;
 
   Aws::Map<Aws::String, Aws::String> m_tags;
@@ -431,6 +449,7 @@ class UpdateOriginEndpointResult {
   bool m_lowLatencyHlsManifestsHasBeenSet = false;
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
+  bool m_uriSeparatorHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
   bool m_dashManifestsHasBeenSet = false;

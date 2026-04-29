@@ -50,6 +50,10 @@ CreateLowLatencyHlsManifestConfiguration& CreateLowLatencyHlsManifestConfigurati
     m_urlEncodeChildManifest = jsonValue.GetBool("UrlEncodeChildManifest");
     m_urlEncodeChildManifestHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UriPathType")) {
+    m_uriPathType = UriPathTypeMapper::GetUriPathTypeForName(jsonValue.GetString("UriPathType"));
+    m_uriPathTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -86,6 +90,10 @@ JsonValue CreateLowLatencyHlsManifestConfiguration::Jsonize() const {
 
   if (m_urlEncodeChildManifestHasBeenSet) {
     payload.WithBool("UrlEncodeChildManifest", m_urlEncodeChildManifest);
+  }
+
+  if (m_uriPathTypeHasBeenSet) {
+    payload.WithString("UriPathType", UriPathTypeMapper::GetNameForUriPathType(m_uriPathType));
   }
 
   return payload;

@@ -7,6 +7,7 @@
 #include <aws/cloudfront/CloudFront_EXPORTS.h>
 #include <aws/cloudfront/model/Aliases.h>
 #include <aws/cloudfront/model/CacheBehaviors.h>
+#include <aws/cloudfront/model/CacheTagConfig.h>
 #include <aws/cloudfront/model/ConnectionFunctionAssociation.h>
 #include <aws/cloudfront/model/ConnectionMode.h>
 #include <aws/cloudfront/model/CustomErrorResponses.h>
@@ -611,6 +612,34 @@ class DistributionConfig {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Configuration for cache tag extraction from origin responses. When specified,
+   * CloudFront reads the header named in <code>HeaderName</code> from origin
+   * responses and stores the comma-separated values as cache tags on the object.</p>
+   * <p>Distributions without <code>CacheTagConfig</code> do not extract tags. When
+   * <code>CacheTagConfig</code> is removed from a distribution via
+   * <code>UpdateDistribution</code>, CloudFront stops extracting tags from origin
+   * responses.</p>  <p>Changing the <code>HeaderName</code> on an existing
+   * distribution does not retroactively affect previously cached objects. Tag-based
+   * invalidations will not apply to objects already cached using a previous header.
+   * To ensure tag invalidations function after updating the header name, use
+   * path-based invalidations to recache all objects that use cache tags.</p>
+   */
+  inline const CacheTagConfig& GetCacheTagConfig() const { return m_cacheTagConfig; }
+  inline bool CacheTagConfigHasBeenSet() const { return m_cacheTagConfigHasBeenSet; }
+  template <typename CacheTagConfigT = CacheTagConfig>
+  void SetCacheTagConfig(CacheTagConfigT&& value) {
+    m_cacheTagConfigHasBeenSet = true;
+    m_cacheTagConfig = std::forward<CacheTagConfigT>(value);
+  }
+  template <typename CacheTagConfigT = CacheTagConfig>
+  DistributionConfig& WithCacheTagConfig(CacheTagConfigT&& value) {
+    SetCacheTagConfig(std::forward<CacheTagConfigT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_callerReference;
 
@@ -659,6 +688,8 @@ class DistributionConfig {
   ViewerMtlsConfig m_viewerMtlsConfig;
 
   ConnectionFunctionAssociation m_connectionFunctionAssociation;
+
+  CacheTagConfig m_cacheTagConfig;
   bool m_callerReferenceHasBeenSet = false;
   bool m_aliasesHasBeenSet = false;
   bool m_defaultRootObjectHasBeenSet = false;
@@ -683,6 +714,7 @@ class DistributionConfig {
   bool m_connectionModeHasBeenSet = false;
   bool m_viewerMtlsConfigHasBeenSet = false;
   bool m_connectionFunctionAssociationHasBeenSet = false;
+  bool m_cacheTagConfigHasBeenSet = false;
 };
 
 }  // namespace Model

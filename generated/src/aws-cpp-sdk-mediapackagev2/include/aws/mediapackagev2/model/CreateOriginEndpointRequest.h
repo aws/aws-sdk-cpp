@@ -17,6 +17,7 @@
 #include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
 
@@ -314,6 +315,24 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
 
   ///@{
   /**
+   * <p>The separator character to use in generated URIs for this origin endpoint.
+   * This setting applies to all manifest types on the endpoint. If you don't specify
+   * a value, the default is <code>UNDERSCORE</code>.</p>
+   */
+  inline UriSeparator GetUriSeparator() const { return m_uriSeparator; }
+  inline bool UriSeparatorHasBeenSet() const { return m_uriSeparatorHasBeenSet; }
+  inline void SetUriSeparator(UriSeparator value) {
+    m_uriSeparatorHasBeenSet = true;
+    m_uriSeparator = value;
+  }
+  inline CreateOriginEndpointRequest& WithUriSeparator(UriSeparator value) {
+    SetUriSeparator(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>A comma-separated list of tag key:value pairs that you define. For
    * example:</p> <p> <code>"Key1": "Value1",</code> </p> <p> <code>"Key2":
    * "Value2"</code> </p>
@@ -364,6 +383,8 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
 
+  UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
+
   Aws::Map<Aws::String, Aws::String> m_tags;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -378,6 +399,7 @@ class CreateOriginEndpointRequest : public Mediapackagev2Request {
   bool m_dashManifestsHasBeenSet = false;
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
+  bool m_uriSeparatorHasBeenSet = false;
   bool m_tagsHasBeenSet = false;
 };
 

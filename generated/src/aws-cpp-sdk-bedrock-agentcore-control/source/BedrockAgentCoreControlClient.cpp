@@ -12,8 +12,10 @@
 #include <aws/bedrock-agentcore-control/model/CreateBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateCodeInterpreterRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreateGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateMemoryRequest.h>
@@ -30,8 +32,10 @@
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteCodeInterpreterRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeleteGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryRequest.h>
@@ -49,8 +53,11 @@
 #include <aws/bedrock-agentcore-control/model/GetBrowserProfileRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetBrowserRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetCodeInterpreterRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetConfigurationBundleRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetConfigurationBundleVersionRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetMemoryRequest.h>
@@ -71,7 +78,10 @@
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowsersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListEvaluatorsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRulesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListHarnessesRequest.h>
@@ -96,8 +106,10 @@
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeEndpointRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateAgentRuntimeRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateApiKeyCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateConfigurationBundleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateEvaluatorRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdateGatewayRuleRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateGatewayTargetRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateHarnessRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryRequest.h>
@@ -361,6 +373,18 @@ CreateCodeInterpreterOutcome BedrockAgentCoreControlClient::CreateCodeInterprete
                             : CreateCodeInterpreterOutcome(std::move(result.GetError()));
 }
 
+CreateConfigurationBundleOutcome BedrockAgentCoreControlClient::CreateConfigurationBundle(
+    const CreateConfigurationBundleRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/create");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateConfigurationBundleOutcome(result.GetResultWithOwnership())
+                            : CreateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
 CreateEvaluatorOutcome BedrockAgentCoreControlClient::CreateEvaluator(const CreateEvaluatorRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -380,6 +404,25 @@ CreateGatewayOutcome BedrockAgentCoreControlClient::CreateGateway(const CreateGa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateGatewayOutcome(result.GetResultWithOwnership()) : CreateGatewayOutcome(std::move(result.GetError()));
+}
+
+CreateGatewayRuleOutcome BedrockAgentCoreControlClient::CreateGatewayRule(const CreateGatewayRuleRequest& request) const {
+  if (!request.GatewayIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreateGatewayRule", "Required field: GatewayIdentifier, is not set");
+    return CreateGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateways/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateGatewayRuleOutcome(result.GetResultWithOwnership())
+                            : CreateGatewayRuleOutcome(std::move(result.GetError()));
 }
 
 CreateGatewayTargetOutcome BedrockAgentCoreControlClient::CreateGatewayTarget(const CreateGatewayTargetRequest& request) const {
@@ -623,6 +666,25 @@ DeleteCodeInterpreterOutcome BedrockAgentCoreControlClient::DeleteCodeInterprete
                             : DeleteCodeInterpreterOutcome(std::move(result.GetError()));
 }
 
+DeleteConfigurationBundleOutcome BedrockAgentCoreControlClient::DeleteConfigurationBundle(
+    const DeleteConfigurationBundleRequest& request) const {
+  if (!request.BundleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteConfigurationBundle", "Required field: BundleId, is not set");
+    return DeleteConfigurationBundleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBundleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteConfigurationBundleOutcome(result.GetResultWithOwnership())
+                            : DeleteConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
 DeleteEvaluatorOutcome BedrockAgentCoreControlClient::DeleteEvaluator(const DeleteEvaluatorRequest& request) const {
   if (!request.EvaluatorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteEvaluator", "Required field: EvaluatorId, is not set");
@@ -656,6 +718,31 @@ DeleteGatewayOutcome BedrockAgentCoreControlClient::DeleteGateway(const DeleteGa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteGatewayOutcome(result.GetResultWithOwnership()) : DeleteGatewayOutcome(std::move(result.GetError()));
+}
+
+DeleteGatewayRuleOutcome BedrockAgentCoreControlClient::DeleteGatewayRule(const DeleteGatewayRuleRequest& request) const {
+  if (!request.GatewayIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRule", "Required field: GatewayIdentifier, is not set");
+    return DeleteGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayIdentifier]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteGatewayRule", "Required field: RuleId, is not set");
+    return DeleteGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateways/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteGatewayRuleOutcome(result.GetResultWithOwnership())
+                            : DeleteGatewayRuleOutcome(std::move(result.GetError()));
 }
 
 DeleteGatewayTargetOutcome BedrockAgentCoreControlClient::DeleteGatewayTarget(const DeleteGatewayTargetRequest& request) const {
@@ -970,6 +1057,50 @@ GetCodeInterpreterOutcome BedrockAgentCoreControlClient::GetCodeInterpreter(cons
                             : GetCodeInterpreterOutcome(std::move(result.GetError()));
 }
 
+GetConfigurationBundleOutcome BedrockAgentCoreControlClient::GetConfigurationBundle(const GetConfigurationBundleRequest& request) const {
+  if (!request.BundleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConfigurationBundle", "Required field: BundleId, is not set");
+    return GetConfigurationBundleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBundleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationBundleOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
+GetConfigurationBundleVersionOutcome BedrockAgentCoreControlClient::GetConfigurationBundleVersion(
+    const GetConfigurationBundleVersionRequest& request) const {
+  if (!request.BundleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConfigurationBundleVersion", "Required field: BundleId, is not set");
+    return GetConfigurationBundleVersionOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
+  if (!request.VersionIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetConfigurationBundleVersion", "Required field: VersionId, is not set");
+    return GetConfigurationBundleVersionOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [VersionId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBundleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetVersionId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetConfigurationBundleVersionOutcome(result.GetResultWithOwnership())
+                            : GetConfigurationBundleVersionOutcome(std::move(result.GetError()));
+}
+
 GetEvaluatorOutcome BedrockAgentCoreControlClient::GetEvaluator(const GetEvaluatorRequest& request) const {
   if (!request.EvaluatorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetEvaluator", "Required field: EvaluatorId, is not set");
@@ -1002,6 +1133,30 @@ GetGatewayOutcome BedrockAgentCoreControlClient::GetGateway(const GetGatewayRequ
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetGatewayOutcome(result.GetResultWithOwnership()) : GetGatewayOutcome(std::move(result.GetError()));
+}
+
+GetGatewayRuleOutcome BedrockAgentCoreControlClient::GetGatewayRule(const GetGatewayRuleRequest& request) const {
+  if (!request.GatewayIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetGatewayRule", "Required field: GatewayIdentifier, is not set");
+    return GetGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayIdentifier]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetGatewayRule", "Required field: RuleId, is not set");
+    return GetGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateways/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetGatewayRuleOutcome(result.GetResultWithOwnership()) : GetGatewayRuleOutcome(std::move(result.GetError()));
 }
 
 GetGatewayTargetOutcome BedrockAgentCoreControlClient::GetGatewayTarget(const GetGatewayTargetRequest& request) const {
@@ -1338,6 +1493,38 @@ ListCodeInterpretersOutcome BedrockAgentCoreControlClient::ListCodeInterpreters(
                             : ListCodeInterpretersOutcome(std::move(result.GetError()));
 }
 
+ListConfigurationBundleVersionsOutcome BedrockAgentCoreControlClient::ListConfigurationBundleVersions(
+    const ListConfigurationBundleVersionsRequest& request) const {
+  if (!request.BundleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListConfigurationBundleVersions", "Required field: BundleId, is not set");
+    return ListConfigurationBundleVersionsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBundleId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/versions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationBundleVersionsOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationBundleVersionsOutcome(std::move(result.GetError()));
+}
+
+ListConfigurationBundlesOutcome BedrockAgentCoreControlClient::ListConfigurationBundles(
+    const ListConfigurationBundlesRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListConfigurationBundlesOutcome(result.GetResultWithOwnership())
+                            : ListConfigurationBundlesOutcome(std::move(result.GetError()));
+}
+
 ListEvaluatorsOutcome BedrockAgentCoreControlClient::ListEvaluators(const ListEvaluatorsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1346,6 +1533,25 @@ ListEvaluatorsOutcome BedrockAgentCoreControlClient::ListEvaluators(const ListEv
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListEvaluatorsOutcome(result.GetResultWithOwnership()) : ListEvaluatorsOutcome(std::move(result.GetError()));
+}
+
+ListGatewayRulesOutcome BedrockAgentCoreControlClient::ListGatewayRules(const ListGatewayRulesRequest& request) const {
+  if (!request.GatewayIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListGatewayRules", "Required field: GatewayIdentifier, is not set");
+    return ListGatewayRulesOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayIdentifier]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateways/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rules");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListGatewayRulesOutcome(result.GetResultWithOwnership())
+                            : ListGatewayRulesOutcome(std::move(result.GetError()));
 }
 
 ListGatewayTargetsOutcome BedrockAgentCoreControlClient::ListGatewayTargets(const ListGatewayTargetsRequest& request) const {
@@ -1744,6 +1950,25 @@ UpdateApiKeyCredentialProviderOutcome BedrockAgentCoreControlClient::UpdateApiKe
                             : UpdateApiKeyCredentialProviderOutcome(std::move(result.GetError()));
 }
 
+UpdateConfigurationBundleOutcome BedrockAgentCoreControlClient::UpdateConfigurationBundle(
+    const UpdateConfigurationBundleRequest& request) const {
+  if (!request.BundleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateConfigurationBundle", "Required field: BundleId, is not set");
+    return UpdateConfigurationBundleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BundleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/configuration-bundles/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBundleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateConfigurationBundleOutcome(result.GetResultWithOwnership())
+                            : UpdateConfigurationBundleOutcome(std::move(result.GetError()));
+}
+
 UpdateEvaluatorOutcome BedrockAgentCoreControlClient::UpdateEvaluator(const UpdateEvaluatorRequest& request) const {
   if (!request.EvaluatorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("UpdateEvaluator", "Required field: EvaluatorId, is not set");
@@ -1777,6 +2002,31 @@ UpdateGatewayOutcome BedrockAgentCoreControlClient::UpdateGateway(const UpdateGa
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateGatewayOutcome(result.GetResultWithOwnership()) : UpdateGatewayOutcome(std::move(result.GetError()));
+}
+
+UpdateGatewayRuleOutcome BedrockAgentCoreControlClient::UpdateGatewayRule(const UpdateGatewayRuleRequest& request) const {
+  if (!request.GatewayIdentifierHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRule", "Required field: GatewayIdentifier, is not set");
+    return UpdateGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [GatewayIdentifier]", false));
+  }
+  if (!request.RuleIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateGatewayRule", "Required field: RuleId, is not set");
+    return UpdateGatewayRuleOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RuleId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/gateways/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetGatewayIdentifier());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/rules/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRuleId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdateGatewayRuleOutcome(result.GetResultWithOwnership())
+                            : UpdateGatewayRuleOutcome(std::move(result.GetError()));
 }
 
 UpdateGatewayTargetOutcome BedrockAgentCoreControlClient::UpdateGatewayTarget(const UpdateGatewayTargetRequest& request) const {

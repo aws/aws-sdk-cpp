@@ -31,6 +31,22 @@ class DeleteAlternateContactRequest : public AccountRequest {
 
   ///@{
   /**
+   * <p>Specifies which of the alternate contacts to delete. </p>
+   */
+  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
+  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
+  inline void SetAlternateContactType(AlternateContactType value) {
+    m_alternateContactTypeHasBeenSet = true;
+    m_alternateContactType = value;
+  }
+  inline DeleteAlternateContactRequest& WithAlternateContactType(AlternateContactType value) {
+    SetAlternateContactType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the 12 digit account ID number of the Amazon Web Services account
    * that you want to access or modify with this operation.</p> <p>If you do not
    * specify this parameter, it defaults to the Amazon Web Services account of the
@@ -65,28 +81,12 @@ class DeleteAlternateContactRequest : public AccountRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies which of the alternate contacts to delete. </p>
-   */
-  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
-  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
-  inline void SetAlternateContactType(AlternateContactType value) {
-    m_alternateContactTypeHasBeenSet = true;
-    m_alternateContactType = value;
-  }
-  inline DeleteAlternateContactRequest& WithAlternateContactType(AlternateContactType value) {
-    SetAlternateContactType(value);
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_accountId;
-
   AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
-  bool m_accountIdHasBeenSet = false;
+
+  Aws::String m_accountId;
   bool m_alternateContactTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
 };
 
 }  // namespace Model

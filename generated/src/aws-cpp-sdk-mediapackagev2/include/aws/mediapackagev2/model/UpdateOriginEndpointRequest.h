@@ -15,6 +15,7 @@
 #include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ForceEndpointErrorConfiguration.h>
 #include <aws/mediapackagev2/model/Segment.h>
+#include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
 
@@ -291,6 +292,24 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
 
   ///@{
   /**
+   * <p>The separator character to use in generated URIs for this origin endpoint.
+   * This setting applies to all manifest types on the endpoint. If you don't specify
+   * a value in the update request, the current value is preserved.</p>
+   */
+  inline UriSeparator GetUriSeparator() const { return m_uriSeparator; }
+  inline bool UriSeparatorHasBeenSet() const { return m_uriSeparatorHasBeenSet; }
+  inline void SetUriSeparator(UriSeparator value) {
+    m_uriSeparatorHasBeenSet = true;
+    m_uriSeparator = value;
+  }
+  inline UpdateOriginEndpointRequest& WithUriSeparator(UriSeparator value) {
+    SetUriSeparator(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The expected current Entity Tag (ETag) for the resource. If the specified
    * ETag does not match the resource's current entity tag, the update request will
    * be rejected.</p>
@@ -333,6 +352,8 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
 
+  UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
+
   Aws::String m_eTag;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -346,6 +367,7 @@ class UpdateOriginEndpointRequest : public Mediapackagev2Request {
   bool m_dashManifestsHasBeenSet = false;
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
+  bool m_uriSeparatorHasBeenSet = false;
   bool m_eTagHasBeenSet = false;
 };
 

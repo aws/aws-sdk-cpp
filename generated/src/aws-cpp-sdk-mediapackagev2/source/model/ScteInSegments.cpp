@@ -17,6 +17,7 @@ namespace ScteInSegmentsMapper {
 
 static const int NONE_HASH = HashingUtils::HashString("NONE");
 static const int ALL_HASH = HashingUtils::HashString("ALL");
+static const int MATCHES_FILTER_HASH = HashingUtils::HashString("MATCHES_FILTER");
 
 ScteInSegments GetScteInSegmentsForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ ScteInSegments GetScteInSegmentsForName(const Aws::String& name) {
     return ScteInSegments::NONE;
   } else if (hashCode == ALL_HASH) {
     return ScteInSegments::ALL;
+  } else if (hashCode == MATCHES_FILTER_HASH) {
+    return ScteInSegments::MATCHES_FILTER;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForScteInSegments(ScteInSegments enumValue) {
       return "NONE";
     case ScteInSegments::ALL:
       return "ALL";
+    case ScteInSegments::MATCHES_FILTER:
+      return "MATCHES_FILTER";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

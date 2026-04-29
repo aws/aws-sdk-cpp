@@ -35,16 +35,36 @@ class AlternateContact {
 
   ///@{
   /**
-   * <p>The type of alternate contact.</p>
+   * <p>The name associated with this alternate contact.</p>
    */
-  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
-  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
-  inline void SetAlternateContactType(AlternateContactType value) {
-    m_alternateContactTypeHasBeenSet = true;
-    m_alternateContactType = value;
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
   }
-  inline AlternateContact& WithAlternateContactType(AlternateContactType value) {
-    SetAlternateContactType(value);
+  template <typename NameT = Aws::String>
+  AlternateContact& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The title associated with this alternate contact.</p>
+   */
+  inline const Aws::String& GetTitle() const { return m_title; }
+  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+  template <typename TitleT = Aws::String>
+  void SetTitle(TitleT&& value) {
+    m_titleHasBeenSet = true;
+    m_title = std::forward<TitleT>(value);
+  }
+  template <typename TitleT = Aws::String>
+  AlternateContact& WithTitle(TitleT&& value) {
+    SetTitle(std::forward<TitleT>(value));
     return *this;
   }
   ///@}
@@ -69,24 +89,6 @@ class AlternateContact {
 
   ///@{
   /**
-   * <p>The name associated with this alternate contact.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  AlternateContact& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The phone number associated with this alternate contact.</p>
    */
   inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
@@ -105,36 +107,34 @@ class AlternateContact {
 
   ///@{
   /**
-   * <p>The title associated with this alternate contact.</p>
+   * <p>The type of alternate contact.</p>
    */
-  inline const Aws::String& GetTitle() const { return m_title; }
-  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-  template <typename TitleT = Aws::String>
-  void SetTitle(TitleT&& value) {
-    m_titleHasBeenSet = true;
-    m_title = std::forward<TitleT>(value);
+  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
+  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
+  inline void SetAlternateContactType(AlternateContactType value) {
+    m_alternateContactTypeHasBeenSet = true;
+    m_alternateContactType = value;
   }
-  template <typename TitleT = Aws::String>
-  AlternateContact& WithTitle(TitleT&& value) {
-    SetTitle(std::forward<TitleT>(value));
+  inline AlternateContact& WithAlternateContactType(AlternateContactType value) {
+    SetAlternateContactType(value);
     return *this;
   }
   ///@}
  private:
-  AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
+  Aws::String m_name;
+
+  Aws::String m_title;
 
   Aws::String m_emailAddress;
 
-  Aws::String m_name;
-
   Aws::String m_phoneNumber;
 
-  Aws::String m_title;
-  bool m_alternateContactTypeHasBeenSet = false;
-  bool m_emailAddressHasBeenSet = false;
+  AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
   bool m_nameHasBeenSet = false;
-  bool m_phoneNumberHasBeenSet = false;
   bool m_titleHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_alternateContactTypeHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String PutContactInformationRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIdHasBeenSet) {
-    payload.WithString("AccountId", m_accountId);
-  }
-
   if (m_contactInformationHasBeenSet) {
     payload.WithObject("ContactInformation", m_contactInformation.Jsonize());
+  }
+
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();

@@ -52,7 +52,7 @@ class HarnessAgentCoreGatewayConfig {
 
   ///@{
   /**
-   * <p>How Loopy authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if
+   * <p>How harness authenticates to this Gateway. Defaults to AWS_IAM (SigV4) if
    * omitted.</p>
    */
   inline const HarnessGatewayOutboundAuth& GetOutboundAuth() const { return m_outboundAuth; }

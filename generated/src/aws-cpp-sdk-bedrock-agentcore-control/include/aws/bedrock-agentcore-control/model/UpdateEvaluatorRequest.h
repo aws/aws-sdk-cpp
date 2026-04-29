@@ -126,6 +126,31 @@ class UpdateEvaluatorRequest : public BedrockAgentCoreControlRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p> The Amazon Resource Name (ARN) of a customer managed KMS key to use for
+   * encrypting sensitive evaluator data. Specify a new key ARN to rotate the
+   * encryption key, or specify a key ARN to add encryption to an evaluator that was
+   * previously created without one. When you rotate to a new key, the service
+   * decrypts the existing data with the old key and re-encrypts it with the new key.
+   * Only symmetric encryption KMS keys are supported. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption
+   * at rest for AgentCore Evaluations</a>. </p>
+   */
+  inline const Aws::String& GetKmsKeyArn() const { return m_kmsKeyArn; }
+  inline bool KmsKeyArnHasBeenSet() const { return m_kmsKeyArnHasBeenSet; }
+  template <typename KmsKeyArnT = Aws::String>
+  void SetKmsKeyArn(KmsKeyArnT&& value) {
+    m_kmsKeyArnHasBeenSet = true;
+    m_kmsKeyArn = std::forward<KmsKeyArnT>(value);
+  }
+  template <typename KmsKeyArnT = Aws::String>
+  UpdateEvaluatorRequest& WithKmsKeyArn(KmsKeyArnT&& value) {
+    SetKmsKeyArn(std::forward<KmsKeyArnT>(value));
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_clientToken{Aws::Utils::UUID::PseudoRandomUUID()};
 
@@ -136,11 +161,14 @@ class UpdateEvaluatorRequest : public BedrockAgentCoreControlRequest {
   EvaluatorConfig m_evaluatorConfig;
 
   EvaluatorLevel m_level{EvaluatorLevel::NOT_SET};
+
+  Aws::String m_kmsKeyArn;
   bool m_clientTokenHasBeenSet = true;
   bool m_evaluatorIdHasBeenSet = false;
   bool m_descriptionHasBeenSet = false;
   bool m_evaluatorConfigHasBeenSet = false;
   bool m_levelHasBeenSet = false;
+  bool m_kmsKeyArnHasBeenSet = false;
 };
 
 }  // namespace Model

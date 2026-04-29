@@ -99,6 +99,10 @@ GetOriginEndpointResult& GetOriginEndpointResult::operator=(const Aws::AmazonWeb
     m_forceEndpointErrorConfiguration = jsonValue.GetObject("ForceEndpointErrorConfiguration");
     m_forceEndpointErrorConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UriSeparator")) {
+    m_uriSeparator = UriSeparatorMapper::GetUriSeparatorForName(jsonValue.GetString("UriSeparator"));
+    m_uriSeparatorHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("ETag")) {
     m_eTag = jsonValue.GetString("ETag");
     m_eTagHasBeenSet = true;

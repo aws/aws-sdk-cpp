@@ -11,6 +11,7 @@
 #include <aws/bedrock-agentcore-control/model/ListHarnessesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListCodeInterpretersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundleVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeEndpointsPaginationTraits.h>
@@ -24,11 +25,13 @@
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewaysPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListGatewayRulesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListAgentRuntimeVersionsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListGatewayTargetsPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListBrowserProfilesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListRegistriesPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListConfigurationBundlesPaginationTraits.h>
 
 #include <aws/testing/AwsCppSdkGTestSuite.h>
 

@@ -195,6 +195,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Creates an A/B test for comparing agent configurations. A/B tests split
+   * traffic between a control variant and a treatment variant through a gateway,
+   * then evaluate performance using online evaluation configurations to determine
+   * which variant performs better.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreateABTest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateABTestOutcome CreateABTest(const Model::CreateABTestRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateABTest that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename CreateABTestRequestT = Model::CreateABTestRequest>
+  Model::CreateABTestOutcomeCallable CreateABTestCallable(const CreateABTestRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::CreateABTest, request);
+  }
+
+  /**
+   * An Async wrapper for CreateABTest that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename CreateABTestRequestT = Model::CreateABTestRequest>
+  void CreateABTestAsync(const CreateABTestRequestT& request, const CreateABTestResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::CreateABTest, request, handler, context);
+  }
+
+  /**
    * <p>Creates an event in an AgentCore Memory resource. Events represent
    * interactions or activities that occur within a session and are associated with
    * specific actors.</p> <p>To use this operation, you must have the
@@ -221,6 +249,59 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void CreateEventAsync(const CreateEventRequestT& request, const CreateEventResponseReceivedHandler& handler,
                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::CreateEvent, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes an A/B test and its associated gateway rules.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteABTest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteABTestOutcome DeleteABTest(const Model::DeleteABTestRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteABTest that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename DeleteABTestRequestT = Model::DeleteABTestRequest>
+  Model::DeleteABTestOutcomeCallable DeleteABTestCallable(const DeleteABTestRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeleteABTest, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteABTest that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename DeleteABTestRequestT = Model::DeleteABTestRequest>
+  void DeleteABTestAsync(const DeleteABTestRequestT& request, const DeleteABTestResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeleteABTest, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a batch evaluation and its associated results.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteBatchEvaluation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteBatchEvaluationOutcome DeleteBatchEvaluation(const Model::DeleteBatchEvaluationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteBatchEvaluation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteBatchEvaluationRequestT = Model::DeleteBatchEvaluationRequest>
+  Model::DeleteBatchEvaluationOutcomeCallable DeleteBatchEvaluationCallable(const DeleteBatchEvaluationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeleteBatchEvaluation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteBatchEvaluation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteBatchEvaluationRequestT = Model::DeleteBatchEvaluationRequest>
+  void DeleteBatchEvaluationAsync(const DeleteBatchEvaluationRequestT& request, const DeleteBatchEvaluationResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeleteBatchEvaluation, request, handler, context);
   }
 
   /**
@@ -281,6 +362,33 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Deletes a recommendation and its associated results.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteRecommendation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteRecommendationOutcome DeleteRecommendation(const Model::DeleteRecommendationRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteRecommendation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteRecommendationRequestT = Model::DeleteRecommendationRequest>
+  Model::DeleteRecommendationOutcomeCallable DeleteRecommendationCallable(const DeleteRecommendationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeleteRecommendation, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteRecommendation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteRecommendationRequestT = Model::DeleteRecommendationRequest>
+  void DeleteRecommendationAsync(const DeleteRecommendationRequestT& request, const DeleteRecommendationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeleteRecommendation, request, handler, context);
+  }
+
+  /**
    * <p> Performs on-demand evaluation of agent traces using a specified evaluator.
    * This synchronous API accepts traces in OpenTelemetry format and returns
    * immediate scoring results with detailed explanations.</p><p><h3>See Also:</h3>
@@ -309,6 +417,32 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Retrieves detailed information about an A/B test, including its
+   * configuration, status, and statistical results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetABTest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetABTestOutcome GetABTest(const Model::GetABTestRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetABTest that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetABTestRequestT = Model::GetABTestRequest>
+  Model::GetABTestOutcomeCallable GetABTestCallable(const GetABTestRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetABTest, request);
+  }
+
+  /**
+   * An Async wrapper for GetABTest that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetABTestRequestT = Model::GetABTestRequest>
+  void GetABTestAsync(const GetABTestRequestT& request, const GetABTestResponseReceivedHandler& handler,
+                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetABTest, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves the A2A agent card associated with an AgentCore Runtime
    * agent.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetAgentCard">AWS
@@ -332,6 +466,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void GetAgentCardAsync(const GetAgentCardRequestT& request, const GetAgentCardResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::GetAgentCard, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a batch evaluation, including its
+   * status, configuration, results, and any error details.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetBatchEvaluation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetBatchEvaluationOutcome GetBatchEvaluation(const Model::GetBatchEvaluationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetBatchEvaluation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetBatchEvaluationRequestT = Model::GetBatchEvaluationRequest>
+  Model::GetBatchEvaluationOutcomeCallable GetBatchEvaluationCallable(const GetBatchEvaluationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetBatchEvaluation, request);
+  }
+
+  /**
+   * An Async wrapper for GetBatchEvaluation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetBatchEvaluationRequestT = Model::GetBatchEvaluationRequest>
+  void GetBatchEvaluationAsync(const GetBatchEvaluationRequestT& request, const GetBatchEvaluationResponseReceivedHandler& handler,
+                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetBatchEvaluation, request, handler, context);
   }
 
   /**
@@ -466,6 +628,33 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void GetMemoryRecordAsync(const GetMemoryRecordRequestT& request, const GetMemoryRecordResponseReceivedHandler& handler,
                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::GetMemoryRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a recommendation, including its
+   * configuration, status, and results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetRecommendation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetRecommendationOutcome GetRecommendation(const Model::GetRecommendationRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetRecommendation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetRecommendationRequestT = Model::GetRecommendationRequest>
+  Model::GetRecommendationOutcomeCallable GetRecommendationCallable(const GetRecommendationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetRecommendation, request);
+  }
+
+  /**
+   * An Async wrapper for GetRecommendation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetRecommendationRequestT = Model::GetRecommendationRequest>
+  void GetRecommendationAsync(const GetRecommendationRequestT& request, const GetRecommendationResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetRecommendation, request, handler, context);
   }
 
   /**
@@ -800,6 +989,32 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Lists all A/B tests in the account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListABTests">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListABTestsOutcome ListABTests(const Model::ListABTestsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListABTests that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ListABTestsRequestT = Model::ListABTestsRequest>
+  Model::ListABTestsOutcomeCallable ListABTestsCallable(const ListABTestsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListABTests, request);
+  }
+
+  /**
+   * An Async wrapper for ListABTests that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ListABTestsRequestT = Model::ListABTestsRequest>
+  void ListABTestsAsync(const ListABTestsResponseReceivedHandler& handler,
+                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                        const ListABTestsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListABTests, request, handler, context);
+  }
+
+  /**
    * <p>Lists all actors in an AgentCore Memory resource. We recommend using
    * pagination to ensure that the operation returns quickly and successfully.</p>
    * <p>To use this operation, you must have the
@@ -826,6 +1041,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void ListActorsAsync(const ListActorsRequestT& request, const ListActorsResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::ListActors, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all batch evaluations in the account, providing summary information
+   * about each evaluation's status and configuration.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListBatchEvaluations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListBatchEvaluationsOutcome ListBatchEvaluations(const Model::ListBatchEvaluationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListBatchEvaluations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListBatchEvaluationsRequestT = Model::ListBatchEvaluationsRequest>
+  Model::ListBatchEvaluationsOutcomeCallable ListBatchEvaluationsCallable(const ListBatchEvaluationsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListBatchEvaluations, request);
+  }
+
+  /**
+   * An Async wrapper for ListBatchEvaluations that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListBatchEvaluationsRequestT = Model::ListBatchEvaluationsRequest>
+  void ListBatchEvaluationsAsync(const ListBatchEvaluationsResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                 const ListBatchEvaluationsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListBatchEvaluations, request, handler, context);
   }
 
   /**
@@ -996,6 +1239,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Lists all recommendations in the account, with optional filtering by
+   * status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListRecommendations">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListRecommendationsOutcome ListRecommendations(const Model::ListRecommendationsRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListRecommendations that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
+  Model::ListRecommendationsOutcomeCallable ListRecommendationsCallable(const ListRecommendationsRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListRecommendations, request);
+  }
+
+  /**
+   * An Async wrapper for ListRecommendations that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListRecommendationsRequestT = Model::ListRecommendationsRequest>
+  void ListRecommendationsAsync(const ListRecommendationsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListRecommendationsRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListRecommendations, request, handler, context);
+  }
+
+  /**
    * <p>Lists sessions in an AgentCore Memory resource based on specified criteria.
    * We recommend using pagination to ensure that the operation returns quickly and
    * successfully.</p> <p>Empty sessions are automatically deleted after one day.</p>
@@ -1127,6 +1398,35 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Starts a batch evaluation job that evaluates agent performance across
+   * multiple sessions. Batch evaluations pull agent traces from CloudWatch Logs or
+   * an existing online evaluation configuration and run specified evaluators and
+   * insights against them.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartBatchEvaluation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartBatchEvaluationOutcome StartBatchEvaluation(const Model::StartBatchEvaluationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartBatchEvaluation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartBatchEvaluationRequestT = Model::StartBatchEvaluationRequest>
+  Model::StartBatchEvaluationOutcomeCallable StartBatchEvaluationCallable(const StartBatchEvaluationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::StartBatchEvaluation, request);
+  }
+
+  /**
+   * An Async wrapper for StartBatchEvaluation that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename StartBatchEvaluationRequestT = Model::StartBatchEvaluationRequest>
+  void StartBatchEvaluationAsync(const StartBatchEvaluationRequestT& request, const StartBatchEvaluationResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::StartBatchEvaluation, request, handler, context);
+  }
+
+  /**
    * <p>Creates and initializes a browser session in Amazon Bedrock AgentCore. The
    * session enables agents to navigate and interact with web content, extract
    * information from websites, and perform web-based tasks as part of their response
@@ -1246,6 +1546,61 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Starts a recommendation job that analyzes agent traces and generates
+   * optimization suggestions for system prompts or tool descriptions to improve
+   * agent performance.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StartRecommendation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StartRecommendationOutcome StartRecommendation(const Model::StartRecommendationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StartRecommendation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StartRecommendationRequestT = Model::StartRecommendationRequest>
+  Model::StartRecommendationOutcomeCallable StartRecommendationCallable(const StartRecommendationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::StartRecommendation, request);
+  }
+
+  /**
+   * An Async wrapper for StartRecommendation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StartRecommendationRequestT = Model::StartRecommendationRequest>
+  void StartRecommendationAsync(const StartRecommendationRequestT& request, const StartRecommendationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::StartRecommendation, request, handler, context);
+  }
+
+  /**
+   * <p>Stops a running batch evaluation. Sessions that have already been evaluated
+   * retain their results.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/StopBatchEvaluation">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::StopBatchEvaluationOutcome StopBatchEvaluation(const Model::StopBatchEvaluationRequest& request) const;
+
+  /**
+   * A Callable wrapper for StopBatchEvaluation that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename StopBatchEvaluationRequestT = Model::StopBatchEvaluationRequest>
+  Model::StopBatchEvaluationOutcomeCallable StopBatchEvaluationCallable(const StopBatchEvaluationRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::StopBatchEvaluation, request);
+  }
+
+  /**
+   * An Async wrapper for StopBatchEvaluation that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename StopBatchEvaluationRequestT = Model::StopBatchEvaluationRequest>
+  void StopBatchEvaluationAsync(const StopBatchEvaluationRequestT& request, const StopBatchEvaluationResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::StopBatchEvaluation, request, handler, context);
+  }
+
+  /**
    * <p>Terminates an active browser session in Amazon Bedrock AgentCore. This
    * operation stops the session, releases associated resources, and makes the
    * session unavailable for further use.</p> <p>To stop a browser session, you must
@@ -1345,6 +1700,32 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void StopRuntimeSessionAsync(const StopRuntimeSessionRequestT& request, const StopRuntimeSessionResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::StopRuntimeSession, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an A/B test's configuration, including variants, traffic allocation,
+   * evaluation settings, or execution status.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/UpdateABTest">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateABTestOutcome UpdateABTest(const Model::UpdateABTestRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateABTest that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename UpdateABTestRequestT = Model::UpdateABTestRequest>
+  Model::UpdateABTestOutcomeCallable UpdateABTestCallable(const UpdateABTestRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::UpdateABTest, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateABTest that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename UpdateABTestRequestT = Model::UpdateABTestRequest>
+  void UpdateABTestAsync(const UpdateABTestRequestT& request, const UpdateABTestResponseReceivedHandler& handler,
+                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::UpdateABTest, request, handler, context);
   }
 
   /**

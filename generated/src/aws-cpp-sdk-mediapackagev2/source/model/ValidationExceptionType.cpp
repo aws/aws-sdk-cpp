@@ -128,6 +128,8 @@ static const int INVALID_CERTIFICATE_KEY_ALGORITHM_HASH = HashingUtils::HashStri
 static const int INVALID_CERTIFICATE_SIGNATURE_ALGORITHM_HASH = HashingUtils::HashString("INVALID_CERTIFICATE_SIGNATURE_ALGORITHM");
 static const int MISSING_CERTIFICATE_DOMAIN_NAME_HASH = HashingUtils::HashString("MISSING_CERTIFICATE_DOMAIN_NAME");
 static const int INVALID_ARN_HASH = HashingUtils::HashString("INVALID_ARN");
+static const int SCTE_IN_MANIFESTS_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("SCTE_IN_MANIFESTS_INVALID_CONFIGURATION");
+static const int CUSTOM_AD_TYPES_INVALID_CONFIGURATION_HASH = HashingUtils::HashString("CUSTOM_AD_TYPES_INVALID_CONFIGURATION");
 
 ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -327,6 +329,10 @@ ValidationExceptionType GetValidationExceptionTypeForName(const Aws::String& nam
     return ValidationExceptionType::MISSING_CERTIFICATE_DOMAIN_NAME;
   } else if (hashCode == INVALID_ARN_HASH) {
     return ValidationExceptionType::INVALID_ARN;
+  } else if (hashCode == SCTE_IN_MANIFESTS_INVALID_CONFIGURATION_HASH) {
+    return ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION;
+  } else if (hashCode == CUSTOM_AD_TYPES_INVALID_CONFIGURATION_HASH) {
+    return ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -537,6 +543,10 @@ Aws::String GetNameForValidationExceptionType(ValidationExceptionType enumValue)
       return "MISSING_CERTIFICATE_DOMAIN_NAME";
     case ValidationExceptionType::INVALID_ARN:
       return "INVALID_ARN";
+    case ValidationExceptionType::SCTE_IN_MANIFESTS_INVALID_CONFIGURATION:
+      return "SCTE_IN_MANIFESTS_INVALID_CONFIGURATION";
+    case ValidationExceptionType::CUSTOM_AD_TYPES_INVALID_CONFIGURATION:
+      return "CUSTOM_AD_TYPES_INVALID_CONFIGURATION";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

@@ -30,6 +30,7 @@ namespace Model {
  * <p> <code>t4</code>: Uses G4dn instance family</p> </li> <li> <p>
  * <code>a10g</code>: Uses G5 instance family</p> </li> <li> <p> <code>l4</code>:
  * Uses G6 and Gr6 instance families</p> </li> <li> <p> <code>l40s</code>: Uses G6e
+ * instance family</p> </li> <li> <p> <code>rtx-pro-server-6000</code>: Uses G7e
  * instance family</p> </li> </ul> <p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/deadline-2023-10-12/AcceleratorCapabilities">AWS
  * API Reference</a></p>

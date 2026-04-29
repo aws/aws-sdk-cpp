@@ -52,7 +52,9 @@ class HarnessRemoteMcpConfig {
   ///@}
 
   ///@{
-
+  /**
+   * <p>Custom headers to include when connecting to the remote MCP server.</p>
+   */
   inline const Aws::Map<Aws::String, Aws::String>& GetHeaders() const { return m_headers; }
   inline bool HeadersHasBeenSet() const { return m_headersHasBeenSet; }
   template <typename HeadersT = Aws::Map<Aws::String, Aws::String>>

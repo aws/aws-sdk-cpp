@@ -153,7 +153,10 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * parameter. When manually setting this parameter, you must use port numbers that
    * match the fleet's inbound permissions port range.</p>  <p>If you set
    * values manually, Amazon GameLift Servers no longer calculates a port range for
-   * you, even if you later remove the manual settings. </p>
+   * you, even if you later remove the manual settings. </p>  <p>The port
+   * range must not overlap with the Amazon GameLift Servers reserved port range
+   * <code>4092-4191</code>. This range is reserved for internal Amazon GameLift
+   * Servers services.</p>
    */
   inline const ConnectionPortRange& GetInstanceConnectionPortRange() const { return m_instanceConnectionPortRange; }
   inline bool InstanceConnectionPortRangeHasBeenSet() const { return m_instanceConnectionPortRangeHasBeenSet; }
@@ -186,7 +189,10 @@ class CreateContainerFleetRequest : public GameLiftRequest {
    * parameter. When manually setting this parameter, you must use port numbers that
    * match the fleet's connection port range.</p>  <p>If you set values
    * manually, Amazon GameLift Servers no longer calculates a port range for you,
-   * even if you later remove the manual settings. </p>
+   * even if you later remove the manual settings. </p>  <p>The port range
+   * must not overlap with the Amazon GameLift Servers reserved port range
+   * <code>4092-4191</code>. This range is reserved for internal Amazon GameLift
+   * Servers services.</p>
    */
   inline const Aws::Vector<IpPermission>& GetInstanceInboundPermissions() const { return m_instanceInboundPermissions; }
   inline bool InstanceInboundPermissionsHasBeenSet() const { return m_instanceInboundPermissionsHasBeenSet; }

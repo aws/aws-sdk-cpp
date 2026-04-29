@@ -1970,6 +1970,57 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
   }
 
   /**
+   * <p> <b>This API works with the following fleet types:</b> Container</p>
+   * <p>Retrieves the port mappings for a container group running on a container
+   * fleet. Port mappings show how container ports are mapped to connection ports on
+   * the fleet instance. Use this operation to find the connection port for a
+   * specific container on a fleet instance.</p> <p> <b>Request options</b> </p> <ul>
+   * <li> <p>Get port mappings for a game server container group. Provide the fleet
+   * ID, set <code>ContainerGroupType</code> to <code>GAME_SERVER</code>, and specify
+   * the <code>ComputeName</code> for the game server container group.</p> </li> <li>
+   * <p>Get port mappings for a per-instance container group. Provide the fleet ID,
+   * set <code>ContainerGroupType</code> to <code>PER_INSTANCE</code>, and specify
+   * the <code>InstanceId</code> for the instance.</p> </li> <li> <p>Optionally
+   * filter results to a single container by providing a
+   * <code>ContainerName</code>.</p> </li> </ul> <p> <b>Results</b> </p> <p>This
+   * operation returns the fleet ID, location, container group definition ARN,
+   * container group type, compute name (for game server container groups), instance
+   * ID, and a list of <code>ContainerGroupPortMapping</code> objects. Each object
+   * contains the container name, runtime ID, and a list of port mappings that show
+   * how container ports map to connection ports on the instance.</p> <p> <b>Learn
+   * more</b> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-remote-access.html">Connect
+   * to containers</a> </p> <p> <a
+   * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/containers-create-groups.html">Create
+   * a container group definition</a> </p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeContainerGroupPortMappings">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DescribeContainerGroupPortMappingsOutcome DescribeContainerGroupPortMappings(
+      const Model::DescribeContainerGroupPortMappingsRequest& request) const;
+
+  /**
+   * A Callable wrapper for DescribeContainerGroupPortMappings that returns a future to the operation so that it can be executed in parallel
+   * to other requests.
+   */
+  template <typename DescribeContainerGroupPortMappingsRequestT = Model::DescribeContainerGroupPortMappingsRequest>
+  Model::DescribeContainerGroupPortMappingsOutcomeCallable DescribeContainerGroupPortMappingsCallable(
+      const DescribeContainerGroupPortMappingsRequestT& request) const {
+    return SubmitCallable(&GameLiftClient::DescribeContainerGroupPortMappings, request);
+  }
+
+  /**
+   * An Async wrapper for DescribeContainerGroupPortMappings that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DescribeContainerGroupPortMappingsRequestT = Model::DescribeContainerGroupPortMappingsRequest>
+  void DescribeContainerGroupPortMappingsAsync(const DescribeContainerGroupPortMappingsRequestT& request,
+                                               const DescribeContainerGroupPortMappingsResponseReceivedHandler& handler,
+                                               const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&GameLiftClient::DescribeContainerGroupPortMappings, request, handler, context);
+  }
+
+  /**
    * <p> <b>This API works with the following fleet types:</b> EC2</p> <p>Retrieves
    * the instance limits and current utilization for an Amazon Web Services Region or
    * location. Instance limits control the number of instances, per instance type,
@@ -1984,30 +2035,34 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * remote locations, limits also differ based on the combination of home Region and
    * remote location. All requests must specify an Amazon Web Services Region (either
    * explicitly or as your default settings). To get the limit for a remote location,
-   * you must also specify the location. For example, the following requests all
+   * you must also specify the location. To learn more about how Amazon GameLift
+   * Servers handles locations, see <a
+   * href="https://docs.aws.amazon.com/gameliftservers/latest/developerguide/gamelift-regions.html">Amazon
+   * GameLift Servers service locations</a>. For example, the following requests all
    * return different results: </p> <ul> <li> <p>Request specifies the Region
    * <code>ap-northeast-1</code> with no location. The result is limits and usage
-   * data on all instance types that are deployed in <code>us-east-2</code>, by all
-   * of the fleets that reside in <code>ap-northeast-1</code>. </p> </li> <li>
-   * <p>Request specifies the Region <code>us-east-1</code> with location
-   * <code>ca-central-1</code>. The result is limits and usage data on all instance
-   * types that are deployed in <code>ca-central-1</code>, by all of the fleets that
-   * reside in <code>us-east-2</code>. These limits do not affect fleets in any other
-   * Regions that deploy instances to <code>ca-central-1</code>.</p> </li> <li>
-   * <p>Request specifies the Region <code>eu-west-1</code> with location
-   * <code>ca-central-1</code>. The result is limits and usage data on all instance
-   * types that are deployed in <code>ca-central-1</code>, by all of the fleets that
-   * reside in <code>eu-west-1</code>.</p> </li> </ul> <p>This operation can be used
-   * in the following ways:</p> <ul> <li> <p>To get limit and usage data for all
-   * instance types that are deployed in an Amazon Web Services Region by fleets that
-   * reside in the same Region: Specify the Region only. Optionally, specify a single
-   * instance type to retrieve information for.</p> </li> <li> <p>To get limit and
-   * usage data for all instance types that are deployed to a remote location by
-   * fleets that reside in different Amazon Web Services Region: Provide both the
-   * Amazon Web Services Region and the remote location. Optionally, specify a single
-   * instance type to retrieve information for.</p> </li> </ul> <p>If successful, an
-   * <code>EC2InstanceLimits</code> object is returned with limits and usage data for
-   * each requested instance type.</p> <p> <b>Learn more</b> </p> <p> <a
+   * data on all of the fleets that reside in <code>ap-northeast-1</code>, for all
+   * instance types that are deployed in <code>ap-northeast-1</code>. </p> </li> <li>
+   * <p>Request specifies the Region <code>ap-northeast-1</code> with location
+   * <code>us-west-2</code>. The result is limits and usage data on all of the fleets
+   * that reside in <code>ap-northeast-1</code>, for all instance types that are
+   * deployed in <code>us-west-2</code>.</p> </li> <li> <p>Request specifies the
+   * Region <code>us-east-1</code> with location <code>ap-northeast-1</code>. The
+   * result is limits and usage data on all of the fleets that reside in
+   * <code>us-east-1</code>, for all instance types that are deployed in
+   * <code>ap-northeast-1</code>. These limits do not affect fleets in any other
+   * Regions that deploy instances to <code>ap-northeast-1</code>.</p> </li> </ul>
+   * <p>This operation can be used in the following ways:</p> <ul> <li> <p>To get
+   * limit and usage data for all instance types that are deployed in an Amazon Web
+   * Services Region by fleets that reside in the same Region: Specify the Region
+   * only. Optionally, specify a single instance type to retrieve information
+   * for.</p> </li> <li> <p>To get limit and usage data for all instance types that
+   * are deployed to a remote location by fleets that reside in different Amazon Web
+   * Services Region: Provide both the Amazon Web Services Region and the remote
+   * location. Optionally, specify a single instance type to retrieve information
+   * for.</p> </li> </ul> <p>If successful, an <code>EC2InstanceLimits</code> object
+   * is returned with limits and usage data for each requested instance type.</p> <p>
+   * <b>Learn more</b> </p> <p> <a
    * href="https://docs.aws.amazon.com/gamelift/latest/developerguide/fleets-intro.html">Setting
    * up Amazon GameLift Servers fleets</a> </p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/gamelift-2015-10-01/DescribeEC2InstanceLimits">AWS
@@ -4118,14 +4173,14 @@ class AWS_GAMELIFT_API GameLiftClient : public Aws::Client::AWSRpcV2CborClient,
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_DescribeGameSessions.html">DescribeGameSessions</a>.</p>
    * <p>To set search and sort criteria, create a filter expression using the
    * following game session attributes. For game session search examples, see the
-   * Examples section of this topic.</p> <ul> <li> <p> <b>gameSessionId</b> -- A
-   * unique identifier for the game session. You can use either a
-   * <code>GameSessionId</code> or <code>GameSessionArn</code> value. </p> </li> <li>
-   * <p> <b>gameSessionName</b> -- Name assigned to a game session. Game session
-   * names do not need to be unique to a game session.</p> </li> <li> <p>
-   * <b>gameSessionProperties</b> -- A set of key-value pairs that can store custom
-   * data in a game session. For example: <code>{"Key": "difficulty", "Value":
-   * "novice"}</code>. The filter expression must specify the <a
+   * Examples section of this topic.</p> <ul> <li> <p> <b>gameSessionId</b> -- An
+   * identifier for the game session that is unique across all regions. You must use
+   * the full ARN value. </p> </li> <li> <p> <b>gameSessionName</b> -- Name assigned
+   * to a game session. Game session names do not need to be unique to a game
+   * session.</p> </li> <li> <p> <b>gameSessionProperties</b> -- A set of key-value
+   * pairs that can store custom data in a game session. For example: <code>{"Key":
+   * "difficulty", "Value": "novice"}</code>. The filter expression must specify the
+   * <a
    * href="https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty">https://docs.aws.amazon.com/gamelift/latest/apireference/API_GameProperty</a>
    * -- a <code>Key</code> and a string <code>Value</code> to search for the game
    * sessions.</p> <p>For example, to search for the above key-value pair, specify

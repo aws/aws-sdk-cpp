@@ -10,15 +10,22 @@
 #include <aws/bedrock-agentcore/model/BatchDeleteMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/BatchUpdateMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthRequest.h>
+#include <aws/bedrock-agentcore/model/CreateABTestRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteABTestRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/DeleteRecommendationRequest.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
+#include <aws/bedrock-agentcore/model/GetABTestRequest.h>
 #include <aws/bedrock-agentcore/model/GetAgentCardRequest.h>
+#include <aws/bedrock-agentcore/model/GetBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/GetBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetEventRequest.h>
 #include <aws/bedrock-agentcore/model/GetMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/GetRecommendationRequest.h>
 #include <aws/bedrock-agentcore/model/GetResourceApiKeyRequest.h>
 #include <aws/bedrock-agentcore/model/GetResourceOauth2TokenRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForJWTRequest.h>
@@ -29,22 +36,29 @@
 #include <aws/bedrock-agentcore/model/InvokeBrowserRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeCodeInterpreterRequest.h>
 #include <aws/bedrock-agentcore/model/InvokeHarnessRequest.h>
+#include <aws/bedrock-agentcore/model/ListABTestsRequest.h>
 #include <aws/bedrock-agentcore/model/ListActorsRequest.h>
+#include <aws/bedrock-agentcore/model/ListBatchEvaluationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListBrowserSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListCodeInterpreterSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListEventsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/ListRecommendationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SearchRegistryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/StartBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/StartBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StartMemoryExtractionJobRequest.h>
+#include <aws/bedrock-agentcore/model/StartRecommendationRequest.h>
+#include <aws/bedrock-agentcore/model/StopBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/StopBrowserSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/StopRuntimeSessionRequest.h>
+#include <aws/bedrock-agentcore/model/UpdateABTestRequest.h>
 #include <aws/bedrock-agentcore/model/UpdateBrowserStreamRequest.h>
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
@@ -290,6 +304,16 @@ CompleteResourceTokenAuthOutcome BedrockAgentCoreClient::CompleteResourceTokenAu
                             : CompleteResourceTokenAuthOutcome(std::move(result.GetError()));
 }
 
+CreateABTestOutcome BedrockAgentCoreClient::CreateABTest(const CreateABTestRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ab-tests");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreateABTestOutcome(result.GetResultWithOwnership()) : CreateABTestOutcome(std::move(result.GetError()));
+}
+
 CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest& request) const {
   if (!request.MemoryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreateEvent", "Required field: MemoryId, is not set");
@@ -306,6 +330,41 @@ CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest&
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? CreateEventOutcome(result.GetResultWithOwnership()) : CreateEventOutcome(std::move(result.GetError()));
+}
+
+DeleteABTestOutcome BedrockAgentCoreClient::DeleteABTest(const DeleteABTestRequest& request) const {
+  if (!request.AbTestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteABTest", "Required field: AbTestId, is not set");
+    return DeleteABTestOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AbTestId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ab-tests/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAbTestId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteABTestOutcome(result.GetResultWithOwnership()) : DeleteABTestOutcome(std::move(result.GetError()));
+}
+
+DeleteBatchEvaluationOutcome BedrockAgentCoreClient::DeleteBatchEvaluation(const DeleteBatchEvaluationRequest& request) const {
+  if (!request.BatchEvaluationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteBatchEvaluation", "Required field: BatchEvaluationId, is not set");
+    return DeleteBatchEvaluationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BatchEvaluationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/batch-evaluate/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchEvaluationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteBatchEvaluationOutcome(result.GetResultWithOwnership())
+                            : DeleteBatchEvaluationOutcome(std::move(result.GetError()));
 }
 
 DeleteEventOutcome BedrockAgentCoreClient::DeleteEvent(const DeleteEventRequest& request) const {
@@ -371,6 +430,24 @@ DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const Delet
                             : DeleteMemoryRecordOutcome(std::move(result.GetError()));
 }
 
+DeleteRecommendationOutcome BedrockAgentCoreClient::DeleteRecommendation(const DeleteRecommendationRequest& request) const {
+  if (!request.RecommendationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeleteRecommendation", "Required field: RecommendationId, is not set");
+    return DeleteRecommendationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeleteRecommendationOutcome(result.GetResultWithOwnership())
+                            : DeleteRecommendationOutcome(std::move(result.GetError()));
+}
+
 EvaluateOutcome BedrockAgentCoreClient::Evaluate(const EvaluateRequest& request) const {
   if (!request.EvaluatorIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("Evaluate", "Required field: EvaluatorId, is not set");
@@ -386,6 +463,23 @@ EvaluateOutcome BedrockAgentCoreClient::Evaluate(const EvaluateRequest& request)
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? EvaluateOutcome(result.GetResultWithOwnership()) : EvaluateOutcome(std::move(result.GetError()));
+}
+
+GetABTestOutcome BedrockAgentCoreClient::GetABTest(const GetABTestRequest& request) const {
+  if (!request.AbTestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetABTest", "Required field: AbTestId, is not set");
+    return GetABTestOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                          "Missing required field [AbTestId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ab-tests/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAbTestId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetABTestOutcome(result.GetResultWithOwnership()) : GetABTestOutcome(std::move(result.GetError()));
 }
 
 GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardRequest& request) const {
@@ -404,6 +498,24 @@ GetAgentCardOutcome BedrockAgentCoreClient::GetAgentCard(const GetAgentCardReque
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetAgentCardOutcome(result.GetResultWithOwnership()) : GetAgentCardOutcome(std::move(result.GetError()));
+}
+
+GetBatchEvaluationOutcome BedrockAgentCoreClient::GetBatchEvaluation(const GetBatchEvaluationRequest& request) const {
+  if (!request.BatchEvaluationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetBatchEvaluation", "Required field: BatchEvaluationId, is not set");
+    return GetBatchEvaluationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BatchEvaluationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/batch-evaluate/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchEvaluationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetBatchEvaluationOutcome(result.GetResultWithOwnership())
+                            : GetBatchEvaluationOutcome(std::move(result.GetError()));
 }
 
 GetBrowserSessionOutcome BedrockAgentCoreClient::GetBrowserSession(const GetBrowserSessionRequest& request) const {
@@ -515,6 +627,24 @@ GetMemoryRecordOutcome BedrockAgentCoreClient::GetMemoryRecord(const GetMemoryRe
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
   return result.IsSuccess() ? GetMemoryRecordOutcome(result.GetResultWithOwnership())
                             : GetMemoryRecordOutcome(std::move(result.GetError()));
+}
+
+GetRecommendationOutcome BedrockAgentCoreClient::GetRecommendation(const GetRecommendationRequest& request) const {
+  if (!request.RecommendationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetRecommendation", "Required field: RecommendationId, is not set");
+    return GetRecommendationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [RecommendationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetRecommendationId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetRecommendationOutcome(result.GetResultWithOwnership())
+                            : GetRecommendationOutcome(std::move(result.GetError()));
 }
 
 GetResourceApiKeyOutcome BedrockAgentCoreClient::GetResourceApiKey(const GetResourceApiKeyRequest& request) const {
@@ -788,6 +918,16 @@ InvokeHarnessOutcome BedrockAgentCoreClient::InvokeHarness(InvokeHarnessRequest&
        {TracingUtils::SMITHY_SERVICE_DIMENSION, this->GetServiceClientName()}});
 }
 
+ListABTestsOutcome BedrockAgentCoreClient::ListABTests(const ListABTestsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ab-tests");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListABTestsOutcome(result.GetResultWithOwnership()) : ListABTestsOutcome(std::move(result.GetError()));
+}
+
 ListActorsOutcome BedrockAgentCoreClient::ListActors(const ListActorsRequest& request) const {
   if (!request.MemoryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListActors", "Required field: MemoryId, is not set");
@@ -804,6 +944,17 @@ ListActorsOutcome BedrockAgentCoreClient::ListActors(const ListActorsRequest& re
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListActorsOutcome(result.GetResultWithOwnership()) : ListActorsOutcome(std::move(result.GetError()));
+}
+
+ListBatchEvaluationsOutcome BedrockAgentCoreClient::ListBatchEvaluations(const ListBatchEvaluationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/batch-evaluate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListBatchEvaluationsOutcome(result.GetResultWithOwnership())
+                            : ListBatchEvaluationsOutcome(std::move(result.GetError()));
 }
 
 ListBrowserSessionsOutcome BedrockAgentCoreClient::ListBrowserSessions(const ListBrowserSessionsRequest& request) const {
@@ -914,6 +1065,17 @@ ListMemoryRecordsOutcome BedrockAgentCoreClient::ListMemoryRecords(const ListMem
                             : ListMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
+ListRecommendationsOutcome BedrockAgentCoreClient::ListRecommendations(const ListRecommendationsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? ListRecommendationsOutcome(result.GetResultWithOwnership())
+                            : ListRecommendationsOutcome(std::move(result.GetError()));
+}
+
 ListSessionsOutcome BedrockAgentCoreClient::ListSessions(const ListSessionsRequest& request) const {
   if (!request.MemoryIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("ListSessions", "Required field: MemoryId, is not set");
@@ -988,6 +1150,17 @@ SearchRegistryRecordsOutcome BedrockAgentCoreClient::SearchRegistryRecords(const
                             : SearchRegistryRecordsOutcome(std::move(result.GetError()));
 }
 
+StartBatchEvaluationOutcome BedrockAgentCoreClient::StartBatchEvaluation(const StartBatchEvaluationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/batch-evaluate");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartBatchEvaluationOutcome(result.GetResultWithOwnership())
+                            : StartBatchEvaluationOutcome(std::move(result.GetError()));
+}
+
 StartBrowserSessionOutcome BedrockAgentCoreClient::StartBrowserSession(const StartBrowserSessionRequest& request) const {
   if (!request.BrowserIdentifierHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("StartBrowserSession", "Required field: BrowserIdentifier, is not set");
@@ -1044,6 +1217,36 @@ StartMemoryExtractionJobOutcome BedrockAgentCoreClient::StartMemoryExtractionJob
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StartMemoryExtractionJobOutcome(result.GetResultWithOwnership())
                             : StartMemoryExtractionJobOutcome(std::move(result.GetError()));
+}
+
+StartRecommendationOutcome BedrockAgentCoreClient::StartRecommendation(const StartRecommendationRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/recommendations");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StartRecommendationOutcome(result.GetResultWithOwnership())
+                            : StartRecommendationOutcome(std::move(result.GetError()));
+}
+
+StopBatchEvaluationOutcome BedrockAgentCoreClient::StopBatchEvaluation(const StopBatchEvaluationRequest& request) const {
+  if (!request.BatchEvaluationIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("StopBatchEvaluation", "Required field: BatchEvaluationId, is not set");
+    return StopBatchEvaluationOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(
+        BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [BatchEvaluationId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/evaluations/batch-evaluate/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetBatchEvaluationId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/stop");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? StopBatchEvaluationOutcome(result.GetResultWithOwnership())
+                            : StopBatchEvaluationOutcome(std::move(result.GetError()));
 }
 
 StopBrowserSessionOutcome BedrockAgentCoreClient::StopBrowserSession(const StopBrowserSessionRequest& request) const {
@@ -1117,6 +1320,23 @@ StopRuntimeSessionOutcome BedrockAgentCoreClient::StopRuntimeSession(const StopR
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? StopRuntimeSessionOutcome(result.GetResultWithOwnership())
                             : StopRuntimeSessionOutcome(std::move(result.GetError()));
+}
+
+UpdateABTestOutcome BedrockAgentCoreClient::UpdateABTest(const UpdateABTestRequest& request) const {
+  if (!request.AbTestIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdateABTest", "Required field: AbTestId, is not set");
+    return UpdateABTestOutcome(Aws::Client::AWSError<BedrockAgentCoreErrors>(BedrockAgentCoreErrors::MISSING_PARAMETER, "MISSING_PARAMETER",
+                                                                             "Missing required field [AbTestId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/ab-tests/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetAbTestId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
+  return result.IsSuccess() ? UpdateABTestOutcome(result.GetResultWithOwnership()) : UpdateABTestOutcome(std::move(result.GetError()));
 }
 
 UpdateBrowserStreamOutcome BedrockAgentCoreClient::UpdateBrowserStream(const UpdateBrowserStreamRequest& request) const {

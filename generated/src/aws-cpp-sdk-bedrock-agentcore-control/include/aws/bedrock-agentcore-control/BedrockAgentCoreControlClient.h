@@ -247,6 +247,36 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Creates a new configuration bundle resource. A configuration bundle stores
+   * versioned component configurations for agent evaluation workflows.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateConfigurationBundle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateConfigurationBundleOutcome CreateConfigurationBundle(const Model::CreateConfigurationBundleRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateConfigurationBundle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateConfigurationBundleRequestT = Model::CreateConfigurationBundleRequest>
+  Model::CreateConfigurationBundleOutcomeCallable CreateConfigurationBundleCallable(
+      const CreateConfigurationBundleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateConfigurationBundle, request);
+  }
+
+  /**
+   * An Async wrapper for CreateConfigurationBundle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreateConfigurationBundleRequestT = Model::CreateConfigurationBundleRequest>
+  void CreateConfigurationBundleAsync(const CreateConfigurationBundleRequestT& request,
+                                      const CreateConfigurationBundleResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateConfigurationBundle, request, handler, context);
+  }
+
+  /**
    * <p> Creates a custom evaluator for agent quality assessment. Custom evaluators
    * can use either LLM-as-a-Judge configurations with user-defined prompts, rating
    * scales, and model settings, or code-based configurations with customer-managed
@@ -301,6 +331,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void CreateGatewayAsync(const CreateGatewayRequestT& request, const CreateGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::CreateGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a rule for a gateway. Rules define conditions and actions that
+   * control how requests are routed and processed through the gateway, including
+   * principal-based access control and path-based routing.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreateGatewayRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreateGatewayRuleOutcome CreateGatewayRule(const Model::CreateGatewayRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreateGatewayRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreateGatewayRuleRequestT = Model::CreateGatewayRuleRequest>
+  Model::CreateGatewayRuleOutcomeCallable CreateGatewayRuleCallable(const CreateGatewayRuleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreateGatewayRule, request);
+  }
+
+  /**
+   * An Async wrapper for CreateGatewayRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename CreateGatewayRuleRequestT = Model::CreateGatewayRuleRequest>
+  void CreateGatewayRuleAsync(const CreateGatewayRuleRequestT& request, const CreateGatewayRuleResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreateGatewayRule, request, handler, context);
   }
 
   /**
@@ -761,6 +820,35 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Deletes a configuration bundle and all of its versions.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteConfigurationBundle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteConfigurationBundleOutcome DeleteConfigurationBundle(const Model::DeleteConfigurationBundleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteConfigurationBundle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteConfigurationBundleRequestT = Model::DeleteConfigurationBundleRequest>
+  Model::DeleteConfigurationBundleOutcomeCallable DeleteConfigurationBundleCallable(
+      const DeleteConfigurationBundleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteConfigurationBundle, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteConfigurationBundle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeleteConfigurationBundleRequestT = Model::DeleteConfigurationBundleRequest>
+  void DeleteConfigurationBundleAsync(const DeleteConfigurationBundleRequestT& request,
+                                      const DeleteConfigurationBundleResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteConfigurationBundle, request, handler, context);
+  }
+
+  /**
    * <p> Deletes a custom evaluator. Builtin evaluators cannot be deleted. The
    * evaluator must not be referenced by any active online evaluation configurations.
    * </p><p><h3>See Also:</h3>   <a
@@ -810,6 +898,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void DeleteGatewayAsync(const DeleteGatewayRequestT& request, const DeleteGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a gateway rule.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeleteGatewayRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeleteGatewayRuleOutcome DeleteGatewayRule(const Model::DeleteGatewayRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeleteGatewayRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeleteGatewayRuleRequestT = Model::DeleteGatewayRuleRequest>
+  Model::DeleteGatewayRuleOutcomeCallable DeleteGatewayRuleCallable(const DeleteGatewayRuleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeleteGatewayRule, request);
+  }
+
+  /**
+   * An Async wrapper for DeleteGatewayRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename DeleteGatewayRuleRequestT = Model::DeleteGatewayRuleRequest>
+  void DeleteGatewayRuleAsync(const DeleteGatewayRuleRequestT& request, const DeleteGatewayRuleResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeleteGatewayRule, request, handler, context);
   }
 
   /**
@@ -1284,6 +1398,66 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Gets the latest version of a configuration bundle. By default, returns the
+   * latest version on the mainline branch. Use
+   * <code>GetConfigurationBundleVersion</code> to retrieve a specific historical
+   * version.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConfigurationBundleOutcome GetConfigurationBundle(const Model::GetConfigurationBundleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConfigurationBundle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetConfigurationBundleRequestT = Model::GetConfigurationBundleRequest>
+  Model::GetConfigurationBundleOutcomeCallable GetConfigurationBundleCallable(const GetConfigurationBundleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetConfigurationBundle, request);
+  }
+
+  /**
+   * An Async wrapper for GetConfigurationBundle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetConfigurationBundleRequestT = Model::GetConfigurationBundleRequest>
+  void GetConfigurationBundleAsync(const GetConfigurationBundleRequestT& request,
+                                   const GetConfigurationBundleResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetConfigurationBundle, request, handler, context);
+  }
+
+  /**
+   * <p>Gets a specific version of a configuration bundle by its version
+   * identifier.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetConfigurationBundleVersion">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetConfigurationBundleVersionOutcome GetConfigurationBundleVersion(
+      const Model::GetConfigurationBundleVersionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetConfigurationBundleVersion that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetConfigurationBundleVersionRequestT = Model::GetConfigurationBundleVersionRequest>
+  Model::GetConfigurationBundleVersionOutcomeCallable GetConfigurationBundleVersionCallable(
+      const GetConfigurationBundleVersionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetConfigurationBundleVersion, request);
+  }
+
+  /**
+   * An Async wrapper for GetConfigurationBundleVersion that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetConfigurationBundleVersionRequestT = Model::GetConfigurationBundleVersionRequest>
+  void GetConfigurationBundleVersionAsync(const GetConfigurationBundleVersionRequestT& request,
+                                          const GetConfigurationBundleVersionResponseReceivedHandler& handler,
+                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetConfigurationBundleVersion, request, handler, context);
+  }
+
+  /**
    * <p> Retrieves detailed information about an evaluator, including its
    * configuration, status, and metadata. Works with both built-in and custom
    * evaluators. </p><p><h3>See Also:</h3>   <a
@@ -1333,6 +1507,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void GetGatewayAsync(const GetGatewayRequestT& request, const GetGatewayResponseReceivedHandler& handler,
                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves detailed information about a specific gateway rule.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetGatewayRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetGatewayRuleOutcome GetGatewayRule(const Model::GetGatewayRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetGatewayRule that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename GetGatewayRuleRequestT = Model::GetGatewayRuleRequest>
+  Model::GetGatewayRuleOutcomeCallable GetGatewayRuleCallable(const GetGatewayRuleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetGatewayRule, request);
+  }
+
+  /**
+   * An Async wrapper for GetGatewayRule that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename GetGatewayRuleRequestT = Model::GetGatewayRuleRequest>
+  void GetGatewayRuleAsync(const GetGatewayRuleRequestT& request, const GetGatewayRuleResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetGatewayRule, request, handler, context);
   }
 
   /**
@@ -1888,6 +2088,64 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Lists all versions of a configuration bundle, with optional filtering by
+   * branch name or creation source.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundleVersions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConfigurationBundleVersionsOutcome ListConfigurationBundleVersions(
+      const Model::ListConfigurationBundleVersionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListConfigurationBundleVersions that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListConfigurationBundleVersionsRequestT = Model::ListConfigurationBundleVersionsRequest>
+  Model::ListConfigurationBundleVersionsOutcomeCallable ListConfigurationBundleVersionsCallable(
+      const ListConfigurationBundleVersionsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListConfigurationBundleVersions, request);
+  }
+
+  /**
+   * An Async wrapper for ListConfigurationBundleVersions that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListConfigurationBundleVersionsRequestT = Model::ListConfigurationBundleVersionsRequest>
+  void ListConfigurationBundleVersionsAsync(const ListConfigurationBundleVersionsRequestT& request,
+                                            const ListConfigurationBundleVersionsResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListConfigurationBundleVersions, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all configuration bundles in the account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListConfigurationBundles">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListConfigurationBundlesOutcome ListConfigurationBundles(const Model::ListConfigurationBundlesRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListConfigurationBundles that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListConfigurationBundlesRequestT = Model::ListConfigurationBundlesRequest>
+  Model::ListConfigurationBundlesOutcomeCallable ListConfigurationBundlesCallable(
+      const ListConfigurationBundlesRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListConfigurationBundles, request);
+  }
+
+  /**
+   * An Async wrapper for ListConfigurationBundles that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListConfigurationBundlesRequestT = Model::ListConfigurationBundlesRequest>
+  void ListConfigurationBundlesAsync(const ListConfigurationBundlesResponseReceivedHandler& handler,
+                                     const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                     const ListConfigurationBundlesRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListConfigurationBundles, request, handler, context);
+  }
+
+  /**
    * <p> Lists all available evaluators, including both builtin evaluators provided
    * by the service and custom evaluators created by the user. </p><p><h3>See
    * Also:</h3>   <a
@@ -1913,6 +2171,32 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                            const ListEvaluatorsRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListEvaluators, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all rules for a gateway.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListGatewayRules">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListGatewayRulesOutcome ListGatewayRules(const Model::ListGatewayRulesRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListGatewayRules that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListGatewayRulesRequestT = Model::ListGatewayRulesRequest>
+  Model::ListGatewayRulesOutcomeCallable ListGatewayRulesCallable(const ListGatewayRulesRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListGatewayRules, request);
+  }
+
+  /**
+   * An Async wrapper for ListGatewayRules that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListGatewayRulesRequestT = Model::ListGatewayRulesRequest>
+  void ListGatewayRulesAsync(const ListGatewayRulesRequestT& request, const ListGatewayRulesResponseReceivedHandler& handler,
+                             const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListGatewayRules, request, handler, context);
   }
 
   /**
@@ -2618,6 +2902,36 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Updates a configuration bundle by creating a new version with the specified
+   * changes. Each update creates a new version in the version history.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateConfigurationBundle">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateConfigurationBundleOutcome UpdateConfigurationBundle(const Model::UpdateConfigurationBundleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateConfigurationBundle that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateConfigurationBundleRequestT = Model::UpdateConfigurationBundleRequest>
+  Model::UpdateConfigurationBundleOutcomeCallable UpdateConfigurationBundleCallable(
+      const UpdateConfigurationBundleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateConfigurationBundle, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateConfigurationBundle that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdateConfigurationBundleRequestT = Model::UpdateConfigurationBundleRequest>
+  void UpdateConfigurationBundleAsync(const UpdateConfigurationBundleRequestT& request,
+                                      const UpdateConfigurationBundleResponseReceivedHandler& handler,
+                                      const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateConfigurationBundle, request, handler, context);
+  }
+
+  /**
    * <p> Updates a custom evaluator's configuration, description, or evaluation
    * level. Built-in evaluators cannot be updated. The evaluator must not be locked
    * for modification. </p><p><h3>See Also:</h3>   <a
@@ -2667,6 +2981,33 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   void UpdateGatewayAsync(const UpdateGatewayRequestT& request, const UpdateGatewayResponseReceivedHandler& handler,
                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateGateway, request, handler, context);
+  }
+
+  /**
+   * <p>Updates a gateway rule's priority, conditions, actions, or
+   * description.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdateGatewayRule">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdateGatewayRuleOutcome UpdateGatewayRule(const Model::UpdateGatewayRuleRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdateGatewayRule that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdateGatewayRuleRequestT = Model::UpdateGatewayRuleRequest>
+  Model::UpdateGatewayRuleOutcomeCallable UpdateGatewayRuleCallable(const UpdateGatewayRuleRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdateGatewayRule, request);
+  }
+
+  /**
+   * An Async wrapper for UpdateGatewayRule that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename UpdateGatewayRuleRequestT = Model::UpdateGatewayRuleRequest>
+  void UpdateGatewayRuleAsync(const UpdateGatewayRuleRequestT& request, const UpdateGatewayRuleResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdateGatewayRule, request, handler, context);
   }
 
   /**

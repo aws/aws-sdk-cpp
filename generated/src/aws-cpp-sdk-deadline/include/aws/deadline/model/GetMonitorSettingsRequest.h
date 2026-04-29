@@ -32,7 +32,7 @@ class GetMonitorSettingsRequest : public DeadlineRequest {
   /**
    * <p>The unique identifier of the monitor. This ID is returned by the
    * <code>CreateMonitor</code> operation, and is included in the response to the
-   * <code>GetMonitor</code> operation.</p>
+   * <code>ListMonitors</code> operation.</p>
    */
   inline const Aws::String& GetMonitorId() const { return m_monitorId; }
   inline bool MonitorIdHasBeenSet() const { return m_monitorIdHasBeenSet; }

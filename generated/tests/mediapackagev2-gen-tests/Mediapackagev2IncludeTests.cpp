@@ -37,6 +37,7 @@
 #include <aws/mediapackagev2/model/CreateMssManifestConfiguration.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointRequest.h>
 #include <aws/mediapackagev2/model/CreateOriginEndpointResult.h>
+#include <aws/mediapackagev2/model/CustomAdType.h>
 #include <aws/mediapackagev2/model/DashBaseUrl.h>
 #include <aws/mediapackagev2/model/DashCompactness.h>
 #include <aws/mediapackagev2/model/DashDrmSignaling.h>
@@ -131,6 +132,7 @@
 #include <aws/mediapackagev2/model/ScteDash.h>
 #include <aws/mediapackagev2/model/ScteFilter.h>
 #include <aws/mediapackagev2/model/ScteHls.h>
+#include <aws/mediapackagev2/model/ScteInManifests.h>
 #include <aws/mediapackagev2/model/ScteInSegments.h>
 #include <aws/mediapackagev2/model/Segment.h>
 #include <aws/mediapackagev2/model/SpekeKeyProvider.h>
@@ -144,6 +146,8 @@
 #include <aws/mediapackagev2/model/UpdateChannelResult.h>
 #include <aws/mediapackagev2/model/UpdateOriginEndpointRequest.h>
 #include <aws/mediapackagev2/model/UpdateOriginEndpointResult.h>
+#include <aws/mediapackagev2/model/UriPathType.h>
+#include <aws/mediapackagev2/model/UriSeparator.h>
 #include <aws/mediapackagev2/model/ValidationException.h>
 #include <aws/mediapackagev2/model/ValidationExceptionType.h>
 

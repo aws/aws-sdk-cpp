@@ -18,6 +18,8 @@ namespace CredentialProviderTypeMapper {
 static const int GATEWAY_IAM_ROLE_HASH = HashingUtils::HashString("GATEWAY_IAM_ROLE");
 static const int OAUTH_HASH = HashingUtils::HashString("OAUTH");
 static const int API_KEY_HASH = HashingUtils::HashString("API_KEY");
+static const int CALLER_IAM_CREDENTIALS_HASH = HashingUtils::HashString("CALLER_IAM_CREDENTIALS");
+static const int JWT_PASSTHROUGH_HASH = HashingUtils::HashString("JWT_PASSTHROUGH");
 
 CredentialProviderType GetCredentialProviderTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -27,6 +29,10 @@ CredentialProviderType GetCredentialProviderTypeForName(const Aws::String& name)
     return CredentialProviderType::OAUTH;
   } else if (hashCode == API_KEY_HASH) {
     return CredentialProviderType::API_KEY;
+  } else if (hashCode == CALLER_IAM_CREDENTIALS_HASH) {
+    return CredentialProviderType::CALLER_IAM_CREDENTIALS;
+  } else if (hashCode == JWT_PASSTHROUGH_HASH) {
+    return CredentialProviderType::JWT_PASSTHROUGH;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -47,6 +53,10 @@ Aws::String GetNameForCredentialProviderType(CredentialProviderType enumValue) {
       return "OAUTH";
     case CredentialProviderType::API_KEY:
       return "API_KEY";
+    case CredentialProviderType::CALLER_IAM_CREDENTIALS:
+      return "CALLER_IAM_CREDENTIALS";
+    case CredentialProviderType::JWT_PASSTHROUGH:
+      return "JWT_PASSTHROUGH";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

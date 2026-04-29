@@ -10,7 +10,7 @@
 namespace Aws {
 namespace mediapackagev2 {
 namespace Model {
-enum class ScteInSegments { NOT_SET, NONE, ALL };
+enum class ScteInSegments { NOT_SET, NONE, ALL, MATCHES_FILTER };
 
 namespace ScteInSegmentsMapper {
 AWS_MEDIAPACKAGEV2_API ScteInSegments GetScteInSegmentsForName(const Aws::String& name);

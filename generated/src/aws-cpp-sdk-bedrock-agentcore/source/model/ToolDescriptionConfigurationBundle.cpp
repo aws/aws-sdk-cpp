@@ -1,0 +1,63 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore/model/ToolDescriptionConfigurationBundle.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
+
+ToolDescriptionConfigurationBundle::ToolDescriptionConfigurationBundle(JsonView jsonValue) { *this = jsonValue; }
+
+ToolDescriptionConfigurationBundle& ToolDescriptionConfigurationBundle::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("bundleArn")) {
+    m_bundleArn = jsonValue.GetString("bundleArn");
+    m_bundleArnHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("versionId")) {
+    m_versionId = jsonValue.GetString("versionId");
+    m_versionIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("tools")) {
+    Aws::Utils::Array<JsonView> toolsJsonList = jsonValue.GetArray("tools");
+    for (unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex) {
+      m_tools.push_back(toolsJsonList[toolsIndex].AsObject());
+    }
+    m_toolsHasBeenSet = true;
+  }
+  return *this;
+}
+
+JsonValue ToolDescriptionConfigurationBundle::Jsonize() const {
+  JsonValue payload;
+
+  if (m_bundleArnHasBeenSet) {
+    payload.WithString("bundleArn", m_bundleArn);
+  }
+
+  if (m_versionIdHasBeenSet) {
+    payload.WithString("versionId", m_versionId);
+  }
+
+  if (m_toolsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> toolsJsonList(m_tools.size());
+    for (unsigned toolsIndex = 0; toolsIndex < toolsJsonList.GetLength(); ++toolsIndex) {
+      toolsJsonList[toolsIndex].AsObject(m_tools[toolsIndex].Jsonize());
+    }
+    payload.WithArray("tools", std::move(toolsJsonList));
+  }
+
+  return payload;
+}
+
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

@@ -97,6 +97,10 @@ CreateDashManifestConfiguration& CreateDashManifestConfiguration::operator=(Json
     m_subtitleConfiguration = jsonValue.GetObject("SubtitleConfiguration");
     m_subtitleConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UriPathType")) {
+    m_uriPathType = UriPathTypeMapper::GetUriPathTypeForName(jsonValue.GetString("UriPathType"));
+    m_uriPathTypeHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -183,6 +187,10 @@ JsonValue CreateDashManifestConfiguration::Jsonize() const {
 
   if (m_subtitleConfigurationHasBeenSet) {
     payload.WithObject("SubtitleConfiguration", m_subtitleConfiguration.Jsonize());
+  }
+
+  if (m_uriPathTypeHasBeenSet) {
+    payload.WithString("UriPathType", UriPathTypeMapper::GetNameForUriPathType(m_uriPathType));
   }
 
   return payload;

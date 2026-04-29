@@ -17,6 +17,7 @@
 #include <aws/account/model/AcceptPrimaryEmailUpdateRequest.h>
 #include <aws/account/model/AcceptPrimaryEmailUpdateResult.h>
 #include <aws/account/model/AccessDeniedException.h>
+#include <aws/account/model/AccountState.h>
 #include <aws/account/model/AlternateContact.h>
 #include <aws/account/model/AlternateContactType.h>
 #include <aws/account/model/AwsAccountState.h>

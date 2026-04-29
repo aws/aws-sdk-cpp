@@ -31,6 +31,25 @@ class PutContactInformationRequest : public AccountRequest {
 
   ///@{
   /**
+   * <p>Contains the details of the primary contact information associated with an
+   * Amazon Web Services account.</p>
+   */
+  inline const ContactInformation& GetContactInformation() const { return m_contactInformation; }
+  inline bool ContactInformationHasBeenSet() const { return m_contactInformationHasBeenSet; }
+  template <typename ContactInformationT = ContactInformation>
+  void SetContactInformation(ContactInformationT&& value) {
+    m_contactInformationHasBeenSet = true;
+    m_contactInformation = std::forward<ContactInformationT>(value);
+  }
+  template <typename ContactInformationT = ContactInformation>
+  PutContactInformationRequest& WithContactInformation(ContactInformationT&& value) {
+    SetContactInformation(std::forward<ContactInformationT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the 12-digit account ID number of the Amazon Web Services account
    * that you want to access or modify with this operation. If you don't specify this
    * parameter, it defaults to the Amazon Web Services account of the identity used
@@ -65,31 +84,12 @@ class PutContactInformationRequest : public AccountRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Contains the details of the primary contact information associated with an
-   * Amazon Web Services account.</p>
-   */
-  inline const ContactInformation& GetContactInformation() const { return m_contactInformation; }
-  inline bool ContactInformationHasBeenSet() const { return m_contactInformationHasBeenSet; }
-  template <typename ContactInformationT = ContactInformation>
-  void SetContactInformation(ContactInformationT&& value) {
-    m_contactInformationHasBeenSet = true;
-    m_contactInformation = std::forward<ContactInformationT>(value);
-  }
-  template <typename ContactInformationT = ContactInformation>
-  PutContactInformationRequest& WithContactInformation(ContactInformationT&& value) {
-    SetContactInformation(std::forward<ContactInformationT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_accountId;
-
   ContactInformation m_contactInformation;
-  bool m_accountIdHasBeenSet = false;
+
+  Aws::String m_accountId;
   bool m_contactInformationHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
 };
 
 }  // namespace Model

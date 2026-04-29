@@ -93,8 +93,8 @@ class CreateMonitorRequest : public DeadlineRequest {
 
   ///@{
   /**
-   * <p>The AWS region where IAM Identity Center is enabled. Required when Identity
-   * Center is in a different region than the monitor.</p>
+   * <p>The AWS Region where IAM Identity Center is enabled. Required when IAM
+   * Identity Center is in a different Region than the monitor.</p>
    */
   inline const Aws::String& GetIdentityCenterRegion() const { return m_identityCenterRegion; }
   inline bool IdentityCenterRegionHasBeenSet() const { return m_identityCenterRegionHasBeenSet; }

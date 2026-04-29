@@ -14,6 +14,7 @@
 #include <aws/mediapackagev2/model/ListHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListLowLatencyHlsManifestConfiguration.h>
 #include <aws/mediapackagev2/model/ListMssManifestConfiguration.h>
+#include <aws/mediapackagev2/model/UriSeparator.h>
 
 #include <utility>
 
@@ -305,6 +306,22 @@ class OriginEndpointListConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The separator character used in generated URIs for this origin endpoint.</p>
+   */
+  inline UriSeparator GetUriSeparator() const { return m_uriSeparator; }
+  inline bool UriSeparatorHasBeenSet() const { return m_uriSeparatorHasBeenSet; }
+  inline void SetUriSeparator(UriSeparator value) {
+    m_uriSeparatorHasBeenSet = true;
+    m_uriSeparator = value;
+  }
+  inline OriginEndpointListConfiguration& WithUriSeparator(UriSeparator value) {
+    SetUriSeparator(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_arn;
 
@@ -331,6 +348,8 @@ class OriginEndpointListConfiguration {
   Aws::Vector<ListMssManifestConfiguration> m_mssManifests;
 
   ForceEndpointErrorConfiguration m_forceEndpointErrorConfiguration;
+
+  UriSeparator m_uriSeparator{UriSeparator::NOT_SET};
   bool m_arnHasBeenSet = false;
   bool m_channelGroupNameHasBeenSet = false;
   bool m_channelNameHasBeenSet = false;
@@ -344,6 +363,7 @@ class OriginEndpointListConfiguration {
   bool m_dashManifestsHasBeenSet = false;
   bool m_mssManifestsHasBeenSet = false;
   bool m_forceEndpointErrorConfigurationHasBeenSet = false;
+  bool m_uriSeparatorHasBeenSet = false;
 };
 
 }  // namespace Model

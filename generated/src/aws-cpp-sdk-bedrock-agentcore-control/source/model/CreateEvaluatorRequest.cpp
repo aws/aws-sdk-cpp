@@ -35,6 +35,10 @@ Aws::String CreateEvaluatorRequest::SerializePayload() const {
     payload.WithString("level", EvaluatorLevelMapper::GetNameForEvaluatorLevel(m_level));
   }
 
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

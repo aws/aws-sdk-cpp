@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/bedrock-agentcore-control/BedrockAgentCoreControl_EXPORTS.h>
+#include <aws/bedrock-agentcore-control/model/HttpTargetConfiguration.h>
 #include <aws/bedrock-agentcore-control/model/McpTargetConfiguration.h>
 
 #include <utility>
@@ -52,9 +53,31 @@ class TargetConfiguration {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The HTTP target configuration. Use this to route gateway requests to an
+   * HTTP-based endpoint such as an AgentCore Runtime.</p>
+   */
+  inline const HttpTargetConfiguration& GetHttp() const { return m_http; }
+  inline bool HttpHasBeenSet() const { return m_httpHasBeenSet; }
+  template <typename HttpT = HttpTargetConfiguration>
+  void SetHttp(HttpT&& value) {
+    m_httpHasBeenSet = true;
+    m_http = std::forward<HttpT>(value);
+  }
+  template <typename HttpT = HttpTargetConfiguration>
+  TargetConfiguration& WithHttp(HttpT&& value) {
+    SetHttp(std::forward<HttpT>(value));
+    return *this;
+  }
+  ///@}
  private:
   McpTargetConfiguration m_mcp;
+
+  HttpTargetConfiguration m_http;
   bool m_mcpHasBeenSet = false;
+  bool m_httpHasBeenSet = false;
 };
 
 }  // namespace Model

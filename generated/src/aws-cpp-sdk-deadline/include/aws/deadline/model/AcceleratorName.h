@@ -10,7 +10,7 @@
 namespace Aws {
 namespace deadline {
 namespace Model {
-enum class AcceleratorName { NOT_SET, t4, a10g, l4, l40s };
+enum class AcceleratorName { NOT_SET, t4, a10g, l4, l40s, rtx_pro_server_6000 };
 
 namespace AcceleratorNameMapper {
 AWS_DEADLINE_API AcceleratorName GetAcceleratorNameForName(const Aws::String& name);

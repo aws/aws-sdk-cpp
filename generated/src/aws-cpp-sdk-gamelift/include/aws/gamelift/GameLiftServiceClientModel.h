@@ -57,6 +57,7 @@
 #include <aws/gamelift/model/DescribeComputeResult.h>
 #include <aws/gamelift/model/DescribeContainerFleetResult.h>
 #include <aws/gamelift/model/DescribeContainerGroupDefinitionResult.h>
+#include <aws/gamelift/model/DescribeContainerGroupPortMappingsResult.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsResult.h>
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
@@ -231,6 +232,7 @@ class DescribeBuildRequest;
 class DescribeComputeRequest;
 class DescribeContainerFleetRequest;
 class DescribeContainerGroupDefinitionRequest;
+class DescribeContainerGroupPortMappingsRequest;
 class DescribeEC2InstanceLimitsRequest;
 class DescribeFleetAttributesRequest;
 class DescribeFleetCapacityRequest;
@@ -353,6 +355,7 @@ typedef Aws::Utils::Outcome<DescribeBuildResult, GameLiftError> DescribeBuildOut
 typedef Aws::Utils::Outcome<DescribeComputeResult, GameLiftError> DescribeComputeOutcome;
 typedef Aws::Utils::Outcome<DescribeContainerFleetResult, GameLiftError> DescribeContainerFleetOutcome;
 typedef Aws::Utils::Outcome<DescribeContainerGroupDefinitionResult, GameLiftError> DescribeContainerGroupDefinitionOutcome;
+typedef Aws::Utils::Outcome<DescribeContainerGroupPortMappingsResult, GameLiftError> DescribeContainerGroupPortMappingsOutcome;
 typedef Aws::Utils::Outcome<DescribeEC2InstanceLimitsResult, GameLiftError> DescribeEC2InstanceLimitsOutcome;
 typedef Aws::Utils::Outcome<DescribeFleetAttributesResult, GameLiftError> DescribeFleetAttributesOutcome;
 typedef Aws::Utils::Outcome<DescribeFleetCapacityResult, GameLiftError> DescribeFleetCapacityOutcome;
@@ -475,6 +478,7 @@ typedef std::future<DescribeBuildOutcome> DescribeBuildOutcomeCallable;
 typedef std::future<DescribeComputeOutcome> DescribeComputeOutcomeCallable;
 typedef std::future<DescribeContainerFleetOutcome> DescribeContainerFleetOutcomeCallable;
 typedef std::future<DescribeContainerGroupDefinitionOutcome> DescribeContainerGroupDefinitionOutcomeCallable;
+typedef std::future<DescribeContainerGroupPortMappingsOutcome> DescribeContainerGroupPortMappingsOutcomeCallable;
 typedef std::future<DescribeEC2InstanceLimitsOutcome> DescribeEC2InstanceLimitsOutcomeCallable;
 typedef std::future<DescribeFleetAttributesOutcome> DescribeFleetAttributesOutcomeCallable;
 typedef std::future<DescribeFleetCapacityOutcome> DescribeFleetCapacityOutcomeCallable;
@@ -689,6 +693,10 @@ typedef std::function<void(const GameLiftClient*, const Model::DescribeContainer
                            const Model::DescribeContainerGroupDefinitionOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeContainerGroupDefinitionResponseReceivedHandler;
+typedef std::function<void(const GameLiftClient*, const Model::DescribeContainerGroupPortMappingsRequest&,
+                           const Model::DescribeContainerGroupPortMappingsOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DescribeContainerGroupPortMappingsResponseReceivedHandler;
 typedef std::function<void(const GameLiftClient*, const Model::DescribeEC2InstanceLimitsRequest&,
                            const Model::DescribeEC2InstanceLimitsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DescribeEC2InstanceLimitsResponseReceivedHandler;

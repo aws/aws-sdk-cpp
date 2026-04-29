@@ -5,10 +5,13 @@
 
 #pragma once
 
+#include <aws/bedrock-agentcore/model/ListABTestsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListActorsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListBatchEvaluationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListEventsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListRecommendationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>
 #include <aws/core/client/UserAgent.h>
@@ -25,6 +28,17 @@ template <typename DerivedClient>
 class BedrockAgentCorePaginationBase {
  public:
   /**
+   * Create a paginator for ListABTests operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListABTestsRequest, Pagination::ListABTestsPaginationTraits<DerivedClient>>
+  ListABTestsPaginator(const Model::ListABTestsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListABTestsRequest,
+                                             Pagination::ListABTestsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
+                                                                                                     request};
+  }
+
+  /**
    * Create a paginator for ListActors operation
    */
   Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorsRequest, Pagination::ListActorsPaginationTraits<DerivedClient>>
@@ -33,6 +47,18 @@ class BedrockAgentCorePaginationBase {
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListActorsRequest,
                                              Pagination::ListActorsPaginationTraits<DerivedClient>>{static_cast<DerivedClient*>(this),
                                                                                                     request};
+  }
+
+  /**
+   * Create a paginator for ListBatchEvaluations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchEvaluationsRequest,
+                                    Pagination::ListBatchEvaluationsPaginationTraits<DerivedClient>>
+  ListBatchEvaluationsPaginator(const Model::ListBatchEvaluationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListBatchEvaluationsRequest,
+                                             Pagination::ListBatchEvaluationsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
   }
 
   /**
@@ -67,6 +93,18 @@ class BedrockAgentCorePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryRecordsRequest,
                                              Pagination::ListMemoryRecordsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListRecommendations operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
+                                    Pagination::ListRecommendationsPaginationTraits<DerivedClient>>
+  ListRecommendationsPaginator(const Model::ListRecommendationsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListRecommendationsRequest,
+                                             Pagination::ListRecommendationsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

@@ -1579,7 +1579,7 @@ class AWS_TRANSFER_API TransferClient : public Aws::Client::AWSJsonClient,
    * of the items contained in the remote directory or not. If your
    * <code>Truncated</code> output value is true, you can increase the value provided
    * in the optional <code>max-items</code> input attribute to be able to list more
-   * items (up to the maximum allowed list size of 10,000 items).</p> </li>
+   * items (up to the maximum allowed list size of 200,000 items).</p> </li>
    * </ul><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/transfer-2018-11-05/StartDirectoryListing">AWS
    * API Reference</a></p>

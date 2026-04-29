@@ -30,21 +30,6 @@ class GetGovCloudAccountInformationResult {
 
   ///@{
   /**
-   * <p>The account state of the linked GovCloud account.</p>
-   */
-  inline AwsAccountState GetAccountState() const { return m_accountState; }
-  inline void SetAccountState(AwsAccountState value) {
-    m_accountStateHasBeenSet = true;
-    m_accountState = value;
-  }
-  inline GetGovCloudAccountInformationResult& WithAccountState(AwsAccountState value) {
-    SetAccountState(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
    * <p>The 12-digit account ID number of the linked GovCloud account.</p>
    */
   inline const Aws::String& GetGovCloudAccountId() const { return m_govCloudAccountId; }
@@ -56,6 +41,21 @@ class GetGovCloudAccountInformationResult {
   template <typename GovCloudAccountIdT = Aws::String>
   GetGovCloudAccountInformationResult& WithGovCloudAccountId(GovCloudAccountIdT&& value) {
     SetGovCloudAccountId(std::forward<GovCloudAccountIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The account state of the linked GovCloud account.</p>
+   */
+  inline AwsAccountState GetAccountState() const { return m_accountState; }
+  inline void SetAccountState(AwsAccountState value) {
+    m_accountStateHasBeenSet = true;
+    m_accountState = value;
+  }
+  inline GetGovCloudAccountInformationResult& WithAccountState(AwsAccountState value) {
+    SetAccountState(value);
     return *this;
   }
   ///@}
@@ -77,14 +77,14 @@ class GetGovCloudAccountInformationResult {
   inline Aws::Http::HttpResponseCode GetHttpResponseCode() const { return m_HttpResponseCode; }
 
  private:
-  AwsAccountState m_accountState{AwsAccountState::NOT_SET};
-
   Aws::String m_govCloudAccountId;
+
+  AwsAccountState m_accountState{AwsAccountState::NOT_SET};
 
   Aws::String m_requestId;
   Aws::Http::HttpResponseCode m_HttpResponseCode;
-  bool m_accountStateHasBeenSet = false;
   bool m_govCloudAccountIdHasBeenSet = false;
+  bool m_accountStateHasBeenSet = false;
   bool m_requestIdHasBeenSet = false;
 };
 

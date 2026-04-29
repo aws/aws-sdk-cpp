@@ -15,12 +15,12 @@ using namespace Aws::Utils;
 Aws::String DeleteAlternateContactRequest::SerializePayload() const {
   JsonValue payload;
 
-  if (m_accountIdHasBeenSet) {
-    payload.WithString("AccountId", m_accountId);
-  }
-
   if (m_alternateContactTypeHasBeenSet) {
     payload.WithString("AlternateContactType", AlternateContactTypeMapper::GetNameForAlternateContactType(m_alternateContactType));
+  }
+
+  if (m_accountIdHasBeenSet) {
+    payload.WithString("AccountId", m_accountId);
   }
 
   return payload.View().WriteReadable();

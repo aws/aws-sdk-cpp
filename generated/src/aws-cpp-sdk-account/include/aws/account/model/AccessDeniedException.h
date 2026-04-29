@@ -33,6 +33,22 @@ class AccessDeniedException {
   AWS_ACCOUNT_API Aws::Utils::Json::JsonValue Jsonize() const;
 
   ///@{
+
+  inline const Aws::String& GetMessage() const { return m_message; }
+  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
+  template <typename MessageT = Aws::String>
+  void SetMessage(MessageT&& value) {
+    m_messageHasBeenSet = true;
+    m_message = std::forward<MessageT>(value);
+  }
+  template <typename MessageT = Aws::String>
+  AccessDeniedException& WithMessage(MessageT&& value) {
+    SetMessage(std::forward<MessageT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
   /**
    * <p>The value populated to the <code>x-amzn-ErrorType</code> response header by
    * API Gateway.</p>
@@ -50,28 +66,12 @@ class AccessDeniedException {
     return *this;
   }
   ///@}
-
-  ///@{
-
-  inline const Aws::String& GetMessage() const { return m_message; }
-  inline bool MessageHasBeenSet() const { return m_messageHasBeenSet; }
-  template <typename MessageT = Aws::String>
-  void SetMessage(MessageT&& value) {
-    m_messageHasBeenSet = true;
-    m_message = std::forward<MessageT>(value);
-  }
-  template <typename MessageT = Aws::String>
-  AccessDeniedException& WithMessage(MessageT&& value) {
-    SetMessage(std::forward<MessageT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_errorType;
-
   Aws::String m_message;
-  bool m_errorTypeHasBeenSet = false;
+
+  Aws::String m_errorType;
   bool m_messageHasBeenSet = false;
+  bool m_errorTypeHasBeenSet = false;
 };
 
 }  // namespace Model

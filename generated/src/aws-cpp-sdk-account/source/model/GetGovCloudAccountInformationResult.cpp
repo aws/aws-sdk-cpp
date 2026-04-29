@@ -24,13 +24,13 @@ GetGovCloudAccountInformationResult::GetGovCloudAccountInformationResult(const A
 GetGovCloudAccountInformationResult& GetGovCloudAccountInformationResult::operator=(const Aws::AmazonWebServiceResult<JsonValue>& result) {
   m_HttpResponseCode = result.GetResponseCode();
   JsonView jsonValue = result.GetPayload().View();
-  if (jsonValue.ValueExists("AccountState")) {
-    m_accountState = AwsAccountStateMapper::GetAwsAccountStateForName(jsonValue.GetString("AccountState"));
-    m_accountStateHasBeenSet = true;
-  }
   if (jsonValue.ValueExists("GovCloudAccountId")) {
     m_govCloudAccountId = jsonValue.GetString("GovCloudAccountId");
     m_govCloudAccountIdHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("AccountState")) {
+    m_accountState = AwsAccountStateMapper::GetAwsAccountStateForName(jsonValue.GetString("AccountState"));
+    m_accountStateHasBeenSet = true;
   }
 
   const auto& headers = result.GetHeaderValueCollection();

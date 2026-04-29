@@ -31,6 +31,94 @@ class PutAlternateContactRequest : public AccountRequest {
 
   ///@{
   /**
+   * <p>Specifies a name for the alternate contact.</p>
+   */
+  inline const Aws::String& GetName() const { return m_name; }
+  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
+  template <typename NameT = Aws::String>
+  void SetName(NameT&& value) {
+    m_nameHasBeenSet = true;
+    m_name = std::forward<NameT>(value);
+  }
+  template <typename NameT = Aws::String>
+  PutAlternateContactRequest& WithName(NameT&& value) {
+    SetName(std::forward<NameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies a title for the alternate contact.</p>
+   */
+  inline const Aws::String& GetTitle() const { return m_title; }
+  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
+  template <typename TitleT = Aws::String>
+  void SetTitle(TitleT&& value) {
+    m_titleHasBeenSet = true;
+    m_title = std::forward<TitleT>(value);
+  }
+  template <typename TitleT = Aws::String>
+  PutAlternateContactRequest& WithTitle(TitleT&& value) {
+    SetTitle(std::forward<TitleT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies an email address for the alternate contact. </p>
+   */
+  inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
+  inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
+  template <typename EmailAddressT = Aws::String>
+  void SetEmailAddress(EmailAddressT&& value) {
+    m_emailAddressHasBeenSet = true;
+    m_emailAddress = std::forward<EmailAddressT>(value);
+  }
+  template <typename EmailAddressT = Aws::String>
+  PutAlternateContactRequest& WithEmailAddress(EmailAddressT&& value) {
+    SetEmailAddress(std::forward<EmailAddressT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies a phone number for the alternate contact.</p>
+   */
+  inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
+  inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
+  template <typename PhoneNumberT = Aws::String>
+  void SetPhoneNumber(PhoneNumberT&& value) {
+    m_phoneNumberHasBeenSet = true;
+    m_phoneNumber = std::forward<PhoneNumberT>(value);
+  }
+  template <typename PhoneNumberT = Aws::String>
+  PutAlternateContactRequest& WithPhoneNumber(PhoneNumberT&& value) {
+    SetPhoneNumber(std::forward<PhoneNumberT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies which alternate contact you want to create or update.</p>
+   */
+  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
+  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
+  inline void SetAlternateContactType(AlternateContactType value) {
+    m_alternateContactTypeHasBeenSet = true;
+    m_alternateContactType = value;
+  }
+  inline PutAlternateContactRequest& WithAlternateContactType(AlternateContactType value) {
+    SetAlternateContactType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>Specifies the 12 digit account ID number of the Amazon Web Services account
    * that you want to access or modify with this operation.</p> <p>If you do not
    * specify this parameter, it defaults to the Amazon Web Services account of the
@@ -65,112 +153,24 @@ class PutAlternateContactRequest : public AccountRequest {
     return *this;
   }
   ///@}
-
-  ///@{
-  /**
-   * <p>Specifies which alternate contact you want to create or update.</p>
-   */
-  inline AlternateContactType GetAlternateContactType() const { return m_alternateContactType; }
-  inline bool AlternateContactTypeHasBeenSet() const { return m_alternateContactTypeHasBeenSet; }
-  inline void SetAlternateContactType(AlternateContactType value) {
-    m_alternateContactTypeHasBeenSet = true;
-    m_alternateContactType = value;
-  }
-  inline PutAlternateContactRequest& WithAlternateContactType(AlternateContactType value) {
-    SetAlternateContactType(value);
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies an email address for the alternate contact. </p>
-   */
-  inline const Aws::String& GetEmailAddress() const { return m_emailAddress; }
-  inline bool EmailAddressHasBeenSet() const { return m_emailAddressHasBeenSet; }
-  template <typename EmailAddressT = Aws::String>
-  void SetEmailAddress(EmailAddressT&& value) {
-    m_emailAddressHasBeenSet = true;
-    m_emailAddress = std::forward<EmailAddressT>(value);
-  }
-  template <typename EmailAddressT = Aws::String>
-  PutAlternateContactRequest& WithEmailAddress(EmailAddressT&& value) {
-    SetEmailAddress(std::forward<EmailAddressT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies a name for the alternate contact.</p>
-   */
-  inline const Aws::String& GetName() const { return m_name; }
-  inline bool NameHasBeenSet() const { return m_nameHasBeenSet; }
-  template <typename NameT = Aws::String>
-  void SetName(NameT&& value) {
-    m_nameHasBeenSet = true;
-    m_name = std::forward<NameT>(value);
-  }
-  template <typename NameT = Aws::String>
-  PutAlternateContactRequest& WithName(NameT&& value) {
-    SetName(std::forward<NameT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies a phone number for the alternate contact.</p>
-   */
-  inline const Aws::String& GetPhoneNumber() const { return m_phoneNumber; }
-  inline bool PhoneNumberHasBeenSet() const { return m_phoneNumberHasBeenSet; }
-  template <typename PhoneNumberT = Aws::String>
-  void SetPhoneNumber(PhoneNumberT&& value) {
-    m_phoneNumberHasBeenSet = true;
-    m_phoneNumber = std::forward<PhoneNumberT>(value);
-  }
-  template <typename PhoneNumberT = Aws::String>
-  PutAlternateContactRequest& WithPhoneNumber(PhoneNumberT&& value) {
-    SetPhoneNumber(std::forward<PhoneNumberT>(value));
-    return *this;
-  }
-  ///@}
-
-  ///@{
-  /**
-   * <p>Specifies a title for the alternate contact.</p>
-   */
-  inline const Aws::String& GetTitle() const { return m_title; }
-  inline bool TitleHasBeenSet() const { return m_titleHasBeenSet; }
-  template <typename TitleT = Aws::String>
-  void SetTitle(TitleT&& value) {
-    m_titleHasBeenSet = true;
-    m_title = std::forward<TitleT>(value);
-  }
-  template <typename TitleT = Aws::String>
-  PutAlternateContactRequest& WithTitle(TitleT&& value) {
-    SetTitle(std::forward<TitleT>(value));
-    return *this;
-  }
-  ///@}
  private:
-  Aws::String m_accountId;
+  Aws::String m_name;
 
-  AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
+  Aws::String m_title;
 
   Aws::String m_emailAddress;
 
-  Aws::String m_name;
-
   Aws::String m_phoneNumber;
 
-  Aws::String m_title;
-  bool m_accountIdHasBeenSet = false;
-  bool m_alternateContactTypeHasBeenSet = false;
-  bool m_emailAddressHasBeenSet = false;
+  AlternateContactType m_alternateContactType{AlternateContactType::NOT_SET};
+
+  Aws::String m_accountId;
   bool m_nameHasBeenSet = false;
-  bool m_phoneNumberHasBeenSet = false;
   bool m_titleHasBeenSet = false;
+  bool m_emailAddressHasBeenSet = false;
+  bool m_phoneNumberHasBeenSet = false;
+  bool m_alternateContactTypeHasBeenSet = false;
+  bool m_accountIdHasBeenSet = false;
 };
 
 }  // namespace Model

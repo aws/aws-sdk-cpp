@@ -163,7 +163,12 @@ class CreateOnlineEvaluationConfigRequest : public BedrockAgentCoreControlReques
   /**
    * <p> The Amazon Resource Name (ARN) of the IAM role that grants permissions to
    * read from CloudWatch logs, write evaluation results, and invoke Amazon Bedrock
-   * models for evaluation. </p>
+   * models for evaluation. If the configuration references evaluators encrypted with
+   * a customer managed KMS key, this role must also have <code>kms:Decrypt</code>
+   * permission on the KMS key. The service validates this permission at
+   * configuration creation time. For more information, see <a
+   * href="https://docs.aws.amazon.com/bedrock-agentcore/latest/devguide/evaluations-encryption.html">Encryption
+   * at rest for AgentCore Evaluations</a>. </p>
    */
   inline const Aws::String& GetEvaluationExecutionRoleArn() const { return m_evaluationExecutionRoleArn; }
   inline bool EvaluationExecutionRoleArnHasBeenSet() const { return m_evaluationExecutionRoleArnHasBeenSet; }

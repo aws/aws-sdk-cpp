@@ -58,6 +58,10 @@ EvaluatorSummary& EvaluatorSummary::operator=(JsonView jsonValue) {
     m_lockedForModification = jsonValue.GetBool("lockedForModification");
     m_lockedForModificationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("kmsKeyArn")) {
+    m_kmsKeyArn = jsonValue.GetString("kmsKeyArn");
+    m_kmsKeyArnHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -102,6 +106,10 @@ JsonValue EvaluatorSummary::Jsonize() const {
 
   if (m_lockedForModificationHasBeenSet) {
     payload.WithBool("lockedForModification", m_lockedForModification);
+  }
+
+  if (m_kmsKeyArnHasBeenSet) {
+    payload.WithString("kmsKeyArn", m_kmsKeyArn);
   }
 
   return payload;

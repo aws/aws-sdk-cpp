@@ -69,6 +69,10 @@ Aws::String UpdateOriginEndpointRequest::SerializePayload() const {
     payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());
   }
 
+  if (m_uriSeparatorHasBeenSet) {
+    payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
+  }
+
   return payload.View().WriteReadable();
 }
 

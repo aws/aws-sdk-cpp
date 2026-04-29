@@ -73,6 +73,10 @@ Aws::String CreateOriginEndpointRequest::SerializePayload() const {
     payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());
   }
 
+  if (m_uriSeparatorHasBeenSet) {
+    payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
+  }
+
   if (m_tagsHasBeenSet) {
     JsonValue tagsJsonMap;
     for (auto& tagsItem : m_tags) {

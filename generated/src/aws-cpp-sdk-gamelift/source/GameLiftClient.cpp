@@ -61,6 +61,7 @@
 #include <aws/gamelift/model/DescribeComputeRequest.h>
 #include <aws/gamelift/model/DescribeContainerFleetRequest.h>
 #include <aws/gamelift/model/DescribeContainerGroupDefinitionRequest.h>
+#include <aws/gamelift/model/DescribeContainerGroupPortMappingsRequest.h>
 #include <aws/gamelift/model/DescribeEC2InstanceLimitsRequest.h>
 #include <aws/gamelift/model/DescribeFleetAttributesRequest.h>
 #include <aws/gamelift/model/DescribeFleetCapacityRequest.h>
@@ -531,6 +532,13 @@ DescribeContainerGroupDefinitionOutcome GameLiftClient::DescribeContainerGroupDe
   auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? DescribeContainerGroupDefinitionOutcome(result.GetResultWithOwnership())
                             : DescribeContainerGroupDefinitionOutcome(std::move(result.GetError()));
+}
+
+DescribeContainerGroupPortMappingsOutcome GameLiftClient::DescribeContainerGroupPortMappings(
+    const DescribeContainerGroupPortMappingsRequest& request) const {
+  auto result = InvokeServiceOperation(request, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DescribeContainerGroupPortMappingsOutcome(result.GetResultWithOwnership())
+                            : DescribeContainerGroupPortMappingsOutcome(std::move(result.GetError()));
 }
 
 DescribeEC2InstanceLimitsOutcome GameLiftClient::DescribeEC2InstanceLimits(const DescribeEC2InstanceLimitsRequest& request) const {

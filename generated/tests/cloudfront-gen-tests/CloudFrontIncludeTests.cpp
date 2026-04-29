@@ -42,6 +42,7 @@
 #include <aws/cloudfront/model/CachePolicyQueryStringsConfig.h>
 #include <aws/cloudfront/model/CachePolicySummary.h>
 #include <aws/cloudfront/model/CachePolicyType.h>
+#include <aws/cloudfront/model/CacheTagConfig.h>
 #include <aws/cloudfront/model/CachedMethods.h>
 #include <aws/cloudfront/model/Certificate.h>
 #include <aws/cloudfront/model/CertificateTransparencyLoggingPreference.h>

@@ -76,9 +76,11 @@ class StartMatchBackfillRequest : public GameLiftRequest {
 
   ///@{
   /**
-   * <p>A unique identifier for the game session. Use the game session ID. When using
-   * FlexMatch as a standalone matchmaking solution, this parameter is not needed.
-   * </p>
+   * <p>An identifier for the game session that is unique across all regions. The
+   * value is always a full ARN in the following format:
+   * <code>arn:aws:gamelift:&lt;location&gt;::gamesession/&lt;fleet ID&gt;/&lt;ID
+   * string&gt;</code>. When using FlexMatch as a standalone matchmaking solution,
+   * this parameter is not needed. </p>
    */
   inline const Aws::String& GetGameSessionArn() const { return m_gameSessionArn; }
   inline bool GameSessionArnHasBeenSet() const { return m_gameSessionArnHasBeenSet; }

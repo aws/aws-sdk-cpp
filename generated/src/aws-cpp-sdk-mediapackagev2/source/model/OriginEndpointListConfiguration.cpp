@@ -83,6 +83,10 @@ OriginEndpointListConfiguration& OriginEndpointListConfiguration::operator=(Json
     m_forceEndpointErrorConfiguration = jsonValue.GetObject("ForceEndpointErrorConfiguration");
     m_forceEndpointErrorConfigurationHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("UriSeparator")) {
+    m_uriSeparator = UriSeparatorMapper::GetUriSeparatorForName(jsonValue.GetString("UriSeparator"));
+    m_uriSeparatorHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -156,6 +160,10 @@ JsonValue OriginEndpointListConfiguration::Jsonize() const {
 
   if (m_forceEndpointErrorConfigurationHasBeenSet) {
     payload.WithObject("ForceEndpointErrorConfiguration", m_forceEndpointErrorConfiguration.Jsonize());
+  }
+
+  if (m_uriSeparatorHasBeenSet) {
+    payload.WithString("UriSeparator", UriSeparatorMapper::GetNameForUriSeparator(m_uriSeparator));
   }
 
   return payload;
