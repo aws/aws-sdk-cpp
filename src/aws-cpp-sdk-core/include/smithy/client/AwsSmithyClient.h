@@ -142,6 +142,9 @@ namespace client
         template <typename OutcomeT, typename ClientT, typename RequestT, typename HandlerT>
         friend class SmithyBidirectionalStreamingTask;
 
+        template <typename OutcomeT, typename ClientT, typename RequestT, typename EncoderStreamT, typename HandlerT>
+        friend class SmithyBidirectionalStreamingWriteDataTask;
+
         void initClient() {
           if (m_endpointProvider && m_authSchemeResolver) {
             m_endpointProvider->InitBuiltInParameters(m_clientConfiguration);

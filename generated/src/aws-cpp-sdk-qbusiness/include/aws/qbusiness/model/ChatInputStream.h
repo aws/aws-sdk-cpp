@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
 #include <aws/core/utils/json/JsonSerializer.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/qbusiness/QBusiness_EXPORTS.h>
 #include <aws/qbusiness/model/ActionExecutionEvent.h>
 #include <aws/qbusiness/model/AttachmentInputEvent.h>
@@ -28,6 +29,9 @@ namespace Model {
  */
 class AWS_QBUSINESS_API ChatInputStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  ChatInputStream() = default;
+  explicit ChatInputStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   ChatInputStream& WriteConfigurationEvent(const ConfigurationEvent& value) {
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));

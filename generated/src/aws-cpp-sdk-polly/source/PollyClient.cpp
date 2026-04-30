@@ -5,6 +5,7 @@
 
 #include <aws/core/auth/AWSAuthSigner.h>
 #include <aws/core/auth/AWSCredentialsProviderChain.h>
+#include <aws/core/client/AWSClientBidirectionalStreaming.h>
 #include <aws/core/client/AWSClientEventStreamingAsyncTask.h>
 #include <aws/core/client/CoreErrors.h>
 #include <aws/core/client/RetryStrategy.h>
@@ -340,10 +341,43 @@ void PollyClient::StartSpeechSynthesisStreamAsync(Model::StartSpeechSynthesisStr
   }
   endpointResolutionOutcome.GetResult().AddPathSegments("/v1/synthesisStream");
 
+#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, GetHttpClient());
+  auto signer = GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER);
+
+  auto eventEncoderStream = Aws::MakeShared<Model::StartSpeechSynthesisStreamActionStream>(ALLOCATION_TAG, writeDataStreamBuf);
+  eventEncoderStream->SetSigner(signer);
+
+  auto requestCopy = Aws::MakeShared<StartSpeechSynthesisStreamRequest>(ALLOCATION_TAG, request);
+  request.SetActionStream(eventEncoderStream);
+
+  auto& endpoint = endpointResolutionOutcome.GetResult();
+  auto httpRequest =
+      CreateHttpRequest(endpoint.GetURI(), Aws::Http::HttpMethod::HTTP_POST, Aws::Utils::Stream::DefaultResponseStreamFactoryMethod);
+  httpRequest->SetEventStreamRequest(true);
+  httpRequest->SetHasEventStreamResponse(true);
+  BuildHttpRequest(*requestCopy, httpRequest);
+
+  if (!signer->SignRequest(*httpRequest, nullptr, nullptr, true)) {
+    handler(this, request,
+            StartSpeechSynthesisStreamOutcome(
+                Aws::Client::AWSError<CoreErrors>(CoreErrors::CLIENT_SIGNING_FAILURE, "", "Failed to sign request", false)),
+            handlerContext);
+    return;
+  }
+  eventEncoderStream->SetSignatureSeed(Aws::Client::GetAuthorizationHeader(*httpRequest));
+
+  Aws::Client::SubmitBidirectionalStreamingRequest<PollyClient, StartSpeechSynthesisStreamOutcome, StartSpeechSynthesisStreamRequest,
+                                                   Model::StartSpeechSynthesisStreamActionStream>(
+      this, request, requestCopy, eventEncoderStream, writeDataStreamBuf, httpRequest, m_clientConfiguration.executor.get(),
+      streamReadyHandler, handler, handlerContext);
+#else
+  // Pull-based path (curl/WinHTTP)
   auto eventEncoderStream = Aws::MakeShared<Model::StartSpeechSynthesisStreamActionStream>(ALLOCATION_TAG);
   eventEncoderStream->SetSigner(GetSignerByName(Aws::Auth::EVENTSTREAM_SIGV4_SIGNER));
   auto requestCopy = Aws::MakeShared<StartSpeechSynthesisStreamRequest>("StartSpeechSynthesisStream", request);
-  requestCopy->SetActionStream(eventEncoderStream);  // this becomes the body of the request
+  requestCopy->SetActionStream(eventEncoderStream);
   request.SetActionStream(eventEncoderStream);
 
   auto asyncTask = CreateBidirectionalEventStreamTask<StartSpeechSynthesisStreamOutcome>(
@@ -352,6 +386,7 @@ void PollyClient::StartSpeechSynthesisStreamAsync(Model::StartSpeechSynthesisStr
   m_clientConfiguration.executor->Submit(std::move(asyncTask));
   sem->WaitOne();
   streamReadyHandler(*eventEncoderStream);
+#endif
 }
 StartSpeechSynthesisTaskOutcome PollyClient::StartSpeechSynthesisTask(const StartSpeechSynthesisTaskRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {

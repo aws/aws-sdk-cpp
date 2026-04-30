@@ -11,6 +11,11 @@
 
 namespace Aws
 {
+namespace Http { class HttpRequest; }
+namespace Utils {
+  namespace Stream { class HttpWriteDataStreamBuf; }
+  namespace Threading { class Executor; }
+}
 namespace Client
 {
     class AsyncCallerContext;
@@ -208,6 +213,14 @@ namespace Client
     protected:
         template <typename OutcomeT, typename ClientT, typename AWSEndpointT, typename RequestT, typename HandlerT>
         friend class BidirectionalEventStreamingTask; // allow BidirectionalEventStreamingTask to access m_isInitialized
+
+        template <typename ClientT, typename OutcomeT, typename RequestT, typename EncoderStreamT,
+                  typename HandlerT, typename StreamReadyHandlerT>
+        friend void SubmitBidirectionalStreamingRequest(
+            const ClientT*, RequestT&, std::shared_ptr<RequestT>, std::shared_ptr<EncoderStreamT>,
+            std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf>, const std::shared_ptr<Aws::Http::HttpRequest>&,
+            Aws::Utils::Threading::Executor*,
+            const StreamReadyHandlerT&, const HandlerT&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&);
 
         std::atomic<bool> m_isInitialized;
         mutable std::atomic<size_t> m_operationsProcessed;

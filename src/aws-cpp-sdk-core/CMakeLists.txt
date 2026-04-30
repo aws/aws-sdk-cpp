@@ -64,6 +64,7 @@ file(GLOB UTILS_CHECKSUM_HEADERS "include/aws/core/utils/checksum/*.h")
 file(GLOB UTILS_CRYPTO_HEADERS "include/aws/core/utils/crypto/*.h")
 file(GLOB UTILS_JSON_HEADERS "include/aws/core/utils/json/*.h")
 file(GLOB UTILS_LOCAL_HEADERS "include/aws/core/utils/local/*.h")
+file(GLOB UTILS_LOCAL_STREAM_HEADERS "include/aws/core/utils/local/stream/*.h")
 file(GLOB UTILS_CBOR_HEADERS "include/aws/core/utils/cbor/*.h")
 file(GLOB UTILS_THREADING_HEADERS "include/aws/core/utils/threading/*.h")
 file(GLOB UTILS_XML_HEADERS "include/aws/core/utils/xml/*.h")
@@ -121,6 +122,7 @@ file(GLOB UTILS_CHECKSUM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/checks
 file(GLOB UTILS_CRYPTO_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/*.cpp")
 file(GLOB UTILS_JSON_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/json/*.cpp")
 file(GLOB UTILS_LOCAL_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/local/*.cpp")
+file(GLOB UTILS_LOCAL_STREAM_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/local/stream/*.cpp")
 file(GLOB UTILS_CBOR_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/cbor/*.cpp")
 file(GLOB UTILS_THREADING_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/threading/*.cpp")
 file(GLOB UTILS_XML_SOURCE "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/xml/*.cpp")
@@ -277,6 +279,7 @@ file(GLOB AWS_NATIVE_SDK_COMMON_HEADERS
   ${UTILS_CRYPTO_HEADERS}
   ${UTILS_JSON_HEADERS}
   ${UTILS_LOCAL_HEADERS}
+  ${UTILS_LOCAL_STREAM_HEADERS}
   ${UTILS_CBOR_HEADERS}
   ${UTILS_THREADING_HEADERS}
   ${UTILS_RETRY_HEADERS}
@@ -364,6 +367,7 @@ file(GLOB AWS_NATIVE_SDK_NON_UNITY_SRC
     ${UTILS_CRYPTO_FACTORY_SOURCE}
     ${UTILS_JSON_SOURCE}
     ${UTILS_LOCAL_SOURCE}
+    ${UTILS_LOCAL_STREAM_SOURCE}
     ${UTILS_CBOR_SOURCE}
     ${UTILS_EVENT_SOURCE}
     ${UTILS_SOURCE}
@@ -426,6 +430,7 @@ if(MSVC)
     source_group("Header Files\\aws\\core\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\json" FILES ${UTILS_JSON_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\local" FILES ${UTILS_LOCAL_HEADERS})
+    source_group("Header Files\\aws\\core\\utils\\local" FILES ${UTILS_LOCAL_STREAM_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\cbor" FILES ${UTILS_CBOR_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\threading" FILES ${UTILS_THREADING_HEADERS})
     source_group("Header Files\\aws\\core\\utils\\xml" FILES ${UTILS_XML_HEADERS})
@@ -497,6 +502,7 @@ if(MSVC)
     source_group("Source Files\\utils\\exceptions" FILES ${UTILS_EXCEPTIONS_SOURCE})
     source_group("Source Files\\utils\\json" FILES ${UTILS_JSON_SOURCE})
     source_group("Source Files\\utils\\local" FILES ${UTILS_LOCAL_SOURCE})
+    source_group("Source Files\\utils\\local" FILES ${UTILS_LOCAL_STREAM_SOURCE})
     source_group("Source Files\\utils\\cbor" FILES ${UTILS_CBOR_SOURCE})
     source_group("Source Files\\utils\\threading" FILES ${UTILS_THREADING_SOURCE})
     source_group("Source Files\\utils\\xml" FILES ${UTILS_XML_SOURCE})

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/lexv2-runtime/LexRuntimeV2_EXPORTS.h>
 #include <aws/lexv2-runtime/model/AudioInputEvent.h>
 #include <aws/lexv2-runtime/model/ConfigurationEvent.h>
@@ -27,6 +28,9 @@ namespace Model {
  */
 class AWS_LEXRUNTIMEV2_API StartConversationRequestEventStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  StartConversationRequestEventStream() = default;
+  explicit StartConversationRequestEventStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   StartConversationRequestEventStream& WriteConfigurationEvent(const ConfigurationEvent& value) {
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));

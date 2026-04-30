@@ -27,7 +27,31 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
 #end
 #end
 #set($streamModelNameWithFirstLetterCapitalized = $CppViewHelper.capitalizeFirstChar($streamModelName))
-  auto eventEncoderStream = Aws::MakeShared<Model::$streamModelType>(ALLOCATION_TAG);
+\#if AWS_SDK_USE_CRT_HTTP
+  // Push-based WriteData path (CRT HTTP client only)
+  auto writeDataStreamBuf = Aws::MakeShared<Aws::Utils::Stream::HttpWriteDataStreamBuf>(ALLOCATION_TAG, m_httpClient);
+  auto eventEncoderStream = Aws::MakeShared<Model::${streamModelType}>(ALLOCATION_TAG, writeDataStreamBuf);
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
+
+  auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>(ALLOCATION_TAG, request);
+
+  auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
+    eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
+      auto outcome = SignEventMessage(message, seed, ctx);
+      return outcome.IsSuccess();
+    });
+  };
+
+  auto asyncTask = smithy::client::CreateSmithyBidirectionalWriteDataTask<${operation.name}Outcome>(
+      this, requestCopy, handler, handlerContext, eventEncoderStream, writeDataStreamBuf,
+      std::move(endpointCallback), std::move(authCallback));
+  auto sem = asyncTask.GetSemaphore();
+  m_clientConfiguration.executor->Submit(std::move(asyncTask));
+  sem->WaitOne();
+  streamReadyHandler(*eventEncoderStream);
+\#else
+  // Pull-based path
+  auto eventEncoderStream = Aws::MakeShared<Model::${streamModelType}>(ALLOCATION_TAG);
   auto authCallback = [&](std::shared_ptr<smithy::client::AwsSmithyClientAsyncRequestContext> ctx) -> void {
     eventEncoderStream->SetSigningCallback([this, ctx, eventEncoderStream](Aws::Utils::Event::Message& message, Aws::String& seed) -> bool {
       auto outcome = SignEventMessage(message, seed, ctx);
@@ -35,8 +59,8 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
         });
     };
   auto requestCopy = Aws::MakeShared<${operation.request.shape.name}>("${operation.name}", request);
-  requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
-  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream); // this becomes the body of the request
+  requestCopy->Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
+  request.Set${streamModelNameWithFirstLetterCapitalized}(eventEncoderStream);
 
   auto asyncTask = smithy::client::CreateSmithyBidirectionalEventStreamTask<${operation.name}Outcome>(this,
         requestCopy,
@@ -49,4 +73,5 @@ void ${className}::${operation.name}Async(Model::${operation.request.shape.name}
     m_clientConfiguration.executor->Submit(std::move(asyncTask));
     sem->WaitOne();
     streamReadyHandler(*eventEncoderStream);
+#endif
 }

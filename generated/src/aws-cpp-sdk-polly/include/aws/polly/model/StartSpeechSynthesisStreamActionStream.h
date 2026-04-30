@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/polly/Polly_EXPORTS.h>
 #include <aws/polly/model/CloseStreamEvent.h>
 #include <aws/polly/model/TextEvent.h>
@@ -23,6 +24,9 @@ namespace Model {
  */
 class AWS_POLLY_API StartSpeechSynthesisStreamActionStream : public Aws::Utils::Event::EventEncoderStream {
  public:
+  StartSpeechSynthesisStreamActionStream() = default;
+  explicit StartSpeechSynthesisStreamActionStream(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   StartSpeechSynthesisStreamActionStream& WriteTextEvent(const TextEvent& value) {
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));

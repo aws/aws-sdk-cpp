@@ -7,6 +7,7 @@
 #include <aws/bedrock-runtime/BedrockRuntime_EXPORTS.h>
 #include <aws/bedrock-runtime/model/BidirectionalInputPayloadPart.h>
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 
 #include <utility>
 
@@ -22,6 +23,9 @@ namespace Model {
  */
 class AWS_BEDROCKRUNTIME_API InvokeModelWithBidirectionalStreamInput : public Aws::Utils::Event::EventEncoderStream {
  public:
+  InvokeModelWithBidirectionalStreamInput() = default;
+  explicit InvokeModelWithBidirectionalStreamInput(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   InvokeModelWithBidirectionalStreamInput& WriteBidirectionalInputPayloadPart(const BidirectionalInputPayloadPart& value) {
     Aws::Utils::Event::Message msg;
     msg.InsertEventHeader(":message-type", Aws::String("event"));

@@ -5,6 +5,7 @@
 
 #pragma once
 #include <aws/core/utils/event/EventStream.h>
+#include <aws/core/utils/stream/HttpWriteDataStreamBuf.h>
 #include <aws/sagemaker-runtime-http2/SageMakerRuntimeHTTP2_EXPORTS.h>
 #include <aws/sagemaker-runtime-http2/model/RequestPayloadPart.h>
 
@@ -21,6 +22,9 @@ namespace Model {
  */
 class AWS_SAGEMAKERRUNTIMEHTTP2_API RequestStreamEvent : public Aws::Utils::Event::EventEncoderStream {
  public:
+  RequestStreamEvent() = default;
+  explicit RequestStreamEvent(std::shared_ptr<Aws::Utils::Stream::HttpWriteDataStreamBuf> streambuf)
+      : Aws::Utils::Event::EventEncoderStream(std::move(streambuf)) {}
   RequestStreamEvent& WriteRequestPayloadPart(const RequestPayloadPart& value) {
     Aws::Utils::Event::Message msg;
     if (!value.GetBytes().empty()) {
