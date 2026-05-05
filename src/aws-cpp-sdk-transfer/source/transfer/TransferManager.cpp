@@ -1497,6 +1497,7 @@ namespace Aws
                         continue;
                     }
 
+                    bool wasParentRef = false;
                     if(i + 2 < filePath.size() && '.' == filePath[i+1] && '.' == filePath[i+2]) // if "/.."
                     {
                         if(i + 3 == filePath.size() || (i + 3 < filePath.size() && '/' == filePath[i+3])) // if "/.." or "/../"
@@ -1505,9 +1506,13 @@ namespace Aws
                                 return false; // attempting to escape parent
                             }
                             level--;
+                            wasParentRef = true;
                         }
                     }
-                    level++;
+                    if (!wasParentRef)
+                    {
+                        level++;
+                    }
                 }
             }
             return true;
