@@ -1,3 +1,9 @@
+# When using the modern build path, include the modern CMakeLists instead.
+if(NOT LEGACY_BUILD)
+    include("${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.modern.txt")
+    return()
+endif()
+
 add_project(aws-cpp-sdk-core "Core http and utility library for the AWS C++ SDK")
 
 if(VERSION_STRING)
