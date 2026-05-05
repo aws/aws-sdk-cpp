@@ -1,0 +1,28 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+#
+# Modern build path for aws-cpp-sdk-core-tests.
+
+file(GLOB_RECURSE _core_test_sources
+    "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+)
+
+add_executable(aws-cpp-sdk-core-tests ${_core_test_sources})
+
+target_link_libraries(aws-cpp-sdk-core-tests
+    PRIVATE
+        aws-cpp-sdk-core
+        testing-resources
+        GTest::gtest
+)
+
+target_compile_definitions(aws-cpp-sdk-core-tests PRIVATE NON_LEGACY_BUILD)
+
+# Copy test resource files to the build directory
+add_custom_command(TARGET aws-cpp-sdk-core-tests PRE_BUILD
+    COMMAND ${CMAKE_COMMAND} -E copy_directory
+        ${CMAKE_CURRENT_SOURCE_DIR}/resources
+        ${CMAKE_CURRENT_BINARY_DIR}
+)
+
+add_test(NAME aws-cpp-sdk-core-tests COMMAND aws-cpp-sdk-core-tests --gtest_brief=1)

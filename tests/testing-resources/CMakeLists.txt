@@ -2,6 +2,11 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
+if(NOT LEGACY_BUILD)
+    include("${CMAKE_CURRENT_SOURCE_DIR}/CMakeLists.modern.txt")
+    return()
+endif()
+
 add_project(testing-resources
     "Testing utility library for the AWS C++ SDK"
     aws-cpp-sdk-core)

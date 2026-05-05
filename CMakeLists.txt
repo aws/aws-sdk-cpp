@@ -426,12 +426,18 @@ else () #  End of Legacy Build
     if(AWS_SDK_ENABLE_TESTING)
         include(fetch_test_dependencies)
         aws_sdk_fetch_test_dependencies()
+        enable_testing()
     endif()
 
     # -- Build service clients (generated + high-level) --
     include(aws_sdk_service_clients)
     aws_sdk_build_service_clients()
 
-    # TODO (Phase 4): Add test targets when AWS_SDK_ENABLE_TESTING is ON
+    # -- Test targets (gated behind AWS_SDK_ENABLE_TESTING) --
+    if(AWS_SDK_ENABLE_TESTING)
+        add_subdirectory(tests/testing-resources ${CMAKE_BINARY_DIR}/testing-resources)
+        add_subdirectory(tests/aws-cpp-sdk-core-tests ${CMAKE_BINARY_DIR}/aws-cpp-sdk-core-tests)
+    endif()
+
     # TODO (Phase 5): Add CPack packaging support
 endif ()

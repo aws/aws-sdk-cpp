@@ -1,0 +1,67 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+#
+# Modern build path for testing-resources.
+# Uses GTest::gtest from FetchContent instead of embedded gtest source.
+
+# -- SDK testing utility sources (NOT gtest itself) --
+file(GLOB AWS_TESTING_HEADERS "include/aws/testing/*.h")
+file(GLOB AWS_TESTING_AUTH_MOCKS_HEADERS "include/aws/testing/mocks/aws/auth/*.h")
+file(GLOB AWS_TESTING_EVENT_MOCKS_HEADERS "include/aws/testing/mocks/event/*.h")
+file(GLOB AWS_TESTING_HTTP_MOCKS_HEADERS "include/aws/testing/mocks/http/*.h")
+file(GLOB AWS_TESTING_CLIENT_MOCKS_HEADERS "include/aws/testing/mocks/aws/client/*.h")
+file(GLOB AWS_TESTING_MONITORING_MOCKS_HEADERS "include/aws/testing/mocks/monitoring/*.h")
+file(GLOB AWS_TESTING_PLATFORM_HEADERS "include/aws/testing/platform/*.h")
+file(GLOB AWS_TESTING_UTILS_HEADERS "include/aws/testing/utils/*.h")
+file(GLOB AWS_TESTING_SOURCE "source/*.cpp")
+
+# -- Platform-specific sources --
+if(CMAKE_SYSTEM_NAME STREQUAL "Android")
+    file(GLOB _platform_src "source/platform/android/*.cpp")
+elseif(WIN32)
+    file(GLOB _platform_src "source/platform/windows/*.cpp")
+else()
+    file(GLOB _platform_src "source/platform/linux-shared/*.cpp")
+endif()
+
+add_library(testing-resources
+    ${AWS_TESTING_HEADERS}
+    ${AWS_TESTING_AUTH_MOCKS_HEADERS}
+    ${AWS_TESTING_EVENT_MOCKS_HEADERS}
+    ${AWS_TESTING_HTTP_MOCKS_HEADERS}
+    ${AWS_TESTING_CLIENT_MOCKS_HEADERS}
+    ${AWS_TESTING_MONITORING_MOCKS_HEADERS}
+    ${AWS_TESTING_PLATFORM_HEADERS}
+    ${AWS_TESTING_UTILS_HEADERS}
+    ${AWS_TESTING_SOURCE}
+    ${_platform_src}
+)
+add_library(AWS::testing-resources ALIAS testing-resources)
+
+target_include_directories(testing-resources
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+)
+
+target_link_libraries(testing-resources
+    PUBLIC
+        aws-cpp-sdk-core
+        GTest::gtest
+)
+
+target_compile_definitions(testing-resources
+    PUBLIC
+        NON_LEGACY_BUILD
+)
+
+if(WIN32 AND BUILD_SHARED_LIBS)
+    target_compile_definitions(testing-resources
+        PRIVATE AWS_TESTING_EXPORTS=1
+        PUBLIC  GTEST_LINKED_AS_SHARED_LIBRARY=1
+    )
+endif()
+
+if(WIN32)
+    target_compile_definitions(testing-resources PRIVATE DISABLE_HOME_DIR_REDIRECT)
+endif()

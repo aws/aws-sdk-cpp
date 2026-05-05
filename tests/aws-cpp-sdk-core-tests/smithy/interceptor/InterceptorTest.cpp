@@ -179,8 +179,8 @@ TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnSuccess)
     InterceptorContext context{modeledRequest};
     const auto response = client.MakeRequest(context, request);
     EXPECT_TRUE(response.IsSuccess());
-    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
-    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse"));
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest").value());
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse").value());
 }
 
 TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureRequset)
@@ -193,7 +193,7 @@ TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureRequset)
     InterceptorContext context{modeledRequest};
     const auto response = client.MakeRequest(context, request);
     EXPECT_FALSE(response.IsSuccess());
-    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest").value());
 }
 
 TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureReseponse)
@@ -206,6 +206,6 @@ TEST_F(SmithyInterceptorTest, MockInterceptorShouldReturnFailureReseponse)
     InterceptorContext context{modeledRequest};
     const auto response = client.MakeRequest(context, request);
     EXPECT_FALSE(response.IsSuccess());
-    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest"));
-    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse"));
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorRequest").value());
+    EXPECT_EQ("Called", context.GetAttribute("MockInterceptorResponse").value());
 }
