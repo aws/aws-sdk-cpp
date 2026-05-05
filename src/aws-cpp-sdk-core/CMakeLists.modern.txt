@@ -153,9 +153,9 @@ aws_sdk_apply_platform_definitions(aws-cpp-sdk-core)
 aws_sdk_apply_option_definitions(aws-cpp-sdk-core)
 
 # -- Symbol visibility --
+# Note: SDK headers use AWS_CORE_API which is empty on non-Windows.
+# Symbols must remain visible (default) for service clients to link.
 set_target_properties(aws-cpp-sdk-core PROPERTIES
-    CXX_VISIBILITY_PRESET hidden
-    VISIBILITY_INLINES_HIDDEN YES
     VERSION ${PROJECT_VERSION}
     SOVERSION ${PROJECT_VERSION_MAJOR}
 )

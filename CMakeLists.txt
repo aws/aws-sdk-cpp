@@ -387,8 +387,6 @@ else () #  End of Legacy Build
     include(fetch_dependencies)
 
     # -- Global project settings --
-    set(CMAKE_CXX_VISIBILITY_PRESET hidden)
-    set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
     set(CMAKE_EXPORT_NO_PACKAGE_REGISTRY YES)
 
     # Validate build type for single-config generators
@@ -430,7 +428,10 @@ else () #  End of Legacy Build
         aws_sdk_fetch_test_dependencies()
     endif()
 
-    # TODO (Phase 3): Add generated service clients via add_subdirectory(generated/src/aws-cpp-sdk-<service>)
+    # -- Build service clients (generated + high-level) --
+    include(aws_sdk_service_clients)
+    aws_sdk_build_service_clients()
+
     # TODO (Phase 4): Add test targets when AWS_SDK_ENABLE_TESTING is ON
     # TODO (Phase 5): Add CPack packaging support
 endif ()
