@@ -2690,6 +2690,32 @@ namespace
       EXPECT_FALSE(outcome.IsSuccess());
     }
 
+    TEST_F(BucketAndObjectOperationTest, TestHeadersReceivedEventHandlerFiresOnEmptyBodyResponse) {
+      const String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
+      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+
+      // PutObject returns 200 with headers but an empty body
+      Aws::S3::Model::PutObjectRequest request;
+      request.SetBucket(fullBucketName);
+      request.SetKey("headers-received-handler-test");
+
+      auto body = Aws::MakeShared<Aws::StringStream>(ALLOCATION_TAG, "test content");
+      request.SetBody(body);
+
+      std::atomic<bool> handlerFired{false};
+      Aws::Http::HttpResponseCode capturedCode{Aws::Http::HttpResponseCode::REQUEST_NOT_MADE};
+      request.SetHeadersReceivedEventHandler(
+          [&handlerFired, &capturedCode](const Aws::Http::HttpRequest*, Aws::Http::HttpResponse* response) {
+              handlerFired = true;
+              capturedCode = response->GetResponseCode();
+          });
+
+      auto outcome = Client->PutObject(request);
+      AWS_EXPECT_SUCCESS(outcome);
+      EXPECT_TRUE(handlerFired.load()) << "HeadersReceivedEventHandler must fire even when response body is empty";
+      EXPECT_EQ(Aws::Http::HttpResponseCode::OK, capturedCode);
+    }
+
     TEST_F(BucketAndObjectOperationTest, ShouldSkipResponseValidationOnCompositeChecksums) {
       const auto fullBucketName = CalculateBucketName(BASE_PUT_MULTIPART_COMPOSITE_CHECKSUM_BUCKET_NAME.c_str());
       m_bucketsToDelete.insert(fullBucketName);
