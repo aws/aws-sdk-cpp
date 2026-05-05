@@ -11,7 +11,9 @@
 #include <aws/core/utils/logging/DefaultLogSystem.h>
 #include <aws/core/utils/logging/DefaultCRTLogSystem.h>
 #include <aws/core/Globals.h>
+#ifndef NON_LEGACY_BUILD
 #include <aws/core/external/cjson/cJSON.h>
+#endif
 #include <aws/core/monitoring/MonitoringManager.h>
 #include <aws/core/utils/component-registry/ComponentRegistry.h>
 #include <aws/core/net/Net.h>
@@ -162,10 +164,12 @@ namespace Aws
         Aws::Http::SetPreservePathSeparators(options.httpOptions.preservePathSeparators);
         Aws::Http::InitHttp();
         Aws::InitializeEnumOverflowContainer();
+#ifndef NON_LEGACY_BUILD
         cJSON_AS4CPP_Hooks hooks;
         hooks.malloc_fn = [](size_t sz) { return Aws::Malloc("cJSON_AS4CPP_Tag", sz); };
         hooks.free_fn = Aws::Free;
         cJSON_AS4CPP_InitHooks(&hooks);
+#endif
         Aws::Net::InitNetwork();
         Aws::Internal::InitEC2MetadataClient();
         Aws::Monitoring::InitMonitoring(options.monitoringOptions.customizedMonitoringFactory_create_fn);

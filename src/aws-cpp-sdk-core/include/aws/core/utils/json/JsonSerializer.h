@@ -11,7 +11,12 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/core/utils/memory/stl/AWSMap.h>
+
+#ifdef NON_LEGACY_BUILD
+struct aws_json_value;
+#else
 #include <aws/core/external/cjson/cJSON.h>
+#endif
 
 #include <utility>
 
@@ -229,8 +234,13 @@ namespace Aws
 
             private:
                 void Destroy();
+#ifdef NON_LEGACY_BUILD
+                JsonValue(aws_json_value* value);
+                aws_json_value* m_value;
+#else
                 JsonValue(cJSON* value);
                 cJSON* m_value;
+#endif
                 bool m_wasParseSuccessful;
                 Aws::String m_errorMessage;
                 friend class JsonView;
@@ -394,9 +404,17 @@ namespace Aws
                 JsonValue Materialize() const;
 
             private:
+#ifdef NON_LEGACY_BUILD
+            public:
+                JsonView(const aws_json_value* val);
+                JsonView& operator=(const aws_json_value* val);
+            private:
+                const aws_json_value* m_value;
+#else
                 JsonView(cJSON* val);
                 JsonView& operator=(cJSON* val);
                 cJSON* m_value;
+#endif
                 friend class Aws::Utils::Document;
             };
 

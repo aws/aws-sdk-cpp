@@ -11,6 +11,11 @@
 #include <aws/core/utils/memory/stl/AWSStreamFwd.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 
+#ifdef NON_LEGACY_BUILD
+#include <aws/core/utils/memory/stl/AWSVector.h>
+#include <aws/core/utils/memory/stl/AWSMap.h>
+#include <memory>
+#else
 namespace Aws
 {
     namespace External
@@ -23,6 +28,7 @@ namespace Aws
         } // namespace tinyxml2
     } // namespace External
 } // namespace Aws
+#endif
 
 namespace Aws
 {
@@ -134,6 +140,16 @@ namespace Aws
                 bool IsNull();
 
             private:
+#ifdef NON_LEGACY_BUILD
+            public:
+                struct NodeData;
+            private:
+                XmlNode(std::shared_ptr<NodeData> node, const XmlDocument& document) :
+                    m_nodeData(std::move(node)), m_doc(&document)
+                {
+                }
+                std::shared_ptr<NodeData> m_nodeData;
+#else
                 XmlNode(Aws::External::tinyxml2::XMLNode* node, const XmlDocument& document) :
                     m_node(node), m_doc(&document)
                 {
@@ -143,6 +159,7 @@ namespace Aws
                 //confused about which assignment operator to call. Do not... I repeat... do not delete
                 //these pointers in your destructor.
                 Aws::External::tinyxml2::XMLNode* m_node = nullptr;
+#endif
                 const XmlDocument* m_doc = nullptr;
 
                 friend class XmlDocument;
@@ -198,9 +215,15 @@ namespace Aws
                 static XmlDocument CreateWithRootNode(const Aws::String&);
 
             private:
+#ifdef NON_LEGACY_BUILD
+            public:
+                struct DocData;
+            private:
+                std::shared_ptr<DocData> m_data;
+#else
                 void InitDoc();
-
                 Aws::External::tinyxml2::XMLDocument* m_doc = nullptr;
+#endif
 
                 friend class XmlNode;
 

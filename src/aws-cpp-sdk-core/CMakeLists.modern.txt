@@ -1,0 +1,292 @@
+# Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# SPDX-License-Identifier: Apache-2.0.
+#
+# Modern CMakeLists for aws-cpp-sdk-core (used when LEGACY_BUILD=OFF).
+
+# -- Version configuration --
+set(AWSSDK_VERSION_MAJOR ${PROJECT_VERSION_MAJOR})
+set(AWSSDK_VERSION_MINOR ${PROJECT_VERSION_MINOR})
+set(AWSSDK_VERSION_PATCH ${PROJECT_VERSION_PATCH})
+
+set(aws-cpp-sdk_VERSION_STRING "${PROJECT_VERSION}")
+set(aws-cpp-sdk_VERSION_MAJOR "${PROJECT_VERSION_MAJOR}")
+set(aws-cpp-sdk_VERSION_MINOR "${PROJECT_VERSION_MINOR}")
+set(aws-cpp-sdk_VERSION_PATCH "${PROJECT_VERSION_PATCH}")
+if(DEFINED aws-cpp-sdk_GIT_HASH)
+    set(aws-cpp-sdk_GIT_HASH "${aws-cpp-sdk_GIT_HASH}")
+else()
+    set(aws-cpp-sdk_GIT_HASH "")
+endif()
+
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/VersionConfig.h.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/include/aws/core/VersionConfig.h"
+    NEWLINE_STYLE UNIX)
+
+# Memory management config
+if(AWS_SDK_CUSTOM_MEMORY_MANAGEMENT OR (BUILD_SHARED_LIBS AND NOT DEFINED AWS_SDK_CUSTOM_MEMORY_MANAGEMENT))
+    set(USE_AWS_MEMORY_MANAGEMENT ON)
+else()
+    set(USE_AWS_MEMORY_MANAGEMENT OFF)
+endif()
+
+configure_file(
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/aws/core/SDKConfig.h.in"
+    "${CMAKE_CURRENT_BINARY_DIR}/include/aws/core/SDKConfig.h"
+    NEWLINE_STYLE UNIX)
+
+# -- Collect sources --
+# Common sources (all platforms)
+file(GLOB_RECURSE CORE_COMMON_SOURCES
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/*.cpp"
+)
+
+# Remove platform-specific directories — we'll add the right ones below
+set(_platform_dirs
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/windows"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/android"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/aix"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/net/linux-shared"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/http/crt"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/smithy/tracing/impl"
+)
+foreach(_dir ${_platform_dirs})
+    file(GLOB_RECURSE _remove "${_dir}/*.cpp")
+    if(_remove)
+        list(REMOVE_ITEM CORE_COMMON_SOURCES ${_remove})
+    endif()
+endforeach()
+
+# Remove embedded cJSON (replaced by CRT JSON from aws-c-common)
+file(GLOB_RECURSE _cjson_src "${CMAKE_CURRENT_SOURCE_DIR}/source/external/cjson/*.cpp")
+if(_cjson_src)
+    list(REMOVE_ITEM CORE_COMMON_SOURCES ${_cjson_src})
+endif()
+
+# Remove embedded tinyxml2 (replaced by CRT XML parser from aws-c-common)
+file(GLOB_RECURSE _tinyxml2_src "${CMAKE_CURRENT_SOURCE_DIR}/source/external/tinyxml2/*.cpp")
+if(_tinyxml2_src)
+    list(REMOVE_ITEM CORE_COMMON_SOURCES ${_tinyxml2_src})
+endif()
+
+# Remove legacy cJSON/tinyxml2-based implementations (replaced by *_crt.cpp)
+set(_legacy_json_files
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/json/JsonSerializer.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/Document.cpp"
+    "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/xml/XmlSerializer.cpp"
+)
+foreach(_f ${_legacy_json_files})
+    list(REMOVE_ITEM CORE_COMMON_SOURCES ${_f})
+endforeach()
+
+# The base source/net/*.cpp files are stubs; platform dirs provide the real impl
+file(GLOB _net_base "${CMAKE_CURRENT_SOURCE_DIR}/source/net/*.cpp")
+if(_net_base)
+    list(REMOVE_ITEM CORE_COMMON_SOURCES ${_net_base})
+endif()
+
+# Platform sources
+if(AWS_SDK_PLATFORM STREQUAL "WINDOWS")
+    file(GLOB _platform_src "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/windows/*.cpp")
+    file(GLOB _net_src "${CMAKE_CURRENT_SOURCE_DIR}/source/net/windows/*.cpp")
+elseif(AWS_SDK_PLATFORM STREQUAL "LINUX" OR AWS_SDK_PLATFORM STREQUAL "APPLE")
+    file(GLOB _platform_src "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/linux-shared/*.cpp")
+    file(GLOB _net_src "${CMAKE_CURRENT_SOURCE_DIR}/source/net/linux-shared/*.cpp")
+elseif(AWS_SDK_PLATFORM STREQUAL "ANDROID")
+    file(GLOB _platform_src "${CMAKE_CURRENT_SOURCE_DIR}/source/platform/android/*.cpp")
+    file(GLOB _net_src "${CMAKE_CURRENT_SOURCE_DIR}/source/net/linux-shared/*.cpp")
+endif()
+
+# HTTP client sources
+if(AWS_SDK_HTTP_CLIENT STREQUAL "curl")
+    file(GLOB _http_client_src "${CMAKE_CURRENT_SOURCE_DIR}/source/http/curl/*.cpp")
+elseif(AWS_SDK_HTTP_CLIENT STREQUAL "crt")
+    file(GLOB _http_client_src "${CMAKE_CURRENT_SOURCE_DIR}/source/http/crt/*.cpp")
+elseif(AWS_SDK_HTTP_CLIENT STREQUAL "winhttp" OR AWS_SDK_HTTP_CLIENT STREQUAL "ixmlhttprequest2")
+    file(GLOB _http_client_src "${CMAKE_CURRENT_SOURCE_DIR}/source/http/windows/*.cpp")
+endif()
+
+# Crypto sources (CRT-based)
+if(NOT AWS_SDK_CRYPTO STREQUAL "none")
+    file(GLOB _crypto_crt_src "${CMAKE_CURRENT_SOURCE_DIR}/source/utils/crypto/crt/*.cpp")
+endif()
+
+set(CORE_ALL_SOURCES
+    ${CORE_COMMON_SOURCES}
+    ${_platform_src}
+    ${_net_src}
+    ${_http_client_src}
+    ${_crypto_crt_src}
+)
+
+# -- Collect headers --
+file(GLOB_RECURSE CORE_PUBLIC_HEADERS
+    "${CMAKE_CURRENT_SOURCE_DIR}/include/*.h"
+)
+
+# -- Create library target --
+add_library(aws-cpp-sdk-core ${CORE_ALL_SOURCES} ${CORE_PUBLIC_HEADERS})
+add_library(AWS::aws-cpp-sdk-core ALIAS aws-cpp-sdk-core)
+
+# -- Include directories --
+target_include_directories(aws-cpp-sdk-core
+    PUBLIC
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}/include>
+        $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+        $<INSTALL_INTERFACE:include>
+)
+
+# -- Version definitions --
+target_compile_definitions(aws-cpp-sdk-core PUBLIC
+    "AWS_SDK_VERSION_MAJOR=${AWSSDK_VERSION_MAJOR}"
+    "AWS_SDK_VERSION_MINOR=${AWSSDK_VERSION_MINOR}"
+    "AWS_SDK_VERSION_PATCH=${AWSSDK_VERSION_PATCH}"
+)
+
+# -- Apply compiler settings, platform defs, option defs --
+aws_sdk_set_compiler_options(aws-cpp-sdk-core)
+aws_sdk_apply_platform_definitions(aws-cpp-sdk-core)
+aws_sdk_apply_option_definitions(aws-cpp-sdk-core)
+
+# -- Symbol visibility --
+set_target_properties(aws-cpp-sdk-core PROPERTIES
+    CXX_VISIBILITY_PRESET hidden
+    VISIBILITY_INLINES_HIDDEN YES
+    VERSION ${PROJECT_VERSION}
+    SOVERSION ${PROJECT_VERSION_MAJOR}
+)
+
+# -- Link dependencies --
+# CRT (always required)
+# When built from source (FetchContent/add_subdirectory), target is "aws-crt-cpp".
+# When found via find_package, target is "AWS::aws-crt-cpp".
+if(TARGET AWS::aws-crt-cpp)
+    target_link_libraries(aws-cpp-sdk-core PUBLIC AWS::aws-crt-cpp)
+elseif(TARGET aws-crt-cpp)
+    target_link_libraries(aws-cpp-sdk-core PUBLIC aws-crt-cpp)
+else()
+    message(FATAL_ERROR "aws-crt-cpp target not found")
+endif()
+
+# Platform system libraries
+aws_sdk_get_platform_libs(_platform_libs)
+if(_platform_libs)
+    target_link_libraries(aws-cpp-sdk-core PRIVATE ${_platform_libs})
+endif()
+
+# HTTP client libraries
+if(AWS_SDK_HTTP_CLIENT STREQUAL "curl")
+    target_link_libraries(aws-cpp-sdk-core PRIVATE CURL::libcurl)
+elseif(AWS_SDK_HTTP_CLIENT STREQUAL "winhttp")
+    target_link_libraries(aws-cpp-sdk-core PRIVATE Wininet winhttp)
+elseif(AWS_SDK_HTTP_CLIENT STREQUAL "ixmlhttprequest2")
+    target_link_libraries(aws-cpp-sdk-core PRIVATE msxml6 runtimeobject)
+endif()
+
+# Zlib
+if(AWS_SDK_HAS_ZLIB)
+    target_link_libraries(aws-cpp-sdk-core PRIVATE ZLIB::ZLIB)
+    # When zlib is built from source via FetchContent, add its include dirs
+    if(TARGET zlibstatic)
+        target_include_directories(aws-cpp-sdk-core PRIVATE
+            "${zlib_SOURCE_DIR}" "${zlib_BINARY_DIR}")
+    endif()
+endif()
+
+# -- aligned_alloc check --
+include(CheckCXXSourceCompiles)
+check_cxx_source_compiles("
+    #include <stdlib.h>
+    int main() { void* p = aligned_alloc(24, 64); return 0; }
+" AWS_HAS_ALIGNED_ALLOC)
+if(AWS_HAS_ALIGNED_ALLOC)
+    target_compile_definitions(aws-cpp-sdk-core PRIVATE AWS_HAS_ALIGNED_ALLOC)
+endif()
+
+# -- pathconf / umask checks --
+include(CheckCXXSymbolExists)
+check_cxx_symbol_exists("pathconf" "unistd.h" HAS_PATHCONF)
+if(HAS_PATHCONF)
+    target_compile_definitions(aws-cpp-sdk-core PRIVATE HAS_PATHCONF)
+endif()
+check_cxx_symbol_exists("umask" "sys/stat.h" HAS_UMASK)
+if(HAS_UMASK)
+    target_compile_definitions(aws-cpp-sdk-core PRIVATE HAS_UMASK)
+endif()
+
+# -- curl HTTP/2 check --
+if(AWS_SDK_HTTP_CLIENT STREQUAL "curl")
+    set(CMAKE_REQUIRED_LIBRARIES CURL::libcurl)
+    check_cxx_source_compiles("
+        #include <curl/curl.h>
+        int main() { CURL* h = curl_easy_init(); return curl_easy_setopt(h, CURLOPT_HTTP_VERSION, CURL_HTTP_VERSION_2_0); }
+    " CURL_HAS_H2)
+    if(CURL_HAS_H2)
+        target_compile_definitions(aws-cpp-sdk-core PRIVATE CURL_HAS_H2)
+    endif()
+    check_cxx_source_compiles("
+        #include <curl/curl.h>
+        int main() { CURL* h = curl_easy_init(); return curl_easy_setopt(h, CURLOPT_PROXY_SSLCERT, \"c.pem\"); }
+    " CURL_HAS_TLS_PROXY)
+    if(CURL_HAS_TLS_PROXY)
+        target_compile_definitions(aws-cpp-sdk-core PRIVATE CURL_HAS_TLS_PROXY)
+    endif()
+    unset(CMAKE_REQUIRED_LIBRARIES)
+    target_compile_definitions(aws-cpp-sdk-core PRIVATE ENABLE_CURL_LOGGING)
+endif()
+
+# -- Install --
+include(GNUInstallDirs)
+include(CMakePackageConfigHelpers)
+
+install(TARGETS aws-cpp-sdk-core
+    EXPORT aws-cpp-sdk-core-targets
+    ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+    RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+    INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+)
+
+# Install public headers preserving directory structure
+install(DIRECTORY "${CMAKE_CURRENT_SOURCE_DIR}/include/"
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    FILES_MATCHING PATTERN "*.h"
+)
+
+# Install generated headers
+install(DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/include/"
+    DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    FILES_MATCHING PATTERN "*.h"
+)
+
+# Export targets
+install(EXPORT aws-cpp-sdk-core-targets
+    FILE aws-cpp-sdk-core-targets.cmake
+    NAMESPACE AWS::
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/aws-cpp-sdk-core
+)
+
+write_basic_package_version_file(
+    "${CMAKE_CURRENT_BINARY_DIR}/aws-cpp-sdk-core-config-version.cmake"
+    VERSION ${PROJECT_VERSION}
+    COMPATIBILITY AnyNewerVersion
+)
+
+# Config file for find_package
+file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/aws-cpp-sdk-core-config.cmake"
+    "include(CMakeFindDependencyMacro)\n"
+    "find_dependency(aws-crt-cpp)\n"
+    "if(NOT TARGET AWS::aws-cpp-sdk-core)\n"
+    "  include(\"\${CMAKE_CURRENT_LIST_DIR}/aws-cpp-sdk-core-targets.cmake\")\n"
+    "endif()\n"
+)
+
+install(FILES
+    "${CMAKE_CURRENT_BINARY_DIR}/aws-cpp-sdk-core-config.cmake"
+    "${CMAKE_CURRENT_BINARY_DIR}/aws-cpp-sdk-core-config-version.cmake"
+    DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/aws-cpp-sdk-core
+)

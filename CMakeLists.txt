@@ -2,7 +2,7 @@
 # SPDX-License-Identifier: Apache-2.0.
 #
 
-cmake_minimum_required(VERSION 3.13 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
 option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
@@ -361,87 +361,76 @@ if (LEGACY_BUILD)
         ADD_CUSTOM_TARGET(uninstall-awssdk "${CMAKE_COMMAND}" -P "${AWS_NATIVE_SDK_ROOT}/cmake/make_uninstall.cmake")
     endif ()
 else () #  End of Legacy Build
-    # -- Preamble --
-    message(STATUS "Building with new CMake scripts.")
-    string(CONCAT DESCRIPTION_STRING "The AWS SDK for C++ provides a modern C++ (standard version C++11 or later) "
-            "interface for Amazon Web Services (AWS).")
+    # ==========================================================================
+    # Modern (non-legacy) build path
+    # ==========================================================================
+    message(STATUS "Building with modern CMake scripts (LEGACY_BUILD=OFF).")
 
     list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_LIST_DIR}/cmake")
 
-    find_package(Git QUIET) # Adding development helper tools as git_hash built when available.
-
+    # -- Project version --
+    find_package(Git QUIET)
     include(project_version)
     obtain_project_version(SDK_PROJECT_VERSION aws-cpp-sdk_GIT_HASH)
 
     project("aws-cpp-sdk"
-            LANGUAGES CXX
-            VERSION ${SDK_PROJECT_VERSION}
-            DESCRIPTION ${DESCRIPTION_STRING}
-            HOMEPAGE_URL "https://docs.aws.amazon.com/sdk-for-cpp"
-            )
-    include(CTest)
+        LANGUAGES CXX C
+        VERSION ${SDK_PROJECT_VERSION}
+        DESCRIPTION "The AWS SDK for C++ provides a modern C++ interface for Amazon Web Services."
+        HOMEPAGE_URL "https://docs.aws.amazon.com/sdk-for-cpp"
+    )
 
-    # -- Project wide setup --
-    # Setting C++ minimum requirements
-    set(CMAKE_CXX_STANDARD 11)
-    set(CMAKE_CXX_EXTENSIONS OFF)
-    set(CMAKE_CXX_STANDARD_REQUIRED ON)
+    # -- Load modern modules --
+    include(aws_sdk_options)
+    include(aws_sdk_platform)
+    include(aws_sdk_compiler)
+    include(fetch_dependencies)
 
-    # Setting flags for telling compiler this is a non-legacy build
-    add_definitions(-DNON_LEGACY_BUILD)
-
-    # Setting build to hide symbols in targets by default
+    # -- Global project settings --
     set(CMAKE_CXX_VISIBILITY_PRESET hidden)
     set(CMAKE_VISIBILITY_INLINES_HIDDEN YES)
-
-    # Preventing writes to package registry by default
     set(CMAKE_EXPORT_NO_PACKAGE_REGISTRY YES)
 
-    # Validating config type and setting default if needed
-    get_property(is_multi_conf_build GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
-    if (NOT is_multi_conf_build)
-        set(allowed_build_types Debug Release RelWithDebInfo MinSizeRel)
-        # cmake-gui helper
-        set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "${allowed_build_types}")
-        if (NOT CMAKE_BUILD_TYPE)
-            message(STATUS "Setting build type to 'RelWithDebInfo' as none was specified.")
-            set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "Choose the type of build." FORCE)
-        elseif (NOT CMAKE_BUILD_TYPE IN_LIST allowed_build_types)
+    # Validate build type for single-config generators
+    get_property(_is_multi_config GLOBAL PROPERTY GENERATOR_IS_MULTI_CONFIG)
+    if(NOT _is_multi_config)
+        set(_allowed_types Debug Release RelWithDebInfo MinSizeRel)
+        set_property(CACHE CMAKE_BUILD_TYPE PROPERTY STRINGS "${_allowed_types}")
+        if(NOT CMAKE_BUILD_TYPE)
+            message(STATUS "Defaulting CMAKE_BUILD_TYPE to RelWithDebInfo.")
+            set(CMAKE_BUILD_TYPE "RelWithDebInfo" CACHE STRING "Build type" FORCE)
+        elseif(NOT CMAKE_BUILD_TYPE IN_LIST _allowed_types)
             message(FATAL_ERROR "Unknown build type: ${CMAKE_BUILD_TYPE}")
-        endif ()
-    endif ()
+        endif()
+    endif()
 
-    # Options definition
-    option(BUILD_TESTING "If enabled, the SDK will include tests in the build" OFF)
+    # -- Resolve auto-detected options --
+    aws_sdk_resolve_http_client()
 
-    # Next to be included
-    #    # -- Dependencies --
-    #    include(dependencies)
+    # -- Fetch / find CRT dependencies --
+    aws_sdk_fetch_dependencies()
 
-    # Configuring the encryption tools used
+    # -- Find external dependencies (curl, zlib, etc.) --
+    aws_sdk_find_external_dependencies()
 
-    #    # -- main build targets --
-    #    add_subdirectory(src)
-    #    add_subdirectory(generated)
+    # -- Build core library --
+    # The modern core uses its own CMakeLists.modern.txt
+    # We include it directly since the legacy CMakeLists.txt is still in the same directory
+    add_subdirectory(src/aws-cpp-sdk-core ${CMAKE_BINARY_DIR}/aws-cpp-sdk-core)
 
-    # -- Tests and packaging if running this as top project --
-    #    if (CMAKE_SOURCE_DIR STREQUAL CMAKE_CURRENT_SOURCE_DIR)
-    #        # Testing Dependencies
-    #        if (BUILD_TESTING)
-    #            add_subdirectory(tests)
-    #        endif ()
-    #        add_subdirectory(packaging)
-    #    endif ()
+    message(STATUS "Modern build: aws-cpp-sdk-core configured.")
+    message(STATUS "  Platform:    ${AWS_SDK_PLATFORM}")
+    message(STATUS "  HTTP client: ${AWS_SDK_HTTP_CLIENT}")
+    message(STATUS "  Crypto:      ${AWS_SDK_CRYPTO}")
+    message(STATUS "  Shared libs: ${BUILD_SHARED_LIBS}")
 
-    # Adding integration tests build and run
-    # Adding end-points tests build and run
-    # Add support for static analysis
-    # Building client libraries.
-    # Doc generation review
-    # Add support support for old SDK build flags
-    # Add previously available options.
+    # -- Test dependencies (gated behind AWS_SDK_ENABLE_TESTING) --
+    if(AWS_SDK_ENABLE_TESTING)
+        include(fetch_test_dependencies)
+        aws_sdk_fetch_test_dependencies()
+    endif()
 
-    message(WARNING "This is work in progress build script. No SDK is built so far."
-            "If you need to build the SDK, you need to use LEGACY_BUILD mode at this time. "
-            )
+    # TODO (Phase 3): Add generated service clients via add_subdirectory(generated/src/aws-cpp-sdk-<service>)
+    # TODO (Phase 4): Add test targets when AWS_SDK_ENABLE_TESTING is ON
+    # TODO (Phase 5): Add CPack packaging support
 endif ()
