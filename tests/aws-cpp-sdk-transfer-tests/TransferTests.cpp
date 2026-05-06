@@ -2326,7 +2326,12 @@ TEST_P(TransferTests, TransferManager_TestRelativePrefix)
                 {R"(./)", R"(./.../foo)", true},
                 {R"(./)", R"(./.../../foo)", true},
                 {R"(./)", R"(.//.../../foo)", true},
-                {R"(./)", R"(.////../test)", false}
+                {R"(./)", R"(.////../test)", false},
+
+                {R"(/home/user/dl)", R"(/home/user/dl/safe/../../etc/passwd)", false},
+                {R"(/home/user/dl)", R"(/home/user/dl/x/../../../etc/passwd)", false},
+                {R"(/home/user/dl)", R"(/home/user/dl/a/b/c/../../../../etc/passwd)", false},
+                {R"(/tmp/download)", R"(/tmp/download/subdir/../../../../../../etc/cron.d/evil)", false}
             };
 
     for(const TestHelperTransferManager::TestCaseEntry& TC_ENTRY : TEST_CASES)
