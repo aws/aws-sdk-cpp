@@ -41,6 +41,49 @@ function(aws_sdk_add_service_client _target _source_dir)
     endif()
 
     aws_sdk_set_compiler_options(${_target})
+
+    # -- Install rules --
+    include(GNUInstallDirs)
+    install(TARGETS ${_target}
+        EXPORT ${_target}-targets
+        ARCHIVE DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        LIBRARY DESTINATION ${CMAKE_INSTALL_LIBDIR}
+        RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
+        INCLUDES DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+    )
+
+    install(DIRECTORY "${_source_dir}/include/"
+        DESTINATION ${CMAKE_INSTALL_INCLUDEDIR}
+        FILES_MATCHING PATTERN "*.h"
+    )
+
+    install(EXPORT ${_target}-targets
+        FILE ${_target}-targets.cmake
+        NAMESPACE AWS::
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${_target}
+    )
+
+    include(CMakePackageConfigHelpers)
+    write_basic_package_version_file(
+        "${CMAKE_CURRENT_BINARY_DIR}/${_target}-config-version.cmake"
+        VERSION ${PROJECT_VERSION}
+        COMPATIBILITY AnyNewerVersion
+    )
+
+    # Generate per-service config file
+    file(WRITE "${CMAKE_CURRENT_BINARY_DIR}/${_target}-config.cmake"
+        "include(CMakeFindDependencyMacro)\n"
+        "find_dependency(aws-cpp-sdk-core)\n"
+        "if(NOT TARGET AWS::${_target})\n"
+        "  include(\"\${CMAKE_CURRENT_LIST_DIR}/${_target}-targets.cmake\")\n"
+        "endif()\n"
+    )
+
+    install(FILES
+        "${CMAKE_CURRENT_BINARY_DIR}/${_target}-config.cmake"
+        "${CMAKE_CURRENT_BINARY_DIR}/${_target}-config-version.cmake"
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/${_target}
+    )
 endfunction()
 
 # ---------------------------------------------------------------------------

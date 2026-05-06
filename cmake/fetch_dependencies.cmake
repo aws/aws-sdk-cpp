@@ -11,8 +11,8 @@
 include_guard(GLOBAL)
 include(FetchContent)
 
-# Pin to the same version as prefetch_crt_dependency.sh
-set(AWS_CRT_CPP_VERSION "v0.38.6" CACHE STRING "aws-crt-cpp version tag to fetch")
+# Pin to exact commit SHA for supply chain security (corresponds to v0.38.6)
+set(AWS_CRT_CPP_VERSION "bd19f640464f22b666660fe724531a6819f80c25" CACHE STRING "aws-crt-cpp commit SHA to fetch")
 
 option(USE_INSTALLED_CRT
     "Use a pre-installed aws-crt-cpp via find_package instead of building from source" OFF)
@@ -40,7 +40,6 @@ function(aws_sdk_fetch_dependencies)
         aws-crt-cpp
         GIT_REPOSITORY https://github.com/awslabs/aws-crt-cpp.git
         GIT_TAG        ${AWS_CRT_CPP_VERSION}
-        GIT_SHALLOW    TRUE
         GIT_SUBMODULES_RECURSE TRUE
     )
 

@@ -9,16 +9,16 @@ include(CheckCXXSourceCompiles)
 include(CMakePushCheckState)
 
 # -- Platform detection --
-if(CMAKE_HOST_WIN32)
+if(WIN32)
     set(AWS_SDK_PLATFORM "WINDOWS")
-elseif(CMAKE_HOST_APPLE)
+elseif(APPLE)
     set(AWS_SDK_PLATFORM "APPLE")
     set(CMAKE_MACOSX_RPATH TRUE)
     set(CMAKE_INSTALL_RPATH "@executable_path")
-elseif(CMAKE_HOST_UNIX)
+elseif(UNIX)
     set(AWS_SDK_PLATFORM "LINUX")
 else()
-    message(FATAL_ERROR "Unsupported host OS")
+    message(FATAL_ERROR "Unsupported target OS")
 endif()
 
 # Allow override via TARGET_ARCH for cross-compilation

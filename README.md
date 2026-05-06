@@ -49,7 +49,67 @@ AWS SDK for C++ is now in General Availability and recommended for production us
 
    **_NOTE:_** BUILD_ONLY is an optional flag used to list only the services you are using. Building the whole SDK can take a long time. Also, check out the list of [CMake parameters](./docs/CMake_Parameters.md)
 
-#### Other Dependencies:
+### Modern Build (Recommended)
+
+The modern build (`-DLEGACY_BUILD=OFF`) is the recommended way to build and consume the SDK. It uses CMake's FetchContent to automatically acquire the AWS Common Runtime (CRT), eliminating the need for system-installed curl, OpenSSL, or zlib.
+
+**Minimum requirements:** CMake 3.14+, C++14 compiler.
+
+#### Building the SDK:
+
+```sh
+mkdir build && cd build
+cmake <path-to-source> \
+  -DLEGACY_BUILD=OFF \
+  -DBUILD_ONLY="s3;dynamodb" \
+  -DCMAKE_BUILD_TYPE=Release \
+  -DCMAKE_INSTALL_PREFIX=<install-path>
+cmake --build . --config=Release
+cmake --install . --config=Release
+```
+
+> **Note:** `BUILD_ONLY` is **required** in the modern build. Specify services as a semicolon-separated list (e.g., `"s3;dynamodb;sts"`).
+
+#### Consuming via FetchContent (Recommended):
+
+The recommended way to use the SDK in your project is via CMake FetchContent:
+
+```cmake
+cmake_minimum_required(VERSION 3.14)
+project(my_app)
+
+include(FetchContent)
+FetchContent_Declare(
+  aws-sdk-cpp
+  GIT_REPOSITORY https://github.com/aws/aws-sdk-cpp.git
+  GIT_TAG        <release-tag>
+)
+set(LEGACY_BUILD OFF CACHE BOOL "")
+set(BUILD_ONLY "s3" CACHE STRING "")
+FetchContent_MakeAvailable(aws-sdk-cpp)
+
+add_executable(my_app main.cpp)
+target_link_libraries(my_app PRIVATE aws-cpp-sdk-s3 aws-cpp-sdk-core)
+```
+
+This approach handles all dependencies automatically — no system packages required beyond a C++14 compiler and CMake 3.14+.
+
+#### Tested Configurations:
+
+| Platform | Compiler | CMake | Status |
+|----------|----------|-------|--------|
+| Amazon Linux 2023 | GCC 11+ | 3.22+ | ✅ Supported |
+| Ubuntu 22.04 | GCC 11+ / Clang 14+ | 3.22+ | ✅ Supported |
+| macOS 13+ | Apple Clang 14+ | 3.24+ | ✅ Supported |
+| Windows | MSVC 2019+ | 3.20+ | ✅ Supported |
+
+#### Legacy build:
+
+The legacy build (`-DLEGACY_BUILD=ON`, the default) remains available for backward compatibility. See the sections below for legacy build instructions.
+
+---
+
+#### Other Dependencies (Legacy Build):
 To compile in Linux, you must have the header files for libcurl, libopenssl. The packages are typically available in your package manager.
 
 Debian based Linux distributions example:

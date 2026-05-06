@@ -4,7 +4,7 @@
 
 cmake_minimum_required(VERSION 3.14 FATAL_ERROR)
 
-option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" OFF)
+option(LEGACY_BUILD "If enabled, the SDK will use 1.11.0 version of CMake files to build" ON)
 if (LEGACY_BUILD)
     message(WARNING "In 1.11 releases, we are releasing experimental alternative building mode."
             "By setting -DLEGACY_BUILD=OFF you can test our advances in modern CMake building and "
@@ -438,6 +438,11 @@ else () #  End of Legacy Build
         add_subdirectory(tests/testing-resources ${CMAKE_BINARY_DIR}/testing-resources)
         add_subdirectory(tests/aws-cpp-sdk-core-tests ${CMAKE_BINARY_DIR}/aws-cpp-sdk-core-tests)
     endif()
+
+    # -- Install AWSSDK backward-compatibility shim --
+    include(GNUInstallDirs)
+    install(FILES "${CMAKE_CURRENT_SOURCE_DIR}/cmake/modern/AWSSDKConfig.cmake"
+        DESTINATION ${CMAKE_INSTALL_LIBDIR}/cmake/AWSSDK)
 
     # -- CPack source distribution --
     include(aws_sdk_packaging)
