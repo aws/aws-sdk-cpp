@@ -1,0 +1,56 @@
+name: Modern Build Matrix
+
+on:
+  pull_request:
+    paths:
+      - 'CMakeLists.txt'
+      - 'cmake/**'
+      - 'src/aws-cpp-sdk-core/**'
+  push:
+    branches: [main]
+    paths:
+      - 'CMakeLists.txt'
+      - 'cmake/**'
+      - 'src/aws-cpp-sdk-core/**'
+
+concurrency:
+  group: modern-build-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  load-matrix:
+    runs-on: ubuntu-latest
+    outputs:
+      matrix: ${{ steps.set.outputs.matrix }}
+    steps:
+      - uses: actions/checkout@v4
+      - id: set
+        run: echo "matrix=$(jq -c . tools/CI/build-matrix.json)" >> "$GITHUB_OUTPUT"
+
+  build:
+    needs: load-matrix
+    strategy:
+      fail-fast: false
+      matrix:
+        include: ${{ fromJson(needs.load-matrix.outputs.matrix) }}
+    runs-on: ${{ matrix.os }}
+    container: ${{ matrix.container || '' }}
+    name: ${{ matrix.platform }}
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+
+      - name: Install dependencies (AL2)
+        if: matrix.container == 'amazonlinux:2'
+        run: yum install -y cmake3 gcc-c++ git libcurl-devel openssl-devel
+
+      - name: Install dependencies (Android)
+        if: contains(matrix.cmake_args, 'TARGET_ARCH=ANDROID')
+        uses: android-actions/setup-android@v3
+
+      - name: Configure
+        run: cmake -B build -DLEGACY_BUILD=OFF ${{ matrix.cmake_args }} -DCMAKE_BUILD_TYPE=Release
+
+      - name: Build
+        run: cmake --build build --config Release --parallel

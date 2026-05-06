@@ -1,0 +1,7 @@
+[
+    {"platform": "al2", "os": "ubuntu-latest", "container": "amazonlinux:2", "cmake_args": "-DAWS_SDK_BUILD_ONLY=s3;dynamodb", "target": "build"},
+    {"platform": "ubuntu", "os": "ubuntu-latest", "container": null, "cmake_args": "-DAWS_SDK_BUILD_ONLY=s3", "target": "build"},
+    {"platform": "mac", "os": "macos-latest", "container": null, "cmake_args": "-DAWS_SDK_BUILD_ONLY=s3", "target": "build"},
+    {"platform": "windows", "os": "windows-latest", "container": null, "cmake_args": "-DAWS_SDK_BUILD_ONLY=s3", "target": "build"},
+    {"platform": "android", "os": "ubuntu-latest", "container": null, "cmake_args": "-DAWS_SDK_BUILD_ONLY=s3 -DTARGET_ARCH=ANDROID", "target": "build"}
+]
