@@ -2692,7 +2692,15 @@ namespace
 
     TEST_F(BucketAndObjectOperationTest, TestHeadersReceivedEventHandlerFiresOnEmptyBodyResponse) {
       const String fullBucketName = CalculateBucketName(BASE_PUT_OBJECTS_BUCKET_NAME.c_str());
-      SCOPED_TRACE(Aws::String("FullBucketName ") + fullBucketName);
+      SCOPED_TRACE(Aws::String("FullBucket"
+                               "Name ") + fullBucketName);
+      CreateBucketRequest createBucketRequest;
+      createBucketRequest.SetBucket(fullBucketName);
+      createBucketRequest.SetACL(BucketCannedACL::private_);
+      CreateBucketOutcome createBucketOutcome = CreateBucket(createBucketRequest);
+      AWS_ASSERT_SUCCESS(createBucketOutcome);
+      ASSERT_TRUE(WaitForBucketToPropagate(fullBucketName, Client));
+      TagTestBucket(fullBucketName, Client);
 
       // PutObject returns 200 with headers but an empty body
       Aws::S3::Model::PutObjectRequest request;
