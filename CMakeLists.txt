@@ -439,5 +439,6 @@ else () #  End of Legacy Build
         add_subdirectory(tests/aws-cpp-sdk-core-tests ${CMAKE_BINARY_DIR}/aws-cpp-sdk-core-tests)
     endif()
 
-    # TODO (Phase 5): Add CPack packaging support
+    # -- CPack source distribution --
+    include(aws_sdk_packaging)
 endif ()
