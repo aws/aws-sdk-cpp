@@ -18,8 +18,6 @@
 namespace Aws {
 namespace Route53RecoveryControlConfig {
 
-class Route53RecoveryControlConfigClient;
-
 template <typename DerivedClient>
 class Route53RecoveryControlConfigPaginationBase {
  public:

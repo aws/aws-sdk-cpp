@@ -23,8 +23,6 @@
 namespace Aws {
 namespace ChimeSDKVoice {
 
-class ChimeSDKVoiceClient;
-
 template <typename DerivedClient>
 class ChimeSDKVoicePaginationBase {
  public:

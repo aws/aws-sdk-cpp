@@ -22,8 +22,6 @@
 namespace Aws {
 namespace SsmSap {
 
-class SsmSapClient;
-
 template <typename DerivedClient>
 class SsmSapPaginationBase {
  public:

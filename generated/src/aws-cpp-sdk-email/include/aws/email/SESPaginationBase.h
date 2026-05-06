@@ -15,8 +15,6 @@
 namespace Aws {
 namespace SES {
 
-class SESClient;
-
 template <typename DerivedClient>
 class SESPaginationBase {
  public:

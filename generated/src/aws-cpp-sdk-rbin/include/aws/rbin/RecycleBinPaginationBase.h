@@ -14,8 +14,6 @@
 namespace Aws {
 namespace RecycleBin {
 
-class RecycleBinClient;
-
 template <typename DerivedClient>
 class RecycleBinPaginationBase {
  public:

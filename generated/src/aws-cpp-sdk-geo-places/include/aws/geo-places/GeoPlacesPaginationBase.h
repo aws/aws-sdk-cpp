@@ -13,8 +13,6 @@
 namespace Aws {
 namespace GeoPlaces {
 
-class GeoPlacesClient;
-
 template <typename DerivedClient>
 class GeoPlacesPaginationBase {
  public:

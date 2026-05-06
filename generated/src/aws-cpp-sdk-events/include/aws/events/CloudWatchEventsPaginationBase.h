@@ -13,8 +13,6 @@
 namespace Aws {
 namespace CloudWatchEvents {
 
-class CloudWatchEventsClient;
-
 template <typename DerivedClient>
 class CloudWatchEventsPaginationBase {
  public:

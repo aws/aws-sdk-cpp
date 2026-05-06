@@ -14,8 +14,6 @@
 namespace Aws {
 namespace DSQL {
 
-class DSQLClient;
-
 template <typename DerivedClient>
 class DSQLPaginationBase {
  public:

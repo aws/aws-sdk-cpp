@@ -17,8 +17,6 @@
 namespace Aws {
 namespace RolesAnywhere {
 
-class RolesAnywhereClient;
-
 template <typename DerivedClient>
 class RolesAnywherePaginationBase {
  public:

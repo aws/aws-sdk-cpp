@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Translate {
 
-class TranslateClient;
-
 template <typename DerivedClient>
 class TranslatePaginationBase {
  public:

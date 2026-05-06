@@ -25,8 +25,6 @@
 namespace Aws {
 namespace XRay {
 
-class XRayClient;
-
 template <typename DerivedClient>
 class XRayPaginationBase {
  public:

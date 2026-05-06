@@ -17,8 +17,6 @@
 namespace Aws {
 namespace CodeStarconnections {
 
-class CodeStarconnectionsClient;
-
 template <typename DerivedClient>
 class CodeStarconnectionsPaginationBase {
  public:

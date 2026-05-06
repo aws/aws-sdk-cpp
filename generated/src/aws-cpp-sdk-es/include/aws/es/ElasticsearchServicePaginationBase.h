@@ -25,8 +25,6 @@
 namespace Aws {
 namespace ElasticsearchService {
 
-class ElasticsearchServiceClient;
-
 template <typename DerivedClient>
 class ElasticsearchServicePaginationBase {
  public:

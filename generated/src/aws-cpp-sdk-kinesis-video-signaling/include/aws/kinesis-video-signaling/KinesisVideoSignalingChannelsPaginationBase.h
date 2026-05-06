@@ -13,8 +13,6 @@
 namespace Aws {
 namespace KinesisVideoSignalingChannels {
 
-class KinesisVideoSignalingChannelsClient;
-
 template <typename DerivedClient>
 class KinesisVideoSignalingChannelsPaginationBase {
  public:

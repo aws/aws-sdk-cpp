@@ -25,8 +25,6 @@
 namespace Aws {
 namespace ConnectCases {
 
-class ConnectCasesClient;
-
 template <typename DerivedClient>
 class ConnectCasesPaginationBase {
  public:

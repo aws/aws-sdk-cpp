@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ChimeSDKMeetings {
 
-class ChimeSDKMeetingsClient;
-
 template <typename DerivedClient>
 class ChimeSDKMeetingsPaginationBase {
  public:

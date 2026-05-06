@@ -22,8 +22,6 @@
 namespace Aws {
 namespace CognitoIdentityProvider {
 
-class CognitoIdentityProviderClient;
-
 template <typename DerivedClient>
 class CognitoIdentityProviderPaginationBase {
  public:

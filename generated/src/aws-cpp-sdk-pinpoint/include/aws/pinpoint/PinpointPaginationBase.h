@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Pinpoint {
 
-class PinpointClient;
-
 template <typename DerivedClient>
 class PinpointPaginationBase {
  public:

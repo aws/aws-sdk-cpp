@@ -17,8 +17,6 @@
 namespace Aws {
 namespace MWAAServerless {
 
-class MWAAServerlessClient;
-
 template <typename DerivedClient>
 class MWAAServerlessPaginationBase {
  public:

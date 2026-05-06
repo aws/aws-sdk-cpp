@@ -19,8 +19,6 @@
 namespace Aws {
 namespace FIS {
 
-class FISClient;
-
 template <typename DerivedClient>
 class FISPaginationBase {
  public:

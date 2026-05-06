@@ -20,8 +20,6 @@
 namespace Aws {
 namespace Snowball {
 
-class SnowballClient;
-
 template <typename DerivedClient>
 class SnowballPaginationBase {
  public:

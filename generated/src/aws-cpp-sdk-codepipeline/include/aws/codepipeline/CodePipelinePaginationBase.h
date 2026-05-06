@@ -21,8 +21,6 @@
 namespace Aws {
 namespace CodePipeline {
 
-class CodePipelineClient;
-
 template <typename DerivedClient>
 class CodePipelinePaginationBase {
  public:

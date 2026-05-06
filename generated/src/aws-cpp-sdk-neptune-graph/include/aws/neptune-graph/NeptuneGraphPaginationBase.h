@@ -18,8 +18,6 @@
 namespace Aws {
 namespace NeptuneGraph {
 
-class NeptuneGraphClient;
-
 template <typename DerivedClient>
 class NeptuneGraphPaginationBase {
  public:

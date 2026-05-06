@@ -14,8 +14,6 @@
 namespace Aws {
 namespace AugmentedAIRuntime {
 
-class AugmentedAIRuntimeClient;
-
 template <typename DerivedClient>
 class AugmentedAIRuntimePaginationBase {
  public:

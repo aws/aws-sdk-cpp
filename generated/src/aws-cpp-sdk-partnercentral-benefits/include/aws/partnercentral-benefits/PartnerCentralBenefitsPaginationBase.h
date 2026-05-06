@@ -16,8 +16,6 @@
 namespace Aws {
 namespace PartnerCentralBenefits {
 
-class PartnerCentralBenefitsClient;
-
 template <typename DerivedClient>
 class PartnerCentralBenefitsPaginationBase {
  public:

@@ -16,8 +16,6 @@
 namespace Aws {
 namespace RTBFabric {
 
-class RTBFabricClient;
-
 template <typename DerivedClient>
 class RTBFabricPaginationBase {
  public:

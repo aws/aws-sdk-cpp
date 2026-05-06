@@ -13,8 +13,6 @@
 namespace Aws {
 namespace PinpointSMSVoice {
 
-class PinpointSMSVoiceClient;
-
 template <typename DerivedClient>
 class PinpointSMSVoicePaginationBase {
  public:

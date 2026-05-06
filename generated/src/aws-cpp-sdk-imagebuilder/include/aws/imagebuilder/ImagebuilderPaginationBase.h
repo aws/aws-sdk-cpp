@@ -34,8 +34,6 @@
 namespace Aws {
 namespace imagebuilder {
 
-class ImagebuilderClient;
-
 template <typename DerivedClient>
 class ImagebuilderPaginationBase {
  public:

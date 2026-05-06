@@ -23,8 +23,6 @@
 namespace Aws {
 namespace CodeArtifact {
 
-class CodeArtifactClient;
-
 template <typename DerivedClient>
 class CodeArtifactPaginationBase {
  public:

@@ -26,8 +26,6 @@
 namespace Aws {
 namespace Transfer {
 
-class TransferClient;
-
 template <typename DerivedClient>
 class TransferPaginationBase {
  public:

@@ -15,8 +15,6 @@
 namespace Aws {
 namespace IoTDeviceAdvisor {
 
-class IoTDeviceAdvisorClient;
-
 template <typename DerivedClient>
 class IoTDeviceAdvisorPaginationBase {
  public:

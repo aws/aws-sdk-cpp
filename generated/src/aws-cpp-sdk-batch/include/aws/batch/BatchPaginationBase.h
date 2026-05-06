@@ -23,8 +23,6 @@
 namespace Aws {
 namespace Batch {
 
-class BatchClient;
-
 template <typename DerivedClient>
 class BatchPaginationBase {
  public:

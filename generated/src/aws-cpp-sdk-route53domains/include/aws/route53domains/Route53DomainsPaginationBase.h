@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Route53Domains {
 
-class Route53DomainsClient;
-
 template <typename DerivedClient>
 class Route53DomainsPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace inspectorscan {
 
-class InspectorscanClient;
-
 template <typename DerivedClient>
 class InspectorscanPaginationBase {
  public:

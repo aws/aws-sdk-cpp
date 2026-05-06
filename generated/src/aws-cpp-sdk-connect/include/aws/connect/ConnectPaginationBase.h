@@ -99,8 +99,6 @@
 namespace Aws {
 namespace Connect {
 
-class ConnectClient;
-
 template <typename DerivedClient>
 class ConnectPaginationBase {
  public:

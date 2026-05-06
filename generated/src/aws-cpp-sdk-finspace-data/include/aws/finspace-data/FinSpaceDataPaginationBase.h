@@ -13,8 +13,6 @@
 namespace Aws {
 namespace FinSpaceData {
 
-class FinSpaceDataClient;
-
 template <typename DerivedClient>
 class FinSpaceDataPaginationBase {
  public:

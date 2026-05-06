@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SSOOIDC {
 
-class SSOOIDCClient;
-
 template <typename DerivedClient>
 class SSOOIDCPaginationBase {
  public:

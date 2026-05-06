@@ -16,8 +16,6 @@
 namespace Aws {
 namespace OAM {
 
-class OAMClient;
-
 template <typename DerivedClient>
 class OAMPaginationBase {
  public:

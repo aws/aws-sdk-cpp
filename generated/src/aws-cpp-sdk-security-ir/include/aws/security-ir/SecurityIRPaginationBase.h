@@ -18,8 +18,6 @@
 namespace Aws {
 namespace SecurityIR {
 
-class SecurityIRClient;
-
 template <typename DerivedClient>
 class SecurityIRPaginationBase {
  public:

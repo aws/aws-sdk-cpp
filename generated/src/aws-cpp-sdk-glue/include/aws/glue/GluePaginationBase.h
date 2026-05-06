@@ -59,8 +59,6 @@
 namespace Aws {
 namespace Glue {
 
-class GlueClient;
-
 template <typename DerivedClient>
 class GluePaginationBase {
  public:

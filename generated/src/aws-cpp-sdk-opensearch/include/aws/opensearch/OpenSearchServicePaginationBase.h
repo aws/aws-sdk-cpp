@@ -28,8 +28,6 @@
 namespace Aws {
 namespace OpenSearchService {
 
-class OpenSearchServiceClient;
-
 template <typename DerivedClient>
 class OpenSearchServicePaginationBase {
  public:

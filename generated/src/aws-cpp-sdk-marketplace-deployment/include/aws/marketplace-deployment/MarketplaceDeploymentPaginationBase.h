@@ -13,8 +13,6 @@
 namespace Aws {
 namespace MarketplaceDeployment {
 
-class MarketplaceDeploymentClient;
-
 template <typename DerivedClient>
 class MarketplaceDeploymentPaginationBase {
  public:

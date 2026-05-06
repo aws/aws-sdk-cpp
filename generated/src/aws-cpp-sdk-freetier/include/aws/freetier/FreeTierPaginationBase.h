@@ -15,8 +15,6 @@
 namespace Aws {
 namespace FreeTier {
 
-class FreeTierClient;
-
 template <typename DerivedClient>
 class FreeTierPaginationBase {
  public:

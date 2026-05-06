@@ -21,8 +21,6 @@
 namespace Aws {
 namespace GlueDataBrew {
 
-class GlueDataBrewClient;
-
 template <typename DerivedClient>
 class GlueDataBrewPaginationBase {
  public:

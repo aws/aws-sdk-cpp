@@ -21,8 +21,6 @@
 namespace Aws {
 namespace AgreementService {
 
-class AgreementServiceClient;
-
 template <typename DerivedClient>
 class AgreementServicePaginationBase {
  public:

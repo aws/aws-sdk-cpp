@@ -24,8 +24,6 @@
 namespace Aws {
 namespace GlobalAccelerator {
 
-class GlobalAcceleratorClient;
-
 template <typename DerivedClient>
 class GlobalAcceleratorPaginationBase {
  public:

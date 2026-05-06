@@ -181,8 +181,6 @@
 namespace Aws {
 namespace EC2 {
 
-class EC2Client;
-
 template <typename DerivedClient>
 class EC2PaginationBase {
  public:

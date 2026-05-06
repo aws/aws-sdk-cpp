@@ -14,8 +14,6 @@
 namespace Aws {
 namespace MediaStoreData {
 
-class MediaStoreDataClient;
-
 template <typename DerivedClient>
 class MediaStoreDataPaginationBase {
  public:

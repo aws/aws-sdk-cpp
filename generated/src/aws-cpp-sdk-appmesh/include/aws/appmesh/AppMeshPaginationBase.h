@@ -21,8 +21,6 @@
 namespace Aws {
 namespace AppMesh {
 
-class AppMeshClient;
-
 template <typename DerivedClient>
 class AppMeshPaginationBase {
  public:

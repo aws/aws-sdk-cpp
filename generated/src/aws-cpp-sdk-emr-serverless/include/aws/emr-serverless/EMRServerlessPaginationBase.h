@@ -17,8 +17,6 @@
 namespace Aws {
 namespace EMRServerless {
 
-class EMRServerlessClient;
-
 template <typename DerivedClient>
 class EMRServerlessPaginationBase {
  public:

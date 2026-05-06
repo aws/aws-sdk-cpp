@@ -16,8 +16,6 @@
 namespace Aws {
 namespace PCS {
 
-class PCSClient;
-
 template <typename DerivedClient>
 class PCSPaginationBase {
  public:

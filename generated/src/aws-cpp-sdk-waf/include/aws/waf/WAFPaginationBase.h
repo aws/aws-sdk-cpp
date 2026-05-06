@@ -13,8 +13,6 @@
 namespace Aws {
 namespace WAF {
 
-class WAFClient;
-
 template <typename DerivedClient>
 class WAFPaginationBase {
  public:

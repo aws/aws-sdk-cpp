@@ -19,8 +19,6 @@
 namespace Aws {
 namespace MPA {
 
-class MPAClient;
-
 template <typename DerivedClient>
 class MPAPaginationBase {
  public:

@@ -15,8 +15,6 @@
 namespace Aws {
 namespace SimSpaceWeaver {
 
-class SimSpaceWeaverClient;
-
 template <typename DerivedClient>
 class SimSpaceWeaverPaginationBase {
  public:

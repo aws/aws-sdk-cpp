@@ -16,8 +16,6 @@
 namespace Aws {
 namespace ARCZonalShift {
 
-class ARCZonalShiftClient;
-
 template <typename DerivedClient>
 class ARCZonalShiftPaginationBase {
  public:

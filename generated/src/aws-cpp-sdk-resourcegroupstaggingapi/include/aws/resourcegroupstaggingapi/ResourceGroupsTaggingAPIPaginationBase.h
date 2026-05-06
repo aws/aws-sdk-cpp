@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ResourceGroupsTaggingAPI {
 
-class ResourceGroupsTaggingAPIClient;
-
 template <typename DerivedClient>
 class ResourceGroupsTaggingAPIPaginationBase {
  public:

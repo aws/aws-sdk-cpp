@@ -24,8 +24,6 @@
 namespace Aws {
 namespace Notifications {
 
-class NotificationsClient;
-
 template <typename DerivedClient>
 class NotificationsPaginationBase {
  public:

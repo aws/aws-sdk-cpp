@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ServiceDiscovery {
 
-class ServiceDiscoveryClient;
-
 template <typename DerivedClient>
 class ServiceDiscoveryPaginationBase {
  public:

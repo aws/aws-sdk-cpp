@@ -16,8 +16,6 @@
 namespace Aws {
 namespace PartnerCentralAccount {
 
-class PartnerCentralAccountClient;
-
 template <typename DerivedClient>
 class PartnerCentralAccountPaginationBase {
  public:

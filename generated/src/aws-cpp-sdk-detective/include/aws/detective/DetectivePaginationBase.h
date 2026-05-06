@@ -18,8 +18,6 @@
 namespace Aws {
 namespace Detective {
 
-class DetectiveClient;
-
 template <typename DerivedClient>
 class DetectivePaginationBase {
  public:

@@ -42,8 +42,6 @@
 namespace Aws {
 namespace mgn {
 
-class MgnClient;
-
 template <typename DerivedClient>
 class MgnPaginationBase {
  public:

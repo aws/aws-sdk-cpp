@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Greengrass {
 
-class GreengrassClient;
-
 template <typename DerivedClient>
 class GreengrassPaginationBase {
  public:

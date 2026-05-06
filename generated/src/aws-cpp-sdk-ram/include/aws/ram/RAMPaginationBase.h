@@ -27,8 +27,6 @@
 namespace Aws {
 namespace RAM {
 
-class RAMClient;
-
 template <typename DerivedClient>
 class RAMPaginationBase {
  public:

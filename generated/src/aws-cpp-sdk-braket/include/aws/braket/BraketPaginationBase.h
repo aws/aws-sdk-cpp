@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Braket {
 
-class BraketClient;
-
 template <typename DerivedClient>
 class BraketPaginationBase {
  public:

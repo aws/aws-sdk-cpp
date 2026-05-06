@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Textract {
 
-class TextractClient;
-
 template <typename DerivedClient>
 class TextractPaginationBase {
  public:

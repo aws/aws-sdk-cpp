@@ -22,8 +22,6 @@
 namespace Aws {
 namespace AppRunner {
 
-class AppRunnerClient;
-
 template <typename DerivedClient>
 class AppRunnerPaginationBase {
  public:

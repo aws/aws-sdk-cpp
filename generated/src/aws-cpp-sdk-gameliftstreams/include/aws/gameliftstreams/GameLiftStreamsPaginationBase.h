@@ -17,8 +17,6 @@
 namespace Aws {
 namespace GameLiftStreams {
 
-class GameLiftStreamsClient;
-
 template <typename DerivedClient>
 class GameLiftStreamsPaginationBase {
  public:

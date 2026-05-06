@@ -13,8 +13,6 @@
 namespace Aws {
 namespace DAX {
 
-class DAXClient;
-
 template <typename DerivedClient>
 class DAXPaginationBase {
  public:

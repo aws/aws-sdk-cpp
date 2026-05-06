@@ -36,8 +36,6 @@
 namespace Aws {
 namespace MediaLive {
 
-class MediaLiveClient;
-
 template <typename DerivedClient>
 class MediaLivePaginationBase {
  public:

@@ -15,8 +15,6 @@
 namespace Aws {
 namespace EBS {
 
-class EBSClient;
-
 template <typename DerivedClient>
 class EBSPaginationBase {
  public:

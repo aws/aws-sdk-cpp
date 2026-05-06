@@ -14,8 +14,6 @@
 namespace Aws {
 namespace KendraRanking {
 
-class KendraRankingClient;
-
 template <typename DerivedClient>
 class KendraRankingPaginationBase {
  public:

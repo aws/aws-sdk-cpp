@@ -14,8 +14,6 @@
 namespace Aws {
 namespace BCMRecommendedActions {
 
-class BCMRecommendedActionsClient;
-
 template <typename DerivedClient>
 class BCMRecommendedActionsPaginationBase {
  public:

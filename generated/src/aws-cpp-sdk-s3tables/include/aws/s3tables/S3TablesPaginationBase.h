@@ -16,8 +16,6 @@
 namespace Aws {
 namespace S3Tables {
 
-class S3TablesClient;
-
 template <typename DerivedClient>
 class S3TablesPaginationBase {
  public:

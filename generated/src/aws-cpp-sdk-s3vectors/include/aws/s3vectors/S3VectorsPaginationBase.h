@@ -16,8 +16,6 @@
 namespace Aws {
 namespace S3Vectors {
 
-class S3VectorsClient;
-
 template <typename DerivedClient>
 class S3VectorsPaginationBase {
  public:

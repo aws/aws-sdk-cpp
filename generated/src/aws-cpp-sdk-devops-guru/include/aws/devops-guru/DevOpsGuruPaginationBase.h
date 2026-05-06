@@ -27,8 +27,6 @@
 namespace Aws {
 namespace DevOpsGuru {
 
-class DevOpsGuruClient;
-
 template <typename DerivedClient>
 class DevOpsGuruPaginationBase {
  public:

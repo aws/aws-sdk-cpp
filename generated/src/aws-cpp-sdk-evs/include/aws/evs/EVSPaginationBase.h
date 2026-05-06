@@ -18,8 +18,6 @@
 namespace Aws {
 namespace EVS {
 
-class EVSClient;
-
 template <typename DerivedClient>
 class EVSPaginationBase {
  public:

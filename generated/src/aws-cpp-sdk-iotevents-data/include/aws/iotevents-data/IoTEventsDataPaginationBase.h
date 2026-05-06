@@ -13,8 +13,6 @@
 namespace Aws {
 namespace IoTEventsData {
 
-class IoTEventsDataClient;
-
 template <typename DerivedClient>
 class IoTEventsDataPaginationBase {
  public:

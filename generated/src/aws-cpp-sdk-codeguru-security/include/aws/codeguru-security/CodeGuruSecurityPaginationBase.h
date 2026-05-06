@@ -16,8 +16,6 @@
 namespace Aws {
 namespace CodeGuruSecurity {
 
-class CodeGuruSecurityClient;
-
 template <typename DerivedClient>
 class CodeGuruSecurityPaginationBase {
  public:

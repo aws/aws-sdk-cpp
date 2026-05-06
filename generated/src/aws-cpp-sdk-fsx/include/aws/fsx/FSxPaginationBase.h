@@ -24,8 +24,6 @@
 namespace Aws {
 namespace FSx {
 
-class FSxClient;
-
 template <typename DerivedClient>
 class FSxPaginationBase {
  public:

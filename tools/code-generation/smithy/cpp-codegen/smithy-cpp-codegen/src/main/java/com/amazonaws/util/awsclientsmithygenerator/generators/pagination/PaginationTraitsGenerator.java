@@ -75,7 +75,9 @@ public class PaginationTraitsGenerator extends BaseTraitsGenerator<OperationData
         
         // Includes - detect suffix like C2J renameShape logic
         String resultSuffix = ShapeUtil.getResultSuffix(context.getModel(), op, smithyServiceName);
-        String capitalizedServiceName = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String capitalizedServiceName = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
         String requestFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + "Request";
         String resultFileName = ShapeUtil.getOperationMethodName(opName, smithyServiceName) + resultSuffix;
         String methodName = ShapeUtil.getOperationMethodName(opName, smithyServiceName);

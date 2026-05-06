@@ -27,8 +27,6 @@
 namespace Aws {
 namespace ForecastService {
 
-class ForecastServiceClient;
-
 template <typename DerivedClient>
 class ForecastServicePaginationBase {
  public:

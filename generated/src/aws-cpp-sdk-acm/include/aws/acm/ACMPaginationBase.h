@@ -15,8 +15,6 @@
 namespace Aws {
 namespace ACM {
 
-class ACMClient;
-
 template <typename DerivedClient>
 class ACMPaginationBase {
  public:

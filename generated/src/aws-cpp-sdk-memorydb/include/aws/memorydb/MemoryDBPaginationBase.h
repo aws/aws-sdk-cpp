@@ -26,8 +26,6 @@
 namespace Aws {
 namespace MemoryDB {
 
-class MemoryDBClient;
-
 template <typename DerivedClient>
 class MemoryDBPaginationBase {
  public:

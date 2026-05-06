@@ -20,8 +20,6 @@
 namespace Aws {
 namespace Health {
 
-class HealthClient;
-
 template <typename DerivedClient>
 class HealthPaginationBase {
  public:

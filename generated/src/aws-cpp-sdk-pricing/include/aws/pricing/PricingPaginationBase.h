@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Pricing {
 
-class PricingClient;
-
 template <typename DerivedClient>
 class PricingPaginationBase {
  public:

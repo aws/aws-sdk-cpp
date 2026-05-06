@@ -23,8 +23,6 @@
 namespace Aws {
 namespace ivsrealtime {
 
-class IvsrealtimeClient;
-
 template <typename DerivedClient>
 class IvsrealtimePaginationBase {
  public:

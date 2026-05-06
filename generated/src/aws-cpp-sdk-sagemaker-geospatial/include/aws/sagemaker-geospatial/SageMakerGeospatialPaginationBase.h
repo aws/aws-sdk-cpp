@@ -17,8 +17,6 @@
 namespace Aws {
 namespace SageMakerGeospatial {
 
-class SageMakerGeospatialClient;
-
 template <typename DerivedClient>
 class SageMakerGeospatialPaginationBase {
  public:

@@ -19,8 +19,6 @@
 namespace Aws {
 namespace DynamoDB {
 
-class DynamoDBClient;
-
 template <typename DerivedClient>
 class DynamoDBPaginationBase {
  public:

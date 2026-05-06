@@ -15,8 +15,6 @@
 namespace Aws {
 namespace ConnectHealth {
 
-class ConnectHealthClient;
-
 template <typename DerivedClient>
 class ConnectHealthPaginationBase {
  public:

@@ -16,8 +16,6 @@
 namespace Aws {
 namespace ServerlessApplicationRepository {
 
-class ServerlessApplicationRepositoryClient;
-
 template <typename DerivedClient>
 class ServerlessApplicationRepositoryPaginationBase {
  public:

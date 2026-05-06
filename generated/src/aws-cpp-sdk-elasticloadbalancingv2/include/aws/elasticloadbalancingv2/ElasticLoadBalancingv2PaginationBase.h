@@ -22,8 +22,6 @@
 namespace Aws {
 namespace ElasticLoadBalancingv2 {
 
-class ElasticLoadBalancingv2Client;
-
 template <typename DerivedClient>
 class ElasticLoadBalancingv2PaginationBase {
  public:

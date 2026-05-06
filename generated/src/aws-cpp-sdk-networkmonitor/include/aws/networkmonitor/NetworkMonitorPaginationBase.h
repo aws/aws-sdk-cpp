@@ -14,8 +14,6 @@
 namespace Aws {
 namespace NetworkMonitor {
 
-class NetworkMonitorClient;
-
 template <typename DerivedClient>
 class NetworkMonitorPaginationBase {
  public:

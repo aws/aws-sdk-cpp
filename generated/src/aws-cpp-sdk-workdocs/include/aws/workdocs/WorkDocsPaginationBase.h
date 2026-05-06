@@ -23,8 +23,6 @@
 namespace Aws {
 namespace WorkDocs {
 
-class WorkDocsClient;
-
 template <typename DerivedClient>
 class WorkDocsPaginationBase {
  public:

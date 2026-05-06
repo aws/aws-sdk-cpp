@@ -16,8 +16,6 @@
 namespace Aws {
 namespace WorkSpacesThinClient {
 
-class WorkSpacesThinClientClient;
-
 template <typename DerivedClient>
 class WorkSpacesThinClientPaginationBase {
  public:

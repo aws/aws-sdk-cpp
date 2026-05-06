@@ -22,8 +22,6 @@
 namespace Aws {
 namespace Route53GlobalResolver {
 
-class Route53GlobalResolverClient;
-
 template <typename DerivedClient>
 class Route53GlobalResolverPaginationBase {
  public:

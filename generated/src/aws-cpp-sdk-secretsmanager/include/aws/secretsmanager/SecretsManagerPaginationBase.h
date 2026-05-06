@@ -16,8 +16,6 @@
 namespace Aws {
 namespace SecretsManager {
 
-class SecretsManagerClient;
-
 template <typename DerivedClient>
 class SecretsManagerPaginationBase {
  public:

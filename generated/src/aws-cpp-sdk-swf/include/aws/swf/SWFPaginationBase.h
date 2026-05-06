@@ -20,8 +20,6 @@
 namespace Aws {
 namespace SWF {
 
-class SWFClient;
-
 template <typename DerivedClient>
 class SWFPaginationBase {
  public:

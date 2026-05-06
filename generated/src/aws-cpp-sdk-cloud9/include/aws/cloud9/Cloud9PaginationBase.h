@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Cloud9 {
 
-class Cloud9Client;
-
 template <typename DerivedClient>
 class Cloud9PaginationBase {
  public:

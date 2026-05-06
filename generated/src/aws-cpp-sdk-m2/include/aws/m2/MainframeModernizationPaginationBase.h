@@ -23,8 +23,6 @@
 namespace Aws {
 namespace MainframeModernization {
 
-class MainframeModernizationClient;
-
 template <typename DerivedClient>
 class MainframeModernizationPaginationBase {
  public:

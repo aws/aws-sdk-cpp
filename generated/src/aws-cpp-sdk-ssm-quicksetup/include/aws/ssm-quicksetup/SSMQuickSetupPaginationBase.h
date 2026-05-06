@@ -15,8 +15,6 @@
 namespace Aws {
 namespace SSMQuickSetup {
 
-class SSMQuickSetupClient;
-
 template <typename DerivedClient>
 class SSMQuickSetupPaginationBase {
  public:

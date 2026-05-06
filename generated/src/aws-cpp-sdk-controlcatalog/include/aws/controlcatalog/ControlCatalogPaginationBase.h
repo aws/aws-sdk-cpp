@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ControlCatalog {
 
-class ControlCatalogClient;
-
 template <typename DerivedClient>
 class ControlCatalogPaginationBase {
  public:

@@ -31,8 +31,6 @@
 namespace Aws {
 namespace CloudWatchLogs {
 
-class CloudWatchLogsClient;
-
 template <typename DerivedClient>
 class CloudWatchLogsPaginationBase {
  public:

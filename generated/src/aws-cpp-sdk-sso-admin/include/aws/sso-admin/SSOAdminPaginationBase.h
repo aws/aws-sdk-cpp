@@ -34,8 +34,6 @@
 namespace Aws {
 namespace SSOAdmin {
 
-class SSOAdminClient;
-
 template <typename DerivedClient>
 class SSOAdminPaginationBase {
  public:

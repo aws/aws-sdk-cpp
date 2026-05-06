@@ -13,8 +13,6 @@
 namespace Aws {
 namespace GeoRoutes {
 
-class GeoRoutesClient;
-
 template <typename DerivedClient>
 class GeoRoutesPaginationBase {
  public:

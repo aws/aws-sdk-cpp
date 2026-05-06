@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SignerData {
 
-class SignerDataClient;
-
 template <typename DerivedClient>
 class SignerDataPaginationBase {
  public:

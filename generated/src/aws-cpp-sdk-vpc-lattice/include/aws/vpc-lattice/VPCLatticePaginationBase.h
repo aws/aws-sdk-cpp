@@ -28,8 +28,6 @@
 namespace Aws {
 namespace VPCLattice {
 
-class VPCLatticeClient;
-
 template <typename DerivedClient>
 class VPCLatticePaginationBase {
  public:

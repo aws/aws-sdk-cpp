@@ -33,8 +33,6 @@
 namespace Aws {
 namespace CleanRooms {
 
-class CleanRoomsClient;
-
 template <typename DerivedClient>
 class CleanRoomsPaginationBase {
  public:

@@ -19,8 +19,6 @@
 namespace Aws {
 namespace VoiceID {
 
-class VoiceIDClient;
-
 template <typename DerivedClient>
 class VoiceIDPaginationBase {
  public:

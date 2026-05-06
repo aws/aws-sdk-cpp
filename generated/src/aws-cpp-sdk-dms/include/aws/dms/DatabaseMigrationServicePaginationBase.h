@@ -55,8 +55,6 @@
 namespace Aws {
 namespace DatabaseMigrationService {
 
-class DatabaseMigrationServiceClient;
-
 template <typename DerivedClient>
 class DatabaseMigrationServicePaginationBase {
  public:

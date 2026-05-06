@@ -15,8 +15,6 @@
 namespace Aws {
 namespace KinesisVideoArchivedMedia {
 
-class KinesisVideoArchivedMediaClient;
-
 template <typename DerivedClient>
 class KinesisVideoArchivedMediaPaginationBase {
  public:

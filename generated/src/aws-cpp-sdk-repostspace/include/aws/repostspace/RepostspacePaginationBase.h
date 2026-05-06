@@ -15,8 +15,6 @@
 namespace Aws {
 namespace repostspace {
 
-class RepostspaceClient;
-
 template <typename DerivedClient>
 class RepostspacePaginationBase {
  public:

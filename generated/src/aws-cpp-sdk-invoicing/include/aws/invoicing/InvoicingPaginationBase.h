@@ -16,8 +16,6 @@
 namespace Aws {
 namespace Invoicing {
 
-class InvoicingClient;
-
 template <typename DerivedClient>
 class InvoicingPaginationBase {
  public:

@@ -19,8 +19,6 @@
 namespace Aws {
 namespace ControlTower {
 
-class ControlTowerClient;
-
 template <typename DerivedClient>
 class ControlTowerPaginationBase {
  public:

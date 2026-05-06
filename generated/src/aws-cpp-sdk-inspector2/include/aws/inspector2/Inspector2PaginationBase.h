@@ -29,8 +29,6 @@
 namespace Aws {
 namespace Inspector2 {
 
-class Inspector2Client;
-
 template <typename DerivedClient>
 class Inspector2PaginationBase {
  public:

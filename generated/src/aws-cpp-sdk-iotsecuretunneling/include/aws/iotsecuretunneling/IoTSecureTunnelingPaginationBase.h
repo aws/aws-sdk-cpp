@@ -14,8 +14,6 @@
 namespace Aws {
 namespace IoTSecureTunneling {
 
-class IoTSecureTunnelingClient;
-
 template <typename DerivedClient>
 class IoTSecureTunnelingPaginationBase {
  public:

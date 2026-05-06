@@ -17,8 +17,6 @@
 namespace Aws {
 namespace IdentityStore {
 
-class IdentityStoreClient;
-
 template <typename DerivedClient>
 class IdentityStorePaginationBase {
  public:

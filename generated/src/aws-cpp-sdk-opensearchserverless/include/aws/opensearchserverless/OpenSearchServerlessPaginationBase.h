@@ -20,8 +20,6 @@
 namespace Aws {
 namespace OpenSearchServerless {
 
-class OpenSearchServerlessClient;
-
 template <typename DerivedClient>
 class OpenSearchServerlessPaginationBase {
  public:

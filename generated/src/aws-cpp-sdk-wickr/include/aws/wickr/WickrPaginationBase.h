@@ -21,8 +21,6 @@
 namespace Aws {
 namespace Wickr {
 
-class WickrClient;
-
 template <typename DerivedClient>
 class WickrPaginationBase {
  public:

@@ -52,8 +52,6 @@
 namespace Aws {
 namespace DataZone {
 
-class DataZoneClient;
-
 template <typename DerivedClient>
 class DataZonePaginationBase {
  public:

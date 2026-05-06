@@ -15,8 +15,6 @@
 namespace Aws {
 namespace MarketplaceCatalog {
 
-class MarketplaceCatalogClient;
-
 template <typename DerivedClient>
 class MarketplaceCatalogPaginationBase {
  public:

@@ -17,8 +17,6 @@
 namespace Aws {
 namespace CloudWatchRUM {
 
-class CloudWatchRUMClient;
-
 template <typename DerivedClient>
 class CloudWatchRUMPaginationBase {
  public:

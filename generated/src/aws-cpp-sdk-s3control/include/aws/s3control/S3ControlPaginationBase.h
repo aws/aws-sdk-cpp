@@ -25,8 +25,6 @@
 namespace Aws {
 namespace S3Control {
 
-class S3ControlClient;
-
 template <typename DerivedClient>
 class S3ControlPaginationBase {
  public:

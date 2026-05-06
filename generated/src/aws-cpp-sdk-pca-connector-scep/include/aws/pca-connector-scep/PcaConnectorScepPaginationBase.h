@@ -15,8 +15,6 @@
 namespace Aws {
 namespace PcaConnectorScep {
 
-class PcaConnectorScepClient;
-
 template <typename DerivedClient>
 class PcaConnectorScepPaginationBase {
  public:

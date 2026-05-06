@@ -14,8 +14,6 @@
 namespace Aws {
 namespace Pipes {
 
-class PipesClient;
-
 template <typename DerivedClient>
 class PipesPaginationBase {
  public:

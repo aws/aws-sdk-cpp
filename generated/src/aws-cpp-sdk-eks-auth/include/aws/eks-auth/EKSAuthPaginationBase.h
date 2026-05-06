@@ -13,8 +13,6 @@
 namespace Aws {
 namespace EKSAuth {
 
-class EKSAuthClient;
-
 template <typename DerivedClient>
 class EKSAuthPaginationBase {
  public:

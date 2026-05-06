@@ -33,8 +33,6 @@
 namespace Aws {
 namespace ResilienceHub {
 
-class ResilienceHubClient;
-
 template <typename DerivedClient>
 class ResilienceHubPaginationBase {
  public:

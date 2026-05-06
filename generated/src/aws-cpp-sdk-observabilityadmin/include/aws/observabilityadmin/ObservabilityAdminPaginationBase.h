@@ -20,8 +20,6 @@
 namespace Aws {
 namespace ObservabilityAdmin {
 
-class ObservabilityAdminClient;
-
 template <typename DerivedClient>
 class ObservabilityAdminPaginationBase {
  public:

@@ -63,8 +63,6 @@
 namespace Aws {
 namespace SSM {
 
-class SSMClient;
-
 template <typename DerivedClient>
 class SSMPaginationBase {
  public:

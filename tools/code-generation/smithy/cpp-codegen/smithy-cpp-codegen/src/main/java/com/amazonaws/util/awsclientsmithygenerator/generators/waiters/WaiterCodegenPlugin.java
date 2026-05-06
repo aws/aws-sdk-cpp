@@ -48,7 +48,9 @@ public class WaiterCodegenPlugin implements SmithyBuildPlugin {
             // Always generate ServiceWaiter.h, even if empty (matches pagination pattern)
             FeatureParser<WaiterOperationData> parser = new FeatureParser<>(context, processedService, waiterOps, "Waiter");
             parser.run(featureParser -> {
-                String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
+                String serviceName = java.util.Optional.ofNullable(featureParser.getNamespaceMap().get(featureParser.getSmithyServiceName()))
+                    .map(ServiceNameUtil::capitalize)
+                    .orElse(ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService()));
                 featureParser.generateClientHeader(
                     serviceName + "Waiter.h",
                     writer -> new WaiterHeaderGenerator(featureParser.getService(), featureParser.getOperations(), featureParser.getServiceMap(), model, featureParser.getNamespaceMap()).render(writer)

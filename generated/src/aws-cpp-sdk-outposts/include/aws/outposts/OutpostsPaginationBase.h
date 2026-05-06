@@ -24,8 +24,6 @@
 namespace Aws {
 namespace Outposts {
 
-class OutpostsClient;
-
 template <typename DerivedClient>
 class OutpostsPaginationBase {
  public:

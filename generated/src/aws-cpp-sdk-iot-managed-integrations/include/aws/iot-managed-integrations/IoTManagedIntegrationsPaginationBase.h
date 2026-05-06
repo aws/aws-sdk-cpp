@@ -30,8 +30,6 @@
 namespace Aws {
 namespace IoTManagedIntegrations {
 
-class IoTManagedIntegrationsClient;
-
 template <typename DerivedClient>
 class IoTManagedIntegrationsPaginationBase {
  public:

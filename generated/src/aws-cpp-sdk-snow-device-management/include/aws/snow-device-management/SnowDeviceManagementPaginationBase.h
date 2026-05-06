@@ -17,8 +17,6 @@
 namespace Aws {
 namespace SnowDeviceManagement {
 
-class SnowDeviceManagementClient;
-
 template <typename DerivedClient>
 class SnowDeviceManagementPaginationBase {
  public:

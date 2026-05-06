@@ -27,8 +27,6 @@
 namespace Aws {
 namespace IoTFleetWise {
 
-class IoTFleetWiseClient;
-
 template <typename DerivedClient>
 class IoTFleetWisePaginationBase {
  public:

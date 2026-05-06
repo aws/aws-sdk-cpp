@@ -15,8 +15,6 @@
 namespace Aws {
 namespace CloudControlApi {
 
-class CloudControlApiClient;
-
 template <typename DerivedClient>
 class CloudControlApiPaginationBase {
  public:

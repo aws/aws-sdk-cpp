@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ManagedGrafana {
 
-class ManagedGrafanaClient;
-
 template <typename DerivedClient>
 class ManagedGrafanaPaginationBase {
  public:

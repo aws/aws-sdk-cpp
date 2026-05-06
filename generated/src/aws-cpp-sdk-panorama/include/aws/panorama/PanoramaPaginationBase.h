@@ -22,8 +22,6 @@
 namespace Aws {
 namespace Panorama {
 
-class PanoramaClient;
-
 template <typename DerivedClient>
 class PanoramaPaginationBase {
  public:

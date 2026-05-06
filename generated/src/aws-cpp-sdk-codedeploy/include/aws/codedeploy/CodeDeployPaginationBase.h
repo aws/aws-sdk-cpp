@@ -18,8 +18,6 @@
 namespace Aws {
 namespace CodeDeploy {
 
-class CodeDeployClient;
-
 template <typename DerivedClient>
 class CodeDeployPaginationBase {
  public:

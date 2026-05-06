@@ -28,8 +28,6 @@
 namespace Aws {
 namespace DirectoryService {
 
-class DirectoryServiceClient;
-
 template <typename DerivedClient>
 class DirectoryServicePaginationBase {
  public:

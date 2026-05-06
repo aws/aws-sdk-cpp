@@ -28,8 +28,6 @@
 namespace Aws {
 namespace CostExplorer {
 
-class CostExplorerClient;
-
 template <typename DerivedClient>
 class CostExplorerPaginationBase {
  public:

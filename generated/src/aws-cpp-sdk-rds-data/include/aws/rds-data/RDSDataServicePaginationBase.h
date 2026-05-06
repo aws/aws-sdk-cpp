@@ -13,8 +13,6 @@
 namespace Aws {
 namespace RDSDataService {
 
-class RDSDataServiceClient;
-
 template <typename DerivedClient>
 class RDSDataServicePaginationBase {
  public:

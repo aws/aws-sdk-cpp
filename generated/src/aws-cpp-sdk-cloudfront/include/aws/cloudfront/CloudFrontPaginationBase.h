@@ -30,8 +30,6 @@
 namespace Aws {
 namespace CloudFront {
 
-class CloudFrontClient;
-
 template <typename DerivedClient>
 class CloudFrontPaginationBase {
  public:

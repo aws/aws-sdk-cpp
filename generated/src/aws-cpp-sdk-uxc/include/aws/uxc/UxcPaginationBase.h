@@ -14,8 +14,6 @@
 namespace Aws {
 namespace uxc {
 
-class UxcClient;
-
 template <typename DerivedClient>
 class UxcPaginationBase {
  public:

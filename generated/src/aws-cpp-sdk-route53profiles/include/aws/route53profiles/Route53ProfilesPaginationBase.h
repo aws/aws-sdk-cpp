@@ -16,8 +16,6 @@
 namespace Aws {
 namespace Route53Profiles {
 
-class Route53ProfilesClient;
-
 template <typename DerivedClient>
 class Route53ProfilesPaginationBase {
  public:

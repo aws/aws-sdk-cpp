@@ -14,8 +14,6 @@
 namespace Aws {
 namespace CloudFrontKeyValueStore {
 
-class CloudFrontKeyValueStoreClient;
-
 template <typename DerivedClient>
 class CloudFrontKeyValueStorePaginationBase {
  public:

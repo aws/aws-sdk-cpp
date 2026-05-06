@@ -16,8 +16,6 @@
 namespace Aws {
 namespace S3Outposts {
 
-class S3OutpostsClient;
-
 template <typename DerivedClient>
 class S3OutpostsPaginationBase {
  public:

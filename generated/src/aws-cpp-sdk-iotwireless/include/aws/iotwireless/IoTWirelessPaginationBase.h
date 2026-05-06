@@ -23,8 +23,6 @@
 namespace Aws {
 namespace IoTWireless {
 
-class IoTWirelessClient;
-
 template <typename DerivedClient>
 class IoTWirelessPaginationBase {
  public:

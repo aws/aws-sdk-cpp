@@ -13,8 +13,6 @@
 namespace Aws {
 namespace DirectConnect {
 
-class DirectConnectClient;
-
 template <typename DerivedClient>
 class DirectConnectPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SageMakerRuntimeHTTP2 {
 
-class SageMakerRuntimeHTTP2Client;
-
 template <typename DerivedClient>
 class SageMakerRuntimeHTTP2PaginationBase {
  public:

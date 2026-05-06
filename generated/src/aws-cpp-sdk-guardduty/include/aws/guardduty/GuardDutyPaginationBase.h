@@ -29,8 +29,6 @@
 namespace Aws {
 namespace GuardDuty {
 
-class GuardDutyClient;
-
 template <typename DerivedClient>
 class GuardDutyPaginationBase {
  public:

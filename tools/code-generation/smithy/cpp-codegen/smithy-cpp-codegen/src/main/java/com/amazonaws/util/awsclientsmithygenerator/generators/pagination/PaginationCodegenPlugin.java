@@ -55,7 +55,9 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
             // Required because legacy C2J generator always includes PaginationBase inheritance in client headers
             FeatureParser<OperationData<PaginatedTrait>> parser = new FeatureParser<>(context, processedService, paginatedOps, "Pagination");
             parser.run(featureParser -> {
-                String serviceName = ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService());
+                String serviceName = java.util.Optional.ofNullable(featureParser.getNamespaceMap().get(featureParser.getSmithyServiceName()))
+                    .map(ServiceNameUtil::capitalize)
+                    .orElse(ServiceNameUtil.getServiceNameUpperCamel(featureParser.getService()));
                 
                 // Generate CRTP pagination (always, even if empty)
                 featureParser.generateClientHeader(
@@ -84,7 +86,7 @@ public class PaginationCodegenPlugin implements SmithyBuildPlugin {
             
             if (!paginatedOps.isEmpty()) {
                 // Generate compilation test
-                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, processedService, paginatedOps, parser.getServiceMap());
+                PaginationCompilationTestGenerator testGenerator = new PaginationCompilationTestGenerator(context, processedService, paginatedOps, parser.getServiceMap(), parser.getNamespaceMap());
                 testGenerator.run();
             }
         }

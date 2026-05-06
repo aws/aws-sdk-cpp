@@ -24,8 +24,6 @@
 namespace Aws {
 namespace ChimeSDKMessaging {
 
-class ChimeSDKMessagingClient;
-
 template <typename DerivedClient>
 class ChimeSDKMessagingPaginationBase {
  public:

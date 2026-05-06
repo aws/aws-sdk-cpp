@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ConnectParticipant {
 
-class ConnectParticipantClient;
-
 template <typename DerivedClient>
 class ConnectParticipantPaginationBase {
  public:

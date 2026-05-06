@@ -20,8 +20,6 @@
 namespace Aws {
 namespace AmplifyUIBuilder {
 
-class AmplifyUIBuilderClient;
-
 template <typename DerivedClient>
 class AmplifyUIBuilderPaginationBase {
  public:

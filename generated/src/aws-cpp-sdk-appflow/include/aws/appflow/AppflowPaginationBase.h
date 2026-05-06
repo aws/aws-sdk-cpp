@@ -18,8 +18,6 @@
 namespace Aws {
 namespace Appflow {
 
-class AppflowClient;
-
 template <typename DerivedClient>
 class AppflowPaginationBase {
  public:

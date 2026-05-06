@@ -24,8 +24,6 @@
 namespace Aws {
 namespace AccessAnalyzer {
 
-class AccessAnalyzerClient;
-
 template <typename DerivedClient>
 class AccessAnalyzerPaginationBase {
  public:

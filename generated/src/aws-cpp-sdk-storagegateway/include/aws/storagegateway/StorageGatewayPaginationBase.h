@@ -25,8 +25,6 @@
 namespace Aws {
 namespace StorageGateway {
 
-class StorageGatewayClient;
-
 template <typename DerivedClient>
 class StorageGatewayPaginationBase {
  public:

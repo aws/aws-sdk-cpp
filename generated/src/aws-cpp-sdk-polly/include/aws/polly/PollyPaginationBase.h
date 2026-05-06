@@ -14,8 +14,6 @@
 namespace Aws {
 namespace Polly {
 
-class PollyClient;
-
 template <typename DerivedClient>
 class PollyPaginationBase {
  public:

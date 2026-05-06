@@ -17,8 +17,6 @@
 namespace Aws {
 namespace ChimeSDKMediaPipelines {
 
-class ChimeSDKMediaPipelinesClient;
-
 template <typename DerivedClient>
 class ChimeSDKMediaPipelinesPaginationBase {
  public:

@@ -25,8 +25,6 @@
 namespace Aws {
 namespace kendra {
 
-class KendraClient;
-
 template <typename DerivedClient>
 class KendraPaginationBase {
  public:

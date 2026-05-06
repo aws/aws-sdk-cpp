@@ -22,8 +22,6 @@
 namespace Aws {
 namespace ConnectWisdomService {
 
-class ConnectWisdomServiceClient;
-
 template <typename DerivedClient>
 class ConnectWisdomServicePaginationBase {
  public:

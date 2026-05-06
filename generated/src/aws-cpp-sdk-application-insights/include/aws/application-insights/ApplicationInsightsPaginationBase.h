@@ -20,8 +20,6 @@
 namespace Aws {
 namespace ApplicationInsights {
 
-class ApplicationInsightsClient;
-
 template <typename DerivedClient>
 class ApplicationInsightsPaginationBase {
  public:

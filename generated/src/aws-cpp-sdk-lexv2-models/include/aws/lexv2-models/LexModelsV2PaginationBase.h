@@ -43,8 +43,6 @@
 namespace Aws {
 namespace LexModelsV2 {
 
-class LexModelsV2Client;
-
 template <typename DerivedClient>
 class LexModelsV2PaginationBase {
  public:

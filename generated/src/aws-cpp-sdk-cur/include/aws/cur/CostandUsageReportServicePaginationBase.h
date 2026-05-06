@@ -14,8 +14,6 @@
 namespace Aws {
 namespace CostandUsageReportService {
 
-class CostandUsageReportServiceClient;
-
 template <typename DerivedClient>
 class CostandUsageReportServicePaginationBase {
  public:

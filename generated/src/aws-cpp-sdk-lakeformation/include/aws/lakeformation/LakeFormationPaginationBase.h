@@ -26,8 +26,6 @@
 namespace Aws {
 namespace LakeFormation {
 
-class LakeFormationClient;
-
 template <typename DerivedClient>
 class LakeFormationPaginationBase {
  public:

@@ -16,8 +16,6 @@
 namespace Aws {
 namespace TimestreamWrite {
 
-class TimestreamWriteClient;
-
 template <typename DerivedClient>
 class TimestreamWritePaginationBase {
  public:

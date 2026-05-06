@@ -16,8 +16,6 @@
 namespace Aws {
 namespace PaymentCryptography {
 
-class PaymentCryptographyClient;
-
 template <typename DerivedClient>
 class PaymentCryptographyPaginationBase {
  public:

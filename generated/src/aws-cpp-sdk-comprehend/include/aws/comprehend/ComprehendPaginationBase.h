@@ -30,8 +30,6 @@
 namespace Aws {
 namespace Comprehend {
 
-class ComprehendClient;
-
 template <typename DerivedClient>
 class ComprehendPaginationBase {
  public:

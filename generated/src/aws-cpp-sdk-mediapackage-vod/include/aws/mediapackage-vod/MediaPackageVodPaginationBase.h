@@ -16,8 +16,6 @@
 namespace Aws {
 namespace MediaPackageVod {
 
-class MediaPackageVodClient;
-
 template <typename DerivedClient>
 class MediaPackageVodPaginationBase {
  public:

@@ -16,8 +16,6 @@
 namespace Aws {
 namespace OSIS {
 
-class OSISClient;
-
 template <typename DerivedClient>
 class OSISPaginationBase {
  public:

@@ -19,8 +19,6 @@
 namespace Aws {
 namespace MediaConvert {
 
-class MediaConvertClient;
-
 template <typename DerivedClient>
 class MediaConvertPaginationBase {
  public:

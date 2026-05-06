@@ -42,8 +42,6 @@
 namespace Aws {
 namespace IoTSiteWise {
 
-class IoTSiteWiseClient;
-
 template <typename DerivedClient>
 class IoTSiteWisePaginationBase {
  public:

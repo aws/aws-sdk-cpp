@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ComputeOptimizer {
 
-class ComputeOptimizerClient;
-
 template <typename DerivedClient>
 class ComputeOptimizerPaginationBase {
  public:

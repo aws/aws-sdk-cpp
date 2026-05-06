@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Glacier {
 
-class GlacierClient;
-
 template <typename DerivedClient>
 class GlacierPaginationBase {
  public:

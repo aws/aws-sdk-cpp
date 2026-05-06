@@ -31,8 +31,6 @@
 namespace Aws {
 namespace Rekognition {
 
-class RekognitionClient;
-
 template <typename DerivedClient>
 class RekognitionPaginationBase {
  public:

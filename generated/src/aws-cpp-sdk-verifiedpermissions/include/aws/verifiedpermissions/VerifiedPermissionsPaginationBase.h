@@ -18,8 +18,6 @@
 namespace Aws {
 namespace VerifiedPermissions {
 
-class VerifiedPermissionsClient;
-
 template <typename DerivedClient>
 class VerifiedPermissionsPaginationBase {
  public:

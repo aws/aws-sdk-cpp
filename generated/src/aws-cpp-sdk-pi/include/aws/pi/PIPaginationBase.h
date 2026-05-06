@@ -18,8 +18,6 @@
 namespace Aws {
 namespace PI {
 
-class PIClient;
-
 template <typename DerivedClient>
 class PIPaginationBase {
  public:

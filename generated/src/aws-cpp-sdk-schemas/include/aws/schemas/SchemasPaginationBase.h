@@ -18,8 +18,6 @@
 namespace Aws {
 namespace Schemas {
 
-class SchemasClient;
-
 template <typename DerivedClient>
 class SchemasPaginationBase {
  public:

@@ -36,8 +36,6 @@
 namespace Aws {
 namespace SecurityHub {
 
-class SecurityHubClient;
-
 template <typename DerivedClient>
 class SecurityHubPaginationBase {
  public:

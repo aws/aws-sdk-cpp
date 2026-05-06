@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ManagedBlockchainQuery {
 
-class ManagedBlockchainQueryClient;
-
 template <typename DerivedClient>
 class ManagedBlockchainQueryPaginationBase {
  public:

@@ -26,8 +26,6 @@
 namespace Aws {
 namespace NetworkFirewall {
 
-class NetworkFirewallClient;
-
 template <typename DerivedClient>
 class NetworkFirewallPaginationBase {
  public:

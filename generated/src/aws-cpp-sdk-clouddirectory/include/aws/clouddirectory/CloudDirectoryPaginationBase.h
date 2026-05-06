@@ -32,8 +32,6 @@
 namespace Aws {
 namespace CloudDirectory {
 
-class CloudDirectoryClient;
-
 template <typename DerivedClient>
 class CloudDirectoryPaginationBase {
  public:

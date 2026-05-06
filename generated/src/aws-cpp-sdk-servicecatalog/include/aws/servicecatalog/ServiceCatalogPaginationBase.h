@@ -32,8 +32,6 @@
 namespace Aws {
 namespace ServiceCatalog {
 
-class ServiceCatalogClient;
-
 template <typename DerivedClient>
 class ServiceCatalogPaginationBase {
  public:

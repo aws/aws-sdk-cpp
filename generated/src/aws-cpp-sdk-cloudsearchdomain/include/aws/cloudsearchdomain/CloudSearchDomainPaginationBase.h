@@ -13,8 +13,6 @@
 namespace Aws {
 namespace CloudSearchDomain {
 
-class CloudSearchDomainClient;
-
 template <typename DerivedClient>
 class CloudSearchDomainPaginationBase {
  public:

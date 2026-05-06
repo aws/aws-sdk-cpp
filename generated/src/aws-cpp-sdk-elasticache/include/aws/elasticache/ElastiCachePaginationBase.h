@@ -32,8 +32,6 @@
 namespace Aws {
 namespace ElastiCache {
 
-class ElastiCacheClient;
-
 template <typename DerivedClient>
 class ElastiCachePaginationBase {
  public:

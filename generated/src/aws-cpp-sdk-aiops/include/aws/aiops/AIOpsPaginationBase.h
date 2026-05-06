@@ -14,8 +14,6 @@
 namespace Aws {
 namespace AIOps {
 
-class AIOpsClient;
-
 template <typename DerivedClient>
 class AIOpsPaginationBase {
  public:

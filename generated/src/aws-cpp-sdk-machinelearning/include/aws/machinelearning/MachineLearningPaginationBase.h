@@ -17,8 +17,6 @@
 namespace Aws {
 namespace MachineLearning {
 
-class MachineLearningClient;
-
 template <typename DerivedClient>
 class MachineLearningPaginationBase {
  public:

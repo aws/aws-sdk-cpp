@@ -23,8 +23,6 @@
 namespace Aws {
 namespace Route53RecoveryReadiness {
 
-class Route53RecoveryReadinessClient;
-
 template <typename DerivedClient>
 class Route53RecoveryReadinessPaginationBase {
  public:

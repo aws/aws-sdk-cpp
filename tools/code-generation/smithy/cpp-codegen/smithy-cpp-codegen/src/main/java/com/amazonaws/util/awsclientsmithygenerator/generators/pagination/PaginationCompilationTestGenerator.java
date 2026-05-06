@@ -15,8 +15,8 @@ import java.util.*;
 
 public class PaginationCompilationTestGenerator extends BaseCompilationTestGenerator<OperationData<PaginatedTrait>> {
 
-    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps, Map<String, String> serviceMap) {
-        super(context, service, allPaginatedOps, serviceMap);
+    public PaginationCompilationTestGenerator(PluginContext context, ServiceShape service, List<OperationData<PaginatedTrait>> allPaginatedOps, Map<String, String> serviceMap, Map<String, String> namespaceMap) {
+        super(context, service, allPaginatedOps, serviceMap, namespaceMap);
     }
 
     @Override
@@ -37,8 +37,10 @@ public class PaginationCompilationTestGenerator extends BaseCompilationTestGener
         
         for (OperationData<PaginatedTrait> paginationData : operations) {
             ServiceShape service = paginationData.getService();
-            String serviceName = ServiceNameUtil.getServiceNameUpperCamel(service);
             String smithyServiceName = ServiceNameUtil.getSmithyServiceName(service, serviceMap);
+            String serviceName = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+                .map(ServiceNameUtil::capitalize)
+                .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
             
             // Collect unique client headers
             clientHeaders.add("aws/" + smithyServiceName + "/" + serviceName + "ClientPagination.h");

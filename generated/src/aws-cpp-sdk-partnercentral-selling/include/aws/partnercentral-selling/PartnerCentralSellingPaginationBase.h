@@ -24,8 +24,6 @@
 namespace Aws {
 namespace PartnerCentralSelling {
 
-class PartnerCentralSellingClient;
-
 template <typename DerivedClient>
 class PartnerCentralSellingPaginationBase {
  public:

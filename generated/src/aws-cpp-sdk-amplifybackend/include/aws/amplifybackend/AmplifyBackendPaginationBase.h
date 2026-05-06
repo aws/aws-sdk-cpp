@@ -13,8 +13,6 @@
 namespace Aws {
 namespace AmplifyBackend {
 
-class AmplifyBackendClient;
-
 template <typename DerivedClient>
 class AmplifyBackendPaginationBase {
  public:

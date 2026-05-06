@@ -16,8 +16,6 @@
 namespace Aws {
 namespace BackupGateway {
 
-class BackupGatewayClient;
-
 template <typename DerivedClient>
 class BackupGatewayPaginationBase {
  public:

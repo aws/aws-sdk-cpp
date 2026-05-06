@@ -27,8 +27,6 @@
 namespace Aws {
 namespace CodeCommit {
 
-class CodeCommitClient;
-
 template <typename DerivedClient>
 class CodeCommitPaginationBase {
  public:

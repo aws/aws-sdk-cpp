@@ -19,8 +19,6 @@
 namespace Aws {
 namespace PinpointEmail {
 
-class PinpointEmailClient;
-
 template <typename DerivedClient>
 class PinpointEmailPaginationBase {
  public:

@@ -16,8 +16,6 @@
 namespace Aws {
 namespace CodeStarNotifications {
 
-class CodeStarNotificationsClient;
-
 template <typename DerivedClient>
 class CodeStarNotificationsPaginationBase {
  public:

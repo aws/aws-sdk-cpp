@@ -20,8 +20,6 @@
 namespace Aws {
 namespace EntityResolution {
 
-class EntityResolutionClient;
-
 template <typename DerivedClient>
 class EntityResolutionPaginationBase {
  public:

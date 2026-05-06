@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Proton {
 
-class ProtonClient;
-
 template <typename DerivedClient>
 class ProtonPaginationBase {
  public:

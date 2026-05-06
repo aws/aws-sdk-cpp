@@ -17,8 +17,6 @@
 namespace Aws {
 namespace AppFabric {
 
-class AppFabricClient;
-
 template <typename DerivedClient>
 class AppFabricPaginationBase {
  public:

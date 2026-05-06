@@ -29,8 +29,6 @@
 namespace Aws {
 namespace AuditManager {
 
-class AuditManagerClient;
-
 template <typename DerivedClient>
 class AuditManagerPaginationBase {
  public:

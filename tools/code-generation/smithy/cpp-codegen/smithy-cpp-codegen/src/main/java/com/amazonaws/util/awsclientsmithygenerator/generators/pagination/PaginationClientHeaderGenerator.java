@@ -22,7 +22,9 @@ public class PaginationClientHeaderGenerator extends BaseHeaderGenerator<Operati
     
     @Override
     protected void writeSpecificIncludes(CppWriter writer, String serviceName, String smithyServiceName) {
-        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String classPrefix = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
         writer.writeInclude("aws/" + smithyServiceName + "/" + classPrefix + "Client.h");
         writer.writeInclude("aws/core/utils/pagination/Paginator.h");
         
@@ -35,7 +37,9 @@ public class PaginationClientHeaderGenerator extends BaseHeaderGenerator<Operati
     
     @Override
     protected void writeSpecificContent(CppWriter writer, String serviceName) {
-        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String classPrefix = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
         
         for (OperationData<PaginatedTrait> data : operations) {
             String opName = data.getOperation().getId().getName();

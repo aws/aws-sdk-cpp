@@ -17,8 +17,6 @@
 namespace Aws {
 namespace mediapackagev2 {
 
-class Mediapackagev2Client;
-
 template <typename DerivedClient>
 class Mediapackagev2PaginationBase {
  public:

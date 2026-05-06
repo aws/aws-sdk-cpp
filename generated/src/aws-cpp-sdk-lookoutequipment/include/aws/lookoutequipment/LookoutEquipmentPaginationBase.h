@@ -24,8 +24,6 @@
 namespace Aws {
 namespace LookoutEquipment {
 
-class LookoutEquipmentClient;
-
 template <typename DerivedClient>
 class LookoutEquipmentPaginationBase {
  public:

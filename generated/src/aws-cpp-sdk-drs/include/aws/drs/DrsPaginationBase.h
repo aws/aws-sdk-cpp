@@ -24,8 +24,6 @@
 namespace Aws {
 namespace drs {
 
-class DrsClient;
-
 template <typename DerivedClient>
 class DrsPaginationBase {
  public:

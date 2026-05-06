@@ -18,8 +18,6 @@
 namespace Aws {
 namespace tnb {
 
-class TnbClient;
-
 template <typename DerivedClient>
 class TnbPaginationBase {
  public:

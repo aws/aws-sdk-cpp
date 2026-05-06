@@ -21,8 +21,6 @@
 namespace Aws {
 namespace KMS {
 
-class KMSClient;
-
 template <typename DerivedClient>
 class KMSPaginationBase {
  public:

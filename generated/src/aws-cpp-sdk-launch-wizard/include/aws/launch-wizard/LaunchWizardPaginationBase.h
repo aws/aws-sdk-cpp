@@ -18,8 +18,6 @@
 namespace Aws {
 namespace LaunchWizard {
 
-class LaunchWizardClient;
-
 template <typename DerivedClient>
 class LaunchWizardPaginationBase {
  public:

@@ -42,8 +42,6 @@
 namespace Aws {
 namespace Backup {
 
-class BackupClient;
-
 template <typename DerivedClient>
 class BackupPaginationBase {
  public:

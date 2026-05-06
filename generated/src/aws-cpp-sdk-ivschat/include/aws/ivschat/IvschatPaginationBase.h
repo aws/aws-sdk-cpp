@@ -15,8 +15,6 @@
 namespace Aws {
 namespace ivschat {
 
-class IvschatClient;
-
 template <typename DerivedClient>
 class IvschatPaginationBase {
  public:

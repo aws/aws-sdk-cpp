@@ -30,8 +30,6 @@
 namespace Aws {
 namespace Macie2 {
 
-class Macie2Client;
-
 template <typename DerivedClient>
 class Macie2PaginationBase {
  public:

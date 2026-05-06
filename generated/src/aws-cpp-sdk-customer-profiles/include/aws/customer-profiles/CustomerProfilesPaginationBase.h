@@ -26,8 +26,6 @@
 namespace Aws {
 namespace CustomerProfiles {
 
-class CustomerProfilesClient;
-
 template <typename DerivedClient>
 class CustomerProfilesPaginationBase {
  public:

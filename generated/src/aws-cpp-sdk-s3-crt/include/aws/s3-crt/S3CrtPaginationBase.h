@@ -17,8 +17,6 @@
 namespace Aws {
 namespace S3Crt {
 
-class S3CrtClient;
-
 template <typename DerivedClient>
 class S3CrtPaginationBase {
  public:

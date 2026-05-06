@@ -23,8 +23,6 @@
 namespace Aws {
 namespace GroundStation {
 
-class GroundStationClient;
-
 template <typename DerivedClient>
 class GroundStationPaginationBase {
  public:

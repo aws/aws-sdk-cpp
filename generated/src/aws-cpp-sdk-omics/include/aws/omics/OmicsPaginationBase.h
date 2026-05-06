@@ -38,8 +38,6 @@
 namespace Aws {
 namespace Omics {
 
-class OmicsClient;
-
 template <typename DerivedClient>
 class OmicsPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace PersonalizeEvents {
 
-class PersonalizeEventsClient;
-
 template <typename DerivedClient>
 class PersonalizeEventsPaginationBase {
  public:

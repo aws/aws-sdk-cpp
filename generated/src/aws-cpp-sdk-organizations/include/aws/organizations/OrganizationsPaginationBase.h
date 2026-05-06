@@ -31,8 +31,6 @@
 namespace Aws {
 namespace Organizations {
 
-class OrganizationsClient;
-
 template <typename DerivedClient>
 class OrganizationsPaginationBase {
  public:

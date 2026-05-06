@@ -17,8 +17,6 @@
 namespace Aws {
 namespace TimestreamInfluxDB {
 
-class TimestreamInfluxDBClient;
-
 template <typename DerivedClient>
 class TimestreamInfluxDBPaginationBase {
  public:

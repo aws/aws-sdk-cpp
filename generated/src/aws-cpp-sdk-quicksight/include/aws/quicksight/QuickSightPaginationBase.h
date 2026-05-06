@@ -54,8 +54,6 @@
 namespace Aws {
 namespace QuickSight {
 
-class QuickSightClient;
-
 template <typename DerivedClient>
 class QuickSightPaginationBase {
  public:

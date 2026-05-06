@@ -31,8 +31,6 @@
 namespace Aws {
 namespace Bedrock {
 
-class BedrockClient;
-
 template <typename DerivedClient>
 class BedrockPaginationBase {
  public:

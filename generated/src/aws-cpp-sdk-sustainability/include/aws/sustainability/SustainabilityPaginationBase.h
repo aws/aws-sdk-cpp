@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Sustainability {
 
-class SustainabilityClient;
-
 template <typename DerivedClient>
 class SustainabilityPaginationBase {
  public:

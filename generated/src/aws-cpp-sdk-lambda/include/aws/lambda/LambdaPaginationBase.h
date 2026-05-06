@@ -29,8 +29,6 @@
 namespace Aws {
 namespace Lambda {
 
-class LambdaClient;
-
 template <typename DerivedClient>
 class LambdaPaginationBase {
  public:

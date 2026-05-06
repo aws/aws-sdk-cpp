@@ -19,8 +19,6 @@
 namespace Aws {
 namespace WorkSpaces {
 
-class WorkSpacesClient;
-
 template <typename DerivedClient>
 class WorkSpacesPaginationBase {
  public:

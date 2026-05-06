@@ -14,8 +14,6 @@
 namespace Aws {
 namespace Route53RecoveryCluster {
 
-class Route53RecoveryClusterClient;
-
 template <typename DerivedClient>
 class Route53RecoveryClusterPaginationBase {
  public:

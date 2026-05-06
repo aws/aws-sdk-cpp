@@ -19,8 +19,6 @@
 namespace Aws {
 namespace SupplyChain {
 
-class SupplyChainClient;
-
 template <typename DerivedClient>
 class SupplyChainPaginationBase {
  public:

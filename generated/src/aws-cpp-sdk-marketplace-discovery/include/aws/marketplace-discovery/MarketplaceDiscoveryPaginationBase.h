@@ -18,8 +18,6 @@
 namespace Aws {
 namespace MarketplaceDiscovery {
 
-class MarketplaceDiscoveryClient;
-
 template <typename DerivedClient>
 class MarketplaceDiscoveryPaginationBase {
  public:

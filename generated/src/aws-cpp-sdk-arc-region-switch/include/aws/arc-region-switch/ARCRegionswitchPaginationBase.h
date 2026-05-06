@@ -21,8 +21,6 @@
 namespace Aws {
 namespace ARCRegionswitch {
 
-class ARCRegionswitchClient;
-
 template <typename DerivedClient>
 class ARCRegionswitchPaginationBase {
  public:

@@ -17,8 +17,6 @@
 namespace Aws {
 namespace PrometheusService {
 
-class PrometheusServiceClient;
-
 template <typename DerivedClient>
 class PrometheusServicePaginationBase {
  public:

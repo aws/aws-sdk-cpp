@@ -40,8 +40,6 @@
 namespace Aws {
 namespace GameLift {
 
-class GameLiftClient;
-
 template <typename DerivedClient>
 class GameLiftPaginationBase {
  public:

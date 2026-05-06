@@ -22,8 +22,6 @@
 namespace Aws {
 namespace ComputeOptimizerAutomation {
 
-class ComputeOptimizerAutomationClient;
-
 template <typename DerivedClient>
 class ComputeOptimizerAutomationPaginationBase {
  public:

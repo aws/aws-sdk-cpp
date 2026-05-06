@@ -19,8 +19,6 @@
 namespace Aws {
 namespace DirectoryServiceData {
 
-class DirectoryServiceDataClient;
-
 template <typename DerivedClient>
 class DirectoryServiceDataPaginationBase {
  public:

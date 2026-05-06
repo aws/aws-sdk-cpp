@@ -13,8 +13,6 @@
 namespace Aws {
 namespace IoTJobsDataPlane {
 
-class IoTJobsDataPlaneClient;
-
 template <typename DerivedClient>
 class IoTJobsDataPlanePaginationBase {
  public:

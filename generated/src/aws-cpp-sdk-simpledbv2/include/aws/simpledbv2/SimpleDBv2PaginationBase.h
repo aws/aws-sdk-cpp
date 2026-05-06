@@ -14,8 +14,6 @@
 namespace Aws {
 namespace SimpleDBv2 {
 
-class SimpleDBv2Client;
-
 template <typename DerivedClient>
 class SimpleDBv2PaginationBase {
  public:

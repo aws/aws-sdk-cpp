@@ -22,8 +22,6 @@
 namespace Aws {
 namespace chatbot {
 
-class ChatbotClient;
-
 template <typename DerivedClient>
 class ChatbotPaginationBase {
  public:

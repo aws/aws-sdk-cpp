@@ -16,13 +16,15 @@ public abstract class BaseCompilationTestGenerator<T> {
     protected final ServiceShape service;
     protected final List<T> operations;
     protected final Map<String, String> serviceMap;
+    protected final Map<String, String> namespaceMap;
     private final CppWriterDelegator writerDelegator;
 
-    public BaseCompilationTestGenerator(PluginContext context, ServiceShape service, List<T> operations, Map<String, String> serviceMap) {
+    public BaseCompilationTestGenerator(PluginContext context, ServiceShape service, List<T> operations, Map<String, String> serviceMap, Map<String, String> namespaceMap) {
         this.context = context;
         this.service = service;
         this.operations = operations;
         this.serviceMap = serviceMap;
+        this.namespaceMap = namespaceMap;
         this.writerDelegator = new CppWriterDelegator(context.getFileManifest());
     }
 

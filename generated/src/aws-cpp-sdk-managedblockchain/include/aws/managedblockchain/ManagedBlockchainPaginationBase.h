@@ -20,8 +20,6 @@
 namespace Aws {
 namespace ManagedBlockchain {
 
-class ManagedBlockchainClient;
-
 template <typename DerivedClient>
 class ManagedBlockchainPaginationBase {
  public:

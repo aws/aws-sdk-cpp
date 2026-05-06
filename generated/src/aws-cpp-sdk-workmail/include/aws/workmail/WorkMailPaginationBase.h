@@ -28,8 +28,6 @@
 namespace Aws {
 namespace WorkMail {
 
-class WorkMailClient;
-
 template <typename DerivedClient>
 class WorkMailPaginationBase {
  public:

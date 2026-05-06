@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SagemakerEdgeManager {
 
-class SagemakerEdgeManagerClient;
-
 template <typename DerivedClient>
 class SagemakerEdgeManagerPaginationBase {
  public:

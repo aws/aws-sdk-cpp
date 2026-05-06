@@ -15,8 +15,6 @@
 namespace Aws {
 namespace KeyspacesStreams {
 
-class KeyspacesStreamsClient;
-
 template <typename DerivedClient>
 class KeyspacesStreamsPaginationBase {
  public:

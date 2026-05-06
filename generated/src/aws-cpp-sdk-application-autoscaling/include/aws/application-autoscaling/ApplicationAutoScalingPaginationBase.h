@@ -17,8 +17,6 @@
 namespace Aws {
 namespace ApplicationAutoScaling {
 
-class ApplicationAutoScalingClient;
-
 template <typename DerivedClient>
 class ApplicationAutoScalingPaginationBase {
  public:

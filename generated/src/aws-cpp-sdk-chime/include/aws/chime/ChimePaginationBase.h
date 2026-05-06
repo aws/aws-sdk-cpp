@@ -21,8 +21,6 @@
 namespace Aws {
 namespace Chime {
 
-class ChimeClient;
-
 template <typename DerivedClient>
 class ChimePaginationBase {
  public:

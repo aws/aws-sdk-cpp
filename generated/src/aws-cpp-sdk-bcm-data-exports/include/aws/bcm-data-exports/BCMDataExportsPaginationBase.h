@@ -16,8 +16,6 @@
 namespace Aws {
 namespace BCMDataExports {
 
-class BCMDataExportsClient;
-
 template <typename DerivedClient>
 class BCMDataExportsPaginationBase {
  public:

@@ -21,8 +21,6 @@
 namespace Aws {
 namespace BedrockAgentRuntime {
 
-class BedrockAgentRuntimeClient;
-
 template <typename DerivedClient>
 class BedrockAgentRuntimePaginationBase {
  public:

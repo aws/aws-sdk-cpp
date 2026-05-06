@@ -17,8 +17,6 @@
 namespace Aws {
 namespace InternetMonitor {
 
-class InternetMonitorClient;
-
 template <typename DerivedClient>
 class InternetMonitorPaginationBase {
  public:

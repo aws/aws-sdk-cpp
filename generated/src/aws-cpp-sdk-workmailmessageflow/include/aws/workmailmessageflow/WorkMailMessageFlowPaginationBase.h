@@ -13,8 +13,6 @@
 namespace Aws {
 namespace WorkMailMessageFlow {
 
-class WorkMailMessageFlowClient;
-
 template <typename DerivedClient>
 class WorkMailMessageFlowPaginationBase {
  public:

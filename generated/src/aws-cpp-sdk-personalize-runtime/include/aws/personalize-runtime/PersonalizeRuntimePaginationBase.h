@@ -13,8 +13,6 @@
 namespace Aws {
 namespace PersonalizeRuntime {
 
-class PersonalizeRuntimeClient;
-
 template <typename DerivedClient>
 class PersonalizeRuntimePaginationBase {
  public:

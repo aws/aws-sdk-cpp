@@ -28,8 +28,6 @@
 namespace Aws {
 namespace Athena {
 
-class AthenaClient;
-
 template <typename DerivedClient>
 class AthenaPaginationBase {
  public:

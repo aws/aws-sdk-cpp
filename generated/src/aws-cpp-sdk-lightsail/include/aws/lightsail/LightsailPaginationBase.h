@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Lightsail {
 
-class LightsailClient;
-
 template <typename DerivedClient>
 class LightsailPaginationBase {
  public:

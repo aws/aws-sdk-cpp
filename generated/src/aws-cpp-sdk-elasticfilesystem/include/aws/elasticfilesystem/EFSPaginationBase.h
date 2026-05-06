@@ -18,8 +18,6 @@
 namespace Aws {
 namespace EFS {
 
-class EFSClient;
-
 template <typename DerivedClient>
 class EFSPaginationBase {
  public:

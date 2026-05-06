@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Support {
 
-class SupportClient;
-
 template <typename DerivedClient>
 class SupportPaginationBase {
  public:

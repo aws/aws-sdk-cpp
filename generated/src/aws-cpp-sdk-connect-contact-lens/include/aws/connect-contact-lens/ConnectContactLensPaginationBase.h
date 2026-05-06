@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ConnectContactLens {
 
-class ConnectContactLensClient;
-
 template <typename DerivedClient>
 class ConnectContactLensPaginationBase {
  public:

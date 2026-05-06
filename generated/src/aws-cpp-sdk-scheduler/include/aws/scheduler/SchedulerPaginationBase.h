@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Scheduler {
 
-class SchedulerClient;
-
 template <typename DerivedClient>
 class SchedulerPaginationBase {
  public:

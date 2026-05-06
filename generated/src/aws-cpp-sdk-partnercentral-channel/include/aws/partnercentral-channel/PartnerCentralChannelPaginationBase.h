@@ -16,8 +16,6 @@
 namespace Aws {
 namespace PartnerCentralChannel {
 
-class PartnerCentralChannelClient;
-
 template <typename DerivedClient>
 class PartnerCentralChannelPaginationBase {
  public:

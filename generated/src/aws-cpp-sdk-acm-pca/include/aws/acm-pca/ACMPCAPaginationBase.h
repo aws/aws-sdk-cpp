@@ -16,8 +16,6 @@
 namespace Aws {
 namespace ACMPCA {
 
-class ACMPCAClient;
-
 template <typename DerivedClient>
 class ACMPCAPaginationBase {
  public:

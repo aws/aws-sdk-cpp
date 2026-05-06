@@ -55,8 +55,6 @@
 namespace Aws {
 namespace RDS {
 
-class RDSClient;
-
 template <typename DerivedClient>
 class RDSPaginationBase {
  public:

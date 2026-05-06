@@ -13,8 +13,6 @@
 namespace Aws {
 namespace ForecastQueryService {
 
-class ForecastQueryServiceClient;
-
 template <typename DerivedClient>
 class ForecastQueryServicePaginationBase {
  public:

@@ -19,8 +19,6 @@
 namespace Aws {
 namespace MigrationHubStrategyRecommendations {
 
-class MigrationHubStrategyRecommendationsClient;
-
 template <typename DerivedClient>
 class MigrationHubStrategyRecommendationsPaginationBase {
  public:

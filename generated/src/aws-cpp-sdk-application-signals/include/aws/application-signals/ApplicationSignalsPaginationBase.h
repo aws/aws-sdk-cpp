@@ -21,8 +21,6 @@
 namespace Aws {
 namespace ApplicationSignals {
 
-class ApplicationSignalsClient;
-
 template <typename DerivedClient>
 class ApplicationSignalsPaginationBase {
  public:

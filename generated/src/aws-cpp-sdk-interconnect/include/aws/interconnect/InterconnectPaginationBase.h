@@ -16,8 +16,6 @@
 namespace Aws {
 namespace Interconnect {
 
-class InterconnectClient;
-
 template <typename DerivedClient>
 class InterconnectPaginationBase {
  public:

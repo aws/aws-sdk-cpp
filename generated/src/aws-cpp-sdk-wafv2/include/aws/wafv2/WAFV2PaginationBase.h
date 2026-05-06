@@ -13,8 +13,6 @@
 namespace Aws {
 namespace WAFV2 {
 
-class WAFV2Client;
-
 template <typename DerivedClient>
 class WAFV2PaginationBase {
  public:

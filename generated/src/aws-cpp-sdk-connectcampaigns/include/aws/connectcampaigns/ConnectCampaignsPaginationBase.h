@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ConnectCampaigns {
 
-class ConnectCampaignsClient;
-
 template <typename DerivedClient>
 class ConnectCampaignsPaginationBase {
  public:

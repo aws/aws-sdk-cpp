@@ -22,8 +22,6 @@
 namespace Aws {
 namespace TranscribeService {
 
-class TranscribeServiceClient;
-
 template <typename DerivedClient>
 class TranscribeServicePaginationBase {
  public:

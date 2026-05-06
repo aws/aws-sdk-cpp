@@ -25,8 +25,6 @@
 namespace Aws {
 namespace MailManager {
 
-class MailManagerClient;
-
 template <typename DerivedClient>
 class MailManagerPaginationBase {
  public:

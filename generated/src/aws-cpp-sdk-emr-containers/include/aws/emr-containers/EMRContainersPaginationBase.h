@@ -18,8 +18,6 @@
 namespace Aws {
 namespace EMRContainers {
 
-class EMRContainersClient;
-
 template <typename DerivedClient>
 class EMRContainersPaginationBase {
  public:

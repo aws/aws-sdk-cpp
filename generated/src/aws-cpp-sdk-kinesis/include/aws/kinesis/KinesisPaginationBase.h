@@ -15,8 +15,6 @@
 namespace Aws {
 namespace Kinesis {
 
-class KinesisClient;
-
 template <typename DerivedClient>
 class KinesisPaginationBase {
  public:

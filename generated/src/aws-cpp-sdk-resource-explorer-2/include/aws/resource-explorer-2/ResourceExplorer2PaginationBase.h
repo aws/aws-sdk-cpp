@@ -24,8 +24,6 @@
 namespace Aws {
 namespace ResourceExplorer2 {
 
-class ResourceExplorer2Client;
-
 template <typename DerivedClient>
 class ResourceExplorer2PaginationBase {
  public:

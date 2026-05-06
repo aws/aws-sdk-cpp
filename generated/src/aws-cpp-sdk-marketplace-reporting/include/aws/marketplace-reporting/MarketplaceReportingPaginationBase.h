@@ -13,8 +13,6 @@
 namespace Aws {
 namespace MarketplaceReporting {
 
-class MarketplaceReportingClient;
-
 template <typename DerivedClient>
 class MarketplaceReportingPaginationBase {
  public:

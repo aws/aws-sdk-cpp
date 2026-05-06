@@ -47,8 +47,6 @@
 namespace Aws {
 namespace IAM {
 
-class IAMClient;
-
 template <typename DerivedClient>
 class IAMPaginationBase {
  public:

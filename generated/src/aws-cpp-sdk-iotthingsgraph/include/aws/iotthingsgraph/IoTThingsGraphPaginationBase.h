@@ -13,8 +13,6 @@
 namespace Aws {
 namespace IoTThingsGraph {
 
-class IoTThingsGraphClient;
-
 template <typename DerivedClient>
 class IoTThingsGraphPaginationBase {
  public:

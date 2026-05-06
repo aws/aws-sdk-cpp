@@ -21,8 +21,6 @@
 namespace Aws {
 namespace IVS {
 
-class IVSClient;
-
 template <typename DerivedClient>
 class IVSPaginationBase {
  public:

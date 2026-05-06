@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ChimeSDKIdentity {
 
-class ChimeSDKIdentityClient;
-
 template <typename DerivedClient>
 class ChimeSDKIdentityPaginationBase {
  public:

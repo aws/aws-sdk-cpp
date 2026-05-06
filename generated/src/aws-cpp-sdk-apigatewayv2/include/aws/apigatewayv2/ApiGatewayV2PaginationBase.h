@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ApiGatewayV2 {
 
-class ApiGatewayV2Client;
-
 template <typename DerivedClient>
 class ApiGatewayV2PaginationBase {
  public:

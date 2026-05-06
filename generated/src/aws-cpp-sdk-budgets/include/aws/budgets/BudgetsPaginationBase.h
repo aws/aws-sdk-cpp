@@ -21,8 +21,6 @@
 namespace Aws {
 namespace Budgets {
 
-class BudgetsClient;
-
 template <typename DerivedClient>
 class BudgetsPaginationBase {
  public:

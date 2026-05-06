@@ -13,8 +13,6 @@
 namespace Aws {
 namespace DynamoDBStreams {
 
-class DynamoDBStreamsClient;
-
 template <typename DerivedClient>
 class DynamoDBStreamsPaginationBase {
  public:

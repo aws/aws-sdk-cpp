@@ -20,8 +20,6 @@
 namespace Aws {
 namespace RedshiftDataAPIService {
 
-class RedshiftDataAPIServiceClient;
-
 template <typename DerivedClient>
 class RedshiftDataAPIServicePaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace MarketplaceMetering {
 
-class MarketplaceMeteringClient;
-
 template <typename DerivedClient>
 class MarketplaceMeteringPaginationBase {
  public:

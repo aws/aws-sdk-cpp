@@ -19,8 +19,6 @@
 namespace Aws {
 namespace AppIntegrationsService {
 
-class AppIntegrationsServiceClient;
-
 template <typename DerivedClient>
 class AppIntegrationsServicePaginationBase {
  public:

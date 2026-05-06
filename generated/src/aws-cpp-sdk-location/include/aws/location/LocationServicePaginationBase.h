@@ -25,8 +25,6 @@
 namespace Aws {
 namespace LocationService {
 
-class LocationServiceClient;
-
 template <typename DerivedClient>
 class LocationServicePaginationBase {
  public:

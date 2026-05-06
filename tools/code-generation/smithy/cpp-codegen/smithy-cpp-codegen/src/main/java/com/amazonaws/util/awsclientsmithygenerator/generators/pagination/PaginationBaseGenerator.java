@@ -38,11 +38,9 @@ public class PaginationBaseGenerator extends BaseHeaderGenerator<OperationData<P
     
     @Override
     protected void writeSpecificContent(CppWriter writer, String serviceName) {
-        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
-        
-        // Forward declare the client
-        writer.write("class " + classPrefix + "Client;");
-        writer.write("");
+        String classPrefix = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
         
         // CRTP base class
         writer.write("template<typename DerivedClient>");

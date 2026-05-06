@@ -20,8 +20,6 @@
 namespace Aws {
 namespace SSMIncidents {
 
-class SSMIncidentsClient;
-
 template <typename DerivedClient>
 class SSMIncidentsPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SageMakerMetrics {
 
-class SageMakerMetricsClient;
-
 template <typename DerivedClient>
 class SageMakerMetricsPaginationBase {
  public:

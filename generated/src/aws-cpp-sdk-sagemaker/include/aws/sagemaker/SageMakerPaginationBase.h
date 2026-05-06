@@ -102,8 +102,6 @@
 namespace Aws {
 namespace SageMaker {
 
-class SageMakerClient;
-
 template <typename DerivedClient>
 class SageMakerPaginationBase {
  public:

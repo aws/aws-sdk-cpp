@@ -16,8 +16,6 @@
 namespace Aws {
 namespace DocDBElastic {
 
-class DocDBElasticClient;
-
 template <typename DerivedClient>
 class DocDBElasticPaginationBase {
  public:

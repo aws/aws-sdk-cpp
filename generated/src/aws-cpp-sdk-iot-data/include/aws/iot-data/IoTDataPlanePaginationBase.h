@@ -14,8 +14,6 @@
 namespace Aws {
 namespace IoTDataPlane {
 
-class IoTDataPlaneClient;
-
 template <typename DerivedClient>
 class IoTDataPlanePaginationBase {
  public:

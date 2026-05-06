@@ -21,8 +21,6 @@
 namespace Aws {
 namespace FMS {
 
-class FMSClient;
-
 template <typename DerivedClient>
 class FMSPaginationBase {
  public:

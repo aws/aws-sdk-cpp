@@ -25,8 +25,6 @@
 namespace Aws {
 namespace EMR {
 
-class EMRClient;
-
 template <typename DerivedClient>
 class EMRPaginationBase {
  public:

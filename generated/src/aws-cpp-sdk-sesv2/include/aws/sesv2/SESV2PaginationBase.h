@@ -32,8 +32,6 @@
 namespace Aws {
 namespace SESV2 {
 
-class SESV2Client;
-
 template <typename DerivedClient>
 class SESV2PaginationBase {
  public:

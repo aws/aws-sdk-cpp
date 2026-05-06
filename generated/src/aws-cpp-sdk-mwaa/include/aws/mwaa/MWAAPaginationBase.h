@@ -14,8 +14,6 @@
 namespace Aws {
 namespace MWAA {
 
-class MWAAClient;
-
 template <typename DerivedClient>
 class MWAAPaginationBase {
  public:

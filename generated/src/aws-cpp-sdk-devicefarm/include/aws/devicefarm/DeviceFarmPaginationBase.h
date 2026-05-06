@@ -31,8 +31,6 @@
 namespace Aws {
 namespace DeviceFarm {
 
-class DeviceFarmClient;
-
 template <typename DerivedClient>
 class DeviceFarmPaginationBase {
  public:

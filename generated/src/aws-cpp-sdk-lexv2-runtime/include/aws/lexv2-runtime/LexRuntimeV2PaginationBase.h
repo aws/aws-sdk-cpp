@@ -13,8 +13,6 @@
 namespace Aws {
 namespace LexRuntimeV2 {
 
-class LexRuntimeV2Client;
-
 template <typename DerivedClient>
 class LexRuntimeV2PaginationBase {
  public:

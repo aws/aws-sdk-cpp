@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Firehose {
 
-class FirehoseClient;
-
 template <typename DerivedClient>
 class FirehosePaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SSMGuiConnect {
 
-class SSMGuiConnectClient;
-
 template <typename DerivedClient>
 class SSMGuiConnectPaginationBase {
  public:

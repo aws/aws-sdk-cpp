@@ -13,8 +13,6 @@
 namespace Aws {
 namespace LexModelBuildingService {
 
-class LexModelBuildingServiceClient;
-
 template <typename DerivedClient>
 class LexModelBuildingServicePaginationBase {
  public:

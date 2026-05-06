@@ -23,8 +23,6 @@
 namespace Aws {
 namespace BCMPricingCalculator {
 
-class BCMPricingCalculatorClient;
-
 template <typename DerivedClient>
 class BCMPricingCalculatorPaginationBase {
  public:

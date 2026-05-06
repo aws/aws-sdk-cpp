@@ -15,8 +15,6 @@
 namespace Aws {
 namespace BCMDashboards {
 
-class BCMDashboardsClient;
-
 template <typename DerivedClient>
 class BCMDashboardsPaginationBase {
  public:

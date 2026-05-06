@@ -16,8 +16,6 @@
 namespace Aws {
 namespace TimestreamQuery {
 
-class TimestreamQueryClient;
-
 template <typename DerivedClient>
 class TimestreamQueryPaginationBase {
  public:

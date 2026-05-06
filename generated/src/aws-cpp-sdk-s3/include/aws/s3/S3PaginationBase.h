@@ -17,8 +17,6 @@
 namespace Aws {
 namespace S3 {
 
-class S3Client;
-
 template <typename DerivedClient>
 class S3PaginationBase {
  public:

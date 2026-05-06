@@ -16,8 +16,6 @@
 namespace Aws {
 namespace CloudHSMV2 {
 
-class CloudHSMV2Client;
-
 template <typename DerivedClient>
 class CloudHSMV2PaginationBase {
  public:

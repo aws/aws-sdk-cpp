@@ -22,8 +22,6 @@
 namespace Aws {
 namespace ECS {
 
-class ECSClient;
-
 template <typename DerivedClient>
 class ECSPaginationBase {
  public:

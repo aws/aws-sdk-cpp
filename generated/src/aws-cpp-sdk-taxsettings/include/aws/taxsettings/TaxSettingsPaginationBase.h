@@ -16,8 +16,6 @@
 namespace Aws {
 namespace TaxSettings {
 
-class TaxSettingsClient;
-
 template <typename DerivedClient>
 class TaxSettingsPaginationBase {
  public:

@@ -27,8 +27,6 @@
 namespace Aws {
 namespace Kafka {
 
-class KafkaClient;
-
 template <typename DerivedClient>
 class KafkaPaginationBase {
  public:

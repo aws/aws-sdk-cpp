@@ -25,8 +25,6 @@
 namespace Aws {
 namespace SecurityAgent {
 
-class SecurityAgentClient;
-
 template <typename DerivedClient>
 class SecurityAgentPaginationBase {
  public:

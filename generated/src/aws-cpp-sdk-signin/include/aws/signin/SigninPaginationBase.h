@@ -13,8 +13,6 @@
 namespace Aws {
 namespace Signin {
 
-class SigninClient;
-
 template <typename DerivedClient>
 class SigninPaginationBase {
  public:

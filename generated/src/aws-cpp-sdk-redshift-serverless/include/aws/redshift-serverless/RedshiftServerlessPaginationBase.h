@@ -27,8 +27,6 @@
 namespace Aws {
 namespace RedshiftServerless {
 
-class RedshiftServerlessClient;
-
 template <typename DerivedClient>
 class RedshiftServerlessPaginationBase {
  public:

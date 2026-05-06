@@ -29,8 +29,6 @@
 namespace Aws {
 namespace Personalize {
 
-class PersonalizeClient;
-
 template <typename DerivedClient>
 class PersonalizePaginationBase {
  public:

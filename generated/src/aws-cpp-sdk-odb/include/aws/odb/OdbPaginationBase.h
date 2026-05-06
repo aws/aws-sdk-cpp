@@ -24,8 +24,6 @@
 namespace Aws {
 namespace odb {
 
-class OdbClient;
-
 template <typename DerivedClient>
 class OdbPaginationBase {
  public:

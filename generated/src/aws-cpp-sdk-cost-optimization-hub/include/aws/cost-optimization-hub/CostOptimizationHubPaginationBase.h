@@ -17,8 +17,6 @@
 namespace Aws {
 namespace CostOptimizationHub {
 
-class CostOptimizationHubClient;
-
 template <typename DerivedClient>
 class CostOptimizationHubPaginationBase {
  public:

@@ -23,8 +23,6 @@
 namespace Aws {
 namespace CodeCatalyst {
 
-class CodeCatalystClient;
-
 template <typename DerivedClient>
 class CodeCatalystPaginationBase {
  public:

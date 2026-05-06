@@ -13,8 +13,6 @@
 namespace Aws {
 namespace KinesisAnalytics {
 
-class KinesisAnalyticsClient;
-
 template <typename DerivedClient>
 class KinesisAnalyticsPaginationBase {
  public:

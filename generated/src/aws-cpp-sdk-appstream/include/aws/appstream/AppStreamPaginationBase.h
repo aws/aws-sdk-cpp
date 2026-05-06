@@ -17,8 +17,6 @@
 namespace Aws {
 namespace AppStream {
 
-class AppStreamClient;
-
 template <typename DerivedClient>
 class AppStreamPaginationBase {
  public:

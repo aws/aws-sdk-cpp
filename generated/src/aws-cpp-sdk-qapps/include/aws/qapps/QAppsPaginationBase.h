@@ -15,8 +15,6 @@
 namespace Aws {
 namespace QApps {
 
-class QAppsClient;
-
 template <typename DerivedClient>
 class QAppsPaginationBase {
  public:

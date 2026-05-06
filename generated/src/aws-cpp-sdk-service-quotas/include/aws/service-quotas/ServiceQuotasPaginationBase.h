@@ -19,8 +19,6 @@
 namespace Aws {
 namespace ServiceQuotas {
 
-class ServiceQuotasClient;
-
 template <typename DerivedClient>
 class ServiceQuotasPaginationBase {
  public:

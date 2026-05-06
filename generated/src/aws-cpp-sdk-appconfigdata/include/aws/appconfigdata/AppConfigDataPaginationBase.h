@@ -13,8 +13,6 @@
 namespace Aws {
 namespace AppConfigData {
 
-class AppConfigDataClient;
-
 template <typename DerivedClient>
 class AppConfigDataPaginationBase {
  public:

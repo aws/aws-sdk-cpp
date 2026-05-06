@@ -16,8 +16,6 @@
 namespace Aws {
 namespace HealthLake {
 
-class HealthLakeClient;
-
 template <typename DerivedClient>
 class HealthLakePaginationBase {
  public:

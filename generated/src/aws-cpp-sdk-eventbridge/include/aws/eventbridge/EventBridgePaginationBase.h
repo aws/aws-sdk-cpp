@@ -13,8 +13,6 @@
 namespace Aws {
 namespace EventBridge {
 
-class EventBridgeClient;
-
 template <typename DerivedClient>
 class EventBridgePaginationBase {
  public:

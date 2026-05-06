@@ -18,8 +18,6 @@
 namespace Aws {
 namespace ResourceGroups {
 
-class ResourceGroupsClient;
-
 template <typename DerivedClient>
 class ResourceGroupsPaginationBase {
  public:

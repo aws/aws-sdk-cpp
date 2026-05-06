@@ -13,8 +13,6 @@
 namespace Aws {
 namespace ApiGatewayManagementApi {
 
-class ApiGatewayManagementApiClient;
-
 template <typename DerivedClient>
 class ApiGatewayManagementApiPaginationBase {
  public:

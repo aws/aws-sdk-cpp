@@ -14,8 +14,6 @@
 namespace Aws {
 namespace Account {
 
-class AccountClient;
-
 template <typename DerivedClient>
 class AccountPaginationBase {
  public:

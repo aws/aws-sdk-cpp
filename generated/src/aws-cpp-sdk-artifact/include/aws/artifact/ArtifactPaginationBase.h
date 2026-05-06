@@ -16,8 +16,6 @@
 namespace Aws {
 namespace Artifact {
 
-class ArtifactClient;
-
 template <typename DerivedClient>
 class ArtifactPaginationBase {
  public:

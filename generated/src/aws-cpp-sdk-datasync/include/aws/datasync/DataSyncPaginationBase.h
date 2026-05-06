@@ -18,8 +18,6 @@
 namespace Aws {
 namespace DataSync {
 
-class DataSyncClient;
-
 template <typename DerivedClient>
 class DataSyncPaginationBase {
  public:

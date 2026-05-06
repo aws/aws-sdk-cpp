@@ -14,8 +14,6 @@
 namespace Aws {
 namespace MarketplaceEntitlementService {
 
-class MarketplaceEntitlementServiceClient;
-
 template <typename DerivedClient>
 class MarketplaceEntitlementServicePaginationBase {
  public:

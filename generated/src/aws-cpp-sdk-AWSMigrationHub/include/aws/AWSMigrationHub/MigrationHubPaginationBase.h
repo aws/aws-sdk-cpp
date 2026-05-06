@@ -20,8 +20,6 @@
 namespace Aws {
 namespace MigrationHub {
 
-class MigrationHubClient;
-
 template <typename DerivedClient>
 class MigrationHubPaginationBase {
  public:

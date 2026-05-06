@@ -37,8 +37,6 @@
 namespace Aws {
 namespace CloudFormation {
 
-class CloudFormationClient;
-
 template <typename DerivedClient>
 class CloudFormationPaginationBase {
  public:

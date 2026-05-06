@@ -29,8 +29,6 @@
 namespace Aws {
 namespace FraudDetector {
 
-class FraudDetectorClient;
-
 template <typename DerivedClient>
 class FraudDetectorPaginationBase {
  public:

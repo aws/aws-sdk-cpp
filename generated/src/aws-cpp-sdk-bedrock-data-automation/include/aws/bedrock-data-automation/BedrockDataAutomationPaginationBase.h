@@ -18,8 +18,6 @@
 namespace Aws {
 namespace BedrockDataAutomation {
 
-class BedrockDataAutomationClient;
-
 template <typename DerivedClient>
 class BedrockDataAutomationPaginationBase {
  public:

@@ -24,8 +24,6 @@
 namespace Aws {
 namespace BillingConductor {
 
-class BillingConductorClient;
-
 template <typename DerivedClient>
 class BillingConductorPaginationBase {
  public:

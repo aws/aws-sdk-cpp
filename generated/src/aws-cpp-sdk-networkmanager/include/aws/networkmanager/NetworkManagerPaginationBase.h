@@ -37,8 +37,6 @@
 namespace Aws {
 namespace NetworkManager {
 
-class NetworkManagerClient;
-
 template <typename DerivedClient>
 class NetworkManagerPaginationBase {
  public:

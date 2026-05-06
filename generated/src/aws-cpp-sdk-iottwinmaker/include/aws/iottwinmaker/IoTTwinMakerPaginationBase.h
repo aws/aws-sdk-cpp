@@ -25,8 +25,6 @@
 namespace Aws {
 namespace IoTTwinMaker {
 
-class IoTTwinMakerClient;
-
 template <typename DerivedClient>
 class IoTTwinMakerPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace DLM {
 
-class DLMClient;
-
 template <typename DerivedClient>
 class DLMPaginationBase {
  public:

@@ -17,8 +17,6 @@
 namespace Aws {
 namespace MedicalImaging {
 
-class MedicalImagingClient;
-
 template <typename DerivedClient>
 class MedicalImagingPaginationBase {
  public:

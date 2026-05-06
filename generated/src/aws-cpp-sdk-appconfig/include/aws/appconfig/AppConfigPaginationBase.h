@@ -21,8 +21,6 @@
 namespace Aws {
 namespace AppConfig {
 
-class AppConfigClient;
-
 template <typename DerivedClient>
 class AppConfigPaginationBase {
  public:

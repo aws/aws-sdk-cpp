@@ -14,8 +14,6 @@
 namespace Aws {
 namespace BedrockRuntime {
 
-class BedrockRuntimeClient;
-
 template <typename DerivedClient>
 class BedrockRuntimePaginationBase {
  public:

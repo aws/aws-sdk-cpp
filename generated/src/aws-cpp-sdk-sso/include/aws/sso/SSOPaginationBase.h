@@ -15,8 +15,6 @@
 namespace Aws {
 namespace SSO {
 
-class SSOClient;
-
 template <typename DerivedClient>
 class SSOPaginationBase {
  public:

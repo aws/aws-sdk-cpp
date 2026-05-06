@@ -33,8 +33,6 @@
 namespace Aws {
 namespace QBusiness {
 
-class QBusinessClient;
-
 template <typename DerivedClient>
 class QBusinessPaginationBase {
  public:

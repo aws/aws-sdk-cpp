@@ -21,8 +21,6 @@
 namespace Aws {
 namespace SNS {
 
-class SNSClient;
-
 template <typename DerivedClient>
 class SNSPaginationBase {
  public:

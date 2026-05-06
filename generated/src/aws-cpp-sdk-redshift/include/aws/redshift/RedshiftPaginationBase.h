@@ -50,8 +50,6 @@
 namespace Aws {
 namespace Redshift {
 
-class RedshiftClient;
-
 template <typename DerivedClient>
 class RedshiftPaginationBase {
  public:

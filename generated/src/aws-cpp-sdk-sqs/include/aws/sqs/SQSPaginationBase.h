@@ -15,8 +15,6 @@
 namespace Aws {
 namespace SQS {
 
-class SQSClient;
-
 template <typename DerivedClient>
 class SQSPaginationBase {
  public:

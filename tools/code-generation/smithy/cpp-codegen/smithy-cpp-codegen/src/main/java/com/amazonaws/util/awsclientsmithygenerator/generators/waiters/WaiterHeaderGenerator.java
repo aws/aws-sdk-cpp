@@ -44,7 +44,9 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
 
     @Override
     protected void writeSpecificIncludes(CppWriter writer, String serviceName, String smithyServiceName) {
-        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String classPrefix = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
         writer.writeInclude("aws/" + smithyServiceName + "/" + classPrefix + "Client.h");
         writer.writeInclude("aws/core/utils/Waiter.h");
         writer.writeInclude("aws/core/utils/memory/AWSMemory.h");
@@ -104,7 +106,9 @@ public class WaiterHeaderGenerator extends BaseHeaderGenerator<WaiterOperationDa
 
     @Override
     protected void writeSpecificContent(CppWriter writer, String serviceName) {
-        String classPrefix = ServiceNameUtil.getServiceNameUpperCamel(service);
+        String classPrefix = java.util.Optional.ofNullable(namespaceMap.get(smithyServiceName))
+            .map(ServiceNameUtil::capitalize)
+            .orElse(ServiceNameUtil.getServiceNameUpperCamel(service));
 
         writer.write("template<typename DerivedClient = " + classPrefix + "Client>");
         writer.openBlock("class " + classPrefix + "Waiter {", "};", () -> {

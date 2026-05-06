@@ -29,8 +29,6 @@
 namespace Aws {
 namespace CodeBuild {
 
-class CodeBuildClient;
-
 template <typename DerivedClient>
 class CodeBuildPaginationBase {
  public:

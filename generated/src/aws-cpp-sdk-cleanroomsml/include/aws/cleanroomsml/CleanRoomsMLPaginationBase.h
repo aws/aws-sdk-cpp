@@ -29,8 +29,6 @@
 namespace Aws {
 namespace CleanRoomsML {
 
-class CleanRoomsMLClient;
-
 template <typename DerivedClient>
 class CleanRoomsMLPaginationBase {
  public:

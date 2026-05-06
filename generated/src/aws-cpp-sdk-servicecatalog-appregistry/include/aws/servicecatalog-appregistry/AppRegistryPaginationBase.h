@@ -18,8 +18,6 @@
 namespace Aws {
 namespace AppRegistry {
 
-class AppRegistryClient;
-
 template <typename DerivedClient>
 class AppRegistryPaginationBase {
  public:

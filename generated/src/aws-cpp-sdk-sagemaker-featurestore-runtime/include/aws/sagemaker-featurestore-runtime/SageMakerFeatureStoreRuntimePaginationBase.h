@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SageMakerFeatureStoreRuntime {
 
-class SageMakerFeatureStoreRuntimeClient;
-
 template <typename DerivedClient>
 class SageMakerFeatureStoreRuntimePaginationBase {
  public:

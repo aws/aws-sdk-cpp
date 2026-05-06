@@ -13,8 +13,6 @@
 namespace Aws {
 namespace neptunedata {
 
-class NeptunedataClient;
-
 template <typename DerivedClient>
 class NeptunedataPaginationBase {
  public:

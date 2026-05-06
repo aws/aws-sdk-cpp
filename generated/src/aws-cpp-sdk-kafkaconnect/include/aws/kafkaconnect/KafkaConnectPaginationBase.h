@@ -17,8 +17,6 @@
 namespace Aws {
 namespace KafkaConnect {
 
-class KafkaConnectClient;
-
 template <typename DerivedClient>
 class KafkaConnectPaginationBase {
  public:

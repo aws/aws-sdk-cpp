@@ -17,8 +17,6 @@
 namespace Aws {
 namespace BackupSearch {
 
-class BackupSearchClient;
-
 template <typename DerivedClient>
 class BackupSearchPaginationBase {
  public:

@@ -18,8 +18,6 @@
 namespace Aws {
 namespace NetworkFlowMonitor {
 
-class NetworkFlowMonitorClient;
-
 template <typename DerivedClient>
 class NetworkFlowMonitorPaginationBase {
  public:

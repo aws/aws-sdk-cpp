@@ -28,8 +28,6 @@
 namespace Aws {
 namespace EKS {
 
-class EKSClient;
-
 template <typename DerivedClient>
 class EKSPaginationBase {
  public:

@@ -17,8 +17,6 @@
 namespace Aws {
 namespace ECRPublic {
 
-class ECRPublicClient;
-
 template <typename DerivedClient>
 class ECRPublicPaginationBase {
  public:

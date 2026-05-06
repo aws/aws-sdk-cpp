@@ -32,8 +32,6 @@
 namespace Aws {
 namespace WellArchitected {
 
-class WellArchitectedClient;
-
 template <typename DerivedClient>
 class WellArchitectedPaginationBase {
  public:

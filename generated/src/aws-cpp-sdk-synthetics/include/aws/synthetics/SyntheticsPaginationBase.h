@@ -20,8 +20,6 @@
 namespace Aws {
 namespace Synthetics {
 
-class SyntheticsClient;
-
 template <typename DerivedClient>
 class SyntheticsPaginationBase {
  public:

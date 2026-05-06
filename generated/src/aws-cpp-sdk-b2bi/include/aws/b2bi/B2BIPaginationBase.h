@@ -17,8 +17,6 @@
 namespace Aws {
 namespace B2BI {
 
-class B2BIClient;
-
 template <typename DerivedClient>
 class B2BIPaginationBase {
  public:

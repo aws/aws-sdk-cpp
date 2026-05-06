@@ -54,8 +54,6 @@
 namespace Aws {
 namespace ConfigService {
 
-class ConfigServiceClient;
-
 template <typename DerivedClient>
 class ConfigServicePaginationBase {
  public:

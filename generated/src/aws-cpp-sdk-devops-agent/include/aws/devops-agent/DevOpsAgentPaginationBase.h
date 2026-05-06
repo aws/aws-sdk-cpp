@@ -20,8 +20,6 @@
 namespace Aws {
 namespace DevOpsAgent {
 
-class DevOpsAgentClient;
-
 template <typename DerivedClient>
 class DevOpsAgentPaginationBase {
  public:

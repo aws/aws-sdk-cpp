@@ -17,8 +17,6 @@
 namespace Aws {
 namespace CodeGuruReviewer {
 
-class CodeGuruReviewerClient;
-
 template <typename DerivedClient>
 class CodeGuruReviewerPaginationBase {
  public:

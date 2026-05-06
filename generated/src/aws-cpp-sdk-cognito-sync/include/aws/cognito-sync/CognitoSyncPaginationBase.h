@@ -13,8 +13,6 @@
 namespace Aws {
 namespace CognitoSync {
 
-class CognitoSyncClient;
-
 template <typename DerivedClient>
 class CognitoSyncPaginationBase {
  public:

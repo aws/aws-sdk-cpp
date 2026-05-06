@@ -25,8 +25,6 @@
 namespace Aws {
 namespace CloudTrail {
 
-class CloudTrailClient;
-
 template <typename DerivedClient>
 class CloudTrailPaginationBase {
  public:

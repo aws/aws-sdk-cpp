@@ -13,8 +13,6 @@
 namespace Aws {
 namespace CloudHSM {
 
-class CloudHSMClient;
-
 template <typename DerivedClient>
 class CloudHSMPaginationBase {
  public:

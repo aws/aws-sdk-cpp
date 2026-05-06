@@ -23,8 +23,6 @@
 namespace Aws {
 namespace MediaConnect {
 
-class MediaConnectClient;
-
 template <typename DerivedClient>
 class MediaConnectPaginationBase {
  public:

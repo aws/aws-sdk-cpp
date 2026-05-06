@@ -18,8 +18,6 @@
 namespace Aws {
 namespace PcaConnectorAd {
 
-class PcaConnectorAdClient;
-
 template <typename DerivedClient>
 class PcaConnectorAdPaginationBase {
  public:

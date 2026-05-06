@@ -14,8 +14,6 @@
 namespace Aws {
 namespace MQ {
 
-class MQClient;
-
 template <typename DerivedClient>
 class MQPaginationBase {
  public:

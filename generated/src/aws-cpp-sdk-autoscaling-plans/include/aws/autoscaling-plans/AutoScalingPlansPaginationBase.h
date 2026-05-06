@@ -13,8 +13,6 @@
 namespace Aws {
 namespace AutoScalingPlans {
 
-class AutoScalingPlansClient;
-
 template <typename DerivedClient>
 class AutoScalingPlansPaginationBase {
  public:

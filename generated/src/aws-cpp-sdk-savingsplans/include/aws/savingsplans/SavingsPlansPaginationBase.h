@@ -13,8 +13,6 @@
 namespace Aws {
 namespace SavingsPlans {
 
-class SavingsPlansClient;
-
 template <typename DerivedClient>
 class SavingsPlansPaginationBase {
  public:

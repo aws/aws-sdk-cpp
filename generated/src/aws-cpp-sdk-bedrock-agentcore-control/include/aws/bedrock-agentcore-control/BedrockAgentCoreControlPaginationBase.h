@@ -37,8 +37,6 @@
 namespace Aws {
 namespace BedrockAgentCoreControl {
 
-class BedrockAgentCoreControlClient;
-
 template <typename DerivedClient>
 class BedrockAgentCoreControlPaginationBase {
  public:

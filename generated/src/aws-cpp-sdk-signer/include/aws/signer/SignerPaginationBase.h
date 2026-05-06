@@ -16,8 +16,6 @@
 namespace Aws {
 namespace signer {
 
-class SignerClient;
-
 template <typename DerivedClient>
 class SignerPaginationBase {
  public:

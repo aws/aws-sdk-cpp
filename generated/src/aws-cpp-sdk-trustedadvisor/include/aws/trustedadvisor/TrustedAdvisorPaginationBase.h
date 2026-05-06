@@ -19,8 +19,6 @@
 namespace Aws {
 namespace TrustedAdvisor {
 
-class TrustedAdvisorClient;
-
 template <typename DerivedClient>
 class TrustedAdvisorPaginationBase {
  public:

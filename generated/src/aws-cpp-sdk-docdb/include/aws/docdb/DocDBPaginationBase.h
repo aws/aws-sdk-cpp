@@ -26,8 +26,6 @@
 namespace Aws {
 namespace DocDB {
 
-class DocDBClient;
-
 template <typename DerivedClient>
 class DocDBPaginationBase {
  public:

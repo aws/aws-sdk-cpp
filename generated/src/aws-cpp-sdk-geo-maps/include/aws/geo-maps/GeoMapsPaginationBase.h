@@ -13,8 +13,6 @@
 namespace Aws {
 namespace GeoMaps {
 
-class GeoMapsClient;
-
 template <typename DerivedClient>
 class GeoMapsPaginationBase {
  public:

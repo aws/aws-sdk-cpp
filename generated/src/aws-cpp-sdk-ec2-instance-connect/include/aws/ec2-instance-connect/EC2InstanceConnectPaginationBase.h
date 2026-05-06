@@ -13,8 +13,6 @@
 namespace Aws {
 namespace EC2InstanceConnect {
 
-class EC2InstanceConnectClient;
-
 template <typename DerivedClient>
 class EC2InstanceConnectPaginationBase {
  public:

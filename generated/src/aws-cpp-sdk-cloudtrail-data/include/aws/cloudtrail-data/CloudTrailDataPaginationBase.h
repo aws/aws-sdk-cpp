@@ -13,8 +13,6 @@
 namespace Aws {
 namespace CloudTrailData {
 
-class CloudTrailDataClient;
-
 template <typename DerivedClient>
 class CloudTrailDataPaginationBase {
  public:

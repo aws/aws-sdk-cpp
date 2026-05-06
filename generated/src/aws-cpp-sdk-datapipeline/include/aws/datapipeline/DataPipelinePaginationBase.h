@@ -16,8 +16,6 @@
 namespace Aws {
 namespace DataPipeline {
 
-class DataPipelineClient;
-
 template <typename DerivedClient>
 class DataPipelinePaginationBase {
  public:

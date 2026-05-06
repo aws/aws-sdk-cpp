@@ -13,8 +13,6 @@
 namespace Aws {
 namespace STS {
 
-class STSClient;
-
 template <typename DerivedClient>
 class STSPaginationBase {
  public:

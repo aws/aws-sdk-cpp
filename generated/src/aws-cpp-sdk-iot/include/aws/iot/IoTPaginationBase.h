@@ -75,8 +75,6 @@
 namespace Aws {
 namespace IoT {
 
-class IoTClient;
-
 template <typename DerivedClient>
 class IoTPaginationBase {
  public:

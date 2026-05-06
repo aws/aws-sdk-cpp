@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ElementalInference {
 
-class ElementalInferenceClient;
-
 template <typename DerivedClient>
 class ElementalInferencePaginationBase {
  public:

@@ -22,8 +22,6 @@
 namespace Aws {
 namespace MediaTailor {
 
-class MediaTailorClient;
-
 template <typename DerivedClient>
 class MediaTailorPaginationBase {
  public:

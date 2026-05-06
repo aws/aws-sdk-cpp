@@ -42,8 +42,6 @@
 namespace Aws {
 namespace deadline {
 
-class DeadlineClient;
-
 template <typename DerivedClient>
 class DeadlinePaginationBase {
  public:

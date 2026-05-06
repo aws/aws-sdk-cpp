@@ -17,8 +17,6 @@
 namespace Aws {
 namespace SecurityLake {
 
-class SecurityLakeClient;
-
 template <typename DerivedClient>
 class SecurityLakePaginationBase {
  public:

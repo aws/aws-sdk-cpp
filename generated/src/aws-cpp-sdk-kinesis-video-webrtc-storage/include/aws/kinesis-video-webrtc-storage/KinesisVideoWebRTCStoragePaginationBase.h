@@ -13,8 +13,6 @@
 namespace Aws {
 namespace KinesisVideoWebRTCStorage {
 
-class KinesisVideoWebRTCStorageClient;
-
 template <typename DerivedClient>
 class KinesisVideoWebRTCStoragePaginationBase {
  public:

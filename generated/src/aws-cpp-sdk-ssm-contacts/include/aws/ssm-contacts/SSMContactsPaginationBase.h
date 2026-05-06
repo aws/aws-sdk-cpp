@@ -24,8 +24,6 @@
 namespace Aws {
 namespace SSMContacts {
 
-class SSMContactsClient;
-
 template <typename DerivedClient>
 class SSMContactsPaginationBase {
  public:

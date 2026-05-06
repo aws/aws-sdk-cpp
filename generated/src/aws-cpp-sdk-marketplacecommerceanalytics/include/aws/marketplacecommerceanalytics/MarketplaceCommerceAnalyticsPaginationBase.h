@@ -13,8 +13,6 @@
 namespace Aws {
 namespace MarketplaceCommerceAnalytics {
 
-class MarketplaceCommerceAnalyticsClient;
-
 template <typename DerivedClient>
 class MarketplaceCommerceAnalyticsPaginationBase {
  public:

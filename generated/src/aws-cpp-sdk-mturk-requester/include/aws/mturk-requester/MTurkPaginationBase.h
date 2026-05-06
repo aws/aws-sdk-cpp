@@ -23,8 +23,6 @@
 namespace Aws {
 namespace MTurk {
 
-class MTurkClient;
-
 template <typename DerivedClient>
 class MTurkPaginationBase {
  public:

@@ -13,8 +13,6 @@
 namespace Aws {
 namespace WAFRegional {
 
-class WAFRegionalClient;
-
 template <typename DerivedClient>
 class WAFRegionalPaginationBase {
  public:

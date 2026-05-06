@@ -14,8 +14,6 @@
 namespace Aws {
 namespace ApplicationCostProfiler {
 
-class ApplicationCostProfilerClient;
-
 template <typename DerivedClient>
 class ApplicationCostProfilerPaginationBase {
  public:

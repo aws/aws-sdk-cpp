@@ -25,8 +25,6 @@
 namespace Aws {
 namespace AppSync {
 
-class AppSyncClient;
-
 template <typename DerivedClient>
 class AppSyncPaginationBase {
  public:

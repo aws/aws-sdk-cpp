@@ -18,8 +18,6 @@
 namespace Aws {
 namespace SFN {
 
-class SFNClient;
-
 template <typename DerivedClient>
 class SFNPaginationBase {
  public:

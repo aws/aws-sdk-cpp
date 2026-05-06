@@ -25,8 +25,6 @@
 namespace Aws {
 namespace APIGateway {
 
-class APIGatewayClient;
-
 template <typename DerivedClient>
 class APIGatewayPaginationBase {
  public:

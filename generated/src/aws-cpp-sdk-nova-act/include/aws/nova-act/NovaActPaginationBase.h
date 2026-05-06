@@ -17,8 +17,6 @@
 namespace Aws {
 namespace NovaAct {
 
-class NovaActClient;
-
 template <typename DerivedClient>
 class NovaActPaginationBase {
  public:

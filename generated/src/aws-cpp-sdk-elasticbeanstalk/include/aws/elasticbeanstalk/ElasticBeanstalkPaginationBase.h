@@ -17,8 +17,6 @@
 namespace Aws {
 namespace ElasticBeanstalk {
 
-class ElasticBeanstalkClient;
-
 template <typename DerivedClient>
 class ElasticBeanstalkPaginationBase {
  public:

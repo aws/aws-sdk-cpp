@@ -16,8 +16,6 @@
 namespace Aws {
 namespace LicenseManagerLinuxSubscriptions {
 
-class LicenseManagerLinuxSubscriptionsClient;
-
 template <typename DerivedClient>
 class LicenseManagerLinuxSubscriptionsPaginationBase {
  public:

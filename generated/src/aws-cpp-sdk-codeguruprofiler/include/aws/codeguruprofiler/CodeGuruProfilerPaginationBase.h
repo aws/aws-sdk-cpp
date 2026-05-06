@@ -17,8 +17,6 @@
 namespace Aws {
 namespace CodeGuruProfiler {
 
-class CodeGuruProfilerClient;
-
 template <typename DerivedClient>
 class CodeGuruProfilerPaginationBase {
  public:

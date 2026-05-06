@@ -34,8 +34,6 @@
 namespace Aws {
 namespace QConnect {
 
-class QConnectClient;
-
 template <typename DerivedClient>
 class QConnectPaginationBase {
  public:

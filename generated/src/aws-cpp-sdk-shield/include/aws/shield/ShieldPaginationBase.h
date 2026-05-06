@@ -17,8 +17,6 @@
 namespace Aws {
 namespace Shield {
 
-class ShieldClient;
-
 template <typename DerivedClient>
 class ShieldPaginationBase {
  public:

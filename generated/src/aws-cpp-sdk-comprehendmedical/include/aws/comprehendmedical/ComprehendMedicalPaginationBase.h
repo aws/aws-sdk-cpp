@@ -13,8 +13,6 @@
 namespace Aws {
 namespace ComprehendMedical {
 
-class ComprehendMedicalClient;
-
 template <typename DerivedClient>
 class ComprehendMedicalPaginationBase {
  public:

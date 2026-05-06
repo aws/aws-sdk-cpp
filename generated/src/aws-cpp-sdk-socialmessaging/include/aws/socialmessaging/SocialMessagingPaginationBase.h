@@ -16,8 +16,6 @@
 namespace Aws {
 namespace SocialMessaging {
 
-class SocialMessagingClient;
-
 template <typename DerivedClient>
 class SocialMessagingPaginationBase {
  public:

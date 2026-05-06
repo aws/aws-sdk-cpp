@@ -13,8 +13,6 @@
 namespace Aws {
 namespace TranscribeStreamingService {
 
-class TranscribeStreamingServiceClient;
-
 template <typename DerivedClient>
 class TranscribeStreamingServicePaginationBase {
  public:

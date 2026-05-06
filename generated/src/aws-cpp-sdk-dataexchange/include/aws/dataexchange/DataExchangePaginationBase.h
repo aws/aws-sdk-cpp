@@ -20,8 +20,6 @@
 namespace Aws {
 namespace DataExchange {
 
-class DataExchangeClient;
-
 template <typename DerivedClient>
 class DataExchangePaginationBase {
  public:

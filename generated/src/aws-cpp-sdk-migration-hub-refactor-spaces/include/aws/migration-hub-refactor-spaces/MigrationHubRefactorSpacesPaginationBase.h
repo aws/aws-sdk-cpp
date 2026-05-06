@@ -18,8 +18,6 @@
 namespace Aws {
 namespace MigrationHubRefactorSpaces {
 
-class MigrationHubRefactorSpacesClient;
-
 template <typename DerivedClient>
 class MigrationHubRefactorSpacesPaginationBase {
  public:
