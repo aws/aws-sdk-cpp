@@ -1,16 +1,16 @@
 name: Modern Build Matrix
 
 on:
+  push:
+    branches: [main, mainline]
+    paths:
+      - 'cmake/**'
+      - 'CMakeLists.txt'
+      - 'src/aws-cpp-sdk-core/**'
   pull_request:
     paths:
-      - 'CMakeLists.txt'
       - 'cmake/**'
-      - 'src/aws-cpp-sdk-core/**'
-  push:
-    branches: [main]
-    paths:
       - 'CMakeLists.txt'
-      - 'cmake/**'
       - 'src/aws-cpp-sdk-core/**'
 
 concurrency:
@@ -18,39 +18,85 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  load-matrix:
-    runs-on: ubuntu-latest
-    outputs:
-      matrix: ${{ steps.set.outputs.matrix }}
-    steps:
-      - uses: actions/checkout@v4
-      - id: set
-        run: echo "matrix=$(jq -c . tools/CI/build-matrix.json)" >> "$GITHUB_OUTPUT"
-
   build:
-    needs: load-matrix
     strategy:
       fail-fast: false
       matrix:
-        include: ${{ fromJson(needs.load-matrix.outputs.matrix) }}
+        os: [ubuntu-22.04, macos-13, windows-2022]
+        build_type: [Release, Debug]
+        shared: ['ON', 'OFF']
     runs-on: ${{ matrix.os }}
-    container: ${{ matrix.container || '' }}
-    name: ${{ matrix.platform }}
+    name: ${{ matrix.os }}-${{ matrix.build_type }}-shared=${{ matrix.shared }}
     steps:
       - uses: actions/checkout@v4
-        with:
-          submodules: recursive
-
-      - name: Install dependencies (AL2)
-        if: matrix.container == 'amazonlinux:2'
-        run: yum install -y cmake3 gcc-c++ git libcurl-devel openssl-devel
-
-      - name: Install dependencies (Android)
-        if: contains(matrix.cmake_args, 'TARGET_ARCH=ANDROID')
-        uses: android-actions/setup-android@v3
 
       - name: Configure
-        run: cmake -B build -DLEGACY_BUILD=OFF ${{ matrix.cmake_args }} -DCMAKE_BUILD_TYPE=Release
+        run: >
+          cmake -B build
+          -DLEGACY_BUILD=OFF
+          -DAWS_SDK_BUILD_ONLY="s3;sts"
+          -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          -DBUILD_SHARED_LIBS=${{ matrix.shared }}
+          -DAWS_SDK_ENABLE_TESTING=ON
 
       - name: Build
-        run: cmake --build build --config Release --parallel
+        run: cmake --build build --config ${{ matrix.build_type }}
+
+      - name: Test
+        run: ctest --test-dir build -C ${{ matrix.build_type }} --output-on-failure
+
+      - name: Install
+        run: cmake --install build --config ${{ matrix.build_type }} --prefix ${{ github.workspace }}/install
+
+      - name: Verify find_package
+        shell: bash
+        run: |
+          mkdir verify_pkg && cd verify_pkg
+          cat > CMakeLists.txt <<'EOF'
+          cmake_minimum_required(VERSION 3.14)
+          project(verify)
+          find_package(aws-cpp-sdk-s3 REQUIRED)
+          add_executable(verify main.cpp)
+          target_link_libraries(verify PRIVATE aws-cpp-sdk-s3)
+          EOF
+          cat > main.cpp <<'EOF'
+          #include <aws/s3/S3Client.h>
+          int main() { return 0; }
+          EOF
+          cmake -B build \
+            -DCMAKE_PREFIX_PATH="${{ github.workspace }}/install" \
+            -DCMAKE_BUILD_TYPE=${{ matrix.build_type }}
+          cmake --build build --config ${{ matrix.build_type }}
+
+  source-package-offline:
+    runs-on: ubuntu-22.04
+    name: source-package-offline
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Configure
+        run: cmake -DLEGACY_BUILD=OFF -DAWS_SDK_BUILD_ONLY="s3" -DCMAKE_BUILD_TYPE=Release -B build
+
+      - name: Build source package
+        run: cmake --build build --target package_source
+
+      - name: Unpack source archive
+        run: |
+          mkdir /tmp/offline-build
+          tar -xzf build/*.tar.gz -C /tmp/offline-build --strip-components=1
+
+      - name: Pre-fetch CRT sources
+        run: git clone --depth 1 https://github.com/awslabs/aws-crt-cpp.git /tmp/crt-src
+
+      - name: Configure offline
+        run: >
+          cmake -B /tmp/offline-build/build
+          -S /tmp/offline-build
+          -DLEGACY_BUILD=OFF
+          -DAWS_SDK_BUILD_ONLY="s3"
+          -DCMAKE_BUILD_TYPE=Release
+          -DFETCHCONTENT_SOURCE_DIR_AWS-CRT-CPP=/tmp/crt-src
+          -DFETCHCONTENT_FULLY_DISCONNECTED=ON
+
+      - name: Build offline
+        run: cmake --build /tmp/offline-build/build --config Release

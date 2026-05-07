@@ -35,9 +35,22 @@ option(AWS_SDK_ENFORCE_TLS_V1_3 "Enforce TLS 1.3 minimum" OFF)
 # -- Service selection --
 set(AWS_SDK_BUILD_ONLY "" CACHE STRING "Semicolon-delimited list of services to build (empty = all)")
 
+# Deprecation shim: map legacy BUILD_ONLY to AWS_SDK_BUILD_ONLY
+if(DEFINED BUILD_ONLY AND NOT AWS_SDK_BUILD_ONLY)
+    message(DEPRECATION "BUILD_ONLY is deprecated. Use -DAWS_SDK_BUILD_ONLY=\"${BUILD_ONLY}\" instead.")
+    set(AWS_SDK_BUILD_ONLY "${BUILD_ONLY}" CACHE STRING "" FORCE)
+endif()
+
 # -- C++ standard --
 # Design doc: minimum C++14 (aligns with Abseil, gtest, Azure C++ SDK)
 set(AWS_SDK_CPP_STANDARD "14" CACHE STRING "C++ standard version (minimum 14)")
+
+if(AWS_SDK_CPP_STANDARD LESS 14)
+    message(FATAL_ERROR
+        "The modern build requires C++14 minimum. "
+        "AWS_SDK_CPP_STANDARD is set to '${AWS_SDK_CPP_STANDARD}'. "
+        "Remove the override or set -DAWS_SDK_CPP_STANDARD=14 or higher.")
+endif()
 
 # -- Memory management --
 option(AWS_SDK_CUSTOM_MEMORY_MANAGEMENT

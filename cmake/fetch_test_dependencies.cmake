@@ -12,7 +12,8 @@ endif()
 
 include(FetchContent)
 
-set(AWS_SDK_GTEST_VERSION "v1.14.0" CACHE STRING "googletest version tag to fetch")
+# googletest v1.14.0
+set(AWS_SDK_GTEST_VERSION "f8d7d77c06936315286eb55f8de22cd23c188571" CACHE STRING "googletest version tag to fetch")
 
 option(AWS_SDK_USE_INSTALLED_GTEST
     "Use a pre-installed googletest via find_package instead of FetchContent" OFF)
@@ -29,7 +30,6 @@ function(aws_sdk_fetch_test_dependencies)
         googletest
         GIT_REPOSITORY https://github.com/google/googletest.git
         GIT_TAG        ${AWS_SDK_GTEST_VERSION}
-        GIT_SHALLOW    TRUE
     )
 
     # For Windows: Prevent overriding the parent project's compiler/linker settings

@@ -13,6 +13,12 @@ function(aws_sdk_set_compiler_options target)
         CXX_STANDARD_REQUIRED ON
     )
 
+    # Hide symbols by default — only explicitly exported symbols are visible
+    set_target_properties(${target} PROPERTIES
+        CXX_VISIBILITY_PRESET hidden
+        VISIBILITY_INLINES_HIDDEN YES
+    )
+
     if(MSVC)
         _aws_sdk_msvc_options(${target})
     else()
@@ -47,6 +53,10 @@ endfunction()
 
 # -- MSVC --
 function(_aws_sdk_msvc_options target)
+    if(POLICY CMP0091)
+        cmake_policy(SET CMP0091 NEW)
+    endif()
+
     target_compile_options(${target} PRIVATE
         /MP        # parallel compilation
         /bigobj    # large object files
