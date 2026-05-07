@@ -304,7 +304,7 @@ namespace Aws
     template<typename T, typename ...ArgTypes>
     UniquePtr<T> MakeUnique(const char* allocationTag, ArgTypes&&... args)
     {
-        static_assert(!std::is_array<T>::value || std::is_trivial<T>::value,
+        static_assert(!std::is_array<T>::value || (std::is_trivially_default_constructible<T>::value && std::is_trivially_copyable<T>::value),
                 "This wrapper/function is not designed to support non-trivial arrays.");
         return UniquePtr<T>(Aws::New<T>(allocationTag, std::forward<ArgTypes>(args)...));
     }
@@ -312,7 +312,7 @@ namespace Aws
     template<typename T, typename D = Deleter<T>, typename ...ArgTypes>
     UniquePtrSafeDeleted<T, D> MakeUniqueSafeDeleted(const char* allocationTag, ArgTypes&&... args)
     {
-        static_assert(!std::is_array<T>::value || std::is_trivial<T>::value,
+        static_assert(!std::is_array<T>::value || (std::is_trivially_default_constructible<T>::value && std::is_trivially_copyable<T>::value),
                       "This wrapper/function is not designed to support non-trivial arrays.");
 
         return UniquePtrSafeDeleted<T, D>(Aws::New<T>(allocationTag, std::forward<ArgTypes>(args)...), D());
