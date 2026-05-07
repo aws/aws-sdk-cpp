@@ -13,11 +13,16 @@ function(aws_sdk_set_compiler_options target)
         CXX_STANDARD_REQUIRED ON
     )
 
-    # Hide symbols by default — only explicitly exported symbols are visible
-    set_target_properties(${target} PROPERTIES
-        CXX_VISIBILITY_PRESET hidden
-        VISIBILITY_INLINES_HIDDEN YES
-    )
+    # Hide symbols by default — only explicitly exported symbols are visible.
+    # NOTE: Only enabled on Windows where USE_IMPORT_EXPORT + __declspec handles exports.
+    # On Unix, SDK headers use AWS_CORE_API which is currently empty (no visibility("default")).
+    # Hidden visibility on Unix will be enabled once export headers are generated (Phase 2).
+    if(WIN32 AND BUILD_SHARED_LIBS)
+        set_target_properties(${target} PROPERTIES
+            CXX_VISIBILITY_PRESET hidden
+            VISIBILITY_INLINES_HIDDEN YES
+        )
+    endif()
 
     if(MSVC)
         _aws_sdk_msvc_options(${target})

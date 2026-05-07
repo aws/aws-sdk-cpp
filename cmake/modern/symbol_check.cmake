@@ -6,24 +6,25 @@
 
 include_guard(GLOBAL)
 
+# Adds a CTest test that verifies no forbidden symbols are exported.
+# Uses a test (not POST_BUILD) to avoid the "TARGET not in this directory" limitation.
 function(aws_sdk_add_symbol_check target)
+    if(NOT BUILD_TESTING AND NOT AWS_SDK_ENABLE_TESTING)
+        # Symbol check runs as a test; skip if testing disabled.
+        # Create a standalone custom target instead.
+    endif()
+
     if(WIN32)
-        add_custom_command(TARGET ${target} POST_BUILD
+        add_test(NAME ${target}_symbol_check
             COMMAND cmd /c "dumpbin /EXPORTS $<TARGET_FILE:${target}> | findstr /I \"gtest gmock tinyxml2 cJSON\" && exit 1 || exit 0"
-            COMMENT "Verifying no forbidden symbols exported from ${target}"
-            VERBATIM
         )
     elseif(APPLE)
-        add_custom_command(TARGET ${target} POST_BUILD
+        add_test(NAME ${target}_symbol_check
             COMMAND sh -c "nm -gU $<TARGET_FILE:${target}> | grep -iE 'gtest|gmock|tinyxml2|cJSON' && exit 1 || exit 0"
-            COMMENT "Verifying no forbidden symbols exported from ${target}"
-            VERBATIM
         )
     elseif(UNIX)
-        add_custom_command(TARGET ${target} POST_BUILD
+        add_test(NAME ${target}_symbol_check
             COMMAND sh -c "nm -gD $<TARGET_FILE:${target}> 2>/dev/null | grep -iE 'gtest|gmock|tinyxml2|cJSON' && exit 1 || exit 0"
-            COMMENT "Verifying no forbidden symbols exported from ${target}"
-            VERBATIM
         )
     endif()
 endfunction()

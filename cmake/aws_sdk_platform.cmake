@@ -115,6 +115,9 @@ function(aws_sdk_apply_platform_definitions target)
     endif()
 
     if(AWS_SDK_HAS_COMPRESSION)
-        target_compile_definitions(${target} PRIVATE ENABLED_ZLIB_REQUEST_COMPRESSION ENABLED_REQUEST_COMPRESSION)
+        # TODO: Wire CRT aws-c-compression to SDK RequestCompression layer.
+        # Until then, compression is logically enabled but the zlib-based
+        # implementation is not compiled (no ENABLED_ZLIB_REQUEST_COMPRESSION define).
+        target_compile_definitions(${target} PRIVATE ENABLED_REQUEST_COMPRESSION)
     endif()
 endfunction()

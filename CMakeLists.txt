@@ -443,6 +443,7 @@ else () #  End of Legacy Build
     aws_sdk_build_service_clients()
 
     # -- Symbol leakage verification --
+    enable_testing()
     include(cmake/modern/symbol_check.cmake)
     aws_sdk_add_symbol_check(aws-cpp-sdk-core)
 
