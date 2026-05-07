@@ -97,7 +97,7 @@ void OnResponseBodyReceived(Aws::Crt::Http::HttpStream&, const Aws::Crt::ByteCur
     AWS_LOGSTREAM_ERROR(CRT_HTTP_CLIENT_TAG, "Failed to write " << body.len << " (eof: " << ref.eof() << ", bad: " << ref.bad() << ")");
   }
 
-  if (request->IsEventStreamRequest() && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE)) {
+  if ((request->IsEventStreamRequest() || request->HasEventStreamResponse()) && !response->HasHeader(Aws::Http::X_AMZN_ERROR_TYPE)) {
     response->GetResponseBody().flush();
   }
 
