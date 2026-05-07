@@ -220,6 +220,12 @@ InstanceTypeInfo& InstanceTypeInfo::operator=(const XmlNode& xmlNode) {
           StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(rebootMigrationSupportNode.GetText()).c_str()));
       m_rebootMigrationSupportHasBeenSet = true;
     }
+    XmlNode supportedInRegionNode = resultNode.FirstChild("supportedInRegion");
+    if (!supportedInRegionNode.IsNull()) {
+      m_supportedInRegion = StringUtils::ConvertToBool(
+          StringUtils::Trim(Aws::Utils::Xml::DecodeEscapedXmlText(supportedInRegionNode.GetText()).c_str()).c_str());
+      m_supportedInRegionHasBeenSet = true;
+    }
   }
 
   return *this;
@@ -399,6 +405,10 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
     oStream << location << index << locationValue << ".RebootMigrationSupport="
             << StringUtils::URLEncode(RebootMigrationSupportMapper::GetNameForRebootMigrationSupport(m_rebootMigrationSupport)) << "&";
   }
+
+  if (m_supportedInRegionHasBeenSet) {
+    oStream << location << index << locationValue << ".SupportedInRegion=" << std::boolalpha << m_supportedInRegion << "&";
+  }
 }
 
 void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* location) const {
@@ -541,6 +551,9 @@ void InstanceTypeInfo::OutputToStream(Aws::OStream& oStream, const char* locatio
   if (m_rebootMigrationSupportHasBeenSet) {
     oStream << location << ".RebootMigrationSupport="
             << StringUtils::URLEncode(RebootMigrationSupportMapper::GetNameForRebootMigrationSupport(m_rebootMigrationSupport)) << "&";
+  }
+  if (m_supportedInRegionHasBeenSet) {
+    oStream << location << ".SupportedInRegion=" << std::boolalpha << m_supportedInRegion << "&";
   }
 }
 

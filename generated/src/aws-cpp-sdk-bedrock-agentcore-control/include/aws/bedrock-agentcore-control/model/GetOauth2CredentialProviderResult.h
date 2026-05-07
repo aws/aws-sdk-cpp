@@ -187,7 +187,7 @@ class GetOauth2CredentialProviderResult {
 
   ///@{
   /**
-   * <p>The reason for the failure if the OAuth2 credential provider is in a failed
+   * <p>The reason for failure if the OAuth2 credential provider is in a failed
    * state.</p>
    */
   inline const Aws::String& GetFailureReason() const { return m_failureReason; }

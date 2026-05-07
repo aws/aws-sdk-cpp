@@ -17,6 +17,7 @@ namespace InvoiceTypeMapper {
 
 static const int INVOICE_HASH = HashingUtils::HashString("INVOICE");
 static const int CREDIT_MEMO_HASH = HashingUtils::HashString("CREDIT_MEMO");
+static const int PAYMENT_RECEIPT_HASH = HashingUtils::HashString("PAYMENT_RECEIPT");
 
 InvoiceType GetInvoiceTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ InvoiceType GetInvoiceTypeForName(const Aws::String& name) {
     return InvoiceType::INVOICE;
   } else if (hashCode == CREDIT_MEMO_HASH) {
     return InvoiceType::CREDIT_MEMO;
+  } else if (hashCode == PAYMENT_RECEIPT_HASH) {
+    return InvoiceType::PAYMENT_RECEIPT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForInvoiceType(InvoiceType enumValue) {
       return "INVOICE";
     case InvoiceType::CREDIT_MEMO:
       return "CREDIT_MEMO";
+    case InvoiceType::PAYMENT_RECEIPT:
+      return "PAYMENT_RECEIPT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

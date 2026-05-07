@@ -34,6 +34,22 @@ InvoiceSummary& InvoiceSummary::operator=(JsonView jsonValue) {
     m_dueDate = jsonValue.GetDouble("DueDate");
     m_dueDateHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillSourceAccounts")) {
+    Aws::Utils::Array<JsonView> billSourceAccountsJsonList = jsonValue.GetArray("BillSourceAccounts");
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      m_billSourceAccounts.push_back(billSourceAccountsJsonList[billSourceAccountsIndex].AsString());
+    }
+    m_billSourceAccountsHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BillSourceAccountsTotalCount")) {
+    m_billSourceAccountsTotalCount = jsonValue.GetInteger("BillSourceAccountsTotalCount");
+    m_billSourceAccountsTotalCountHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("ReceiverRole")) {
+    m_receiverRole = ReceiverRoleMapper::GetReceiverRoleForName(jsonValue.GetString("ReceiverRole"));
+    m_receiverRoleHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("Entity")) {
     m_entity = jsonValue.GetObject("Entity");
     m_entityHasBeenSet = true;
@@ -42,9 +58,21 @@ InvoiceSummary& InvoiceSummary::operator=(JsonView jsonValue) {
     m_billingPeriod = jsonValue.GetObject("BillingPeriod");
     m_billingPeriodHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("InvoiceFrequency")) {
+    m_invoiceFrequency = InvoiceFrequencyMapper::GetInvoiceFrequencyForName(jsonValue.GetString("InvoiceFrequency"));
+    m_invoiceFrequencyHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("BillType")) {
+    m_billType = BillTypeMapper::GetBillTypeForName(jsonValue.GetString("BillType"));
+    m_billTypeHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("InvoiceType")) {
     m_invoiceType = InvoiceTypeMapper::GetInvoiceTypeForName(jsonValue.GetString("InvoiceType"));
     m_invoiceTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("CommercialInvoiceId")) {
+    m_commercialInvoiceId = jsonValue.GetString("CommercialInvoiceId");
+    m_commercialInvoiceIdHasBeenSet = true;
   }
   if (jsonValue.ValueExists("OriginalInvoiceId")) {
     m_originalInvoiceId = jsonValue.GetString("OriginalInvoiceId");
@@ -53,6 +81,15 @@ InvoiceSummary& InvoiceSummary::operator=(JsonView jsonValue) {
   if (jsonValue.ValueExists("PurchaseOrderNumber")) {
     m_purchaseOrderNumber = jsonValue.GetString("PurchaseOrderNumber");
     m_purchaseOrderNumberHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("EinvoiceDeliveryStatus")) {
+    m_einvoiceDeliveryStatus =
+        EinvoiceDeliveryStatusMapper::GetEinvoiceDeliveryStatusForName(jsonValue.GetString("EinvoiceDeliveryStatus"));
+    m_einvoiceDeliveryStatusHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("TaxAuthorityStatus")) {
+    m_taxAuthorityStatus = TaxAuthorityStatusMapper::GetTaxAuthorityStatusForName(jsonValue.GetString("TaxAuthorityStatus"));
+    m_taxAuthorityStatusHasBeenSet = true;
   }
   if (jsonValue.ValueExists("BaseCurrencyAmount")) {
     m_baseCurrencyAmount = jsonValue.GetObject("BaseCurrencyAmount");
@@ -88,6 +125,23 @@ JsonValue InvoiceSummary::Jsonize() const {
     payload.WithDouble("DueDate", m_dueDate.SecondsWithMSPrecision());
   }
 
+  if (m_billSourceAccountsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> billSourceAccountsJsonList(m_billSourceAccounts.size());
+    for (unsigned billSourceAccountsIndex = 0; billSourceAccountsIndex < billSourceAccountsJsonList.GetLength();
+         ++billSourceAccountsIndex) {
+      billSourceAccountsJsonList[billSourceAccountsIndex].AsString(m_billSourceAccounts[billSourceAccountsIndex]);
+    }
+    payload.WithArray("BillSourceAccounts", std::move(billSourceAccountsJsonList));
+  }
+
+  if (m_billSourceAccountsTotalCountHasBeenSet) {
+    payload.WithInteger("BillSourceAccountsTotalCount", m_billSourceAccountsTotalCount);
+  }
+
+  if (m_receiverRoleHasBeenSet) {
+    payload.WithString("ReceiverRole", ReceiverRoleMapper::GetNameForReceiverRole(m_receiverRole));
+  }
+
   if (m_entityHasBeenSet) {
     payload.WithObject("Entity", m_entity.Jsonize());
   }
@@ -96,8 +150,20 @@ JsonValue InvoiceSummary::Jsonize() const {
     payload.WithObject("BillingPeriod", m_billingPeriod.Jsonize());
   }
 
+  if (m_invoiceFrequencyHasBeenSet) {
+    payload.WithString("InvoiceFrequency", InvoiceFrequencyMapper::GetNameForInvoiceFrequency(m_invoiceFrequency));
+  }
+
+  if (m_billTypeHasBeenSet) {
+    payload.WithString("BillType", BillTypeMapper::GetNameForBillType(m_billType));
+  }
+
   if (m_invoiceTypeHasBeenSet) {
     payload.WithString("InvoiceType", InvoiceTypeMapper::GetNameForInvoiceType(m_invoiceType));
+  }
+
+  if (m_commercialInvoiceIdHasBeenSet) {
+    payload.WithString("CommercialInvoiceId", m_commercialInvoiceId);
   }
 
   if (m_originalInvoiceIdHasBeenSet) {
@@ -106,6 +172,14 @@ JsonValue InvoiceSummary::Jsonize() const {
 
   if (m_purchaseOrderNumberHasBeenSet) {
     payload.WithString("PurchaseOrderNumber", m_purchaseOrderNumber);
+  }
+
+  if (m_einvoiceDeliveryStatusHasBeenSet) {
+    payload.WithString("EinvoiceDeliveryStatus", EinvoiceDeliveryStatusMapper::GetNameForEinvoiceDeliveryStatus(m_einvoiceDeliveryStatus));
+  }
+
+  if (m_taxAuthorityStatusHasBeenSet) {
+    payload.WithString("TaxAuthorityStatus", TaxAuthorityStatusMapper::GetNameForTaxAuthorityStatus(m_taxAuthorityStatus));
   }
 
   if (m_baseCurrencyAmountHasBeenSet) {

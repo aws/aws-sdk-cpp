@@ -41,6 +41,10 @@ Aws::String DescribeInstanceTypesRequest::SerializePayload() const {
     ss << "NextToken=" << StringUtils::URLEncode(m_nextToken.c_str()) << "&";
   }
 
+  if (m_includeUnsupportedInRegionHasBeenSet) {
+    ss << "IncludeUnsupportedInRegion=" << std::boolalpha << m_includeUnsupportedInRegion << "&";
+  }
+
   ss << "Version=2016-11-15";
   return ss.str();
 }

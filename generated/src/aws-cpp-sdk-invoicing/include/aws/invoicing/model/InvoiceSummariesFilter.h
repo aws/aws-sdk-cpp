@@ -8,6 +8,7 @@
 #include <aws/invoicing/Invoicing_EXPORTS.h>
 #include <aws/invoicing/model/BillingPeriod.h>
 #include <aws/invoicing/model/DateInterval.h>
+#include <aws/invoicing/model/ReceiverRole.h>
 
 #include <utility>
 
@@ -86,15 +87,40 @@ class InvoiceSummariesFilter {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>The role of the invoice receiver to filter by.</p>  <p>When
+   * <code>ReceiverRole</code> is specified:</p> <ul> <li> <p>Data is available
+   * starting <code>2025-06-01</code>. Queries for periods before
+   * <code>2025-06-01</code> return a validation error.</p> </li> <li> <p>
+   * <code>TimeInterval</code> supports a time interval of up to 5 years. Without
+   * <code>ReceiverRole</code>, <code>TimeInterval</code> is limited to one
+   * month.</p> </li> </ul>
+   */
+  inline ReceiverRole GetReceiverRole() const { return m_receiverRole; }
+  inline bool ReceiverRoleHasBeenSet() const { return m_receiverRoleHasBeenSet; }
+  inline void SetReceiverRole(ReceiverRole value) {
+    m_receiverRoleHasBeenSet = true;
+    m_receiverRole = value;
+  }
+  inline InvoiceSummariesFilter& WithReceiverRole(ReceiverRole value) {
+    SetReceiverRole(value);
+    return *this;
+  }
+  ///@}
  private:
   DateInterval m_timeInterval;
 
   BillingPeriod m_billingPeriod;
 
   Aws::String m_invoicingEntity;
+
+  ReceiverRole m_receiverRole{ReceiverRole::NOT_SET};
   bool m_timeIntervalHasBeenSet = false;
   bool m_billingPeriodHasBeenSet = false;
   bool m_invoicingEntityHasBeenSet = false;
+  bool m_receiverRoleHasBeenSet = false;
 };
 
 }  // namespace Model

@@ -22,6 +22,9 @@
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentConnectorsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentManagersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
@@ -236,6 +239,42 @@ class BedrockAgentCoreControlPaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListOnlineEvaluationConfigsRequest,
                                              Pagination::ListOnlineEvaluationConfigsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPaymentConnectors operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentConnectorsRequest,
+                                    Pagination::ListPaymentConnectorsPaginationTraits<DerivedClient>>
+  ListPaymentConnectorsPaginator(const Model::ListPaymentConnectorsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentConnectorsRequest,
+                                             Pagination::ListPaymentConnectorsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPaymentCredentialProviders operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentCredentialProvidersRequest,
+                                    Pagination::ListPaymentCredentialProvidersPaginationTraits<DerivedClient>>
+  ListPaymentCredentialProvidersPaginator(const Model::ListPaymentCredentialProvidersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentCredentialProvidersRequest,
+                                             Pagination::ListPaymentCredentialProvidersPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPaymentManagers operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentManagersRequest,
+                                    Pagination::ListPaymentManagersPaginationTraits<DerivedClient>>
+  ListPaymentManagersPaginator(const Model::ListPaymentManagersRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentManagersRequest,
+                                             Pagination::ListPaymentManagersPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

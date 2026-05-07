@@ -16,11 +16,17 @@ namespace Model {
 namespace S3OutputTypeMapper {
 
 static const int CUSTOM_HASH = HashingUtils::HashString("CUSTOM");
+static const int ATHENA_HASH = HashingUtils::HashString("ATHENA");
+static const int REDSHIFT_HASH = HashingUtils::HashString("REDSHIFT");
 
 S3OutputType GetS3OutputTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
   if (hashCode == CUSTOM_HASH) {
     return S3OutputType::CUSTOM;
+  } else if (hashCode == ATHENA_HASH) {
+    return S3OutputType::ATHENA;
+  } else if (hashCode == REDSHIFT_HASH) {
+    return S3OutputType::REDSHIFT;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -37,6 +43,10 @@ Aws::String GetNameForS3OutputType(S3OutputType enumValue) {
       return {};
     case S3OutputType::CUSTOM:
       return "CUSTOM";
+    case S3OutputType::ATHENA:
+      return "ATHENA";
+    case S3OutputType::REDSHIFT:
+      return "REDSHIFT";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

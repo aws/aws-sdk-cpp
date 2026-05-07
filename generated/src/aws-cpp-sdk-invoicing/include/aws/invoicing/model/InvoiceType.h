@@ -10,7 +10,7 @@
 namespace Aws {
 namespace Invoicing {
 namespace Model {
-enum class InvoiceType { NOT_SET, INVOICE, CREDIT_MEMO };
+enum class InvoiceType { NOT_SET, INVOICE, CREDIT_MEMO, PAYMENT_RECEIPT };
 
 namespace InvoiceTypeMapper {
 AWS_INVOICING_API InvoiceType GetInvoiceTypeForName(const Aws::String& name);

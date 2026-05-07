@@ -252,6 +252,59 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Create a new payment instrument for a connector</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentInstrument">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePaymentInstrumentOutcome CreatePaymentInstrument(const Model::CreatePaymentInstrumentRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePaymentInstrument that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePaymentInstrumentRequestT = Model::CreatePaymentInstrumentRequest>
+  Model::CreatePaymentInstrumentOutcomeCallable CreatePaymentInstrumentCallable(const CreatePaymentInstrumentRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::CreatePaymentInstrument, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePaymentInstrument that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePaymentInstrumentRequestT = Model::CreatePaymentInstrumentRequest>
+  void CreatePaymentInstrumentAsync(const CreatePaymentInstrumentRequestT& request,
+                                    const CreatePaymentInstrumentResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::CreatePaymentInstrument, request, handler, context);
+  }
+
+  /**
+   * <p>Create a new payment manager session</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/CreatePaymentSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePaymentSessionOutcome CreatePaymentSession(const Model::CreatePaymentSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePaymentSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePaymentSessionRequestT = Model::CreatePaymentSessionRequest>
+  Model::CreatePaymentSessionOutcomeCallable CreatePaymentSessionCallable(const CreatePaymentSessionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::CreatePaymentSession, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePaymentSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePaymentSessionRequestT = Model::CreatePaymentSessionRequest>
+  void CreatePaymentSessionAsync(const CreatePaymentSessionRequestT& request, const CreatePaymentSessionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::CreatePaymentSession, request, handler, context);
+  }
+
+  /**
    * <p>Deletes an A/B test and its associated gateway rules.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeleteABTest">AWS
@@ -359,6 +412,83 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void DeleteMemoryRecordAsync(const DeleteMemoryRecordRequestT& request, const DeleteMemoryRecordResponseReceivedHandler& handler,
                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::DeleteMemoryRecord, request, handler, context);
+  }
+
+  /**
+   * <p>Delete a payment instrument</p> <p>Marks a payment instrument as deleted by
+   * updating its status to DELETED. This is a soft delete operation that preserves
+   * the record in the database for audit and compliance purposes. The record remains
+   * queryable for audit purposes but is excluded from normal list and get
+   * operations.</p> <p>Deleting an already-deleted or non-existent instrument
+   * returns ResourceNotFoundException (404).</p> <p>Authorization: The caller must
+   * own the instrument (accountId, userId, and paymentManagerId must match). If
+   * authorization fails, a 403 Forbidden error is returned.</p> <p>Timestamp
+   * Management: The updatedAt timestamp is set to the current time, while createdAt
+   * is preserved. The version field is incremented for optimistic locking.</p>
+   * <p>Errors:</p> <ul> <li>ResourceNotFoundException: The instrument does not exist
+   * or is already deleted</li> <li>AccessDeniedException: The caller is not
+   * authorized to delete this instrument</li> <li>ValidationException: Required
+   * fields are missing or invalid</li> <li>InternalServerException: An unexpected
+   * server error occurred</li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentInstrument">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePaymentInstrumentOutcome DeletePaymentInstrument(const Model::DeletePaymentInstrumentRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePaymentInstrument that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePaymentInstrumentRequestT = Model::DeletePaymentInstrumentRequest>
+  Model::DeletePaymentInstrumentOutcomeCallable DeletePaymentInstrumentCallable(const DeletePaymentInstrumentRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeletePaymentInstrument, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePaymentInstrument that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePaymentInstrumentRequestT = Model::DeletePaymentInstrumentRequest>
+  void DeletePaymentInstrumentAsync(const DeletePaymentInstrumentRequestT& request,
+                                    const DeletePaymentInstrumentResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeletePaymentInstrument, request, handler, context);
+  }
+
+  /**
+   * <p>Delete a payment manager session</p> <p>Permanently removes a payment session
+   * record from the database. This is a hard delete operation that removes the
+   * session completely.</p> <p>Deleting a non-existent or already-deleted session
+   * returns ResourceNotFoundException (404).</p> <p>Authorization: The caller must
+   * own the session (accountId, userId, and paymentManagerId must match). If
+   * authorization fails, a 403 Forbidden error is returned.</p> <p>Errors:</p> <ul>
+   * <li>ResourceNotFoundException: The session does not exist or has already been
+   * deleted</li> <li>AccessDeniedException: The caller is not authorized to delete
+   * this session</li> <li>ValidationException: Required fields are missing or
+   * invalid</li> <li>InternalServerException: An unexpected server error
+   * occurred</li> </ul><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/DeletePaymentSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePaymentSessionOutcome DeletePaymentSession(const Model::DeletePaymentSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePaymentSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePaymentSessionRequestT = Model::DeletePaymentSessionRequest>
+  Model::DeletePaymentSessionOutcomeCallable DeletePaymentSessionCallable(const DeletePaymentSessionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::DeletePaymentSession, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePaymentSession that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePaymentSessionRequestT = Model::DeletePaymentSessionRequest>
+  void DeletePaymentSessionAsync(const DeletePaymentSessionRequestT& request, const DeletePaymentSessionResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::DeletePaymentSession, request, handler, context);
   }
 
   /**
@@ -631,6 +761,87 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>Get a payment instrument by ID</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrument">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentInstrumentOutcome GetPaymentInstrument(const Model::GetPaymentInstrumentRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentInstrument that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPaymentInstrumentRequestT = Model::GetPaymentInstrumentRequest>
+  Model::GetPaymentInstrumentOutcomeCallable GetPaymentInstrumentCallable(const GetPaymentInstrumentRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetPaymentInstrument, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentInstrument that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPaymentInstrumentRequestT = Model::GetPaymentInstrumentRequest>
+  void GetPaymentInstrumentAsync(const GetPaymentInstrumentRequestT& request, const GetPaymentInstrumentResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetPaymentInstrument, request, handler, context);
+  }
+
+  /**
+   * <p>Get the balance of a payment instrument</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentInstrumentBalance">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentInstrumentBalanceOutcome GetPaymentInstrumentBalance(
+      const Model::GetPaymentInstrumentBalanceRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentInstrumentBalance that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPaymentInstrumentBalanceRequestT = Model::GetPaymentInstrumentBalanceRequest>
+  Model::GetPaymentInstrumentBalanceOutcomeCallable GetPaymentInstrumentBalanceCallable(
+      const GetPaymentInstrumentBalanceRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetPaymentInstrumentBalance, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentInstrumentBalance that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPaymentInstrumentBalanceRequestT = Model::GetPaymentInstrumentBalanceRequest>
+  void GetPaymentInstrumentBalanceAsync(const GetPaymentInstrumentBalanceRequestT& request,
+                                        const GetPaymentInstrumentBalanceResponseReceivedHandler& handler,
+                                        const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetPaymentInstrumentBalance, request, handler, context);
+  }
+
+  /**
+   * <p>Get a payment session</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentSession">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentSessionOutcome GetPaymentSession(const Model::GetPaymentSessionRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentSession that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPaymentSessionRequestT = Model::GetPaymentSessionRequest>
+  Model::GetPaymentSessionOutcomeCallable GetPaymentSessionCallable(const GetPaymentSessionRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetPaymentSession, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentSession that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPaymentSessionRequestT = Model::GetPaymentSessionRequest>
+  void GetPaymentSessionAsync(const GetPaymentSessionRequestT& request, const GetPaymentSessionResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetPaymentSession, request, handler, context);
+  }
+
+  /**
    * <p>Retrieves detailed information about a recommendation, including its
    * configuration, status, and results.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetRecommendation">AWS
@@ -710,6 +921,34 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
                                    const GetResourceOauth2TokenResponseReceivedHandler& handler,
                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::GetResourceOauth2Token, request, handler, context);
+  }
+
+  /**
+   * <p>Generates authentication tokens for payment providers that use
+   * vendor-specific authentication mechanisms.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetResourcePaymentToken">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetResourcePaymentTokenOutcome GetResourcePaymentToken(const Model::GetResourcePaymentTokenRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetResourcePaymentToken that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetResourcePaymentTokenRequestT = Model::GetResourcePaymentTokenRequest>
+  Model::GetResourcePaymentTokenOutcomeCallable GetResourcePaymentTokenCallable(const GetResourcePaymentTokenRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::GetResourcePaymentToken, request);
+  }
+
+  /**
+   * An Async wrapper for GetResourcePaymentToken that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetResourcePaymentTokenRequestT = Model::GetResourcePaymentTokenRequest>
+  void GetResourcePaymentTokenAsync(const GetResourcePaymentTokenRequestT& request,
+                                    const GetResourcePaymentTokenResponseReceivedHandler& handler,
+                                    const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::GetResourcePaymentToken, request, handler, context);
   }
 
   /**
@@ -1239,6 +1478,59 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   }
 
   /**
+   * <p>List payment instruments for a manager</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentInstruments">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPaymentInstrumentsOutcome ListPaymentInstruments(const Model::ListPaymentInstrumentsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPaymentInstruments that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPaymentInstrumentsRequestT = Model::ListPaymentInstrumentsRequest>
+  Model::ListPaymentInstrumentsOutcomeCallable ListPaymentInstrumentsCallable(const ListPaymentInstrumentsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListPaymentInstruments, request);
+  }
+
+  /**
+   * An Async wrapper for ListPaymentInstruments that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPaymentInstrumentsRequestT = Model::ListPaymentInstrumentsRequest>
+  void ListPaymentInstrumentsAsync(const ListPaymentInstrumentsRequestT& request,
+                                   const ListPaymentInstrumentsResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListPaymentInstruments, request, handler, context);
+  }
+
+  /**
+   * <p>List payment manager sessions</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListPaymentSessions">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPaymentSessionsOutcome ListPaymentSessions(const Model::ListPaymentSessionsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPaymentSessions that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPaymentSessionsRequestT = Model::ListPaymentSessionsRequest>
+  Model::ListPaymentSessionsOutcomeCallable ListPaymentSessionsCallable(const ListPaymentSessionsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ListPaymentSessions, request);
+  }
+
+  /**
+   * An Async wrapper for ListPaymentSessions that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListPaymentSessionsRequestT = Model::ListPaymentSessionsRequest>
+  void ListPaymentSessionsAsync(const ListPaymentSessionsRequestT& request, const ListPaymentSessionsResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ListPaymentSessions, request, handler, context);
+  }
+
+  /**
    * <p>Lists all recommendations in the account, with optional filtering by
    * status.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ListRecommendations">AWS
@@ -1294,6 +1586,31 @@ class AWS_BEDROCKAGENTCORE_API BedrockAgentCoreClient : public Aws::Client::AWSJ
   void ListSessionsAsync(const ListSessionsRequestT& request, const ListSessionsResponseReceivedHandler& handler,
                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreClient::ListSessions, request, handler, context);
+  }
+
+  /**
+   * <p>Process a payment transaction</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/ProcessPayment">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ProcessPaymentOutcome ProcessPayment(const Model::ProcessPaymentRequest& request) const;
+
+  /**
+   * A Callable wrapper for ProcessPayment that returns a future to the operation so that it can be executed in parallel to other requests.
+   */
+  template <typename ProcessPaymentRequestT = Model::ProcessPaymentRequest>
+  Model::ProcessPaymentOutcomeCallable ProcessPaymentCallable(const ProcessPaymentRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreClient::ProcessPayment, request);
+  }
+
+  /**
+   * An Async wrapper for ProcessPayment that queues the request into a thread executor and triggers associated callback when operation has
+   * finished.
+   */
+  template <typename ProcessPaymentRequestT = Model::ProcessPaymentRequest>
+  void ProcessPaymentAsync(const ProcessPaymentRequestT& request, const ProcessPaymentResponseReceivedHandler& handler,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreClient::ProcessPayment, request, handler, context);
   }
 
   /**

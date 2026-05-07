@@ -61,9 +61,9 @@ class InvoiceUnitRule {
 
   ///@{
   /**
-   * <p> A list of Amazon Web Services account account IDs that have delegated their
-   * billing responsibility to the receiver account through transfer billing. Unlike
-   * linked accounts, these bill source accounts can be payer accounts from other
+   * <p> A list of Amazon Web Services account IDs that have delegated their billing
+   * responsibility to the receiver account through transfer billing. Unlike linked
+   * accounts, these bill source accounts can be payer accounts from other
    * organizations that have authorized billing transfer to this account. </p>
    */
   inline const Aws::Vector<Aws::String>& GetBillSourceAccounts() const { return m_billSourceAccounts; }

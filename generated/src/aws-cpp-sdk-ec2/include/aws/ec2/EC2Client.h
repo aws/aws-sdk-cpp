@@ -11267,8 +11267,10 @@ class AWS_EC2_API EC2Client : public Aws::Client::AWSXMLClient,
 
   /**
    * <p>Describes the specified instance types. By default, all instance types for
-   * the current Region are described. Alternatively, you can filter the
-   * results.</p><p><h3>See Also:</h3>   <a
+   * the current Region are described. Alternatively, you can filter the results. To
+   * include instance types that are not supported in the current Region, set
+   * <code>IncludeUnsupportedInRegion</code> to <code>true</code>.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/ec2-2016-11-15/DescribeInstanceTypes">AWS
    * API Reference</a></p>
    */

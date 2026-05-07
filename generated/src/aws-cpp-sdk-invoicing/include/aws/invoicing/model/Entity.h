@@ -6,6 +6,7 @@
 #pragma once
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
+#include <aws/invoicing/model/BillingEntity.h>
 
 #include <utility>
 
@@ -49,9 +50,29 @@ class Entity {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Helps you identify whether your invoices are for Amazon Web Services
+   * Marketplace or for purchases of other Amazon Web Services services.</p>
+   */
+  inline BillingEntity GetBillingEntity() const { return m_billingEntity; }
+  inline bool BillingEntityHasBeenSet() const { return m_billingEntityHasBeenSet; }
+  inline void SetBillingEntity(BillingEntity value) {
+    m_billingEntityHasBeenSet = true;
+    m_billingEntity = value;
+  }
+  inline Entity& WithBillingEntity(BillingEntity value) {
+    SetBillingEntity(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_invoicingEntity;
+
+  BillingEntity m_billingEntity{BillingEntity::NOT_SET};
   bool m_invoicingEntityHasBeenSet = false;
+  bool m_billingEntityHasBeenSet = false;
 };
 
 }  // namespace Model

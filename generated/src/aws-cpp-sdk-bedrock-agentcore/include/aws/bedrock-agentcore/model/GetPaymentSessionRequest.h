@@ -1,0 +1,123 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore/BedrockAgentCoreRequest.h>
+#include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace BedrockAgentCore {
+namespace Model {
+
+/**
+ * <p>Request structure for getting a payment session</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/GetPaymentSessionRequest">AWS
+ * API Reference</a></p>
+ */
+class GetPaymentSessionRequest : public BedrockAgentCoreRequest {
+ public:
+  AWS_BEDROCKAGENTCORE_API GetPaymentSessionRequest() = default;
+
+  // Service request name is the Operation name which will send this request out,
+  // each operation should has unique request name, so that we can get operation's name from this request.
+  // Note: this is not true for response, multiple operations may have the same response name,
+  // so we can not get operation's name from response.
+  inline virtual const char* GetServiceRequestName() const override { return "GetPaymentSession"; }
+
+  AWS_BEDROCKAGENTCORE_API Aws::String SerializePayload() const override;
+
+  AWS_BEDROCKAGENTCORE_API Aws::Http::HeaderValueCollection GetRequestSpecificHeaders() const override;
+
+  ///@{
+  /**
+   * <p>The user ID associated with this payment session.</p>
+   */
+  inline const Aws::String& GetUserId() const { return m_userId; }
+  inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+  template <typename UserIdT = Aws::String>
+  void SetUserId(UserIdT&& value) {
+    m_userIdHasBeenSet = true;
+    m_userId = std::forward<UserIdT>(value);
+  }
+  template <typename UserIdT = Aws::String>
+  GetPaymentSessionRequest& WithUserId(UserIdT&& value) {
+    SetUserId(std::forward<UserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The agent name associated with this request, used for observability.</p>
+   */
+  inline const Aws::String& GetAgentName() const { return m_agentName; }
+  inline bool AgentNameHasBeenSet() const { return m_agentNameHasBeenSet; }
+  template <typename AgentNameT = Aws::String>
+  void SetAgentName(AgentNameT&& value) {
+    m_agentNameHasBeenSet = true;
+    m_agentName = std::forward<AgentNameT>(value);
+  }
+  template <typename AgentNameT = Aws::String>
+  GetPaymentSessionRequest& WithAgentName(AgentNameT&& value) {
+    SetAgentName(std::forward<AgentNameT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the payment manager that owns this session.</p>
+   */
+  inline const Aws::String& GetPaymentManagerArn() const { return m_paymentManagerArn; }
+  inline bool PaymentManagerArnHasBeenSet() const { return m_paymentManagerArnHasBeenSet; }
+  template <typename PaymentManagerArnT = Aws::String>
+  void SetPaymentManagerArn(PaymentManagerArnT&& value) {
+    m_paymentManagerArnHasBeenSet = true;
+    m_paymentManagerArn = std::forward<PaymentManagerArnT>(value);
+  }
+  template <typename PaymentManagerArnT = Aws::String>
+  GetPaymentSessionRequest& WithPaymentManagerArn(PaymentManagerArnT&& value) {
+    SetPaymentManagerArn(std::forward<PaymentManagerArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the payment session to retrieve.</p>
+   */
+  inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
+  inline bool PaymentSessionIdHasBeenSet() const { return m_paymentSessionIdHasBeenSet; }
+  template <typename PaymentSessionIdT = Aws::String>
+  void SetPaymentSessionId(PaymentSessionIdT&& value) {
+    m_paymentSessionIdHasBeenSet = true;
+    m_paymentSessionId = std::forward<PaymentSessionIdT>(value);
+  }
+  template <typename PaymentSessionIdT = Aws::String>
+  GetPaymentSessionRequest& WithPaymentSessionId(PaymentSessionIdT&& value) {
+    SetPaymentSessionId(std::forward<PaymentSessionIdT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_userId;
+
+  Aws::String m_agentName;
+
+  Aws::String m_paymentManagerArn;
+
+  Aws::String m_paymentSessionId;
+  bool m_userIdHasBeenSet = false;
+  bool m_agentNameHasBeenSet = false;
+  bool m_paymentManagerArnHasBeenSet = false;
+  bool m_paymentSessionIdHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

@@ -18,6 +18,8 @@
 #include <aws/invoicing/model/AmountBreakdown.h>
 #include <aws/invoicing/model/BatchGetInvoiceProfileRequest.h>
 #include <aws/invoicing/model/BatchGetInvoiceProfileResult.h>
+#include <aws/invoicing/model/BillType.h>
+#include <aws/invoicing/model/BillingEntity.h>
 #include <aws/invoicing/model/BillingPeriod.h>
 #include <aws/invoicing/model/BuyerDomain.h>
 #include <aws/invoicing/model/ConflictException.h>
@@ -38,6 +40,7 @@
 #include <aws/invoicing/model/EinvoiceDeliveryAttachmentType.h>
 #include <aws/invoicing/model/EinvoiceDeliveryDocumentType.h>
 #include <aws/invoicing/model/EinvoiceDeliveryPreference.h>
+#include <aws/invoicing/model/EinvoiceDeliveryStatus.h>
 #include <aws/invoicing/model/Entity.h>
 #include <aws/invoicing/model/FeesBreakdown.h>
 #include <aws/invoicing/model/FeesBreakdownAmount.h>
@@ -50,6 +53,7 @@
 #include <aws/invoicing/model/GetProcurementPortalPreferenceResult.h>
 #include <aws/invoicing/model/InternalServerException.h>
 #include <aws/invoicing/model/InvoiceCurrencyAmount.h>
+#include <aws/invoicing/model/InvoiceFrequency.h>
 #include <aws/invoicing/model/InvoicePDF.h>
 #include <aws/invoicing/model/InvoiceProfile.h>
 #include <aws/invoicing/model/InvoiceSummariesFilter.h>
@@ -78,12 +82,15 @@
 #include <aws/invoicing/model/PutProcurementPortalPreferenceRequest.h>
 #include <aws/invoicing/model/PutProcurementPortalPreferenceResult.h>
 #include <aws/invoicing/model/ReceiverAddress.h>
+#include <aws/invoicing/model/ReceiverRole.h>
 #include <aws/invoicing/model/ResourceNotFoundException.h>
 #include <aws/invoicing/model/ResourceTag.h>
 #include <aws/invoicing/model/SupplementalDocument.h>
+#include <aws/invoicing/model/SupplementalDocumentType.h>
 #include <aws/invoicing/model/SupplierDomain.h>
 #include <aws/invoicing/model/TagResourceRequest.h>
 #include <aws/invoicing/model/TagResourceResult.h>
+#include <aws/invoicing/model/TaxAuthorityStatus.h>
 #include <aws/invoicing/model/TaxesBreakdown.h>
 #include <aws/invoicing/model/TaxesBreakdownAmount.h>
 #include <aws/invoicing/model/TestEnvPreference.h>

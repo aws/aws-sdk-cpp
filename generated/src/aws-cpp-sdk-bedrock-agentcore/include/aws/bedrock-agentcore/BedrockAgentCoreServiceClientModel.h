@@ -25,10 +25,14 @@
 #include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthResult.h>
 #include <aws/bedrock-agentcore/model/CreateABTestResult.h>
 #include <aws/bedrock-agentcore/model/CreateEventResult.h>
+#include <aws/bedrock-agentcore/model/CreatePaymentInstrumentResult.h>
+#include <aws/bedrock-agentcore/model/CreatePaymentSessionResult.h>
 #include <aws/bedrock-agentcore/model/DeleteABTestResult.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationResult.h>
 #include <aws/bedrock-agentcore/model/DeleteEventResult.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/DeletePaymentInstrumentResult.h>
+#include <aws/bedrock-agentcore/model/DeletePaymentSessionResult.h>
 #include <aws/bedrock-agentcore/model/DeleteRecommendationResult.h>
 #include <aws/bedrock-agentcore/model/EvaluateResult.h>
 #include <aws/bedrock-agentcore/model/GetABTestResult.h>
@@ -38,9 +42,13 @@
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionResult.h>
 #include <aws/bedrock-agentcore/model/GetEventResult.h>
 #include <aws/bedrock-agentcore/model/GetMemoryRecordResult.h>
+#include <aws/bedrock-agentcore/model/GetPaymentInstrumentBalanceResult.h>
+#include <aws/bedrock-agentcore/model/GetPaymentInstrumentResult.h>
+#include <aws/bedrock-agentcore/model/GetPaymentSessionResult.h>
 #include <aws/bedrock-agentcore/model/GetRecommendationResult.h>
 #include <aws/bedrock-agentcore/model/GetResourceApiKeyResult.h>
 #include <aws/bedrock-agentcore/model/GetResourceOauth2TokenResult.h>
+#include <aws/bedrock-agentcore/model/GetResourcePaymentTokenResult.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForJWTResult.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForUserIdResult.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenResult.h>
@@ -56,9 +64,12 @@
 #include <aws/bedrock-agentcore/model/ListEventsResult.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsResult.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsResult.h>
+#include <aws/bedrock-agentcore/model/ListPaymentInstrumentsResult.h>
+#include <aws/bedrock-agentcore/model/ListPaymentSessionsResult.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsResult.h>
 #include <aws/bedrock-agentcore/model/ListSessionsResult.h>
+#include <aws/bedrock-agentcore/model/ProcessPaymentResult.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsResult.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileResult.h>
 #include <aws/bedrock-agentcore/model/SearchRegistryRecordsResult.h>
@@ -113,10 +124,14 @@ class BatchUpdateMemoryRecordsRequest;
 class CompleteResourceTokenAuthRequest;
 class CreateABTestRequest;
 class CreateEventRequest;
+class CreatePaymentInstrumentRequest;
+class CreatePaymentSessionRequest;
 class DeleteABTestRequest;
 class DeleteBatchEvaluationRequest;
 class DeleteEventRequest;
 class DeleteMemoryRecordRequest;
+class DeletePaymentInstrumentRequest;
+class DeletePaymentSessionRequest;
 class DeleteRecommendationRequest;
 class EvaluateRequest;
 class GetABTestRequest;
@@ -126,9 +141,13 @@ class GetBrowserSessionRequest;
 class GetCodeInterpreterSessionRequest;
 class GetEventRequest;
 class GetMemoryRecordRequest;
+class GetPaymentInstrumentRequest;
+class GetPaymentInstrumentBalanceRequest;
+class GetPaymentSessionRequest;
 class GetRecommendationRequest;
 class GetResourceApiKeyRequest;
 class GetResourceOauth2TokenRequest;
+class GetResourcePaymentTokenRequest;
 class GetWorkloadAccessTokenRequest;
 class GetWorkloadAccessTokenForJWTRequest;
 class GetWorkloadAccessTokenForUserIdRequest;
@@ -145,8 +164,11 @@ class ListCodeInterpreterSessionsRequest;
 class ListEventsRequest;
 class ListMemoryExtractionJobsRequest;
 class ListMemoryRecordsRequest;
+class ListPaymentInstrumentsRequest;
+class ListPaymentSessionsRequest;
 class ListRecommendationsRequest;
 class ListSessionsRequest;
+class ProcessPaymentRequest;
 class RetrieveMemoryRecordsRequest;
 class SaveBrowserSessionProfileRequest;
 class SearchRegistryRecordsRequest;
@@ -170,10 +192,14 @@ typedef Aws::Utils::Outcome<BatchUpdateMemoryRecordsResult, BedrockAgentCoreErro
 typedef Aws::Utils::Outcome<CompleteResourceTokenAuthResult, BedrockAgentCoreError> CompleteResourceTokenAuthOutcome;
 typedef Aws::Utils::Outcome<CreateABTestResult, BedrockAgentCoreError> CreateABTestOutcome;
 typedef Aws::Utils::Outcome<CreateEventResult, BedrockAgentCoreError> CreateEventOutcome;
+typedef Aws::Utils::Outcome<CreatePaymentInstrumentResult, BedrockAgentCoreError> CreatePaymentInstrumentOutcome;
+typedef Aws::Utils::Outcome<CreatePaymentSessionResult, BedrockAgentCoreError> CreatePaymentSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteABTestResult, BedrockAgentCoreError> DeleteABTestOutcome;
 typedef Aws::Utils::Outcome<DeleteBatchEvaluationResult, BedrockAgentCoreError> DeleteBatchEvaluationOutcome;
 typedef Aws::Utils::Outcome<DeleteEventResult, BedrockAgentCoreError> DeleteEventOutcome;
 typedef Aws::Utils::Outcome<DeleteMemoryRecordResult, BedrockAgentCoreError> DeleteMemoryRecordOutcome;
+typedef Aws::Utils::Outcome<DeletePaymentInstrumentResult, BedrockAgentCoreError> DeletePaymentInstrumentOutcome;
+typedef Aws::Utils::Outcome<DeletePaymentSessionResult, BedrockAgentCoreError> DeletePaymentSessionOutcome;
 typedef Aws::Utils::Outcome<DeleteRecommendationResult, BedrockAgentCoreError> DeleteRecommendationOutcome;
 typedef Aws::Utils::Outcome<EvaluateResult, BedrockAgentCoreError> EvaluateOutcome;
 typedef Aws::Utils::Outcome<GetABTestResult, BedrockAgentCoreError> GetABTestOutcome;
@@ -183,9 +209,13 @@ typedef Aws::Utils::Outcome<GetBrowserSessionResult, BedrockAgentCoreError> GetB
 typedef Aws::Utils::Outcome<GetCodeInterpreterSessionResult, BedrockAgentCoreError> GetCodeInterpreterSessionOutcome;
 typedef Aws::Utils::Outcome<GetEventResult, BedrockAgentCoreError> GetEventOutcome;
 typedef Aws::Utils::Outcome<GetMemoryRecordResult, BedrockAgentCoreError> GetMemoryRecordOutcome;
+typedef Aws::Utils::Outcome<GetPaymentInstrumentResult, BedrockAgentCoreError> GetPaymentInstrumentOutcome;
+typedef Aws::Utils::Outcome<GetPaymentInstrumentBalanceResult, BedrockAgentCoreError> GetPaymentInstrumentBalanceOutcome;
+typedef Aws::Utils::Outcome<GetPaymentSessionResult, BedrockAgentCoreError> GetPaymentSessionOutcome;
 typedef Aws::Utils::Outcome<GetRecommendationResult, BedrockAgentCoreError> GetRecommendationOutcome;
 typedef Aws::Utils::Outcome<GetResourceApiKeyResult, BedrockAgentCoreError> GetResourceApiKeyOutcome;
 typedef Aws::Utils::Outcome<GetResourceOauth2TokenResult, BedrockAgentCoreError> GetResourceOauth2TokenOutcome;
+typedef Aws::Utils::Outcome<GetResourcePaymentTokenResult, BedrockAgentCoreError> GetResourcePaymentTokenOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenResult, BedrockAgentCoreError> GetWorkloadAccessTokenOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForJWTResult, BedrockAgentCoreError> GetWorkloadAccessTokenForJWTOutcome;
 typedef Aws::Utils::Outcome<GetWorkloadAccessTokenForUserIdResult, BedrockAgentCoreError> GetWorkloadAccessTokenForUserIdOutcome;
@@ -202,8 +232,11 @@ typedef Aws::Utils::Outcome<ListCodeInterpreterSessionsResult, BedrockAgentCoreE
 typedef Aws::Utils::Outcome<ListEventsResult, BedrockAgentCoreError> ListEventsOutcome;
 typedef Aws::Utils::Outcome<ListMemoryExtractionJobsResult, BedrockAgentCoreError> ListMemoryExtractionJobsOutcome;
 typedef Aws::Utils::Outcome<ListMemoryRecordsResult, BedrockAgentCoreError> ListMemoryRecordsOutcome;
+typedef Aws::Utils::Outcome<ListPaymentInstrumentsResult, BedrockAgentCoreError> ListPaymentInstrumentsOutcome;
+typedef Aws::Utils::Outcome<ListPaymentSessionsResult, BedrockAgentCoreError> ListPaymentSessionsOutcome;
 typedef Aws::Utils::Outcome<ListRecommendationsResult, BedrockAgentCoreError> ListRecommendationsOutcome;
 typedef Aws::Utils::Outcome<ListSessionsResult, BedrockAgentCoreError> ListSessionsOutcome;
+typedef Aws::Utils::Outcome<ProcessPaymentResult, BedrockAgentCoreError> ProcessPaymentOutcome;
 typedef Aws::Utils::Outcome<RetrieveMemoryRecordsResult, BedrockAgentCoreError> RetrieveMemoryRecordsOutcome;
 typedef Aws::Utils::Outcome<SaveBrowserSessionProfileResult, BedrockAgentCoreError> SaveBrowserSessionProfileOutcome;
 typedef Aws::Utils::Outcome<SearchRegistryRecordsResult, BedrockAgentCoreError> SearchRegistryRecordsOutcome;
@@ -227,10 +260,14 @@ typedef std::future<BatchUpdateMemoryRecordsOutcome> BatchUpdateMemoryRecordsOut
 typedef std::future<CompleteResourceTokenAuthOutcome> CompleteResourceTokenAuthOutcomeCallable;
 typedef std::future<CreateABTestOutcome> CreateABTestOutcomeCallable;
 typedef std::future<CreateEventOutcome> CreateEventOutcomeCallable;
+typedef std::future<CreatePaymentInstrumentOutcome> CreatePaymentInstrumentOutcomeCallable;
+typedef std::future<CreatePaymentSessionOutcome> CreatePaymentSessionOutcomeCallable;
 typedef std::future<DeleteABTestOutcome> DeleteABTestOutcomeCallable;
 typedef std::future<DeleteBatchEvaluationOutcome> DeleteBatchEvaluationOutcomeCallable;
 typedef std::future<DeleteEventOutcome> DeleteEventOutcomeCallable;
 typedef std::future<DeleteMemoryRecordOutcome> DeleteMemoryRecordOutcomeCallable;
+typedef std::future<DeletePaymentInstrumentOutcome> DeletePaymentInstrumentOutcomeCallable;
+typedef std::future<DeletePaymentSessionOutcome> DeletePaymentSessionOutcomeCallable;
 typedef std::future<DeleteRecommendationOutcome> DeleteRecommendationOutcomeCallable;
 typedef std::future<EvaluateOutcome> EvaluateOutcomeCallable;
 typedef std::future<GetABTestOutcome> GetABTestOutcomeCallable;
@@ -240,9 +277,13 @@ typedef std::future<GetBrowserSessionOutcome> GetBrowserSessionOutcomeCallable;
 typedef std::future<GetCodeInterpreterSessionOutcome> GetCodeInterpreterSessionOutcomeCallable;
 typedef std::future<GetEventOutcome> GetEventOutcomeCallable;
 typedef std::future<GetMemoryRecordOutcome> GetMemoryRecordOutcomeCallable;
+typedef std::future<GetPaymentInstrumentOutcome> GetPaymentInstrumentOutcomeCallable;
+typedef std::future<GetPaymentInstrumentBalanceOutcome> GetPaymentInstrumentBalanceOutcomeCallable;
+typedef std::future<GetPaymentSessionOutcome> GetPaymentSessionOutcomeCallable;
 typedef std::future<GetRecommendationOutcome> GetRecommendationOutcomeCallable;
 typedef std::future<GetResourceApiKeyOutcome> GetResourceApiKeyOutcomeCallable;
 typedef std::future<GetResourceOauth2TokenOutcome> GetResourceOauth2TokenOutcomeCallable;
+typedef std::future<GetResourcePaymentTokenOutcome> GetResourcePaymentTokenOutcomeCallable;
 typedef std::future<GetWorkloadAccessTokenOutcome> GetWorkloadAccessTokenOutcomeCallable;
 typedef std::future<GetWorkloadAccessTokenForJWTOutcome> GetWorkloadAccessTokenForJWTOutcomeCallable;
 typedef std::future<GetWorkloadAccessTokenForUserIdOutcome> GetWorkloadAccessTokenForUserIdOutcomeCallable;
@@ -259,8 +300,11 @@ typedef std::future<ListCodeInterpreterSessionsOutcome> ListCodeInterpreterSessi
 typedef std::future<ListEventsOutcome> ListEventsOutcomeCallable;
 typedef std::future<ListMemoryExtractionJobsOutcome> ListMemoryExtractionJobsOutcomeCallable;
 typedef std::future<ListMemoryRecordsOutcome> ListMemoryRecordsOutcomeCallable;
+typedef std::future<ListPaymentInstrumentsOutcome> ListPaymentInstrumentsOutcomeCallable;
+typedef std::future<ListPaymentSessionsOutcome> ListPaymentSessionsOutcomeCallable;
 typedef std::future<ListRecommendationsOutcome> ListRecommendationsOutcomeCallable;
 typedef std::future<ListSessionsOutcome> ListSessionsOutcomeCallable;
+typedef std::future<ProcessPaymentOutcome> ProcessPaymentOutcomeCallable;
 typedef std::future<RetrieveMemoryRecordsOutcome> RetrieveMemoryRecordsOutcomeCallable;
 typedef std::future<SaveBrowserSessionProfileOutcome> SaveBrowserSessionProfileOutcomeCallable;
 typedef std::future<SearchRegistryRecordsOutcome> SearchRegistryRecordsOutcomeCallable;
@@ -299,6 +343,12 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreateABT
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreateEventRequest&, const Model::CreateEventOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateEventResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreatePaymentInstrumentRequest&,
+                           const Model::CreatePaymentInstrumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePaymentInstrumentResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::CreatePaymentSessionRequest&,
+                           const Model::CreatePaymentSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePaymentSessionResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteABTestRequest&, const Model::DeleteABTestOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteABTestResponseReceivedHandler;
@@ -311,6 +361,12 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteEve
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteMemoryRecordRequest&, const Model::DeleteMemoryRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteMemoryRecordResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeletePaymentInstrumentRequest&,
+                           const Model::DeletePaymentInstrumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePaymentInstrumentResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeletePaymentSessionRequest&,
+                           const Model::DeletePaymentSessionOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePaymentSessionResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::DeleteRecommendationRequest&,
                            const Model::DeleteRecommendationOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteRecommendationResponseReceivedHandler;
@@ -338,6 +394,15 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetEventR
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetMemoryRecordRequest&, const Model::GetMemoryRecordOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetMemoryRecordResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetPaymentInstrumentRequest&,
+                           const Model::GetPaymentInstrumentOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentInstrumentResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetPaymentInstrumentBalanceRequest&,
+                           const Model::GetPaymentInstrumentBalanceOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentInstrumentBalanceResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetPaymentSessionRequest&, const Model::GetPaymentSessionOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentSessionResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetRecommendationRequest&, const Model::GetRecommendationOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetRecommendationResponseReceivedHandler;
@@ -347,6 +412,9 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetResour
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetResourceOauth2TokenRequest&,
                            const Model::GetResourceOauth2TokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetResourceOauth2TokenResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetResourcePaymentTokenRequest&,
+                           const Model::GetResourcePaymentTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetResourcePaymentTokenResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::GetWorkloadAccessTokenRequest&,
                            const Model::GetWorkloadAccessTokenOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetWorkloadAccessTokenResponseReceivedHandler;
@@ -397,12 +465,21 @@ typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListMemor
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListMemoryRecordsRequest&, const Model::ListMemoryRecordsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListMemoryRecordsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListPaymentInstrumentsRequest&,
+                           const Model::ListPaymentInstrumentsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPaymentInstrumentsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListPaymentSessionsRequest&,
+                           const Model::ListPaymentSessionsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPaymentSessionsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListRecommendationsRequest&,
                            const Model::ListRecommendationsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListRecommendationsResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::ListSessionsRequest&, const Model::ListSessionsOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListSessionsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreClient*, const Model::ProcessPaymentRequest&, const Model::ProcessPaymentOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ProcessPaymentResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreClient*, const Model::RetrieveMemoryRecordsRequest&,
                            const Model::RetrieveMemoryRecordsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     RetrieveMemoryRecordsResponseReceivedHandler;

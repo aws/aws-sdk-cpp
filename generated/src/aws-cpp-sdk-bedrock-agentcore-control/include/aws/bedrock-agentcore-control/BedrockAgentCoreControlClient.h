@@ -502,6 +502,97 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
   }
 
   /**
+   * <p>Creates a new payment connector for a payment manager. A payment connector
+   * integrates with a supported payment provider to enable payment processing
+   * capabilities.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePaymentConnectorOutcome CreatePaymentConnector(const Model::CreatePaymentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePaymentConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePaymentConnectorRequestT = Model::CreatePaymentConnectorRequest>
+  Model::CreatePaymentConnectorOutcomeCallable CreatePaymentConnectorCallable(const CreatePaymentConnectorRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreatePaymentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePaymentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePaymentConnectorRequestT = Model::CreatePaymentConnectorRequest>
+  void CreatePaymentConnectorAsync(const CreatePaymentConnectorRequestT& request,
+                                   const CreatePaymentConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreatePaymentConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new payment credential provider for storing authentication
+   * credentials used by payment connectors to communicate with external payment
+   * providers.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentCredentialProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePaymentCredentialProviderOutcome CreatePaymentCredentialProvider(
+      const Model::CreatePaymentCredentialProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePaymentCredentialProvider that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename CreatePaymentCredentialProviderRequestT = Model::CreatePaymentCredentialProviderRequest>
+  Model::CreatePaymentCredentialProviderOutcomeCallable CreatePaymentCredentialProviderCallable(
+      const CreatePaymentCredentialProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreatePaymentCredentialProvider, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePaymentCredentialProvider that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename CreatePaymentCredentialProviderRequestT = Model::CreatePaymentCredentialProviderRequest>
+  void CreatePaymentCredentialProviderAsync(const CreatePaymentCredentialProviderRequestT& request,
+                                            const CreatePaymentCredentialProviderResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreatePaymentCredentialProvider, request, handler, context);
+  }
+
+  /**
+   * <p>Creates a new payment manager in your Amazon Web Services account. A payment
+   * manager serves as the top-level resource for managing payment processing
+   * capabilities, including payment connectors that integrate with supported payment
+   * providers.</p> <p>If you specify <code>CUSTOM_JWT</code> as the
+   * <code>authorizerType</code>, you must provide an
+   * <code>authorizerConfiguration</code>.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/CreatePaymentManager">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::CreatePaymentManagerOutcome CreatePaymentManager(const Model::CreatePaymentManagerRequest& request) const;
+
+  /**
+   * A Callable wrapper for CreatePaymentManager that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename CreatePaymentManagerRequestT = Model::CreatePaymentManagerRequest>
+  Model::CreatePaymentManagerOutcomeCallable CreatePaymentManagerCallable(const CreatePaymentManagerRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::CreatePaymentManager, request);
+  }
+
+  /**
+   * An Async wrapper for CreatePaymentManager that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename CreatePaymentManagerRequestT = Model::CreatePaymentManagerRequest>
+  void CreatePaymentManagerAsync(const CreatePaymentManagerRequestT& request, const CreatePaymentManagerResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::CreatePaymentManager, request, handler, context);
+  }
+
+  /**
    * <p>Creates a policy within the AgentCore Policy system. Policies provide
    * real-time, deterministic control over agentic interactions with AgentCore
    * Gateway. Using the Cedar policy language, you can define fine-grained policies
@@ -1064,6 +1155,92 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                          const DeleteOnlineEvaluationConfigResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::DeleteOnlineEvaluationConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a payment connector.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePaymentConnectorOutcome DeletePaymentConnector(const Model::DeletePaymentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePaymentConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePaymentConnectorRequestT = Model::DeletePaymentConnectorRequest>
+  Model::DeletePaymentConnectorOutcomeCallable DeletePaymentConnectorCallable(const DeletePaymentConnectorRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeletePaymentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePaymentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePaymentConnectorRequestT = Model::DeletePaymentConnectorRequest>
+  void DeletePaymentConnectorAsync(const DeletePaymentConnectorRequestT& request,
+                                   const DeletePaymentConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeletePaymentConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a payment credential provider and its associated stored
+   * credentials.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentCredentialProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePaymentCredentialProviderOutcome DeletePaymentCredentialProvider(
+      const Model::DeletePaymentCredentialProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePaymentCredentialProvider that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename DeletePaymentCredentialProviderRequestT = Model::DeletePaymentCredentialProviderRequest>
+  Model::DeletePaymentCredentialProviderOutcomeCallable DeletePaymentCredentialProviderCallable(
+      const DeletePaymentCredentialProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeletePaymentCredentialProvider, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePaymentCredentialProvider that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename DeletePaymentCredentialProviderRequestT = Model::DeletePaymentCredentialProviderRequest>
+  void DeletePaymentCredentialProviderAsync(const DeletePaymentCredentialProviderRequestT& request,
+                                            const DeletePaymentCredentialProviderResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeletePaymentCredentialProvider, request, handler, context);
+  }
+
+  /**
+   * <p>Deletes a payment manager. All payment connectors associated with the payment
+   * manager must be deleted before the payment manager can be deleted. This
+   * operation initiates the deletion process asynchronously.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/DeletePaymentManager">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::DeletePaymentManagerOutcome DeletePaymentManager(const Model::DeletePaymentManagerRequest& request) const;
+
+  /**
+   * A Callable wrapper for DeletePaymentManager that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename DeletePaymentManagerRequestT = Model::DeletePaymentManagerRequest>
+  Model::DeletePaymentManagerOutcomeCallable DeletePaymentManagerCallable(const DeletePaymentManagerRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::DeletePaymentManager, request);
+  }
+
+  /**
+   * An Async wrapper for DeletePaymentManager that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename DeletePaymentManagerRequestT = Model::DeletePaymentManagerRequest>
+  void DeletePaymentManagerAsync(const DeletePaymentManagerRequestT& request, const DeletePaymentManagerResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::DeletePaymentManager, request, handler, context);
   }
 
   /**
@@ -1671,6 +1848,90 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                       const GetOnlineEvaluationConfigResponseReceivedHandler& handler,
                                       const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::GetOnlineEvaluationConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific payment connector.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentConnectorOutcome GetPaymentConnector(const Model::GetPaymentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPaymentConnectorRequestT = Model::GetPaymentConnectorRequest>
+  Model::GetPaymentConnectorOutcomeCallable GetPaymentConnectorCallable(const GetPaymentConnectorRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPaymentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentConnector that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPaymentConnectorRequestT = Model::GetPaymentConnectorRequest>
+  void GetPaymentConnectorAsync(const GetPaymentConnectorRequestT& request, const GetPaymentConnectorResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPaymentConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific payment credential
+   * provider.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentCredentialProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentCredentialProviderOutcome GetPaymentCredentialProvider(
+      const Model::GetPaymentCredentialProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentCredentialProvider that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename GetPaymentCredentialProviderRequestT = Model::GetPaymentCredentialProviderRequest>
+  Model::GetPaymentCredentialProviderOutcomeCallable GetPaymentCredentialProviderCallable(
+      const GetPaymentCredentialProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPaymentCredentialProvider, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentCredentialProvider that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename GetPaymentCredentialProviderRequestT = Model::GetPaymentCredentialProviderRequest>
+  void GetPaymentCredentialProviderAsync(const GetPaymentCredentialProviderRequestT& request,
+                                         const GetPaymentCredentialProviderResponseReceivedHandler& handler,
+                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPaymentCredentialProvider, request, handler, context);
+  }
+
+  /**
+   * <p>Retrieves information about a specific payment manager.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/GetPaymentManager">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::GetPaymentManagerOutcome GetPaymentManager(const Model::GetPaymentManagerRequest& request) const;
+
+  /**
+   * A Callable wrapper for GetPaymentManager that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename GetPaymentManagerRequestT = Model::GetPaymentManagerRequest>
+  Model::GetPaymentManagerOutcomeCallable GetPaymentManagerCallable(const GetPaymentManagerRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::GetPaymentManager, request);
+  }
+
+  /**
+   * An Async wrapper for GetPaymentManager that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename GetPaymentManagerRequestT = Model::GetPaymentManagerRequest>
+  void GetPaymentManagerAsync(const GetPaymentManagerRequestT& request, const GetPaymentManagerResponseReceivedHandler& handler,
+                              const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::GetPaymentManager, request, handler, context);
   }
 
   /**
@@ -2363,6 +2624,90 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                         const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
                                         const ListOnlineEvaluationConfigsRequestT& request = {}) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::ListOnlineEvaluationConfigs, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all payment connectors for a specified payment manager.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentConnectors">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPaymentConnectorsOutcome ListPaymentConnectors(const Model::ListPaymentConnectorsRequest& request) const;
+
+  /**
+   * A Callable wrapper for ListPaymentConnectors that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPaymentConnectorsRequestT = Model::ListPaymentConnectorsRequest>
+  Model::ListPaymentConnectorsOutcomeCallable ListPaymentConnectorsCallable(const ListPaymentConnectorsRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPaymentConnectors, request);
+  }
+
+  /**
+   * An Async wrapper for ListPaymentConnectors that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename ListPaymentConnectorsRequestT = Model::ListPaymentConnectorsRequest>
+  void ListPaymentConnectorsAsync(const ListPaymentConnectorsRequestT& request, const ListPaymentConnectorsResponseReceivedHandler& handler,
+                                  const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPaymentConnectors, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all payment credential providers in the account.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentCredentialProviders">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPaymentCredentialProvidersOutcome ListPaymentCredentialProviders(
+      const Model::ListPaymentCredentialProvidersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPaymentCredentialProviders that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename ListPaymentCredentialProvidersRequestT = Model::ListPaymentCredentialProvidersRequest>
+  Model::ListPaymentCredentialProvidersOutcomeCallable ListPaymentCredentialProvidersCallable(
+      const ListPaymentCredentialProvidersRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPaymentCredentialProviders, request);
+  }
+
+  /**
+   * An Async wrapper for ListPaymentCredentialProviders that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename ListPaymentCredentialProvidersRequestT = Model::ListPaymentCredentialProvidersRequest>
+  void ListPaymentCredentialProvidersAsync(const ListPaymentCredentialProvidersResponseReceivedHandler& handler,
+                                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                           const ListPaymentCredentialProvidersRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPaymentCredentialProviders, request, handler, context);
+  }
+
+  /**
+   * <p>Lists all payment managers in the account.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/ListPaymentManagers">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::ListPaymentManagersOutcome ListPaymentManagers(const Model::ListPaymentManagersRequest& request = {}) const;
+
+  /**
+   * A Callable wrapper for ListPaymentManagers that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename ListPaymentManagersRequestT = Model::ListPaymentManagersRequest>
+  Model::ListPaymentManagersOutcomeCallable ListPaymentManagersCallable(const ListPaymentManagersRequestT& request = {}) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::ListPaymentManagers, request);
+  }
+
+  /**
+   * An Async wrapper for ListPaymentManagers that queues the request into a thread executor and triggers associated callback when operation
+   * has finished.
+   */
+  template <typename ListPaymentManagersRequestT = Model::ListPaymentManagersRequest>
+  void ListPaymentManagersAsync(const ListPaymentManagersResponseReceivedHandler& handler,
+                                const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr,
+                                const ListPaymentManagersRequestT& request = {}) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::ListPaymentManagers, request, handler, context);
   }
 
   /**
@@ -3149,6 +3494,93 @@ class AWS_BEDROCKAGENTCORECONTROL_API BedrockAgentCoreControlClient
                                          const UpdateOnlineEvaluationConfigResponseReceivedHandler& handler,
                                          const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
     return SubmitAsync(&BedrockAgentCoreControlClient::UpdateOnlineEvaluationConfig, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing payment connector. This operation uses PATCH semantics,
+   * so you only need to specify the fields you want to change.</p><p><h3>See
+   * Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentConnector">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePaymentConnectorOutcome UpdatePaymentConnector(const Model::UpdatePaymentConnectorRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePaymentConnector that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdatePaymentConnectorRequestT = Model::UpdatePaymentConnectorRequest>
+  Model::UpdatePaymentConnectorOutcomeCallable UpdatePaymentConnectorCallable(const UpdatePaymentConnectorRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdatePaymentConnector, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePaymentConnector that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdatePaymentConnectorRequestT = Model::UpdatePaymentConnectorRequest>
+  void UpdatePaymentConnectorAsync(const UpdatePaymentConnectorRequestT& request,
+                                   const UpdatePaymentConnectorResponseReceivedHandler& handler,
+                                   const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdatePaymentConnector, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing payment credential provider with new authentication
+   * credentials.</p><p><h3>See Also:</h3>   <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentCredentialProvider">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePaymentCredentialProviderOutcome UpdatePaymentCredentialProvider(
+      const Model::UpdatePaymentCredentialProviderRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePaymentCredentialProvider that returns a future to the operation so that it can be executed in parallel to
+   * other requests.
+   */
+  template <typename UpdatePaymentCredentialProviderRequestT = Model::UpdatePaymentCredentialProviderRequest>
+  Model::UpdatePaymentCredentialProviderOutcomeCallable UpdatePaymentCredentialProviderCallable(
+      const UpdatePaymentCredentialProviderRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdatePaymentCredentialProvider, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePaymentCredentialProvider that queues the request into a thread executor and triggers associated callback
+   * when operation has finished.
+   */
+  template <typename UpdatePaymentCredentialProviderRequestT = Model::UpdatePaymentCredentialProviderRequest>
+  void UpdatePaymentCredentialProviderAsync(const UpdatePaymentCredentialProviderRequestT& request,
+                                            const UpdatePaymentCredentialProviderResponseReceivedHandler& handler,
+                                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdatePaymentCredentialProvider, request, handler, context);
+  }
+
+  /**
+   * <p>Updates an existing payment manager. This operation uses PATCH semantics, so
+   * you only need to specify the fields you want to change.</p><p><h3>See Also:</h3>
+   * <a
+   * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-control-2023-06-05/UpdatePaymentManager">AWS
+   * API Reference</a></p>
+   */
+  virtual Model::UpdatePaymentManagerOutcome UpdatePaymentManager(const Model::UpdatePaymentManagerRequest& request) const;
+
+  /**
+   * A Callable wrapper for UpdatePaymentManager that returns a future to the operation so that it can be executed in parallel to other
+   * requests.
+   */
+  template <typename UpdatePaymentManagerRequestT = Model::UpdatePaymentManagerRequest>
+  Model::UpdatePaymentManagerOutcomeCallable UpdatePaymentManagerCallable(const UpdatePaymentManagerRequestT& request) const {
+    return SubmitCallable(&BedrockAgentCoreControlClient::UpdatePaymentManager, request);
+  }
+
+  /**
+   * An Async wrapper for UpdatePaymentManager that queues the request into a thread executor and triggers associated callback when
+   * operation has finished.
+   */
+  template <typename UpdatePaymentManagerRequestT = Model::UpdatePaymentManagerRequest>
+  void UpdatePaymentManagerAsync(const UpdatePaymentManagerRequestT& request, const UpdatePaymentManagerResponseReceivedHandler& handler,
+                                 const std::shared_ptr<const Aws::Client::AsyncCallerContext>& context = nullptr) const {
+    return SubmitAsync(&BedrockAgentCoreControlClient::UpdatePaymentManager, request, handler, context);
   }
 
   /**

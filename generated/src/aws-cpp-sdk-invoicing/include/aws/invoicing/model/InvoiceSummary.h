@@ -6,11 +6,17 @@
 #pragma once
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
+#include <aws/core/utils/memory/stl/AWSVector.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
+#include <aws/invoicing/model/BillType.h>
 #include <aws/invoicing/model/BillingPeriod.h>
+#include <aws/invoicing/model/EinvoiceDeliveryStatus.h>
 #include <aws/invoicing/model/Entity.h>
 #include <aws/invoicing/model/InvoiceCurrencyAmount.h>
+#include <aws/invoicing/model/InvoiceFrequency.h>
 #include <aws/invoicing/model/InvoiceType.h>
+#include <aws/invoicing/model/ReceiverRole.h>
+#include <aws/invoicing/model/TaxAuthorityStatus.h>
 
 #include <utility>
 
@@ -110,6 +116,63 @@ class InvoiceSummary {
 
   ///@{
   /**
+   * <p> The list of Amazon Web Services account IDs that are the bill source of the
+   * invoice. Currently, only a single bill source account is returned.</p>
+   */
+  inline const Aws::Vector<Aws::String>& GetBillSourceAccounts() const { return m_billSourceAccounts; }
+  inline bool BillSourceAccountsHasBeenSet() const { return m_billSourceAccountsHasBeenSet; }
+  template <typename BillSourceAccountsT = Aws::Vector<Aws::String>>
+  void SetBillSourceAccounts(BillSourceAccountsT&& value) {
+    m_billSourceAccountsHasBeenSet = true;
+    m_billSourceAccounts = std::forward<BillSourceAccountsT>(value);
+  }
+  template <typename BillSourceAccountsT = Aws::Vector<Aws::String>>
+  InvoiceSummary& WithBillSourceAccounts(BillSourceAccountsT&& value) {
+    SetBillSourceAccounts(std::forward<BillSourceAccountsT>(value));
+    return *this;
+  }
+  template <typename BillSourceAccountsT = Aws::String>
+  InvoiceSummary& AddBillSourceAccounts(BillSourceAccountsT&& value) {
+    m_billSourceAccountsHasBeenSet = true;
+    m_billSourceAccounts.emplace_back(std::forward<BillSourceAccountsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The total number of accounts that are the bill source of the invoice. </p>
+   */
+  inline int GetBillSourceAccountsTotalCount() const { return m_billSourceAccountsTotalCount; }
+  inline bool BillSourceAccountsTotalCountHasBeenSet() const { return m_billSourceAccountsTotalCountHasBeenSet; }
+  inline void SetBillSourceAccountsTotalCount(int value) {
+    m_billSourceAccountsTotalCountHasBeenSet = true;
+    m_billSourceAccountsTotalCount = value;
+  }
+  inline InvoiceSummary& WithBillSourceAccountsTotalCount(int value) {
+    SetBillSourceAccountsTotalCount(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The role of the invoice receiver.</p>
+   */
+  inline ReceiverRole GetReceiverRole() const { return m_receiverRole; }
+  inline bool ReceiverRoleHasBeenSet() const { return m_receiverRoleHasBeenSet; }
+  inline void SetReceiverRole(ReceiverRole value) {
+    m_receiverRoleHasBeenSet = true;
+    m_receiverRole = value;
+  }
+  inline InvoiceSummary& WithReceiverRole(ReceiverRole value) {
+    SetReceiverRole(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p>The organization name providing Amazon Web Services services.</p>
    */
   inline const Entity& GetEntity() const { return m_entity; }
@@ -146,6 +209,38 @@ class InvoiceSummary {
 
   ///@{
   /**
+   * <p> The frequency of the invoice. </p>
+   */
+  inline InvoiceFrequency GetInvoiceFrequency() const { return m_invoiceFrequency; }
+  inline bool InvoiceFrequencyHasBeenSet() const { return m_invoiceFrequencyHasBeenSet; }
+  inline void SetInvoiceFrequency(InvoiceFrequency value) {
+    m_invoiceFrequencyHasBeenSet = true;
+    m_invoiceFrequency = value;
+  }
+  inline InvoiceSummary& WithInvoiceFrequency(InvoiceFrequency value) {
+    SetInvoiceFrequency(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The type of the bill. </p>
+   */
+  inline BillType GetBillType() const { return m_billType; }
+  inline bool BillTypeHasBeenSet() const { return m_billTypeHasBeenSet; }
+  inline void SetBillType(BillType value) {
+    m_billTypeHasBeenSet = true;
+    m_billType = value;
+  }
+  inline InvoiceSummary& WithBillType(BillType value) {
+    SetBillType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
    * <p> The type of invoice. </p>
    */
   inline InvoiceType GetInvoiceType() const { return m_invoiceType; }
@@ -156,6 +251,25 @@ class InvoiceSummary {
   }
   inline InvoiceSummary& WithInvoiceType(InvoiceType value) {
     SetInvoiceType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The commercial invoice ID. This is only applicable for tax invoices and
+   * identifies the associated commercial invoice. </p>
+   */
+  inline const Aws::String& GetCommercialInvoiceId() const { return m_commercialInvoiceId; }
+  inline bool CommercialInvoiceIdHasBeenSet() const { return m_commercialInvoiceIdHasBeenSet; }
+  template <typename CommercialInvoiceIdT = Aws::String>
+  void SetCommercialInvoiceId(CommercialInvoiceIdT&& value) {
+    m_commercialInvoiceIdHasBeenSet = true;
+    m_commercialInvoiceId = std::forward<CommercialInvoiceIdT>(value);
+  }
+  template <typename CommercialInvoiceIdT = Aws::String>
+  InvoiceSummary& WithCommercialInvoiceId(CommercialInvoiceIdT&& value) {
+    SetCommercialInvoiceId(std::forward<CommercialInvoiceIdT>(value));
     return *this;
   }
   ///@}
@@ -192,6 +306,39 @@ class InvoiceSummary {
   template <typename PurchaseOrderNumberT = Aws::String>
   InvoiceSummary& WithPurchaseOrderNumber(PurchaseOrderNumberT&& value) {
     SetPurchaseOrderNumber(std::forward<PurchaseOrderNumberT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The e-invoice delivery status. </p>
+   */
+  inline EinvoiceDeliveryStatus GetEinvoiceDeliveryStatus() const { return m_einvoiceDeliveryStatus; }
+  inline bool EinvoiceDeliveryStatusHasBeenSet() const { return m_einvoiceDeliveryStatusHasBeenSet; }
+  inline void SetEinvoiceDeliveryStatus(EinvoiceDeliveryStatus value) {
+    m_einvoiceDeliveryStatusHasBeenSet = true;
+    m_einvoiceDeliveryStatus = value;
+  }
+  inline InvoiceSummary& WithEinvoiceDeliveryStatus(EinvoiceDeliveryStatus value) {
+    SetEinvoiceDeliveryStatus(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p> The current status of an invoice as reported to the tax authority. This
+   * captures scenarios where an invoice may be cancelled after issuance. </p>
+   */
+  inline TaxAuthorityStatus GetTaxAuthorityStatus() const { return m_taxAuthorityStatus; }
+  inline bool TaxAuthorityStatusHasBeenSet() const { return m_taxAuthorityStatusHasBeenSet; }
+  inline void SetTaxAuthorityStatus(TaxAuthorityStatus value) {
+    m_taxAuthorityStatusHasBeenSet = true;
+    m_taxAuthorityStatus = value;
+  }
+  inline InvoiceSummary& WithTaxAuthorityStatus(TaxAuthorityStatus value) {
+    SetTaxAuthorityStatus(value);
     return *this;
   }
   ///@}
@@ -258,15 +405,31 @@ class InvoiceSummary {
 
   Aws::Utils::DateTime m_dueDate{};
 
+  Aws::Vector<Aws::String> m_billSourceAccounts;
+
+  int m_billSourceAccountsTotalCount{0};
+
+  ReceiverRole m_receiverRole{ReceiverRole::NOT_SET};
+
   Entity m_entity;
 
   BillingPeriod m_billingPeriod;
 
+  InvoiceFrequency m_invoiceFrequency{InvoiceFrequency::NOT_SET};
+
+  BillType m_billType{BillType::NOT_SET};
+
   InvoiceType m_invoiceType{InvoiceType::NOT_SET};
+
+  Aws::String m_commercialInvoiceId;
 
   Aws::String m_originalInvoiceId;
 
   Aws::String m_purchaseOrderNumber;
+
+  EinvoiceDeliveryStatus m_einvoiceDeliveryStatus{EinvoiceDeliveryStatus::NOT_SET};
+
+  TaxAuthorityStatus m_taxAuthorityStatus{TaxAuthorityStatus::NOT_SET};
 
   InvoiceCurrencyAmount m_baseCurrencyAmount;
 
@@ -277,11 +440,19 @@ class InvoiceSummary {
   bool m_invoiceIdHasBeenSet = false;
   bool m_issuedDateHasBeenSet = false;
   bool m_dueDateHasBeenSet = false;
+  bool m_billSourceAccountsHasBeenSet = false;
+  bool m_billSourceAccountsTotalCountHasBeenSet = false;
+  bool m_receiverRoleHasBeenSet = false;
   bool m_entityHasBeenSet = false;
   bool m_billingPeriodHasBeenSet = false;
+  bool m_invoiceFrequencyHasBeenSet = false;
+  bool m_billTypeHasBeenSet = false;
   bool m_invoiceTypeHasBeenSet = false;
+  bool m_commercialInvoiceIdHasBeenSet = false;
   bool m_originalInvoiceIdHasBeenSet = false;
   bool m_purchaseOrderNumberHasBeenSet = false;
+  bool m_einvoiceDeliveryStatusHasBeenSet = false;
+  bool m_taxAuthorityStatusHasBeenSet = false;
   bool m_baseCurrencyAmountHasBeenSet = false;
   bool m_taxCurrencyAmountHasBeenSet = false;
   bool m_paymentCurrencyAmountHasBeenSet = false;

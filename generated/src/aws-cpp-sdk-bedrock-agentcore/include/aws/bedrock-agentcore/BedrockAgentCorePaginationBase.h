@@ -11,6 +11,8 @@
 #include <aws/bedrock-agentcore/model/ListEventsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListPaymentInstrumentsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListPaymentSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>
@@ -91,6 +93,30 @@ class BedrockAgentCorePaginationBase {
     request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
     return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListMemoryRecordsRequest,
                                              Pagination::ListMemoryRecordsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPaymentInstruments operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentInstrumentsRequest,
+                                    Pagination::ListPaymentInstrumentsPaginationTraits<DerivedClient>>
+  ListPaymentInstrumentsPaginator(const Model::ListPaymentInstrumentsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentInstrumentsRequest,
+                                             Pagination::ListPaymentInstrumentsPaginationTraits<DerivedClient>>{
+        static_cast<DerivedClient*>(this), request};
+  }
+
+  /**
+   * Create a paginator for ListPaymentSessions operation
+   */
+  Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentSessionsRequest,
+                                    Pagination::ListPaymentSessionsPaginationTraits<DerivedClient>>
+  ListPaymentSessionsPaginator(const Model::ListPaymentSessionsRequest& request) {
+    request.AddUserAgentFeature(Aws::Client::UserAgentFeature::PAGINATOR);
+    return Aws::Utils::Pagination::Paginator<DerivedClient, Model::ListPaymentSessionsRequest,
+                                             Pagination::ListPaymentSessionsPaginationTraits<DerivedClient>>{
         static_cast<DerivedClient*>(this), request};
   }
 

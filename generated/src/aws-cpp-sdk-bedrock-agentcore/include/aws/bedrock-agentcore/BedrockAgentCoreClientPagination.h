@@ -11,6 +11,8 @@
 #include <aws/bedrock-agentcore/model/ListEventsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListPaymentInstrumentsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListPaymentSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>
@@ -33,6 +35,12 @@ using ListMemoryExtractionJobsPaginator =
                                       Pagination::ListMemoryExtractionJobsPaginationTraits<BedrockAgentCoreClient>>;
 using ListMemoryRecordsPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListMemoryRecordsRequest,
                                                                      Pagination::ListMemoryRecordsPaginationTraits<BedrockAgentCoreClient>>;
+using ListPaymentInstrumentsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListPaymentInstrumentsRequest,
+                                      Pagination::ListPaymentInstrumentsPaginationTraits<BedrockAgentCoreClient>>;
+using ListPaymentSessionsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListPaymentSessionsRequest,
+                                      Pagination::ListPaymentSessionsPaginationTraits<BedrockAgentCoreClient>>;
 using ListRecommendationsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreClient, Model::ListRecommendationsRequest,
                                       Pagination::ListRecommendationsPaginationTraits<BedrockAgentCoreClient>>;

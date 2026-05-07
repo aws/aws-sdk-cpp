@@ -21,6 +21,9 @@
 #include <aws/bedrock-agentcore-control/model/CreateMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateOauth2CredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateOnlineEvaluationConfigRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentConnectorRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentManagerRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/CreateRegistryRecordRequest.h>
@@ -41,6 +44,9 @@
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOauth2CredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOnlineEvaluationConfigRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentConnectorRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentManagerRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/DeleteRegistryRecordRequest.h>
@@ -63,6 +69,9 @@
 #include <aws/bedrock-agentcore-control/model/GetMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetOauth2CredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetOnlineEvaluationConfigRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentConnectorRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentManagerRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationRequest.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyRequest.h>
@@ -88,6 +97,9 @@
 #include <aws/bedrock-agentcore-control/model/ListMemoriesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentConnectorsRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentManagersRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsRequest.h>
@@ -115,6 +127,9 @@
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOauth2CredentialProviderRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOnlineEvaluationConfigRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentConnectorRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentCredentialProviderRequest.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentManagerRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyEngineRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyRequest.h>
 #include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordRequest.h>
@@ -488,6 +503,48 @@ CreateOnlineEvaluationConfigOutcome BedrockAgentCoreControlClient::CreateOnlineE
                             : CreateOnlineEvaluationConfigOutcome(std::move(result.GetError()));
 }
 
+CreatePaymentConnectorOutcome BedrockAgentCoreControlClient::CreatePaymentConnector(const CreatePaymentConnectorRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("CreatePaymentConnector", "Required field: PaymentManagerId, is not set");
+    return CreatePaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePaymentConnectorOutcome(result.GetResultWithOwnership())
+                            : CreatePaymentConnectorOutcome(std::move(result.GetError()));
+}
+
+CreatePaymentCredentialProviderOutcome BedrockAgentCoreControlClient::CreatePaymentCredentialProvider(
+    const CreatePaymentCredentialProviderRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/CreatePaymentCredentialProvider");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePaymentCredentialProviderOutcome(result.GetResultWithOwnership())
+                            : CreatePaymentCredentialProviderOutcome(std::move(result.GetError()));
+}
+
+CreatePaymentManagerOutcome BedrockAgentCoreControlClient::CreatePaymentManager(const CreatePaymentManagerRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePaymentManagerOutcome(result.GetResultWithOwnership())
+                            : CreatePaymentManagerOutcome(std::move(result.GetError()));
+}
+
 CreatePolicyOutcome BedrockAgentCoreControlClient::CreatePolicy(const CreatePolicyRequest& request) const {
   if (!request.PolicyEngineIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("CreatePolicy", "Required field: PolicyEngineId, is not set");
@@ -834,6 +891,61 @@ DeleteOnlineEvaluationConfigOutcome BedrockAgentCoreControlClient::DeleteOnlineE
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteOnlineEvaluationConfigOutcome(result.GetResultWithOwnership())
                             : DeleteOnlineEvaluationConfigOutcome(std::move(result.GetError()));
+}
+
+DeletePaymentConnectorOutcome BedrockAgentCoreControlClient::DeletePaymentConnector(const DeletePaymentConnectorRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePaymentConnector", "Required field: PaymentManagerId, is not set");
+    return DeletePaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+  if (!request.PaymentConnectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePaymentConnector", "Required field: PaymentConnectorId, is not set");
+    return DeletePaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentConnectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentConnectorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePaymentConnectorOutcome(result.GetResultWithOwnership())
+                            : DeletePaymentConnectorOutcome(std::move(result.GetError()));
+}
+
+DeletePaymentCredentialProviderOutcome BedrockAgentCoreControlClient::DeletePaymentCredentialProvider(
+    const DeletePaymentCredentialProviderRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/DeletePaymentCredentialProvider");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePaymentCredentialProviderOutcome(result.GetResultWithOwnership())
+                            : DeletePaymentCredentialProviderOutcome(std::move(result.GetError()));
+}
+
+DeletePaymentManagerOutcome BedrockAgentCoreControlClient::DeletePaymentManager(const DeletePaymentManagerRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("DeletePaymentManager", "Required field: PaymentManagerId, is not set");
+    return DeletePaymentManagerOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
+  return result.IsSuccess() ? DeletePaymentManagerOutcome(result.GetResultWithOwnership())
+                            : DeletePaymentManagerOutcome(std::move(result.GetError()));
 }
 
 DeletePolicyOutcome BedrockAgentCoreControlClient::DeletePolicy(const DeletePolicyRequest& request) const {
@@ -1250,6 +1362,61 @@ GetOnlineEvaluationConfigOutcome BedrockAgentCoreControlClient::GetOnlineEvaluat
                             : GetOnlineEvaluationConfigOutcome(std::move(result.GetError()));
 }
 
+GetPaymentConnectorOutcome BedrockAgentCoreControlClient::GetPaymentConnector(const GetPaymentConnectorRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPaymentConnector", "Required field: PaymentManagerId, is not set");
+    return GetPaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+  if (!request.PaymentConnectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPaymentConnector", "Required field: PaymentConnectorId, is not set");
+    return GetPaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentConnectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentConnectorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPaymentConnectorOutcome(result.GetResultWithOwnership())
+                            : GetPaymentConnectorOutcome(std::move(result.GetError()));
+}
+
+GetPaymentCredentialProviderOutcome BedrockAgentCoreControlClient::GetPaymentCredentialProvider(
+    const GetPaymentCredentialProviderRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/GetPaymentCredentialProvider");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPaymentCredentialProviderOutcome(result.GetResultWithOwnership())
+                            : GetPaymentCredentialProviderOutcome(std::move(result.GetError()));
+}
+
+GetPaymentManagerOutcome BedrockAgentCoreControlClient::GetPaymentManager(const GetPaymentManagerRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("GetPaymentManager", "Required field: PaymentManagerId, is not set");
+    return GetPaymentManagerOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_GET);
+  return result.IsSuccess() ? GetPaymentManagerOutcome(result.GetResultWithOwnership())
+                            : GetPaymentManagerOutcome(std::move(result.GetError()));
+}
+
 GetPolicyOutcome BedrockAgentCoreControlClient::GetPolicy(const GetPolicyRequest& request) const {
   if (!request.PolicyEngineIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetPolicy", "Required field: PolicyEngineId, is not set");
@@ -1625,6 +1792,48 @@ ListOnlineEvaluationConfigsOutcome BedrockAgentCoreControlClient::ListOnlineEval
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListOnlineEvaluationConfigsOutcome(result.GetResultWithOwnership())
                             : ListOnlineEvaluationConfigsOutcome(std::move(result.GetError()));
+}
+
+ListPaymentConnectorsOutcome BedrockAgentCoreControlClient::ListPaymentConnectors(const ListPaymentConnectorsRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("ListPaymentConnectors", "Required field: PaymentManagerId, is not set");
+    return ListPaymentConnectorsOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors-list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPaymentConnectorsOutcome(result.GetResultWithOwnership())
+                            : ListPaymentConnectorsOutcome(std::move(result.GetError()));
+}
+
+ListPaymentCredentialProvidersOutcome BedrockAgentCoreControlClient::ListPaymentCredentialProviders(
+    const ListPaymentCredentialProvidersRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/ListPaymentCredentialProviders");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPaymentCredentialProvidersOutcome(result.GetResultWithOwnership())
+                            : ListPaymentCredentialProvidersOutcome(std::move(result.GetError()));
+}
+
+ListPaymentManagersOutcome BedrockAgentCoreControlClient::ListPaymentManagers(const ListPaymentManagersRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers-list");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPaymentManagersOutcome(result.GetResultWithOwnership())
+                            : ListPaymentManagersOutcome(std::move(result.GetError()));
 }
 
 ListPoliciesOutcome BedrockAgentCoreControlClient::ListPolicies(const ListPoliciesRequest& request) const {
@@ -2118,6 +2327,61 @@ UpdateOnlineEvaluationConfigOutcome BedrockAgentCoreControlClient::UpdateOnlineE
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PUT);
   return result.IsSuccess() ? UpdateOnlineEvaluationConfigOutcome(result.GetResultWithOwnership())
                             : UpdateOnlineEvaluationConfigOutcome(std::move(result.GetError()));
+}
+
+UpdatePaymentConnectorOutcome BedrockAgentCoreControlClient::UpdatePaymentConnector(const UpdatePaymentConnectorRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePaymentConnector", "Required field: PaymentManagerId, is not set");
+    return UpdatePaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+  if (!request.PaymentConnectorIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePaymentConnector", "Required field: PaymentConnectorId, is not set");
+    return UpdatePaymentConnectorOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentConnectorId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+    endpointResolutionOutcome.GetResult().AddPathSegments("/connectors/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentConnectorId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePaymentConnectorOutcome(result.GetResultWithOwnership())
+                            : UpdatePaymentConnectorOutcome(std::move(result.GetError()));
+}
+
+UpdatePaymentCredentialProviderOutcome BedrockAgentCoreControlClient::UpdatePaymentCredentialProvider(
+    const UpdatePaymentCredentialProviderRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/UpdatePaymentCredentialProvider");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? UpdatePaymentCredentialProviderOutcome(result.GetResultWithOwnership())
+                            : UpdatePaymentCredentialProviderOutcome(std::move(result.GetError()));
+}
+
+UpdatePaymentManagerOutcome BedrockAgentCoreControlClient::UpdatePaymentManager(const UpdatePaymentManagerRequest& request) const {
+  if (!request.PaymentManagerIdHasBeenSet()) {
+    AWS_LOGSTREAM_ERROR("UpdatePaymentManager", "Required field: PaymentManagerId, is not set");
+    return UpdatePaymentManagerOutcome(Aws::Client::AWSError<BedrockAgentCoreControlErrors>(
+        BedrockAgentCoreControlErrors::MISSING_PARAMETER, "MISSING_PARAMETER", "Missing required field [PaymentManagerId]", false));
+  }
+
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/managers/");
+    endpointResolutionOutcome.GetResult().AddPathSegment(request.GetPaymentManagerId());
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_PATCH);
+  return result.IsSuccess() ? UpdatePaymentManagerOutcome(result.GetResultWithOwnership())
+                            : UpdatePaymentManagerOutcome(std::move(result.GetError()));
 }
 
 UpdatePolicyOutcome BedrockAgentCoreControlClient::UpdatePolicy(const UpdatePolicyRequest& request) const {

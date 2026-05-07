@@ -261,6 +261,24 @@ class DescribeInstanceTypesRequest : public EC2Request {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>If <code>true</code>, the response includes instance types that are not
+   * supported in the current Region, in addition to the supported types. Default:
+   * <code>false</code>.</p>
+   */
+  inline bool GetIncludeUnsupportedInRegion() const { return m_includeUnsupportedInRegion; }
+  inline bool IncludeUnsupportedInRegionHasBeenSet() const { return m_includeUnsupportedInRegionHasBeenSet; }
+  inline void SetIncludeUnsupportedInRegion(bool value) {
+    m_includeUnsupportedInRegionHasBeenSet = true;
+    m_includeUnsupportedInRegion = value;
+  }
+  inline DescribeInstanceTypesRequest& WithIncludeUnsupportedInRegion(bool value) {
+    SetIncludeUnsupportedInRegion(value);
+    return *this;
+  }
+  ///@}
  private:
   bool m_dryRun{false};
 
@@ -271,11 +289,14 @@ class DescribeInstanceTypesRequest : public EC2Request {
   int m_maxResults{0};
 
   Aws::String m_nextToken;
+
+  bool m_includeUnsupportedInRegion{false};
   bool m_dryRunHasBeenSet = false;
   bool m_instanceTypesHasBeenSet = false;
   bool m_filtersHasBeenSet = false;
   bool m_maxResultsHasBeenSet = false;
   bool m_nextTokenHasBeenSet = false;
+  bool m_includeUnsupportedInRegionHasBeenSet = false;
 };
 
 }  // namespace Model

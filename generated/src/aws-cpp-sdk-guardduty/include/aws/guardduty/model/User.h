@@ -107,7 +107,9 @@ class User {
 
   ///@{
   /**
-   * <p>Contains information about the Amazon Web Services account.</p>
+   * <p>Contains information about the Amazon Web Services account within which the
+   * activity took place. This is not necessarily the account that owns the user
+   * identity.</p>
    */
   inline const Account& GetAccount() const { return m_account; }
   inline bool AccountHasBeenSet() const { return m_accountHasBeenSet; }

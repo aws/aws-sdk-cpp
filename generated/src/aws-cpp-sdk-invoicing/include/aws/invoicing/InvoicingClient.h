@@ -177,9 +177,12 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Creates a procurement portal preference configuration for e-invoice delivery
-   * and purchase order retrieval. This preference defines how invoices are delivered
-   * to a procurement portal and how purchase orders are retrieved.</p><p><h3>See
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Creates a
+   * procurement portal preference configuration for e-invoice delivery and purchase
+   * order retrieval. This preference defines how invoices are delivered to a
+   * procurement portal and how purchase orders are retrieved.</p><p><h3>See
    * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/CreateProcurementPortalPreference">AWS
    * API Reference</a></p>
@@ -236,8 +239,11 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Deletes an existing procurement portal preference. This action cannot be
-   * undone. Active e-invoice delivery and PO retrieval configurations will be
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Deletes an
+   * existing procurement portal preference. This action cannot be undone. Active
+   * e-invoice delivery and PO retrieval configurations will be
    * terminated.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/DeleteProcurementPortalPreference">AWS
    * API Reference</a></p>
@@ -324,8 +330,11 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves the details of a specific procurement portal preference
-   * configuration.</p><p><h3>See Also:</h3>   <a
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Retrieves the
+   * details of a specific procurement portal preference configuration.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/GetProcurementPortalPreference">AWS
    * API Reference</a></p>
    */
@@ -409,8 +418,11 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Retrieves a list of procurement portal preferences associated with the Amazon
-   * Web Services account.</p><p><h3>See Also:</h3>   <a
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Retrieves a
+   * list of procurement portal preferences associated with the Amazon Web Services
+   * account.</p><p><h3>See Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/ListProcurementPortalPreferences">AWS
    * API Reference</a></p>
    */
@@ -465,9 +477,12 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates an existing procurement portal preference configuration. This
-   * operation can modify settings for e-invoice delivery and purchase order
-   * retrieval.</p><p><h3>See Also:</h3>   <a
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Updates an
+   * existing procurement portal preference configuration. This operation can modify
+   * settings for e-invoice delivery and purchase order retrieval.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/PutProcurementPortalPreference">AWS
    * API Reference</a></p>
    */
@@ -574,9 +589,12 @@ class AWS_INVOICING_API InvoicingClient : public Aws::Client::AWSJsonClient,
   }
 
   /**
-   * <p>Updates the status of a procurement portal preference, including the
-   * activation state of e-invoice delivery and purchase order retrieval
-   * features.</p><p><h3>See Also:</h3>   <a
+   * <p> <i> <b>This feature API is subject to changing at any time. For more
+   * information, see the <a href="https://aws.amazon.com/service-terms/">Amazon Web
+   * Services Service Terms</a> (Betas and Previews).</b> </i> </p> <p>Updates the
+   * status of a procurement portal preference, including the activation state of
+   * e-invoice delivery and purchase order retrieval features.</p><p><h3>See
+   * Also:</h3>   <a
    * href="http://docs.aws.amazon.com/goto/WebAPI/invoicing-2024-12-01/UpdateProcurementPortalPreferenceStatus">AWS
    * API Reference</a></p>
    */

@@ -10,7 +10,7 @@
 namespace Aws {
 namespace BCMDataExports {
 namespace Model {
-enum class S3OutputType { NOT_SET, CUSTOM };
+enum class S3OutputType { NOT_SET, CUSTOM, ATHENA, REDSHIFT };
 
 namespace S3OutputTypeMapper {
 AWS_BCMDATAEXPORTS_API S3OutputType GetS3OutputTypeForName(const Aws::String& name);

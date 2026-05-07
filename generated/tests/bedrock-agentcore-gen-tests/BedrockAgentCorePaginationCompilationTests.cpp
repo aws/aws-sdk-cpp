@@ -8,9 +8,11 @@
 
 #include <aws/bedrock-agentcore/BedrockAgentCoreClientPagination.h>
 #include <aws/bedrock-agentcore/BedrockAgentCorePaginationBase.h>
+#include <aws/bedrock-agentcore/model/ListPaymentSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListSessionsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListBatchEvaluationsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsPaginationTraits.h>
+#include <aws/bedrock-agentcore/model/ListPaymentInstrumentsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListABTestsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/ListActorsPaginationTraits.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsPaginationTraits.h>

@@ -30,6 +30,10 @@ InvoiceSummariesFilter& InvoiceSummariesFilter::operator=(JsonView jsonValue) {
     m_invoicingEntity = jsonValue.GetString("InvoicingEntity");
     m_invoicingEntityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("ReceiverRole")) {
+    m_receiverRole = ReceiverRoleMapper::GetReceiverRoleForName(jsonValue.GetString("ReceiverRole"));
+    m_receiverRoleHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -46,6 +50,10 @@ JsonValue InvoiceSummariesFilter::Jsonize() const {
 
   if (m_invoicingEntityHasBeenSet) {
     payload.WithString("InvoicingEntity", m_invoicingEntity);
+  }
+
+  if (m_receiverRoleHasBeenSet) {
+    payload.WithString("ReceiverRole", ReceiverRoleMapper::GetNameForReceiverRole(m_receiverRole));
   }
 
   return payload;

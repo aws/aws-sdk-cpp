@@ -96,6 +96,14 @@ ResolverEndpoint& ResolverEndpoint::operator=(JsonView jsonValue) {
     m_targetNameServerMetricsEnabled = jsonValue.GetBool("TargetNameServerMetricsEnabled");
     m_targetNameServerMetricsEnabledHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("Dns64Enabled")) {
+    m_dns64Enabled = jsonValue.GetBool("Dns64Enabled");
+    m_dns64EnabledHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("Ipv6InternetAccessEnabled")) {
+    m_ipv6InternetAccessEnabled = jsonValue.GetBool("Ipv6InternetAccessEnabled");
+    m_ipv6InternetAccessEnabledHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -180,6 +188,14 @@ JsonValue ResolverEndpoint::Jsonize() const {
 
   if (m_targetNameServerMetricsEnabledHasBeenSet) {
     payload.WithBool("TargetNameServerMetricsEnabled", m_targetNameServerMetricsEnabled);
+  }
+
+  if (m_dns64EnabledHasBeenSet) {
+    payload.WithBool("Dns64Enabled", m_dns64Enabled);
+  }
+
+  if (m_ipv6InternetAccessEnabledHasBeenSet) {
+    payload.WithBool("Ipv6InternetAccessEnabled", m_ipv6InternetAccessEnabled);
   }
 
   return payload;

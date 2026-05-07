@@ -1,0 +1,207 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#pragma once
+#include <aws/bedrock-agentcore/BedrockAgentCore_EXPORTS.h>
+#include <aws/bedrock-agentcore/model/AvailableLimits.h>
+#include <aws/bedrock-agentcore/model/SessionLimits.h>
+#include <aws/core/utils/DateTime.h>
+#include <aws/core/utils/memory/stl/AWSString.h>
+
+#include <utility>
+
+namespace Aws {
+namespace Utils {
+namespace Json {
+class JsonValue;
+class JsonView;
+}  // namespace Json
+}  // namespace Utils
+namespace BedrockAgentCore {
+namespace Model {
+
+/**
+ * <p>Payment manager session</p><p><h3>See Also:</h3>   <a
+ * href="http://docs.aws.amazon.com/goto/WebAPI/bedrock-agentcore-2024-02-28/PaymentSession">AWS
+ * API Reference</a></p>
+ */
+class PaymentSession {
+ public:
+  AWS_BEDROCKAGENTCORE_API PaymentSession() = default;
+  AWS_BEDROCKAGENTCORE_API PaymentSession(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORE_API PaymentSession& operator=(Aws::Utils::Json::JsonView jsonValue);
+  AWS_BEDROCKAGENTCORE_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The unique identifier for this payment session.</p>
+   */
+  inline const Aws::String& GetPaymentSessionId() const { return m_paymentSessionId; }
+  inline bool PaymentSessionIdHasBeenSet() const { return m_paymentSessionIdHasBeenSet; }
+  template <typename PaymentSessionIdT = Aws::String>
+  void SetPaymentSessionId(PaymentSessionIdT&& value) {
+    m_paymentSessionIdHasBeenSet = true;
+    m_paymentSessionId = std::forward<PaymentSessionIdT>(value);
+  }
+  template <typename PaymentSessionIdT = Aws::String>
+  PaymentSession& WithPaymentSessionId(PaymentSessionIdT&& value) {
+    SetPaymentSessionId(std::forward<PaymentSessionIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ARN of the payment manager that owns this session.</p>
+   */
+  inline const Aws::String& GetPaymentManagerArn() const { return m_paymentManagerArn; }
+  inline bool PaymentManagerArnHasBeenSet() const { return m_paymentManagerArnHasBeenSet; }
+  template <typename PaymentManagerArnT = Aws::String>
+  void SetPaymentManagerArn(PaymentManagerArnT&& value) {
+    m_paymentManagerArnHasBeenSet = true;
+    m_paymentManagerArn = std::forward<PaymentManagerArnT>(value);
+  }
+  template <typename PaymentManagerArnT = Aws::String>
+  PaymentSession& WithPaymentManagerArn(PaymentManagerArnT&& value) {
+    SetPaymentManagerArn(std::forward<PaymentManagerArnT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The spending limits for this session.</p>
+   */
+  inline const SessionLimits& GetLimits() const { return m_limits; }
+  inline bool LimitsHasBeenSet() const { return m_limitsHasBeenSet; }
+  template <typename LimitsT = SessionLimits>
+  void SetLimits(LimitsT&& value) {
+    m_limitsHasBeenSet = true;
+    m_limits = std::forward<LimitsT>(value);
+  }
+  template <typename LimitsT = SessionLimits>
+  PaymentSession& WithLimits(LimitsT&& value) {
+    SetLimits(std::forward<LimitsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The user ID associated with this payment session.</p>
+   */
+  inline const Aws::String& GetUserId() const { return m_userId; }
+  inline bool UserIdHasBeenSet() const { return m_userIdHasBeenSet; }
+  template <typename UserIdT = Aws::String>
+  void SetUserId(UserIdT&& value) {
+    m_userIdHasBeenSet = true;
+    m_userId = std::forward<UserIdT>(value);
+  }
+  template <typename UserIdT = Aws::String>
+  PaymentSession& WithUserId(UserIdT&& value) {
+    SetUserId(std::forward<UserIdT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The session expiry time in minutes.</p>
+   */
+  inline int GetExpiryTimeInMinutes() const { return m_expiryTimeInMinutes; }
+  inline bool ExpiryTimeInMinutesHasBeenSet() const { return m_expiryTimeInMinutesHasBeenSet; }
+  inline void SetExpiryTimeInMinutes(int value) {
+    m_expiryTimeInMinutesHasBeenSet = true;
+    m_expiryTimeInMinutes = value;
+  }
+  inline PaymentSession& WithExpiryTimeInMinutes(int value) {
+    SetExpiryTimeInMinutes(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when this payment session was created.</p>
+   */
+  inline const Aws::Utils::DateTime& GetCreatedAt() const { return m_createdAt; }
+  inline bool CreatedAtHasBeenSet() const { return m_createdAtHasBeenSet; }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  void SetCreatedAt(CreatedAtT&& value) {
+    m_createdAtHasBeenSet = true;
+    m_createdAt = std::forward<CreatedAtT>(value);
+  }
+  template <typename CreatedAtT = Aws::Utils::DateTime>
+  PaymentSession& WithCreatedAt(CreatedAtT&& value) {
+    SetCreatedAt(std::forward<CreatedAtT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The available limits for this session after accounting for processed
+   * payments.</p>
+   */
+  inline const AvailableLimits& GetAvailableLimits() const { return m_availableLimits; }
+  inline bool AvailableLimitsHasBeenSet() const { return m_availableLimitsHasBeenSet; }
+  template <typename AvailableLimitsT = AvailableLimits>
+  void SetAvailableLimits(AvailableLimitsT&& value) {
+    m_availableLimitsHasBeenSet = true;
+    m_availableLimits = std::forward<AvailableLimitsT>(value);
+  }
+  template <typename AvailableLimitsT = AvailableLimits>
+  PaymentSession& WithAvailableLimits(AvailableLimitsT&& value) {
+    SetAvailableLimits(std::forward<AvailableLimitsT>(value));
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The timestamp when this payment session was last updated.</p>
+   */
+  inline const Aws::Utils::DateTime& GetUpdatedAt() const { return m_updatedAt; }
+  inline bool UpdatedAtHasBeenSet() const { return m_updatedAtHasBeenSet; }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  void SetUpdatedAt(UpdatedAtT&& value) {
+    m_updatedAtHasBeenSet = true;
+    m_updatedAt = std::forward<UpdatedAtT>(value);
+  }
+  template <typename UpdatedAtT = Aws::Utils::DateTime>
+  PaymentSession& WithUpdatedAt(UpdatedAtT&& value) {
+    SetUpdatedAt(std::forward<UpdatedAtT>(value));
+    return *this;
+  }
+  ///@}
+ private:
+  Aws::String m_paymentSessionId;
+
+  Aws::String m_paymentManagerArn;
+
+  SessionLimits m_limits;
+
+  Aws::String m_userId;
+
+  int m_expiryTimeInMinutes{0};
+
+  Aws::Utils::DateTime m_createdAt{};
+
+  AvailableLimits m_availableLimits;
+
+  Aws::Utils::DateTime m_updatedAt{};
+  bool m_paymentSessionIdHasBeenSet = false;
+  bool m_paymentManagerArnHasBeenSet = false;
+  bool m_limitsHasBeenSet = false;
+  bool m_userIdHasBeenSet = false;
+  bool m_expiryTimeInMinutesHasBeenSet = false;
+  bool m_createdAtHasBeenSet = false;
+  bool m_availableLimitsHasBeenSet = false;
+  bool m_updatedAtHasBeenSet = false;
+};
+
+}  // namespace Model
+}  // namespace BedrockAgentCore
+}  // namespace Aws

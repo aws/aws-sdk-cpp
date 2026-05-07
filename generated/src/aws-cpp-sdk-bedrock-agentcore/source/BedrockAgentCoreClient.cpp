@@ -12,10 +12,14 @@
 #include <aws/bedrock-agentcore/model/CompleteResourceTokenAuthRequest.h>
 #include <aws/bedrock-agentcore/model/CreateABTestRequest.h>
 #include <aws/bedrock-agentcore/model/CreateEventRequest.h>
+#include <aws/bedrock-agentcore/model/CreatePaymentInstrumentRequest.h>
+#include <aws/bedrock-agentcore/model/CreatePaymentSessionRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteABTestRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteBatchEvaluationRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteEventRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/DeletePaymentInstrumentRequest.h>
+#include <aws/bedrock-agentcore/model/DeletePaymentSessionRequest.h>
 #include <aws/bedrock-agentcore/model/DeleteRecommendationRequest.h>
 #include <aws/bedrock-agentcore/model/EvaluateRequest.h>
 #include <aws/bedrock-agentcore/model/GetABTestRequest.h>
@@ -25,9 +29,13 @@
 #include <aws/bedrock-agentcore/model/GetCodeInterpreterSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetEventRequest.h>
 #include <aws/bedrock-agentcore/model/GetMemoryRecordRequest.h>
+#include <aws/bedrock-agentcore/model/GetPaymentInstrumentBalanceRequest.h>
+#include <aws/bedrock-agentcore/model/GetPaymentInstrumentRequest.h>
+#include <aws/bedrock-agentcore/model/GetPaymentSessionRequest.h>
 #include <aws/bedrock-agentcore/model/GetRecommendationRequest.h>
 #include <aws/bedrock-agentcore/model/GetResourceApiKeyRequest.h>
 #include <aws/bedrock-agentcore/model/GetResourceOauth2TokenRequest.h>
+#include <aws/bedrock-agentcore/model/GetResourcePaymentTokenRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForJWTRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenForUserIdRequest.h>
 #include <aws/bedrock-agentcore/model/GetWorkloadAccessTokenRequest.h>
@@ -44,8 +52,11 @@
 #include <aws/bedrock-agentcore/model/ListEventsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryExtractionJobsRequest.h>
 #include <aws/bedrock-agentcore/model/ListMemoryRecordsRequest.h>
+#include <aws/bedrock-agentcore/model/ListPaymentInstrumentsRequest.h>
+#include <aws/bedrock-agentcore/model/ListPaymentSessionsRequest.h>
 #include <aws/bedrock-agentcore/model/ListRecommendationsRequest.h>
 #include <aws/bedrock-agentcore/model/ListSessionsRequest.h>
+#include <aws/bedrock-agentcore/model/ProcessPaymentRequest.h>
 #include <aws/bedrock-agentcore/model/RetrieveMemoryRecordsRequest.h>
 #include <aws/bedrock-agentcore/model/SaveBrowserSessionProfileRequest.h>
 #include <aws/bedrock-agentcore/model/SearchRegistryRecordsRequest.h>
@@ -332,6 +343,28 @@ CreateEventOutcome BedrockAgentCoreClient::CreateEvent(const CreateEventRequest&
   return result.IsSuccess() ? CreateEventOutcome(result.GetResultWithOwnership()) : CreateEventOutcome(std::move(result.GetError()));
 }
 
+CreatePaymentInstrumentOutcome BedrockAgentCoreClient::CreatePaymentInstrument(const CreatePaymentInstrumentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/createPaymentInstrument");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePaymentInstrumentOutcome(result.GetResultWithOwnership())
+                            : CreatePaymentInstrumentOutcome(std::move(result.GetError()));
+}
+
+CreatePaymentSessionOutcome BedrockAgentCoreClient::CreatePaymentSession(const CreatePaymentSessionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/createPaymentSession");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? CreatePaymentSessionOutcome(result.GetResultWithOwnership())
+                            : CreatePaymentSessionOutcome(std::move(result.GetError()));
+}
+
 DeleteABTestOutcome BedrockAgentCoreClient::DeleteABTest(const DeleteABTestRequest& request) const {
   if (!request.AbTestIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("DeleteABTest", "Required field: AbTestId, is not set");
@@ -428,6 +461,28 @@ DeleteMemoryRecordOutcome BedrockAgentCoreClient::DeleteMemoryRecord(const Delet
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_DELETE);
   return result.IsSuccess() ? DeleteMemoryRecordOutcome(result.GetResultWithOwnership())
                             : DeleteMemoryRecordOutcome(std::move(result.GetError()));
+}
+
+DeletePaymentInstrumentOutcome BedrockAgentCoreClient::DeletePaymentInstrument(const DeletePaymentInstrumentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/deletePaymentInstrument");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePaymentInstrumentOutcome(result.GetResultWithOwnership())
+                            : DeletePaymentInstrumentOutcome(std::move(result.GetError()));
+}
+
+DeletePaymentSessionOutcome BedrockAgentCoreClient::DeletePaymentSession(const DeletePaymentSessionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/deletePaymentSession");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? DeletePaymentSessionOutcome(result.GetResultWithOwnership())
+                            : DeletePaymentSessionOutcome(std::move(result.GetError()));
 }
 
 DeleteRecommendationOutcome BedrockAgentCoreClient::DeleteRecommendation(const DeleteRecommendationRequest& request) const {
@@ -629,6 +684,40 @@ GetMemoryRecordOutcome BedrockAgentCoreClient::GetMemoryRecord(const GetMemoryRe
                             : GetMemoryRecordOutcome(std::move(result.GetError()));
 }
 
+GetPaymentInstrumentOutcome BedrockAgentCoreClient::GetPaymentInstrument(const GetPaymentInstrumentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/getPaymentInstrument");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPaymentInstrumentOutcome(result.GetResultWithOwnership())
+                            : GetPaymentInstrumentOutcome(std::move(result.GetError()));
+}
+
+GetPaymentInstrumentBalanceOutcome BedrockAgentCoreClient::GetPaymentInstrumentBalance(
+    const GetPaymentInstrumentBalanceRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/getPaymentInstrumentBalance");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPaymentInstrumentBalanceOutcome(result.GetResultWithOwnership())
+                            : GetPaymentInstrumentBalanceOutcome(std::move(result.GetError()));
+}
+
+GetPaymentSessionOutcome BedrockAgentCoreClient::GetPaymentSession(const GetPaymentSessionRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/getPaymentSession");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetPaymentSessionOutcome(result.GetResultWithOwnership())
+                            : GetPaymentSessionOutcome(std::move(result.GetError()));
+}
+
 GetRecommendationOutcome BedrockAgentCoreClient::GetRecommendation(const GetRecommendationRequest& request) const {
   if (!request.RecommendationIdHasBeenSet()) {
     AWS_LOGSTREAM_ERROR("GetRecommendation", "Required field: RecommendationId, is not set");
@@ -667,6 +756,17 @@ GetResourceOauth2TokenOutcome BedrockAgentCoreClient::GetResourceOauth2Token(con
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? GetResourceOauth2TokenOutcome(result.GetResultWithOwnership())
                             : GetResourceOauth2TokenOutcome(std::move(result.GetError()));
+}
+
+GetResourcePaymentTokenOutcome BedrockAgentCoreClient::GetResourcePaymentToken(const GetResourcePaymentTokenRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/identities/payment/token");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? GetResourcePaymentTokenOutcome(result.GetResultWithOwnership())
+                            : GetResourcePaymentTokenOutcome(std::move(result.GetError()));
 }
 
 GetWorkloadAccessTokenOutcome BedrockAgentCoreClient::GetWorkloadAccessToken(const GetWorkloadAccessTokenRequest& request) const {
@@ -1065,6 +1165,28 @@ ListMemoryRecordsOutcome BedrockAgentCoreClient::ListMemoryRecords(const ListMem
                             : ListMemoryRecordsOutcome(std::move(result.GetError()));
 }
 
+ListPaymentInstrumentsOutcome BedrockAgentCoreClient::ListPaymentInstruments(const ListPaymentInstrumentsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/listPaymentInstruments");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPaymentInstrumentsOutcome(result.GetResultWithOwnership())
+                            : ListPaymentInstrumentsOutcome(std::move(result.GetError()));
+}
+
+ListPaymentSessionsOutcome BedrockAgentCoreClient::ListPaymentSessions(const ListPaymentSessionsRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/listPaymentSessions");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ListPaymentSessionsOutcome(result.GetResultWithOwnership())
+                            : ListPaymentSessionsOutcome(std::move(result.GetError()));
+}
+
 ListRecommendationsOutcome BedrockAgentCoreClient::ListRecommendations(const ListRecommendationsRequest& request) const {
   auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
     (void)endpointResolutionOutcome;
@@ -1099,6 +1221,16 @@ ListSessionsOutcome BedrockAgentCoreClient::ListSessions(const ListSessionsReque
 
   auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
   return result.IsSuccess() ? ListSessionsOutcome(result.GetResultWithOwnership()) : ListSessionsOutcome(std::move(result.GetError()));
+}
+
+ProcessPaymentOutcome BedrockAgentCoreClient::ProcessPayment(const ProcessPaymentRequest& request) const {
+  auto uriResolver = [&](Aws::Endpoint::ResolveEndpointOutcome& endpointResolutionOutcome) {
+    (void)endpointResolutionOutcome;
+    endpointResolutionOutcome.GetResult().AddPathSegments("/payments/processPayment");
+  };
+
+  auto result = InvokeServiceOperation(request, uriResolver, Aws::Http::HttpMethod::HTTP_POST);
+  return result.IsSuccess() ? ProcessPaymentOutcome(result.GetResultWithOwnership()) : ProcessPaymentOutcome(std::move(result.GetError()));
 }
 
 RetrieveMemoryRecordsOutcome BedrockAgentCoreClient::RetrieveMemoryRecords(const RetrieveMemoryRecordsRequest& request) const {

@@ -1,0 +1,42 @@
+﻿/**
+ * Copyright Amazon.com, Inc. or its affiliates. All Rights Reserved.
+ * SPDX-License-Identifier: Apache-2.0.
+ */
+
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentConnectorRequest.h>
+#include <aws/core/utils/json/JsonSerializer.h>
+
+#include <utility>
+
+using namespace Aws::BedrockAgentCoreControl::Model;
+using namespace Aws::Utils::Json;
+using namespace Aws::Utils;
+
+Aws::String UpdatePaymentConnectorRequest::SerializePayload() const {
+  JsonValue payload;
+
+  if (m_descriptionHasBeenSet) {
+    payload.WithString("description", m_description);
+  }
+
+  if (m_typeHasBeenSet) {
+    payload.WithString("type", PaymentConnectorTypeMapper::GetNameForPaymentConnectorType(m_type));
+  }
+
+  if (m_credentialProviderConfigurationsHasBeenSet) {
+    Aws::Utils::Array<JsonValue> credentialProviderConfigurationsJsonList(m_credentialProviderConfigurations.size());
+    for (unsigned credentialProviderConfigurationsIndex = 0;
+         credentialProviderConfigurationsIndex < credentialProviderConfigurationsJsonList.GetLength();
+         ++credentialProviderConfigurationsIndex) {
+      credentialProviderConfigurationsJsonList[credentialProviderConfigurationsIndex].AsObject(
+          m_credentialProviderConfigurations[credentialProviderConfigurationsIndex].Jsonize());
+    }
+    payload.WithArray("credentialProviderConfigurations", std::move(credentialProviderConfigurationsJsonList));
+  }
+
+  if (m_clientTokenHasBeenSet) {
+    payload.WithString("clientToken", m_clientToken);
+  }
+
+  return payload.View().WriteReadable();
+}

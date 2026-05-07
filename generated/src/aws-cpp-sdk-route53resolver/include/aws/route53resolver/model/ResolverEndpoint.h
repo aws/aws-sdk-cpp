@@ -425,6 +425,43 @@ class ResolverEndpoint {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether DNS64 is enabled for the inbound Resolver endpoint. When
+   * <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for
+   * IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the
+   * IPv4 address.</p>
+   */
+  inline bool GetDns64Enabled() const { return m_dns64Enabled; }
+  inline bool Dns64EnabledHasBeenSet() const { return m_dns64EnabledHasBeenSet; }
+  inline void SetDns64Enabled(bool value) {
+    m_dns64EnabledHasBeenSet = true;
+    m_dns64Enabled = value;
+  }
+  inline ResolverEndpoint& WithDns64Enabled(bool value) {
+    SetDns64Enabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether IPv6 internet access is enabled for the outbound Resolver
+   * endpoint. When <code>true</code>, the endpoint elastic network interfaces (ENIs)
+   * can forward DNS queries to public IPv6 targets through an internet gateway.</p>
+   */
+  inline bool GetIpv6InternetAccessEnabled() const { return m_ipv6InternetAccessEnabled; }
+  inline bool Ipv6InternetAccessEnabledHasBeenSet() const { return m_ipv6InternetAccessEnabledHasBeenSet; }
+  inline void SetIpv6InternetAccessEnabled(bool value) {
+    m_ipv6InternetAccessEnabledHasBeenSet = true;
+    m_ipv6InternetAccessEnabled = value;
+  }
+  inline ResolverEndpoint& WithIpv6InternetAccessEnabled(bool value) {
+    SetIpv6InternetAccessEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_id;
 
@@ -461,6 +498,10 @@ class ResolverEndpoint {
   bool m_rniEnhancedMetricsEnabled{false};
 
   bool m_targetNameServerMetricsEnabled{false};
+
+  bool m_dns64Enabled{false};
+
+  bool m_ipv6InternetAccessEnabled{false};
   bool m_idHasBeenSet = false;
   bool m_creatorRequestIdHasBeenSet = false;
   bool m_arnHasBeenSet = false;
@@ -479,6 +520,8 @@ class ResolverEndpoint {
   bool m_protocolsHasBeenSet = false;
   bool m_rniEnhancedMetricsEnabledHasBeenSet = false;
   bool m_targetNameServerMetricsEnabledHasBeenSet = false;
+  bool m_dns64EnabledHasBeenSet = false;
+  bool m_ipv6InternetAccessEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

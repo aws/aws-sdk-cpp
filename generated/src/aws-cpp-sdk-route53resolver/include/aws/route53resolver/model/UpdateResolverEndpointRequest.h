@@ -198,6 +198,54 @@ class UpdateResolverEndpointRequest : public Route53ResolverRequest {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether DNS64 is enabled for the inbound Resolver endpoint. When
+   * set to <code>true</code>, Route 53 Resolver synthesizes AAAA (IPv6) records for
+   * IPv4-only services by prepending the <code>64:ff9b::/96</code> prefix to the
+   * IPv4 address. This enables IPv6-only clients that send queries through the
+   * inbound endpoint to reach IPv4-only services. DNS64 works with NAT64 to provide
+   * complete IPv6-to-IPv4 translation.</p>
+   */
+  inline bool GetDns64Enabled() const { return m_dns64Enabled; }
+  inline bool Dns64EnabledHasBeenSet() const { return m_dns64EnabledHasBeenSet; }
+  inline void SetDns64Enabled(bool value) {
+    m_dns64EnabledHasBeenSet = true;
+    m_dns64Enabled = value;
+  }
+  inline UpdateResolverEndpointRequest& WithDns64Enabled(bool value) {
+    SetDns64Enabled(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>Specifies whether IPv6 internet access is enabled for the outbound Resolver
+   * endpoint. When set to <code>true</code>, the endpoint elastic network interfaces
+   * (ENIs) can forward DNS queries to public IPv6 targets through an internet
+   * gateway.</p>  <p>When you enable IPv6 internet access, use network
+   * controls like security groups, NACLs, or egress-only internet gateways to
+   * protect the endpoint ENIs from unsolicited ingress traffic. Be aware that some
+   * network controls can affect DNS query throughput due to connection tracking. For
+   * more information, see <a
+   * href="https://docs.aws.amazon.com/ec2/latest/userguide/security-group-connection-tracking.html">Amazon
+   * EC2 security group connection tracking</a> and <a
+   * href="https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/best-practices-resolver-endpoint-scaling.html">Resolver
+   * endpoint scaling</a>.</p>
+   */
+  inline bool GetIpv6InternetAccessEnabled() const { return m_ipv6InternetAccessEnabled; }
+  inline bool Ipv6InternetAccessEnabledHasBeenSet() const { return m_ipv6InternetAccessEnabledHasBeenSet; }
+  inline void SetIpv6InternetAccessEnabled(bool value) {
+    m_ipv6InternetAccessEnabledHasBeenSet = true;
+    m_ipv6InternetAccessEnabled = value;
+  }
+  inline UpdateResolverEndpointRequest& WithIpv6InternetAccessEnabled(bool value) {
+    SetIpv6InternetAccessEnabled(value);
+    return *this;
+  }
+  ///@}
  private:
   Aws::String m_resolverEndpointId;
 
@@ -212,6 +260,10 @@ class UpdateResolverEndpointRequest : public Route53ResolverRequest {
   bool m_rniEnhancedMetricsEnabled{false};
 
   bool m_targetNameServerMetricsEnabled{false};
+
+  bool m_dns64Enabled{false};
+
+  bool m_ipv6InternetAccessEnabled{false};
   bool m_resolverEndpointIdHasBeenSet = false;
   bool m_nameHasBeenSet = false;
   bool m_resolverEndpointTypeHasBeenSet = false;
@@ -219,6 +271,8 @@ class UpdateResolverEndpointRequest : public Route53ResolverRequest {
   bool m_protocolsHasBeenSet = false;
   bool m_rniEnhancedMetricsEnabledHasBeenSet = false;
   bool m_targetNameServerMetricsEnabledHasBeenSet = false;
+  bool m_dns64EnabledHasBeenSet = false;
+  bool m_ipv6InternetAccessEnabledHasBeenSet = false;
 };
 
 }  // namespace Model

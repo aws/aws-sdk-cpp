@@ -79,6 +79,14 @@ Aws::String CreateResolverEndpointRequest::SerializePayload() const {
     payload.WithBool("TargetNameServerMetricsEnabled", m_targetNameServerMetricsEnabled);
   }
 
+  if (m_dns64EnabledHasBeenSet) {
+    payload.WithBool("Dns64Enabled", m_dns64Enabled);
+  }
+
+  if (m_ipv6InternetAccessEnabledHasBeenSet) {
+    payload.WithBool("Ipv6InternetAccessEnabled", m_ipv6InternetAccessEnabled);
+  }
+
   return payload.View().WriteReadable();
 }
 

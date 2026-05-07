@@ -7,6 +7,7 @@
 #include <aws/core/utils/DateTime.h>
 #include <aws/core/utils/memory/stl/AWSString.h>
 #include <aws/invoicing/Invoicing_EXPORTS.h>
+#include <aws/invoicing/model/SupplementalDocumentType.h>
 
 #include <utility>
 
@@ -32,6 +33,40 @@ class SupplementalDocument {
   AWS_INVOICING_API SupplementalDocument(Aws::Utils::Json::JsonView jsonValue);
   AWS_INVOICING_API SupplementalDocument& operator=(Aws::Utils::Json::JsonView jsonValue);
   AWS_INVOICING_API Aws::Utils::Json::JsonValue Jsonize() const;
+
+  ///@{
+  /**
+   * <p>The type of supplemental document.</p>
+   */
+  inline SupplementalDocumentType GetDocumentType() const { return m_documentType; }
+  inline bool DocumentTypeHasBeenSet() const { return m_documentTypeHasBeenSet; }
+  inline void SetDocumentType(SupplementalDocumentType value) {
+    m_documentTypeHasBeenSet = true;
+    m_documentType = value;
+  }
+  inline SupplementalDocument& WithDocumentType(SupplementalDocumentType value) {
+    SetDocumentType(value);
+    return *this;
+  }
+  ///@}
+
+  ///@{
+  /**
+   * <p>The ID of the supplemental document.</p>
+   */
+  inline const Aws::String& GetDocumentId() const { return m_documentId; }
+  inline bool DocumentIdHasBeenSet() const { return m_documentIdHasBeenSet; }
+  template <typename DocumentIdT = Aws::String>
+  void SetDocumentId(DocumentIdT&& value) {
+    m_documentIdHasBeenSet = true;
+    m_documentId = std::forward<DocumentIdT>(value);
+  }
+  template <typename DocumentIdT = Aws::String>
+  SupplementalDocument& WithDocumentId(DocumentIdT&& value) {
+    SetDocumentId(std::forward<DocumentIdT>(value));
+    return *this;
+  }
+  ///@}
 
   ///@{
   /**
@@ -69,9 +104,15 @@ class SupplementalDocument {
   }
   ///@}
  private:
+  SupplementalDocumentType m_documentType{SupplementalDocumentType::NOT_SET};
+
+  Aws::String m_documentId;
+
   Aws::String m_documentUrl;
 
   Aws::Utils::DateTime m_documentUrlExpirationDate{};
+  bool m_documentTypeHasBeenSet = false;
+  bool m_documentIdHasBeenSet = false;
   bool m_documentUrlHasBeenSet = false;
   bool m_documentUrlExpirationDateHasBeenSet = false;
 };

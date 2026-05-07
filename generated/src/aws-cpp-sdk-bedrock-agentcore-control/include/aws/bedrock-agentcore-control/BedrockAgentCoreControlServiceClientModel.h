@@ -34,6 +34,9 @@
 #include <aws/bedrock-agentcore-control/model/CreateMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateOauth2CredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateOnlineEvaluationConfigResult.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentConnectorResult.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/CreatePaymentManagerResult.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/CreatePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/CreateRegistryRecordResult.h>
@@ -54,6 +57,9 @@
 #include <aws/bedrock-agentcore-control/model/DeleteMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOauth2CredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteOnlineEvaluationConfigResult.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentConnectorResult.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/DeletePaymentManagerResult.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/DeletePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/DeleteRegistryRecordResult.h>
@@ -76,6 +82,9 @@
 #include <aws/bedrock-agentcore-control/model/GetMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/GetOauth2CredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/GetOnlineEvaluationConfigResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentConnectorResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/GetPaymentManagerResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyGenerationResult.h>
 #include <aws/bedrock-agentcore-control/model/GetPolicyResult.h>
@@ -114,6 +123,11 @@
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentConnectorsResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersResult.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentManagersRequest.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentManagersResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesResult.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesRequest.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesResult.h>
@@ -144,6 +158,9 @@
 #include <aws/bedrock-agentcore-control/model/UpdateMemoryResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOauth2CredentialProviderResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateOnlineEvaluationConfigResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentConnectorResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentCredentialProviderResult.h>
+#include <aws/bedrock-agentcore-control/model/UpdatePaymentManagerResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyEngineResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdatePolicyResult.h>
 #include <aws/bedrock-agentcore-control/model/UpdateRegistryRecordResult.h>
@@ -198,6 +215,9 @@ class CreateHarnessRequest;
 class CreateMemoryRequest;
 class CreateOauth2CredentialProviderRequest;
 class CreateOnlineEvaluationConfigRequest;
+class CreatePaymentConnectorRequest;
+class CreatePaymentCredentialProviderRequest;
+class CreatePaymentManagerRequest;
 class CreatePolicyRequest;
 class CreatePolicyEngineRequest;
 class CreateRegistryRequest;
@@ -218,6 +238,9 @@ class DeleteHarnessRequest;
 class DeleteMemoryRequest;
 class DeleteOauth2CredentialProviderRequest;
 class DeleteOnlineEvaluationConfigRequest;
+class DeletePaymentConnectorRequest;
+class DeletePaymentCredentialProviderRequest;
+class DeletePaymentManagerRequest;
 class DeletePolicyRequest;
 class DeletePolicyEngineRequest;
 class DeleteRegistryRequest;
@@ -240,6 +263,9 @@ class GetHarnessRequest;
 class GetMemoryRequest;
 class GetOauth2CredentialProviderRequest;
 class GetOnlineEvaluationConfigRequest;
+class GetPaymentConnectorRequest;
+class GetPaymentCredentialProviderRequest;
+class GetPaymentManagerRequest;
 class GetPolicyRequest;
 class GetPolicyEngineRequest;
 class GetPolicyGenerationRequest;
@@ -265,6 +291,9 @@ class ListHarnessesRequest;
 class ListMemoriesRequest;
 class ListOauth2CredentialProvidersRequest;
 class ListOnlineEvaluationConfigsRequest;
+class ListPaymentConnectorsRequest;
+class ListPaymentCredentialProvidersRequest;
+class ListPaymentManagersRequest;
 class ListPoliciesRequest;
 class ListPolicyEnginesRequest;
 class ListPolicyGenerationAssetsRequest;
@@ -292,6 +321,9 @@ class UpdateHarnessRequest;
 class UpdateMemoryRequest;
 class UpdateOauth2CredentialProviderRequest;
 class UpdateOnlineEvaluationConfigRequest;
+class UpdatePaymentConnectorRequest;
+class UpdatePaymentCredentialProviderRequest;
+class UpdatePaymentManagerRequest;
 class UpdatePolicyRequest;
 class UpdatePolicyEngineRequest;
 class UpdateRegistryRequest;
@@ -316,6 +348,9 @@ typedef Aws::Utils::Outcome<CreateHarnessResult, BedrockAgentCoreControlError> C
 typedef Aws::Utils::Outcome<CreateMemoryResult, BedrockAgentCoreControlError> CreateMemoryOutcome;
 typedef Aws::Utils::Outcome<CreateOauth2CredentialProviderResult, BedrockAgentCoreControlError> CreateOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<CreateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> CreateOnlineEvaluationConfigOutcome;
+typedef Aws::Utils::Outcome<CreatePaymentConnectorResult, BedrockAgentCoreControlError> CreatePaymentConnectorOutcome;
+typedef Aws::Utils::Outcome<CreatePaymentCredentialProviderResult, BedrockAgentCoreControlError> CreatePaymentCredentialProviderOutcome;
+typedef Aws::Utils::Outcome<CreatePaymentManagerResult, BedrockAgentCoreControlError> CreatePaymentManagerOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyResult, BedrockAgentCoreControlError> CreatePolicyOutcome;
 typedef Aws::Utils::Outcome<CreatePolicyEngineResult, BedrockAgentCoreControlError> CreatePolicyEngineOutcome;
 typedef Aws::Utils::Outcome<CreateRegistryResult, BedrockAgentCoreControlError> CreateRegistryOutcome;
@@ -336,6 +371,9 @@ typedef Aws::Utils::Outcome<DeleteHarnessResult, BedrockAgentCoreControlError> D
 typedef Aws::Utils::Outcome<DeleteMemoryResult, BedrockAgentCoreControlError> DeleteMemoryOutcome;
 typedef Aws::Utils::Outcome<DeleteOauth2CredentialProviderResult, BedrockAgentCoreControlError> DeleteOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<DeleteOnlineEvaluationConfigResult, BedrockAgentCoreControlError> DeleteOnlineEvaluationConfigOutcome;
+typedef Aws::Utils::Outcome<DeletePaymentConnectorResult, BedrockAgentCoreControlError> DeletePaymentConnectorOutcome;
+typedef Aws::Utils::Outcome<DeletePaymentCredentialProviderResult, BedrockAgentCoreControlError> DeletePaymentCredentialProviderOutcome;
+typedef Aws::Utils::Outcome<DeletePaymentManagerResult, BedrockAgentCoreControlError> DeletePaymentManagerOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyResult, BedrockAgentCoreControlError> DeletePolicyOutcome;
 typedef Aws::Utils::Outcome<DeletePolicyEngineResult, BedrockAgentCoreControlError> DeletePolicyEngineOutcome;
 typedef Aws::Utils::Outcome<DeleteRegistryResult, BedrockAgentCoreControlError> DeleteRegistryOutcome;
@@ -358,6 +396,9 @@ typedef Aws::Utils::Outcome<GetHarnessResult, BedrockAgentCoreControlError> GetH
 typedef Aws::Utils::Outcome<GetMemoryResult, BedrockAgentCoreControlError> GetMemoryOutcome;
 typedef Aws::Utils::Outcome<GetOauth2CredentialProviderResult, BedrockAgentCoreControlError> GetOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<GetOnlineEvaluationConfigResult, BedrockAgentCoreControlError> GetOnlineEvaluationConfigOutcome;
+typedef Aws::Utils::Outcome<GetPaymentConnectorResult, BedrockAgentCoreControlError> GetPaymentConnectorOutcome;
+typedef Aws::Utils::Outcome<GetPaymentCredentialProviderResult, BedrockAgentCoreControlError> GetPaymentCredentialProviderOutcome;
+typedef Aws::Utils::Outcome<GetPaymentManagerResult, BedrockAgentCoreControlError> GetPaymentManagerOutcome;
 typedef Aws::Utils::Outcome<GetPolicyResult, BedrockAgentCoreControlError> GetPolicyOutcome;
 typedef Aws::Utils::Outcome<GetPolicyEngineResult, BedrockAgentCoreControlError> GetPolicyEngineOutcome;
 typedef Aws::Utils::Outcome<GetPolicyGenerationResult, BedrockAgentCoreControlError> GetPolicyGenerationOutcome;
@@ -383,6 +424,9 @@ typedef Aws::Utils::Outcome<ListHarnessesResult, BedrockAgentCoreControlError> L
 typedef Aws::Utils::Outcome<ListMemoriesResult, BedrockAgentCoreControlError> ListMemoriesOutcome;
 typedef Aws::Utils::Outcome<ListOauth2CredentialProvidersResult, BedrockAgentCoreControlError> ListOauth2CredentialProvidersOutcome;
 typedef Aws::Utils::Outcome<ListOnlineEvaluationConfigsResult, BedrockAgentCoreControlError> ListOnlineEvaluationConfigsOutcome;
+typedef Aws::Utils::Outcome<ListPaymentConnectorsResult, BedrockAgentCoreControlError> ListPaymentConnectorsOutcome;
+typedef Aws::Utils::Outcome<ListPaymentCredentialProvidersResult, BedrockAgentCoreControlError> ListPaymentCredentialProvidersOutcome;
+typedef Aws::Utils::Outcome<ListPaymentManagersResult, BedrockAgentCoreControlError> ListPaymentManagersOutcome;
 typedef Aws::Utils::Outcome<ListPoliciesResult, BedrockAgentCoreControlError> ListPoliciesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyEnginesResult, BedrockAgentCoreControlError> ListPolicyEnginesOutcome;
 typedef Aws::Utils::Outcome<ListPolicyGenerationAssetsResult, BedrockAgentCoreControlError> ListPolicyGenerationAssetsOutcome;
@@ -410,6 +454,9 @@ typedef Aws::Utils::Outcome<UpdateHarnessResult, BedrockAgentCoreControlError> U
 typedef Aws::Utils::Outcome<UpdateMemoryResult, BedrockAgentCoreControlError> UpdateMemoryOutcome;
 typedef Aws::Utils::Outcome<UpdateOauth2CredentialProviderResult, BedrockAgentCoreControlError> UpdateOauth2CredentialProviderOutcome;
 typedef Aws::Utils::Outcome<UpdateOnlineEvaluationConfigResult, BedrockAgentCoreControlError> UpdateOnlineEvaluationConfigOutcome;
+typedef Aws::Utils::Outcome<UpdatePaymentConnectorResult, BedrockAgentCoreControlError> UpdatePaymentConnectorOutcome;
+typedef Aws::Utils::Outcome<UpdatePaymentCredentialProviderResult, BedrockAgentCoreControlError> UpdatePaymentCredentialProviderOutcome;
+typedef Aws::Utils::Outcome<UpdatePaymentManagerResult, BedrockAgentCoreControlError> UpdatePaymentManagerOutcome;
 typedef Aws::Utils::Outcome<UpdatePolicyResult, BedrockAgentCoreControlError> UpdatePolicyOutcome;
 typedef Aws::Utils::Outcome<UpdatePolicyEngineResult, BedrockAgentCoreControlError> UpdatePolicyEngineOutcome;
 typedef Aws::Utils::Outcome<UpdateRegistryResult, BedrockAgentCoreControlError> UpdateRegistryOutcome;
@@ -434,6 +481,9 @@ typedef std::future<CreateHarnessOutcome> CreateHarnessOutcomeCallable;
 typedef std::future<CreateMemoryOutcome> CreateMemoryOutcomeCallable;
 typedef std::future<CreateOauth2CredentialProviderOutcome> CreateOauth2CredentialProviderOutcomeCallable;
 typedef std::future<CreateOnlineEvaluationConfigOutcome> CreateOnlineEvaluationConfigOutcomeCallable;
+typedef std::future<CreatePaymentConnectorOutcome> CreatePaymentConnectorOutcomeCallable;
+typedef std::future<CreatePaymentCredentialProviderOutcome> CreatePaymentCredentialProviderOutcomeCallable;
+typedef std::future<CreatePaymentManagerOutcome> CreatePaymentManagerOutcomeCallable;
 typedef std::future<CreatePolicyOutcome> CreatePolicyOutcomeCallable;
 typedef std::future<CreatePolicyEngineOutcome> CreatePolicyEngineOutcomeCallable;
 typedef std::future<CreateRegistryOutcome> CreateRegistryOutcomeCallable;
@@ -454,6 +504,9 @@ typedef std::future<DeleteHarnessOutcome> DeleteHarnessOutcomeCallable;
 typedef std::future<DeleteMemoryOutcome> DeleteMemoryOutcomeCallable;
 typedef std::future<DeleteOauth2CredentialProviderOutcome> DeleteOauth2CredentialProviderOutcomeCallable;
 typedef std::future<DeleteOnlineEvaluationConfigOutcome> DeleteOnlineEvaluationConfigOutcomeCallable;
+typedef std::future<DeletePaymentConnectorOutcome> DeletePaymentConnectorOutcomeCallable;
+typedef std::future<DeletePaymentCredentialProviderOutcome> DeletePaymentCredentialProviderOutcomeCallable;
+typedef std::future<DeletePaymentManagerOutcome> DeletePaymentManagerOutcomeCallable;
 typedef std::future<DeletePolicyOutcome> DeletePolicyOutcomeCallable;
 typedef std::future<DeletePolicyEngineOutcome> DeletePolicyEngineOutcomeCallable;
 typedef std::future<DeleteRegistryOutcome> DeleteRegistryOutcomeCallable;
@@ -476,6 +529,9 @@ typedef std::future<GetHarnessOutcome> GetHarnessOutcomeCallable;
 typedef std::future<GetMemoryOutcome> GetMemoryOutcomeCallable;
 typedef std::future<GetOauth2CredentialProviderOutcome> GetOauth2CredentialProviderOutcomeCallable;
 typedef std::future<GetOnlineEvaluationConfigOutcome> GetOnlineEvaluationConfigOutcomeCallable;
+typedef std::future<GetPaymentConnectorOutcome> GetPaymentConnectorOutcomeCallable;
+typedef std::future<GetPaymentCredentialProviderOutcome> GetPaymentCredentialProviderOutcomeCallable;
+typedef std::future<GetPaymentManagerOutcome> GetPaymentManagerOutcomeCallable;
 typedef std::future<GetPolicyOutcome> GetPolicyOutcomeCallable;
 typedef std::future<GetPolicyEngineOutcome> GetPolicyEngineOutcomeCallable;
 typedef std::future<GetPolicyGenerationOutcome> GetPolicyGenerationOutcomeCallable;
@@ -501,6 +557,9 @@ typedef std::future<ListHarnessesOutcome> ListHarnessesOutcomeCallable;
 typedef std::future<ListMemoriesOutcome> ListMemoriesOutcomeCallable;
 typedef std::future<ListOauth2CredentialProvidersOutcome> ListOauth2CredentialProvidersOutcomeCallable;
 typedef std::future<ListOnlineEvaluationConfigsOutcome> ListOnlineEvaluationConfigsOutcomeCallable;
+typedef std::future<ListPaymentConnectorsOutcome> ListPaymentConnectorsOutcomeCallable;
+typedef std::future<ListPaymentCredentialProvidersOutcome> ListPaymentCredentialProvidersOutcomeCallable;
+typedef std::future<ListPaymentManagersOutcome> ListPaymentManagersOutcomeCallable;
 typedef std::future<ListPoliciesOutcome> ListPoliciesOutcomeCallable;
 typedef std::future<ListPolicyEnginesOutcome> ListPolicyEnginesOutcomeCallable;
 typedef std::future<ListPolicyGenerationAssetsOutcome> ListPolicyGenerationAssetsOutcomeCallable;
@@ -528,6 +587,9 @@ typedef std::future<UpdateHarnessOutcome> UpdateHarnessOutcomeCallable;
 typedef std::future<UpdateMemoryOutcome> UpdateMemoryOutcomeCallable;
 typedef std::future<UpdateOauth2CredentialProviderOutcome> UpdateOauth2CredentialProviderOutcomeCallable;
 typedef std::future<UpdateOnlineEvaluationConfigOutcome> UpdateOnlineEvaluationConfigOutcomeCallable;
+typedef std::future<UpdatePaymentConnectorOutcome> UpdatePaymentConnectorOutcomeCallable;
+typedef std::future<UpdatePaymentCredentialProviderOutcome> UpdatePaymentCredentialProviderOutcomeCallable;
+typedef std::future<UpdatePaymentManagerOutcome> UpdatePaymentManagerOutcomeCallable;
 typedef std::future<UpdatePolicyOutcome> UpdatePolicyOutcomeCallable;
 typedef std::future<UpdatePolicyEngineOutcome> UpdatePolicyEngineOutcomeCallable;
 typedef std::future<UpdateRegistryOutcome> UpdateRegistryOutcomeCallable;
@@ -588,6 +650,16 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Cr
                            const Model::CreateOnlineEvaluationConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreateOnlineEvaluationConfigResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreatePaymentConnectorRequest&,
+                           const Model::CreatePaymentConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePaymentConnectorResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreatePaymentCredentialProviderRequest&,
+                           const Model::CreatePaymentCredentialProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePaymentCredentialProviderResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreatePaymentManagerRequest&,
+                           const Model::CreatePaymentManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    CreatePaymentManagerResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::CreatePolicyRequest&, const Model::CreatePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     CreatePolicyResponseReceivedHandler;
@@ -651,6 +723,16 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::De
                            const Model::DeleteOnlineEvaluationConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeleteOnlineEvaluationConfigResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeletePaymentConnectorRequest&,
+                           const Model::DeletePaymentConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePaymentConnectorResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeletePaymentCredentialProviderRequest&,
+                           const Model::DeletePaymentCredentialProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePaymentCredentialProviderResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeletePaymentManagerRequest&,
+                           const Model::DeletePaymentManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    DeletePaymentManagerResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::DeletePolicyRequest&, const Model::DeletePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     DeletePolicyResponseReceivedHandler;
@@ -718,6 +800,16 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Ge
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetOnlineEvaluationConfigRequest&,
                            const Model::GetOnlineEvaluationConfigOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetOnlineEvaluationConfigResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPaymentConnectorRequest&,
+                           const Model::GetPaymentConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentConnectorResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPaymentCredentialProviderRequest&,
+                           const Model::GetPaymentCredentialProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentCredentialProviderResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPaymentManagerRequest&,
+                           const Model::GetPaymentManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    GetPaymentManagerResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::GetPolicyRequest&, const Model::GetPolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     GetPolicyResponseReceivedHandler;
@@ -796,6 +888,16 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Li
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListOnlineEvaluationConfigsRequest&,
                            const Model::ListOnlineEvaluationConfigsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListOnlineEvaluationConfigsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPaymentConnectorsRequest&,
+                           const Model::ListPaymentConnectorsOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPaymentConnectorsResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPaymentCredentialProvidersRequest&,
+                           const Model::ListPaymentCredentialProvidersOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPaymentCredentialProvidersResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPaymentManagersRequest&,
+                           const Model::ListPaymentManagersOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    ListPaymentManagersResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::ListPoliciesRequest&, const Model::ListPoliciesOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     ListPoliciesResponseReceivedHandler;
@@ -881,6 +983,16 @@ typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::Up
                            const Model::UpdateOnlineEvaluationConfigOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdateOnlineEvaluationConfigResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdatePaymentConnectorRequest&,
+                           const Model::UpdatePaymentConnectorOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePaymentConnectorResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdatePaymentCredentialProviderRequest&,
+                           const Model::UpdatePaymentCredentialProviderOutcome&,
+                           const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePaymentCredentialProviderResponseReceivedHandler;
+typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdatePaymentManagerRequest&,
+                           const Model::UpdatePaymentManagerOutcome&, const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
+    UpdatePaymentManagerResponseReceivedHandler;
 typedef std::function<void(const BedrockAgentCoreControlClient*, const Model::UpdatePolicyRequest&, const Model::UpdatePolicyOutcome&,
                            const std::shared_ptr<const Aws::Client::AsyncCallerContext>&)>
     UpdatePolicyResponseReceivedHandler;

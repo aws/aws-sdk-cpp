@@ -618,6 +618,22 @@ class InstanceTypeInfo {
     return *this;
   }
   ///@}
+
+  ///@{
+  /**
+   * <p>Indicates whether the instance type is supported in the current Region.</p>
+   */
+  inline bool GetSupportedInRegion() const { return m_supportedInRegion; }
+  inline bool SupportedInRegionHasBeenSet() const { return m_supportedInRegionHasBeenSet; }
+  inline void SetSupportedInRegion(bool value) {
+    m_supportedInRegionHasBeenSet = true;
+    m_supportedInRegion = value;
+  }
+  inline InstanceTypeInfo& WithSupportedInRegion(bool value) {
+    SetSupportedInRegion(value);
+    return *this;
+  }
+  ///@}
  private:
   InstanceType m_instanceType{InstanceType::NOT_SET};
 
@@ -680,6 +696,8 @@ class InstanceTypeInfo {
   PhcSupport m_phcSupport{PhcSupport::NOT_SET};
 
   RebootMigrationSupport m_rebootMigrationSupport{RebootMigrationSupport::NOT_SET};
+
+  bool m_supportedInRegion{false};
   bool m_instanceTypeHasBeenSet = false;
   bool m_currentGenerationHasBeenSet = false;
   bool m_freeTierEligibleHasBeenSet = false;
@@ -711,6 +729,7 @@ class InstanceTypeInfo {
   bool m_neuronInfoHasBeenSet = false;
   bool m_phcSupportHasBeenSet = false;
   bool m_rebootMigrationSupportHasBeenSet = false;
+  bool m_supportedInRegionHasBeenSet = false;
 };
 
 }  // namespace Model

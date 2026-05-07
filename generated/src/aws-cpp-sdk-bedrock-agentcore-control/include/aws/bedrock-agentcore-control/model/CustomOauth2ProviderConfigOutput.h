@@ -95,9 +95,8 @@ class CustomOauth2ProviderConfigOutput {
 
   ///@{
   /**
-   * <p>The list of private endpoint overrides for the custom OAuth2 provider. Each
-   * override maps a specific domain to a private endpoint, enabling secure
-   * connectivity through VPC Lattice resource configurations.</p>
+   * <p>The private endpoint overrides for the custom OAuth2 provider
+   * configuration.</p>
    */
   inline const Aws::Vector<PrivateEndpointOverride>& GetPrivateEndpointOverrides() const { return m_privateEndpointOverrides; }
   inline bool PrivateEndpointOverridesHasBeenSet() const { return m_privateEndpointOverridesHasBeenSet; }

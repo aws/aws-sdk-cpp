@@ -120,10 +120,10 @@ class Filters {
 
   ///@{
   /**
-   * <p> A list of Amazon Web Services account account IDs used to filter invoice
-   * units. These are payer accounts from other Organizations that have delegated
-   * their billing responsibility to the receiver account through the billing
-   * transfer feature. </p>
+   * <p> A list of Amazon Web Services account IDs used to filter invoice units.
+   * These are payer accounts from other Organizations that have delegated their
+   * billing responsibility to the receiver account through the billing transfer
+   * feature. </p>
    */
   inline const Aws::Vector<Aws::String>& GetBillSourceAccounts() const { return m_billSourceAccounts; }
   inline bool BillSourceAccountsHasBeenSet() const { return m_billSourceAccountsHasBeenSet; }

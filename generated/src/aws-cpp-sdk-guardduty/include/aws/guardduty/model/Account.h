@@ -20,7 +20,8 @@ namespace GuardDuty {
 namespace Model {
 
 /**
- * <p>Contains information about the account.</p><p><h3>See Also:</h3>   <a
+ * <p>Contains information about the Amazon Web Services account within which the
+ * activity took place.</p><p><h3>See Also:</h3>   <a
  * href="http://docs.aws.amazon.com/goto/WebAPI/guardduty-2017-11-28/Account">AWS
  * API Reference</a></p>
  */
@@ -33,7 +34,8 @@ class Account {
 
   ///@{
   /**
-   * <p>ID of the member's Amazon Web Services account</p>
+   * <p>The Amazon Web Services account ID within which the activity took place. This
+   * may differ from the account that owns the user identity.</p>
    */
   inline const Aws::String& GetUid() const { return m_uid; }
   inline bool UidHasBeenSet() const { return m_uidHasBeenSet; }

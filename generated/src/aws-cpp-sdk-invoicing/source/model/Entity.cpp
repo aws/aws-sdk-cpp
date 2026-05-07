@@ -22,6 +22,10 @@ Entity& Entity::operator=(JsonView jsonValue) {
     m_invoicingEntity = jsonValue.GetString("InvoicingEntity");
     m_invoicingEntityHasBeenSet = true;
   }
+  if (jsonValue.ValueExists("BillingEntity")) {
+    m_billingEntity = BillingEntityMapper::GetBillingEntityForName(jsonValue.GetString("BillingEntity"));
+    m_billingEntityHasBeenSet = true;
+  }
   return *this;
 }
 
@@ -30,6 +34,10 @@ JsonValue Entity::Jsonize() const {
 
   if (m_invoicingEntityHasBeenSet) {
     payload.WithString("InvoicingEntity", m_invoicingEntity);
+  }
+
+  if (m_billingEntityHasBeenSet) {
+    payload.WithString("BillingEntity", BillingEntityMapper::GetNameForBillingEntity(m_billingEntity));
   }
 
   return payload;

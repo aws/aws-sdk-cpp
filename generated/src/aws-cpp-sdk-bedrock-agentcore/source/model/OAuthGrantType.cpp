@@ -17,6 +17,7 @@ namespace OAuthGrantTypeMapper {
 
 static const int CLIENT_CREDENTIALS_HASH = HashingUtils::HashString("CLIENT_CREDENTIALS");
 static const int AUTHORIZATION_CODE_HASH = HashingUtils::HashString("AUTHORIZATION_CODE");
+static const int TOKEN_EXCHANGE_HASH = HashingUtils::HashString("TOKEN_EXCHANGE");
 
 OAuthGrantType GetOAuthGrantTypeForName(const Aws::String& name) {
   int hashCode = HashingUtils::HashString(name.c_str());
@@ -24,6 +25,8 @@ OAuthGrantType GetOAuthGrantTypeForName(const Aws::String& name) {
     return OAuthGrantType::CLIENT_CREDENTIALS;
   } else if (hashCode == AUTHORIZATION_CODE_HASH) {
     return OAuthGrantType::AUTHORIZATION_CODE;
+  } else if (hashCode == TOKEN_EXCHANGE_HASH) {
+    return OAuthGrantType::TOKEN_EXCHANGE;
   }
   EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
   if (overflowContainer) {
@@ -42,6 +45,8 @@ Aws::String GetNameForOAuthGrantType(OAuthGrantType enumValue) {
       return "CLIENT_CREDENTIALS";
     case OAuthGrantType::AUTHORIZATION_CODE:
       return "AUTHORIZATION_CODE";
+    case OAuthGrantType::TOKEN_EXCHANGE:
+      return "TOKEN_EXCHANGE";
     default:
       EnumParseOverflowContainer* overflowContainer = Aws::GetEnumOverflowContainer();
       if (overflowContainer) {

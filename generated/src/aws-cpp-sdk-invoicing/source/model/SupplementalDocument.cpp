@@ -18,6 +18,14 @@ namespace Model {
 SupplementalDocument::SupplementalDocument(JsonView jsonValue) { *this = jsonValue; }
 
 SupplementalDocument& SupplementalDocument::operator=(JsonView jsonValue) {
+  if (jsonValue.ValueExists("DocumentType")) {
+    m_documentType = SupplementalDocumentTypeMapper::GetSupplementalDocumentTypeForName(jsonValue.GetString("DocumentType"));
+    m_documentTypeHasBeenSet = true;
+  }
+  if (jsonValue.ValueExists("DocumentId")) {
+    m_documentId = jsonValue.GetString("DocumentId");
+    m_documentIdHasBeenSet = true;
+  }
   if (jsonValue.ValueExists("DocumentUrl")) {
     m_documentUrl = jsonValue.GetString("DocumentUrl");
     m_documentUrlHasBeenSet = true;
@@ -31,6 +39,14 @@ SupplementalDocument& SupplementalDocument::operator=(JsonView jsonValue) {
 
 JsonValue SupplementalDocument::Jsonize() const {
   JsonValue payload;
+
+  if (m_documentTypeHasBeenSet) {
+    payload.WithString("DocumentType", SupplementalDocumentTypeMapper::GetNameForSupplementalDocumentType(m_documentType));
+  }
+
+  if (m_documentIdHasBeenSet) {
+    payload.WithString("DocumentId", m_documentId);
+  }
 
   if (m_documentUrlHasBeenSet) {
     payload.WithString("DocumentUrl", m_documentUrl);

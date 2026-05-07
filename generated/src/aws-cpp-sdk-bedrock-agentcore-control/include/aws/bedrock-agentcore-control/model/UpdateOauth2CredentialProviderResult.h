@@ -173,7 +173,7 @@ class UpdateOauth2CredentialProviderResult {
 
   ///@{
   /**
-   * <p>The current status of the OAuth2 credential provider.</p>
+   * <p>The current status of the updated OAuth2 credential provider.</p>
    */
   inline Status GetStatus() const { return m_status; }
   inline void SetStatus(Status value) {

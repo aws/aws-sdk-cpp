@@ -22,6 +22,9 @@
 #include <aws/bedrock-agentcore-control/model/ListMemoriesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOauth2CredentialProvidersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListOnlineEvaluationConfigsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentConnectorsPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentCredentialProvidersPaginationTraits.h>
+#include <aws/bedrock-agentcore-control/model/ListPaymentManagersPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPoliciesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyEnginesPaginationTraits.h>
 #include <aws/bedrock-agentcore-control/model/ListPolicyGenerationAssetsPaginationTraits.h>
@@ -81,6 +84,15 @@ using ListOauth2CredentialProvidersPaginator =
 using ListOnlineEvaluationConfigsPaginator =
     Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListOnlineEvaluationConfigsRequest,
                                       Pagination::ListOnlineEvaluationConfigsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPaymentConnectorsPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPaymentConnectorsRequest,
+                                      Pagination::ListPaymentConnectorsPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPaymentCredentialProvidersPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPaymentCredentialProvidersRequest,
+                                      Pagination::ListPaymentCredentialProvidersPaginationTraits<BedrockAgentCoreControlClient>>;
+using ListPaymentManagersPaginator =
+    Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPaymentManagersRequest,
+                                      Pagination::ListPaymentManagersPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListPoliciesPaginator = Aws::Utils::Pagination::Paginator<BedrockAgentCoreControlClient, Model::ListPoliciesRequest,
                                                                 Pagination::ListPoliciesPaginationTraits<BedrockAgentCoreControlClient>>;
 using ListPolicyEnginesPaginator =
