@@ -382,6 +382,15 @@ else () #  End of Legacy Build
 
     # -- Load modern modules --
     include(aws_sdk_options)
+
+    # Validate BUILD_ONLY is set before fetching dependencies (fail fast)
+    if(NOT AWS_SDK_BUILD_ONLY)
+        message(FATAL_ERROR
+            "AWS_SDK_BUILD_ONLY is required in the modern build.\n"
+            "Specify services to build: -DAWS_SDK_BUILD_ONLY=\"s3;dynamodb\"\n"
+            "To build all services: -DAWS_SDK_BUILD_ONLY=\"all\"")
+    endif()
+
     include(aws_sdk_platform)
     include(aws_sdk_compiler)
     include(fetch_dependencies)
@@ -432,6 +441,10 @@ else () #  End of Legacy Build
     # -- Build service clients (generated + high-level) --
     include(aws_sdk_service_clients)
     aws_sdk_build_service_clients()
+
+    # -- Symbol leakage verification --
+    include(cmake/modern/symbol_check.cmake)
+    aws_sdk_add_symbol_check(aws-cpp-sdk-core)
 
     # -- Test targets (gated behind AWS_SDK_ENABLE_TESTING) --
     if(AWS_SDK_ENABLE_TESTING)
