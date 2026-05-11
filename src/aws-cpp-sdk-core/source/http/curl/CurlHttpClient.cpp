@@ -138,8 +138,7 @@ struct CurlWriteCallbackContext
         m_request(request),
         m_response(response),
         m_rateLimiter(rateLimiter),
-        m_numBytesResponseReceived(0),
-        m_headersReceivedEventFired(false)
+        m_numBytesResponseReceived(0)
     {}
 
     const CurlHttpClient* m_client;
@@ -148,7 +147,6 @@ struct CurlWriteCallbackContext
     HttpResponse* m_response;
     Aws::Utils::RateLimits::RateLimiterInterface* m_rateLimiter;
     int64_t m_numBytesResponseReceived;
-    bool m_headersReceivedEventFired;
 };
 
 static const char* CURL_HTTP_CLIENT_TAG = "CurlHttpClient";
@@ -281,15 +279,10 @@ static size_t WriteHeader(char* ptr, size_t size, size_t nmemb, void* userdata)
             curl_easy_getinfo(context->m_curlHandle, CURLINFO_RESPONSE_CODE, &responseCode);
             response->SetResponseCode(static_cast<HttpResponseCode>(responseCode));
             AWS_LOGSTREAM_DEBUG(CURL_HTTP_CLIENT_TAG, "Returned http response code " << responseCode);
-
-            if (!context->m_headersReceivedEventFired)
+            auto& headersHandler = context->m_request->GetHeadersReceivedEventHandler();
+            if (headersHandler)
             {
-                auto& headersHandler = context->m_request->GetHeadersReceivedEventHandler();
-                if (headersHandler)
-                {
-                    headersHandler(context->m_request, context->m_response);
-                }
-                context->m_headersReceivedEventFired = true;
+                headersHandler(context->m_request, context->m_response);
             }
         }
 
