@@ -9,7 +9,7 @@ val logger = Logging.getLogger("MyLogger")
 
 plugins {
     id("java-library")
-    id("software.amazon.smithy.gradle.smithy-base").version("1.3.0")
+    id("software.amazon.smithy.gradle.smithy-base").version("1.4.0")
 }
 
 repositories {
@@ -19,21 +19,21 @@ repositories {
 
 buildscript {
     dependencies {
-        classpath("software.amazon.smithy:smithy-model:1.67.0")
-        classpath("software.amazon.smithy:smithy-aws-traits:1.67.0")
-        classpath("software.amazon.smithy:smithy-rules-engine:1.67.0")
+        classpath("software.amazon.smithy:smithy-model:1.70.0")
+        classpath("software.amazon.smithy:smithy-aws-traits:1.70.0")
+        classpath("software.amazon.smithy:smithy-rules-engine:1.70.0")
     }
 }
 
 dependencies {
     implementation(project(":smithy-cpp-codegen"))
-    implementation("software.amazon.smithy:smithy-aws-traits:1.67.0")
-    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.67.0")
-    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.67.0")
-    implementation("software.amazon.smithy:smithy-aws-endpoints:1.67.0")
-    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.67.0")
-    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.67.0")
-    implementation("software.amazon.smithy:smithy-waiters:1.67.0")
+    implementation("software.amazon.smithy:smithy-aws-traits:1.70.0")
+    implementation("software.amazon.smithy:smithy-aws-cloudformation-traits:1.70.0")
+    implementation("software.amazon.smithy:smithy-aws-iam-traits:1.70.0")
+    implementation("software.amazon.smithy:smithy-aws-endpoints:1.70.0")
+    implementation("software.amazon.smithy:smithy-smoke-test-traits:1.70.0")
+    implementation("software.amazon.smithy:smithy-aws-smoke-test-model:1.70.0")
+    implementation("software.amazon.smithy:smithy-waiters:1.70.0")
 }
 
 tasks.register("generate-smithy-build") {
