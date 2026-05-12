@@ -151,6 +151,7 @@ class LegacyC2jCppGen(object):
             return -1
 
         self._create_smithy_namespace_mapping(self.c2j_models)
+        self._update_smithy2c2j_service_map(self.c2j_models)
 
         print(f"Code generation done, (re)generated {len(done)} packages.")  # Including defaults and partitions
         
@@ -380,3 +381,36 @@ class LegacyC2jCppGen(object):
         with open(tmp_path, 'w') as f:
             json.dump(mapping, f, indent=2)
         os.replace(tmp_path, output_path)
+
+    def _update_smithy2c2j_service_map(self, c2j_models: dict):
+        """Update smithy2c2j_service_map.json with entries for services where the
+        Smithy sdkId-derived name differs from the C2J filename-derived name.
+        Only processes the services being generated; merges with existing entries."""
+        output_paths = [
+            f"{self.path_to_api_definitions}/../smithy/cpp-codegen/smithy2c2j_service_map.json",
+            f"{self.path_to_api_definitions}/../smithy/codegen/smithy2c2j_service_map.json",
+        ]
+
+        for output_path in output_paths:
+            if os.path.exists(output_path):
+                with open(output_path, 'r') as f:
+                    mapping = json.load(f)
+            else:
+                mapping = {}
+
+            for service, model_files in c2j_models.items():
+                full_model_file_path = f"{self.path_to_api_definitions}/{model_files.c2j_model}"
+                with open(full_model_file_path, 'r') as f:
+                    model = json.load(f)
+                service_id = model.get("metadata", {}).get("serviceId", "")
+                if not service_id:
+                    continue
+                smithy_name = service_id.lower().replace(" ", "-").replace("_", "-")
+                if smithy_name != service:
+                    mapping[smithy_name] = service
+
+            tmp_path = output_path + ".tmp"
+            with open(tmp_path, 'w') as f:
+                json.dump(mapping, f, indent=4, sort_keys=True)
+                f.write("\n")
+            os.replace(tmp_path, output_path)
