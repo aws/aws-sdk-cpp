@@ -104,6 +104,39 @@ class ModelUtils(object):
             return dict((k, self.models_available[k]) for k in clients_to_build if k in clients_to_build)
 
     @staticmethod
+    def _resolve_service_key(raw_key: str, model_filename: str, models_dir: str, legacy_services: set) -> str:
+        """Resolve the package directory name for a service.
+
+        For legacy services (in the frozen set), use the filename-based key.
+        For new services, use the normalized serviceId from the model
+        so it naturally aligns with what Smithy codegen expects.
+        """
+        key = SERVICE_NAME_REMAPS.get(raw_key, raw_key)
+        if "." in key:
+            key = "-".join(reversed(key.split(".")))
+        if ";" in key:
+            key = key.replace(";", "-")
+
+        # Legacy service: keep filename-based name
+        if key in legacy_services:
+            return key
+
+        # New service: use normalized serviceId if it differs from filename-based key
+        full_model_path = os.path.join(models_dir, model_filename)
+        try:
+            with open(full_model_path, 'r') as f:
+                model = json.load(f)
+            service_id = model.get("metadata", {}).get("serviceId", "")
+            if service_id:
+                sdk_id_key = service_id.lower().replace(" ", "-").replace("_", "-")
+                if sdk_id_key != key:
+                    return sdk_id_key
+        except (json.JSONDecodeError, IOError):
+            pass
+
+        return key
+
+    @staticmethod
     def _collect_available_models(models_dir: str, endpoint_rules_dir: str) -> dict:
         """Return a dict of <service_name, ServiceModel> with all available c2j models in a models_dir
 
@@ -111,6 +144,20 @@ class ModelUtils(object):
         :param endpoint_rules_dir: path to the directory with endpoints dir models
         :return: dict<service_name, model_file_name> in models dir
         """
+        # Load the smithy2c2j service map to determine which services are legacy
+        # (any service whose sdkId-derived name appears as a KEY in this map has a known
+        # mismatch and uses the filename-based value)
+        service_map_path = os.path.normpath(
+            os.path.join(models_dir, "../smithy/cpp-codegen/smithy2c2j_service_map.json"))
+        legacy_services = set()
+        if os.path.exists(service_map_path):
+            try:
+                with open(service_map_path, 'r') as f:
+                    service_map = json.load(f)
+                legacy_services = set(service_map.values())
+            except (json.JSONDecodeError, IOError):
+                pass
+
         model_files = os.listdir(models_dir)
         service_name_to_model_filename_date = dict()
 
@@ -133,11 +180,7 @@ class ModelUtils(object):
         service_name_to_model_filename = dict()
         missing = set()
         for raw_key, model_file_date in service_name_to_model_filename_date.items():
-            key = SERVICE_NAME_REMAPS.get(raw_key, raw_key)
-            if "." in key:
-                key = "-".join(reversed(key.split(".")))  # just replicating existing legacy behavior
-            if ";" in key:
-                key = key.replace(";", "-")  # just in case... just replicating existing legacy behavior
+            key = ModelUtils._resolve_service_key(raw_key, model_file_date[0], models_dir, legacy_services)
 
             # fetch endpoint-rules filename which is based on ServiceId in c2j models:
             try:
