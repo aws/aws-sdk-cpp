@@ -398,7 +398,13 @@ class LegacyC2jCppGen(object):
             else:
                 mapping = {}
 
+            seen_models = set()
             for service, model_files in c2j_models.items():
+                # Skip synthetic entries that share a model file with another service (e.g. s3-crt uses s3's model)
+                if model_files.c2j_model in seen_models:
+                    continue
+                seen_models.add(model_files.c2j_model)
+
                 full_model_file_path = f"{self.path_to_api_definitions}/{model_files.c2j_model}"
                 with open(full_model_file_path, 'r') as f:
                     model = json.load(f)
